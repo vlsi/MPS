@@ -55,6 +55,7 @@
     <orderEntry type="library" exported="" name="JDOM" level="project" />
     <orderEntry type="library" exported="" name="IDEA-plaform" level="project" />
     <orderEntry type="library" exported="" name="JUnit4" level="project" />
+    <orderEntry type="module" module-name="transformationTest" />
     <orderEntryProperties />
   </component>
   <component name="copyright">

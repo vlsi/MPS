@@ -993,7 +993,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/kernel/vcs/svn/svn.iml" filepath="$PROJECT_DIR$/core/kernel/vcs/svn/svn.iml" group="core/kernel/vcs" />
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" filepath="$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/platform/transformationTest/transformationTest.iml" filepath="$PROJECT_DIR$/platform/transformationTest/transformationTest.iml" group="platform" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/transformationTest/transformationTest.iml" filepath="$PROJECT_DIR$/core/languageDesign/transformationTest/transformationTest.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" filepath="$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" group="platform/uiLanguage" />
       <module fileurl="file://$PROJECT_DIR$/platform/uiLanguage/runtime/uiLanguage-runtime.iml" filepath="$PROJECT_DIR$/platform/uiLanguage/runtime/uiLanguage-runtime.iml" group="platform/uiLanguage" />
       <module fileurl="file://$PROJECT_DIR$/platform/unitTest/unitTest.iml" filepath="$PROJECT_DIR$/platform/unitTest/unitTest.iml" group="platform" />

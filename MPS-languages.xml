@@ -1397,21 +1397,21 @@
   <target name="pack.jetbrains.mps.transformationTest">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.tmp/module" />
-    <mkdir dir="platform/transformationTest/classes" />
+    <mkdir dir="core/languageDesign/transformationTest/classes" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.tmp/module">
-      <fileset file="platform/transformationTest/transformationTest.mpl" />
+      <fileset file="core/languageDesign/transformationTest/transformationTest.mpl" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.tmp/module">
-      <fileset dir="platform/transformationTest" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit" />
+      <fileset dir="core/languageDesign/transformationTest" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.transformationTest.tmp">
-      <fileset dir="platform/transformationTest/classes" />
+      <fileset dir="core/languageDesign/transformationTest/classes" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.tmp" />
     </jar>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="platform/transformationTest/classes" />
+      <fileset dir="core/languageDesign/transformationTest/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.tmp" />
   </target>
