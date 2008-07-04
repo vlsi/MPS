@@ -15179,6 +15179,12 @@
         <property name="vertical" value="false" />
         <link role="relationDeclaration" targetNodeId="17.1068499141038" />
         <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202948938337">
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215187008628">
+            <property name="value" value="0.0" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215187010990">
+            <property name="value" value="0.0" />
+          </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997033">
             <property name="flag" value="true" />
           </node>
