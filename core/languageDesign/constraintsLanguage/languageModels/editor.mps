@@ -1375,6 +1375,9 @@
                   <link role="cellMenuComponent" targetNodeId="1197896807120" resolveInfo="ConceptMethodDeclaration_Menu" />
                 </node>
               </node>
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215166130419">
+                <property name="value" value="1.0" />
+              </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177755613649">
               <property name="text" value="(" />

@@ -39,6 +39,8 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };

@@ -188,6 +188,7 @@ public class BaseLanguageStyle_StyleSheet {
   public static final Style BRACKET = new Style() {
     {
       this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      this.set(StyleAttributes.PADDING_RIGHT, 0.0);
     }
 
   };

@@ -59,7 +59,8 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
@@ -77,6 +78,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };

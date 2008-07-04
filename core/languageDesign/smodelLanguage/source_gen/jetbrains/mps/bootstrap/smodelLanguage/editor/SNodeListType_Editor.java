@@ -31,6 +31,15 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell11674_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11674_0");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell11674_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -40,6 +49,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
@@ -54,6 +64,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
@@ -172,6 +183,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
               }
 
             });
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }
 
         };

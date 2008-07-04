@@ -186,6 +186,15 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_namePropertyCell20116_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell20116_01");
     BaseLanguageStyle_StyleSheet.METHOD_NAME.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell20116_08(EditorCell editorCell, SNode node, EditorContext context) {
