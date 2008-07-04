@@ -116,6 +116,12 @@ public enum LanguageAspect {
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapModule.DATA_FLOW.getUID());
     }
+  },
+
+  LANGUAGE_TEST("languageTest") {
+    protected List<String> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.LANGUAGE_TEST.getUID());
+    }
   };
 
   private String myName;
@@ -123,6 +129,8 @@ public enum LanguageAspect {
   LanguageAspect(String name) {
     myName = name;
   }
+
+
 
   public Icon getIcon() {
     return Icons.MODEL_ICON;

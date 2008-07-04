@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.dataFlow.DataFlow;
+import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
@@ -28,11 +29,17 @@ public class StatementList_Behavior {
   public static void call_checkReturns_1213877327397(SNode thisNode) {
     Set<SNode> expectedReturns = DataFlow.getExpectedReturns(thisNode);
     for(SNode n : expectedReturns) {
-      SNode statement = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.Statement", true, false);
-      if (statement != null) {
+      SNode nodeToSelect;
+      if (((StatementList)SNodeOperations.getAdapter(SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", false, false))).getStatementsCount() > 0) {
+        SNodeOperations.getAncestor(nodeToSelect = n, "jetbrains.mps.baseLanguage.structure.Statement", true, false);
+      } else
+      {
+        nodeToSelect = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+      }
+      if (nodeToSelect != null) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(statement, "Return expected", "jetbrains.mps.baseLanguage.behavior", "1213877327419", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(nodeToSelect, "Return expected", "jetbrains.mps.baseLanguage.behavior", "1213877327419", intentionProvider);
         }
       } else
       {
