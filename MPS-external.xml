@@ -375,6 +375,7 @@
     <antcall target="pack.webr.xmlSchema" />
     <antcall target="pack.jetbrains.mps.gtext.runtime" />
     <antcall target="pack.jetbrains.mps.transformationTest" />
+    <antcall target="pack.jetbrains.mps.transformationTest.runtime" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/docs">
       <fileset dir="docs" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>

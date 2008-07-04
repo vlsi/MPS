@@ -1415,6 +1415,26 @@
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.tmp" />
   </target>
+  <target name="pack.jetbrains.mps.transformationTest.runtime">
+    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.runtime.tmp" />
+    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.runtime.tmp/module" />
+    <mkdir dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
+    <mkdir dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.runtime.tmp/module">
+      <fileset file="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.transformationTest.runtime/jetbrains.mps.transformationTest.runtime.msd" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.runtime.tmp/module">
+      <fileset dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.transformationTest.runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.transformationTest.runtime.tmp">
+      <fileset dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
+      <fileset dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.runtime.mpsarch.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.runtime.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.runtime.tmp" />
+  </target>
   <target name="pack.jetbrains.mps.ide.uiLanguage">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.uiLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.uiLanguage.tmp/module" />
