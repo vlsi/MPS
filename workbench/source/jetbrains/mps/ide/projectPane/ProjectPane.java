@@ -268,7 +268,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       }
 
       public String toString() {
-        return "Project Pane";
+        return "Logical View";
       }
     };
   }

@@ -85,10 +85,24 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
       }
     };
 
+    BaseAction expandAllAction = new BaseAction("Expand all", "Expand all nodes", jetbrains.mps.ide.findusages.view.icons.Icons.EXPAND_ICON) {
+      protected void doExecute(AnActionEvent e) {
+        myHierarchyTree.expandAll();
+      }
+    };
+
+    BaseAction collapseAllAction = new BaseAction("Collapse all", "Collapse all nodes", jetbrains.mps.ide.findusages.view.icons.Icons.COLLAPSE_ICON) {
+      protected void doExecute(AnActionEvent e) {
+        myHierarchyTree.collapseAll();
+      }
+    };
+
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(childrenAction);
     group.add(parentAction);
     group.add(thisModelAction);
+    group.add(expandAllAction);
+    group.add(collapseAllAction);
     group.add(createCloseAction());
 
     return ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, group, true).getComponent();
