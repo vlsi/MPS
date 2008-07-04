@@ -172,7 +172,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
 
   // used for sorting tabs in the tabbed pane
   public int getWeight() {
-    return 1;
+    return 5;
   }
 
   public SelectInTarget createSelectInTarget() {

@@ -1,12 +1,12 @@
 package jetbrains.mps.vcs;
 
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationListener;
 
@@ -35,6 +35,7 @@ public class MPSVCSManager implements ProjectComponent {
   private boolean myGenerationRunning;
   private final Object myMonitor = new Object();
   private final List<Runnable> myTasks = new LinkedList<Runnable>();
+  private SModelRepositoryListener myModelRepositoryListener;
 
   public MPSVCSManager(Project project) {
     myProject = project;
@@ -59,6 +60,22 @@ public class MPSVCSManager implements ProjectComponent {
 
           myTasks.clear();
         }
+      }
+    };
+    myModelRepositoryListener = new SModelRepositoryAdapter() {
+      @Override
+      public void modelCreated(SModelDescriptor modelDescriptor) {
+        IFile ifile = modelDescriptor.getModelFile();
+        if (ifile != null){
+          VirtualFile f = VFileSystem.getFile(ifile);
+          if (f != null){
+            addInternal(Collections.singletonList(f));
+          }
+        }
+      }
+
+      @Override
+      public void modelRenamed(SModelDescriptor modelDescriptor) {
       }
     };
   }
@@ -182,6 +199,23 @@ public class MPSVCSManager implements ProjectComponent {
       }
     }
 
+    boolean result = addInternal(inVCS);
+
+    IProjectHandler projectHandler = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
+    if (projectHandler != null) {
+      try {
+        projectHandler.addFilesToVCS(notInVCS);
+      } catch (RemoteException e) {
+        LOG.error(e);
+        return false;
+      }
+    }
+
+    return result;
+  }
+
+  private boolean addInternal(final List<VirtualFile> inVCS) {
+    final ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
     boolean result = true;
     invokeLater(new Runnable() {
       public void run() {
@@ -206,17 +240,6 @@ public class MPSVCSManager implements ProjectComponent {
         });
       }
     });
-
-    IProjectHandler projectHandler = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
-    if (projectHandler != null) {
-      try {
-        projectHandler.addFilesToVCS(notInVCS);
-      } catch (RemoteException e) {
-        LOG.error(e);
-        return false;
-      }
-    }
-
     return result;
   }
 
@@ -245,9 +268,11 @@ public class MPSVCSManager implements ProjectComponent {
 
   public void initComponent() {
     myProject.getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
+    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
   }
 
   public void disposeComponent() {
     myProject.getComponent(GeneratorManager.class).removeGenerationListener(myGenerationListener);
+    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
   }
 }

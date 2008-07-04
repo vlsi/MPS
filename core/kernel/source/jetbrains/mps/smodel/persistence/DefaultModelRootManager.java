@@ -193,14 +193,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
     IFile modelFile = createFileForModelUID(root, uid);
     SModelDescriptor result = DefaultModelRootManager.createModel(this, root, modelFile.getCanonicalPath(), uid, owner);
-    IOperationContext operationContext = result.getOperationContext();
-    if (operationContext != null) {
-      MPSVCSManager manager = operationContext.getProject().getComponent(MPSVCSManager.class);
-      manager.addFilesToVCS(Collections.singletonList(modelFile.toFile()));
-
-    } else {
-      LOG.warning("can't find an operation context for a model " + result);
-    }
+    
     return result;
   }
 
