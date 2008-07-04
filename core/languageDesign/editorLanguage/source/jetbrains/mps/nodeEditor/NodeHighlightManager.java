@@ -1,12 +1,11 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.smodel.SNode;
 
+import java.awt.Color;
 import java.util.*;
-import java.util.List;
-import java.awt.*;
 
 
 /**
@@ -29,10 +28,10 @@ public class NodeHighlightManager implements IEditorMessageOwner {
   }
 
   public void clear() {
-    for (IEditorMessageOwner owner : myMessages.keySet()) {
-      myEditor.getMessagesGutter().removeMessages(owner);
-    }
     synchronized (myMessagesLock) {
+      for (IEditorMessageOwner owner : myMessages.keySet()) {
+        myEditor.getMessagesGutter().removeMessages(owner);
+      }
       myMessages.clear();
     }
     myEditor.getExternalComponent().repaint();
@@ -70,20 +69,24 @@ public class NodeHighlightManager implements IEditorMessageOwner {
       if (msg.getNode() == node && msg.getOwner() == owner) return;
     }
 
-    Set<IEditorMessage> messages = myMessages.get(owner);
-    if (messages == null) {
-      messages = new HashSet<IEditorMessage>();
-      myMessages.put(owner, messages);
+    synchronized (myMessagesLock) {
+      Set<IEditorMessage> messages = myMessages.get(owner);
+      if (messages == null) {
+        messages = new HashSet<IEditorMessage>();
+        myMessages.put(owner, messages);
+      }
+      messages.add(message);
     }
-    messages.add(message);
     myEditor.getMessagesGutter().add(message);
     myEditor.updateMessages();
   }
 
   public Set<IEditorMessage> getMessages() {
     Set<IEditorMessage> result = new HashSet<IEditorMessage>();
-    for (IEditorMessageOwner owner : myMessages.keySet()) {
-      result.addAll(myMessages.get(owner));
+    synchronized (myMessagesLock) {
+      for (IEditorMessageOwner owner : myMessages.keySet()) {
+        result.addAll(myMessages.get(owner));
+      }
     }
     return result;
   }
@@ -103,9 +106,11 @@ public class NodeHighlightManager implements IEditorMessageOwner {
       }
     }
     for (IEditorMessage msg : messagesToRemove) {
-      Set<IEditorMessage> msgs = this.myMessages.get(msg.getOwner());
-      if (msgs != null) {
-        msgs.remove(msg);
+      synchronized (myMessagesLock) {
+        Set<IEditorMessage> msgs = this.myMessages.get(msg.getOwner());
+        if (msgs != null) {
+          msgs.remove(msg);
+        }
       }
     }
     for (IEditorMessage msg : messagesToRemove) {
