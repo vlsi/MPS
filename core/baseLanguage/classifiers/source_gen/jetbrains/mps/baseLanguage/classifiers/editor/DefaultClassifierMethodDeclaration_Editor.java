@@ -265,7 +265,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   public EditorCell create_returnTypeRefNodeCell8711_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("returnType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no returnType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_returnTypeRefNodeCell8711_0_internal(context, node, provider);
@@ -294,7 +294,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   public EditorCell create_bodyRefNodeCell8711_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell8711_0_internal(context, node, provider);

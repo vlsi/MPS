@@ -125,7 +125,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
   public EditorCell create_methodRefCell14829_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("method");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no method>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_methodRefCell14829_0_internal(context, node, provider);
@@ -176,7 +176,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
     public EditorCell create_namePropertyCell14829_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell14829_0_internal(context, node, provider);

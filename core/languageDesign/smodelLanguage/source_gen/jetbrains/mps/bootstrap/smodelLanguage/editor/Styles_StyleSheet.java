@@ -20,6 +20,7 @@ public class Styles_StyleSheet {
         }
 
       });
+      this.set(StyleAttributes.PADDING_RIGHT, 0.0);
     }
 
   };
