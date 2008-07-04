@@ -126,6 +126,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell17599_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell17599_0");
+      BaseLanguageStyle_StyleSheet.CLASS_NAME.apply(editorCell);
     }
 
     private static void setupLabel_namePropertyCell17599_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

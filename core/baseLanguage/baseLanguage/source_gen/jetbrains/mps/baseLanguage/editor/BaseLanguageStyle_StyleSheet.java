@@ -213,6 +213,13 @@ public class BaseLanguageStyle_StyleSheet {
     }
 
   };
+  public static final Style CLASS_NAME = new Style() {
+    {
+      this.set(StyleAttributes.PADDING_LEFT, 0.0);
+      this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+    }
+
+  };
   public static final Style SEMICOLON = new Style() {
     {
       this.set(StyleAttributes.PADDING_LEFT, 0.0);

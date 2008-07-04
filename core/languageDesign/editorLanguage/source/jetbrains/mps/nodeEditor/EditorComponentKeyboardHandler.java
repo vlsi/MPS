@@ -109,7 +109,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     // process action
 
     if (selectedCell != null) {
-      if (selectedCell.getUserObject(EditorCell.ROLE) == null && (EditorCellAction.INSERT.equals(actionType) || EditorCellAction.INSERT_BEFORE.equals(actionType))) {
+      if (selectedCell instanceof EditorCell_Label && selectedCell.getUserObject(EditorCell.ROLE) == null && (EditorCellAction.INSERT.equals(actionType) || EditorCellAction.INSERT_BEFORE.equals(actionType))) {
         DfsTraverser traverser = new DfsTraverser(selectedCell, EditorCellAction.INSERT.equals(actionType));
 
         SNode selectedNode = selectedCell.getSNode();
