@@ -110,33 +110,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     if (selectedCell != null) {
       if (selectedCell instanceof EditorCell_Label && selectedCell.getUserObject(EditorCell.ROLE) == null && (EditorCellAction.INSERT.equals(actionType) || EditorCellAction.INSERT_BEFORE.equals(actionType))) {
-        DfsTraverser traverser = new DfsTraverser(selectedCell, EditorCellAction.INSERT.equals(actionType));
-
-        SNode selectedNode = selectedCell.getSNode();
-        EditorCell cellWithRole = null;
-
-        while (traverser.getCurrent() != null) {
-          EditorCell current = traverser.getCurrent();
-          SNode currentNode = current.getSNode();
-
-          if (!selectedNode.isAncestorOf(currentNode)) {
-            break;
-          }
-
-          if (current.getUserObject(EditorCell.ROLE) != null) {
-            String role = (String) current.getUserObject(EditorCell.ROLE);
-            LinkDeclaration linkDeclaration = currentNode.getLinkDeclaration(role);
-            if (linkDeclaration != null &&
-              linkDeclaration.getMetaClass() == LinkMetaclass.aggregation &&
-              (linkDeclaration.getSourceCardinality() == Cardinality._0__n || linkDeclaration.getSourceCardinality() == Cardinality._1__n)) {
-              cellWithRole = current;
-            }
-            break;                                                                                
-          }
-
-          traverser.next();
-        }
-
+        EditorCell cellWithRole = new ChildrenCollectionFinder(selectedCell, EditorCellAction.INSERT.equals(actionType)).find();
         if (cellWithRole != null && EditorUtil.executeCellAction(cellWithRole, actionType, editorContext)) {
           return true;
         }

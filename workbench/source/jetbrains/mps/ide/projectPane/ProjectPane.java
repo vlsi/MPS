@@ -935,7 +935,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         getTree().loadState(state.getState());
       }
     });
-  }
+  }                                                                        
 
   public static class MyState {
     private TreeState myState;
