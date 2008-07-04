@@ -5,6 +5,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.generator.GeneratorManager;
@@ -84,6 +85,17 @@ public class MPSVCSManager implements ProjectComponent {
           }
         }
       }
+
+      @Override
+      public void beforeModelFileChanged(SModelDescriptor modelDescriptor) {
+        Set<IModule> modules = modelDescriptor.getModules();
+        for (IModule m : modules) {
+          VirtualFile file = VFileSystem.getFile(m.getGeneratorOutputPath());
+          if (file != null) {
+//            deleteInternal(Collections.singletonList(file));
+          }
+        }
+      }
     };
   }
 
@@ -127,6 +139,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean deleteFilesAndRemoveFromVCS(List<File> files) {
+    System.out.println("deleting files from vcs " + files);
     List<VirtualFile> list = new LinkedList<VirtualFile>();
     for (File f : files) {
       VirtualFile file = VFileSystem.getFile(f);

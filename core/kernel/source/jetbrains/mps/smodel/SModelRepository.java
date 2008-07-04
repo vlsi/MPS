@@ -497,7 +497,14 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
+  private void fireBeforeModelFileChangedEvent(SModelDescriptor modelDescriptor) {
+    for (SModelRepositoryListener listener : listeners()) {
+      listener.beforeModelFileChanged(modelDescriptor);
+    }
+  }
+
   public void setModelFile(DefaultSModelDescriptor defaultSModelDescriptor, IFile dest) {
+    fireBeforeModelFileChangedEvent(defaultSModelDescriptor);
     IFile source = defaultSModelDescriptor.getModelFile();
     removeModelFromFileCache(defaultSModelDescriptor);
     defaultSModelDescriptor.setModelFile(dest);
