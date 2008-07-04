@@ -60,7 +60,12 @@ public class FileTreeNode extends AbstractFileTreeNode {
   }
 
   private Icon getDefaultIcon() {
-    return VFileSystem.getFile(myFile).getFileType().getIcon();
+    VirtualFile file = VFileSystem.getFile(myFile);
+    if (file != null) {
+      return file.getFileType().getIcon();
+    } else {
+      return VCSIcons.FILE_ICON;
+    }
   }
 
 }
