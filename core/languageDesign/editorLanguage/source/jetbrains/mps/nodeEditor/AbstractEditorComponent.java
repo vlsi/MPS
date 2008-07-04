@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.ide.CopyProvider;
 import com.intellij.ide.CutProvider;
+import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.command.undo.UndoManager;
@@ -2412,14 +2413,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public void actionPerformed(ActionEvent e) {
       for (final BaseAction action : myActions) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
-          final ActionContext context = createActionContext();
-          Presentation p = new Presentation();
-          action.update(ActionUtils.createEvent(myPlace, p, context));
-          if (!p.isVisible() || !p.isEnabled()) {
+          DataContext context = ActionUtils.createDataContext(DataManager.getInstance().getDataContext(AbstractEditorComponent.this, 100, 100), createActionContext());
+          AnActionEvent event = ActionUtils.createEvent(myPlace, context);
+
+          action.update(event);
+          if (!event.getPresentation().isVisible() || !event.getPresentation().isEnabled()) {
             continue;
           }
 
-          action.actionPerformed(ActionUtils.createEvent(myPlace, context));
+          action.actionPerformed(event);
           return;
         }
       }

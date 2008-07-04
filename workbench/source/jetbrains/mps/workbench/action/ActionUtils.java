@@ -118,34 +118,18 @@ public class ActionUtils {
     };
   }
 
-  public static AnActionEvent createEvent(String place, ActionContext context) {
-    return createEvent(place, new Presentation(), context);
-  }
-
-  public static AnActionEvent createEvent(final AnActionEvent event, ActionContext context) {
-    final DataContext dataContext = createDataContext(context);
+  public static DataContext createDataContext(final DataContext dContext, ActionContext aContext) {
+    final DataContext aContextData = createDataContext(aContext);
     DataContext resDataContext = new DataContext() {
       @Nullable
       public Object getData(@NonNls String dataId) {
         Object data = null;
-        try {
-          data = event.getDataContext().getData(dataId);
-        } catch (Throwable t) {
-        }
+        data = dContext.getData(dataId);
         if (data != null) return data;
-        else return dataContext.getData(dataId);
+        else return aContextData.getData(dataId);
       }
     };
-
-    AnActionEvent res = new AnActionEvent(null, resDataContext, ActionPlaces.UNKNOWN, event.getPresentation(), ActionManager.getInstance(), 0);
-    return res;
-  }
-
-
-  public static AnActionEvent createEvent(String place, Presentation presentation, final ActionContext context) {
-    DataContext dataContext = createDataContext(context);
-    AnActionEvent event = new AnActionEvent(null, dataContext, place, presentation, ActionManager.getInstance(), 0);
-    return event;
+    return resDataContext;
   }
 
   private static DataContext createDataContext(final ActionContext context) {
@@ -171,9 +155,30 @@ public class ActionUtils {
           Project project = context.getOperationContext().getProject();
           return project;
         }
-        throw new UnsupportedOperationException(dataId);
+        return null;
       }
     };
+  }
+
+  public static AnActionEvent createEvent(String place, ActionContext context) {
+    return createEvent(place, new Presentation(), context);
+  }
+
+  public static AnActionEvent createEvent(final AnActionEvent event, ActionContext context) {
+    DataContext resDataContext = createDataContext(event.getDataContext(), context);
+    AnActionEvent res = new AnActionEvent(null, resDataContext, ActionPlaces.UNKNOWN, event.getPresentation(), ActionManager.getInstance(), 0);
+    return res;
+  }
+
+  public static AnActionEvent createEvent(String place, DataContext context) {
+    AnActionEvent res = new AnActionEvent(null, context, ActionPlaces.UNKNOWN, new Presentation(), ActionManager.getInstance(), 0);
+    return res;
+  }
+
+  public static AnActionEvent createEvent(String place, Presentation presentation, final ActionContext context) {
+    DataContext dataContext = createDataContext(context);
+    AnActionEvent event = new AnActionEvent(null, dataContext, place, presentation, ActionManager.getInstance(), 0);
+    return event;
   }
 
   /*

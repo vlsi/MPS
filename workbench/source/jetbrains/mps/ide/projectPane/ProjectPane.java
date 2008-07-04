@@ -260,11 +260,15 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       }
 
       public String getMinorViewId() {
-        return "min v id";
+        return null;
       }
 
       public float getWeight() {
         return 0;
+      }
+
+      public String toString() {
+        return "Project Pane";
       }
     };
   }
