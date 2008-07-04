@@ -8,6 +8,9 @@
   </language>
   <language namespace="webr.logging" />
   <language namespace="jetbrains.mps.baseLanguageInternal" />
+  <language namespace="jetbrains.mps.nanoj">
+    <languageAspect modelUID="jetbrains.mps.nanoj.constraints" version="45" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
@@ -17,6 +20,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   <maxImportIndex value="16" />
   <import index="14" modelUID="java.lang@java_stub" version="-1" />
   <import index="15" modelUID="java.io@java_stub" version="-1" />
@@ -193,6 +197,18 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215002795820" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214554222481" />
+  </node>
+  <node type="jetbrains.mps.nanoj.structure.ClassConcept" id="1215176056885">
+    <property name="name" value="ABC" />
+    <node role="method" type="jetbrains.mps.nanoj.structure.InstanceMethod" id="1215176060108">
+      <property name="name" value="abcdef" />
+      <node role="type" type="jetbrains.mps.nanoj.structure.VoidType" id="1215176060109" />
+      <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1215176060110" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.nanoj.structure.Constructor" id="1215176056886">
+      <node role="type" type="jetbrains.mps.nanoj.structure.VoidType" id="1215176056887" />
+      <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1215176056888" />
+    </node>
   </node>
 </model>
 

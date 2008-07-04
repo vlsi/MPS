@@ -26,6 +26,7 @@
     <usedLanguages>jetbrains.mps.baseLanguage.strings</usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.blTypes</usedLanguages>
     <usedLanguages>webr.logging</usedLanguages>
+    <usedLanguages>jetbrains.mps.nanoj</usedLanguages>
   </usedLanguages>
 </solution>
 

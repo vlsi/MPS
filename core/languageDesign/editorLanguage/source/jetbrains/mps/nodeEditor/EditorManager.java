@@ -19,6 +19,7 @@ import java.awt.event.KeyEvent;
 import java.util.*;
 
 import org.jetbrains.annotations.Nullable;
+import com.intellij.ui.LightColors;
 
 public class EditorManager {
   private static final Logger LOG = Logger.getLogger(EditorManager.class);
@@ -334,7 +335,7 @@ public class EditorManager {
       setDefaultText(" ");
       setEditable(true);
       setDrawBorder(false);
-      setCellBackgroundColor(Color.YELLOW);
+      setCellBackgroundColor(LightColors.BLUE);
       setCellInfoProvider(new ICellInfoProvider() {
         public CellInfo getCellInfo(EditorCell cell) {
           return new RTHintCellInfo(EditorCell_RTHint.this, myAnchorCell);
@@ -351,10 +352,6 @@ public class EditorManager {
 
     public static EditorCell_RTHint create(EditorContext editorContext, SNode node) {
       return new EditorCell_RTHint(editorContext, node);
-    }
-
-    protected boolean isSelectionPainted() {
-      return isSelected();
     }
   }
 
