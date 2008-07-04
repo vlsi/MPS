@@ -12,8 +12,8 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   private ModelDifferenceView myDifferenceView;
 
-  public ModelDifferenceDialog(Frame parent, SModel oldModel, SModel newModel) throws HeadlessException {
-    super(parent, "Model Difference");
+  public ModelDifferenceDialog(Frame parent, SModel oldModel, SModel newModel, String windowTitle) throws HeadlessException {
+    super(parent, windowTitle);
     myDifferenceView = new ModelDifferenceView();
     myDifferenceView.showDifference(oldModel, newModel);
   }

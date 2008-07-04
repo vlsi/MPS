@@ -21,7 +21,7 @@ import org.jdom.JDOMException;
 
 public class ModelDiffTool implements DiffTool {
 
-  public void show(DiffRequest request) {
+  public void show(final DiffRequest request) {
     DiffContent[] contents = request.getContents();
 
     try {
@@ -30,7 +30,7 @@ public class ModelDiffTool implements DiffTool {
 
       ModelDifferenceDialog d = ModelAccess.instance().runReadAction(new Computable<ModelDifferenceDialog>() {
         public ModelDifferenceDialog compute() {
-          return new ModelDifferenceDialog(null, oldModel, newModel);
+          return new ModelDifferenceDialog(null, oldModel, newModel, request.getWindowTitle());
         }
       });
       d.showDialog();
