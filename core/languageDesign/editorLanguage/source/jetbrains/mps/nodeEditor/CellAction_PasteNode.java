@@ -33,7 +33,7 @@ public class CellAction_PasteNode extends EditorCellAction {
       return false;
     }
 
-    if (!PasteNodeUtil.canPaste(selectedCell, pasteNodes)) {
+    if (!PasteNodeUtil.canPaste(getCellToPasteTo(selectedCell), pasteNodes)) {
       LOG.debug("Couldn't paste node here");
       return false;
     }
@@ -43,18 +43,10 @@ public class CellAction_PasteNode extends EditorCellAction {
   public void execute(final EditorContext context) {
     LOG.assertInCommand();
     AbstractEditorComponent editorComponent = context.getNodeEditorComponent();
-    EditorCell selectedCell = editorComponent.getSelectedCell();
+    EditorCell selectedCell = getCellToPasteTo(editorComponent.getSelectedCell());
     SNode selectedNode = selectedCell.getSNode();
 
     PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(selectedNode.getModel());
-
-// test - try do not do it
-//    Set<String> necessaryLanguages = pasteNodeData.getNecessaryLanguages();
-//    Set<SModelUID> necessaryImports = pasteNodeData.getNecessaryImports();
-//    if (!CopyPasteUtil.addImportsAndLanguagesToModel(model,
-//      necessaryLanguages,
-//      necessaryImports,
-//      context.getOperationContext())) return;
 
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
@@ -86,5 +78,22 @@ public class CellAction_PasteNode extends EditorCellAction {
     }
   }
 
+
+  private EditorCell getCellToPasteTo(EditorCell cell) {
+    if (cell instanceof EditorCell_Label && cell.getUserObject(EditorCell.ROLE) == null) {
+      EditorCell result = new ChildrenCollectionFinder(cell, true).find();
+      if (result != null) {
+        return result;
+      }
+      result = new ChildrenCollectionFinder(cell, false).find();
+      if (result != null) {
+        if (result instanceof EditorCell_Collection) {
+          return result.getLastChild();
+        }        
+        return result;
+      }
+    }
+    return cell;
+  }
 
 }
