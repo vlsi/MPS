@@ -4,7 +4,6 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.ide.ThreadUtils;
 
 import javax.swing.Icon;
 
@@ -16,21 +15,13 @@ public abstract class BaseMPSTool extends BaseTool implements ProjectComponent {
   public void projectOpened() {
     StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
       public void run() {
-        ThreadUtils.runInUIThreadNoWait(new Runnable() {
-          public void run() {
-            registerLater();
-          }
-        });
+        registerLater();
       }
     });
   }
 
   public void projectClosed() {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        unregisterLater();
-      }
-    });
+    unregister();
   }
 
   public void initComponent() {
