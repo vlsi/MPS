@@ -50,6 +50,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
       rebuildTreeLater();
     }
   };
+  private VirtualFileManagerListener myVirtualFileManagerListener;
 
   protected FileProjectViewPane(Project project, final ProjectView projectView) {
     super(project);
@@ -110,11 +111,23 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
         rebuildTreeLater();
       }
     };
+
+    myVirtualFileManagerListener = new VirtualFileManagerListener(){
+
+      public void beforeRefreshStart(boolean asynchonous) {
+
+      }
+
+      public void afterRefreshFinish(boolean asynchonous) {
+        rebuildTreeLater();
+      }
+    };
   }
 
   public void initComponent() {
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
     VirtualFileManager.getInstance().addVirtualFileListener(myFileListener);
+    VirtualFileManager.getInstance().addVirtualFileManagerListener(myVirtualFileManagerListener);
     myProject.getComponent(ProjectLevelVcsManager.class).addVcsListener(myDirectoryMappingListener);
   }
 
@@ -129,6 +142,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
   public void disposeComponent() {
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
     VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
+    VirtualFileManager.getInstance().removeVirtualFileManagerListener(myVirtualFileManagerListener);
     myProject.getComponent(ProjectLevelVcsManager.class).removeVcsListener(myDirectoryMappingListener);
   }
 
