@@ -252,6 +252,9 @@
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678041">
               <property name="color" value="DARK_MAGENTA" />
             </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215162730188">
+              <property name="value" value="0.0" />
+            </node>
           </node>
         </node>
       </node>

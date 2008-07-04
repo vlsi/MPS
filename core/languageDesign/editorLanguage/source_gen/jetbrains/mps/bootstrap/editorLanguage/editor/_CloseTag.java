@@ -37,6 +37,7 @@ public class _CloseTag extends AbstractCellProvider {
 
           });
           this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
