@@ -5,6 +5,9 @@ import jetbrains.mps.nodeEditor.text.TextBuilder;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import sun.misc.Unsafe;
 
 /**
  * User: Sergey Dmitriev

@@ -9,7 +9,11 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
+import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 
 import java.awt.event.KeyEvent;
 import java.util.List;
@@ -104,10 +108,40 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     // process action
 
-    if (selectedCell != null) {      
-      if (EditorCellAction.INSERT.equals(actionType)) {
+    if (selectedCell != null) {
+      if (selectedCell.getUserObject(EditorCell.ROLE) == null && (EditorCellAction.INSERT.equals(actionType) || EditorCellAction.INSERT_BEFORE.equals(actionType))) {
+        DfsTraverser traverser = new DfsTraverser(selectedCell, EditorCellAction.INSERT.equals(actionType));
 
+        SNode selectedNode = selectedCell.getSNode();
+        EditorCell cellWithRole = null;
+
+        while (traverser.getCurrent() != null) {
+          EditorCell current = traverser.getCurrent();
+          SNode currentNode = current.getSNode();
+
+          if (!selectedNode.isAncestorOf(currentNode)) {
+            break;
+          }
+
+          if (current.getUserObject(EditorCell.ROLE) != null) {
+            String role = (String) current.getUserObject(EditorCell.ROLE);
+            LinkDeclaration linkDeclaration = currentNode.getLinkDeclaration(role);
+            if (linkDeclaration != null &&
+              linkDeclaration.getMetaClass() == LinkMetaclass.aggregation &&
+              (linkDeclaration.getSourceCardinality() == Cardinality._0__n || linkDeclaration.getSourceCardinality() == Cardinality._1__n)) {
+              cellWithRole = current;
+            }
+            break;                                                                                
+          }
+
+          traverser.next();
+        }
+
+        if (cellWithRole != null && EditorUtil.executeCellAction(cellWithRole, actionType, editorContext)) {
+          return true;
+        }
       }
+
 
       if (actionType != null && !actionType.equals(EditorCellAction.DELETE)) {
         if (!(EditorCellAction.RIGHT_TRANSFORM.equals(actionType) && dontExecuteRT)) {

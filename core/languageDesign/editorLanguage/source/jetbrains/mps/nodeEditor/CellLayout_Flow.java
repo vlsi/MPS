@@ -21,7 +21,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
          wStart
         <------>
        |--------|------------------|
-       |--------| blah blah blah   |
+       |--------| blah blah blah   | 
        |blah blah blah  |----------|
        |----------------|----------|
        <---- wEnd------>
