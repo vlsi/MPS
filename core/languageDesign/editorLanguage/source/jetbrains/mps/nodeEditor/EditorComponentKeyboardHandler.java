@@ -104,7 +104,11 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     // process action
 
-    if (selectedCell != null) {
+    if (selectedCell != null) {      
+      if (EditorCellAction.INSERT.equals(actionType)) {
+
+      }
+
       if (actionType != null && !actionType.equals(EditorCellAction.DELETE)) {
         if (!(EditorCellAction.RIGHT_TRANSFORM.equals(actionType) && dontExecuteRT)) {
           if (EditorUtil.executeCellAction(selectedCell, actionType, editorContext)) {
@@ -114,6 +118,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       }
 
       if (!keyEvent.isConsumed()) {
+        
         // auto-completion (AKA node substitution)
         if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown() && !(keyEvent.isAltDown() || keyEvent.isShiftDown())) ||
           (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && (!keyEvent.isAltDown()) && !(keyEvent.isControlDown() || keyEvent.isShiftDown()))) {
@@ -131,8 +136,10 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
 
         // allow selected cell to process event.
-        if (allowCellToProcessEvent(selectedCell, keyEvent, true)) return true;
-      }// if (!keyEvent.isConsumed())
+        if (allowCellToProcessEvent(selectedCell, keyEvent, true)) {
+          return true;
+        }
+      }
 
       if (EditorCellAction.DELETE.equals(actionType)) {
         if (EditorUtil.executeCellAction(selectedCell, actionType, editorContext)) {
@@ -147,9 +154,8 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           editor.changeSelection(deepestSelectedCell);
           return true;
         }
-
-      } // if (!keyEvent.isConsumed())
-    } // if (selectedCell != null)
+      }
+    }
 
     if (actionType != null) {
       if (editor.executeComponentAction(actionType)) {
