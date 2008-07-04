@@ -19,6 +19,7 @@ import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
+import com.intellij.util.xmlb.annotations.Collection;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelRepository;
@@ -29,10 +30,14 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import jetbrains.mps.vcs.MPSVCSManager;
 
 import java.util.List;
 import java.util.Set;
 import java.util.LinkedHashSet;
+import java.util.Collections;
+import java.io.File;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
@@ -47,38 +52,45 @@ public class ModelChangesWatcher implements ApplicationComponent {
       final Set<SModelDescriptor> toReload = new LinkedHashSet<SModelDescriptor>();
 
       for (VFileEvent event : events) {
+        String path = event.getPath();
+        VirtualFile vfile = event.getFileSystem().findFileByPath(path);
+        if (vfile == null) continue;
         if ((event instanceof VFileDeleteEvent) || (event instanceof VFileCreateEvent)) {
 
-          String path = event.getPath();
-          if (path.endsWith(".mps")) {
-            ProgressManager.getInstance().run(new Modal(null, "Reloading Updated Models", false) {
-              public void run(@NotNull final ProgressIndicator indicator) {
-                ModelAccess.instance().runReadAction(new Runnable() {
-                  public void run() {
-                    try {
-                      indicator.setIndeterminate(true);
-                      List<SModelDescriptor> allModelDescriptors = ApplicationManager.getApplication().getComponent(SModelRepository.class).getAllModelDescriptors();
+          if (vfile.getFileType().equals(MPSFileTypesManager.MODEL_FILE_TYPE)) {
+            IFile ifile = VFileSystem.toIFile(vfile);
+            if ((ifile == null) || (!ifile.exists())) continue;
+            final SModelDescriptor model = ApplicationManager.getApplication().getComponent(SModelRepository.class).findModel(ifile);
+            if (model.needsReloading()) {
+              ProgressManager.getInstance().run(new Modal(null, "Reloading Updated Models", false) {
+                public void run(@NotNull final ProgressIndicator indicator) {
+                  ModelAccess.instance().runReadAction(new Runnable() {
+                    public void run() {
+                      try {
+                        indicator.setIndeterminate(true);
+                        List<SModelDescriptor> allModelDescriptors = ApplicationManager.getApplication().getComponent(SModelRepository.class).getAllModelDescriptors();
 
-                      for (SModelDescriptor d : allModelDescriptors) {
-                        IFile modelFile = d.getModelFile();
-                        if ((modelFile != null) && (!isInConflict(modelFile))) {
-                          d.reloadFromDisk();
+                        for (SModelDescriptor d : allModelDescriptors) {
+                          IFile modelFile = d.getModelFile();
+                          if ((modelFile != null) && (!isInConflict(modelFile))) {
+                            d.reloadFromDisk();
+                          }
                         }
+                      } catch (Throwable t) {
+                        LOG.error(t);
                       }
-                    } catch (Throwable t) {
-                      LOG.error(t);
                     }
-                  }
-                });
-              }
-            });
+                  });
+                }
+              });
+            }
           }
           return;
 
         } else {
 
-          IFile ifile = VFileSystem.toIFile(event.getFileSystem().findFileByPath(event.getPath()));
-          if ((ifile == null) || (!ifile.exists())) continue;
+          IFile ifile = VFileSystem.toIFile(vfile);
+          if ((ifile == null) || (!ifile.exists()) || (!vfile.getFileType().equals(MPSFileTypesManager.MODEL_FILE_TYPE))) continue;
           final SModelDescriptor model = ApplicationManager.getApplication().getComponent(SModelRepository.class).findModel(ifile);
 
           if (model != null) {

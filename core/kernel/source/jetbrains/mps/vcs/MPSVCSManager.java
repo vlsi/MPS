@@ -77,18 +77,32 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean deleteFilesAndRemoveFromVCS(List<File> files) {
-    final List<File> inVCS = new LinkedList<File>();
+    List<VirtualFile> list = new LinkedList<VirtualFile>();
+    for (File f : files) {
+      VirtualFile file = VFileSystem.getFile(f);
+      if (file != null) {
+        list.add(file);
+      }
+    }
+
+    return deleteVFilesAndRemoveFromVCS(list);
+  }
+
+  public boolean deleteVFilesAndRemoveFromVCS(List<VirtualFile> files) {
+    final List<VirtualFile> inVCS = new LinkedList<VirtualFile>();
     List<File> notInVCS = new LinkedList<File>();
 
     final ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
-    for (File f : files) {
-      VirtualFile virtualFile = VFileSystem.getFile(f);
-      if (virtualFile != null) {
-        AbstractVcs vcs = manager.getVcsFor(virtualFile);
+    for (VirtualFile f : files) {
+      if (f != null) {
+        AbstractVcs vcs = manager.getVcsFor(f);
         if (vcs != null) {
           inVCS.add(f);
         } else {
-          notInVCS.add(f);
+          File iofile = VFileSystem.toFile(f);
+          if (iofile != null) {
+            notInVCS.add(iofile);
+          }
         }
       }
     }
@@ -100,8 +114,7 @@ public class MPSVCSManager implements ProjectComponent {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           public void run() {
             LocalFileSystem lfs = LocalFileSystem.getInstance();
-            for (File file : inVCS) {
-              VirtualFile vfile = lfs.refreshAndFindFileByIoFile(file);
+            for (VirtualFile vfile : inVCS) {
               if (vfile != null) {
                 AbstractVcs vcs = manager.getVcsFor(vfile);
                 if (vcs != null) {
@@ -129,7 +142,7 @@ public class MPSVCSManager implements ProjectComponent {
         return false;
       }
     } else {
-      for (File f : files) {
+      for (File f : notInVCS) {
         f.delete();
       }
     }
@@ -138,18 +151,33 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean addFilesToVCS(final List<File> files) {
-    final List<File> inVCS = new LinkedList<File>();
+    List<VirtualFile> list = new LinkedList<VirtualFile>();
+    for (File f : files) {
+      VirtualFile file = VFileSystem.getFile(f);
+      if (file != null) {
+        list.add(file);
+      }
+    }
+
+    return addVFilesToVCS(list);
+  }
+
+  public boolean addVFilesToVCS(final List<VirtualFile> files) {
+    System.out.println("adding files to vcs " + files);
+    final List<VirtualFile> inVCS = new LinkedList<VirtualFile>();
     List<File> notInVCS = new LinkedList<File>();
 
     final ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
-    for (File f : files) {
-      VirtualFile virtualFile = VFileSystem.getFile(f);
-      if (virtualFile != null) {
-        AbstractVcs vcs = manager.getVcsFor(virtualFile);
+    for (VirtualFile f : files) {
+      if (f != null) {
+        AbstractVcs vcs = manager.getVcsFor(f);
         if (vcs != null) {
           inVCS.add(f);
         } else {
-          notInVCS.add(f);
+          File iofile = VFileSystem.toFile(f);
+          if (iofile != null) {
+            notInVCS.add(iofile);
+          }
         }
       }
     }
@@ -159,9 +187,7 @@ public class MPSVCSManager implements ProjectComponent {
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           public void run() {
-            LocalFileSystem lfs = LocalFileSystem.getInstance();
-            for (File f : inVCS) {
-              VirtualFile vf = lfs.refreshAndFindFileByIoFile(f);
+            for (VirtualFile vf : inVCS) {
               if (vf == null) {
                 continue;
               }

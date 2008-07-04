@@ -77,7 +77,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
       }
     });
     myTimer.setRepeats(false);
-    myTimer.setInitialDelay(3 * SECOND);
+    myTimer.setInitialDelay(2 * SECOND);
 
     myFileStatusListener = new FileStatusListener() {
       public void fileStatusesChanged() {
