@@ -8783,6 +8783,12 @@
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032098">
             <property name="flag" value="true" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215188228174">
+            <property name="value" value="0.0" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215188230145">
+            <property name="value" value="0.0" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1173990956441">
@@ -10427,6 +10433,18 @@
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1186415560222">
         <property name="style" value="BOLD" />
+      </node>
+    </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1215188818086">
+      <property name="name" value="CompactKeyWord" />
+      <node role="extendedClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClassReference" id="1215188911005">
+        <link role="styleSheetClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215188913241">
+        <property name="value" value="0.0" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215188915540">
+        <property name="value" value="0.0" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1198594875276">

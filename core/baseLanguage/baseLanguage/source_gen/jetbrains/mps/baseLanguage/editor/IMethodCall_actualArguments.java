@@ -163,6 +163,8 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
           {
             this.set(StyleAttributes.SELECTABLE, true);
             this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }
 
         };

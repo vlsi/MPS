@@ -24,6 +24,14 @@ public class BaseLanguageStyle_StyleSheet {
     }
 
   };
+  public static final Style COMPACT_KEY_WORD = new Style() {
+    {
+      this.putAll(BaseLanguageStyle_StyleSheet.KEY_WORD);
+      this.set(StyleAttributes.PADDING_LEFT, 0.0);
+      this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+    }
+
+  };
   public static final Style COMMENT = new Style() {
     {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
