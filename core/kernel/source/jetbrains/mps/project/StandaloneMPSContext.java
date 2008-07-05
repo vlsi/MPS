@@ -1,16 +1,11 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.toolsPane.ToolsPane;
-import jetbrains.mps.ide.toolsPane.ITool;
-
-import java.awt.*;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.smodel.IOperationContext;
+
+import java.awt.Frame;
 
 public abstract class StandaloneMPSContext implements IOperationContext {
   public Frame getMainFrame() {
@@ -33,12 +28,6 @@ public abstract class StandaloneMPSContext implements IOperationContext {
   public <T> T getComponent(Class<T> clazz) {
     T component = ApplicationManager.getApplication().getComponent(clazz);
     if (component != null) return component;
-    if (clazz != ToolsPane.class) {
-      ToolsPane toolsPane = getComponent(ToolsPane.class);
-      if (toolsPane != null) {
-        return (T) toolsPane.getTool((Class<? extends ITool>) clazz);
-      }
-    }
     return null;
   }
 }

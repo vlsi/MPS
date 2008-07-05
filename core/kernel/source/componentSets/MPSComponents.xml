@@ -245,6 +245,9 @@
       <implementation-class>jetbrains.mps.fileTypes.MPSFileTypesManager</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

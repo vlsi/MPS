@@ -151,7 +151,10 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   }
 
   public void doRegister() {
-    ActionManager.getInstance().registerAction(PREV_COMMAND, new AnAction() {
+    ActionManager am = ActionManager.getInstance();
+    if (am.getAction(PREV_COMMAND) != null) return;
+
+    am.registerAction(PREV_COMMAND, new AnAction() {
       public void actionPerformed(AnActionEvent e) {
         UsagesView usagesView = getCurrentView();
         if (usagesView != null) usagesView.goToPrevious();
@@ -159,7 +162,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     });
     KeymapManager.getInstance().getActiveKeymap().addShortcut(PREV_COMMAND, getPrevShortcut());
 
-    ActionManager.getInstance().registerAction(NEXT_COMMAND, new AnAction() {
+    am.registerAction(NEXT_COMMAND, new AnAction() {
       public void actionPerformed(AnActionEvent e) {
         UsagesView usagesView = getCurrentView();
         if (usagesView != null) usagesView.goToNext();

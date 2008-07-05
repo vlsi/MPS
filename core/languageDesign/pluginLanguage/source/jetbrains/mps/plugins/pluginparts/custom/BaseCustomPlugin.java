@@ -1,8 +1,8 @@
-package jetbrains.mps.plugins.custom;
+package jetbrains.mps.plugins.pluginparts.custom;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.DefaultPlugin;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.logging.Logger;
 
 public abstract class BaseCustomPlugin extends DefaultPlugin {
 

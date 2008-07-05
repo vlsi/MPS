@@ -44,6 +44,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     myScrollPane = new JScrollPane(myHierarchyTree);
     myComponent.add(myScrollPane, BorderLayout.CENTER);
     showConceptInHierarchy(null, null);
+    myHierarchyTree.expandAll();
   }
 
   protected abstract AbstractHierarchyTree<T> createHierarchyTree(boolean isParentHierarchy);

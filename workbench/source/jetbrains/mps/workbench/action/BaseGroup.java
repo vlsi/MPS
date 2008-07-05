@@ -1,9 +1,13 @@
 package jetbrains.mps.workbench.action;
 
+import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.action.InternalFlag;
+import jetbrains.mps.ide.action.MPSActionGroup;
+import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -54,6 +58,13 @@ public class BaseGroup extends DefaultGroup {
     else disable(p);
   }
 
+  //todo: move to generated group
+  protected static BaseGroup getGroup(String id) {
+    MPSActionGroup group = (MPSActionGroup) ActionManager.getInstance().getAction(id);
+    if (group != null) return group;
+    return ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).getGroup(id);
+  }
+
   public void update(final AnActionEvent e) {
     super.update(e);
     enable(e.getPresentation());
@@ -73,7 +84,7 @@ public class BaseGroup extends DefaultGroup {
       }
     }).toArray(new AnAction[0]);
   }
-  
+
   @NotNull
   public AnAction[] internalGetChildren(@Nullable AnActionEvent e) {
     return super.getChildren(e);

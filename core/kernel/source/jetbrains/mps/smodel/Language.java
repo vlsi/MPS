@@ -2,11 +2,11 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
-import jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.refactoring.structure.Refactoring;
@@ -14,7 +14,6 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
-import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
@@ -149,11 +148,11 @@ public class Language extends AbstractModule {
     IFile dir = myDescriptorFile.getParent();
     String oldShortFileName = NameUtil.shortNameFromLongName(myDescriptorFile.getAbsolutePath());
     String newPathSuffix = NameUtil.shortNameFromLongName(newNamespace);
-    if ((dir.getAbsolutePath()+MPSExtentions.DOT_LANGUAGE).endsWith(oldShortFileName)) {
+    if ((dir.getAbsolutePath() + MPSExtentions.DOT_LANGUAGE).endsWith(oldShortFileName)) {
       dir = dir.getParent();
       newPathSuffix = newPathSuffix + File.separatorChar + newPathSuffix;
     }
-    return dir.child(newPathSuffix+ MPSExtentions.DOT_LANGUAGE);
+    return dir.child(newPathSuffix + MPSExtentions.DOT_LANGUAGE);
   }
 
   public List<String> getExtendedLanguageNamespaces() {
@@ -441,6 +440,10 @@ public class Language extends AbstractModule {
 
   public String getGeneratedPluginClassLongName() {
     return getPluginModelDescriptor().getLongName() + "." + PluginNameUtils.getPluginName(this);
+  }
+
+  public String getGeneratedApplicationPluginClassLongName() {
+    return getPluginModelDescriptor().getLongName() + "." + PluginNameUtils.getApplicationPluginName(this);
   }
 
   public List<Generator> getGenerators() {
@@ -866,19 +869,19 @@ public class Language extends AbstractModule {
     return null;
   }
 
-   private static LanguageDescriptor createNewDescriptor(String languageNamespace, IFile descriptorFile, SModel descriptorModel) {
-      LanguageDescriptor languageDescriptor = LanguageDescriptor.newInstance(descriptorModel);
-      descriptorModel.addRoot(languageDescriptor);
-      languageDescriptor.setNamespace(languageNamespace);
-      // default descriptorModel roots
-      ModelRoot modelRoot = ModelRoot.newInstance(descriptorModel);
-      modelRoot.setPath(new File(descriptorFile.getParent().toFile(), LANGUAGE_MODELS).getAbsolutePath());
-      modelRoot.setPrefix(languageNamespace);
-      languageDescriptor.addModelRoot(modelRoot);
-      modelRoot = ModelRoot.newInstance(descriptorModel);
-      modelRoot.setPath(new File(descriptorFile.getParent().toFile(), LANGUAGE_ACCESSORIES).getAbsolutePath());
-      modelRoot.setPrefix(languageNamespace);
-      languageDescriptor.addModelRoot(modelRoot);
-      return languageDescriptor;
-    }
+  private static LanguageDescriptor createNewDescriptor(String languageNamespace, IFile descriptorFile, SModel descriptorModel) {
+    LanguageDescriptor languageDescriptor = LanguageDescriptor.newInstance(descriptorModel);
+    descriptorModel.addRoot(languageDescriptor);
+    languageDescriptor.setNamespace(languageNamespace);
+    // default descriptorModel roots
+    ModelRoot modelRoot = ModelRoot.newInstance(descriptorModel);
+    modelRoot.setPath(new File(descriptorFile.getParent().toFile(), LANGUAGE_MODELS).getAbsolutePath());
+    modelRoot.setPrefix(languageNamespace);
+    languageDescriptor.addModelRoot(modelRoot);
+    modelRoot = ModelRoot.newInstance(descriptorModel);
+    modelRoot.setPath(new File(descriptorFile.getParent().toFile(), LANGUAGE_ACCESSORIES).getAbsolutePath());
+    modelRoot.setPrefix(languageNamespace);
+    languageDescriptor.addModelRoot(modelRoot);
+    return languageDescriptor;
+  }
 }

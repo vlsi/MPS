@@ -55,7 +55,7 @@
   <import index="16" modelUID="javax.swing.text@java_stub" version="-1"/>
   <import index="18" modelUID="java.io@java_stub" version="-1"/>
   <import index="19" modelUID="jetbrains.mps.logging@java_stub" version="-1"/>
-  <import index="20" modelUID="jetbrains.mps.plugins.tool@java_stub" version="-1"/>
+  <import index="20" modelUID="jetbrains.mps.plugins.pluginparts.tool@java_stub" version="-1"/>
   <import index="21" modelUID="jetbrains.mps.baseLanguage.unitTest.runtime" version="-1"/>
   <import index="23" modelUID="jetbrains.mps.ide@java_stub" version="-1"/>
   <import index="24" modelUID="java.util@java_stub" version="-1"/>
@@ -79,7 +79,7 @@
     <property name="name" value="RunJUnitTestClass"/>
     <property name="caption" value="Run Test"/>
     <property name="iconPath" value="${language_descriptor}\icons\run.png"/>
-    <link role="extendedAction" targetNodeId="38.~CurrentProjectAction" resolveInfo="CurrentProjectAction"/>
+    <link role="extendedAction" targetNodeId="38.~BaseAction" resolveInfo="BaseAction"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1208265544756">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208265544757">
@@ -5490,7 +5490,7 @@
     <property name="name" value="RunJUnitTestMethod"/>
     <property name="caption" value="Run Test"/>
     <property name="iconPath" value="${language_descriptor}\icons\run.png"/>
-    <link role="extendedAction" targetNodeId="38.~CurrentProjectAction" resolveInfo="CurrentProjectAction"/>
+    <link role="extendedAction" targetNodeId="38.~BaseAction" resolveInfo="BaseAction"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1208769567843">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208769567844">
@@ -12088,7 +12088,7 @@
     <property name="name" value="RunJUnitTestModel"/>
     <property name="caption" value="Run All Tests in model"/>
     <property name="iconPath" value="${language_descriptor}\icons\run.png"/>
-    <link role="extendedAction" targetNodeId="38.~CurrentProjectAction" resolveInfo="CurrentProjectAction"/>
+    <link role="extendedAction" targetNodeId="38.~BaseAction" resolveInfo="BaseAction"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1209121024518">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209121024519">
@@ -12351,7 +12351,7 @@
     <property name="name" value="RunJUnitTestModule"/>
     <property name="caption" value="Run All Tests in module"/>
     <property name="iconPath" value="${language_descriptor}\icons\run.png"/>
-    <link role="extendedAction" targetNodeId="38.~CurrentProjectAction" resolveInfo="CurrentProjectAction"/>
+    <link role="extendedAction" targetNodeId="38.~BaseAction" resolveInfo="BaseAction"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1209121623497">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209121623498">

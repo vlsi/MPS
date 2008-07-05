@@ -1,7 +1,7 @@
 package jetbrains.mps.project;
 
-import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.ide.IdeEventQueue;
+import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
@@ -78,7 +78,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         }
 
         for (IModule m : getModules()) {
-          ((AbstractModule)m).convertRenamedDependencies();
+          ((AbstractModule) m).convertRenamedDependencies();
         }
 
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
@@ -112,7 +112,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
       }
       IFile descriptorFile = FileSystem.getFile(path);
       if (!descriptorFile.getName().endsWith(MPSExtentions.DOT_SOLUTION)) {
-        LOG.error("Couldn't load solution from: " + descriptorFile.getPath() + " : '*"+MPSExtentions.DOT_SOLUTION+"' file expected");
+        LOG.error("Couldn't load solution from: " + descriptorFile.getPath() + " : '*" + MPSExtentions.DOT_SOLUTION + "' file expected");
       } else if (descriptorFile.exists()) {
         mySolutions.add((Solution) MPSModuleRepository.getInstance().registerSolution(descriptorFile, this));
       } else {
@@ -128,7 +128,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
       String path = languagePath.getPath();
       IFile descriptorFile = FileSystem.getFile(path);
       if (!descriptorFile.getName().endsWith(MPSExtentions.DOT_LANGUAGE)) {
-        LOG.error("Couldn't load language from: " + descriptorFile.getPath() + " : '*"+MPSExtentions.DOT_LANGUAGE+"' file expected");
+        LOG.error("Couldn't load language from: " + descriptorFile.getPath() + " : '*" + MPSExtentions.DOT_LANGUAGE + "' file expected");
       } else if (descriptorFile.exists()) {
         myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this));
       } else {
@@ -146,7 +146,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
       String path = dk.getPath();
       IFile devKit = FileSystem.getFile(path);
       if (!devKit.getName().endsWith(MPSExtentions.DOT_DEVKIT)) {
-        LOG.error("Couldn't load devkit from: " + devKit.getPath() + " : '*."+MPSExtentions.DOT_DEVKIT+"' file expected");
+        LOG.error("Couldn't load devkit from: " + devKit.getPath() + " : '*." + MPSExtentions.DOT_DEVKIT + "' file expected");
       } else if (devKit.exists()) {
         myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
       } else {

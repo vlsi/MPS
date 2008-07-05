@@ -1,10 +1,7 @@
 package jetbrains.mps.ide.scriptLanguage.plugin;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.scriptLanguage.runtime.BaseMigrationScript;
 import jetbrains.mps.ide.scriptLanguage.structure.MigrationScript;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.workbench.action.ActionEventData;
 
@@ -18,8 +15,8 @@ import java.util.List;
 public class RunMigrationScriptAction extends AbstractMigrationScriptAction {
   private MigrationScript myScript;
 
-  public RunMigrationScriptAction(MigrationScript script, Project project, String name) {
-    super(project, name);
+  public RunMigrationScriptAction(MigrationScript script, String name) {
+    super(name);
     myScript = script;
   }
 

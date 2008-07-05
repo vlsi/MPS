@@ -38,7 +38,7 @@
   <import index="8" modelUID="java.lang@java_stub" version="-1"/>
   <import index="9" modelUID="com.intellij.openapi.actionSystem@java_stub" version="-1"/>
   <import index="10" modelUID="jetbrains.mps.workbench@java_stub" version="-1"/>
-  <import index="11" modelUID="jetbrains.mps.plugins.actions@java_stub" version="-1"/>
+  <import index="11" modelUID="jetbrains.mps.plugins.pluginparts.actions@java_stub" version="-1"/>
   <import index="12" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1"/>
   <import index="13" modelUID="com.intellij.openapi.project@java_stub" version="-1"/>
   <visible index="2" modelUID="jetbrains.mps.ide.actions"/>

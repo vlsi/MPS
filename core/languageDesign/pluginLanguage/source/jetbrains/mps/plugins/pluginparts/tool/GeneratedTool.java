@@ -1,4 +1,4 @@
-package jetbrains.mps.plugins.tool;
+package jetbrains.mps.plugins.pluginparts.tool;
 
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;

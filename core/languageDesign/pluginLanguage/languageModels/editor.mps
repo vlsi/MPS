@@ -60,23 +60,6 @@
           <property name="noTargetText" value="&lt;no name&gt;"/>
           <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-              id="1205677569022">
-          <property name="text" value="extends"/>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell"
-              id="1205677569023">
-          <link role="relationDeclaration" targetNodeId="1.1205607379485"/>
-          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent"
-                id="1205677569024">
-            <link role="conceptDeclaration" targetNodeId="15.1068390468198" resolveInfo="ClassConcept"/>
-            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
-                  id="1205677569025">
-              <property name="readOnly" value="true"/>
-              <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
             id="1211299019676">

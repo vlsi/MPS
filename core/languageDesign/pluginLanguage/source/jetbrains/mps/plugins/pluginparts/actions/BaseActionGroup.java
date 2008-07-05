@@ -1,12 +1,10 @@
-package jetbrains.mps.plugins.actions;
+package jetbrains.mps.plugins.pluginparts.actions;
 
-import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.MPSActionGroup;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 public abstract class BaseActionGroup extends MPSActionGroup implements IActionGroupElementOwner {
@@ -19,13 +17,6 @@ public abstract class BaseActionGroup extends MPSActionGroup implements IActionG
 
   public MPSProject getProject() {
     return myProject;
-  }
-
-
-  protected BaseGroup getGroup(String id) {
-    MPSActionGroup group = (MPSActionGroup) ActionManager.getInstance().getAction(id);
-    if (group != null) return group;
-    return getProject().getPluginManager().getGroup(id);
   }
 
 
@@ -48,5 +39,6 @@ public abstract class BaseActionGroup extends MPSActionGroup implements IActionG
     return true;
   }
 
-  public void adjust(IActionGroupElementOwner owner){}
+  public void adjust(IActionGroupElementOwner owner) {
+  }
 }

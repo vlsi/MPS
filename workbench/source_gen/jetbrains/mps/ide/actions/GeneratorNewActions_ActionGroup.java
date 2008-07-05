@@ -4,19 +4,17 @@ package jetbrains.mps.ide.actions;
 
 import com.intellij.openapi.actionSystem.Anchor;
 import com.intellij.openapi.actionSystem.Constraints;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.model.NewModelAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.CurrentProjectGroup;
 
-public class GeneratorNewActions_ActionGroup extends CurrentProjectGroup {
+public class GeneratorNewActions_ActionGroup extends BaseGroup {
   public static Logger LOG = Logger.getLogger(GeneratorNewActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.GeneratorNewActions";
 
-  public GeneratorNewActions_ActionGroup(Project project) {
-    super("New", ID, true, false, null, project);
+  public GeneratorNewActions_ActionGroup() {
+    super("New", ID, true, false, null);
     this.setPopup(true);
     try {
       this.add(new NewModelAction());

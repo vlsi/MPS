@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.scriptLanguage.plugin;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.scriptLanguage.plugin.migrationtool.MigrationScriptsTool;
 import jetbrains.mps.ide.scriptLanguage.structure.MigrationScript;
 import jetbrains.mps.project.DevKit;
@@ -8,7 +7,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionEventData;
-import jetbrains.mps.workbench.action.CurrentProjectAction;
+import jetbrains.mps.workbench.action.BaseAction;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -19,9 +18,9 @@ import java.util.Set;
  * Igor Alshannikov
  * Mar 25, 2008
  */
-public abstract class AbstractMigrationScriptAction extends CurrentProjectAction {
-  public AbstractMigrationScriptAction(Project project, String name) {
-    super(project, name);
+public abstract class AbstractMigrationScriptAction extends BaseAction {
+  public AbstractMigrationScriptAction(String name) {
+    super(name);
   }
 
   protected void doRunScripts(List<MigrationScript> scripts, IScope scope, IOperationContext context) {

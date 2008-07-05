@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.actions.nodes;
 
-import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.Presentation;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.core.scripts.SafeDelete;
 import jetbrains.mps.dialogs.YesNoToAllDialog;
@@ -85,11 +85,11 @@ public class DeleteNodesHelper {
   }
 
   private void safeDelete(IOperationContext context, SNode node) {
-    final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(new SafeDelete(), context.getMPSProject());
+    final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(new SafeDelete());
     final ActionContext newContext = new ActionContext(context, node);
     newContext.put(List.class, CollectionUtil.asList(node));
     Presentation p = new Presentation();
-    safeDeleteAction.update(ActionUtils.createEvent(ActionPlaces.UNKNOWN,p, newContext));
+    safeDeleteAction.update(ActionUtils.createEvent(ActionPlaces.UNKNOWN, p, newContext));
     if (p.isEnabled()) {
       safeDeleteAction.dodoExecute(newContext);
     }
