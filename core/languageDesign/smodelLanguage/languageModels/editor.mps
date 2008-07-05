@@ -79,6 +79,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1138063769792">
         <property name="text" value="." />
+        <link role="styleClass" targetNodeId="5.1215096040201" resolveInfo="Dot" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995273">
           <property name="flag" value="true" />
         </node>
@@ -2517,6 +2518,12 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1206019891665">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215272661313">
+              <property name="value" value="0.0" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215272663315">
+              <property name="value" value="0.0" />
+            </node>
           </node>
         </node>
       </node>
@@ -2531,6 +2538,12 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1206019907860">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215272888232">
+              <property name="value" value="0.0" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215272890687">
+              <property name="value" value="0.0" />
+            </node>
           </node>
         </node>
       </node>

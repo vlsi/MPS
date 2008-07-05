@@ -160,6 +160,15 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_namePropertyCell19902_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19902_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell19902_05(EditorCell editorCell, SNode node, EditorContext context) {

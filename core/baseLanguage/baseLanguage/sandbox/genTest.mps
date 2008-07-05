@@ -91,22 +91,20 @@
             <property name="value" value="true" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215201081359">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215201081360">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215201081361" />
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215201107128">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215201107129">
             <property name="name" value="l" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215201107130" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1215262789368">
+              <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215262792698" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215201083613">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215201083614">
             <property name="name" value="j" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215201083615" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1215262796449">
+              <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215201083615" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215201085070">
