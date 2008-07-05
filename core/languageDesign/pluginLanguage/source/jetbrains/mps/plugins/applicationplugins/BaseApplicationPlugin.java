@@ -2,6 +2,7 @@ package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.LabelledAnchor;
@@ -14,6 +15,7 @@ import java.util.List;
 public abstract class BaseApplicationPlugin implements IApplicationPlugin {
   private HashMap<String, BaseGroup> myGroups = new HashMap<String, BaseGroup>();
   private List<String> myActions = new ArrayList<String>();
+  private List<BaseCustomApplicationPlugin> myCustomParts;
 
   public void initGroups() {
   }
@@ -21,8 +23,13 @@ public abstract class BaseApplicationPlugin implements IApplicationPlugin {
   public void adjustGroups() {
   }
 
+  public List<BaseCustomApplicationPlugin> initCustomParts() {
+    return new ArrayList<BaseCustomApplicationPlugin>();
+  }
+
   public void init() {
     initGroups();
+    myCustomParts = initCustomParts();
   }
 
   public void afterInit() {
@@ -32,6 +39,10 @@ public abstract class BaseApplicationPlugin implements IApplicationPlugin {
   public void dispose() {
     for (String actionId : myActions) {
       ActionUtils.unregisterAction(actionId);
+    }
+
+    for (BaseCustomApplicationPlugin part : myCustomParts) {
+      part.dispose();
     }
   }
 

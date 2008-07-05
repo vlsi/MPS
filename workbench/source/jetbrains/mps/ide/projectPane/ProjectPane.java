@@ -92,7 +92,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public static final String PROJECT_PANE_LANGUAGE_ACTIONS = LanguageActions_ActionGroup.ID;
   public static final String PROJECT_PANE_DEVKIT_ACTIONS = DevkitActions_ActionGroup.ID;
   public static final String PROJECT_PANE_PROJECT_ACTIONS = ProjectActions_ActionGroup.ID;
-  public static final String PROJECT_PANE_PROJECT_SOLUTION_ACTIONS = SolutionActions_ActionGroup.ID;
+  public static final String PROJECT_PANE_SOLUTION_ACTIONS = SolutionActions_ActionGroup.ID;
   public static final String PROJECT_PANE_GENERATOR_ACTIONS = GeneratorActions_ActionGroup.ID;
   public static final String PROJECT_PANE_TRANSIENT_MODULES_ACTIONS = TransientModulesActions_ActionGroup.ID;
 
@@ -935,7 +935,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         getTree().loadState(state.getState());
       }
     });
-  }                                                                        
+  }
 
   public static class MyState {
     private TreeState myState;

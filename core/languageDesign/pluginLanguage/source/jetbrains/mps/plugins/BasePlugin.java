@@ -5,7 +5,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.custom.BaseCustomPlugin;
+import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
@@ -23,7 +23,7 @@ public abstract class BasePlugin extends DefaultPlugin {
 
   private List<GeneratedTool> myTools = new ArrayList<GeneratedTool>();
   private List<GeneratedTool> myInitializedTools = new ArrayList<GeneratedTool>();
-  private List<BaseCustomPlugin> myCustomPartsToDispose = new ArrayList<BaseCustomPlugin>();
+  private List<BaseCustomProjectPlugin> myCustomPartsToDispose = new ArrayList<BaseCustomProjectPlugin>();
 
   private HashMap<String, BaseGroup> myGroups = new HashMap<String, BaseGroup>();
   private List<String> myActions = new ArrayList<String>();
@@ -42,7 +42,7 @@ public abstract class BasePlugin extends DefaultPlugin {
 
   protected abstract List<GeneratedTool> initTools(Project project);
 
-  protected abstract List<BaseCustomPlugin> initCustomParts(MPSProject project);
+  protected abstract List<BaseCustomProjectPlugin> initCustomParts(MPSProject project);
 
   //adjust groups here
   public void adjustGroups() {
@@ -83,7 +83,7 @@ public abstract class BasePlugin extends DefaultPlugin {
       ActionUtils.unregisterAction(actionId);
     }
 
-    for (BaseCustomPlugin customPart : myCustomPartsToDispose) {
+    for (BaseCustomProjectPlugin customPart : myCustomPartsToDispose) {
       customPart.dispose(getProject());
     }
     myCustomPartsToDispose.clear();

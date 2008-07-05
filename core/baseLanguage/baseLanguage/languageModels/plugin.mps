@@ -4,7 +4,7 @@
   <refactoringHistory/>
   <language namespace="jetbrains.mps.bootstrap.pluginLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="6"/>
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6"/>
@@ -5702,7 +5702,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208785973391"/>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.CustomPluginDeclaration" id="1208787586603">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginDeclaration" id="1208787586603">
     <property name="name" value="BaseLanguageCustomPlugin"/>
     <node role="fieldDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldDeclaration"
           id="1208787621157">
@@ -5717,7 +5717,8 @@
         </node>
       </node>
     </node>
-    <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.InitBlock" id="1208787699614">
+    <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginInitBlock"
+          id="1208787699614">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208787699615">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
               id="1208787714852">
@@ -5781,7 +5782,8 @@
         </node>
       </node>
     </node>
-    <node role="disposeBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DisposeBlock" id="1208787738781">
+    <node role="disposeBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginDisposeBlock"
+          id="1208787738781">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208787738782">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
               id="1208787749003">
@@ -5857,7 +5859,8 @@
         <link role="classifier" targetNodeId="1205860902244" resolveInfo="RunComponent"/>
       </node>
     </node>
-    <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.InitBlock" id="1214210862081">
+    <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginInitBlock"
+          id="1214210862081">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214210862082">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214210864817">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1214210865900">
@@ -5890,7 +5893,8 @@
         </node>
       </node>
     </node>
-    <node role="disposeBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DisposeBlock" id="1214211490882">
+    <node role="disposeBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginDisposeBlock"
+          id="1214211490882">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214211490883">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214211520901">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214211529356">

@@ -89,7 +89,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
       }
     }
 
-    //todo:do we need it?
+    //todo: uncomment when plugin model will be added to devkits
     /*
     for (DevKit dk : devkits) {
       if (dk.getDevKitPluginClass() != null) {

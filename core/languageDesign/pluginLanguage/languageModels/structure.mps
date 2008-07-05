@@ -23,6 +23,73 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept"/>
+      <moveMap/>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="PluginType" conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginType"
+               featureKind="CONCEPT"/>
+          <value featureName="CustomPluginType"
+                 conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.CustomPluginType"
+                 featureKind="CONCEPT"/>
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="3">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept"/>
+      <moveMap/>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="CustomProjectPluginDeclaration"
+               conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.CustomProjectPluginDeclaration"
+               featureKind="CONCEPT"/>
+          <value featureName="ProjectPluginDeclaration"
+                 conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginDeclaration"
+                 featureKind="CONCEPT"/>
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="4">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept"/>
+      <moveMap/>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="CustomProjectPluginType"
+               conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.CustomProjectPluginType"
+               featureKind="CONCEPT"/>
+          <value featureName="ProjectPluginType"
+                 conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginType"
+                 featureKind="CONCEPT"/>
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="5">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept"/>
+      <moveMap/>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="InitBlock" conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.InitBlock"
+               featureKind="CONCEPT"/>
+          <value featureName="ProjectPluginInitBlock"
+                 conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginInitBlock"
+                 featureKind="CONCEPT"/>
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="6">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept"/>
+      <moveMap/>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="DisposeBlock" conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.DisposeBlock"
+               featureKind="CONCEPT"/>
+          <value featureName="ProjectPluginDisposeBlock"
+                 conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginDisposeBlock"
+                 featureKind="CONCEPT"/>
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11"/>
@@ -40,7 +107,7 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   </language>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="6"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7"/>
@@ -946,8 +1013,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206110063106">
-    <property name="name" value="CustomPluginDeclaration"/>
-    <property name="package" value="Custom"/>
+    <property name="name" value="ProjectPluginDeclaration"/>
+    <property name="package" value="Custom.ProjectPlugin"/>
     <property name="rootable" value="true"/>
     <property name="iconPath" value="${language_descriptor}\icons\customPlugin.png"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
@@ -972,17 +1039,17 @@
       <property name="metaClass" value="aggregation"/>
       <property name="role" value="fieldDeclaration"/>
       <property name="sourceCardinality" value="0..n"/>
-      <link role="target" targetNodeId="1206111530559" resolveInfo="PluginFieldDeclaration"/>
+      <link role="target" targetNodeId="14.1213999088275" resolveInfo="DefaultClassifierFieldDeclaration"/>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1206112904192">
-      <property name="value" value="Custom Plugin"/>
+      <property name="value" value="Project Plugin"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206110093589">
-    <property name="package" value="Custom"/>
-    <property name="name" value="InitBlock"/>
+    <property name="package" value="Custom.ProjectPlugin"/>
+    <property name="name" value="ProjectPluginInitBlock"/>
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1206110184190">
@@ -1002,8 +1069,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206110108761">
-    <property name="package" value="Custom"/>
-    <property name="name" value="DisposeBlock"/>
+    <property name="package" value="Custom.ProjectPlugin"/>
+    <property name="name" value="ProjectPluginDisposeBlock"/>
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1206110157077">
@@ -1022,27 +1089,13 @@
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206111530559">
-    <property name="package" value="Custom"/>
-    <property name="name" value="PluginFieldDeclaration"/>
-    <link role="extends" targetNodeId="2.1068390468200" resolveInfo="FieldDeclaration"/>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
-          id="1206111549309">
-      <link role="intfc" targetNodeId="14.1205752032448" resolveInfo="IMember"/>
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
-          id="1206112062481">
-      <link role="conceptLinkDeclaration" targetNodeId="14.1205921683134" resolveInfo="operationConcept"/>
-      <link role="target" targetNodeId="1206111989155" resolveInfo="PluginFieldReferenceOperation"/>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206111617316">
-    <property name="package" value="Custom"/>
-    <property name="name" value="PluginType"/>
+    <property name="package" value="Custom.ProjectPlugin"/>
+    <property name="name" value="ProjectPluginType"/>
     <link role="extends" targetNodeId="14.1205752813637" resolveInfo="BaseClassifierType"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1206111653895">
-      <property name="value" value="plugin&lt;&gt;"/>
+      <property name="value" value="project plugin&lt;&gt;"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
@@ -1050,25 +1103,6 @@
       <property name="role" value="plugin"/>
       <property name="sourceCardinality" value="1"/>
       <link role="target" targetNodeId="1206110063106" resolveInfo="CustomPlugin"/>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206111989155">
-    <property name="package" value="Custom"/>
-    <property name="name" value="PluginFieldReferenceOperation"/>
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1206112028503">
-      <property name="role" value="fieldDeclaration"/>
-      <link role="target" targetNodeId="1206111530559" resolveInfo="PluginFieldDeclaration"/>
-      <link role="specializedLink" targetNodeId="14.1205756909548"/>
-    </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
-          id="1206112025782">
-      <link role="intfc" targetNodeId="14.1205756064662" resolveInfo="IMemberOperation"/>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
-          id="1206112124892">
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1197029536315" resolveInfo="lvalue"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1207145102141">
@@ -1883,6 +1917,87 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1215038387074">
       <property name="value" value="getComponent"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215278261851">
+    <property name="package" value="Custom.ApplicationPlugin"/>
+    <property name="name" value="ApplicationPluginInitBlock"/>
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1215278261852">
+      <property name="value" value="init"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
+          id="1215278261853">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215278261854"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215278396618">
+    <property name="package" value="Custom.ApplicationPlugin"/>
+    <property name="name" value="ApplicationPluginDisposeBlock"/>
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
+          id="1215278396619">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215278396620"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1215278396622">
+      <property name="value" value="dispose"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215279025855">
+    <property name="package" value="Custom.ApplicationPlugin"/>
+    <property name="name" value="ApplicationPluginType"/>
+    <link role="extends" targetNodeId="14.1205752813637" resolveInfo="BaseClassifierType"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1215279025856">
+      <property name="value" value="application plugin&lt;&gt;"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1215279025857">
+      <property name="role" value="plugin"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="1215279937187" resolveInfo="CustomApplicationPluginDeclaration"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215279937187">
+    <property name="name" value="ApplicationPluginDeclaration"/>
+    <property name="package" value="Custom.ApplicationPlugin"/>
+    <property name="rootable" value="true"/>
+    <property name="iconPath" value="${language_descriptor}\icons\customPlugin.png"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1215279937188">
+      <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1215279937189">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="initBlock"/>
+      <link role="target" targetNodeId="1215278261851" resolveInfo="ApplicationPluginInitBlock"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1215279937190">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="disposeBlock"/>
+      <link role="target" targetNodeId="1215278396618" resolveInfo="ApplicationPluginDisposeBlock"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1215279937191">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="fieldDeclaration"/>
+      <property name="sourceCardinality" value="0..n"/>
+      <link role="target" targetNodeId="14.1213999088275" resolveInfo="DefaultClassifierFieldDeclaration"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1215279937192">
+      <property name="value" value="Application Plugin"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
   </node>

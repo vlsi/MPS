@@ -4,7 +4,7 @@
   <refactoringHistory/>
   <language namespace="jetbrains.mps.bootstrap.pluginLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="6"/>
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6"/>
@@ -355,7 +355,8 @@
         <link role="classifier" targetNodeId="1208270545572" resolveInfo="JUnitTestViewComponent"/>
       </node>
     </node>
-    <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.InitBlock" id="1214211906107">
+    <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginInitBlock"
+          id="1214211906107">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214211906108">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214211911752">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1214211915177">
@@ -388,7 +389,8 @@
         </node>
       </node>
     </node>
-    <node role="disposeBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DisposeBlock" id="1214211906937">
+    <node role="disposeBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginDisposeBlock"
+          id="1214211906937">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214211906938">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214211927083">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214211928651">
