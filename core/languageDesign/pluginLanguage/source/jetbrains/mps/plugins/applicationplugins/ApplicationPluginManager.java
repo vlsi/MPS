@@ -19,24 +19,20 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class ApplicationPluginManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ApplicationPluginManager.class);
 
-  private List<IApplicationPlugin> myPluginsToUnregister = new ArrayList<IApplicationPlugin>();
-  private List<IApplicationPlugin> myNewPlugins = new ArrayList<IApplicationPlugin>();
+  private Map<String,IApplicationPlugin> myPlugins = new HashMap<String, IApplicationPlugin>();
 
   private ReloadListener myReloadListener = new ReloadListener() {
     public void onBeforeReload() {
-
+      disposePlugins();
     }
 
     public void onReload() {
-      loadNewPlugins();
+      loadPlugins();
     }
 
     public void onAfterReload() {
@@ -45,7 +41,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
   @Nullable
   public BaseGroup getGroup(String id) {
-    for (IApplicationPlugin plugin : myPluginsToUnregister) {
+    for (IApplicationPlugin plugin : myPlugins.values()) {
       if (plugin instanceof BaseApplicationPlugin) {
         BaseGroup g = ((BaseApplicationPlugin) plugin).getGroup(id);
         if (g != null) return g;
@@ -56,7 +52,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
   //----------------RELOAD STUFF---------------------
 
-  private void loadNewPlugins() {
+  private void loadPlugins() {
     Set<Language> languages = new HashSet<Language>();
     Set<DevKit> devkits = new HashSet<DevKit>();
 
@@ -98,7 +94,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
     }
     */
 
-    for (IApplicationPlugin plugin : myNewPlugins) {
+    for (IApplicationPlugin plugin : myPlugins.values()) {
       try {
         plugin.init();
       } catch (Throwable t1) {
@@ -106,15 +102,13 @@ public class ApplicationPluginManager implements ApplicationComponent {
       }
     }
 
-    for (IApplicationPlugin plugin : myNewPlugins) {
+    for (IApplicationPlugin plugin : myPlugins.values()) {
       try {
         plugin.afterInit();
       } catch (Throwable t1) {
         LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
       }
     }
-
-    myNewPlugins.clear();
   }
 
   private void addPlugin(IModule contextModule, String pluginClassFqName) {
@@ -125,29 +119,24 @@ public class ApplicationPluginManager implements ApplicationComponent {
         return;
       }
 
-      //todo: make it faster
-      for (IApplicationPlugin plugin : myPluginsToUnregister) {
-        if (plugin.getClass() == pluginClass) return;
-        if (plugin.getClass().getName().equals(pluginClass.getName())) return;
-      }
+      if (myPlugins.containsKey(pluginClassFqName)) return;
 
-      IApplicationPlugin o = (IApplicationPlugin) pluginClass.newInstance();
-      myNewPlugins.add(o);
-      myPluginsToUnregister.add(o);
+      IApplicationPlugin plugin = (IApplicationPlugin) pluginClass.newInstance();
+      myPlugins.put(pluginClassFqName,plugin);
     } catch (Throwable t) {
       LOG.error(t);
     }
   }
 
   private void disposePlugins() {
-    for (IApplicationPlugin plugin : myPluginsToUnregister) {
+    for (IApplicationPlugin plugin : myPlugins.values()) {
       try {
         plugin.dispose();
       } catch (Throwable t) {
         LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
       }
     }
-    myPluginsToUnregister.clear();
+    myPlugins.clear();
   }
 
   //----------------COMPONENT STUFF---------------------
@@ -159,7 +148,6 @@ public class ApplicationPluginManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    //loadNewPlugins();
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
