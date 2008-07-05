@@ -6,7 +6,6 @@ import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.watching.ModelChangesWatcher;
-import jetbrains.mps.watching.IModelFileCreatedListener;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.*;
