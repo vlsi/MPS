@@ -1199,13 +1199,21 @@
     <link role="conceptDeclaration" targetNodeId="1.1177068340529" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177068566614">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177068570382">
-        <property name="text" value="immediateSupertypes(" />
+        <property name="text" value="immediateSupertypes" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215445409727">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215445396664">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="27.1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1177068577728">
         <link role="relationDeclaration" targetNodeId="1.1177068475017" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177068580230">
         <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="27.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>
