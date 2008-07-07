@@ -10,10 +10,14 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.project.GlobalScope;
 
 import java.awt.event.KeyEvent;
 import java.util.List;
@@ -26,14 +30,15 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
   }
 
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
-    editorContext.getNodeEditorComponent().hideMessageToolTip();
+    AbstractEditorComponent nodeEditor = editorContext.getNodeEditorComponent();
+    nodeEditor.hideMessageToolTip();
 
     if (keyEvent.isConsumed()) return false;
 
-    AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
+    AbstractEditorComponent editor = nodeEditor;
     SNodePointer pointer = editor.getRootCell().getSNodePointer();
     boolean notEditable = pointer != null &&  pointer.getModel() != null && pointer.getModel().isNotEditable();
-    notEditable = (editorContext.getNodeEditorComponent().isReadOnly() || notEditable);
+    notEditable = (nodeEditor.isReadOnly() || notEditable);
 
     if (notEditable) return false;
 
@@ -72,7 +77,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       boolean strictMatching = endEditKeystroke || EditorCellAction.RIGHT_TRANSFORM.equals(actionType);
 
       if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
-        editorContext.getNodeEditorComponent().showMessageTooltip();
+        nodeEditor.showMessageTooltip();
         return true;
       }
 
@@ -155,10 +160,27 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       }
 
       if (!keyEvent.isConsumed()) {
-        //allow deepest selected cell to process event.
-        EditorCell deepestSelectedCell = editor.getDeepestSelectedCell();
-        if (allowCellToProcessEvent(deepestSelectedCell, keyEvent, true)) {
-          editor.changeSelection(deepestSelectedCell);
+        if (!(selectedCell instanceof EditorCell_Label) && !selectedCell.getSNode().isRoot() && KeyboardUtil.isDefaultAction(keyEvent)) {
+          SNode node = selectedCell.getSNode();
+          LinkDeclaration link = node.getParent().getLinkDeclaration(node.getRole_());
+          AbstractConceptDeclaration concept = link.getTarget();
+          String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept), editorContext.getScope());
+          SNode newNode = new SNode(node.getModel(), concreteConceptFqName);
+          node.getParent().replaceChild(node, newNode);
+
+          editorContext.flushEvents();
+
+          EditorCell nodeCell = nodeEditor.findNodeCell(newNode);
+          EditorCell_Label editable = EditorUtil.findEditableCell(nodeCell);
+          if (editable != null) {
+            nodeEditor.changeSelection(editable);
+            allowCellToProcessEvent(editable, keyEvent, true);
+          } else {
+            nodeEditor.changeSelection(nodeCell);
+            nodeEditor.activateNodeSubstituteChooser(nodeCell, true);
+            nodeEditor.processKeyPressed(keyEvent);
+          }
+
           return true;
         }
       }
@@ -180,14 +202,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
   private boolean allowCellToProcessEvent(EditorCell selectedCell, KeyEvent keyEvent, boolean allowErrors) {
     return selectedCell.processKeyPressed(keyEvent, allowErrors);
-  }
-
-  private boolean isDeleteKeystroke(final KeyEvent keyEvent) {
-    return (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
-  }
-
-  private boolean isBackspaceKeystroke(final KeyEvent keyEvent) {
-    return (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
   }
 
   private boolean isEndEditKeystroke(final KeyEvent keyEvent) {
