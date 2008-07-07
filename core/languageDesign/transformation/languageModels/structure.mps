@@ -518,6 +518,10 @@
       <property name="value" value="create root" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215461323202">
+      <property name="value" value="'name' property is replaced with 'label' reference" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1167087518662">
     <property name="name" value="CreateRootRule_Condition" />

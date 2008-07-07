@@ -7883,6 +7883,7 @@
         <property name="vertical" value="true" />
         <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197651363306">
           <property name="allowEmptyText" value="true" />
+          <property name="emptyNoTargetText" value="true" />
           <link role="relationDeclaration" targetNodeId="17.1168623065899" resolveInfo="value" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934146">
             <property name="style" value="ITALIC" />
