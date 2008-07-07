@@ -2160,5 +2160,20 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1138763350436" resolveInfo="applicable_to_linkList" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215467301810">
+    <property name="name" value="Property_RemoveOperation" />
+    <property name="package" value="operation.property" />
+    <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215467301812">
+      <property name="value" value="remove" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1215467301813">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763303089" resolveInfo="applicable_to_simple_property" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1215467301814">
+      <link role="conceptPropertyDeclaration" targetNodeId="1146171845591" resolveInfo="applicable_to_enum_property" />
+    </node>
+  </node>
 </model>
 

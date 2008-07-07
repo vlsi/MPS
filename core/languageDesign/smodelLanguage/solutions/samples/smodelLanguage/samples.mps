@@ -2613,6 +2613,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215467669576">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215467672285">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215467669672">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215467669577">
+                <link role="variableDeclaration" targetNodeId="1206550857193" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1215467671487">
+                <link role="property" targetNodeId="6.1169194664001" resolveInfo="name" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_RemoveOperation" id="1215467676419" />
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206550857193">
         <property name="name" value="node" />
@@ -2740,6 +2753,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215467703484">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215467707084">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215467703564">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215467703485">
+                <link role="variableDeclaration" targetNodeId="1206551650568" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1215467705614">
+                <link role="property" targetNodeId="1.1068580123138" resolveInfo="value" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_RemoveOperation" id="1215467708337" />
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206551650568">
         <property name="name" value="node" />
@@ -2856,6 +2882,19 @@
                 <link role="property" targetNodeId="1.1068580320021" resolveInfo="value" />
               </node>
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215467728374">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215467732739">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215467728454">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215467728375">
+                <link role="variableDeclaration" targetNodeId="1206551707880" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1215467730566">
+                <link role="property" targetNodeId="1.1068580320021" resolveInfo="value" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_RemoveOperation" id="1215467734805" />
           </node>
         </node>
       </node>

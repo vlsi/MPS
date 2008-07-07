@@ -27,6 +27,7 @@ public class Properties {
     SPropertyOperations.set(node, "name", "Class1");
     SPropertyOperations.set(node, "name", "" + (null));
     SPropertyOperations.set(node, "name", "" + null);
+    SPropertyOperations.set(node, "name", null);
   }
 
   public void booleanProperty(SNode boolConst) {
@@ -41,6 +42,7 @@ public class Properties {
 
   public void booleanProperty2(SNode node) {
     SPropertyOperations.set(node, "value", "" + true);
+    SPropertyOperations.set(node, "value", null);
   }
 
   public void integerProperty(SNode intConst) {
@@ -53,6 +55,7 @@ public class Properties {
 
   public void integerProperty2(SNode node) {
     SPropertyOperations.set(node, "value", "" + 10);
+    SPropertyOperations.set(node, "value", null);
   }
 
   public void enumProperty_string(SNode link) {

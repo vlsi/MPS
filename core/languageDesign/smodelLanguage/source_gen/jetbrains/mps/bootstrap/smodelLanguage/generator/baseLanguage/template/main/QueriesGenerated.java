@@ -64,7 +64,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1168978822549(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // apply rule if argument is string
+    // apply rule if argument is not string
     SNode typeOfArgument = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "value", true));
     return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeOfArgument, new QuotationClass_1().createNode()));
   }
@@ -555,6 +555,13 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1207342110793(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode parm = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)).first();
     return NameUtil.nodeFQName(SLinkOperations.getTarget(parm, "concept", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1215467512339(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    // <expr>.<property-access>.<operation>
+    SNode operation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(_context.getNode());
+    SNode op = operation;
+    return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
   }
 
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1204,6 +1211,11 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1215104840853(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1215467512330(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    // <expr>.<property-access>.<operation>
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1213877508920(_context.getNode());
   }
 
   public static List sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
