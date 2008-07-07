@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class ChildTypeRestriction extends BaseConcept implements INamedConcept {
@@ -17,6 +18,7 @@ public class ChildTypeRestriction extends BaseConcept implements INamedConcept {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String RESTRICTION_KIND = "restrictionKind";
+  public static String CHILD_LINK_DECLARATION = "childLinkDeclaration";
   public static String TYPE = "type";
 
   public ChildTypeRestriction(SNode node) {
@@ -71,6 +73,14 @@ public class ChildTypeRestriction extends BaseConcept implements INamedConcept {
 
   public void setRestrictionKind(RestrictionKind value) {
     super.setProperty(ChildTypeRestriction.RESTRICTION_KIND, value.getValueAsString());
+  }
+
+  public LinkDeclaration getChildLinkDeclaration() {
+    return (LinkDeclaration)this.getReferent(ChildTypeRestriction.CHILD_LINK_DECLARATION);
+  }
+
+  public void setChildLinkDeclaration(LinkDeclaration node) {
+    super.setReferent(ChildTypeRestriction.CHILD_LINK_DECLARATION, node);
   }
 
   public Expression getType() {

@@ -46,7 +46,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CoerceStatement_Editor.calculateColor22(cell);
+              return CoerceStatement_Editor.calculateColor18(cell);
             }
 
           });
@@ -135,7 +135,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell13194_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor22(EditorCell cell) {
+  private static Color calculateColor18(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
@@ -247,7 +247,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_nodeToCoerceRefNodeCell13194_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeToCoerce");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no nodeToCoerce>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_nodeToCoerceRefNodeCell13194_0_internal(context, node, provider);
@@ -276,7 +276,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_patternRefNodeCell13194_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("pattern");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no pattern>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_patternRefNodeCell13194_0_internal(context, node, provider);
@@ -305,7 +305,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell13194_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell13194_0_internal(context, node, provider);

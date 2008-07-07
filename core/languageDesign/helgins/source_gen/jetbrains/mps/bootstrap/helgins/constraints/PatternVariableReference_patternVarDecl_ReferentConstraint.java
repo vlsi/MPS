@@ -52,14 +52,14 @@ public class PatternVariableReference_patternVarDecl_ReferentConstraint implemen
       }
     }
     SNode coerceStatement = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", false, false);
-    while(coerceStatement != null) {
+    while (coerceStatement != null) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coerceStatement, "pattern", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition")) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(coerceStatement, "pattern", true), "pattern", true), "jetbrains.mps.patterns.structure.PatternVariableDeclaration", false)));
       }
       coerceStatement = SNodeOperations.getAncestor(coerceStatement, "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", false, false);
     }
     SNode matchStatementItem = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem", false, false);
-    while(matchStatementItem != null) {
+    while (matchStatementItem != null) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchStatementItem, "condition", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition")) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(matchStatementItem, "condition", true), "pattern", true), "jetbrains.mps.patterns.structure.PatternVariableDeclaration", false)));
       }

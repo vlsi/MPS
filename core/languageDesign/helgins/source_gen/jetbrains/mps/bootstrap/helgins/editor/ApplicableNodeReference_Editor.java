@@ -6,6 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -14,9 +18,6 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
@@ -24,12 +25,24 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_applicableNodeRefCell36_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_applicableNodeRefCell36_0");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.PADDING_LEFT, 0.0);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_applicableNodeRefCell36_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor17(EditorCell cell) {
+  private static Color calculateColor13(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
@@ -55,7 +68,7 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
   public EditorCell create_applicableNodeRefCell36_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("applicableNode");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no applicableNode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_applicableNodeRefCell36_0_internal(context, node, provider);
@@ -84,7 +97,7 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return ApplicableNodeReference_Editor.calculateColor17(cell);
+                return ApplicableNodeReference_Editor.calculateColor13(cell);
               }
 
             });
@@ -122,7 +135,7 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell36_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell36_0_internal(context, node, provider);

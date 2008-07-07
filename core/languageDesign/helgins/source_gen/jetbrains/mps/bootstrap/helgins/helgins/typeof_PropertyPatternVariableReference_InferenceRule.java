@@ -14,7 +14,10 @@ public class typeof_PropertyPatternVariableReference_InferenceRule implements In
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.helgins.helgins", "1202488296110", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.helgins", "1202488301243", true), nodeToCheck, null, "jetbrains.mps.bootstrap.helgins.helgins", "1202488299535");
+    {
+      SNode _nodeToCheck_1029348928467 = nodeToCheck;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1202488296110", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.helgins", "1202488301243", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1202488299535");
+    }
   }
 
   public String getApplicableConceptFQName() {

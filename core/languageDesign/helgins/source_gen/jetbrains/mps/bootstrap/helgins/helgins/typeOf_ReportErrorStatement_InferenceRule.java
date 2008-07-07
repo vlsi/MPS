@@ -4,8 +4,8 @@ package jetbrains.mps.bootstrap.helgins.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ReportErrorStatement_InferenceRule implements InferenceRule_Runtime {
@@ -14,8 +14,14 @@ public class typeOf_ReportErrorStatement_InferenceRule implements InferenceRule_
   }
 
   public void applyRule(final SNode reportErrorStatement) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(reportErrorStatement, "errorString", true), "jetbrains.mps.bootstrap.helgins.helgins", "1185805422170", true), new QuotationClass_11().createNode(), SLinkOperations.getTarget(reportErrorStatement, "errorString", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805429689", false, 0);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(reportErrorStatement, "nodeToReport", true), "jetbrains.mps.bootstrap.helgins.helgins", "1185805452077", true), new QuotationClass_12().createNode(), SLinkOperations.getTarget(reportErrorStatement, "nodeToReport", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805461349", false, 0);
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(reportErrorStatement, "errorString", true);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1185805422170", true), new QuotationClass_11().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805429689", false, 0);
+    }
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(reportErrorStatement, "nodeToReport", true);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1185805452077", true), new QuotationClass_12().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805461349", false, 0);
+    }
   }
 
   public String getApplicableConceptFQName() {

@@ -97,7 +97,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor23(EditorCell cell) {
+  private static Color calculateColor19(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -161,7 +161,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
   public EditorCell create_conceptRefCell8771_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("concept");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no concept>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_conceptRefCell8771_0_internal(context, node, provider);
@@ -191,7 +191,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell8771_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell8771_01_internal(context, node, provider);
@@ -219,7 +219,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return ConceptReference_Editor.calculateColor23(cell);
+                return ConceptReference_Editor.calculateColor19(cell);
               }
 
             });
@@ -257,7 +257,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell8771_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell8771_0_internal(context, node, provider);

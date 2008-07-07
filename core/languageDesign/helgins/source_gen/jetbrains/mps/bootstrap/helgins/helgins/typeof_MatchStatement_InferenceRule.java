@@ -4,8 +4,8 @@ package jetbrains.mps.bootstrap.helgins.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_MatchStatement_InferenceRule implements InferenceRule_Runtime {
@@ -14,7 +14,10 @@ public class typeof_MatchStatement_InferenceRule implements InferenceRule_Runtim
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "expression", true), "jetbrains.mps.bootstrap.helgins.helgins", "1196960489604", true), new QuotationClass_19().createNode(), SLinkOperations.getTarget(nodeToCheck, "expression", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1196960500018", false, 0);
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "expression", true);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1196960489604", true), new QuotationClass_19().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1196960500018", false, 0);
+    }
   }
 
   public String getApplicableConceptFQName() {

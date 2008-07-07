@@ -10548,7 +10548,7 @@
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1215010868182">
-      <property name="name" value="Paren" />
+      <property name="name" value="Parenthesis" />
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1215010896172">
         <property name="style" value="PLAIN" />
       </node>

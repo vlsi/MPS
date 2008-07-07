@@ -4,8 +4,8 @@ package jetbrains.mps.bootstrap.helgins.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_WhenConcreteStatement_InferenceRule implements InferenceRule_Runtime {
@@ -14,7 +14,10 @@ public class typeOf_WhenConcreteStatement_InferenceRule implements InferenceRule
   }
 
   public void applyRule(final SNode whenConcreteStatement) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(whenConcreteStatement, "argument", true), "jetbrains.mps.bootstrap.helgins.helgins", "1185805519376", true), new QuotationClass_13().createNode(), SLinkOperations.getTarget(whenConcreteStatement, "argument", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805532321", false, 0);
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(whenConcreteStatement, "argument", true);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1185805519376", true), new QuotationClass_13().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805532321", false, 0);
+    }
   }
 
   public String getApplicableConceptFQName() {

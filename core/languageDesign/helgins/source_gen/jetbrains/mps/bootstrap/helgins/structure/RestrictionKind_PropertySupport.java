@@ -12,7 +12,7 @@ public class RestrictionKind_PropertySupport extends PropertySupport {
       return true;
     }
     Iterator<RestrictionKind> constants = RestrictionKind.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       RestrictionKind constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
@@ -26,7 +26,7 @@ public class RestrictionKind_PropertySupport extends PropertySupport {
       return null;
     }
     Iterator<RestrictionKind> constants = RestrictionKind.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       RestrictionKind constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();

@@ -617,7 +617,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell9480_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell9480_0_internal(context, node, provider);
@@ -646,7 +646,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   public EditorCell create_applicableNodeRefNodeCell9480_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("applicableNode");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no applicableNode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_applicableNodeRefNodeCell9480_0_internal(context, node, provider);
@@ -675,7 +675,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   public EditorCell create_overridesPropertyCell9480_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("overrides");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no overrides>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_overridesPropertyCell9480_0_internal(context, node, provider);
@@ -704,7 +704,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell9480_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell9480_0_internal(context, node, provider);

@@ -50,7 +50,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return AbstractEquationStatement_Editor.calculateColor15(cell);
+              return AbstractEquationStatement_Editor.calculateColor12(cell);
             }
 
           });
@@ -86,7 +86,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static Color calculateColor15(EditorCell cell) {
+  private static Color calculateColor12(EditorCell cell) {
     Color result;
     result = AbstractEquationStatement_Editor._QueryFunction_Color_1214399678504((cell == null ?
       null :
@@ -152,7 +152,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_leftExpressionRefNodeCell20705_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no leftExpression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_leftExpressionRefNodeCell20705_0_internal(context, node, provider);
@@ -181,7 +181,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_rightExpressionRefNodeCell20705_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("rightExpression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no rightExpression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_rightExpressionRefNodeCell20705_0_internal(context, node, provider);
@@ -211,7 +211,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_ConceptPropertyCell20705_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ConceptPropertyCell20705_0_internal(context, node, provider);

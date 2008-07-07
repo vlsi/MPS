@@ -4,8 +4,8 @@ package jetbrains.mps.bootstrap.helgins.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_TypeOfExpression_InferenceRule implements InferenceRule_Runtime {
@@ -14,8 +14,14 @@ public class typeOf_TypeOfExpression_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(final SNode typeOfExpression) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(typeOfExpression, "term", true), "jetbrains.mps.bootstrap.helgins.helgins", "1178192158210", true), new QuotationClass_3().createNode(), SLinkOperations.getTarget(typeOfExpression, "term", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1178192184638", false, 0);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(typeOfExpression, "jetbrains.mps.bootstrap.helgins.helgins", "1198582744237", true), new QuotationClass_4().createNode(), typeOfExpression, null, "jetbrains.mps.bootstrap.helgins.helgins", "1198582744235");
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(typeOfExpression, "term", true);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1178192158210", true), new QuotationClass_3().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1178192184638", false, 0);
+    }
+    {
+      SNode _nodeToCheck_1029348928467 = typeOfExpression;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1198582744237", true), new QuotationClass_4().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1198582744235");
+    }
   }
 
   public String getApplicableConceptFQName() {

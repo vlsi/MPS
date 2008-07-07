@@ -109,7 +109,7 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
   public EditorCell create_patternRefNodeCell10016_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("pattern");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no pattern>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_patternRefNodeCell10016_0_internal(context, node, provider);
@@ -138,7 +138,7 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell10016_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell10016_0_internal(context, node, provider);

@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
@@ -29,6 +30,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14674_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14674_0");
+    BaseLanguageStyle_StyleSheet.COMPACT_KEY_WORD.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -51,10 +53,12 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14674_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14674_01");
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell14674_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14674_02");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell14674_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -67,6 +71,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14674_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14674_03");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupLabel_ConstantCell14674_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -92,7 +97,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
       return Color.GRAY;
     } else
     {
-      return MPSColors.DARK_GREEN;
+      return MPSColors.DARK_BLUE;
     }
   }
 
@@ -123,7 +128,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell14674_0(context, node, "TYPEOF"));
+    editorCell.addEditorCell(this.create_ConstantCell14674_0(context, node, "typeof"));
     editorCell.addEditorCell(this.create_ConstantCell14674_01(context, node, "("));
     editorCell.addEditorCell(this.create_termRefNodeCell14674_0(context, node));
     editorCell.addEditorCell(this.create_ConstantCell14674_02(context, node, ")"));
@@ -188,7 +193,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_termRefNodeCell14674_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("term");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no term>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_termRefNodeCell14674_0_internal(context, node, provider);
@@ -217,7 +222,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_skipDependencyOnCurrentPropertyCell14674_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("skipDependencyOnCurrent");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no skipDependencyOnCurrent>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_skipDependencyOnCurrentPropertyCell14674_0_internal(context, node, provider);

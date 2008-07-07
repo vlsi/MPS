@@ -218,7 +218,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   public EditorCell create_restrictionKindPropertyCell10316_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("restrictionKind");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no restrictionKind>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_restrictionKindPropertyCell10316_0_internal(context, node, provider);
@@ -247,7 +247,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   public EditorCell create_typeRefNodeCell10316_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no type>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_typeRefNodeCell10316_0_internal(context, node, provider);
@@ -276,7 +276,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   public EditorCell create_childLinkDeclarationRefCell10316_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("childLinkDeclaration");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no childLinkDeclaration>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_childLinkDeclarationRefCell10316_0_internal(context, node, provider);
@@ -305,7 +305,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell10316_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell10316_0_internal(context, node, provider);
@@ -365,7 +365,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     public EditorCell create_rolePropertyCell10316_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no role>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_rolePropertyCell10316_0_internal(context, node, provider);

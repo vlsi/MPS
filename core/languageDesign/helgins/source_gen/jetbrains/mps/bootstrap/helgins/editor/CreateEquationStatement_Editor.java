@@ -273,7 +273,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_leftExpressionRefNodeCell15735_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no leftExpression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_leftExpressionRefNodeCell15735_0_internal(context, node, provider);
@@ -303,7 +303,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_ConceptPropertyCell15735_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ConceptPropertyCell15735_0_internal(context, node, provider);
@@ -332,7 +332,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_rightExpressionRefNodeCell15735_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("rightExpression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no rightExpression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_rightExpressionRefNodeCell15735_0_internal(context, node, provider);
@@ -390,7 +390,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_errorStringRefNodeCell15735_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("errorString");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no errorString>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_errorStringRefNodeCell15735_0_internal(context, node, provider);
@@ -419,7 +419,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_directionPropertyCell15735_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("direction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no direction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_directionPropertyCell15735_0_internal(context, node, provider);

@@ -143,7 +143,7 @@ public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_nodeToCoerceRefNodeCell9891_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeToCoerce");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no nodeToCoerce>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_nodeToCoerceRefNodeCell9891_0_internal(context, node, provider);
@@ -172,7 +172,7 @@ public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_patternRefNodeCell9891_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("pattern");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no pattern>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_patternRefNodeCell9891_0_internal(context, node, provider);

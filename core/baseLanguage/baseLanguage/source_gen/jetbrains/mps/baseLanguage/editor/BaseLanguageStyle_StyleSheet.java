@@ -149,7 +149,7 @@ public class BaseLanguageStyle_StyleSheet {
     }
 
   };
-  public static final Style PAREN = new Style() {
+  public static final Style PARENTHESIS = new Style() {
     {
       this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
@@ -157,7 +157,7 @@ public class BaseLanguageStyle_StyleSheet {
   };
   public static final Style LEFT_PAREN = new Style() {
     {
-      this.putAll(BaseLanguageStyle_StyleSheet.PAREN);
+      this.putAll(BaseLanguageStyle_StyleSheet.PARENTHESIS);
       this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
       this.set(StyleAttributes.PADDING_LEFT, 0.0);
       this.set(StyleAttributes.PADDING_RIGHT, 0.0);
@@ -166,7 +166,7 @@ public class BaseLanguageStyle_StyleSheet {
   };
   public static final Style RIGHT_PAREN = new Style() {
     {
-      this.putAll(BaseLanguageStyle_StyleSheet.PAREN);
+      this.putAll(BaseLanguageStyle_StyleSheet.PARENTHESIS);
       this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
       this.set(StyleAttributes.PADDING_LEFT, 0.0);
       this.set(StyleAttributes.PADDING_RIGHT, 0.0);

@@ -45,7 +45,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return AbstractInequationStatement_Editor.calculateColor19(cell);
+              return AbstractInequationStatement_Editor.calculateColor15(cell);
             }
 
           });
@@ -135,7 +135,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static Color calculateColor19(EditorCell cell) {
+  private static Color calculateColor15(EditorCell cell) {
     Color result;
     result = AbstractInequationStatement_Editor._QueryFunction_Color_1214399678682((cell == null ?
       null :
@@ -234,7 +234,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_leftExpressionRefNodeCell18424_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no leftExpression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_leftExpressionRefNodeCell18424_0_internal(context, node, provider);
@@ -264,7 +264,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_ConceptPropertyCell18424_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ConceptPropertyCell18424_0_internal(context, node, provider);
@@ -293,7 +293,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_rightExpressionRefNodeCell18424_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("rightExpression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no rightExpression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_rightExpressionRefNodeCell18424_0_internal(context, node, provider);
@@ -322,7 +322,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_inequationPriorityNonEmptyPropertyCell18424_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new NonEmptyPropertyCellProvider(node, context);
     provider.setRole("inequationPriority");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no inequationPriority>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_inequationPriorityNonEmptyPropertyCell18424_0_internal(context, node, provider);
@@ -351,7 +351,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_inequationPriorityPropertyCell18424_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("inequationPriority");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no inequationPriority>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_inequationPriorityPropertyCell18424_0_internal(context, node, provider);

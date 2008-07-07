@@ -171,7 +171,7 @@ public class Dependency_Editor extends DefaultNodeEditor {
   public EditorCell create_targetConceptRefCell17378_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("targetConcept");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no targetConcept>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_targetConceptRefCell17378_0_internal(context, node, provider);
@@ -200,7 +200,7 @@ public class Dependency_Editor extends DefaultNodeEditor {
   public EditorCell create_findSourceBlockRefNodeCell17378_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("findSourceBlock");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no findSourceBlock>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_findSourceBlockRefNodeCell17378_0_internal(context, node, provider);
@@ -280,7 +280,7 @@ public class Dependency_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell17378_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell17378_0_internal(context, node, provider);
@@ -332,7 +332,7 @@ public class Dependency_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell17378_01(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell17378_01_internal(context, node, provider);

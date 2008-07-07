@@ -117,7 +117,7 @@ public class NormalTypeClause_Editor extends DefaultNodeEditor {
   public EditorCell create_normalTypeRefNodeCell1456_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("normalType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no normalType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_normalTypeRefNodeCell1456_0_internal(context, node, provider);

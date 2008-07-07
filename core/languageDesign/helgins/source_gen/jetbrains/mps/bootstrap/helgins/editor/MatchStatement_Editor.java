@@ -56,7 +56,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return MatchStatement_Editor.calculateColor20(cell);
+              return MatchStatement_Editor.calculateColor16(cell);
             }
 
           });
@@ -78,7 +78,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return MatchStatement_Editor.calculateColor21(cell);
+              return MatchStatement_Editor.calculateColor17(cell);
             }
 
           });
@@ -279,13 +279,13 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor20(EditorCell cell) {
+  private static Color calculateColor16(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor21(EditorCell cell) {
+  private static Color calculateColor17(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
@@ -478,7 +478,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_expressionRefNodeCell10933_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no expression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_expressionRefNodeCell10933_0_internal(context, node, provider);
@@ -507,7 +507,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_ifFalseStatementRefNodeCell10933_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ifFalseStatement");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no ifFalseStatement>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ifFalseStatementRefNodeCell10933_0_internal(context, node, provider);

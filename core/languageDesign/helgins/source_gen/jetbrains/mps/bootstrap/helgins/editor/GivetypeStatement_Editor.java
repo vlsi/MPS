@@ -6,12 +6,12 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -27,21 +27,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell21416_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell21416_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return GivetypeStatement_Editor.calculateColor16(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_typeExpressionRefNodeCell21416_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -49,21 +35,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell21416_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell21416_01");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return GivetypeStatement_Editor.calculateColor13(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_termExpressionRefNodeCell21416_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -90,7 +62,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return GivetypeStatement_Editor.calculateColor12(cell);
+              return GivetypeStatement_Editor.calculateColor11(cell);
             }
 
           });
@@ -125,21 +97,9 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell21416_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor12(EditorCell cell) {
+  private static Color calculateColor11(EditorCell cell) {
     Color result;
     result = Color.red;
-    return result;
-  }
-
-  private static Color calculateColor13(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
-    return result;
-  }
-
-  private static Color calculateColor16(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
     return result;
   }
 
@@ -155,11 +115,11 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_ConstantCell21416_05(context, node, "!"));
-    editorCell.addEditorCell(this.create_ConstantCell21416_0(context, node, "GIVETYPE"));
+    editorCell.addEditorCell(this.create_ConstantCell21416_0(context, node, "givetype"));
     editorCell.addEditorCell(this.create_ConstantCell21416_03(context, node, "("));
     editorCell.addEditorCell(this.create_typeExpressionRefNodeCell21416_0(context, node));
     editorCell.addEditorCell(this.create_ConstantCell21416_04(context, node, ")"));
-    editorCell.addEditorCell(this.create_ConstantCell21416_01(context, node, "TO"));
+    editorCell.addEditorCell(this.create_ConstantCell21416_01(context, node, "to"));
     editorCell.addEditorCell(this.create_termExpressionRefNodeCell21416_0(context, node));
     editorCell.addEditorCell(this.create_ConstantCell21416_02(context, node, ";"));
     return editorCell;
@@ -228,7 +188,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_typeExpressionRefNodeCell21416_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("typeExpression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no typeExpression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_typeExpressionRefNodeCell21416_0_internal(context, node, provider);
@@ -257,7 +217,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_termExpressionRefNodeCell21416_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("termExpression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no termExpression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_termExpressionRefNodeCell21416_0_internal(context, node, provider);

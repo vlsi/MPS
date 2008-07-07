@@ -116,7 +116,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_subtypeExpressionRefNodeCell9141_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("subtypeExpression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no subtypeExpression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_subtypeExpressionRefNodeCell9141_0_internal(context, node, provider);
@@ -145,7 +145,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_supertypeExpressionRefNodeCell9141_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("supertypeExpression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no supertypeExpression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_supertypeExpressionRefNodeCell9141_0_internal(context, node, provider);

@@ -49,12 +49,12 @@ public class ApplicableNodeReference_applicableNode_ReferentConstraint implement
       }
     }
     SNode coerceStatement = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", false, false);
-    while(coerceStatement != null) {
+    while (coerceStatement != null) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(coerceStatement, "pattern", true));
       coerceStatement = SNodeOperations.getAncestor(coerceStatement, "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", false, false);
     }
     SNode matchStatementItem = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem", false, false);
-    while(matchStatementItem != null) {
+    while (matchStatementItem != null) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(matchStatementItem, "condition", true));
       matchStatementItem = SNodeOperations.getAncestor(matchStatementItem, "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem", false, false);
     }

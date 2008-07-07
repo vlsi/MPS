@@ -529,7 +529,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell1383_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell1383_0_internal(context, node, provider);
@@ -558,7 +558,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
   public EditorCell create_applicableNodeRefNodeCell1383_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("applicableNode");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no applicableNode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_applicableNodeRefNodeCell1383_0_internal(context, node, provider);
@@ -587,7 +587,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell1383_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell1383_0_internal(context, node, provider);
@@ -616,7 +616,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
   public EditorCell create_isWeakPropertyCell1383_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("isWeak");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no isWeak>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_isWeakPropertyCell1383_0_internal(context, node, provider);

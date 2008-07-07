@@ -43,7 +43,7 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
   public EditorCell create_typeVarDeclarationRefCell13449_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("typeVarDeclaration");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no typeVarDeclaration>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_typeVarDeclarationRefCell13449_0_internal(context, node, provider);
@@ -94,7 +94,7 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell13449_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell13449_0_internal(context, node, provider);

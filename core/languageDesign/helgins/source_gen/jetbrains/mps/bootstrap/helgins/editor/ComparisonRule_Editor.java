@@ -435,7 +435,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell14608_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell14608_0_internal(context, node, provider);
@@ -464,7 +464,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   public EditorCell create_applicableNodeRefNodeCell14608_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("applicableNode");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no applicableNode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_applicableNodeRefNodeCell14608_0_internal(context, node, provider);
@@ -493,7 +493,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell14608_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell14608_0_internal(context, node, provider);
@@ -522,7 +522,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   public EditorCell create_isWeakPropertyCell14608_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("isWeak");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no isWeak>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_isWeakPropertyCell14608_0_internal(context, node, provider);
@@ -551,7 +551,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   public EditorCell create_anotherNodeRefNodeCell14608_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("anotherNode");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no anotherNode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_anotherNodeRefNodeCell14608_0_internal(context, node, provider);

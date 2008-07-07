@@ -29,7 +29,7 @@ public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
   private static void setupLabel_patternVarDeclRefCell2093_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor24(EditorCell cell) {
+  private static Color calculateColor20(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
@@ -55,7 +55,7 @@ public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
   public EditorCell create_patternVarDeclRefCell2093_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("patternVarDecl");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no patternVarDecl>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_patternVarDeclRefCell2093_0_internal(context, node, provider);
@@ -84,7 +84,7 @@ public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return PropertyPatternVariableReference_Editor.calculateColor24(cell);
+                return PropertyPatternVariableReference_Editor.calculateColor20(cell);
               }
 
             });
@@ -122,7 +122,7 @@ public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell2093_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell2093_0_internal(context, node, provider);

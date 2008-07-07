@@ -21,7 +21,7 @@ public class check_VarRef_in_WhenConcreteStatement_InferenceRule implements Infe
     if (ancestor != null) {
       SNode argument = SLinkOperations.getTarget(ancestor, "argument", true);
       SNode parent = variableReference;
-      while(parent != null && parent != ancestor) {
+      while (parent != null && parent != ancestor) {
         if (parent == argument) {
           return;
         } else

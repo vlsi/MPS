@@ -14,7 +14,10 @@ public class typeof_ListVarReference_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.helgins.helgins", "1203432890796", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "listVarDeclaration", false), "jetbrains.mps.bootstrap.helgins.helgins", "1203432899895", true), nodeToCheck, null, "jetbrains.mps.bootstrap.helgins.helgins", "1203432897938");
+    {
+      SNode _nodeToCheck_1029348928467 = nodeToCheck;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1203432890796", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "listVarDeclaration", false), "jetbrains.mps.bootstrap.helgins.helgins", "1203432899895", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1203432897938");
+    }
   }
 
   public String getApplicableConceptFQName() {

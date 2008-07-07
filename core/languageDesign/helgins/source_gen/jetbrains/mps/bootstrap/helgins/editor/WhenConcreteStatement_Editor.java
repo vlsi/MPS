@@ -231,7 +231,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_argumentRefNodeCell6496_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("argument");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no argument>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_argumentRefNodeCell6496_0_internal(context, node, provider);
@@ -260,7 +260,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell6496_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell6496_0_internal(context, node, provider);
@@ -289,7 +289,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_argumentRepresentatorRefNodeCell6496_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("argumentRepresentator");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no argumentRepresentator>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_argumentRepresentatorRefNodeCell6496_0_internal(context, node, provider);

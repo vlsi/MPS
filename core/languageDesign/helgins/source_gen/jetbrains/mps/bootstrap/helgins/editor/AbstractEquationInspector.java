@@ -235,7 +235,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
   public EditorCell create_errorStringRefNodeCell19992_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("errorString");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no errorString>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_errorStringRefNodeCell19992_0_internal(context, node, provider);
@@ -264,7 +264,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
   public EditorCell create_checkOnlyPropertyCell19992_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("checkOnly");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no checkOnly>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_checkOnlyPropertyCell19992_0_internal(context, node, provider);

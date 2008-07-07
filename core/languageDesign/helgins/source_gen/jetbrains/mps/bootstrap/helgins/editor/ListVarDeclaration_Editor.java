@@ -91,7 +91,7 @@ public class ListVarDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell2672_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell2672_0_internal(context, node, provider);

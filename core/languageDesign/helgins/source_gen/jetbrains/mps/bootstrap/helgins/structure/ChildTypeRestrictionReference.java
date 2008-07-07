@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ChildTypeRestrictionReference extends Expression {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ChildTypeRestrictionReference";
+  public static String TYPE_RESTRICTION = "typeRestriction";
 
   public ChildTypeRestrictionReference(SNode node) {
     super(node);
@@ -21,6 +22,15 @@ public class ChildTypeRestrictionReference extends Expression {
 
   public static ChildTypeRestrictionReference newInstance(SModel sm) {
     return ChildTypeRestrictionReference.newInstance(sm, false);
+  }
+
+
+  public ChildTypeRestriction getTypeRestriction() {
+    return (ChildTypeRestriction)this.getReferent(ChildTypeRestrictionReference.TYPE_RESTRICTION);
+  }
+
+  public void setTypeRestriction(ChildTypeRestriction node) {
+    super.setReferent(ChildTypeRestrictionReference.TYPE_RESTRICTION, node);
   }
 
 }

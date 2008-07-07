@@ -13,7 +13,10 @@ public class typeOf_TypeVarDeclaration_InferenceRule implements InferenceRule_Ru
   }
 
   public void applyRule(final SNode typeVarDeclaration) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(typeVarDeclaration, "jetbrains.mps.bootstrap.helgins.helgins", "1185878023858", true), new QuotationClass_14().createNode(), typeVarDeclaration, null, "jetbrains.mps.bootstrap.helgins.helgins", "1185878029189");
+    {
+      SNode _nodeToCheck_1029348928467 = typeVarDeclaration;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1185878023858", true), new QuotationClass_14().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1185878029189");
+    }
   }
 
   public String getApplicableConceptFQName() {
