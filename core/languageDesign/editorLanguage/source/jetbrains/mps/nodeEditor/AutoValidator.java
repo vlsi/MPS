@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.wm.impl.CommandProcessor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_RTHint;
 
 import javax.swing.SwingUtilities;
@@ -18,6 +19,7 @@ class AutoValidator {
     public void selectionChanged(final AbstractEditorComponent editor, final EditorCell oldSelection, EditorCell newSelection) {
       if (editor.isCellSwapInProgress()) return;
       if (oldSelection != null && (!EditorUtil.isValidCell(oldSelection) || oldSelection instanceof EditorCell_RTHint)) {
+        final SNode node = oldSelection.getSNode();
         final CellInfo cellInfo = oldSelection.getCellInfo();
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
@@ -34,7 +36,7 @@ class AutoValidator {
                 }
 
                 if (oldSelection instanceof EditorCell_RTHint) {
-                  oldSelection.getSNode().removeRightTransformHint();
+                  node.removeRightTransformHint();
                 }
               }
             });

@@ -5975,34 +5975,6 @@
       </node>
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1215434805957">
         <link role="concept" targetNodeId="1.1068580123159" resolveInfo="IfStatement" />
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleRightTransformMenuPart" id="1215434814005">
-          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_Handler" id="1215434814006">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215434814007">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215434840095">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215434858649">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215434840738">
-                    <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1215434840096" />
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1215434858132">
-                      <link role="link" targetNodeId="1.1082485599094" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1215434860198" />
-                </node>
-              </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215434864576">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215434866579">
-                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1215434865968" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1215434867628">
-                    <link role="link" targetNodeId="1.1082485599094" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1215434816258">
-            <property name="text" value="else" />
-          </node>
-        </node>
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleRightTransformMenuPart" id="1215436377222">
           <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_Handler" id="1215436377223">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215436377224">
@@ -6030,7 +6002,7 @@
             </node>
           </node>
           <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1215436379381">
-            <property name="text" value="else {" />
+            <property name="text" value="else" />
           </node>
         </node>
       </node>
