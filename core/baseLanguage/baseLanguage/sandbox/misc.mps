@@ -250,9 +250,22 @@
     <property name="name" value="C1" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1214859271313">
       <property name="name" value="aa" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1214859271314" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214859271316" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214859271316">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215450672492">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215450672493">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215450672494" />
+          </node>
+        </node>
+      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214860852496" />
+      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1215450573646">
+        <property name="name" value="T11" />
+      </node>
+      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1215450611733">
+        <property name="name" value="T12" />
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215450607841" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1214431379231">
       <property name="name" value="me" />
@@ -755,6 +768,59 @@
     </node>
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1214432545909">
       <property name="name" value="T1" />
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1215450696623">
+      <property name="name" value="aaa" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1215451515356">
+        <link role="typeVariableDeclaration" targetNodeId="1215451502387" resolveInfo="T22" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215450696625" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215450696626">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215451712734">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215451712735">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215451712736">
+              <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215451717457">
+              <link role="baseMethodDeclaration" targetNodeId="1215450696623" resolveInfo="aaa" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215451604722">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215451604723">
+            <property name="name" value="s" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215451604724">
+              <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215451645030">
+              <link role="baseMethodDeclaration" targetNodeId="1215450696623" resolveInfo="aaa" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215451654643">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215451654644">
+            <property name="name" value="t" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1215451654645">
+              <link role="typeVariableDeclaration" targetNodeId="1215451502387" resolveInfo="T22" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215451654646">
+              <link role="baseMethodDeclaration" targetNodeId="1215450696623" resolveInfo="aaa" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215451668570">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1215451676228">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1215451676229">
+              <link role="typeVariableDeclaration" targetNodeId="1215451502387" resolveInfo="T22" />
+            </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215451681637" />
+          </node>
+        </node>
+      </node>
+      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1215451502387">
+        <property name="name" value="T22" />
+      </node>
     </node>
   </node>
 </model>
