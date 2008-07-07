@@ -21,7 +21,11 @@ public abstract class BaseCustomApplicationPlugin {
     }
   }
 
-  public abstract void doInit();
+  public void doInit() {
 
-  public abstract void doDispose();
+  }
+
+  public void doDispose() {
+
+  }
 }
