@@ -714,22 +714,13 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1214431324746" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214431324747" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214431324748">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214847918931">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214847918932">
-            <property name="name" value="iii" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1214847918933" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215005665920">
-              <property name="value" value="1" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215097367897">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215097369821">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215097369871">
+              <property name="value" value="4" />
             </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215005656974">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215005659727">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215005662137">
-              <link role="variableDeclaration" targetNodeId="1214847918932" resolveInfo="iii" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215005656975">
-              <link role="variableDeclaration" targetNodeId="1214847918932" resolveInfo="iii" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1215097367898">
+              <property name="value" value="true" />
             </node>
           </node>
         </node>
