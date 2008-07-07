@@ -29,24 +29,26 @@ public class StatementList_Behavior {
   public static void call_checkReturns_1213877327397(SNode thisNode) {
     Set<SNode> expectedReturns = DataFlow.getExpectedReturns(thisNode);
     for(SNode n : expectedReturns) {
-      SNode nodeToSelect;
-      SNode sl = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-      if ((sl != null) && ((StatementList)SNodeOperations.getAdapter(sl)).getStatementsCount() > 0) {
-        SNodeOperations.getAncestor(nodeToSelect = n, "jetbrains.mps.baseLanguage.structure.Statement", true, false);
-      } else
-      {
-        nodeToSelect = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-      }
-      if (nodeToSelect != null) {
+      if (n != null) {
+        SNode nodeToSelect;
+        SNode sl = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+        if ((sl != null) && ((StatementList)SNodeOperations.getAdapter(sl)).getStatementsCount() > 0) {
+          SNodeOperations.getAncestor(nodeToSelect = n, "jetbrains.mps.baseLanguage.structure.Statement", true, false);
+        } else
         {
-          BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(nodeToSelect, "Return expected", "jetbrains.mps.baseLanguage.behavior", "1213877327419", intentionProvider);
+          nodeToSelect = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
         }
-      } else
-      {
+        if (nodeToSelect != null) {
+          {
+            BaseIntentionProvider intentionProvider = null;
+            TypeChecker.getInstance().reportTypeError(nodeToSelect, "Return expected", "jetbrains.mps.baseLanguage.behavior", "1215433086400", intentionProvider);
+          }
+        } else
         {
-          BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(n, "Return expected", "jetbrains.mps.baseLanguage.behavior", "1213877327427", intentionProvider);
+          {
+            BaseIntentionProvider intentionProvider = null;
+            TypeChecker.getInstance().reportTypeError(n, "Return expected", "jetbrains.mps.baseLanguage.behavior", "1215433086408", intentionProvider);
+          }
         }
       }
     }

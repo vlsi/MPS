@@ -4,7 +4,12 @@
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.transformationTest" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.transformationTest" />
   </models>
-  <accessoryModels />
+  <accessoryModels>
+    <model modelUID="jetbrains.mps.transformationTest" />
+    <model modelUID="jetbrains.mps.transformationTest" />
+    <model modelUID="jetbrains.mps.transformationTest" />
+    <model modelUID="jetbrains.mps.transformationTest.categories" />
+  </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.transformationTest#1210261198005">
       <models>
