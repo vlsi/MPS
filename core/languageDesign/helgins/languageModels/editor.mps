@@ -26,7 +26,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="28" />
+  <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
@@ -46,6 +46,8 @@
   <import index="26" modelUID="jetbrains.mps.core.editor" version="0" />
   <import index="27" modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
   <import index="28" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.structure" version="-1" />
+  <import index="29" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
+  <import index="30" modelUID="jetbrains.mps.bootstrap.sharedConcepts.editor" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1174643003920">
     <link role="conceptDeclaration" targetNodeId="1.1174642900584" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1174643009469">
@@ -83,9 +85,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1174643059857">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
-            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678903">
-              <property name="color" value="DARK_MAGENTA" />
-            </node>
+            <link role="styleClass" targetNodeId="30.1203541385314" resolveInfo="ReferenceOnConcept" />
           </node>
         </node>
       </node>

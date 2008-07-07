@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.bootstrap.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -94,12 +95,6 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
   private static Color calculateColor6(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
-  private static Color calculateColor15(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
@@ -213,21 +208,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell8771_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell8771_0");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return ConceptReference_Editor.calculateColor15(cell);
-              }
-
-            });
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
+      SharedStyles_StyleSheet.REFERENCE_ON_CONCEPT.apply(editorCell);
     }
 
     private static void setupLabel_namePropertyCell8771_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

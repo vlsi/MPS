@@ -36,6 +36,7 @@
     <dependency reexport="false">jetbrains.mps.ide</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.pluginLanguage</dependency>
     <dependency reexport="false">MPS.Classpath</dependency>
+    <dependency reexport="false">jetbrains.mps.bootstrap.sharedConcepts</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
