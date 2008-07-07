@@ -6,13 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -32,25 +29,12 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6496_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6496_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return WhenConcreteStatement_Editor.calculateColor7(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.COMPACT_KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell6496_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6496_01");
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_argumentRefNodeCell6496_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -58,6 +42,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6496_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6496_02");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell6496_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -82,6 +67,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6496_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6496_04");
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell6496_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -90,6 +76,11 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_argumentRepresentatorRefNodeCell6496_0(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_ConstantCell6496_06(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6496_06");
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
   private static void setupLabel_ConstantCell6496_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -119,10 +110,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_argumentRepresentatorRefNodeCell6496_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor7(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
-    return result;
+  private static void setupLabel_ConstantCell6496_06(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -148,12 +136,13 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell6496_0(context, node, "WHEN CONCRETE"));
+    editorCell.addEditorCell(this.create_ConstantCell6496_0(context, node, "when concrete"));
     editorCell.addEditorCell(this.create_ConstantCell6496_01(context, node, "("));
     editorCell.addEditorCell(this.create_argumentRefNodeCell6496_0(context, node));
     editorCell.addEditorCell(this.create_ConstantCell6496_05(context, node, "as"));
     editorCell.addEditorCell(this.create_argumentRepresentatorRefNodeCell6496_0(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell6496_02(context, node, ") {"));
+    editorCell.addEditorCell(this.create_ConstantCell6496_02(context, node, ")"));
+    editorCell.addEditorCell(this.create_ConstantCell6496_06(context, node, "{"));
     return editorCell;
   }
 
@@ -212,6 +201,14 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell6496_05(editorCell, node, context);
     setupLabel_ConstantCell6496_05(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell create_ConstantCell6496_06(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_ConstantCell6496_06(editorCell, node, context);
+    setupLabel_ConstantCell6496_06(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

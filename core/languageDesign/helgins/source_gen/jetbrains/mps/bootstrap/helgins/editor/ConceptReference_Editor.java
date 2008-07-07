@@ -97,7 +97,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor17(EditorCell cell) {
+  private static Color calculateColor16(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -219,7 +219,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return ConceptReference_Editor.calculateColor17(cell);
+                return ConceptReference_Editor.calculateColor16(cell);
               }
 
             });

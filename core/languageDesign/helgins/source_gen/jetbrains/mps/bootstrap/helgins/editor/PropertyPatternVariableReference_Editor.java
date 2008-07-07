@@ -29,7 +29,7 @@ public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
   private static void setupLabel_patternVarDeclRefCell2093_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor18(EditorCell cell) {
+  private static Color calculateColor17(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
@@ -84,7 +84,7 @@ public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return PropertyPatternVariableReference_Editor.calculateColor18(cell);
+                return PropertyPatternVariableReference_Editor.calculateColor17(cell);
               }
 
             });

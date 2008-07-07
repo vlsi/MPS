@@ -717,7 +717,7 @@
       <link role="target" targetNodeId="1205762105978" resolveInfo="WhenConcreteVariableDeclaration" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1185963081006">
-      <property name="value" value="WHEN CONCRETE" />
+      <property name="value" value="when concrete" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1207666175590">
