@@ -8,7 +8,7 @@
     <model modelUID="jetbrains.mps.generator@java_stub" />
   </accessoryModels>
   <generators>
-    <generator name="default" generatorUID="jetbrains.mps.transformation.TLBase#1167163152317">
+    <generator generatorUID="jetbrains.mps.transformation.TLBase#1167163152317">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.transformation.TLBase.generator.baseLanguage.template" />
       </models>
@@ -47,6 +47,9 @@
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">MPS.Classpath</dependency>
+  </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.bootstrap.structureLanguage</extendedLanguage>

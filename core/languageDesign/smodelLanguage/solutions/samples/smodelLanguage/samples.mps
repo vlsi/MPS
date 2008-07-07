@@ -2585,6 +2585,34 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215466164500">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215466167975">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215466164846">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215466164501">
+                <link role="variableDeclaration" targetNodeId="1206550857193" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1215466166364">
+                <link role="property" targetNodeId="6.1169194664001" resolveInfo="name" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1215466232843">
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215466234814" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215466550620">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215466559022">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215466562041" />
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215466550716">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215466550621">
+                <link role="variableDeclaration" targetNodeId="1206550857193" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1215466551485">
+                <link role="property" targetNodeId="6.1169194664001" resolveInfo="name" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206550857193">
         <property name="name" value="node" />

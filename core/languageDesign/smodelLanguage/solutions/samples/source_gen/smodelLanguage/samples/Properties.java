@@ -25,6 +25,8 @@ public class Properties {
 
   public void stringProperty3(SNode node) {
     SPropertyOperations.set(node, "name", "Class1");
+    SPropertyOperations.set(node, "name", "" + (null));
+    SPropertyOperations.set(node, "name", "" + null);
   }
 
   public void booleanProperty(SNode boolConst) {
