@@ -5,6 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.ide.actions.language.DeleteGeneratorAction;
 import jetbrains.mps.ide.actions.language.GenerateTemplateQueriesAction;
 import jetbrains.mps.ide.actions.language.GeneratorPropertiesAction;
+import jetbrains.mps.ide.actions.module.ShowModuleDependenciesAction;
 import jetbrains.mps.ide.modelchecker.CheckGeneratorAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -22,6 +23,8 @@ public class GeneratorActions_ActionGroup extends BaseGroup {
       this.add(new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_generatorNew));
       this.add(new GenerateTemplateQueriesAction(true));
       this.add(new GenerateTemplateQueriesAction(false));
+      this.addSeparator();
+      this.add(new ShowModuleDependenciesAction());
       this.addSeparator();
       this.add(new DeleteGeneratorAction());
       this.addSeparator();

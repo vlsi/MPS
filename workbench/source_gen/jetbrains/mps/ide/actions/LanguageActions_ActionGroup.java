@@ -9,6 +9,7 @@ import jetbrains.mps.ide.actions.make.MakeModuleAction;
 import jetbrains.mps.ide.actions.make.RebuildModuleAction;
 import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction;
 import jetbrains.mps.ide.actions.module.SetModuleFolderAction;
+import jetbrains.mps.ide.actions.module.ShowModuleDependenciesAction;
 import jetbrains.mps.ide.actions.project.AddModuleToProjectAction;
 import jetbrains.mps.ide.actions.project.RemoveModuleFromProjectAction;
 import jetbrains.mps.ide.classpath.AnalyzeClassPathAction;
@@ -37,6 +38,7 @@ public class LanguageActions_ActionGroup extends BaseGroup {
       this.addSeparator();
       this.add(new LanguagePropertiesAction());
       this.add(new LanguageHierarchyAction());
+      this.add(new ShowModuleDependenciesAction());
       this.addSeparator();
       this.add(new AddModuleToProjectAction());
       this.add(new RemoveModuleFromProjectAction());

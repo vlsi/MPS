@@ -1,24 +1,27 @@
 package jetbrains.mps.ide.dependency;
 
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
-import jetbrains.mps.MPSProjectHolder;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-
-import com.intellij.openapi.wm.ToolWindowAnchor;
-import com.intellij.openapi.project.Project;
+import java.awt.BorderLayout;
 
 public class DependencyViewer extends BaseMPSTool {
   private DependencyTree myTree;
-  private JScrollPane myExternalComponent;
+  private JPanel myExternalComponent;
+
   private ModuleRepositoryListener myListener = new ModuleRepositoryListener() {
     public void moduleAdded(IModule module) {
       myTree.rebuildLater();
@@ -39,11 +42,16 @@ public class DependencyViewer extends BaseMPSTool {
     super(project, "Module Dependency Viewer", -1, null, ToolWindowAnchor.BOTTOM, false);
   }
 
+  public void setModule(IModule module) {
+    myTree.setModule(module);
+    myTree.rebuildLater();
+  }
+
   public void projectOpened() {
     super.projectOpened();
 
     myTree = new DependencyTree(getProject().getComponent(MPSProjectHolder.class).getMPSProject());
-    myExternalComponent = new JScrollPane(myTree) {
+    JScrollPane scrollPane = new JScrollPane(myTree) {
       public void addNotify() {
         super.addNotify();
         addListeners();
@@ -55,9 +63,15 @@ public class DependencyViewer extends BaseMPSTool {
       }
     };
 
-    myTree.rebuildLater();
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(createCloseAction());
+    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
 
-    makeAvailableLater();
+    myExternalComponent = new JPanel(new BorderLayout());
+    myExternalComponent.add(scrollPane, BorderLayout.CENTER);
+    myExternalComponent.add(toolbar, BorderLayout.WEST);
+
+    myTree.rebuildLater();
   }
 
   public String getName() {

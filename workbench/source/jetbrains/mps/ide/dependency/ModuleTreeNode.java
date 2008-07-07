@@ -1,18 +1,17 @@
 package jetbrains.mps.ide.dependency;
 
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class ModuleTreeNode extends MPSTreeNode {
   private MPSProject myProject;
@@ -87,7 +86,9 @@ public class ModuleTreeNode extends MPSTreeNode {
 
   protected void updatePresentation() {
     super.updatePresentation();
-    setText(myModule.getModuleUID());
+    String uid = myModule.getModuleUID();
+    setText(uid);
+    setNodeIdentifier(uid);
     setIcon(IconManager.getIconFor(myModule));
   }
 

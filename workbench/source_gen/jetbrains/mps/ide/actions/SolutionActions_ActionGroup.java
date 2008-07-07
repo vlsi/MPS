@@ -7,6 +7,7 @@ import jetbrains.mps.ide.actions.make.MakeModuleAction;
 import jetbrains.mps.ide.actions.make.RebuildModuleAction;
 import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction;
 import jetbrains.mps.ide.actions.module.SetModuleFolderAction;
+import jetbrains.mps.ide.actions.module.ShowModuleDependenciesAction;
 import jetbrains.mps.ide.actions.project.AddModuleToProjectAction;
 import jetbrains.mps.ide.actions.project.RemoveModuleFromProjectAction;
 import jetbrains.mps.ide.actions.solution.GenerateTextFromAllModelsInSolutionAction;
@@ -38,6 +39,7 @@ public class SolutionActions_ActionGroup extends BaseGroup {
       this.add(new CheckSolutionAction());
       this.add(new OptimizeSolutionImportsAction());
       this.add(new AnalyzeClassPathAction());
+      this.add(new ShowModuleDependenciesAction());
       this.addSeparator();
       this.add(new MakeModuleAction());
       this.add(new RebuildModuleAction());
