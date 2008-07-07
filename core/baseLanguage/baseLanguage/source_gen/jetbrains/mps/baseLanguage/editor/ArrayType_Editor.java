@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -39,9 +38,6 @@ public class ArrayType_Editor extends DefaultNodeEditor {
 
       };
       inlineStyle.apply(editorCell);
-    }
-    if (true) {
-      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
     ArrayType_Brackets_Actions.setCellActions(editorCell, node, context);
   }

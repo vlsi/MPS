@@ -226,13 +226,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877247308">
           <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1213877247309">
-            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877247310">
-              <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1213877247311">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877247312">
-                  <link role="variableDeclaration" targetNodeId="1213877247303" resolveInfo="conceptOfNodeReturnedByHandler" />
-                </node>
-              </node>
-            </node>
+            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1215434891645" />
           </node>
         </node>
       </node>

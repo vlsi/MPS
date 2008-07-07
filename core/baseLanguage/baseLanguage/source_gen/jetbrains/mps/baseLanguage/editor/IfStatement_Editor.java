@@ -109,22 +109,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_ifTrueRefNodeCell17307_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_ConstantCell17307_05(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_05");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.EDITABLE, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-    IfStatement_rTransform_action.setCellActions(editorCell, node, context);
-  }
-
   private static void setupBasic_AlternationCell17307_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_AlternationCell17307_0");
   }
@@ -155,13 +139,13 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_ConstantCell17307_06(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_06");
+  private static void setupBasic_ConstantCell17307_05(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_05");
     BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
   }
 
-  private static void setupBasic_ConstantCell17307_07(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_07");
+  private static void setupBasic_ConstantCell17307_06(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_06");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -175,8 +159,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     IfStatement_elseDelete_action.setCellActions(editorCell, node, context);
   }
 
-  private static void setupBasic_ConstantCell17307_08(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_08");
+  private static void setupBasic_ConstantCell17307_07(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_07");
     BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
     IfStatement_elseBlockStatement_delete.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
@@ -211,9 +195,18 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_ConstantCell17307_09(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_09");
+  private static void setupBasic_ConstantCell17307_08(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_08");
     BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     IfStatement_elseBlockStatement_delete.setCellActions(editorCell, node, context);
   }
 
@@ -224,8 +217,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_elsifClausesRefNodeListCell17307_0");
   }
 
-  private static void setupBasic_ConstantCell17307_010(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_010");
+  private static void setupBasic_ConstantCell17307_09(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_09");
     BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
@@ -235,6 +228,36 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_IndentCell17307_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_IndentCell17307_01");
+  }
+
+  private static void setupBasic_CollectionCell17307_08(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell17307_08");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_ConstantCell17307_010(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_010");
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConstantCell17307_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -267,19 +290,19 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell17307_07(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell17307_08(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_ifFalseStatementRefNodeCell17307_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell17307_09(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell17307_08(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ifFalseStatementRefNodeCell17307_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_elsifClausesRefNodeListCell17307_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell17307_09(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell17307_010(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -291,15 +314,15 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition17307_01(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "ifFalseStatement", true) == null;
-  }
-
-  public static boolean renderingCondition17307_02(SNode node, EditorContext editorContext, IScope scope) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.IfStatement");
   }
 
-  public static boolean renderingCondition17307_03(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition17307_02(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "ifFalseStatement", true) != null;
+  }
+
+  public static boolean renderingCondition17307_03(SNode node, EditorContext editorContext, IScope scope) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement");
   }
 
   public static boolean renderingCondition17307_04(SNode node, EditorContext editorContext, IScope scope) {
@@ -307,11 +330,11 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition17307_05(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement");
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty();
   }
 
   public static boolean renderingCondition17307_06(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty();
+    return SLinkOperations.getTarget(node, "ifFalseStatement", true) == null;
   }
 
 
@@ -321,7 +344,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell create_AlternationCell17307_0(EditorContext context, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = IfStatement_Editor.renderingCondition17307_02(node, context, context.getOperationContext().getScope());
+    alternationCondition = IfStatement_Editor.renderingCondition17307_01(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.create_ifFalseStatementRefNodeCell17307_01(context, node);
@@ -341,13 +364,13 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_CollectionCell17307_01(context, node));
     editorCell.addEditorCell(this.create_CollectionCell17307_03(context, node));
-    if (renderingCondition17307_06(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition17307_05(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_elsifClausesRefNodeListCell17307_0(context, node));
     }
-    if (renderingCondition17307_01(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.create_ConstantCell17307_05(context, node, "}"));
+    if (renderingCondition17307_06(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell17307_08(context, node));
     }
-    if (renderingCondition17307_03(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition17307_02(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_AlternationCell17307_0(context, node));
     }
     return editorCell;
@@ -366,7 +389,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_ConstantCell17307_03(context, node, "("));
     editorCell.addEditorCell(this.create_conditionRefNodeCell17307_0(context, node));
     editorCell.addEditorCell(this.create_ConstantCell17307_04(context, node, ")"));
-    editorCell.addEditorCell(this.create_ConstantCell17307_010(context, node, "{"));
+    editorCell.addEditorCell(this.create_ConstantCell17307_09(context, node, "{"));
     return editorCell;
   }
 
@@ -410,10 +433,10 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell17307_06(context, node, "}"));
-    editorCell.addEditorCell(this.create_ConstantCell17307_07(context, node, "else"));
-    if (renderingCondition17307_04(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.create_ConstantCell17307_08(context, node, "{"));
+    editorCell.addEditorCell(this.create_ConstantCell17307_05(context, node, "}"));
+    editorCell.addEditorCell(this.create_ConstantCell17307_06(context, node, "else"));
+    if (renderingCondition17307_03(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_ConstantCell17307_07(context, node, "{"));
     }
     return editorCell;
   }
@@ -435,9 +458,19 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition17307_05(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.create_ConstantCell17307_09(context, node, "}"));
+    if (renderingCondition17307_04(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_ConstantCell17307_08(context, node, "}"));
     }
+    return editorCell;
+  }
+
+  public EditorCell create_CollectionCell17307_08(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_CollectionCell17307_08(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.create_ConstantCell17307_010(context, node, "}"));
     return editorCell;
   }
 

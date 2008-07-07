@@ -205,6 +205,10 @@ __switch__:
     return Classifier_Behavior.call_hasStaticMemebers_1214840444586(SLinkOperations.getTarget(_context.getSourceNode(), "classifier", false));
   }
 
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_IfStatement_1215434787647(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "ifFalseStatement", true) == null);
+  }
+
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
     SLinkOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
     SLinkOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -1927,6 +1931,61 @@ __switch__:
 
         public String getDescriptionText(String pattern) {
           return "postfix decrement";
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_IfStatement_1215434760427(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.setNewChild(_context.getSourceNode(), "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.Statement");
+          return SLinkOperations.getTarget(_context.getSourceNode(), "ifFalseStatement", true);
+        }
+
+        public String getMatchingText(String pattern) {
+          return "else";
+        }
+
+      });
+    }
+    {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.setNewChild(_context.getSourceNode(), "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
+          return SLinkOperations.getTarget(_context.getSourceNode(), "ifFalseStatement", true);
+        }
+
+        public String getMatchingText(String pattern) {
+          return "else {";
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_IfStatement_1215436522417(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode elseIf = SLinkOperations.addNewChild(_context.getSourceNode(), "elsifClauses", "jetbrains.mps.baseLanguage.structure.ElsifClause");
+          return elseIf;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "else if";
         }
 
       });
