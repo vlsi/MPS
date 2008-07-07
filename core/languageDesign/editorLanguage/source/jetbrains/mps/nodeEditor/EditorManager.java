@@ -220,6 +220,11 @@ public class EditorManager {
       NodeReadAccessCaster.setCellBuildNodeReadAccessListener(nodeAccessListener);
       nodeCell = isInspectorCell ? editor.createInspectedCell(context, node) : editor.createEditorCell(context, node);
       //-voodoo
+
+      if (node.hasRightTransformHint()) {
+        nodeCell = addRightTransformHintCell(node, nodeCell, context);
+        return nodeCell;
+      }
     } catch (Throwable e) {
       LOG.error("Failed to create cell for node " + node.getDebugText(), e);
       nodeCell = new EditorCell_Error(context, node, "!exception!:" + node.getDebugText());
@@ -231,11 +236,6 @@ public class EditorManager {
         nodeAccessListener.recordingFinishedForCell(nodeCell);
       }
       NodeReadAccessCaster.removeCellBuildNodeAccessListener();
-    }
-
-    if (node.hasRightTransformHint()) {
-      nodeCell = addRightTransformHintCell(node, nodeCell, context);
-      return nodeCell;
     }
 
     assert nodeCell != null;
@@ -346,6 +346,13 @@ public class EditorManager {
       getStyle().set(StyleAttributes.PADDING_RIGHT, 0.0);
     }
 
+    public void changeText(String text) {
+      super.changeText(text);
+      if ("".equals(getText())) {
+        getSNode().removeRightTransformHint();
+      }
+    }
+
     private void setAnchor(EditorCell anchorCell) {
       myAnchorCell = anchorCell;
     }
@@ -387,8 +394,17 @@ public class EditorManager {
     public EditorCell findCell(AbstractEditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       if (anchorCell == null) return super.findCell(editorComponent);
-      EditorCell_Collection parent = anchorCell.getParent();
-      return parent.getCellAt(parent.indexOf(anchorCell) + 1);
+      return anchorCell.getRTHintCell();
+    }
+
+    public EditorCell findClosestCell(AbstractEditorComponent editorComponent) {
+      EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
+      if (anchorCell == null) return super.findCell(editorComponent);
+      EditorCell_Label rtHint = anchorCell.getRTHintCell();
+      if (rtHint == null) {
+        return anchorCell;
+      }
+      return rtHint;
     }
   }
 }

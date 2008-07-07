@@ -300,7 +300,8 @@ public class EditorContext {
     }
 
     public void restore() {
-      EditorCell cellToSelect = myCellInfo.findCell(myNodeEditor);
+      EditorCell cellToSelect = myCellInfo.findClosestCell(myNodeEditor);
+
       myNodeEditor.changeSelection(cellToSelect);
       myNodeEditor.setSelectedStackFromMemento(mySelectedStack);
       for (CellInfo collectionInfo : myCollectionsWithEnabledBraces) {

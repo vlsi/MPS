@@ -75,13 +75,6 @@ public class CellInfo {
   }
 
 
-  private SNode getSNode() {
-    if (myNodePointer == null) {
-      return null;
-    }
-    return myNodePointer.getNode();
-  }
-
   public int hashCode() {
     return (myParentInfo == null ? 0 : myParentInfo.hashCode()) +
         (myNodePointer == null?0: myNodePointer.hashCode()) + (myCellId == null?0:myCellId.hashCode()) + myCellNumber;
@@ -92,6 +85,10 @@ public class CellInfo {
       return null;
     }
     return editorComponent.findCellWithId(myCellId, myNodePointer.getNode());
+  }
+
+  public EditorCell findClosestCell(AbstractEditorComponent editorComponent) {
+    return findCell(editorComponent);    
   }
 
   public boolean equals(Object o) {

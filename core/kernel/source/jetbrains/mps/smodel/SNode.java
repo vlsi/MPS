@@ -1389,22 +1389,15 @@ public final class SNode {
   }
 
   public void addRightTransformHint() {
-    putUserObject(RIGHT_TRANSFORM_HINT, RIGHT_TRANSFORM_HINT);
-    getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, null, "", true, false);
-
-    UndoUtil.addUndoableAction(new AddRTHintUndoableAction(this));
+    setBooleanProperty(RIGHT_TRANSFORM_HINT, true);
   }
 
   public boolean hasRightTransformHint() {
-    getProperty(RIGHT_TRANSFORM_HINT); // register access
-    return getUserObject(RIGHT_TRANSFORM_HINT) != null;
+    return getBooleanProperty(RIGHT_TRANSFORM_HINT);
   }
 
   public void removeRightTransformHint() {
-    removeUserObject(RIGHT_TRANSFORM_HINT);
-    getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, "", null, true, true);
-
-    UndoUtil.addUndoableAction(new RemoveRTHintUndoableAction(this));
+    setBooleanProperty(RIGHT_TRANSFORM_HINT, false);
   }
 
   public Language getNodeLanguage() {
