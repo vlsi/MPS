@@ -214,5 +214,15 @@
     <link role="source" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <link role="target" targetNodeId="1215195622986" resolveInfo="TypeAssert" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215434692368">
+    <property name="name" value="TestCategoryReference" />
+    <link role="extends" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1215434730716">
+      <property name="metaClass" value="reference" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="category" />
+      <link role="target" targetNodeId="1212572376577" resolveInfo="TestCategory" />
+    </node>
+  </node>
 </model>
 

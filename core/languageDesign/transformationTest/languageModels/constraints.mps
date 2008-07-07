@@ -147,5 +147,11 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1215434953648">
+    <link role="concept" targetNodeId="1.1215434692368" resolveInfo="TestCategoryReference" />
+    <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1215435081471">
+      <link role="applicableLink" targetNodeId="1.1215434730716" />
+    </node>
+  </node>
 </model>
 

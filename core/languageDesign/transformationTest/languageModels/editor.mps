@@ -334,5 +334,18 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1215434777610">
+    <link role="conceptDeclaration" targetNodeId="1.1215434692368" resolveInfo="TestCategoryReference" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1215434785846">
+      <link role="relationDeclaration" targetNodeId="1.1215434730716" />
+      <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1215434785847">
+        <link role="conceptDeclaration" targetNodeId="1.1212572376577" resolveInfo="TestCategory" />
+        <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1215434832243">
+          <property name="readOnly" value="true" />
+          <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
