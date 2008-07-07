@@ -8,10 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -40,25 +38,12 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell13194_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13194_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return CoerceStatement_Editor.calculateColor15(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell13194_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13194_01");
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_nodeToCoerceRefNodeCell13194_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -73,6 +58,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell13194_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13194_03");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell13194_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -106,6 +92,12 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell13194_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13194_05");
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+  }
+
+  private static void setupBasic_ConstantCell13194_06(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13194_06");
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
   private static void setupLabel_ConstantCell13194_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -135,10 +127,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell13194_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor15(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
+  private static void setupLabel_ConstantCell13194_06(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -169,7 +158,8 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_nodeToCoerceRefNodeCell13194_0(context, node));
     editorCell.addEditorCell(this.create_ConstantCell13194_02(context, node, ":<"));
     editorCell.addEditorCell(this.create_patternRefNodeCell13194_0(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell13194_03(context, node, ") {"));
+    editorCell.addEditorCell(this.create_ConstantCell13194_03(context, node, ")"));
+    editorCell.addEditorCell(this.create_ConstantCell13194_06(context, node, "{"));
     return editorCell;
   }
 
@@ -228,6 +218,14 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell13194_05(editorCell, node, context);
     setupLabel_ConstantCell13194_05(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell create_ConstantCell13194_06(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_ConstantCell13194_06(editorCell, node, context);
+    setupLabel_ConstantCell13194_06(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
