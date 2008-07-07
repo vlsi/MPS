@@ -30,6 +30,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
+import jetbrains.mps.nodeEditor.EditorManager.EditorCell_RTHint;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -961,21 +962,24 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // ---
     if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.getModifiers() == 0) {
       EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
-      if (!(selectedCell instanceof EditorCell_Label)) {
-        return EditorCellAction.RIGHT_TRANSFORM;
-      }
-      EditorCell_Label labelCell = (EditorCell_Label) selectedCell;
-      if (!labelCell.isEditable()) {
-        return EditorCellAction.RIGHT_TRANSFORM;
-      }
 
-      // caret at the end of text ?
-      String text = labelCell.getText();
-      int caretPosition = labelCell.getCaretPosition();
-      //System.out.println("text:" + text + " len:" + text.length() + "caret at:" + caretPosition);
-      if (caretPosition == text.length()) {
-        return EditorCellAction.RIGHT_TRANSFORM;
-      }
+      if (!(selectedCell instanceof EditorCell_RTHint)) {
+        if (!(selectedCell instanceof EditorCell_Label)) {
+          return EditorCellAction.RIGHT_TRANSFORM;
+        }
+        EditorCell_Label labelCell = (EditorCell_Label) selectedCell;
+        if (!labelCell.isEditable()) {
+          return EditorCellAction.RIGHT_TRANSFORM;
+        }
+
+        // caret at the end of text ?
+        String text = labelCell.getText();
+        int caretPosition = labelCell.getCaretPosition();
+        //System.out.println("text:" + text + " len:" + text.length() + "caret at:" + caretPosition);
+        if (caretPosition == text.length()) {
+          return EditorCellAction.RIGHT_TRANSFORM;
+        }
+      }      
     }
 
 
