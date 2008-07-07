@@ -49,6 +49,8 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
+          this.set(StyleAttributes.PADDING_RIGHT, 1.0);
         }
 
       };

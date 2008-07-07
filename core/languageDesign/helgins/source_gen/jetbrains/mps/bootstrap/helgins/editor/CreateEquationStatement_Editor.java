@@ -32,6 +32,16 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptPropertyCell15735_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell15735_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
+          this.set(StyleAttributes.PADDING_RIGHT, 1.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_rightExpressionRefNodeCell15735_0(EditorCell editorCell, SNode node, EditorContext context) {

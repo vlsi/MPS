@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -29,6 +30,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell13937_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13937_0");
+    BaseLanguageStyle_StyleSheet.COMPACT_KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_argumentRefNodeListCell13937_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -37,6 +39,12 @@ public class JoinType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell13937_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13937_01");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+  }
+
+  private static void setupBasic_ConstantCell13937_02(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13937_02");
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
   private static void setupLabel_ConstantCell13937_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -46,6 +54,9 @@ public class JoinType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell13937_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell13937_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -59,7 +70,8 @@ public class JoinType_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell13937_0(context, node, "JOIN ("));
+    editorCell.addEditorCell(this.create_ConstantCell13937_0(context, node, "join"));
+    editorCell.addEditorCell(this.create_ConstantCell13937_02(context, node, "("));
     editorCell.addEditorCell(this.create_argumentRefNodeListCell13937_0(context, node));
     editorCell.addEditorCell(this.create_ConstantCell13937_01(context, node, ")"));
     return editorCell;
@@ -77,6 +89,14 @@ public class JoinType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell13937_01(editorCell, node, context);
     setupLabel_ConstantCell13937_01(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell create_ConstantCell13937_02(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_ConstantCell13937_02(editorCell, node, context);
+    setupLabel_ConstantCell13937_02(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
