@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
@@ -29,6 +30,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell2741_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2741_0");
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -40,6 +42,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.PADDING_RIGHT, 0.5);
         }
 
       };
@@ -52,6 +55,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell2741_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2741_01");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -63,6 +67,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.PADDING_LEFT, 0.5);
         }
 
       };
@@ -208,7 +213,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
   public EditorCell create_quotedNodeRefNodeCell2741_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("quotedNode");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no quotedNode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_quotedNodeRefNodeCell2741_0_internal(context, node, provider);
@@ -237,7 +242,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
   public EditorCell create_modelToCreateRefNodeCell2741_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("modelToCreate");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no modelToCreate>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_modelToCreateRefNodeCell2741_0_internal(context, node, provider);

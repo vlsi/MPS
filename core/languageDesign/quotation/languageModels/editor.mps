@@ -424,17 +424,22 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="jetbrains.mps.baseLanguage.editor" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196350915656">
     <link role="conceptDeclaration" targetNodeId="1.1196350785113" resolveInfo="Quotation" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196350915657">
       <link role="keyMap" targetNodeId="1196350915740" resolveInfo="_CreateAntiquotationKeyMap" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196350915658">
         <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="2v.1215087929380" resolveInfo="LeftParen" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994814">
           <property name="flag" value="true" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441911">
           <property name="color" value="cyan" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215436926206">
+          <property name="value" value="0.5" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1196350915659">
@@ -443,11 +448,15 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196350915660">
         <property name="text" value="&gt;" />
         <link role="keyMap" targetNodeId="1196350915994" resolveInfo="_Quotation_createModel" />
+        <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997307">
           <property name="flag" value="true" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407442002">
           <property name="color" value="cyan" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215436937864">
+          <property name="value" value="0.5" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196350915661">
