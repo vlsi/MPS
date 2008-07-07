@@ -391,6 +391,10 @@
       </implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.ide.dependency.DependencyViewer</implementation-class>
+    </component>
+
 
     <!--project view tool-->
     <component>
@@ -414,5 +418,6 @@
       <skipForDummyProject/>
     </component>
   </project-components>
+
 
 </components>

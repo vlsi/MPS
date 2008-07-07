@@ -125,8 +125,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
       }
 
-      if (!keyEvent.isConsumed()) {
-        
+      if (!keyEvent.isConsumed()) {        
         // auto-completion (AKA node substitution)
         if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown() && !(keyEvent.isAltDown() || keyEvent.isShiftDown())) ||
           (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && (!keyEvent.isAltDown()) && !(keyEvent.isControlDown() || keyEvent.isShiftDown()))) {
