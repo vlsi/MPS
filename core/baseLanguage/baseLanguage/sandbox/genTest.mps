@@ -29,7 +29,7 @@
   <import index="16" modelUID="jetbrains.mps.baseLanguage.sandbox.genTest" version="-1" />
   <import index="17" modelUID="java.util@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1214554222480">
-    <property name="name" value="FiboNacci" />
+    <property name="name" value="FiboNazzi" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1215091133689">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215091133690" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215091133691" />
@@ -73,6 +73,7 @@
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215443956319">
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215443956320">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1215446189910" />
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215444035871">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215444042404">
                             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215444044565">
@@ -84,6 +85,17 @@
                               </node>
                             </node>
                             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215444035872">
+                              <link role="variableDeclaration" targetNodeId="1215442957328" resolveInfo="s" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215445982856">
+                          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215445982857">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1215445982858" />
+                          </node>
+                          <node role="condition" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215446646693">
+                            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.Expression" id="1215446646695" />
+                            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215446554535">
                               <link role="variableDeclaration" targetNodeId="1215442957328" resolveInfo="s" />
                             </node>
                           </node>

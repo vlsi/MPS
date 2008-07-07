@@ -52,7 +52,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
-    if (isBeforePosition(selectedCell) && PasteNodeUtil.canPasteRelative(selectedNode, pasteNodes)) {
+    if (EditorUtil.isBeforePosition(selectedCell) && PasteNodeUtil.canPasteRelative(selectedNode, pasteNodes)) {
       PasteNodeUtil.pasteRelative(selectedNode, pasteNodes, PastePlaceHint.BEFORE_ANCHOR);
     } else {
       PasteNodeUtil.paste(selectedCell, pasteNodes);
@@ -102,8 +102,5 @@ public class CellAction_PasteNode extends EditorCellAction {
     return cell;
   }
 
-  private boolean isBeforePosition(EditorCell cell) {
-    return cell instanceof EditorCell_Label && cell.getContainingBigCell().getFirstLeaf() == cell && ((EditorCell_Label) cell).getCaretPosition() == 0;
-  }
 }
 

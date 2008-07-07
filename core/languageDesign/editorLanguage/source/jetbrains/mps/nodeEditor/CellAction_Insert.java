@@ -20,6 +20,10 @@ public class CellAction_Insert extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    myListHandler.startInsertMode(context, context.getContextCell(), myInsertBefore);
+    boolean before = myInsertBefore;
+    if (!before && EditorUtil.isBeforePosition(context.getContextCell())) {
+      before = true;
+    }    
+    myListHandler.startInsertMode(context, context.getContextCell(), before);
   }
 }
