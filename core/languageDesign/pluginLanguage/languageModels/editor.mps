@@ -2082,6 +2082,10 @@
             id="1205679161879">
         <property name="noTargetText" value="&lt;name&gt;"/>
         <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem"
+              id="1215440960801">
+          <property name="value" value="1.0"/>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1205679222181">
