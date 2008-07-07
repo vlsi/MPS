@@ -180,11 +180,11 @@ public class GenerationPartitioner {
 
     } else {
       // map: lesser-pri mapping -> {greater-pri mapping, .... , greater-pri mapping }
-      if (rule.getGreaterPriorityMapping() instanceof MappingConfig_RefAllGlobal) {
-        greaterPriMappings = CollectionUtil.subtraction(greaterPriMappings, lesserPriMappings);
-      } else {
+//      if (rule.getGreaterPriorityMapping() instanceof MappingConfig_RefAllGlobal) {
+//        greaterPriMappings = CollectionUtil.subtraction(greaterPriMappings, lesserPriMappings);
+//      } else {
         lesserPriMappings = CollectionUtil.subtraction(lesserPriMappings, greaterPriMappings);
-      }
+//      }
 
       for (MappingConfiguration lesserPriMapping : lesserPriMappings) {
         Map<MappingConfiguration, PriorityData> grtPriMappingsFromMap = myPriorityMap.get(lesserPriMapping);
