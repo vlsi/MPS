@@ -48,6 +48,13 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     return editorCell;
   }
 
+  protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
+    EditorCell_Error errorCell = new EditorCell_Error(context, node, null);
+    errorCell.setText(error);
+    errorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteOnErrorReference(node, myGenuineRole));
+    return errorCell;
+  }
+
   public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
     if (relationDeclaration instanceof LinkDeclaration) {
       LinkDeclaration linkDeclaration = (LinkDeclaration) relationDeclaration;

@@ -366,10 +366,6 @@
       <node role="type" type="jetbrains.mps.nanoj.structure.VoidType" id="1215176060109" />
       <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1215176060110" />
     </node>
-    <node role="constructor" type="jetbrains.mps.nanoj.structure.Constructor" id="1215176056886">
-      <node role="type" type="jetbrains.mps.nanoj.structure.VoidType" id="1215176056887" />
-      <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1215176056888" />
-    </node>
   </node>
 </model>
 

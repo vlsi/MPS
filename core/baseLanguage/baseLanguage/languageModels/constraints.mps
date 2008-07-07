@@ -13649,9 +13649,7 @@
   <language namespace="jetbrains.mps.bootstrap.intentionsLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" version="1" />
   </language>
-  <language namespace="jetbrains.mps.bootstrap.actionsLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.constraints" version="16" />
-  </language>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.constraints" version="16" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
@@ -13663,21 +13661,11 @@
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
-  <import index="6" modelUID="java.util@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.baseLanguage.search@java_stub" version="-1" />
   <import index="11" modelUID="jetbrains.mps.smodel.presentation@java_stub" version="-1" />
   <import index="13" modelUID="java.lang@java_stub" version="-1" />
-  <import index="26" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
-  <import index="27" modelUID="javax.swing@java_stub" version="-1" />
-  <import index="28" modelUID="java.lang.reflect@java_stub" version="-1" />
-  <import index="30" modelUID="jetbrains.mps.reloading@java_stub" version="-1" />
   <import index="32" modelUID="jetbrains.mps.baseLanguage.constraints@java_stub" version="-1" />
-  <import index="35" modelUID="jetbrains.mps.project@java_stub" version="-1" />
-  <import index="36" modelUID="jetbrains.mps.core.constraints" version="2" />
-  <import index="37" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="43" modelUID="jetbrains.mps.dataFlow@java_stub" version="-1" />
-  <import index="49" modelUID="jetbrains.mps.core.behavior" version="-1" />
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1212611479483">
     <property name="name" value="RemoveUnusedAssignment" />
     <link role="forConcept" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
