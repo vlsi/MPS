@@ -1945,12 +1945,27 @@ __switch__:
       result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.setNewChild(_context.getSourceNode(), "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
+          SLinkOperations.setNewChild(_context.getSourceNode(), "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.Statement");
           return SLinkOperations.getTarget(_context.getSourceNode(), "ifFalseStatement", true);
         }
 
         public String getMatchingText(String pattern) {
           return "else";
+        }
+
+      });
+    }
+    {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.setNewChild(_context.getSourceNode(), "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
+          return SLinkOperations.getTarget(_context.getSourceNode(), "ifFalseStatement", true);
+        }
+
+        public String getMatchingText(String pattern) {
+          return "else {";
         }
 
       });

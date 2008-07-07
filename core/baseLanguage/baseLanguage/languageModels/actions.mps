@@ -5986,9 +5986,7 @@
                       <link role="link" targetNodeId="1.1082485599094" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1215436389122">
-                    <link role="concept" targetNodeId="1.1082485599095" resolveInfo="BlockStatement" />
-                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1215436389122" />
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215436389123">
@@ -6003,6 +6001,39 @@
           </node>
           <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1215436379381">
             <property name="text" value="else" />
+          </node>
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1215447014993">
+        <link role="concept" targetNodeId="1.1068580123159" resolveInfo="IfStatement" />
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleRightTransformMenuPart" id="1215447014994">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_Handler" id="1215447014995">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215447014996">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215447014997">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215447014998">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215447014999">
+                    <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1215447015000" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1215447015001">
+                      <link role="link" targetNodeId="1.1082485599094" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1215447015002">
+                    <link role="concept" targetNodeId="1.1082485599095" resolveInfo="BlockStatement" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215447015003">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215447015004">
+                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1215447015005" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1215447015006">
+                    <link role="link" targetNodeId="1.1082485599094" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1215447015007">
+            <property name="text" value="else {" />
           </node>
         </node>
       </node>
