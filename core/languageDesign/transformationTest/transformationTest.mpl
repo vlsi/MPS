@@ -5,9 +5,6 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.transformationTest" />
   </models>
   <accessoryModels>
-    <model modelUID="jetbrains.mps.transformationTest" />
-    <model modelUID="jetbrains.mps.transformationTest" />
-    <model modelUID="jetbrains.mps.transformationTest" />
     <model modelUID="jetbrains.mps.transformationTest.categories" />
   </accessoryModels>
   <generators>

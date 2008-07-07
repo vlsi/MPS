@@ -30,7 +30,6 @@
     <dependency reexport="false">jetbrains.mps.bootstrap.dataFlow</dependency>
     <dependency reexport="false">jetbrains.mps.quotation</dependency>
     <dependency reexport="false">MPS.Classpath</dependency>
-    <dependency reexport="false">jetbrains.mps.baseLanguage.refactoring-tests</dependency>
     <dependency reexport="false">jetbrains.mps.transformationTest</dependency>
   </dependencies>
   <usedLanguages>
