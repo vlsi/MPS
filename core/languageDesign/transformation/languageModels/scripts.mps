@@ -2037,14 +2037,14 @@
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215461479357">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215461503860">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215461507553">
-                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215461515197" />
-                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215461503909">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215468095778">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215461503909">
                     <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1215461503861" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1215461505412">
                       <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
                     </node>
                   </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_RemoveOperation" id="1215468097600" />
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215461527839" />
@@ -2056,14 +2056,14 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215462402726">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215462402727">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215462419848">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215462423729">
-                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215462429935" />
-                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215462419897">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215468102741">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215462419897">
                     <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1215462419849" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1215462421337">
                       <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
                     </node>
                   </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_RemoveOperation" id="1215468104322" />
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215462433125" />
@@ -2122,14 +2122,14 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215464979465">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215464981971">
-              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215464982568" />
-              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215464979514">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215468109089">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215464979514">
                 <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1215464979466" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1215464980267">
                   <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
                 </node>
               </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_RemoveOperation" id="1215468110576" />
             </node>
           </node>
         </node>
