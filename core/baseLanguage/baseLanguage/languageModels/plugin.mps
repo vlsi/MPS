@@ -5704,15 +5704,15 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginDeclaration" id="1208787586603">
     <property name="name" value="BaseLanguageCustomPlugin"/>
-    <node role="fieldDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldDeclaration"
-          id="1208787621157">
-      <property name="name" value="myChecker"/>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1208787621158"/>
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208787644629">
+    <node role="fieldDeclaration"
+          type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1215438553604">
+      <property name="name" value="myToDoHighlighter"/>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1215438553605"/>
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215438586843">
         <link role="classifier" targetNodeId="1208785675986" resolveInfo="ToDoHighlighter"/>
       </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034543008">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034543010">
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215438599799">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215438599800">
           <link role="baseMethodDeclaration" targetNodeId="1208787693048" resolveInfo="ToDoHighlighter"/>
         </node>
       </node>
@@ -5763,9 +5763,9 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"
                           id="1208787714866"/>
                     <node role="operation"
-                          type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldReferenceOperation"
-                          id="1208787714867">
-                      <link role="member" targetNodeId="1208787621157" resolveInfo="myChecker"/>
+                          type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"
+                          id="1215438898538">
+                      <link role="member" targetNodeId="1215438553604" resolveInfo="myToDoHighlighter"/>
                     </node>
                   </node>
                 </node>
@@ -5828,9 +5828,9 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"
                           id="1208787749017"/>
                     <node role="operation"
-                          type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldReferenceOperation"
-                          id="1208787749018">
-                      <link role="member" targetNodeId="1208787621157" resolveInfo="myChecker"/>
+                          type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"
+                          id="1215438607896">
+                      <link role="member" targetNodeId="1215438553604" resolveInfo="myToDoHighlighter"/>
                     </node>
                   </node>
                 </node>

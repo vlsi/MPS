@@ -278,11 +278,11 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginDeclaration" id="1207844373881">
     <property name="name" value="EditorLangPlugin"/>
-    <node role="fieldDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldDeclaration"
-          id="1207844410108">
+    <node role="fieldDeclaration"
+          type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1215438685387">
       <property name="name" value="myAutoResolver"/>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1207844410109"/>
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207844443367">
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1215438685388"/>
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215438690213">
         <link role="classifier" targetNodeId="6.~AutoResolver" resolveInfo="AutoResolver"/>
       </node>
     </node>
@@ -301,9 +301,9 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"
                     id="1207844454230"/>
               <node role="operation"
-                    type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldReferenceOperation"
-                    id="1207844454231">
-                <link role="member" targetNodeId="1207844410108" resolveInfo="myAutoResolver"/>
+                    type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"
+                    id="1215438697558">
+                <link role="member" targetNodeId="1215438685387" resolveInfo="myAutoResolver"/>
               </node>
             </node>
           </node>
@@ -351,9 +351,9 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"
                           id="1207844539360"/>
                     <node role="operation"
-                          type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldReferenceOperation"
-                          id="1207844539361">
-                      <link role="member" targetNodeId="1207844410108" resolveInfo="myAutoResolver"/>
+                          type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"
+                          id="1215438699887">
+                      <link role="member" targetNodeId="1215438685387" resolveInfo="myAutoResolver"/>
                     </node>
                   </node>
                 </node>
@@ -416,9 +416,9 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"
                           id="1207844554114"/>
                     <node role="operation"
-                          type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldReferenceOperation"
-                          id="1207844554115">
-                      <link role="member" targetNodeId="1207844410108" resolveInfo="myAutoResolver"/>
+                          type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"
+                          id="1215438702373">
+                      <link role="member" targetNodeId="1215438685387" resolveInfo="myAutoResolver"/>
                     </node>
                   </node>
                 </node>

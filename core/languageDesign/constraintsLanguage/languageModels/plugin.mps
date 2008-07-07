@@ -61,15 +61,15 @@
   <import index="30" modelUID="jetbrains.mps.bootstrap.helgins.plugin" version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginDeclaration" id="1208436352096">
     <property name="name" value="ConstaintsLanguagePlugin"/>
-    <node role="fieldDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldDeclaration"
-          id="1208436358925">
-      <property name="name" value="myChecker"/>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1208436358926"/>
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208436368966">
+    <node role="fieldDeclaration"
+          type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1215438637915">
+      <property name="name" value="myConstraintsChecker"/>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1215438637916"/>
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215438646788">
         <link role="classifier" targetNodeId="2.~ConstraintsChecker" resolveInfo="ConstraintsChecker"/>
       </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213047804595">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213047804597">
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215438655227">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215438655228">
           <link role="baseMethodDeclaration" targetNodeId="2.~ConstraintsChecker.&lt;init&gt;()"
                 resolveInfo="ConstraintsChecker"/>
         </node>
@@ -121,9 +121,9 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"
                           id="1208436397053"/>
                     <node role="operation"
-                          type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldReferenceOperation"
-                          id="1208436397054">
-                      <link role="member" targetNodeId="1208436358925" resolveInfo="myChecker"/>
+                          type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"
+                          id="1215438662761">
+                      <link role="member" targetNodeId="1215438637915" resolveInfo="myConstraintsChecker"/>
                     </node>
                   </node>
                 </node>
@@ -186,9 +186,9 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"
                           id="1208436450711"/>
                     <node role="operation"
-                          type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldReferenceOperation"
-                          id="1208436450712">
-                      <link role="member" targetNodeId="1208436358925" resolveInfo="myChecker"/>
+                          type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"
+                          id="1215438665465">
+                      <link role="member" targetNodeId="1215438637915" resolveInfo="myConstraintsChecker"/>
                     </node>
                   </node>
                 </node>

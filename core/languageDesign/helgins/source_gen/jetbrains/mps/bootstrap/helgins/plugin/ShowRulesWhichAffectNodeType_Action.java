@@ -34,7 +34,7 @@ public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
   private Frame frame;
 
   public ShowRulesWhichAffectNodeType_Action() {
-    super("Show Rules Which Affect Node's Type", "", ICON, false, false);
+    super("Show Rules Which Affect Node's Type", "", ICON, true, false);
   }
 
   @NotNull()
