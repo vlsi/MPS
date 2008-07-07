@@ -64,7 +64,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return GivetypeStatement_Editor.calculateColor10(cell);
+              return GivetypeStatement_Editor.calculateColor9(cell);
             }
 
           });
@@ -99,7 +99,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell21416_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor10(EditorCell cell) {
+  private static Color calculateColor9(EditorCell cell) {
     Color result;
     result = Color.red;
     return result;

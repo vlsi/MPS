@@ -6,14 +6,11 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -23,6 +20,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.bootstrap.smodelLanguage.editor.Styles_StyleSheet;
 
 public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
 
@@ -32,38 +30,27 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell10316_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10316_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return ChildTypeRestriction_Editor.calculateColor(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.COMPACT_KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell10316_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10316_01");
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell10316_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10316_02");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell10316_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10316_03");
+    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell10316_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10316_04");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.COMPACT_KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_restrictionKindPropertyCell10316_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -72,6 +59,8 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
+          this.set(StyleAttributes.PADDING_RIGHT, 1.0);
         }
 
       };
@@ -93,6 +82,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_namePropertyCell10316_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell10316_0");
+    BaseLanguageStyle_StyleSheet.VARIABLE_NAME.apply(editorCell);
   }
 
   private static void setupLabel_ConstantCell10316_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -125,12 +115,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   private static void setupLabel_namePropertyCell10316_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
-    return result;
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.create_CollectionCell10316_0(context, node);
@@ -142,7 +126,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell10316_0(context, node, "TYPEOF"));
+    editorCell.addEditorCell(this.create_ConstantCell10316_0(context, node, "typeof"));
     editorCell.addEditorCell(this.create_ConstantCell10316_01(context, node, "("));
     editorCell.addEditorCell(this.create_ConstantCell10316_04(context, node, "this"));
     editorCell.addEditorCell(this.create_ConstantCell10316_03(context, node, "."));
@@ -327,15 +311,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_rolePropertyCell10316_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rolePropertyCell10316_0");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
+      Styles_StyleSheet.REF_LINK_ROLE.apply(editorCell);
     }
 
     private static void setupLabel_rolePropertyCell10316_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

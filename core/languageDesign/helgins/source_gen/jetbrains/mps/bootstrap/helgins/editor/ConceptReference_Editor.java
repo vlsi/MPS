@@ -61,7 +61,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ConceptReference_Editor.calculateColor7(cell);
+              return ConceptReference_Editor.calculateColor6(cell);
             }
 
           });
@@ -91,13 +91,13 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell8771_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor7(EditorCell cell) {
+  private static Color calculateColor6(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor18(EditorCell cell) {
+  private static Color calculateColor17(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -219,7 +219,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return ConceptReference_Editor.calculateColor18(cell);
+                return ConceptReference_Editor.calculateColor17(cell);
               }
 
             });

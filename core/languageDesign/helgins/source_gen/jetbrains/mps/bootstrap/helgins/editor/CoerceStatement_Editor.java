@@ -46,7 +46,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CoerceStatement_Editor.calculateColor17(cell);
+              return CoerceStatement_Editor.calculateColor16(cell);
             }
 
           });
@@ -135,7 +135,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell13194_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor17(EditorCell cell) {
+  private static Color calculateColor16(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

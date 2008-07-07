@@ -37,7 +37,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return TypeOfExpression_Editor.calculateColor2(cell);
+              return TypeOfExpression_Editor.calculateColor1(cell);
             }
 
           });
@@ -101,7 +101,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static Color calculateColor2(EditorCell cell) {
+  private static Color calculateColor1(EditorCell cell) {
     Color result;
     result = TypeOfExpression_Editor._QueryFunction_Color_1214399678001((cell == null ?
       null :

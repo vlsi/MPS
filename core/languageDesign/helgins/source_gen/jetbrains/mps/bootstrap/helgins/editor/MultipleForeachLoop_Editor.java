@@ -57,7 +57,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return MultipleForeachLoop_Editor.calculateColor3(cell);
+              return MultipleForeachLoop_Editor.calculateColor2(cell);
             }
 
           });
@@ -134,7 +134,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell237_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor3(EditorCell cell) {
+  private static Color calculateColor2(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

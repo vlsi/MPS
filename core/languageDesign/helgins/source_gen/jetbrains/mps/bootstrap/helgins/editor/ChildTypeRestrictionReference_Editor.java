@@ -12,6 +12,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class ChildTypeRestrictionReference_Editor extends DefaultNodeEditor {
@@ -65,6 +66,7 @@ public class ChildTypeRestrictionReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell6374_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell6374_0");
+      BaseLanguageStyle_StyleSheet.VARIABLE_NAME.apply(editorCell);
     }
 
     private static void setupLabel_namePropertyCell6374_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

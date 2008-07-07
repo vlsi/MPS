@@ -29,7 +29,7 @@ public class LinkPatternVariableReference_Editor extends DefaultNodeEditor {
   private static void setupLabel_patternVarDeclRefCell3190_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor13(EditorCell cell) {
+  private static Color calculateColor12(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;
@@ -84,7 +84,7 @@ public class LinkPatternVariableReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return LinkPatternVariableReference_Editor.calculateColor13(cell);
+                return LinkPatternVariableReference_Editor.calculateColor12(cell);
               }
 
             });

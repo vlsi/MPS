@@ -50,7 +50,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return AbstractEquationStatement_Editor.calculateColor11(cell);
+              return AbstractEquationStatement_Editor.calculateColor10(cell);
             }
 
           });
@@ -86,7 +86,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static Color calculateColor11(EditorCell cell) {
+  private static Color calculateColor10(EditorCell cell) {
     Color result;
     result = AbstractEquationStatement_Editor._QueryFunction_Color_1214399678504((cell == null ?
       null :

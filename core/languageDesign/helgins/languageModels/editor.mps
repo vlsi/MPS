@@ -2570,25 +2570,26 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1212573766896">
     <link role="conceptDeclaration" targetNodeId="1.1212573344738" resolveInfo="ChildTypeRestriction" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1212573805776">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1212573843999">
-        <property name="text" value="TYPEOF" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677885">
-          <property name="color" value="DARK_GREEN" />
-        </node>
+        <property name="text" value="typeof" />
+        <link role="styleClass" targetNodeId="27.1215188818086" resolveInfo="CompactKeyWord" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1212573848564">
         <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="27.1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1212573870101">
         <property name="text" value="this" />
-        <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+        <link role="styleClass" targetNodeId="27.1215188818086" resolveInfo="CompactKeyWord" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1212573863818">
         <property name="text" value="." />
+        <link role="styleClass" targetNodeId="27.1215096040201" resolveInfo="Dot" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1212575851420">
         <link role="relationDeclaration" targetNodeId="1.1212575801821" />
@@ -2597,14 +2598,13 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1212575856814">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
-            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934288">
-              <property name="style" value="ITALIC" />
-            </node>
+            <link role="styleClass" targetNodeId="2v.1205441017139" resolveInfo="ref_link_role" />
           </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1212573858331">
         <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="27.1215088010675" resolveInfo="RightParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1212671242541">
         <property name="text" value="as" />
@@ -2612,11 +2612,18 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1212671248638">
         <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+        <link role="styleClass" targetNodeId="27.1215090010725" resolveInfo="VariableName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1212573934882">
         <link role="relationDeclaration" targetNodeId="1.1212573745114" resolveInfo="restrictionKind" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934129">
           <property name="style" value="BOLD" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215438651005">
+          <property name="value" value="1.0" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215438656726">
+          <property name="value" value="1.0" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1212574031164">
@@ -2633,6 +2640,7 @@
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1212763729005">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+          <link role="styleClass" targetNodeId="27.1215090010725" resolveInfo="VariableName" />
         </node>
       </node>
     </node>
