@@ -45,7 +45,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return AbstractInequationStatement_Editor.calculateColor15(cell);
+              return AbstractInequationStatement_Editor.calculateColor14(cell);
             }
 
           });
@@ -137,7 +137,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static Color calculateColor15(EditorCell cell) {
+  private static Color calculateColor14(EditorCell cell) {
     Color result;
     result = AbstractInequationStatement_Editor._QueryFunction_Color_1214399678682((cell == null ?
       null :

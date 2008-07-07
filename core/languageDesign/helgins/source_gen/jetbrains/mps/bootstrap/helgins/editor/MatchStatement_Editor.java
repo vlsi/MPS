@@ -56,7 +56,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return MatchStatement_Editor.calculateColor16(cell);
+              return MatchStatement_Editor.calculateColor15(cell);
             }
 
           });
@@ -78,7 +78,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return MatchStatement_Editor.calculateColor17(cell);
+              return MatchStatement_Editor.calculateColor16(cell);
             }
 
           });
@@ -279,13 +279,13 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor16(EditorCell cell) {
+  private static Color calculateColor15(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor17(EditorCell cell) {
+  private static Color calculateColor16(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

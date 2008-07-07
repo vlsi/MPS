@@ -925,10 +925,8 @@
     <link role="conceptDeclaration" targetNodeId="1.1175517767210" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1175517968839">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175517970856">
-        <property name="text" value="ERROR" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678253">
-          <property name="color" value="DARK_GREEN" />
-        </node>
+        <property name="text" value="error" />
+        <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1175517983013">
         <property name="noTargetText" value="&lt;error string&gt;" />

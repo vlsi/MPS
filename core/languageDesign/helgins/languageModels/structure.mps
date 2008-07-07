@@ -344,7 +344,7 @@
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1175517756569">
-      <property name="value" value="ASSERT" />
+      <property name="value" value="ensure" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
@@ -369,7 +369,7 @@
       <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1175517787706">
-      <property name="value" value="ERROR" />
+      <property name="value" value="error" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
