@@ -28,6 +28,7 @@ public class ListVarDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_namePropertyCell2672_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell2672_0");
+    BaseLanguageStyle_StyleSheet.VARIABLE_NAME.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell2672_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -54,7 +55,7 @@ public class ListVarDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell2672_0(context, node, "list_var"));
+    editorCell.addEditorCell(this.create_ConstantCell2672_0(context, node, "listVar"));
     editorCell.addEditorCell(this.create_namePropertyCell2672_0(context, node));
     editorCell.addEditorCell(this.create_ConstantCell2672_01(context, node, ";"));
     return editorCell;

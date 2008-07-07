@@ -33,7 +33,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return WarningStatement_Editor.calculateColor4(cell);
+              return WarningStatement_Editor.calculateColor3(cell);
             }
 
           });
@@ -90,7 +90,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_helginsIntentionRefNodeCell8225_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor4(EditorCell cell) {
+  private static Color calculateColor3(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;

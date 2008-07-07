@@ -8,9 +8,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -55,24 +57,21 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_ConstantCell14782_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14782_01");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+  private static void setupBasic_ifTrueRefNodeCell14782_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_ifTrueRefNodeCell14782_0(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell14782_01(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14782_01");
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell14782_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14782_02");
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+  }
+
+  private static void setupBasic_IndentCell14782_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_IndentCell14782_0");
   }
 
   private static void setupLabel_conditionRefNodeCell14782_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -81,10 +80,10 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell14782_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell14782_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ifTrueRefNodeCell14782_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ifTrueRefNodeCell14782_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell14782_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell14782_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -103,7 +102,7 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_CollectionCell14782_01(context, node));
     editorCell.addEditorCell(this.create_CollectionCell14782_02(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell14782_02(context, node, "}"));
+    editorCell.addEditorCell(this.create_ConstantCell14782_01(context, node, "}"));
     return editorCell;
   }
 
@@ -114,7 +113,8 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_conditionRefNodeCell14782_0(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell14782_0(context, node, "-> {"));
+    editorCell.addEditorCell(this.create_ConstantCell14782_0(context, node, "->"));
+    editorCell.addEditorCell(this.create_ConstantCell14782_02(context, node, "{"));
     return editorCell;
   }
 
@@ -124,7 +124,7 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell14782_01(context, node, "  "));
+    editorCell.addEditorCell(this.createIndentCell4(context, node));
     editorCell.addEditorCell(this.create_ifTrueRefNodeCell14782_0(context, node));
     return editorCell;
   }
@@ -151,6 +151,11 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     setupLabel_ConstantCell14782_02(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  public EditorCell createIndentCell4(EditorContext context, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(context, node);
+    return result;
   }
 
   public EditorCell create_conditionRefNodeCell14782_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {

@@ -33,7 +33,7 @@ public class NormalTypeClause_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return NormalTypeClause_Editor.calculateColor5(cell);
+              return NormalTypeClause_Editor.calculateColor4(cell);
             }
 
           });
@@ -60,7 +60,7 @@ public class NormalTypeClause_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell1456_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor5(EditorCell cell) {
+  private static Color calculateColor4(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;

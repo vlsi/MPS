@@ -42,7 +42,7 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
   private static void setupLabel_applicableNodeRefCell36_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor10(EditorCell cell) {
+  private static Color calculateColor9(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
@@ -97,7 +97,7 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return ApplicableNodeReference_Editor.calculateColor10(cell);
+                return ApplicableNodeReference_Editor.calculateColor9(cell);
               }
 
             });
