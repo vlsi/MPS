@@ -28,7 +28,10 @@ public class typeof_ForEachMatrixElement_InferenceRule implements InferenceRule_
             }
           }
           SNode t = ((SNode)TypeChecker.getInstance().getEquationManager().getRepresentator(matrix));
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "element", true), "jetbrains.mps.matrixLanguage.helgins", "1210241241539", true), SLinkOperations.getTarget(t, "scalarType", true), SLinkOperations.getTarget(nodeToCheck, "element", true), null, "jetbrains.mps.matrixLanguage.helgins", "1210241241537");
+          {
+            SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "element", true);
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1210241241539", true), SLinkOperations.getTarget(t, "scalarType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins", "1210241241537");
+          }
         }
 
       }, "jetbrains.mps.matrixLanguage.helgins", "1210240199916");

@@ -32,6 +32,7 @@
   <import index="5" modelUID="jetbrains.mps.core.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration" id="1210673592080">
     <property name="role" value="testNode" />
+    <property name="package" value="annotations" />
     <link role="source" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <link role="target" targetNodeId="1210673684636" resolveInfo="TestNodeAnnotation" />
   </node>
@@ -167,11 +168,13 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration" id="1215076521114">
     <property name="role" value="nodeTypeErrorMarker" />
+    <property name="package" value="annotations" />
     <link role="source" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <link role="target" targetNodeId="1215076571005" resolveInfo="NodeTypeErrorAnnotation" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215076571005">
     <property name="name" value="NodeTypeErrorAnnotation" />
+    <property name="package" value="annotations" />
     <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1215076602481">
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
@@ -179,6 +182,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215083281978">
     <property name="name" value="NodeTypeWarningAnnotation" />
+    <property name="package" value="annotations" />
     <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1215083281979">
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
@@ -186,8 +190,29 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration" id="1215083491064">
     <property name="role" value="nodeTypeWaringMarker" />
+    <property name="package" value="annotations" />
     <link role="source" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <link role="target" targetNodeId="1215083281978" resolveInfo="NodeTypeWarningAnnotation" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215195622986">
+    <property name="package" value="annotations" />
+    <property name="name" value="NodeTypeAnnotation" />
+    <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1215195746838">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="type" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2v.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1215196995163">
+      <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration" id="1215195678034">
+    <property name="package" value="annotations" />
+    <property name="role" value="nodeTypeMarker" />
+    <link role="source" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+    <link role="target" targetNodeId="1215195622986" resolveInfo="TypeAssert" />
   </node>
 </model>
 

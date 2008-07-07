@@ -29,7 +29,7 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4179_0");
     DataFlow_StyleSheet.MAY_BE_UNREACHABLE.apply(editorCell);
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
@@ -44,7 +44,7 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4179_01");
     DataFlow_StyleSheet.MAY_BE_UNREACHABLE.apply(editorCell);
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
@@ -112,7 +112,7 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
   public EditorCell create_emitStatementRefNodeCell4179_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("emitStatement");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no emitStatement>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_emitStatementRefNodeCell4179_0_internal(context, node, provider);

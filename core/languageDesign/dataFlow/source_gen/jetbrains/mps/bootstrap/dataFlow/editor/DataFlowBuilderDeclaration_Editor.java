@@ -30,7 +30,7 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell12010_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell12010_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -67,7 +67,7 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell12010_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12010_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -80,7 +80,7 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell12010_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell12010_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -252,7 +252,7 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_conceptDeclarationRefCell12010_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("conceptDeclaration");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no conceptDeclaration>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_conceptDeclarationRefCell12010_0_internal(context, node, provider);
@@ -281,7 +281,7 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_builderBlockRefNodeCell12010_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("builderBlock");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no builderBlock>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_builderBlockRefNodeCell12010_0_internal(context, node, provider);
@@ -332,7 +332,7 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell12010_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell12010_0_internal(context, node, provider);

@@ -216,7 +216,7 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1210252661231(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "item", true);
+    return SLinkOperations.getTargets(_context.getNode(), "items", true);
   }
 
 }

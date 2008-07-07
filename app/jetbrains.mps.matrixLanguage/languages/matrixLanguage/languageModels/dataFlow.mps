@@ -117,10 +117,21 @@
     <link role="conceptDeclaration" targetNodeId="1.1209987469663" resolveInfo="MatrixLiteral" />
     <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1210244322012">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210244322013">
-        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1210244335135">
-          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210244340652">
-            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1210244337870" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1210244356681">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1215194725954">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215194725955">
+            <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1215194750752">
+              <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215194752926">
+                <link role="variableDeclaration" targetNodeId="1215194725958" resolveInfo="row" />
+              </node>
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215194725958">
+            <property name="name" value="row" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1215194742780" />
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215194735212">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1215194735213" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1215194735214">
               <link role="link" targetNodeId="1.1209987497704" />
             </node>
           </node>
@@ -133,12 +144,23 @@
     <link role="conceptDeclaration" targetNodeId="1.1209987479015" resolveInfo="MatrixRow" />
     <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1210244363228">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210244363229">
-        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1210244388618">
-          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210244391323">
-            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1210244390963" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1210244395637">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1215194979256">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215194979257">
+            <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1215195019362">
+              <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215195023104">
+                <link role="variableDeclaration" targetNodeId="1215194979260" resolveInfo="item" />
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215195012039">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1215195010896" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1215195014763">
               <link role="link" targetNodeId="1.1209987483934" />
             </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215194979260">
+            <property name="name" value="item" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1215194983468" />
           </node>
         </node>
       </node>

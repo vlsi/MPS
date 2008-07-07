@@ -16,7 +16,10 @@ public class typeof_NodeParameter_InferenceRule implements InferenceRule_Runtime
 
   public void applyRule(final SNode nodeToCheck) {
     SNode builder = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration", true, false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.dataFlow.helgins", "1206443475036", true), new QuotationClass_().createNode(SLinkOperations.getTarget(builder, "conceptDeclaration", false)), nodeToCheck, null, "jetbrains.mps.bootstrap.dataFlow.helgins", "1206443478602");
+    {
+      SNode _nodeToCheck_1029348928467 = nodeToCheck;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.dataFlow.helgins", "1206443475036", true), new QuotationClass_().createNode(SLinkOperations.getTarget(builder, "conceptDeclaration", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.dataFlow.helgins", "1206443478602");
+    }
   }
 
   public String getApplicableConceptFQName() {

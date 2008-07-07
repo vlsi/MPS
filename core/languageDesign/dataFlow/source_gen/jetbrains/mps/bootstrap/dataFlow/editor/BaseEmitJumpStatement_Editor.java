@@ -65,7 +65,7 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_ConceptPropertyCell14251_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ConceptPropertyCell14251_0_internal(context, node, provider);
@@ -94,7 +94,7 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_jumpToRefNodeCell14251_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("jumpTo");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no jumpTo>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_jumpToRefNodeCell14251_0_internal(context, node, provider);

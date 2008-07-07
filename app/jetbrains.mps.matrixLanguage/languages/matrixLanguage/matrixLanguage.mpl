@@ -22,6 +22,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">jetbrains.mps.bootstrap.dataFlow</dependency>
+    <dependency reexport="false">JDK</dependency>
   </dependencies>
   <runtime>
     <dependency reexport="false">jetbrains.mps.matrixLanguage.runtime</dependency>

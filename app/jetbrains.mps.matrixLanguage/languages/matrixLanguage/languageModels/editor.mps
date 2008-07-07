@@ -36,6 +36,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210159696492">
         <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="2v.1215091279307" resolveInfo="LeftBrace" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1210159697979">
         <link role="relationDeclaration" targetNodeId="1.1210159684238" />
@@ -52,6 +53,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210161262162">
         <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="2v.1215091279307" resolveInfo="LeftBrace" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1210161282776">
         <link role="relationDeclaration" targetNodeId="1.1210161158423" />
@@ -66,17 +68,22 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214483512281">
           <property name="flag" value="true" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LastPositionAllowedStyleSheetItem" id="1215418081489">
+          <property name="flag" value="true" />
+        </node>
       </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1209987600840">
     <property name="package" value="literal" />
     <link role="conceptDeclaration" targetNodeId="1.1209987479015" resolveInfo="MatrixRow" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1209988029837">
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1215417842215">
+      <property name="vertical" value="false" />
       <property name="separatorText" value="," />
-      <property name="gridLayout" value="true" />
+      <property name="gridLayout" value="false" />
+      <property name="usesFolding" value="false" />
       <link role="relationDeclaration" targetNodeId="1.1209987483934" />
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214483512022">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LastPositionAllowedStyleSheetItem" id="1215417842216">
         <property name="flag" value="true" />
       </node>
     </node>

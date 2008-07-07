@@ -83,7 +83,7 @@
       <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1209987615332">
-      <property name="value" value="matrix literal" />
+      <property name="value" value="new matrix" />
       <link role="conceptPropertyDeclaration" targetNodeId="10.1137473891462" resolveInfo="alias" />
     </node>
   </node>
@@ -93,7 +93,7 @@
     <link role="extends" targetNodeId="10.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1209987483934">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="item" />
+      <property name="role" value="items" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>

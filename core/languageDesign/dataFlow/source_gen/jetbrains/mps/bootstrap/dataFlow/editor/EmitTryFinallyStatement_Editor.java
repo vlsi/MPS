@@ -31,7 +31,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell9793_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9793_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -56,7 +56,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell9793_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9793_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -183,7 +183,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_tryPartRefNodeCell9793_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("tryPart");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no tryPart>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_tryPartRefNodeCell9793_0_internal(context, node, provider);
@@ -212,7 +212,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_finallyPartRefNodeCell9793_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("finallyPart");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no finallyPart>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_finallyPartRefNodeCell9793_0_internal(context, node, provider);

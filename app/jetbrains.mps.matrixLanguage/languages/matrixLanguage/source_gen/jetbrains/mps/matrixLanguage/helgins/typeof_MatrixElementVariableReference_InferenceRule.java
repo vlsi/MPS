@@ -14,7 +14,10 @@ public class typeof_MatrixElementVariableReference_InferenceRule implements Infe
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.matrixLanguage.helgins", "1210239764816", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "variableDeclaration", false), "type", true), "jetbrains.mps.matrixLanguage.helgins", "1210239897535", true), nodeToCheck, null, "jetbrains.mps.matrixLanguage.helgins", "1210239778473");
+    {
+      SNode _nodeToCheck_1029348928467 = nodeToCheck;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1210239764816", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "variableDeclaration", false), "type", true), "jetbrains.mps.matrixLanguage.helgins", "1210239897535", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins", "1210239778473");
+    }
   }
 
   public String getApplicableConceptFQName() {

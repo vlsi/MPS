@@ -65,7 +65,7 @@ public class BaseEmitVariableStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_ConceptPropertyCell3993_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ConceptPropertyCell3993_0_internal(context, node, provider);
@@ -94,7 +94,7 @@ public class BaseEmitVariableStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_variableRefNodeCell3993_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("variable");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no variable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_variableRefNodeCell3993_0_internal(context, node, provider);

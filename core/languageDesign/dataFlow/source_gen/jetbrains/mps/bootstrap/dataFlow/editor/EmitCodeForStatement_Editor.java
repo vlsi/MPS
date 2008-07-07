@@ -90,7 +90,7 @@ public class EmitCodeForStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_codeForRefNodeCell12721_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("codeFor");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no codeFor>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_codeForRefNodeCell12721_0_internal(context, node, provider);

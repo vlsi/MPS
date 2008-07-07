@@ -28,11 +28,15 @@ public class typeof_Determinant_InferenceRule implements InferenceRule_Runtime {
               TypeChecker.getInstance().reportTypeError(nodeToCheck, "Should be matrix but was " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(TypeChecker.getInstance().getEquationManager().getRepresentator(type)), "name"), "jetbrains.mps.matrixLanguage.helgins", "1210173696595", intentionProvider);
             }
           }
+          SNode matrix = (SNode)TypeChecker.getInstance().getEquationManager().getRepresentator(type);
+          {
+            SNode _nodeToCheck_1029348928467 = nodeToCheck;
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1215405423730", true), SLinkOperations.getTarget(matrix, "scalarType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins", "1215405423725");
+          }
         }
 
       }, "jetbrains.mps.matrixLanguage.helgins", "1210172894554");
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.matrixLanguage.helgins", "1210001413694", true), new QuotationClass_1().createNode(), nodeToCheck, null, "jetbrains.mps.matrixLanguage.helgins", "1210001416872");
   }
 
   public String getApplicableConceptFQName() {

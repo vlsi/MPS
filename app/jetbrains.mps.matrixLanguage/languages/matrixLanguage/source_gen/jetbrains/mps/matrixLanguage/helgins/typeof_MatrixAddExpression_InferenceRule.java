@@ -16,19 +16,46 @@ public class typeof_MatrixAddExpression_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    final SNode v_typevar_1210172437577 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.matrixLanguage.helgins", "1210150106048", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1210172437577), nodeToCheck, null, "jetbrains.mps.matrixLanguage.helgins", "1210150110176");
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "leftExpression", true), "jetbrains.mps.matrixLanguage.helgins", "1210150142984", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1210172437577), SLinkOperations.getTarget(nodeToCheck, "leftExpression", true), null, "jetbrains.mps.matrixLanguage.helgins", "1210150142979");
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "rightExpression", true), "jetbrains.mps.matrixLanguage.helgins", "1210150154499", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1210172437577), SLinkOperations.getTarget(nodeToCheck, "rightExpression", true), null, "jetbrains.mps.matrixLanguage.helgins", "1210150154494");
+    final SNode v_typevar_1215411668136 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
-      final SNode type = TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1210172437577);
+      final SNode left = SLinkOperations.getTarget(nodeToCheck, "leftExpression", true);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(left, new Runnable() {
+
+        public void run() {
+          {
+            final SNode right = SLinkOperations.getTarget(nodeToCheck, "rightExpression", true);
+            TypeChecker.getInstance().getRuntimeSupport().whenConcrete(right, new Runnable() {
+
+              public void run() {
+                {
+                  SNode _nodeToCheck_1029348928467 = nodeToCheck;
+                  TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1215411640551", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1215411668136), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins", "1215411640547");
+                }
+                {
+                  SNode _nodeToCheck_1029348928467 = TypeChecker.getInstance().getEquationManager().getRepresentator(left);
+                  TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1215411640557", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1215411668136), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins", "1215411640553");
+                }
+                {
+                  SNode _nodeToCheck_1029348928467 = TypeChecker.getInstance().getEquationManager().getRepresentator(right);
+                  TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1215411640565", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1215411668136), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins", "1215411640561");
+                }
+              }
+
+            }, "jetbrains.mps.matrixLanguage.helgins", "1215411596973");
+          }
+        }
+
+      }, "jetbrains.mps.matrixLanguage.helgins", "1215411450860");
+    }
+    {
+      final SNode type = TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1215411668136);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(type, new Runnable() {
 
         public void run() {
           if (!(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(type), "jetbrains.mps.matrixLanguage.structure.MatrixType"))) {
             {
               BaseIntentionProvider intentionProvider = null;
-              TypeChecker.getInstance().reportTypeError(nodeToCheck, "Should be matrix, but " + SNodeOperations.getConceptDeclaration(TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1210172437577)), "jetbrains.mps.matrixLanguage.helgins", "1210175079706", intentionProvider);
+              TypeChecker.getInstance().reportTypeError(nodeToCheck, "Should be matrix, but " + SNodeOperations.getConceptDeclaration(TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1215411668136)), "jetbrains.mps.matrixLanguage.helgins", "1210175079706", intentionProvider);
             }
           }
         }
