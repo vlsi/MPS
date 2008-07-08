@@ -26,11 +26,6 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   }
 
   public void doLayout(EditorCell_Collection editorCells) {
-
-    if (editorCells.getCellsCount() == 3 && editorCells.getSNode().getAdapter() instanceof BlockStatement && editorCells.isDrawBrackets()) {
-      System.currentTimeMillis();      
-    }
-
     if (editorCells.isFolded()) {
       Font font = EditorSettings.getInstance().getDefaultEditorFont();
       FontMetrics metrics = editorCells.getEditor().getFontMetrics(font);
