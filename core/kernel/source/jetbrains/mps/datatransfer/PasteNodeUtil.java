@@ -50,7 +50,7 @@ public class PasteNodeUtil {
     }
   }
 
-  public static boolean canPasteAsRoots(List<SNode> pasteNodes) {
+  public static boolean canPasteAsRoots(List<SNode> pasteNodes) {        
     for (SNode pasteNode : pasteNodes) {
       AbstractConceptDeclaration nodeConcept = pasteNode.getConceptDeclarationAdapter();
       if (!(nodeConcept instanceof ConceptDeclaration && ((ConceptDeclaration) nodeConcept).getRootable())) {

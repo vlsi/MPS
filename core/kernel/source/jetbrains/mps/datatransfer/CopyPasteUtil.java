@@ -18,6 +18,8 @@ import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.util.*;
 
+import com.intellij.openapi.util.Computable;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -281,38 +283,39 @@ public class CopyPasteUtil {
     return getNodesFromClipboard(model).get(0);
   }
 
-  public static boolean addImportsAndLanguagesToModel(SModel targetModel, Set<String> necessaryLanguages, Set<SModelUID> necessaryImports, IOperationContext context) {
-    List<String> additionalLanguages = new ArrayList<String>();
-    List<SModelUID> additionalModels = new ArrayList<SModelUID>();
-    List<String> additionalDevKits = new ArrayList<String>();
-    Set<String> necessaryDevKits = new HashSet<String>();
+  public static boolean addImportsAndLanguagesToModel(final SModel targetModel, final Set<String> necessaryLanguages, final Set<SModelUID> necessaryImports, final IOperationContext context) {
+    final List<String> additionalLanguages = new ArrayList<String>();
+    final List<SModelUID> additionalModels = new ArrayList<SModelUID>();
+    final Set<String> necessaryDevKits = new HashSet<String>();
 
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SModelUID modelUID : necessaryImports) {
+          if (modelUID != null && !(targetModel.hasImportedModel(modelUID)) && !(targetModel.getUID().equals(modelUID)))
+            additionalModels.add(modelUID);
+        }
 
-    for (SModelUID modelUID : necessaryImports) {
-      if (modelUID != null && !(targetModel.hasImportedModel(modelUID)) && !(targetModel.getUID().equals(modelUID)))
-        additionalModels.add(modelUID);
-    }
-    //todo
-  /*  for (String devKit : devKitsFromPattern) {
-      if (!(targetModel.hasDevKit(devKit))) additionalDevKits.add(devKit);
-    }*/
-    for (String namespace : necessaryLanguages) {
-      if (!targetModel.hasLanguage(namespace)) additionalLanguages.add(namespace);
-    }
+        for (String namespace : necessaryLanguages) {
+          if (!targetModel.hasLanguage(namespace)) additionalLanguages.add(namespace);
+        }
 
-    necessaryImports.retainAll(additionalModels);
-    necessaryLanguages.retainAll(additionalLanguages);
-    for (String devKitName : additionalDevKits) {
-      DevKit devKit = context.getScope().getDevKit(devKitName);
-      if (devKit != null) necessaryLanguages.removeAll(devKit.getLanguageNamespaces());
-    }
+        necessaryImports.retainAll(additionalModels);
+        necessaryLanguages.retainAll(additionalLanguages);
+      }
+    });
 
     if ((!necessaryImports.isEmpty()) || (!necessaryLanguages.isEmpty()) || (!necessaryDevKits.isEmpty())) {
-      AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getMainFrame(), targetModel,
-        necessaryImports,
-        necessaryLanguages,
-        necessaryDevKits);
-      dialog.setModal(true);
+      AddRequiredModelImportsDialog dialog = ModelAccess.instance().runReadAction(new Computable<AddRequiredModelImportsDialog>() {
+        public AddRequiredModelImportsDialog compute() {
+          AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getMainFrame(), targetModel,
+            necessaryImports,
+            necessaryLanguages,
+            necessaryDevKits);
+          dialog.setModal(true);
+          return dialog;
+        }
+      });
+
       dialog.showDialog();
       return (!dialog.isCanceled());
     }
