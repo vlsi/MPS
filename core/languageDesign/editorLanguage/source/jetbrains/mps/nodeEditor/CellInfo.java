@@ -17,7 +17,7 @@ public class CellInfo {
 
   protected CellInfo myParentInfo;
 
-  // use only within EditorCell.getCellInfo
+  // use only within EditorCell.getSelectedCellInfo
   public CellInfo(EditorCell cell) {
     myNodePointer = cell.getSNodePointer();
     myCellId = (String) cell.getUserObject(EditorCell.CELL_ID);

@@ -20,20 +20,11 @@ import java.util.*;
 
 import com.intellij.openapi.util.Computable;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 22.07.2005
- * Time: 17:53:14
- * To change this template use File | Settings | File Templates.
- */
 public class CopyPasteUtil {
-
   private static final Logger LOG = Logger.getLogger(CopyPasteUtil.class);
 
   private static final ModelOwner ourModelOwner = new ModelOwner() {
   };
-
 
   static ModelOwner getCopyPasteOwner() {
     return ourModelOwner;
