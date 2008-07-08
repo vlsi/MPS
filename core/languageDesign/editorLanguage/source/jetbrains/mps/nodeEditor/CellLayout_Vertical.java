@@ -55,15 +55,8 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     int braceIndent = 0;
     int width = 0;
     int height = 0;
-    if (editorCells.isDrawBrackets()) {
-      width += EditorCell_Collection.BRACKET_WIDTH * 2;
-    }
     for (EditorCell editorCell : editorCells.contentCells()) {
-      if (editorCells.isDrawBrackets()) {
-        editorCell.setX(x + EditorCell_Collection.BRACKET_WIDTH);
-      } else {
-        editorCell.setX(x);
-      }
+      editorCell.setX(x);
       editorCell.setY(y + height);
       editorCell.relayout();
       int cellHeight = editorCell.getHeight();
@@ -77,9 +70,6 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       int delta = braceIndent - indent;
       width = Math.max(width, lastCellWidth + delta);
     }
-    if (editorCells.isDrawBrackets()) {
-      width += EditorCell_Collection.BRACKET_WIDTH * 2;
-    }
     editorCells.setArtificialBracesIndent(braceIndent);
     for (EditorCell editorCell : editorCells.contentCells()) {
       int cellX = editorCell.getX();
@@ -91,9 +81,6 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
     if (myGridLayout) {
       int x0 = x;
-      if (editorCells.isDrawBrackets()) {
-        x0 += EditorCell_Collection.BRACKET_WIDTH;
-      }
       int size = editorCells.getContentCellsCount();
       int[] maxHeights = new int[size];
       for (int j = 0; j < maxHeights.length; j++) {
@@ -154,9 +141,6 @@ public class CellLayout_Vertical extends AbstractCellLayout {
           CellLayout cellLayout = editorCellCollection.getCellLayout();
           if (cellLayout instanceof CellLayout_Horizontal) {
             int width0 = 0;
-            if (editorCells.isDrawBrackets()) {
-              width0 += EditorCell_Collection.BRACKET_WIDTH * 2;
-            }
             for (EditorCell cell : editorCellCollection) {
               width0 += cell.getWidth();
             }

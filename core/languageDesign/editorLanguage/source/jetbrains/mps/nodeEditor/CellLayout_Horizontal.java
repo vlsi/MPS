@@ -13,9 +13,6 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     int width = 0;
     final int x = editorCells.getX();
     final int y = editorCells.getY();
-    if (editorCells.isDrawBrackets()) {
-      width += EditorCell_Collection.BRACKET_WIDTH * 2;
-    }
     int ascent = 0;
     int descent = 0;
     EditorCell[] cells = editorCells.getCells();
@@ -37,10 +34,8 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
       descent = Math.max(descent, editorCell.getDescent());
     }
 
-    if (editorCells.isDrawBrackets()) {
-      width += EditorCell_Collection.BRACKET_WIDTH * 2;
-    }
     int baseline = y + ascent;
+
     editorCells.setWidth(width);
     editorCells.setHeight(ascent + descent);
 
