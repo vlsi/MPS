@@ -4460,6 +4460,12 @@
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1169580472034">
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215475315265">
+            <property name="text" value="!deprecated label" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1215475315266">
+              <property name="color" value="red" />
+            </node>
+          </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1169580472035">
             <property name="allowEmptyText" value="true" />
             <property name="noTargetText" value="&lt;no mapping name&gt;" />
@@ -4779,6 +4785,12 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1169672948378">
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215475264761">
+              <property name="text" value="!deprecated label" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1215475264762">
+                <property name="color" value="red" />
+              </node>
+            </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1169672948379">
               <property name="allowEmptyText" value="true" />
               <property name="noTargetText" value="&lt;no mapping name&gt;" />
@@ -5083,6 +5095,12 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1167516991645">
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215475304185">
+          <property name="text" value="!deprecated label" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1215475304186">
+            <property name="color" value="red" />
+          </node>
+        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1167516991646">
           <property name="allowEmptyText" value="true" />
           <property name="noTargetText" value="&lt;no mapping name&gt;" />
