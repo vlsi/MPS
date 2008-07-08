@@ -192,6 +192,10 @@
     <property name="name" value="TemplateFragment" />
     <property name="package" value="template" />
     <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215477279208">
+      <property name="value" value="'name' property is replaced with 'label' reference" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1200916687663">
       <property name="role" value="labelDeclaration" />
       <link role="target" targetNodeId="1200911316486" resolveInfo="MappingLabelDeclaration" />
@@ -632,6 +636,10 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1167169327669">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215477239972">
+      <property name="value" value="'name' property is replaced with 'label' reference" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1167171569011">
