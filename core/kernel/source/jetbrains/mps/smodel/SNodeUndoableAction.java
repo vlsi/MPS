@@ -9,7 +9,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 
-abstract class SNodeUndoableAction implements UndoableAction {
+public abstract class SNodeUndoableAction implements UndoableAction {
   private DocumentReference[] myAffectedDocuments;
 
   protected SNodeUndoableAction(SNode affectedNode) {
