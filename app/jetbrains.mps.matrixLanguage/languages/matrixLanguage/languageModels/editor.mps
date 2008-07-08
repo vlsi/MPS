@@ -36,13 +36,14 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210159696492">
         <property name="text" value="&lt;" />
-        <link role="styleClass" targetNodeId="2v.1215091279307" resolveInfo="LeftBrace" />
+        <link role="styleClass" targetNodeId="2v.1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1210159697979">
         <link role="relationDeclaration" targetNodeId="1.1210159684238" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210159699059">
         <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>
