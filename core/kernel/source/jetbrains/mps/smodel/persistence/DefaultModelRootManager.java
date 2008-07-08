@@ -17,6 +17,7 @@ import jetbrains.mps.vcs.merge.Merger;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.watching.ModelChangesWatcher;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -311,13 +312,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     IFile metadataFile = getMetadataFile(modelDescriptor.getModelFile());
     if (!metadataFile.exists()) {
       metadataFile.createNewFile();
-      IOperationContext operationContext = modelDescriptor.getOperationContext();
-      if (operationContext != null) {
-        MPSVCSManager manager = operationContext.getProject().getComponent(MPSVCSManager.class); 
-        manager.addFilesToVCS(CollectionUtil.asList(metadataFile.toFile()));
-      } else {
-        LOG.warning("can't find an operation context for a model " + modelDescriptor);
-      }
+      ModelChangesWatcher.instance().fireMetadataFileCreated(metadataFile);
     }
 
     System.err.println("saving metadata");

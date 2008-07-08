@@ -42,6 +42,11 @@ import java.io.File;
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
   private final MessageBus myBus;
+  private final Set<MetadataCreationListener> myMetadataListeners = new LinkedHashSet<MetadataCreationListener>();
+
+  public static ModelChangesWatcher instance(){
+    return ApplicationManager.getApplication().getComponent(ModelChangesWatcher.class);
+  }
 
   private BulkFileListener myBusListener = new BulkFileListener() {
     public void before(List<? extends VFileEvent> events) {
@@ -156,5 +161,23 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
   public void disposeComponent() {
     myConnection.disconnect();
+  }
+
+  public void addMetadataListener(MetadataCreationListener l){
+    myMetadataListeners.add(l);
+  }
+
+  public void removeMetadataListener(MetadataCreationListener l){
+    myMetadataListeners.remove(l);
+  }
+
+  public void fireMetadataFileCreated(IFile f){
+    for (MetadataCreationListener l : myMetadataListeners){
+      l.metadataFileCreated(f);
+    }
+  }
+
+  public static interface MetadataCreationListener {
+    void metadataFileCreated(IFile f);
   }
 }

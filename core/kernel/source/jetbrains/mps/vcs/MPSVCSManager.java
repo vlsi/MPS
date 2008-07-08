@@ -6,6 +6,7 @@ import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.watching.ModelChangesWatcher;
+import jetbrains.mps.watching.ModelChangesWatcher.MetadataCreationListener;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.*;
@@ -21,8 +22,7 @@ import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NonNls;
@@ -37,7 +37,7 @@ public class MPSVCSManager implements ProjectComponent {
   private boolean myGenerationRunning;
   private final Object myMonitor = new Object();
   private final List<Runnable> myTasks = new LinkedList<Runnable>();
-  private SModelRepositoryListener myModelRepositoryListener;
+  private final SModelRepositoryListener myModelRepositoryListener;
   private final SModelAdapter myModelInitializationListener = new SModelAdapter() {
     @Override
     public void modelSaved(SModelDescriptor sm) {
@@ -49,6 +49,18 @@ public class MPSVCSManager implements ProjectComponent {
         }
       }
       sm.removeModelListener(this);
+    }
+  };
+  private MetadataCreationListener myMetadataListener = new MetadataCreationListener() {
+    public void metadataFileCreated(IFile ifile) {
+      if (ifile != null) {
+        VirtualFile vfile = VFileSystem.getFile(ifile);
+        if (vfile != null) {
+          if (ProjectLevelVcsManager.getInstance(myProject).getVcsFor(vfile) != null) {
+            addInternal(Collections.singletonList(vfile));
+          }
+        }
+      }
     }
   };
 
@@ -323,10 +335,12 @@ public class MPSVCSManager implements ProjectComponent {
   public void initComponent() {
     myProject.getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
+    ModelChangesWatcher.instance().addMetadataListener(myMetadataListener);
   }
 
   public void disposeComponent() {
     myProject.getComponent(GeneratorManager.class).removeGenerationListener(myGenerationListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
+    ModelChangesWatcher.instance().addMetadataListener(myMetadataListener);
   }
 }
