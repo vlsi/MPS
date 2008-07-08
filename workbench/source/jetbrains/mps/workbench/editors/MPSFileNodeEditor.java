@@ -14,8 +14,11 @@ import org.jetbrains.annotations.NonNls;
 
 import javax.swing.JComponent;
 import java.beans.PropertyChangeListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.project.MPSProject;
@@ -23,6 +26,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNode;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentReferenceEditor {
   private MPSNodeVirtualFile myFile;
@@ -41,7 +45,11 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
   }
 
   public DocumentReference[] getDocumentReferences() {
-    return new DocumentReference[] { new DocumentReferenceByVirtualFile(myFile) };
+    List<DocumentReference> docRefs = new ArrayList<DocumentReference>();
+    for (SNode node : myNodeEditor.getEditedNodes()) {
+      docRefs.add(new DocumentReferenceByVirtualFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(node)));
+    }
+    return docRefs.toArray(new DocumentReference[docRefs.size()]);
   }
 
   public MPSNodeVirtualFile getFile() {

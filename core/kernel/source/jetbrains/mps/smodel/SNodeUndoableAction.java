@@ -48,6 +48,6 @@ abstract class SNodeUndoableAction implements UndoableAction {
   }
 
   public boolean isComplex() {
-    return true;
+    return false;
   }
 }

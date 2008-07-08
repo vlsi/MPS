@@ -14,6 +14,8 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
+import java.util.List;
+import java.util.Collections;
 
 import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
@@ -83,6 +85,10 @@ public class NodeEditor implements IEditor {
 
   public SNodePointer getEditedNodePointer() {
     return myEditorComponent.getEditedNodePointer();
+  }
+
+  public List<SNode> getEditedNodes() {
+    return Collections.singletonList(getEditedNode());
   }
 
   public void selectNode(SNode node) {

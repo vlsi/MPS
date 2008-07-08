@@ -174,6 +174,19 @@ public class TabbedEditor implements IEditor {
     return myNodePointer.getNode();
   }
 
+  public List<SNode> getEditedNodes() {
+    List<SNode> result = new ArrayList<SNode>();
+    for (ILazyTab tab : myTabbedPane.getTabs()) {
+      tab.getComponent();      
+      for (AbstractEditorComponent aec : tab.getEditorComponents()) {
+        if (aec.getEditedNode() != null) {
+          result.add(aec.getEditedNode());
+        }
+      }
+    }
+    return result;
+  }
+
   public SNodePointer getEditedNodePointer() {
     return myNodePointer;
   }

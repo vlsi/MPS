@@ -15,6 +15,8 @@ import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+
 public interface IEditor {
   JComponent getComponent();
 
@@ -34,6 +36,8 @@ public interface IEditor {
   EditorCell getRootCell();
   SNode getEditedNode();
   SNodePointer getEditedNodePointer();
+
+  List<SNode> getEditedNodes();
 
   void selectNode(SNode node);
 
