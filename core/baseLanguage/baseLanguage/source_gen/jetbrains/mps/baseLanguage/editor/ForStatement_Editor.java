@@ -58,6 +58,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.PADDING_RIGHT, 1.0);
           this.set(StyleAttributes.SELECTABLE, false);
         }
 
@@ -119,6 +120,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.PADDING_RIGHT, 1.0);
           this.set(StyleAttributes.SELECTABLE, false);
         }
 
