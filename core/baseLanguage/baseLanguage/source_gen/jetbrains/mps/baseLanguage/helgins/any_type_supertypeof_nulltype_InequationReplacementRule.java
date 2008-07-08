@@ -16,8 +16,9 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Ine
     // truth
   }
 
-  public void checkInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
+  public boolean checkInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
     // truth
+    return true;
   }
 
   public boolean isWeak() {
