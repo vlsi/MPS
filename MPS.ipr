@@ -989,6 +989,8 @@
       <module fileurl="file://$PROJECT_DIR$/platform/springframework/runtime/springframework-runtime.iml" filepath="$PROJECT_DIR$/platform/springframework/runtime/springframework-runtime.iml" group="platform/spring-framework" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/strings/strings.iml" filepath="$PROJECT_DIR$/core/baseLanguage/strings/strings.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/structureLanguage/structureLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/structureLanguage/structureLanguage.iml" group="core/languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/testMaterial/testRefactoring/testRefactoring.iml" filepath="$PROJECT_DIR$/testMaterial/testRefactoring/testRefactoring.iml" group="core/languageDesign/refactoring" />
+      <module fileurl="file://$PROJECT_DIR$/testMaterial/testRenameLanguage/testRenameLanguage.iml" filepath="$PROJECT_DIR$/testMaterial/testRenameLanguage/testRenameLanguage.iml" group="core/languageDesign/refactoring" />
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" filepath="$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/transformationTest/transformationTest.iml" filepath="$PROJECT_DIR$/core/languageDesign/transformationTest/transformationTest.iml" group="core/languageDesign" />
@@ -1013,7 +1015,7 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
-      <option name="VM_PARAMETERS" value="-ea -Xmx1024m -XX:MaxPermSize=92m -Xss1024k -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError" />
+      <option name="VM_PARAMETERS" value="-ea -Xmx1024m -XX:MaxPermSize=92m -Xss1024k -Dmps.internal=true" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1029,7 +1031,7 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;additional-options=&#13;&#10;snapshots-dir=&#13;&#10;" />
+        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
