@@ -991,7 +991,7 @@ public class QueriesGenerated {
           -1
         );
         lastStmt = StatementListUtil.nextSibling(cstmt);
-        while((lastStmt != null)) {
+        while ((lastStmt != null)) {
           stmts = StatementListUtil.selectStatementsUntilControlStatement(_context.getNode(), lastStmt);
           if (stmts.size() == 0) {
             cstmt = lastStmt;
