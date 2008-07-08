@@ -47,8 +47,6 @@
     <orderEntry type="module" module-name="kernel" exported="" />
     <orderEntry type="module" module-name="pluginLanguage" exported="" />
     <orderEntry type="module" module-name="classifiers" exported="" />
-    <orderEntry type="module" module-name="svn" exported="" />
-    <orderEntry type="module" module-name="generic" exported="" />
     <orderEntry type="module" module-name="dataFlow" exported="" />
     <orderEntry type="library" exported="" name="commons-lang" level="project" />
     <orderEntry type="module" module-name="Closures" exported="" />

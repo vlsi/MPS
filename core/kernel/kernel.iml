@@ -15,8 +15,6 @@
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="module" module-name="pluginLanguage" />
-    <orderEntry type="module" module-name="generic" />
-    <orderEntry type="module" module-name="svn" exported="" />
     <orderEntry type="library" name="XStream" level="project" />
     <orderEntry type="module" module-name="runtime" exported="" />
     <orderEntryProperties />

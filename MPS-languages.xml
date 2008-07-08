@@ -848,26 +848,6 @@
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformationTest.runtime.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.vcs">
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/kernel/vcs/generic/jetbrains.mps.vcs.tmp" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/kernel/vcs/generic/jetbrains.mps.vcs.tmp/module" />
-    <mkdir dir="core/kernel/vcs/generic/solutions/jetbrains.mps.vcs/classes_gen" />
-    <mkdir dir="core/kernel/vcs/generic/solutions/jetbrains.mps.vcs/classes_gen" />
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/kernel/vcs/generic/jetbrains.mps.vcs.tmp/module">
-      <fileset file="core/kernel/vcs/generic/solutions/jetbrains.mps.vcs/jetbrains.mps.vcs.msd" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/kernel/vcs/generic/jetbrains.mps.vcs.tmp/module">
-      <fileset dir="core/kernel/vcs/generic/solutions/jetbrains.mps.vcs" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.tmp">
-      <fileset dir="core/kernel/vcs/generic/solutions/jetbrains.mps.vcs/classes_gen" />
-      <fileset dir="core/kernel/vcs/generic/solutions/jetbrains.mps.vcs/classes_gen" />
-    </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/kernel/vcs/generic/jetbrains.mps.vcs.mpsarch.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/kernel/vcs/generic/jetbrains.mps.vcs.tmp" />
-    </jar>
-    <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/kernel/vcs/generic/jetbrains.mps.vcs.tmp" />
-  </target>
   <target name="pack.jetbrains.mps.projectLanguage">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/jetbrains.mps.projectLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/jetbrains.mps.projectLanguage.tmp/module" />

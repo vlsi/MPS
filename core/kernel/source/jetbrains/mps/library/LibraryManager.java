@@ -145,11 +145,6 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
         return PathManager.getAppPath()  ;
       }
     });
-    result.add(new PredefinedLibrary("mps.vcs") {
-      public String getPath() {
-        return PathManager.getVCSPath()  ;
-      }
-    });
     return result;
   }
 

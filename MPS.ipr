@@ -958,7 +958,6 @@
       <module fileurl="file://$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/formulaLanguage/formulaLanguage.iml" filepath="$PROJECT_DIR$/app/formulaLanguage/formulaLanguage.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/functional/functional.iml" filepath="$PROJECT_DIR$/app/functional/functional.iml" group="app" />
-      <module fileurl="file://$PROJECT_DIR$/core/kernel/vcs/generic/generic.iml" filepath="$PROJECT_DIR$/core/kernel/vcs/generic/generic.iml" group="core/kernel/vcs" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/gothic/gothic.iml" filepath="$PROJECT_DIR$/app/mf/gothic/gothic.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" filepath="$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideUiLanguage/ideUiLanguage.iml" filepath="$PROJECT_DIR$/workbench/ideUiLanguage/ideUiLanguage.iml" group="workbench" />
@@ -990,7 +989,6 @@
       <module fileurl="file://$PROJECT_DIR$/platform/springframework/runtime/springframework-runtime.iml" filepath="$PROJECT_DIR$/platform/springframework/runtime/springframework-runtime.iml" group="platform/spring-framework" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/strings/strings.iml" filepath="$PROJECT_DIR$/core/baseLanguage/strings/strings.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/structureLanguage/structureLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/structureLanguage/structureLanguage.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/core/kernel/vcs/svn/svn.iml" filepath="$PROJECT_DIR$/core/kernel/vcs/svn/svn.iml" group="core/kernel/vcs" />
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" filepath="$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/transformationTest/transformationTest.iml" filepath="$PROJECT_DIR$/core/languageDesign/transformationTest/transformationTest.iml" group="core/languageDesign" />
@@ -1587,7 +1585,6 @@
   </component>
   <UsedPathMacros>
     <macro name="MPS_BUILD_HOME" />
-    <macro name="MPS_HOME" />
   </UsedPathMacros>
 </project>
 

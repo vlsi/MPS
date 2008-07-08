@@ -4,7 +4,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.vcs.ui.VCSIcons;
 import jetbrains.mps.ide.projectPane.fileSystem.AbstractFileTreeNode;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.workbench.editors.MPSIconProvider;
@@ -23,8 +22,8 @@ public class FileTreeNode extends AbstractFileTreeNode {
   private Project myProject;
 
   static {
-    ICONS.put(MPSExtentions.JAVAFILE, VCSIcons.JAVA_ICON);
-    ICONS.put(MPSExtentions.CLASSFILE, VCSIcons.CLASS_ICON);
+    ICONS.put(MPSExtentions.JAVAFILE, FileIcons.JAVA_ICON);
+    ICONS.put(MPSExtentions.CLASSFILE, FileIcons.CLASS_ICON);
   }
 
   public FileTreeNode(IOperationContext operationContext, VcsFileStatusProvider provider, IFile file) {
@@ -64,7 +63,7 @@ public class FileTreeNode extends AbstractFileTreeNode {
     if (file != null) {
       return file.getFileType().getIcon();
     } else {
-      return VCSIcons.FILE_ICON;
+      return FileIcons.FILE_ICON;
     }
   }
 

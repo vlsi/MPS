@@ -16,7 +16,6 @@
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="library" name="httpclient" level="project" />
-    <orderEntry type="module" module-name="svn" />
     <orderEntry type="library" name="IDEA-plaform" level="project" />
     <orderEntry type="module-library">
       <library>

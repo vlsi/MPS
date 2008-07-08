@@ -36,7 +36,6 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/log4j" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/spring" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/stax" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/svnkit" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/xstream" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/quartz" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/commons-codecs" />
@@ -61,9 +60,6 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/kernel" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/kernel/vcs" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/kernel/vcs/generic" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/docs" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/plugin" />
@@ -133,9 +129,6 @@
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/stax">
       <fileset dir="lib/stax" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/svnkit">
-      <fileset dir="lib/svnkit" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/xstream">
       <fileset dir="lib/xstream" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
@@ -350,7 +343,6 @@
     <antcall target="pack.jetbrains.mps.transformation.TLBase" />
     <antcall target="pack.jetbrains.mps.transformationTest" />
     <antcall target="pack.jetbrains.mps.transformationTest.runtime" />
-    <antcall target="pack.jetbrains.mps.vcs" />
     <antcall target="pack.jetbrains.mps.projectLanguage" />
     <antcall target="pack.transform" />
     <antcall target="pack.ypath.main" />
