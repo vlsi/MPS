@@ -37,6 +37,7 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 
 public class MoveNodes extends AbstractLoggableRefactoring {
@@ -224,18 +225,24 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return new ChooseNodeOrModelComponent(refactoringContext.getCurrentOperationContext(), null, true, true);
   }
 
-  public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public boolean askForInfo(final ActionContext actionContext, final RefactoringContext refactoringContext) {
     {
       boolean result = false;
-      List<IChooseComponent> components = new ArrayList<IChooseComponent>();
-      {
-        IChooseComponent<Object> chooseComponent;
-        chooseComponent = this.target_componentCreator(actionContext, refactoringContext);
-        chooseComponent.setPropertyName("target");
-        chooseComponent.setCaption("choose target");
-        chooseComponent.initComponent();
-        components.add(chooseComponent);
-      }
+      final List<IChooseComponent> components = new ArrayList<IChooseComponent>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+
+        public void run() {
+          {
+            IChooseComponent<Object> chooseComponent;
+            chooseComponent = MoveNodes.this.target_componentCreator(actionContext, refactoringContext);
+            chooseComponent.setPropertyName("target");
+            chooseComponent.setCaption("choose target");
+            chooseComponent.initComponent();
+            components.add(chooseComponent);
+          }
+        }
+
+      });
       ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
       dialog.showDialog();
       result = dialog.getResult();

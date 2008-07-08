@@ -128,7 +128,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
     return false;
   }
 
-  public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public boolean askForInfo(final ActionContext actionContext, final RefactoringContext refactoringContext) {
     return this.isApplicable(actionContext, refactoringContext);
   }
 
