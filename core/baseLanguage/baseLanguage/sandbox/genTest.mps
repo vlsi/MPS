@@ -509,5 +509,13 @@
       <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1215176060110" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1215542589224">
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215542589225" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1215542589226">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215542589227" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215542589228" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215542589229" />
+    </node>
+  </node>
 </model>
 

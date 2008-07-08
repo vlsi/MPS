@@ -51,10 +51,11 @@
     <orderEntry type="library" exported="" name="commons-lang" level="project" />
     <orderEntry type="module" module-name="Closures" exported="" />
     <orderEntry type="module" module-name="Closures-runtime" exported="" />
+    <orderEntry type="module" module-name="idea-patch" exported="" />
+    <orderEntry type="module" module-name="transformationTest" exported="" />
     <orderEntry type="library" exported="" name="JDOM" level="project" />
     <orderEntry type="library" exported="" name="IDEA-plaform" level="project" />
     <orderEntry type="library" exported="" name="JUnit4" level="project" />
-    <orderEntry type="module" module-name="transformationTest" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
