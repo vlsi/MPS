@@ -33,6 +33,9 @@ public class IntelligentInputUtil {
     String smallPattern = pattern.substring(0, pattern.length() - 1);
     String tail = "" + pattern.charAt(pattern.length() - 1);
     EditorCell nextCell = cell.getNextLeaf();
+    while (nextCell != null && !nextCell.isSelectable()) {
+      nextCell = nextCell.getNextLeaf();      
+    }
 
     if (canCompleteSmallPatternImmediately(substituteInfo, pattern, "")) {
       substituteInfo.getMatchingActions(pattern, true).get(0).substitute(editorContext, pattern);
