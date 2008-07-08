@@ -27,6 +27,10 @@ public class GenericRefactoringAction extends MPSActionAdapter {
     return myRefactoring.getKeyStroke();
   }
 
+  public boolean executeInsideCommand() {
+    return false;
+  }
+
   public void dodoExecute(@NotNull ActionContext context) {
     new RefactoringProcessor().execute(context, myRefactoring);
   }

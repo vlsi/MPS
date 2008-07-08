@@ -145,7 +145,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public boolean askForInfo(final ActionContext actionContext, final RefactoringContext refactoringContext) {
     return this.isApplicable(actionContext, refactoringContext);
   }
 

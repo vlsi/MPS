@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 
@@ -162,19 +163,25 @@ public class RenameConcept extends AbstractLoggableRefactoring {
     return SPropertyOperations.getString(node, "name");
   }
 
-  public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public boolean askForInfo(final ActionContext actionContext, final RefactoringContext refactoringContext) {
     {
       boolean result = false;
-      List<IChooseComponent> components = new ArrayList<IChooseComponent>();
-      {
-        IChooseComponent<String> chooseComponent;
-        chooseComponent = new ChooseStringComponent();
-        chooseComponent.setInitialValue(this.newName_initialValue(actionContext, refactoringContext));
-        chooseComponent.setPropertyName("newName");
-        chooseComponent.setCaption("new concept name");
-        chooseComponent.initComponent();
-        components.add(chooseComponent);
-      }
+      final List<IChooseComponent> components = new ArrayList<IChooseComponent>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+
+        public void run() {
+          {
+            IChooseComponent<String> chooseComponent;
+            chooseComponent = new ChooseStringComponent();
+            chooseComponent.setInitialValue(RenameConcept.this.newName_initialValue(actionContext, refactoringContext));
+            chooseComponent.setPropertyName("newName");
+            chooseComponent.setCaption("new concept name");
+            chooseComponent.initComponent();
+            components.add(chooseComponent);
+          }
+        }
+
+      });
       ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
       dialog.showDialog();
       result = dialog.getResult();

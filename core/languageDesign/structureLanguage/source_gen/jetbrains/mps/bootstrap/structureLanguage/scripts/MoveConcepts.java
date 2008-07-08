@@ -31,6 +31,7 @@ import jetbrains.mps.project.IModule;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseModelDescriptorComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.util.Condition;
@@ -230,19 +231,25 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public boolean askForInfo(final ActionContext actionContext, final RefactoringContext refactoringContext) {
     {
       boolean result = false;
-      List<IChooseComponent> components = new ArrayList<IChooseComponent>();
-      {
-        IChooseComponent<SModelDescriptor> chooseComponent;
-        chooseComponent = new ChooseModelDescriptorComponent(refactoringContext.getCurrentOperationContext());
-        chooseComponent.setCondition(new MoveConcepts.My_targetModel_Condition(actionContext));
-        chooseComponent.setPropertyName("targetModel");
-        chooseComponent.setCaption("choose target model");
-        chooseComponent.initComponent();
-        components.add(chooseComponent);
-      }
+      final List<IChooseComponent> components = new ArrayList<IChooseComponent>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+
+        public void run() {
+          {
+            IChooseComponent<SModelDescriptor> chooseComponent;
+            chooseComponent = new ChooseModelDescriptorComponent(refactoringContext.getCurrentOperationContext());
+            chooseComponent.setCondition(new MoveConcepts.My_targetModel_Condition(refactoringContext));
+            chooseComponent.setPropertyName("targetModel");
+            chooseComponent.setCaption("choose target model");
+            chooseComponent.initComponent();
+            components.add(chooseComponent);
+          }
+        }
+
+      });
       ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
       dialog.showDialog();
       result = dialog.getResult();
@@ -252,17 +259,17 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
 
   public static class My_targetModel_Condition implements Condition<SModelDescriptor> {
 
-    private ActionContext myActionContext;
+    private RefactoringContext myRefactoringContext;
 
-    public My_targetModel_Condition(ActionContext actionContext) {
-      this.myActionContext = actionContext;
+    public My_targetModel_Condition(RefactoringContext refactoringContext) {
+      this.myRefactoringContext = refactoringContext;
     }
 
     public boolean met(SModelDescriptor argument) {
-      return this.met_internal(argument, this.myActionContext);
+      return this.met_internal(argument, this.myRefactoringContext);
     }
 
-    public boolean met_internal(SModelDescriptor argument, ActionContext actionContext) {
+    public boolean met_internal(SModelDescriptor argument, RefactoringContext refactoringContext) {
       return Language.getModelAspect(argument) == LanguageAspect.STRUCTURE;
     }
 

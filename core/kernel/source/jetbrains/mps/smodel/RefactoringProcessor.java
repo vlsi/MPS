@@ -43,58 +43,62 @@ public class RefactoringProcessor {
     boolean success = refactoring.askForInfo(context, refactoringContext);
     if (!success) return;
 
-    if (refactoring.showsAffectedNodes()) {
-      Thread thread = new Thread() {
-        public void run() {
-          final boolean toReturn[] = new boolean[]{false};
-          ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        if (refactoring.showsAffectedNodes()) {
+          Thread thread = new Thread() {
             public void run() {
-              final boolean[] wasError = new boolean[]{false};
-              ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getComponent(Project.class),"Finding usages...",false) {
-                public void run(@NotNull ProgressIndicator indicator) {
-                  indicator.setIndeterminate(true);
-                  ModelAccess.instance().runReadAction(new Runnable() {
-                    public void run() {
-                      try {
-                        ActionContext newContext = new ActionContext(context);
-                        newContext.put(IOperationContext.class, new ProjectOperationContext(refactoringContext.getSelectedMPSProject()));
-                        refactoringContext.setUsages(refactoring.getAffectedNodes(newContext, refactoringContext));
-                      } catch (Throwable t) {
-                        LOG.error(t);
-                        wasError[0] = true;
-                      }
+              final boolean toReturn[] = new boolean[]{false};
+              ThreadUtils.runInUIThreadAndWait(new Runnable() {
+                public void run() {
+                  final boolean[] wasError = new boolean[]{false};
+                  ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getComponent(Project.class),"Finding usages...",false) {
+                    public void run(@NotNull ProgressIndicator indicator) {
+                      indicator.setIndeterminate(true);
+                      ModelAccess.instance().runReadAction(new Runnable() {
+                        public void run() {
+                          try {
+                            ActionContext newContext = new ActionContext(context);
+                            newContext.put(IOperationContext.class, new ProjectOperationContext(refactoringContext.getSelectedMPSProject()));
+                            refactoringContext.setUsages(refactoring.getAffectedNodes(newContext, refactoringContext));
+                          } catch (Throwable t) {
+                            LOG.error(t);
+                            wasError[0] = true;
+                          }
+                        }
+                      });
                     }
                   });
+                  if (wasError[0]){
+                    int promptResult = JOptionPane.showConfirmDialog(context.getFrame(),
+                      "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
+                    toReturn[0] = promptResult == JOptionPane.NO_OPTION;
+                  }
                 }
               });
-              if (wasError[0]){
-                int promptResult = JOptionPane.showConfirmDialog(context.getFrame(),
-                  "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
-                toReturn[0] = promptResult == JOptionPane.NO_OPTION;
-              }
-            }
-          });
-          if (toReturn[0]) return;
-          SearchResults usages = refactoringContext.getUsages();
-          if (usages == null || (refactoring.refactorImmediatelyIfNoUsages() && usages.getSearchResults().isEmpty())) {
-            doExecuteInThread(context, refactoringContext);
-          } else {
-            ThreadUtils.runInUIThreadNoWait(new Runnable() {
-              public void run() {
-                ModelAccess.instance().runReadAction(new Runnable() {
+              if (toReturn[0]) return;
+              SearchResults usages = refactoringContext.getUsages();
+              if (usages == null || (refactoring.refactorImmediatelyIfNoUsages() && usages.getSearchResults().isEmpty())) {
+                doExecuteInThread(context, refactoringContext);
+              } else {
+                ThreadUtils.runInUIThreadNoWait(new Runnable() {
                   public void run() {
-                    refactoringContext.getCurrentOperationContext().getComponent(NewRefactoringView.class).showRefactoringView(context, new LoggableRefactoringViewAction(refactoringContext), refactoringContext.getUsages());
+                    ModelAccess.instance().runReadAction(new Runnable() {
+                      public void run() {
+                        refactoringContext.getCurrentOperationContext().getComponent(NewRefactoringView.class).showRefactoringView(context, new LoggableRefactoringViewAction(refactoringContext), refactoringContext.getUsages());
+                      }
+                    });
                   }
                 });
               }
-            });
-          }
+            }
+          };
+          thread.start();
+        } else {
+          doExecuteInThread(context, refactoringContext);
         }
-      };
-      thread.start();
-    } else {
-      doExecuteInThread(context, refactoringContext);
-    }
+      }
+    });
   }
 
   public Thread doExecuteInThread(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
