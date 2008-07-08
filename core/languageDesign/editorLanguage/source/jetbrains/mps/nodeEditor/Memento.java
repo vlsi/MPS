@@ -35,9 +35,9 @@ class Memento {
       }
     }
 
-//    if (full) {
-//      collectErrors(myNodeEditor.getRootCell());
-//    }
+    if (full) {
+      collectErrors(myNodeEditor.getRootCell());
+    }
   }
 
   private void collectErrors(EditorCell cell) {

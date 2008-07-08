@@ -331,7 +331,9 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
       EditorCell cell = myEditorComponent.findNodeCell(node);
       myEditorComponent.changeSelection(cell);
-      IntelligentInputUtil.processCell(cell, myEditorComponent.getEditorContext(), pattern);
+      if (cell instanceof EditorCell_Label) {
+        IntelligentInputUtil.processCell((EditorCell_Label) cell, myEditorComponent.getEditorContext(), pattern);
+      }
     }
   }
 

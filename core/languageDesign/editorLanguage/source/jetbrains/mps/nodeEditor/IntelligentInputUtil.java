@@ -13,7 +13,7 @@ import java.util.List;
 public class IntelligentInputUtil {
   private static EditorManager ourServiceEditorManager = new EditorManager();
 
-  public static void processCell(EditorCell cell, final EditorContext editorContext, String pattern) {
+  public static void processCell(EditorCell_Label cell, final EditorContext editorContext, String pattern) {
     if (pattern == null || pattern.equals("")) {
       return;
     }
@@ -69,7 +69,7 @@ public class IntelligentInputUtil {
     }
   }
 
-  private static void processCell(EditorCell cell, final EditorContext editorContext, String smallPattern, final String tail) {
+  private static void processCell(EditorCell_Label cell, final EditorContext editorContext, String smallPattern, final String tail) {
     boolean sourceCellRemains = false;
     INodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
     if (substituteInfo == null) {
@@ -78,8 +78,7 @@ public class IntelligentInputUtil {
 
     EditorCell cellForNewNode;
     final SNode newNode;
-    if (cell instanceof EditorCell_Label &&
-        ((EditorCell_Label) cell).isValidText(smallPattern) && !"".equals(smallPattern)
+    if (cell.isValidText(smallPattern) && !"".equals(smallPattern)
             && substituteInfo.hasExactlyNActions(smallPattern + tail, false, 0)) {
       newNode = cell.getSNode();
       cellForNewNode = cell;
@@ -148,6 +147,7 @@ public class IntelligentInputUtil {
       return;
     }
 
+    cell.changeText(smallPattern);
     rtAction.execute(editorContext);
     EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
 
@@ -169,7 +169,7 @@ public class IntelligentInputUtil {
       if (!canCompleteSmallPatternImmediately(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         editorContext.flushEvents();
 
-        EditorCell foundCell = prepareRTCell(editorContext, newNode, tail);
+        EditorCell_Label foundCell = prepareRTCell(editorContext, newNode, tail);
         if (foundCell != null) {
           editorContext.getNodeEditorComponent().changeSelection(foundCell);
           processCell(foundCell, editorContext, tail);
