@@ -38,6 +38,19 @@ public class MPSVCSManager implements ProjectComponent {
   private final Object myMonitor = new Object();
   private final List<Runnable> myTasks = new LinkedList<Runnable>();
   private SModelRepositoryListener myModelRepositoryListener;
+  private final SModelAdapter myModelInitializationListener = new SModelAdapter() {
+    @Override
+    public void modelSaved(SModelDescriptor sm) {
+      final IFile ifile = sm.getModelFile();
+      if (ifile != null) {
+        VirtualFile f = VFileSystem.getFile(ifile);
+        if (f != null) {
+          addInternal(Collections.singletonList(f));
+        }
+      }
+      sm.removeModelListener(this);
+    }
+  };
 
   public MPSVCSManager(Project project) {
     myProject = project;
@@ -67,13 +80,8 @@ public class MPSVCSManager implements ProjectComponent {
     myModelRepositoryListener = new SModelRepositoryAdapter() {
       @Override
       public void modelCreated(SModelDescriptor modelDescriptor) {
-        final IFile ifile = modelDescriptor.getModelFile();
-        if (ifile != null) {
-          VirtualFile f = VFileSystem.getFile(ifile);
-          if (f != null) {
-            addInternal(Collections.singletonList(f));
-          }
-        }
+        modelDescriptor.addModelListener(myModelInitializationListener);
+
       }
 
       @Override
