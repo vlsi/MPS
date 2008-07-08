@@ -8730,7 +8730,11 @@
         <property name="text" value="]" />
         <link role="styleClass" targetNodeId="1215010871495" resolveInfo="Bracket" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1215164262629">
-          <property name="flag" value="false" />
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleSheetItem" id="1215547580103" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LastPositionAllowedStyleSheetItem" id="1215547575476">
+          <property name="flag" value="true" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215164260127">
           <property name="value" value="0.0" />
