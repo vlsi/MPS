@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.baseLanguage.structure.BlockStatement;
 
 import java.awt.Font;
 import java.awt.FontMetrics;
@@ -25,6 +26,11 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   }
 
   public void doLayout(EditorCell_Collection editorCells) {
+
+    if (editorCells.getCellsCount() == 3 && editorCells.getSNode().getAdapter() instanceof BlockStatement && editorCells.isDrawBrackets()) {
+      System.currentTimeMillis();      
+    }
+
     if (editorCells.isFolded()) {
       Font font = EditorSettings.getInstance().getDefaultEditorFont();
       FontMetrics metrics = editorCells.getEditor().getFontMetrics(font);

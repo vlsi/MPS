@@ -43,6 +43,8 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PADDING_LEFT, 0.0);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
@@ -61,6 +63,15 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell3670_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3670_02");
     BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
