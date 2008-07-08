@@ -661,6 +661,21 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_IndentCell6031_09");
   }
 
+  private static void setupBasic_ConstantCell6031_030(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6031_030");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PADDING_LEFT, 0.0);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_ConstantCell6031_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -775,6 +790,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   private static void setupLabel_superclassRefNodeCell6031_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_ConstantCell6031_030(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   public static boolean renderingCondition6031_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }
@@ -860,6 +878,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.create_ConstantCell6031_019(context, node, "abstract"));
     }
     editorCell.addEditorCell(this.create_ConstantCell6031_0(context, node, "class"));
+    editorCell.addEditorCell(this.create_ConstantCell6031_030(context, node, " "));
     editorCell.addEditorCell(this.create_namePropertyCell6031_0(context, node));
     if (renderingCondition6031_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create__GenericDeclaration_TypeVariables_ComponentComponentCell6031_0(context, node));
@@ -1274,6 +1293,14 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell6031_028(editorCell, node, context);
     setupLabel_ConstantCell6031_028(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell create_ConstantCell6031_030(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_ConstantCell6031_030(editorCell, node, context);
+    setupLabel_ConstantCell6031_030(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

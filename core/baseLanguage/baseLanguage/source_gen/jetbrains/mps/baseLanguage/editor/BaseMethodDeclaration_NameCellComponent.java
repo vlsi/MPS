@@ -9,6 +9,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
@@ -28,13 +30,32 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     super(node);
   }
 
-  private static void setupBasic_namePropertyCell9984_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell9984_0");
-    BaseLanguageStyle_StyleSheet.METHOD_NAME.apply(editorCell);
+  private static void setupBasic_CollectionCell9984_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9984_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_LEFT, 1.0);
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_namePropertyCell9984_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell9984_0");
+    BaseLanguageStyle_StyleSheet.METHOD_NAME.apply(editorCell);
+  }
+
+  private static void setupBasic_ConstantCell9984_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9984_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PADDING_LEFT, 0.0);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
@@ -45,13 +66,35 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
   private static void setupLabel_namePropertyCell9984_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_ConstantCell9984_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
 
   public EditorCell createEditorCell(EditorContext context) {
     return this.createEditorCell(context, this.getSNode());
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_namePropertyCell9984_0(context, node);
+    return this.create_CollectionCell9984_0(context, node);
+  }
+
+  public EditorCell create_CollectionCell9984_0(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_CollectionCell9984_0(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.create_ConstantCell9984_0(context, node, " "));
+    editorCell.addEditorCell(this.create_namePropertyCell9984_0(context, node));
+    return editorCell;
+  }
+
+  public EditorCell create_ConstantCell9984_0(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_ConstantCell9984_0(editorCell, node, context);
+    setupLabel_ConstantCell9984_0(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
   public EditorCell create_namePropertyCell9984_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
