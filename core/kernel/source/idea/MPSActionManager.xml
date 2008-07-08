@@ -32,8 +32,8 @@
     </group>
 
     <group id="FileSystemViewPopupMenu">
-      <reference ref="CutCopyPasteGroup"/>
-      <separator/>
+      <!--<reference ref="CutCopyPasteGroup"/>
+      <separator/>-->
       <reference ref="VcsGroup"/>
     </group>
 
