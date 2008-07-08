@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.util.EqualUtil;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 class Memento {
   private AbstractEditorComponent myNodeEditor;
@@ -10,9 +11,12 @@ class Memento {
   private Stack<CellInfo> mySelectedStack = new Stack<CellInfo>();
   private List<CellInfo> myCollectionsWithEnabledBraces = new ArrayList<CellInfo>();
   private Set<CellInfo> myFolded = new HashSet<CellInfo>();
+
+  private Map<CellInfo, String> myErrorTexts = new HashMap<CellInfo, String>();
+
   private Integer myCaretX;
 
-  Memento(EditorContext context) {
+  Memento(EditorContext context, boolean full) {
     myNodeEditor = context.getNodeEditorComponent();
     EditorCell selectedCell = myNodeEditor.getSelectedCell();
     EditorCell deepestSelectedCell = myNodeEditor.getDeepestSelectedCell();
@@ -30,6 +34,27 @@ class Memento {
         myCollectionsWithEnabledBraces.add(bracesEnabledCell.getCellInfo());
       }
     }
+
+//    if (full) {
+//      collectErrors(myNodeEditor.getRootCell());
+//    }
+  }
+
+  private void collectErrors(EditorCell cell) {
+    if (cell instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) cell;
+      for (EditorCell child : collection) {
+        collectErrors(child);
+      }
+    }
+
+    if (cell instanceof EditorCell_Label) {
+      EditorCell_Label label = (EditorCell_Label) cell;
+      if (label.isErrorState()) {
+        myErrorTexts.put(label.getCellInfo(), label.getText());
+      }
+    }
+
   }
 
   void restore() {
@@ -49,9 +74,21 @@ class Memento {
       if (!(collection instanceof EditorCell_Collection)) continue;
       ((EditorCell_Collection)collection).fold(true);
     }
+    
+    restoreErrors();
+
     EditorCell deepestSelectedCell = myNodeEditor.getDeepestSelectedCell();
     if (deepestSelectedCell != null) {
       deepestSelectedCell.setCaretX(myCaretX);
+    }
+  }
+
+  private void restoreErrors() {
+    for (Entry<CellInfo, String> entry : myErrorTexts.entrySet()) {
+      EditorCell_Label cell = (EditorCell_Label) entry.getKey().findCell(myNodeEditor);
+      if (cell != null) {
+        cell.changeText(entry.getValue());
+      }
     }
   }
 

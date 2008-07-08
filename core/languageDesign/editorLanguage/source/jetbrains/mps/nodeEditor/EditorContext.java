@@ -140,8 +140,12 @@ public class EditorContext {
     myNodeEditorComponent.flushEvents();
   }
 
+  public Object createMemento(boolean full) {
+    return new Memento(this, full);
+  }
+
   public Object createMemento() {
-    return new Memento(this);
+    return createMemento(true);
   }
 
   public boolean isMementoApplicable(Object o) {

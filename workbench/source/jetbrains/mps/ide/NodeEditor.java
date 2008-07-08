@@ -53,7 +53,7 @@ public class NodeEditor implements IEditor {
   }
 
   public boolean removeFromRecentEditorsOnClose() {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return false;
   }
 
   public void addCellSelectionListener(@NotNull ICellSelectionListener listener) {
@@ -112,7 +112,7 @@ public class NodeEditor implements IEditor {
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState result = new MyFileEditorState();
     if (getEditorContext() != null) {
-      result.myMemento = getEditorContext().createMemento();
+      result.myMemento = getEditorContext().createMemento(level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL);
     }
     return result;
   }
