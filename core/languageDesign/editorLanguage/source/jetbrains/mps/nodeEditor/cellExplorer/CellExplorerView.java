@@ -3,6 +3,8 @@ package jetbrains.mps.nodeEditor.cellExplorer;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
@@ -18,6 +20,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.tools.BaseTool;
+import jetbrains.mps.workbench.tools.BaseMPSTool;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -30,7 +34,7 @@ import java.util.*;
 /**
  * @author Kostik
  */
-public class CellExplorerView extends DefaultTool {
+public class CellExplorerView extends BaseMPSTool {
   public static final Logger LOG = Logger.getLogger(CellExplorerView.class);
 
   private JPanel myComponent = new JPanel(new BorderLayout());
@@ -61,55 +65,21 @@ public class CellExplorerView extends DefaultTool {
     }
   };
 
-  public CellExplorerView() {
+  public CellExplorerView(Project project) {
+    super(project, "cell explorer view", -1, null, ToolWindowAnchor.BOTTOM, true);
+
     myTree.setRootVisible(true);
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
     update();
-//    getEditorsPane().addListener(new EditorsPane.IEditorsPaneListener() {
-//      public void editorOpened(@NotNull IEditor e) {
-//        update();
-//      }
-//      public void editorClosed(@NotNull IEditor e) {
-//        update();
-//      }
-//      public void editorSelected(@NotNull IEditor e) {
-//        update();
-//      }
-//
-//      public void editorStateChanged(@NotNull IEditor e) {
-//        update();
-//      }
-//    });
   }
-
-  private ToolsPane getToolsPane() {
-    return null;
-  }
-
-//  private EditorsPane getEditorsPane() {
-//    return null;
-//  }
-
 
   public void update() {
-    if (!getToolsPane().isVisible(this)) {
-      return;
-    }
     removeListeners();
-
-//    IEditor currentEditor = getEditorsPane().getCurrentEditor();
-//
-//    if (!(currentEditor instanceof NodeEditor || currentEditor instanceof ConceptDeclarationEditor)) {
-//      myTree.rebuildNow();
-//      return;
-//    }
-
-//    myCurrentEditor = currentEditor.getCurrentEditorComponent();
-//    if (myCurrentEditor != null) {
-//      myCurrentEditor.addRebuildListener(myRebuildListener);
-//      myCurrentEditor.addSynchronizationListener(mySynchronizationListener);
-//    }
-//    myTree.rebuildNow();
+    if (myCurrentEditor != null) {
+      myCurrentEditor.addRebuildListener(myRebuildListener);
+      myCurrentEditor.addSynchronizationListener(mySynchronizationListener);
+    }
+    myTree.rebuildLater();
   }
 
   private void removeListeners() {
@@ -128,16 +98,22 @@ public class CellExplorerView extends DefaultTool {
   }
 
   public void showCell(EditorCell cell) {
-    if (!getToolsPane().isVisible(this)) {
-      getToolsPane().selectTool(this);
+    makeAvailable();
+    openTool(true);
+
+    AbstractEditorComponent cellEditor = cell.getEditorContext().getNodeEditorComponent();
+    if (myCurrentEditor != cellEditor) {
+      removeListeners();
+      myCurrentEditor = cellEditor;
+      update();
     }
+
     MPSTreeNode current = findCellTreeNode(cell);
     if (current == null) {
       LOG.warning("Can't find cell in tree");
       return;
     }
     myTree.selectNode(current);
-    getToolsPane().selectTool(this);
   }
 
   private MPSTreeNode findCellTreeNode(EditorCell cell) {
@@ -173,24 +149,21 @@ public class CellExplorerView extends DefaultTool {
 
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
-//      IEditor editor = getEditorsPane().getCurrentEditor();
-//      if (editor == null || editor.getCurrentEditorComponent() == null) {
-//        return new TextTreeNode("No editor selected") {
-//          {
-//            setIcon(Icons.CELL_EXPLORER_ICON);
-//          }
-//        };
-//      } else {
-//        TextTreeNode root = new TextTreeNode("CELLS") {
-//          {
-//            setIcon(Icons.CELL_EXPLORER_ICON);
-//          }
-//        };
-//        root.add(new CellTreeNode(editor.getRootCell()));
-//        return root;
-//      }
-
-      return null;
+      if (myCurrentEditor == null) {
+        return new TextTreeNode("No editor selected") {
+          {
+            setIcon(Icons.CELL_EXPLORER_ICON);
+          }
+        };
+      } else {
+        TextTreeNode root = new TextTreeNode("CELLS") {
+          {
+            setIcon(Icons.CELL_EXPLORER_ICON);
+          }
+        };
+        root.add(new CellTreeNode(myCurrentEditor.getRootCell()));
+        return root;
+      }
     }
   }
 
@@ -249,13 +222,10 @@ public class CellExplorerView extends DefaultTool {
     }
 
     private void showCell() {
-//      IEditor currentEditor = getEditorsPane().getCurrentEditor();
-//      if (currentEditor != null) {
-//        AbstractEditorComponent currentComponent = currentEditor.getCurrentEditorComponent();
-//        if (currentComponent != null) {
-//          currentComponent.changeSelection(myCell);
-//        }
-//      }
+      makeAvailable();
+      if (myCurrentEditor != null) {
+        myCurrentEditor.changeSelection(myCell);
+      }
     }
 
     public void doubleClick() {

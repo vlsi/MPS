@@ -395,6 +395,10 @@
       <implementation-class>jetbrains.mps.ide.dependency.DependencyViewer</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.cellExplorer.CellExplorerView</implementation-class>
+    </component>
+
 
     <!--project view tool-->
     <component>
