@@ -331,4 +331,9 @@ public class CellLayout_Flow extends AbstractCellLayout {
     }
     return result;
   }
+
+  public String toString() {
+    return "Flow";
+  }
+
 }

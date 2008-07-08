@@ -249,4 +249,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     // return null;
   }
 
+  public String toString() {
+    return "Vertical";
+  }
 }

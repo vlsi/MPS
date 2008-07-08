@@ -238,7 +238,12 @@ public class CellExplorerView extends BaseMPSTool {
         final SNode node = myCell.getSNode();
         String name = node.getName();
         name = name != null ? name : "<no name>";
-        add(new TextTreeNode("<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(node.getConceptShortName()) + ") [" + node.getId() + "]") {
+        String text = "<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(node.getConceptShortName()) + ") [" + node.getId() + "]";
+        if (myCell instanceof EditorCell_Collection) {
+          CellLayout layout = ((EditorCell_Collection) myCell).getCellLayout();
+          text += "{"+layout.toString()+"}";
+        }
+        add(new TextTreeNode(text) {
           {
             setIcon(IconManager.getIconFor(node));
           }

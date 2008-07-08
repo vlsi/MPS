@@ -106,4 +106,9 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
       return null;
     }
   }
+
+  public String toString() {
+    return "Horizontal";
+  }
+
 }

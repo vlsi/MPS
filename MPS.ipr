@@ -1587,6 +1587,7 @@
   </component>
   <UsedPathMacros>
     <macro name="MPS_BUILD_HOME" />
+    <macro name="MPS_HOME" />
   </UsedPathMacros>
 </project>
 
