@@ -16,8 +16,5 @@ public interface CellLayout {
 
   void paintSelection(Graphics g, EditorCell_Collection editorCells, Color c);
 
-  int getRightInternalInset(EditorCell_Collection editorCell_collection);
-  int getLeftInternalInset(EditorCell_Collection editorCell_collection);
-  
   boolean canBeFolded();
 }
