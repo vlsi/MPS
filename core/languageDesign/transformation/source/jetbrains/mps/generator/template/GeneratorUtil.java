@@ -137,13 +137,11 @@ public class GeneratorUtil {
         generator.getGeneratorSessionContext(),
         new MappingScriptContext(model, generator),
         mappingScript.getModel());
-    } /*catch (GenerationFailueException gfe) {
-      generator.showErrorMessage(codeBlock.getNode(), "error executing script '" + mappingScript.getName() + "'");
-      throw gfe;
-    } *//*catch (IllegalModelChangeError imce) {
-      generator.showErrorMessage(codeBlock.getNode(), "error executing script '" + mappingScript.getName() + "'");
-      throw imce;
-    } */ catch (Throwable t) {
+    } catch (ClassNotFoundException e) {
+      generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no generated code found");
+    } catch (NoSuchMethodException e) {
+      generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no generated code found");
+    } catch (Throwable t) {
       throw new GenerationFailueException("error executing script '" + mappingScript.getName() + "'", codeBlock.getNode(), t);
     } finally {
       Statistics.getStatistic(Statistics.TPL).add(mappingScript.getModel(), methodName, startTime);
