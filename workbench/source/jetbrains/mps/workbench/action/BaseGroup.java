@@ -59,7 +59,7 @@ public class BaseGroup extends DefaultGroup {
   }
 
   //todo: move to generated group
-  protected static BaseGroup getGroup(String id) {
+  public static BaseGroup getGroup(String id) {
     MPSActionGroup group = (MPSActionGroup) ActionManager.getInstance().getAction(id);
     if (group != null) return group;
     return ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).getGroup(id);
