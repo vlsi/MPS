@@ -34,7 +34,7 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     myDescendantsProvider = descendantsProvider;
     myInitialNode = initialNode;
 
-    initComponent();
+    //initComponent();
   }
 
   public void initComponent() {

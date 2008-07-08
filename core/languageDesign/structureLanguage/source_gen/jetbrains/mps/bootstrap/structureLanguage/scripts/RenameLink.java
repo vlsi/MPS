@@ -171,10 +171,10 @@ public class RenameLink extends AbstractLoggableRefactoring {
           {
             IChooseComponent<String> chooseComponent;
             chooseComponent = new ChooseStringComponent();
-            chooseComponent.setInitialValue(RenameLink.this.newName_initialValue(actionContext, refactoringContext));
             chooseComponent.setPropertyName("newName");
             chooseComponent.setCaption("enter new name");
             chooseComponent.initComponent();
+            chooseComponent.setInitialValue(RenameLink.this.newName_initialValue(actionContext, refactoringContext));
             components.add(chooseComponent);
           }
         }

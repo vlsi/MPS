@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
 
 public class ChooseStringComponent extends JPanel implements IChooseComponent<String>  {
   private JTextField myTextField;
@@ -16,11 +18,25 @@ public class ChooseStringComponent extends JPanel implements IChooseComponent<St
   private Condition<String> myCondition = Condition.TRUE_CONDITION;
 
   public ChooseStringComponent() {
-    initComponent();
+   // initComponent();
   }
 
   public void initComponent() {
-    myTextField = new JTextField();
+    myTextField = new JTextField() {
+      public void addNotify() {
+        super.addNotify();
+        System.err.println("ancestor changed");
+      }
+
+      protected Object clone() throws CloneNotSupportedException {
+        return super.clone();    //To change body of overridden methods use File | Settings | File Templates.
+      }
+    };
+   /* myTextField.addPropertyChangeListener("ancestor", new PropertyChangeListener() {
+      public void propertyChange(PropertyChangeEvent evt) {
+        System.err.println("ancestor changed");
+      }
+    });*/
     setLayout(new GridLayout(1, 2));
     add(new JLabel(myCaption), BorderLayout.NORTH);
     add(myTextField);

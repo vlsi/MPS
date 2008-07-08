@@ -173,10 +173,10 @@ public class RenameConcept extends AbstractLoggableRefactoring {
           {
             IChooseComponent<String> chooseComponent;
             chooseComponent = new ChooseStringComponent();
-            chooseComponent.setInitialValue(RenameConcept.this.newName_initialValue(actionContext, refactoringContext));
             chooseComponent.setPropertyName("newName");
             chooseComponent.setCaption("new concept name");
             chooseComponent.initComponent();
+            chooseComponent.setInitialValue(RenameConcept.this.newName_initialValue(actionContext, refactoringContext));
             components.add(chooseComponent);
           }
         }
