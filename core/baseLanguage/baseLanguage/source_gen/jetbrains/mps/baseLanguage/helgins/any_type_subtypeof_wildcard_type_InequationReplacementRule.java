@@ -16,6 +16,10 @@ public class any_type_subtypeof_wildcard_type_InequationReplacementRule extends 
     // do I have to say more? 
   }
 
+  public void checkInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
+    // do I have to say more? 
+  }
+
   public boolean isWeak() {
     return true;
   }

@@ -1360,6 +1360,10 @@ public class QueriesGenerated {
     } while(false);
   }
 
+  public static boolean ifMacro_Condition_1215520023194(final IOperationContext operationContext, final IfMacroContext _context) {
+    return true;
+  }
+
   public static SNode sourceNodeQuery_1174654997817(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -1664,6 +1668,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1215078905470(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1215520014842(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
   public static List sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
