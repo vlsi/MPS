@@ -58,6 +58,8 @@ class Memento {
   }
 
   void restore() {
+    myNodeEditor.flushEvents();
+
     if (mySelectedCellInfo != null) {
       EditorCell cellToSelect = mySelectedCellInfo.findClosestCell(myNodeEditor);
       myNodeEditor.changeSelection(cellToSelect);
