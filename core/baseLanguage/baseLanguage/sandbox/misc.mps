@@ -229,6 +229,12 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215510528830">
+      <property name="name" value="pysh" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215510528831" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215510528832" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215510528833" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1213199242548">
     <property name="name" value="Lehitraot" />
@@ -239,12 +245,6 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213790647251" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213199242549" />
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215092627959">
-      <property name="name" value="pysh" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215092627960" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215092627961" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215092627962" />
-    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1214431324743">
     <property name="name" value="C1" />

@@ -3,11 +3,14 @@ package jetbrains.mps.refactoring.framework;
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
 import java.util.*;
 import java.util.List;
 import java.awt.*;
+
+import com.intellij.openapi.util.Computable;
 
 public class ChooseRefactoringInputDataDialog extends BaseDialog {
 
@@ -109,7 +112,14 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
       for (IChooseComponent component : myComponents) {
         myRefactoringContext.setParameter(component.getPropertyName(), component.submit());
       }
-      if (myRefactoring.isApplicable(myActionContext, myRefactoringContext)) {
+
+      boolean applicable = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return myRefactoring.isApplicable(myActionContext, myRefactoringContext);
+        }
+      });
+
+      if (applicable) {
         myResult = true;
         dispose();
       } else {
