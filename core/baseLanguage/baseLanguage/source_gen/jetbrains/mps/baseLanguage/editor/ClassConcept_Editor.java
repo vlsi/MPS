@@ -69,6 +69,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell6031_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6031_0");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_namePropertyCell6031_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -76,6 +85,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.PADDING_RIGHT, 1.0);
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }
@@ -227,6 +237,8 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
+          this.set(StyleAttributes.PADDING_RIGHT, 1.0);
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {

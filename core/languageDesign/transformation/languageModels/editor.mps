@@ -6016,6 +6016,9 @@
             </node>
           </node>
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215514926180">
+          <property name="value" value="1.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedNodeCell" id="1184865331991">
         <link role="styleClass" targetNodeId="1215514347972" resolveInfo="nodeUnderMacro" />
@@ -6241,7 +6244,7 @@
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1215513928924">
       <property name="name" value="macroStart" />
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215513933221">
-        <property name="value" value="1.0" />
+        <property name="value" value="0.0" />
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215513935567">
         <property name="value" value="0.0" />
@@ -6266,6 +6269,9 @@
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1215514369126">
         <property name="flag" value="true" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.BracketColorStyleSheetItem" id="1215516491316">
+        <property name="color" value="pink" />
       </node>
     </node>
   </node>
