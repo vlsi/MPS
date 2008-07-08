@@ -2,11 +2,10 @@ package jetbrains.mps.workbench.editors;
 
 import com.intellij.openapi.util.UserDataHolderBase;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.fileEditor.FileEditorState;
-import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import com.intellij.openapi.fileEditor.FileEditorLocation;
+import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.command.undo.DocumentReference;
+import com.intellij.openapi.command.undo.DocumentReferenceByVirtualFile;
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import org.jetbrains.annotations.NotNull;
@@ -25,7 +24,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 
-public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor {
+public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentReferenceEditor {
   private MPSNodeVirtualFile myFile;
   private IEditor myNodeEditor;
 
@@ -39,6 +38,10 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
           .createEditorFor(new ModuleContext(sm.getModule(), mpsProject), file.getNode());
       }
     });
+  }
+
+  public DocumentReference[] getDocumentReferences() {
+    return new DocumentReference[] { new DocumentReferenceByVirtualFile(myFile) };
   }
 
   public MPSNodeVirtualFile getFile() {

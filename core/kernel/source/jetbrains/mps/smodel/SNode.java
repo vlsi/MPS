@@ -1305,7 +1305,7 @@ public final class SNode {
 
   public String getPresentation() {
     try {
-      return BaseConcept_Behavior.call_getPresentation_1213877396640(this);
+      return "" + BaseConcept_Behavior.call_getPresentation_1213877396640(this);
     } catch (Throwable t) {
       LOG.error(t);
       return "[can't calculate presentation : " + t.getMessage() + "]";
