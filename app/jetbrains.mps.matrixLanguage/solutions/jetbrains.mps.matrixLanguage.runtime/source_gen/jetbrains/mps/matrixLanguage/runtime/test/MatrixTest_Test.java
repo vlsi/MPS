@@ -25,7 +25,6 @@ public class MatrixTest_Test extends TestCase {
     Matrix c = m.clone();
     Assert.assertEquals(10.0, c.getValueAt(0, 0));
   }
-  
 
   @Test()
   public void test_multiplicationByDouble() throws Exception {

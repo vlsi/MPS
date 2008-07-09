@@ -191,5 +191,8 @@
       <link role="target" targetNodeId="1172073500303" resolveInfo="Message" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1215620452633">
+    <property name="name" value="ITestable" />
+  </node>
 </model>
 

@@ -24,6 +24,7 @@
     <dependency reexport="false">jetbrains.mps.baseLanguage.unitTest.runtime</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.pluginLanguage</dependency>
     <dependency reexport="false">MPS.Classpath</dependency>
+    <dependency reexport="false">JDK</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.strings</usedLanguages>
