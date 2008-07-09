@@ -20,6 +20,8 @@ import java.rmi.RemoteException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
+import com.intellij.openapi.vcs.changes.ChangeListManager;
+import com.intellij.openapi.vcs.changes.IgnoredFileBean;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vfs.*;
@@ -320,6 +322,23 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public void projectOpened() {
+    addDotSvnToIgnore();
+  }
+
+  private void addDotSvnToIgnore() {
+    ChangeListManager m = ChangeListManager.getInstance(myProject);
+    IgnoredFileBean[] filesToIgnore = m.getFilesToIgnore();
+    for (IgnoredFileBean bean : filesToIgnore) {
+      if ((bean != null) && (bean.getPath() != null)) {
+        if (bean.getPath().equalsIgnoreCase(".svn")) {
+          return;
+        }
+      }
+    }
+
+    IgnoredFileBean svnIgnoreBean = new IgnoredFileBean();
+    svnIgnoreBean.setPath(".svn");
+    m.addFilesToIgnore(svnIgnoreBean);
   }
 
   public void projectClosed() {

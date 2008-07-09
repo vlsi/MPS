@@ -6,10 +6,11 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
-import com.intellij.openapi.vcs.FileStatus;
+import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.ui.Messages;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -57,6 +58,18 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     return false;
   }
 
+  @Nullable
+  public Project getProjectForFile(VirtualFile f) {
+    Project[] projects = ApplicationManager.getApplication().getComponent(ProjectManager.class).getOpenProjects();
+    for (Project project : projects) {
+      AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(f);
+      if (vcs != null) {
+        return project;
+      }
+    }
+    return null;
+  }
+
   public void assertModelFileNotInConflict(final SModelDescriptor modelDescriptor) {
     IFile ifile = modelDescriptor.getModelFile();
     if (ApplicationLevelVcsManager.instance().isInConflict(ifile)) {
@@ -84,9 +97,9 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
         });
       } else {
         ConflictModelException conflictModelException = new ConflictModelException(modelDescriptor);
-//        Messages.showErrorDialog(conflictModelException.getMessage(), "Model file in conflict");
         throw conflictModelException;
-//      }
+      }
     }
   }
+
 }

@@ -123,8 +123,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
       return;
     }
 
-    doInit();
-    if (getTree() != null) {
+    MPSTree tree = ModelAccess.instance().runReadAction(new Computable<MPSTree>() {
+      public MPSTree compute() {
+        doInit();
+        return getTree();
+      }
+    });
+
+    if (tree != null) {
       ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);
     }
   }
@@ -250,7 +256,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   public final void setIcon(Icon newIcon, boolean expanded) {
     if (expanded) {
       myExpandedIcon = newIcon;
-    } else {                                            
+    } else {
       myCollapsedIcon = newIcon;
     }
   }

@@ -9,27 +9,23 @@ import jetbrains.mps.ide.projectPane.fileSystem.FileTreeNode;
 import java.util.*;
 
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
+import com.intellij.openapi.fileTypes.FileTypeManager;
 
 public class FolderTreeNode extends AbstractFileTreeNode {
-  private static final Set<String> myExcluded = new HashSet<String>();
-
-  static {
-    myExcluded.add(".svn");
-  }
 
   public FolderTreeNode(IOperationContext operationContext, VcsFileStatusProvider provider, IFile folder) {
     super(operationContext, provider, folder);
 
     for (IFile f : myFile.list()) {
       if (f.exists()) {
-        if (!myExcluded.contains(f.getName()) && f.isDirectory()) {
+        if (/*!FileTypeManager.getInstance().isFileIgnored(f.getName()) && */f.isDirectory()) {
           this.add(createNode(operationContext, provider, f));
         }
       }
     }
     for (IFile f : myFile.list()) {
       if (f.exists()) {
-        if (!myExcluded.contains(f.getName()) && !f.isDirectory()) {
+        if (/*!FileTypeManager.getInstance().isFileIgnored(f.getName()) && */!f.isDirectory()) {
           this.add(createNode(operationContext, provider, f));
         }
       }
