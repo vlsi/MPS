@@ -4,6 +4,7 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.constraints" version="16" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="22" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
@@ -37,7 +38,7 @@
   <import index="4" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.helgins.helgins" version="-1" />
-  <import index="7" modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="-1" />
+  <import index="7" modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="22" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="9" modelUID="jetbrains.mps.bootstrap.structureLanguage.behavior" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactories" id="1174664633061">
@@ -322,18 +323,18 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActions" id="1175609457861">
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1175609457861">
     <property name="name" value="_Helgins_RT" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" id="1175609466956">
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1175609466956">
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1068431790191" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1199876186454">
         <link role="concept" targetNodeId="1.1174660718586" resolveInfo="AbstractEquationStatement" />
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart" id="1199876188033">
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSideTransformMenuPart" id="1199876188033">
           <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1199876190492">
             <link role="conceptDeclaraton" targetNodeId="1.1174660718586" resolveInfo="AbstractEquationStatement" />
           </node>
-          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedRightTransform_Query" id="1199876188035">
+          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSideTransform_Query" id="1199876188035">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199876188036">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199876270870">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199876270871">
@@ -404,7 +405,7 @@
               </node>
             </node>
           </node>
-          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedRightTransform_Handler" id="1199876188037">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSideTransform_Handler" id="1199876188037">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199876188038">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199876619383">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199876619384">

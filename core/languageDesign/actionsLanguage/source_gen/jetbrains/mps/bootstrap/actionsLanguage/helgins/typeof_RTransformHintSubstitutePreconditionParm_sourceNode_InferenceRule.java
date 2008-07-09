@@ -15,7 +15,7 @@ public class typeof_RTransformHintSubstitutePreconditionParm_sourceNode_Inferenc
   }
 
   public void applyRule(final SNode node) {
-    SNode hostBuilder = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder", false, false);
+    SNode hostBuilder = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder", false, false);
     SNode applicableConcept = SLinkOperations.getTarget(hostBuilder, "applicableConcept", false);
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_3().createNode(applicableConcept), node, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046610346");
   }

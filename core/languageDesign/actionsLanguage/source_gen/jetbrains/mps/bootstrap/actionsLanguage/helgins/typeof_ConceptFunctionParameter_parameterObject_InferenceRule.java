@@ -19,8 +19,8 @@ public class typeof_ConceptFunctionParameter_parameterObject_InferenceRule imple
       TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSubstituteMenuPart", false, false), "type", true), parameter, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046146642");
       return;
     }
-    if (SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart", false, false), "type", true) != null) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart", false, false), "type", true), parameter, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046146661");
+    if (SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSideTransformMenuPart", false, false), "type", true) != null) {
+      TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSideTransformMenuPart", false, false), "type", true), parameter, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046146661");
       return;
     }
   }

@@ -32,7 +32,7 @@ public class QueriesGenerated {
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_MenuPart_1177496214780(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder", false, false) != null;
+    return SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder", false, false) != null;
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_MenuBuilderPart_1180112146090(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -40,7 +40,7 @@ public class QueriesGenerated {
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_MenuBuilderPart_1180112503623(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder", true, false) != null;
+    return SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder", true, false) != null;
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MenuPart_1177495821852(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -86,7 +86,7 @@ public class QueriesGenerated {
       result.addAll(defaultActions);
     }
     {
-      ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveRTByConditionPart", operationContext.getScope()));
+      ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveSTByConditionPart", operationContext.getScope()));
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
@@ -117,16 +117,16 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IRightTransform_String_1196932866446(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ISideTransform_String_1196932866446(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString", operationContext.getScope());
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransform_SimpleString", operationContext.getScope());
       SNode childConcept = (SNode)_context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString", null);
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransform_SimpleString", null);
             SPropertyOperations.set(result, "text", pattern);
             return result;
           }
@@ -143,7 +143,7 @@ public class QueriesGenerated {
 
   public static void removeActionsByCondition_1177495897822(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
     Iterator<INodeSubstituteAction> actions = _context.getActions();
-    while(actions.hasNext()) {
+    while (actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
       final SNode concept = current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.MenuPart");
@@ -162,14 +162,14 @@ public class QueriesGenerated {
 
   public static void removeActionsByCondition_1177496231840(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
     Iterator<INodeSubstituteAction> actions = _context.getActions();
-    while(actions.hasNext()) {
+    while (actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
       final SNode concept = current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.MenuPart");
       Condition cond = new Condition() {
 
         public boolean met(Object object) {
-          return !(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformMenuPart"));
+          return !(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformMenuPart"));
         }
 
       };

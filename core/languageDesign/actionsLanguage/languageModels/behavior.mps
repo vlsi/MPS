@@ -28,8 +28,9 @@
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="22" />
   <maxImportIndex value="3" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="-1" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="22" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.actionsLanguage.behavior" version="-1" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877224817">

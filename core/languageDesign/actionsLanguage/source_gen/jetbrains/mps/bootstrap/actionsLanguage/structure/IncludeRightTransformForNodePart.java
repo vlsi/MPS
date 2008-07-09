@@ -24,11 +24,11 @@ public class IncludeRightTransformForNodePart extends MenuBuilderPart {
   }
 
 
-  public QueryFunction_RightTransform_NodeQuery getNodeBlock() {
-    return (QueryFunction_RightTransform_NodeQuery)this.getChild(IncludeRightTransformForNodePart.NODE_BLOCK);
+  public QueryFunction_SideTransform_NodeQuery getNodeBlock() {
+    return (QueryFunction_SideTransform_NodeQuery)this.getChild(IncludeRightTransformForNodePart.NODE_BLOCK);
   }
 
-  public void setNodeBlock(QueryFunction_RightTransform_NodeQuery node) {
+  public void setNodeBlock(QueryFunction_SideTransform_NodeQuery node) {
     super.setChild(IncludeRightTransformForNodePart.NODE_BLOCK, node);
   }
 

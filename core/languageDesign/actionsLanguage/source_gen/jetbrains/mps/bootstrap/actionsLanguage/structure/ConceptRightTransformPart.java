@@ -34,11 +34,11 @@ public class ConceptRightTransformPart extends MenuBuilderPart {
     super.setReferent(ConceptRightTransformPart.CONCEPT, node);
   }
 
-  public QueryFunction_RightTransform_ConceptHandler getHandler() {
-    return (QueryFunction_RightTransform_ConceptHandler)this.getChild(ConceptRightTransformPart.HANDLER);
+  public QueryFunction_SideTransform_ConceptHandler getHandler() {
+    return (QueryFunction_SideTransform_ConceptHandler)this.getChild(ConceptRightTransformPart.HANDLER);
   }
 
-  public void setHandler(QueryFunction_RightTransform_ConceptHandler node) {
+  public void setHandler(QueryFunction_SideTransform_ConceptHandler node) {
     super.setChild(ConceptRightTransformPart.HANDLER, node);
   }
 

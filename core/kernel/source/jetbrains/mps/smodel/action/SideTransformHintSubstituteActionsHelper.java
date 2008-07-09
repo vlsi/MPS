@@ -45,18 +45,18 @@ import java.util.*;
 
   private List<INodeSubstituteAction> createActions_internal() {
     List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
-    List<RTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders();
+    List<SideTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders();
 
-    List<RemoveRTByConditionPart> removesByCondition = new ArrayList<RemoveRTByConditionPart>();
+    List<RemoveSTByConditionPart> removesByCondition = new ArrayList<RemoveSTByConditionPart>();
 
     Set<SNode> conceptsToRemove = new HashSet<SNode>();
     // for each builder create actions and apply all filters
-    for (RTransformHintSubstituteActionsBuilder builder : actionsBuilders) {
+    for (SideTransformHintSubstituteActionsBuilder builder : actionsBuilders) {
       for (RemovePart rp : builder.getDescendants(RemovePart.class)) {
         conceptsToRemove.add(rp.getConceptToRemove().getNode());
       }
 
-      for (RemoveRTByConditionPart rp : builder.getDescendants(RemoveRTByConditionPart.class)) {
+      for (RemoveSTByConditionPart rp : builder.getDescendants(RemoveSTByConditionPart.class)) {
         removesByCondition.add(rp);
       }
 
@@ -65,7 +65,7 @@ import java.util.*;
     }
 
     //remove with conditions
-    for (RemoveRTByConditionPart rbc : removesByCondition) {
+    for (RemoveSTByConditionPart rbc : removesByCondition) {
       invokeRemoveByCondition(rbc, resultActions.iterator());
     }
 
@@ -87,11 +87,11 @@ import java.util.*;
     return resultActions;
   }
 
-  private List<RTransformHintSubstituteActionsBuilder> getActionBuilders() {
-    List<RTransformHintSubstituteActionsBuilder> actionsBuilders = new LinkedList<RTransformHintSubstituteActionsBuilder>();
+  private List<SideTransformHintSubstituteActionsBuilder> getActionBuilders() {
+    List<SideTransformHintSubstituteActionsBuilder> actionsBuilders = new LinkedList<SideTransformHintSubstituteActionsBuilder>();
     IScope scope = myContext.getScope();
     final AbstractConceptDeclaration sourceConcept = mySourceNode.getConceptDeclarationAdapter();
-    final RTransformTag tag = RTransformTag.parseValue(myTransformTag);
+    final SideTransformTag tag = SideTransformTag.parseValue(myTransformTag);
 
     List<Language> languages = mySourceNode.getModel().getLanguages(scope);
     for (Language language : languages) {
@@ -99,8 +99,8 @@ import java.util.*;
       if (actionsModel != null && actionsModel.getSModel() != null) {
         List<SNode> list = actionsModel.getSModel().allNodes(new Condition<SNode>() {
           public boolean met(SNode node) {
-            if (BaseAdapter.fromNode(node) instanceof RTransformHintSubstituteActionsBuilder) {
-              RTransformHintSubstituteActionsBuilder actionsBuilder = (RTransformHintSubstituteActionsBuilder) BaseAdapter.fromNode(node);
+            if (BaseAdapter.fromNode(node) instanceof SideTransformHintSubstituteActionsBuilder) {
+              SideTransformHintSubstituteActionsBuilder actionsBuilder = (SideTransformHintSubstituteActionsBuilder) BaseAdapter.fromNode(node);
               // same tag?
               if (actionsBuilder.getTransformTag() != tag) {
                 return false;
@@ -118,7 +118,7 @@ import java.util.*;
     return actionsBuilders;
   }
 
-  private void invokeRemoveByCondition(RemoveRTByConditionPart removeByCondition, Iterator<INodeSubstituteAction> actions) {
+  private void invokeRemoveByCondition(RemoveSTByConditionPart removeByCondition, Iterator<INodeSubstituteAction> actions) {
     String methodName = ActionQueryMethodName.sideTransformHintSubstituteActionsBuilder_RemoveByCondition(removeByCondition);
     try {
       QueryMethodGenerated.invoke(methodName, myContext, new RemoveSideTransformActionByConditionContext(actions, mySourceNode), removeByCondition.getModel());
@@ -127,9 +127,9 @@ import java.util.*;
     }
   }
 
-  private boolean satisfiesPrecondition(RTransformHintSubstituteActionsBuilder actionsBuilder) {
+  private boolean satisfiesPrecondition(SideTransformHintSubstituteActionsBuilder actionsBuilder) {
     // try generatred query method
-    RTransformHintSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
+    SideTransformHintSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
     // precondition is optional
     if (precondition != null) {
       String methodName = ActionQueryMethodName.sideTransformHintSubstituteActionsBuilder_Precondition(actionsBuilder);
@@ -145,7 +145,7 @@ import java.util.*;
     return true;
   }
 
-  private List<INodeSubstituteAction> invokeActionFactory(RTransformHintSubstituteActionsBuilder substituteActionsBuilder) {
+  private List<INodeSubstituteAction> invokeActionFactory(SideTransformHintSubstituteActionsBuilder substituteActionsBuilder) {
     String methodName = ActionQueryMethodName.nodeFactory_SideTransformActionBuilder(substituteActionsBuilder);
     SModel model = substituteActionsBuilder.getModel();
     try {

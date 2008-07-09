@@ -1,7 +1,238 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.actionsLanguage.structure">
   <persistence version="1" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="RTransformHintSubstituteActions" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActions" featureKind="CONCEPT" />
+          <value featureName="SideTransformHintSubstituteActions" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="RightTransformVariableReference" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformVariableReference" featureKind="CONCEPT" />
+          <value featureName="SideTransformVariableReference" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformVariableReference" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="RightTransformVariableDeclaration" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformVariableDeclaration" featureKind="CONCEPT" />
+          <value featureName="SideTransformVariableDeclaration" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformVariableDeclaration" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="3">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="RTransformHintSubstitutePreconditionFunction" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstitutePreconditionFunction" featureKind="CONCEPT" />
+          <value featureName="SideTransformHintSubstitutePreconditionFunction" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstitutePreconditionFunction" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="4">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="RTransformHintSubstituteActionsBuilder" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" featureKind="CONCEPT" />
+          <value featureName="SideTransformHintSubstituteActionsBuilder" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="5">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="QueryFunction_RT_RemoveBy_Condition" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RT_RemoveBy_Condition" featureKind="CONCEPT" />
+          <value featureName="QueryFunction_ST_RemoveBy_Condition" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ST_RemoveBy_Condition" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="6">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="IRightTransform_String" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.IRightTransform_String" featureKind="CONCEPT" />
+          <value featureName="ISideTransform_String" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.ISideTransform_String" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="7">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="QueryFunction_ParameterizedRightTransform_Handler" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedRightTransform_Handler" featureKind="CONCEPT" />
+          <value featureName="QueryFunction_ParameterizedSideTransform_Handler" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSideTransform_Handler" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="8">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="QueryFunction_ParameterizedRightTransform_Query" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedRightTransform_Query" featureKind="CONCEPT" />
+          <value featureName="QueryFunction_ParameterizedSideTransform_Query" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSideTransform_Query" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="9">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="QueryFunction_RTVariableInitializer" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RTVariableInitializer" featureKind="CONCEPT" />
+          <value featureName="QueryFunction_STVariableInitializer" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_STVariableInitializer" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="10">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="QueryFunction_RT_CommonInitializer" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RT_CommonInitializer" featureKind="CONCEPT" />
+          <value featureName="QueryFunction_ST_CommonInitializer" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ST_CommonInitializer" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="11">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="QueryFunction_RightTransform_ConceptHandler" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_ConceptHandler" featureKind="CONCEPT" />
+          <value featureName="QueryFunction_SideTransform_ConceptHandler" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_ConceptHandler" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="12">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="QueryFunction_RightTransform_Handler" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_Handler" featureKind="CONCEPT" />
+          <value featureName="QueryFunction_SideTransform_Handler" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_Handler" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="13">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="QueryFunction_RightTransform_Icon" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_Icon" featureKind="CONCEPT" />
+          <value featureName="QueryFunction_SideTransform_Icon" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_Icon" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="14">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="QueryFunction_RightTransform_NodeQuery" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_NodeQuery" featureKind="CONCEPT" />
+          <value featureName="QueryFunction_SideTransform_NodeQuery" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_NodeQuery" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="15">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="QueryFunction_RightTransform_String" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" featureKind="CONCEPT" />
+          <value featureName="QueryFunction_SideTransform_String" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_String" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="16">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="RightTransform_SimpleString" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" featureKind="CONCEPT" />
+          <value featureName="SideTransform_SimpleString" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransform_SimpleString" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="17">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="SimpleRightTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleRightTransformMenuPart" featureKind="CONCEPT" />
+          <value featureName="SimpleSideTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleSideTransformMenuPart" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="18">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="RightTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformMenuPart" featureKind="CONCEPT" />
+          <value featureName="SideTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformMenuPart" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="19">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ParameterizedRightTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart" featureKind="CONCEPT" />
+          <value featureName="ParameterizedSideTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSideTransformMenuPart" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="20">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="IncludeRightTransformForNodeMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodeMenuPart" featureKind="CONCEPT" />
+          <value featureName="IncludeSideTransformForNodeMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeSideTransformForNodeMenuPart" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="21">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ConceptRightTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformMenuPart" featureKind="CONCEPT" />
+          <value featureName="ConceptSideTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSideTransformMenuPart" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="22">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="RemoveRTByConditionPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveRTByConditionPart" featureKind="CONCEPT" />
+          <value featureName="RemoveSTByConditionPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveSTByConditionPart" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   </language>
@@ -26,6 +257,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.constraints" version="16" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="22" />
   <maxImportIndex value="9" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -117,7 +349,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1138079221458">
-    <property name="name" value="RTransformHintSubstituteActionsBuilder" />
+    <property name="name" value="SideTransformHintSubstituteActionsBuilder" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1154622781911">
       <property name="value" value="'preconditionAspectId' property is replaced with 'precondition block'" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1154621836409" />
@@ -183,7 +415,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1138079416598">
     <property name="rootable" value="true" />
     <property name="iconPath" value="${language_descriptor}\icons\rightTransform.png" />
-    <property name="name" value="RTransformHintSubstituteActions" />
+    <property name="name" value="SideTransformHintSubstituteActions" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1173470403719">
       <link role="intfc" targetNodeId="1.1169194658468" />
@@ -201,7 +433,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1140829206022">
-    <property name="name" value="RTransformTag" />
+    <property name="name" value="SideTransformTag" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1140829274114" resolveInfo="default_" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1140829274114">
@@ -295,7 +527,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1154622616118">
-    <property name="name" value="RTransformHintSubstitutePreconditionFunction" />
+    <property name="name" value="SideTransformHintSubstitutePreconditionFunction" />
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1154622616119">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
@@ -1015,7 +1247,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177496137779">
     <property name="package" value="menuParts.RightTransform" />
-    <property name="name" value="RightTransformMenuPart" />
+    <property name="name" value="SideTransformMenuPart" />
     <link role="extends" targetNodeId="1177495774157" resolveInfo="MenuPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1177498002696">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
@@ -1035,7 +1267,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177498013932">
     <property name="package" value="menuParts.RightTransform" />
-    <property name="name" value="SimpleRightTransformMenuPart" />
+    <property name="name" value="SimpleSideTransformMenuPart" />
     <link role="extends" targetNodeId="1177496137779" resolveInfo="RightTransformMenuPart" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177498166690">
       <property name="metaClass" value="aggregation" />
@@ -1066,7 +1298,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177498071304">
     <property name="package" value="queryFunctions" />
-    <property name="name" value="QueryFunction_RightTransform_String" />
+    <property name="name" value="QueryFunction_SideTransform_String" />
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1177498071308">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
@@ -1108,7 +1340,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177498227294">
     <property name="package" value="queryFunctions" />
-    <property name="name" value="QueryFunction_RightTransform_Handler" />
+    <property name="name" value="QueryFunction_SideTransform_Handler" />
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1177498227295">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
@@ -1137,7 +1369,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177508764419">
     <property name="package" value="menuParts.RightTransform" />
-    <property name="name" value="ParameterizedRightTransformMenuPart" />
+    <property name="name" value="ParameterizedSideTransformMenuPart" />
     <link role="extends" targetNodeId="1177496137779" resolveInfo="RightTransformMenuPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177508983755">
       <property name="value" value="parameterized item" />
@@ -1179,7 +1411,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177508842676">
     <property name="package" value="queryFunctions" />
-    <property name="name" value="QueryFunction_ParameterizedRightTransform_Query" />
+    <property name="name" value="QueryFunction_ParameterizedSideTransform_Query" />
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1177508842677">
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
@@ -1203,7 +1435,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177509289232">
     <property name="package" value="queryFunctions" />
-    <property name="name" value="QueryFunction_ParameterizedRightTransform_Handler" />
+    <property name="name" value="QueryFunction_ParameterizedSideTransform_Handler" />
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1177509289233">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
@@ -1236,7 +1468,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177526070940">
     <property name="package" value="menuParts.RightTransform" />
-    <property name="name" value="ConceptRightTransformMenuPart" />
+    <property name="name" value="ConceptSideTransformMenuPart" />
     <link role="extends" targetNodeId="1177496137779" resolveInfo="RightTransformMenuPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177526417535">
       <property name="value" value="concept" />
@@ -1295,7 +1527,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177526592562">
     <property name="package" value="queryFunctions" />
-    <property name="name" value="QueryFunction_RightTransform_ConceptHandler" />
+    <property name="name" value="QueryFunction_SideTransform_ConceptHandler" />
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1177526626764">
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
@@ -1381,7 +1613,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1178536947382">
     <property name="package" value="menuParts.RightTransform" />
-    <property name="name" value="IncludeRightTransformForNodeMenuPart" />
+    <property name="name" value="IncludeSideTransformForNodeMenuPart" />
     <link role="extends" targetNodeId="1177496137779" resolveInfo="RightTransformMenuPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1178537311353">
       <property name="value" value="include right transform for" />
@@ -1403,7 +1635,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1178537049112">
     <property name="package" value="queryFunctions" />
-    <property name="name" value="QueryFunction_RightTransform_NodeQuery" />
+    <property name="name" value="QueryFunction_SideTransform_NodeQuery" />
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1178537125465">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
@@ -1573,11 +1805,11 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196433731217">
     <property name="package" value="queryFunctions" />
-    <property name="name" value="IRightTransform_String" />
+    <property name="name" value="ISideTransform_String" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196433923911">
     <property name="package" value="sugar" />
-    <property name="name" value="RightTransform_SimpleString" />
+    <property name="name" value="SideTransform_SimpleString" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196434014050">
       <property name="value" value="simple string" />
@@ -1612,7 +1844,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197454418909">
     <property name="package" value="queryFunctions" />
-    <property name="name" value="QueryFunction_RT_RemoveBy_Condition" />
+    <property name="name" value="QueryFunction_ST_RemoveBy_Condition" />
     <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1197454519422">
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -1636,7 +1868,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197454626277">
     <property name="package" value="menuBuilderParts" />
-    <property name="name" value="RemoveRTByConditionPart" />
+    <property name="name" value="RemoveSTByConditionPart" />
     <link role="extends" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197454658375">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
@@ -1808,7 +2040,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203073706921">
     <property name="package" value="queryFunctions" />
-    <property name="name" value="QueryFunction_RightTransform_Icon" />
+    <property name="name" value="QueryFunction_SideTransform_Icon" />
     <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1203073706926">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" resolveInfo="conceptFunctionReturnType" />
@@ -1849,7 +2081,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203347547493">
-    <property name="name" value="RightTransformVariableDeclaration" />
+    <property name="name" value="SideTransformVariableDeclaration" />
     <link role="extends" targetNodeId="3.1068431474542" resolveInfo="VariableDeclaration" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203347547494">
       <property name="metaClass" value="aggregation" />
@@ -1863,7 +2095,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203347609566">
     <property name="package" value="queryFunctions" />
-    <property name="name" value="QueryFunction_RTVariableInitializer" />
+    <property name="name" value="QueryFunction_STVariableInitializer" />
     <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1203347609567">
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -1883,7 +2115,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203348041101">
-    <property name="name" value="RightTransformVariableReference" />
+    <property name="name" value="SideTransformVariableReference" />
     <link role="extends" targetNodeId="3.1068498886296" resolveInfo="VariableReference" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203348041102">
       <property name="sourceCardinality" value="1" />
@@ -1894,7 +2126,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203349485621">
     <property name="package" value="queryFunctions" />
-    <property name="name" value="QueryFunction_RT_CommonInitializer" />
+    <property name="name" value="QueryFunction_ST_CommonInitializer" />
     <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1203349485622">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" resolveInfo="conceptFunctionReturnType" />
