@@ -92,6 +92,7 @@ class Memento {
         cell.changeText(entry.getValue());
       }
     }
+    myNodeEditor.relayout();
   }
 
   AbstractEditorComponent getEditorComponent() {
