@@ -2025,22 +2025,36 @@ __switch__:
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1215607802229(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1215608453575(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
-      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
-
-        public SNode doSubstitute(String pattern) {
-          System.out.println("Test!");
-          return _context.getSourceNode();
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation");
+      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
+      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      for(final SNode subconcept : concepts) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration"))) {
+          continue;
         }
-
-        public String getMatchingText(String pattern) {
-          return "test";
+        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
+          continue;
         }
+        result.add(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
 
-      });
+          public SNode doSubstitute(String pattern) {
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+            SLinkOperations.setTarget(result, "rightExpression", _context.getSourceNode(), true);
+            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(result, null, false, false), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+              ParenthesisUtil.checkOperationWRTPriority(SNodeOperations.getParent(result, null, false, false));
+            } else
+            {
+              ParenthesisUtil.checkOperationWRTPriority(result);
+            }
+            return result;
+          }
+
+        });
+      }
     }
     return result;
   }
