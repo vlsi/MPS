@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * @author Kostik
@@ -14,6 +15,10 @@ public class SModelReferenceEvent extends SModelEvent {
     super(model);
     myReference = reference;
     myAdded = added;
+  }
+
+  public SNode getAffectedRoot() {
+    return myReference.getSourceNode().getContainingRoot();
   }
 
   public SReference getReference() {

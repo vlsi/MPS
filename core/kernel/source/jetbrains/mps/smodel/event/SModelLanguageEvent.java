@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 
 public class SModelLanguageEvent extends SModelEvent {
   private String myLanguageNamespace;
@@ -8,6 +9,10 @@ public class SModelLanguageEvent extends SModelEvent {
   public SModelLanguageEvent(SModel model, String languageNamespace) {
     super(model);
     myLanguageNamespace = languageNamespace;
+  }
+
+  public SNode getAffectedRoot() {
+    return null;
   }
 
   public String getLanguageNamespace() {

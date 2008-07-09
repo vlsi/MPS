@@ -16,6 +16,10 @@ public class SModelRootEvent extends SModelEvent {
     myAdded = added;
   }
 
+  public SNode getAffectedRoot() {
+    return myRoot;
+  }
+
   public SNode getRoot() {
     return myRoot;
   }

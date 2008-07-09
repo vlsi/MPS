@@ -20,6 +20,10 @@ public class SModelPropertyEvent extends SModelEvent {
     myNewPropertyValue = newPropertyValue;
   }
 
+  public SNode getAffectedRoot() {
+    return myNode.getContainingRoot();
+  }
+
   public String getPropertyName() {
     return myPropertyName;
   }

@@ -22,6 +22,10 @@ public class SModelChildEvent extends SModelEvent{
     myChildRole = role;
   }
 
+  public SNode getAffectedRoot() {
+    return myParent.getContainingRoot();
+  }
+
   public boolean isAdded() {
     return myAdded;
   }

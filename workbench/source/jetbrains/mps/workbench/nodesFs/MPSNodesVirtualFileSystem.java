@@ -7,6 +7,7 @@ import com.intellij.openapi.vfs.VirtualFileListener;
 import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.Computable;
+import com.intellij.util.LocalTimeCounter;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -127,6 +128,13 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     throw new UnsupportedOperationException();
   }
 
+  private void updateModificationStamp(SNode rootNode) {
+    MPSNodeVirtualFile vf = myVirtualFiles.get(rootNode.getContainingRoot());
+    if (vf != null) {
+      vf.setModificationStamp(LocalTimeCounter.currentTime());  
+    }
+  }
+
   private class MyCommandListener implements SModelCommandListener {
     public void eventsHappenedInCommand(final List<SModelEvent> events) {
       SwingUtilities.invokeLater(new Runnable() {
@@ -134,6 +142,10 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
               for (SModelEvent e : events) {
+                if (e.getAffectedRoot() != null) {
+                  updateModificationStamp(e.getAffectedRoot());
+                }
+
                 e.accept(new SModelEventVisitorAdapter() {
                   public void visitRootEvent(SModelRootEvent event) {
                     if (event.isRemoved()) {

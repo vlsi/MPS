@@ -4,6 +4,7 @@ import com.intellij.openapi.vfs.DeprecatedVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.util.Computable;
+import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Calculable;
@@ -19,6 +20,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   private SNode myNode;
   private String myPath;
   private String myName;
+  private long myModificationStamp = LocalTimeCounter.currentTime();
 
   public MPSNodeVirtualFile(@NotNull SNode node) {
     myNode = node;
@@ -104,6 +106,10 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   }
 
   public long getModificationStamp() {
-    return getTimeStamp();
+    return myModificationStamp;
+  }
+
+  public void setModificationStamp(long newValue) {
+    myModificationStamp = newValue;
   }
 }
