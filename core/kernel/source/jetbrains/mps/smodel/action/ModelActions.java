@@ -5,6 +5,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.nodeEditor.CellSide;
 
 import java.util.List;
 
@@ -46,11 +47,11 @@ public class ModelActions {
   // right-transform hint substitute
   //-------------------
 
-  public static boolean canCreateRightTransformHintSubstituteActions(SNode sourceNode, String transformTag, IOperationContext context) {
-    return new SideTransformHintSubstituteActionsHelper(sourceNode, transformTag, context).canCreateActions();
+  public static boolean canCreateSideTransformHintSubstituteActions(SNode sourceNode, CellSide side, String transformTag, IOperationContext context) {
+    return new SideTransformHintSubstituteActionsHelper(sourceNode, side, transformTag, context).canCreateActions();
   }
 
-  public static List<INodeSubstituteAction> createRightTransformHintSubstituteActions(SNode sourceNode, String transformTag, IOperationContext context) {
-    return new SideTransformHintSubstituteActionsHelper(sourceNode, transformTag, context).createActions();
+  public static List<INodeSubstituteAction> createRightTransformHintSubstituteActions(SNode sourceNode, CellSide side, String transformTag, IOperationContext context) {
+    return new SideTransformHintSubstituteActionsHelper(sourceNode, side, transformTag, context).createActions();
   }
 }

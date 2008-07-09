@@ -6220,5 +6220,42 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1215607791840">
+    <property name="name" value="testLT" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1215607802229">
+      <property name="useNewActions" value="true" />
+      <property name="side" value="left" />
+      <link role="applicableConcept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1215607828811">
+        <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleSideTransformMenuPart" id="1215607832798">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_Handler" id="1215607832799">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215607832800">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215607840536">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215607845131">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215607840537">
+                    <link role="classifier" targetNodeId="20.~System" resolveInfo="System" />
+                    <link role="variableDeclaration" targetNodeId="20.~System.out" resolveInfo="out" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215607848930">
+                    <link role="baseMethodDeclaration" targetNodeId="42.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215607849338">
+                      <property name="value" value="Test!" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215607854121">
+                <node role="expression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1215607855389" />
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransform_SimpleString" id="1215607834504">
+            <property name="text" value="test" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

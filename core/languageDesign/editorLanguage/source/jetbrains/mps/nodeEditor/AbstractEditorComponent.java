@@ -29,7 +29,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
-import jetbrains.mps.nodeEditor.EditorManager.EditorCell_RTHint;
+import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -962,7 +962,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.getModifiers() == 0) {
       EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
 
-      if (!(selectedCell instanceof EditorCell_RTHint)) {
+      if (!(selectedCell instanceof EditorCell_STHint)) {
         if (!(selectedCell instanceof EditorCell_Label)) {
           return EditorCellAction.RIGHT_TRANSFORM;
         }

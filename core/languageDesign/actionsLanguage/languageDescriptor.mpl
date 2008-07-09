@@ -15,6 +15,7 @@
       </external-templates>
       <dependencies>
         <dependency reexport="true">jetbrains.mps.baseLanguageInternal</dependency>
+        <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage#1129914002149</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>

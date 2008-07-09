@@ -45,7 +45,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1172253315888(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode builder = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder", false, false);
+    SNode builder = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder", false, false);
     return ActionQueryMethodName.sideTransformHintSubstituteActionsBuilder_Precondition(((SideTransformHintSubstituteActionsBuilder)SNodeOperations.getAdapter(builder)));
   }
 
@@ -238,6 +238,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1206027954955(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "returnSmallPart", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1215607715367(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.hasValue(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder", false, false), "side", null, null);
   }
 
   public static SNode sourceNodeQuery_1172253185556(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -442,7 +446,7 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1177441873770(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendantsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart","jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart","jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformMenuPart"}, false);
+    return SNodeOperations.getDescendantsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart","jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart","jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformMenuPart"}, false);
   }
 
   public static List sourceNodesQuery_1177530541055(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

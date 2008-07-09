@@ -14,11 +14,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
-import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.nodeEditor.EditorManager.EditorCell_RTHint;
 
 import java.awt.event.KeyEvent;
 import java.util.List;

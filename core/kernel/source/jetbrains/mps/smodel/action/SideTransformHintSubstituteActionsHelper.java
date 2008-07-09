@@ -6,6 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.nodeEditor.CellSide;
 
 import java.util.*;
 
@@ -15,11 +16,13 @@ import java.util.*;
    private IOperationContext myContext;
    private SNode mySourceNode;
    private String myTransformTag;
+   private CellSide mySide;
 
-   SideTransformHintSubstituteActionsHelper(SNode sourceNode, String transformTag, IOperationContext context) {
+   SideTransformHintSubstituteActionsHelper(SNode sourceNode, CellSide side, String transformTag, IOperationContext context) {
      myContext = context;
      mySourceNode = sourceNode;
      myTransformTag = transformTag;
+     mySide = side;
    }
 
    public boolean canCreateActions() {
@@ -105,6 +108,15 @@ import java.util.*;
               if (actionsBuilder.getTransformTag() != tag) {
                 return false;
               }
+
+              if (actionsBuilder.getSide() == Side.left && mySide != CellSide.LEFT) {
+                return false;
+              }
+
+              if (actionsBuilder.getSide() == Side.right && mySide != CellSide.RIGHT) {
+                return false;
+              }
+
               // is applicable ?
               return SModelUtil_new.isAssignableConcept(sourceConcept, actionsBuilder.getApplicableConcept()) &&
                       satisfiesPrecondition(actionsBuilder);

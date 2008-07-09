@@ -49,6 +49,7 @@ import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
+import jetbrains.mps.nodeEditor.CellSide;
 
 public class QueriesGenerated {
 
@@ -976,7 +977,7 @@ public class QueriesGenerated {
 
       };
       SNode node = (SNode)calc.calculate();
-      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, _context.getTransformationTag(), operationContext));
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext));
     }
     return result;
   }
@@ -992,7 +993,7 @@ public class QueriesGenerated {
 
       };
       SNode node = (SNode)calc.calculate();
-      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, _context.getTransformationTag(), operationContext));
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext));
     }
     return result;
   }
@@ -1008,7 +1009,7 @@ public class QueriesGenerated {
 
       };
       SNode node = (SNode)calc.calculate();
-      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, _context.getTransformationTag(), operationContext));
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext));
     }
     return result;
   }

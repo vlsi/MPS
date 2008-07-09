@@ -4,7 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
-import jetbrains.mps.nodeEditor.EditorManager.EditorCell_RTHint;
+import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.TypeCheckingMode;
 
@@ -17,8 +17,8 @@ public class IntelligentInputUtil {
     if (pattern == null || pattern.equals("")) {
       return;
     }
-    if (cell instanceof EditorManager.EditorCell_RTHint) {
-      EditorManager.EditorCell_RTHint rtHintCell = (EditorCell_RTHint) cell;
+    if (cell instanceof EditorCell_STHint) {
+      EditorCell_STHint rtHintCell = (EditorCell_STHint) cell;
       processRTHintCell(rtHintCell, editorContext, pattern);
       return;
     }
@@ -27,7 +27,7 @@ public class IntelligentInputUtil {
     processCell(cell, editorContext, smallPattern, tail);
   }
 
-  private static void processRTHintCell(EditorCell_RTHint cell, EditorContext editorContext, String pattern) {
+  private static void processRTHintCell(EditorCell_STHint cell, EditorContext editorContext, String pattern) {
     INodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
 
     String smallPattern = pattern.substring(0, pattern.length() - 1);
@@ -224,7 +224,7 @@ public class IntelligentInputUtil {
 
   private static EditorCell_Label prepareRTCell(EditorContext context, EditorCell root, String textToSet) {
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
-    EditorCell_Label rtCell = root.getRTHintCell();
+    EditorCell_Label rtCell = root.getSTHintCell();
     if (rtCell == null) {
       EditorCell selectedCell = nodeEditorComponent.getSelectedCell();
       if (selectedCell != null && selectedCell instanceof EditorCell_Label && selectedCell.isErrorState()) {

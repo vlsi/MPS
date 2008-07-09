@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
-import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.*;
 
@@ -26,8 +25,8 @@ public class EditorManager {
 
   public static final Object BIG_CELL_CONTEXT = new Object();
 
-  public static final String RIGHT_TRANSFORM_HINT_ANCHOR_CELL_ID = "RTHint_Anchor_ID";
-  public static final String RIGHT_TRANSFORM_HINT_ANCHOR_TAG = "RTHint_Anchor_Tag";
+  public static final String SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID = "STHint_Anchor_ID";
+  public static final String SIDE_TRANSFORM_HINT_ANCHOR_TAG = "STHint_Anchor_Tag";
 
   private HashMap<ReferencedNodeContext, EditorCell> myMap = new HashMap<ReferencedNodeContext, EditorCell>();
   private boolean myCreatingInspectedCell = false;
@@ -222,7 +221,12 @@ public class EditorManager {
       //-voodoo
 
       if (node.hasRightTransformHint()) {
-        nodeCell = addRightTransformHintCell(node, nodeCell, context);
+        nodeCell = addSideTransformHintCell(node, nodeCell, context, CellSide.RIGHT);
+        return nodeCell;
+      }
+
+      if (node.hasLeftTransformHint()) {
+        nodeCell = addSideTransformHintCell(node, nodeCell, context, CellSide.LEFT);
         return nodeCell;
       }
     } catch (Throwable e) {
@@ -243,42 +247,50 @@ public class EditorManager {
     return nodeCell;
   }
 
-  private EditorCell addRightTransformHintCell(final SNode node, EditorCell nodeCell, final EditorContext context) {
+  private EditorCell addSideTransformHintCell(final SNode node, EditorCell nodeCell, final EditorContext context, final CellSide side) {
     // create the hint cell
-    final EditorCell_RTHint rightTransformHintCell = EditorCell_RTHint.create(context, node);
+    final EditorCell_STHint sideTransformHintCell = EditorCell_STHint.create(context, node);
     final CellInfo nodeCellInfo = context.getNodeEditorComponent().getRecentlySelectedCellInfo();
 
     // delete the hint when pressed ctrl-delete, delete or backspace
-    rightTransformHintCell.setAction(EditorCellAction.DELETE, new EditorCellAction() {
+    sideTransformHintCell.setAction(EditorCellAction.DELETE, new EditorCellAction() {
       public void execute(final EditorContext context) {
-        removeRTHintAndChangeSelection(context, node, nodeCellInfo);
+        removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
     // delete the hint when double press 'space'
-    rightTransformHintCell.setAction(EditorCellAction.RIGHT_TRANSFORM, new EditorCellAction() {
+    sideTransformHintCell.setAction(EditorCellAction.RIGHT_TRANSFORM, new EditorCellAction() {
       public void execute(EditorContext context) {
-        removeRTHintAndChangeSelection(context, node, nodeCellInfo);
+        removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
+
+    sideTransformHintCell.setAction(EditorCellAction.LEFT_TRANSFORM, new EditorCellAction() {
+      public void execute(EditorContext context) {
+        removeSTHintAndChangeSelection(context, node, nodeCellInfo);
+      }
+    });
+
     // delete the hint when double press 'esc'
     EditorCellKeyMap keyMap = new EditorCellKeyMap();
     keyMap.putAction(EditorCellKeyMap.KEY_MODIFIERS_NONE, "VK_ESCAPE", new EditorCellKeyMapAction() {
       public void execute(KeyEvent keyEvent, final EditorContext context) {
-        removeRTHintAndChangeSelection(context, node, nodeCellInfo);
+        removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
-    rightTransformHintCell.addKeyMap(keyMap);
+    sideTransformHintCell.addKeyMap(keyMap);
 
     // create the hint's auto-completion menu
-    final String transformTag = (String) node.getUserObject(RIGHT_TRANSFORM_HINT_ANCHOR_TAG);
-    rightTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
+    final String transformTag = (String) node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG);
+    sideTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
       protected List<INodeSubstituteAction> createActions() {
-        List list = ModelActions.createRightTransformHintSubstituteActions(node, transformTag, context.getOperationContext());
+        List list = ModelActions.createRightTransformHintSubstituteActions(node, side, transformTag, context.getOperationContext());
         List wrapperList = new LinkedList();
         for (Object action : list) {
           wrapperList.add(new NodeSubstituteActionWrapper((INodeSubstituteAction) action) {
             public SNode substitute(@Nullable EditorContext context, String pattern) {
               node.removeRightTransformHint();
+              node.removeLeftTransformHint();
               return super.substitute(context, pattern);
             }
           });
@@ -289,28 +301,40 @@ public class EditorManager {
 
     // decide position of the hint cell
     EditorCell resultCell;
-    Object anchorId = node.getUserObject(RIGHT_TRANSFORM_HINT_ANCHOR_CELL_ID);
+    Object anchorId = node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID);
     EditorCell anchorCell = anchorId == null ? null : context.getNodeEditorComponent().findCellWithId(nodeCell, anchorId.toString());
     if (anchorCell != null && anchorCell != nodeCell) {
       EditorCell_Collection cellCollection = anchorCell.getParent();
-      cellCollection.addCellAt(cellCollection.indexOf(anchorCell) + 1, rightTransformHintCell, false);
+      int index;
+      if (side == CellSide.RIGHT) {
+        index = cellCollection.indexOf(anchorCell) + 1;
+      } else {
+        index = cellCollection.indexOf(anchorCell);
+      }
+
+      cellCollection.addCellAt(index, sideTransformHintCell, false);
       resultCell = nodeCell;
-      rightTransformHintCell.setAnchor(anchorCell);
+      sideTransformHintCell.setAnchor(anchorCell);
     } else {
       // couldn't insert hint cell - create wrapper collection and put hint to last position
       EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(context, node);
       rowWrapper.setSelectable(false);
       rowWrapper.setDrawBorder(false);
       rowWrapper.addEditorCell(nodeCell);
-      rowWrapper.addEditorCell(rightTransformHintCell);
+      if (side == CellSide.RIGHT) {
+        rowWrapper.addEditorCell(sideTransformHintCell);
+      } else {
+        rowWrapper.addCellAt(0, sideTransformHintCell, false);
+      }
       resultCell = rowWrapper;
-      rightTransformHintCell.setAnchor(nodeCell);
+      sideTransformHintCell.setAnchor(nodeCell);
     }
     return resultCell;
   }
 
-  private void removeRTHintAndChangeSelection(final EditorContext context, SNode node, final CellInfo cellInfoToSelect) {
+  private void removeSTHintAndChangeSelection(final EditorContext context, SNode node, final CellInfo cellInfoToSelect) {
     node.removeRightTransformHint();
+    node.removeLeftTransformHint();
 
     context.flushEvents();
 
@@ -325,11 +349,11 @@ public class EditorManager {
   }
 
 
-  /*package*/ static class EditorCell_RTHint extends EditorCell_Constant {
+  /*package*/ static class EditorCell_STHint extends EditorCell_Constant {
 
     private EditorCell myAnchorCell;
 
-    protected EditorCell_RTHint(EditorContext editorContext, SNode node) {
+    protected EditorCell_STHint(EditorContext editorContext, SNode node) {
       super(editorContext, node, "");
       putUserObject(EditorCell.CELL_ID, node.getId());
       setDefaultText(" ");
@@ -338,7 +362,7 @@ public class EditorManager {
       setCellBackgroundColor(LightColors.BLUE);
       setCellInfoProvider(new ICellInfoProvider() {
         public CellInfo getCellInfo(EditorCell cell) {
-          return new RTHintCellInfo(EditorCell_RTHint.this, myAnchorCell);
+          return new STHintCellInfo(EditorCell_STHint.this, myAnchorCell);
         }
       });
 
@@ -350,6 +374,7 @@ public class EditorManager {
       super.changeText(text);
       if ("".equals(getText())) {
         getSNode().removeRightTransformHint();
+        getSNode().removeLeftTransformHint();
       }
     }
 
@@ -357,8 +382,8 @@ public class EditorManager {
       myAnchorCell = anchorCell;
     }
 
-    public static EditorCell_RTHint create(EditorContext editorContext, SNode node) {
-      return new EditorCell_RTHint(editorContext, node);
+    public static EditorCell_STHint create(EditorContext editorContext, SNode node) {
+      return new EditorCell_STHint(editorContext, node);
     }
   }
 
@@ -383,10 +408,10 @@ public class EditorManager {
   }
 
 
-  private static class RTHintCellInfo extends CellInfo {
+  private static class STHintCellInfo extends CellInfo {
     CellInfo myAnchorCellInfo;
 
-    public RTHintCellInfo(EditorCell_Constant rightTransformHintCell, EditorCell anchorCell) {
+    public STHintCellInfo(EditorCell_Constant rightTransformHintCell, EditorCell anchorCell) {
       super(rightTransformHintCell);
       myAnchorCellInfo = anchorCell.getCellInfo();
     }
@@ -394,13 +419,13 @@ public class EditorManager {
     public EditorCell findCell(AbstractEditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       if (anchorCell == null) return super.findCell(editorComponent);
-      return anchorCell.getRTHintCell();
+      return anchorCell.getSTHintCell();
     }
 
     public EditorCell findClosestCell(AbstractEditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       if (anchorCell == null) return super.findCell(editorComponent);
-      EditorCell_Label rtHint = anchorCell.getRTHintCell();
+      EditorCell_Label rtHint = anchorCell.getSTHintCell();
       if (rtHint == null) {
         return anchorCell;
       }
