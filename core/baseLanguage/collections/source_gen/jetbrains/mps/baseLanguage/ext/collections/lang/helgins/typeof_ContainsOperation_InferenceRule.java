@@ -17,26 +17,36 @@ public class typeof_ContainsOperation_InferenceRule implements InferenceRule_Run
   public void applyRule(final SNode op) {
     SNode parent = SNodeOperations.getParent(op, null, false, false);
     do {
-      SNode matchedNode_1178725705169 = parent;
+      SNode matchedNode_1 = parent;
       {
-        boolean matches_1205249543839 = false;
-        matches_1205249543839 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression");
-        if (matches_1205249543839) {
+        boolean matches_2 = false;
+        {
+          SNode matchingNode_2 = parent;
+          if (matchingNode_2 != null) {
+            matches_2 = SModelUtil_new.isAssignableConcept(matchingNode_2.getConceptFqName(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression");
+          }
+        }
+        if (matches_2) {
           TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_60().createNode(), op, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1205249554164");
           break;
         }
       }
       {
-        boolean matches_1178725705171 = false;
-        matches_1178725705171 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.DotExpression");
-        if (matches_1178725705171) {
+        boolean matches_3 = false;
+        {
+          SNode matchingNode_3 = parent;
+          if (matchingNode_3 != null) {
+            matches_3 = SModelUtil_new.isAssignableConcept(matchingNode_3.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.DotExpression");
+          }
+        }
+        if (matches_3) {
           TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_14().createNode(), op, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705174");
           break;
         }
       }
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705180", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607388053", intentionProvider);
       }
     } while(false);
   }

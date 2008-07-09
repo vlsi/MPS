@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_TakeOperation_InferenceRule implements InferenceRule_Runtime {
@@ -15,7 +15,10 @@ public class typeof_TakeOperation_InferenceRule implements InferenceRule_Runtime
 
   public void applyRule(final SNode op) {
     RulesFunctions_Collections.setInputSequenceType(op, op);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "elementsToTake", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847262796", true), new QuotationClass_7().createNode(), SLinkOperations.getTarget(op, "elementsToTake", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847269142", false, 0);
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "elementsToTake", true);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607387187", true), new QuotationClass_7().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607387184", false, 0);
+    }
   }
 
   public String getApplicableConceptFQName() {

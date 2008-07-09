@@ -18,10 +18,22 @@ public class typeof_BinaryOperation_InferenceRule implements InferenceRule_Runti
     SNode rValue = SLinkOperations.getTarget(op, "rightExpression", true);
     final SNode elementType_typevar_1184848397564 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     final SNode sequenceType_typevar_1184848409899 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(sequenceType_typevar_1184848409899), new QuotationClass_35().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184848397564)), op, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184848442457");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(lValue, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184848533289", true), TypeChecker.getInstance().getEquationManager().getRepresentator(sequenceType_typevar_1184848409899), lValue, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184848544308", false, 0);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(rValue, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184848549565", true), TypeChecker.getInstance().getEquationManager().getRepresentator(sequenceType_typevar_1184848409899), rValue, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184848553704", false, 0);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184848561861", true), TypeChecker.getInstance().getEquationManager().getRepresentator(sequenceType_typevar_1184848409899), op, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184848565182");
+    {
+      SNode _nodeToCheck_1029348928467 = op;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(sequenceType_typevar_1184848409899), new QuotationClass_35().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184848397564)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607389766");
+    }
+    {
+      SNode _nodeToCheck_1029348928467 = lValue;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607389772", true), TypeChecker.getInstance().getEquationManager().getRepresentator(sequenceType_typevar_1184848409899), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607389769", false, 0);
+    }
+    {
+      SNode _nodeToCheck_1029348928467 = rValue;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607389777", true), TypeChecker.getInstance().getEquationManager().getRepresentator(sequenceType_typevar_1184848409899), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607389774", false, 0);
+    }
+    {
+      SNode _nodeToCheck_1029348928467 = op;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607389782", true), TypeChecker.getInstance().getEquationManager().getRepresentator(sequenceType_typevar_1184848409899), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607389779");
+    }
   }
 
   public String getApplicableConceptFQName() {
