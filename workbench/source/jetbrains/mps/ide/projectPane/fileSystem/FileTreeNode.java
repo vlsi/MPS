@@ -18,17 +18,9 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ide.FileIconProvider;
 
 public class FileTreeNode extends AbstractFileTreeNode {
-  private static final Map<String, Icon> ICONS = new HashMap<String, Icon>();
-  private Project myProject;
-
-  static {
-    ICONS.put(MPSExtentions.JAVAFILE, FileIcons.JAVA_ICON);
-    ICONS.put(MPSExtentions.CLASSFILE, FileIcons.CLASS_ICON);
-  }
 
   public FileTreeNode(IOperationContext operationContext, VcsFileStatusProvider provider, IFile file) {
     super(operationContext, provider, file);
-    myProject = operationContext.getProject();
   }
 
   @Override
@@ -44,21 +36,6 @@ public class FileTreeNode extends AbstractFileTreeNode {
   }
 
   private Icon getIcon() {
-    FileIconProvider provider = ApplicationManager.getApplication().getComponent(FileIconProvider.class);
-    if (provider != null) {
-      System.out.println("USING IDEA ICONS");
-      return provider.getIcon(VFileSystem.getFile(myFile), 0, myProject);
-    }
-    String name = myFile.getName();
-    int pos = name.lastIndexOf(".");
-    if (pos == -1) return getDefaultIcon();
-
-    Icon icon = ICONS.get(name.substring(pos + 1));
-    if (icon != null) return icon;
-    else return getDefaultIcon();
-  }
-
-  private Icon getDefaultIcon() {
     VirtualFile file = VFileSystem.getFile(myFile);
     if (file != null) {
       return file.getFileType().getIcon();
@@ -66,5 +43,4 @@ public class FileTreeNode extends AbstractFileTreeNode {
       return FileIcons.FILE_ICON;
     }
   }
-
 }

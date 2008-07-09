@@ -27,7 +27,6 @@ public class MPSAdapter implements ApplicationComponent {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         //we do this in order to prevent deadlock
-        myFileTypeManager.registerFileType(StdFileTypes.JAVA, MPSExtentions.JAVAFILE);
         myFileTypeManager.registerFileType(StdFileTypes.PATCH, "patch");
       }
     });
