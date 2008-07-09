@@ -3,9 +3,7 @@ package jetbrains.mps.ide.projectPane;
 import com.intellij.ide.*;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandProcessor;
@@ -179,23 +177,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       }
     });
 
-    int interval = 1000;
-    myTimer = new Timer(interval, new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        boolean showMembers = myProjectView.isShowMembers(MPS_FILESYSTEM);
-        if (showMembers != myLastPropertiesState) {
-          myLastPropertiesState = showMembers;
-          ModelAccess.instance().runReadInEDT(new Runnable() {
-            public void run() {
-              getTree().rebuildNow();
-            }
-          });
-        }
-      }
-    });
-    myTimer.setRepeats(true);
-    myTimer.start();
-
     if (!IdeMain.isTestMode()) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
@@ -203,6 +184,26 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         }
       });
     }
+  }
+
+  public void addToolbarActions(final DefaultActionGroup group) {
+    ToggleAction myPAndRToggle = new ToggleAction("Show properties and references", "Show properties and references", Icons.PROP_AND_REF) {
+      public boolean isSelected(@Nullable AnActionEvent e) {
+        return isShowPropertiesAndReferences();
+      }
+
+      public void setSelected(@Nullable AnActionEvent e, boolean state) {
+        if (state != myLastPropertiesState) {
+          myLastPropertiesState = state;
+          ModelAccess.instance().runReadInEDT(new Runnable() {
+            public void run() {
+              getTree().rebuildNow();
+            }
+          });
+        }
+      }
+    };
+    group.add(myPAndRToggle);
   }
 
   public void disposeComponent() {
