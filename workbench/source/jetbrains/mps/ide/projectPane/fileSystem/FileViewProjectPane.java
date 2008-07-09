@@ -14,6 +14,7 @@ import com.intellij.openapi.vcs.VcsListener;
 import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -84,7 +85,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     myTree.addMouseListener(new MouseAdapter() {
       @Override
       public void mouseClicked(MouseEvent e) {
-        if (e.getClickCount() >= 2){
+        if (e.getClickCount() >= 2) {
           openEditor();
           e.consume();
         }
@@ -151,14 +152,15 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     TreePath selectionPath = getTree().getSelectionPath();
     if (selectionPath == null) return;
     if (!(selectionPath.getLastPathComponent() instanceof FileTreeNode)) return;
-    FileTreeNode fileTreeNode = (FileTreeNode) selectionPath.getLastPathComponent();
+    final FileTreeNode fileTreeNode = (FileTreeNode) selectionPath.getLastPathComponent();
 
-//    IEditor editor = openNode(fileTreeNode.getFile(), fileTreeNode.getOperationContext());
-//    editor.requestFocus();
-
-    FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
-    editorManager.openFile(VFileSystem.getFile(fileTreeNode.getFile()), true);
-//    fileEditors[0].getComponent().requestFocus();
+    com.intellij.openapi.command.CommandProcessor.getInstance().executeCommand(myProject, new Runnable() {
+      public void run() {
+        myProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
+        FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
+        editorManager.openFile(VFileSystem.getFile(fileTreeNode.getFile()), true);
+      }
+    }, "navigate", "");
   }
 
   public void initComponent() {
