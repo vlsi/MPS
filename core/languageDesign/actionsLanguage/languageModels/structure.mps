@@ -382,6 +382,10 @@
       <property name="name" value="useNewActions" />
       <link role="dataType" targetNodeId="1.1082983657063" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1215605257730">
+      <property name="name" value="side" />
+      <link role="dataType" targetNodeId="1215604970641" resolveInfo="Side" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1138079221462">
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="applicableConcept" />
@@ -2222,6 +2226,17 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1214831035988">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" resolveInfo="conceptFunctionParameterType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1214831036865" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1215604970641">
+    <property name="name" value="Side" />
+    <link role="memberDataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1215604970642">
+      <property name="externalValue" value="right" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1215605024347">
+      <property name="externalValue" value="left" />
+      <property name="internalValue" value="left" />
     </node>
   </node>
 </model>

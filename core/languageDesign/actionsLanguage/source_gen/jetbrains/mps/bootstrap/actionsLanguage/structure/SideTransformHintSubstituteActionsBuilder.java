@@ -19,6 +19,7 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   public static String PRECONDITION_ASPECT_ID = "preconditionAspectId";
   public static String USE_NEW_ACTIONS = "useNewActions";
   public static String TRANSFORM_TAG = "transformTag";
+  public static String SIDE = "side";
   public static String APPLICABLE_CONCEPT = "applicableConcept";
   public static String PRECONDITION = "precondition";
   public static String COMMON_INITIALIZER = "commonInitializer";
@@ -85,6 +86,15 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
 
   public void setTransformTag(SideTransformTag value) {
     super.setProperty(SideTransformHintSubstituteActionsBuilder.TRANSFORM_TAG, value.getValueAsString());
+  }
+
+  public Side getSide() {
+    String value = super.getProperty(SideTransformHintSubstituteActionsBuilder.SIDE);
+    return Side.parseValue(value);
+  }
+
+  public void setSide(Side value) {
+    super.setProperty(SideTransformHintSubstituteActionsBuilder.SIDE, value.getValueAsString());
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
