@@ -157,7 +157,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
   public EditorCell create_expectedRefNodeCell2080_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expected");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no expected>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_expectedRefNodeCell2080_0_internal(context, node, provider);
@@ -186,7 +186,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
   public EditorCell create_actualRefNodeCell2080_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("actual");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no actual>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_actualRefNodeCell2080_0_internal(context, node, provider);

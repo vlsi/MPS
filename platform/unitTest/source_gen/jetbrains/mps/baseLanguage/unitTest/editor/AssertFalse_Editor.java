@@ -113,7 +113,7 @@ public class AssertFalse_Editor extends DefaultNodeEditor {
   public EditorCell create_conditionRefNodeCell5830_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no condition>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_conditionRefNodeCell5830_0_internal(context, node, provider);

@@ -257,7 +257,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   public EditorCell create_testCaseNamePropertyCell16676_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("testCaseName");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no testCaseName>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_testCaseNamePropertyCell16676_0_internal(context, node, provider);
@@ -315,7 +315,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   public EditorCell create_testMethodListRefNodeCell16676_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("testMethodList");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no testMethodList>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_testMethodListRefNodeCell16676_0_internal(context, node, provider);

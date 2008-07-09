@@ -164,7 +164,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
   public EditorCell create_statementRefNodeCell18211_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("statement");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no statement>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_statementRefNodeCell18211_0_internal(context, node, provider);
@@ -193,7 +193,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
   public EditorCell create_exceptionTypeRefNodeCell18211_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("exceptionType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no exceptionType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_exceptionTypeRefNodeCell18211_0_internal(context, node, provider);
@@ -222,7 +222,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
   public EditorCell create_messageRefNodeCell18211_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("message");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no message>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_messageRefNodeCell18211_0_internal(context, node, provider);

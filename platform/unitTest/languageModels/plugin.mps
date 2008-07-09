@@ -3427,7 +3427,6 @@
     </node>
   </node>
   <visible index="4" modelUID="jetbrains.mps.baseLanguage.plugin" />
-  <visible index="5" modelUID="jetbrains.mps.baseLanguage.unitTest.behavior" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1208523052170">
     <property name="package" value="tool.runner" />
     <property name="name" value="UnitTestRunner" />
@@ -3687,44 +3686,6 @@
                             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1208770970163">
                               <link role="conceptMethodDeclaration" targetNodeId="39.1213877404258" resolveInfo="getFqName" />
                             </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1215620595578">
-                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215620630113">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1215620629950">
-                    <link role="variable" targetNodeId="1208535691536" resolveInfo="test" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1215620632866">
-                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1215620640617">
-                      <link role="conceptDeclaration" targetNodeId="1.1215620452633" resolveInfo="ITestable" />
-                    </node>
-                  </node>
-                </node>
-                <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215620595580">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215620756917">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215620758638">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215620756918">
-                        <link role="variableDeclaration" targetNodeId="1208535535118" resolveInfo="params" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation" id="1215620765453">
-                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215620831310">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1215620784755">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1215620791665">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1215620829285">
-                                <link role="variable" targetNodeId="1208535691536" resolveInfo="test" />
-                              </node>
-                              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1215620819514">
-                                <link role="concept" targetNodeId="1.1215620452633" resolveInfo="ITestable" />
-                              </node>
-                            </node>
-                          </node>
-                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1215621545404">
-                            <link role="conceptMethodDeclaration" targetNodeId="5v.1215620460293" resolveInfo="getParameterPart" />
                           </node>
                         </node>
                       </node>
@@ -10890,32 +10851,32 @@
       </node>
     </node>
   </node>
-  <visible index="6" modelUID="jetbrains.mps.uiLanguage.components" />
+  <visible index="5" modelUID="jetbrains.mps.uiLanguage.components" />
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="1210693629079">
     <property name="package" value="tool.preferences" />
     <property name="name" value="PreferencePageComponent" />
     <node role="root" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1210761360015">
-      <link role="componentDeclaration" targetNodeId="6v.1202816402995" resolveInfo="Panel" />
+      <link role="componentDeclaration" targetNodeId="5v.1202816402995" resolveInfo="Panel" />
       <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1210761729047">
-        <link role="attribute" targetNodeId="6v.1202393600503" resolveInfo="layout" />
+        <link role="attribute" targetNodeId="5v.1202393600503" resolveInfo="layout" />
         <node role="value" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1210761733081">
           <link role="baseMethodDeclaration" targetNodeId="5.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
         </node>
       </node>
       <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1210761637184">
-        <link role="componentDeclaration" targetNodeId="6v.1202738287160" resolveInfo="VBox" />
+        <link role="componentDeclaration" targetNodeId="5v.1202738287160" resolveInfo="VBox" />
         <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1210761360016">
-          <link role="componentDeclaration" targetNodeId="6v.1202816455619" resolveInfo="FlowPanel" />
+          <link role="componentDeclaration" targetNodeId="5v.1202816455619" resolveInfo="FlowPanel" />
           <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1210761360017">
-            <link role="componentDeclaration" targetNodeId="6v.1202815836444" resolveInfo="CheckBox" />
+            <link role="componentDeclaration" targetNodeId="5v.1202815836444" resolveInfo="CheckBox" />
             <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1210761360018">
-              <link role="attribute" targetNodeId="6v.1202393575288" resolveInfo="text" />
+              <link role="attribute" targetNodeId="5v.1202393575288" resolveInfo="text" />
               <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210761360019">
                 <property name="value" value="Run in debug mode" />
               </node>
             </node>
             <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1210761360020">
-              <link role="attribute" targetNodeId="6v.1202815889044" resolveInfo="selected" />
+              <link role="attribute" targetNodeId="5v.1202815889044" resolveInfo="selected" />
               <node role="value" type="jetbrains.mps.uiLanguage.structure.BindExpression" id="1210761360021">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210761360022">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1210761360023" />
@@ -10928,20 +10889,20 @@
           </node>
         </node>
         <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1210761360025">
-          <link role="componentDeclaration" targetNodeId="6v.1202816455619" resolveInfo="FlowPanel" />
+          <link role="componentDeclaration" targetNodeId="5v.1202816455619" resolveInfo="FlowPanel" />
           <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1210761360026">
-            <link role="componentDeclaration" targetNodeId="6v.1202465811094" resolveInfo="Label" />
+            <link role="componentDeclaration" targetNodeId="5v.1202465811094" resolveInfo="Label" />
             <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1210761360027">
-              <link role="attribute" targetNodeId="6v.1202465836231" resolveInfo="text" />
+              <link role="attribute" targetNodeId="5v.1202465836231" resolveInfo="text" />
               <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210761360028">
                 <property name="value" value="Debug Port" />
               </node>
             </node>
           </node>
           <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1210761360029">
-            <link role="componentDeclaration" targetNodeId="6v.1202464198724" resolveInfo="TextField" />
+            <link role="componentDeclaration" targetNodeId="5v.1202464198724" resolveInfo="TextField" />
             <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1210761360030">
-              <link role="attribute" targetNodeId="6v.1202464208353" resolveInfo="text" />
+              <link role="attribute" targetNodeId="5v.1202464208353" resolveInfo="text" />
               <node role="value" type="jetbrains.mps.uiLanguage.structure.BindExpression" id="1210761360031">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210761360032">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1210761360033" />
@@ -10952,7 +10913,7 @@
               </node>
             </node>
             <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1210761360035">
-              <link role="attribute" targetNodeId="6v.1202818338918" resolveInfo="columns" />
+              <link role="attribute" targetNodeId="5v.1202818338918" resolveInfo="columns" />
               <node role="value" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1210761360036">
                 <property name="value" value="5" />
               </node>
@@ -10960,15 +10921,15 @@
           </node>
           <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1210762946518">
             <property name="name" value="debugPortErrorLabel" />
-            <link role="componentDeclaration" targetNodeId="6v.1202465811094" resolveInfo="Label" />
+            <link role="componentDeclaration" targetNodeId="5v.1202465811094" resolveInfo="Label" />
             <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1210762960086">
-              <link role="attribute" targetNodeId="6v.1202465836231" resolveInfo="text" />
+              <link role="attribute" targetNodeId="5v.1202465836231" resolveInfo="text" />
               <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210762964476">
                 <property name="value" value="" />
               </node>
             </node>
             <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1210763137983">
-              <link role="attribute" targetNodeId="6v.1210763059950" resolveInfo="foreground" />
+              <link role="attribute" targetNodeId="5v.1210763059950" resolveInfo="foreground" />
               <node role="value" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1210763141298">
                 <link role="classifier" targetNodeId="5.~Color" resolveInfo="Color" />
                 <link role="variableDeclaration" targetNodeId="5.~Color.RED" resolveInfo="RED" />
@@ -10976,7 +10937,7 @@
             </node>
           </node>
           <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1210761360037">
-            <link role="attribute" targetNodeId="6v.1204902000237" resolveInfo="border" />
+            <link role="attribute" targetNodeId="5v.1204902000237" resolveInfo="border" />
             <node role="value" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1210761360039">
               <link role="classConcept" targetNodeId="7.~BorderFactory" resolveInfo="BorderFactory" />
               <link role="baseMethodDeclaration" targetNodeId="7.~BorderFactory.createEtchedBorder():javax.swing.border.Border" resolveInfo="createEtchedBorder" />
@@ -10991,7 +10952,7 @@
         </node>
       </node>
       <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1210761425051">
-        <link role="componentDeclaration" targetNodeId="6v.1202816402995" resolveInfo="Panel" />
+        <link role="componentDeclaration" targetNodeId="5v.1202816402995" resolveInfo="Panel" />
         <node role="content" type="jetbrains.mps.uiLanguage.structure.LayoutConstraint" id="1210762360906">
           <node role="constraint" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1210762367485">
             <link role="classifier" targetNodeId="5.~BorderLayout" resolveInfo="BorderLayout" />

@@ -211,7 +211,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
   public EditorCell create_methodNamePropertyCell15632_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("methodName");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no methodName>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_methodNamePropertyCell15632_0_internal(context, node, provider);
@@ -240,7 +240,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell15632_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell15632_0_internal(context, node, provider);
