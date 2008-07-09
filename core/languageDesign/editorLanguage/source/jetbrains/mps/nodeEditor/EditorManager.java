@@ -378,6 +378,14 @@ public class EditorManager {
       }
     }
 
+    public void setParent(EditorCell_Collection parent) {
+      if (parent == null) {
+        System.currentTimeMillis();
+      }
+
+      super.setParent(parent);
+    }
+
     private void setAnchor(EditorCell anchorCell) {
       myAnchorCell = anchorCell;
     }

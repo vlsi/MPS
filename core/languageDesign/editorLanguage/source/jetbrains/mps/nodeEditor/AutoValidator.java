@@ -36,6 +36,7 @@ class AutoValidator {
 
                 if (oldSelection instanceof EditorCell_STHint) {
                   node.removeRightTransformHint();
+                  node.removeLeftTransformHint();
                 }
               }
             });
