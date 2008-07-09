@@ -127,6 +127,26 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215188171114" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215188171115" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215188171116">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215597235097">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215597235098">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215597237412">
+              <link role="baseMethodDeclaration" targetNodeId="17.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215597244367">
+                <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215597110841">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215597110842">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215597113000">
+              <link role="baseMethodDeclaration" targetNodeId="17.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215597121829">
+                <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215596775768">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215596775769">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1215597084839">

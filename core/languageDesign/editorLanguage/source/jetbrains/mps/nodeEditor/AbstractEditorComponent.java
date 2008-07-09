@@ -2403,6 +2403,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       });
     }
+    relayout();
   }
 
   private void synchronizeWithModelWithinBigCell(EditorCell cell) {

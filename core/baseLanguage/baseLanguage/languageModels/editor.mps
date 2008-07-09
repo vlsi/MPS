@@ -4829,6 +4829,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1211505168857">
           <property name="text" value="&lt;" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996989" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215597215816">
+            <property name="value" value="0.0" />
+          </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215165506943">
             <property name="value" value="0.0" />
           </node>
@@ -15607,6 +15610,10 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1212699852038">
           <property name="text" value="&lt;" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215597268712">
+            <property name="value" value="0.0" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleSheetItem" id="1215597362268" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310998102">
             <property name="flag" value="false" />
           </node>
@@ -15618,9 +15625,10 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1212699852040">
           <property name="text" value="&gt;" />
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993804">
-            <property name="flag" value="false" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215597656584">
+            <property name="value" value="0.0" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleSheetItem" id="1215597358125" />
         </node>
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1212699852041">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212699852042">

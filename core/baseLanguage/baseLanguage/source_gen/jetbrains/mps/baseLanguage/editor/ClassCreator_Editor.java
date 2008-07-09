@@ -51,6 +51,8 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
           this.set(StyleAttributes.SELECTABLE, false);
         }
 
@@ -68,7 +70,8 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
         }
 
       };
