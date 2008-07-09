@@ -12,6 +12,7 @@
     <dependency reexport="false">jetbrains.mps.baseLanguage#1129914002933</dependency>
     <dependency reexport="false">MPS.Classpath</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.pluginLanguage</dependency>
+    <dependency reexport="false">jetbrains.mps.bootstrap.structureLanguage</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>

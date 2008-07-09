@@ -11,7 +11,6 @@ import jetbrains.mps.ide.actions.nodes.HighlightInstancesAction;
 import jetbrains.mps.ide.actions.nodes.ShowRootInProjectAction;
 import jetbrains.mps.ide.actions.nodes.ShowInProjectAction;
 import jetbrains.mps.ide.actions.nodes.SelectInActionAdapter;
-import jetbrains.mps.ide.actions.nodes.GoToConceptDeclarationAction;
 import jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationAction;
 import jetbrains.mps.ide.actions.nodes.GoToRulesAction;
 import jetbrains.mps.ide.actions.nodes.ShowNodeInExplorerAction;
@@ -47,7 +46,7 @@ public class EditorPopup_ActionGroup extends BaseGroup {
       this.add(new ShowInProjectAction());
       this.add(new SelectInActionAdapter());
       this.addSeparator();
-      this.add(new GoToConceptDeclarationAction());
+      this.add(new GoToConceptDeclaration_Action());
       this.add(new GoToEditorDeclarationAction());
       this.add(new GoToRulesAction());
       this.add(new ShowNodeInExplorerAction());

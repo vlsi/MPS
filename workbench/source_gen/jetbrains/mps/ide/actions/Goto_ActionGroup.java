@@ -9,7 +9,6 @@ import jetbrains.mps.workbench.actions.goTo.actions.GoToRootNodeAction;
 import jetbrains.mps.workbench.actions.goTo.actions.GoToNamedNodeAction;
 import jetbrains.mps.workbench.actions.goTo.actions.GoToConceptNodeAction;
 import jetbrains.mps.ide.actions.gotoMenu.GoToNodeByIdAction;
-import jetbrains.mps.ide.actions.nodes.GoToConceptDeclarationAction;
 import jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationAction;
 import jetbrains.mps.ide.actions.nodes.GoToRulesAction;
 import jetbrains.mps.workbench.actions.goTo.actions.GoToModelAction;
@@ -33,7 +32,7 @@ public class Goto_ActionGroup extends BaseGroup {
       this.add(new GoToConceptNodeAction());
       this.add(new GoToNodeByIdAction());
       this.addSeparator();
-      this.add(new GoToConceptDeclarationAction());
+      this.add(new GoToConceptDeclaration_Action());
       this.add(new GoToEditorDeclarationAction());
       this.add(new GoToRulesAction());
       this.addSeparator();
