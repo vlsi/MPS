@@ -28,6 +28,8 @@ public class GoToConceptDeclaration extends AnAction {
   }
 
   public PsiClass getConceptClass(PsiElement e) {
+    if (e == null) return null;
+
     if (e instanceof PsiTypeElement) {
       PsiTypeElement pte = (PsiTypeElement) e;
       if (pte.getType() instanceof PsiClassReferenceType) {

@@ -18,10 +18,11 @@ public class PluginUtil {
     return file.findElementAt(editor.getCaretModel().getOffset());
   }
 
-  public static<PE extends PsiElement> PE getElement(PsiElement current, Class<PE> elementClass) {
+  public static <PE extends PsiElement> PE getElement(PsiElement current, Class<PE> elementClass) {
+    if (current == null) return null;
     if (elementClass.isInstance(current)) {
       return (PE) current;
-    }    
+    }
     if (current.getParent() == null) return null;
     return getElement(current.getParent(), elementClass);
   }

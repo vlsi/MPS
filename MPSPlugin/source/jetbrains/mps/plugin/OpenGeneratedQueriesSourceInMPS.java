@@ -27,6 +27,7 @@ public class OpenGeneratedQueriesSourceInMPS extends AnAction {
   }
 
   private PsiMethod getMethod(PsiElement e) {
+    if (e == null) return null;
     if (e instanceof PsiMethod) return (PsiMethod) e;
     if (e.getParent() != null) return getMethod(e.getParent());
     return null;
