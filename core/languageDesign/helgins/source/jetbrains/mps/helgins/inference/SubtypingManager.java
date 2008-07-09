@@ -47,6 +47,14 @@ public class SubtypingManager {
   public boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak) {
     if (subtype == supertype) return true;
     if (subtype == null || supertype == null) return false;
+
+    Set<InequationReplacementRule_Runtime> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(subtype, supertype);
+      for (InequationReplacementRule_Runtime inequationReplacementRule : inequationReplacementRules) {
+        if (inequationReplacementRule.checkInequation(subtype, supertype, new EquationInfo(null, null))) {
+          return true;
+        }
+      }
+
     return isSubtype(NodeWrapper.createWrapperFromNode(subtype, null),
       NodeWrapper.createWrapperFromNode(supertype, null), null, null, isWeak);
   }

@@ -38,4 +38,8 @@ public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoA
   public String getApplicableConceptFQName2() {
     return getApplicableSupertypeConceptFQName();
   }
+
+  public boolean checkInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
+    return false;
+  }
 }
