@@ -15,7 +15,7 @@ public class typeof_ArrayLengthOperation_InferenceRule implements InferenceRule_
   public void applyRule(final SNode lengthOperation) {
     {
       SNode _nodeToCheck_1029348928467 = lengthOperation;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614096410", true), new QuotationClass_86().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614096407");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215615992160", true), new QuotationClass_86().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215615992157");
     }
   }
 
