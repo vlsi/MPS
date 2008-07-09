@@ -1993,4 +1993,35 @@ __switch__:
     return result;
   }
 
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_ClassCreator_1215595029605(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
+          SNode cls = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null);
+          for(SNode arg : SLinkOperations.getTargets(_context.getSourceNode(), "actualArgument", true)) {
+            SLinkOperations.addChild(cls, "parameter", arg);
+          }
+          SLinkOperations.setTarget(cls, "classifier", SNodeOperations.getParent(SLinkOperations.getTarget(_context.getSourceNode(), "baseMethodDeclaration", false), null, false, false), false);
+          SLinkOperations.setTarget(creator, "cls", cls, true);
+          SNodeOperations.replaceWithAnother(_context.getSourceNode(), creator);
+          return creator;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "{";
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "anonymous class";
+        }
+
+      });
+    }
+    return result;
+  }
+
 }

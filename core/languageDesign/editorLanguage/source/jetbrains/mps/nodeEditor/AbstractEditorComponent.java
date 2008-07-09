@@ -2031,7 +2031,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   EditorCell getBigCellForNode(SNode node) {
     WeakReference<EditorCell> weakReference = myNodesToBigCellsMap.get(node);
     if (weakReference == null) return null;
-    return weakReference.get();
+    EditorCell result = weakReference.get(); //todo this is a hack. need to make myNodesToBigCellsMap not weak
+    if (result != null && result.getRootParent() != getRootCell()) {
+      return null;
+    }
+    return result;
   }
 
   public EditorCell getBigValidCellForNode(SNode node) {
