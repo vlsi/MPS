@@ -4,8 +4,8 @@ package jetbrains.mps.bootstrap.editorLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_CaretPositionParameter_InferenceRule implements InferenceRule_Runtime {
@@ -14,7 +14,10 @@ public class typeof_CaretPositionParameter_InferenceRule implements InferenceRul
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "position", true), "jetbrains.mps.bootstrap.editorLanguage.helgins", "1201271583415", true), new QuotationClass_9().createNode(), SLinkOperations.getTarget(nodeToCheck, "position", true), null, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1201271589564");
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "position", true);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1201271583415", true), new QuotationClass_9().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1201271589564");
+    }
   }
 
   public String getApplicableConceptFQName() {

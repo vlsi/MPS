@@ -4,8 +4,8 @@ package jetbrains.mps.bootstrap.editorLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SelectLaterOperation_InferenceRule implements InferenceRule_Runtime {
@@ -14,7 +14,10 @@ public class typeof_SelectLaterOperation_InferenceRule implements InferenceRule_
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "editorContext", true), "jetbrains.mps.bootstrap.editorLanguage.helgins", "1201270098250", true), new QuotationClass_8().createNode(), SLinkOperations.getTarget(nodeToCheck, "editorContext", true), null, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1201270048564", false, 0);
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "editorContext", true);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1201270098250", true), new QuotationClass_8().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1201270048564", false, 0);
+    }
   }
 
   public String getApplicableConceptFQName() {
