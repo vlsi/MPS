@@ -16,11 +16,11 @@ public class typeOf_OrExpression_InferenceRule implements InferenceRule_Runtime 
   public void applyRule(final SNode orExpr) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(orExpr, "leftExpression", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1176901341532", true), new QuotationClass_34().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176901360178", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599136242", true), new QuotationClass_34().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599136239", false, 0);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(orExpr, "rightExpression", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1176901371535", true), new QuotationClass_35().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176901371532", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599136248", true), new QuotationClass_35().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599136245", false, 0);
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_36().createNode(), orExpr, "jetbrains.mps.baseLanguage.helgins", "1176901392839");
   }

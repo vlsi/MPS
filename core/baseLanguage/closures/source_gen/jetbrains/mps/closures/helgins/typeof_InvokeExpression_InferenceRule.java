@@ -21,12 +21,15 @@ public class typeof_InvokeExpression_InferenceRule implements InferenceRule_Runt
       TypeChecker.getInstance().reportTypeError(invoke, "Must be within ClosureLiteral", "jetbrains.mps.closures.helgins", "1199711581032");
     }
     {
-      final SNode _representatorVar1 = TypeChecker.getInstance().getRuntimeSupport().typeOf(cl, "jetbrains.mps.closures.helgins", "1199711625694", true);
+      final SNode _representatorVar1 = TypeChecker.getInstance().getRuntimeSupport().typeOf(cl, "jetbrains.mps.closures.helgins@5_0", "1215598000860", true);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar1, new Runnable() {
 
         public void run() {
-          SNode ft = TypeChecker.getInstance().getRuntimeSupport().typeOf(cl, "jetbrains.mps.closures.helgins", "1199711616632", true);
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(invoke, "jetbrains.mps.closures.helgins", "1199711815333", true), SLinkOperations.getTarget(ft, "resultType", true), invoke, null, "jetbrains.mps.closures.helgins", "1199711813747");
+          SNode ft = TypeChecker.getInstance().getRuntimeSupport().typeOf(cl, "jetbrains.mps.closures.helgins@5_0", "1215598000867", true);
+          {
+            SNode _nodeToCheck_1029348928467 = invoke;
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.closures.helgins@5_0", "1215598000871", true), SLinkOperations.getTarget(ft, "resultType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins@5_0", "1215598000869");
+          }
           if (!(SLinkOperations.getCount(ft, "parameterType") == SLinkOperations.getCount(invoke, "parameter"))) {
             TypeChecker.getInstance().reportTypeError(invoke, "Wrong parameters number", "jetbrains.mps.closures.helgins", "1199711857568");
           }
@@ -44,7 +47,10 @@ public class typeof_InvokeExpression_InferenceRule implements InferenceRule_Runt
               }
               pt = pt_iterator.next();
               p = p_iterator.next();
-              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(p, "jetbrains.mps.closures.helgins", "1202920161360", true), pt, p, null, "jetbrains.mps.closures.helgins", "1202920161358", false, 0);
+              {
+                SNode _nodeToCheck_1029348928467 = p;
+                TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.closures.helgins@5_0", "1215598000901", true), pt, _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins@5_0", "1215598000899", false, 0);
+              }
             }
           }
         }

@@ -17,11 +17,21 @@
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
         <dependency reexport="false">jetbrains.mps.quotation</dependency>
         <dependency reexport="false">jetbrains.mps.quotation</dependency>
+        <dependency reexport="false">jetbrains.mps.patterns</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
       </usedLanguages>
-      <mapping-priorities />
+      <mapping-priorities>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main@templates" nodeID="1174411222995" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main@templates" nodeID="1215528394348" />
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+      </mapping-priorities>
     </generator>
   </generators>
   <classPath>

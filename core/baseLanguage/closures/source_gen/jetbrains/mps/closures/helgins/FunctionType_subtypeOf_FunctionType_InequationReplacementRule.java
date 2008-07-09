@@ -20,11 +20,14 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     if (SLinkOperations.getCount(subtype, "parameterType") != SLinkOperations.getCount(supertype, "parameterType")) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), "different parameter numbers", "jetbrains.mps.closures.helgins", "1201618945543", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), "different parameter numbers", "jetbrains.mps.closures.helgins@5_0", "1215598001644", intentionProvider);
       }
       return;
     }
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), SLinkOperations.getTarget(supertype, "resultType", true), equationInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1201614892741", false, 0);
+    {
+      SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), SLinkOperations.getTarget(supertype, "resultType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins@5_0", "1215598001658", false, 0);
+    }
     {
       SNode paramType1;
       SNode paramType2;
@@ -39,9 +42,39 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         }
         paramType1 = paramType1_iterator.next();
         paramType2 = paramType2_iterator.next();
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(paramType2, paramType1, equationInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1201614990748", false, 0);
+        {
+          SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(paramType2, paramType1, _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins@5_0", "1215598001676", false, 0);
+        }
       }
     }
+  }
+
+  public boolean checkInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
+    boolean result_14532009 = true;
+    if (SLinkOperations.getCount(subtype, "parameterType") != SLinkOperations.getCount(supertype, "parameterType")) {
+      result_14532009 = false;
+      return result_14532009;
+    }
+    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(subtype, "resultType", true), SLinkOperations.getTarget(supertype, "resultType", true), true);
+    {
+      SNode paramType1;
+      SNode paramType2;
+      Iterator<SNode> paramType1_iterator = SLinkOperations.getTargets(subtype, "parameterType", true).iterator();
+      Iterator<SNode> paramType2_iterator = SLinkOperations.getTargets(supertype, "parameterType", true).iterator();
+      while (true) {
+        if (!(paramType1_iterator.hasNext())) {
+          break;
+        }
+        if (!(paramType2_iterator.hasNext())) {
+          break;
+        }
+        paramType1 = paramType1_iterator.next();
+        paramType2 = paramType2_iterator.next();
+        result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(paramType2, paramType1, true);
+      }
+    }
+    return result_14532009;
   }
 
   public boolean isWeak() {

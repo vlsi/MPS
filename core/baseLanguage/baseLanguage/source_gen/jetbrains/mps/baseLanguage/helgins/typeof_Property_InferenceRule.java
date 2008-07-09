@@ -16,7 +16,7 @@ public class typeof_Property_InferenceRule implements InferenceRule_Runtime {
   public void applyRule(final SNode property) {
     {
       SNode _nodeToCheck_1029348928467 = property;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1201468307043", true), SLinkOperations.getTarget(property, "type", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1201468313014");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599145179", true), SLinkOperations.getTarget(property, "type", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599145174");
     }
   }
 

@@ -16,7 +16,7 @@ public class typeOf_GenericNewExpression_InferenceRule implements InferenceRule_
   public void applyRule(final SNode genericNE) {
     {
       SNode _nodeToCheck_1029348928467 = genericNE;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1197929386566", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(genericNE, "creator", true), "jetbrains.mps.baseLanguage.helgins", "1176896993400", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1197929386564");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599135371", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(genericNE, "creator", true), "jetbrains.mps.baseLanguage.helgins@5_0", "1215599135373", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599135369");
     }
   }
 
