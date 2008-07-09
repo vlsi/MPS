@@ -108,7 +108,8 @@ public class GenerationController {
           if (module != null && module.reloadClassesAfterGeneration()) {
             needToReload = true;
           }
-          compiledSuccessfully = compiledSuccessfully && compileModule(module, totalJob, startJobTime);
+          boolean compilationResult = compileModule(module, totalJob, startJobTime);
+          compiledSuccessfully = compiledSuccessfully && compilationResult;
         }
         for (SModelDescriptor sm : myModelsToContexts.keySet()) {
           ModelGenerationStatusManager.getInstance().invalidateData(sm);
