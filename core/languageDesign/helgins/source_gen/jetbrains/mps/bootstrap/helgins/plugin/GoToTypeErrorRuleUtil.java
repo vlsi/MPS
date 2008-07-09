@@ -5,9 +5,9 @@ package jetbrains.mps.bootstrap.helgins.plugin;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
@@ -16,14 +16,17 @@ public class GoToTypeErrorRuleUtil {
   public static void goToTypeErrorRule(IOperationContext context, IErrorReporter error, Logger LOG) {
     String ruleID = error.getRuleId();
     String ruleModel = error.getRuleModel();
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(ruleModel));
+    SModelUID modelUID = SModelUID.fromString(ruleModel);
+    modelUID = SModelUID.fromString(modelUID.getLongName());
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     if (modelDescriptor == null) {
-      LOG.error("can't find rule's model" + ruleModel);
+      LOG.error("can't find rule's model " + ruleModel);
       return;
     }
     SNode rule = modelDescriptor.getSModel().getNodeById(ruleID);
     if (rule == null) {
       LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
+      return;
     }
     context.getComponent(MPSEditorOpener.class).openNode(rule);
   }

@@ -236,8 +236,16 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215510528833">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215599469290">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215599469291">
+            <property name="name" value="n" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1215599469292">
               <link role="concept" targetNodeId="134.1105736889287" resolveInfo="AggregationConceptLink" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215599697549">
+              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1215599697550">
+                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1215599697551">
+                  <link role="concept" targetNodeId="125.1133920641626" resolveInfo="BaseConcept" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
