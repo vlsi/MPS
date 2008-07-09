@@ -259,69 +259,23 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1213790647249" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213790647250" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213790647251">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215534603588">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215534606137">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215534603589">
-              <property name="value" value="sdsds" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215534608124">
-              <link role="baseMethodDeclaration" targetNodeId="1.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215534611157">
-                <property name="value" value="3" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215607596096">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215607596097">
+            <property name="name" value="input" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1215607596098">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215607596099">
+                <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
               </node>
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215607629707" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215535409617">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215535409618">
-            <property name="name" value="s" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215535409619">
-              <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215607619059">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215607620827">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215607619060">
+              <link role="variableDeclaration" targetNodeId="1215607596097" resolveInfo="input" />
             </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215599321690">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1215599322676">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215599326976">
-              <property name="value" value="sd" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215599321691">
-              <property name="value" value="3" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215599352416">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1215599354090">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1215599354091" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215599352417">
-              <property name="value" value="3" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215599365579">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1215599367034">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1215599367035" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215599365580">
-              <property name="value" value="3" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215599388694">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215599388695">
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1215599388696" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215535412230">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215535412311">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215535412231">
-              <link role="variableDeclaration" targetNodeId="1215535409618" resolveInfo="s" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215535414111">
-              <link role="baseMethodDeclaration" targetNodeId="1.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215535416080">
-                <property name="value" value="sdsdss" />
-              </node>
-            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToArrayOperation" id="1215607623048" />
           </node>
         </node>
       </node>
