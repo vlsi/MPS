@@ -50,7 +50,7 @@ class Memento {
 
     if (cell instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) cell;
-      if (label.isErrorState()) {
+      if (label.isErrorState() && !"".equals(label.getText())) {
         myErrorTexts.put(label.getCellInfo(), label.getText());
       }
     }
