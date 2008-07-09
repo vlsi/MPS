@@ -761,9 +761,6 @@
             <link role="javaClass" targetNodeId="13.~DumpKeyStrokes" resolveInfo="DumpKeyStrokes" />
           </node>
           <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1207148387807" />
-          <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207148387808">
-            <link role="javaClass" targetNodeId="13.~InternalRefactoringAction" resolveInfo="InternalRefactoringAction" />
-          </node>
         </node>
       </node>
     </node>

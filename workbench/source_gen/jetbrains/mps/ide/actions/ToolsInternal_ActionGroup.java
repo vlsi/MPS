@@ -6,7 +6,6 @@ import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.actions.tools.RemoveTransientModulesAction;
 import jetbrains.mps.ide.actions.tools.DumpKeyStrokes;
-import jetbrains.mps.ide.actions.tools.InternalRefactoringAction;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -23,7 +22,6 @@ public class ToolsInternal_ActionGroup extends BaseGroup {
       this.addSeparator();
       this.add(new DumpKeyStrokes());
       this.addSeparator();
-      this.add(new InternalRefactoringAction());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
