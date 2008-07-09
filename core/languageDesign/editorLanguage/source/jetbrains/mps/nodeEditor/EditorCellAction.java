@@ -33,6 +33,7 @@ public abstract class EditorCellAction {
   public static final String PAGE_DOWN = "PAGE_DOWN";
   // --
   public static final String RIGHT_TRANSFORM = "RIGHT_TRANSFORM";
+  public static final String LEFT_TRANSFORM = "LEFT_TRANSFORM";
 
   public static final String FOLD = "FOLD";
   public static final String UNFOLD = "UNFOLD";

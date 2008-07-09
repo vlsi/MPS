@@ -978,6 +978,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (caretPosition == text.length()) {
           return EditorCellAction.RIGHT_TRANSFORM;
         }
+
+        if (caretPosition == 0) {
+          return EditorCellAction.LEFT_TRANSFORM;
+        }
       }      
     }
 

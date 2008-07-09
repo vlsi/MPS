@@ -35,6 +35,7 @@ public final class SNode {
   public static final Object LAST_UPDATE = new Object();
 
   public static final String RIGHT_TRANSFORM_HINT = "right_transfrom_hint";
+  public static final String LEFT_TRANSFORM_HINT = "left_transfrom_hint";
 
   public static final SNode[] EMPTY_ARRAY = new SNode[0];
 
@@ -1386,6 +1387,7 @@ public final class SNode {
     return false;
   }
 
+  //todo remove into editor code
   public void addRightTransformHint() {
     setBooleanProperty(RIGHT_TRANSFORM_HINT, true);
   }
@@ -1396,6 +1398,18 @@ public final class SNode {
 
   public void removeRightTransformHint() {
     setBooleanProperty(RIGHT_TRANSFORM_HINT, false);
+  }
+
+  public void addLeftTransformHint() {
+    setBooleanProperty(LEFT_TRANSFORM_HINT, true);
+  }
+
+  public boolean hasLeftTransformHint() {
+    return getBooleanProperty(LEFT_TRANSFORM_HINT);
+  }
+
+  public void removeLeftTransformHint() {
+    setBooleanProperty(LEFT_TRANSFORM_HINT, false);
   }
 
   public Language getNodeLanguage() {

@@ -75,7 +75,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     if (selectedCell != null) {
       boolean endEditKeystroke = isEndEditKeystroke(keyEvent);      
-      boolean strictMatching = endEditKeystroke || EditorCellAction.RIGHT_TRANSFORM.equals(actionType);
+      boolean strictMatching = endEditKeystroke || EditorCellAction.RIGHT_TRANSFORM.equals(actionType) || EditorCellAction.LEFT_TRANSFORM.equals(actionType);
 
       if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
         nodeEditor.showMessageTooltip();
@@ -91,7 +91,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           return true;
         }
 
-        if (EditorCellAction.RIGHT_TRANSFORM.equals(actionType)) {
+        if (EditorCellAction.RIGHT_TRANSFORM.equals(actionType) || EditorCellAction.LEFT_TRANSFORM.equals(actionType)) {
           // !side effect: can change selection!
           if (EditorUtil.validateCell(selectedCell, editorContext, strictMatching, true) != 0) {
             return true;
