@@ -26,9 +26,7 @@ public class IntelligentInputUtil {
       String smallPattern = pattern.substring(0, pattern.length() - 1);
       String tail = pattern.substring(pattern.length() - 1, pattern.length());
       processCellAtEnd(cell, editorContext, smallPattern, tail);
-    }
-
-    if (cell.getCaretPosition() == 1) {
+    } else if (cell.getCaretPosition() == 1) {
       String head = "" + pattern.charAt(0);
       String smallPattern = pattern.substring(1);
       processCellAtStart(cell, editorContext, head, smallPattern);

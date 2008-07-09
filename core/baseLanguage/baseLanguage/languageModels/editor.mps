@@ -2395,6 +2395,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215436040090">
           <property name="text" value="}" />
           <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1215618958947">
+            <property name="flag" value="true" />
+          </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1215436040099">
             <property name="flag" value="true" />
           </node>
@@ -2539,6 +2542,9 @@
                     </node>
                   </node>
                 </node>
+              </node>
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1215618964933">
+                <property name="flag" value="true" />
               </node>
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1215436607530">
                 <property name="tag" value="ext_1_RTransform" />
