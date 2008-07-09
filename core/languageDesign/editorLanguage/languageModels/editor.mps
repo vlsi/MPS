@@ -2233,6 +2233,7 @@
             <property name="writable" value="true" />
             <property name="defaultValue" value="&lt;null&gt;" />
             <property name="noTargetText" value="&lt;none&gt;" />
+            <property name="allowEmptyText" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1073389577007" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleSheetItem" id="1214314941786">
               <property name="flag" value="true" />
