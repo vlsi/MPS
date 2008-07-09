@@ -421,7 +421,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.projectPane.fileSystem.FileProjectViewPane</implementation-class>
+      <implementation-class>jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane</implementation-class>
       <option name="workspace" value="true"/>
       <skipForDummyProject/>
     </component>

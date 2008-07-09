@@ -12,11 +12,16 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsListener;
 import com.intellij.openapi.vfs.*;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -29,12 +34,11 @@ import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 import javax.swing.Timer;
 import javax.swing.tree.TreePath;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.LinkedList;
 import java.util.List;
 
-public class FileProjectViewPane extends AbstractProjectViewPane implements DataProvider {
+public class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
   @NonNls
   public static final String ID = "FileSystem";
   public static final String TITLE = "File System";
@@ -52,7 +56,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
   };
   private VirtualFileManagerListener myVirtualFileManagerListener;
 
-  protected FileProjectViewPane(Project project, final ProjectView projectView) {
+  protected FileViewProjectPane(Project project, final ProjectView projectView) {
     super(project);
 
     myProject = project;
@@ -67,6 +71,16 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
         }
       }
     };
+
+    myTree.addKeyListener(new KeyAdapter() {
+      @Override
+      public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0) {
+          openEditor();
+          e.consume();
+        }
+      }
+    });
 
     myTimer = new Timer(SECOND, new ActionListener() {
       public void actionPerformed(ActionEvent e) {
@@ -112,7 +126,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
       }
     };
 
-    myVirtualFileManagerListener = new VirtualFileManagerListener(){
+    myVirtualFileManagerListener = new VirtualFileManagerListener() {
 
       public void beforeRefreshStart(boolean asynchonous) {
 
@@ -122,6 +136,20 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
         rebuildTreeLater();
       }
     };
+  }
+
+  private void openEditor() {
+    TreePath selectionPath = getTree().getSelectionPath();
+    if (selectionPath == null) return;
+    if (!(selectionPath.getLastPathComponent() instanceof FileTreeNode)) return;
+    FileTreeNode fileTreeNode = (FileTreeNode) selectionPath.getLastPathComponent();
+
+//    IEditor editor = openNode(fileTreeNode.getFile(), fileTreeNode.getOperationContext());
+//    editor.requestFocus();
+
+    FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
+    editorManager.openFile(VFileSystem.getFile(fileTreeNode.getFile()), true);
+//    fileEditors[0].getComponent().requestFocus();
   }
 
   public void initComponent() {
@@ -197,7 +225,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
     rebuildTreeLater();
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
-        myProjectView.addProjectPane(FileProjectViewPane.this);
+        myProjectView.addProjectPane(FileViewProjectPane.this);
       }
     });
   }
