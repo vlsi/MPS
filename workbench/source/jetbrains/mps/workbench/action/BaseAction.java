@@ -101,6 +101,11 @@ public abstract class BaseAction extends AnAction {
     p.setVisible(isVisible);
   }
 
+  /**
+   * Collect action parameters HERE
+    * @param e
+   * @return true if all action parameters collected, false otherwise
+   */
   protected boolean fillFieldsIfNecessary(AnActionEvent e) {
     return true;
   }
