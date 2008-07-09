@@ -27,5 +27,14 @@
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1215628673339">
+    <property name="name" value="IAaa" />
+    <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1215628680512">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1215628682983">
+      <link role="intfc" targetNodeId="1.1196978630214" resolveInfo="IResolveInfo" />
+    </node>
+  </node>
 </model>
 

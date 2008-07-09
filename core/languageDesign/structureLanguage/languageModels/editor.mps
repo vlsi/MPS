@@ -2059,7 +2059,7 @@
         <property name="vertical" value="false" />
         <property name="name" value="headerRow" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1169126008915">
-          <property name="text" value="interface concept declaration" />
+          <property name="text" value="interface concept" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1169126008916">
           <property name="noTargetText" value="&lt;no name&gt;" />
@@ -2069,6 +2069,23 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorSelectedStyleSheetItem" id="1214407442129">
             <property name="color" value="cyan" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1215628239608">
+          <property name="vertical" value="false" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1215628239609">
+            <property name="flag" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215628249189">
+            <property name="text" value="extends" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1215628749906" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1215628259127">
+            <property name="vertical" value="true" />
+            <link role="relationDeclaration" targetNodeId="1.1169127546356" />
+            <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215628279925">
+              <property name="nullText" value="&lt;none&gt;" />
+            </node>
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993993">
@@ -2093,13 +2110,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1169126008920">
           <property name="vertical" value="true" />
           <property name="name" value="contentArea" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1169127688705">
-            <property name="text" value="extends:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1169127704617">
-            <property name="vertical" value="true" />
-            <link role="relationDeclaration" targetNodeId="1.1169127546356" />
-          </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1169127682234">
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994424">
               <property name="flag" value="false" />
