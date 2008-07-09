@@ -693,8 +693,6 @@ public final class SNode {
     }
 
     if (ModelChange.needRegisterUndo(getModel())) {
-      final String pv = propertyValue;
-
       UndoUtil.addUndoableAction(new PropertyChangeUndoableAction(this, propertyName, oldValue, propertyValue));
     }
 

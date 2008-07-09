@@ -11,14 +11,17 @@ import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 
 public abstract class SNodeUndoableAction implements UndoableAction {
   private DocumentReference[] myAffectedDocuments;
+  private MPSNodeVirtualFile myFile;
+  private long myModifcationStamp;
 
   protected SNodeUndoableAction(SNode affectedNode) {
     SNode containingRoot = affectedNode.getContainingRoot();
     if (containingRoot == null) {
       myAffectedDocuments =  new DocumentReference[0];
     } else {
-      VirtualFile vf = MPSNodesVirtualFileSystem.getInstance().getFileFor(containingRoot);
-      myAffectedDocuments = new DocumentReference[] { new DocumentReferenceByVirtualFile(vf) };
+      myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(containingRoot);
+      myAffectedDocuments = new DocumentReference[] { new DocumentReferenceByVirtualFile(myFile) };
+      myModifcationStamp = myFile.getModificationStamp();
     }
   }
 
@@ -29,6 +32,9 @@ public abstract class SNodeUndoableAction implements UndoableAction {
   public final void undo() throws UnexpectedUndoException {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
+        if (myFile != null) {
+          myFile.setModificationStamp(myModifcationStamp);
+        }
         doUndo();
       }
     });

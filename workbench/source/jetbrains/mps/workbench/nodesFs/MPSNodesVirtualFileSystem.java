@@ -1,9 +1,7 @@
 package jetbrains.mps.workbench.nodesFs;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileListener;
 import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.Computable;
@@ -20,9 +18,6 @@ import java.util.regex.Matcher;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.util.Calculable;
-import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.project.GlobalScope;
 
 import javax.swing.SwingUtilities;
@@ -33,7 +28,8 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     return ApplicationManager.getApplication().getComponent(MPSNodesVirtualFileSystem.class);
   }
 
-  private SModelCommandListener myListener = new MyCommandListener();
+  private SModelCommandListener myCommandListener = new MyCommandListener();
+  private SModelListener myListener = new MyModelListener();
   private WeakHashMap<SNode, MPSNodeVirtualFile> myVirtualFiles = new WeakHashMap<SNode, MPSNodeVirtualFile>();
 
   public MPSNodeVirtualFile getFileFor(@NotNull final SNode node) {
@@ -55,11 +51,13 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   public void initComponent() {
-    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myListener);
+    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myCommandListener);
+    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myListener);
   }
 
   public void disposeComponent() {
-    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myListener);
+    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myListener);
+    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myCommandListener);
   }
 
   @NonNls
@@ -142,10 +140,6 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
               for (SModelEvent e : events) {
-                if (e.getAffectedRoot() != null) {
-                  updateModificationStamp(e.getAffectedRoot());
-                }
-
                 e.accept(new SModelEventVisitorAdapter() {
                   public void visitRootEvent(SModelRootEvent event) {
                     if (event.isRemoved()) {
@@ -173,6 +167,14 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
           });
         }
       });
+    }
+  }
+
+  private class MyModelListener extends SModelAdapter {
+    public void eventFired(SModelEvent event) {
+      if (event.getAffectedRoot() != null) {
+        updateModificationStamp(event.getAffectedRoot());
+      }
     }
   }
 }
