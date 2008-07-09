@@ -77,14 +77,14 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return InterfaceConceptDeclaration_Editor.calculateColor37(cell);
+              return InterfaceConceptDeclaration_Editor.calculateColor36(cell);
             }
 
           });
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return InterfaceConceptDeclaration_Editor.calculateColor42(cell);
+              return InterfaceConceptDeclaration_Editor.calculateColor41(cell);
             }
 
           });
@@ -489,13 +489,13 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell9508_018(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor37(EditorCell cell) {
+  private static Color calculateColor36(EditorCell cell) {
     Color result;
     result = Color.yellow;
     return result;
   }
 
-  private static Color calculateColor42(EditorCell cell) {
+  private static Color calculateColor41(EditorCell cell) {
     Color result;
     result = Color.cyan;
     return result;

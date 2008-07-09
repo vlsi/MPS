@@ -35,7 +35,7 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StringConceptPropertyDeclaration_Editor.calculateColor29(cell);
+              return StringConceptPropertyDeclaration_Editor.calculateColor28(cell);
             }
 
           });
@@ -54,7 +54,7 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StringConceptPropertyDeclaration_Editor.calculateColor19(cell);
+              return StringConceptPropertyDeclaration_Editor.calculateColor18(cell);
             }
 
           });
@@ -71,13 +71,13 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_namePropertyCell1972_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor19(EditorCell cell) {
+  private static Color calculateColor18(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;
   }
 
-  private static Color calculateColor29(EditorCell cell) {
+  private static Color calculateColor28(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

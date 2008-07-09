@@ -49,7 +49,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
   private static void setupLabel_targetRefCell4537_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor5(EditorCell cell) {
+  private static Color calculateColor4(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -82,7 +82,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
 
   public EditorCell create_referenceConceptLinkDeclarationRefCell4537_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline3());
+    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline2());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_referenceConceptLinkDeclarationRefCell4537_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -111,7 +111,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
 
   public EditorCell create_targetRefCell4537_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline8());
+    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline7());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_targetRefCell4537_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -138,9 +138,9 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline3 extends AbstractCellProvider {
+  public static class _Inline2 extends AbstractCellProvider {
 
-    public _Inline3() {
+    public _Inline2() {
       super();
     }
 
@@ -153,7 +153,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return ReferenceConceptLink_Editor.calculateColor5(cell);
+                return ReferenceConceptLink_Editor.calculateColor4(cell);
               }
 
             });
@@ -206,9 +206,9 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline8 extends AbstractCellProvider {
+  public static class _Inline7 extends AbstractCellProvider {
 
-    public _Inline8() {
+    public _Inline7() {
       super();
     }
 

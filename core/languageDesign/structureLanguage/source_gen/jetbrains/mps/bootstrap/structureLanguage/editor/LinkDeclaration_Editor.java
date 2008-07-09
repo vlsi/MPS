@@ -90,7 +90,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return LinkDeclaration_Editor.calculateColor39(cell);
+              return LinkDeclaration_Editor.calculateColor38(cell);
             }
 
           });
@@ -181,13 +181,13 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "specializedLink", false) != null;
   }
 
-  private static Color calculateColor12(EditorCell cell) {
+  private static Color calculateColor11(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor39(EditorCell cell) {
+  private static Color calculateColor38(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;
@@ -325,7 +325,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell create_specializedLinkRefCell7832_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new LinkDeclaration_Editor._Inline11());
+    provider.setAuxiliaryCellProvider(new LinkDeclaration_Editor._Inline10());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_specializedLinkRefCell7832_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -354,7 +354,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell create_targetRefCell7832_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new LinkDeclaration_Editor._Inline12());
+    provider.setAuxiliaryCellProvider(new LinkDeclaration_Editor._Inline11());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_targetRefCell7832_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -381,9 +381,9 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline11 extends AbstractCellProvider {
+  public static class _Inline10 extends AbstractCellProvider {
 
-    public _Inline11() {
+    public _Inline10() {
       super();
     }
 
@@ -433,9 +433,9 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline12 extends AbstractCellProvider {
+  public static class _Inline11 extends AbstractCellProvider {
 
-    public _Inline12() {
+    public _Inline11() {
       super();
     }
 
@@ -447,7 +447,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return LinkDeclaration_Editor.calculateColor12(cell);
+                return LinkDeclaration_Editor.calculateColor11(cell);
               }
 
             });

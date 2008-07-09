@@ -59,14 +59,14 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return PrimitiveDataTypeDeclaration_Editor.calculateColor38(cell);
+              return PrimitiveDataTypeDeclaration_Editor.calculateColor37(cell);
             }
 
           });
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return PrimitiveDataTypeDeclaration_Editor.calculateColor43(cell);
+              return PrimitiveDataTypeDeclaration_Editor.calculateColor42(cell);
             }
 
           });
@@ -83,13 +83,13 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_namePropertyCell19118_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor38(EditorCell cell) {
+  private static Color calculateColor37(EditorCell cell) {
     Color result;
     result = Color.yellow;
     return result;
   }
 
-  private static Color calculateColor43(EditorCell cell) {
+  private static Color calculateColor42(EditorCell cell) {
     Color result;
     result = Color.cyan;
     return result;

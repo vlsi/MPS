@@ -54,7 +54,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
   private static void setupLabel_targetRefNodeCell20120_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor9(EditorCell cell) {
+  private static Color calculateColor8(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -87,7 +87,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
 
   public EditorCell create_aggregationConceptLinkDeclarationRefCell20120_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new AggregationConceptLink_Editor._Inline4());
+    provider.setAuxiliaryCellProvider(new AggregationConceptLink_Editor._Inline3());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_aggregationConceptLinkDeclarationRefCell20120_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -144,9 +144,9 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline4 extends AbstractCellProvider {
+  public static class _Inline3 extends AbstractCellProvider {
 
-    public _Inline4() {
+    public _Inline3() {
       super();
     }
 
@@ -159,7 +159,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return AggregationConceptLink_Editor.calculateColor9(cell);
+                return AggregationConceptLink_Editor.calculateColor8(cell);
               }
 
             });

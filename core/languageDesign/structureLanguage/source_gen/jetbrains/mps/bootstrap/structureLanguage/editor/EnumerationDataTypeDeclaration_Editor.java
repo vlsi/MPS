@@ -74,14 +74,14 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return EnumerationDataTypeDeclaration_Editor.calculateColor36(cell);
+              return EnumerationDataTypeDeclaration_Editor.calculateColor35(cell);
             }
 
           });
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return EnumerationDataTypeDeclaration_Editor.calculateColor40(cell);
+              return EnumerationDataTypeDeclaration_Editor.calculateColor39(cell);
             }
 
           });
@@ -313,7 +313,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return EnumerationDataTypeDeclaration_Editor.calculateColor16(cell);
+              return EnumerationDataTypeDeclaration_Editor.calculateColor15(cell);
             }
 
           });
@@ -333,7 +333,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return EnumerationDataTypeDeclaration_Editor.calculateColor23(cell);
+              return EnumerationDataTypeDeclaration_Editor.calculateColor22(cell);
             }
 
           });
@@ -438,7 +438,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return EnumerationDataTypeDeclaration_Editor.calculateColor24(cell);
+              return EnumerationDataTypeDeclaration_Editor.calculateColor23(cell);
             }
 
           });
@@ -527,37 +527,37 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "hasNoDefaultMember");
   }
 
+  private static Color calculateColor15(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
   private static Color calculateColor16(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor17(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor23(EditorCell cell) {
+  private static Color calculateColor22(EditorCell cell) {
     Color result;
     result = Color.red;
     return result;
   }
 
-  private static Color calculateColor24(EditorCell cell) {
+  private static Color calculateColor23(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;
   }
 
-  private static Color calculateColor36(EditorCell cell) {
+  private static Color calculateColor35(EditorCell cell) {
     Color result;
     result = Color.yellow;
     return result;
   }
 
-  private static Color calculateColor40(EditorCell cell) {
+  private static Color calculateColor39(EditorCell cell) {
     Color result;
     result = Color.cyan;
     return result;
@@ -859,7 +859,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell create_memberDataTypeRefCell7131_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_Editor._Inline10());
+    provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_Editor._Inline9());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_memberDataTypeRefCell7131_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -917,7 +917,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell create_defaultMemberRefCell7131_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_Editor._Inline16());
+    provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_Editor._Inline15());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_defaultMemberRefCell7131_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -1002,9 +1002,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline10 extends AbstractCellProvider {
+  public static class _Inline9 extends AbstractCellProvider {
 
-    public _Inline10() {
+    public _Inline9() {
       super();
     }
 
@@ -1054,9 +1054,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline16 extends AbstractCellProvider {
+  public static class _Inline15 extends AbstractCellProvider {
 
-    public _Inline16() {
+    public _Inline15() {
       super();
     }
 
@@ -1069,7 +1069,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return EnumerationDataTypeDeclaration_Editor.calculateColor17(cell);
+                return EnumerationDataTypeDeclaration_Editor.calculateColor16(cell);
               }
 
             });

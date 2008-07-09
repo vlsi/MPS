@@ -53,7 +53,7 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return IntegerConceptProperty_Editor.calculateColor35(cell);
+              return IntegerConceptProperty_Editor.calculateColor34(cell);
             }
 
           });
@@ -73,13 +73,13 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
   private static void setupLabel_valuePropertyCell10226_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor11(EditorCell cell) {
+  private static Color calculateColor10(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor35(EditorCell cell) {
+  private static Color calculateColor34(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
@@ -112,7 +112,7 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
 
   public EditorCell create_integerConceptPropertyDeclarationRefCell10226_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new IntegerConceptProperty_Editor._Inline1());
+    provider.setAuxiliaryCellProvider(new IntegerConceptProperty_Editor._Inline());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_integerConceptPropertyDeclarationRefCell10226_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -168,9 +168,9 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline1 extends AbstractCellProvider {
+  public static class _Inline extends AbstractCellProvider {
 
-    public _Inline1() {
+    public _Inline() {
       super();
     }
 
@@ -183,7 +183,7 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return IntegerConceptProperty_Editor.calculateColor11(cell);
+                return IntegerConceptProperty_Editor.calculateColor10(cell);
               }
 
             });

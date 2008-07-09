@@ -54,7 +54,7 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StringConceptProperty_Editor.calculateColor30(cell);
+              return StringConceptProperty_Editor.calculateColor29(cell);
             }
 
           });
@@ -80,7 +80,7 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor30(EditorCell cell) {
+  private static Color calculateColor29(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;
@@ -113,7 +113,7 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
 
   public EditorCell create_stringConceptPropertyDeclarationRefCell16366_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new StringConceptProperty_Editor._Inline2());
+    provider.setAuxiliaryCellProvider(new StringConceptProperty_Editor._Inline1());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_stringConceptPropertyDeclarationRefCell16366_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -169,9 +169,9 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline2 extends AbstractCellProvider {
+  public static class _Inline1 extends AbstractCellProvider {
 
-    public _Inline2() {
+    public _Inline1() {
       super();
     }
 

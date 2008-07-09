@@ -54,7 +54,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return IntegerConceptPropertyDeclaration_Editor.calculateColor10(cell);
+              return IntegerConceptPropertyDeclaration_Editor.calculateColor9(cell);
             }
 
           });
@@ -77,7 +77,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return result;
   }
 
-  private static Color calculateColor10(EditorCell cell) {
+  private static Color calculateColor9(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;

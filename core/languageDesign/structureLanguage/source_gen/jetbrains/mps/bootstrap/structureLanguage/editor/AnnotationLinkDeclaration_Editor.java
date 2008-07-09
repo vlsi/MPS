@@ -220,13 +220,13 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_sourceCardinalityPropertyCell418_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor7(EditorCell cell) {
+  private static Color calculateColor6(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor28(EditorCell cell) {
+  private static Color calculateColor27(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -444,7 +444,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell create_sourceRefCell418_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new AnnotationLinkDeclaration_Editor._Inline14());
+    provider.setAuxiliaryCellProvider(new AnnotationLinkDeclaration_Editor._Inline13());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_sourceRefCell418_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -473,7 +473,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell create_targetRefCell418_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new AnnotationLinkDeclaration_Editor._Inline15());
+    provider.setAuxiliaryCellProvider(new AnnotationLinkDeclaration_Editor._Inline14());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_targetRefCell418_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -529,9 +529,9 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline14 extends AbstractCellProvider {
+  public static class _Inline13 extends AbstractCellProvider {
 
-    public _Inline14() {
+    public _Inline13() {
       super();
     }
 
@@ -543,7 +543,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return AnnotationLinkDeclaration_Editor.calculateColor28(cell);
+                return AnnotationLinkDeclaration_Editor.calculateColor27(cell);
               }
 
             });
@@ -596,9 +596,9 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline15 extends AbstractCellProvider {
+  public static class _Inline14 extends AbstractCellProvider {
 
-    public _Inline15() {
+    public _Inline14() {
       super();
     }
 
@@ -610,7 +610,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return AnnotationLinkDeclaration_Editor.calculateColor7(cell);
+                return AnnotationLinkDeclaration_Editor.calculateColor6(cell);
               }
 
             });

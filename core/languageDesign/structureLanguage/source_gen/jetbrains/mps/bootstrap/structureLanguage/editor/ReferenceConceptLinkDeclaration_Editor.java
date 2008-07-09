@@ -37,7 +37,7 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ReferenceConceptLinkDeclaration_Editor.calculateColor33(cell);
+              return ReferenceConceptLinkDeclaration_Editor.calculateColor32(cell);
             }
 
           });
@@ -56,7 +56,7 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ReferenceConceptLinkDeclaration_Editor.calculateColor18(cell);
+              return ReferenceConceptLinkDeclaration_Editor.calculateColor17(cell);
             }
 
           });
@@ -76,7 +76,7 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ReferenceConceptLinkDeclaration_Editor.calculateColor8(cell);
+              return ReferenceConceptLinkDeclaration_Editor.calculateColor7(cell);
             }
 
           });
@@ -103,19 +103,19 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_targetTypeRefCell14568_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor8(EditorCell cell) {
+  private static Color calculateColor7(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor18(EditorCell cell) {
+  private static Color calculateColor17(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;
   }
 
-  private static Color calculateColor33(EditorCell cell) {
+  private static Color calculateColor32(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -186,7 +186,7 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell create_targetTypeRefCell14568_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ReferenceConceptLinkDeclaration_Editor._Inline7());
+    provider.setAuxiliaryCellProvider(new ReferenceConceptLinkDeclaration_Editor._Inline6());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_targetTypeRefCell14568_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -213,9 +213,9 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline7 extends AbstractCellProvider {
+  public static class _Inline6 extends AbstractCellProvider {
 
-    public _Inline7() {
+    public _Inline6() {
       super();
     }
 

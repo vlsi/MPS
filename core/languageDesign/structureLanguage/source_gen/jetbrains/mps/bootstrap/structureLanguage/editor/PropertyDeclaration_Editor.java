@@ -37,7 +37,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return PropertyDeclaration_Editor.calculateColor34(cell);
+              return PropertyDeclaration_Editor.calculateColor33(cell);
             }
 
           });
@@ -74,7 +74,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_dataTypeRefCell16771_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor34(EditorCell cell) {
+  private static Color calculateColor33(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -136,7 +136,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell create_dataTypeRefCell16771_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new PropertyDeclaration_Editor._Inline5());
+    provider.setAuxiliaryCellProvider(new PropertyDeclaration_Editor._Inline4());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_dataTypeRefCell16771_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -163,9 +163,9 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline5 extends AbstractCellProvider {
+  public static class _Inline4 extends AbstractCellProvider {
 
-    public _Inline5() {
+    public _Inline4() {
       super();
     }
 

@@ -37,7 +37,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return AggregationConceptLinkDeclaration_Editor.calculateColor26(cell);
+              return AggregationConceptLinkDeclaration_Editor.calculateColor25(cell);
             }
 
           });
@@ -56,7 +56,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return AggregationConceptLinkDeclaration_Editor.calculateColor27(cell);
+              return AggregationConceptLinkDeclaration_Editor.calculateColor26(cell);
             }
 
           });
@@ -76,7 +76,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return AggregationConceptLinkDeclaration_Editor.calculateColor21(cell);
+              return AggregationConceptLinkDeclaration_Editor.calculateColor20(cell);
             }
 
           });
@@ -103,19 +103,19 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
   private static void setupLabel_targetTypeRefCell13781_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor21(EditorCell cell) {
+  private static Color calculateColor20(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor25(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
   private static Color calculateColor26(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor27(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;
@@ -186,7 +186,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
 
   public EditorCell create_targetTypeRefCell13781_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new AggregationConceptLinkDeclaration_Editor._Inline6());
+    provider.setAuxiliaryCellProvider(new AggregationConceptLinkDeclaration_Editor._Inline5());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_targetTypeRefCell13781_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -213,9 +213,9 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     return cellWithRole;
   }
 
-  public static class _Inline6 extends AbstractCellProvider {
+  public static class _Inline5 extends AbstractCellProvider {
 
-    public _Inline6() {
+    public _Inline5() {
       super();
     }
 

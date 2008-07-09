@@ -29,7 +29,7 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
   private static void setupLabel_booleanConceptPropertyDeclarationRefCell16082_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor32(EditorCell cell) {
+  private static Color calculateColor31(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -42,7 +42,7 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
 
   public EditorCell create_booleanConceptPropertyDeclarationRefCell16082_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new BooleanConceptProperty_Editor._Inline9());
+    provider.setAuxiliaryCellProvider(new BooleanConceptProperty_Editor._Inline8());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_booleanConceptPropertyDeclarationRefCell16082_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -69,9 +69,9 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline9 extends AbstractCellProvider {
+  public static class _Inline8 extends AbstractCellProvider {
 
-    public _Inline9() {
+    public _Inline8() {
       super();
     }
 
@@ -84,7 +84,7 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return BooleanConceptProperty_Editor.calculateColor32(cell);
+                return BooleanConceptProperty_Editor.calculateColor31(cell);
               }
 
             });

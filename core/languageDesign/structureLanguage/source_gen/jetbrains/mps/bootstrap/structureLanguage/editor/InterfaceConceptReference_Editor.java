@@ -28,7 +28,7 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
   private static void setupLabel_intfcRefCell19749_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor31(EditorCell cell) {
+  private static Color calculateColor30(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -41,7 +41,7 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
 
   public EditorCell create_intfcRefCell19749_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new InterfaceConceptReference_Editor._Inline13());
+    provider.setAuxiliaryCellProvider(new InterfaceConceptReference_Editor._Inline12());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_intfcRefCell19749_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -68,9 +68,9 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline13 extends AbstractCellProvider {
+  public static class _Inline12 extends AbstractCellProvider {
 
-    public _Inline13() {
+    public _Inline12() {
       super();
     }
 
@@ -82,7 +82,7 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return InterfaceConceptReference_Editor.calculateColor31(cell);
+                return InterfaceConceptReference_Editor.calculateColor30(cell);
               }
 
             });

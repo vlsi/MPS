@@ -35,7 +35,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return BooleanConceptPropertyDeclaration_Editor.calculateColor6(cell);
+              return BooleanConceptPropertyDeclaration_Editor.calculateColor5(cell);
             }
 
           });
@@ -77,7 +77,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return result;
   }
 
-  private static Color calculateColor6(EditorCell cell) {
+  private static Color calculateColor5(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
