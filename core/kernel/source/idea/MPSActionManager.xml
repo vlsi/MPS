@@ -21,6 +21,13 @@
       <add-to-group group-id="HelpMenu" anchor="after" relative-to-action="OnlineDocAction"/>
     </group>
 
+    <group id="EditorFix">
+      <!--We need this only cause platform requires this action, and NPE is thrown if
+      the action is not in its place (see MPS-2081 for further details) -->
+      <action id="EditorSelectWord" class="com.intellij.openapi.editor.actions.SelectWordAtCaretAction"/>
+      <add-to-group group-id="EditMenu"/>
+    </group>
+
     <group>
       <separator/>
       <action id="AddMPSModelImportAction" class="jetbrains.mps.workbench.actions.imports.AddModelImportAction"
