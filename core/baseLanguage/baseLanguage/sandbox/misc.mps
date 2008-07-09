@@ -30,7 +30,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="134" />
+  <maxImportIndex value="135" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
   <import index="124" modelUID="java.io@java_stub" version="-1" />
@@ -38,6 +38,7 @@
   <import index="132" modelUID="jetbrains.mps.baseLanguage.sandbox.misc" version="-1" />
   <import index="133" modelUID="java.net@java_stub" version="-1" />
   <import index="134" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  <import index="135" modelUID="jetbrains.mps.internalCollections.test.basicOperations" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.smodel@java_stub" />
   <refactoringLog type="jetbrains.mps.logging.refactoring.structure.RuntimeLogStack" id="1191250524181">
     <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1191250524182">
@@ -270,12 +271,22 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215607629707" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215607619059">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215607620827">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215607619060">
-              <link role="variableDeclaration" targetNodeId="1215607596097" resolveInfo="input" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215608609622">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215608615124">
+            <link role="classConcept" targetNodeId="3.~Arrays" resolveInfo="Arrays" />
+            <link role="baseMethodDeclaration" targetNodeId="3.~Arrays.equals(java.lang.Object[],java.lang.Object[]):boolean" resolveInfo="equals" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215608629003">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215608619156">
+                <link role="variableDeclaration" targetNodeId="1215607596097" resolveInfo="input" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToArrayOperation" id="1215608630631" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToArrayOperation" id="1215607623048" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215608632931">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215608621674">
+                <link role="variableDeclaration" targetNodeId="1215607596097" resolveInfo="input" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToArrayOperation" id="1215608634951" />
+            </node>
           </node>
         </node>
       </node>
