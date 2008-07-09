@@ -50,6 +50,7 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/smack" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp/idea" />
+    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/plugins" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/agreement" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/complexLanguage" />
@@ -288,6 +289,9 @@
       <param name="output.dir" value="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib" />
     </antcall>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm" />
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/plugins">
+      <fileset dir="plugins" excludes="**/*.iml, **/*.ipr" includes="" />
+    </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/agreement">
       <fileset dir="app/agreement" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
