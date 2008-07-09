@@ -248,6 +248,10 @@
     <component>
       <implementation-class>jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.vcs.ApplicationLevelVcsManager</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

@@ -13,6 +13,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.MPSVCSManager;
+import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.merge.Merger;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -50,33 +51,12 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     if (!modelDescriptor.getModelFile().isReadOnly()) {
       final File file = FileSystem.toFile(modelDescriptor.getModelFile());
 
-      File mineFile = new File(file.getPath() + ".mine");
-
-      if (mineFile.exists() && !IdeMain.isTestMode()) {
-        FileUtil.copyFile(mineFile, file);
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            NodeReadAccessCaster.blockEvents();
-            try {
-              Merger.merge(file);
-            } finally {
-              NodeReadAccessCaster.unblockEvents();
-            }
-
-
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              public void run() {
-                modelDescriptor.reloadFromDisk();
-              }
-            });
-          }
-        });
-      }
-
       if (!file.exists()) {
         return new SModel(modelDescriptor.getModelUID());
       }
     }
+
+    ApplicationLevelVcsManager.instance().assertModelFileNotInConflict(modelDescriptor);
 
     SModel model = ModelPersistence.readModel(modelDescriptor.getModelFile());
     LOG.assertLog(model.getUID().equals(modelDescriptor.getModelUID()),

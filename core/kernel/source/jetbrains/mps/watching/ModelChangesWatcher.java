@@ -32,6 +32,7 @@ import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.vcs.MPSVCSManager;
+import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 
 import java.util.List;
 import java.util.Set;
@@ -77,7 +78,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
                         for (SModelDescriptor d : allModelDescriptors) {
                           IFile modelFile = d.getModelFile();
-                          if ((modelFile != null) && (!isInConflict(modelFile))) {
+                          if ((modelFile != null) && (!ApplicationLevelVcsManager.instance().isInConflict(modelFile))) {
                             d.reloadFromDisk();
                           }
                         }
@@ -99,7 +100,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
           final SModelDescriptor model = ApplicationManager.getApplication().getComponent(SModelRepository.class).findModel(ifile);
 
           if (model != null) {
-            if (isInConflict(ifile)) {
+            if (ApplicationLevelVcsManager.instance().isInConflict(ifile)) {
               continue;
             }
             if (model.needsReloading()) {
@@ -125,20 +126,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
     }
   };
-
-  private boolean isInConflict(IFile ifile) {
-    VirtualFile vfile = VFileSystem.getFile(ifile);
-    if ((vfile != null) && (vfile.exists())) {
-      Project[] projects = ApplicationManager.getApplication().getComponent(ProjectManager.class).getOpenProjects();
-      for (Project project : projects) {
-        VcsFileStatusProvider statusProvider = project.getComponent(VcsFileStatusProvider.class);
-        if (statusProvider.getFileStatus(vfile).equals(FileStatus.MERGED_WITH_CONFLICTS)) {
-          return true;
-        }
-      }
-    }
-    return false;
-  }
 
   private MessageBusConnection myConnection;
 
