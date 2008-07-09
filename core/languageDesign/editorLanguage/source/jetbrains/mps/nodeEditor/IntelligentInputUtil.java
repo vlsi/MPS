@@ -58,6 +58,8 @@ public class IntelligentInputUtil {
         if (!EditorUtil.isValidCell(target)) {
           EditorUtil.validateCell(target, editorContext, true, true, false);
         }
+
+        editorContext.getNodeEditorComponent().relayout();
       }
     } else if (substituteInfo.getMatchingActions(pattern, false).isEmpty() &&
                 substituteInfo.getMatchingActions(pattern.trim(), false).isEmpty() &&
