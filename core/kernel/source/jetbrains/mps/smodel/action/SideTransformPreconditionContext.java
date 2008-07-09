@@ -3,10 +3,10 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 
-public class RTransformPreconditionContext {
+public class SideTransformPreconditionContext {
   private SNode mySourceNode;
 
-  public RTransformPreconditionContext(SNode sourceNode) {
+  public SideTransformPreconditionContext(SNode sourceNode) {
     mySourceNode = sourceNode;
   }
 

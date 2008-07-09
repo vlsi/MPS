@@ -3,12 +3,12 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 
-public class RTActionsBuilderContext {
+public class SideTransformActionsBuilderContext {
   private SNode mySourceNode;
   private SModel myModel;
   private String myTransformationTag;
 
-  public RTActionsBuilderContext(SNode sourceNode, SModel model, String transformationTag) {
+  public SideTransformActionsBuilderContext(SNode sourceNode, SModel model, String transformationTag) {
     mySourceNode = sourceNode;
     myModel = model;
     myTransformationTag = transformationTag;

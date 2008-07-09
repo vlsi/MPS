@@ -9,14 +9,14 @@ import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.*;
 
- class RTransformHintSubstituteActionsHelper {
-  private static final Logger LOG = Logger.getLogger(RTransformHintSubstituteActionsHelper.class);
+ class SideTransformHintSubstituteActionsHelper {
+  private static final Logger LOG = Logger.getLogger(SideTransformHintSubstituteActionsHelper.class);
 
    private IOperationContext myContext;
    private SNode mySourceNode;
    private String myTransformTag;
 
-   RTransformHintSubstituteActionsHelper(SNode sourceNode, String transformTag, IOperationContext context) {
+   SideTransformHintSubstituteActionsHelper(SNode sourceNode, String transformTag, IOperationContext context) {
      myContext = context;
      mySourceNode = sourceNode;
      myTransformTag = transformTag;
@@ -119,9 +119,9 @@ import java.util.*;
   }
 
   private void invokeRemoveByCondition(RemoveRTByConditionPart removeByCondition, Iterator<INodeSubstituteAction> actions) {
-    String methodName = "removeRTActionsByCondition_" + removeByCondition.getId();
+    String methodName = ActionQueryMethodName.sideTransformHintSubstituteActionsBuilder_RemoveByCondition(removeByCondition);
     try {
-      QueryMethodGenerated.invoke(methodName, myContext, new RemoveRTActionByConditionContext(actions, mySourceNode), removeByCondition.getModel());
+      QueryMethodGenerated.invoke(methodName, myContext, new RemoveSideTransformActionByConditionContext(actions, mySourceNode), removeByCondition.getModel());
     } catch (Throwable t) {
       LOG.error(t);
     }
@@ -132,10 +132,10 @@ import java.util.*;
     RTransformHintSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
     // precondition is optional
     if (precondition != null) {
-      String methodName = ActionQueryMethodName.rTransformHintSubstituteActionsBuilder_Precondition(actionsBuilder);
+      String methodName = ActionQueryMethodName.sideTransformHintSubstituteActionsBuilder_Precondition(actionsBuilder);
       SModel model = actionsBuilder.getModel();
       try {
-        return (Boolean) QueryMethodGenerated.invoke(methodName, myContext, new RTransformPreconditionContext(mySourceNode), model);
+        return (Boolean) QueryMethodGenerated.invoke(methodName, myContext, new SideTransformPreconditionContext(mySourceNode), model);
       } catch (Exception e) {
         LOG.error(e);
         return false;
@@ -146,10 +146,10 @@ import java.util.*;
   }
 
   private List<INodeSubstituteAction> invokeActionFactory(RTransformHintSubstituteActionsBuilder substituteActionsBuilder) {
-    String methodName = ActionQueryMethodName.nodeFactory_RightTransformActionBuilder(substituteActionsBuilder);
+    String methodName = ActionQueryMethodName.nodeFactory_SideTransformActionBuilder(substituteActionsBuilder);
     SModel model = substituteActionsBuilder.getModel();
     try {
-      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, myContext, new RTActionsBuilderContext(mySourceNode, mySourceNode.getModel(), null), model);
+      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, myContext, new SideTransformActionsBuilderContext(mySourceNode, mySourceNode.getModel(), null), model);
     } catch (Exception e) {
       return new ArrayList<INodeSubstituteAction>();
     }

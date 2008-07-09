@@ -1,11 +1,8 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
@@ -50,10 +47,10 @@ public class ModelActions {
   //-------------------
 
   public static boolean canCreateRightTransformHintSubstituteActions(SNode sourceNode, String transformTag, IOperationContext context) {
-    return new RTransformHintSubstituteActionsHelper(sourceNode, transformTag, context).canCreateActions();
+    return new SideTransformHintSubstituteActionsHelper(sourceNode, transformTag, context).canCreateActions();
   }
 
   public static List<INodeSubstituteAction> createRightTransformHintSubstituteActions(SNode sourceNode, String transformTag, IOperationContext context) {
-    return new RTransformHintSubstituteActionsHelper(sourceNode, transformTag, context).createActions();
+    return new SideTransformHintSubstituteActionsHelper(sourceNode, transformTag, context).createActions();
   }
 }

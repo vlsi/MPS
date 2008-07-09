@@ -1,9 +1,8 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
+import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
@@ -15,7 +14,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
  * T is a type of node adapter to create
  * S is a type of node adapter to substitute
  */
-public abstract class ConceptDeclarationRTransformHintSubstituteAction<S extends BaseConcept, T extends BaseConcept> extends AbstractRTransformHintSubstituteAction {
+public abstract class ConceptDeclarationRTransformHintSubstituteAction<S extends BaseConcept, T extends BaseConcept> extends AbstractSideTransformHintSubstituteAction {
   private ConceptDeclaration myConceptDeclaration;
   private String myMatchingTextConceptProperty;
   private String myMatchingText;
