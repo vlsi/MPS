@@ -16,7 +16,7 @@ public class typeof_AnnotationInstanceValue_InferenceRule implements InferenceRu
   public void applyRule(final SNode annotationInstanceValue) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(annotationInstanceValue, "value", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599144245", true), SLinkOperations.getTarget(SLinkOperations.getTarget(annotationInstanceValue, "key", false), "returnType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599144243", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614094642", true), SLinkOperations.getTarget(SLinkOperations.getTarget(annotationInstanceValue, "key", false), "returnType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614094640", false, 0);
     }
   }
 

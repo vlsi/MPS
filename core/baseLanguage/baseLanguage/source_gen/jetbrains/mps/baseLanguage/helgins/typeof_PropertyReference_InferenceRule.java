@@ -20,11 +20,11 @@ public class typeof_PropertyReference_InferenceRule implements InferenceRule_Run
     if ((property != null)) {
       {
         SNode _nodeToCheck_1029348928467 = propertyReference;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599145115", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(property, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599145112", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599145110");
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614095528", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(property, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614095525", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614095523");
       }
       {
         SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(propertyReference);
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599145124", true), new QuotationClass_73().createNode(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599145116", false, 0);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614095537", true), new QuotationClass_73().createNode(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614095529", false, 0);
       }
     }
   }

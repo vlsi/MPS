@@ -16,7 +16,7 @@ public class typeOf_WhileStatement_InferenceRule implements InferenceRule_Runtim
   public void applyRule(final SNode whileStatement) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(whileStatement, "condition", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599135180", true), new QuotationClass_17().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599135177", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614090724", true), new QuotationClass_17().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614090721", false, 0);
     }
   }
 

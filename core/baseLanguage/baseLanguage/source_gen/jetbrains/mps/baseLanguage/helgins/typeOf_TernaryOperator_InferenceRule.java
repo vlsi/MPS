@@ -16,15 +16,15 @@ public class typeOf_TernaryOperator_InferenceRule implements InferenceRule_Runti
   public void applyRule(final SNode toe) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(toe, "condition", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599133671", true), new QuotationClass_3().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599133669", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614089217", true), new QuotationClass_3().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614089215", false, 0);
     }
     {
       SNode _nodeToCheck_1029348928467 = toe;
-      TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599133677", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(toe, "ifTrue", true), "jetbrains.mps.baseLanguage.helgins@5_0", "1215599133679", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599133675", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614089223", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(toe, "ifTrue", true), "jetbrains.mps.baseLanguage.helgins@5_0", "1215614089225", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614089221", false, 0);
     }
     {
       SNode _nodeToCheck_1029348928467 = toe;
-      TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599133684", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(toe, "ifFalse", true), "jetbrains.mps.baseLanguage.helgins@5_0", "1215599133686", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599133682", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614089230", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(toe, "ifFalse", true), "jetbrains.mps.baseLanguage.helgins@5_0", "1215614089232", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614089228", false, 0);
     }
   }
 

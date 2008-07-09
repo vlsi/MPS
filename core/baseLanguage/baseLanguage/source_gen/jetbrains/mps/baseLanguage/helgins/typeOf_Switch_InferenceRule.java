@@ -18,7 +18,7 @@ public class typeOf_Switch_InferenceRule implements InferenceRule_Runtime {
     for(SNode switchCase : SLinkOperations.getTargets(switchSt, "case", true)) {
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(switchCase, "expression", true);
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599133620", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(switchSt, "expression", true), "jetbrains.mps.baseLanguage.helgins@5_0", "1215599133625", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215599133618", false, 0);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614089166", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(switchSt, "expression", true), "jetbrains.mps.baseLanguage.helgins@5_0", "1215614089171", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215614089164", false, 0);
       }
     }
   }
