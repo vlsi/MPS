@@ -13,7 +13,6 @@ import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.SystemInfo;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.action.MPSActionAdapter;
@@ -2269,6 +2268,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       updateSelection(events);
+      revertErrorCells(events);
     }
   }
 
@@ -2380,6 +2380,41 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
   }
+
+  private void revertErrorCells(List<SModelEvent> events) {
+    for (SModelEvent e : events) {
+      e.accept(new SModelEventVisitorAdapter() {
+        public void visitPropertyEvent(SModelPropertyEvent event) {
+          EditorCell cell = findNodeCell(event.getNode());
+          if (cell != null) {
+            synchronizeWithModelWithinBigCell(cell);            
+          }
+        }
+
+        public void visitReferenceEvent(SModelReferenceEvent event) {
+          EditorCell cell = findNodeCell(event.getReference().getSourceNode());
+          if (cell != null) {
+            synchronizeWithModelWithinBigCell(cell);
+          }
+        }
+      });
+    }
+  }
+
+  private void synchronizeWithModelWithinBigCell(EditorCell cell) {
+    if (cell instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) cell;
+      for (EditorCell child : collection) {
+        if (child.getSNode() == cell.getSNode()) {
+          synchronizeWithModelWithinBigCell(child);
+        }
+      }
+    } else {
+      cell.synchronizeViewWithModel();
+    }
+  }
+
+
 
   private class MySimpleModelListener extends SModelAdapter {
     public void modelReloaded(SModelDescriptor sm) {
