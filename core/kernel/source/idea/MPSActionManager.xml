@@ -17,6 +17,10 @@
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GenerateMenu"/>
     </group>
 
+    <group id="MPSHelpMenu">
+      <add-to-group group-id="HelpMenu" anchor="after" relative-to-action="OnlineDocAction"/>
+    </group>
+
     <group>
       <separator/>
       <action id="AddMPSModelImportAction" class="jetbrains.mps.workbench.actions.imports.AddModelImportAction"
