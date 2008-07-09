@@ -2,9 +2,11 @@ package jetbrains.mps.ide.dependency;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+
+import javax.swing.tree.TreePath;
 
 public class DependencyTree extends MPSTree {
   private MPSProject myProject;
@@ -15,11 +17,15 @@ public class DependencyTree extends MPSTree {
   }
 
   protected MPSTreeNode rebuild() {
-    setRootVisible(true);
-    MPSTreeNode root = new TextTreeNode("Modules");
-    if (myModule != null) {
-      root.add(new ModuleTreeNode(myProject, myModule));
+    if (myModule==null){
+      setRootVisible(false);
+      return new TextMPSTreeNode("No Contents",null);
     }
+
+    setRootVisible(true);
+
+    ModuleTreeNode root = new ModuleTreeNode(myProject, myModule);
+    expandPath(new TreePath(root.getPath()));
     return root;
   }
 
