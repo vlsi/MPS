@@ -81,6 +81,15 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
         }
       }
     });
+    myTree.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        if (e.getClickCount() >= 2){
+          openEditor();
+          e.consume();
+        }
+      }
+    });
 
     myTimer = new Timer(SECOND, new ActionListener() {
       public void actionPerformed(ActionEvent e) {
