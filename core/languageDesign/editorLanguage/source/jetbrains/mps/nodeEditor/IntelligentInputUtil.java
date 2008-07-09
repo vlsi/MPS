@@ -22,9 +22,17 @@ public class IntelligentInputUtil {
       processRTHintCell(rtHintCell, editorContext, pattern);
       return;
     }
-    String smallPattern = pattern.substring(0, pattern.length() - 1);
-    String tail = pattern.substring(pattern.length() - 1, pattern.length());
-    processCell(cell, editorContext, smallPattern, tail);
+    if (cell.getCaretPosition() == pattern.length()) {
+      String smallPattern = pattern.substring(0, pattern.length() - 1);
+      String tail = pattern.substring(pattern.length() - 1, pattern.length());
+      processCellAtEnd(cell, editorContext, smallPattern, tail);
+    }
+
+    if (cell.getCaretPosition() == 1) {
+      String head = "" + pattern.charAt(0);
+      String smallPattern = pattern.substring(1);
+      processCellAtStart(cell, editorContext, head, smallPattern);
+    }
   }
 
   private static void processRTHintCell(EditorCell_STHint cell, EditorContext editorContext, String pattern) {
@@ -55,11 +63,22 @@ public class IntelligentInputUtil {
         target.changeText(tail);
         target.end();
 
+        editorContext.getNodeEditorComponent().relayout();
+
         if (!EditorUtil.isValidCell(target)) {
           EditorUtil.validateCell(target, editorContext, true, true, false);
         }
 
-        editorContext.getNodeEditorComponent().relayout();
+        editorContext.flushEvents();
+
+        if (editorContext.getSelectedCell() instanceof EditorCell_Label) {
+          EditorCell_Label label = (EditorCell_Label) editorContext.getSelectedCell();
+          if (cell.getSide() == CellSide.LEFT) {
+            label.home();
+          } else {
+            label.end();
+          }
+        }
       }
     } else if (substituteInfo.getMatchingActions(pattern, false).isEmpty() &&
                 substituteInfo.getMatchingActions(pattern.trim(), false).isEmpty() &&
@@ -75,7 +94,7 @@ public class IntelligentInputUtil {
     }
   }
 
-  private static void processCell(EditorCell_Label cell, final EditorContext editorContext, String smallPattern, final String tail) {
+  private static void processCellAtEnd(EditorCell_Label cell, final EditorContext editorContext, String smallPattern, final String tail) {
     boolean sourceCellRemains = false;
     INodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
     if (substituteInfo == null) {
@@ -106,15 +125,11 @@ public class IntelligentInputUtil {
 
       if (errorCell != null && errorCell instanceof EditorCell_Label) {
         editorContext.flushEvents();
-        new Runnable() {
-          public void run() {
-            EditorCell cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
-            EditorCell_Label errorCell = (EditorCell_Label) EditorUtil.findErrorCell(cellForNewNode);
-            ((EditorCell_Label) errorCell).changeText(tail);
-            errorCell.setCaretPosition(tail.length());
-            editorContext.getNodeEditorComponent().relayout();
-          }
-        }.run();
+        EditorCell cellForNewNode1 = editorContext.getNodeEditorComponent().findNodeCell(newNode);
+        EditorCell_Label errorCell1 = (EditorCell_Label) EditorUtil.findErrorCell(cellForNewNode1);
+        ((EditorCell_Label) errorCell1).changeText(tail);
+        errorCell1.setCaretPosition(tail.length());
+        editorContext.getNodeEditorComponent().relayout();
         return;
       }
     } else if (canCompleteTheWholeStringImmediately(substituteInfo, smallPattern, tail) ||
@@ -136,32 +151,19 @@ public class IntelligentInputUtil {
     EditorCellAction rtAction = EditorUtil.getCellAction(EditorUtil.findLastSelectableCell(cellForNewNode), EditorCellAction.RIGHT_TRANSFORM, editorContext);
     if (rtAction == null) {
       final CellInfo cellInfo = cellForNewNode.getCellInfo();
-
-      editorContext.flushEvents();
-
-      AbstractEditorComponent component = editorContext.getNodeEditorComponent();
-      EditorCell cellToSelect = cellInfo.findCell(component);
-      if (cellToSelect != null) {
-        EditorCell errorCell = EditorUtil.findErrorCell(cellToSelect);
-        if (errorCell instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label) errorCell;
-          if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
-            label.changeText(smallPattern + tail);
-            component.relayout();
-          }
-          label.getRenderedTextLine().end();
-        }
-      }
+      putTextInErrorChild(cellInfo, smallPattern + tail, editorContext);
       return;
     }
 
-    cell.changeText(smallPattern);
-    editorContext.getNodeEditorComponent().relayout();
+    if (sourceCellRemains) {
+      cell.changeText(smallPattern);
+      editorContext.getNodeEditorComponent().relayout();
+    }
     
     rtAction.execute(editorContext);
-    EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
 
-    EditorCell rtHintCell = prepareRTCell(editorContext, newCellForNewNode, tail);
+    EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
+    EditorCell rtHintCell = prepareSTCell(editorContext, newCellForNewNode, tail);
 
     if (rtHintCell != null) {
       INodeSubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
@@ -171,11 +173,6 @@ public class IntelligentInputUtil {
       TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.COMPLETION);
       List<INodeSubstituteAction> rtMatchingActions = rtSubstituteInfo.getMatchingActions(tail, true);
       TypeChecker.getInstance().resetTypeCheckingMode();
-
-      if (sourceCellRemains) {
-        ((EditorCell_Label) cell).changeText(smallPattern);
-        editorContext.getNodeEditorComponent().relayout();
-      }
 
       if (!canCompleteSmallPatternImmediately(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         editorContext.flushEvents();
@@ -208,6 +205,46 @@ public class IntelligentInputUtil {
     }
   }
 
+  private static void processCellAtStart(EditorCell_Label cell, final EditorContext editorContext, String head, final String smallPattern) {
+    INodeSubstituteInfo info = cell.getSubstituteInfo();
+    if (info == null) {
+      info = new NullSubstituteInfo();
+    }
+    EditorCell cellForNewNode;
+    SNode newNode;
+    boolean sourceCellRemains = false;
+
+
+    if (cell.isValidText(smallPattern) && !"".equals(smallPattern)
+        && info.hasExactlyNActions(head + smallPattern, false, 0)) {
+      newNode = cell.getSNode();
+      cellForNewNode = cell;
+      sourceCellRemains = true;
+    } else if (canCompleteSmallPatternImmediately(info, smallPattern, "")) {
+      newNode = info.getMatchingActions(smallPattern, true).get(0).substitute(editorContext, smallPattern);
+      cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
+    } else {
+      return;
+    }
+
+    EditorCellAction ltAction = EditorUtil.getCellAction(EditorUtil.findLastSelectableCell(cellForNewNode), EditorCellAction.LEFT_TRANSFORM, editorContext);
+    if (ltAction == null) {
+      CellInfo cellInfo = cellForNewNode.getCellInfo();
+      putTextInErrorChild(cellInfo, head + smallPattern, editorContext);
+      return;
+    }
+
+    if (sourceCellRemains) {
+      cell.changeText(smallPattern);
+      editorContext.getNodeEditorComponent().relayout();
+    }
+
+    ltAction.execute(editorContext);
+
+    EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
+    prepareSTCell(editorContext, newCellForNewNode, head);
+  }
+
   private static boolean canCompleteSmallPatternImmediately(INodeSubstituteInfo info, String smallPattern, String tail) {
     if ("".equals(tail)) {
       return info.hasExactlyNActions(smallPattern, true, 1) && info.hasExactlyNActions(smallPattern, false, 1);
@@ -222,7 +259,7 @@ public class IntelligentInputUtil {
     return info.hasExactlyNActions(smallPattern + tail, true, 1) && info.hasExactlyNActions(smallPattern + tail, false, 1);
   }
 
-  private static EditorCell_Label prepareRTCell(EditorContext context, EditorCell root, String textToSet) {
+  private static EditorCell_Label prepareSTCell(EditorContext context, EditorCell root, String textToSet) {
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell_Label rtCell = root.getSTHintCell();
     if (rtCell == null) {
@@ -245,6 +282,23 @@ public class IntelligentInputUtil {
     if (root == null) {
       return null;
     }
-    return prepareRTCell(context, root, textToSet);
-  }  
+    return prepareSTCell(context, root, textToSet);
+  }
+
+  private static void putTextInErrorChild(CellInfo cellInfo, String textToSet, EditorContext editorContext) {
+    editorContext.flushEvents();
+    AbstractEditorComponent component = editorContext.getNodeEditorComponent();
+    EditorCell cellToSelect = cellInfo.findCell(component);
+    if (cellToSelect != null) {
+      EditorCell errorCell = EditorUtil.findErrorCell(cellToSelect);
+      if (errorCell instanceof EditorCell_Label) {
+        EditorCell_Label label = (EditorCell_Label) errorCell;
+        if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
+          label.changeText(textToSet);
+          component.relayout();
+        }
+        label.getRenderedTextLine().end();
+      }
+    }
+  }
 }

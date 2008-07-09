@@ -249,7 +249,7 @@ public class EditorManager {
 
   private EditorCell addSideTransformHintCell(final SNode node, EditorCell nodeCell, final EditorContext context, final CellSide side) {
     // create the hint cell
-    final EditorCell_STHint sideTransformHintCell = EditorCell_STHint.create(context, node);
+    final EditorCell_STHint sideTransformHintCell = new EditorCell_STHint(context, node, side);
     final CellInfo nodeCellInfo = context.getNodeEditorComponent().getRecentlySelectedCellInfo();
 
     // delete the hint when pressed ctrl-delete, delete or backspace
@@ -352,8 +352,9 @@ public class EditorManager {
   /*package*/ static class EditorCell_STHint extends EditorCell_Constant {
 
     private EditorCell myAnchorCell;
+    private CellSide mySide;
 
-    protected EditorCell_STHint(EditorContext editorContext, SNode node) {
+    protected EditorCell_STHint(EditorContext editorContext, SNode node, CellSide side) {
       super(editorContext, node, "");
       putUserObject(EditorCell.CELL_ID, node.getId());
       setDefaultText(" ");
@@ -368,6 +369,8 @@ public class EditorManager {
 
       getStyle().set(StyleAttributes.PADDING_LEFT, 0.0);
       getStyle().set(StyleAttributes.PADDING_RIGHT, 0.0);
+
+      mySide = side;
     }
 
     public void changeText(String text) {
@@ -378,20 +381,12 @@ public class EditorManager {
       }
     }
 
-    public void setParent(EditorCell_Collection parent) {
-      if (parent == null) {
-        System.currentTimeMillis();
-      }
-
-      super.setParent(parent);
+    public CellSide getSide() {
+      return mySide;
     }
 
     private void setAnchor(EditorCell anchorCell) {
       myAnchorCell = anchorCell;
-    }
-
-    public static EditorCell_STHint create(EditorContext editorContext, SNode node) {
-      return new EditorCell_STHint(editorContext, node);
     }
   }
 
