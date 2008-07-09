@@ -329,15 +329,15 @@ public class MPSVCSManager implements ProjectComponent {
     ChangeListManager m = ChangeListManager.getInstance(myProject);
     IgnoredFileBean[] filesToIgnore = m.getFilesToIgnore();
     for (IgnoredFileBean bean : filesToIgnore) {
-      if ((bean != null) && (bean.getPath() != null)) {
-        if (bean.getPath().equalsIgnoreCase(".svn")) {
+      if ((bean != null) && (bean.getMask() != null)) {
+        if (bean.getMask().equalsIgnoreCase(".svn*")) {
           return;
         }
       }
     }
 
     IgnoredFileBean svnIgnoreBean = new IgnoredFileBean();
-    svnIgnoreBean.setPath(".svn");
+    svnIgnoreBean.setMask(".svn*");
     m.addFilesToIgnore(svnIgnoreBean);
   }
 

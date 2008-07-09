@@ -18,14 +18,14 @@ public class FolderTreeNode extends AbstractFileTreeNode {
 
     for (IFile f : myFile.list()) {
       if (f.exists()) {
-        if (/*!FileTypeManager.getInstance().isFileIgnored(f.getName()) && */f.isDirectory()) {
+        if (!FileTypeManager.getInstance().isFileIgnored(f.getName()) && f.isDirectory()) {
           this.add(createNode(operationContext, provider, f));
         }
       }
     }
     for (IFile f : myFile.list()) {
       if (f.exists()) {
-        if (/*!FileTypeManager.getInstance().isFileIgnored(f.getName()) && */!f.isDirectory()) {
+        if (!FileTypeManager.getInstance().isFileIgnored(f.getName()) && !f.isDirectory()) {
           this.add(createNode(operationContext, provider, f));
         }
       }
