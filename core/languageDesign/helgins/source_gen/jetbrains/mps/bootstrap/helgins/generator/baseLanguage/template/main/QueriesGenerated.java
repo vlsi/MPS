@@ -196,8 +196,12 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1215598753994(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode parameterDeclaration = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "parameter", true)).first();
+    SNode type = SLinkOperations.getTarget(parameterDeclaration, "type", true);
+    if ((type == null)) {
+      return false;
+    }
     do {
-      SNode matchedNode_ = SLinkOperations.getTarget(parameterDeclaration, "type", true);
+      SNode matchedNode_ = type;
       {
         boolean matches_ = false;
         Pattern_ matchingPattern = new Pattern_();
