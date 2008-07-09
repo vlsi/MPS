@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import junit.framework.Assert;
 import java.util.Collections;
-import jetbrains.mps.closures.runtime.FunctionTypes;
+import jetbrains.mps.closures.runtime._FunctionTypes;
 import java.util.Iterator;
 import jetbrains.mps.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
@@ -37,7 +37,7 @@ public class Sequence_Test extends Util_Test {
 
   @Test()
   public void test_sequenceFromClosure() throws Exception {
-    Iterable<Integer> seq = new FunctionTypes._R <Iterable<Integer>>() {
+    Iterable<Integer> seq = new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
 
       public Iterable<Integer> invoke() {
         return new Iterable <Integer>() {

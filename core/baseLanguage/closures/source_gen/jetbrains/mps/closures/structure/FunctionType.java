@@ -9,11 +9,13 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class FunctionType extends Type {
   public static final String concept = "jetbrains.mps.closures.structure.FunctionType";
   public static String RESULT_TYPE = "resultType";
   public static String PARAMETER_TYPE = "parameterType";
+  public static String THROWS_TYPE = "throwsType";
 
   public FunctionType(SNode node) {
     super(node);
@@ -54,6 +56,26 @@ public class FunctionType extends Type {
 
   public void insertParameterType(Type prev, Type node) {
     this.insertChild(prev, FunctionType.PARAMETER_TYPE, node);
+  }
+
+  public int getThrowsTypesCount() {
+    return this.getChildCount(FunctionType.THROWS_TYPE);
+  }
+
+  public Iterator<ClassifierType> throwsTypes() {
+    return this.children(FunctionType.THROWS_TYPE);
+  }
+
+  public List<ClassifierType> getThrowsTypes() {
+    return this.getChildren(FunctionType.THROWS_TYPE);
+  }
+
+  public void addThrowsType(ClassifierType node) {
+    this.addChild(FunctionType.THROWS_TYPE, node);
+  }
+
+  public void insertThrowsType(ClassifierType prev, ClassifierType node) {
+    this.insertChild(prev, FunctionType.THROWS_TYPE, node);
   }
 
 }

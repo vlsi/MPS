@@ -39,26 +39,30 @@ public class FunctionType_Behavior {
     String[] paramTypes = new String[]{"_J","_K","_L","_M","_N","_O","_P","_Q","_S","_T"};
     StringBuilder sb = new StringBuilder();
     if ((SLinkOperations.getTarget(thisNode, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-      sb.append("_R");
+      sb.append("_return");
     } else
     {
       sb.append("_void");
     }
-    int idx = paramTypes.length - SLinkOperations.getCount(thisNode, "parameterType");
-    if (idx < 0) {
-      return "???too many parameters in function type???";
-    }
-    String sep = "_from";
-    for(SNode t : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
-      sb.append(sep);
-      sep = "_and";
-      if (idx >= paramTypes.length) {
-        sb.append("_not_enough_type_variables");
-        break;
+    sb.append("_P").append(SLinkOperations.getCount(thisNode, "parameterType"));
+    sb.append("_E").append(SLinkOperations.getCount(thisNode, "throwsType"));
+    /*
+      int idx = paramTypes.length - SLinkOperations.getCount(thisNode, "parameterType");
+      if (idx < 0) {
+        return "???too many parameters in function type???";
       }
-      sb.append(paramTypes[idx]);
-      idx = idx + 1;
-    }
+      String sep = "_from";
+      for(SNode t : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
+        sb.append(sep);
+        sep = "_and";
+        if (idx >= paramTypes.length) {
+          sb.append("_not_enough_type_variables");
+          break;
+        }
+        sb.append(paramTypes[idx]);
+        idx = idx + 1;
+      }
+    */
     return sb.toString();
   }
 
@@ -73,6 +77,12 @@ public class FunctionType_Behavior {
       buf.append(sep);
       sep = "_and";
       FunctionType_Behavior.call_fillTypeSignature_1213877405099(thisNode, pt, buf);
+    }
+    sep = "_throws";
+    for(SNode tt : SLinkOperations.getTargets(thisNode, "throwsType", true)) {
+      buf.append(sep);
+      sep = "_and";
+      FunctionType_Behavior.call_fillTypeSignature_1213877405099(thisNode, tt, buf);
     }
     return buf.toString();
   }

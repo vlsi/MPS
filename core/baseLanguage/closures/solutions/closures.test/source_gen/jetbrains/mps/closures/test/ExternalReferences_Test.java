@@ -4,7 +4,7 @@ package jetbrains.mps.closures.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import jetbrains.mps.closures.runtime.FunctionTypes;
+import jetbrains.mps.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
 import jetbrains.mps.closures.runtime.Wrappers;
 import java.util.Iterator;
@@ -15,7 +15,7 @@ public class ExternalReferences_Test extends TestCase {
   @Test()
   public void test_localVariableDeclaration() throws Exception {
     final int foo = 42;
-    int bar = new FunctionTypes._R <Integer>() {
+    int bar = new _FunctionTypes._return_P0_E0 <Integer>() {
 
       public Integer invoke() {
         return foo;
@@ -29,7 +29,7 @@ public class ExternalReferences_Test extends TestCase {
   public void test_alteredLocalvariable() throws Exception {
     final Wrappers._int res = new Wrappers._int(0);
     for(int i = 1 ; i <= 5 ; i = i + 1) {
-      new FunctionTypes._R <Integer>() {
+      new _FunctionTypes._return_P0_E0 <Integer>() {
 
         public Integer invoke() {
           return res.value = res.value + 1;
@@ -45,7 +45,7 @@ public class ExternalReferences_Test extends TestCase {
   public void test_alteredLocalVariable2() throws Exception {
     final Wrappers._int res = new Wrappers._int(0);
     for(int i = 1 ; i <= 5 ; i = i + 1) {
-      for(int j : new FunctionTypes._R <Iterable<Integer>>() {
+      for(int j : new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
 
         public Iterable<Integer> invoke() {
           return new Iterable <Integer>() {
@@ -92,11 +92,25 @@ __switch__:
   }
 
   @Test()
+  public void test_alteredLocalVariable3() throws Exception {
+    final Wrappers._T<byte[]> bytes = new Wrappers._T<byte[]>(new byte[1]);
+    new _FunctionTypes._void_P0_E0() {
+
+      public void invoke() {
+        bytes.value = new byte[3];
+        //  no return value
+      }
+
+    };
+    Assert.assertSame(3, bytes.value.length);
+  }
+
+  @Test()
   public void test_methodParameter() throws Exception {
     Worker wrk = new Worker() {
 
       public String doWork(final Integer d) {
-        return new FunctionTypes._R <String>() {
+        return new _FunctionTypes._return_P0_E0 <String>() {
 
           public String invoke() {
             return "Done: " + d;
@@ -119,7 +133,7 @@ __switch__:
       public String doWork(Integer foo) {
         this.foo = foo;
         this.field = this.foo;
-        return new FunctionTypes._R <String>() {
+        return new _FunctionTypes._return_P0_E0 <String>() {
 
           public String invoke() {
             return "Done: " + field;

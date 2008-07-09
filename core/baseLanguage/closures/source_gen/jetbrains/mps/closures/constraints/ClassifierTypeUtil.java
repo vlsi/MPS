@@ -35,8 +35,8 @@ public class ClassifierTypeUtil {
     return type;
   }
 
-  public static SNode getClassifierType(SNode ft) {
-    String rtSig = "FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
+  public static SNode getDeclarationClassifierType(SNode ft) {
+    String rtSig = "_FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
     for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_1().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
       if (rtSig.equals(SPropertyOperations.getString(ice, "name"))) {
         SNode ct = new QuotationClass_().createNode(ice);
@@ -45,6 +45,49 @@ public class ClassifierTypeUtil {
         }
         for(SNode pt : SLinkOperations.getTargets(ft, "parameterType", true)) {
           SLinkOperations.addChild(ct, "parameter", copyTypeRecursively(getTypeCoercedToClassifierType(pt), false));
+        }
+        for(SNode tt : SLinkOperations.getTargets(ft, "throwsType", true)) {
+          SLinkOperations.addChild(ct, "parameter", copyTypeRecursively(tt, true));
+        }
+        return ct;
+      }
+    }
+    return null;
+  }
+
+  public static SNode getClassifierType(SNode ft) {
+    String rtSig = "_FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
+    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_9().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
+      if (rtSig.equals(SPropertyOperations.getString(ice, "name"))) {
+        SNode ct = new QuotationClass_8().createNode(ice);
+        if ((SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ft, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+          SLinkOperations.addChild(ct, "parameter", copyTypeRecursively(getTypeCoercedToClassifierType(SLinkOperations.getTarget(ft, "resultType", true))));
+        }
+        for(SNode pt : SLinkOperations.getTargets(ft, "parameterType", true)) {
+          SLinkOperations.addChild(ct, "parameter", copyTypeRecursively(getTypeCoercedToClassifierType(pt)));
+        }
+        for(SNode tt : SLinkOperations.getTargets(ft, "throwsType", true)) {
+          SLinkOperations.addChild(ct, "parameter", copyTypeRecursively(tt));
+        }
+        return ct;
+      }
+    }
+    return null;
+  }
+
+  public static SNode getClassifierType(SNode ft, List<SNode> parameterType) {
+    String rtSig = "_FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
+    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_11().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
+      if (rtSig.equals(SPropertyOperations.getString(ice, "name"))) {
+        SNode ct = new QuotationClass_10().createNode(ice);
+        if ((SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ft, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+          SLinkOperations.addChild(ct, "parameter", copyTypeRecursively(getTypeCoercedToClassifierType(SLinkOperations.getTarget(ft, "resultType", true))));
+        }
+        for(SNode pt : parameterType) {
+          SLinkOperations.addChild(ct, "parameter", copyTypeRecursively(getTypeCoercedToClassifierType(pt)));
+        }
+        for(SNode tt : SLinkOperations.getTargets(ft, "throwsType", true)) {
+          SLinkOperations.addChild(ct, "parameter", copyTypeRecursively(tt));
         }
         return ct;
       }

@@ -139,7 +139,7 @@ public class ClosureLiteralUtil {
     Set<String> visited = new HashSet<String>();
     LinkedList<SNode> queue = new LinkedList<SNode>();
     queue.addLast(absType);
-    while(!(queue.isEmpty())) {
+    while (!(queue.isEmpty())) {
       SNode candidate = queue.removeFirst();
       if (!(visited.contains(BaseConcept_Behavior.call_getPresentation_1213877396640(candidate)))) {
         if (SNodeOperations.isInstanceOf(candidate, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") || (SNodeOperations.getConceptDeclaration(realType) == SNodeOperations.getConceptDeclaration(candidate) && (!(SNodeOperations.isInstanceOf(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) || (SLinkOperations.getTarget(realType, "classifier", false) == SLinkOperations.getTarget(candidate, "classifier", false) && SLinkOperations.getCount(realType, "parameter") == SLinkOperations.getCount(candidate, "parameter"))))) {

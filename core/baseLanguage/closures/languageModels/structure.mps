@@ -51,6 +51,12 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1214831762486">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="throwsType" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="2.1107535904670" resolveInfo="ClassifierType" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1199547238293">
     <property name="name" value="InvokeFunctionExpression" />
@@ -157,6 +163,26 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1204058849324">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214952349786">
+    <property name="name" value="PairOfInts" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1214952413127">
+      <property name="name" value="first" />
+      <link role="dataType" targetNodeId="1.1082983657062" resolveInfo="integer" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1214952416967">
+      <property name="name" value="second" />
+      <link role="dataType" targetNodeId="1.1082983657062" resolveInfo="integer" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214952607239">
+    <property name="name" value="StringPropertyHolder" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1214952630977">
+      <property name="name" value="value" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     </node>
   </node>
 </model>

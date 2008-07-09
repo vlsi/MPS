@@ -49,6 +49,8 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">jetbrains.mps.closures#1199623535494</dependency>
+    <dependency reexport="false">jetbrains.mps.bootstrap.helgins</dependency>
+    <dependency reexport="false">jetbrains.mps.patterns#1174810948060</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>

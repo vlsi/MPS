@@ -18,6 +18,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.text.Collator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.closures.constraints.ClassifierTypeUtil;
 import java.util.Comparator;
 
 public class FunctionTypeUtil {
@@ -78,6 +79,46 @@ public class FunctionTypeUtil {
       prev = next;
     }
     return typesList;
+  }
+
+  public static void prepAdaptations(SNode ltype, SNode rtype, SNode expr, ITemplateGenerator generator) {
+    SNode lCType = (SNodeOperations.isInstanceOf(ltype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
+      ltype :
+      null
+    );
+    SNode rCType = (SNodeOperations.isInstanceOf(rtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
+      rtype :
+      null
+    );
+    SNode lFType = (SNodeOperations.isInstanceOf(ltype, "jetbrains.mps.closures.structure.FunctionType") ?
+      ltype :
+      null
+    );
+    SNode rFType = (SNodeOperations.isInstanceOf(rtype, "jetbrains.mps.closures.structure.FunctionType") ?
+      rtype :
+      null
+    );
+    if ((lCType != null) && (rFType != null)) {
+      if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.closures.structure.ClosureLiteral")) {
+        ClosureLiteralUtil.addAdaptableClosureLiteralTarget(expr, lCType, generator);
+      } else
+      {
+        FunctionTypeUtil.addAdaptableClassifierTypeTarget(ClassifierTypeUtil.getDeclarationClassifierType(rFType), lCType, generator);
+        FunctionTypeUtil.putPrepData(expr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(lCType, "classifier", false)), generator);
+      }
+    } else
+    if ((lFType != null) && (rCType != null)) {
+      FunctionTypeUtil.addAdaptableClassifierTypeTarget(rCType, ClassifierTypeUtil.getDeclarationClassifierType(lFType), generator);
+      FunctionTypeUtil.putPrepData(expr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)), generator);
+    } else
+    if ((lFType != null) && (rFType != null)) {
+      if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.closures.structure.ClosureLiteral")) {
+        ClosureLiteralUtil.addAdaptableClosureLiteralTarget(expr, ClassifierTypeUtil.getClassifierType(lFType, SLinkOperations.getTargets(rFType, "parameterType", true)), generator);
+      } else if (SLinkOperations.getCount(lFType, "throwsType") != SLinkOperations.getCount(rFType, "throwsType")) {
+        FunctionTypeUtil.addAdaptableClassifierTypeTarget(ClassifierTypeUtil.getDeclarationClassifierType(rFType), ClassifierTypeUtil.getDeclarationClassifierType(lFType), generator);
+        FunctionTypeUtil.putPrepData(expr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)), generator);
+      }
+    }
   }
 
   public static void addAdaptableClassifierTypeTarget(SNode adaptable, SNode target, ITemplateGenerator generator) {

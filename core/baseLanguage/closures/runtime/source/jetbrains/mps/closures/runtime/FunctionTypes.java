@@ -73,6 +73,11 @@ public class FunctionTypes {
         R invoke(T t);
     }
 
+    public static interface _R_from_T_throws<R, T> {
+
+        R invoke(T t) throws Throwable;
+    }
+
     public static interface _R_from_S_and_T<R, S, T> {
 
         R invoke(S s, T t);

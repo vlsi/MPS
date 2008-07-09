@@ -33,7 +33,6 @@ import java.util.Collections;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
-import jetbrains.mps.core.behavior.INamedConcept_Behavior;
 
 public class QueriesGenerated {
 
@@ -286,6 +285,18 @@ public class QueriesGenerated {
     return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
   }
 
+  public static boolean baseMappingRule_Condition_1215452055499(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return false;
+  }
+
+  public static boolean baseMappingRule_Condition_1215557472438(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType");
+  }
+
+  public static boolean baseMappingRule_Condition_1215557569392(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1201019320624(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return (String)PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
   }
@@ -530,7 +541,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1203245282594(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
     if (ct == null) {
-      ct = ClassifierTypeUtil.getClassifierType(TypeChecker.getInstance().getTypeOf(_context.getNode()));
+      ct = ClassifierTypeUtil.getDeclarationClassifierType(TypeChecker.getInstance().getTypeOf(_context.getNode()));
     }
     List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
     if (imds.size() > 0) {
@@ -542,7 +553,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1203250798068(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
     if (ct == null) {
-      ct = ClassifierTypeUtil.getClassifierType(TypeChecker.getInstance().getTypeOf(_context.getNode()));
+      ct = ClassifierTypeUtil.getDeclarationClassifierType(TypeChecker.getInstance().getTypeOf(_context.getNode()));
     }
     List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
     if (imds.size() > 0) {
@@ -565,7 +576,7 @@ public class QueriesGenerated {
     if (ct != null) {
       return SLinkOperations.getTarget(ct, "classifier", false);
     }
-    return SLinkOperations.getTarget(ClassifierTypeUtil.getClassifierType(TypeChecker.getInstance().getTypeOf(_context.getNode())), "classifier", false);
+    return SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(TypeChecker.getInstance().getTypeOf(_context.getNode())), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_1201044570620(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -573,7 +584,7 @@ public class QueriesGenerated {
     if (ct != null) {
       return SLinkOperations.getTarget(ct, "classifier", false);
     }
-    return SLinkOperations.getTarget(ClassifierTypeUtil.getClassifierType(TypeChecker.getInstance().getTypeOf(_context.getNode())), "classifier", false);
+    return SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(TypeChecker.getInstance().getTypeOf(_context.getNode())), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_1202752475172(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -619,6 +630,10 @@ public class QueriesGenerated {
       Object retClassifier = ((SNode)ct).getUserObject("returnType");
       return SLinkOperations.getTarget(((SNode)retClassifier), "classifier", false);
     }
+  }
+
+  public static Object referenceMacro_GetReferent_1215446201280(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return "jetbrains.mps.closures.runtime._FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_1201276700612(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -692,6 +707,25 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1203268216179(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    return ct != null;
+  }
+
+  public static boolean ifMacro_Condition_1215429196709(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    return ct == null;
+  }
+
+  public static boolean ifMacro_Condition_1215446294705(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"));
+  }
+
+  public static boolean ifMacro_Condition_1215457391282(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    return ct == null;
+  }
+
+  public static boolean ifMacro_Condition_1215457429074(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
     return ct != null;
   }
@@ -810,10 +844,6 @@ public class QueriesGenerated {
     return FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(TypeChecker.getInstance().getTypeOf(_context.getNode()));
   }
 
-  public static SNode sourceNodeQuery_1202774454380(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ClassifierTypeUtil.getClassifierType(_context.getNode());
-  }
-
   public static SNode sourceNodeQuery_1202817755445(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
   }
@@ -915,6 +945,38 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1209330067919(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "condition", true);
+  }
+
+  public static SNode sourceNodeQuery_1215429260858(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1215446297577(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1215446402993(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1215446443664(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1215452022890(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ClassifierTypeUtil.getDeclarationClassifierType(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1215557494551(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TypeChecker.getInstance().getTypeOf(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1215557564769(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "initializer", true);
+  }
+
+  public static SNode sourceNodeQuery_1215557564777(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TypeChecker.getInstance().getTypeOf(_context.getNode());
   }
 
   public static List sourceNodesQuery_1199624932349(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1183,6 +1245,56 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true);
   }
 
+  public static List sourceNodesQuery_1215429180557(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(TypeChecker.getInstance().getTypeOf(_context.getNode()), "throwsType", true);
+  }
+
+  public static List sourceNodesQuery_1215429255567(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    if (ct != null) {
+      List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
+      if (imds.size() > 0) {
+        SNode imd = imds.get(0);
+        List<SNode> res = new ArrayList();
+        for(SNode tt : SLinkOperations.getTargets(imd, "throwsItem", true)) {
+          res.add(ClassifierTypeUtil.resolveType(tt, ct));
+        }
+        return res;
+      }
+    }
+    return SLinkOperations.getTargets(TypeChecker.getInstance().getTypeOf(_context.getNode()), "throwsType", true);
+  }
+
+  public static List sourceNodesQuery_1215446400341(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(_context.getNode());
+  }
+
+  public static List sourceNodesQuery_1215446433989(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "throwsType", true);
+  }
+
+  public static List sourceNodesQuery_1215457425734(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> paramDecls = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    if (ct != null) {
+      List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
+      if (imds.size() > 0) {
+        SNode imd = imds.get(0);
+        List<SNode> res = new ArrayList<SNode>();
+        int idx = 0;
+        for(SNode pd : SLinkOperations.getTargets(imd, "parameter", true)) {
+          SNode newpd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
+          SLinkOperations.setTarget(newpd, "type", ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pd, "type", true), ct), true);
+          SPropertyOperations.set(newpd, "name", SPropertyOperations.getString(paramDecls.get(idx), "name"));
+          idx = idx + 1;
+          res.add(newpd);
+        }
+        return res;
+      }
+    }
+    return Collections.emptyList();
+  }
+
   public static SNode mapSrcMacro_mapper_1202998342276(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode te = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
     SLinkOperations.setTarget(te, "classConcept", (SNode)_context.getGenerator().getGeneratorSessionContext().getStepObject("set_this_classconcept_" + ((SNode)SLinkOperations.getTarget(_context.getNode(), "instance", true)).getId()), false);
@@ -1271,39 +1383,9 @@ public class QueriesGenerated {
       }
       int idx = 0;
       for(SNode pdecl : pdecls) {
-        SNode pdtype = SLinkOperations.getTarget(pdecl, "type", true);
-        SNode pdFType = (SNodeOperations.isInstanceOf(pdtype, "jetbrains.mps.closures.structure.FunctionType") ?
-          pdtype :
-          null
-        );
-        SNode pdCType = (SNodeOperations.isInstanceOf(pdtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-          pdtype :
-          null
-        );
-        if (((pdFType != null) || (pdCType != null)) && idx < args.size()) {
+        if (idx < args.size()) {
           SNode arg = args.get(idx);
-          SNode argtype = TypeChecker.getInstance().getTypeOf(arg);
-          SNode argFType = (SNodeOperations.isInstanceOf(argtype, "jetbrains.mps.closures.structure.FunctionType") ?
-            argtype :
-            null
-          );
-          SNode argCType = (SNodeOperations.isInstanceOf(argtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-            argtype :
-            null
-          );
-          if ((pdCType != null) && (argFType != null)) {
-            if (SNodeOperations.isInstanceOf(arg, "jetbrains.mps.closures.structure.ClosureLiteral")) {
-              ClosureLiteralUtil.addAdaptableClosureLiteralTarget(arg, pdCType, _context.getGenerator());
-            } else
-            {
-              FunctionTypeUtil.addAdaptableClassifierTypeTarget(ClassifierTypeUtil.getClassifierType(argFType), pdCType, _context.getGenerator());
-              FunctionTypeUtil.putPrepData(arg, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(pdCType, "classifier", false)), _context.getGenerator());
-            }
-          } else
-          if ((pdFType != null) && (argCType != null)) {
-            FunctionTypeUtil.addAdaptableClassifierTypeTarget(argCType, ClassifierTypeUtil.getClassifierType(pdFType), _context.getGenerator());
-            FunctionTypeUtil.putPrepData(arg, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getClassifierType(pdFType), "classifier", false)), _context.getGenerator());
-          }
+          FunctionTypeUtil.prepAdaptations(SLinkOperations.getTarget(pdecl, "type", true), TypeChecker.getInstance().getTypeOf(arg), arg, _context.getGenerator());
         }
         idx = idx + 1;
       }
@@ -1313,76 +1395,14 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_1201703119163(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> aes = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
     for(SNode ae : aes) {
-      SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ae, "lValue", true));
-      SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ae, "rValue", true));
-      SNode lCType = (SNodeOperations.isInstanceOf(ltype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-        ltype :
-        null
-      );
-      SNode rCType = (SNodeOperations.isInstanceOf(rtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-        rtype :
-        null
-      );
-      SNode lFType = (SNodeOperations.isInstanceOf(ltype, "jetbrains.mps.closures.structure.FunctionType") ?
-        ltype :
-        null
-      );
-      SNode rFType = (SNodeOperations.isInstanceOf(rtype, "jetbrains.mps.closures.structure.FunctionType") ?
-        rtype :
-        null
-      );
-      if ((lCType != null) && (rFType != null)) {
-        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ae, "rValue", true), "jetbrains.mps.closures.structure.ClosureLiteral")) {
-          ClosureLiteralUtil.addAdaptableClosureLiteralTarget(SLinkOperations.getTarget(ae, "rValue", true), lCType, _context.getGenerator());
-        } else
-        {
-          FunctionTypeUtil.addAdaptableClassifierTypeTarget(ClassifierTypeUtil.getClassifierType(rFType), lCType, _context.getGenerator());
-          FunctionTypeUtil.putPrepData(SLinkOperations.getTarget(ae, "rValue", true), INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(lCType, "classifier", false)), _context.getGenerator());
-        }
-      } else
-      if ((lFType != null) && (rCType != null)) {
-        FunctionTypeUtil.addAdaptableClassifierTypeTarget(rCType, ClassifierTypeUtil.getClassifierType(lFType), _context.getGenerator());
-        FunctionTypeUtil.putPrepData(SLinkOperations.getTarget(ae, "rValue", true), INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getClassifierType(lFType), "classifier", false)), _context.getGenerator());
-      }
+      FunctionTypeUtil.prepAdaptations(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ae, "lValue", true)), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ae, "rValue", true)), SLinkOperations.getTarget(ae, "rValue", true), _context.getGenerator());
     }
   }
 
   public static void mappingScript_CodeBlock_1201705474278(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> vds = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
     for(SNode vd : vds) {
-      SNode vdtype = SLinkOperations.getTarget(vd, "type", true);
-      SNode vdCType = (SNodeOperations.isInstanceOf(vdtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-        vdtype :
-        null
-      );
-      SNode vdFType = (SNodeOperations.isInstanceOf(vdtype, "jetbrains.mps.closures.structure.FunctionType") ?
-        vdtype :
-        null
-      );
-      if ((vdFType != null) || (vdCType != null)) {
-        SNode inittype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(vd, "initializer", true));
-        SNode initCType = (SNodeOperations.isInstanceOf(inittype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-          inittype :
-          null
-        );
-        SNode initFType = (SNodeOperations.isInstanceOf(inittype, "jetbrains.mps.closures.structure.FunctionType") ?
-          inittype :
-          null
-        );
-        if ((vdCType != null) && (initFType != null)) {
-          if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(vd, "initializer", true), "jetbrains.mps.closures.structure.ClosureLiteral")) {
-            ClosureLiteralUtil.addAdaptableClosureLiteralTarget(SLinkOperations.getTarget(vd, "initializer", true), vdCType, _context.getGenerator());
-          } else
-          {
-            FunctionTypeUtil.addAdaptableClassifierTypeTarget(ClassifierTypeUtil.getClassifierType(initFType), vdCType, _context.getGenerator());
-            FunctionTypeUtil.putPrepData(SLinkOperations.getTarget(vd, "initializer", true), INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(vdCType, "classifier", false)), _context.getGenerator());
-          }
-        } else
-        if ((vdFType != null) && (initCType != null)) {
-          FunctionTypeUtil.addAdaptableClassifierTypeTarget(initCType, ClassifierTypeUtil.getClassifierType(vdFType), _context.getGenerator());
-          FunctionTypeUtil.putPrepData(SLinkOperations.getTarget(vd, "initializer", true), INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getClassifierType(vdFType), "classifier", false)), _context.getGenerator());
-        }
-      }
+      FunctionTypeUtil.prepAdaptations(SLinkOperations.getTarget(vd, "type", true), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(vd, "initializer", true)), SLinkOperations.getTarget(vd, "initializer", true), _context.getGenerator());
     }
   }
 
@@ -1423,24 +1443,6 @@ public class QueriesGenerated {
     }
   }
 
-  public static void mappingScript_CodeBlock_1203244875243(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for(SNode cl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.closures.structure.ClosureLiteral")) {
-      SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(cl, _context.getGenerator());
-      if (ct == null) {
-        SNode ft = TypeChecker.getInstance().getTypeOf(cl);
-        String rtSig = "FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
-        for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_1().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
-          if (rtSig.equals(SPropertyOperations.getString(ice, "name"))) {
-            SNode ict = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-            SLinkOperations.setTarget(ict, "classifier", ice, false);
-            ClosureLiteralUtil.addAdaptableClosureLiteralTarget(cl, ict, _context.getGenerator());
-            break;
-          }
-        }
-      }
-    }
-  }
-
   public static void mappingScript_CodeBlock_1204637450606(final IOperationContext operationContext, final MappingScriptContext _context) {
     for(SNode de : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(de, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
@@ -1452,40 +1454,9 @@ public class QueriesGenerated {
         }
         int idx = 0;
         for(SNode pdecl : pdecls) {
-          SNode pdtype = SLinkOperations.getTarget(pdecl, "type", true);
-          SNode pdFType = (SNodeOperations.isInstanceOf(pdtype, "jetbrains.mps.closures.structure.FunctionType") ?
-            pdtype :
-            null
-          );
-          SNode pdCType = (SNodeOperations.isInstanceOf(pdtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-            pdtype :
-            null
-          );
-          if (((pdFType != null) || (pdCType != null)) && idx < args.size()) {
+          if (idx < args.size()) {
             SNode arg = args.get(idx);
-            SNode argtype = TypeChecker.getInstance().getTypeOf(arg);
-            SNode argFType = (SNodeOperations.isInstanceOf(argtype, "jetbrains.mps.closures.structure.FunctionType") ?
-              argtype :
-              null
-            );
-            SNode argCType = (SNodeOperations.isInstanceOf(argtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-              argtype :
-              null
-            );
-            if ((pdCType != null) && (argFType != null)) {
-              if (SNodeOperations.isInstanceOf(arg, "jetbrains.mps.closures.structure.ClosureLiteral")) {
-                SNode resCT = ClassifierTypeUtil.resolveType(pdCType, TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)));
-                ClosureLiteralUtil.addAdaptableClosureLiteralTarget(arg, resCT, _context.getGenerator());
-              } else
-              {
-                FunctionTypeUtil.addAdaptableClassifierTypeTarget(ClassifierTypeUtil.getClassifierType(argFType), pdCType, _context.getGenerator());
-                FunctionTypeUtil.putPrepData(arg, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(pdCType, "classifier", false)), _context.getGenerator());
-              }
-            } else
-            if ((pdFType != null) && (argCType != null)) {
-              FunctionTypeUtil.addAdaptableClassifierTypeTarget(argCType, ClassifierTypeUtil.getClassifierType(pdFType), _context.getGenerator());
-              FunctionTypeUtil.putPrepData(arg, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getClassifierType(pdFType), "classifier", false)), _context.getGenerator());
-            }
+            FunctionTypeUtil.prepAdaptations(SLinkOperations.getTarget(pdecl, "type", true), TypeChecker.getInstance().getTypeOf(arg), arg, _context.getGenerator());
           }
           idx = idx + 1;
         }
@@ -1550,6 +1521,21 @@ public class QueriesGenerated {
         } else
         if (thisCC == null) {
           _context.getGenerator().showWarningMessage(te, "Cound not find the class concept");
+        }
+      }
+    }
+  }
+
+  public static void mappingScript_CodeBlock_1215524499704(final IOperationContext operationContext, final MappingScriptContext _context) {
+    List<SNode> rss = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ReturnStatement");
+    for(SNode rs : rss) {
+      if ((SLinkOperations.getTarget(rs, "expression", true) != null)) {
+        SNode anc = SNodeOperations.getAncestorWhereConceptInList(rs, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration","jetbrains.mps.closures.structure.ClosureLiteral"}, false, false);
+        if (SNodeOperations.isInstanceOf(anc, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+          SNode rt = SLinkOperations.getTarget(anc, "returnType", true);
+          if (!((rt != null) && SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+            FunctionTypeUtil.prepAdaptations(rt, TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(rs, "expression", true)), SLinkOperations.getTarget(rs, "expression", true), _context.getGenerator());
+          }
         }
       }
     }

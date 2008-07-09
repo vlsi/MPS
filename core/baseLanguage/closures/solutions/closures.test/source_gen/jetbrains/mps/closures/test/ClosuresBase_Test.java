@@ -4,7 +4,7 @@ package jetbrains.mps.closures.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import jetbrains.mps.closures.runtime.FunctionTypes;
+import jetbrains.mps.closures.runtime._FunctionTypes;
 import java.util.List;
 import java.util.ArrayList;
 import junit.framework.Assert;
@@ -17,7 +17,7 @@ public class ClosuresBase_Test extends TestCase {
     // this method exists only to calm down the JUnit complaining about lacking tests
   }
 
-  public void assertResultsEqual(FunctionTypes._void_from_T<? super List<Integer>> expected, FunctionTypes._R<? extends Iterable<Integer>> test) {
+  public void assertResultsEqual(_FunctionTypes._void_P1_E0<? super List<Integer>> expected, _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> test) {
     List<Integer> expectedList = new ArrayList<Integer>();
     expected.invoke(expectedList);
     List<Integer> testList = new ArrayList<Integer>();
@@ -27,7 +27,7 @@ public class ClosuresBase_Test extends TestCase {
     Assert.assertEquals(expectedList, testList);
   }
 
-  public void assertResultsEqual(FunctionTypes._R<? extends Iterable<Integer>> expected, FunctionTypes._R<? extends Iterable<Integer>> test) {
+  public void assertResultsEqual(_FunctionTypes._return_P0_E0<? extends Iterable<Integer>> expected, _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> test) {
     Iterator<Integer> expIt = expected.invoke().iterator();
     Iterator<Integer> testIt = expected.invoke().iterator();
     while (expIt.hasNext() && testIt.hasNext()) {

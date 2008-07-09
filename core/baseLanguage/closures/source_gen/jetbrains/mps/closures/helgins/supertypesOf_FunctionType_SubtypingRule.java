@@ -20,7 +20,7 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
 
   public List<SNode> getSubOrSuperTypes(SNode ft) {
     List<SNode> supertypes = Collections.emptyList();
-    String rtSig = "FunctionTypes." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(ft);
+    String rtSig = "_FunctionTypes." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(ft);
     List<SNode> interfaces = RulesUtil_Closures.getInterfaces();
     for(SNode ice : interfaces) {
       if (rtSig.equals(SPropertyOperations.getString(ice, "name"))) {

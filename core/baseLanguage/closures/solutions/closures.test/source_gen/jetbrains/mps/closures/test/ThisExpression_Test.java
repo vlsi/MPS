@@ -4,7 +4,7 @@ package jetbrains.mps.closures.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import jetbrains.mps.closures.runtime.FunctionTypes;
+import jetbrains.mps.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
 
 public class ThisExpression_Test extends TestCase {
@@ -16,7 +16,7 @@ public class ThisExpression_Test extends TestCase {
       private Integer foo = 0;
 
       public void run() {
-        new FunctionTypes._void() {
+        new _FunctionTypes._void_P0_E0() {
 
           public void invoke() {
             foo = 42;

@@ -30,7 +30,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
         if (SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {
           {
             SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-            TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins@5_0", "1215598001920", false, 0);
+            TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins@34_0", "1215601560550", false, 0);
           }
           {
             SNode fpt;
@@ -48,7 +48,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
               mpt = mpt_iterator.next();
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-                TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), fpt, _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins@5_0", "1215598001941", false, 0);
+                TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), fpt, _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins@34_0", "1215601560572", false, 0);
               }
             }
           }
@@ -67,7 +67,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     }
     {
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype) + errorMsg, "jetbrains.mps.closures.helgins@5_0", "1215598001991", intentionProvider);
+      TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype) + errorMsg, "jetbrains.mps.closures.helgins@34_0", "1215601560623", intentionProvider);
     }
   }
 

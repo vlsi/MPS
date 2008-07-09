@@ -4,7 +4,7 @@ package jetbrains.mps.closures.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import jetbrains.mps.closures.runtime.FunctionTypes;
+import jetbrains.mps.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
 import java.util.Iterator;
 import jetbrains.mps.closures.runtime.YieldingIterator;
@@ -25,20 +25,20 @@ public class ClassifierAdapters_Test extends TestCase {
       }
 
     };
-    FunctionTypes._R_from_T<? extends String, ? super Integer> ft = new _Adapters.Worker_to__R_from_T_adapter(wrk);
+    _FunctionTypes._return_P1_E0<? extends String, ? super Integer> ft = new _Adapters.Worker_to__return_P1_E0_adapter(wrk);
     Assert.assertEquals("Done: 1234", ft.invoke(1234));
   }
 
   @Test()
   public void test_functionTypeAsInterface() throws Exception {
-    FunctionTypes._R_from_T<? extends String, ? super Integer> cls = new FunctionTypes._R_from_T <String, Integer>() {
+    _FunctionTypes._return_P1_E0<? extends String, ? super Integer> cls = new _FunctionTypes._return_P1_E0 <String, Integer>() {
 
       public String invoke(Integer foo) {
         return "Done: " + foo;
       }
 
     };
-    Worker wrk = new _Adapters._R_from_T_to_Worker_adapter(cls);
+    Worker wrk = new _Adapters._return_P1_E0_to_Worker_adapter(cls);
     Assert.assertEquals("Done: 4321", wrk.doWork(4321));
   }
 
@@ -187,6 +187,25 @@ __switch__:
   }
 
   @Test()
+  public void test_exceptions() throws Exception {
+    try {
+      this.process(new Processor() {
+
+        public int process(String instr) throws ProcessingException {
+          if (Integer.parseInt(instr) < 0) {
+            throw new ProcessingException();
+          }
+          return 1;
+        }
+
+      }, "-1");
+      Assert.fail();
+    } catch (ProcessingException e) {
+      // expected exception
+    }
+  }
+
+  @Test()
   public void test_closureLiteralAsComparator() throws Exception {
     List<Integer> list = new ArrayList<Integer>();
     list.addAll(Arrays.asList(new Integer[]{4,3,5,1,2}));
@@ -218,6 +237,22 @@ __switch__:
     });
   }
 
+  @Test()
+  public void test_returnWorker() throws Exception {
+    Worker wrk = this.returnWorker();
+  }
+
+  @Test()
+  public void test_returnProcessor() throws Exception {
+    Processor prc = this.returnProcessor();
+    try {
+      prc.process("foobar");
+      Assert.fail();
+    } catch (ProcessingException e) {
+      // expected exception
+    }
+  }
+
   public void acceptWorker(Worker one, Worker two) {
   }
 
@@ -226,6 +261,30 @@ __switch__:
 
   public String makeWork(Worker wrk, Integer i) {
     return wrk.doWork(i);
+  }
+
+  public int process(Processor prc, String instr) throws ProcessingException {
+    return prc.process(instr);
+  }
+
+  public Worker returnWorker() {
+    return new Worker() {
+
+      public String doWork(Integer i) {
+        return String.valueOf(i);
+      }
+
+    };
+  }
+
+  public Processor returnProcessor() {
+    return new Processor() {
+
+      public int process(String str) throws ProcessingException {
+        throw new ProcessingException(str);
+      }
+
+    };
   }
 
 }

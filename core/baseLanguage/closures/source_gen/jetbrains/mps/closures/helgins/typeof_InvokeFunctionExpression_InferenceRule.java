@@ -16,14 +16,14 @@ public class typeof_InvokeFunctionExpression_InferenceRule implements InferenceR
 
   public void applyRule(final SNode invoke) {
     {
-      final SNode _representatorVar = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(invoke, "function", true), "jetbrains.mps.closures.helgins@5_0", "1215598000159", true);
+      final SNode _representatorVar = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(invoke, "function", true), "jetbrains.mps.closures.helgins@34_0", "1215601558533", true);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar, new Runnable() {
 
         public void run() {
-          SNode ft = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(invoke, "function", true), "jetbrains.mps.closures.helgins@5_0", "1215598000167", true);
+          SNode ft = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(invoke, "function", true), "jetbrains.mps.closures.helgins@34_0", "1215601558542", true);
           {
             SNode _nodeToCheck_1029348928467 = invoke;
-            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.closures.helgins@5_0", "1215598000172", true), SLinkOperations.getTarget(ft, "resultType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins@5_0", "1215598000170");
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.closures.helgins@34_0", "1215601558547", true), SLinkOperations.getTarget(ft, "resultType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins@34_0", "1215601558545");
           }
           if (!(SLinkOperations.getCount(ft, "parameterType") == SLinkOperations.getCount(invoke, "parameter"))) {
             TypeChecker.getInstance().reportTypeError(invoke, "Wrong parameters number", "jetbrains.mps.closures.helgins", "1199568419784");
@@ -44,7 +44,7 @@ public class typeof_InvokeFunctionExpression_InferenceRule implements InferenceR
               p = p_iterator.next();
               {
                 SNode _nodeToCheck_1029348928467 = p;
-                TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.closures.helgins@5_0", "1215598000202", true), pt, _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins@5_0", "1215598000200", false, 0);
+                TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.closures.helgins@34_0", "1215601558578", true), pt, _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins@34_0", "1215601558576", false, 0);
               }
             }
           }

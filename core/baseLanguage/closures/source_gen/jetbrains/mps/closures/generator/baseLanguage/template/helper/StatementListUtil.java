@@ -39,7 +39,7 @@ public class StatementListUtil {
 
   public static SNode nextSibling(SNode stmt) {
     SNode nextSibling = SNodeOperations.getNextSibling(stmt);
-    while((nextSibling != null) && isIgnoredStatement(nextSibling)) {
+    while ((nextSibling != null) && isIgnoredStatement(nextSibling)) {
       nextSibling = SNodeOperations.getNextSibling(nextSibling);
     }
     return nextSibling;
