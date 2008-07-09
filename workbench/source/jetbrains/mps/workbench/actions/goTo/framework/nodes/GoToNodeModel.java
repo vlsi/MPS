@@ -73,7 +73,7 @@ public abstract class GoToNodeModel extends BaseMPSChooseModel<SNode> {
 
   public String getNotInMessage() {
     //return IdeBundle.message("label.no.matches.found.in.project");
-    return "-";
+    return "no nodes found in project";
   }
 
   public String getNotFoundMessage() {

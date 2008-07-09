@@ -56,7 +56,7 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
 
   public String getNotInMessage() {
     //return IdeBundle.message("label.no.matches.found.in.project");
-    return "-";
+    return "no modules found in project";
   }
 
   public String getNotFoundMessage() {

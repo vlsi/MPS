@@ -135,7 +135,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     //PropertiesComponent propertiesComponent = PropertiesComponent.getInstance(myProject);
     //return Boolean.TRUE.toString().equals(propertiesComponent.getValue("GoToClass.toSaveIncludeLibraries")) &&
     //  Boolean.TRUE.toString().equals(propertiesComponent.getValue("GoToClass.includeLibraries"));
-    return true;
+    return false;
   }
 
   public void saveInitialCheckBoxState(boolean state) {
