@@ -71,6 +71,7 @@ public class IntelligentInputUtil {
       label.changeText(pattern);
       label.end();
       editorContext.getNodeEditorComponent().changeSelection(label);
+      editorContext.getNodeEditorComponent().relayout();
     }
   }
 
@@ -111,6 +112,7 @@ public class IntelligentInputUtil {
             EditorCell_Label errorCell = (EditorCell_Label) EditorUtil.findErrorCell(cellForNewNode);
             ((EditorCell_Label) errorCell).changeText(tail);
             errorCell.setCaretPosition(tail.length());
+            editorContext.getNodeEditorComponent().relayout();
           }
         }.run();
         return;
@@ -145,6 +147,7 @@ public class IntelligentInputUtil {
           EditorCell_Label label = (EditorCell_Label) errorCell;
           if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
             label.changeText(smallPattern + tail);
+            component.relayout();
           }
           label.getRenderedTextLine().end();
         }
@@ -153,6 +156,8 @@ public class IntelligentInputUtil {
     }
 
     cell.changeText(smallPattern);
+    editorContext.getNodeEditorComponent().relayout();
+    
     rtAction.execute(editorContext);
     EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
 
@@ -169,6 +174,7 @@ public class IntelligentInputUtil {
 
       if (sourceCellRemains) {
         ((EditorCell_Label) cell).changeText(smallPattern);
+        editorContext.getNodeEditorComponent().relayout();
       }
 
       if (!canCompleteSmallPatternImmediately(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
