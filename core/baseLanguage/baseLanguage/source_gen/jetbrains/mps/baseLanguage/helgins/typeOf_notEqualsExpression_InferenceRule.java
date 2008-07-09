@@ -16,7 +16,7 @@ public class typeOf_notEqualsExpression_InferenceRule implements InferenceRule_R
   public void applyRule(final SNode notEqExpr) {
     {
       SNode _nodeToCheck_1029348928467 = notEqExpr;
-      TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(notEqExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins@5_0", "1215615985774", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(notEqExpr, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins@5_0", "1215615985778", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215615985772");
+      TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(notEqExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins@5_0", "1215617401665", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(notEqExpr, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins@5_0", "1215617401669", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215617401663");
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_13().createNode(), notEqExpr, "jetbrains.mps.baseLanguage.helgins", "1175606302946");
   }

@@ -31,7 +31,8 @@ public class FindSourceBlock_Behavior {
       expressions.add(SLinkOperations.getTarget(lastStatement, "expression", true));
     }
     for(SNode expr : expressions) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(expr), new QuotationClass_1().createNode())) {
+      SNode type = TypeChecker.getInstance().getTypeOf(expr);
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_1().createNode()) && !(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.NullType"))) {
         return true;
       }
     }

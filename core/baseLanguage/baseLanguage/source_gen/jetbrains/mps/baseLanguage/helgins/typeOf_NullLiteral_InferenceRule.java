@@ -15,7 +15,7 @@ public class typeOf_NullLiteral_InferenceRule implements InferenceRule_Runtime {
   public void applyRule(final SNode nullLiteral) {
     {
       SNode _nodeToCheck_1029348928467 = nullLiteral;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215615986803", true), new QuotationClass_76().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215615986801");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215617402693", true), new QuotationClass_76().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215617402691");
     }
   }
 

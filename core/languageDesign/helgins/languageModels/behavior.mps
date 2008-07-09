@@ -744,6 +744,18 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1213877521628">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877521629">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215617285928">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215617285929">
+                <property name="name" value="type" />
+                <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1215617285930" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215617285931">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215617285932">
+                    <link role="variableDeclaration" targetNodeId="1213877521641" resolveInfo="expr" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1215617285933" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877521630">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877521631">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877521632">
@@ -752,16 +764,27 @@
                   </node>
                 </node>
               </node>
-              <node role="condition" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1213877521634">
-                <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877521635">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877521636">
-                    <link role="variableDeclaration" targetNodeId="1213877521641" resolveInfo="expr" />
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1215617295485">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1215617298397">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215617308199">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215617306963">
+                      <link role="variableDeclaration" targetNodeId="1215617285929" resolveInfo="type" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1215617309875">
+                      <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1215617313127">
+                        <link role="conceptDeclaration" targetNodeId="7v.1204200696010" resolveInfo="NullType" />
+                      </node>
+                    </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1213877521637" />
                 </node>
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1213877521638">
-                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877521639">
-                    <link role="classifier" targetNodeId="6.~Set" resolveInfo="Set" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1213877521634">
+                  <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215617285934">
+                    <link role="variableDeclaration" targetNodeId="1215617285929" resolveInfo="type" />
+                  </node>
+                  <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1213877521638">
+                    <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877521639">
+                      <link role="classifier" targetNodeId="6.~Set" resolveInfo="Set" />
+                    </node>
                   </node>
                 </node>
               </node>
