@@ -18,7 +18,7 @@ import java.util.Set;
 
 public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDeclaration> {
   private boolean myCachesAreValid = false;
-  private Map<String, Set<String>> myDescendantsCache = new HashMap<String, Set<String>>(100000);
+  private Map<String, Set<String>> myDescendantsCache = new HashMap<String, Set<String>>(10000);
 
   public HierarchyViewTool(Project project) {
     super(project, "Hierarchy", 8, jetbrains.mps.ide.projectPane.Icons.HIERARCHY_ICON);
@@ -26,8 +26,6 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
 
   protected AbstractHierarchyTree<AbstractConceptDeclaration> createHierarchyTree(boolean isParentHierarchy) {
     //todo add structure model listener
-    /*todo do not always compute, just when needs to be shown (or we get computation on every reload, even if not used)*/
-    if (!myCachesAreValid) validateCaches();
     return new ConceptHierarchyTree(this, isParentHierarchy);
   }
 
@@ -48,6 +46,13 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
       }
     });
     myCachesAreValid = true;
+  }
+
+  private Set<String> getDescendantsOfConcept(String congeptFQName){
+    if (!myCachesAreValid) validateCaches();
+    Set<String> children = myDescendantsCache.get(congeptFQName);
+    if (children==null) return new HashSet<String>();
+    return children;
   }
 
   private void addToCache(Language language, String nodeFQName) {
@@ -99,9 +104,7 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
     }
 
     protected Set<AbstractConceptDeclaration> getDescendants(AbstractConceptDeclaration conceptDeclaration) {
-      Set<String> children = myDescendantsCache.get(NameUtil.nodeFQName(conceptDeclaration));
-      if (children==null) return new HashSet<AbstractConceptDeclaration>();
-      return CollectionUtil.map(children,new Mapper<String, AbstractConceptDeclaration>() {
+      return CollectionUtil.map(getDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclaration)),new Mapper<String, AbstractConceptDeclaration>() {
         public AbstractConceptDeclaration map(String s) {
           //todo improve performance
           return SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance());

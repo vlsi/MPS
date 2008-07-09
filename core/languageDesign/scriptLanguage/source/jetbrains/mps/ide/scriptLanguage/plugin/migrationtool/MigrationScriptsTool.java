@@ -12,16 +12,14 @@ import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.scriptLanguage.structure.MigrationScript;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.workbench.tools.BaseMPSTool;
+import jetbrains.mps.workbench.tools.BaseGeneratedTool;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -33,7 +31,7 @@ import java.util.List;
  * Igor Alshannikov
  * Jun 19, 2008
  */
-public class MigrationScriptsTool extends BaseMPSTool {
+public class MigrationScriptsTool extends BaseGeneratedTool {
   private static Logger LOG = Logger.getLogger(MigrationScriptsTool.class);
 
   private List<SNodePointer> myScripts;

@@ -12,14 +12,14 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.workbench.tools.BaseMPSTool;
+import jetbrains.mps.workbench.tools.BaseGeneratedTool;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Frame;
 import java.util.ArrayList;
 
-public abstract class AbstractHierarchyView<T extends INodeAdapter> extends BaseMPSTool {
+public abstract class AbstractHierarchyView<T extends INodeAdapter> extends BaseGeneratedTool {
 
   protected AbstractHierarchyTree<T> myHierarchyTree;
   protected HierarchyTreeNode<T> myTreeNode;
@@ -44,7 +44,6 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     myScrollPane = new JScrollPane(myHierarchyTree);
     myComponent.add(myScrollPane, BorderLayout.CENTER);
     showConceptInHierarchy(null, null);
-    myHierarchyTree.expandAll();
   }
 
   protected abstract AbstractHierarchyTree<T> createHierarchyTree(boolean isParentHierarchy);
@@ -150,6 +149,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
         if (myTreeNode != null) {
           myHierarchyTree.selectNode(myTreeNode);
         }
+        myHierarchyTree.expandAll();        
       }
     });
   }

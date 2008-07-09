@@ -9,7 +9,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.tools.BaseMPSTool;
+import jetbrains.mps.workbench.tools.BaseGeneratedTool;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 
-public class NewRefactoringView extends BaseMPSTool {
+public class NewRefactoringView extends BaseGeneratedTool {
   private static final Logger LOG = Logger.getLogger(NewRefactoringView.class);
   private RefactoringViewItem myRefactoringViewItem;
   private JPanel myComponent = new JPanel(new BorderLayout());

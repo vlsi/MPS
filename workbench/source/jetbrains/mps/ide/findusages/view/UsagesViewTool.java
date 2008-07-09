@@ -43,7 +43,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.workbench.tools.BaseMPSTool;
+import jetbrains.mps.workbench.tools.BaseGeneratedTool;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -64,7 +64,7 @@ import java.util.List;
   )
     }
 )
-public class UsagesViewTool extends BaseMPSTool implements PersistentStateComponent<Element> {
+public class UsagesViewTool extends BaseGeneratedTool implements PersistentStateComponent<Element> {
   private static Logger LOG = Logger.getLogger(UsagesViewTool.class);
 
   private static final String VERSION_NUMBER = "0.99";

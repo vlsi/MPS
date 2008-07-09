@@ -7,8 +7,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.toolsPane.DefaultTool;
-import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -20,8 +18,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.tools.BaseTool;
-import jetbrains.mps.workbench.tools.BaseMPSTool;
+import jetbrains.mps.workbench.tools.BaseGeneratedTool;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -34,7 +31,7 @@ import java.util.*;
 /**
  * @author Kostik
  */
-public class CellExplorerView extends BaseMPSTool {
+public class CellExplorerView extends BaseGeneratedTool {
   public static final Logger LOG = Logger.getLogger(CellExplorerView.class);
 
   private JPanel myComponent = new JPanel(new BorderLayout());
