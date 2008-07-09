@@ -798,8 +798,8 @@ public class EquationManager {
     Set<IWrapper> types = subtypingGraphVertices();
     boolean hasConcreteTypes = true;
     int priority = 0;
-    int[] minPriority = new int[]{Integer.MAX_VALUE};
     while (hasConcreteTypes) {
+      int[] minPriority = new int[]{Integer.MAX_VALUE};
       startCollectingConcretes();
       hasConcreteTypes = false;
       for (IWrapper type : types) {

@@ -16,7 +16,7 @@ public class typeOf_VarRef_InferenceRule implements InferenceRule_Runtime {
   public void applyRule(final SNode varRef) {
     {
       SNode _nodeToCheck_1029348928467 = varRef;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.helgins@5_0", "1215617402238", false), TypeChecker.getInstance().getRuntimeSupport().typeOf(varRef, "jetbrains.mps.baseLanguage.helgins@5_0", "1215617402236", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215617402234");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.helgins@5_0", "1215619081581", false), TypeChecker.getInstance().getRuntimeSupport().typeOf(varRef, "jetbrains.mps.baseLanguage.helgins@5_0", "1215619081579", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215619081577");
     }
   }
 

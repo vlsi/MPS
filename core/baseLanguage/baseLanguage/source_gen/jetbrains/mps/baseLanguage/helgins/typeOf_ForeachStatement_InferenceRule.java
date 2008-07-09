@@ -17,11 +17,11 @@ public class typeOf_ForeachStatement_InferenceRule implements InferenceRule_Runt
     final SNode T_typevar_1176561507041 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(foreachStatement, "iterable", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215617402053", true), new QuotationClass_79().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215617402050", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215619081411", true), new QuotationClass_79().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215619081408", false, 0);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(foreachStatement, "variable", true);
-      TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215617402058", true), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215617402056", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215619081416", true), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215619081414", false, 0);
     }
   }
 

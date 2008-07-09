@@ -22,7 +22,7 @@ public class checkThrowedByThrowIsCaught_NonTypesystemRule implements NonTypesys
       return;
     }
     {
-      final SNode ThrowableType = TypeChecker.getInstance().getRuntimeSupport().typeOf(throwable, "jetbrains.mps.baseLanguage.helgins@5_0", "1215617408129", true);
+      final SNode ThrowableType = TypeChecker.getInstance().getRuntimeSupport().typeOf(throwable, "jetbrains.mps.baseLanguage.helgins@5_0", "1215619087534", true);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(ThrowableType, new Runnable() {
 
         public void run() {
