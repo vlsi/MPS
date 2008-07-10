@@ -18,12 +18,12 @@ public class typeof_ArrayLiteral_InferenceRule implements InferenceRule_Runtime 
     for(SNode item : SLinkOperations.getTargets(arrayLiteral, "item", true)) {
       {
         SNode _nodeToCheck_1029348928467 = item;
-        TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596), TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1188221461717", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215688508588", false, 0);
+        TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596), TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1188221461717", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1188221461712", false, 0);
       }
     }
     {
       SNode _nodeToCheck_1029348928467 = arrayLiteral;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1188221454647", true), new QuotationClass_68().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215688508592");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1188221454647", true), new QuotationClass_68().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1188221467376");
     }
   }
 

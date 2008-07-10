@@ -16,7 +16,7 @@ public class typeOf_ThrowStatement_InferenceRule implements InferenceRule_Runtim
   public void applyRule(final SNode throwStatement) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(throwStatement, "throwable", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1176896098411", true), new QuotationClass_19().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215688504903", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1176896098411", true), new QuotationClass_19().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176896118328", false, 0);
     }
   }
 

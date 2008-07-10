@@ -250,6 +250,26 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215693864114">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1215693866257">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215693867370">
+              <property name="value" value="3" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215693864115">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215693870747">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1215693873686">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215693874752">
+              <property name="value" value="sd" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215693870748">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

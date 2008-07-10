@@ -16,7 +16,7 @@ public class typeOf_AssertStatement_InferenceRule implements InferenceRule_Runti
   public void applyRule(final SNode assertStatement) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(assertStatement, "condition", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1178271601478", true), new QuotationClass_1().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins@5_0", "1215688283605", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1178271601478", true), new QuotationClass_1().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1178271610359", false, 0);
     }
   }
 
