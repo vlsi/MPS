@@ -40,86 +40,13 @@ public class MPSVCSManager implements ProjectComponent {
   private final Object myMonitor = new Object();
   private final List<Runnable> myTasks = new LinkedList<Runnable>();
   private final SModelRepositoryListener myModelRepositoryListener;
-  private final SModelAdapter myModelInitializationListener = new SModelAdapter() {
-    @Override
-    public void modelSaved(SModelDescriptor sm) {
-      final IFile ifile = sm.getModelFile();
-      if (ifile != null) {
-        VirtualFile f = VFileSystem.getFile(ifile);
-        if (f != null) {
-          addInternal(Collections.singletonList(f));
-        }
-      }
-      sm.removeModelListener(this);
-    }
-  };
-  private MetadataCreationListener myMetadataListener = new MetadataCreationListener() {
-    public void metadataFileCreated(IFile ifile) {
-      if (ifile != null) {
-        VirtualFile vfile = VFileSystem.getFile(ifile);
-        if (vfile != null) {
-          if (ProjectLevelVcsManager.getInstance(myProject).getVcsFor(vfile) != null) {
-            addInternal(Collections.singletonList(vfile));
-          }
-        }
-      }
-    }
-  };
+  private final SModelAdapter myModelInitializationListener = new ModelSavedListener();
+  private MetadataCreationListener myMetadataListener = new MetadataCreationListenerImpl();
 
   public MPSVCSManager(Project project) {
     myProject = project;
-    myGenerationListener = new GenerationListener() {
-      public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
-        synchronized (myMonitor) {
-          myGenerationRunning = true;
-        }
-      }
-
-      public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
-
-      }
-
-      public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
-        synchronized (myMonitor) {
-          myGenerationRunning = false;
-
-          for (Runnable task : myTasks) {
-            SwingUtilities.invokeLater(task);
-          }
-
-          myTasks.clear();
-        }
-      }
-    };
-    myModelRepositoryListener = new SModelRepositoryAdapter() {
-      @Override
-      public void modelCreated(SModelDescriptor modelDescriptor) {
-        modelDescriptor.addModelListener(myModelInitializationListener);
-
-      }
-
-      @Override
-      public void modelFileChanged(IFile ifrom, IFile ito) {
-        if (ifrom != null) {
-          VirtualFile to = VFileSystem.getFile(ito);
-          VirtualFile from = VFileSystem.getFile(ifrom);
-          if (from != null) {
-            renameInternal(from, to);
-          }
-        }
-      }
-
-      @Override
-      public void beforeModelFileChanged(SModelDescriptor modelDescriptor) {
-        Set<IModule> modules = modelDescriptor.getModules();
-        for (IModule m : modules) {
-          VirtualFile file = VFileSystem.getFile(m.getGeneratorOutputPath());
-          if (file != null) {
-//            deleteInternal(Collections.singletonList(file));
-          }
-        }
-      }
-    };
+    myGenerationListener = new GenerationWhatcher();
+    myModelRepositoryListener = new SModelRepositoryListenerImpl();
   }
 
   private void renameInternal(final VirtualFile from, final VirtualFile to) {
@@ -361,5 +288,86 @@ public class MPSVCSManager implements ProjectComponent {
     myProject.getComponent(GeneratorManager.class).removeGenerationListener(myGenerationListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
     ModelChangesWatcher.instance().addMetadataListener(myMetadataListener);
+  }
+
+  private class ModelSavedListener extends SModelAdapter {
+    @Override
+    public void modelSaved(SModelDescriptor sm) {
+      final IFile ifile = sm.getModelFile();
+      if (ifile != null) {
+        VirtualFile f = VFileSystem.getFile(ifile);
+        if (f != null) {
+          addInternal(Collections.singletonList(f));
+        }
+      }
+      sm.removeModelListener(this);
+    }
+  }
+
+  private class MetadataCreationListenerImpl implements MetadataCreationListener {
+    public void metadataFileCreated(IFile ifile) {
+      if (ifile != null) {
+        VirtualFile vfile = VFileSystem.getFile(ifile);
+        if (vfile != null) {
+          if (ProjectLevelVcsManager.getInstance(myProject).getVcsFor(vfile) != null) {
+            addInternal(Collections.singletonList(vfile));
+          }
+        }
+      }
+    }
+  }
+
+  private class GenerationWhatcher implements GenerationListener {
+    public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+      synchronized (myMonitor) {
+        myGenerationRunning = true;
+      }
+    }
+
+    public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+
+    }
+
+    public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+      synchronized (myMonitor) {
+        myGenerationRunning = false;
+
+        for (Runnable task : myTasks) {
+          SwingUtilities.invokeLater(task);
+        }
+
+        myTasks.clear();
+      }
+    }
+  }
+
+  private class SModelRepositoryListenerImpl extends SModelRepositoryAdapter {
+    @Override
+      public void modelCreated(SModelDescriptor modelDescriptor) {
+      modelDescriptor.addModelListener(myModelInitializationListener);
+
+    }
+
+    @Override
+      public void modelFileChanged(IFile ifrom, IFile ito) {
+      if (ifrom != null) {
+        VirtualFile to = VFileSystem.getFile(ito);
+        VirtualFile from = VFileSystem.getFile(ifrom);
+        if (from != null) {
+          renameInternal(from, to);
+        }
+      }
+    }
+
+    @Override
+      public void beforeModelFileChanged(SModelDescriptor modelDescriptor) {
+      Set<IModule> modules = modelDescriptor.getModules();
+      for (IModule m : modules) {
+        VirtualFile file = VFileSystem.getFile(m.getGeneratorOutputPath());
+        if (file != null) {
+//            deleteInternal(Collections.singletonList(file));
+        }
+      }
+    }
   }
 }
