@@ -47,46 +47,101 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215690998229">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215690998230">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1215690998231" />
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1215691005800">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215691148153">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215691148187">
-                <property name="value" value="2" />
-              </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215691433049">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215691433099">
-                  <property name="value" value="2" />
-                </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215690826702">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215690813368">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215691010429">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215691009678">
-                        <link role="variableDeclaration" targetNodeId="1215690994129" resolveInfo="o" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215691616620">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215691616621">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215691645791">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215691645792">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215691651432">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215691652357">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215692043761">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215692043826">
+                        <property name="value" value="2" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215691011573">
-                        <link role="baseMethodDeclaration" targetNodeId="14.~Object.toString():java.lang.String" resolveInfo="toString" />
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215692059232">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215692059297">
+                          <property name="value" value="2" />
+                        </node>
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215691652375">
+                          <property name="value" value="23" />
+                        </node>
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215690825654">
-                      <link role="baseMethodDeclaration" targetNodeId="14.~String.toString():java.lang.String" resolveInfo="toString" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215692072189">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215692073990">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215692074040">
+                          <property name="value" value="2" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215692078228">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215692081920">
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215692081954">
+                              <property name="value" value="1" />
+                            </node>
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215692078278">
+                              <property name="value" value="2" />
+                            </node>
+                          </node>
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215692072239">
+                            <property name="value" value="2" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215691651668">
+                        <property name="value" value="23" />
+                      </node>
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215690827955">
-                    <link role="baseMethodDeclaration" targetNodeId="14.~String.toString():java.lang.String" resolveInfo="toString" />
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1215691646326">
+                <property name="value" value="true" />
+              </node>
+              <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1215691648047">
+                <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215691648048">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215691649096">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215691649912">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215691649946">
+                        <property name="value" value="23" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215691649333">
+                        <property name="value" value="23" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215690998828">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215690998514">
-                <link role="variableDeclaration" targetNodeId="1215690994129" resolveInfo="o" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215691618609">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215691619127">
+                <property name="value" value="239" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215691000252">
-                <link role="baseMethodDeclaration" targetNodeId="14.~Object.toString():java.lang.String" resolveInfo="toString" />
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1215691617202">
+            <property name="value" value="true" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215691604083">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215691610269">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215691608624">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215691606730">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215691604429">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215691604084">
+                    <link role="variableDeclaration" targetNodeId="1215690994129" resolveInfo="o" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215691606026">
+                    <link role="baseMethodDeclaration" targetNodeId="14.~Object.toString():java.lang.String" resolveInfo="toString" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215691607811">
+                  <link role="baseMethodDeclaration" targetNodeId="14.~String.toString():java.lang.String" resolveInfo="toString" />
+                </node>
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215691609643">
+                <link role="baseMethodDeclaration" targetNodeId="14.~String.toString():java.lang.String" resolveInfo="toString" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215691611335">
+              <link role="baseMethodDeclaration" targetNodeId="14.~String.toString():java.lang.String" resolveInfo="toString" />
             </node>
           </node>
         </node>

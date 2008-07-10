@@ -13,7 +13,7 @@ import java.util.List;
 public class IntelligentInputUtil {
   private static EditorManager ourServiceEditorManager = new EditorManager();
 
-  public static void processCell(EditorCell_Label cell, final EditorContext editorContext, String pattern) {
+  public static void processCell(EditorCell_Label cell, final EditorContext editorContext, String pattern, String oldText) {
     if (pattern == null || pattern.equals("")) {
       return;
     }
@@ -24,11 +24,11 @@ public class IntelligentInputUtil {
       return;
     }
 
-    if (pattern.startsWith(cell.getText())) {
+    if (pattern.startsWith(oldText)) {
       String smallPattern = pattern.substring(0, pattern.length() - 1);
       String tail = pattern.substring(pattern.length() - 1, pattern.length());
       processCellAtEnd(cell, editorContext, smallPattern, tail);
-    } else if (pattern.startsWith(cell.getText(), 1)) {
+    } else if (pattern.startsWith(oldText, 1)) {
       String head = "" + pattern.charAt(0);
       String smallPattern = pattern.substring(1);
       processCellAtStart(cell, editorContext, head, smallPattern);
@@ -176,7 +176,7 @@ public class IntelligentInputUtil {
         EditorCell_Label foundCell = prepareRTCell(editorContext, newNode, tail);
         if (foundCell != null) {
           editorContext.getNodeEditorComponent().changeSelection(foundCell);
-          processCell(foundCell, editorContext, tail);
+          processCell(foundCell, editorContext, tail, "");
         }
         return;
       }
@@ -196,7 +196,7 @@ public class IntelligentInputUtil {
       editorContext.flushEvents();
       EditorCell_Label rtCell = prepareRTCell(editorContext, newNode, tail);
       if (rtCell != null) {
-        processCell(rtCell, editorContext, tail);
+        processCell(rtCell, editorContext, tail, "");
       }
     }
   }
