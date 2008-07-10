@@ -2047,15 +2047,21 @@ __switch__:
 
           public SNode doSubstitute(String pattern) {
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-            SLinkOperations.setTarget(result, "rightExpression", _context.getSourceNode(), true);
-            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(result, null, false, false), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-              ParenthesisUtil.checkOperationWRTPriority(SNodeOperations.getParent(result, null, false, false));
-            } else
             {
-              ParenthesisUtil.checkOperationWRTPriority(result);
+              SNode nodeToProcess = _context.getSourceNode();
+              while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToProcess, null, false, false), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+                nodeToProcess = SNodeOperations.getParent(nodeToProcess, null, false, false);
+              }
+              SNodeOperations.replaceWithAnother(nodeToProcess, result);
+              SLinkOperations.setTarget(result, "rightExpression", nodeToProcess, true);
+              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(result, null, false, false), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+                ParenthesisUtil.checkOperationWRTPriority(SNodeOperations.getParent(result, null, false, false));
+              } else
+              {
+                ParenthesisUtil.checkOperationWRTPriority(result);
+              }
+              return result;
             }
-            return result;
           }
 
         });
