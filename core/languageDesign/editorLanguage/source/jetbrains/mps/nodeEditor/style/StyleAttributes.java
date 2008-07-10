@@ -35,4 +35,6 @@ public class StyleAttributes {
 
   public static final StyleAttribute<Boolean> FIRST_POSITION_ALLOWED = new SimpleStyleAttribute<Boolean>("first-position-allowed", true);
   public static final StyleAttribute<Boolean> LAST_POSITION_ALLOWED = new SimpleStyleAttribute<Boolean>("last-position-allowed", true);
+
+  public static final StyleAttribute<Boolean> INDENTED = new SimpleStyleAttribute<Boolean>("indented", true);
 }

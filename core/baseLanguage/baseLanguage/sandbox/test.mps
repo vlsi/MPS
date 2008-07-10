@@ -1338,5 +1338,46 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1211503175704" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1215494722102">
+    <property name="name" value="TestIndentLayout" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215494722103" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1215494722104">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215494722105" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215494722106" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215494722107">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215494764655">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215494764656">
+            <property name="name" value="aaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215494764657" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215494790280">
+              <property name="value" value="1" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215494768128">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215494768129">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215494793531">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215494796954">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215494796989">
+                  <property name="value" value="1" />
+                </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215494793532">
+                  <link role="variableDeclaration" targetNodeId="1215494764656" resolveInfo="aaa" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1215494777430">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215494779073">
+              <property name="value" value="0" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215494775163">
+              <link role="variableDeclaration" targetNodeId="1215494764656" resolveInfo="aaa" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
