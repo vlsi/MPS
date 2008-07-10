@@ -194,7 +194,7 @@ public class EquationManager {
     // no equation needed
     if (NodeWrapper.fromWrapper(subtypeRepresentator) == NodeWrapper.fromWrapper(supertypeRepresentator)) return;
 
-   // RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
+    // RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
     RuntimeTypeVariable varSupertype = supertypeRepresentator == null ? null : supertypeRepresentator.getVariable();
     isConcrete(subtypeRepresentator);
     boolean subtypeHasNonConcreteVars = !isConcrete(subtypeRepresentator);
@@ -875,7 +875,7 @@ public class EquationManager {
       keepInequationsAndEffects(wrapper, wrapper, true);
     }
     for (IWrapper wrapper : new HashSet<IWrapper>(mySubtypesToSupertypesMapStrong_check.keySet())) {
-       keepInequationsAndEffects(wrapper, wrapper, true);
+      keepInequationsAndEffects(wrapper, wrapper, true);
     }
   }
 
@@ -936,10 +936,13 @@ public class EquationManager {
         continue;
       }
       int inequationPriority = subtypes.get(subtypeNode).getInequationPriority();
-      minPriority[0] = Math.min(minPriority[0], inequationPriority);
-      if (subtypeNode.isConcrete() && inequationPriority <= priority) {
-        concreteSubtypes.add(subtypeNode);
+      if (subtypeNode.isConcrete()) {
+        minPriority[0] = Math.min(minPriority[0], inequationPriority);
+        if (inequationPriority <= priority) {
+          concreteSubtypes.add(subtypeNode);
+        }
       }
+
     }
     if (concreteSubtypes.isEmpty()) return;
 
@@ -1003,9 +1006,11 @@ public class EquationManager {
         continue;
       }
       int inequationPriority = supertypes.get(supertypeNode).getInequationPriority();
-      minPriority[0] = Math.min(minPriority[0], inequationPriority);
-      if (supertypeNode.isConcrete() && inequationPriority <= priority) {
-        concreteSupertypes.add(supertypeNode);
+      if (supertypeNode.isConcrete()) {
+        minPriority[0] = Math.min(minPriority[0], inequationPriority);
+        if (inequationPriority <= priority) {
+          concreteSupertypes.add(supertypeNode);
+        }
       }
     }
     if (concreteSupertypes.isEmpty()) return;
