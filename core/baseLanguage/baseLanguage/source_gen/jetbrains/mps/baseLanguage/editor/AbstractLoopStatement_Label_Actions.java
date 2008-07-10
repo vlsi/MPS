@@ -27,7 +27,7 @@ public class AbstractLoopStatement_Label_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, "label", "" + (null));
+      SPropertyOperations.set(node, "label", null);
     }
 
 }
