@@ -2721,6 +2721,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215710658549">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215710658550">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215710672132">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215710676406" />
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1215710664325">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215710667769" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215710662087">
+              <link role="variableDeclaration" targetNodeId="1213877514858" resolveInfo="children" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1213877514864">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877514865">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877514866">
@@ -2831,10 +2844,12 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877514910">
               <link role="classifier" targetNodeId="5.~File" resolveInfo="File" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213877514911">
-              <link role="baseMethodDeclaration" targetNodeId="5.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877514912">
-                <link role="variableDeclaration" targetNodeId="1213877514897" resolveInfo="basedir" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215710684807">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215710684809">
+                <link role="baseMethodDeclaration" targetNodeId="5.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877514912">
+                  <link role="variableDeclaration" targetNodeId="1213877514897" resolveInfo="basedir" />
+                </node>
               </node>
             </node>
           </node>

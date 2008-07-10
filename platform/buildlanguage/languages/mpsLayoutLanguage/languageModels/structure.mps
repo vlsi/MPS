@@ -33,11 +33,6 @@
     <property name="name" value="MPSLayout" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204706457824">
-      <property name="role" value="projectHome" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="1203617883391" resolveInfo="ICompositeComponent" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204115898932">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="configuration" />
