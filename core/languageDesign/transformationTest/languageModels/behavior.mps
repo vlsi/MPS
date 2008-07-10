@@ -16,7 +16,7 @@
   </language>
   <language namespace="jetbrains.mps.transformationTest">
     <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
-    <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.unitTest">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
@@ -36,11 +36,12 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
-  <maxImportIndex value="4" />
-  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+  <maxImportIndex value="9" />
+  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="1" />
   <import index="2" modelUID="jetbrains.mps.transformationTest.categories" version="-1" />
   <import index="3" modelUID="jetbrains.mps.helgins.inference@java_stub" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.transformationTest.runtime@java_stub" version="-1" />
+  <import index="8" modelUID="jetbrains.mps.transformationTest.runtime@java_stub" version="-1" />
+  <import index="9" modelUID="jetbrains.mps.transformationTest.runtime" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877365986">
     <link role="concept" targetNodeId="1.1210674524691" resolveInfo="TestNodeReference" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877365987">
@@ -161,8 +162,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215608521838">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215608402260">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215608404747">
-            <link role="baseMethodDeclaration" targetNodeId="4.~SubtreeChecker.checkNodeForErrors(jetbrains.mps.smodel.SNode):void" resolveInfo="checkNodeForErrors" />
-            <link role="classConcept" targetNodeId="4.~SubtreeChecker" resolveInfo="SubtreeChecker" />
+            <link role="baseMethodDeclaration" targetNodeId="8.~SubtreeChecker.checkNodeForErrors(jetbrains.mps.smodel.SNode):void" resolveInfo="checkNodeForErrors" />
+            <link role="classConcept" targetNodeId="8.~SubtreeChecker" resolveInfo="SubtreeChecker" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215608407591">
               <link role="variableDeclaration" targetNodeId="1215607151412" resolveInfo="node" />
             </node>
@@ -181,11 +182,11 @@
       <property name="name" value="perform" />
       <link role="overriddenMethod" targetNodeId="1215601182156" resolveInfo="perform" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215611899255">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215612908968">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215612915048">
-            <link role="baseMethodDeclaration" targetNodeId="4.~SubtreeChecker.checkDataFlow(jetbrains.mps.smodel.SNode):void" resolveInfo="checkDataFlow" />
-            <link role="classConcept" targetNodeId="4.~SubtreeChecker" resolveInfo="SubtreeChecker" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215612916768">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215694872339">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215694879076">
+            <link role="baseMethodDeclaration" targetNodeId="9.1215611932104" resolveInfo="checkDataFlow" />
+            <link role="classConcept" targetNodeId="9.1215078243118" resolveInfo="SubtreeChecker" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215694881453">
               <link role="variableDeclaration" targetNodeId="1215611920632" resolveInfo="node" />
             </node>
           </node>

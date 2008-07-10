@@ -15,7 +15,7 @@ public class typeof_MatrixIndexVariableDeclaration_InferenceRule implements Infe
   public void applyRule(final SNode nodeToCheck) {
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1210248715900", true), new QuotationClass_10().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins", "1210248722055");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1210248715900", true), new QuotationClass_10().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins@22_0", "1215699390124");
     }
   }
 

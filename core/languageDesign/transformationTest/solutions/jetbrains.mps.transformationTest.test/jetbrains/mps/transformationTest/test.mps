@@ -4,7 +4,7 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.transformationTest">
     <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
-    <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.core">
     <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />

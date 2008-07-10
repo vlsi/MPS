@@ -25,27 +25,31 @@
   <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
   <maxImportIndex value="2" />
-  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="1" />
   <import index="2" modelUID="java.util@java_stub" version="-1" />
-  <visible index="2" modelUID="jetbrains.mps.core.structure" />
+  <visible index="2" modelUID="jetbrains.mps.baseLanguage.editor" />
+  <visible index="3" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1210673785657">
     <link role="conceptDeclaration" targetNodeId="1.1210673684636" resolveInfo="TestNodeAnnotation" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1210673789911">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210673794902">
         <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="2v.1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1210673792352">
-        <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441910">
-          <property name="color" value="cyan" />
+        <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
+        <link role="styleClass" targetNodeId="1215703780827" resolveInfo="NodeAnnotation" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215704242276">
+          <property name="value" value="1.0" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedNodeCell" id="1210673841386" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210673843483">
         <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>
@@ -57,10 +61,8 @@
         <link role="conceptDeclaration" targetNodeId="1.1210673684636" resolveInfo="TestNodeAnnotation" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1210674551757">
           <property name="readOnly" value="true" />
-          <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441877">
-            <property name="color" value="cyan" />
-          </node>
+          <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
+          <link role="styleClass" targetNodeId="1215703780827" resolveInfo="NodeAnnotation" />
         </node>
       </node>
     </node>
@@ -75,7 +77,7 @@
           <property name="text" value="test:" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1211896382822">
-          <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
+          <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1212571574356">
           <property name="text" value="testset:" />
@@ -86,7 +88,7 @@
             <link role="conceptDeclaration" targetNodeId="1.1212572376577" resolveInfo="TestCategory" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1212573809404">
               <property name="readOnly" value="true" />
-              <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
+              <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
             </node>
           </node>
         </node>
@@ -123,7 +125,6 @@
       </node>
     </node>
   </node>
-  <visible index="3" modelUID="jetbrains.mps.baseLanguage.editor" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1211979400462">
     <link role="conceptDeclaration" targetNodeId="1.1211979288880" resolveInfo="AssertMatch" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1211979486899">
@@ -134,7 +135,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1211982195991">
         <property name="text" value="&lt;" />
-        <link role="styleClass" targetNodeId="3v.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="2v.1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1211979504028">
         <property name="separatorText" value="," />
@@ -142,7 +143,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1211982206915">
         <property name="text" value="&gt;" />
-        <link role="styleClass" targetNodeId="3v.1215088010675" resolveInfo="RightParen" />
+        <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1211979524795">
         <property name="text" value=" match" />
@@ -150,7 +151,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1211982223918">
         <property name="text" value="&lt;" />
-        <link role="styleClass" targetNodeId="3v.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="2v.1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1211979534640">
         <property name="separatorText" value="," />
@@ -158,7 +159,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1211982237875">
         <property name="text" value="&gt;" />
-        <link role="styleClass" targetNodeId="3v.1215088010675" resolveInfo="RightParen" />
+        <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1211979547001">
         <property name="text" value=";" />
@@ -188,7 +189,7 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1212572844454">
     <link role="conceptDeclaration" targetNodeId="1.1212572376577" resolveInfo="TestCategory" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1212572863695">
-      <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
+      <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheet" id="1214842776812">
@@ -197,6 +198,27 @@
       <property name="name" value="AssertStyle" />
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214842837425">
         <property name="color" value="blue" />
+      </node>
+    </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1215703780827">
+      <property name="name" value="NodeAnnotation" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215703818170">
+        <property name="value" value="0.0" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1215704381850">
+        <property name="underlined" value="2" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1215704542249">
+        <property name="color" value="DARK_GREEN" />
+      </node>
+    </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1215705076737">
+      <property name="name" value="NodeProperty" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215705089238">
+        <property name="value" value="0.0" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1215705096037">
+        <property name="color" value="DARK_GREEN" />
       </node>
     </node>
   </node>
@@ -213,11 +235,15 @@
         <link role="relationDeclaration" targetNodeId="1.1214846370530" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215076096329">
-        <property name="text" value="for type errors" />
+        <property name="text" value=" for type errors" />
         <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215704902632">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215076105964">
         <property name="text" value=";" />
+        <link role="styleClass" targetNodeId="2v.1215094139260" resolveInfo="Semicolon" />
       </node>
     </node>
   </node>
@@ -229,7 +255,7 @@
         <link role="conceptDeclaration" targetNodeId="1.1212572376577" resolveInfo="TestCategory" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1215434832243">
           <property name="readOnly" value="true" />
-          <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
+          <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
         </node>
       </node>
     </node>
@@ -239,7 +265,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1215507671101" resolveInfo="NodeErrorPropeties" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215507702924">
       <property name="text" value="has error" />
-      <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+      <link role="styleClass" targetNodeId="1215705076737" resolveInfo="NodeProperty" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1215507929232">
@@ -250,7 +276,7 @@
       <link role="actionMap" targetNodeId="1215524000577" resolveInfo="Annotation_Actions" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215507938748">
         <property name="text" value="&lt;node" />
-        <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+        <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
         <link role="actionMap" targetNodeId="1215524000577" resolveInfo="Annotation_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedNodeCell" id="1215507949478" />
@@ -258,14 +284,15 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1215518214434">
         <property name="separatorText" value="," />
         <link role="relationDeclaration" targetNodeId="1.1215507909023" />
+        <link role="styleClass" targetNodeId="2v.1215094139260" resolveInfo="Semicolon" />
         <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215518225140">
           <property name="text" value="..." />
-          <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+          <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215507972762">
         <property name="text" value="&gt;" />
-        <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+        <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
         <link role="actionMap" targetNodeId="1215524000577" resolveInfo="Annotation_Actions" />
       </node>
     </node>
@@ -275,7 +302,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1215511704609" resolveInfo="NodeWarningProperty" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215515361840">
       <property name="text" value="has warning" />
-      <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+      <link role="styleClass" targetNodeId="1215705076737" resolveInfo="NodeProperty" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1215524000577">
@@ -299,7 +326,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1215525678776" resolveInfo="NodeReachable" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215525730465">
       <property name="text" value="reachable" />
-      <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+      <link role="styleClass" targetNodeId="1215705076737" resolveInfo="NodeProperty" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1215526335114">
@@ -309,7 +336,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215526430789">
         <property name="text" value="has type" />
-        <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+        <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1215526437947">
         <link role="relationDeclaration" targetNodeId="1.1215526393912" />
@@ -323,22 +350,22 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215604459549">
         <property name="text" value="&lt;" />
-        <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+        <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LastPositionAllowedStyleSheetItem" id="1215605008129" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1215604465395">
         <property name="separatorText" value="," />
         <link role="relationDeclaration" targetNodeId="1.1215604436604" />
-        <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+        <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
         <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215604492494">
           <property name="text" value="..." />
-          <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+          <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedNodeCell" id="1215604473288" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215604480993">
         <property name="text" value="&gt;" />
-        <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+        <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
       </node>
     </node>
   </node>
@@ -347,7 +374,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1215607067978" resolveInfo="NodeErrorCheck" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215607094699">
       <property name="text" value="check types" />
-      <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+      <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1215611856135">
@@ -355,7 +382,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1215611834554" resolveInfo="CheckDataFlowOperation" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215611873639">
       <property name="text" value="check dataflow" />
-      <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+      <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1215612962552">
@@ -363,7 +390,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1215612918969" resolveInfo="NodeUnreacable" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215612967335">
       <property name="text" value="unreachable" />
-      <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+      <link role="styleClass" targetNodeId="1215705076737" resolveInfo="NodeProperty" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1215614451933">
@@ -373,7 +400,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215614465499">
         <property name="text" value="init" />
-        <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+        <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1215614526849">
         <link role="relationDeclaration" targetNodeId="1.1215614415465" />
@@ -387,7 +414,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215617035871">
         <property name="text" value="live" />
-        <link role="styleClass" targetNodeId="3v.1198596447279" resolveInfo="Annotation" />
+        <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1215617041233">
         <link role="relationDeclaration" targetNodeId="1.1215617010458" />

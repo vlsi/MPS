@@ -17,12 +17,12 @@ public class typeof_MatrixLiteral_InferenceRule implements InferenceRule_Runtime
     /*
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1210001192695", true), new QuotationClass_().createNode(SLinkOperations.getTarget(nodeToCheck, "scalarType", true)), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins", "1210001196874");
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1210001192695", true), new QuotationClass_().createNode(SLinkOperations.getTarget(nodeToCheck, "scalarType", true)), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins@22_0", "1215699388813");
       }
     */
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1210167980581", true), new QuotationClass_5().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins", "1210167980571");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1210167980581", true), new QuotationClass_5().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins@22_0", "1215699388849");
     }
   }
 

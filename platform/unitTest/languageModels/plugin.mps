@@ -10466,6 +10466,9 @@
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1209122623801">
                         <property name="value" value="No tests found" />
                       </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215625603939">
+                        <property name="value" value="No tests found" />
+                      </node>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1209122843435">
                         <property name="value" value="Can't run tests" />
                       </node>

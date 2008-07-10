@@ -12,6 +12,16 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="NodeUnreacable" conceptFQName="jetbrains.mps.transformationTest.structure.NodeUnreacable" featureKind="CONCEPT" />
+          <value featureName="NodeUnreachable" conceptFQName="jetbrains.mps.transformationTest.structure.NodeUnreachable" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
@@ -36,7 +46,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
   <maxImportIndex value="6" />
   <import index="2" modelUID="jetbrains.mps.patterns.util@java_stub" version="-1" />
   <import index="4" modelUID="java.util@java_stub" version="-1" />
@@ -273,7 +283,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215612918969">
     <property name="package" value="nodeProperties" />
-    <property name="name" value="NodeUnreacable" />
+    <property name="name" value="NodeUnreachable" />
     <link role="extends" targetNodeId="1215507599032" resolveInfo="NodeProperty" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215612941316">
       <property name="value" value="unreachable" />

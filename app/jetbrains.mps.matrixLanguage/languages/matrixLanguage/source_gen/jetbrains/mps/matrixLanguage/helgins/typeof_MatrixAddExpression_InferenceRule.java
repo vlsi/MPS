@@ -29,15 +29,15 @@ public class typeof_MatrixAddExpression_InferenceRule implements InferenceRule_R
               public void run() {
                 {
                   SNode _nodeToCheck_1029348928467 = nodeToCheck;
-                  TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1215411640551", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1215411668136), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins", "1215411640547");
+                  TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1215411640551", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1215411668136), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins@22_0", "1215699389451");
                 }
                 {
                   SNode _nodeToCheck_1029348928467 = TypeChecker.getInstance().getEquationManager().getRepresentator(left);
-                  TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1215411640557", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1215411668136), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins", "1215411640553");
+                  TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1215411640557", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1215411668136), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins@22_0", "1215699389454");
                 }
                 {
                   SNode _nodeToCheck_1029348928467 = TypeChecker.getInstance().getEquationManager().getRepresentator(right);
-                  TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1215411640565", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1215411668136), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins", "1215411640561");
+                  TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1215411640565", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1215411668136), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins@22_0", "1215699389457");
                 }
               }
 
@@ -55,7 +55,7 @@ public class typeof_MatrixAddExpression_InferenceRule implements InferenceRule_R
           if (!(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(type), "jetbrains.mps.matrixLanguage.structure.MatrixType"))) {
             {
               BaseIntentionProvider intentionProvider = null;
-              TypeChecker.getInstance().reportTypeError(nodeToCheck, "Should be matrix, but " + SNodeOperations.getConceptDeclaration(TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1215411668136)), "jetbrains.mps.matrixLanguage.helgins", "1210175079706", intentionProvider);
+              TypeChecker.getInstance().reportTypeError(nodeToCheck, "Should be matrix, but " + SNodeOperations.getConceptDeclaration(TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1215411668136)), "jetbrains.mps.matrixLanguage.helgins@22_0", "1215699389479", intentionProvider);
             }
           }
         }

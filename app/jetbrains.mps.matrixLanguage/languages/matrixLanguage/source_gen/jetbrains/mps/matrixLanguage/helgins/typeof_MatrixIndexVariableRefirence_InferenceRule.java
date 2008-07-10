@@ -16,7 +16,7 @@ public class typeof_MatrixIndexVariableRefirence_InferenceRule implements Infere
   public void applyRule(final SNode nodeToCheck) {
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1210246928078", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "variableDeclaration", false), "jetbrains.mps.matrixLanguage.helgins", "1210248952116", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins", "1210246928076");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1210246928078", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "variableDeclaration", false), "jetbrains.mps.matrixLanguage.helgins", "1210248952116", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins@22_0", "1215699390060");
     }
   }
 

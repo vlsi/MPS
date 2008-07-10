@@ -19,7 +19,7 @@ public class typeof_MatrixRow_InferenceRule implements InferenceRule_Runtime {
     for(SNode arg : SLinkOperations.getTargets(nodeToCheck, "items", true)) {
       {
         SNode _nodeToCheck_1029348928467 = arg;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1215189863261", true), type, _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins", "1215189863259", false, 0);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.matrixLanguage.helgins", "1215189863261", true), type, _nodeToCheck_1029348928467, null, "jetbrains.mps.matrixLanguage.helgins@22_0", "1215699390224", false, 0);
       }
     }
   }
