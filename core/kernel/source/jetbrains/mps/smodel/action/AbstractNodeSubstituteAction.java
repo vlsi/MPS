@@ -147,6 +147,9 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     SNode newNode = doSubstitute(pattern);
     if (context != null) {
       EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+
+      selectedCell.getContainingBigCell().synchronizeViewWithModel();
+      context.getNodeEditorComponent().relayout();
       
       if (newNode == null) {
         // put caret at the end of text
