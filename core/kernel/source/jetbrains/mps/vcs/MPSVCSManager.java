@@ -19,6 +19,7 @@ import java.rmi.RemoteException;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.*;
+import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.changes.IgnoredFileBean;
@@ -239,13 +240,11 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public static boolean isUnderVCS(Project project, VirtualFile f) {
-    ProjectLevelVcsManager manager = project.getComponent(ProjectLevelVcsManager.class);
-    AbstractVcs vcs = manager.getVcsFor(f);
-    if (vcs == null) {
-      return false;
-    }
-    FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOn(f);
-    return vcs.fileIsUnderVcs(path);
+
+    VcsFileStatusProvider provider = project.getComponent(VcsFileStatusProvider.class);
+
+    FileStatus status = provider.getFileStatus(f);
+    return !(status.equals(FileStatus.UNKNOWN) || status.equals(FileStatus.IGNORED));
   }
 
   public void projectOpened() {
