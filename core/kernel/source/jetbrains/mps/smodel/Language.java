@@ -611,11 +611,15 @@ public class Language extends AbstractModule {
 
   public void invalidateCaches() {
     super.invalidateCaches();
+    invalidateHierarchyCaches();
     myNameToConceptCache.clear();
-    myParentsNamesMap.clear();
-    myAncestorsNamesMap.clear();
     myNotFoundRefactorings.clear();
     myCachedRefactorings = null;
+  }
+
+  private void invalidateHierarchyCaches() {
+    myParentsNamesMap.clear();
+    myAncestorsNamesMap.clear();
   }
 
   public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {

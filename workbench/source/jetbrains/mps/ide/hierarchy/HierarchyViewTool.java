@@ -1,16 +1,21 @@
 package jetbrains.mps.ide.hierarchy;
 
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.util.containers.HashMap;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -20,12 +25,76 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
   private boolean myCachesAreValid = false;
   private Map<String, Set<String>> myDescendantsCache = new HashMap<String, Set<String>>(10000);
 
+  private SModelRepositoryAdapter myRepositoryListener = null;
+  private SModelAdapter myModelListener = null;
+
   public HierarchyViewTool(Project project) {
     super(project, "Hierarchy", 8, jetbrains.mps.ide.projectPane.Icons.HIERARCHY_ICON);
   }
 
+  public void initComponent() {
+    super.initComponent();
+
+    myRepositoryListener = new SModelRepositoryAdapter() {
+      public void modelAdded(SModelDescriptor modelDescriptor) {
+        modelDescriptor.addModelListener(myModelListener);
+      }
+    };
+
+    myModelListener = new SModelAdapter() {
+      public void referenceAdded(SModelReferenceEvent event) {
+        super.referenceAdded(event);
+
+      }
+
+      public void referenceRemoved(SModelReferenceEvent event) {
+        super.referenceRemoved(event);
+
+      }
+
+      public void rootRemoved(SModelRootEvent event) {
+        super.rootRemoved(event);
+
+      }
+
+      public void rootAdded(SModelRootEvent event) {
+        super.rootAdded(event);
+
+      }
+
+      public void modelChangedDramatically(SModel model) {
+        myCachesAreValid = false;
+      }
+    };
+
+    //for consistency
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
+          SModelDescriptor structureDescriptor = language.getStructureModelDescriptor();
+          structureDescriptor.addModelListener(myModelListener);
+        }
+
+        SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
+      }
+    });
+  }
+
+  public void disposeComponent() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
+          SModelDescriptor structureDescriptor = language.getStructureModelDescriptor();
+          structureDescriptor.removeModelListener(myModelListener);
+        }
+
+        SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
+      }
+    });
+    super.disposeComponent();
+  }
+
   protected AbstractHierarchyTree<AbstractConceptDeclaration> createHierarchyTree(boolean isParentHierarchy) {
-    //todo add structure model listener
     return new ConceptHierarchyTree(this, isParentHierarchy);
   }
 
@@ -35,9 +104,9 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
       public void run() {
         for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
           SModelDescriptor structureDescriptor = language.getStructureModelDescriptor();
-          if (structureDescriptor!=null){
-            for (SNode root : structureDescriptor.getSModel().getRoots()){
-              if (root.isInstanceOfConcept(AbstractConceptDeclaration.concept)){
+          if (structureDescriptor != null) {
+            for (SNode root : structureDescriptor.getSModel().getRoots()) {
+              if (root.isInstanceOfConcept(AbstractConceptDeclaration.concept)) {
                 addToCache(language, NameUtil.nodeFQName(root));
               }
             }
@@ -48,16 +117,16 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
     myCachesAreValid = true;
   }
 
-  private Set<String> getDescendantsOfConcept(String congeptFQName){
+  private Set<String> getDescendantsOfConcept(String congeptFQName) {
     if (!myCachesAreValid) validateCaches();
     Set<String> children = myDescendantsCache.get(congeptFQName);
-    if (children==null) return new HashSet<String>();
+    if (children == null) return new HashSet<String>();
     return children;
   }
 
   private void addToCache(Language language, String nodeFQName) {
-    for (String parentFQName:language.getParentsNames(nodeFQName)){
-      if (!myDescendantsCache.containsKey(parentFQName)) myDescendantsCache.put(parentFQName,new HashSet<String>());
+    for (String parentFQName : language.getParentsNames(nodeFQName)) {
+      if (!myDescendantsCache.containsKey(parentFQName)) myDescendantsCache.put(parentFQName, new HashSet<String>());
       myDescendantsCache.get(parentFQName).add(nodeFQName);
     }
   }
@@ -68,31 +137,14 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
     }
 
     protected Set<AbstractConceptDeclaration> getParents(AbstractConceptDeclaration node) {
-      //todo: can we replace it all with Language.getParentNames?
-      Set<AbstractConceptDeclaration> parents = new HashSet<AbstractConceptDeclaration>();
-      if (node instanceof ConceptDeclaration) {
-        ConceptDeclaration concept = (ConceptDeclaration) node;
-        ConceptDeclaration parentConcept = concept.getExtends();
-        if (parentConcept != null) {
-          parents.add(parentConcept);
+      Language language = SModelUtil_new.getDeclaringLanguage(node, GlobalScope.getInstance());
+      Set<String> parents = language.getParentsNames(NameUtil.nodeFQName(node));
+      return CollectionUtil.map(parents, new Mapper<String, AbstractConceptDeclaration>() {
+        public AbstractConceptDeclaration map(String s) {
+          //todo improve performance
+          return SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance());
         }
-        for (InterfaceConceptReference interfaceConceptReference : concept.getImplementses()) {
-          InterfaceConceptDeclaration declaration = interfaceConceptReference.getIntfc();
-          if (declaration != null) {
-            parents.add(declaration);
-          }
-        }
-      }
-      if (node instanceof InterfaceConceptDeclaration) {
-        InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) node;
-        for (InterfaceConceptReference interfaceConceptReference : interfaceConcept.getExtendses()) {
-          InterfaceConceptDeclaration declaration = interfaceConceptReference.getIntfc();
-          if (declaration != null) {
-            parents.add(declaration);
-          }
-        }
-      }
-      return parents;
+      });
     }
 
     protected AbstractConceptDeclaration getParent(AbstractConceptDeclaration node) {
@@ -104,7 +156,7 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
     }
 
     protected Set<AbstractConceptDeclaration> getDescendants(AbstractConceptDeclaration conceptDeclaration) {
-      return CollectionUtil.map(getDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclaration)),new Mapper<String, AbstractConceptDeclaration>() {
+      return CollectionUtil.map(getDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclaration)), new Mapper<String, AbstractConceptDeclaration>() {
         public AbstractConceptDeclaration map(String s) {
           //todo improve performance
           return SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance());

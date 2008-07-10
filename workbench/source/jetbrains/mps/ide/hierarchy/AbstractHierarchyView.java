@@ -37,9 +37,9 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     myHierarchyTree = createHierarchyTree(false);
     myHierarchyTree.setRootVisible(true);
 
-    createButtons();
     JPanel panel = new JPanel(new BorderLayout());
-    panel.add(createButtons(), BorderLayout.WEST);
+    JComponent buttonsPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, createButtonsGroup(), true).getComponent();
+    panel.add(buttonsPanel, BorderLayout.WEST);
     myComponent.add(panel, BorderLayout.NORTH);
     myScrollPane = new JScrollPane(myHierarchyTree);
     myComponent.add(myScrollPane, BorderLayout.CENTER);
@@ -52,8 +52,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     context.getComponent(MPSEditorOpener.class).openNode(node, context);
   }
 
-  protected JComponent createButtons() {
-
+  protected DefaultActionGroup createButtonsGroup() {
     GroupedToggleAction childrenAction = new GroupedToggleAction("Children Hierarchy", "Show children hierarchy", Icons.CHILDREN_ICON, true) {
       public void select() {
         myHierarchyTree.setParentHierarchy(false);
@@ -105,7 +104,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     group.add(collapseAllAction);
     group.add(createCloseAction());
 
-    return ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, group, true).getComponent();
+    return group;
   }
 
 

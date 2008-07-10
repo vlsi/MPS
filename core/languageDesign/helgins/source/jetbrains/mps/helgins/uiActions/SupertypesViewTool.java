@@ -23,7 +23,7 @@ public class SupertypesViewTool extends AbstractHierarchyView {
     return new SupertypesTree(this);
   }
 
-  protected JComponent createButtons() {
+  protected DefaultActionGroup createButtonsGroup() {
     ToggleAction action = new ToggleAction("Strong", "Show Only Strong Supertypes", Icons.STRONG_SUBTYPE_ICON) {
       private boolean myState = false;
 
@@ -41,6 +41,6 @@ public class SupertypesViewTool extends AbstractHierarchyView {
     group.add(action);
     group.add(createCloseAction());
 
-    return ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, group, true).getComponent();
+    return group;
   }
 }
