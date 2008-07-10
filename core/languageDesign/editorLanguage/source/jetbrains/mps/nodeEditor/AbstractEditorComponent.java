@@ -1724,11 +1724,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  protected void paintChildren(Graphics g) {
-    super.paintChildren(g);
-    if (mySelectedCell instanceof EditorCell_Component) ((EditorCell_Component) mySelectedCell).paintSelection(g);
-  }
-
   public Dimension getPreferredSize() {
     JViewport viewport = myScrollPane.getViewport();
     Rectangle viewRect = viewport.getViewRect();
