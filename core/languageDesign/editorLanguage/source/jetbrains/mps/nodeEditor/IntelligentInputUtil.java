@@ -22,7 +22,7 @@ public class IntelligentInputUtil {
       processRTHintCell(rtHintCell, editorContext, pattern);
       return;
     }
-    if (cell.getCaretPosition() == pattern.length() || cell.getCaretPosition() == pattern.length() - 1) {
+    if (cell.getCaretPosition() == pattern.length() || (cell.getCaretPosition() == pattern.length() - 1 && cell.getCaretPosition() != 1)) {
       String smallPattern = pattern.substring(0, pattern.length() - 1);
       String tail = pattern.substring(pattern.length() - 1, pattern.length());
       processCellAtEnd(cell, editorContext, smallPattern, tail);

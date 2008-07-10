@@ -40,7 +40,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="45" />
+  <maxImportIndex value="46" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" version="-1" />
@@ -59,6 +59,7 @@
   <import index="43" modelUID="jetbrains.mps.ide.icons@java_stub" version="-1" />
   <import index="44" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <import index="45" modelUID="jetbrains.mps.baseLanguage.blTypes.structure" version="-1" />
+  <import index="46" modelUID="java.util@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1138168268784">
     <property name="name" value="binaryOperations" />
     <property name="package" value="rightTransform" />
