@@ -17,16 +17,20 @@ public class IntelligentInputUtil {
     if (pattern == null || pattern.equals("")) {
       return;
     }
+
     if (cell instanceof EditorCell_STHint) {
       EditorCell_STHint rtHintCell = (EditorCell_STHint) cell;
       processRTHintCell(rtHintCell, editorContext, pattern);
       return;
     }
-    if (cell.getCaretPosition() == pattern.length() || (cell.getCaretPosition() == pattern.length() - 1)) {
+
+    cell.synchronizeViewWithModel();    
+
+    if (pattern.startsWith(cell.getText())) {
       String smallPattern = pattern.substring(0, pattern.length() - 1);
       String tail = pattern.substring(pattern.length() - 1, pattern.length());
       processCellAtEnd(cell, editorContext, smallPattern, tail);
-    } else if (cell.getCaretPosition() == 1) {
+    } else if (pattern.startsWith(cell.getText(), 1)) {
       String head = "" + pattern.charAt(0);
       String smallPattern = pattern.substring(1);
       processCellAtStart(cell, editorContext, head, smallPattern);
