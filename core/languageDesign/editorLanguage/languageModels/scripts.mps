@@ -24,8 +24,9 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="0" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="0" />
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1214310157048">
     <property name="migrationFromBuild" value="755" />
     <property name="name" value="ConvertToInlineProperies" />

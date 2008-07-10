@@ -556,7 +556,7 @@ __switch__:
             }
 
             public String getDescriptionText(String pattern) {
-              return NodePresentationUtil.descriptionText((item)) + " static access";
+              return "static access ^" + NodePresentationUtil.descriptionText((item));
             }
 
           });

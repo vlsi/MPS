@@ -26,11 +26,11 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="40" />
+  <maxImportIndex value="41" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="27" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
+  <import index="27" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="0" />
   <import index="28" modelUID="java.awt.event@java_stub" version="-1" />
   <import index="29" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <import index="33" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -41,6 +41,7 @@
   <import index="38" modelUID="javax.swing@java_stub" version="-1" />
   <import index="39" modelUID="java.awt@java_stub" version="-1" />
   <import index="40" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  <import index="41" modelUID="jetbrains.mps.nodeEditor.style@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1071666914219">
     <property name="name" value="ConceptEditorDeclaration" />
     <property name="iconPath" value="${language_descriptor}\icons\editor.png" />
@@ -2510,6 +2511,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1186402481854">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
     </node>
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLinkDeclaration" id="1215701938122">
+      <property name="name" value="attributeConstant" />
+      <link role="targetType" targetNodeId="4.1068431790191" resolveInfo="Expression" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186403694788">
     <property name="package" value="Stylesheet" />
@@ -2545,6 +2550,13 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="ForegroundColorStyleSheetItem" />
     <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215703469851">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215703469852">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.TEXT_COLOR" resolveInfo="TEXT_COLOR" />
+      </node>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186404568646">
       <property name="value" value="text-foreground-color" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
@@ -2558,11 +2570,25 @@
       <property name="value" value="background-color" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215703443814">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215703448660">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.BACKGROUND_COLOR" resolveInfo="BACKGROUND_COLOR" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186413799158">
     <property name="package" value="Stylesheet" />
     <property name="name" value="BracketColorStyleSheetItem" />
     <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215703461771">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215703461772">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.BRACKETS_COLOR" resolveInfo="BRACKETS_COLOR" />
+      </node>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186413814629">
       <property name="value" value="bracket-color" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
@@ -2584,6 +2610,13 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="SelectableStyleSheetItem" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215702083875">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215702083876">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.SELECTABLE" resolveInfo="SELECTABLE" />
+      </node>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186414942927">
       <property name="value" value="selectable" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
@@ -2593,6 +2626,13 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="DrawBracketsStyleSheetItem" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215702053365">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215702053366">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.DRAW_BRACKETS" resolveInfo="DRAW_BRACKETS" />
+      </node>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186414964929">
       <property name="value" value="draw-brackets" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
@@ -2605,6 +2645,13 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186414988603">
       <property name="value" value="draw-border" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215702014501">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215702044051">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.DRAW_BORDER" resolveInfo="DRAW_BORDER" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186414999511">
@@ -2637,6 +2684,13 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="EditableStyleSheetItem" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215702059789">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215702059790">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.EDITABLE" resolveInfo="EDITABLE" />
+      </node>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186414958479">
       <property name="value" value="editable" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
@@ -2646,6 +2700,13 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="ForegroundNullColorStyleSheetItem" />
     <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215703479915">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215703479916">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.NULL_TEXT_COLOR" resolveInfo="NULL_TEXT_COLOR" />
+      </node>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1187258725566">
       <property name="value" value="text-foreground-null-color" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
@@ -2851,6 +2912,13 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="TextBackgroundColorStyleSheetItem" />
     <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215703515607">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215703515608">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.TEXT_BACKGROUND_COLOR" resolveInfo="TEXT_BACKGROUND_COLOR" />
+      </node>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1214406454887">
       <property name="value" value="text-background-color" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
@@ -2860,6 +2928,13 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="TextBackgroundColorSelectedStyleSheetItem" />
     <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215703491746">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215703491747">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR" resolveInfo="SELECTED_TEXT_BACKGROUND_COLOR" />
+      </node>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1214406466687">
       <property name="value" value="text-background-color-selected" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
@@ -2912,6 +2987,13 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="FirstPositionAllowedStyleSheetItem" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215702064900">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215702064901">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.FIRST_POSITION_ALLOWED" resolveInfo="FIRST_POSITION_ALLOWED" />
+      </node>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215085187379">
       <property name="value" value="first-position-allowed" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
@@ -2921,6 +3003,13 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="LastPositionAllowedStyleSheetItem" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215702077186">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215702077187">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.LAST_POSITION_ALLOWED" resolveInfo="LAST_POSITION_ALLOWED" />
+      </node>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215085197272">
       <property name="value" value="last-position-allowed" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
@@ -2930,6 +3019,13 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="IndentedStyleSheetItem" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215702070965">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215702070966">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.INDENTED" resolveInfo="INDENTED" />
+      </node>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215669861455">
       <property name="value" value="indented" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />

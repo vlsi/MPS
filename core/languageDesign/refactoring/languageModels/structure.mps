@@ -28,6 +28,7 @@
   <languageAspect modelUID="jetbrains.mps.logging.refactoring.constraints" version="4" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="0" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -39,7 +40,7 @@
   <import index="8" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="9" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.refactoring.framework@java_stub" version="-1" />
-  <import index="11" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
+  <import index="11" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="0" />
   <import index="14" modelUID="jetbrains.mps.ide.findusages.model@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1189693812263">
     <property name="name" value="Refactoring" />

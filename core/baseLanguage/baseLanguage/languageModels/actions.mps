@@ -2376,15 +2376,15 @@
           </node>
           <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSubstitute_String" id="1177397032667">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177397032668">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177397033506">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1177397588245">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177397589652">
-                    <property name="value" value=" static access" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215707195402">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215707198327">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215707196029">
+                    <property name="value" value="static access ^" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1177397584996">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215707206861">
                     <link role="baseMethodDeclaration" targetNodeId="30.~NodePresentationUtil.descriptionText(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="descriptionText" />
                     <link role="classConcept" targetNodeId="30.~NodePresentationUtil" resolveInfo="NodePresentationUtil" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1177397586473" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1215707206862" />
                   </node>
                 </node>
               </node>

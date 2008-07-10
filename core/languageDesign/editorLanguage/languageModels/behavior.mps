@@ -28,8 +28,9 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="0" />
   <maxImportIndex value="7" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="0" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.bootstrap.editorLanguage.behavior" version="-1" />
@@ -1191,6 +1192,29 @@
         <property name="name" value="cellModel" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214304733227">
           <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1215703564594">
+      <property name="name" value="getStyleConstant" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1215703569972">
+        <link role="concept" targetNodeId="5v.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215703564596">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215703576145">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215703585044">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215703581059">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215703577023">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1215703576835" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptLinkAccess" id="1215703579308">
+                  <link role="conceptLinkDeclaration" targetNodeId="1.1215701938122" resolveInfo="attributeConstant" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1215703582655" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" id="1215703587314" />
+          </node>
         </node>
       </node>
     </node>
