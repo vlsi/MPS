@@ -28,6 +28,11 @@
       <add-to-group group-id="EditMenu" anchor="last"/>
     </group>
 
+    <group id="VcsMappingsFix">
+      <!--fix MPS-2142-->
+      <action id="NewElement" class="com.intellij.ide.actions.NewElementAction"/>
+    </group>
+
     <group>
       <separator/>
       <action id="AddMPSModelImportAction" class="jetbrains.mps.workbench.actions.imports.AddModelImportAction"
