@@ -24,11 +24,11 @@ public class ThisExpression extends Expression {
   }
 
 
-  public ClassConcept getClassConcept() {
-    return (ClassConcept)this.getReferent(ThisExpression.CLASS_CONCEPT);
+  public Classifier getClassConcept() {
+    return (Classifier)this.getReferent(ThisExpression.CLASS_CONCEPT);
   }
 
-  public void setClassConcept(ClassConcept node) {
+  public void setClassConcept(Classifier node) {
     super.setReferent(ThisExpression.CLASS_CONCEPT, node);
   }
 

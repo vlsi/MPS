@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 
 public class ThisExpression_classConcept_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -29,7 +29,7 @@ public class ThisExpression_classConcept_ReferentConstraint implements IModelCon
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new SimpleSearchScope(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false));
+    return new SimpleSearchScope(ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(_context.getEnclosingNode()));
   }
 
   public String getNodeReferentSearchScopeDescription() {

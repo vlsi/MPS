@@ -71,11 +71,7 @@ public class IntelligentInputUtil {
 
         if (editorContext.getSelectedCell() instanceof EditorCell_Label) {
           EditorCell_Label label = (EditorCell_Label) editorContext.getSelectedCell();
-          if (cell.getSide() == CellSide.LEFT) {
-            label.home();
-          } else {
-            label.end();
-          }
+          label.end();
         }
       }
     } else if (substituteInfo.getMatchingActions(pattern, false).isEmpty() &&

@@ -1836,7 +1836,7 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1182955020723">
       <property name="role" value="classConcept" />
-      <link role="target" targetNodeId="1068390468198" resolveInfo="ClassConcept" />
+      <link role="target" targetNodeId="1107461130800" resolveInfo="Classifier" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1163668896201">
