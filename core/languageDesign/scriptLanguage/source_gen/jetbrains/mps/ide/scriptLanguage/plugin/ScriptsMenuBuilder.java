@@ -28,21 +28,20 @@ public class ScriptsMenuBuilder {
       }
 
     });
-    List<MigrationScript> scripts;
     this.allScripts = ScriptsActionGroupHelper.getMigrationScripts(this.allLanguages);
   }
 
   public BaseGroup create_ByCategoryPopup() {
     BaseGroup byCategoryGroup = new BaseGroup("By Category");
     byCategoryGroup.setPopup(true);
-    ScriptsActionGroupHelper.populateByCategoryGroup(this.allScripts, byCategoryGroup);
+    ScriptsActionGroupHelper.populateByCategoryGroup(this.allScripts, byCategoryGroup, this.applyToSelection);
     return byCategoryGroup;
   }
 
   public BaseGroup create_ByBuildPopup() {
     BaseGroup byBuildGroup = new BaseGroup("By Build");
     byBuildGroup.setPopup(true);
-    ScriptsActionGroupHelper.populateByBuildGroup(this.allScripts, byBuildGroup);
+    ScriptsActionGroupHelper.populateByBuildGroup(this.allScripts, byBuildGroup, this.applyToSelection);
     return byBuildGroup;
   }
 
@@ -50,13 +49,13 @@ public class ScriptsMenuBuilder {
     BaseGroup byLanguageGroup = new BaseGroup("By Language");
     byLanguageGroup.setPopup(true);
     for(Language language : this.allLanguages) {
-      ScriptsActionGroupHelper.populateByLanguageGroup(language, byLanguageGroup);
+      ScriptsActionGroupHelper.populateByLanguageGroup(language, byLanguageGroup, this.applyToSelection);
     }
     return byLanguageGroup;
   }
 
   public BaseAction create_MoreAction() {
-    return new RunMigrationScriptsAction(this.allScripts, "More...");
+    return new RunMigrationScriptsAction(this.allScripts, "More...", this.applyToSelection);
   }
 
 }

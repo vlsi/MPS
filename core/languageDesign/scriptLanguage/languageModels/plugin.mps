@@ -371,17 +371,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215714165223">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215714165224">
-            <property name="name" value="scripts" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215714165225">
-              <link role="classifier" targetNodeId="4.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215714165226">
-                <link role="classifier" targetNodeId="6.~MigrationScript" resolveInfo="MigrationScript" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215714181279">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215714181280">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215714165227">
@@ -446,8 +435,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215714585270">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215714585271">
-            <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByCategoryGroup(java.util.List,jetbrains.mps.workbench.action.BaseGroup):void" resolveInfo="populateByCategoryGroup" />
             <link role="classConcept" targetNodeId="2.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
+            <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByCategoryGroup(java.util.List,jetbrains.mps.workbench.action.BaseGroup,boolean):void" resolveInfo="populateByCategoryGroup" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215714592289">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1215714592290">
                 <link role="fieldDeclaration" targetNodeId="1215714011501" resolveInfo="allScripts" />
@@ -456,6 +445,12 @@
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215714585273">
               <link role="variableDeclaration" targetNodeId="1215714585260" resolveInfo="byCategoryGroup" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215716244485">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1215716244486">
+                <link role="fieldDeclaration" targetNodeId="1215714508667" resolveInfo="applyToSelection" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1215716244487" />
             </node>
           </node>
         </node>
@@ -504,8 +499,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215714650285">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215714650286">
-            <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByBuildGroup(java.util.List,jetbrains.mps.workbench.action.BaseGroup):void" resolveInfo="populateByBuildGroup" />
             <link role="classConcept" targetNodeId="2.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
+            <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByBuildGroup(java.util.List,jetbrains.mps.workbench.action.BaseGroup,boolean):void" resolveInfo="populateByBuildGroup" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215714657976">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1215714657977">
                 <link role="fieldDeclaration" targetNodeId="1215714011501" resolveInfo="allScripts" />
@@ -514,6 +509,12 @@
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215714650288">
               <link role="variableDeclaration" targetNodeId="1215714650275" resolveInfo="byBuildGroup" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215716249976">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1215716249977">
+                <link role="fieldDeclaration" targetNodeId="1215714508667" resolveInfo="applyToSelection" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1215716249978" />
             </node>
           </node>
         </node>
@@ -574,12 +575,18 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215714705990">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215714705991">
                 <link role="classConcept" targetNodeId="2.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
-                <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByLanguageGroup(jetbrains.mps.smodel.Language,jetbrains.mps.workbench.action.BaseGroup):void" resolveInfo="populateByLanguageGroup" />
+                <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByLanguageGroup(jetbrains.mps.smodel.Language,jetbrains.mps.workbench.action.BaseGroup,boolean):void" resolveInfo="populateByLanguageGroup" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1215714705992">
                   <link role="variable" targetNodeId="1215714705987" resolveInfo="language" />
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215714705993">
                   <link role="variableDeclaration" targetNodeId="1215714705976" resolveInfo="byLanguageGroup" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215716255841">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1215716255842">
+                    <link role="fieldDeclaration" targetNodeId="1215714508667" resolveInfo="applyToSelection" />
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1215716255843" />
                 </node>
               </node>
             </node>
@@ -602,7 +609,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215715015306">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215715095785">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215715095786">
-              <link role="baseMethodDeclaration" targetNodeId="2.~RunMigrationScriptsAction.&lt;init&gt;(java.util.List,java.lang.String)" resolveInfo="RunMigrationScriptsAction" />
+              <link role="baseMethodDeclaration" targetNodeId="2.~RunMigrationScriptsAction.&lt;init&gt;(java.util.List,java.lang.String,boolean)" resolveInfo="RunMigrationScriptsAction" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215715101633">
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1215715101634">
                   <link role="fieldDeclaration" targetNodeId="1215714011501" resolveInfo="allScripts" />
@@ -611,6 +618,12 @@
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215715095788">
                 <property name="value" value="More..." />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215716261518">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1215716261519">
+                  <link role="fieldDeclaration" targetNodeId="1215714508667" resolveInfo="applyToSelection" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1215716261520" />
               </node>
             </node>
           </node>
@@ -737,7 +750,7 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215715702686">
                 <link role="baseMethodDeclaration" targetNodeId="1215713862583" resolveInfo="ScriptsMenuBuilder" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1215715702687">
-                  <property name="value" value="true" />
+                  <property name="value" value="false" />
                 </node>
               </node>
             </node>

@@ -21,7 +21,7 @@ public class ScriptsActionGroupHelper {
     return migrationScripts;
   }
 
-  public static void populateByCategoryGroup(List<MigrationScript> migrationScripts, BaseGroup ownerGroup) {
+  public static void populateByCategoryGroup(List<MigrationScript> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
     Map<String, List<MigrationScript>> byCategory = new HashMap<String, List<MigrationScript>>();
     for (MigrationScript migrationScript : migrationScripts) {
       String cat = migrationScript.getCategory();
@@ -46,14 +46,14 @@ public class ScriptsActionGroupHelper {
       MPSActionGroup categoryGroup = new MPSActionGroup(cat, "");
       for (MigrationScript script : byCategory.get(cat)) {
         categoryGroup.add(new RunMigrationScriptAction(script,
-          makeScriptActionName(null, script.getTitle(), script.getMigrationFromBuild())));
+          makeScriptActionName(null, script.getTitle(), script.getMigrationFromBuild()), applyToSelection));
       }
       categoryGroup.setPopup(true);
       ownerGroup.add(categoryGroup);
     }
   }
 
-  public static void populateByBuildGroup(List<MigrationScript> migrationScripts, BaseGroup ownerGroup) {
+  public static void populateByBuildGroup(List<MigrationScript> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
     Map<String, List<MigrationScript>> byBuild = new HashMap<String, List<MigrationScript>>();
     for (MigrationScript migrationScript : migrationScripts) {
       String build = migrationScript.getMigrationFromBuild();
@@ -71,14 +71,14 @@ public class ScriptsActionGroupHelper {
       MPSActionGroup categoryGroup = new MPSActionGroup("migrate from b." + build, "");
       for (MigrationScript script : byBuild.get(build)) {
         categoryGroup.add(new RunMigrationScriptAction(script,
-          makeScriptActionName(script.getCategory(), script.getTitle(), null)));
+          makeScriptActionName(script.getCategory(), script.getTitle(), null), applyToSelection));
       }
       categoryGroup.setPopup(true);
       ownerGroup.add(categoryGroup);
     }
   }
 
-  public static void populateByLanguageGroup(Language language, BaseGroup ownerGroup) {
+  public static void populateByLanguageGroup(Language language, BaseGroup ownerGroup, boolean applyToSelection) {
     SModelDescriptor scriptsModel = language.getScriptsModelDescriptor();
     if (scriptsModel == null) return;
     List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
@@ -87,7 +87,7 @@ public class ScriptsActionGroupHelper {
     MPSActionGroup languageScriptsGroup = new MPSActionGroup(language.getNamespace(), "");
     for (MigrationScript script : migrationScripts) {
       languageScriptsGroup.add(new RunMigrationScriptAction(script,
-        makeScriptActionName(script.getCategory(), script.getTitle(), script.getMigrationFromBuild())));
+        makeScriptActionName(script.getCategory(), script.getTitle(), script.getMigrationFromBuild()), applyToSelection));
     }
     if (!(migrationScripts.isEmpty() || genericScripts.isEmpty())) {
       languageScriptsGroup.addSeparator();

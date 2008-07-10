@@ -34,7 +34,7 @@ public class ScriptsGlobally_ActionGroup extends BaseGroup {
       }
       event.getPresentation().setEnabled(true);
       // 
-      ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(true);
+      ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(false);
       this.add(menuBuilder.create_ByCategoryPopup());
       this.add(menuBuilder.create_ByBuildPopup());
       this.add(menuBuilder.create_ByLanguagePopup());

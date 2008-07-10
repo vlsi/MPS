@@ -19,8 +19,11 @@ import java.util.Set;
  * Mar 25, 2008
  */
 public abstract class AbstractMigrationScriptAction extends BaseAction {
-  public AbstractMigrationScriptAction(String name) {
+  private boolean myApplyToSelection;
+
+  public AbstractMigrationScriptAction(String name, boolean applyToSelection) {
     super(name);
+    myApplyToSelection = applyToSelection;
   }
 
   protected void doRunScripts(List<MigrationScript> scripts, IScope scope, IOperationContext context) {
@@ -29,15 +32,17 @@ public abstract class AbstractMigrationScriptAction extends BaseAction {
 
   protected IScope createMigrationScope(ActionEventData eventData) {
     MigrationScope migrationScope = new MigrationScope();
-    for (SModelDescriptor model : eventData.getModels()) {
-      migrationScope.addModel(model);
-    }
-    for (IModule module : eventData.getModules()) {
-      migrationScope.addModule(module);
-      if (module instanceof Language) {
-        Language language = (Language) module;
-        for (Generator generator : language.getGenerators()) {
-          migrationScope.addModule(generator);
+    if (myApplyToSelection) {
+      for (SModelDescriptor model : eventData.getModels()) {
+        migrationScope.addModel(model);
+      }
+      for (IModule module : eventData.getModules()) {
+        migrationScope.addModule(module);
+        if (module instanceof Language) {
+          Language language = (Language) module;
+          for (Generator generator : language.getGenerators()) {
+            migrationScope.addModule(generator);
+          }
         }
       }
     }

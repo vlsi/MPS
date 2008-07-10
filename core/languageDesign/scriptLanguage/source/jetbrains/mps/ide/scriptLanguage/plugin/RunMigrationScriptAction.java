@@ -15,8 +15,8 @@ import java.util.List;
 public class RunMigrationScriptAction extends AbstractMigrationScriptAction {
   private MigrationScript myScript;
 
-  public RunMigrationScriptAction(MigrationScript script, String name) {
-    super(name);
+  public RunMigrationScriptAction(MigrationScript script, String name, boolean applyToSelection) {
+    super(name, applyToSelection);
     myScript = script;
   }
 
