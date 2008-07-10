@@ -14,6 +14,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.IEditor;
@@ -68,6 +70,7 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.LinkedList;
 
 @State(
   name = "MPSProjectPane",
@@ -112,7 +115,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   private ProjectView myProjectView;
 
   private MyScrollPane myScrollPane;
-  private Timer myTimer;
   private boolean myLastPropertiesState;
 
   private ReloadListener myReloadListener = new ReloadListener() {
@@ -370,7 +372,49 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       return new MyCutProvider();
     }
 
+    if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
+      return getSelectedFiles();
+    }
+
     return null;
+  }
+
+  private VirtualFile[] getSelectedFiles() {
+    List<VirtualFile> selectedFilesList = new LinkedList<VirtualFile>();
+
+    // add selected model files
+    List<SModelDescriptor> descriptors = getSelectedModels();
+    if (descriptors != null){
+      for (SModelDescriptor descriptor : descriptors){
+        IFile ifile = descriptor.getModelFile();
+        if (ifile != null){
+          VirtualFile vfile = VFileSystem.getFile(ifile);
+          if (vfile != null){
+            selectedFilesList.add(vfile);
+          }
+        }
+      }
+    }
+
+    // add selected modules files
+    List<IModule> modules = getSelectedModules();
+    if (modules != null){
+      for (IModule module : modules){
+        IFile ifile = module.getDescriptorFile();
+        if (ifile != null){
+          VirtualFile vfile = VFileSystem.getFile(ifile);
+          if (vfile != null){
+            selectedFilesList.add(vfile);
+          }
+        }
+      }
+    }
+
+    if (selectedFilesList.size() == 0){
+      return null;
+    }
+
+    return selectedFilesList.toArray(new VirtualFile[selectedFilesList.size()]);
   }
 
   private IOperationContext getContextForSelection() {

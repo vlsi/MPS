@@ -5,6 +5,7 @@ import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.actionSystem.DataConstants;
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.FileStatusListener;
@@ -251,7 +252,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   }
 
   public Object getData(String dataId) {
-    if (dataId.equals(DataConstants.VIRTUAL_FILE_ARRAY)) {
+    if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
       List<VirtualFile> files = new LinkedList<VirtualFile>();
       TreePath[] treePaths = getSelectionPaths();
       for (TreePath tp : treePaths) {
