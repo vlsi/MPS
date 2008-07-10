@@ -388,6 +388,9 @@ public class EditorManager {
     private void setAnchor(EditorCell anchorCell) {
       myAnchorCell = anchorCell;
     }
+
+    public void synchronizeViewWithModel() {
+    }
   }
 
 

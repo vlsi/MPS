@@ -24,8 +24,6 @@ public class IntelligentInputUtil {
       return;
     }
 
-    cell.synchronizeViewWithModel();    
-
     if (pattern.startsWith(cell.getText())) {
       String smallPattern = pattern.substring(0, pattern.length() - 1);
       String tail = pattern.substring(pattern.length() - 1, pattern.length());
