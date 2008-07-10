@@ -20,4 +20,8 @@ public class AssignmentExpression_Behavior {
     return type;
   }
 
+  public static boolean virtual_isReadAsignment_1215696236033(SNode thisNode) {
+    return false;
+  }
+
 }

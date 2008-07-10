@@ -7,13 +7,11 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AssignmentExpression extends Expression implements TypeDerivable {
+public class AssignmentExpression extends BaseAssignmentExpression implements TypeDerivable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AssignmentExpression";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String L_VALUE = "lValue";
-  public static String R_VALUE = "rValue";
 
   public AssignmentExpression(SNode node) {
     super(node);
@@ -50,22 +48,6 @@ public class AssignmentExpression extends Expression implements TypeDerivable {
 
   public void setVirtualPackage(String value) {
     this.setProperty(AssignmentExpression.VIRTUAL_PACKAGE, value);
-  }
-
-  public Expression getLValue() {
-    return (Expression)this.getChild(AssignmentExpression.L_VALUE);
-  }
-
-  public void setLValue(Expression node) {
-    super.setChild(AssignmentExpression.L_VALUE, node);
-  }
-
-  public Expression getRValue() {
-    return (Expression)this.getChild(AssignmentExpression.R_VALUE);
-  }
-
-  public void setRValue(Expression node) {
-    super.setChild(AssignmentExpression.R_VALUE, node);
   }
 
 }

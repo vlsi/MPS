@@ -34,24 +34,11 @@
   <import index="37" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068498886294">
     <property name="name" value="AssignmentExpression" />
-    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <property name="package" value="assignments" />
+    <link role="extends" targetNodeId="1215693861676" resolveInfo="BaseAssignmentExpression" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107215415034">
       <property name="value" value="=" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1068498886295">
-      <property name="targetCardinality" value="1" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="lValue" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1068498886297">
-      <property name="targetCardinality" value="1" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="rValue" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1201184944236">
       <link role="intfc" targetNodeId="1201183863028" resolveInfo="TypeDerivable" />
@@ -2828,6 +2815,46 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1214918975464">
       <property name="value" value="postfix decrement" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215693861676">
+    <property name="name" value="BaseAssignmentExpression" />
+    <property name="package" value="assignments" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1068498886295">
+      <property name="targetCardinality" value="1" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="lValue" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1068498886297">
+      <property name="targetCardinality" value="1" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="rValue" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1215694354103">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215695189714">
+    <property name="name" value="PlusAssignmentExpression" />
+    <property name="package" value="assignments" />
+    <link role="extends" targetNodeId="1215693861676" resolveInfo="BaseAssignmentExpression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215695189715">
+      <property name="value" value="+=" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215695201514">
+    <property name="name" value="MinusAssignmentExpression" />
+    <property name="package" value="assignments" />
+    <link role="extends" targetNodeId="1215693861676" resolveInfo="BaseAssignmentExpression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215695201515">
+      <property name="value" value="-=" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
   </node>

@@ -1877,8 +1877,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075310480281">
-    <property name="name" value="AssignmentExpression_Editor" />
-    <link role="conceptDeclaration" targetNodeId="17.1068498886294" />
+    <property name="name" value="BaseAssignmentExpression_Editor" />
+    <property name="package" value="assignments" />
+    <link role="conceptDeclaration" targetNodeId="17.1215693861676" resolveInfo="BaseAssignmentExpression" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1075310480282">
       <property name="actionSet" value="RightTransform" />
       <property name="name" value="expressionBox" />
@@ -1892,8 +1893,8 @@
           <property name="flag" value="true" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1075310480285">
-        <property name="text" value="=" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1215694331196">
+        <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
         <link role="styleClass" targetNodeId="1215010940130" resolveInfo="Operator" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1075310480286">

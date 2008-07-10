@@ -1275,25 +1275,27 @@ __switch__:
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1177503307237(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", operationContext.getScope());
-      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
-
-        public SNode doSubstitute(String pattern) {
-          SNode assignment = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), assignment);
-          SLinkOperations.setTarget(assignment, "lValue", _context.getSourceNode(), true);
-          return assignment;
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression");
+      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
+      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      for(final SNode subconcept : concepts) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration"))) {
+          continue;
         }
-
-        public String getMatchingText(String pattern) {
-          return "=";
+        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
+          continue;
         }
+        result.add(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
 
-        public String getDescriptionText(String pattern) {
-          return "assignment";
-        }
+          public SNode doSubstitute(String pattern) {
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+            SLinkOperations.setTarget(result, "lValue", _context.getSourceNode(), true);
+            return result;
+          }
 
-      });
+        });
+      }
     }
     return result;
   }

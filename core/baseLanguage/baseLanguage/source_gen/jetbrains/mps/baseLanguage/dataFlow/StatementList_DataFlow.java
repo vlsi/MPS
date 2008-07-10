@@ -32,7 +32,7 @@ public class StatementList_DataFlow extends DataFlowBuilder {
     }
     _context.getBuilder().emitNop();
     for(SNode s : SLinkOperations.getTargets(_context.getNode(), "statement", true)) {
-      _context.getBuilder().build(s);
+      _context.getBuilder().build((SNode)s);
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).isNotEmpty()) {
       SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).last();

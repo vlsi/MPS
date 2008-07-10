@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.dataFlow;
 import jetbrains.mps.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.dataFlow.DataFlowBuilderContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class WhileStatement_DataFlow extends DataFlowBuilder {
@@ -16,7 +16,7 @@ public class WhileStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "condition", true));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "condition", true));
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
       SNode constant = SLinkOperations.getTarget(_context.getNode(), "condition", true);
       if (!(SPropertyOperations.getBoolean(constant, "value"))) {
@@ -26,7 +26,7 @@ public class WhileStatement_DataFlow extends DataFlowBuilder {
     {
       _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()));
     }
-    _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
 
       public void run() {

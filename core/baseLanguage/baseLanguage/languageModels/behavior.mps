@@ -6968,6 +6968,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877498977">
+    <property name="package" value="assignments" />
     <link role="concept" targetNodeId="1.1068498886294" resolveInfo="AssignmentExpression" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877498978">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877498979" />
@@ -7046,6 +7047,18 @@
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877499012">
         <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1215696289272">
+      <property name="name" value="isChangeAssignment" />
+      <link role="overriddenMethod" targetNodeId="1215696236033" resolveInfo="isChangeAssignment" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215696289274">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215696292495">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1215696293169">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1215696291369" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877501569">
@@ -8227,6 +8240,25 @@
     <link role="concept" targetNodeId="1.1073063089578" resolveInfo="SuperMethodCall" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877539512">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877539513" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1215696234405">
+    <property name="package" value="assignments" />
+    <link role="concept" targetNodeId="1.1215693861676" resolveInfo="BaseAssignmentExpression" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1215696234406">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215696234407" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1215696236033">
+      <property name="name" value="isReadAsignment" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1215696264534" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215696236035">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215696269613">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1215696269802">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

@@ -15,7 +15,7 @@ public class ArrayLiteral_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for(SNode item : SLinkOperations.getTargets(_context.getNode(), "item", true)) {
-      _context.getBuilder().build(item);
+      _context.getBuilder().build((SNode)item);
     }
   }
 
