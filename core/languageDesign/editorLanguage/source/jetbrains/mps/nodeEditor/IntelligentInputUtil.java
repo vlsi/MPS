@@ -224,7 +224,9 @@ public class IntelligentInputUtil {
     EditorCellAction ltAction = EditorUtil.getCellAction(EditorUtil.findLastSelectableCell(cellForNewNode), EditorCellAction.LEFT_TRANSFORM, editorContext);
     if (ltAction == null) {
       CellInfo cellInfo = cellForNewNode.getCellInfo();
-      putTextInErrorChild(cellInfo, head + smallPattern, editorContext);
+      if (!sourceCellRemains) {
+        putTextInErrorChild(cellInfo, head + smallPattern, editorContext);
+      }
       return;
     }
 
