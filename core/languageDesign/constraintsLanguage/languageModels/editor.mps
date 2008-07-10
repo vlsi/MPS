@@ -632,8 +632,17 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1159205529753">
     <link role="conceptDeclaration" targetNodeId="1.1159205453623" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1196975839155">
-      <link role="editorComponent" targetNodeId="11.1196975362614" resolveInfo="ConceptFunction_Component" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1215724860668">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215724877654">
+        <property name="text" value="!deprecated" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1215724898702">
+          <property name="color" value="red" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1196975839155">
+        <link role="editorComponent" targetNodeId="11.1196975362614" resolveInfo="ConceptFunction_Component" />
+      </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1159205622450">
       <property name="vertical" value="true" />

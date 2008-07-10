@@ -347,6 +347,10 @@
       <property name="value" value="search scope precondition" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215724931205">
+      <property name="value" value="'can create' is not used any longer" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1215461340299" resolveInfo="deprecated_next_after_798" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1159285995602">
     <property name="name" value="NodeDefaultSearchScope" />
