@@ -1,6 +1,7 @@
 package jetbrains.mps.vcs.diff;
 
 import com.intellij.openapi.diff.impl.mergeTool.DiffRequestFactoryImpl;
+import com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl;
 import com.intellij.openapi.diff.MergeRequest;
 import com.intellij.openapi.diff.ActionButtonPresentation;
 import com.intellij.openapi.diff.DiffContent;
@@ -27,63 +28,15 @@ public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
     return request;
   }
 
-  public static class ModelMergeRequest extends MergeRequest {
+  public static class ModelMergeRequest extends MergeRequestImpl {
     public static final int CURRENT = 0;
     public static final int ORIGINAL = 1;
     public static final int LAST_REVISION = 2;
-    private final DiffContent[] myDiffContents = new DiffContent[3];
-    private String myWindowTitle = null;
-    private String[] myVersionTitles = null;
-    private int myResult = DialogWrapper.CANCEL_EXIT_CODE;
-    private String myHelpId;
-    @Nullable private final ActionButtonPresentation myActionButtonPresentation;
     private final VirtualFile myFile;
 
     protected ModelMergeRequest(String leftText, String rightText, String originalContent, VirtualFile file, Project project, ActionButtonPresentation actionButtonPresentation) {
-      super(project);
-      myActionButtonPresentation = actionButtonPresentation;
-      myDiffContents[CURRENT] = new SimpleContent(leftText);
-      myDiffContents[ORIGINAL] = new SimpleContent(originalContent);
-      myDiffContents[LAST_REVISION] = new SimpleContent(rightText);
-
+      super(leftText, originalContent, rightText, project, actionButtonPresentation);
       myFile = file;
-    }
-
-    public void setVersionTitles(String[] versionTitles) {
-      myVersionTitles = versionTitles;
-    }
-
-    public void setWindowTitle(String windowTitle) {
-      myWindowTitle = windowTitle;
-    }
-
-    public void setHelpId(@Nullable @NonNls String helpId) {
-      myHelpId = helpId;
-    }
-
-    public int getResult() {
-      return myResult;
-    }
-
-    @Nullable
-    public DiffContent getResultContent() {
-      return myDiffContents[ORIGINAL];
-    }
-
-    public void restoreOriginalContent() {
-      // doing nothing sinse all changes are in memory
-    }
-
-    public DiffContent[] getContents() {
-      return myDiffContents;
-    }
-
-    public String[] getContentTitles() {
-      return myVersionTitles;
-    }
-
-    public String getWindowTitle() {
-      return myWindowTitle;
     }
 
     public VirtualFile getFile() {
@@ -91,11 +44,10 @@ public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
     }
 
     public void resolved(byte[] result) {
-      ((SimpleContent) myDiffContents[ORIGINAL]).setBOM(result);
-      myResult = DialogWrapper.OK_EXIT_CODE;
+      ((SimpleContent) getContents()[ORIGINAL]).setBOM(result);
+      setResult(DialogWrapper.OK_EXIT_CODE);
       try {
         OutputStream outputStream = myFile.getOutputStream(this);
-        assert ((SimpleContent)getResultContent()) != null;
         outputStream.write(result);
         outputStream.close();
       } catch (IOException e) {
