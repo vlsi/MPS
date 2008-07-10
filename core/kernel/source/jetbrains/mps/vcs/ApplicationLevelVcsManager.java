@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.persistence.ConflictModelException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.vcs.merge.Merger;
+import jetbrains.mps.vcs.hacks.HacksManager;
 import jetbrains.mps.ide.IdeMain;
 
 import javax.swing.SwingUtilities;
@@ -70,31 +71,23 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     return null;
   }
 
+  @Nullable
+  public AbstractVcs getVcsForFile(VirtualFile f) {
+    Project[] projects = ApplicationManager.getApplication().getComponent(ProjectManager.class).getOpenProjects();
+    for (Project project : projects) {
+      AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(f);
+      if (vcs != null) {
+        return vcs;
+      }
+    }
+    return null;
+  }
+
   public void assertModelFileNotInConflict(final SModelDescriptor modelDescriptor) {
     IFile ifile = modelDescriptor.getModelFile();
     if (ApplicationLevelVcsManager.instance().isInConflict(ifile)) {
-      final File file = ifile.toFile();
-      File mineFile = new File(file.getPath() + ".mine");
-
-      if (mineFile.exists() && !IdeMain.isTestMode()) {
-        FileUtil.copyFile(mineFile, file);
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            NodeReadAccessCaster.blockEvents();
-            try {
-              Merger.merge(file);
-            } finally {
-              NodeReadAccessCaster.unblockEvents();
-            }
-
-
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              public void run() {
-                modelDescriptor.reloadFromDisk();
-              }
-            });
-          }
-        });
+      AbstractVcs vcs = getVcsForFile(VFileSystem.getFile(ifile));
+      if ((vcs != null) && HacksManager.getInstance().tryToMergeConflictedModel(modelDescriptor, vcs.getName())){
       } else {
         ConflictModelException conflictModelException = new ConflictModelException(modelDescriptor);
         throw conflictModelException;
