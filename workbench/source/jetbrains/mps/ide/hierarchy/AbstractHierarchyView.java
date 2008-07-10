@@ -148,9 +148,15 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
         if (myTreeNode != null) {
           myHierarchyTree.selectNode(myTreeNode);
         }
-        myHierarchyTree.expandAll();        
+        if (!isTreeInfinite()) {
+          myHierarchyTree.expandAll();
+        }
       }
     });
+  }
+
+  protected boolean isTreeInfinite() {
+    return false;
   }
 
   public JComponent getComponent() {

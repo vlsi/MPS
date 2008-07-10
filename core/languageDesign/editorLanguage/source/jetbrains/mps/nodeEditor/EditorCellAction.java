@@ -40,7 +40,6 @@ public abstract class EditorCellAction {
   public static final String FOLD_ALL = "FOLD_ALL";
   public static final String UNFOLD_ALL = "UNFOLD_ALL";
 
-
   public String getDescriptionText() {
     return "no description : " + this.getClass().getName();
   }

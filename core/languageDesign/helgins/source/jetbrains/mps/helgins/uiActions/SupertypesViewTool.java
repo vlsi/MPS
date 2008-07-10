@@ -43,4 +43,8 @@ public class SupertypesViewTool extends AbstractHierarchyView {
 
     return group;
   }
+
+  protected boolean isTreeInfinite() {
+    return true;
+  }
 }

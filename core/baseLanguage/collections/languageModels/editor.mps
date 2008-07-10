@@ -498,6 +498,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1153944570244">
           <property name="text" value="in" />
+          <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1153944570245">
           <property name="attractsFocus" value="1" />

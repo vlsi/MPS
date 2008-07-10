@@ -55,6 +55,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell17927_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17927_01");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_inputSequenceRefNodeCell17927_0(EditorCell editorCell, SNode node, EditorContext context) {

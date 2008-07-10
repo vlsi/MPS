@@ -1905,5 +1905,36 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1215684869392">
+    <property name="migrationFromBuild" value="dddd" />
+    <property name="title" value="show old rt actions" />
+    <property name="name" value="ShowOldRTActions" />
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1215684883315">
+      <property name="description" value="rt actions" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1139535280617" resolveInfo="CellActionMapItem" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1215684883316">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215684883317" />
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1215684909896">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215684909897">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215684911117">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215684923029">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215684911259">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1215684911118" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1215684922231">
+                  <link role="property" targetNodeId="1.1139535298778" resolveInfo="actionId" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1215684924976">
+                <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1215684924977">
+                  <link role="enumMember" targetNodeId="1.1139535329028" resolveInfo="right_transform" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

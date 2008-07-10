@@ -10881,6 +10881,7 @@
         <link role="relationDeclaration" targetNodeId="17.1068580123133" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1188206662537">
+        <property name="readOnly" value="false" />
         <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1188206667508">
