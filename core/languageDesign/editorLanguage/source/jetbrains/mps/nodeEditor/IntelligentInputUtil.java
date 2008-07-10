@@ -13,7 +13,7 @@ import java.util.List;
 public class IntelligentInputUtil {
   private static EditorManager ourServiceEditorManager = new EditorManager();
 
-  public static void processCell(EditorCell_Label cell, final EditorContext editorContext, String pattern, String oldText) {
+  public static void processCell(EditorCell_Label cell, final EditorContext editorContext, String pattern, CellSide side) {
     if (pattern == null || pattern.equals("")) {
       return;
     }
@@ -24,7 +24,7 @@ public class IntelligentInputUtil {
       return;
     }
 
-    if (pattern.startsWith(oldText, 1)) {
+    if (side == CellSide.LEFT) {
       String head = "" + pattern.charAt(0);
       String smallPattern = pattern.substring(1);
       processCellAtStart(cell, editorContext, head, smallPattern);
@@ -176,7 +176,7 @@ public class IntelligentInputUtil {
         EditorCell_Label foundCell = prepareRTCell(editorContext, newNode, tail);
         if (foundCell != null) {
           editorContext.getNodeEditorComponent().changeSelection(foundCell);
-          processCell(foundCell, editorContext, tail, "");
+          processCell(foundCell, editorContext, tail, CellSide.RIGHT);
         }
         return;
       }
@@ -196,7 +196,7 @@ public class IntelligentInputUtil {
       editorContext.flushEvents();
       EditorCell_Label rtCell = prepareRTCell(editorContext, newNode, tail);
       if (rtCell != null) {
-        processCell(rtCell, editorContext, tail, "");
+        processCell(rtCell, editorContext, tail, CellSide.RIGHT);
       }
     }
   }
