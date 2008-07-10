@@ -38,8 +38,23 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215705926695">
             <property name="name" value="i" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215705926696" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215705937245">
-              <property name="value" value="0" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215707098152">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215707098186">
+                <property name="value" value="2" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215707100218">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1215707101957">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215707101991">
+                    <property name="value" value="1" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215707100252">
+                    <property name="value" value="2" />
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215707094916">
+                  <property name="value" value="22" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -58,6 +73,13 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.FloatType" id="1215705956114" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1215705974836">
               <property name="value" value="20.0" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215707560208">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215707560209">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215707571050">
+              <link role="baseMethodDeclaration" targetNodeId="17.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
             </node>
           </node>
         </node>
@@ -91,6 +113,9 @@
                   <link role="baseMethodDeclaration" targetNodeId="17.~ArrayList.&lt;init&gt;(java.util.Collection)" resolveInfo="ArrayList" />
                   <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215706575412">
                     <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215708328771">
+                    <property name="value" value="23" />
                   </node>
                 </node>
               </node>

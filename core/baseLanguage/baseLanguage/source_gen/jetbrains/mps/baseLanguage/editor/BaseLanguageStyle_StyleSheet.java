@@ -158,7 +158,7 @@ public class BaseLanguageStyle_StyleSheet {
   public static final Style LEFT_PAREN = new Style() {
     {
       this.putAll(BaseLanguageStyle_StyleSheet.PARENTHESIS);
-      this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+      this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
       this.set(StyleAttributes.PADDING_LEFT, 0.0);
       this.set(StyleAttributes.PADDING_RIGHT, 0.0);
     }

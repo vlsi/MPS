@@ -53,6 +53,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
 
