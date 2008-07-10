@@ -14,10 +14,10 @@ public class ApplicationsTest extends BaseMPSTest {
       assertTrue(res, res == null);
   }
  
-  public void testYPath() {
-    String res = testProject(new File("platform/ypath/YPath.mpr"));
-    assertTrue(res, res == null);
-  }
+//  public void testYPath() {
+//    String res = testProject(new File("platform/ypath/YPath.mpr"));
+//    assertTrue(res, res == null);
+//  }
 
   public void testPanacea() {
     String res = testProject(new File("platform/panacea/Panacea.mpr"));
