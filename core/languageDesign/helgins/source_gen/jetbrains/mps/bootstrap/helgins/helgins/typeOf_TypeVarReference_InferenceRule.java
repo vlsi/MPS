@@ -16,7 +16,7 @@ public class typeOf_TypeVarReference_InferenceRule implements InferenceRule_Runt
   public void applyRule(final SNode typeVarReference) {
     {
       SNode _nodeToCheck_1029348928467 = typeVarReference;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1185878055040", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(typeVarReference, "typeVarDeclaration", false), "jetbrains.mps.bootstrap.helgins.helgins", "1185878063692", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1185878061141");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1185878055040", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(typeVarReference, "typeVarDeclaration", false), "jetbrains.mps.bootstrap.helgins.helgins", "1185878063692", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins@5_0", "1215688284005");
     }
   }
 

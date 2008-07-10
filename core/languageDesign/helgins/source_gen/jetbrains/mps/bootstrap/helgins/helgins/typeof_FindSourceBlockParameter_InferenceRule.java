@@ -19,7 +19,7 @@ public class typeof_FindSourceBlockParameter_InferenceRule implements InferenceR
     if ((dependency != null)) {
       {
         SNode _nodeToCheck_1029348928467 = findSourceBlockParameter;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1193734407573", true), new QuotationClass_17().createNode(SLinkOperations.getTarget(dependency, "targetConcept", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1193734407570");
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1193734407573", true), new QuotationClass_17().createNode(SLinkOperations.getTarget(dependency, "targetConcept", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins@5_0", "1215688284155");
       }
     }
   }

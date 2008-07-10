@@ -14,7 +14,7 @@ public class typeOf_ParenthesizedExpression_InferenceRule implements InferenceRu
   }
 
   public void applyRule(final SNode parExpr) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(parExpr, "expression", true), "jetbrains.mps.baseLanguage.helgins@5_0", "1215619082653", true), parExpr, "jetbrains.mps.baseLanguage.helgins", "1176901170144");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(parExpr, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1176901172506", true), parExpr, "jetbrains.mps.baseLanguage.helgins", "1176901170144");
   }
 
   public String getApplicableConceptFQName() {

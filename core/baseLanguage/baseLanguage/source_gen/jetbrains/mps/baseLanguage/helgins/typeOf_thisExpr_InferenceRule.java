@@ -31,7 +31,7 @@ public class typeOf_thisExpr_InferenceRule implements InferenceRule_Runtime {
     }
     {
       SNode _nodeToCheck_1029348928467 = thisExpr;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins@5_0", "1215619081194", true), new QuotationClass_102().createNode(typeVarRefs, classConcept), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215619081173");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1215004810739", true), new QuotationClass_102().createNode(typeVarRefs, classConcept), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins@5_0", "1215688504354");
     }
   }
 

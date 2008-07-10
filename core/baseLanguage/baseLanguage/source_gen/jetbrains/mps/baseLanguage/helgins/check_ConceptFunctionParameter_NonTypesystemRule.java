@@ -25,7 +25,7 @@ public class check_ConceptFunctionParameter_NonTypesystemRule implements NonType
     if (SNodeOperations.isInstanceOf(conceptFunction, "jetbrains.mps.baseLanguage.structure.Closure")) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(parameter, "concept function parameter can not be used in closure", "jetbrains.mps.baseLanguage.helgins@5_0", "1215619086103", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(parameter, "concept function parameter can not be used in closure", "jetbrains.mps.baseLanguage.helgins@5_0", "1215688509268", intentionProvider);
       }
     } else
     {
@@ -40,7 +40,7 @@ public class check_ConceptFunctionParameter_NonTypesystemRule implements NonType
       if (Sequence.fromIterable(seq).isEmpty()) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(parameter, "not applicable in this context", "jetbrains.mps.baseLanguage.helgins@5_0", "1215619086136", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(parameter, "not applicable in this context", "jetbrains.mps.baseLanguage.helgins@5_0", "1215688509301", intentionProvider);
         }
       }
     }
