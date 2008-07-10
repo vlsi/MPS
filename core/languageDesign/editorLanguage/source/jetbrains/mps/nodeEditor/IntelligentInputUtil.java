@@ -24,15 +24,15 @@ public class IntelligentInputUtil {
       return;
     }
 
-    if (pattern.startsWith(oldText)) {
-      String smallPattern = pattern.substring(0, pattern.length() - 1);
-      String tail = pattern.substring(pattern.length() - 1, pattern.length());
-      processCellAtEnd(cell, editorContext, smallPattern, tail);
-    } else if (pattern.startsWith(oldText, 1)) {
+    if (pattern.startsWith(oldText, 1)) {
       String head = "" + pattern.charAt(0);
       String smallPattern = pattern.substring(1);
       processCellAtStart(cell, editorContext, head, smallPattern);
-    }
+    } else {
+      String smallPattern = pattern.substring(0, pattern.length() - 1);
+      String tail = pattern.substring(pattern.length() - 1, pattern.length());
+      processCellAtEnd(cell, editorContext, smallPattern, tail);
+    }  
   }
 
   private static void processRTHintCell(EditorCell_STHint cell, EditorContext editorContext, String pattern) {
