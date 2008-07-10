@@ -2328,10 +2328,10 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877327517">
                     <property name="name" value="assignment" />
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877327518">
-                      <link role="concept" targetNodeId="1.1068498886294" resolveInfo="AssignmentExpression" />
+                      <link role="concept" targetNodeId="1.1215693861676" resolveInfo="BaseAssignmentExpression" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1213877327519">
-                      <link role="concept" targetNodeId="1.1068498886294" resolveInfo="AssignmentExpression" />
+                      <link role="concept" targetNodeId="1.1215693861676" resolveInfo="BaseAssignmentExpression" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877327520">
                         <link role="variableDeclaration" targetNodeId="1213877327582" resolveInfo="write" />
                       </node>
@@ -2440,8 +2440,8 @@
                   <link role="variableDeclaration" targetNodeId="1213877327582" resolveInfo="write" />
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1213877327562">
-                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1213877327563">
-                    <link role="conceptDeclaration" targetNodeId="1.1068498886294" resolveInfo="AssignmentExpression" />
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1215700254198">
+                    <link role="conceptDeclaration" targetNodeId="1.1215693861676" resolveInfo="BaseAssignmentExpression" />
                   </node>
                 </node>
               </node>
