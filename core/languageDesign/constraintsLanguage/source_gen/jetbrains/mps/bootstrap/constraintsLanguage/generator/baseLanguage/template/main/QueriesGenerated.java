@@ -268,6 +268,18 @@ public class QueriesGenerated {
     return BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME;
   }
 
+  public static Object propertyMacro_GetPropertyValue_1215720598098(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(NodeDefaultSearchScope_Behavior.call_getReferentConcept_1213877261403(_context.getNode()), "name") + "_DefaultSearchScope";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1215721466114(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(NodePropertyConstraint_Behavior.call_getApplicableConcept_1213877292345(_context.getNode()), "name") + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "applicableProperty", false), "name") + "_PropertyConstraint";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1215722058730(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(NodeReferentConstraint_Behavior.call_getApplicableConcept_1213877399322(_context.getNode()), "name") + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "applicableLink", false), "role") + "_ReferentConstraint";
+  }
+
   public static Object referenceMacro_GetReferent_1194605811159(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "parameters");
   }
