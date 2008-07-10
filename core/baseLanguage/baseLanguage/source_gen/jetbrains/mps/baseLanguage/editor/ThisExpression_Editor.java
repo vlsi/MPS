@@ -183,6 +183,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell2695_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell2695_0");
+      BaseLanguageStyle_StyleSheet.CLASS_NAME.apply(editorCell);
     }
 
     private static void setupLabel_namePropertyCell2695_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

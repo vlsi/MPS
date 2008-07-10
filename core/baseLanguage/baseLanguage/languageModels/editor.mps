@@ -1986,6 +1986,7 @@
             <link role="conceptDeclaration" targetNodeId="17.1068390468198" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1182955065205">
               <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
+              <link role="styleClass" targetNodeId="1215189282959" resolveInfo="ClassName" />
             </node>
           </node>
         </node>
