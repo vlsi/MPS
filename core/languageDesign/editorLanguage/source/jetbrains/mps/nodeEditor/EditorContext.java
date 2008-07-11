@@ -148,13 +148,6 @@ public class EditorContext {
     return createMemento(true);
   }
 
-  public boolean isMementoApplicable(Object o) {
-    if (o instanceof Memento) {
-      return myNodeEditorComponent == ((Memento) o).getEditorComponent();
-    }
-    return false;
-  }
-
   public void select(final SNode node) {
     flushEvents();
 
@@ -235,19 +228,17 @@ public class EditorContext {
   public boolean setMemento(Object o) {
     if (o instanceof Memento) {
       final Memento memento = (Memento) o;
-      if (myNodeEditorComponent == memento.getEditorComponent()) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            memento.restore();
-          }
-        });
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          memento.restore(myNodeEditorComponent);
+        }
+      });
 
-        myNodeEditorComponent.flushEvents();
+      myNodeEditorComponent.flushEvents();
 
-        myNodeEditorComponent.relayout();
+      myNodeEditorComponent.relayout();
 
-        return true;
-      }
+      return true;
     }
     return false;
   }
