@@ -1,10 +1,7 @@
 package jetbrains.mps.ide.messages;
 
 import com.intellij.ide.SelectInManager;
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.ToggleAction;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -20,7 +17,6 @@ import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.action.DefaultGroup;
 import jetbrains.mps.workbench.tools.BaseGeneratedTool;
 
 import javax.swing.*;
@@ -88,7 +84,7 @@ public class MessagesViewTool extends BaseGeneratedTool implements PersistentSta
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(new JPanel(), BorderLayout.CENTER);
 
-    DefaultGroup group = new DefaultGroup();
+    DefaultActionGroup group = new DefaultActionGroup();
     group.add(myErrorsAction);
     group.add(myWarningsAction);
     group.add(myInfoAction);

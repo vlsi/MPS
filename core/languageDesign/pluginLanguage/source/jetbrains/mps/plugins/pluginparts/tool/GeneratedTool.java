@@ -2,9 +2,9 @@ package jetbrains.mps.plugins.pluginparts.tool;
 
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.workbench.action.DefaultGroup;
 import jetbrains.mps.workbench.tools.BaseTool;
 
 import javax.swing.Icon;
@@ -33,7 +33,7 @@ public abstract class GeneratedTool extends BaseTool {
   }
 
   protected JComponent createCloseButtonToolbar() {
-    DefaultGroup group = new DefaultGroup();
+    DefaultActionGroup group = new DefaultActionGroup();
     group.add(createCloseAction());
     return ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
   }

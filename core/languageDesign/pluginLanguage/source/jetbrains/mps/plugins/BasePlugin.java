@@ -138,7 +138,7 @@ public abstract class BasePlugin extends DefaultPlugin {
       BaseGroup group = (BaseGroup) action;
       id = group.getId();
       if (m.getAction(id) == null) m.registerAction(id, group);
-      for (AnAction a : group.internalGetChildren(null)) {
+      for (AnAction a : group.getChildren(null)) {
         register(m, a);
       }
     } else if (action instanceof LabelledAnchor) {

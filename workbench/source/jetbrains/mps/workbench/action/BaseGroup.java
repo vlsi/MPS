@@ -1,9 +1,6 @@
 package jetbrains.mps.workbench.action;
 
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.action.InternalFlag;
 import jetbrains.mps.ide.action.MPSActionGroup;
@@ -16,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 
-public class BaseGroup extends DefaultGroup {
+public class BaseGroup extends DefaultActionGroup {
   private String myId = "";
   private boolean myIsInternal = false;
   private boolean myIsAlwaysVisible = true;
@@ -74,20 +71,6 @@ public class BaseGroup extends DefaultGroup {
       }
     });
     if (myIsInternal && !InternalFlag.isInternalModel()) disable(e.getPresentation());
-  }
-
-  @NotNull
-  public AnAction[] getChildren(@Nullable AnActionEvent e) {
-    return CollectionUtil.filter(Arrays.asList(super.getChildren(e)), new Condition<AnAction>() {
-      public boolean met(AnAction action) {
-        return !(action instanceof LabelledAnchor);
-      }
-    }).toArray(new AnAction[0]);
-  }
-
-  @NotNull
-  public AnAction[] internalGetChildren(@Nullable AnActionEvent e) {
-    return super.getChildren(e);
   }
 
   public void adjust() {

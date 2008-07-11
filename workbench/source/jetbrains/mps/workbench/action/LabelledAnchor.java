@@ -15,6 +15,10 @@ public class LabelledAnchor extends BaseAction {
     return myId;
   }
 
+  protected void doUpdate(AnActionEvent e) {
+    setVisible(e.getPresentation(),false);
+  }
+
   public void doExecute(AnActionEvent e) {
 
   }
