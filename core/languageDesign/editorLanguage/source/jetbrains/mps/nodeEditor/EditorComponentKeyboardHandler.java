@@ -9,12 +9,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 import java.awt.event.KeyEvent;
 import java.util.List;
@@ -42,7 +37,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     EditorCell selectedCell = editor.getSelectedCell();
 
     if (selectedCell != null) {
-      if (allowCellToProcessEvent(selectedCell, keyEvent, false)) {
+      if (selectedCell.processKeyPressed(keyEvent, false)) {
         return true;
       }
     }
@@ -143,7 +138,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
 
         // allow selected cell to process event.
-        if (allowCellToProcessEvent(selectedCell, keyEvent, true)) {
+        if (selectedCell.processKeyPressed(keyEvent, true)) {
           return true;
         }
       }
@@ -161,10 +156,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     }
 
     return false;
-  }
-
-  private boolean allowCellToProcessEvent(EditorCell selectedCell, KeyEvent keyEvent, boolean allowErrors) {
-    return selectedCell.processKeyPressed(keyEvent, allowErrors);
   }
 
   private boolean isEndEditKeystroke(final KeyEvent keyEvent) {
