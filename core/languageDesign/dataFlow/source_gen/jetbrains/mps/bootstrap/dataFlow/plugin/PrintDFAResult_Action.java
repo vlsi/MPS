@@ -6,21 +6,23 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.dataFlow.DataFlowManager;
 import jetbrains.mps.dataFlow.framework.Program;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.ActionEventData;
-import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
-public class PrintDFAResult_Action extends BaseAction {
+public class PrintDFAResult_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(PrintDFAResult_Action.class);
   public static final Icon ICON = null;
 
   private SNode node;
 
   public PrintDFAResult_Action() {
-    super("Print DFA", "", ICON, false, false);
+    super("Print DFA", "", ICON);
+    this.setIsAlwaysVisible(false);
+    this.setExecuteOutsideCommand(false);
   }
 
   @NotNull()
@@ -37,7 +39,8 @@ public class PrintDFAResult_Action extends BaseAction {
     }
   }
 
-  protected boolean fillFieldsIfNecessary(AnActionEvent event) {
+  @Override()
+  protected boolean collectActionData(AnActionEvent event) {
     try {
       {
         SNode node = new ActionEventData(event).getNode();

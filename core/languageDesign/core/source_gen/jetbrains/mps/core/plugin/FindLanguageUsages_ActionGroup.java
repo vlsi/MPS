@@ -4,15 +4,18 @@ package jetbrains.mps.core.plugin;
 
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 
-public class FindLanguageUsages_ActionGroup extends BaseGroup {
+public class FindLanguageUsages_ActionGroup extends GeneratedActionGroup {
   public static Logger LOG = Logger.getLogger(FindLanguageUsages_ActionGroup.class);
   public static final String ID = "jetbrains.mps.core.plugin.FindLanguageUsages";
 
   public FindLanguageUsages_ActionGroup() {
-    super("", ID, true, false, null);
+    super("", ID);
+    this.setIsAlwaysVisible(true);
+    this.setIsInternal(false);
     this.setPopup(false);
     try {
       this.add(new FindLanguageUsages_Action());

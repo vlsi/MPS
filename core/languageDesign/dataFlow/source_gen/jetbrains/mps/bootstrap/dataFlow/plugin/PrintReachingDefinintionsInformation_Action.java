@@ -9,22 +9,24 @@ import jetbrains.mps.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.framework.analyzers.ReachingDefinitionsAnalyzer;
 import jetbrains.mps.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.ActionEventData;
-import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.Set;
 
-public class PrintReachingDefinintionsInformation_Action extends BaseAction {
+public class PrintReachingDefinintionsInformation_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(PrintReachingDefinintionsInformation_Action.class);
   public static final Icon ICON = null;
 
   private SNode node;
 
   public PrintReachingDefinintionsInformation_Action() {
-    super("Print DFA Reaching Definitions Information", "", ICON, false, false);
+    super("Print DFA Reaching Definitions Information", "", ICON);
+    this.setIsAlwaysVisible(false);
+    this.setExecuteOutsideCommand(false);
   }
 
   @NotNull()
@@ -41,7 +43,8 @@ public class PrintReachingDefinintionsInformation_Action extends BaseAction {
     }
   }
 
-  protected boolean fillFieldsIfNecessary(AnActionEvent event) {
+  @Override()
+  protected boolean collectActionData(AnActionEvent event) {
     try {
       {
         SNode node = new ActionEventData(event).getNode();

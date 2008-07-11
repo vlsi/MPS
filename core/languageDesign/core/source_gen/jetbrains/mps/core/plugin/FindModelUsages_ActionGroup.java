@@ -4,15 +4,18 @@ package jetbrains.mps.core.plugin;
 
 import jetbrains.mps.ide.actions.ProjectPaneModelActions_ActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 
-public class FindModelUsages_ActionGroup extends BaseGroup {
+public class FindModelUsages_ActionGroup extends GeneratedActionGroup {
   public static Logger LOG = Logger.getLogger(FindModelUsages_ActionGroup.class);
   public static final String ID = "jetbrains.mps.core.plugin.FindModelUsages";
 
   public FindModelUsages_ActionGroup() {
-    super("", ID, true, false, null);
+    super("", ID);
+    this.setIsAlwaysVisible(true);
+    this.setIsInternal(false);
     this.setPopup(false);
     try {
       this.add(new FindModelUsages_Action());

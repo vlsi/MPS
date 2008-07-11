@@ -9,17 +9,17 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.workbench.action.ActionEventData;
-import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
-public class FindModelUsages_Action extends BaseAction {
+public class FindModelUsages_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(FindModelUsages_Action.class);
   public static final Icon ICON = null;
 
@@ -28,7 +28,9 @@ public class FindModelUsages_Action extends BaseAction {
   private IOperationContext context;
 
   public FindModelUsages_Action() {
-    super("Find Usages", "", ICON, false, false);
+    super("Find Usages", "", ICON);
+    this.setIsAlwaysVisible(false);
+    this.setExecuteOutsideCommand(false);
   }
 
   @NotNull()
@@ -45,7 +47,8 @@ public class FindModelUsages_Action extends BaseAction {
     }
   }
 
-  protected boolean fillFieldsIfNecessary(AnActionEvent event) {
+  @Override()
+  protected boolean collectActionData(AnActionEvent event) {
     try {
       this.model = new ActionEventData(event).getModelDescriptor().getSModel();
       if (this.model == null) {

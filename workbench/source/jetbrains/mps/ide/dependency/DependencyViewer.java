@@ -10,7 +10,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
-import jetbrains.mps.workbench.tools.BaseGeneratedTool;
+import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
 
-public class DependencyViewer extends BaseGeneratedTool {
+public class DependencyViewer extends BaseProjectTool {
   private DependencyTree myTree;
   private JPanel myExternalComponent;
 

@@ -17,7 +17,7 @@ import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.tools.BaseGeneratedTool;
+import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.*;
 import java.awt.*;
@@ -40,7 +40,7 @@ import java.util.Queue;
   )
     }
 )
-public class MessagesViewTool extends BaseGeneratedTool implements PersistentStateComponent<MyState> {
+public class MessagesViewTool extends BaseProjectTool implements PersistentStateComponent<MyState> {
   private static final int MAX_MESSAGES_SIZE = 30000;
 
   public static final Icon INFORMATION_ICON = new ImageIcon(MessagesViewTool.class.getResource("information.png"));

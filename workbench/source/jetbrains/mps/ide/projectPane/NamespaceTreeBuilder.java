@@ -162,7 +162,11 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
         group.addSeparator();
       }
 
-      group.add(new BaseAction("Generate files", "Generate files from all models under this namespace", IconManager.EMPTY_ICON, true, true) {
+      group.add(new BaseAction("Generate files", "Generate files from all models under this namespace", IconManager.EMPTY_ICON) {
+        {
+          setExecuteOutsideCommand(true);
+        }
+
         protected void doExecute(AnActionEvent e) {
           DataContext dataContext = DataManager.getInstance().getDataContext();
           Project ideaProject = PlatformDataKeys.PROJECT.getData(dataContext);

@@ -848,40 +848,7 @@
     <link role="concept" targetNodeId="1.1203071646776" resolveInfo="ActionDeclaration"/>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration"
           id="1213877371870">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877371871">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215268385863">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215268385864">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215268385865">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression"
-                    id="1215268385866"/>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
-                    id="1215268385867">
-                <link role="link" targetNodeId="1.1205607379485"/>
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation"
-                  id="1215268385868">
-              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression"
-                    id="1215268385869">
-                <link role="concept" targetNodeId="6.1068390468198" resolveInfo="ClassConcept"/>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
-                      id="1215268385870">
-                  <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1215268385871">
-                    <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType"
-                          id="1215268385872">
-                      <link role="classifier" targetNodeId="10.~BaseAction" resolveInfo="BaseAction"/>
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
-                        id="1215268385873">
-                    <link role="link" targetNodeId="6.1107535924139"/>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877371871"/>
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration"
           id="1213877371942">

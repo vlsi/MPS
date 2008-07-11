@@ -8,7 +8,7 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.tools.BaseGeneratedTool;
+import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -18,7 +18,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class OutputViewTool extends BaseGeneratedTool {
+public class OutputViewTool extends BaseProjectTool {
   private JPanel myComponent = new JPanel(new BorderLayout());
   private JTextArea myTextArea = new JTextArea();
   private String myLastSearchPattern = null;

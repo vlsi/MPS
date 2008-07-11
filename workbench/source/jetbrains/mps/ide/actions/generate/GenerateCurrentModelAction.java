@@ -11,7 +11,8 @@ import org.jetbrains.annotations.NotNull;
 
 public abstract class GenerateCurrentModelAction extends BaseAction {
   public GenerateCurrentModelAction(@NotNull String name) {
-    super(name, "", null, true, true);
+    super(name);
+    setExecuteOutsideCommand(true);
   }
 
   public abstract IGenerationType getGenerationType();

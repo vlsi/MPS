@@ -26,7 +26,9 @@ public abstract class BaseCustomProjectPlugin extends DefaultPlugin {
     super.dispose();
   }
 
-  public abstract void doInit(MPSProject project);
+  public void doInit(MPSProject project) {
+  }
 
-  public abstract void doDispose(MPSProject project);
+  public void doDispose(MPSProject project) {
+  }
 }

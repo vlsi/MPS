@@ -1,22 +1,19 @@
 package jetbrains.mps.workbench.actions;
 
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.ide.newProjectDialog.NewProjectDialog;
+import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.JFrame;
-
-import jetbrains.mps.ide.newProjectDialog.NewProjectDialog;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.action.BaseAction;
 
 public class NewMPSProjectAction extends BaseAction {
 
   public NewMPSProjectAction() {
-    myExecuteOutsideCommand = true;
+    setExecuteOutsideCommand(true);
   }
 
   public void doExecute(AnActionEvent e) {

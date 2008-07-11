@@ -4,15 +4,18 @@ package jetbrains.mps.bootstrap.dataFlow.plugin;
 
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 
-public class DFAActions_ActionGroup extends BaseGroup {
+public class DFAActions_ActionGroup extends GeneratedActionGroup {
   public static Logger LOG = Logger.getLogger(DFAActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.bootstrap.dataFlow.plugin.DFAActions";
 
   public DFAActions_ActionGroup() {
-    super("", ID, true, false, null);
+    super("", ID);
+    this.setIsAlwaysVisible(true);
+    this.setIsInternal(false);
     this.setPopup(false);
     try {
       this.add(new PrintDFAResult_Action());

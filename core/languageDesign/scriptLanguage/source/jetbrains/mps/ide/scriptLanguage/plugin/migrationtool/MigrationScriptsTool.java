@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.workbench.tools.BaseGeneratedTool;
+import jetbrains.mps.workbench.tools.BaseProjectTool;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -31,7 +31,7 @@ import java.util.List;
  * Igor Alshannikov
  * Jun 19, 2008
  */
-public class MigrationScriptsTool extends BaseGeneratedTool {
+public class MigrationScriptsTool extends BaseProjectTool {
   private static Logger LOG = Logger.getLogger(MigrationScriptsTool.class);
 
   private List<SNodePointer> myScripts;

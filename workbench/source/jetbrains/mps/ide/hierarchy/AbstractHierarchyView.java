@@ -12,14 +12,14 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.workbench.tools.BaseGeneratedTool;
+import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Frame;
 import java.util.ArrayList;
 
-public abstract class AbstractHierarchyView<T extends INodeAdapter> extends BaseGeneratedTool {
+public abstract class AbstractHierarchyView<T extends INodeAdapter> extends BaseProjectTool {
 
   protected AbstractHierarchyTree<T> myHierarchyTree;
   protected HierarchyTreeNode<T> myTreeNode;

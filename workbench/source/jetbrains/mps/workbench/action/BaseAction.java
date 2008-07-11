@@ -8,32 +8,19 @@ import javax.swing.Icon;
 import javax.swing.KeyStroke;
 
 public abstract class BaseAction extends AnAction {
-  private boolean myIsAlwaysVisible;
-  //todo: make private
-  protected boolean myExecuteOutsideCommand;
+  private boolean myIsAlwaysVisible = true;
+  private boolean myExecuteOutsideCommand = false;
 
-  public BaseAction(String text, String description, Icon icon, boolean isAlwaysVisible, boolean executeOutsideCommand) {
-    super(text, description, icon);
-    doConstruct(isAlwaysVisible, executeOutsideCommand);
-  }
-
-  protected BaseAction(String text, String description, Icon icon) {
-    super(text, description, icon);
-    doConstruct(true, false);
+  public BaseAction() {
+    this(null, null, null);
   }
 
   public BaseAction(String text) {
-    super(text);
-    doConstruct(true, false);
+    this(text, null, null);
   }
 
-  protected BaseAction() {
-    doConstruct(true, false);
-  }
-
-  protected void doConstruct(boolean isAlwaysVisible, boolean executeOutsideCommand) {
-    myIsAlwaysVisible = isAlwaysVisible;
-    myExecuteOutsideCommand = executeOutsideCommand;
+  public BaseAction(String text, String description, Icon icon) {
+    super(text, description, icon);
     setShortcutSet(new ShortcutSet() {
       public Shortcut[] getShortcuts() {
         KeyStroke keyStroke = KeyStroke.getKeyStroke(getKeyStroke());
@@ -47,11 +34,19 @@ public abstract class BaseAction extends AnAction {
     });
   }
 
+  public void setExecuteOutsideCommand(boolean executeOutsideCommand) {
+    myExecuteOutsideCommand = executeOutsideCommand;
+  }
+
+  public void setIsAlwaysVisible(boolean isAlwaysVisible) {
+    myIsAlwaysVisible = isAlwaysVisible;
+  }
+
   public final void update(final AnActionEvent e) {
     super.update(e);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (!fillFieldsIfNecessary(e)) {
+        if (!collectActionData(e)) {
           disable(e.getPresentation());
           return;
         }
@@ -103,21 +98,22 @@ public abstract class BaseAction extends AnAction {
 
   /**
    * Collect action parameters HERE
-    * @param e
+   *
+   * @param e
    * @return true if all action parameters collected, false otherwise
    */
-  protected boolean fillFieldsIfNecessary(AnActionEvent e) {
+  protected boolean collectActionData(AnActionEvent e) {
     return true;
-  }
-
-  protected void doUpdate(AnActionEvent e) {
-    e.getPresentation().setVisible(true);
-    e.getPresentation().setEnabled(true);
   }
 
   @NotNull
   protected String getKeyStroke() {
     return "";
+  }
+
+  protected void doUpdate(AnActionEvent e) {
+    e.getPresentation().setVisible(true);
+    e.getPresentation().setEnabled(true);
   }
 
   protected abstract void doExecute(AnActionEvent e);

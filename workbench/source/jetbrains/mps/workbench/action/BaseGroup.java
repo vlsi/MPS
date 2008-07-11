@@ -1,31 +1,36 @@
 package jetbrains.mps.workbench.action;
 
-import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.Presentation;
 import jetbrains.mps.ide.action.InternalFlag;
-import jetbrains.mps.ide.action.MPSActionGroup;
-import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Arrays;
 
 public class BaseGroup extends DefaultActionGroup {
   private String myId = "";
   private boolean myIsInternal = false;
   private boolean myIsAlwaysVisible = true;
+  private Integer myMnemonic = null;
 
-  public BaseGroup(String text, String id, boolean isAlwaysVisible, boolean isInternal, Object mnemonic) {
+  public BaseGroup(String name) {
+    this(name, name);
+  }
+
+  public BaseGroup(String text, String id) {
     super(text, false);
     myId = id;
+  }
+
+  public void setIsAlwaysVisible(boolean isAlwaysVisible) {
+    myIsAlwaysVisible = isAlwaysVisible;
+  }
+
+  public void setIsInternal(boolean isInternal) {
     myIsInternal = isInternal;
   }
 
-  public BaseGroup(String name) {
-    this(name, name, true, false, 'a');
+  public void setMnemonic(Integer mnemonic) {
+    myMnemonic = mnemonic;
   }
 
   public String getId() {
@@ -53,13 +58,6 @@ public class BaseGroup extends DefaultActionGroup {
   protected void setEnabledState(Presentation p, boolean state) {
     if (state) enable(p);
     else disable(p);
-  }
-
-  //todo: move to generated group
-  public static BaseGroup getGroup(String id) {
-    MPSActionGroup group = (MPSActionGroup) ActionManager.getInstance().getAction(id);
-    if (group != null) return group;
-    return ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).getGroup(id);
   }
 
   public void update(final AnActionEvent e) {

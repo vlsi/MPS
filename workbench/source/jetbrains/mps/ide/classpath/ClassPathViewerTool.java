@@ -14,7 +14,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.workbench.tools.BaseGeneratedTool;
+import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ClassPathViewerTool extends BaseGeneratedTool {
+public class ClassPathViewerTool extends BaseProjectTool {
   private MyClassPathTree myTree = new MyClassPathTree();
   private JPanel myComponent = new JPanel(new BorderLayout());
   private IModule myInspectedModule;

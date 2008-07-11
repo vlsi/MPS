@@ -7,7 +7,7 @@ import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
-import jetbrains.mps.workbench.tools.BaseGeneratedTool;
+import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -20,7 +20,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenerationTracerViewTool extends BaseGeneratedTool {
+public class GenerationTracerViewTool extends BaseProjectTool {
   private JPanel myPanel;
   private JComponent myNoTabsComponent;
   private JTabbedPane myTabbedPane;

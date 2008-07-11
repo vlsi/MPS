@@ -7,15 +7,15 @@ import jetbrains.mps.dataFlow.DataFlowManager;
 import jetbrains.mps.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.presentation.ShowCFGDialog;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.ActionEventData;
-import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
-public class ShowDFA_Action extends BaseAction {
+public class ShowDFA_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(ShowDFA_Action.class);
   public static final Icon ICON = null;
 
@@ -23,7 +23,9 @@ public class ShowDFA_Action extends BaseAction {
   private IOperationContext context;
 
   public ShowDFA_Action() {
-    super("Show DFA (under construction)", "", ICON, false, false);
+    super("Show DFA (under construction)", "", ICON);
+    this.setIsAlwaysVisible(false);
+    this.setExecuteOutsideCommand(false);
   }
 
   @NotNull()
@@ -40,7 +42,8 @@ public class ShowDFA_Action extends BaseAction {
     }
   }
 
-  protected boolean fillFieldsIfNecessary(AnActionEvent event) {
+  @Override()
+  protected boolean collectActionData(AnActionEvent event) {
     try {
       {
         SNode node = new ActionEventData(event).getNode();

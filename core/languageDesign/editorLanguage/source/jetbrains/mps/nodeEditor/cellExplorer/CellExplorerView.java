@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.tools.BaseGeneratedTool;
+import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -31,7 +31,7 @@ import java.util.*;
 /**
  * @author Kostik
  */
-public class CellExplorerView extends BaseGeneratedTool {
+public class CellExplorerView extends BaseProjectTool {
   public static final Logger LOG = Logger.getLogger(CellExplorerView.class);
 
   private JPanel myComponent = new JPanel(new BorderLayout());
@@ -238,7 +238,7 @@ public class CellExplorerView extends BaseGeneratedTool {
         String text = "<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(node.getConceptShortName()) + ") [" + node.getId() + "]";
         if (myCell instanceof EditorCell_Collection) {
           CellLayout layout = ((EditorCell_Collection) myCell).getCellLayout();
-          text += "{"+layout.toString()+"}";
+          text += "{" + layout.toString() + "}";
         }
         add(new TextTreeNode(text) {
           {

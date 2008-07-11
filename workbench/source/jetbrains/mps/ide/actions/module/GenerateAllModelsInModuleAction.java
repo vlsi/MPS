@@ -2,8 +2,8 @@ package jetbrains.mps.ide.actions.module;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
@@ -26,7 +26,9 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
   private boolean myRegenerate;
 
   public GenerateAllModelsInModuleAction(boolean regenerate) {
-    super("Generate Models In Module", "", null, false, true);
+    super("Generate Models In Module");
+    setIsAlwaysVisible(false);
+    setExecuteOutsideCommand(true);
     myRegenerate = regenerate;
   }
 
