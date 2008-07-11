@@ -155,32 +155,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           return true;
         }
       }
-
-      if (!keyEvent.isConsumed()) {
-        if (!(selectedCell instanceof EditorCell_Label) && !selectedCell.getSNode().isRoot() && KeyboardUtil.isDefaultAction(keyEvent)) {
-          SNode node = selectedCell.getSNode();
-          LinkDeclaration link = node.getParent().getLinkDeclaration(node.getRole_());
-          AbstractConceptDeclaration concept = link.getTarget();
-          String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept), editorContext.getScope());
-          SNode newNode = new SNode(node.getModel(), concreteConceptFqName);
-          node.getParent().replaceChild(node, newNode);
-
-          editorContext.flushEvents();
-
-          EditorCell nodeCell = nodeEditor.findNodeCell(newNode);
-          EditorCell_Label editable = EditorUtil.findEditableCell(nodeCell);
-          if (editable != null) {
-            nodeEditor.changeSelection(editable);
-            allowCellToProcessEvent(editable, keyEvent, true);
-          } else {
-            nodeEditor.changeSelection(nodeCell);
-            nodeEditor.activateNodeSubstituteChooser(nodeCell, true);
-            nodeEditor.processKeyPressed(keyEvent);
-          }
-
-          return true;
-        }
-      }
     }
 
     if (actionType != null) {
