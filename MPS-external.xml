@@ -176,6 +176,9 @@
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/idea-patch.jar.tmp" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
+      <fileset dir="core/idea-patch/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="classes" excludes="production/, test/, **/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
