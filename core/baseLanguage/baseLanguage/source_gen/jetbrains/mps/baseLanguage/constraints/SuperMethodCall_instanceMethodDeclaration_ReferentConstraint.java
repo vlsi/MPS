@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
@@ -26,17 +26,9 @@ public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint implem
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.SuperMethodCall", "baseMethodDeclaration");
   }
 
-  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return true;
-  }
-
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode enclosingClass = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
     return new SuperMethodCall_InstanceMethodScope(((ClassifierType)SNodeOperations.getAdapter(SLinkOperations.getTarget(enclosingClass, "superclass", true))), _context.getEnclosingNode());
-  }
-
-  public String getNodeReferentSearchScopeDescription() {
-    return "<no description>";
   }
 
 }

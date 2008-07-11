@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 
@@ -24,16 +24,8 @@ public class ThisExpression_classConcept_ReferentConstraint implements IModelCon
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept");
   }
 
-  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return true;
-  }
-
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new SimpleSearchScope(ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(_context.getEnclosingNode()));
-  }
-
-  public String getNodeReferentSearchScopeDescription() {
-    return "<no description>";
   }
 
 }

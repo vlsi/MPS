@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -28,10 +28,6 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint implemen
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.ParameterReference", "variableDeclaration");
   }
 
-  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return true;
-  }
-
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> methods = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true);
     List<SNode> params = ListSequence.<SNode>fromArray();
@@ -39,10 +35,6 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint implemen
       ListSequence.fromList(params).addSequence(ListSequence.fromList(SLinkOperations.getTargets(bmd, "parameter", true)));
     }
     return new SimpleSearchScope(params);
-  }
-
-  public String getNodeReferentSearchScopeDescription() {
-    return "parameters declared in enclosing method";
   }
 
 }
