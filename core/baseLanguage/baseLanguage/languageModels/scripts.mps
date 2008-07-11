@@ -196,8 +196,16 @@
       <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1204244594739">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204244594740">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204320505349">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204320505350">
-              <property name="value" value="true" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215796681272">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215796663190">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1215796658439" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1215796679974" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation" id="1215796685978">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1215796691244">
+                  <link role="conceptDeclaration" targetNodeId="1.1068580123158" resolveInfo="FieldReference" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
