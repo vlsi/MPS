@@ -622,7 +622,8 @@ public class RefactoringContext {
   public void setActionData(ActionContext actionContext) {
     mySelectedModel = actionContext.getModel();
     mySelectedNode = actionContext.getNode();
-    mySelectedNodes = new ArrayList<SNode>(actionContext.getNodes());
+    List<SNode> list = actionContext.getNodes();
+    mySelectedNodes = list == null ? new ArrayList<SNode>() : new ArrayList<SNode>(list);
     mySelectedModule = actionContext.get(IModule.class);
     mySelectedMPSProject = actionContext.getMPSProject();
     myCurrentScope = actionContext.getScope();

@@ -6,6 +6,7 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
 import com.intellij.ui.TreeToolTipHandler;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
@@ -466,6 +467,9 @@ public abstract class MPSTree extends DnDAwareTree {
   }
 
   public void runRebuildAction(final Runnable rebuildAction, final boolean saveExpansion) {
+    if (IdeMain.isTestMode()) {
+      return;
+    }
     if (!ThreadUtils.isEventDispatchThread()) {
       throw new RuntimeException("Rebuild now can be only called from UI thread");
     }

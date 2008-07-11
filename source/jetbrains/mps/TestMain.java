@@ -143,7 +143,11 @@ public class TestMain {
       }
     });
 
-    project.dispose();
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        project.dispose();
+      }
+    });
     return b[0];
   }
 

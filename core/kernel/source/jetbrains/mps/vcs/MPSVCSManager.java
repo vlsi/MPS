@@ -308,7 +308,13 @@ public class MPSVCSManager implements ProjectComponent {
       if (ifile != null) {
         VirtualFile vfile = VFileSystem.getFile(ifile);
         if (vfile != null) {
-          if (ProjectLevelVcsManager.getInstance(myProject).getVcsFor(vfile) != null) {
+          AbstractVcs vcs = null;
+          try {
+            vcs = ProjectLevelVcsManager.getInstance(myProject).getVcsFor(vfile);
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
+          if (vcs != null) {
             addInternal(Collections.singletonList(vfile));
           }
         }
@@ -342,13 +348,13 @@ public class MPSVCSManager implements ProjectComponent {
 
   private class SModelRepositoryListenerImpl extends SModelRepositoryAdapter {
     @Override
-      public void modelCreated(SModelDescriptor modelDescriptor) {
+    public void modelCreated(SModelDescriptor modelDescriptor) {
       modelDescriptor.addModelListener(myModelInitializationListener);
 
     }
 
     @Override
-      public void modelFileChanged(IFile ifrom, IFile ito) {
+    public void modelFileChanged(IFile ifrom, IFile ito) {
       if (ifrom != null) {
         VirtualFile to = VFileSystem.getFile(ito);
         VirtualFile from = VFileSystem.getFile(ifrom);
@@ -359,7 +365,7 @@ public class MPSVCSManager implements ProjectComponent {
     }
 
     @Override
-      public void beforeModelFileChanged(SModelDescriptor modelDescriptor) {
+    public void beforeModelFileChanged(SModelDescriptor modelDescriptor) {
       Set<IModule> modules = modelDescriptor.getModules();
       for (IModule m : modules) {
         VirtualFile file = VFileSystem.getFile(m.getGeneratorOutputPath());

@@ -112,6 +112,7 @@ public class RefactoringProcessor {
   }
 
   public void doExecuteInTest(ActionContext context, RefactoringContext refactoringContext, Runnable continuation) {
+    refactoringContext.setActionData(context);
     doExecute(context, refactoringContext, continuation);
   }
 
