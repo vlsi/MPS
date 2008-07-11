@@ -1322,6 +1322,7 @@
     <property name="name" value="MappingScript" />
     <property name="package" value="script" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}\icons\generatorScript.png" />
     <link role="extends" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1195595592106">
       <property name="name" value="scriptKind" />
