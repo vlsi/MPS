@@ -33,6 +33,10 @@
       <action id="NewElement" class="com.intellij.ide.actions.NewElementAction"/>
     </group>
 
+    <!--fix MPS-2156 after fixing MPS-2142-->
+    <group id="NewGroup" popup="true">
+    </group>
+
     <group>
       <separator/>
       <action id="AddMPSModelImportAction" class="jetbrains.mps.workbench.actions.imports.AddModelImportAction"
