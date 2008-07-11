@@ -62,6 +62,7 @@ public class RefactoringContext {
   private SearchResults myUsages;
   private Set<String> myTransientParameters = new HashSet<String>();
   private boolean myIsLocal = false;
+  private boolean myDoesGenerateModels = true;
 
   private SModelDescriptor mySelectedModel;
   private SNode mySelectedNode;
@@ -654,6 +655,14 @@ public class RefactoringContext {
 
   public IOperationContext getCurrentOperationContext() {
     return myCurrentOperationContext;
+  }
+
+  public void setDoesGenerateModels(boolean b) {
+    myDoesGenerateModels = b;
+  }
+
+  public boolean getDoesGenerateModels() {
+    return myDoesGenerateModels;
   }
 
   public static class FullNodeId implements Comparable<FullNodeId> {

@@ -205,6 +205,9 @@ public class RefactoringProcessor {
   }
 
   private void generateModels(final ActionContext context, final Map<IModule, List<SModel>> sourceModels, final RefactoringContext refactoringContext, final ProgressIndicator progressIndicator) {
+    if (!refactoringContext.getDoesGenerateModels()) {
+      return;
+    }
     final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier();
     for (final IModule sourceModule : sourceModels.keySet()) {
       ModelAccess.instance().runWriteAction(new Runnable() {

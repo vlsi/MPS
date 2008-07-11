@@ -42,6 +42,8 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     constraints.weightx = 1;
     constraints.weighty = 0;
     myInnerPanel.setLayout(layout);
+    JPanel checkBoxPanel = new JPanel(new GridLayout(1,2));
+
     boolean isLocalByDefault = true;
     IModule module = refactoringContext.getSelectedModule();
     if (module instanceof Language) {
@@ -50,11 +52,14 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
          isLocalByDefault = false;
       }
     }
+    myInnerPanel.add(checkBoxPanel, constraints);
     if (myRefactoring.doesUpdateModel()) {
       myIsLocalCheckBox = new JCheckBox("is local");
       myIsLocalCheckBox.setSelected(isLocalByDefault);
-      myInnerPanel.add(myIsLocalCheckBox, constraints);
+      checkBoxPanel.add(myIsLocalCheckBox, constraints);
     }
+    checkBoxPanel.add(myGenerateModelsCheckBox = new JCheckBox("generate models"));
+    myGenerateModelsCheckBox.setSelected(true);
     myFirstComponent = null;
     for (int i = 0; i < myComponents.size(); i++) {
       IChooseComponent component = myComponents.get(i);
@@ -120,6 +125,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
       if (myRefactoring.doesUpdateModel()) {
         myRefactoringContext.setLocal(myIsLocalCheckBox.isSelected());
       }
+      myRefactoringContext.setDoesGenerateModels(myGenerateModelsCheckBox.isSelected());
       for (IChooseComponent component : myComponents) {
         myRefactoringContext.setParameter(component.getPropertyName(), component.submit());
       }
