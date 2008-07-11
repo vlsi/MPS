@@ -20,7 +20,7 @@ public class ApplicationsTest extends BaseMPSTest {
 //  }
 
   public void testPanacea() {
-    String res = testProject(new File("platform/panacea/Panacea.mpr"));
+    String res = testProject(new File("platform/panacea/Panacea.ipr"));
     assertTrue(res, res == null);
   }
 
