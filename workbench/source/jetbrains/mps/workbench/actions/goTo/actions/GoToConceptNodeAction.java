@@ -14,13 +14,14 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.framework.nodes.GoToNodeModel;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoToConceptNodeAction extends BaseProjectAction {
+public class GoToConceptNodeAction extends BaseAction {
   public GoToConceptNodeAction() {
     super("Go To Concept");
   }

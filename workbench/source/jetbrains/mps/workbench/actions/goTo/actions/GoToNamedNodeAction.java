@@ -13,13 +13,14 @@ import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.framework.nodes.GoToNodeModel;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoToNamedNodeAction extends BaseProjectAction {
+public class GoToNamedNodeAction extends BaseAction {
   public GoToNamedNodeAction() {
     super("Go To Symbol");
   }

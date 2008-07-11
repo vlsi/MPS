@@ -14,6 +14,7 @@ public class NewMPSProjectAction extends BaseAction {
 
   public NewMPSProjectAction() {
     setExecuteOutsideCommand(true);
+    setDisableOnNoProject(false);
   }
 
   public void doExecute(AnActionEvent e) {

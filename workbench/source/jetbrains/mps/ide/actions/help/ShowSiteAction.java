@@ -1,20 +1,18 @@
 package jetbrains.mps.ide.actions.help;
 
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSActionAdapter;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.browser.BrowserUtil;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.workbench.action.BaseAction;
 
-public abstract class ShowSiteAction extends MPSActionAdapter {
-
-
+public abstract class ShowSiteAction extends BaseAction {
   protected ShowSiteAction(String name) {
     super(name);
+    setDisableOnNoProject(false);
+  }
+
+  protected void doExecute(AnActionEvent e) {
+    BrowserUtil.launchBrowser(getSiteURL());
   }
 
   protected abstract String getSiteURL();
-
-  public void dodoExecute(@NotNull ActionContext context) {
-    BrowserUtil.launchBrowser(getSiteURL());
-  }
 }

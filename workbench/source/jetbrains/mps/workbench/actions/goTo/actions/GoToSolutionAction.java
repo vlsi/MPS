@@ -15,6 +15,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseModuleItem;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseSolutionModel;
 import org.jetbrains.annotations.NotNull;
@@ -22,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoToSolutionAction extends BaseProjectAction {
+public class GoToSolutionAction extends BaseAction {
   public GoToSolutionAction() {
     super("Go To Solution");
   }

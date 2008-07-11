@@ -18,13 +18,14 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelItem;
 import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelModel;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class GoToModelAction extends BaseProjectAction {
+public class GoToModelAction extends BaseAction {
   public GoToModelAction() {
     super("Go To Model");
   }

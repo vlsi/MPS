@@ -15,11 +15,12 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseModuleItem;
 import org.jetbrains.annotations.NotNull;
 
-public class GoToLanguageAction extends BaseProjectAction {
+public class GoToLanguageAction extends BaseAction {
   public GoToLanguageAction() {
     super("Go To Language");
   }

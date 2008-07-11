@@ -18,6 +18,7 @@ import java.io.File;
 public class OpenMPSProjectAction extends BaseAction {
   public OpenMPSProjectAction() {
     setExecuteOutsideCommand(true);
+    setDisableOnNoProject(false);
   }
 
   public void doExecute(AnActionEvent e) {

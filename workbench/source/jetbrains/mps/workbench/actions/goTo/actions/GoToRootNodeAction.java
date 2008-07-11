@@ -12,13 +12,14 @@ import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.framework.nodes.GoToNodeModel;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoToRootNodeAction extends BaseProjectAction {
+public class GoToRootNodeAction extends BaseAction {
   public GoToRootNodeAction() {
     super("Go To Root Node");
   }

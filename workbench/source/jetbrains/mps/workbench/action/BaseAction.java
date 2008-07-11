@@ -10,6 +10,7 @@ import javax.swing.KeyStroke;
 public abstract class BaseAction extends AnAction {
   private boolean myIsAlwaysVisible = true;
   private boolean myExecuteOutsideCommand = false;
+  private boolean myDisableOnNoProject = true;
 
   public BaseAction() {
     this(null, null, null);
@@ -42,10 +43,18 @@ public abstract class BaseAction extends AnAction {
     myIsAlwaysVisible = isAlwaysVisible;
   }
 
+  public void setDisableOnNoProject(boolean disableOnNoProject) {
+    myDisableOnNoProject = disableOnNoProject;
+  }
+
   public final void update(final AnActionEvent e) {
     super.update(e);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        if (myDisableOnNoProject && e.getData(PlatformDataKeys.PROJECT) == null) {
+          disable(e.getPresentation());
+          return;
+        }
         if (!collectActionData(e)) {
           disable(e.getPresentation());
           return;
