@@ -385,6 +385,10 @@ public class EditorManager {
       return mySide;
     }
 
+    public EditorCell getAnchorCell() {
+      return myAnchorCell;
+    }
+
     private void setAnchor(EditorCell anchorCell) {
       myAnchorCell = anchorCell;
     }

@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.CellSide;
 
 import java.util.*;
 
- class SideTransformHintSubstituteActionsHelper {
+public class SideTransformHintSubstituteActionsHelper {
   private static final Logger LOG = Logger.getLogger(SideTransformHintSubstituteActionsHelper.class);
 
    private IOperationContext myContext;
@@ -18,7 +18,7 @@ import java.util.*;
    private String myTransformTag;
    private CellSide mySide;
 
-   SideTransformHintSubstituteActionsHelper(SNode sourceNode, CellSide side, String transformTag, IOperationContext context) {
+   public SideTransformHintSubstituteActionsHelper(SNode sourceNode, CellSide side, String transformTag, IOperationContext context) {
      myContext = context;
      mySourceNode = sourceNode;
      myTransformTag = transformTag;

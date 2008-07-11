@@ -2,6 +2,8 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
+import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
@@ -37,7 +39,6 @@ public class IntelligentInputUtil {
 
   private static void processRTHintCell(EditorCell_STHint cell, EditorContext editorContext, String pattern) {
     INodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
-
     String smallPattern = pattern.substring(0, pattern.length() - 1);
     String tail = "" + pattern.charAt(pattern.length() - 1);
     EditorCell nextCell = cell.getNextLeaf();
@@ -145,7 +146,7 @@ public class IntelligentInputUtil {
     }
 
     EditorCellAction rtAction = EditorUtil.getCellAction(EditorUtil.findLastSelectableCell(cellForNewNode), EditorCellAction.RIGHT_TRANSFORM, editorContext);
-    if (rtAction == null) {
+    if (rtAction == null || !hasSideActions(cellForNewNode, CellSide.RIGHT, tail)) {
       final CellInfo cellInfo = cellForNewNode.getCellInfo();
       putTextInErrorChild(cellInfo, smallPattern + tail, editorContext);
       return;
@@ -224,7 +225,7 @@ public class IntelligentInputUtil {
     }
 
     EditorCellAction ltAction = EditorUtil.getCellAction(EditorUtil.findLastSelectableCell(cellForNewNode), EditorCellAction.LEFT_TRANSFORM, editorContext);
-    if (ltAction == null) {
+    if (ltAction == null || !hasSideActions(cellForNewNode, CellSide.LEFT, head)) {
       CellInfo cellInfo = cellForNewNode.getCellInfo();
       if (!sourceCellRemains) {
         putTextInErrorChild(cellInfo, head + smallPattern, editorContext);
@@ -298,5 +299,15 @@ public class IntelligentInputUtil {
         label.getRenderedTextLine().end();
       }
     }
+  }
+
+  private static boolean hasSideActions(EditorCell cell, CellSide side, String prefix) {
+    final SideTransformHintSubstituteActionsHelper helper = new SideTransformHintSubstituteActionsHelper(cell.getSNode(), side, cell.getRightTransformAnchorTag(), cell.getEditorContext().getOperationContext());
+    INodeSubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getEditorContext()) {
+      protected List<INodeSubstituteAction> createActions() {
+        return helper.createActions();
+      }
+    };
+    return !info.getMatchingActions(prefix, false).isEmpty();
   }
 }
