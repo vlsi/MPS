@@ -1,5 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+
 import java.awt.*;
 
 
@@ -206,8 +208,7 @@ public class NodeEditorActions {
       context.getNodeEditorComponent().changeSelection(target);
       if (target.isPunctuationLayout()) {
         ((EditorCell_Label)target).setCaretPosition(1);
-      } else
-      if (target instanceof EditorCell_Label) {
+      } else if (target instanceof EditorCell_Label) {
         ((EditorCell_Label)target).home();
       }
     }
