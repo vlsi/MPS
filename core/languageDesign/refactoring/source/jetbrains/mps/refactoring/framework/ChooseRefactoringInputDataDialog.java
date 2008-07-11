@@ -4,6 +4,8 @@ import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.IModule;
 
 import javax.swing.*;
 import java.util.*;
@@ -22,6 +24,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   private RefactoringContext myRefactoringContext;
   private IChooseComponent myFirstComponent = null;
   public JCheckBox myIsLocalCheckBox;
+  public JCheckBox myGenerateModelsCheckBox;
 
   public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, ActionContext actionContext, RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
     super(actionContext.getOperationContext().getMainFrame(), "Input data for refactoring");
@@ -39,9 +42,17 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     constraints.weightx = 1;
     constraints.weighty = 0;
     myInnerPanel.setLayout(layout);
+    boolean isLocalByDefault = true;
+    IModule module = refactoringContext.getSelectedModule();
+    if (module instanceof Language) {
+      Language l = (Language) module;
+      if (l.isBootstrap()) {
+         isLocalByDefault = false;
+      }
+    }
     if (myRefactoring.doesUpdateModel()) {
       myIsLocalCheckBox = new JCheckBox("is local");
-      myIsLocalCheckBox.setSelected(true);
+      myIsLocalCheckBox.setSelected(isLocalByDefault);
       myInnerPanel.add(myIsLocalCheckBox, constraints);
     }
     myFirstComponent = null;
