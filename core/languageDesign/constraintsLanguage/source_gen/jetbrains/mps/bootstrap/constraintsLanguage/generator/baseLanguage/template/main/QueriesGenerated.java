@@ -160,28 +160,12 @@ public class QueriesGenerated {
     return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(applicableLink)));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1184610250485(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String description = SPropertyOperations.getString(_context.getNode(), "searchScopeDescription");
-    if (description != null) {
-      return description;
-    }
-    return _context.getTemplateValue();
-  }
-
   public static Object propertyMacro_GetPropertyValue_1184610547646(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(NodeDefaultSearchScope_Behavior.call_getReferentConcept_1213877261403(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184610580040(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(NodeDefaultSearchScope_Behavior.call_getReferentConcept_1213877261403(_context.getNode()));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1184610822428(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String description = SPropertyOperations.getString(_context.getNode(), "description");
-    if (description != null) {
-      return description;
-    }
-    return _context.getTemplateValue();
   }
 
   public static Object propertyMacro_GetPropertyValue_1193402330791(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -344,22 +328,6 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType");
   }
 
-  public static boolean ifMacro_Condition_1184610049652(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "searchScopeCanCreate", true) != null;
-  }
-
-  public static boolean ifMacro_Condition_1184610109644(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "searchScopeCanCreate", true) == null;
-  }
-
-  public static boolean ifMacro_Condition_1184610641051(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "searchScopeCanCreate", true) != null;
-  }
-
-  public static boolean ifMacro_Condition_1184610697840(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "searchScopeCanCreate", true) == null;
-  }
-
   public static boolean ifMacro_Condition_1193402330798(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "isVirtual");
   }
@@ -448,16 +416,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "referentSetHandler", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1184610152426(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "searchScopeCanCreate", true), "body", true);
-  }
-
   public static SNode sourceNodeQuery_1184610216074(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "searchScopeFactory", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1184610732199(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "searchScopeCanCreate", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1184610779284(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

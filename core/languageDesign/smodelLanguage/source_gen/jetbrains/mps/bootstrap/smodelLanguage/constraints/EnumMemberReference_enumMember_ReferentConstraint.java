@@ -5,6 +5,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -12,7 +13,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation;
 import jetbrains.mps.smodel.DataTypeUtil;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -30,24 +30,15 @@ public class EnumMemberReference_enumMember_ReferentConstraint implements IModel
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference", "enumMember");
   }
 
-  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation") || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum")) {
       DataTypeDeclaration datatype = SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(((SNodeOperation)SNodeOperations.getAdapter(_context.getEnclosingNode())));
       if (DataTypeUtil.isEnum(datatype)) {
-        return true;
+        SNode datatypeNode = datatype.getNode();
+        return new SimpleSearchScope(SLinkOperations.getTargets(datatypeNode, "member", true));
       }
     }
-    return false;
-  }
-
-  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    DataTypeDeclaration datatype = SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(((SNodeOperation)SNodeOperations.getAdapter(_context.getEnclosingNode())));
-    SNode datatypeNode = datatype.getNode();
-    return new SimpleSearchScope(SLinkOperations.getTargets(datatypeNode, "member", true));
-  }
-
-  public String getNodeReferentSearchScopeDescription() {
-    return "<no description>";
+    return null;
   }
 
 }
