@@ -2,7 +2,6 @@ package jetbrains.mps.plugins.pluginparts.actions;
 
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.ide.action.MPSActionGroup;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.workbench.action.BaseGroup;
 
@@ -16,7 +15,7 @@ public abstract class GeneratedActionGroup extends BaseGroup {
   }
 
   public static BaseGroup getGroup(String id) {
-    MPSActionGroup group = (MPSActionGroup) ActionManager.getInstance().getAction(id);
+    BaseGroup group = (BaseGroup) ActionManager.getInstance().getAction(id);
     if (group != null) return group;
     return ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).getGroup(id);
   }
