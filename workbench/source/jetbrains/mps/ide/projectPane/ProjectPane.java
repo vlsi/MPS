@@ -700,6 +700,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       TreeNode node = (TreeNode) path.getLastPathComponent();
       if (node instanceof ProjectModuleTreeNode) {
         result.add(((ProjectModuleTreeNode) node).getModule());
+      } else if (node instanceof GeneratorTreeNode) {
+        result.add(((GeneratorTreeNode) node).getGenerator());
       }
     }
     return result;
