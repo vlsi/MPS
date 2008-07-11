@@ -14,7 +14,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
-import jetbrains.mps.plugins.PluginManager;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -97,8 +97,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     setProjectDescriptor(getProjectDescriptor());
   }
 
-  public PluginManager getPluginManager() {
-    return getComponentSafe(Project.class).getComponent(PluginManager.class);
+  public ProjectPluginManager getPluginManager() {
+    return getComponentSafe(Project.class).getComponent(ProjectPluginManager.class);
   }
 
   private void readModules() {

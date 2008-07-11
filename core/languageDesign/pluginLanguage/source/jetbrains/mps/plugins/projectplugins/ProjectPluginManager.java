@@ -1,4 +1,4 @@
-package jetbrains.mps.plugins;
+package jetbrains.mps.plugins.projectplugins;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
@@ -22,8 +22,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class PluginManager implements ProjectComponent {
-  private static final Logger LOG = Logger.getLogger(PluginManager.class);
+public class ProjectPluginManager implements ProjectComponent {
+  private static final Logger LOG = Logger.getLogger(ProjectPluginManager.class);
 
   private List<IProjectPlugin> myPlugins = new ArrayList<IProjectPlugin>();
 
@@ -41,7 +41,7 @@ public class PluginManager implements ProjectComponent {
     }
   };
 
-  public PluginManager(Project project) {
+  public ProjectPluginManager(Project project) {
     myProject = project;
   }
 
@@ -57,8 +57,8 @@ public class PluginManager implements ProjectComponent {
   @Nullable
   public <T extends GeneratedTool> T getTool(Class<T> toolClass) {
     for (IProjectPlugin plugin : myPlugins) {
-      if (!(plugin instanceof BasePlugin)) continue;
-      List<GeneratedTool> tools = ((BasePlugin) plugin).getTools();
+      if (!(plugin instanceof BaseProjectPlugin)) continue;
+      List<GeneratedTool> tools = ((BaseProjectPlugin) plugin).getTools();
       for (GeneratedTool tool : tools) {
         if (tool.getClass() == toolClass) return (T) tool;
       }
@@ -129,9 +129,9 @@ public class PluginManager implements ProjectComponent {
     }
 
     for (IProjectPlugin plugin : myPlugins) {
-      if (plugin instanceof BasePlugin) {
+      if (plugin instanceof BaseProjectPlugin) {
         try {
-          ((BasePlugin) plugin).adjustGroups();
+          ((BaseProjectPlugin) plugin).adjustGroups();
         } catch (Throwable t1) {
           LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
         }

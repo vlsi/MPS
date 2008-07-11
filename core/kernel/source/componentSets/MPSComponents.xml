@@ -375,7 +375,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.plugins.PluginManager</implementation-class>
+      <implementation-class>jetbrains.mps.plugins.projectplugins.ProjectPluginManager</implementation-class>
     </component>
 
     <component>

@@ -98,7 +98,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213879243298">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213879243299">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213879243300">
-              <property name="value" value="_Plugin"/>
+              <property name="value" value="_ProjectPlugin"/>
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213879243301">
               <link role="classConcept" targetNodeId="10.~NameUtil" resolveInfo="NameUtil"/>

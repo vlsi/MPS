@@ -1,4 +1,4 @@
-package jetbrains.mps.plugins;
+package jetbrains.mps.plugins.projectplugins;
 
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;

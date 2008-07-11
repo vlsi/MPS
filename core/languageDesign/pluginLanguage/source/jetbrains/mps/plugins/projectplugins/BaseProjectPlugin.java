@@ -1,4 +1,4 @@
-package jetbrains.mps.plugins;
+package jetbrains.mps.plugins.projectplugins;
 
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -16,8 +16,8 @@ import jetbrains.mps.workbench.action.LabelledAnchor;
 import javax.swing.SwingUtilities;
 import java.util.*;
 
-public abstract class BasePlugin extends DefaultPlugin {
-  private static Logger LOG = Logger.getLogger(BasePlugin.class);
+public abstract class BaseProjectPlugin extends DefaultPlugin {
+  private static Logger LOG = Logger.getLogger(BaseProjectPlugin.class);
 
   private Project myProject;
 
