@@ -15,6 +15,7 @@ public class ToListOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18767_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18767_0");
+    Collections_Style_StyleSheet.OPERATION.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

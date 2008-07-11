@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -25,6 +26,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell10597_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10597_0");
+    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
   }
 
   private static void setupBasic_keyRefNodeCell10597_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -32,6 +34,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell10597_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10597_01");
+    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
   }
 
   private static void setupLabel_mapRefNodeCell10597_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -29,10 +29,12 @@ public class MapRemoveOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6162_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6162_0");
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell6162_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6162_01");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_keyRefNodeCell6162_0(EditorCell editorCell, SNode node, EditorContext context) {

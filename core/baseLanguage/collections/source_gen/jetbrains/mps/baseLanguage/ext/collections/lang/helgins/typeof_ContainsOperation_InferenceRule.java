@@ -46,7 +46,7 @@ public class typeof_ContainsOperation_InferenceRule implements InferenceRule_Run
       }
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607388053", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709900020", intentionProvider);
       }
     } while(false);
   }

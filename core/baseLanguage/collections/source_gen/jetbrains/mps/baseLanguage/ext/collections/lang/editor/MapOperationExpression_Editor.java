@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -25,6 +26,7 @@ public class MapOperationExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell655_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell655_0");
+    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
   }
 
   private static void setupBasic_mapOperationRefNodeCell655_0(EditorCell editorCell, SNode node, EditorContext context) {

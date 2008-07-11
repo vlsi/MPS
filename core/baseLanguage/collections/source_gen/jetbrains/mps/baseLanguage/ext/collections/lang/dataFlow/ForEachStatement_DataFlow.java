@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.dataFlow;
 import jetbrains.mps.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.dataFlow.DataFlowBuilderContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class ForEachStatement_DataFlow extends DataFlowBuilder {
@@ -13,11 +14,11 @@ public class ForEachStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "inputSequence", true));
     _context.getBuilder().emitLabel("condition");
     _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()));
     _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), "variable", true));
-    _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
 
       public void run() {

@@ -18,15 +18,15 @@ public class typeof_MapElement_InferenceRule implements InferenceRule_Runtime {
     final SNode valueType_typevar_1198083495346 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(mapElement, "map", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607390607", true), new QuotationClass_53().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(keyType_typevar_1198083488673), TypeChecker.getInstance().getEquationManager().getRepresentator(valueType_typevar_1198083495346)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607390604", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902527", true), new QuotationClass_53().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(keyType_typevar_1198083488673), TypeChecker.getInstance().getEquationManager().getRepresentator(valueType_typevar_1198083495346)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902524", false, 0);
     }
     {
       SNode _nodeToCheck_1029348928467 = mapElement;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607390613", true), TypeChecker.getInstance().getEquationManager().getRepresentator(valueType_typevar_1198083495346), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607390610");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902533", true), TypeChecker.getInstance().getEquationManager().getRepresentator(valueType_typevar_1198083495346), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902530");
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(mapElement, "key", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607390616", true), TypeChecker.getInstance().getEquationManager().getRepresentator(keyType_typevar_1198083488673), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607390614", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902536", true), TypeChecker.getInstance().getEquationManager().getRepresentator(keyType_typevar_1198083488673), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902534", false, 0);
     }
   }
 

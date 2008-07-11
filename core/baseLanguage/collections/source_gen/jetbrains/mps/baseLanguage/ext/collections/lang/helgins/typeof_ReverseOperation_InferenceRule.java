@@ -17,11 +17,11 @@ public class typeof_ReverseOperation_InferenceRule implements InferenceRule_Runt
     SNode input = RulesFunctions_Collections.getInput(op);
     {
       SNode _nodeToCheck_1029348928467 = input;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607389537", true), new QuotationClass_32().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184856571984)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607389534", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709901491", true), new QuotationClass_32().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184856571984)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709901488", false, 0);
     }
     {
       SNode _nodeToCheck_1029348928467 = op;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607389542", true), new QuotationClass_33().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184856571984)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607389539");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709901496", true), new QuotationClass_33().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184856571984)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709901493");
     }
   }
 

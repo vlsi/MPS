@@ -6,13 +6,11 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -28,17 +26,12 @@ public class ListType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell9877_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9877_0");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.EDITABLE, false);
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return ListType_Editor.calculateColor15(cell);
-            }
-
-          });
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
@@ -54,17 +47,25 @@ public class ListType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell9877_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9877_01");
+    Collections_Style_StyleSheet.RIGHT_ANGLE_BRACKET.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.EDITABLE, false);
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+        }
 
-            public Color calculate(EditorCell cell) {
-              return ListType_Editor.calculateColor(cell);
-            }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
 
-          });
+  private static void setupBasic_ConstantCell9877_02(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9877_02");
+    Collections_Style_StyleSheet.LEFT_ANGLE_BRACKET.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -81,16 +82,7 @@ public class ListType_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell9877_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
-  private static Color calculateColor15(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
+  private static void setupLabel_ConstantCell9877_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -104,7 +96,8 @@ public class ListType_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell9877_0(context, node, "list<"));
+    editorCell.addEditorCell(this.create_ConstantCell9877_0(context, node, "list"));
+    editorCell.addEditorCell(this.create_ConstantCell9877_02(context, node, "<"));
     editorCell.addEditorCell(this.create_elementTypeRefNodeCell9877_0(context, node));
     editorCell.addEditorCell(this.create_ConstantCell9877_01(context, node, ">"));
     return editorCell;
@@ -122,6 +115,14 @@ public class ListType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell9877_01(editorCell, node, context);
     setupLabel_ConstantCell9877_01(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell create_ConstantCell9877_02(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_ConstantCell9877_02(editorCell, node, context);
+    setupLabel_ConstantCell9877_02(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

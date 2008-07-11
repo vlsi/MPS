@@ -18,7 +18,7 @@ public class typeof_MapClearOperation_InferenceRule implements InferenceRule_Run
     final SNode VALUE_typevar_1208542413609 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(nodeToCheck);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607391157", true), new QuotationClass_67().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(VALUE_typevar_1208542413609), TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1208542413607)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607391155", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709903071", true), new QuotationClass_67().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(VALUE_typevar_1208542413609), TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1208542413607)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709903069", false, 0);
     }
   }
 

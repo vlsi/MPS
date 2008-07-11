@@ -17,11 +17,11 @@ public class typeof_ToArrayOperation_InferenceRule implements InferenceRule_Runt
     final SNode elementType_typevar_1184970400760 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = input;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607390226", true), new QuotationClass_45().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184970400760)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607390223", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902154", true), new QuotationClass_45().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184970400760)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902151", false, 0);
     }
     {
       SNode _nodeToCheck_1029348928467 = toArrayOperation;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607390230", true), new QuotationClass_46().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184970400760)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607390228");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902158", true), new QuotationClass_46().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184970400760)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902156");
     }
   }
 

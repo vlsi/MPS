@@ -45,7 +45,7 @@ public class typeof_IsNotEmptyOperation_InferenceRule implements InferenceRule_R
       }
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@5_0", "1215607389630", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709901570", intentionProvider);
       }
     } while(false);
   }
