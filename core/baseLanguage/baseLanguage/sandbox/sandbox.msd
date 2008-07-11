@@ -17,6 +17,8 @@
     <dependency reexport="false">jetbrains.mps.bootstrap.helgins</dependency>
     <dependency reexport="false">jetbrains.mps.quotation</dependency>
     <dependency reexport="false">JDK</dependency>
+    <dependency reexport="false">jetbrains.mps.bootstrap.helgins#1174411220599</dependency>
+    <dependency reexport="false">internalCollections.test</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
