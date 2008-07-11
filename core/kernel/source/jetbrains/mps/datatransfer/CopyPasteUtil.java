@@ -48,7 +48,7 @@ public class CopyPasteUtil {
   }
 
   public static PasteNodeData createNodeDataIn(List<SNode> sourceNodes, Map<SNode, Set<SNode>> sourceNodesAndAttributes) {
-    if (sourceNodes.isEmpty()) return new PasteNodeData(new ArrayList<SNode>(), null, null, null, null, null);
+    if (sourceNodes.isEmpty()) return PasteNodeData.emptyPasteNodeData(null);
     SModel model = sourceNodes.get(0).getModel();
 
     List<SNode> result = new ArrayList<SNode>();
@@ -78,7 +78,7 @@ public class CopyPasteUtil {
                                                 Set<String> necessaryLanguages,
                                                 Set<SModelUID> necessaryImports,
                                                 Set<String> necessaryDevKits) {
-    if (sourceNodes.isEmpty()) return new PasteNodeData(new ArrayList<SNode>(), null, null, null, null, null);
+    if (sourceNodes.isEmpty()) return PasteNodeData.emptyPasteNodeData(null);
     List<SNode> result = new ArrayList<SNode>();
     model.setLoading(true);
     Set<SReference> referencesRequireResolve = new HashSet<SReference>();
