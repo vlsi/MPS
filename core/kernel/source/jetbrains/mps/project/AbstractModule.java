@@ -1,10 +1,12 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.javastub.classpath.ClassPathModelRootManager;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
+import jetbrains.mps.javastub.classpath.ClassPathModelRootManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.reloading.*;
+import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -13,14 +15,11 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
-import jetbrains.mps.runtime.BytecodeLocator;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
 import java.net.URL;
-
-import com.intellij.openapi.util.Computable;
+import java.util.*;
 
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
@@ -354,7 +353,7 @@ public abstract class AbstractModule implements IModule {
     }
     for (Language l : new HashSet<Language>(result)) {
       result.addAll(l.getAllExtendedLanguages());
-    }    
+    }
     return new ArrayList<Language>(result);
   }
 
@@ -490,7 +489,12 @@ public abstract class AbstractModule implements IModule {
   }
 
   public Class getClass(String fqName) {
-    return ClassLoaderManager.getInstance().getClassFor(this, fqName);
+    try {
+      return ClassLoaderManager.getInstance().getClassFor(this, fqName);
+    } catch (Throwable t) {
+      LOG.error(t);
+      return null;
+    }
   }
 
   public void updateClassPath() {
@@ -615,7 +619,7 @@ public abstract class AbstractModule implements IModule {
   public boolean reloadClassesAfterGeneration() {
     return true;
   }
-  
+
   public void addModuleImport(final String moduleUID) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
