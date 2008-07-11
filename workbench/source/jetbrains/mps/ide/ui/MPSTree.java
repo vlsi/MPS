@@ -5,8 +5,8 @@ import com.intellij.ide.dnd.aware.DnDAwareTree;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
 import com.intellij.ui.TreeToolTipHandler;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
@@ -287,9 +287,8 @@ public abstract class MPSTree extends DnDAwareTree {
     Object lastPathComponent = path.getLastPathComponent();
     if (lastPathComponent instanceof MPSTreeNode && ((MPSTreeNode) lastPathComponent).canBeOpened() && (e.getClickCount() == 2 ||
       (e.getClickCount() == 1 && isAutoOpen()))) {
-      setSelectionPath(path);
-      MPSTreeNode node = (MPSTreeNode) lastPathComponent;
-      node.doubleClick();
+      MPSTreeNode nodeToClick = (MPSTreeNode) lastPathComponent;
+      nodeToClick.doubleClick();
       e.consume();
     } else if (e.getButton() == MouseEvent.BUTTON3) {
       // fix right-click behaviour - make selection before showing popup
