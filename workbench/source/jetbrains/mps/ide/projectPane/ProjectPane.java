@@ -155,12 +155,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     super(project);
     myProjectView = projectView;
     myLastPropertiesState = projectView.isShowMembers(MPS_FILESYSTEM);
-  }
 
-  public void initComponent() {
     myTree = new MyTree();
-
-    addListeners();
 
     myScrollPane = new MyScrollPane(getTree());
     getTree().addKeyListener(new KeyAdapter() {
@@ -175,6 +171,10 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         }
       }
     });
+  }
+
+  public void initComponent() {
+    addListeners();
 
     if (!IdeMain.isTestMode()) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
