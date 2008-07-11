@@ -51,6 +51,7 @@ public abstract class BaseAction extends AnAction {
     super.update(e);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        enable(e.getPresentation());
         if (myDisableOnNoProject && e.getData(PlatformDataKeys.PROJECT) == null) {
           disable(e.getPresentation());
           return;
