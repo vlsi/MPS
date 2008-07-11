@@ -878,7 +878,7 @@
     <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215005307186">
       <property name="value" value="GoToMenu" />
     </node>
-    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1215005292031" />
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1215776825236" />
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapActionGroup" id="1215010709295">
     <property name="package" value="Integration" />
