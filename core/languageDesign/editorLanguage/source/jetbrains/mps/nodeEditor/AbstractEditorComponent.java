@@ -1049,15 +1049,20 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   boolean executeComponentAction(String actionType) {
-    if (actionType == null) {
-      return false;
-    }
-    EditorCellAction action = myActionMap.get(actionType);
-    if (action != null && action.canExecute(getEditorContext())) {
+    EditorCellAction action = getComponentAction(actionType);
+    if (action != null) {
       action.execute(getEditorContext());
       return true;
     }
     return false;
+  }
+
+  EditorCellAction getComponentAction(String actionType) {
+    EditorCellAction action = myActionMap.get(actionType);
+    if (action != null && action.canExecute(getEditorContext())) {
+      return action;
+    }
+    return null;
   }
 
   public void relayout() {
