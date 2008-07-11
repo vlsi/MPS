@@ -13801,7 +13801,6 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104836688">
     <link role="concept" targetNodeId="1.1153179560115" resolveInfo="ClosureParameterReference" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104836689">
-      <property name="searchScopeDescription" value="closure-parameters declaring in enclosing closure" />
       <link role="applicableLink" targetNodeId="1.1153179615652" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104836690">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104836691">
@@ -13961,10 +13960,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104844472">
     <link role="concept" targetNodeId="1.1068580123158" resolveInfo="FieldReference" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104844473">
-      <property name="searchScopeDescription" value="fields declared in hierarhy of class specified by left expression. only applicable to expressions of classifier-type" />
       <link role="applicableLink" targetNodeId="1.1070568237987" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104844474">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104844475">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903625">
+            <property name="value" value="fields declared in hierarhy of class specified by left expression. only applicable to expressions of classifier-type" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104844476">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104844477">
               <property name="name" value="instance" />
@@ -14024,10 +14025,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104844541">
     <link role="concept" targetNodeId="1.1109283449304" resolveInfo="TypeVariableReference" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104844542">
-      <property name="searchScopeDescription" value="type-variables declared in enclosing classifier" />
       <link role="applicableLink" targetNodeId="1.1109283546497" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104844543">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104844544">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903587">
+            <property name="value" value="type-variables declared in enclosing classifier" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104844545">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104844546">
               <property name="name" value="declarations" />
@@ -14408,10 +14411,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104847359">
     <link role="concept" targetNodeId="1.1070533707846" resolveInfo="StaticFieldReference" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104847360">
-      <property name="searchScopeDescription" value="static fields from hierarchy of specified class" />
       <link role="applicableLink" targetNodeId="1.1070568178160" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104847361">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104847362">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903621">
+            <property name="value" value="static fields from hierarchy of specified class" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104847363">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104847364">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104847365">
@@ -14816,10 +14821,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104856628">
     <link role="concept" targetNodeId="1.1083260308424" resolveInfo="EnumConstantReference" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104856629">
-      <property name="searchScopeDescription" value="constants declared in the specified class" />
       <link role="applicableLink" targetNodeId="1.1083260308426" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104856630">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104856631">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903624">
+            <property name="value" value="constants declared in the specified class" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104856632">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104856633">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104856634">
@@ -14848,10 +14855,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104856698">
     <link role="concept" targetNodeId="1.1068581242874" resolveInfo="ParameterReference" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104856699">
-      <property name="searchScopeDescription" value="parameters declared in enclosing method" />
       <link role="applicableLink" targetNodeId="1.1070567982819" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104856700">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104856701">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903627">
+            <property name="value" value="parameters declared in enclosing method" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104856702">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104856703">
               <property name="name" value="methods" />
@@ -15372,10 +15381,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104860474">
     <link role="concept" targetNodeId="1.1197029447546" resolveInfo="FieldReferenceOperation" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104860475">
-      <property name="searchScopeDescription" value="fields declared in hierarhy of class specified by left expression. only applicable to expressions of classifier-type" />
       <link role="applicableLink" targetNodeId="1.1197029500499" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104860476">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104860477">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903618">
+            <property name="value" value="fields declared in hierarhy of class specified by left expression. only applicable to expressions of classifier-type" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104860478">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104860479">
               <property name="name" value="instance" />

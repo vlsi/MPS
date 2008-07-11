@@ -2359,10 +2359,12 @@
       </node>
     </node>
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104859360">
-      <property name="searchScopeDescription" value="concepts from this language" />
       <link role="applicableLink" targetNodeId="1.1158700943156" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104859361">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104859362">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903619">
+            <property name="value" value="concepts from this language" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104859363">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104859364">
               <property name="name" value="language" />

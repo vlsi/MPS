@@ -5,9 +5,9 @@ package jetbrains.mps.bootstrap.structureLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SubnodesSearchScope;
 
 public class EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -23,16 +23,9 @@ public class EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint imp
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration", "defaultMember");
   }
 
-  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return true;
-  }
-
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    // members declared here
     return new SubnodesSearchScope(_context.getReferenceNode());
-  }
-
-  public String getNodeReferentSearchScopeDescription() {
-    return "members declared here";
   }
 
 }

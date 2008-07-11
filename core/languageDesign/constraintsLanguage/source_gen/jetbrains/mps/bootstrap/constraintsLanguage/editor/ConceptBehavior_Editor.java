@@ -515,7 +515,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor31(EditorCell cell) {
+  private static Color calculateColor30(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;
@@ -1474,7 +1474,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return ConceptBehavior_Editor.calculateColor31(cell);
+                return ConceptBehavior_Editor.calculateColor30(cell);
               }
 
             });

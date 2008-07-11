@@ -5,9 +5,9 @@ package jetbrains.mps.bootstrap.structureLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.ISearchScope;
 
 public class ConceptDeclaration_extends_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -22,16 +22,9 @@ public class ConceptDeclaration_extends_ReferentConstraint implements IModelCons
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", "extends");
   }
 
-  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return _context.getReferenceNode() != null;
-  }
-
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    // don't allow cycling
     return new ConceptDeclarationExtendedConceptSearchScope(_context.getReferenceNode(), operationContext.getScope());
-  }
-
-  public String getNodeReferentSearchScopeDescription() {
-    return "don't allow cycling";
   }
 
 }

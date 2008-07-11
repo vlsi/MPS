@@ -5,9 +5,9 @@ package jetbrains.mps.bootstrap.structureLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
@@ -26,17 +26,10 @@ public class ConceptLink_conceptLinkDeclaration_ReferentConstraint implements IM
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLink", "conceptLinkDeclaration");
   }
 
-  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return true;
-  }
-
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    // concept links declared in hierarchy of enclosing concept
     SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", true, false);
     return new ConceptAndSuperConceptsScope(((ConceptDeclaration)SNodeOperations.getAdapter(enclosingConcept)));
-  }
-
-  public String getNodeReferentSearchScopeDescription() {
-    return "concept links declared in hierarchy of enclosing concept";
   }
 
 }

@@ -93,7 +93,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return NodePropertyConstraint_Editor.calculateColor30(cell);
+              return NodePropertyConstraint_Editor.calculateColor29(cell);
             }
 
           });
@@ -366,13 +366,13 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor30(EditorCell cell) {
+  private static Color calculateColor29(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor32(EditorCell cell) {
+  private static Color calculateColor31(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -685,7 +685,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return NodePropertyConstraint_Editor.calculateColor32(cell);
+                return NodePropertyConstraint_Editor.calculateColor31(cell);
               }
 
             });

@@ -29,6 +29,7 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint implemen
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    // parameters declared in enclosing method
     List<SNode> methods = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true);
     List<SNode> params = ListSequence.<SNode>fromArray();
     for(SNode bmd : methods) {

@@ -5,9 +5,9 @@ package jetbrains.mps.bootstrap.editorLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -31,11 +31,8 @@ public class CellModel_RefNode_linkDeclaration_ReferentConstraint implements IMo
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode", "relationDeclaration");
   }
 
-  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return true;
-  }
-
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    // aggregation links declared in concept hierarchy and not overridden
     SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.BaseEditorComponent", true, false);
     SNode editedConcept = SLinkOperations.getTarget(editorComponent, "conceptDeclaration", false);
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(editedConcept);
@@ -46,10 +43,6 @@ public class CellModel_RefNode_linkDeclaration_ReferentConstraint implements IMo
       }
 
     }).toListSequence());
-  }
-
-  public String getNodeReferentSearchScopeDescription() {
-    return "aggregation links declared in concept hierarchy and not overridden";
   }
 
 }

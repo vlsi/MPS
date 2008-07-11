@@ -1079,10 +1079,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104847098">
     <link role="concept" targetNodeId="1.1153944233411" resolveInfo="ForEachVariableReference" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104847099">
-      <property name="searchScopeDescription" value="cycle-variable of enclosing 'foreach' cycle" />
       <link role="applicableLink" targetNodeId="1.1153944258490" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104847100">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104847101">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903626">
+            <property name="value" value="cycle-variable of enclosing 'foreach' cycle" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104847102">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104847103">
               <property name="name" value="forEachStatements" />

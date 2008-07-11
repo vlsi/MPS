@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.NodeListChildrenSearchScope;
 
 public class ForEachVariableReference_variable_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -26,17 +26,10 @@ public class ForEachVariableReference_variable_ReferentConstraint implements IMo
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference", "variable");
   }
 
-  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", true, false) != null;
-  }
-
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    // cycle-variable of enclosing 'foreach' cycle
     List<SNode> forEachStatements = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", false);
     return new NodeListChildrenSearchScope(forEachStatements);
-  }
-
-  public String getNodeReferentSearchScopeDescription() {
-    return "cycle-variable of enclosing 'foreach' cycle";
   }
 
 }

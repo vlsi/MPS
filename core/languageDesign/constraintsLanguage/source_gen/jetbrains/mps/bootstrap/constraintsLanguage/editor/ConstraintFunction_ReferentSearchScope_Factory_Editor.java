@@ -49,7 +49,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateColor36(cell);
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateColor34(cell);
             }
 
           });
@@ -237,7 +237,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateColor38(cell);
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateColor36(cell);
             }
 
           });
@@ -330,13 +330,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return result;
   }
 
-  private static Color calculateColor36(EditorCell cell) {
+  private static Color calculateColor34(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;
   }
 
-  private static Color calculateColor38(EditorCell cell) {
+  private static Color calculateColor36(EditorCell cell) {
     Color result;
     result = Color.pink;
     return result;

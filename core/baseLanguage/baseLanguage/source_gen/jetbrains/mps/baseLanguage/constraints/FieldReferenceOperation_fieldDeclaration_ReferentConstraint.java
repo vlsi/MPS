@@ -31,6 +31,7 @@ public class FieldReferenceOperation_fieldDeclaration_ReferentConstraint impleme
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    // fields declared in hierarhy of class specified by left expression. only applicable to expressions of classifier-type
     SNode instance = SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true);
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     return new ClassifierVisibleMembersScope(((ClassifierType)SNodeOperations.getAdapter(classifierType)), _context.getEnclosingNode(), IClassifiersSearchScope.INSTANCE_FIELD);

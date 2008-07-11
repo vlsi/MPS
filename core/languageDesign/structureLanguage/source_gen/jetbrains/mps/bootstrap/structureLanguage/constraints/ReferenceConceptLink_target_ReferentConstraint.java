@@ -5,10 +5,9 @@ package jetbrains.mps.bootstrap.structureLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.ISearchScope;
 
 public class ReferenceConceptLink_target_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -23,16 +22,9 @@ public class ReferenceConceptLink_target_ReferentConstraint implements IModelCon
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink", "target");
   }
 
-  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), "conceptLinkDeclaration", false), "targetType", false) != null;
-  }
-
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    // only nodes assignable to target type specified in concept link declaration
     return new ReferenceConceptLinkTargetSearchScope(_context.getReferenceNode(), operationContext.getScope());
-  }
-
-  public String getNodeReferentSearchScopeDescription() {
-    return "only nodes assignable to target type specified in concept link declaration";
   }
 
 }

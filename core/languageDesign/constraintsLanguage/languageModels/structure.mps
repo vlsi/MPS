@@ -238,6 +238,14 @@
       <property name="value" value="link 'applicableConcept' is not used with Behaviors" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215736522092">
+      <property name="value" value="'searchScopeDescription' property is not used any more" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1215461340299" resolveInfo="deprecated_next_after_798" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215736732672">
+      <property name="value" value="'searchScopeCanCreate' link is not used any more" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1215461340299" resolveInfo="deprecated_next_after_798" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1148934493876">
     <property name="package" value="Functions" />

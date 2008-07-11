@@ -3505,10 +3505,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104840673">
     <link role="concept" targetNodeId="1.1071489090640" resolveInfo="ConceptDeclaration" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104841230">
-      <property name="searchScopeDescription" value="don't allow cycling" />
       <link role="applicableLink" targetNodeId="1.1071489389519" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104841231">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104841232">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903613">
+            <property name="value" value="don't allow cycling" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104841233">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213104841234">
               <link role="baseMethodDeclaration" targetNodeId="11.~ConceptDeclarationExtendedConceptSearchScope.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope)" resolveInfo="ConceptDeclarationExtendedConceptSearchScope" />
@@ -3534,10 +3536,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104841300">
     <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104841301">
-      <property name="searchScopeDescription" value="links declared in hierarchy of enclosing concept." />
       <link role="applicableLink" targetNodeId="1.1071599698500" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104841302">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104841303">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903612">
+            <property name="value" value="links declared in hierarchy of enclosing concept." />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104841304">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104841305">
               <property name="name" value="aggregation" />
@@ -3759,10 +3763,12 @@
       </node>
     </node>
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104847176">
-      <property name="searchScopeDescription" value="members declared here" />
       <link role="applicableLink" targetNodeId="1.1083241965437" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104847177">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104847178">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903610">
+            <property name="value" value="members declared here" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104847179">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213104847180">
               <link role="baseMethodDeclaration" targetNodeId="2.~SubnodesSearchScope.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SubnodesSearchScope" />
@@ -3776,10 +3782,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104847455">
     <link role="concept" targetNodeId="1.1105736778597" resolveInfo="ReferenceConceptLink" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104847456">
-      <property name="searchScopeDescription" value="only nodes assignable to target type specified in concept link declaration" />
       <link role="applicableLink" targetNodeId="1.1105736807942" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104847457">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104847458">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903591">
+            <property name="value" value="only nodes assignable to target type specified in concept link declaration" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104847459">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213104847460">
               <link role="baseMethodDeclaration" targetNodeId="11.~ReferenceConceptLinkTargetSearchScope.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope)" resolveInfo="ReferenceConceptLinkTargetSearchScope" />
@@ -3832,10 +3840,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104858461">
     <link role="concept" targetNodeId="1.1105736674127" resolveInfo="ConceptLink" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104858462">
-      <property name="searchScopeDescription" value="concept links declared in hierarchy of enclosing concept" />
       <link role="applicableLink" targetNodeId="1.1105736734721" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104858463">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104858464">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903623">
+            <property name="value" value="concept links declared in hierarchy of enclosing concept" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104858465">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104858466">
               <property name="name" value="enclosingConcept" />
@@ -3873,10 +3883,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104860717">
     <link role="concept" targetNodeId="1.1105725413739" resolveInfo="ConceptProperty" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104860718">
-      <property name="searchScopeDescription" value="concept properties declared in hierarchy of enclosing concept" />
       <link role="applicableLink" targetNodeId="1.1105725439818" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104860719">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104860720">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903622">
+            <property name="value" value="concept properties declared in hierarchy of enclosing concept" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104860721">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104860722">
               <property name="name" value="enclosingConcept" />

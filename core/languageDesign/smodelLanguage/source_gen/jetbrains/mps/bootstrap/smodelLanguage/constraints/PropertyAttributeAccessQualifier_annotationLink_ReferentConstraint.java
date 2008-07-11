@@ -30,6 +30,7 @@ public class PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint 
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    // all 'property' annotation links
     SNode ald = SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration");
     List<SNode> annotationLinks = SConceptOperations.findConceptInstances(ald, operationContext.getScope());
     List<SNode> propertyAttrLinks = ListSequence.fromList(annotationLinks).where(new IWhereFilter <SNode>() {

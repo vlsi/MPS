@@ -2268,10 +2268,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104846218">
     <link role="concept" targetNodeId="1.1166042131867" resolveInfo="CellMenuComponentFeature_Link" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104846219">
-      <property name="searchScopeDescription" value="links declared in edited concept' hierarchy and not overridden" />
       <link role="applicableLink" targetNodeId="1.1166042131869" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104846220">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104846221">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903617">
+            <property name="value" value="links declared in edited concept' hierarchy and not overridden" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104846222">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104846223">
               <property name="name" value="editorComponent" />
@@ -2329,7 +2331,6 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104846421">
     <link role="concept" targetNodeId="1.1088013125922" resolveInfo="CellModel_RefCell" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104846422">
-      <property name="searchScopeDescription" value="singular links declared in concept hierarchy and not overridden" />
       <link role="applicableLink" targetNodeId="1.1088013239202" />
       <node role="referentSetHandler" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSetHandler" id="1213104846423">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104846424">
@@ -2360,6 +2361,9 @@
       </node>
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104846436">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104846437">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903588">
+            <property name="value" value="singular links declared in concept hierarchy and not overridden" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104846438">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104846439">
               <property name="name" value="editorComponent" />
@@ -2540,10 +2544,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104855916">
     <link role="concept" targetNodeId="1.1166041748520" resolveInfo="CellMenuComponentFeature_Property" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104855917">
-      <property name="searchScopeDescription" value="properties declared in edited concept' hierarchy and not overridden" />
       <link role="applicableLink" targetNodeId="1.1166041884271" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104855918">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104855919">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903629">
+            <property name="value" value="properties declared in edited concept' hierarchy and not overridden" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104855920">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104855921">
               <property name="name" value="editorComponent" />
@@ -2601,10 +2607,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104856673">
     <link role="concept" targetNodeId="1.1139848536355" resolveInfo="CellModel_WithRole" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104856674">
-      <property name="searchScopeDescription" value="relations (links,properties etc.) declared in hierarchy of edited concept" />
       <link role="applicableLink" targetNodeId="1.1140103550593" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104856675">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104856676">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903628">
+            <property name="value" value="relations (links,properties etc.) declared in hierarchy of edited concept" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104856677">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104856678">
               <property name="name" value="editorComponent" />
@@ -2660,10 +2668,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104859540">
     <link role="concept" targetNodeId="1.1164914519156" resolveInfo="CellMenuPart_ReplaceNode_CustomNodeConcept" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104860161">
-      <property name="searchScopeDescription" value="super- and sub-concepts of the edited node's concept" />
       <link role="applicableLink" targetNodeId="1.1164914727930" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104860162">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104860163">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903614">
+            <property name="value" value="super- and sub-concepts of the edited node's concept" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104860164">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104860165">
               <property name="name" value="editorComponent" />
@@ -2841,10 +2851,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104860579">
     <link role="concept" targetNodeId="1.1073389882823" resolveInfo="CellModel_RefNode" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104860580">
-      <property name="searchScopeDescription" value="aggregation links declared in concept hierarchy and not overridden" />
       <link role="applicableLink" targetNodeId="1.1073389882824" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104860581">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104860582">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903611">
+            <property name="value" value="aggregation links declared in concept hierarchy and not overridden" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104860583">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104860584">
               <property name="name" value="editorComponent" />

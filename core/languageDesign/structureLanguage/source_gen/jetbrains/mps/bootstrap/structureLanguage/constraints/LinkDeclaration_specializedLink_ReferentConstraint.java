@@ -5,9 +5,9 @@ package jetbrains.mps.bootstrap.structureLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
@@ -32,11 +32,8 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration", "specializedLink");
   }
 
-  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return _context.getReferenceNode() != null;
-  }
-
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    // links declared in hierarchy of enclosing concept.
     final boolean aggregation = SPropertyOperations.hasValue(_context.getReferenceNode(), "metaClass", "aggregation", "reference");
     List<SNode> result = new ArrayList<SNode>();
     SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", true, false);
@@ -55,10 +52,6 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
       }));
     }
     return new SimpleSearchScope(result);
-  }
-
-  public String getNodeReferentSearchScopeDescription() {
-    return "links declared in hierarchy of enclosing concept.";
   }
 
 }

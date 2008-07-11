@@ -1889,10 +1889,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104781819">
     <link role="concept" targetNodeId="1.1147467115080" resolveInfo="NodePropertyConstraint" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104781820">
-      <property name="searchScopeDescription" value="properties declared in specified concept" />
       <link role="applicableLink" targetNodeId="1.1147467295099" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104781821">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104781822">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903609">
+            <property name="value" value="properties declared in specified concept" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104781823">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104781824">
               <property name="name" value="applicableConcept" />
@@ -2128,10 +2130,12 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104781931">
     <link role="concept" targetNodeId="1.1148687176410" resolveInfo="NodeReferentConstraint" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104781932">
-      <property name="searchScopeDescription" value="links declared in specified concept" />
       <link role="applicableLink" targetNodeId="1.1148687202698" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104781933">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104781934">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903630">
+            <property name="value" value="links declared in specified concept" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104781935">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104781936">
               <property name="name" value="applicableConcept" />
