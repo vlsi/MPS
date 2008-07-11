@@ -14,8 +14,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.IEditor;
@@ -47,6 +45,8 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -57,20 +57,17 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
-import javax.swing.Timer;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.Component;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.LinkedList;
+import java.util.List;
 
 @State(
   name = "MPSProjectPane",
@@ -384,12 +381,12 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
     // add selected model files
     List<SModelDescriptor> descriptors = getSelectedModels();
-    if (descriptors != null){
-      for (SModelDescriptor descriptor : descriptors){
+    if (descriptors != null) {
+      for (SModelDescriptor descriptor : descriptors) {
         IFile ifile = descriptor.getModelFile();
-        if (ifile != null){
+        if (ifile != null) {
           VirtualFile vfile = VFileSystem.getFile(ifile);
-          if (vfile != null){
+          if (vfile != null) {
             selectedFilesList.add(vfile);
           }
         }
@@ -398,19 +395,19 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
     // add selected modules files
     List<IModule> modules = getSelectedModules();
-    if (modules != null){
-      for (IModule module : modules){
+    if (modules != null) {
+      for (IModule module : modules) {
         IFile ifile = module.getDescriptorFile();
-        if (ifile != null){
+        if (ifile != null) {
           VirtualFile vfile = VFileSystem.getFile(ifile);
-          if (vfile != null){
+          if (vfile != null) {
             selectedFilesList.add(vfile);
           }
         }
       }
     }
 
-    if (selectedFilesList.size() == 0){
+    if (selectedFilesList.size() == 0) {
       return null;
     }
 
@@ -977,6 +974,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public void loadState(final MyState state) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
+        rebuildTreeNow();
         getTree().loadState(state.getState());
       }
     });

@@ -192,6 +192,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
           String newFolder = JOptionPane.showInputDialog(frame, "Enter new Folder", myName);
           if (newFolder != null) {
             if (newFolder.equals("")) {
+
               newFolder = null;
             }
 
