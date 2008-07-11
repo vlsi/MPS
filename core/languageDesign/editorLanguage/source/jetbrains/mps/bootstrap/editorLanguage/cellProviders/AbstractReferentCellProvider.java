@@ -65,7 +65,11 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     if (result.getUserObject(EditorCell.ROLE) == null &&
       result.getUserObject(EditorCell.METAINFO_LINK_DECLARATION) == null) {
       result.putUserObject(EditorCell.ROLE, myGenuineRole);
-      result.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, myGenuineLinkDeclaration.getNode());
+      if (myGenuineLinkDeclaration != null) {
+        result.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, myGenuineLinkDeclaration.getNode());
+      } else {
+        LOG.error("Can't find link declaration " + myGenuineRole);
+      }
     }
     return result;
   }
