@@ -8,25 +8,30 @@ import jetbrains.mps.util.Condition;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ArrayList;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
- * author: Igor Alshannikov
+ * Igor Alshannikov
  * Sep 19, 2006
  */
 public class CellMenuPart_ReplaceNode_replacementConcept_SearchScope extends AbstractSearchScope {
   private ConceptDeclaration myConcept;
   private List<ConceptDeclaration> myConcepts;
 
-  public CellMenuPart_ReplaceNode_replacementConcept_SearchScope(ConceptDeclaration concept) {
+  /**
+   * todo : should accept AbstractConceptDeclaration
+   */
+  public CellMenuPart_ReplaceNode_replacementConcept_SearchScope(@Nullable ConceptDeclaration concept) {
     myConcept = concept;
   }
 
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
     if (myConcepts == null) {
-      myConcepts = new LinkedList<ConceptDeclaration>();
+      myConcepts = new ArrayList<ConceptDeclaration>();
       // add this concept and all 'super' concepts
       ConceptDeclaration addConcept = myConcept;
       while (addConcept != null) {
@@ -35,17 +40,17 @@ public class CellMenuPart_ReplaceNode_replacementConcept_SearchScope extends Abs
       }
 
       // add all sub-concepts declared in the same language
-
-      assert myConcept != null;
-      List<ConceptDeclaration> sub_concepts = myConcept.getModel().allAdapters(ConceptDeclaration.class, new Condition<ConceptDeclaration>() {
-        public boolean met(ConceptDeclaration object) {
-          return object != myConcept && SModelUtil_new.isAssignableConcept(object, myConcept);
-        }
-      });
-      myConcepts.addAll(sub_concepts);
+      if (myConcept != null) {
+        List<ConceptDeclaration> sub_concepts = myConcept.getModel().allAdapters(ConceptDeclaration.class, new Condition<ConceptDeclaration>() {
+          public boolean met(ConceptDeclaration object) {
+            return object != myConcept && SModelUtil_new.isAssignableConcept(object, myConcept);
+          }
+        });
+        myConcepts.addAll(sub_concepts);
+      }
     }
 
-    List<SNode> result = new LinkedList<SNode>();
+    List<SNode> result = new ArrayList<SNode>();
     for (ConceptDeclaration concept : myConcepts) {
       if (condition.met(concept.getNode())) {
         result.add(concept.getNode());

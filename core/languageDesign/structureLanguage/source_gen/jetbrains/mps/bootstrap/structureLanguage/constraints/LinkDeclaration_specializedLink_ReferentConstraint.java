@@ -34,6 +34,9 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     // links declared in hierarchy of enclosing concept.
+    if (_context.getReferenceNode() == null) {
+      return null;
+    }
     final boolean aggregation = SPropertyOperations.hasValue(_context.getReferenceNode(), "metaClass", "aggregation", "reference");
     List<SNode> result = new ArrayList<SNode>();
     SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", true, false);

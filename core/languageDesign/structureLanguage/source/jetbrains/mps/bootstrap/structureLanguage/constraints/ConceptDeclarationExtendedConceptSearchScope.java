@@ -9,8 +9,10 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Igor Alshannikov
@@ -21,7 +23,7 @@ public class ConceptDeclarationExtendedConceptSearchScope extends AbstractSearch
   private List<SNode> myOwnNodes;
   private IScope myScope;
 
-  public ConceptDeclarationExtendedConceptSearchScope(SNode conceptDeclaration, IScope scope) {
+  public ConceptDeclarationExtendedConceptSearchScope(@Nullable SNode conceptDeclaration, IScope scope) {
     myScope = scope;
     myConceptDeclaration = (ConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration);
   }
@@ -35,6 +37,10 @@ public class ConceptDeclarationExtendedConceptSearchScope extends AbstractSearch
   }
 
   private List<SNode> createOwnNodesList() {
+    if(myConceptDeclaration == null) {
+      return new ArrayList<SNode>();
+    }
+
     ISearchScope allNodesScope = SModelSearchUtil.createModelAndImportedModelsScope(myConceptDeclaration.getModel(), myScope);
     return BaseAdapter.toNodes(allNodesScope.getAdapters(new Condition<INodeAdapter>() {
       public boolean met(INodeAdapter object) {

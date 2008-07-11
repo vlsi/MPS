@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class ReferenceConceptLink_target_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -24,6 +25,9 @@ public class ReferenceConceptLink_target_ReferentConstraint implements IModelCon
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     // only nodes assignable to target type specified in concept link declaration
+    if (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), "conceptLinkDeclaration", false), "targetType", false) == null) {
+      return null;
+    }
     return new ReferenceConceptLinkTargetSearchScope(_context.getReferenceNode(), operationContext.getScope());
   }
 

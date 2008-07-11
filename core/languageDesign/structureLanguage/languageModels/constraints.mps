@@ -3542,6 +3542,17 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903612">
             <property name="value" value="links declared in hierarchy of enclosing concept." />
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215740141314">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215740141315">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215740152260">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215740153841" />
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1215740147225">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215740149025" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1215740145115" />
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104841304">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104841305">
               <property name="name" value="aggregation" />
@@ -3787,6 +3798,27 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104847458">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903591">
             <property name="value" value="only nodes assignable to target type specified in concept link declaration" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215740196811">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215740196812">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215740218422">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215740221424" />
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1215740212215">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215740213655" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215740206023">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215740201691">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1215740199503" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1215740202351">
+                    <link role="link" targetNodeId="1.1105742372452" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1215740209683">
+                  <link role="link" targetNodeId="1.1105736621938" />
+                </node>
+              </node>
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104847459">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213104847460">
