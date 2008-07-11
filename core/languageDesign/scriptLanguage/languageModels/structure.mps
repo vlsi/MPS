@@ -25,6 +25,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1172272794406">
     <property name="rootable" value="true" />
     <property name="name" value="Script" />
+    <property name="iconPath" value="${language_descriptor}\icons\script.png" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1172287476293">
       <property name="metaClass" value="aggregation" />
@@ -92,6 +93,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177457067821">
     <property name="rootable" value="true" />
     <property name="name" value="MigrationScript" />
+    <property name="iconPath" value="${language_descriptor}\icons\migrationScript.png" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177458178889">
       <property name="metaClass" value="aggregation" />
