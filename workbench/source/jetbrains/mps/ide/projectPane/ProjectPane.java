@@ -99,10 +99,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public static final String LANGUAGE_NEW_ACTIONS = LanguageNewActions_ActionGroup.ID;
   public static final String GENERATOR_NEW_ACTIONS = GeneratorNewActions_ActionGroup.ID;
 
-  public static final String SHOW_P_AND_R = "show-p-and-r";
-  public static final String AUTOSCROLL_TO_SOURCE = "autoscroll-to-source";
-  public static final String AUTOSCROLL_FROM_SOURCE = "autoscroll-from-source";
-
   private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryAdapter();
   private MyCommandListener myCommandListener = new MyCommandListener();
   private MyModuleRepositoryListener myRepositoryListener = new MyModuleRepositoryListener();
