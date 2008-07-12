@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import com.intellij.openapi.actionSystem.Anchor;
 import com.intellij.openapi.actionSystem.Constraints;
-import jetbrains.mps.ide.actions.tools.RemoveTransientModulesAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -19,7 +18,7 @@ public class ToolsInternal_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(true);
     this.setPopup(false);
     try {
-      this.add(new RemoveTransientModulesAction());
+      this.add(new RemoveTransientModels_Action());
       this.addSeparator();
       this.add(new DumpKeyStrokes_Action());
       this.addSeparator();
