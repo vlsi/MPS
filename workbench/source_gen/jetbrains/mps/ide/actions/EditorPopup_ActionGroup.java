@@ -51,7 +51,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.add(new ShowConceptInHierarchyAction());
       this.add(new ShowConceptStructureAction());
       this.addSeparator();
-      this.add(new CloneRootAction());
+      this.add(new CloneRoot_Action());
       this.addSeparator();
       this.add(new ShowCellKeymapsAction());
       this.addSeparator();
