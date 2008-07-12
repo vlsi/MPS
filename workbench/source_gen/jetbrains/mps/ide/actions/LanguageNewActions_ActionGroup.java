@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import com.intellij.openapi.actionSystem.Anchor;
 import com.intellij.openapi.actionSystem.Constraints;
 import jetbrains.mps.ide.actions.language.NewAccessoryModelAction;
-import jetbrains.mps.ide.actions.language.NewGeneratorAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -21,7 +20,7 @@ public class LanguageNewActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      this.add(new NewGeneratorAction());
+      this.add(new NewGenerator_Action());
       this.addSeparator();
       this.add(new NewAccessoryModelAction());
       this.addSeparator();
