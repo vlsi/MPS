@@ -101,8 +101,12 @@ public class IconManager {
       } else {
         Class icons = language.getClass(className);
         if (icons != null) {
-          Method method = icons.getMethod("getLanguageIcon");
-          if (method == null) return EMPTY_ICON;
+          Method method;
+          try {
+            method = icons.getMethod("getLanguageIcon");
+          } catch (NoSuchMethodException e) {
+            return EMPTY_ICON;
+          }
           Icon icon = (Icon) method.invoke(null);
           if (icon != null) return icon;
         }
