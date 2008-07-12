@@ -13,7 +13,6 @@ import jetbrains.mps.ide.actions.module.ShowModuleDependenciesAction;
 import jetbrains.mps.ide.actions.project.AddModuleToProjectAction;
 import jetbrains.mps.ide.actions.project.RemoveModuleFromProjectAction;
 import jetbrains.mps.ide.hierarchy.LanguageHierarchyAction;
-import jetbrains.mps.ide.modelchecker.CheckLanguageAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.workbench.action.LabelledAnchor;
@@ -33,7 +32,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.add(new GenerateAllModelsInModuleAction(true));
       this.add(new GenerateAllModelsInModuleAction(false));
-      this.add(new CheckLanguageAction());
+      this.add(new CheckLanguage_Action());
       this.add(new OptimizeLanguageImportsAction());
       this.add(new AnalyzeClasspath_Action());
       this.addSeparator();

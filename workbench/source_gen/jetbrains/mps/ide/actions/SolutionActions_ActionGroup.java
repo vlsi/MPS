@@ -13,7 +13,6 @@ import jetbrains.mps.ide.actions.project.RemoveModuleFromProjectAction;
 import jetbrains.mps.ide.actions.solution.GenerateTextFromAllModelsInSolutionAction;
 import jetbrains.mps.ide.actions.solution.OptimizeSolutionImportsAction;
 import jetbrains.mps.ide.actions.solution.SolutionPropertiesAction;
-import jetbrains.mps.ide.modelchecker.CheckSolutionAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.workbench.action.LabelledAnchor;
@@ -37,7 +36,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
       this.add(new GenerateAllModelsInModuleAction(true));
       this.add(new GenerateAllModelsInModuleAction(false));
       this.add(new GenerateTextFromAllModelsInSolutionAction());
-      this.add(new CheckSolutionAction());
+      this.add(new CheckSolution_Action());
       this.add(new OptimizeSolutionImportsAction());
       this.add(new AnalyzeClasspath_Action());
       this.add(new ShowModuleDependenciesAction());
