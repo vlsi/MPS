@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.ide.actions.language.LanguagePropertiesAction;
 import jetbrains.mps.ide.actions.language.OptimizeLanguageImportsAction;
-import jetbrains.mps.ide.actions.make.CleanModuleAction;
 import jetbrains.mps.ide.actions.make.MakeModuleAction;
 import jetbrains.mps.ide.actions.make.RebuildModuleAction;
 import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction;
@@ -45,7 +44,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.add(new MakeModuleAction());
       this.add(new RebuildModuleAction());
-      this.add(new CleanModuleAction());
+      this.add(new CleanModule_Action());
       this.addSeparator();
       this.add(new SetModuleFolderAction());
     } catch (Throwable t) {
