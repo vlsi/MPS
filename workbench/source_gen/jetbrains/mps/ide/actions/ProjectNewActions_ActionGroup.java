@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import com.intellij.openapi.actionSystem.Anchor;
 import com.intellij.openapi.actionSystem.Constraints;
-import jetbrains.mps.ide.actions.project.NewDevKitAction;
 import jetbrains.mps.ide.actions.project.NewLanguageAction;
 import jetbrains.mps.ide.actions.project.NewSolutionAction;
 import jetbrains.mps.logging.Logger;
@@ -24,7 +23,7 @@ public class ProjectNewActions_ActionGroup extends GeneratedActionGroup {
     try {
       this.add(new NewSolutionAction());
       this.add(new NewLanguageAction());
-      this.add(new NewDevKitAction());
+      this.add(new NewDevKit_Action());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
