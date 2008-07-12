@@ -91,7 +91,7 @@ public class DeleteNodesHelper {
     Presentation p = new Presentation();
     safeDeleteAction.update(ActionUtils.createEvent(ActionPlaces.UNKNOWN, p, newContext));
     if (p.isEnabled()) {
-      safeDeleteAction.dodoExecute(newContext);
+      safeDeleteAction.actionPerformed(ActionUtils.createEvent(ActionPlaces.UNKNOWN, newContext));
     }
   }
 }

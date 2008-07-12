@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.ide.actions.language.DeleteGeneratorAction;
 import jetbrains.mps.ide.actions.language.GenerateTemplateQueriesAction;
-import jetbrains.mps.ide.actions.language.GeneratorPropertiesAction;
 import jetbrains.mps.ide.actions.module.ShowModuleDependenciesAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
@@ -31,7 +30,7 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.add(new CheckGenerator_Action());
       this.addSeparator();
-      this.add(new GeneratorPropertiesAction());
+      this.add(new GeneratorProperties_Action());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

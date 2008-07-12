@@ -1,25 +1,25 @@
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSActionAdapter;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.RefactoringProcessor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.action.ActionEventData;
+import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 14.09.2007
- * Time: 16:53:20
- * To change this template use File | Settings | File Templates.
- */
-public class GenericRefactoringAction extends MPSActionAdapter {
+public class GenericRefactoringAction extends BaseAction {
   private ILoggableRefactoring myRefactoring;
 
   public GenericRefactoringAction(ILoggableRefactoring refactoring) {
     super("".equals(refactoring.getUserFriendlyName()) ? refactoring.getClass().getName() : refactoring.getUserFriendlyName());
     myRefactoring = refactoring;
+    setExecuteOutsideCommand(true);
+    setIsAlwaysVisible(false);
+  }
+
+  protected void doExecute(AnActionEvent e) {
+    new RefactoringProcessor().execute(new ActionEventData(e), myRefactoring);
   }
 
   @NotNull
@@ -27,28 +27,20 @@ public class GenericRefactoringAction extends MPSActionAdapter {
     return myRefactoring.getKeyStroke();
   }
 
-  public boolean executeInsideCommand() {
-    return false;
-  }
-
-  public void dodoExecute(@NotNull ActionContext context) {
-    new RefactoringProcessor().execute(context, myRefactoring);
-  }
-
-  public void dodoUpdate(@NotNull ActionContext context) {
+  protected void doUpdate(AnActionEvent e) {
+    ActionEventData data = new ActionEventData(e);
     boolean enabled = false;
     if (myRefactoring.getRefactoringTarget() == RefactoringTarget.MODEL) {
-      SModelDescriptor modelDescriptor = context.getModel();
+      SModelDescriptor modelDescriptor = data.getModelDescriptor();
       if (modelDescriptor != null) {
         enabled = myRefactoring.isApplicableToModel(modelDescriptor);
       }
     } else {
-      SNode node = context.getNode();
+      SNode node = data.getNode();
       if (node != null) {
         enabled = myRefactoring.isApplicableWRTConcept(node);
       }
     }
-    setEnabled(enabled);
-    setVisible(enabled);
+    setEnabled(e.getPresentation(), enabled);
   }
 }

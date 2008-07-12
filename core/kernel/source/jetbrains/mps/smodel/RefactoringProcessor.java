@@ -1,24 +1,28 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.generator.*;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.refactoring.NewRefactoringView;
 import jetbrains.mps.refactoring.LoggableRefactoringViewAction;
+import jetbrains.mps.refactoring.NewRefactoringView;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
-import jetbrains.mps.util.Calculable;
+import jetbrains.mps.workbench.action.ActionEventData;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NotNull;
 
@@ -26,17 +30,11 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import java.util.*;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.application.ApplicationManager;
-
 public class RefactoringProcessor {
   private static final Logger LOG = Logger.getLogger(RefactoringProcessor.class);
 
-  public void execute(final @NotNull ActionContext context, final ILoggableRefactoring refactoring) {
+  public void execute(final @NotNull ActionEventData data, final ILoggableRefactoring refactoring) {
+    final ActionContext context = ActionUtils.createContext(data);
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring);
     refactoringContext.setActionData(context);
 
@@ -52,7 +50,7 @@ public class RefactoringProcessor {
               ThreadUtils.runInUIThreadAndWait(new Runnable() {
                 public void run() {
                   final boolean[] wasError = new boolean[]{false};
-                  ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getComponent(Project.class),"Finding usages...",false) {
+                  ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getComponent(Project.class), "Finding usages...", false) {
                     public void run(@NotNull ProgressIndicator indicator) {
                       indicator.setIndeterminate(true);
                       ModelAccess.instance().runReadAction(new Runnable() {
@@ -69,7 +67,7 @@ public class RefactoringProcessor {
                       });
                     }
                   });
-                  if (wasError[0]){
+                  if (wasError[0]) {
                     int promptResult = JOptionPane.showConfirmDialog(context.getFrame(),
                       "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
                     toReturn[0] = promptResult == JOptionPane.NO_OPTION;
