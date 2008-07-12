@@ -42,6 +42,7 @@
               <link role="variableDeclaration" targetNodeId="1215532134999" resolveInfo="i" />
             </node>
           </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1215865593650" />
         </node>
       </node>
     </node>

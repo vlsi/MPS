@@ -2415,6 +2415,9 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996305">
           <property name="flag" value="false" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.IndentedStyleSheetItem" id="1215865255526">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1206063692153">
         <property name="vertical" value="true" />
@@ -2433,6 +2436,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleSheetItem" id="1215865871665">
+          <property name="flag" value="true" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1215436040088">
@@ -2455,6 +2461,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1215436040102">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleSheetItem" id="1215865885886">
+          <property name="flag" value="true" />
         </node>
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1215436054213">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215436054214">
@@ -2553,6 +2562,9 @@
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996545">
               <property name="flag" value="false" />
             </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleSheetItem" id="1215865928982">
+              <property name="flag" value="true" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177555034720">
             <property name="name" value="ifFalseBranch" />
@@ -2563,6 +2575,9 @@
             </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994884">
               <property name="flag" value="false" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.IndentedStyleSheetItem" id="1215865281809">
+              <property name="flag" value="true" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177555034723">
@@ -2600,6 +2615,9 @@
             </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995794">
               <property name="flag" value="false" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleSheetItem" id="1215865415566">
+              <property name="flag" value="true" />
             </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995734">
@@ -15460,6 +15478,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994357">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.IndentedStyleSheetItem" id="1215865307968">
+          <property name="flag" value="true" />
         </node>
       </node>
     </node>

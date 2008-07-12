@@ -108,6 +108,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENTED, true);
         }
 
       };
@@ -150,6 +151,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.NEXT_LINE, true);
         }
 
       };
@@ -190,6 +192,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENTED, true);
         }
 
       };
@@ -206,6 +209,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.NEXT_LINE, true);
         }
 
       };
@@ -234,6 +238,15 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_elsifClausesRefNodeListCell17307_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_elsifClausesRefNodeListCell17307_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.NEXT_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell17307_09(EditorCell editorCell, SNode node, EditorContext context) {
@@ -256,6 +269,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.NEXT_LINE, true);
         }
 
       };
