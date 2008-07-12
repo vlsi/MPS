@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.scriptLanguage.plugin;
 
-import jetbrains.mps.ide.action.MPSActionGroup;
 import jetbrains.mps.ide.scriptLanguage.structure.MigrationScript;
 import jetbrains.mps.ide.scriptLanguage.structure.Script;
 import jetbrains.mps.smodel.Language;
@@ -43,7 +42,7 @@ public class ScriptsActionGroupHelper {
     });
     sorted.addAll(byCategory.keySet());
     for (String cat : sorted) {
-      MPSActionGroup categoryGroup = new MPSActionGroup(cat, "");
+      BaseGroup categoryGroup = new BaseGroup(cat, "");
       for (MigrationScript script : byCategory.get(cat)) {
         categoryGroup.add(new RunMigrationScriptAction(script,
           makeScriptActionName(null, script.getTitle(), script.getMigrationFromBuild()), applyToSelection));
@@ -68,7 +67,7 @@ public class ScriptsActionGroupHelper {
 
     Set<String> sorted = new TreeSet<String>(byBuild.keySet());
     for (String build : sorted) {
-      MPSActionGroup categoryGroup = new MPSActionGroup("migrate from b." + build, "");
+      BaseGroup categoryGroup = new BaseGroup("migrate from b." + build, "");
       for (MigrationScript script : byBuild.get(build)) {
         categoryGroup.add(new RunMigrationScriptAction(script,
           makeScriptActionName(script.getCategory(), script.getTitle(), null), applyToSelection));
@@ -84,7 +83,7 @@ public class ScriptsActionGroupHelper {
     List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
     List<Script> genericScripts = scriptsModel.getSModel().getRootsAdapters(Script.class);
     if (migrationScripts.isEmpty() && genericScripts.isEmpty()) return;
-    MPSActionGroup languageScriptsGroup = new MPSActionGroup(language.getNamespace(), "");
+    BaseGroup languageScriptsGroup = new BaseGroup(language.getNamespace(), "");
     for (MigrationScript script : migrationScripts) {
       languageScriptsGroup.add(new RunMigrationScriptAction(script,
         makeScriptActionName(script.getCategory(), script.getTitle(), script.getMigrationFromBuild()), applyToSelection));

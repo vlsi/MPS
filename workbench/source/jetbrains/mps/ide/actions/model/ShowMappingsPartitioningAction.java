@@ -1,55 +1,50 @@
 package jetbrains.mps.ide.actions.model;
 
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.generator.plan.GenerationPartitioner;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.workbench.action.ActionEventData;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.output.OutputViewTool;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
+import java.awt.Frame;
 import java.util.List;
 
 /**
  * Igor Alshannikov
  * Mar 11, 2008
  */
-public class ShowMappingsPartitioningAction extends MPSActionAdapter {
+public class ShowMappingsPartitioningAction extends BaseAction {
+  private List<SModelDescriptor> myModels;
+  private MPSProject myProject;
+  private Frame myFrame;
+  private IScope myScope;
+
   public ShowMappingsPartitioningAction() {
     super("Show mappings partitioning");
   }
 
-  public void dodoUpdate(@NotNull ActionContext context) {
-    List<SModelDescriptor> selectedModels = GenerateGroup_autoplan.getModelsToGenerate(context);
-    if (selectedModels.size() != 1) {
-      setEnabled(false);
-    } else {
-      setEnabled(true);
-    }
-  }
-
-  public void dodoExecute(@NotNull ActionContext context) {
-    IOperationContext operationContext = context.getSafe(IOperationContext.class);
-    List<SModelDescriptor> selectedModels = GenerateGroup_autoplan.getModelsToGenerate(context);
-
+  protected void doExecute(AnActionEvent e) {
     // no multiple input models
-    SModel inputModel = selectedModels.get(0).getSModel();
+    SModel inputModel = myModels.get(0).getSModel();
 
-    List<Generator> generators = GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(inputModel, operationContext.getScope());
+    List<Generator> generators = GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(inputModel, myScope);
     GenerationPartitioner partitioner = new GenerationPartitioner();
     List<List<MappingConfiguration>> mappingSets = partitioner.createMappingSets(generators);
 
-    MessagesViewTool messagesView = operationContext.getMPSProject().getComponent(MessagesViewTool.class);
+    MessagesViewTool messagesView = myProject.getComponent(MessagesViewTool.class);
     // print all rules
     messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
     for (Generator generator : generators) {
@@ -69,7 +64,7 @@ public class ShowMappingsPartitioningAction extends MPSActionAdapter {
       }
       messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
 
-      JOptionPane.showMessageDialog(context.getFrame(), "Conflicting mapping priority rules encountered", "Generation plan error", JOptionPane.WARNING_MESSAGE);
+      JOptionPane.showMessageDialog(myFrame, "Conflicting mapping priority rules encountered", "Generation plan error", JOptionPane.WARNING_MESSAGE);
     }
 
     // show partitioning
@@ -83,11 +78,24 @@ public class ShowMappingsPartitioningAction extends MPSActionAdapter {
       }
       text += "\n";
     }
-    OutputViewTool viewTool = OutputViewTool.getOutputViewTool(operationContext.getMPSProject());
+    OutputViewTool viewTool = OutputViewTool.getOutputViewTool(myProject);
     viewTool.clear();
     viewTool.append("---------------------  mappings partitioning  -----------------------------------\n\n");
     viewTool.append(text);
     viewTool.append("---------------------------------------------------------------------------------\n");
     viewTool.openToolLater(true);
+  }
+
+  protected boolean collectActionData(AnActionEvent e) {
+    ActionEventData data = new ActionEventData(e);
+    myScope = data.getScope();
+    if (myScope == null) return false;
+    myProject = data.getMPSProject();
+    if (myProject == null) return false;
+    myFrame = data.getFrame();
+    if (myFrame == null) return false;
+    myModels = data.getModels();
+    return myModels.size() == 1;
+
   }
 }

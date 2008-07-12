@@ -65,11 +65,9 @@ public class CreateRootNodeGroup extends BaseGroup {
         if (!myAllowedLanguages.contains(language.getNamespace())) continue;
       }
 
-      MPSActionGroup langRootsGroup = new MPSActionGroup(language.getNamespace()) {
-        public Icon getIcon() {
-          return IconManager.getIconFor(language.getNamespace());
-        }
-      };
+      String name = language.getNamespace();
+      Icon icon = IconManager.getIconFor(language.getNamespace());
+      BaseGroup langRootsGroup = new BaseGroup(name, name, icon);
 
       langRootsGroup.setPopup(true);
 

@@ -1,7 +1,7 @@
 package jetbrains.mps.ide;
 
 import com.intellij.openapi.actionSystem.*;
-import jetbrains.mps.ide.action.MPSActionGroup;
+import jetbrains.mps.workbench.action.BaseGroup;
 
 public class KeyStrokesUtil {
   public static String dumpKeyStrokes() {
@@ -28,8 +28,8 @@ public class KeyStrokesUtil {
       }
       builder.append("\n");
 
-      if (a instanceof MPSActionGroup) {
-        dump((MPSActionGroup) a, builder);
+      if (a instanceof BaseGroup) {
+        dump((BaseGroup) a, builder);
       }
     }
   }

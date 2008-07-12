@@ -6,6 +6,8 @@ import com.intellij.openapi.actionSystem.Presentation;
 import jetbrains.mps.ide.action.InternalFlag;
 import jetbrains.mps.smodel.ModelAccess;
 
+import javax.swing.Icon;
+
 public class BaseGroup extends DefaultActionGroup {
   private String myId = "";
   private boolean myIsInternal = false;
@@ -16,8 +18,13 @@ public class BaseGroup extends DefaultActionGroup {
   }
 
   public BaseGroup(String text, String id) {
+    this(text, id, null);
+  }
+
+  public BaseGroup(String text, String id, Icon icon) {
     super(text, false);
     myId = id;
+    getTemplatePresentation().setIcon(icon);
   }
 
   public void setIsAlwaysVisible(boolean isAlwaysVisible) {

@@ -52,39 +52,39 @@
       <property name="name" value="myNodeGroup"/>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1215283278059"/>
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215283296930">
-        <link role="classifier" targetNodeId="4.~MPSActionGroup" resolveInfo="MPSActionGroup"/>
+        <link role="classifier" targetNodeId="12.~BaseGroup" resolveInfo="BaseGroup"/>
       </node>
     </node>
     <node role="fieldDeclaration"
           type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1215283404192">
       <property name="name" value="myModelGroup"/>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1215283404193"/>
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215283404194">
-        <link role="classifier" targetNodeId="4.~MPSActionGroup" resolveInfo="MPSActionGroup"/>
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215880285816">
+        <link role="classifier" targetNodeId="12.~BaseGroup" resolveInfo="BaseGroup"/>
       </node>
     </node>
     <node role="fieldDeclaration"
           type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1215283403829">
       <property name="name" value="myLanguageGroup"/>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1215283403830"/>
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215283403831">
-        <link role="classifier" targetNodeId="4.~MPSActionGroup" resolveInfo="MPSActionGroup"/>
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215880287176">
+        <link role="classifier" targetNodeId="12.~BaseGroup" resolveInfo="BaseGroup"/>
       </node>
     </node>
     <node role="fieldDeclaration"
           type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1215283403264">
       <property name="name" value="mySolutionGroup"/>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1215283403265"/>
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215283403266">
-        <link role="classifier" targetNodeId="4.~MPSActionGroup" resolveInfo="MPSActionGroup"/>
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215880288615">
+        <link role="classifier" targetNodeId="12.~BaseGroup" resolveInfo="BaseGroup"/>
       </node>
     </node>
     <node role="fieldDeclaration"
           type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1215283402604">
       <property name="name" value="myDevkitGroup"/>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1215283402605"/>
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215283402606">
-        <link role="classifier" targetNodeId="4.~MPSActionGroup" resolveInfo="MPSActionGroup"/>
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215880289897">
+        <link role="classifier" targetNodeId="12.~BaseGroup" resolveInfo="BaseGroup"/>
       </node>
     </node>
     <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ApplicationPluginInitBlock"
