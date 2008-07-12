@@ -20,7 +20,7 @@
             <property name="name" value="i" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215532135000" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215532138518">
-              <property name="value" value="0" />
+              <property name="value" value="10" />
             </node>
           </node>
         </node>

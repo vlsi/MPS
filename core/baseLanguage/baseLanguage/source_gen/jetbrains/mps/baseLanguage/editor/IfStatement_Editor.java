@@ -35,6 +35,15 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell17307_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell17307_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.NEXT_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell17307_01(EditorCell editorCell, SNode node, EditorContext context) {

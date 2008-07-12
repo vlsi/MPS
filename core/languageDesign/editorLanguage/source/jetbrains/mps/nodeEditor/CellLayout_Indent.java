@@ -53,22 +53,26 @@ public class CellLayout_Indent extends AbstractCellLayout {
     final int y = editorCells.getY();
     int width = 0;
     int height = 0;
+    int h = 0;
 
     for (EditorCell editorCell : cells) {
       if (editorCell.getStyle().get(StyleAttributes.INDENTED)) {
         width = INDENT;
-        height += 15;
+        height += h;
+        h=0;
       }
       else if(editorCell.getStyle().get(StyleAttributes.NEXT_LINE)) {
         width = 0;
-        height += 15;
+        height += h;
+        h=0;
       }
       editorCell.setX(x + width);
       editorCell.setY(y + height);
       editorCell.relayout();
+      h= Math.max(h, editorCell.getHeight());
       width += editorCell.getWidth();
     }
     editorCells.setWidth(width);
-    editorCells.setHeight(15+height);
+    editorCells.setHeight(height+h);
   }
 }
