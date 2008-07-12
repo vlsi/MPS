@@ -12,11 +12,13 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.workbench.action.BaseAction;
 
+import javax.swing.ImageIcon;
 import java.awt.Frame;
 import java.io.File;
 
 public class OpenMPSProjectAction extends BaseAction {
   public OpenMPSProjectAction() {
+    getTemplatePresentation().setIcon(new ImageIcon(getClass().getResource("open.png")));
     setExecuteOutsideCommand(true);
     setDisableOnNoProject(false);
   }
