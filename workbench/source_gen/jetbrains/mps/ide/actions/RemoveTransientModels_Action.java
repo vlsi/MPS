@@ -23,7 +23,7 @@ public class RemoveTransientModels_Action extends GeneratedAction {
 
   public RemoveTransientModels_Action() {
     super("Remove Transient Models", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
 

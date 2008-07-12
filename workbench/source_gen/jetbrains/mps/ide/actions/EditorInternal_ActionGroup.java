@@ -4,8 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.ide.actions.cells.ShowCellInCellExplorerAction;
 import jetbrains.mps.ide.actions.nodes.HighlightCellDependenciesAction;
-import jetbrains.mps.ide.actions.nodes.PrintNodeIDAction;
-import jetbrains.mps.ide.actions.nodes.PrintTextPresentationAction;
 import jetbrains.mps.ide.actions.nodes.TestNodePathAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
@@ -26,8 +24,8 @@ public class EditorInternal_ActionGroup extends GeneratedActionGroup {
       this.add(new CellProperties_Action());
       this.add(new ShowCellInCellExplorerAction());
       this.addSeparator();
-      this.add(new PrintNodeIDAction());
-      this.add(new PrintTextPresentationAction());
+      this.add(new PrintNodeID_Action());
+      this.add(new PrintTextPresentation_Action());
       this.add(new HighlightCellDependenciesAction());
       this.addSeparator();
     } catch (Throwable t) {

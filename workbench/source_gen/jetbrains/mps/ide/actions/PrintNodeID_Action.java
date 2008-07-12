@@ -5,20 +5,20 @@ package jetbrains.mps.ide.actions;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.ActionEventData;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
-public class SaveModel_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(SaveModel_Action.class);
+public class PrintNodeID_Action extends GeneratedAction {
+  public static final Logger LOG = Logger.getLogger(PrintNodeID_Action.class);
   public static final Icon ICON = null;
 
-  private SModelDescriptor model;
+  private SNode node;
 
-  public SaveModel_Action() {
-    super("Save", "", ICON);
+  public PrintNodeID_Action() {
+    super("Print Node ID To System.out", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
@@ -32,7 +32,7 @@ public class SaveModel_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "SaveModel", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "PrintNodeID", t);
       this.disable(event.getPresentation());
     }
   }
@@ -40,8 +40,8 @@ public class SaveModel_Action extends GeneratedAction {
   @Override()
   protected boolean collectActionData(AnActionEvent event) {
     try {
-      this.model = new ActionEventData(event).getModelDescriptor();
-      if (this.model == null) {
+      this.node = new ActionEventData(event).getNode();
+      if (this.node == null) {
         return false;
       }
     } catch (Throwable t) {
@@ -52,9 +52,9 @@ public class SaveModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      this.model.save();
+      System.out.println("ID = " + this.node.getId());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "SaveModel", t);
+      LOG.error("User's action execute method failed. Action:" + "PrintNodeID", t);
     }
   }
 
