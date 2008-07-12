@@ -3,8 +3,6 @@ package jetbrains.mps.ide.actions.model;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.ide.action.MPSActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -17,7 +15,6 @@ import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.*;
@@ -90,32 +87,35 @@ public class CreateRootNodeGroup extends BaseGroup {
     //todo:setVisible(event.getPresentation(),data.hasOneSelectedItem());
   }
 
-  private MPSActionAdapter newRootNodeAction(final SNodePointer nodeConcept, final SModelDescriptor modelDescriptor) {
-    return new MPSActionAdapter(NodePresentationUtil.matchingText(nodeConcept.getNode())) {
-      public Icon getIcon() {
-        return ModelAccess.instance().runReadAction(new Computable<Icon>() {
+  private BaseAction newRootNodeAction(final SNodePointer nodeConcept, final SModelDescriptor modelDescriptor) {
+    return new BaseAction(NodePresentationUtil.matchingText(nodeConcept.getNode())) {
+      {
+        Icon icon = ModelAccess.instance().runReadAction(new Computable<Icon>() {
           public Icon compute() {
             return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept.getNode()));
           }
         });
+        getTemplatePresentation().setIcon(icon);
+        setExecuteOutsideCommand(true);
       }
 
-      public boolean executeInsideCommand() {
-        return false;
-      }
+      protected void doExecute(AnActionEvent e) {
+        ActionEventData data = new ActionEventData(e);
+        IOperationContext operationContext = data.getOperationContext();
+        final IScope scope = data.getScope();
+        ProjectPane pane = operationContext.getComponent(ProjectPane.class);
 
-      public void dodoExecute(@NotNull final ActionContext context) {
         SNode node = ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
           public SNode compute() {
-            SNode result = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), context.getScope());
+            SNode result = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), scope);
             result.setProperty(SModelTreeNode.PACK, myPackage);
             modelDescriptor.getSModel().addRoot(result);
             return result;
           }
         });
 
-        context.get(ProjectPane.class).selectNode(node, context.get(IOperationContext.class));
-        context.get(ProjectPane.class).openEditor();
+        pane.selectNode(node, operationContext);
+        pane.openEditor();
       }
     };
   }

@@ -6,7 +6,6 @@ import jetbrains.mps.ide.actions.devkit.DevKitPropertiesAction;
 import jetbrains.mps.ide.actions.module.SetModuleFolderAction;
 import jetbrains.mps.ide.actions.project.AddModuleToProjectAction;
 import jetbrains.mps.ide.actions.project.RemoveModuleFromProjectAction;
-import jetbrains.mps.ide.classpath.AnalyzeClassPathAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 
@@ -24,7 +23,7 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.add(new AddModuleToProjectAction());
       this.add(new RemoveModuleFromProjectAction());
-      this.add(new AnalyzeClassPathAction());
+      this.add(new AnalyzeClasspath_Action());
       this.addSeparator();
       this.add(new DevKitPropertiesAction());
     } catch (Throwable t) {

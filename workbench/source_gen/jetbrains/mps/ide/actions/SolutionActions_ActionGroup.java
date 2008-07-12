@@ -13,7 +13,6 @@ import jetbrains.mps.ide.actions.project.RemoveModuleFromProjectAction;
 import jetbrains.mps.ide.actions.solution.GenerateTextFromAllModelsInSolutionAction;
 import jetbrains.mps.ide.actions.solution.OptimizeSolutionImportsAction;
 import jetbrains.mps.ide.actions.solution.SolutionPropertiesAction;
-import jetbrains.mps.ide.classpath.AnalyzeClassPathAction;
 import jetbrains.mps.ide.modelchecker.CheckSolutionAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
@@ -40,7 +39,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
       this.add(new GenerateTextFromAllModelsInSolutionAction());
       this.add(new CheckSolutionAction());
       this.add(new OptimizeSolutionImportsAction());
-      this.add(new AnalyzeClassPathAction());
+      this.add(new AnalyzeClasspath_Action());
       this.add(new ShowModuleDependenciesAction());
       this.addSeparator();
       this.add(new MakeModuleAction());

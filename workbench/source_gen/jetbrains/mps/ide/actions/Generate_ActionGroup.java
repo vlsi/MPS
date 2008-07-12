@@ -20,7 +20,6 @@ public class Generate_ActionGroup extends GeneratedActionGroup {
     super("Generate", ID);
     this.setIsAlwaysVisible(true);
     this.setIsInternal(false);
-    this.setMnemonic("n".charAt(0));
     this.setPopup(false);
     try {
       this.add(new SaveTransientModelsAction());

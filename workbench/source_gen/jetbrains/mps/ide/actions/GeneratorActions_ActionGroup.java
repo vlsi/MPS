@@ -6,7 +6,6 @@ import jetbrains.mps.ide.actions.language.DeleteGeneratorAction;
 import jetbrains.mps.ide.actions.language.GenerateTemplateQueriesAction;
 import jetbrains.mps.ide.actions.language.GeneratorPropertiesAction;
 import jetbrains.mps.ide.actions.module.ShowModuleDependenciesAction;
-import jetbrains.mps.ide.modelchecker.CheckGeneratorAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.workbench.action.LabelledAnchor;
@@ -30,7 +29,7 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.add(new DeleteGeneratorAction());
       this.addSeparator();
-      this.add(new CheckGeneratorAction());
+      this.add(new CheckGenerator_Action());
       this.addSeparator();
       this.add(new GeneratorPropertiesAction());
     } catch (Throwable t) {

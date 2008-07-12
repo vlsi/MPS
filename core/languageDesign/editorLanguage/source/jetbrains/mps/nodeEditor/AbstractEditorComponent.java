@@ -15,7 +15,6 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
-import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
@@ -24,12 +23,12 @@ import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
-import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -705,7 +704,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       keyMapActions.setIcon(IconManager.EMPTY_ICON);
 
       for (final EditorCellKeyMapAction action : actions) {
-        MPSActionAdapter mpsAction = new MPSActionAdapter("" + action.getDescriptionText()) {
+        BaseAction mpsAction = new BaseAction("" + action.getDescriptionText()) {
           private EditorCellKeyMapAction myAction = action;
 
           @NotNull
@@ -713,11 +712,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             return action.getKeyStroke();
           }
 
-          public void dodoExecute(@NotNull ActionContext context) {
+          protected void doExecute(AnActionEvent e) {
             myAction.execute(null, editorContext);
-          }
-
-          protected void dodoUpdate(ActionContext context) {
           }
         };
         keyMapActions.add(ActionUtils.createComponent(ActionPlaces.EDITOR_POPUP, mpsAction));
@@ -991,7 +987,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (caretPosition == 0) {
           return EditorCellAction.LEFT_TRANSFORM;
         }
-      }      
+      }
     }
 
 
@@ -2404,7 +2400,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         public void visitPropertyEvent(SModelPropertyEvent event) {
           EditorCell cell = findNodeCell(event.getNode());
           if (cell != null) {
-            synchronizeWithModelWithinBigCell(cell);            
+            synchronizeWithModelWithinBigCell(cell);
           }
         }
 
@@ -2431,7 +2427,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       cell.synchronizeViewWithModel();
     }
   }
-
 
 
   private class MySimpleModelListener extends SModelAdapter {
