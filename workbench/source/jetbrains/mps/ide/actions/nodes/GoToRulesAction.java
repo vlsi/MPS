@@ -12,6 +12,8 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.action.ActionEventData;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.AbstractAction;
@@ -20,21 +22,22 @@ import javax.swing.JLabel;
 import javax.swing.JPopupMenu;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 15.11.2006
- * Time: 13:30:35
- * To change this template use File | Settings | File Templates.
- */
-public class GoToRulesAction extends MPSActionAdapter {
+import com.intellij.openapi.actionSystem.AnActionEvent;
+
+public class GoToRulesAction extends BaseAction {
+  private SNode myNode;
+  private Frame myFrame;
+  private IOperationContext myContext;
+  private EditorCell myCell;
 
   public GoToRulesAction() {
     super("Go To Typesystem Rules");
+    setIsAlwaysVisible(false);
   }
 
   @NotNull
@@ -42,34 +45,38 @@ public class GoToRulesAction extends MPSActionAdapter {
     return "control shift R";
   }
 
-
-  public void dodoUpdate(@NotNull ActionContext context) {
-    boolean enabled = BaseAdapter.fromNode(context.getNode()) instanceof AbstractConceptDeclaration;
-    setEnabled(enabled);
-    setVisible(enabled);
-  }
-
-
-  public void dodoExecute(@NotNull ActionContext context) {
-    final AbstractConceptDeclaration conceptDeclaration = (AbstractConceptDeclaration) BaseAdapter.fromNode(context.getNode());
-    final IOperationContext operationContext = context.getOperationContext();
-    List<SNode> rules = getHelginsRules(conceptDeclaration, operationContext);
+  protected void doExecute(AnActionEvent e) {
+    final AbstractConceptDeclaration conceptDeclaration = (AbstractConceptDeclaration) myNode.getAdapter();
+    List<SNode> rules = getHelginsRules(conceptDeclaration, myContext);
 
     if (rules.size() == 1) {// single rule
-      operationContext.getComponent(MPSEditorOpener.class).openNode(rules.get(0));
+      myContext.getComponent(MPSEditorOpener.class).openNode(rules.get(0));
       return;
     }
 
     // multiple rules
-    MyMenu m = new MyMenu(rules, operationContext);
+    MyMenu m = new MyMenu(rules, myContext);
     int x = 0;
     int y = 0;
-    EditorCell cell = context.get(EditorCell.class);
-    if (cell != null) {
-      x = cell.getX();
-      y = cell.getY();
+    if (myCell != null) {
+      x = myCell.getX();
+      y = myCell.getY();
     }
-    m.show(context.getFrame(), x, y);
+    m.show(myFrame, x, y);
+  }
+
+  protected boolean collectActionData(AnActionEvent e) {
+    ActionEventData data = new ActionEventData(e);
+    myNode = data.getNode();
+    if (myNode==null) return false;
+    if (!(myNode.getAdapter() instanceof AbstractConceptDeclaration)) return false;
+    myFrame = data.getFrame();
+    if (myFrame==null) return false;
+    myContext = data.getOperationContext();
+    if (myContext==null) return false;
+    myCell = data.getEditorCell();
+    if (myCell==null) return false;
+    return true;
   }
 
   public static List<SNode> getHelginsRules(final AbstractConceptDeclaration conceptDeclaration, final IOperationContext operationContext) {
