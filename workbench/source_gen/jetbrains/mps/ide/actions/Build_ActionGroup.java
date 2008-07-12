@@ -19,6 +19,7 @@ public class Build_ActionGroup extends GeneratedActionGroup {
     super("Build", ID);
     this.setIsAlwaysVisible(true);
     this.setIsInternal(false);
+    this.setMnemonic("B".charAt(0));
     this.setPopup(false);
     try {
       this.add(new MakeAllAction());

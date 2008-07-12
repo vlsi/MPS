@@ -65,6 +65,7 @@
     <property name="name" value="TypesystemActions"/>
     <property name="caption" value="Type System"/>
     <property name="isPopup" value="true"/>
+    <property name="mnemonic" value="T"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1205245247513">
       <property name="additionType" value="false"/>

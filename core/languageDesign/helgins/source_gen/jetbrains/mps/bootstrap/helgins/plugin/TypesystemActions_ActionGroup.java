@@ -17,6 +17,7 @@ public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
     super("Type System", ID);
     this.setIsAlwaysVisible(true);
     this.setIsInternal(false);
+    this.setMnemonic("T".charAt(0));
     this.setPopup(true);
     try {
       this.add(new ShowNodeTypeAction());

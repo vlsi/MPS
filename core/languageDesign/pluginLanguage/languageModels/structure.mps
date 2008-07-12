@@ -185,6 +185,11 @@
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1215865999894">
+      <property name="name" value="mnemonic"/>
+      <link role="dataType" targetNodeId="1205676676847" resolveInfo="mnemonic"/>
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
           id="1207149998849">
       <property name="name" value="isAlwaysVisible"/>
       <link role="dataType" targetNodeId="6.1082983657063" resolveInfo="boolean"/>

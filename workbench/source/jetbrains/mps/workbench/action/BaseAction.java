@@ -47,6 +47,14 @@ public abstract class BaseAction extends AnAction {
     myDisableOnNoProject = disableOnNoProject;
   }
 
+  public void setMnemonic(char mnemonic) {
+    String text = getTemplatePresentation().getText();
+    int pos = text.indexOf(mnemonic);
+    StringBuilder newText = new StringBuilder(text);
+    newText.insert(pos, '_');
+    getTemplatePresentation().setText(newText.toString());
+  }
+
   public final void update(final AnActionEvent e) {
     super.update(e);
     ModelAccess.instance().runReadAction(new Runnable() {

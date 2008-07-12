@@ -9,7 +9,7 @@
       <add-to-group anchor="first" group-id="FileMenu"/>
     </group>
 
-    <group id="GenerateMenu" popup="true" text="Generate">
+    <group id="GenerateMenu" popup="true" text="Ge_nerate">
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu"/>
     </group>
 

@@ -786,6 +786,7 @@
     <property name="name" value="ScriptsGlobally"/>
     <property name="caption" value="Scripts"/>
     <property name="isPopup" value="true"/>
+    <property name="mnemonic" value="S"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1215715702634">
       <property name="additionType" value="false"/>

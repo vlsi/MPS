@@ -19,6 +19,7 @@ public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
     super("Scripts", ID);
     this.setIsAlwaysVisible(true);
     this.setIsInternal(false);
+    this.setMnemonic("S".charAt(0));
     this.setPopup(true);
     try {
     } catch (Throwable t) {

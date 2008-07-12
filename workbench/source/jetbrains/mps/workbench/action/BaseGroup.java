@@ -10,7 +10,6 @@ public class BaseGroup extends DefaultActionGroup {
   private String myId = "";
   private boolean myIsInternal = false;
   private boolean myIsAlwaysVisible = true;
-  private Integer myMnemonic = null;
 
   public BaseGroup(String name) {
     this(name, name);
@@ -29,8 +28,12 @@ public class BaseGroup extends DefaultActionGroup {
     myIsInternal = isInternal;
   }
 
-  public void setMnemonic(Integer mnemonic) {
-    myMnemonic = mnemonic;
+  public void setMnemonic(char mnemonic) {
+    String text = getTemplatePresentation().getText();
+    int pos = text.indexOf(mnemonic);
+    StringBuilder newText = new StringBuilder(text);
+    newText.insert(pos, '_');
+    getTemplatePresentation().setText(newText.toString());
   }
 
   public String getId() {
