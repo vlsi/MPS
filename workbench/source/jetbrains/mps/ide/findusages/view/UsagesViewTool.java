@@ -38,10 +38,13 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.action.ActionEventData;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 import org.jdom.Element;
@@ -188,7 +191,8 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
 
   //---FIND USAGES STUFF----
 
-  public void findUsages(final ActionContext context) {
+  public void findUsages(ActionEventData data) {
+    final ActionContext context = ActionUtils.createContext(data);
     new Thread(new Runnable() {
       public void run() {
         final SNode[] semanticNode = new SNode[1];
@@ -197,7 +201,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             semanticNode[0] = context.getNode();
-            operationNode[0] = EditorUtil.getOperationNodeWRTReference(context, semanticNode[0]);
+            operationNode[0] = EditorUtil.getOperationNodeWRTReference(context.get(EditorCell.class), semanticNode[0]);
           }
         });
 
