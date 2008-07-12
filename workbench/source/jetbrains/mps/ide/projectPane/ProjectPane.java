@@ -48,6 +48,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
@@ -1024,17 +1025,21 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
   }
 
+  private AnActionEvent createEvent(DataContext context) {
+    return ActionUtils.createEvent(ActionPlaces.PROJECT_VIEW_POPUP, new Presentation(), context);
+  }
+
   private class MyCopyProvider implements CopyProvider {
     private CopyNodeAction myAction = new CopyNodeAction();
 
     public void performCopy(DataContext dataContext) {
-      myAction.dodoExecute(new ActionContext());
+      myAction.actionPerformed(createEvent(dataContext));
     }
 
     public boolean isCopyEnabled(DataContext dataContext) {
-//      myAction.update(new ActionContext());
-//      return myAction.isEnabled();
-      return true;
+      AnActionEvent event = createEvent(dataContext);
+      myAction.update(event);
+      return event.getPresentation().isEnabled();
     }
   }
 
@@ -1042,7 +1047,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     private PasteNodeAction myAction = new PasteNodeAction();
 
     public void performPaste(DataContext dataContext) {
-      myAction.dodoExecute(new ActionContext());
+      myAction.actionPerformed(createEvent(dataContext));
     }
 
     public boolean isPastePossible(DataContext dataContext) {
@@ -1050,9 +1055,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
 
     public boolean isPasteEnabled(DataContext dataContext) {
-//      myAction.update(new ActionContext());
-//      return myAction.isEnabled();
-      return true;
+      AnActionEvent event = createEvent(dataContext);
+      myAction.update(event);
+      return event.getPresentation().isEnabled();
     }
   }
 
@@ -1060,13 +1065,13 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     private CutNodeAction myAction = new CutNodeAction();
 
     public void performCut(DataContext dataContext) {
-      myAction.dodoExecute(new ActionContext());
+      myAction.actionPerformed(createEvent(dataContext));
     }
 
     public boolean isCutEnabled(DataContext dataContext) {
-      //myAction.update(new ActionContext());
-      //return myAction.isEnabled();
-      return true;
+      AnActionEvent event = createEvent(dataContext);
+      myAction.update(event);
+      return event.getPresentation().isEnabled();
     }
   }
 }

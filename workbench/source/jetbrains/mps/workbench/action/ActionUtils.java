@@ -177,7 +177,15 @@ public class ActionUtils {
 
   public static AnActionEvent createEvent(String place, Presentation presentation, final ActionContext context) {
     DataContext dataContext = createDataContext(context);
-    AnActionEvent event = new AnActionEvent(null, dataContext, place, presentation, ActionManager.getInstance(), 0);
+    return createEvent(place, presentation, dataContext);
+  }
+
+  public static AnActionEvent createEvent(Presentation presentation, final DataContext context) {
+    return createEvent(ActionPlaces.UNKNOWN, presentation, context);
+  }
+
+  public static AnActionEvent createEvent(String place, Presentation presentation, final DataContext context) {
+    AnActionEvent event = new AnActionEvent(null, context, place, presentation, ActionManager.getInstance(), 0);
     return event;
   }
 

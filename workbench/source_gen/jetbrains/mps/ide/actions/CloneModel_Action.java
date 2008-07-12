@@ -22,7 +22,7 @@ public class CloneModel_Action extends GeneratedAction {
 
   public CloneModel_Action() {
     super("Clone Model", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
 

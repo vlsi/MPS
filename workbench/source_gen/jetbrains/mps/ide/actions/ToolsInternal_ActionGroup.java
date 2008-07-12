@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import com.intellij.openapi.actionSystem.Anchor;
 import com.intellij.openapi.actionSystem.Constraints;
-import jetbrains.mps.ide.actions.tools.DumpKeyStrokes;
 import jetbrains.mps.ide.actions.tools.RemoveTransientModulesAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
@@ -22,7 +21,7 @@ public class ToolsInternal_ActionGroup extends GeneratedActionGroup {
     try {
       this.add(new RemoveTransientModulesAction());
       this.addSeparator();
-      this.add(new DumpKeyStrokes());
+      this.add(new DumpKeyStrokes_Action());
       this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

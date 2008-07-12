@@ -24,7 +24,7 @@ public class CloneRoot_Action extends GeneratedAction {
 
   public CloneRoot_Action() {
     super("Clone Root", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
 

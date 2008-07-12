@@ -30,7 +30,7 @@ public class CheckModel_Action extends GeneratedAction {
 
   public CheckModel_Action() {
     super("Check Model", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
 

@@ -28,7 +28,7 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
 
   public GoToConceptDeclaration_Action() {
     super("Go To Concept Declaration", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
 

@@ -867,8 +867,9 @@
                   resolveInfo="RemoveTransientModulesAction"/>
           </node>
           <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1207148387805"/>
-          <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207148387806">
-            <link role="javaClass" targetNodeId="13.~DumpKeyStrokes" resolveInfo="DumpKeyStrokes"/>
+          <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference"
+                id="1215878170807">
+            <link role="action" targetNodeId="1215878121755" resolveInfo="DumpKeyStrokes"/>
           </node>
           <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1207148387807"/>
         </node>
@@ -1112,6 +1113,7 @@
     <property name="name" value="GoToConceptDeclaration"/>
     <property name="iconPath"
               value="${mps_home}\core\languageDesign\structureLanguage\source\jetbrains\mps\bootstrap\structureLanguage\icons\structure.png"/>
+    <property name="isAlwaysVisible" value="true"/>
     <link role="extendedAction" targetNodeId="58.~BaseAction" resolveInfo="BaseAction"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215608712909">
@@ -1237,6 +1239,7 @@
     <property name="package" value="Actions"/>
     <property name="name" value="AddMissingImports"/>
     <property name="caption" value="Fix Missing Imports"/>
+    <property name="isAlwaysVisible" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215867986487">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215867986488">
@@ -1299,6 +1302,7 @@
     <property name="package" value="Actions"/>
     <property name="name" value="AnalyzeClasspath"/>
     <property name="caption" value="Analyze Classpath"/>
+    <property name="isAlwaysVisible" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215868765947">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215868765948">
@@ -1394,6 +1398,7 @@
     <property name="package" value="Actions"/>
     <property name="name" value="CellProperties"/>
     <property name="caption" value="Cell Properties"/>
+    <property name="isAlwaysVisible" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215870087531">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215870087532">
@@ -1448,6 +1453,7 @@
     <property name="name" value="CheckGenerator"/>
     <property name="caption" value="Check Generator"/>
     <property name="outsideCommandExecution" value="true"/>
+    <property name="isAlwaysVisible" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215870501536">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215870501537">
@@ -1656,6 +1662,7 @@
     <property name="name" value="CheckLanguage"/>
     <property name="caption" value="Check Language"/>
     <property name="outsideCommandExecution" value="true"/>
+    <property name="isAlwaysVisible" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215871905656">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215871905657">
@@ -1864,6 +1871,7 @@
     <property name="name" value="CheckSolution"/>
     <property name="caption" value="Check Solution"/>
     <property name="outsideCommandExecution" value="true"/>
+    <property name="isAlwaysVisible" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215873138430">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215873138431">
@@ -2072,6 +2080,7 @@
     <property name="name" value="CheckModel"/>
     <property name="caption" value="Check Model"/>
     <property name="outsideCommandExecution" value="true"/>
+    <property name="isAlwaysVisible" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215873275290">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215873275291">
@@ -2283,6 +2292,7 @@
     <property name="outsideCommandExecution" value="true"/>
     <property name="name" value="CleanAllModules"/>
     <property name="caption" value="Clean All Modules"/>
+    <property name="isAlwaysVisible" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215873654620">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215873654621">
@@ -2484,6 +2494,7 @@
     <property name="outsideCommandExecution" value="true"/>
     <property name="name" value="CleanModule"/>
     <property name="caption" value="Clean"/>
+    <property name="isAlwaysVisible" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215873952434">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215873952435">
@@ -2728,6 +2739,7 @@
     <property name="outsideCommandExecution" value="true"/>
     <property name="name" value="CleanProject"/>
     <property name="caption" value="Clean"/>
+    <property name="isAlwaysVisible" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215874097591">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215874097592">
@@ -2998,6 +3010,7 @@
     <property name="name" value="CloneModel"/>
     <property name="caption" value="Clone Model"/>
     <property name="outsideCommandExecution" value="true"/>
+    <property name="isAlwaysVisible" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215874656795">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215874656796">
@@ -3102,6 +3115,7 @@
     <property name="package" value="Actions"/>
     <property name="name" value="CloneRoot"/>
     <property name="caption" value="Clone Root"/>
+    <property name="isAlwaysVisible" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215874930421">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215874930422">
@@ -3227,6 +3241,7 @@
     <property name="outsideCommandExecution" value="true"/>
     <property name="iconPath"
               value="${mps_home}\workbench\source\jetbrains\mps\ide\projectPane\nodes\languageProperties.png"/>
+    <property name="isAlwaysVisible" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215875422459">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215875422460">
@@ -3405,6 +3420,7 @@
     <property name="outsideCommandExecution" value="true"/>
     <property name="iconPath"
               value="${mps_home}\workbench\source\jetbrains\mps\ide\projectPane\nodes\languageProperties.png"/>
+    <property name="isAlwaysVisible" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215875847681">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215875847682">
@@ -3604,6 +3620,24 @@
                       resolveInfo="getModule"/>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215878121755">
+    <property name="package" value="Actions"/>
+    <property name="name" value="DumpKeyStrokes"/>
+    <property name="caption" value="Dump KeyStrokes"/>
+    <property name="isAlwaysVisible" value="true"/>
+    <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
+          id="1215878121756">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215878121757">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215878203387">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215878204639">
+            <link role="baseMethodDeclaration" targetNodeId="80.~KeyStrokesUtil.dumpKeyStrokes():java.lang.String"
+                  resolveInfo="dumpKeyStrokes"/>
+            <link role="classConcept" targetNodeId="80.~KeyStrokesUtil" resolveInfo="KeyStrokesUtil"/>
           </node>
         </node>
       </node>

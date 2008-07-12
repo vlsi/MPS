@@ -31,7 +31,7 @@ public class CleanProject_Action extends GeneratedAction {
 
   public CleanProject_Action() {
     super("Clean", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
 

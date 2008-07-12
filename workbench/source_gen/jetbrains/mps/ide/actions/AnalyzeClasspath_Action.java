@@ -22,7 +22,7 @@ public class AnalyzeClasspath_Action extends GeneratedAction {
 
   public AnalyzeClasspath_Action() {
     super("Analyze Classpath", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
 
