@@ -18,7 +18,9 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <maxImportIndex value="0" />
+  <maxImportIndex value="2" />
+  <import index="1" modelUID="java.util.regex@java_stub" version="-1" />
+  <import index="2" modelUID="java.nio@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1210841363259">
     <property name="name" value="c2" />
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1210841398680">
@@ -35,7 +37,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1210841363260" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1210841413989">
-    <property name="name" value="c1" />
+    <property name="name" value="cssssssssssssssssssssssssssssssssssssssssss1" />
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1210841423933">
       <property name="name" value="f" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1210841423934" />
