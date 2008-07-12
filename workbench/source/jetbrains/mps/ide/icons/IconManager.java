@@ -20,6 +20,7 @@ import java.awt.Component;
 import java.awt.Graphics;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -100,7 +101,9 @@ public class IconManager {
       } else {
         Class icons = language.getClass(className);
         if (icons != null) {
-          Icon icon = (Icon) icons.getMethod("getLanguageIcon").invoke(null);
+          Method method = icons.getMethod("getLanguageIcon");
+          if (method == null) return EMPTY_ICON;
+          Icon icon = (Icon) method.invoke(null);
           if (icon != null) return icon;
         }
       }
