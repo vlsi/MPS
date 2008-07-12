@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -15,9 +16,14 @@ import java.awt.*;
  */
 public class CellLayout_Indent extends AbstractCellLayout {
 
+  private static final int INDENT = 20;
   private static Logger LOG = Logger.getLogger(CellLayout_Indent.class);
 
+  public static final boolean DO_INDENT_EVERYWHERE = false;
+
   public void doLayout(EditorCell_Collection editorCells) {
+    _doLayout(editorCells);
+
   }
 
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
@@ -38,5 +44,31 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
   public String toString() {
     return "Indent";
+  }
+
+
+  public static void _doLayout(EditorCell_Collection editorCells) {
+    EditorCell[] cells = editorCells.getCells();
+    final int x = editorCells.getX();
+    final int y = editorCells.getY();
+    int width = 0;
+    int height = 0;
+
+    for (EditorCell editorCell : cells) {
+      if (editorCell.getStyle().get(StyleAttributes.INDENTED)) {
+        width = INDENT;
+        height += 15;
+      }
+      else if(editorCell.getStyle().get(StyleAttributes.NEXT_LINE)) {
+        width = 0;
+        height += 15;
+      }
+      editorCell.setX(x + width);
+      editorCell.setY(y + height);
+      editorCell.relayout();
+      width += editorCell.getWidth();
+    }
+    editorCells.setWidth(width);
+    editorCells.setHeight(15+height);
   }
 }

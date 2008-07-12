@@ -51,6 +51,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell6031_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6031_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENTED, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell6031_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -115,6 +124,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENTED, true);
         }
 
       };
@@ -141,6 +151,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENTED, true);
         }
 
       };
@@ -167,6 +178,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENTED, true);
         }
 
       };
@@ -189,6 +201,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell6031_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6031_05");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENTED, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_staticMethodRefNodeListCell6031_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -263,6 +284,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell6031_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6031_06");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENTED, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_staticFieldRefNodeListCell6031_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -281,6 +311,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell6031_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6031_010");
     BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.NEXT_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell6031_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -289,6 +328,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENTED, true);
         }
 
       };
@@ -459,6 +499,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell6031_014(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6031_014");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENTED, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_staticInnerClassifiersRefNodeListCell6031_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -556,6 +605,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENTED, true);
         }
 
       };
@@ -590,6 +640,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENTED, true);
         }
 
       };

@@ -26,6 +26,11 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   }
 
   public void doLayout(EditorCell_Collection editorCells) {
+    if(CellLayout_Indent.DO_INDENT_EVERYWHERE) {
+      CellLayout_Indent._doLayout(editorCells);
+      return;
+    }
+
     if (editorCells.isFolded()) {
       Font font = EditorSettings.getInstance().getDefaultEditorFont();
       FontMetrics metrics = editorCells.getEditor().getFontMetrics(font);

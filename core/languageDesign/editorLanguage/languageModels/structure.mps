@@ -3031,5 +3031,21 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215855821528">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="NextLineStyleSheetItem" />
+    <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215855821529">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215855821530">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.NEXT_LINE" resolveInfo="NEXT_LINE" />
+      </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215855821531">
+      <property name="value" value="nextLine" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
