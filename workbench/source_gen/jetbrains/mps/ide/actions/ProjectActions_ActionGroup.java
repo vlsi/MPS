@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.ide.actions.make.MakeProjectAction;
 import jetbrains.mps.ide.actions.make.RebuildProjectAction;
-import jetbrains.mps.ide.actions.project.OptimizeProjectImportsAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.workbench.action.LabelledAnchor;
@@ -26,7 +25,7 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
       this.add(new RebuildProjectAction());
       this.add(new CleanProject_Action());
       this.addSeparator();
-      this.add(new OptimizeProjectImportsAction());
+      this.add(new OptimizeProjectImports_Action());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
