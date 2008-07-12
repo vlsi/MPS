@@ -49,7 +49,8 @@ public abstract class BaseAction extends AnAction {
 
   public void setMnemonic(char mnemonic) {
     String text = getTemplatePresentation().getText();
-    int pos = text.indexOf(mnemonic);
+    int pos = text.indexOf(Character.toUpperCase(mnemonic));
+    if (pos == -1) pos = text.indexOf(Character.toLowerCase(mnemonic));
     StringBuilder newText = new StringBuilder(text);
     newText.insert(pos, '_');
     getTemplatePresentation().setText(newText.toString());
