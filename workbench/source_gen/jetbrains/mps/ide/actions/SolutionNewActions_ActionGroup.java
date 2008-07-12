@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import com.intellij.openapi.actionSystem.Anchor;
 import com.intellij.openapi.actionSystem.Constraints;
-import jetbrains.mps.ide.actions.model.NewModelAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -20,7 +19,7 @@ public class SolutionNewActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      this.add(new NewModelAction());
+      this.add(new NewModel_Action());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
