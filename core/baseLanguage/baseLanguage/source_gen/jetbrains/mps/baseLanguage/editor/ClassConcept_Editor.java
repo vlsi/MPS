@@ -55,6 +55,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENTED, true);
+          this.set(StyleAttributes.NEXT_LINE, true);
         }
 
       };

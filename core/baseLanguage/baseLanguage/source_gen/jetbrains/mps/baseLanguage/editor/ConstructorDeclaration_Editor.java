@@ -48,6 +48,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.NEXT_LINE, true);
         }
 
       };

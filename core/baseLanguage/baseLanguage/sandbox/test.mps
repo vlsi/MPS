@@ -1375,6 +1375,46 @@
               <link role="variableDeclaration" targetNodeId="1215494764656" resolveInfo="aaa" />
             </node>
           </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1215949038381">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215949038382">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215949044462">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215949044463">
+                  <property name="name" value="a" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215949044464" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="1215947500720">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215947500721">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215947513008">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215947513009">
+                <property name="name" value="i" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215947513010" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215947516450">
+                  <property name="value" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1215947500723">
+            <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215947500726">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215948232396">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215948232397">
+                  <property name="name" value="bbbvb" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215948232398" />
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215948237885">
+                    <property name="value" value="0" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215947547514">
+              <property name="name" value="aaa" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215947550345" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

@@ -24,6 +24,15 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell12909_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell12909_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.NEXT_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell12909_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -58,6 +67,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENTED, true);
         }
 
       };
@@ -74,6 +84,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.NEXT_LINE, true);
         }
 
       };

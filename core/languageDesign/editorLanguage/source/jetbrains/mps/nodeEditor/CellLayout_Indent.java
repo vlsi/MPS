@@ -52,30 +52,30 @@ public class CellLayout_Indent extends AbstractCellLayout {
     final int x = editorCells.getX();
     final int y = editorCells.getY();
     int currentLineWidth = 0;
-    int cellsWidth = 0;
-    int cellsHeight = 0;
+    int totalWidth = 0;
+    int totalHeight = 0;
     int currentLineHeight = 0;
 
     for (EditorCell editorCell : cells) {
       if (editorCell.getStyle().get(StyleAttributes.INDENTED)) {
         currentLineWidth = INDENT;
-        cellsHeight += currentLineHeight;
+        totalHeight += currentLineHeight;
         currentLineHeight=0;
       }
       else if(editorCell.getStyle().get(StyleAttributes.NEXT_LINE)) {
         currentLineWidth = 0;
-        cellsHeight += currentLineHeight;
+        totalHeight += currentLineHeight;
         currentLineHeight=0;
       }
       editorCell.setX(x + currentLineWidth);
-      editorCell.setY(y + cellsHeight);
+      editorCell.setY(y + totalHeight);
       editorCell.relayout();
 //      System.out.println("EditorCell [" + editorCell.getX()+","+editorCell.getY()+","+editorCell.getWidth()+","+editorCell.getHeight()+"] node:"+editorCell.getSNode().getConceptShortName()+" cell:"+ editorCell.toString());
       currentLineHeight = Math.max(currentLineHeight, editorCell.getHeight());
       currentLineWidth += editorCell.getWidth();
-      cellsWidth = Math.max(cellsWidth, currentLineWidth);
+      totalWidth = Math.max(totalWidth, currentLineWidth);
     }
-    editorCells.setWidth(cellsWidth);
-    editorCells.setHeight(cellsHeight+currentLineHeight);
+    editorCells.setWidth(totalWidth);
+    editorCells.setHeight(totalHeight+currentLineHeight);
   }
 }

@@ -22,6 +22,15 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell17987_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell17987_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.NEXT_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_expressionRefNodeCell17987_0(EditorCell editorCell, SNode node, EditorContext context) {

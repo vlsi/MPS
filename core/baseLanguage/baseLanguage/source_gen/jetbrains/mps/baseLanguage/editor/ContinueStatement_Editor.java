@@ -37,6 +37,15 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell4891_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4891_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.NEXT_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell4891_0(EditorCell editorCell, SNode node, EditorContext context) {
