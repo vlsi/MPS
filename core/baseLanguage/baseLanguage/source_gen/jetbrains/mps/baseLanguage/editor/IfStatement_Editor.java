@@ -117,15 +117,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ifTrueRefNodeCell17307_0(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENTED, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_AlternationCell17307_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -138,6 +129,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.NEXT_LINE, true);
         }
 
       };
@@ -151,7 +143,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.NEXT_LINE, true);
         }
 
       };

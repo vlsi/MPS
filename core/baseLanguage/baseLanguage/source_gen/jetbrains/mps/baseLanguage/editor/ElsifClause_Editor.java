@@ -29,6 +29,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.NEXT_LINE, true);
         }
 
       };

@@ -2408,9 +2408,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1215011029445" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1177555034678">
           <link role="relationDeclaration" targetNodeId="17.1068580123161" />
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.IndentedStyleSheetItem" id="1215673889528">
-            <property name="flag" value="true" />
-          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996305">
           <property name="flag" value="false" />
@@ -2562,9 +2559,6 @@
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996545">
               <property name="flag" value="false" />
             </node>
-            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleSheetItem" id="1215865928982">
-              <property name="flag" value="true" />
-            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177555034720">
             <property name="name" value="ifFalseBranch" />
@@ -2622,6 +2616,9 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995734">
             <property name="flag" value="false" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleSheetItem" id="1215937651828">
+            <property name="flag" value="true" />
           </node>
         </node>
         <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1177555034734">
@@ -2717,6 +2714,9 @@
       </node>
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215092480198">
         <property name="value" value="0.0" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleSheetItem" id="1215938715141">
+        <property name="flag" value="true" />
       </node>
     </node>
   </node>
@@ -15464,6 +15464,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994808">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleSheetItem" id="1215935787125">
+          <property name="flag" value="true" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206061099778">
