@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.ide.actions.cells.ShowCellInCellExplorerAction;
 import jetbrains.mps.ide.actions.nodes.HighlightCellDependenciesAction;
-import jetbrains.mps.ide.actions.nodes.TestNodePathAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -20,7 +19,7 @@ public class EditorInternal_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(true);
     this.setPopup(true);
     try {
-      this.add(new TestNodePathAction());
+      this.add(new TestNodePath_Action());
       this.add(new CellProperties_Action());
       this.add(new ShowCellInCellExplorerAction());
       this.addSeparator();

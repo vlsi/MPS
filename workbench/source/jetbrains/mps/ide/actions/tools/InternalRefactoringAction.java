@@ -1,17 +1,16 @@
 package jetbrains.mps.ide.actions.tools;
 
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.baseLanguage.structure.EnumConstantReference;
 import jetbrains.mps.baseLanguage.structure.StaticFieldReference;
 import jetbrains.mps.baseLanguage.structure.StaticMethodCall;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.workbench.action.BaseAction;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -19,14 +18,14 @@ import java.util.List;
 /**
  * serves as template: just loads all models from MPSFileModelDescriptor and "process" them.
  */
-public class InternalRefactoringAction extends MPSActionAdapter {
+public class InternalRefactoringAction extends BaseAction {
   public static final boolean SHOW = false;
 
   public InternalRefactoringAction() {
     super("... refactor static members ...");
   }
 
-  public void dodoExecute(@NotNull ActionContext context) {
+  protected void doExecute(AnActionEvent e) {
     System.out.println(" -- load models -- ");
     List<SModel> models = loadAllModels();
 
@@ -36,7 +35,6 @@ public class InternalRefactoringAction extends MPSActionAdapter {
       processModel(model);
     }
   }
-
 
   /**
    * load all that has MPSFileModelDescriptor
