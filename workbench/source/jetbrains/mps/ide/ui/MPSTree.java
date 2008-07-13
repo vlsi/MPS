@@ -160,9 +160,12 @@ public abstract class MPSTree extends DnDAwareTree {
           ActionUtils.updateGroup(actionGroup, event);
           final AnAction a = findAction(e, dataContext, actionGroup, eventKeyStroke);
           if (a == null) continue;
-          a.actionPerformed(event);
-          e.consume();
-          return;
+          a.update(event);
+          if (event.getPresentation().isEnabled()) {
+            a.actionPerformed(event);
+            e.consume();
+            return;
+          }
         }
       }
 

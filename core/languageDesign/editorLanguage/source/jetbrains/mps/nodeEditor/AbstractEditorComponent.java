@@ -1471,7 +1471,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void goByFirstReference() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        new GoByFirstReferenceAction().actionPerformed(ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP,createActionContext()));
+        GoByFirstReferenceAction action = new GoByFirstReferenceAction();
+        AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, createActionContext());
+        action.update(event);
+        if (event.getPresentation().isEnabled()) {
+          action.actionPerformed(event);
+        }
       }
     });
   }
@@ -2466,12 +2471,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           AnActionEvent event = ActionUtils.createEvent(myPlace, context);
 
           action.update(event);
-          if (!event.getPresentation().isVisible() || !event.getPresentation().isEnabled()) {
-            continue;
+          if (event.getPresentation().isEnabled()) {
+            action.actionPerformed(event);
+            return;
           }
-
-          action.actionPerformed(event);
-          return;
         }
       }
     }

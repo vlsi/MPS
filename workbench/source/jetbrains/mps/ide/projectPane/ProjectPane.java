@@ -1033,7 +1033,10 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     private CopyNodeAction myAction = new CopyNodeAction();
 
     public void performCopy(DataContext dataContext) {
-      myAction.actionPerformed(createEvent(dataContext));
+      AnActionEvent event = createEvent(dataContext);
+      myAction.update(event);
+      assert event.getPresentation().isEnabled();
+      myAction.actionPerformed(event);
     }
 
     public boolean isCopyEnabled(DataContext dataContext) {
@@ -1047,7 +1050,10 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     private PasteNodeAction myAction = new PasteNodeAction();
 
     public void performPaste(DataContext dataContext) {
-      myAction.actionPerformed(createEvent(dataContext));
+      AnActionEvent event = createEvent(dataContext);
+      myAction.update(event);
+      assert event.getPresentation().isEnabled();
+      myAction.actionPerformed(event);
     }
 
     public boolean isPastePossible(DataContext dataContext) {
@@ -1065,7 +1071,10 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     private CutNodeAction myAction = new CutNodeAction();
 
     public void performCut(DataContext dataContext) {
-      myAction.actionPerformed(createEvent(dataContext));
+      AnActionEvent event = createEvent(dataContext);
+      myAction.update(event);
+      assert event.getPresentation().isEnabled();
+      myAction.actionPerformed(event);
     }
 
     public boolean isCutEnabled(DataContext dataContext) {
