@@ -10,11 +10,9 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 
-import javax.swing.JPopupMenu;
 import java.util.List;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.ActionPlaces;
 
 /**
  * Created by IntelliJ IDEA.
@@ -59,8 +57,8 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     return myLanguage;
   }
 
-  public JPopupMenu getQuickCreatePopupMenu() {
-    return ActionUtils.createPopup(ActionPlaces.PROJECT_VIEW_POPUP,ProjectPane.LANGUAGE_NEW_ACTIONS);
+  protected ActionGroup getQuickCreateGroup(boolean plain) {
+    return ActionUtils.getGroup(ProjectPane.LANGUAGE_NEW_ACTIONS);
   }
 
   public ActionGroup getActionGroup() {

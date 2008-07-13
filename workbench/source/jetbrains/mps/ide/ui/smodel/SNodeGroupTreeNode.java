@@ -2,16 +2,10 @@ package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseAction;
 
-import javax.swing.JPopupMenu;
 import java.awt.Color;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.ActionPlaces;
 
 public class SNodeGroupTreeNode extends TextTreeNode {
 
@@ -43,8 +37,8 @@ public class SNodeGroupTreeNode extends TextTreeNode {
     setColor(Color.BLACK);
   }
 
-  public JPopupMenu getQuickCreatePopupMenu() {
-    return ActionUtils.createPopup(ActionPlaces.PROJECT_VIEW_POPUP,getActionGroup());
+  protected ActionGroup getQuickCreateGroup(boolean plain) {
+    return getActionGroup();
   }
 
   public boolean hasErrors() {

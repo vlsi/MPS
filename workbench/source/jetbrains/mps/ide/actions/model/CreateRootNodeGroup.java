@@ -25,6 +25,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
   private Set<String> myAllowedLanguages = null;
   private String myPackage;
+  private boolean myPlain = false;
 
   public CreateRootNodeGroup() {
     super("Create Root Node");
@@ -41,6 +42,12 @@ public class CreateRootNodeGroup extends BaseGroup {
   public CreateRootNodeGroup(String pack) {
     this();
     myPackage = pack;
+    setPopup(true);
+  }
+
+  public CreateRootNodeGroup(String pack, boolean plain) {
+    this(pack);
+    myPlain = plain;
     setPopup(true);
   }
 
@@ -66,17 +73,28 @@ public class CreateRootNodeGroup extends BaseGroup {
 
       String name = language.getNamespace();
       Icon icon = IconManager.getIconFor(language.getNamespace());
-      BaseGroup langRootsGroup = new BaseGroup(name, name, icon);
+      BaseGroup langRootsGroup;
 
-      langRootsGroup.setPopup(true);
+      if (! myPlain) {
+        langRootsGroup = new BaseGroup(name, name, icon);
+        langRootsGroup.setPopup(true);
+      } else {
+        langRootsGroup = this;
+      }
 
+      boolean hasChildren = false;
       for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
         if (conceptDeclaration.getRootable()) {
           langRootsGroup.add(newRootNodeAction(new SNodePointer(conceptDeclaration), data.getModelDescriptor()));
+          hasChildren = true;
         }
       }
-      if (langRootsGroup.getChildren(null).length > 0) {
-        this.add(langRootsGroup);
+      if (hasChildren) {
+        if (! myPlain) {
+          this.add(langRootsGroup);
+        } else {
+          this.addSeparator();
+        }
       }
     }
 

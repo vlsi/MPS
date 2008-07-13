@@ -4,8 +4,8 @@ import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
@@ -22,7 +22,11 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.ui.popup.ListPopup;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.ide.DataManager;
+import com.intellij.ide.IdeBundle;
 
 /**
  * @author Kostik
@@ -88,14 +92,46 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
+    JPopupMenu popupMenu = null;
+    ActionGroup actionGroup = getQuickCreateGroup(false);
+    if (actionGroup != null) {
+      popupMenu = ActionUtils.createPopup(ActionPlaces.PROJECT_VIEW_POPUP, actionGroup);
+    }
+    return popupMenu;
+  }
+
+  protected ActionGroup getQuickCreateGroup(boolean plain) {
     return null;
   }
 
   public void doubleClick() {
   }
 
-  public void keyPressed(KeyEvent keyEvent) {
-    if (keyEvent.isAltDown() && (
+  public void keyPressed(final KeyEvent keyEvent) {
+    if (keyEvent.isAltDown() && keyEvent.isControlDown() && (
+      (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
+        (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP))) {
+      final DataContext dataContext = DataManager.getInstance().getDataContext(this.getTree());
+      ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
+        public ListPopup compute() {
+          ActionGroup group = getQuickCreateGroup(true);
+          ListPopup popup = null;
+          if (group != null) {
+            Presentation presentation = new Presentation();
+            AnActionEvent event = new AnActionEvent(keyEvent, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
+            ActionUtils.updateGroup(group, event);
+            popup = JBPopupFactory.getInstance()
+              .createActionGroupPopup(IdeBundle.message("title.popup.new.element"),
+                                      group,
+                                      dataContext,
+                                      JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
+                                      false);
+          }
+          return popup;
+        }
+      });
+      popup.showInBestPositionFor(dataContext);
+    } else if (keyEvent.isAltDown() && (
       (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
         (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP))) {
       JPopupMenu popupMenu = ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {

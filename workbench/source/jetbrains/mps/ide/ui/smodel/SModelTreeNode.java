@@ -318,6 +318,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return createMenu(context, group);
   }
 
+  protected CreateRootNodeGroup getQuickCreateGroup(boolean plain) {
+    return new CreateRootNodeGroup(null, plain);  
+  }
+
   public String calculateText() {
     SModelUID uid;
 
@@ -803,6 +807,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       });
 
       return group;
+    }
+
+    protected ActionGroup getQuickCreateGroup(boolean plain) {
+      return new CreateRootNodeGroup(getPackage(), plain);
     }
 
     public IOperationContext getOperationContext() {
