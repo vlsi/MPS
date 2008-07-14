@@ -128,25 +128,27 @@ public class EditorManager {
   /*package*/ EditorCell createEditorCell(EditorContext context, List<SModelEvent> events, ReferencedNodeContext refContext) {
     SNode node = refContext.getNode();
 
-    for (SNode attribute : node.getNodeAttributes()) {
-      //if the whole node has attribute
-      if (attribute != null) {
-        //if creating this cell for this attribute for the first time
-        if (!myAttributesStack.contains(attribute)) {
-          myAttributesStack.push(attribute);
-          EditorCell nodeCell = createEditorCell(context, events, refContext.contextWithOneMoreAttribute(attribute));
-          EditorCell result;
-          // hack: exclude link/property attributes
-          // imho node.getNodeAttributes() should return 'node attributes' only
-          String role_ = attribute.getRole_();
-          if (AttributesRolesUtil.isLinkAttributeRole(role_) || AttributesRolesUtil.isPropertyAttributeRole(role_)) {
-            result = nodeCell;
-          } else {
-            result = createNodeAttributeCell(context, attribute, nodeCell);
+    if (!myCreatingInspectedCell) {
+      for (SNode attribute : node.getNodeAttributes()) {
+        //if the whole node has attribute
+        if (attribute != null) {
+          //if creating this cell for this attribute for the first time
+          if (!myAttributesStack.contains(attribute)) {
+            myAttributesStack.push(attribute);
+            EditorCell nodeCell = createEditorCell(context, events, refContext.contextWithOneMoreAttribute(attribute));
+            EditorCell result;
+            // hack: exclude link/property attributes
+            // imho node.getNodeAttributes() should return 'node attributes' only
+            String role_ = attribute.getRole_();
+            if (AttributesRolesUtil.isLinkAttributeRole(role_) || AttributesRolesUtil.isPropertyAttributeRole(role_)) {
+              result = nodeCell;
+            } else {
+              result = createNodeAttributeCell(context, attribute, nodeCell);
+            }
+            SNode poppedAttribute = myAttributesStack.pop();
+            LOG.assertLog(poppedAttribute == attribute);
+            return result;
           }
-          SNode poppedAttribute = myAttributesStack.pop();
-          LOG.assertLog(poppedAttribute == attribute);
-          return result;
         }
       }
     }
