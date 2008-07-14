@@ -38,14 +38,6 @@ public class BaseMethodDeclaration_Behavior {
     return result.toString();
   }
 
-  public static String virtual_getCompactPresentation_1214568609321(SNode thisNode) {
-    String name = SPropertyOperations.getString(thisNode, "name");
-    if (name != null) {
-      return name;
-    }
-    return "<no name>";
-  }
-
   public static String call_getParametersPresentation_1213877350304(SNode thisNode) {
     StringBuilder result = new StringBuilder();
     result.append("(");

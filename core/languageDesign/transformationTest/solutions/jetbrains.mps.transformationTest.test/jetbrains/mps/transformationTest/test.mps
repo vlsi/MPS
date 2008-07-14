@@ -13,9 +13,11 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <maxImportIndex value="2" />
@@ -29,10 +31,19 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1210841400248" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1210841388926">
-      <property name="name" value="m" />
+      <property name="name" value="abc" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1210841388927" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1210841388928" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210841388929" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210841388929">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216060892549">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216060892550">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216060892551">
+              <link role="baseMethodDeclaration" targetNodeId="1210841388926" resolveInfo="abc" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1216060892552" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1210841363260" />
   </node>
@@ -43,13 +54,13 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1210841423934" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1210841426800" />
     </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1210841420752">
-      <property name="name" value="m" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1210841420753" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1210841420754" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210841420755" />
-    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1210841413990" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1216060197773">
+      <property name="name" value="fib" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1216060197774" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216060197775" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216060197776" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.Interface" id="1210843559643">
     <property name="name" value="i1" />

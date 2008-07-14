@@ -1311,20 +1311,6 @@ public final class SNode {
     }
   }
 
-  /**
-   * Presentation which is used in smart reference for completion
-   * For example, when we complete a method, we don't want to use its full signature
-   * but want to show it in completion menu
-   */
-  public String getCompactPresentation() {
-    try {
-      return BaseConcept_Behavior.call_getCompactPresentation_1214568609321(this);
-    } catch (Throwable t) {
-      LOG.error(t);
-      return "[can't calculate compact presentation : " + t.getMessage() + "]";
-    }
-  }
-
   public String toString() {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();

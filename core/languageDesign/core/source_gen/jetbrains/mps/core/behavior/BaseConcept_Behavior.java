@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseConcept_Behavior {
   public static Class[] PARAMETERS_1213877396640 = {SNode.class};
-  public static Class[] PARAMETERS_1214568609321 = {SNode.class};
   public static Class[] PARAMETERS_1213877396707 = {SNode.class};
 
   public static void init(SNode thisNode) {
@@ -44,10 +43,6 @@ public class BaseConcept_Behavior {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name");
   }
 
-  public static String virtual_getCompactPresentation_1214568609321(SNode thisNode) {
-    return BaseConcept_Behavior.call_getPresentation_1213877396640(thisNode);
-  }
-
   public static boolean virtual_useHorizontalInspector_1213877396707(SNode thisNode) {
     return false;
   }
@@ -56,20 +51,12 @@ public class BaseConcept_Behavior {
     return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getPresentation_1213877396640", PARAMETERS_1213877396640);
   }
 
-  public static String call_getCompactPresentation_1214568609321(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getCompactPresentation_1214568609321", PARAMETERS_1214568609321);
-  }
-
   public static boolean call_useHorizontalInspector_1213877396707(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_useHorizontalInspector_1213877396707", PARAMETERS_1213877396707);
   }
 
   public static String callSuper_getPresentation_1213877396640(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_1213877396640);
-  }
-
-  public static String callSuper_getCompactPresentation_1214568609321(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getCompactPresentation_1214568609321", PARAMETERS_1214568609321);
   }
 
   public static boolean callSuper_useHorizontalInspector_1213877396707(SNode thisNode, String callerConceptFqName) {
