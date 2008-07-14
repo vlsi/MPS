@@ -2,6 +2,7 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
 import javax.swing.event.TableModelListener;
@@ -11,6 +12,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.awt.*;
+
+import com.intellij.openapi.wm.impl.CommandProcessor;
 
 /**
  * Created by IntelliJ IDEA.
@@ -104,31 +107,39 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "Add All", defaultButton = true)
   public void buttonAddAll() {
-    for (SModelUID imported : myImports) {
-      myModel.addImportedModel(imported);
-    }
-    for (String language : myLanguages) {
-      myModel.addLanguage(language);
-    }
-    for (String devkit : myDevKits) {
-      myModel.addNewlyImportedDevKit(devkit);
-    }
-    myCanceled = false;
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        for (SModelUID imported : myImports) {
+          myModel.addImportedModel(imported);
+        }
+        for (String language : myLanguages) {
+          myModel.addLanguage(language);
+        }
+        for (String devkit : myDevKits) {
+          myModel.addNewlyImportedDevKit(devkit);
+        }
+        myCanceled = false;
+      }
+    });
     dispose();
   }
 
   @BaseDialog.Button(position = 1, name = "Add Selected")
   public void buttonAddSelected() {
-    for (SModelUID imported : myImportsToAdd) {
-      myModel.addImportedModel(imported);
-    }
-    for (String language : myLanguagesToAdd) {
-      myModel.addLanguage(language);
-    }
-    for (String devKit : myDevKitsToAdd) {
-      myModel.addNewlyImportedDevKit(devKit);
-    }
-    myCanceled = false;
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        for (SModelUID imported : myImportsToAdd) {
+          myModel.addImportedModel(imported);
+        }
+        for (String language : myLanguagesToAdd) {
+          myModel.addLanguage(language);
+        }
+        for (String devKit : myDevKitsToAdd) {
+          myModel.addNewlyImportedDevKit(devKit);
+        }
+        myCanceled = false;
+      }
+    });
     dispose();
   }
 

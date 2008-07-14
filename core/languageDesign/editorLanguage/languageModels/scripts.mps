@@ -1945,11 +1945,12 @@
   </node>
   <visible index="4" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1216026957730">
-    <property name="name" value="MigrationScript1" />
-    <property name="category" value="editor" />
-    <property name="title" value="title" />
+    <property name="category" value="structure" />
+    <property name="title" value="migrate enum members" />
+    <property name="migrationFromBuild" value="822" />
+    <property name="name" value="Migrate enumeration members" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1216026994262">
-      <property name="description" value="statement with statement list parent" />
+      <property name="description" value="migrate enum members" />
       <link role="affectedInstanceConcept" targetNodeId="4v.1083171877298" resolveInfo="EnumerationMemberDeclaration" />
       <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1216026994263">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216026994264">
