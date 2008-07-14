@@ -983,6 +983,29 @@
         <property name="name" value="T22" />
       </node>
     </node>
+    <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1216060975811">
+      <property name="name" value="FF" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216060975812" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1216060975813">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1216060975814" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216060975815" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216060975816">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216060991703">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216060991704">
+              <property name="name" value="o" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216060991705">
+                <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216060995613">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216060995614">
+                  <link role="baseMethodDeclaration" targetNodeId="1216060975813" resolveInfo="FF" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
