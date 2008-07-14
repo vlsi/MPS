@@ -24,10 +24,10 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
 
         result.append("model = ").append(node.getModel().getUID()).append("\n");
         result.append("concept = ").append(NameUtil.shortNameFromLongName(node.getConceptFqName())).append("\n");
-        result.append("language = ").append(node.getLanguageNamespace());
-        result.append("ID = ").append(node.getId());
+        result.append("language = ").append(node.getLanguageNamespace()).append("\n");
+        result.append("ID = ").append(node.getId()).append("\n");
 
-        result.append("\n\nReferences:");
+        result.append("\nReferences:");
         for (SReference ref : node.getReferences()) {
           SNode target = ref.getTargetNode();
 
