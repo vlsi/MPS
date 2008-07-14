@@ -510,8 +510,7 @@
       <property name="internalValue" value="false" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1083928804393">
-      <property name="name" value="none" />
-      <property name="externalValue" value="&lt;default&gt;" />
+      <property name="externalValue" value="none" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1083952545109">
@@ -519,8 +518,7 @@
     <link role="defaultMember" targetNodeId="1083952545110" resolveInfo="none" />
     <link role="memberDataType" targetNodeId="3.1082983041843" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1083952545110">
-      <property name="name" value="none" />
-      <property name="externalValue" value="&lt;default&gt;" />
+      <property name="externalValue" value="none" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1083952545111">
       <property name="name" value="red" />
@@ -548,8 +546,7 @@
       <property name="internalValue" value="green" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1101213169706">
-      <property name="name" value="darkGreen" />
-      <property name="externalValue" value="dark green" />
+      <property name="externalValue" value="darkGreen" />
       <property name="internalValue" value="DARK_GREEN" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1083952545116">
@@ -558,8 +555,7 @@
       <property name="internalValue" value="magenta" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1101213185757">
-      <property name="name" value="darkMagenta" />
-      <property name="externalValue" value="dark magenta" />
+      <property name="externalValue" value="darkMagenta" />
       <property name="internalValue" value="DARK_MAGENTA" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1083952545117">
@@ -573,8 +569,7 @@
       <property name="internalValue" value="blue" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1101209985304">
-      <property name="name" value="darkBlue" />
-      <property name="externalValue" value="dark blue" />
+      <property name="externalValue" value="darkBlue" />
       <property name="internalValue" value="DARK_BLUE" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1084208529765">
@@ -583,13 +578,11 @@
       <property name="internalValue" value="gray" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1084208529766">
-      <property name="name" value="lightGray" />
-      <property name="externalValue" value="light gray" />
+      <property name="externalValue" value="lightGray" />
       <property name="internalValue" value="lightGray" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1084208529767">
-      <property name="name" value="darkGray" />
-      <property name="externalValue" value="dark gray" />
+      <property name="externalValue" value="darkGray" />
       <property name="internalValue" value="darkGray" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1214395400259">
@@ -597,8 +590,7 @@
       <property name="internalValue" value="WHITE" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1139246571096">
-      <property name="name" value="query" />
-      <property name="externalValue" value="&lt;query&gt;" />
+      <property name="externalValue" value="query" />
       <property name="internalValue" value="query" />
     </node>
   </node>
@@ -680,8 +672,7 @@
     <link role="memberDataType" targetNodeId="3.1082983041843" />
     <link role="defaultMember" targetNodeId="1101211506174" resolveInfo="none" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1101211506174">
-      <property name="name" value="none" />
-      <property name="externalValue" value="&lt;default&gt;" />
+      <property name="externalValue" value="none" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1101211523070">
       <property name="name" value="bold" />
@@ -694,8 +685,7 @@
       <property name="internalValue" value="ITALIC" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1101213960346">
-      <property name="name" value="boldItalic" />
-      <property name="externalValue" value="bold italic" />
+      <property name="externalValue" value="boldItalic" />
       <property name="internalValue" value="BOLD_ITALIC" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1134577855137">
@@ -743,13 +733,11 @@
     <link role="memberDataType" targetNodeId="3.1082983657062" />
     <link role="defaultMember" targetNodeId="1130847686918" resolveInfo="as_is" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1130847686918">
-      <property name="name" value="as_is" />
-      <property name="externalValue" value="as is" />
+      <property name="externalValue" value="as_is" />
       <property name="internalValue" value="0" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1130847816499">
-      <property name="name" value="not_underlined" />
-      <property name="externalValue" value="not underlined" />
+      <property name="externalValue" value="not_underlined" />
       <property name="internalValue" value="1" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1130847833453">
@@ -763,18 +751,15 @@
     <link role="memberDataType" targetNodeId="3.1082983657062" />
     <link role="defaultMember" targetNodeId="1130926557292" resolveInfo="noAttraction" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1130926557292">
-      <property name="name" value="noAttraction" />
-      <property name="externalValue" value="no attraction" />
+      <property name="externalValue" value="noAttraction" />
       <property name="internalValue" value="0" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1130926591919">
-      <property name="name" value="attractsFocus" />
-      <property name="externalValue" value="attracts focus" />
+      <property name="externalValue" value="attractsFocus" />
       <property name="internalValue" value="1" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1130926603060">
-      <property name="name" value="firstEditableCell" />
-      <property name="externalValue" value="first editable cell" />
+      <property name="externalValue" value="firstEditableCell" />
       <property name="internalValue" value="2" />
     </node>
   </node>
@@ -980,8 +965,7 @@
       <property name="internalValue" value="noflow" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1138197631095">
-      <property name="name" value="none" />
-      <property name="externalValue" value="&lt;none&gt;" />
+      <property name="externalValue" value="none" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1139535219966">
@@ -1035,13 +1019,11 @@
     <link role="memberDataType" targetNodeId="3.1082983041843" />
     <link role="defaultMember" targetNodeId="1139535329028" resolveInfo="right_transform" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1139535329028">
-      <property name="name" value="right_transform" />
-      <property name="externalValue" value="RIGHT_TRANSFORM" />
+      <property name="externalValue" value="right_transform" />
       <property name="internalValue" value="right_transform_action_id" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1139535387060">
-      <property name="name" value="delete" />
-      <property name="externalValue" value="DELETE" />
+      <property name="externalValue" value="delete" />
       <property name="internalValue" value="delete_action_id" />
     </node>
   </node>
@@ -1077,18 +1059,15 @@
     <link role="memberDataType" targetNodeId="3.1082983041843" />
     <link role="defaultMember" targetNodeId="1139744471411" resolveInfo="alignmentJustify" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1139744471411">
-      <property name="name" value="alignmentJustify" />
-      <property name="externalValue" value="justify" />
+      <property name="externalValue" value="alignmentJustify" />
       <property name="internalValue" value="justify" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1139744531598">
-      <property name="name" value="alignmentCenter" />
-      <property name="externalValue" value="center" />
+      <property name="externalValue" value="alignmentCenter" />
       <property name="internalValue" value="center" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1139744545740">
-      <property name="name" value="alignmentTile" />
-      <property name="externalValue" value="tile" />
+      <property name="externalValue" value="alignmentTile" />
       <property name="internalValue" value="tile" />
     </node>
   </node>
@@ -1208,37 +1187,30 @@
     <link role="memberDataType" targetNodeId="3.1082983041843" />
     <link role="defaultMember" targetNodeId="1140813780644" resolveInfo="none" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1140813780644">
-      <property name="name" value="none" />
-      <property name="externalValue" value="&lt;none&gt;" />
+      <property name="externalValue" value="none" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1140813835051">
-      <property name="name" value="default_" />
-      <property name="externalValue" value="DEFAULT" />
+      <property name="externalValue" value="default_" />
       <property name="internalValue" value="default_RTransform" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1140813898505">
-      <property name="name" value="ext_1" />
-      <property name="externalValue" value="EXT 1" />
+      <property name="externalValue" value="ext_1" />
       <property name="internalValue" value="ext_1_RTransform" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1140813939727">
-      <property name="name" value="ext_2" />
-      <property name="externalValue" value="EXT 2" />
+      <property name="externalValue" value="ext_2" />
       <property name="internalValue" value="ext_2_RTransform" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1140813947731">
-      <property name="name" value="ext_3" />
-      <property name="externalValue" value="EXT 3" />
+      <property name="externalValue" value="ext_3" />
       <property name="internalValue" value="ext_3_RTransform" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1140813957048">
-      <property name="name" value="ext_4" />
-      <property name="externalValue" value="EXT 4" />
+      <property name="externalValue" value="ext_4" />
       <property name="internalValue" value="ext_4_RTransform" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1140813967505">
-      <property name="name" value="ext_5" />
-      <property name="externalValue" value="EXT 5" />
+      <property name="externalValue" value="ext_5" />
       <property name="internalValue" value="ext_5_RTransform" />
     </node>
   </node>

@@ -396,7 +396,15 @@
       <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216034429022">
         <link role="classifier" targetNodeId="1.~Throwable" resolveInfo="Throwable" />
       </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216034429023" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216034429023">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216036026037">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216036026038">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216036035864">
+              <link role="baseMethodDeclaration" targetNodeId="3.~AbstractMap$SimpleEntry.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolveInfo="AbstractMap.SimpleEntry" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1214431324743">

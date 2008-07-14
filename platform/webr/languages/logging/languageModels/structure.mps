@@ -48,28 +48,28 @@
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1167245288119" resolveInfo="debug" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1167245107476">
-      <property name="name" value="fatal" />
       <property name="internalValue" value="fatal" />
+      <property name="externalValue" value="fatal" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1167245252932">
-      <property name="name" value="error" />
       <property name="internalValue" value="error" />
+      <property name="externalValue" value="error" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1167245264682">
-      <property name="name" value="warn" />
       <property name="internalValue" value="warn" />
+      <property name="externalValue" value="warn" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1167245288119">
-      <property name="name" value="debug" />
       <property name="internalValue" value="debug" />
+      <property name="externalValue" value="debug" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1169477928086">
-      <property name="name" value="info" />
       <property name="internalValue" value="info" />
+      <property name="externalValue" value="info" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1167245293010">
-      <property name="name" value="trace" />
       <property name="internalValue" value="trace" />
+      <property name="externalValue" value="trace" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1168401810208">

@@ -442,33 +442,27 @@
     <link role="defaultMember" targetNodeId="1140829274114" resolveInfo="default_" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1140829274114">
       <property name="internalValue" value="default_RTransform" />
-      <property name="name" value="default_" />
-      <property name="externalValue" value="DEFAULT" />
+      <property name="externalValue" value="default_" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1140829274115">
       <property name="internalValue" value="ext_1_RTransform" />
-      <property name="name" value="ext_1" />
-      <property name="externalValue" value="EXT 1" />
+      <property name="externalValue" value="ext_1" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1140829274116">
       <property name="internalValue" value="ext_2_RTransform" />
-      <property name="name" value="ext_2" />
-      <property name="externalValue" value="EXT 2" />
+      <property name="externalValue" value="ext_2" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1140829274117">
       <property name="internalValue" value="ext_3_RTransform" />
-      <property name="name" value="ext_3" />
-      <property name="externalValue" value="EXT 3" />
+      <property name="externalValue" value="ext_3" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1140829274118">
       <property name="internalValue" value="ext_4_RTransform" />
-      <property name="name" value="ext_4" />
-      <property name="externalValue" value="EXT 4" />
+      <property name="externalValue" value="ext_4" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1140829274119">
       <property name="internalValue" value="ext_5_RTransform" />
-      <property name="name" value="ext_5" />
-      <property name="externalValue" value="EXT 5" />
+      <property name="externalValue" value="ext_5" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1154465102724">

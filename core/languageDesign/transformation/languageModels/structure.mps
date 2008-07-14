@@ -1075,15 +1075,15 @@
     <link role="memberDataType" targetNodeId="2.1082983041843" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1169670215798">
       <property name="internalValue" value="info" />
-      <property name="name" value="info" />
+      <property name="externalValue" value="info" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1169670280596">
       <property name="internalValue" value="warning" />
-      <property name="name" value="warning" />
+      <property name="externalValue" value="warning" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1169670287832">
       <property name="internalValue" value="error" />
-      <property name="name" value="error" />
+      <property name="externalValue" value="error" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1170725621272">

@@ -187,23 +187,19 @@
     <property name="hasNoDefaultMember" value="false" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1084197782723">
-      <property name="name" value="_0_1" />
-      <property name="externalValue" value="0..1" />
+      <property name="externalValue" value="_0_1" />
       <property name="internalValue" value="0..1" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1084197782724">
-      <property name="name" value="_1" />
-      <property name="externalValue" value="1" />
+      <property name="externalValue" value="_1" />
       <property name="internalValue" value="1" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1084197782725">
-      <property name="name" value="_0_n" />
-      <property name="externalValue" value="0..n" />
+      <property name="externalValue" value="_0_n" />
       <property name="internalValue" value="0..n" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1084197782726">
-      <property name="name" value="_1_n" />
-      <property name="externalValue" value="1..n" />
+      <property name="externalValue" value="_1_n" />
       <property name="internalValue" value="1..n" />
     </node>
   </node>

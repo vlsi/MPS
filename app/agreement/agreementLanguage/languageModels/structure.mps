@@ -157,14 +157,12 @@
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1111792874919" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1111792874919">
-      <property name="externalValue" value="Quantity" />
+      <property name="externalValue" value="QUANTITY" />
       <property name="internalValue" value="Quantity" />
-      <property name="name" value="QUANTITY" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1111792901670">
-      <property name="externalValue" value="Money" />
+      <property name="externalValue" value="MONEY" />
       <property name="internalValue" value="Money" />
-      <property name="name" value="MONEY" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1111793238658">
@@ -173,19 +171,16 @@
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1111793245330" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1111793245330">
-      <property name="externalValue" value="USD/KwH" />
+      <property name="externalValue" value="USD_KWH" />
       <property name="internalValue" value="USD_KWH" />
-      <property name="name" value="USD_KWH" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1111793298691">
-      <property name="externalValue" value="$" />
+      <property name="externalValue" value="USD" />
       <property name="internalValue" value="USD" />
-      <property name="name" value="USD" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1111793319239">
-      <property name="externalValue" value="KwH" />
+      <property name="externalValue" value="KWH" />
       <property name="internalValue" value="KWH" />
-      <property name="name" value="KWH" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1111793698243">
@@ -286,15 +281,13 @@
     <link role="memberDataType" targetNodeId="1.1082983657063" />
     <link role="defaultMember" targetNodeId="1116367977408" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1116367977408">
-      <property name="externalValue" value="taxable" />
+      <property name="externalValue" value="TAXABLE" />
       <property name="internalValue" value="true" />
-      <property name="name" value="TAXABLE" />
       <property name="javaIdentifier" value="taxable" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1116368030878">
-      <property name="externalValue" value="tax-free" />
+      <property name="externalValue" value="TAXFREE" />
       <property name="internalValue" value="false" />
-      <property name="name" value="TAXFREE" />
       <property name="javaIdentifier" value="tax_free" />
     </node>
   </node>
