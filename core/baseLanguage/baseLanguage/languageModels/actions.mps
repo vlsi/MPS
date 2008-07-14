@@ -62,7 +62,7 @@
   <import index="46" modelUID="java.util@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1138168268784">
     <property name="name" value="binaryOperations" />
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1138168906052">
       <property name="description" value="transform expression into left operand of binary operation" />
       <property name="useNewActions" value="true" />
@@ -2896,7 +2896,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177498981738">
     <property name="name" value="dotExpression" />
-    <property name="package" value="rightTransform.expression" />
+    <property name="package" value="sideTransforms.expression" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1197028841767">
       <property name="useNewActions" value="true" />
       <property name="description" value="transform expression into DotExpression" />
@@ -2999,7 +2999,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177502352477">
     <property name="name" value="instanceOf" />
-    <property name="package" value="rightTransform.expression" />
+    <property name="package" value="sideTransforms.expression" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177502380176">
       <property name="description" value="transform expression into left operand of 'instanceof'" />
       <property name="useNewActions" value="true" />
@@ -3065,8 +3065,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177503287075">
-    <property name="name" value="assignment" />
-    <property name="package" value="rightTransform.expression" />
+    <property name="name" value="assignments" />
+    <property name="package" value="sideTransforms.expression" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177503307237">
       <property name="description" value="transform expression into Lvalue of assignment" />
       <property name="useNewActions" value="true" />
@@ -3103,10 +3103,47 @@
         </node>
       </node>
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1216039263418">
+      <property name="description" value="transform expression into Lvalue of assignment" />
+      <property name="useNewActions" value="true" />
+      <property name="side" value="left" />
+      <link role="applicableConcept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart" id="1216039263419">
+        <link role="concept" targetNodeId="1.1215693861676" resolveInfo="BaseAssignmentExpression" />
+        <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_ConceptHandler" id="1216039263420">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216039263421">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216039263422">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216039263423">
+                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1216039263424" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1216039263425">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_result" id="1216039263426" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216039263427">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216039263428">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216039263429">
+                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_result" id="1216039263430" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216039299445">
+                    <link role="link" targetNodeId="1.1068498886297" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1216039263432">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1216039263433" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216039263434">
+              <node role="expression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_result" id="1216039263435" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177503862877">
     <property name="name" value="arrayAccess" />
-    <property name="package" value="rightTransform.expression" />
+    <property name="package" value="sideTransforms.expression" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177503884612">
       <property name="description" value="transforms array into array access expression" />
       <property name="useNewActions" value="true" />
@@ -3215,7 +3252,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177505027922">
     <property name="name" value="variableDeclarationInitializer" />
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177505054799">
       <property name="description" value="add initializer to variable declaration" />
       <property name="useNewActions" value="true" />
@@ -3294,7 +3331,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177505340963">
     <property name="name" value="arrayBrackets" />
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177505359407">
       <property name="description" value="tranform type into array type" />
       <property name="useNewActions" value="true" />
@@ -3362,7 +3399,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177505591885">
     <property name="name" value="addGenericParameter" />
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177505734540">
       <property name="description" value="add generic parameters to classifier type" />
       <property name="useNewActions" value="true" />
@@ -3428,7 +3465,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177506061638">
     <property name="name" value="genericDeclaration" />
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177506104969">
       <property name="description" value="add type variables to class/interface declaration" />
       <property name="useNewActions" value="true" />
@@ -3494,7 +3531,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177506302287">
     <property name="name" value="newExpression" />
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177506323525">
       <property name="description" value="new Smth() --&gt; new Smth&lt;T&gt;()" />
       <property name="transformTag" value="ext_1_RTransform" />
@@ -3628,7 +3665,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177507958366">
     <property name="name" value="tryCatch" />
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177507970664">
       <property name="description" value="add catch clause" />
       <property name="useNewActions" value="true" />
@@ -3671,7 +3708,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177508104715">
     <property name="name" value="convertToTry" />
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177508119482">
       <property name="description" value="convert to try statement" />
       <property name="useNewActions" value="true" />
@@ -3806,7 +3843,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177508499638">
     <property name="name" value="ternaryOperator" />
-    <property name="package" value="rightTransform.expression" />
+    <property name="package" value="sideTransforms.expression" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177508524786">
       <property name="description" value="convert to ternary operator" />
       <property name="useNewActions" value="true" />
@@ -4353,7 +4390,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1187946457493">
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <property name="name" value="arrayCreator" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1187946508194">
       <property name="useNewActions" value="true" />
@@ -4533,7 +4570,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1199465903940">
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <property name="name" value="break" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1199465912028">
       <property name="useNewActions" value="true" />
@@ -4851,7 +4888,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1199470396950">
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <property name="name" value="continue" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1199470401054">
       <property name="useNewActions" value="true" />
@@ -5761,7 +5798,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1214840259991">
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <property name="name" value="classifierTypeInLocalVarRT" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1214840267304">
       <property name="useNewActions" value="true" />
@@ -5911,7 +5948,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1214919533012">
-    <property name="package" value="rightTransform.expression" />
+    <property name="package" value="sideTransforms.expression" />
     <property name="name" value="postfix" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1214919536691">
       <property name="useNewActions" value="true" />
@@ -6045,7 +6082,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1215434748907">
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <property name="name" value="ifStatement" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1215434760427">
       <property name="useNewActions" value="true" />
@@ -6172,7 +6209,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1215595015926">
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <property name="name" value="anonymousClass" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1215595029605">
       <property name="useNewActions" value="true" />
@@ -6313,7 +6350,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1215681490967">
-    <property name="package" value="rightTransform" />
+    <property name="package" value="sideTransforms" />
     <property name="name" value="OuterClassesOnThisExpression" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1215681514846">
       <property name="useNewActions" value="true" />
