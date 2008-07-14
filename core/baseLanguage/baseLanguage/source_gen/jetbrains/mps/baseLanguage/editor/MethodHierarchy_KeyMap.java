@@ -46,7 +46,7 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -58,16 +58,16 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false) != null);
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode method = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false);
       SNode declClassifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       if ((declClassifier != null)) {
@@ -99,7 +99,7 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -111,17 +111,18 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null);
     }
 
-    private void execute_internal(KeyEvent keyEvent, final EditorContext editorContext, final SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SwingUtilities.invokeLater(new Runnable() {
+
         public void run() {
           new OverrideMethodDialog(node, editorContext.getOperationContext().getMainFrame()).showDialog();
         }
@@ -148,7 +149,7 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -160,16 +161,16 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null);
     }
 
-    private void execute_internal(KeyEvent keyEvent, final EditorContext editorContext, final SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SwingUtilities.invokeLater(new Runnable() {
 
         public void run() {

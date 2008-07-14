@@ -40,7 +40,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -55,17 +55,17 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       return (classConcept != null) && !(FieldDeclaration_Behavior.call_hasGetter_1213877243808(node, classConcept));
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode g;
       g = new QuotationClass_().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), node, FieldDeclaration_Behavior.call_getGetterName_1213877243782(node));
       SLinkOperations.addChild(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "method", g);
@@ -90,7 +90,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -105,17 +105,17 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       return (classConcept != null) && !(FieldDeclaration_Behavior.call_hasSetter_1213877243871(node, classConcept));
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode s;
       s = new QuotationClass_1().createNode(node, FieldDeclaration_Behavior.call_getSetterName_1213877243861(node), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), SPropertyOperations.getString(node, "name"));
       SLinkOperations.addChild(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "method", s);
