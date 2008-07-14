@@ -154,7 +154,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068390468204">
     <property name="name" value="MethodDeclaration" />
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <property name="package" value="method" />
     <link role="extends" targetNodeId="1068580123132" resolveInfo="BaseMethodDeclaration" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1158696727750">
