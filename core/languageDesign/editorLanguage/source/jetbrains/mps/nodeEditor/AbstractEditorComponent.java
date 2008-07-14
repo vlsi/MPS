@@ -1924,7 +1924,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
         pattern.equals(patternEditor.getText()); // caret at the end
 
-    // 1st - try to do substitution with current pattern (id cursor at the end of text)
+    // 1st - try to do substitution with current pattern (if cursor at the end of text)
     if (trySubstituteNow) {
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, false);
       if (matchingActions.size() == 1 && pattern.length() > 0) {

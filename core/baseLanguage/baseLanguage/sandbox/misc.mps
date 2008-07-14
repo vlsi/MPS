@@ -408,7 +408,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1214431324743">
-    <property name="name" value="C112323232321111" />
+    <property name="name" value="C1" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1214859271313">
       <property name="name" value="aa" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214859271316">

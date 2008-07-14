@@ -33,4 +33,8 @@ public class ConstructorDeclaration_Behavior {
     return result.toString();
   }
 
+  public static String virtual_getCompactPresentation_1214568609321(SNode thisNode) {
+    return SPropertyOperations.getString(thisNode, "nestedName");
+  }
+
 }
