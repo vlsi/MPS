@@ -47,7 +47,6 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
   private int myIndentSize = 2;
 
   private MyState myState = new MyState();
-
   private MyPreferencesPage myPreferencesPage;
 
   private CaretBlinker myCaretBlinker;

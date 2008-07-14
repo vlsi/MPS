@@ -317,6 +317,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   public void save() {
     if (mySModel == null) return;
+
+    //we must be in command since model save might change model by adding model/language imports
+    LOG.assertInCommand();
+
     SModelRepository.getInstance().markUnchanged(mySModel);
     myModelRootManager.saveModel(this);
     myDiskTimestamp = fileTimestamp();
