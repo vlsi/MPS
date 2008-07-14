@@ -63,7 +63,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return EnumClass_Editor.calculateColor30(cell);
+              return EnumClass_Editor.calculateColor29(cell);
             }
 
           });
@@ -295,7 +295,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor30(EditorCell cell) {
+  private static Color calculateColor29(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

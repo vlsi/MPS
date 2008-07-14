@@ -58,7 +58,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ContinueStatement_Editor.calculateColor34(cell);
+              return ContinueStatement_Editor.calculateColor33(cell);
             }
 
           });
@@ -115,7 +115,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
-  private static Color calculateColor34(EditorCell cell) {
+  private static Color calculateColor33(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

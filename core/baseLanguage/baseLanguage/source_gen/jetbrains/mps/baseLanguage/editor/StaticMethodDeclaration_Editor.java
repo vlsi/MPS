@@ -37,7 +37,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_Component_Visibility1;
-  /* package */AbstractCellProvider myBaseMethodDeclaration_NameCellComponent2;
+  /* package */AbstractCellProvider myBaseMethodDeclaration_NameCellComponent1;
   /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component3;
   /* package */AbstractCellListHandler myListHandler_19808_0;
   /* package */AbstractCellListHandler myListHandler_19808_01;
@@ -200,7 +200,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StaticMethodDeclaration_Editor.calculateColor40(cell);
+              return StaticMethodDeclaration_Editor.calculateColor39(cell);
             }
 
           });
@@ -330,7 +330,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }
 
-  private static Color calculateColor40(EditorCell cell) {
+  private static Color calculateColor39(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
@@ -381,7 +381,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell46(context, node));
+    editorCell.addEditorCell(this.createIndentCell45(context, node));
     editorCell.addEditorCell(this.create_bodyRefNodeCell19808_0(context, node));
     return editorCell;
   }
@@ -459,10 +459,10 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell create_BaseMethodDeclaration_NameCellComponentComponentCell19808_0(EditorContext context, SNode node) {
-    if (this.myBaseMethodDeclaration_NameCellComponent2 == null) {
-      this.myBaseMethodDeclaration_NameCellComponent2 = new BaseMethodDeclaration_NameCellComponent(node);
+    if (this.myBaseMethodDeclaration_NameCellComponent1 == null) {
+      this.myBaseMethodDeclaration_NameCellComponent1 = new BaseMethodDeclaration_NameCellComponent(node);
     }
-    EditorCell editorCell = this.myBaseMethodDeclaration_NameCellComponent2.createEditorCell(context);
+    EditorCell editorCell = this.myBaseMethodDeclaration_NameCellComponent1.createEditorCell(context);
     setupBasic_BaseMethodDeclaration_NameCellComponentComponentCell19808_0(editorCell, node, context);
     return editorCell;
   }
@@ -600,7 +600,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell46(EditorContext context, SNode node) {
+  public EditorCell createIndentCell45(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }

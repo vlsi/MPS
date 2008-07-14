@@ -61,7 +61,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StringLiteral_Editor.calculateColor37(cell);
+              return StringLiteral_Editor.calculateColor36(cell);
             }
 
           });
@@ -87,7 +87,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StringLiteral_Editor.calculateColor41(cell);
+              return StringLiteral_Editor.calculateColor40(cell);
             }
 
           });
@@ -116,13 +116,13 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor37(EditorCell cell) {
+  private static Color calculateColor36(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;
   }
 
-  private static Color calculateColor41(EditorCell cell) {
+  private static Color calculateColor40(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;

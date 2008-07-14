@@ -316,7 +316,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell47(context, node));
+    editorCell.addEditorCell(this.createIndentCell46(context, node));
     editorCell.addEditorCell(this.create_bodyRefNodeCell17219_0(context, node));
     return editorCell;
   }
@@ -444,7 +444,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell47(EditorContext context, SNode node) {
+  public EditorCell createIndentCell46(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }

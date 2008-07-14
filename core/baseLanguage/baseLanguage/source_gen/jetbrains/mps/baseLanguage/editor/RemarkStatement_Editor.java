@@ -61,7 +61,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return RemarkStatement_Editor.calculateColor35(cell);
+              return RemarkStatement_Editor.calculateColor34(cell);
             }
 
           });
@@ -81,7 +81,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return RemarkStatement_Editor.calculateColor39(cell);
+              return RemarkStatement_Editor.calculateColor38(cell);
             }
 
           });
@@ -111,13 +111,13 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor35(EditorCell cell) {
+  private static Color calculateColor34(EditorCell cell) {
     Color result;
     result = Color.gray;
     return result;
   }
 
-  private static Color calculateColor39(EditorCell cell) {
+  private static Color calculateColor38(EditorCell cell) {
     Color result;
     result = Color.blue;
     return result;

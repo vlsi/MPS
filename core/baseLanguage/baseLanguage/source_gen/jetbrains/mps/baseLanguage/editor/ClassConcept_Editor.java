@@ -441,7 +441,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ClassConcept_Editor.calculateColor28(cell);
+              return ClassConcept_Editor.calculateColor27(cell);
             }
 
           });
@@ -871,7 +871,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor28(EditorCell cell) {
+  private static Color calculateColor27(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
@@ -1037,7 +1037,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell45(context, node));
+    editorCell.addEditorCell(this.createIndentCell44(context, node));
     editorCell.addEditorCell(this.create_staticInitializerRefNodeCell6031_0(context, node));
     return editorCell;
   }
@@ -1532,7 +1532,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  public EditorCell createIndentCell45(EditorContext context, SNode node) {
+  public EditorCell createIndentCell44(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }

@@ -49,7 +49,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return AnnotationInstance_Editor.calculateColor27(cell);
+              return AnnotationInstance_Editor.calculateColor26(cell);
             }
 
           });
@@ -119,7 +119,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "annotation", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "annotation", false), "method", true)).isNotEmpty();
   }
 
-  private static Color calculateColor27(EditorCell cell) {
+  private static Color calculateColor26(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;

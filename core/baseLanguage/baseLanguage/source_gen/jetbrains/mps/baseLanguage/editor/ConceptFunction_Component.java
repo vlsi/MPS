@@ -74,7 +74,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ConceptFunction_Component.calculateColor42(cell);
+              return ConceptFunction_Component.calculateColor41(cell);
             }
 
           });
@@ -127,7 +127,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   private static void setupLabel_ConstantCell6954_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor42(EditorCell cell) {
+  private static Color calculateColor41(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

@@ -96,7 +96,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return TryStatement_Editor.calculateColor29(cell);
+              return TryStatement_Editor.calculateColor28(cell);
             }
 
           });
@@ -226,7 +226,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "catchClause") > 0;
   }
 
-  private static Color calculateColor29(EditorCell cell) {
+  private static Color calculateColor28(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
