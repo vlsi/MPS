@@ -1424,27 +1424,13 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198588069148">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1198588106975">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198588108634">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648104">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198588111230">
-                  <link role="variableDeclaration" targetNodeId="1198588060722" resolveInfo="node" />
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1198588113421">
-                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1198588115642">
-                    <link role="conceptDeclaration" targetNodeId="1.1149608206811" resolveInfo="AnnotationLinkDeclaration" />
-                  </node>
-                </node>
-              </node>
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648128">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198588069149">
+              <link role="variableDeclaration" targetNodeId="1198588060722" resolveInfo="node" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648128">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198588069149">
-                <link role="variableDeclaration" targetNodeId="1198588060722" resolveInfo="node" />
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1198588071168">
-                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1198588072655">
-                  <link role="conceptDeclaration" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
-                </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1198588071168">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1198588072655">
+                <link role="conceptDeclaration" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
               </node>
             </node>
           </node>

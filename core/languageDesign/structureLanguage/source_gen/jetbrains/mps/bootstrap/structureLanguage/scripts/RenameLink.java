@@ -86,7 +86,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
-      return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration") && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration"));
+      return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration");
     }
   }
 
