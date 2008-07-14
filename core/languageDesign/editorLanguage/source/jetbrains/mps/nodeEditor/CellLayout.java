@@ -7,7 +7,9 @@ import java.awt.*;
 public interface CellLayout {
 
   void doLayout(EditorCell_Collection editorCells);
+
   TextBuilder doLayoutText(Iterable<EditorCell> editorCells);
+
   int getAscent(EditorCell_Collection editorCells);
   int getDescent(EditorCell_Collection editorCell_collection);
   EditorCell findNearestCell(EditorCell_Collection editorCells, int x, int y, boolean isPrevious);

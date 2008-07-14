@@ -16,6 +16,7 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.baseLanguage.plugin.uiActions.OverrideMethodDialog;
 import jetbrains.mps.baseLanguage.plugin.uiActions.ImplementMethodDialog;
 
@@ -119,8 +120,13 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
       return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null);
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
-      new OverrideMethodDialog(node, editorContext.getOperationContext().getMainFrame()).showDialog();
+    private void execute_internal(KeyEvent keyEvent, final EditorContext editorContext, final SNode node, List<SNode> selectedNodes) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          new OverrideMethodDialog(node, editorContext.getOperationContext().getMainFrame()).showDialog();
+        }
+
+      });
     }
 
     public String getKeyStroke() {
@@ -163,8 +169,14 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
       return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null);
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
-      new ImplementMethodDialog(node, editorContext.getOperationContext().getMainFrame()).showDialog();
+    private void execute_internal(KeyEvent keyEvent, final EditorContext editorContext, final SNode node, List<SNode> selectedNodes) {
+      SwingUtilities.invokeLater(new Runnable() {
+
+        public void run() {
+          new ImplementMethodDialog(node, editorContext.getOperationContext().getMainFrame()).showDialog();
+        }
+
+      });
     }
 
     public String getKeyStroke() {

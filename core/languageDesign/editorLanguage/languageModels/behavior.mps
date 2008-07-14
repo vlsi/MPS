@@ -1510,5 +1510,12 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215085235807" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1216029180736">
+    <property name="package" value="Stylesheet" />
+    <link role="concept" targetNodeId="1.1186403694788" resolveInfo="ColorStyleClassItem" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1216029180737">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216029180738" />
+    </node>
+  </node>
 </model>
 
