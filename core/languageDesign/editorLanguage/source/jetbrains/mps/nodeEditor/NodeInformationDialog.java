@@ -25,7 +25,7 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
         result.append("model = ").append(node.getModel().getUID()).append("\n");
         result.append("concept = ").append(NameUtil.shortNameFromLongName(node.getConceptFqName())).append("\n");
         result.append("language = ").append(node.getLanguageNamespace());
-
+        result.append("ID = ").append(node.getId());
 
         result.append("\n\nReferences:");
         for (SReference ref : node.getReferences()) {
@@ -37,7 +37,7 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
           } else {
             result.append("Model = ").append(target.getModel().getUID()).append("\n");
             result.append("Node = ").append(NodePresentationUtil.getPathToRoot(target)).append("\n");
-            result.append("ID  = ").append(target.getId()).append("\n");
+            result.append("ID = ").append(target.getId()).append("\n");
           }
 
           result.append("\n");
