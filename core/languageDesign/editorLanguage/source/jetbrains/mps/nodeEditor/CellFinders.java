@@ -13,35 +13,11 @@ public class CellFinders {
   public static final CellFinder<EditorCell> LAST_SELECTABLE = new SelectableCellFinder(false);
 
   public static<C extends EditorCell> CellFinder<C> byClass(final Class<C> cls, final boolean first) {
-    return new CellFinder<C>() {
-      public boolean isSuitable(C cell) {
-        return true;
-      }
-
-      public Class<C> getCellClass() {
-        return cls;
-      }
-
-      public boolean isFirstChild() {
-        return first;
-      }
-    };
+    return new ByClassCellFinder<C>(cls, first);
   }
 
   public static CellFinder<EditorCell> byCondition(final Condition<EditorCell> condition, final boolean first) {
-    return new CellFinder<EditorCell>() {
-      public boolean isSuitable(EditorCell cell) {
-        return condition.met(cell);
-      }
-
-      public Class<EditorCell> getCellClass() {
-        return EditorCell.class;
-      }
-
-      public boolean isFirstChild() {
-        return first;
-      }
-    };
+    return new ByConditionCellFinder(condition, first);
   }
 
   private static class EditableCellFinder extends CellFinder<EditorCell_Label> {
@@ -73,6 +49,50 @@ public class CellFinders {
 
     public boolean isSuitable(EditorCell cell) {
       return cell.isSelectable();
+    }
+
+    public Class<EditorCell> getCellClass() {
+      return EditorCell.class;
+    }
+
+    public boolean isFirstChild() {
+      return myFirst;
+    }
+  }
+
+  private static class ByClassCellFinder<C extends EditorCell> extends CellFinder<C> {
+    private final Class<C> myCls;
+    private final boolean myFirst;
+
+    public ByClassCellFinder(Class<C> cls, boolean first) {
+      myCls = cls;
+      myFirst = first;
+    }
+
+    public boolean isSuitable(C cell) {
+      return true;
+    }
+
+    public Class<C> getCellClass() {
+      return myCls;
+    }
+
+    public boolean isFirstChild() {
+      return myFirst;
+    }
+  }
+
+  private static class ByConditionCellFinder extends CellFinder<EditorCell> {
+    private final Condition<EditorCell> myCondition;
+    private final boolean myFirst;
+
+    public ByConditionCellFinder(Condition<EditorCell> condition, boolean first) {
+      myCondition = condition;
+      myFirst = first;
+    }
+
+    public boolean isSuitable(EditorCell cell) {
+      return myCondition.met(cell);
     }
 
     public Class<EditorCell> getCellClass() {
