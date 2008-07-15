@@ -4,7 +4,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -119,7 +118,7 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
     if (myModule == null) return false;
     myContext = data.getOperationContext();
     if (myContext == null) return false;
-    myEditor = new ActionContext().get(IEditor.class);
+    myEditor = data.getEditor();
     if (myEditor == null) return false;
     return true;
   }

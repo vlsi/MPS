@@ -72,15 +72,15 @@ public class BaseGroup extends DefaultActionGroup {
 
   public void update(final AnActionEvent e) {
     super.update(e);
-    enable(e.getPresentation());
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        doUpdate(e);
-      }
-    });
     if (myIsInternal && !InternalFlag.isInternalModel()) {
       e.getPresentation().setEnabled(false);
       e.getPresentation().setVisible(false);
+    } else {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          doUpdate(e);
+        }
+      });
     }
   }
 

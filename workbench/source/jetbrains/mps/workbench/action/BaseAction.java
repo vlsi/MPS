@@ -60,7 +60,6 @@ public abstract class BaseAction extends AnAction {
     super.update(e);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        enable(e.getPresentation());
         if (myDisableOnNoProject && e.getData(PlatformDataKeys.PROJECT) == null) {
           disable(e.getPresentation());
           return;
@@ -75,21 +74,16 @@ public abstract class BaseAction extends AnAction {
   }
 
   public final void actionPerformed(final AnActionEvent e) {
-    final Runnable action = new Runnable() {
-      public void run() {
-        doExecute(e);
-      }
-    };
-
     final ModelAccess access = ModelAccess.instance();
     if (myExecuteOutsideCommand) {
-      //execute outside command means no action neither read nor write
-      //otherwise it will lead to a deadlock
-      action.run();
+      doExecute(e);
     } else {
-      access.runWriteActionInCommand(action);
+      access.runWriteActionInCommand(new Runnable() {
+        public void run() {
+          doExecute(e);
+        }
+      });
     }
-
   }
 
   protected void disable(Presentation p) {

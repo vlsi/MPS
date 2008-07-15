@@ -7705,14 +7705,14 @@
                       id="1216124242271"/>
                 <node role="operation"
                       type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation"
-                      id="1216124242272">
-                  <link role="member" targetNodeId="1216124231782" resolveInfo="context"/>
+                      id="1216138467790">
+                  <link role="member" targetNodeId="1216124303655" resolveInfo="project"/>
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                     id="1216124244151">
                 <link role="baseMethodDeclaration"
-                      targetNodeId="40.~IOperationContext.getComponent(java.lang.Class):java.lang.Object"
+                      targetNodeId="63.~MPSProject.getComponent(java.lang.Class):java.lang.Object"
                       resolveInfo="getComponent"/>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression"
                       id="1216124274990">
@@ -7767,13 +7767,6 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216124195336"/>
       <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1216124196760">
         <link role="concept" targetNodeId="93.1169125787135" resolveInfo="AbstractConceptDeclaration"/>
-      </node>
-    </node>
-    <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration"
-          id="1216124231782">
-      <property name="name" value="context"/>
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216124232408">
-        <link role="classifier" targetNodeId="40.~IOperationContext" resolveInfo="IOperationContext"/>
       </node>
     </node>
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration"
