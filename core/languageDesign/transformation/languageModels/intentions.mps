@@ -52,6 +52,7 @@
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1195665973055">
     <property name="name" value="CreateTemplateDeclarationFromUsage" />
     <property name="isErrorIntention" value="false" />
+    <property name="package" value="migrations" />
     <link role="forConcept" targetNodeId="1.1168559098955" resolveInfo="RuleConsequence" />
     <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1195665973125">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195665973126">
@@ -185,6 +186,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1203775431223">
     <property name="name" value="ConvertInlineTemplateToTemplateFragment" />
+    <property name="package" value="migrations" />
     <link role="forConcept" targetNodeId="1.1177093525992" resolveInfo="InlineTemplate_RuleConsequence" />
     <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1203775431224">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203775431225">
@@ -591,6 +593,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1205436780371">
     <property name="name" value="ConvertTemplateDeclRefToInlineTemplate" />
+    <property name="package" value="migrations" />
     <link role="forConcept" targetNodeId="1.1168559333462" resolveInfo="TemplateDeclarationReference" />
     <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1205436780372">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205436780373">
@@ -1601,7 +1604,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1207695450179">
-    <property name="package" value="label" />
+    <property name="package" value="migrations.label" />
     <property name="name" value="Replace_ConditionalRootLabelDeclaration" />
     <property name="isErrorIntention" value="true" />
     <link role="forConcept" targetNodeId="1.1200923014784" resolveInfo="ConditionalRootLabelDeclaration" />
@@ -1703,6 +1706,7 @@
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1212103271142">
     <property name="name" value="Remove_properyLink_fromPropMacro" />
     <property name="isErrorIntention" value="true" />
+    <property name="package" value="migrations" />
     <link role="forConcept" targetNodeId="1.1087833241328" resolveInfo="PropertyMacro" />
     <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1212103271143">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212103271144">
@@ -1773,6 +1777,7 @@
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1212104471752">
     <property name="name" value="Remove_linkLink_fromRefMacro" />
     <property name="isErrorIntention" value="true" />
+    <property name="package" value="migrations" />
     <link role="forConcept" targetNodeId="1.1088761943574" resolveInfo="ReferenceMacro" />
     <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1212104471753">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212104471754">

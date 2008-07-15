@@ -1462,7 +1462,7 @@
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1207697731300">
     <property name="name" value="Replace_ConditionalRootLabelDeclaration504" />
-    <property name="package" value="label" />
+    <property name="package" value="migrations.label" />
     <property name="migrationFromBuild" value="504" />
     <property name="title" value="replace 'root label decl' " />
     <property name="category" value="generator" />
@@ -2012,7 +2012,7 @@
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1215460243934">
     <property name="migrationFromBuild" value="798" />
-    <property name="package" value="label" />
+    <property name="package" value="migrations.label" />
     <property name="name" value="Replace_MappingNameWithMappingLabel" />
     <property name="category" value="generator" />
     <property name="title" value="replace old mapping names with mapping labels" />
@@ -2554,7 +2554,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1215462558115">
-    <property name="package" value="label" />
+    <property name="package" value="migrations.label" />
     <property name="name" value="LabelUpdaterUtil" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215462558116" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1215462756966">
