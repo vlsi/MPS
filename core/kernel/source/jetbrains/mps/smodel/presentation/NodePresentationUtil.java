@@ -61,7 +61,7 @@ public class NodePresentationUtil {
       if (nodeAdapter instanceof IResolveInfo) {
         return ((IResolveInfo) nodeAdapter).getResolveInfo();
       }
-      return nodeAdapter.getName();
+      return nodeAdapter.getNode().getPresentation();
     }
   }
 
