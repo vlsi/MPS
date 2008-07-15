@@ -3,6 +3,7 @@ package jetbrains.mps.workbench.action;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
@@ -48,20 +49,12 @@ public class ActionUtils {
     return ((DefaultActionGroup) ActionManager.getInstance().getAction(id));
   }
 
-  public static JPopupMenu createPopup(String place, String groupId) {
-    return createPopup(place, getGroup(groupId));
-  }
-
   public static JPopupMenu createPopup(String place, ActionGroup g) {
     return ActionManager.getInstance().createActionPopupMenu(place, g).getComponent();
   }
 
   public static JComponent createComponent(String place, AnAction... actions) {
-    return createComponent(place, groupFromActions(actions));
-  }
-
-  public static JComponent createComponent(String place, ActionGroup g) {
-    return ActionManager.getInstance().createButtonToolbar(place, g);
+    return ActionManager.getInstance().createButtonToolbar(place, groupFromActions(actions));
   }
 
   public static ActionGroup groupFromActions(AnAction... actions) {
@@ -79,7 +72,11 @@ public class ActionUtils {
   public static ActionContext createContext(final ActionEventData eventData) {
     return new ActionContext() {
       public <T> T get(Class<T> cls) {
-        return eventData.get(cls);
+        List<IActionDataProvider> dataProviderList = jetbrains.mps.ide.action.ActionManager.instance().getCurrentDataProviders();
+        for (IActionDataProvider provider : dataProviderList) {
+          if (provider.get(cls) != null) return provider.get(cls);
+        }
+        return null;
       }
 
       @Nullable
@@ -163,32 +160,14 @@ public class ActionUtils {
   }
 
   public static AnActionEvent createEvent(String place, ActionContext context) {
-    return createEvent(place, new Presentation(), context);
-  }
-
-  public static AnActionEvent createEvent(final AnActionEvent event, ActionContext context) {
-    DataContext resDataContext = createDataContext(event.getDataContext(), context);
-    AnActionEvent res = new AnActionEvent(null, resDataContext, ActionPlaces.UNKNOWN, event.getPresentation(), ActionManager.getInstance(), 0);
-    return res;
+    DataContext dataContext = createDataContext(context);
+    AnActionEvent event = new AnActionEvent(null, dataContext, place, new Presentation(), ActionManager.getInstance(), 0);
+    return event;
   }
 
   public static AnActionEvent createEvent(String place, DataContext context) {
     AnActionEvent res = new AnActionEvent(null, context, ActionPlaces.UNKNOWN, new Presentation(), ActionManager.getInstance(), 0);
     return res;
-  }
-
-  public static AnActionEvent createEvent(String place, Presentation presentation, final ActionContext context) {
-    DataContext dataContext = createDataContext(context);
-    return createEvent(place, presentation, dataContext);
-  }
-
-  public static AnActionEvent createEvent(Presentation presentation, final DataContext context) {
-    return createEvent(ActionPlaces.UNKNOWN, presentation, context);
-  }
-
-  public static AnActionEvent createEvent(String place, Presentation presentation, final DataContext context) {
-    AnActionEvent event = new AnActionEvent(null, context, place, presentation, ActionManager.getInstance(), 0);
-    return event;
   }
 
   /*

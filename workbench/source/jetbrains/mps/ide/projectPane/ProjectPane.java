@@ -1026,7 +1026,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   private AnActionEvent createEvent(DataContext context) {
-    return ActionUtils.createEvent(ActionPlaces.PROJECT_VIEW_POPUP, new Presentation(), context);
+    return ActionUtils.createEvent(ActionPlaces.PROJECT_VIEW_POPUP, context);
   }
 
   private class MyCopyProvider implements CopyProvider {
