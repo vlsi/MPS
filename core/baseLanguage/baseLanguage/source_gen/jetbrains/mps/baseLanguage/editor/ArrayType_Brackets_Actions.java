@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class ArrayType_Brackets_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new ArrayType_Brackets_Actions.ArrayType_Brackets_Actions_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new ArrayType_Brackets_Actions.ArrayType_Brackets_Actions_DELETE(node));
   }
 
   public static class ArrayType_Brackets_Actions_DELETE extends EditorCellAction {

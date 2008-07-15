@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class TypeVariableDeclaration_addAuxBound {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("RIGHT_TRANSFORM", new TypeVariableDeclaration_addAuxBound.TypeVariableDeclaration_addAuxBound_RIGHT_TRANSFORM(node));
+    editorCell.setAction(EditorCellAction.RIGHT_TRANSFORM, new TypeVariableDeclaration_addAuxBound.TypeVariableDeclaration_addAuxBound_RIGHT_TRANSFORM(node));
   }
 
   public static class TypeVariableDeclaration_addAuxBound_RIGHT_TRANSFORM extends EditorCellAction {

@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class AssignmentExpression_RightArgument_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new AssignmentExpression_RightArgument_Actions.AssignmentExpression_RightArgument_Actions_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new AssignmentExpression_RightArgument_Actions.AssignmentExpression_RightArgument_Actions_DELETE(node));
   }
 
   public static class AssignmentExpression_RightArgument_Actions_DELETE extends EditorCellAction {

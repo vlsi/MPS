@@ -3156,6 +3156,111 @@
         </node>
       </node>
     </node>
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapItem" id="1216156618050">
+      <property name="showInPopup" value="true" />
+      <property name="description" value="!(expr) surround with negation" />
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1216156618051">
+        <property name="modifiers" value="ctrl+alt" />
+        <property name="keycode" value="VK_T" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_ExecuteFunction" id="1216156618052">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216156618053">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216156775426">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216156801810">
+              <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1216156775427" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation" id="1216156814842">
+                <link role="concept" targetNodeId="17.1081516740877" resolveInfo="NotExpression" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_IsApplicableFunction" id="1216156778146">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216156778147">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216156782555">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1216156789789">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1216156792074">
+                <property name="value" value="1" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216156784432">
+                <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNodes" id="1216156782556" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1216156785919" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapItem" id="1216156827999">
+      <property name="description" value="if(expr) {} use as condition" />
+      <property name="showInPopup" value="true" />
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1216156828000">
+        <property name="keycode" value="VK_T" />
+        <property name="modifiers" value="ctrl+alt" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_ExecuteFunction" id="1216156828001">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216156828002">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216157198138">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216157198139">
+              <property name="name" value="ifStatement" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1216157198140">
+                <link role="concept" targetNodeId="17.1068580123159" resolveInfo="IfStatement" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216157198141">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216157198142">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1216157198143" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1216157198144" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation" id="1216157198145">
+                  <link role="concept" targetNodeId="17.1068580123159" resolveInfo="IfStatement" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216157702178">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1216157707528">
+              <node role="rValue" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1216157712109" />
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216157703743">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216157702179">
+                  <link role="variableDeclaration" targetNodeId="1216157198139" resolveInfo="ifStatement" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216157705668">
+                  <link role="link" targetNodeId="17.1068580123160" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_IsApplicableFunction" id="1216156905035">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216156905036">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216156908005">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1216157141264">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216157161151">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216157157614">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1216157157096" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1216157159805" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1216157163171">
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1216157166313">
+                    <link role="conceptDeclaration" targetNodeId="17.1068580123155" resolveInfo="ExpressionStatement" />
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1216157012786">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216156910539">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNodes" id="1216156908006" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1216156911057" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1216157129871">
+                  <property name="value" value="1" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapItem" id="1166035149309">
       <property name="description" value="Insert closing parenthesis" />
       <property name="caretPolicy" value="caret_at_last_position" />

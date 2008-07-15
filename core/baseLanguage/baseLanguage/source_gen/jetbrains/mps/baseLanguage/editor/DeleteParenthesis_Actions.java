@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class DeleteParenthesis_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new DeleteParenthesis_Actions.DeleteParenthesis_Actions_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new DeleteParenthesis_Actions.DeleteParenthesis_Actions_DELETE(node));
   }
 
   public static class DeleteParenthesis_Actions_DELETE extends EditorCellAction {

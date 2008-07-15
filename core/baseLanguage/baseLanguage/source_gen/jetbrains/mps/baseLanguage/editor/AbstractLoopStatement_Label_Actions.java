@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 public class AbstractLoopStatement_Label_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new AbstractLoopStatement_Label_Actions.AbstractLoopStatement_Label_Actions_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new AbstractLoopStatement_Label_Actions.AbstractLoopStatement_Label_Actions_DELETE(node));
   }
 
   public static class AbstractLoopStatement_Label_Actions_DELETE extends EditorCellAction {

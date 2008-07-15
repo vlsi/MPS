@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 public class CommentedStatementsBlock_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new CommentedStatementsBlock_Actions.CommentedStatementsBlock_Actions_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new CommentedStatementsBlock_Actions.CommentedStatementsBlock_Actions_DELETE(node));
   }
 
   public static class CommentedStatementsBlock_Actions_DELETE extends EditorCellAction {

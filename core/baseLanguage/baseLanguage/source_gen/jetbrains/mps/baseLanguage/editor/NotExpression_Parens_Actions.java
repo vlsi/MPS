@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class NotExpression_Parens_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new NotExpression_Parens_Actions.NotExpression_Parens_Actions_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new NotExpression_Parens_Actions.NotExpression_Parens_Actions_DELETE(node));
   }
 
   public static class NotExpression_Parens_Actions_DELETE extends EditorCellAction {

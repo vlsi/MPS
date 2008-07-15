@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 public class BinaryOperation_Symbol_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new BinaryOperation_Symbol_Actions.BinaryOperation_Symbol_Actions_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new BinaryOperation_Symbol_Actions.BinaryOperation_Symbol_Actions_DELETE(node));
   }
 
   public static class BinaryOperation_Symbol_Actions_DELETE extends EditorCellAction {

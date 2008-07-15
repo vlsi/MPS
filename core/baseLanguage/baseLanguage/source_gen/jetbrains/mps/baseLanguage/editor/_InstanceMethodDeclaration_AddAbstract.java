@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 public class _InstanceMethodDeclaration_AddAbstract {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("RIGHT_TRANSFORM", new _InstanceMethodDeclaration_AddAbstract._InstanceMethodDeclaration_AddAbstract_RIGHT_TRANSFORM(node));
+    editorCell.setAction(EditorCellAction.RIGHT_TRANSFORM, new _InstanceMethodDeclaration_AddAbstract._InstanceMethodDeclaration_AddAbstract_RIGHT_TRANSFORM(node));
   }
 
   public static class _InstanceMethodDeclaration_AddAbstract_RIGHT_TRANSFORM extends EditorCellAction {

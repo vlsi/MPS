@@ -15,7 +15,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 public class IfStatement_elseBlockStatement_delete {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new IfStatement_elseBlockStatement_delete.IfStatement_elseBlockStatement_delete_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new IfStatement_elseBlockStatement_delete.IfStatement_elseBlockStatement_delete_DELETE(node));
   }
 
   public static class IfStatement_elseBlockStatement_delete_DELETE extends EditorCellAction {

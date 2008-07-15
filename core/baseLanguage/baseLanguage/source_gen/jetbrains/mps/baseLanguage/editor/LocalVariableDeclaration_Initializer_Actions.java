@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class LocalVariableDeclaration_Initializer_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new LocalVariableDeclaration_Initializer_Actions.LocalVariableDeclaration_Initializer_Actions_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new LocalVariableDeclaration_Initializer_Actions.LocalVariableDeclaration_Initializer_Actions_DELETE(node));
   }
 
   public static class LocalVariableDeclaration_Initializer_Actions_DELETE extends EditorCellAction {

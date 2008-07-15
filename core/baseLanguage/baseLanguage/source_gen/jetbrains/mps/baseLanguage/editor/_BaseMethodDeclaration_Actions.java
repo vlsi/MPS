@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class _BaseMethodDeclaration_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("RIGHT_TRANSFORM", new _BaseMethodDeclaration_Actions._BaseMethodDeclaration_Actions_RIGHT_TRANSFORM(node));
+    editorCell.setAction(EditorCellAction.RIGHT_TRANSFORM, new _BaseMethodDeclaration_Actions._BaseMethodDeclaration_Actions_RIGHT_TRANSFORM(node));
   }
 
   public static class _BaseMethodDeclaration_Actions_RIGHT_TRANSFORM extends EditorCellAction {

@@ -12,8 +12,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 public class ReturnStatement_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("RIGHT_TRANSFORM", new ReturnStatement_Actions.ReturnStatement_Actions_RIGHT_TRANSFORM(node));
-    editorCell.setAction("DELETE", new ReturnStatement_Actions.ReturnStatement_Actions_DELETE(node));
+    editorCell.setAction(EditorCellAction.RIGHT_TRANSFORM, new ReturnStatement_Actions.ReturnStatement_Actions_RIGHT_TRANSFORM(node));
+    editorCell.setAction(EditorCellAction.DELETE, new ReturnStatement_Actions.ReturnStatement_Actions_DELETE(node));
   }
 
   public static class ReturnStatement_Actions_RIGHT_TRANSFORM extends EditorCellAction {
