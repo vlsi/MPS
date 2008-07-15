@@ -245,7 +245,6 @@ public class EditorManager {
     }
 
     assert nodeCell != null;
-    nodeCell.setInspectorCell(isInspectorCell);
     return nodeCell;
   }
 
