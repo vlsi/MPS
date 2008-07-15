@@ -49,7 +49,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.add(new ShowClassInHierarchy_Action());
       this.add(new ShowConceptInHierarchy_Action());
-      this.add(new ShowConceptStructureAction());
+      this.add(new ShowConceptStructure_Action());
       this.addSeparator();
       this.add(new CloneRoot_Action());
       this.addSeparator();
