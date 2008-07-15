@@ -5,6 +5,8 @@ import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
 
+import java.util.Iterator;
+
 /**
  * Created by IntelliJ IDEA.
  * User: User
@@ -34,7 +36,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     } else {
       editorCell = context.createReferentCell(inlineComponent, getSNode(), effectiveNode, myGenuineRole);
     }
-    EditorUtil.setSemanticNodeToCells(editorCell, node);
+    setSemanticNodeToCells(editorCell, node);
 
     if (myIsCardinality1) {
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
@@ -46,6 +48,19 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
       }
     }
     return editorCell;
+  }
+
+  private void setSemanticNodeToCells(EditorCell rootCell, SNode semanticNode) {
+    if (!(rootCell instanceof EditorCell_Basic) || semanticNode == null) {
+      return;
+    }
+    ((EditorCell_Basic) rootCell).setSNode(semanticNode);
+    if (rootCell instanceof EditorCell_Collection) {
+      Iterator<EditorCell> children = ((EditorCell_Collection) rootCell).cells();
+      while (children.hasNext()) {
+        setSemanticNodeToCells(children.next(), semanticNode);
+      }
+    }
   }
 
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
