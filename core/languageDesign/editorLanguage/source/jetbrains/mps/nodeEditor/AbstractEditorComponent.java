@@ -10,6 +10,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
+import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.SystemInfo;
@@ -42,7 +43,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.core.structure.INamedConcept;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -689,42 +689,41 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     JPopupMenu popupMenu = ActionUtils.createPopup(ActionPlaces.EDITOR_POPUP, group);
 
     EditorCell cell = getSelectedCell();
-    { // keymaps
-      final EditorContext editorContext = createEditorContextForActions();
-      List<EditorCellKeyMapAction> actions = new ArrayList<EditorCellKeyMapAction>();
-      for (EditorCellKeyMapAction action : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
-        try {
-          if (action.isShownInPopupMenu() && action.canExecute(null, editorContext)) {
-            actions.add(action);
-          }
-        } catch (Throwable t) {
-          LOG.error(t);
+
+    final EditorContext editorContext = createEditorContextForActions();
+    List<EditorCellKeyMapAction> actions = new ArrayList<EditorCellKeyMapAction>();
+    for (EditorCellKeyMapAction action : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
+      try {
+        if (action.isShownInPopupMenu() && action.canExecute(null, editorContext)) {
+          actions.add(action);
         }
+      } catch (Throwable t) {
+        LOG.error(t);
       }
-      if (!actions.isEmpty()) popupMenu.addSeparator();
+    }
+    if (!actions.isEmpty()) popupMenu.addSeparator();
 
-      JMenu keyMapActions = new JMenu("KeyMap Actions");
-      keyMapActions.setBorder(null);
-      keyMapActions.setIcon(IconManager.EMPTY_ICON);
+    JMenu keyMapActions = new JMenu("KeyMap Actions");
+    keyMapActions.setBorder(null);
+    keyMapActions.setIcon(IconManager.EMPTY_ICON);
 
-      for (final EditorCellKeyMapAction action : actions) {
-        BaseAction mpsAction = new BaseAction("" + action.getDescriptionText()) {
-          private EditorCellKeyMapAction myAction = action;
+    for (final EditorCellKeyMapAction action : actions) {
+      BaseAction mpsAction = new BaseAction("" + action.getDescriptionText()) {
+        private EditorCellKeyMapAction myAction = action;
 
-          @NotNull
-          public String getKeyStroke() {
-            return action.getKeyStroke();
-          }
+        @NotNull
+        public String getKeyStroke() {
+          return action.getKeyStroke();
+        }
 
-          protected void doExecute(AnActionEvent e) {
-            myAction.execute(null, editorContext);
-          }
-        };
-        keyMapActions.add(ActionUtils.createComponent(ActionPlaces.EDITOR_POPUP, mpsAction));
-      }
+        protected void doExecute(AnActionEvent e) {
+          myAction.execute(null, editorContext);
+        }
+      };
+      keyMapActions.add(ActionUtils.createComponent(ActionPlaces.EDITOR_POPUP, mpsAction));
+    }
 
-      popupMenu.add(keyMapActions);
-    } // ~keymaps
+    popupMenu.add(keyMapActions);
 
     popupMenu.show(AbstractEditorComponent.this, x, y);
   }
@@ -1472,7 +1471,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  private void goByFirstReference() {    
+  private void goByFirstReference() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         GoByFirstReferenceAction action = new GoByFirstReferenceAction();

@@ -1,19 +1,18 @@
 package jetbrains.mps.ide.actions.nodes;
 
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.bootstrap.helgins.structure.AbstractRule;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.bootstrap.helgins.structure.PatternCondition;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.ActionEventData;
+import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.AbstractAction;
@@ -26,8 +25,6 @@ import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class GoToRulesAction extends BaseAction {
   private SNode myNode;
@@ -68,14 +65,14 @@ public class GoToRulesAction extends BaseAction {
   protected boolean collectActionData(AnActionEvent e) {
     ActionEventData data = new ActionEventData(e);
     myNode = data.getNode();
-    if (myNode==null) return false;
+    if (myNode == null) return false;
     if (!(myNode.getAdapter() instanceof AbstractConceptDeclaration)) return false;
     myFrame = data.getFrame();
-    if (myFrame==null) return false;
+    if (myFrame == null) return false;
     myContext = data.getOperationContext();
-    if (myContext==null) return false;
+    if (myContext == null) return false;
     myCell = data.getEditorCell();
-    if (myCell==null) return false;
+    if (myCell == null) return false;
     return true;
   }
 

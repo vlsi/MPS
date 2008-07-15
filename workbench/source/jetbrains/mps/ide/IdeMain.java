@@ -1,21 +1,8 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.logging.LoggerUtil;
-import jetbrains.mps.plugin.MPSPlugin;
-import jetbrains.mps.ide.actions.tools.MakeAllModulesAction;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.make.ModuleMaker;
-
-import javax.swing.JOptionPane;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.SwingUtilities;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ex.ApplicationManagerEx;
 
 public class IdeMain {
 
