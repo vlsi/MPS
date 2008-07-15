@@ -12,6 +12,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.ide.ThreadUtils;
 
 import java.awt.Color;
 import java.util.LinkedHashSet;
@@ -46,11 +47,17 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
       IntentionProvider intentionProvider = errorNode.o2.getIntentionProvider();
       if (intentionProvider != null && intentionProvider.isExecutedImmediately()) {
         final Intention intention = intentionProvider.getIntention();
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            intention.execute(node, null);
-          }
-        });
+        if (intention != null) {
+          ThreadUtils.runInUIThreadNoWait(new Runnable() {
+            public void run() {
+              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                public void run() {
+                  intention.execute(node, null);
+                }
+              });
+            }
+          });
+        }
       } else {
         MessageStatus status = MessageStatus.ERROR;
         Color color = Color.red;

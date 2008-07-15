@@ -31,7 +31,7 @@ public class ChildTypeRestrictionReference_Editor extends DefaultNodeEditor {
 
   public EditorCell create_typeRestrictionRefCell6374_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ChildTypeRestrictionReference_Editor._Inline14());
+    provider.setAuxiliaryCellProvider(new ChildTypeRestrictionReference_Editor._Inline13());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_typeRestrictionRefCell6374_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -58,9 +58,9 @@ public class ChildTypeRestrictionReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline14 extends AbstractCellProvider {
+  public static class _Inline13 extends AbstractCellProvider {
 
-    public _Inline14() {
+    public _Inline13() {
       super();
     }
 

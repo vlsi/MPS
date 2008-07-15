@@ -2,6 +2,7 @@ package jetbrains.mps.intentions;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.helgins.inference.TypeChecker;
@@ -27,7 +28,8 @@ public class BaseIntentionProvider implements IntentionProvider {
   private Map<String, Object> myMap = new HashMap<String, Object>();
 
   public BaseIntentionProvider(String classFQName) {
-    myClassFQName = classFQName;
+    myClassFQName = SModelUID.fromString(NameUtil.namespaceFromLongName(classFQName)).getLongName() +
+      "." + NameUtil.shortNameFromLongName(classFQName);
     myIntention = null;
     myIntentionTaken = false;
   }

@@ -463,7 +463,7 @@ __switch__:
           }
           {
             BaseIntentionProvider intentionProvider = null;
-            intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins@5_0.AddExceptionToMethodSignature_Intention");
+            intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins@5_0.AddExceptionToMethodSignature_Intention", false);
             intentionProvider.putArgument("throwableType", throwables.iterator().next());
             TypeChecker.getInstance().reportTypeError(mainNode, errorString, "jetbrains.mps.baseLanguage.helgins@5_0", "1210182111558", intentionProvider);
           }

@@ -386,6 +386,24 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216142123838">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216142123839">
+            <property name="name" value="lehitraot" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216142123840">
+              <link role="classifier" targetNodeId="1213199242548" resolveInfo="Lehitraot" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216143422163">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216143423603">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216143422164">
+              <link role="variableDeclaration" targetNodeId="1216142123839" resolveInfo="lehitraot" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216143552499">
+              <link role="baseMethodDeclaration" targetNodeId="1216142038952" resolveInfo="foof" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213199242549" />
@@ -404,6 +422,22 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1216142038952">
+      <property name="name" value="foof" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1216142038953" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216142038954" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216142038955" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1216142061799">
+      <property name="name" value="foof" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1216142061800" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216142061801" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216142061802" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216142069836">
+        <property name="name" value="i" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1216142069837" />
       </node>
     </node>
   </node>
