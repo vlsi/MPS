@@ -3,32 +3,44 @@ package jetbrains.mps.nodeEditor;
 import java.awt.*;
 
 
-/**
- * Author: Sergey Dmitriev.
- * Time: Nov 6, 2003 11:34:47 AM
- */
 public class NodeEditorActions {
+  private static EditorCell findRightmostOrLeftmostSelectableCell(final EditorCell cell, final boolean isLeftmost) {
+    EditorCell_Collection rootCell = cell.isUnfoldedCollection() ? (EditorCell_Collection) cell : cell.getParent();
+    while (rootCell.getParent() != null) rootCell = rootCell.getParent();
 
-  private static EditorCell_Collection findHorizontalCollection(EditorCell cell) {
-    EditorCell_Collection parentCell = (cell.isUnfoldedCollection()) ? (EditorCell_Collection) cell : cell.getParent();
+    class RightmostCellCondition extends EditorCellCondition {
+      private int myY = cell.getBaseline();
 
-    if (parentCell == null) return null;
+      public void checkLeafCell(EditorCell editorCell) {
+        if (editorCell.getY() > myY) {
+          return;
+        }
+        if (editorCell.getY() + editorCell.getHeight() < myY) {
+          return;
+        }
+        if (getFoundCell() == null) {
+          if (editorCell.isSelectable()) {
+            setFoundCell(editorCell);
+          }
+          return;
+        }
 
-    while (!(parentCell.getCellLayout() instanceof CellLayout_Horizontal || parentCell.getCellLayout() instanceof CellLayout_Flow)) {
-      EditorCell firstCell = parentCell.firstCell();
-      if (firstCell.isUnfoldedCollection()) parentCell = (EditorCell_Collection) firstCell;
-      //else return firstCell;
+        if (editorCell.getX() > getFoundCell().getX() && editorCell.isSelectable()) {
+          if (!isLeftmost) setFoundCell(editorCell);
+          return;
+        }
+        if (editorCell.getX() < getFoundCell().getX() && editorCell.isSelectable()) {
+          if (isLeftmost) {
+            setFoundCell(editorCell);
+          }
+        }
+      }
     }
 
-    EditorCell_Collection prev_parentCell = parentCell;
-
-    while (parentCell != null && (parentCell.getCellLayout() instanceof CellLayout_Horizontal || parentCell.getCellLayout() instanceof CellLayout_Flow)) {
-      prev_parentCell = parentCell;
-      parentCell = parentCell.getParent();
-    }
-    return prev_parentCell;
+    RightmostCellCondition rightmostCellCondition = new RightmostCellCondition();
+    rootCell.iterateTreeUntilCondition(rightmostCellCondition);
+    return rightmostCellCondition.getFoundCell();
   }
-
 
   public static class LEFT extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
@@ -112,7 +124,7 @@ public class NodeEditorActions {
       while (rootCell != null && rootCell.getParent() != null) {
         rootCell = rootCell.getParent();
       }
-      return rootCell.findChild(CellFinders.FIRST_SELECTABLE);
+      return rootCell == null ? null : rootCell.findChild(CellFinders.FIRST_SELECTABLE);
     }
 
   }
@@ -136,7 +148,7 @@ public class NodeEditorActions {
       while (rootCell != null && rootCell.getParent() != null) {
         rootCell = rootCell.getParent();
       }
-      return rootCell.findChild(CellFinders.LAST_SELECTABLE);
+      return rootCell == null ? null : rootCell.findChild(CellFinders.LAST_SELECTABLE);
     }
 
   }
@@ -162,7 +174,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      return EditorUtil.findRightmostOrLeftmostSelectableCell(cell, true);
+      return findRightmostOrLeftmostSelectableCell(cell, true);
     }
 
   }
@@ -187,7 +199,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      return EditorUtil.findRightmostOrLeftmostSelectableCell(cell, false);
+      return findRightmostOrLeftmostSelectableCell(cell, false);
     }
 
   }
