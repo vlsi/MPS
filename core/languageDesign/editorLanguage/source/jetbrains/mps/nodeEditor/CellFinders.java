@@ -1,5 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.util.Condition;
+
 public class CellFinders {
   public static final CellFinder<EditorCell_Label> FIRST_EDITABLE = new EditableCellFinder(true);
   public static final CellFinder<EditorCell_Label> LAST_EDITABLE = new EditableCellFinder(false);
@@ -18,6 +20,22 @@ public class CellFinders {
 
       public Class<C> getCellClass() {
         return cls;
+      }
+
+      public boolean isFirstChild() {
+        return first;
+      }
+    };
+  }
+
+  public static CellFinder<EditorCell> byCondition(final Condition<EditorCell> condition, final boolean first) {
+    return new CellFinder<EditorCell>() {
+      public boolean isSuitable(EditorCell cell) {
+        return condition.met(cell);
+      }
+
+      public Class<EditorCell> getCellClass() {
+        return EditorCell.class;
       }
 
       public boolean isFirstChild() {
