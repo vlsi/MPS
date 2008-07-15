@@ -338,7 +338,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       return getSelectedNodes();
     }
 
-    if (dataId.equals(MPSDataKeys.SMODEL_DESCRIPTOR.getName())) {
+    if (dataId.equals(MPSDataKeys.MODEL_DESCRIPTOR.getName())) {
       return getSelectedModel();
     }
 

@@ -2212,7 +2212,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return getSelectedNodes();
     }
 
-    if (dataId.equals(MPSDataKeys.SMODEL_DESCRIPTOR.getName())) {
+    if (dataId.equals(MPSDataKeys.MODEL_DESCRIPTOR.getName())) {
       return ModelAccess.instance().runReadAction(new Computable() {
         public Object compute() {
           return getRootCell().getSNode().getModel().getModelDescriptor();

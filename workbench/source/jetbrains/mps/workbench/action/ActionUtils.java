@@ -142,7 +142,7 @@ public class ActionUtils {
         if (dataId.equals(MPSDataKeys.MODELS.getName())) {
           return context.getModels();
         }
-        if (dataId.equals(MPSDataKeys.SMODEL_DESCRIPTOR.getName())) {
+        if (dataId.equals(MPSDataKeys.MODEL_DESCRIPTOR.getName())) {
           return context.getModel();
         }
         if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
