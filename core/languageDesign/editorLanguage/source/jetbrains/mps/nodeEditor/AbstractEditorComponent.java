@@ -1468,8 +1468,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  private void goByFirstReference() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+  private void goByFirstReference() {    
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         GoByFirstReferenceAction action = new GoByFirstReferenceAction();
         AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, createActionContext());
