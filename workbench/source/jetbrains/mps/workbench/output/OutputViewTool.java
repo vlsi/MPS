@@ -5,9 +5,9 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.*;

@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.action;
+package jetbrains.mps.workbench.action;
 
 public class InternalFlag {
 

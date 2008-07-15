@@ -152,7 +152,9 @@ public class ActionUtils {
           return context.getOperationContext();
         }
         if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
-          Project project = context.getOperationContext().getProject();
+          IOperationContext oContext = context.getOperationContext();
+          if (oContext == null) return null;
+          Project project = oContext.getProject();
           return project;
         }
         return null;

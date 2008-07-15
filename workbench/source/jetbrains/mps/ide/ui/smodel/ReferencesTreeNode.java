@@ -1,6 +1,8 @@
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -8,15 +10,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.action.BaseAction;
-
-import javax.swing.JPopupMenu;
-import java.awt.event.ActionEvent;
-
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class ReferencesTreeNode extends MPSTreeNodeEx {
   private SNode myNode;

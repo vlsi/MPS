@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.action;
+package jetbrains.mps.workbench.action;
 
 import jetbrains.mps.ide.icons.IconManager;
 

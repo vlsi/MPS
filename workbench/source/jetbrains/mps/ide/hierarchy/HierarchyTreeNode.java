@@ -1,18 +1,13 @@
 package jetbrains.mps.ide.hierarchy;
 
-import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
-
-import javax.swing.JPopupMenu;
-import java.awt.event.ActionEvent;
-
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 

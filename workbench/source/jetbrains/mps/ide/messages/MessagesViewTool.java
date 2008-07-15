@@ -11,12 +11,12 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.blame.BlameDialog;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.*;

@@ -1,13 +1,12 @@
 package jetbrains.mps.ide.moduleRepositoryViewer;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.CommandProcessorEx;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -24,9 +23,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
-import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
-import java.awt.event.ActionEvent;
 
 public class ModuleRepositoryView extends DefaultTool {
   private MPSTree myTree = new MyTree();

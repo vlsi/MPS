@@ -3,20 +3,15 @@ package jetbrains.mps.transformation.TLBase.plugin.debug;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
 import jetbrains.mps.transformation.TLBase.plugin.debug.icons.Icons;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-
-import javax.swing.JPopupMenu;
-import java.awt.event.ActionEvent;
 
 public class GenerationTracerTreeNode extends MPSTreeNode {
   private static final Logger LOG = Logger.getLogger(GenerationTracerTreeNode.class);
@@ -162,21 +157,5 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     }
     setIcon(Icons.getIcon(myTracerNode));
     setAutoExpandable(getChildCount() == 1);
-  }
-
-  private static abstract class PopupAction extends AbstractActionWithEmptyIcon {
-    protected PopupAction(String name) {
-      super(name);
-    }
-
-    public void actionPerformed(ActionEvent e) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          action();
-        }
-      });
-    }
-
-    protected abstract void action();
   }
 }

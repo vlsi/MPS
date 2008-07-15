@@ -3,7 +3,6 @@ package jetbrains.mps.workbench.action;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.Presentation;
-import jetbrains.mps.ide.action.InternalFlag;
 import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.Icon;
@@ -79,7 +78,10 @@ public class BaseGroup extends DefaultActionGroup {
         doUpdate(e);
       }
     });
-    if (myIsInternal && !InternalFlag.isInternalModel()) disable(e.getPresentation());
+    if (myIsInternal && !InternalFlag.isInternalModel()) {
+      e.getPresentation().setEnabled(false);
+      e.getPresentation().setVisible(false);
+    }
   }
 
   public void adjust() {
