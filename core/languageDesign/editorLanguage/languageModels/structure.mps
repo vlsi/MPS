@@ -1019,11 +1019,11 @@
     <link role="memberDataType" targetNodeId="3.1082983041843" />
     <link role="defaultMember" targetNodeId="1139535329028" resolveInfo="right_transform" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1139535329028">
-      <property name="externalValue" value="right_transform" />
+      <property name="externalValue" value="RIGHT_TRANSFORM" />
       <property name="internalValue" value="right_transform_action_id" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1139535387060">
-      <property name="externalValue" value="delete" />
+      <property name="externalValue" value="DELETE" />
       <property name="internalValue" value="delete_action_id" />
     </node>
   </node>
