@@ -1,7 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-
 import java.awt.*;
 
 
@@ -12,13 +10,13 @@ import java.awt.*;
 public class NodeEditorActions {
 
   private static EditorCell_Collection findHorizontalCollection(EditorCell cell) {
-    EditorCell_Collection parentCell = (EditorUtil.isCollection(cell)) ? (EditorCell_Collection) cell : cell.getParent();
+    EditorCell_Collection parentCell = (cell.isUnfoldedCollection()) ? (EditorCell_Collection) cell : cell.getParent();
 
     if (parentCell == null) return null;
 
     while (!(parentCell.getCellLayout() instanceof CellLayout_Horizontal || parentCell.getCellLayout() instanceof CellLayout_Flow)) {
       EditorCell firstCell = parentCell.firstCell();
-      if (EditorUtil.isCollection(firstCell)) parentCell = (EditorCell_Collection) firstCell;
+      if (firstCell.isUnfoldedCollection()) parentCell = (EditorCell_Collection) firstCell;
       //else return firstCell;
     }
 
@@ -75,21 +73,21 @@ public class NodeEditorActions {
       EditorCell_Collection parentCollection = parent.getParent();
       if (parentCollection == null) return null;
       EditorCell target = parentCollection.getPrevCell(parent);
-      while (target != null && !(EditorUtil.isCollection(target) || target.isSelectable())) {
+      while (target != null && !(target.isUnfoldedCollection() || target.isSelectable())) {
           target = parentCollection.getPrevCell(target);
       }
 
-      while (target == null || !(EditorUtil.isCollection(target) || target.isSelectable())) {
+      while (target == null || !(target.isUnfoldedCollection() || target.isSelectable())) {
         parent = parentCollection;
         parentCollection = parentCollection.getParent();
         if (parentCollection == null) return null;
         target = parentCollection.getPrevCell(parent);
-        while (target != null && !(EditorUtil.isCollection(target) || target.isSelectable())) {
+        while (target != null && !(target.isUnfoldedCollection() || target.isSelectable())) {
           target = parentCollection.getPrevCell(target);
         }
       }
 
-      if (!(EditorUtil.isCollection(target))) return target;
+      if (!(target.isUnfoldedCollection())) return target;
 
       return EditorUtil.findLastSelectableCell((EditorCell_Collection) target);
       //---
@@ -110,7 +108,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      EditorCell_Collection rootCell = EditorUtil.isCollection(cell)?(EditorCell_Collection) cell : cell.getParent();
+      EditorCell_Collection rootCell = cell.isUnfoldedCollection() ?(EditorCell_Collection) cell : cell.getParent();
       while (rootCell != null && rootCell.getParent() != null) {
         rootCell = rootCell.getParent();
       }
@@ -134,7 +132,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      EditorCell_Collection rootCell = EditorUtil.isCollection(cell)?(EditorCell_Collection) cell : cell.getParent();
+      EditorCell_Collection rootCell = cell.isUnfoldedCollection() ?(EditorCell_Collection) cell : cell.getParent();
       while (rootCell != null && rootCell.getParent() != null) {
         rootCell = rootCell.getParent();
       }
@@ -216,7 +214,7 @@ public class NodeEditorActions {
     private EditorCell findTarget(EditorCell cell) {
       EditorCell_Collection parent = cell.getParent();
       if (parent == null) {
-        return (EditorUtil.isCollection(cell))?EditorUtil.findFirstSelectableCell((EditorCell_Collection) cell) :null;
+        return (cell.isUnfoldedCollection())?EditorUtil.findFirstSelectableCell((EditorCell_Collection) cell) :null;
       }
 
       EditorCell nextToRight = parent.findNextToRight(cell);
@@ -226,21 +224,21 @@ public class NodeEditorActions {
       EditorCell_Collection parentCollection = parent.getParent();
       if (parentCollection == null) return null;
       EditorCell target = parentCollection.getNextCell(parent);
-      while (target != null && !(EditorUtil.isCollection(target) || target.isSelectable())) {
+      while (target != null && !(target.isUnfoldedCollection() || target.isSelectable())) {
           target = parentCollection.getNextCell(target);
       }
 
-      while (target == null || !(EditorUtil.isCollection(target) || target.isSelectable())) {
+      while (target == null || !(target.isUnfoldedCollection() || target.isSelectable())) {
         parent = parentCollection;
         parentCollection = parentCollection.getParent();
         if (parentCollection == null) return null;
         target = parentCollection.getNextCell(parent);
-        while (target != null && !(EditorUtil.isCollection(target) || target.isSelectable())) {
+        while (target != null && !(target.isUnfoldedCollection() || target.isSelectable())) {
           target = parentCollection.getNextCell(target);
         }
       }
 
-      if (!(EditorUtil.isCollection(target))) return target;
+      if (!(target.isUnfoldedCollection())) return target;
 
       return EditorUtil.findFirstSelectableCell((EditorCell_Collection) target);
       //---
@@ -288,7 +286,7 @@ public class NodeEditorActions {
 
     private EditorCell findTarget(EditorCell cell, int caretX) {
        if (cell.getParent() == null) {
-        return (EditorUtil.isCollection(cell))?findTarget((EditorCell_Collection) cell, caretX):null;
+         return (cell.isUnfoldedCollection())?findTarget((EditorCell_Collection) cell, caretX):null;
       }
       return cell.getParent().findNextToDown(caretX, cell.getY() + cell.getHeight());
     }
@@ -297,7 +295,7 @@ public class NodeEditorActions {
     private EditorCell findTarget(EditorCell_Collection collection, int caretX) {
       EditorCell target = collection.firstCell();
       while (target != null) {
-        if (EditorUtil.isCollection(target)) {
+        if (target.isUnfoldedCollection()) {
           EditorCell childTarget = findTarget((EditorCell_Collection) target, caretX);
           if (childTarget != null) {
             return childTarget;

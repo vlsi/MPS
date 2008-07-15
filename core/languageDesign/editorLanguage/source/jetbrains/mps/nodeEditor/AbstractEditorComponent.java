@@ -1131,7 +1131,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void selectFirstEditableCellOf(final SNode node) {
     EditorCell cell = findNodeCell(node);
-    EditorCell editable = EditorUtil.findEditableCell(cell);
+    EditorCell editable = cell.findChild(CellFinder.FIRST_EDITABLE);
     if (editable == null) {
       changeSelection(cell);
     } else {

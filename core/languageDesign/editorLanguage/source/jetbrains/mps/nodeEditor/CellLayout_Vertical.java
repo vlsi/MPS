@@ -1,14 +1,10 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.baseLanguage.structure.BlockStatement;
 
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import sun.misc.Unsafe;
 
 /**
  * User: Sergey Dmitriev
@@ -163,7 +159,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
         width += closingBrace.getWidth();
       } else {
         EditorCell lastCell = editorCells.lastContentCell();
-        while (EditorUtil.isCollection(lastCell)) {
+        while (lastCell.isUnfoldedCollection()) {
           lastCell = ((EditorCell_Collection)lastCell).lastCell();
         }
         closingBrace.setX(lastCell.getX() + lastCell.getWidth()/*x + lastCellWidth*/);
