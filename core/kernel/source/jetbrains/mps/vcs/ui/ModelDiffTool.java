@@ -4,6 +4,7 @@ import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffContent;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.fileTypes.FileType;
 
 import java.io.InputStream;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import org.jdom.Document;
 import org.jdom.JDOMException;
+import org.jetbrains.annotations.NotNull;
 
 public class ModelDiffTool implements DiffTool {
 
@@ -84,7 +86,11 @@ public class ModelDiffTool implements DiffTool {
     return (contents.length == 2) && isModelFile(contents[0]) && isModelFile(contents[1]);
   }
 
-  private boolean isModelFile(DiffContent contents) {
-    return contents.getContentType().equals(MPSFileTypesManager.MODEL_FILE_TYPE);
+  private boolean isModelFile(@NotNull DiffContent contents) {
+    FileType type = contents.getContentType();
+    if (type == null) {
+      return false;
+    }
+    return type.equals(MPSFileTypesManager.MODEL_FILE_TYPE);
   }
 }
