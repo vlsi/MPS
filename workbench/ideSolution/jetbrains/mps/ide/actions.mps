@@ -230,8 +230,8 @@
               resolveInfo="ShowDifferenceWithModelOnDiskAction"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909591822"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909597168">
-        <link role="javaClass" targetNodeId="3.~RevertMemoryChangesAction" resolveInfo="RevertMemoryChangesAction"/>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1216120960664">
+        <link role="action" targetNodeId="1216120752903" resolveInfo="RevertMemoryChanges"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1215889790375">
         <link role="action" targetNodeId="1215889706327" resolveInfo="SaveModel"/>
@@ -6513,6 +6513,42 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216120265907"/>
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216120268707">
         <link role="classifier" targetNodeId="63.~MPSProject" resolveInfo="MPSProject"/>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216120752903">
+    <property name="package" value="Actions"/>
+    <property name="name" value="RevertMemoryChanges"/>
+    <property name="caption" value="Revert Memory Changes"/>
+    <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
+          id="1216120752904">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216120752905">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216120783441">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216120785101">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216120783442">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"
+                    id="1216120783443"/>
+              <node role="operation"
+                    type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation"
+                    id="1216120783444">
+                <link role="member" targetNodeId="1216120774140" resolveInfo="model"/>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
+                  id="1216120800780">
+              <link role="baseMethodDeclaration" targetNodeId="40.~SModelDescriptor.reloadFromDisk():void"
+                    resolveInfo="reloadFromDisk"/>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration"
+          id="1216120774140">
+      <property name="name" value="model"/>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216120774141"/>
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216120778737">
+        <link role="classifier" targetNodeId="40.~SModelDescriptor" resolveInfo="SModelDescriptor"/>
       </node>
     </node>
   </node>
