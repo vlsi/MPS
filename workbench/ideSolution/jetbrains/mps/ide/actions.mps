@@ -30,20 +30,20 @@
   <languageAspect modelUID="jetbrains.mps.ide.uiLanguage.constraints" version="3"/>
   <languageAspect modelUID="jetbrains.mps.uiLanguage.constraints" version="26"/>
   <maxImportIndex value="101"/>
-  <import index="1" modelUID="jetbrains.mps.ide.actions.nodes@java_stub" version="-1"/>
+  <import index="1" modelUID="jetbrains.mps.workbench.actions.nodes@java_stub" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.ide.modelchecker@java_stub" version="-1"/>
-  <import index="3" modelUID="jetbrains.mps.ide.actions.model@java_stub" version="-1"/>
-  <import index="5" modelUID="jetbrains.mps.ide.actions.project@java_stub" version="-1"/>
+  <import index="3" modelUID="jetbrains.mps.workbench.actions.model@java_stub" version="-1"/>
+  <import index="5" modelUID="jetbrains.mps.workbench.actions.project@java_stub" version="-1"/>
   <import index="6" modelUID="jetbrains.mps.ide.actions.make@java_stub" version="-1"/>
-  <import index="8" modelUID="jetbrains.mps.ide.actions.language@java_stub" version="-1"/>
+  <import index="8" modelUID="jetbrains.mps.workbench.actions.language@java_stub" version="-1"/>
   <import index="9" modelUID="jetbrains.mps.ide.hierarchy@java_stub" version="-1"/>
-  <import index="10" modelUID="jetbrains.mps.ide.actions.module@java_stub" version="-1"/>
-  <import index="11" modelUID="jetbrains.mps.ide.actions.solution@java_stub" version="-1"/>
-  <import index="13" modelUID="jetbrains.mps.ide.actions.tools@java_stub" version="-1"/>
-  <import index="14" modelUID="jetbrains.mps.ide.actions.generate@java_stub" version="-1"/>
-  <import index="15" modelUID="jetbrains.mps.ide.actions.cells@java_stub" version="-1"/>
-  <import index="16" modelUID="jetbrains.mps.ide.actions.baseLanguage@java_stub" version="-1"/>
-  <import index="21" modelUID="jetbrains.mps.ide.actions.help@java_stub" version="-1"/>
+  <import index="10" modelUID="jetbrains.mps.workbench.actions.module@java_stub" version="-1"/>
+  <import index="11" modelUID="jetbrains.mps.workbench.actions.solution@java_stub" version="-1"/>
+  <import index="13" modelUID="jetbrains.mps.workbench.actions.tools@java_stub" version="-1"/>
+  <import index="14" modelUID="jetbrains.mps.workbench.actions.generate@java_stub" version="-1"/>
+  <import index="15" modelUID="jetbrains.mps.workbench.actions.cells@java_stub" version="-1"/>
+  <import index="16" modelUID="jetbrains.mps.workbench.actions.baseLanguage@java_stub" version="-1"/>
+  <import index="21" modelUID="jetbrains.mps.workbench.actions.help@java_stub" version="-1"/>
   <import index="40" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
   <import index="42" modelUID="jetbrains.mps.ide.classpath@java_stub" version="-1"/>
   <import index="43" modelUID="jetbrains.mps.transformation.TLBase.plugin.debug.actions@java_stub" version="-1"/>

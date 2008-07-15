@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.actions.model;
+package jetbrains.mps.workbench.actions.model;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.util.Computable;
@@ -75,7 +75,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       Icon icon = IconManager.getIconFor(language.getNamespace());
       BaseGroup langRootsGroup;
 
-      if (! myPlain) {
+      if (!myPlain) {
         langRootsGroup = new BaseGroup(name, name, icon);
         langRootsGroup.setPopup(true);
       } else {
@@ -90,7 +90,7 @@ public class CreateRootNodeGroup extends BaseGroup {
         }
       }
       if (hasChildren) {
-        if (! myPlain) {
+        if (!myPlain) {
           this.add(langRootsGroup);
         } else {
           this.addSeparator();

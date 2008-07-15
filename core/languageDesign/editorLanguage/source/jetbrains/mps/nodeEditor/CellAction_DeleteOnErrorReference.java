@@ -1,11 +1,10 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
+import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CellAction_DeleteOnErrorReference extends EditorCellAction {
   private SNode mySource;
@@ -15,7 +14,7 @@ public class CellAction_DeleteOnErrorReference extends EditorCellAction {
     mySource = source;
     myRole = role;
   }
-  
+
   public void execute(EditorContext context) {
     if (mySource.getReference(myRole) != null && mySource.getReferent(myRole) == null) {
       mySource.removeReference(mySource.getReference(myRole));

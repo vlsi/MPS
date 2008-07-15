@@ -1,10 +1,10 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
+import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Author: Sergey Dmitriev.

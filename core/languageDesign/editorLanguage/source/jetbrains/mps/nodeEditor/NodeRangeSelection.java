@@ -8,10 +8,10 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -38,16 +38,16 @@ public class NodeRangeSelection implements IKeyboardHandler {
 
   public boolean isSelectionKeystroke(KeyEvent keyEvent) {
     if (keyEvent.isShiftDown() && keyEvent.isControlDown() && !(keyEvent.isAltDown()) &&
-            (keyEvent.getKeyCode() == KeyEvent.VK_UP ||
-                    keyEvent.getKeyCode() == KeyEvent.VK_DOWN ||
-                    keyEvent.getKeyCode() == KeyEvent.VK_LEFT ||
-                    keyEvent.getKeyCode() == KeyEvent.VK_RIGHT)) {
+      (keyEvent.getKeyCode() == KeyEvent.VK_UP ||
+        keyEvent.getKeyCode() == KeyEvent.VK_DOWN ||
+        keyEvent.getKeyCode() == KeyEvent.VK_LEFT ||
+        keyEvent.getKeyCode() == KeyEvent.VK_RIGHT)) {
       return true;
     }
 
     if (keyEvent.isShiftDown() && !(keyEvent.isAltDown()) &&
-            (keyEvent.getKeyCode() == KeyEvent.VK_UP ||
-                    keyEvent.getKeyCode() == KeyEvent.VK_DOWN)) {
+      (keyEvent.getKeyCode() == KeyEvent.VK_UP ||
+        keyEvent.getKeyCode() == KeyEvent.VK_DOWN)) {
       return true;
     }
 
@@ -196,9 +196,9 @@ public class NodeRangeSelection implements IKeyboardHandler {
     if (!isSelectionKeystroke(keyEvent)) {
       // any navigation key - deactivate
       if (keyEvent.getKeyCode() == KeyEvent.VK_UP ||
-              keyEvent.getKeyCode() == KeyEvent.VK_DOWN ||
-              keyEvent.getKeyCode() == KeyEvent.VK_LEFT ||
-              keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
+        keyEvent.getKeyCode() == KeyEvent.VK_DOWN ||
+        keyEvent.getKeyCode() == KeyEvent.VK_LEFT ||
+        keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
 
         if (keyEvent.isAltDown()) {
           //alt + arrows node movement will be handled by editor 

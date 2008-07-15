@@ -34,7 +34,7 @@
   <import index="2" modelUID="jetbrains.mps.smodel.constraints@java_stub" version="-1"/>
   <import index="3" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1"/>
   <import index="4" modelUID="jetbrains.mps.helgins.uiActions@java_stub" version="-1"/>
-  <import index="5" modelUID="jetbrains.mps.ide.actions.nodes@java_stub" version="-1"/>
+  <import index="5" modelUID="jetbrains.mps.workbench.actions.nodes@java_stub" version="-1"/>
   <import index="6" modelUID="jetbrains.mps.ide.actions" version="-1"/>
   <import index="7" modelUID="jetbrains.mps.ide.action@java_stub" version="-1"/>
   <import index="8" modelUID="jetbrains.mps.bootstrap.helgins.dependencies@java_stub" version="-1"/>

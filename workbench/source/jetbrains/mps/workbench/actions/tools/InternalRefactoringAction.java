@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.actions.tools;
+package jetbrains.mps.workbench.actions.tools;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.baseLanguage.structure.EnumConstantReference;

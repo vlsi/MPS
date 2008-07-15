@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.actions.help;
+package jetbrains.mps.workbench.actions.help;
 
 public class ShowMPSDiscussionForum extends ShowSiteAction {
   public ShowMPSDiscussionForum() {

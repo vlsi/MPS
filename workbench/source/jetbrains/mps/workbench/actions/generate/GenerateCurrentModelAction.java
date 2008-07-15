@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.actions.generate;
+package jetbrains.mps.workbench.actions.generate;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.generator.GeneratorManager;

@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.actions.module;
+package jetbrains.mps.workbench.actions.module;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;

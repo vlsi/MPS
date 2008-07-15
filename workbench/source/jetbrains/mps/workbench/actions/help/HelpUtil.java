@@ -1,18 +1,9 @@
-package jetbrains.mps.ide.actions.help;
+package jetbrains.mps.workbench.actions.help;
 
 import jetbrains.mps.ide.browser.BrowserUtil;
 import jetbrains.mps.logging.Logger;
 
-import javax.swing.*;
-import javax.swing.event.HyperlinkListener;
-import javax.swing.event.HyperlinkEvent;
-import javax.swing.border.EtchedBorder;
-import javax.swing.text.html.HTMLEditorKit;
 import java.io.File;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.awt.*;
 import java.net.MalformedURLException;
 
 /**

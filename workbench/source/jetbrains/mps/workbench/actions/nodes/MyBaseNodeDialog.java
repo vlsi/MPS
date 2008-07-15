@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.actions.nodes;
+package jetbrains.mps.workbench.actions.nodes;
 
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;

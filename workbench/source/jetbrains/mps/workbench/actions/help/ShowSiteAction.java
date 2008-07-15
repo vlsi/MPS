@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.actions.help;
+package jetbrains.mps.workbench.actions.help;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.browser.BrowserUtil;

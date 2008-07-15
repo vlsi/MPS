@@ -6,7 +6,6 @@ import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.actions.model.CreateRootNodeGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -23,6 +22,7 @@ import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
@@ -319,7 +319,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   protected CreateRootNodeGroup getQuickCreateGroup(boolean plain) {
-    return new CreateRootNodeGroup(null, plain);  
+    return new CreateRootNodeGroup(null, plain);
   }
 
   public String calculateText() {

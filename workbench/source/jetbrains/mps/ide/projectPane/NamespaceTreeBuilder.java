@@ -6,8 +6,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.ide.actions.project.NewLanguageAction;
-import jetbrains.mps.ide.actions.project.NewSolutionAction;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -21,6 +19,8 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.actions.project.NewLanguageAction;
+import jetbrains.mps.workbench.actions.project.NewSolutionAction;
 
 import javax.swing.JOptionPane;
 import java.awt.Frame;

@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.actions.generate;
+package jetbrains.mps.workbench.actions.generate;
 
 import jetbrains.mps.generator.IGenerationType;
 import org.jetbrains.annotations.NotNull;
