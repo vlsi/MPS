@@ -42,7 +42,7 @@ public class PropertyAccessor implements ModelAccessor {
     return myPropertyName;
   }
 
-  public String getText() {
+  public String getText() {                                                                      
     String value = NodeReadAccessCaster.runEditorCellPropertyAccessAction(this);
     return fromInternal(value);
   }

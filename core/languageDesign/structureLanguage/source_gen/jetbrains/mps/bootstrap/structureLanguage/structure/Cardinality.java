@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.LinkedList;
 
 public enum Cardinality {
-  _0__1("_0_1", "0..1"),
-  _1("_1", "1"),
-  _0__n("_0_n", "0..n"),
-  _1__n("_1_n", "1..n");
+  _0__1("0..1", "0..1"),
+  _1("1", "1"),
+  _0__n("0..n", "0..n"),
+  _1__n("1..n", "1..n");
 
   private String myName;
   private String myValue;
