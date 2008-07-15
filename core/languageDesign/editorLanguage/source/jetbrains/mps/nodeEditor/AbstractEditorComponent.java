@@ -1194,7 +1194,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private EditorCell findNodeCellWithRole(EditorCell rootCell, String role, SNode node) {
     if (role == null) return null;
-    if (role.equals(EditorUtil.getCellRole(rootCell)) && node == rootCell.getSNode()) {
+    if (role.equals(rootCell.getCellRole()) && node == rootCell.getSNode()) {
       return rootCell;
     }
     if (rootCell instanceof EditorCell_Collection) {
