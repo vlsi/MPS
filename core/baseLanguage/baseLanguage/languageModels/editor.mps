@@ -3230,6 +3230,24 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216157532142">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216157666714">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216157650616">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216157533956">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216157532143">
+                    <link role="variableDeclaration" targetNodeId="1216157198139" resolveInfo="ifStatement" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216157649147">
+                    <link role="link" targetNodeId="17.1068580123161" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1216157665323">
+                  <link role="link" targetNodeId="17.1068581517665" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_RemoveAllChildrenOperation" id="1216157670389" />
+            </node>
+          </node>
         </node>
       </node>
       <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_IsApplicableFunction" id="1216156905035">

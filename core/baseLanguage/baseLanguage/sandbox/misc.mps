@@ -922,14 +922,10 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1214431324746" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214431324747" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214431324748">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215097367897">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215097369821">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215097369871">
-              <property name="value" value="4" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1215097367898">
-              <property name="value" value="true" />
-            </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216158040167">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216158040168" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1216158036072">
+            <property name="value" value="true" />
           </node>
         </node>
       </node>
