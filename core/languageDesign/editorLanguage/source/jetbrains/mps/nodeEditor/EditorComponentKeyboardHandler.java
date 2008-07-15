@@ -53,7 +53,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       } else if (actionsInfo.size() > 1 ||
         (actionsInfo.size() == 1 && actionsInfo.get(0).o1.isMenuAlwaysShown())) {
         // show menu
-        EditorUtil.showActionsMenu(actionsInfo, keyEvent, editorContext, selectedCell);
+        KeyMapUtil.showActionsMenu(actionsInfo, keyEvent, editorContext, selectedCell);
         return true;
       }
     }

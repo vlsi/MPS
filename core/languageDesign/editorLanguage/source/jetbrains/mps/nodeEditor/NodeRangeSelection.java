@@ -160,7 +160,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
         return true;
       } else if (actionsInfo.size() > 1) {
         // show menu
-        EditorUtil.showActionsMenu(actionsInfo, keyEvent, editorContext, cell);
+        KeyMapUtil.showActionsMenu(actionsInfo, keyEvent, editorContext, cell);
         return true;
       }
     }

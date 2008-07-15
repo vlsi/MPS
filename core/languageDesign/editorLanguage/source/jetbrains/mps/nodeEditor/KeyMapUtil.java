@@ -4,11 +4,19 @@ import jetbrains.mps.nodeEditor.EditorCellKeyMap.ActionKey;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 
+import javax.swing.JPopupMenu;
+import javax.swing.JMenuItem;
+import javax.swing.KeyStroke;
+import javax.swing.JViewport;
 import java.util.*;
 import java.awt.event.KeyEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Rectangle;
 
 /**
  * author: Igor Alshannikov
@@ -211,5 +219,48 @@ public class KeyMapUtil {
     editorContext.setContextCell(contextCell);
     action.execute(keyEvent, editorContext);
     editorContext.setContextCell(oldContextCell);
+  }
+
+  static void showActionsMenu(List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo, final KeyEvent keyEvent, final EditorContext editorContext, EditorCell selectedCell) {
+    JPopupMenu menu = new JPopupMenu();
+    int index = 1;
+    for (Pair<EditorCellKeyMapAction, EditorCell> actionAndContextCell : actionsInfo) {
+      final EditorCellKeyMapAction action = actionAndContextCell.o1;
+      final EditorCell contextCell = actionAndContextCell.o2;
+      char acc = 0;
+      if (1 <= index && index <= 9) {
+        acc = (char) ('0' + index);
+      } else if (index == 10) {
+        acc = '0';
+      } else if (10 < index && index - 11 < ('Z' - 'A')) {
+        acc = (char) ('A' + index - 11);
+      }
+      JMenuItem menuItem = new JMenuItem(action.getDescriptionText());
+      if (acc != 0) {
+        menuItem.setAccelerator(KeyStroke.getKeyStroke(acc));
+      }
+      ActionListener actionListener = new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              executeKeyMapAction(action, keyEvent, contextCell, editorContext);
+            }
+          });
+        }
+      };
+      menuItem.addActionListener(actionListener);
+      menu.add(menuItem);
+      index++;
+    }
+    AbstractEditorComponent component = editorContext.getNodeEditorComponent();
+    int x = selectedCell.getX();
+    int y = selectedCell.getY() + selectedCell.getHeight();
+    if (component.getParent() instanceof JViewport) {
+      JViewport viewport = (JViewport) component.getParent();
+      Rectangle vr = viewport.getViewRect();
+      x = Math.max(vr.x, x);
+      y = Math.max(vr.y, y);
+    }
+    menu.show(component, x, y);
   }
 }
