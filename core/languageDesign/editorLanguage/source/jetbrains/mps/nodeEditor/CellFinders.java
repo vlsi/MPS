@@ -5,28 +5,28 @@ import jetbrains.mps.util.Condition;
 import java.util.Iterator;
 
 public class CellFinders {
-  public static final CellFinder<EditorCell_Label> FIRST_EDITABLE = new EditableCellFinder(true);
-  public static final CellFinder<EditorCell_Label> LAST_EDITABLE = new EditableCellFinder(false);
+  public static final CellFinder<EditorCell_Label> FIRST_EDITABLE = new EditableCellCellFinder(true);
+  public static final CellFinder<EditorCell_Label> LAST_EDITABLE = new EditableCellCellFinder(false);
 
   public static final CellFinder<EditorCell_Error> FIRST_ERROR = byClass(EditorCell_Error.class, true);
   public static final CellFinder<EditorCell_Error> LAST_ERROR = byClass(EditorCell_Error.class, true);
 
-  public static final CellFinder<EditorCell> FIRST_SELECTABLE = new SelectableCellFinder(true);
-  public static final CellFinder<EditorCell> LAST_SELECTABLE = new SelectableCellFinder(false);
+  public static final CellFinder<EditorCell> FIRST_SELECTABLE = new SelectableCellCellFinder(true);
+  public static final CellFinder<EditorCell> LAST_SELECTABLE = new SelectableCellCellFinder(false);
 
   public static<C extends EditorCell> CellFinder<C> byClass(final Class<C> cls, final boolean first) {
-    return new ByClassCellFinder<C>(cls, first);
+    return new ByClassCellCellFinder<C>(cls, first);
   }
 
   public static CellFinder<EditorCell> byCondition(final Condition<EditorCell> condition, final boolean first) {
-    return new ByConditionCellFinder(condition, first);
+    return new ByConditionCellCellFinder(condition, first);
   }
 
   public static CellFinder<EditorCell> or(CellFinder<? extends EditorCell>... finders) {
     return new OrConditionFinder(finders);
   }
 
-  private static abstract class BaseFinder<C extends EditorCell> implements CellFinder<C> {
+  private static abstract class BaseCellFinder<C extends EditorCell> implements CellFinder<C> {
     abstract boolean isSuitable(C cell);
     abstract Class<C> getCellClass();
     abstract boolean isFirstChild();
@@ -59,10 +59,10 @@ public class CellFinders {
     }
   }
 
-  private static class EditableCellFinder extends BaseFinder<EditorCell_Label> {
+  private static class EditableCellCellFinder extends BaseCellFinder<EditorCell_Label> {
     private boolean myFirst;
 
-    EditableCellFinder(boolean first) {
+    EditableCellCellFinder(boolean first) {
       myFirst = first;
     }
 
@@ -79,10 +79,10 @@ public class CellFinders {
     }
   }
 
-  private static class SelectableCellFinder extends BaseFinder<EditorCell> {
+  private static class SelectableCellCellFinder extends BaseCellFinder<EditorCell> {
     private boolean myFirst;
 
-    SelectableCellFinder(boolean first) {
+    SelectableCellCellFinder(boolean first) {
       myFirst = first;
     }
 
@@ -99,11 +99,11 @@ public class CellFinders {
     }
   }
 
-  private static class ByClassCellFinder<C extends EditorCell> extends BaseFinder<C> {
+  private static class ByClassCellCellFinder<C extends EditorCell> extends BaseCellFinder<C> {
     private final Class<C> myCls;
     private final boolean myFirst;
 
-    public ByClassCellFinder(Class<C> cls, boolean first) {
+    public ByClassCellCellFinder(Class<C> cls, boolean first) {
       myCls = cls;
       myFirst = first;
     }
@@ -121,11 +121,11 @@ public class CellFinders {
     }
   }
 
-  private static class ByConditionCellFinder extends BaseFinder<EditorCell> {
+  private static class ByConditionCellCellFinder extends BaseCellFinder<EditorCell> {
     private final Condition<EditorCell> myCondition;
     private final boolean myFirst;
 
-    public ByConditionCellFinder(Condition<EditorCell> condition, boolean first) {
+    public ByConditionCellCellFinder(Condition<EditorCell> condition, boolean first) {
       myCondition = condition;
       myFirst = first;
     }
