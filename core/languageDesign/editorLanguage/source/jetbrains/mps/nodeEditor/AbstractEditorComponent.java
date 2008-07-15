@@ -1160,7 +1160,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       if (foundCell != null) return foundCell;
     }
     EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
-    class SelectNodeCondition extends NodeCondition {
+    class SelectNodeCondition extends EditorCellCondition {
       public void checkLeafCell(EditorCell editorCell) {
         checkNotLeafCell(editorCell);
       }
@@ -1306,7 +1306,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return null;
     }
     EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
-    class SelectNodeCondition extends NodeCondition {
+    class SelectNodeCondition extends EditorCellCondition {
       private boolean myToStart = false;
 
       public boolean checkNotLeafCell(EditorCell editorCell) {
@@ -1359,7 +1359,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return null;
     }
     EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
-    class SelectNodeCondition extends NodeCondition {
+    class SelectNodeCondition extends EditorCellCondition {
       public boolean checkNotLeafCell(EditorCell editorCell) {
         boolean goodCell = editorCellCondition.met(editorCell);
         if (editorCell == cell) {
