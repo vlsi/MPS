@@ -145,7 +145,10 @@ public class IntelligentInputUtil {
     }
 
     EditorCellAction rtAction = EditorUtil.getCellAction(cellForNewNode.findChild(CellFinders.LAST_SELECTABLE, true), EditorCellAction.RIGHT_TRANSFORM, editorContext);
-    if (rtAction == null || !hasSideActions(cellForNewNode, CellSide.RIGHT, tail)) {
+    TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.COMPLETION);
+    boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.RIGHT, tail);
+    TypeChecker.getInstance().resetTypeCheckingMode();
+    if (rtAction == null || !hasSideActions) {
       final CellInfo cellInfo = cellForNewNode.getCellInfo();
       putTextInErrorChild(cellInfo, smallPattern + tail, editorContext);
       return;
@@ -225,7 +228,10 @@ public class IntelligentInputUtil {
 
 
     EditorCellAction ltAction = EditorUtil.getCellAction(cellForNewNode.findChild(CellFinders.LAST_SELECTABLE, true), EditorCellAction.LEFT_TRANSFORM, editorContext);
-    if (ltAction == null || !hasSideActions(cellForNewNode, CellSide.LEFT, head)) {
+    TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.COMPLETION);
+    boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.LEFT, head);
+    TypeChecker.getInstance().resetTypeCheckingMode();
+    if (ltAction == null || !hasSideActions) {
       CellInfo cellInfo = cellForNewNode.getCellInfo();
       if (!sourceCellRemains) {
         putTextInErrorChild(cellInfo, head + smallPattern, editorContext);
