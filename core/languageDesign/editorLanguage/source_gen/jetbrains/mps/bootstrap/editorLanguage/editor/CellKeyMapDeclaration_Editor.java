@@ -222,7 +222,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_everyModelPropertyCell276_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor34(EditorCell cell) {
+  private static Color calculateColor33(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -464,7 +464,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return CellKeyMapDeclaration_Editor.calculateColor34(cell);
+                return CellKeyMapDeclaration_Editor.calculateColor33(cell);
               }
 
             });

@@ -221,14 +221,14 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_RefCell_Editor.calculateColor77(cell);
+              return CellModel_RefCell_Editor.calculateColor75(cell);
             }
 
           });
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_RefCell_Editor.calculateColor89(cell);
+              return CellModel_RefCell_Editor.calculateColor87(cell);
             }
 
           });
@@ -646,14 +646,14 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_RefCell_Editor.calculateColor100(cell);
+              return CellModel_RefCell_Editor.calculateColor98(cell);
             }
 
           });
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_RefCell_Editor.calculateColor101(cell);
+              return CellModel_RefCell_Editor.calculateColor99(cell);
             }
 
           });
@@ -804,25 +804,25 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getString(node, "noTargetText") == null;
   }
 
-  private static Color calculateColor77(EditorCell cell) {
+  private static Color calculateColor75(EditorCell cell) {
     Color result;
     result = Color.yellow;
     return result;
   }
 
-  private static Color calculateColor89(EditorCell cell) {
+  private static Color calculateColor87(EditorCell cell) {
     Color result;
     result = Color.cyan;
     return result;
   }
 
-  private static Color calculateColor100(EditorCell cell) {
+  private static Color calculateColor98(EditorCell cell) {
     Color result;
     result = Color.yellow;
     return result;
   }
 
-  private static Color calculateColor101(EditorCell cell) {
+  private static Color calculateColor99(EditorCell cell) {
     Color result;
     result = Color.cyan;
     return result;

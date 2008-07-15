@@ -53,7 +53,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellMenuPart_PropertyPostfixHints_Editor.calculateColor57(cell);
+              return CellMenuPart_PropertyPostfixHints_Editor.calculateColor55(cell);
             }
 
           });
@@ -140,7 +140,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     return result;
   }
 
-  private static Color calculateColor57(EditorCell cell) {
+  private static Color calculateColor55(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;

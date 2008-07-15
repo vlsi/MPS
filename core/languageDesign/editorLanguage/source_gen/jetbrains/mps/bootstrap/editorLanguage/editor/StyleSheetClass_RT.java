@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class StyleSheetClass_RT {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("RIGHT_TRANSFORM", new StyleSheetClass_RT.StyleSheetClass_RT_RIGHT_TRANSFORM(node));
+    editorCell.setAction(EditorCellAction.RIGHT_TRANSFORM, new StyleSheetClass_RT.StyleSheetClass_RT_RIGHT_TRANSFORM(node));
   }
 
   public static class StyleSheetClass_RT_RIGHT_TRANSFORM extends EditorCellAction {

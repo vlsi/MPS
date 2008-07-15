@@ -54,7 +54,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellMenuPart_ReplaceChild_Item_Editor.calculateColor72(cell);
+              return CellMenuPart_ReplaceChild_Item_Editor.calculateColor70(cell);
             }
 
           });
@@ -286,7 +286,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor72(EditorCell cell) {
+  private static Color calculateColor70(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;

@@ -183,14 +183,14 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_ModelAccess_Editor.calculateColor61(cell);
+              return CellModel_ModelAccess_Editor.calculateColor59(cell);
             }
 
           });
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_ModelAccess_Editor.calculateColor82(cell);
+              return CellModel_ModelAccess_Editor.calculateColor80(cell);
             }
 
           });
@@ -1071,13 +1071,13 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "textBgColorSelected", null, null));
   }
 
-  private static Color calculateColor61(EditorCell cell) {
+  private static Color calculateColor59(EditorCell cell) {
     Color result;
     result = Color.yellow;
     return result;
   }
 
-  private static Color calculateColor82(EditorCell cell) {
+  private static Color calculateColor80(EditorCell cell) {
     Color result;
     result = Color.cyan;
     return result;

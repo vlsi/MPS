@@ -49,7 +49,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return QueryMethodIdEditorProviderExpression_Editor.calculateColor42(cell);
+              return QueryMethodIdEditorProviderExpression_Editor.calculateColor41(cell);
             }
 
           });
@@ -125,7 +125,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return QueryMethodIdEditorProviderExpression_Editor.calculateColor45(cell);
+              return QueryMethodIdEditorProviderExpression_Editor.calculateColor44(cell);
             }
 
           });
@@ -217,13 +217,13 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   private static void setupLabel_queryIdPropertyRefCell18242_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor42(EditorCell cell) {
+  private static Color calculateColor41(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor45(EditorCell cell) {
+  private static Color calculateColor44(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

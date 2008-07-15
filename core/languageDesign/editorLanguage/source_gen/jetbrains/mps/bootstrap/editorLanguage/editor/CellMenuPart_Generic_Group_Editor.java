@@ -49,14 +49,14 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellMenuPart_Generic_Group_Editor.calculateColor35(cell);
+              return CellMenuPart_Generic_Group_Editor.calculateColor34(cell);
             }
 
           });
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellMenuPart_Generic_Group_Editor.calculateColor66(cell);
+              return CellMenuPart_Generic_Group_Editor.calculateColor64(cell);
             }
 
           });
@@ -373,13 +373,13 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return SPropertyOperations.hasValue(node, "presentation", "custom", null);
   }
 
-  private static Color calculateColor35(EditorCell cell) {
+  private static Color calculateColor34(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor66(EditorCell cell) {
+  private static Color calculateColor64(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;

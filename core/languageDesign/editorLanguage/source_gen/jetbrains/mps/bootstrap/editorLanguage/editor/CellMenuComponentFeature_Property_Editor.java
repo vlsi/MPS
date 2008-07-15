@@ -28,7 +28,7 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
   private static void setupLabel_propertyDeclarationRefCell5546_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor40(EditorCell cell) {
+  private static Color calculateColor39(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -82,7 +82,7 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return CellMenuComponentFeature_Property_Editor.calculateColor40(cell);
+                return CellMenuComponentFeature_Property_Editor.calculateColor39(cell);
               }
 
             });

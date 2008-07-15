@@ -62,7 +62,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_AttributedLinkCell_Editor.calculateColor71(cell);
+              return CellModel_AttributedLinkCell_Editor.calculateColor69(cell);
             }
 
           });
@@ -228,7 +228,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "bracketsColor", null, null));
   }
 
-  private static Color calculateColor71(EditorCell cell) {
+  private static Color calculateColor69(EditorCell cell) {
     Color result;
     result = Color.green;
     return result;

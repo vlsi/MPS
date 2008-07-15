@@ -876,14 +876,14 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_RefNodeList_Editor.calculateColor90(cell);
+              return CellModel_RefNodeList_Editor.calculateColor88(cell);
             }
 
           });
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_RefNodeList_Editor.calculateColor91(cell);
+              return CellModel_RefNodeList_Editor.calculateColor89(cell);
             }
 
           });
@@ -1247,13 +1247,13 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "bracketsColor", null, null));
   }
 
-  private static Color calculateColor90(EditorCell cell) {
+  private static Color calculateColor88(EditorCell cell) {
     Color result;
     result = Color.yellow;
     return result;
   }
 
-  private static Color calculateColor91(EditorCell cell) {
+  private static Color calculateColor89(EditorCell cell) {
     Color result;
     result = Color.cyan;
     return result;

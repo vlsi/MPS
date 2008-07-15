@@ -125,7 +125,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ModelAccessor_Editor.calculateColor32(cell);
+              return ModelAccessor_Editor.calculateColor31(cell);
             }
 
           });
@@ -263,7 +263,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ModelAccessor_Editor.calculateColor47(cell);
+              return ModelAccessor_Editor.calculateColor45(cell);
             }
 
           });
@@ -380,13 +380,13 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor32(EditorCell cell) {
+  private static Color calculateColor31(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor47(EditorCell cell) {
+  private static Color calculateColor45(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

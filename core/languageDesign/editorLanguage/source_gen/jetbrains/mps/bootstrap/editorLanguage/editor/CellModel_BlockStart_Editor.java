@@ -41,7 +41,7 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.NULL_TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_BlockStart_Editor.calculateColor50(cell);
+              return CellModel_BlockStart_Editor.calculateColor48(cell);
             }
 
           });
@@ -237,7 +237,7 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor50(EditorCell cell) {
+  private static Color calculateColor48(EditorCell cell) {
     Color result;
     result = Color.blue;
     return result;

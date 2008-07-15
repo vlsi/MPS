@@ -98,7 +98,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.calculateColor54(cell);
+              return CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.calculateColor52(cell);
             }
 
           });
@@ -143,13 +143,13 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     return result;
   }
 
-  private static Color calculateColor36(EditorCell cell) {
+  private static Color calculateColor35(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor54(EditorCell cell) {
+  private static Color calculateColor52(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;
@@ -269,7 +269,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.calculateColor36(cell);
+                return CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.calculateColor35(cell);
               }
 
             });

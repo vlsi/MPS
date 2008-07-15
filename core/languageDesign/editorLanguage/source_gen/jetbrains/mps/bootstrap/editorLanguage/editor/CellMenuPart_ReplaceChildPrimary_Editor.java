@@ -43,14 +43,14 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellMenuPart_ReplaceChildPrimary_Editor.calculateColor44(cell);
+              return CellMenuPart_ReplaceChildPrimary_Editor.calculateColor43(cell);
             }
 
           });
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellMenuPart_ReplaceChildPrimary_Editor.calculateColor79(cell);
+              return CellMenuPart_ReplaceChildPrimary_Editor.calculateColor77(cell);
             }
 
           });
@@ -122,13 +122,13 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor44(EditorCell cell) {
+  private static Color calculateColor43(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor79(EditorCell cell) {
+  private static Color calculateColor77(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;

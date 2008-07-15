@@ -57,7 +57,7 @@ public class Styles_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return Styles_StyleSheet.calculateColor94(cell);
+          return Styles_StyleSheet.calculateColor92(cell);
         }
 
       });
@@ -72,7 +72,7 @@ public class Styles_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return Styles_StyleSheet.calculateColor95(cell);
+          return Styles_StyleSheet.calculateColor93(cell);
         }
 
       });
@@ -98,13 +98,13 @@ public class Styles_StyleSheet {
     return result;
   }
 
-  private static Color calculateColor94(EditorCell cell) {
+  private static Color calculateColor92(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;
   }
 
-  private static Color calculateColor95(EditorCell cell) {
+  private static Color calculateColor93(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

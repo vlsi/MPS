@@ -46,14 +46,14 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellMenuPart_ReplaceChild_CustomChildConcept_Editor.calculateColor49(cell);
+              return CellMenuPart_ReplaceChild_CustomChildConcept_Editor.calculateColor47(cell);
             }
 
           });
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellMenuPart_ReplaceChild_CustomChildConcept_Editor.calculateColor59(cell);
+              return CellMenuPart_ReplaceChild_CustomChildConcept_Editor.calculateColor57(cell);
             }
 
           });
@@ -134,13 +134,13 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
   private static void setupLabel_childConceptFunctionRefNodeCell20847_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor49(EditorCell cell) {
+  private static Color calculateColor47(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor59(EditorCell cell) {
+  private static Color calculateColor57(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;

@@ -159,7 +159,7 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
   private static void setupLabel_applicableFeatureRefNodeCell19999_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor41(EditorCell cell) {
+  private static Color calculateColor40(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -399,7 +399,7 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return CellMenuComponent_Editor.calculateColor41(cell);
+                return CellMenuComponent_Editor.calculateColor40(cell);
               }
 
             });
