@@ -224,6 +224,7 @@ public class IntelligentInputUtil {
       return;
     }
 
+
     EditorCellAction ltAction = EditorUtil.getCellAction(EditorUtil.findLastSelectableCell(cellForNewNode), EditorCellAction.LEFT_TRANSFORM, editorContext);
     if (ltAction == null || !hasSideActions(cellForNewNode, CellSide.LEFT, head)) {
       CellInfo cellInfo = cellForNewNode.getCellInfo();
