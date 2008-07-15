@@ -4,14 +4,14 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -556,7 +556,7 @@ public class RefactoringContext {
       myRefactoringClassName = className;
       try {
         String namespace = NameUtil.namespaceFromLongName(
-         NameUtil.namespaceFromLongName(className));//remove ".scripts.%ClassName%"
+          NameUtil.namespaceFromLongName(className));//remove ".scripts.%ClassName%"
         Language l = MPSModuleRepository.getInstance().getLanguage(namespace);
         if (l == null) {
           LOG.errorWithTrace("can't find a language " + namespace);
@@ -624,13 +624,13 @@ public class RefactoringContext {
     mySelectedNode = actionContext.getNode();
     List<SNode> list = actionContext.getNodes();
     mySelectedNodes = list == null ? new ArrayList<SNode>() : new ArrayList<SNode>(list);
-    mySelectedModule = actionContext.get(IModule.class);
+    mySelectedModule = actionContext.getModule();
     mySelectedMPSProject = actionContext.getMPSProject();
     myCurrentScope = actionContext.getScope();
     myCurrentOperationContext = actionContext.getOperationContext();
   }
 
-   public SModelDescriptor getSelectedModel() {
+  public SModelDescriptor getSelectedModel() {
     return mySelectedModel;
   }
 
