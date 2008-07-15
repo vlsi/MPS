@@ -42,6 +42,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.core.structure.INamedConcept;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -1006,7 +1007,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       if (selectedCell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) selectedCell;
         if (label.getText().length() == 0 ||
-          (label instanceof EditorCell_Constant && !label.isEditable() && EditorUtil.isEasilyDeletableFromConstant(label.getSNode()))) {
+          (label instanceof EditorCell_Constant && !label.isEditable() && !(label.getSNode().getAdapter() instanceof INamedConcept))) {
           return EditorCellAction.DELETE;
         }
       }
