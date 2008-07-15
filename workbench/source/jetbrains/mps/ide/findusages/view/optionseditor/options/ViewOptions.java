@@ -1,8 +1,8 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.action.ActionEventData;
 import org.jdom.Element;
 
 public class ViewOptions extends BaseOptions<ViewOptions> {
@@ -31,7 +31,7 @@ public class ViewOptions extends BaseOptions<ViewOptions> {
     return new ViewOptions(myShowOneResult, myNewTab);
   }
 
-  public ViewOptions getResult(SNode node, ActionContext context) {
+  public ViewOptions getResult(SNode node, ActionEventData data) {
     return this;
   }
 

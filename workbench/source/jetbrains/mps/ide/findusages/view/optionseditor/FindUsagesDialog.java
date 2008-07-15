@@ -2,7 +2,6 @@ package jetbrains.mps.ide.findusages.view.optionseditor;
 
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.FindersEditor;
@@ -14,6 +13,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.JComponent;
@@ -27,14 +27,14 @@ public class FindUsagesDialog extends BaseDialog {
   private ViewOptionsEditor myViewOptionsEditor;
   private boolean myIsCancelled = true;
 
-  public FindUsagesDialog(final FindUsagesOptions defaultOptions, final SNode node, final ActionContext context) {
-    super(context.getOperationContext().getMainFrame(), "Find usages");
+  public FindUsagesDialog(final FindUsagesOptions defaultOptions, final SNode node, final ActionEventData data) {
+    super(data.getOperationContext().getMainFrame(), "Find usages");
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myQueryEditor = new QueryEditor(defaultOptions.getOption(QueryOptions.class), node, context);
-        myFindersEditor = new MyFindersEditor(defaultOptions, node, context);
-        myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class), node, context);
+        myQueryEditor = new QueryEditor(defaultOptions.getOption(QueryOptions.class), node, data);
+        myFindersEditor = new MyFindersEditor(defaultOptions, node, data);
+        myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class), node, data);
       }
     });
 
@@ -81,11 +81,11 @@ public class FindUsagesDialog extends BaseDialog {
   }
 
   private class MyFindersEditor extends FindersEditor {
-    private final ActionContext myContext;
+    private final ActionEventData myContext;
 
-    public MyFindersEditor(FindUsagesOptions defaultOptions, SNode node, ActionContext context) {
-      super(defaultOptions.getOption(FindersOptions.class), node, context);
-      myContext = context;
+    public MyFindersEditor(FindUsagesOptions defaultOptions, SNode node, ActionEventData data) {
+      super(defaultOptions.getOption(FindersOptions.class), node, data);
+      myContext = data;
     }
 
     public void goToFinder(final GeneratedFinder finder) {
@@ -101,7 +101,7 @@ public class FindUsagesDialog extends BaseDialog {
 
       FindUsagesDialog.this.onCancel();
 
-      MPSProject project = myContext.get(MPSProject.class);
+      MPSProject project = myContext.getMPSProject();
       project.getComponentSafe(MPSEditorOpener.class).openNode(finderNode[0]);
     }
   }

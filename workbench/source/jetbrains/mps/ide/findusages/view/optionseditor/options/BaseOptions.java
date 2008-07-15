@@ -1,11 +1,8 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
-import org.jdom.Element;
+import jetbrains.mps.workbench.action.ActionEventData;
 
 public abstract class BaseOptions<Result> implements IExternalizeable, Cloneable {
   protected BaseOptions() {
@@ -14,5 +11,5 @@ public abstract class BaseOptions<Result> implements IExternalizeable, Cloneable
 
   public abstract BaseOptions clone();
 
-  public abstract Result getResult(SNode node, ActionContext context);
+  public abstract Result getResult(SNode node, ActionEventData data);
 }

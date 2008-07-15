@@ -22,7 +22,6 @@ import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
@@ -38,12 +37,10 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.ActionEventData;
-import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 import org.jdom.Element;
@@ -190,8 +187,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
 
   //---FIND USAGES STUFF----
 
-  public void findUsages(ActionEventData data) {
-    final ActionContext context = ActionUtils.createContext(data);
+  public void findUsages(final ActionEventData data) {
     new Thread(new Runnable() {
       public void run() {
         final SNode[] semanticNode = new SNode[1];
@@ -199,14 +195,14 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
 
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            semanticNode[0] = context.getNode();
-            operationNode[0] = context.get(EditorCell.class).getSNodeWRTReference();
+            semanticNode[0] = data.getNode();
+            operationNode[0] = data.getEditorCell().getSNodeWRTReference();
           }
         });
 
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
-            final FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultFindOptions, operationNode[0], context);
+            final FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultFindOptions, operationNode[0], data);
             findUsagesDialog.showDialog();
 
             if (!findUsagesDialog.isCancelled()) {
@@ -217,8 +213,8 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
 
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
-                  provider[0] = myDefaultFindOptions.getOption(FindersOptions.class).getResult(operationNode[0], context);
-                  query[0] = myDefaultFindOptions.getOption(QueryOptions.class).getResult(operationNode[0], context);
+                  provider[0] = myDefaultFindOptions.getOption(FindersOptions.class).getResult(operationNode[0], data);
+                  query[0] = myDefaultFindOptions.getOption(QueryOptions.class).getResult(operationNode[0], data);
                   viewOptions[0] = myDefaultFindOptions.getOption(ViewOptions.class);
                 }
               });

@@ -1,8 +1,8 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.action.ActionEventData;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -15,8 +15,8 @@ public class ViewOptionsEditor extends BaseEditor<ViewOptions> {
   private JCheckBox myShowOneResult;
   private JCheckBox myNewTab;
 
-  public ViewOptionsEditor(ViewOptions defaultOptions, SNode node, ActionContext context) {
-    super(defaultOptions, node, context);
+  public ViewOptionsEditor(ViewOptions defaultOptions, SNode node, ActionEventData data) {
+    super(defaultOptions, node, data);
 
     myPanel = new JPanel();
     myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));

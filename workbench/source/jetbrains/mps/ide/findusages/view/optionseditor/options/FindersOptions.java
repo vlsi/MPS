@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -11,6 +10,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.workbench.action.ActionEventData;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -51,7 +51,7 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
     myFindersClassNames = findersClassNames;
   }
 
-  public IResultProvider getResult(SNode node, ActionContext context) {
+  public IResultProvider getResult(SNode node, ActionEventData data) {
     List<BaseFinder> finders = new ArrayList<BaseFinder>();
     for (String finderClassName : myFindersClassNames) {
       String languageNamespacePlusFindUsages = NameUtil.namespaceFromLongName(finderClassName);

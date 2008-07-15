@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.ui.DefaultCompletionTextField;
 import jetbrains.mps.project.IModule;
@@ -10,6 +9,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
+import jetbrains.mps.workbench.action.ActionEventData;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -33,8 +33,8 @@ public class QueryEditor extends BaseEditor<QueryOptions> {
   private List<String> myModuleNameList;
   private List<String> myModelNameList;
 
-  public QueryEditor(QueryOptions defaultOptions, SNode node, ActionContext context) {
-    super(defaultOptions, node, context);
+  public QueryEditor(QueryOptions defaultOptions, SNode node, ActionEventData data) {
+    super(defaultOptions, node, data);
 
     myPanel = new JPanel();
     myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));

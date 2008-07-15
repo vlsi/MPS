@@ -1,10 +1,10 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.FindersManager;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.action.ActionEventData;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -18,8 +18,8 @@ import java.awt.event.KeyEvent;
 import java.util.*;
 
 public abstract class FindersEditor extends BaseEditor<FindersOptions> {
-  public FindersEditor(FindersOptions defaultOptions, final SNode node, ActionContext context) {
-    super(defaultOptions, node, context);
+  public FindersEditor(FindersOptions defaultOptions, final SNode node, ActionEventData data) {
+    super(defaultOptions, node, data);
 
     myPanel = new JPanel();
     myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));

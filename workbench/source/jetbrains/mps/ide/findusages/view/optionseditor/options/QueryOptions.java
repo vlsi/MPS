@@ -1,12 +1,12 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.action.ActionEventData;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -75,9 +75,9 @@ public class QueryOptions extends BaseOptions<SearchQuery> {
   }
 
   @NotNull
-  public SearchQuery getResult(SNode node, ActionContext context) {
+  public SearchQuery getResult(SNode node, ActionEventData data) {
     IScope scope;
-    IOperationContext operationContext = context.getOperationContext();
+    IOperationContext operationContext = data.getOperationContext();
 
     if (myScopeType.equals(GLOBAL_SCOPE)) {
       scope = GlobalScope.getInstance();
@@ -97,11 +97,11 @@ public class QueryOptions extends BaseOptions<SearchQuery> {
       }
     } else if (myScopeType.equals(MODEL_SCOPE)) {
       if (myModel.equals(DEFAULT_VALUE)) {
-        scope = new ModelScope(operationContext.getModule().getScope(), context.getModel());
+        scope = new ModelScope(operationContext.getModule().getScope(), data.getModelDescriptor());
       } else {
         List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptorsByModelName(myModel);
         if (models.isEmpty()) {
-          myModel = context.getModel().getModelUID().toString();
+          myModel = data.getModelDescriptor().getModelUID().toString();
           models = SModelRepository.getInstance().getModelDescriptorsByModelName(myModel);
           LOG.error("Model is not found for " + myModel + ". Using current model.");
         }

@@ -1,25 +1,18 @@
 package jetbrains.mps.refactoring;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.RefactoringProcessor;
+import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-
-import org.jetbrains.annotations.NotNull;
-import org.jdom.Element;
-
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -54,7 +47,7 @@ public class RefactoringViewItem {
     }
     myActionContext = actionContext;
     myPanel = new JPanel(new BorderLayout());
-    myUsagesView = new UsagesView(actionContext.get(MPSProject.class), new ViewOptions()) {
+    myUsagesView = new UsagesView(actionContext.getMPSProject(), new ViewOptions()) {
       public void close() {
         cancel();
       }
