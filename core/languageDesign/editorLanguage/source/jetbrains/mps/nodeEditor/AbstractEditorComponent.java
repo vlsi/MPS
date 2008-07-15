@@ -243,6 +243,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.FOLD_ALL, new CellAction_FoldAll());
     myActionMap.put(EditorCellAction.UNFOLD_ALL, new CellAction_UnfoldAll());
 
+    myActionMap.put(EditorCellAction.RIGHT_TRANSFORM, new CellAction_SideTransform(CellSide.RIGHT));
+    myActionMap.put(EditorCellAction.LEFT_TRANSFORM, new CellAction_SideTransform(CellSide.LEFT));
+
     updateMPSActionsWithKeyStrokes();
 
     registerKeyboardAction(new AbstractAction() {
