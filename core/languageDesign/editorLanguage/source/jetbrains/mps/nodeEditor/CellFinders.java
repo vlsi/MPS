@@ -11,8 +11,9 @@ public class CellFinders {
   public static final CellFinder<EditorCell_Error> FIRST_ERROR = byClass(EditorCell_Error.class, true);
   public static final CellFinder<EditorCell_Error> LAST_ERROR = byClass(EditorCell_Error.class, true);
 
-  public static final CellFinder<EditorCell> FIRST_SELECTABLE = new SelectableCellCellFinder(true);
-  public static final CellFinder<EditorCell> LAST_SELECTABLE = new SelectableCellCellFinder(false);
+  public static final CellFinder<EditorCell> FIRST_SELECTABLE_LEAF = new SelectableLeafCellFinder(true);
+  public static final CellFinder<EditorCell> LAST_SELECTABLE_LEAF = new SelectableLeafCellFinder(false);
+
 
   public static<C extends EditorCell> CellFinder<C> byClass(final Class<C> cls, final boolean first) {
     return new ByClassCellCellFinder<C>(cls, first);
@@ -79,15 +80,15 @@ public class CellFinders {
     }
   }
 
-  private static class SelectableCellCellFinder extends BaseCellFinder<EditorCell> {
+  private static class SelectableLeafCellFinder extends BaseCellFinder<EditorCell> {
     private boolean myFirst;
 
-    SelectableCellCellFinder(boolean first) {
+    SelectableLeafCellFinder(boolean first) {
       myFirst = first;
     }
 
     public boolean isSuitable(EditorCell cell) {
-      return cell.isSelectable();
+      return cell.isSelectable() && !(cell instanceof EditorCell_Collection);
     }
 
     public Class<EditorCell> getCellClass() {

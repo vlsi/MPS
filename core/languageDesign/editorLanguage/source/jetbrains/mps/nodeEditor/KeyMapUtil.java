@@ -155,9 +155,9 @@ public class KeyMapUtil {
         conditionSatisfied = true;
       } else if (action.getCaretPolicy() == actualCaretPosition) {
         if (action.getCaretPolicy() == EditorCellKeyMapAction.CARET_AT_FIRST_POSITION) {
-          conditionSatisfied = (actionCell.findChild(CellFinders.FIRST_SELECTABLE) == selectedCell);
+          conditionSatisfied = (actionCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF) == selectedCell);
         } else if (action.getCaretPolicy() == EditorCellKeyMapAction.CARET_AT_LAST_POSITION) {
-          conditionSatisfied = (actionCell.findChild(CellFinders.LAST_SELECTABLE) == selectedCell);
+          conditionSatisfied = (actionCell.findChild(CellFinders.LAST_SELECTABLE_LEAF) == selectedCell);
         } else {
           conditionSatisfied = true;
         }

@@ -101,7 +101,7 @@ public class NodeEditorActions {
 
       if (!(target.isUnfoldedCollection())) return target;
 
-      return ((EditorCell_Collection) target).findChild(CellFinders.LAST_SELECTABLE);
+      return ((EditorCell_Collection) target).findChild(CellFinders.LAST_SELECTABLE_LEAF);
       //---
     }
   }
@@ -124,7 +124,7 @@ public class NodeEditorActions {
       while (rootCell != null && rootCell.getParent() != null) {
         rootCell = rootCell.getParent();
       }
-      return rootCell == null ? null : rootCell.findChild(CellFinders.FIRST_SELECTABLE);
+      return rootCell == null ? null : rootCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
     }
 
   }
@@ -148,7 +148,7 @@ public class NodeEditorActions {
       while (rootCell != null && rootCell.getParent() != null) {
         rootCell = rootCell.getParent();
       }
-      return rootCell == null ? null : rootCell.findChild(CellFinders.LAST_SELECTABLE);
+      return rootCell == null ? null : rootCell.findChild(CellFinders.LAST_SELECTABLE_LEAF);
     }
 
   }
@@ -226,7 +226,7 @@ public class NodeEditorActions {
     private EditorCell findTarget(EditorCell cell) {
       EditorCell_Collection parent = cell.getParent();
       if (parent == null) {
-        return (cell.isUnfoldedCollection())? ((EditorCell_Collection) cell).findChild(CellFinders.FIRST_SELECTABLE) :null;
+        return (cell.isUnfoldedCollection())? ((EditorCell_Collection) cell).findChild(CellFinders.FIRST_SELECTABLE_LEAF) :null;
       }
 
       EditorCell nextToRight = parent.findNextToRight(cell);
@@ -252,7 +252,7 @@ public class NodeEditorActions {
 
       if (!(target.isUnfoldedCollection())) return target;
 
-      return ((EditorCell_Collection) target).findChild(CellFinders.FIRST_SELECTABLE);
+      return ((EditorCell_Collection) target).findChild(CellFinders.FIRST_SELECTABLE_LEAF);
       //---
     }
   }

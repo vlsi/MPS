@@ -353,7 +353,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
             EditorCell toSelect;
             if (focusPolicyCell == null || (focusPolicyCell == rootCell && !focusPolicyCell.hasFocusPolicy())) {
-              toSelect = rootCell.findChild(CellFinders.FIRST_SELECTABLE);
+              toSelect = rootCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
             } else {
               toSelect = focusPolicyCell;
             }
@@ -1280,11 +1280,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public EditorCell findFirstSelectableCell() {
-    return myRootCell.findChild(CellFinders.FIRST_SELECTABLE);
+    return myRootCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
   }
 
   public EditorCell findLastSelectableCell() {
-    return myRootCell.findChild(CellFinders.LAST_SELECTABLE);
+    return myRootCell.findChild(CellFinders.LAST_SELECTABLE_LEAF);
   }
 
   public EditorCell findNextSelectableCell(final EditorCell cell) {
@@ -2098,7 +2098,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (focusPolicyCell == null || (focusPolicyCell == cell && !focusPolicyCell.hasFocusPolicy())) {
       toSelect = cell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE));
       if (toSelect == null) {
-        toSelect = cell.findChild(CellFinders.FIRST_SELECTABLE);
+        toSelect = cell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
       }
     } else {
       toSelect = focusPolicyCell;

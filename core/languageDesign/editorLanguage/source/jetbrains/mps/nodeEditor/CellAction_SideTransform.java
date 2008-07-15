@@ -38,10 +38,7 @@ public class CellAction_SideTransform extends EditorCellAction {
       anchorCell = selectedCell;
     } else {
       // find 'default' anchor cell
-      EditorCell nodeMainCell = selectedCell;
-      while (nodeMainCell.getParent() != null && nodeMainCell.getParent().getSNode() == node) {
-        nodeMainCell = nodeMainCell.getParent();
-      }
+      EditorCell nodeMainCell = selectedCell.getContainingBigCell();
       EditorCell defAnchorCell = nodeMainCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
         public boolean met(EditorCell object) {
           return object.hasRightTransformAnchorTag(RightTransformAnchorTag.default_.getValueAsString()) && object.getSNode() == node;
@@ -59,11 +56,11 @@ public class CellAction_SideTransform extends EditorCellAction {
     }
 
     // selected cell must be last selectable cell
-    if (side == CellSide.RIGHT && anchorCell != null && anchorCell.findChild(CellFinders.LAST_SELECTABLE, true) != selectedCell) {
+    if (side == CellSide.RIGHT && anchorCell != null && anchorCell.findChild(CellFinders.LAST_SELECTABLE_LEAF, true) != selectedCell) {
       return null;
     }
 
-    if (side == CellSide.LEFT && anchorCell != null && anchorCell.findChild(CellFinders.FIRST_SELECTABLE, true) != selectedCell) {
+    if (side == CellSide.LEFT && anchorCell != null && anchorCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF, true) != selectedCell) {
       return null;
     }
 
