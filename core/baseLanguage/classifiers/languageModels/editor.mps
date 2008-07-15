@@ -165,6 +165,9 @@
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1213999830409">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1216110125528">
+            <property name="value" value="0.0" />
+          </node>
         </node>
       </node>
     </node>
