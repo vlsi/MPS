@@ -9262,6 +9262,9 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1178547765558">
       <property name="noTargetText" value="/*package*/" />
       <link role="relationDeclaration" targetNodeId="17.1178549979242" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1216113991403">
+        <property name="tag" value="ext_1_RTransform" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1178609533048">

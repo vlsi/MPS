@@ -1748,7 +1748,7 @@
     <property name="name" value="IncludeRightTransformForNodePart" />
     <link role="extends" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1180111513020">
-      <property name="value" value="include right transform for" />
+      <property name="value" value="include transform for" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1180112416747">

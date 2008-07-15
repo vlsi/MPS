@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.LinkedList;
 
 public enum SideTransformTag {
-  DEFAULT("DEFAULT", "default_RTransform"),
-  EXT_1("EXT 1", "ext_1_RTransform"),
-  EXT_2("EXT 2", "ext_2_RTransform"),
-  EXT_3("EXT 3", "ext_3_RTransform"),
-  EXT_4("EXT 4", "ext_4_RTransform"),
-  EXT_5("EXT 5", "ext_5_RTransform");
+  default_("default_", "default_RTransform"),
+  ext_1("ext_1", "ext_1_RTransform"),
+  ext_2("ext_2", "ext_2_RTransform"),
+  ext_3("ext_3", "ext_3_RTransform"),
+  ext_4("ext_4", "ext_4_RTransform"),
+  ext_5("ext_5", "ext_5_RTransform");
 
   private String myName;
   private String myValue;
@@ -23,40 +23,40 @@ SideTransformTag(String name, String value) {
 
   public static List<SideTransformTag> getConstants() {
     List<SideTransformTag> list = new LinkedList<SideTransformTag>();
-    list.add(SideTransformTag.DEFAULT);
-    list.add(SideTransformTag.EXT_1);
-    list.add(SideTransformTag.EXT_2);
-    list.add(SideTransformTag.EXT_3);
-    list.add(SideTransformTag.EXT_4);
-    list.add(SideTransformTag.EXT_5);
+    list.add(SideTransformTag.default_);
+    list.add(SideTransformTag.ext_1);
+    list.add(SideTransformTag.ext_2);
+    list.add(SideTransformTag.ext_3);
+    list.add(SideTransformTag.ext_4);
+    list.add(SideTransformTag.ext_5);
     return list;
   }
 
   public static SideTransformTag getDefault() {
-    return SideTransformTag.DEFAULT;
+    return SideTransformTag.default_;
   }
 
   public static SideTransformTag parseValue(String value) {
     if (value == null) {
       return SideTransformTag.getDefault();
     }
-    if (value.equals(SideTransformTag.DEFAULT.getValueAsString())) {
-      return SideTransformTag.DEFAULT;
+    if (value.equals(SideTransformTag.default_.getValueAsString())) {
+      return SideTransformTag.default_;
     }
-    if (value.equals(SideTransformTag.EXT_1.getValueAsString())) {
-      return SideTransformTag.EXT_1;
+    if (value.equals(SideTransformTag.ext_1.getValueAsString())) {
+      return SideTransformTag.ext_1;
     }
-    if (value.equals(SideTransformTag.EXT_2.getValueAsString())) {
-      return SideTransformTag.EXT_2;
+    if (value.equals(SideTransformTag.ext_2.getValueAsString())) {
+      return SideTransformTag.ext_2;
     }
-    if (value.equals(SideTransformTag.EXT_3.getValueAsString())) {
-      return SideTransformTag.EXT_3;
+    if (value.equals(SideTransformTag.ext_3.getValueAsString())) {
+      return SideTransformTag.ext_3;
     }
-    if (value.equals(SideTransformTag.EXT_4.getValueAsString())) {
-      return SideTransformTag.EXT_4;
+    if (value.equals(SideTransformTag.ext_4.getValueAsString())) {
+      return SideTransformTag.ext_4;
     }
-    if (value.equals(SideTransformTag.EXT_5.getValueAsString())) {
-      return SideTransformTag.EXT_5;
+    if (value.equals(SideTransformTag.ext_5.getValueAsString())) {
+      return SideTransformTag.ext_5;
     }
     return SideTransformTag.getDefault();
   }
