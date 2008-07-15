@@ -2,6 +2,8 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.util.Condition;
 
+import java.util.Iterator;
+
 public class CellFinders {
   public static final CellFinder<EditorCell_Label> FIRST_EDITABLE = new EditableCellFinder(true);
   public static final CellFinder<EditorCell_Label> LAST_EDITABLE = new EditableCellFinder(false);
@@ -20,7 +22,44 @@ public class CellFinders {
     return new ByConditionCellFinder(condition, first);
   }
 
-  private static class EditableCellFinder extends CellFinder<EditorCell_Label> {
+  public static CellFinder<EditorCell> or(CellFinder<? extends EditorCell>... finders) {
+    return new OrConditionFinder(finders);
+  }
+
+  private static abstract class BaseFinder<C extends EditorCell> implements CellFinder<C> {
+    abstract boolean isSuitable(C cell);
+    abstract Class<C> getCellClass();
+    abstract boolean isFirstChild();
+
+    public C find(EditorCell cell, boolean includeThis) {
+      if (includeThis && getCellClass().isInstance(cell) && isSuitable((C) cell)) {
+        return (C) cell;
+      }
+
+      if (cell instanceof EditorCell_Collection) {
+        EditorCell_Collection collection = (EditorCell_Collection) cell;
+        if (collection.isUnfoldedCollection()) {
+          Iterator<EditorCell> iterator = isFirstChild() ? collection.iterator() : collection.reverseCellIterator();
+
+          while (iterator.hasNext()) {
+            EditorCell child = iterator.next();
+            if (getCellClass().isInstance(child) && isSuitable((C) child)) {
+              return (C) child;
+            }
+
+            C result = find(child, false);
+            if (result != null) {
+              return result;
+            }
+          }
+        }
+      }
+
+      return null;
+    }
+  }
+
+  private static class EditableCellFinder extends BaseFinder<EditorCell_Label> {
     private boolean myFirst;
 
     EditableCellFinder(boolean first) {
@@ -40,7 +79,7 @@ public class CellFinders {
     }
   }
 
-  private static class SelectableCellFinder extends CellFinder<EditorCell> {
+  private static class SelectableCellFinder extends BaseFinder<EditorCell> {
     private boolean myFirst;
 
     SelectableCellFinder(boolean first) {
@@ -60,7 +99,7 @@ public class CellFinders {
     }
   }
 
-  private static class ByClassCellFinder<C extends EditorCell> extends CellFinder<C> {
+  private static class ByClassCellFinder<C extends EditorCell> extends BaseFinder<C> {
     private final Class<C> myCls;
     private final boolean myFirst;
 
@@ -82,7 +121,7 @@ public class CellFinders {
     }
   }
 
-  private static class ByConditionCellFinder extends CellFinder<EditorCell> {
+  private static class ByConditionCellFinder extends BaseFinder<EditorCell> {
     private final Condition<EditorCell> myCondition;
     private final boolean myFirst;
 
@@ -101,6 +140,22 @@ public class CellFinders {
 
     public boolean isFirstChild() {
       return myFirst;
+    }
+  }
+
+  private static class OrConditionFinder implements CellFinder<EditorCell> {
+    private CellFinder<? extends EditorCell>[] myFinders;
+
+    private OrConditionFinder(CellFinder<? extends EditorCell>[] finders) {
+      myFinders = finders;
+    }
+
+    public EditorCell find(EditorCell cell, boolean includeThis) {
+      for (CellFinder<? extends EditorCell> finder : myFinders) {
+        EditorCell result = finder.find(cell, includeThis);
+        if (result != null) return result;
+      }
+      return null;
     }
   }
 }
