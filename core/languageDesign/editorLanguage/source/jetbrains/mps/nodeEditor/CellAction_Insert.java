@@ -21,7 +21,7 @@ public class CellAction_Insert extends EditorCellAction {
 
   public void execute(EditorContext context) {
     boolean before = myInsertBefore;
-    if (!before && EditorUtil.isBeforePosition(context.getContextCell())) {
+    if (!before && context.getContextCell().isFirstPositionInBigCell()) {
       before = true;
     }    
     myListHandler.startInsertMode(context, context.getContextCell(), before);

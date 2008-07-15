@@ -7,7 +7,6 @@ import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Condition;
 
 import java.util.List;
 import java.util.Set;
@@ -52,7 +51,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
-    if (EditorUtil.isBeforePosition(selectedCell) && PasteNodeUtil.canPasteRelative(selectedNode, pasteNodes)) {
+    if (selectedCell.isFirstPositionInBigCell() && PasteNodeUtil.canPasteRelative(selectedNode, pasteNodes)) {
       PasteNodeUtil.pasteRelative(selectedNode, pasteNodes, PastePlaceHint.BEFORE_ANCHOR);
     } else {
       PasteNodeUtil.paste(selectedCell, pasteNodes);
