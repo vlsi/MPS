@@ -4,10 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.ide.actions.language.OptimizeLanguageImportsAction;
 import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction;
-import jetbrains.mps.ide.actions.module.SetModuleFolderAction;
 import jetbrains.mps.ide.actions.module.ShowModuleDependenciesAction;
 import jetbrains.mps.ide.actions.project.AddModuleToProjectAction;
-import jetbrains.mps.ide.actions.project.RemoveModuleFromProjectAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.workbench.action.LabelledAnchor;
@@ -36,13 +34,13 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
       this.add(new ShowModuleDependenciesAction());
       this.addSeparator();
       this.add(new AddModuleToProjectAction());
-      this.add(new RemoveModuleFromProjectAction());
+      this.add(new RemoveModuleFromProject_Action());
       this.addSeparator();
       this.add(new MakeModule_Action());
       this.add(new RebuildModule_Action());
       this.add(new CleanModule_Action());
       this.addSeparator();
-      this.add(new SetModuleFolderAction());
+      this.add(new SetModuleFolder_Action());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -11,7 +11,6 @@ import jetbrains.mps.ide.actions.nodes.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.transformation.TLBase.plugin.debug.actions.ShowGenerationTraceAction;
-import jetbrains.mps.transformation.TLBase.plugin.debug.actions.ShowGenerationTracebackAction;
 
 public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   public static Logger LOG = Logger.getLogger(EditorPopup_ActionGroup.class);
@@ -41,7 +40,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.add(new GenerateTextFromCurrentModelAction());
       this.addSeparator();
       this.add(new ShowGenerationTraceAction());
-      this.add(new ShowGenerationTracebackAction());
+      this.add(new ShowGenerationTraceback_Action());
       this.addSeparator();
       this.add(new FindSpecificNodeUsagesAction());
       this.add(new FastFindUsagesNodeAction());
