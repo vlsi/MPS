@@ -1,16 +1,12 @@
 package jetbrains.mps.nodeEditor.inspector;
 
-import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
-import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JComponent;
-import javax.swing.event.ChangeListener;
 import java.util.List;
 
 public class InspectorEditorComponent extends AbstractEditorComponent {
@@ -82,11 +78,5 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
 
   public EditorCell createRootCell() {
     return createRootCell(null);
-  }
-
-  public <T> T get(Class<T> cls) {
-    T result = super.get(cls);
-    if (result != null) return result;
-    return null;
   }
 }

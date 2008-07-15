@@ -1,24 +1,24 @@
 package jetbrains.mps.ide;
 
+import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.workbench.MPSDataKeys;
+import org.jdom.Element;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jdom.Element;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
-import java.util.List;
 import java.util.Collections;
-
-import com.intellij.openapi.fileEditor.FileEditorState;
-import com.intellij.openapi.fileEditor.FileEditorStateLevel;
+import java.util.List;
 
 public class NodeEditor implements IEditor {
 
@@ -166,6 +166,15 @@ public class NodeEditor implements IEditor {
       if (cls == IEditor.class) {
         return (T) NodeEditor.this;
       }
+      return null;
+    }
+
+    @Nullable
+    public Object getData(@NonNls String dataId) {
+      if (dataId.equals(MPSDataKeys.EDITOR.getName())) {
+        return NodeEditor.this;
+      }
+
       return null;
     }
   }

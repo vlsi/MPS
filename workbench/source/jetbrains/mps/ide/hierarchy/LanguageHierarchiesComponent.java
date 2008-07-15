@@ -2,7 +2,7 @@ package jetbrains.mps.ide.hierarchy;
 
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
@@ -12,10 +12,13 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -34,7 +37,7 @@ import java.util.List;
  * Time: 15:56:56
  * To change this template use File | Settings | File Templates.
  */
-public class LanguageHierarchiesComponent extends JComponent implements Scrollable, IActionDataProvider {
+public class LanguageHierarchiesComponent extends JComponent implements Scrollable, IActionDataProvider, DataProvider {
   private static final int SPACING = 10;
   private static final int PADDING_X = 5;
   private static final int PADDING_Y = 5;
@@ -306,6 +309,19 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     if (cls == SNode.class) return (T) getSelectedConcept();
     if (cls == ConceptDeclaration.class) return (T) getSelectedConcept();
     if (cls == IOperationContext.class) return (T) myOperationContext;
+    return null;
+  }
+
+  @Nullable
+  public Object getData(@NonNls String dataId) {
+    if (dataId.equals(MPSDataKeys.SNODE.getName())) {
+      return getSelectedConcept();
+    }
+
+    if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+      return myOperationContext;
+    }
+
     return null;
   }
 

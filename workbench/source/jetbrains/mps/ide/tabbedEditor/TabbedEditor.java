@@ -1,27 +1,38 @@
 package jetbrains.mps.ide.tabbedEditor;
 
-import jetbrains.mps.ide.IEditor;
+import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import jetbrains.mps.ide.ConceptDeclarationEditor;
+import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.ICellSelectionListener;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.workbench.MPSDataKeys;
+import org.jdom.Element;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jdom.Element;
 
-import javax.swing.*;
+import javax.swing.AbstractAction;
+import javax.swing.JComponent;
+import javax.swing.KeyStroke;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.util.*;
-
-import com.intellij.openapi.fileEditor.FileEditorState;
-import com.intellij.openapi.fileEditor.FileEditorStateLevel;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class TabbedEditor implements IEditor {
   public static final Logger LOG = Logger.getLogger(ConceptDeclarationEditor.class);
@@ -177,7 +188,7 @@ public class TabbedEditor implements IEditor {
   public List<SNode> getEditedNodes() {
     List<SNode> result = new ArrayList<SNode>();
     for (ILazyTab tab : myTabbedPane.getTabs()) {
-      tab.getComponent();      
+      tab.getComponent();
       for (AbstractEditorComponent aec : tab.getEditorComponents()) {
         if (aec.getEditedNode() != null) {
           result.add(aec.getEditedNode());
@@ -320,7 +331,7 @@ public class TabbedEditor implements IEditor {
     }
   }
 
-  private class MyLazyTabbedPane extends LazyTabbedPane implements IActionDataProvider {
+  private class MyLazyTabbedPane extends LazyTabbedPane implements IActionDataProvider, DataProvider {
     private MyLazyTabbedPane(TabbedEditor tabbedEditor) {
       super(tabbedEditor);
     }
@@ -329,6 +340,15 @@ public class TabbedEditor implements IEditor {
       if (cls == IEditor.class) {
         return (T) TabbedEditor.this;
       }
+      return null;
+    }
+
+    @Nullable
+    public Object getData(@NonNls String dataId) {
+      if (dataId.equals(MPSDataKeys.EDITOR.getName())) {
+        return TabbedEditor.this;
+      }
+
       return null;
     }
   }

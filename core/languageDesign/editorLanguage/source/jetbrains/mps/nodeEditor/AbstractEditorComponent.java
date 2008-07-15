@@ -2163,6 +2163,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myReadOnly = readOnly;
   }
 
+  @Deprecated
+  //use getData instead
+  //DO NOT EDIT THIS METHOD WITHOUT EDITING getData!!! THIS WILL BREAK YOUR CODE LATER
   public <T> T get(Class<T> cls) {
     if (getEditorContext() == null) {
       return null; //i.e editor is disposed
