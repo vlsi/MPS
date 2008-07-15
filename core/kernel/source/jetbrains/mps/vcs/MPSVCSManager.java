@@ -43,29 +43,31 @@ public class MPSVCSManager implements ProjectComponent {
   private final SModelRepositoryListener myModelRepositoryListener;
   private final SModelAdapter myModelInitializationListener = new ModelSavedListener();
   private MetadataCreationListener myMetadataListener = new MetadataCreationListenerImpl();
+  private ProjectLevelVcsManager myManager;
+  private List<VcsDirectoryMapping> myOldDirectoryMappings;
 
-  public MPSVCSManager(Project project) {
+  public MPSVCSManager(Project project, ProjectLevelVcsManager manager, MPSProjectHolder holder, MPSModuleRepository repository) {
     myProject = project;
+    myManager = manager;
     myGenerationListener = new GenerationWhatcher();
     myModelRepositoryListener = new SModelRepositoryListenerImpl();
   }
 
   private void renameInternal(final VirtualFile from, final VirtualFile to) {
-    final ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(myProject);
     invokeLater(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           public void run() {
-            sheduleMissingFileInternal(manager, from);
-            sceduleUnversionedFileForAdditionInternal(to, manager);
+            sheduleMissingFileInternal(from);
+            sceduleUnversionedFileForAdditionInternal(to);
           }
         });
       }
     });
   }
 
-  private void sheduleMissingFileInternal(ProjectLevelVcsManager manager, VirtualFile file) {
-    AbstractVcs fromVCS = manager.getVcsFor(file);
+  private void sheduleMissingFileInternal(VirtualFile file) {
+    AbstractVcs fromVCS = myManager.getVcsFor(file);
     if (fromVCS != null) {
       CheckinEnvironment ci = fromVCS.getCheckinEnvironment();
       if (ci != null && isUnderVCS(myProject, file)) {
@@ -149,7 +151,7 @@ public class MPSVCSManager implements ProjectComponent {
             LocalFileSystem lfs = LocalFileSystem.getInstance();
             for (VirtualFile vfile : inVCS) {
               if (vfile != null) {
-                sheduleMissingFileInternal(manager, vfile);
+                sheduleMissingFileInternal(vfile);
               }
             }
           }
@@ -176,10 +178,9 @@ public class MPSVCSManager implements ProjectComponent {
     final List<VirtualFile> inVCS = new LinkedList<VirtualFile>();
     List<File> notInVCS = new LinkedList<File>();
 
-    final ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
     for (VirtualFile f : files) {
       if (f != null) {
-        AbstractVcs vcs = manager.getVcsFor(f);
+        AbstractVcs vcs = myManager.getVcsFor(f);
         if (vcs != null) {
           inVCS.add(f);
         } else {
@@ -207,7 +208,6 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private boolean addInternal(final List<VirtualFile> inVCS) {
-    final ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
     boolean result = true;
     invokeLater(new Runnable() {
       public void run() {
@@ -217,7 +217,7 @@ public class MPSVCSManager implements ProjectComponent {
               if (vf == null) {
                 continue;
               }
-              sceduleUnversionedFileForAdditionInternal(vf, manager);
+              sceduleUnversionedFileForAdditionInternal(vf);
             }
           }
         });
@@ -226,8 +226,8 @@ public class MPSVCSManager implements ProjectComponent {
     return result;
   }
 
-  private void sceduleUnversionedFileForAdditionInternal(VirtualFile vf, ProjectLevelVcsManager manager) {
-    AbstractVcs vcs = manager.getVcsFor(vf);
+  private void sceduleUnversionedFileForAdditionInternal(VirtualFile vf) {
+    AbstractVcs vcs = myManager.getVcsFor(vf);
     if (vcs != null) {
       CheckinEnvironment ci = vcs.getCheckinEnvironment();
       if (ci != null && !isUnderVCS(myProject, vf)) {
@@ -249,6 +249,7 @@ public class MPSVCSManager implements ProjectComponent {
 
   public void projectOpened() {
     addDotSvnToIgnore();
+    addDirectoryMappings();
   }
 
   private void addDotSvnToIgnore() {
@@ -268,7 +269,6 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public void projectClosed() {
-
   }
 
   @NonNls
@@ -281,6 +281,75 @@ public class MPSVCSManager implements ProjectComponent {
     myProject.getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
     ModelChangesWatcher.instance().addMetadataListener(myMetadataListener);
+  }
+
+  private void addDirectoryMappings() {
+    VirtualFile projectBasedir = myProject.getBaseDir();
+    if (projectBasedir == null) return;
+
+    List<VcsDirectoryMapping> vcsMappings = new LinkedList<VcsDirectoryMapping>();
+    Map<VirtualFile, String> map = new LinkedHashMap<VirtualFile, String>();
+    myOldDirectoryMappings = myManager.getDirectoryMappings();
+
+    for (VcsDirectoryMapping mapping : vcsMappings) {
+      VirtualFile vfile = VFileSystem.getFile(mapping.getDirectory());
+      if (vfile != null) {
+        map.put(vfile, mapping.getVcs());
+      }
+    }
+
+    List<IModule> modules = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getModules();
+    for (IModule module : modules) {
+      if (!module.isPackaged()) {
+        IFile moduleFile = module.getDescriptorFile();
+        IFile moduleBasedir = moduleFile.getParent();
+
+        if (moduleBasedir.getPath().equals(projectBasedir.getPath())){
+          break;
+        }
+
+        VirtualFile moduleVFile = VFileSystem.getFile(moduleFile);
+        VirtualFile moduleVBasedir = VFileSystem.getFile(moduleBasedir);
+
+        if (moduleVFile != null) {
+          AbstractVcs vcsFor = myManager.getVcsFor(moduleVFile);
+
+          if (vcsFor != null) {
+            map.put(moduleVBasedir, vcsFor.getName());
+          }
+        }
+      }
+    }
+
+    for (VirtualFile directory : map.keySet()) {
+      boolean hasParents = false;
+      for (VirtualFile directory2 : map.keySet()) {
+        if (isParent(directory2, directory)) {
+          hasParents = true;
+          break;
+        }
+      }
+
+      if (!hasParents) {
+        vcsMappings.add(new VcsDirectoryMapping(directory.getPath(), map.get(directory)));
+      }
+    }
+
+    myManager.setDirectoryMappings(vcsMappings);
+  }
+
+  public static boolean isParent(VirtualFile parent, VirtualFile child){
+    if (!parent.isDirectory()){
+      return false;
+    }
+
+    if (parent.equals(child)) return false;
+
+    for (VirtualFile f : parent.getChildren()){
+      if (isParent(f, child)) return true;
+    }
+
+    return false;
   }
 
   public void disposeComponent() {
@@ -310,7 +379,7 @@ public class MPSVCSManager implements ProjectComponent {
         if (vfile != null) {
           AbstractVcs vcs = null;
           try {
-            vcs = ProjectLevelVcsManager.getInstance(myProject).getVcsFor(vfile);
+            vcs = myManager.getVcsFor(vfile);
           } catch (Throwable t) {
             LOG.error(t);
           }
