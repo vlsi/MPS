@@ -1,7 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 
@@ -25,7 +24,7 @@ public class FocusPolicyUtil {
     }
 
     if (prevCell.getFocusPolicy() == FocusPolicy.FIRST_EDITABLE_CELL) {
-      EditorCell result = EditorUtil.findErrorOrEditableCell(prevCell);
+      EditorCell result = prevCell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE));
       if (result != null) {
         return result;
       }

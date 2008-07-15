@@ -55,7 +55,7 @@ public class IntelligentInputUtil {
       EditorCell cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
 
       EditorCell_Label target = null;
-      EditorCell errorOrEditable =  cellForNewNode.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE), true);
+      EditorCell errorOrEditable =  cellForNewNode.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE), true);
       if (errorOrEditable instanceof EditorCell_Label) {
         target = (EditorCell_Label) errorOrEditable;
       }
@@ -193,7 +193,7 @@ public class IntelligentInputUtil {
       if (yetNewNode != null) {
         AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
         EditorCell yetNewNodeCell = editor.findNodeCell(yetNewNode);
-        EditorCell errorOrEditableCell = yetNewNodeCell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE), true);
+        EditorCell errorOrEditableCell = yetNewNodeCell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE), true);
         editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
       }
     } else {
