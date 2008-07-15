@@ -56,7 +56,28 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1144313193355">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216116028883">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216116028884">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1216116028885" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216119389628">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216119389629">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216119391571">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1216119393293">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1216119394375">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1216119394425">
+                        <property name="value" value="23" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1216119393327">
+                        <property name="value" value="23" />
+                      </node>
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1216119392323">
+                      <property name="value" value="239" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1216119390445">
+                <property name="value" value="true" />
+              </node>
+            </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1216116029606">
             <property name="value" value="true" />

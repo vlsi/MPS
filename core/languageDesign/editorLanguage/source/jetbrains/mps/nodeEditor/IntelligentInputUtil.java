@@ -2,7 +2,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
@@ -118,12 +117,12 @@ public class IntelligentInputUtil {
       newNode = item.substitute(editorContext, smallPattern);
       assert newNode != null;
       cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
-      EditorCell errorCell = EditorUtil.findErrorCell(cellForNewNode);
+      EditorCell errorCell = cellForNewNode.findChild(CellFinders.FIRST_ERROR);
 
       if (errorCell != null && errorCell instanceof EditorCell_Label) {
         editorContext.flushEvents();
         EditorCell cellForNewNode1 = editorContext.getNodeEditorComponent().findNodeCell(newNode);
-        EditorCell_Label errorCell1 = (EditorCell_Label) EditorUtil.findErrorCell(cellForNewNode1);
+        EditorCell_Label errorCell1 = (EditorCell_Label) cellForNewNode1.findChild(CellFinders.FIRST_ERROR);
         ((EditorCell_Label) errorCell1).changeText(tail);
         errorCell1.setCaretPosition(tail.length());
         editorContext.getNodeEditorComponent().relayout();
@@ -145,7 +144,7 @@ public class IntelligentInputUtil {
       return;
     }
 
-    EditorCellAction rtAction = EditorUtil.getCellAction(EditorUtil.findLastSelectableCell(cellForNewNode), EditorCellAction.RIGHT_TRANSFORM, editorContext);
+    EditorCellAction rtAction = EditorUtil.getCellAction(cellForNewNode.findChild(CellFinders.LAST_SELECTABLE), EditorCellAction.RIGHT_TRANSFORM, editorContext);
     if (rtAction == null || !hasSideActions(cellForNewNode, CellSide.RIGHT, tail)) {
       final CellInfo cellInfo = cellForNewNode.getCellInfo();
       putTextInErrorChild(cellInfo, smallPattern + tail, editorContext);
@@ -225,7 +224,7 @@ public class IntelligentInputUtil {
     }
 
 
-    EditorCellAction ltAction = EditorUtil.getCellAction(EditorUtil.findLastSelectableCell(cellForNewNode), EditorCellAction.LEFT_TRANSFORM, editorContext);
+    EditorCellAction ltAction = EditorUtil.getCellAction(cellForNewNode.findChild(CellFinders.LAST_SELECTABLE), EditorCellAction.LEFT_TRANSFORM, editorContext);
     if (ltAction == null || !hasSideActions(cellForNewNode, CellSide.LEFT, head)) {
       CellInfo cellInfo = cellForNewNode.getCellInfo();
       if (!sourceCellRemains) {
@@ -290,7 +289,7 @@ public class IntelligentInputUtil {
     AbstractEditorComponent component = editorContext.getNodeEditorComponent();
     EditorCell cellToSelect = cellInfo.findCell(component);
     if (cellToSelect != null) {
-      EditorCell errorCell = EditorUtil.findErrorCell(cellToSelect);
+      EditorCell errorCell = cellToSelect.findChild(CellFinders.FIRST_ERROR);
       if (errorCell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) errorCell;
         if (label.isEditable() && !(label instanceof EditorCell_Constant)) {

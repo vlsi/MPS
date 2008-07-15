@@ -17,7 +17,7 @@ public class FocusPolicyUtil {
     EditorCell selectedCell = findFocusedCell(cell);
     if (selectedCell == null || selectedCell == cell) return cell;
     if (!selectedCell.hasFocusPolicy()) {
-      EditorCell firstEditableCell = EditorUtil.findFirstEditableCell(selectedCell);
+      EditorCell firstEditableCell = selectedCell.findChild(CellFinders.FIRST_SELECTABLE);
       if (firstEditableCell != null) selectedCell = firstEditableCell;
     }
     return selectedCell;

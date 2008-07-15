@@ -147,9 +147,9 @@ public class KeyMapUtil {
         conditionSatisfied = true;
       } else if (action.getCaretPolicy() == actualCaretPosition) {
         if (action.getCaretPolicy() == EditorCellKeyMapAction.CARET_AT_FIRST_POSITION) {
-          conditionSatisfied = (EditorUtil.findFirstSelectableCell(actionCell) == selectedCell);
+          conditionSatisfied = (actionCell.findChild(CellFinders.FIRST_SELECTABLE) == selectedCell);
         } else if (action.getCaretPolicy() == EditorCellKeyMapAction.CARET_AT_LAST_POSITION) {
-          conditionSatisfied = (EditorUtil.findLastSelectableCell(actionCell) == selectedCell);
+          conditionSatisfied = (actionCell.findChild(CellFinders.LAST_SELECTABLE) == selectedCell);
         } else {
           conditionSatisfied = true;
         }
