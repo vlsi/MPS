@@ -12,16 +12,11 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 21.02.2006
- * Time: 14:53:54
- * To change this template use File | Settings | File Templates.
- */
 public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   private AbstractConceptDeclaration myChildConcept;
