@@ -29,14 +29,14 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.add(new HighlightInstancesAction());
       this.addSeparator();
       this.add(new ShowRootInProjectAction());
-      this.add(new ShowInProjectAction());
+      this.add(new ShowInProject_Action());
       this.add(new SelectInActionAdapter());
       this.addSeparator();
       this.add(new GoToConceptDeclaration_Action());
       this.add(new GoToEditorDeclarationAction());
       this.add(new GoToRulesAction());
-      this.add(new ShowNodeInExplorerAction());
-      this.add(new ShowNodeInInspectorAction());
+      this.add(new ShowNodeInExplorer_Action());
+      this.add(new ShowNodeInInspector_Action());
       this.addSeparator();
       this.add(new GenerateFilesFromCurrentModelAction());
       this.add(new GenerateTextFromCurrentModelAction());

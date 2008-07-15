@@ -18,6 +18,7 @@
     <dependency reexport="false">jetbrains.mps.bootstrap.pluginLanguage#1203080439937</dependency>
     <dependency reexport="false">jetbrains.mps.ide</dependency>
     <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
+    <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>
