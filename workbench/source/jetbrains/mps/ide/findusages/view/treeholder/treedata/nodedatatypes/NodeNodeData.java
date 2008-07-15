@@ -1,5 +1,6 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -8,20 +9,17 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.util.Calculable;
 import org.jdom.Element;
 
 import javax.swing.Icon;
 import java.util.List;
-
-import com.intellij.openapi.util.Computable;
 
 public class NodeNodeData extends BaseNodeData {
   private static Logger LOG = Logger.getLogger(NodeNodeData.class);
@@ -110,13 +108,23 @@ public class NodeNodeData extends BaseNodeData {
     return
       ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          if (node.getName() != null) {
-            return node.getName();
-          } else {
-            return node.toString();
-          }
+          String result = (node.getName() != null) ? node.getName() : node.toString();
+          result = textStringToHtml(result);
+          return result;
         }
       });
+  }
+
+  private static String textStringToHtml(String text) {
+    StringBuffer buffer = new StringBuffer();
+    for (char c : text.toCharArray()) {
+      if (c == '<') buffer.append("&lt;");
+      else if (c == '>') buffer.append("&gt;");
+      else if (c == '"') buffer.append("&quot;");
+      else if (c == '&') buffer.append("&amp;");
+      else buffer.append(c);
+    }
+    return buffer.toString();
   }
 
   public static String nodeAdditionalInfo(final SNode node) {
@@ -125,12 +133,12 @@ public class NodeNodeData extends BaseNodeData {
         if (node == node.getContainingRoot()) return "";
         return "role: " +
           "<i>" +
-          node.getRole_() +
+          textStringToHtml(node.getRole_()) +
           "</i>" +
           "; " +
           "in: " +
           "<i>" +
-          node.getParent() +
+          snodeRepresentation(node.getParent()) +
           "</i>";
       }
     });
