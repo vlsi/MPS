@@ -7,6 +7,7 @@ import jetbrains.mps.core.scripts.SafeDelete;
 import jetbrains.mps.dialogs.YesNoToAllDialog;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.refactoring.framework.GenericRefactoringAction;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.IOperationContext;
@@ -56,10 +57,14 @@ public class DeleteNodesHelper {
   }
 
   private void execute_internal(ProjectPane projectPane, boolean fromProjectPane, SNode node, IOperationContext context) {
+    MPSTreeNode nextNode = null;
     if (fromProjectPane) {
-      projectPane.selectNextTreeNode(node);
+      nextNode = projectPane.findNextTreeNode(node);
     }
     doDelete(node, context);
+    if (fromProjectPane) {
+      projectPane.getTree().selectNode(nextNode);
+    }
   }
 
   private void doDelete(SNode node, IOperationContext context) {
