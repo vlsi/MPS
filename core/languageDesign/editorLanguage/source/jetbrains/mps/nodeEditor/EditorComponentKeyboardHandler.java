@@ -78,13 +78,13 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         if (endEditKeystroke ||
           EditorCellAction.INSERT.equals(actionType) ||
           EditorCellAction.INSERT_BEFORE.equals(actionType)) {
-          EditorUtil.validateCell(selectedCell, editorContext, strictMatching);
+          selectedCell.validate(strictMatching, true);
           return true;
         }
 
         if (EditorCellAction.RIGHT_TRANSFORM.equals(actionType) || EditorCellAction.LEFT_TRANSFORM.equals(actionType)) {
           // !side effect: can change selection!
-          if (EditorUtil.validateCell(selectedCell, editorContext, strictMatching, true) != 0) {
+          if (selectedCell.validate(strictMatching, false)) {
             return true;
           }
         }

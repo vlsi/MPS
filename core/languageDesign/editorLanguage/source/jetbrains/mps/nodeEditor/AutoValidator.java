@@ -28,7 +28,7 @@ class AutoValidator {
                   EditorCell cell = cellInfo.findCell(editor);
                   if (cell != null) {
                     Object memento = editor.getEditorContext().createMemento();
-                    EditorUtil.validateCell(cell, null, true, true, false);
+                    cell.validate(true, false);
                     editor.flushEvents();
                     editor.getEditorContext().setMemento(memento);
                   }

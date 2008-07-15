@@ -66,8 +66,8 @@ public class IntelligentInputUtil {
 
         editorContext.getNodeEditorComponent().relayout();
 
-        if (!!target.isErrorState()) {
-          EditorUtil.validateCell(target, editorContext, true, true, false);
+        if (target.isErrorState()) {
+          target.validate(true, false);
         }
 
         editorContext.flushEvents();
