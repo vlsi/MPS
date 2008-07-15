@@ -97,7 +97,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     for (IEditorMessage message : messages) {
       IntentionProvider intentionProvider = message.getIntentionProvider();
       if (intentionProvider != null) {
-        Intention intention = intentionProvider.getIntention(node, context);
+        Intention intention = intentionProvider.getIntention();
         if (intention != null) {
           result.add(intention);
         }

@@ -11,5 +11,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
  * To change this template use File | Settings | File Templates.
  */
 public interface IntentionProvider {
-  public Intention getIntention(SNode node, EditorContext editorContext);
+  public Intention getIntention();
+  public boolean isExecutedImmediately();
 }

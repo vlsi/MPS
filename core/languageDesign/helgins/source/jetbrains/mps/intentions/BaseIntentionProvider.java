@@ -23,6 +23,7 @@ public class BaseIntentionProvider implements IntentionProvider {
   private Intention myIntention;
   private boolean myIntentionTaken;
   private final String myClassFQName;
+  private boolean myExecuteImmediately = false;
   private Map<String, Object> myMap = new HashMap<String, Object>();
 
   public BaseIntentionProvider(String classFQName) {
@@ -31,11 +32,20 @@ public class BaseIntentionProvider implements IntentionProvider {
     myIntentionTaken = false;
   }
 
+  public BaseIntentionProvider(String classFQName, boolean executeImmediately) {
+    this(classFQName);
+    myExecuteImmediately = executeImmediately;
+  }
+
   public void putArgument(String key, Object argument) {
     myMap.put(key, argument);
   }
 
-  public Intention getIntention(SNode node, EditorContext editorContext) {
+  public boolean isExecutedImmediately() {
+    return myExecuteImmediately;
+  }
+
+  public Intention getIntention() {
     if (myIntentionTaken) {
       return myIntention;
     }
