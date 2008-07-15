@@ -62,13 +62,13 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       editorCell.setY(y + height);
       editorCell.relayout();
       int cellHeight = editorCell.getHeight();
-      int indent = EditorUtil.getBracesIndent(editorCell);
+      int indent = getBracesIndent(editorCell);
       braceIndent = Math.max(indent, braceIndent);
       height += cellHeight;
     }
     for (EditorCell editorCell : editorCells.contentCells()) {
       lastCellWidth = editorCell.getWidth();
-      int indent = EditorUtil.getBracesIndent(editorCell);
+      int indent = getBracesIndent(editorCell);
       int delta = braceIndent - indent;
       width = Math.max(width, lastCellWidth + delta);
     }
@@ -76,7 +76,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     for (EditorCell editorCell : editorCells.contentCells()) {
       int cellX = editorCell.getX();
       int cellY = editorCell.getY();
-      int indent = EditorUtil.getBracesIndent(editorCell);
+      int indent = getBracesIndent(editorCell);
       int newCellX = cellX - indent + braceIndent;
       if (newCellX != cellX) editorCell.moveTo(newCellX, cellY);
     }
@@ -169,6 +169,11 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     }
     editorCells.setWidth(width);
     editorCells.setHeight(height);
+  }
+
+  private int getBracesIndent(EditorCell cell) {
+    if (cell instanceof EditorCell_Collection) return ((EditorCell_Collection) cell).getBracesIndent();
+    return 0;
   }
 
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {

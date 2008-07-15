@@ -74,7 +74,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       }
 
 
-      if (!EditorUtil.isValidCell(selectedCell)) {
+      if (!!selectedCell.isErrorState()) {
         if (endEditKeystroke ||
           EditorCellAction.INSERT.equals(actionType) ||
           EditorCellAction.INSERT_BEFORE.equals(actionType)) {

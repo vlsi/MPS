@@ -17,14 +17,14 @@ class AutoValidator {
   private class MyCellSelectionListener implements ICellSelectionListener {
     public void selectionChanged(final AbstractEditorComponent editor, final EditorCell oldSelection, EditorCell newSelection) {
       if (editor.isCellSwapInProgress()) return;
-      if (oldSelection != null && (!EditorUtil.isValidCell(oldSelection) || oldSelection instanceof EditorCell_STHint)) {
+      if (oldSelection != null && (!!oldSelection.isErrorState() || oldSelection instanceof EditorCell_STHint)) {
         final SNode node = oldSelection.getSNode();
         final CellInfo cellInfo = oldSelection.getCellInfo();
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
-                if (!EditorUtil.isValidCell(oldSelection)) {
+                if (oldSelection != null && !!oldSelection.isErrorState()) {
                   EditorCell cell = cellInfo.findCell(editor);
                   if (cell != null) {
                     Object memento = editor.getEditorContext().createMemento();
