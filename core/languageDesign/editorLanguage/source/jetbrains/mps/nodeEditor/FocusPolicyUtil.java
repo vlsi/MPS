@@ -5,13 +5,6 @@ import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 30.01.2006
- * Time: 16:33:37
- * To change this template use File | Settings | File Templates.
- */
 public class FocusPolicyUtil {
   public static EditorCell findCellToSelectDueToFocusPolicy(EditorCell cell) {
     EditorCell selectedCell = findFocusedCell(cell);
