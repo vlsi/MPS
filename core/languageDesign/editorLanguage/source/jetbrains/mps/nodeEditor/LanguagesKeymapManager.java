@@ -6,6 +6,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
 
@@ -94,7 +95,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     if (editorModel == null) return;
     for (CellKeyMapDeclaration node : editorModel.getRootsAdapters(CellKeyMapDeclaration.class)) {
       try {
-        Class<EditorCellKeyMap> keyMapClass = EditorUtil.findKeyMapClassByDeclaration(node);
+        Class<EditorCellKeyMap> keyMapClass = findKeyMapClassByDeclaration(node);
         if (keyMapClass != null) {
           registerKeyMap(keyMapClass.newInstance(), language.getNamespace());
         }
@@ -102,6 +103,18 @@ public class LanguagesKeymapManager implements ApplicationComponent {
         LOG.error(t);
       }
     }
+  }
+
+  private Class<EditorCellKeyMap> findKeyMapClassByDeclaration(CellKeyMapDeclaration declaration) {
+    String fqName = NameUtil.nodeFQName(declaration);
+
+    String namespace = NameUtil.namespaceFromLongName(fqName);
+    assert namespace.endsWith(".editor");
+
+    String langaugeNamespace = namespace.substring(0, namespace.length() - ".editor".length());
+    Language language = (Language) MPSModuleRepository.getInstance().getModuleByUID(langaugeNamespace);
+
+    return language.getClass(fqName);
   }
 
   private void unregisterLanguageKeyMaps(Language language) {
