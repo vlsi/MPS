@@ -4,6 +4,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -27,6 +28,7 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
   private MPSProject myProject;
   private IModule myModule;
   private IOperationContext myContext;
+  private IEditor myEditor;
 
   public GoToConceptEditorDeclarationAction() {
     super("Go To Concept Editor Declaration");
@@ -36,9 +38,6 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
   }
 
   protected void doExecute(AnActionEvent e) {
-    IEditor currentEditor = myContext.getComponent(IEditor.class);
-    if (currentEditor == null) return;
-
     Language language = null;
     if (myModule instanceof Language) {
       Language contextLanguage = (Language) myModule;
@@ -61,7 +60,7 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
     if (languageEditor != null) {
       editorDeclaration = SModelUtil_new.findEditorDeclaration(languageEditor.getSModel(), myConcept);
       if (editorDeclaration != null) {
-        navigateToEditorDeclaration(editorDeclaration.getNode(), languageContext, currentEditor);
+        navigateToEditorDeclaration(editorDeclaration.getNode(), languageContext, myEditor);
         return;
       }
     }
@@ -98,7 +97,7 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
     SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
     assert editorModelDescriptor != null;
     editorDeclaration = SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), (ConceptDeclaration) myNode.getAdapter());
-    navigateToEditorDeclaration(editorDeclaration.getNode(), languageContext, currentEditor);
+    navigateToEditorDeclaration(editorDeclaration.getNode(), languageContext, myEditor);
   }
 
   @NotNull
@@ -120,6 +119,8 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
     if (myModule == null) return false;
     myContext = data.getOperationContext();
     if (myContext == null) return false;
+    myEditor = new ActionContext().get(IEditor.class);
+    if (myEditor == null) return false;
     return true;
   }
 
