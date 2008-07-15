@@ -181,6 +181,7 @@ public abstract class MPSTree extends DnDAwareTree {
                 Presentation presentation = new Presentation();
                 AnActionEvent event = new AnActionEvent(e, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
                 action.update(event);
+                assert event.getPresentation().isEnabled();
                 if (presentation.isEnabled()) return action;
               }
             }

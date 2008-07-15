@@ -28,7 +28,6 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.add(new HighlightUsagesAction());
       this.add(new HighlightInstancesAction());
       this.addSeparator();
-      this.add(new ShowRootInProjectAction());
       this.add(new ShowInProject_Action());
       this.add(new SelectInActionAdapter());
       this.addSeparator();
