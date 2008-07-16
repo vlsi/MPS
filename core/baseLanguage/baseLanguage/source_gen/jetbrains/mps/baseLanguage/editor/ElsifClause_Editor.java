@@ -95,6 +95,11 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   private static void setupBasic_statementListRefNodeCell16141_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_ConstantCell16141_05(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16141_05");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+  }
+
   private static void setupLabel_ConstantCell16141_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -114,6 +119,9 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_statementListRefNodeCell16141_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell16141_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -139,7 +147,8 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_ConstantCell16141_0(context, node, "}"));
-    editorCell.addEditorCell(this.create_ConstantCell16141_01(context, node, "elseif"));
+    editorCell.addEditorCell(this.create_ConstantCell16141_01(context, node, "else"));
+    editorCell.addEditorCell(this.create_ConstantCell16141_05(context, node, "if"));
     editorCell.addEditorCell(this.create_ConstantCell16141_02(context, node, "("));
     editorCell.addEditorCell(this.create_conditionRefNodeCell16141_0(context, node));
     editorCell.addEditorCell(this.create_ConstantCell16141_03(context, node, ")"));
@@ -194,6 +203,14 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell16141_04(editorCell, node, context);
     setupLabel_ConstantCell16141_04(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell create_ConstantCell16141_05(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_ConstantCell16141_05(editorCell, node, context);
+    setupLabel_ConstantCell16141_05(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

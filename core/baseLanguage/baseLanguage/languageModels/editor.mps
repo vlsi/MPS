@@ -15595,7 +15595,11 @@
           <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206061059815">
-          <property name="text" value="elseif" />
+          <property name="text" value="else" />
+          <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216212753379">
+          <property name="text" value="if" />
           <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206061068802">

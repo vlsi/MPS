@@ -2454,6 +2454,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
           if (getEditorContext() == null) return false;
+          if (getSelectedCell() == null) return false;
           return getSelectedCell().canExecuteAction(EditorCellAction.CUT);
         }
       });
@@ -2473,6 +2474,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
           if (getEditorContext() == null) return false;
+          if (getSelectedCell() == null) return false;
           return getSelectedCell().canExecuteAction(EditorCellAction.COPY);
         }
       });
@@ -2492,6 +2494,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
           if (getEditorContext() == null) return false;
+          if (getSelectedCell() == null) return false;
           return getSelectedCell().canExecuteAction(EditorCellAction.PASTE);
         }
       });
