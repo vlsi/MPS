@@ -139,7 +139,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_ConstantCell16141_0(context, node, "}"));
-    editorCell.addEditorCell(this.create_ConstantCell16141_01(context, node, "elsif"));
+    editorCell.addEditorCell(this.create_ConstantCell16141_01(context, node, "elseif"));
     editorCell.addEditorCell(this.create_ConstantCell16141_02(context, node, "("));
     editorCell.addEditorCell(this.create_conditionRefNodeCell16141_0(context, node));
     editorCell.addEditorCell(this.create_ConstantCell16141_03(context, node, ")"));
