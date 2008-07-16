@@ -82,7 +82,6 @@ public class FinderNode extends BaseLeaf {
       myFinder = (BaseFinder) Class.forName(finderName).newInstance();
       myFinder.read(finderXML, project);
     } catch (Throwable t) {
-      LOG.error("Can't find or read finder " + finderName, t);
       throw new CantLoadSomethingException("Can't find or read finder " + finderName, t);
     }
   }

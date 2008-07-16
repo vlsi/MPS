@@ -82,7 +82,6 @@ public class FilterNode extends BaseNode {
       myFilter = (BaseFilter) Class.forName(filterName).newInstance();
       myFilter.read(filterXML, project);
     } catch (Throwable t) {
-      LOG.error("Can't instantiate or read filter " + filterName, t);
       throw new CantLoadSomethingException("Can't instantiate or read filter " + filterName, t);
     }
   }
