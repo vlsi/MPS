@@ -1,6 +1,7 @@
 package jetbrains.mps.ide;
 
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
+import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
@@ -157,7 +158,7 @@ public class NodeEditor implements IEditor {
     }
   }
 
-  private class MyPanel extends JPanel implements IActionDataProvider {
+  private class MyPanel extends JPanel implements IActionDataProvider, DataProvider {
     private MyPanel() {
       setLayout(new BorderLayout());
     }
