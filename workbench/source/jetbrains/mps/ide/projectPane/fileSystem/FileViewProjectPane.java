@@ -238,12 +238,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   public void projectClosed() {
   }
 
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "FileProjectViewPane";
-  }
-
   public Object getData(String dataId) {
     if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
       List<VirtualFile> files = new LinkedList<VirtualFile>();

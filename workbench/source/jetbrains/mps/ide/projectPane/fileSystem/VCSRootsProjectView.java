@@ -32,4 +32,10 @@ public class VCSRootsProjectView extends FileViewProjectPane {
   public int getWeight() {
     return 6;
   }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "VCSRootsProjectView";
+  }
 }

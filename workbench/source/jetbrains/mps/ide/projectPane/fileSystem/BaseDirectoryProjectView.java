@@ -33,4 +33,10 @@ public class BaseDirectoryProjectView extends FileViewProjectPane{
   public int getWeight() {
     return 5;
   }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "BaseDirectoryProjectView";
+  }
 }
