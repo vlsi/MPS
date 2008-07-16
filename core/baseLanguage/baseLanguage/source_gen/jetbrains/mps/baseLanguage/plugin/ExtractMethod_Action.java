@@ -9,12 +9,15 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.baseLanguage.refactoring.extractMethod.ExtractMethodRefactoringAnalyzer;
 import jetbrains.mps.workbench.action.ActionEventData;
 import java.util.ArrayList;
+import jetbrains.mps.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.refactoring.extractMethod.ExtractMethodKind;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.refactoring.extractMethod.ExtractMethodDialog;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class ExtractMethod_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(ExtractMethod_Action.class);
@@ -25,7 +28,7 @@ public class ExtractMethod_Action extends GeneratedAction {
   public ExtractMethod_Action() {
     super("Extract Method", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull()
@@ -35,7 +38,7 @@ public class ExtractMethod_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull() AnActionEvent event) {
     try {
-      if (!(this.isExpression(this.nodes)) && !(this.isStatements(this.nodes))) {
+      if (!(this.isExpression(this.nodes)) && !(ExtractMethodRefactoringAnalyzer.isStatements(this.nodes))) {
         this.setVisible(event.getPresentation(), false);
       } else
       {
@@ -73,27 +76,25 @@ public class ExtractMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ExtractMethodKind kind;
-      if (this.isStatements(this.nodes)) {
-        kind = ExtractMethodKind.FROM_STATEMENTS;
-      } else
-      {
-        kind = ExtractMethodKind.FROM_EXPRESSION;
-      }
-      ExtractMethodDialog dialog = new ExtractMethodDialog(kind, new ActionEventData(event));
+      final Wrappers._T<ExtractMethodKind> kind = new Wrappers._T<ExtractMethodKind>(null);
+      final List<SNode> n = this.nodes;
+      ModelAccess.instance().runReadAction(new Runnable() {
+
+        public void run() {
+          if (ExtractMethodRefactoringAnalyzer.isStatements(n)) {
+            kind.value = ExtractMethodKind.FROM_STATEMENTS;
+          } else
+          {
+            kind.value = ExtractMethodKind.FROM_EXPRESSION;
+          }
+        }
+
+      });
+      ExtractMethodDialog dialog = new ExtractMethodDialog(kind.value, new ActionEventData(event));
       dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);
     }
-  }
-
-  /* package */boolean isStatements(List<SNode> statements) {
-    for(SNode node : statements) {
-      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
-        return false;
-      }
-    }
-    return true;
   }
 
   /* package */boolean isExpression(List<SNode> nodes) {
