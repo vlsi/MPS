@@ -134,35 +134,6 @@ public class EquationManager {
     return var;
   }
 
-  private SNode prepareType(SNode node) {
-    SNode nodeToPrepare = node;
-    if (node.getParent() != null) {
-      nodeToPrepare = CopyUtil.copy(node);
-    }
-    return prepareType_internal(nodeToPrepare);
-  }
-
-  private SNode prepareType_internal(SNode node) {
-    SNode variable = myTypeChecker.getRulesManager().provideVariable(node);
-    if (variable != null) {
-      return variable;
-    } else {
-      for (SNode child : new ArrayList<SNode>(node.getChildren())) {
-        SNode newChild = prepareType_internal(child);
-        if (newChild != child) {
-          if (newChild.getParent() != null) {
-            SNode newVariable = myTypeChecker.getRuntimeSupport().createNewRuntimeTypesVariable(false);
-            addEquation(newChild, newVariable, (SNode) null);
-            node.replaceChild(child, newVariable);
-          } else {
-            node.replaceChild(child, newChild);
-          }
-        }
-      }
-      return node;
-    }
-  }
-
 
   public void addInequation(SNode subType, SNode supertype, EquationInfo errorInfo, boolean isWeak, boolean checkOnly) {
     addInequation(NodeWrapper.createWrapperFromNode(subType, this), NodeWrapper.createWrapperFromNode(supertype, this), errorInfo, isWeak, true, checkOnly);
@@ -260,6 +231,7 @@ public class EquationManager {
     IErrorReporter errorReporter =
       new EquationErrorReporter(this, "type ", subtypeRepresentator,
         " is not a" + strongString + " subtype of ", supertypeRepresentator, "", equationInfo.getRuleModel(), equationInfo.getRuleId());
+    myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, equationInfo, isWeak);
     myTypeChecker.reportTypeError(equationInfo.getNodeWithError(), errorReporter);
 
     //4debug
