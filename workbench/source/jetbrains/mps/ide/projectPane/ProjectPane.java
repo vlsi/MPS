@@ -43,7 +43,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.actions.model.DeleteModelsAction;
 import jetbrains.mps.workbench.actions.nodes.CopyNodeAction;
 import jetbrains.mps.workbench.actions.nodes.CutNodeAction;
@@ -248,6 +247,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             selectNode(((MPSNodeVirtualFile) context.getVirtualFile()).getNode());
+            getComponent().requestFocus();
           }
         });
       }
@@ -881,13 +881,13 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       myModulesPool = new ProjectModulesPoolTreeNode(getMPSProject());
       root.add(myModulesPool);
 
-      if (getMPSProject().getComponentSafe(TransientModelsModule.class).getOwnModelDescriptors().size()!=0){
+      if (getMPSProject().getComponentSafe(TransientModelsModule.class).getOwnModelDescriptors().size() != 0) {
         TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(getMPSProject());
         root.add(transientModelsNode);
       }
       return root;
     }
-  } 
+  }
 
   private class ModulesNamespaceTreeBuilder extends NamespaceTreeBuilder {
     private MPSProject myProject;
