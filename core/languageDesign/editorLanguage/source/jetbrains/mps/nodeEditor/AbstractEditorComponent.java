@@ -14,8 +14,6 @@ import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.SystemInfo;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
@@ -42,6 +40,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.actions.nodes.GoByFirstReferenceAction;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -59,7 +58,7 @@ import java.util.*;
 import java.util.List;
 
 
-public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IActionDataProvider, DataProvider {
+public abstract class AbstractEditorComponent extends JComponent implements Scrollable, DataProvider {
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
@@ -439,7 +438,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     updateMPSActionsWithKeyStrokes(null);
   }
 
-  private void updateMPSActionsWithKeyStrokes(@Nullable ActionContext actionContext) {
+  private void updateMPSActionsWithKeyStrokes(@Nullable ActionEventData data) {
     myActionProxies.clear();
     for (BaseAction a : myMPSActionsWithShortcuts) {
       Shortcut[] shortcuts = a.getShortcutSet().getShortcuts();
@@ -449,14 +448,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     myMPSActionsWithShortcuts.clear();
     BaseGroup group = (BaseGroup) ActionManager.getInstance().getAction(EDITOR_POPUP_MENU_ACTIONS);
-    registerKeyStrokes(group, actionContext);
+    registerKeyStrokes(group, data);
   }
 
   public IEditorMessageOwner getHighlightMessagesOwner() {
     return myOwner;
   }
 
-  private void registerKeyStrokes(BaseGroup group, @Nullable final ActionContext actionContext) {
+  private void registerKeyStrokes(BaseGroup group, @Nullable final ActionEventData data) {
     if (group != null) {
       for (final AnAction child : group.getChildren(null)) {
         if (child instanceof BaseAction) {
@@ -468,10 +467,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
         if (child instanceof BaseGroup) {
           try {
-            if (actionContext != null) {
-              AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, actionContext);
+            if (data != null) {
+              AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, data);
               ActionUtils.updateGroup((BaseGroup) child, event);
-              registerKeyStrokes((BaseGroup) child, actionContext);
+              registerKeyStrokes((BaseGroup) child, data);
             }
           } catch (Throwable t) {
             LOG.error(t);
@@ -728,10 +727,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     popupMenu.show(AbstractEditorComponent.this, x, y);
   }
 
-  private ActionContext createActionContext() {
-    return ModelAccess.instance().runReadAction(new Computable<ActionContext>() {
-      public ActionContext compute() {
-        ActionContext context = new ActionContext(getOperationContext());
+  private ActionEventData createActionContext() {
+    return ModelAccess.instance().runReadAction(new Computable<ActionEventData>() {
+      public ActionEventData compute() {
+        ActionEventData context = new ActionEventData(getOperationContext());
         context.put(Project.class, getOperationContext().getProject());
         context.put(MPSProject.class, getOperationContext().getMPSProject());
         EditorCell cell_ = getSelectedCell();
@@ -2161,37 +2160,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void setReadOnly(boolean readOnly) {
     myReadOnly = readOnly;
-  }
-
-  @Deprecated
-  //use getData instead
-  //DO NOT EDIT THIS METHOD WITHOUT EDITING getData!!! THIS WILL BREAK YOUR CODE LATER
-  public <T> T get(Class<T> cls) {
-    if (getEditorContext() == null) {
-      return null; //i.e editor is disposed
-    }
-
-    if (cls == SNode.class) {
-      if (getSelectedCell() != null) {
-        return (T) getSelectedCell().getSNode();
-      } else {
-        return (T) getRootCell().getSNode();
-      }
-    }
-    if (cls == EditorCell.class) {
-      return (T) getSelectedCell();
-    }
-    if (cls == SModelDescriptor.class && get(SNode.class) != null) {
-      return ModelAccess.instance().runReadAction(new Computable<T>() {
-        public T compute() {
-          return (T) get(SNode.class).getModel().getModelDescriptor();
-        }
-      });
-    }
-    if (cls == IOperationContext.class) return (T) getOperationContext();
-    if (cls == AbstractEditorComponent.class) return (T) this;
-    if (cls == EditorContext.class) return (T) getEditorContext();
-    return null;
   }
 
   @Nullable

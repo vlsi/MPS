@@ -5,7 +5,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.core.scripts.SafeDelete;
 import jetbrains.mps.dialogs.YesNoToAllDialog;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.refactoring.framework.GenericRefactoringAction;
@@ -14,6 +13,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.ActionEventData;
 
 import java.util.Iterator;
 import java.util.List;
@@ -91,7 +91,7 @@ public class DeleteNodesHelper {
 
   private void safeDelete(IOperationContext context, SNode node) {
     final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(new SafeDelete());
-    final ActionContext newContext = new ActionContext(context, node);
+    final ActionEventData newContext = new ActionEventData(context, node);
     newContext.put(List.class, CollectionUtil.asList(node));
     AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, newContext);
     safeDeleteAction.update(event);

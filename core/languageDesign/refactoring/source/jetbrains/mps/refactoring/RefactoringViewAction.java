@@ -1,6 +1,7 @@
 package jetbrains.mps.refactoring;
 
-import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.workbench.action.ActionEventData;
+
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,5 +11,5 @@ import jetbrains.mps.ide.action.ActionContext;
  * To change this template use File | Settings | File Templates.
  */
 public interface RefactoringViewAction {
-  void performAction(ActionContext actionContext, NewRefactoringView refactoringView);
+  void performAction(ActionEventData data, NewRefactoringView refactoringView);
 }

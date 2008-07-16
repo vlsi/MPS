@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
@@ -39,6 +38,7 @@ import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
+import jetbrains.mps.workbench.action.ActionEventData;
 
 public class MoveNodes extends AbstractLoggableRefactoring {
   public static final String target = "target";
@@ -95,7 +95,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return null;
   }
 
-  public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public boolean isApplicable(ActionEventData data, RefactoringContext refactoringContext) {
     if (ListSequence.fromList(refactoringContext.getSelectedNodes()).isEmpty()) {
       return false;
     }
@@ -166,11 +166,11 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(actionContext.createProgressIndicator(), actionContext.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
+  public SearchResults getAffectedNodes(ActionEventData data, RefactoringContext refactoringContext) {
+    return FindUtils.getSearchResults(data.createProgressIndicator(), data.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
-  public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public void doRefactor(ActionEventData data, RefactoringContext refactoringContext) {
     {
       List<SNode> nodes = refactoringContext.getSelectedNodes();
       SModel targetModel = null;
@@ -197,11 +197,11 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(ActionEventData data, RefactoringContext refactoringContext) {
     return new HashMap<IModule, List<SModel>>();
   }
 
-  public List<SModel> getModelsToUpdate(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(ActionEventData data, RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
@@ -209,7 +209,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     refactoringContext.updateModelWithMaps(model);
   }
 
-  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(ActionEventData data, RefactoringContext refactoringContext) {
     {
       ArrayList<SNode> result = new ArrayList<SNode>(1);
       result.add(((SNode)refactoringContext.getParameter("nodeToOpen")));
@@ -221,11 +221,11 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public IChooseComponent<Object> target_componentCreator(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public IChooseComponent<Object> target_componentCreator(ActionEventData data, RefactoringContext refactoringContext) {
     return new ChooseNodeOrModelComponent(refactoringContext.getCurrentOperationContext(), null, true, true);
   }
 
-  public boolean askForInfo(final ActionContext actionContext, final RefactoringContext refactoringContext) {
+  public boolean askForInfo(final ActionEventData data, final RefactoringContext refactoringContext) {
     {
       boolean result = false;
       final List<IChooseComponent> components = new ArrayList<IChooseComponent>();
@@ -234,7 +234,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
         public void run() {
           {
             IChooseComponent<Object> chooseComponent;
-            chooseComponent = MoveNodes.this.target_componentCreator(actionContext, refactoringContext);
+            chooseComponent = MoveNodes.this.target_componentCreator(data, refactoringContext);
             chooseComponent.setPropertyName("target");
             chooseComponent.setCaption("choose target");
             chooseComponent.initComponent();
@@ -243,7 +243,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
         }
 
       });
-      ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
+      ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, data, refactoringContext, components);
       dialog.showDialog();
       result = dialog.getResult();
       return result;

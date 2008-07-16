@@ -5,11 +5,11 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.workbench.action.ActionEventData;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
@@ -40,10 +40,10 @@ public class NewRefactoringView extends BaseProjectTool {
     myComponent.add(toolbar, BorderLayout.WEST);
   }
 
-  public void showRefactoringView(@NotNull ActionContext actionContext,
+  public void showRefactoringView(@NotNull ActionEventData data,
                                   @NotNull RefactoringViewAction refactoringViewAction,
                                   SearchResults searchResults) {
-    myRefactoringViewItem = new RefactoringViewItem(actionContext, refactoringViewAction, searchResults, this);
+    myRefactoringViewItem = new RefactoringViewItem(data, refactoringViewAction, searchResults, this);
     myComponent.remove(myLabel);
     myComponent.add(myRefactoringViewItem.getComponent(), BorderLayout.CENTER);
     myRefactoringViewItem.initUsagesView();

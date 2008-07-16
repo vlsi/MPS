@@ -5,7 +5,6 @@ import jetbrains.mps.annotations.structure.AttributeConcept;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -22,6 +21,7 @@ import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 
 import javax.swing.JOptionPane;
@@ -283,12 +283,12 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_MODEL_ACTIONS);
   }
 
-  private JPopupMenu createMenu(ActionContext context, BaseGroup group) {
+  private JPopupMenu createMenu(ActionEventData context, BaseGroup group) {
     ActionManager manager = ActionManager.getInstance();
     return manager.createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
-  protected ActionContext getActionContext() {
+  protected ActionEventData getActionContext() {
     SModelDescriptor model = getSModelDescriptor();
 
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
@@ -299,7 +299,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
     }
 
-    ActionContext context = new ActionContext(getOperationContext());
+    ActionEventData context = new ActionEventData(getOperationContext());
     context.put(SModelDescriptor.class, model);
     if (getOperationContext() != null) {
       context.put(MPSProject.class, getOperationContext().getMPSProject());
@@ -314,7 +314,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   public JPopupMenu getQuickCreatePopupMenu() {
     BaseGroup group = new CreateRootNodeGroup();
-    ActionContext context = getActionContext();
+    ActionEventData context = getActionContext();
     return createMenu(context, group);
   }
 

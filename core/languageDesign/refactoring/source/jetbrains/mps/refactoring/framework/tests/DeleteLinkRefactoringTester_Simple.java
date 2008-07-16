@@ -2,11 +2,11 @@ package jetbrains.mps.refactoring.framework.tests;
 
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.scripts.SafeDeleteLink;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.workbench.action.ActionEventData;
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,7 +22,7 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
                                  final Language testRefactoringLanguage,
                                  final Language testRefactoringTargetLanguage, Runnable continuation) {
     System.err.println("preparing arguments for refactoring");
-    final ActionContext actionContext = new ActionContext(project.createOperationContext());
+    final ActionEventData data = new ActionEventData(project.createOperationContext());
     SafeDeleteLink safeDeleteLink = new SafeDeleteLink();
     final RefactoringContext refactoringContext = new RefactoringContext(safeDeleteLink);
     final String[] linkName = new String[]{null};
@@ -34,14 +34,14 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
         ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
         SNode link = concept.getLinkDeclarations().get(0).getNode();
         linkName[0] = link.getProperty("role");
-        actionContext.put(SNode.class, link);
-        actionContext.put(SModelDescriptor.class, structureModelDescriptor);
+        data.put(SNode.class, link);
+        data.put(SModelDescriptor.class, structureModelDescriptor);
       }
     });
 
 
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(actionContext, refactoringContext, continuation);
+    new RefactoringProcessor().doExecuteInTest(data, refactoringContext, continuation);
 
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {

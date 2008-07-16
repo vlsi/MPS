@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
@@ -22,6 +21,8 @@ import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.workbench.action.ActionEventData;
+
 import java.util.HashMap;
 import java.util.ArrayList;
 
@@ -76,7 +77,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
     return SafeDelete.getClass_static();
   }
 
-  public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public boolean isApplicable(ActionEventData data, RefactoringContext refactoringContext) {
     return true;
   }
 
@@ -96,19 +97,19 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public SearchResults getAffectedNodes(ActionEventData data, RefactoringContext refactoringContext) {
     refactoringContext.setParameter("sourceLanguage", Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor()));
-    return FindUtils.getSearchResults(actionContext.createProgressIndicator(), actionContext.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.LinkExamples_Finder", "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
+    return FindUtils.getSearchResults(data.createProgressIndicator(), data.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.LinkExamples_Finder", "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
-  public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public void doRefactor(ActionEventData data, RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
       refactoringContext.deleteFeature(node);
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(ActionEventData data, RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
       if (((Language)refactoringContext.getParameter("sourceLanguage")) == null) {
@@ -129,7 +130,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
     }
   }
 
-  public List<SModel> getModelsToUpdate(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(ActionEventData data, RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
@@ -137,7 +138,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
     refactoringContext.updateModelWithMaps(model);
   }
 
-  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(ActionEventData data, RefactoringContext refactoringContext) {
     return new ArrayList<SNode>();
   }
 
@@ -145,8 +146,8 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public boolean askForInfo(final ActionContext actionContext, final RefactoringContext refactoringContext) {
-    return this.isApplicable(actionContext, refactoringContext);
+  public boolean askForInfo(final ActionEventData data, final RefactoringContext refactoringContext) {
+    return this.isApplicable(data, refactoringContext);
   }
 
 }

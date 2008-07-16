@@ -1,6 +1,5 @@
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;

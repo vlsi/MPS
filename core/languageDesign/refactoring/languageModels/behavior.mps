@@ -6,10 +6,6 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="9" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
@@ -19,6 +15,8 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.quotation" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="21" />
@@ -35,7 +33,6 @@
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.logging.refactoring.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.refactoring.framework@java_stub" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.logging.refactoring.behavior" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.baseLanguage.behavior" />
   <visible index="3" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877320624">

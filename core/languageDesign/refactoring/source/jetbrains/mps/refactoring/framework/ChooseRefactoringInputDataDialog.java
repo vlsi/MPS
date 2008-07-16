@@ -1,11 +1,11 @@
 package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.ide.BaseDialog;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.workbench.action.ActionEventData;
 
 import javax.swing.*;
 import java.util.*;
@@ -20,16 +20,16 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   private boolean myResult = false;
   private List<IChooseComponent> myComponents;
   private ILoggableRefactoring myRefactoring;
-  private ActionContext myActionContext;
+  private ActionEventData myActionContext;
   private RefactoringContext myRefactoringContext;
   private IChooseComponent myFirstComponent = null;
   public JCheckBox myIsLocalCheckBox;
   public JCheckBox myGenerateModelsCheckBox;
 
-  public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, ActionContext actionContext, RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
-    super(actionContext.getOperationContext().getMainFrame(), "Input data for refactoring");
+  public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, ActionEventData data, RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
+    super(data.getOperationContext().getMainFrame(), "Input data for refactoring");
     myRefactoring = refactoring;
-    myActionContext = actionContext;
+    myActionContext = data;
     myRefactoringContext = refactoringContext;
     myComponents = new ArrayList<IChooseComponent>(components);
     myInnerPanel = new JPanel();

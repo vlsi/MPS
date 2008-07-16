@@ -122,11 +122,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.action.ActionManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.ide.action.MPSIdeActions</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.action.MPSIdeActions</implementation-class>
     </component>
 
 

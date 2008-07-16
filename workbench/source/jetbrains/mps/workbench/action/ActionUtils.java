@@ -2,8 +2,6 @@ package jetbrains.mps.workbench.action;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
@@ -18,6 +16,8 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.JPopupMenu;
 import java.awt.Frame;
+import java.awt.event.MouseEvent;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -65,63 +65,13 @@ public class ActionUtils {
     return g;
   }
 
-  public static ActionContext createContext(AnActionEvent e) {
-    return createContext(new ActionEventData(e));
-  }
-
-  public static ActionContext createContext(final ActionEventData eventData) {
-    return new ActionContext() {
-      public <T> T get(Class<T> cls) {
-        List<IActionDataProvider> dataProviderList = jetbrains.mps.ide.action.ActionManager.instance().getCurrentDataProviders();
-        for (IActionDataProvider provider : dataProviderList) {
-          if (provider.get(cls) != null) return provider.get(cls);
-        }
-        return null;
-      }
-
-      @Nullable
-      public List<SNode> getNodes() {
-        return eventData.getNodes();
-      }
-
-      @Nullable
-      public List<SModelDescriptor> getModels() {
-        return eventData.getModels();
-      }
-
-      public SNode getNode() {
-        return eventData.getNode();
-      }
-
-      public SModelDescriptor getModel() {
-        return eventData.getModelDescriptor();
-      }
-
-      public IScope getScope() {
-        return eventData.getScope();
-      }
-
-      public Frame getFrame() {
-        return eventData.getFrame();
-      }
-
-      public IOperationContext getOperationContext() {
-        return eventData.getOperationContext();
-      }
-
-      public MPSProject getMPSProject() {
-        return eventData.getMPSProject();
-      }
-    };
-  }
-
-  public static DataContext createDataContext(final DataContext dContext, ActionContext aContext) {
-    final DataContext aContextData = createDataContext(aContext);
+  public static DataContext createDataContext(final DataContext context, ActionEventData data) {
+    final DataContext aContextData = data.getDataContext();
     DataContext resDataContext = new DataContext() {
       @Nullable
       public Object getData(@NonNls String dataId) {
         Object data = null;
-        data = dContext.getData(dataId);
+        data = context.getData(dataId);
         if (data != null) return data;
         else return aContextData.getData(dataId);
       }
@@ -129,39 +79,9 @@ public class ActionUtils {
     return resDataContext;
   }
 
-  private static DataContext createDataContext(final ActionContext context) {
-    return new DataContext() {
-      @Nullable
-      public Object getData(@NonNls String dataId) {
-        if (dataId.equals(MPSDataKeys.SNODE.getName())) {
-          return context.getNode();
-        }
-        if (dataId.equals(MPSDataKeys.SNODES.getName())) {
-          return context.getNodes();
-        }
-        if (dataId.equals(MPSDataKeys.MODELS.getName())) {
-          return context.getModels();
-        }
-        if (dataId.equals(MPSDataKeys.MODEL_DESCRIPTOR.getName())) {
-          return context.getModel();
-        }
-        if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
-          return context.getOperationContext();
-        }
-        if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
-          IOperationContext oContext = context.getOperationContext();
-          if (oContext == null) return null;
-          Project project = oContext.getProject();
-          return project;
-        }
-        return null;
-      }
-    };
-  }
-
-  public static AnActionEvent createEvent(String place, ActionContext context) {
-    DataContext dataContext = createDataContext(context);
-    AnActionEvent event = new AnActionEvent(null, dataContext, place, new Presentation(), ActionManager.getInstance(), 0);
+  public static AnActionEvent createEvent(String place, ActionEventData data) {
+    DataContext dataContext = data.getDataContext();
+    AnActionEvent event = new AnActionEvent(new KeyEvent(data.getFrame(),0,0,0,0), dataContext, place, new Presentation(), ActionManager.getInstance(), 0);
     return event;
   }
 
@@ -223,5 +143,4 @@ public class ActionUtils {
       ((DefaultActionGroup) group).remove(action);
     }
   }
-
 }

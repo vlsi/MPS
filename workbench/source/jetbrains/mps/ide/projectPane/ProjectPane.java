@@ -19,8 +19,6 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -44,6 +42,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.actions.model.DeleteModelsAction;
 import jetbrains.mps.workbench.actions.nodes.CopyNodeAction;
 import jetbrains.mps.workbench.actions.nodes.CutNodeAction;
@@ -846,21 +845,21 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       registerMPSAction(new DeleteNodeAction(), SNodeTreeNode.class);
     }
 
-    protected ActionContext getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
-      ActionContext actionContext = super.getActionContext(node, nodes);
+    protected ActionEventData getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
+      ActionEventData data = super.getActionContext(node, nodes);
       if (node instanceof SNodeTreeNode) {
-        actionContext.put(SNode.class, ((SNodeTreeNode) node).getSNode());
+        data.put(SNode.class, ((SNodeTreeNode) node).getSNode());
         List<SNode> otherNodes = new ArrayList<SNode>();
         for (MPSTreeNode aNode : nodes) {
           if (aNode instanceof SNodeTreeNode)
             otherNodes.add(((SNodeTreeNode) aNode).getSNode());
         }
-        actionContext.put(List.class, otherNodes);
+        data.put(List.class, otherNodes);
       } else if (node instanceof SModelTreeNode) {
-        actionContext.put(SModelDescriptor.class, ((SModelTreeNode) node).getSModelDescriptor());
+        data.put(SModelDescriptor.class, ((SModelTreeNode) node).getSModelDescriptor());
       }
 
-      return actionContext;
+      return data;
     }
 
     protected MPSTreeNode rebuild() {
@@ -991,32 +990,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
   }
 
-  private class MyScrollPane extends JScrollPane implements IActionDataProvider, DataProvider {
+  private class MyScrollPane extends JScrollPane implements DataProvider {
     private MyScrollPane(Component view) {
       super(view);
-    }
-
-    public <T> T get(Class<T> cls) {
-      if (cls == SNode.class) return (T) getSelectedSNode();
-      if (cls == SModelDescriptor.class) {
-        T model = (T) getSelectedModel();
-        if (model != null) {
-          return model;
-        }
-        SNode node = getSelectedSNode();
-        if (node != null) {
-          return (T) node.getModel().getModelDescriptor();
-        }
-      }
-      if (cls == List.class) {
-        List result = new ArrayList();
-        result.addAll(getSelectedModels());
-        result.addAll(getSelectedNodes());
-        result.addAll(getSelectedModules());
-        return (T) result;
-      }
-      if (cls == IOperationContext.class) return (T) getContextForSelection();
-      return null;
     }
 
     @Nullable

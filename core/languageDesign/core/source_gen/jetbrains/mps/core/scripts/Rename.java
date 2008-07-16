@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
@@ -26,6 +25,7 @@ import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
+import jetbrains.mps.workbench.action.ActionEventData;
 
 public class Rename extends AbstractLoggableRefactoring {
   public static final String newName = "newName";
@@ -78,7 +78,7 @@ public class Rename extends AbstractLoggableRefactoring {
     return null;
   }
 
-  public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public boolean isApplicable(ActionEventData data, RefactoringContext refactoringContext) {
     return refactoringContext.getSelectedNode() != null;
   }
 
@@ -98,29 +98,29 @@ public class Rename extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(actionContext.createProgressIndicator(), actionContext.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
+  public SearchResults getAffectedNodes(ActionEventData data, RefactoringContext refactoringContext) {
+    return FindUtils.getSearchResults(data.createProgressIndicator(), data.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
-  public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public void doRefactor(ActionEventData data, RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
       node.setName(((String)refactoringContext.getParameter("newName")));
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(ActionEventData data, RefactoringContext refactoringContext) {
     return new HashMap<IModule, List<SModel>>();
   }
 
-  public List<SModel> getModelsToUpdate(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(ActionEventData data, RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
   }
 
-  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(ActionEventData data, RefactoringContext refactoringContext) {
     return new ArrayList<SNode>();
   }
 
@@ -128,11 +128,11 @@ public class Rename extends AbstractLoggableRefactoring {
     return false;
   }
 
-  public String newName_initialValue(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public String newName_initialValue(ActionEventData data, RefactoringContext refactoringContext) {
     return refactoringContext.getSelectedNode().getName();
   }
 
-  public boolean askForInfo(final ActionContext actionContext, final RefactoringContext refactoringContext) {
+  public boolean askForInfo(final ActionEventData data, final RefactoringContext refactoringContext) {
     {
       boolean result = false;
       final List<IChooseComponent> components = new ArrayList<IChooseComponent>();
@@ -145,13 +145,13 @@ public class Rename extends AbstractLoggableRefactoring {
             chooseComponent.setPropertyName("newName");
             chooseComponent.setCaption("new name:");
             chooseComponent.initComponent();
-            chooseComponent.setInitialValue(Rename.this.newName_initialValue(actionContext, refactoringContext));
+            chooseComponent.setInitialValue(Rename.this.newName_initialValue(data, refactoringContext));
             components.add(chooseComponent);
           }
         }
 
       });
-      ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
+      ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, data, refactoringContext, components);
       dialog.showDialog();
       result = dialog.getResult();
       return result;

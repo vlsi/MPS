@@ -5,7 +5,6 @@ import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import jetbrains.mps.ide.ConceptDeclarationEditor;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.MPSEditorState;
-import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
@@ -331,16 +330,9 @@ public class TabbedEditor implements IEditor {
     }
   }
 
-  private class MyLazyTabbedPane extends LazyTabbedPane implements IActionDataProvider, DataProvider {
+  private class MyLazyTabbedPane extends LazyTabbedPane implements  DataProvider {
     private MyLazyTabbedPane(TabbedEditor tabbedEditor) {
       super(tabbedEditor);
-    }
-
-    public <T> T get(Class<T> cls) {
-      if (cls == IEditor.class) {
-        return (T) TabbedEditor.this;
-      }
-      return null;
     }
 
     @Nullable

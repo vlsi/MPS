@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
@@ -20,6 +19,8 @@ import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.workbench.action.ActionEventData;
+
 import java.util.HashMap;
 import java.util.ArrayList;
 
@@ -72,7 +73,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
     return null;
   }
 
-  public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public boolean isApplicable(ActionEventData data, RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
       if (node == null) {
@@ -98,29 +99,29 @@ public class SafeDelete extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(actionContext.createProgressIndicator(), actionContext.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
+  public SearchResults getAffectedNodes(ActionEventData data, RefactoringContext refactoringContext) {
+    return FindUtils.getSearchResults(data.createProgressIndicator(), data.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
-  public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public void doRefactor(ActionEventData data, RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
       SNodeOperations.deleteNode(node);
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(ActionEventData data, RefactoringContext refactoringContext) {
     return new HashMap<IModule, List<SModel>>();
   }
 
-  public List<SModel> getModelsToUpdate(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(ActionEventData data, RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
   }
 
-  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(ActionEventData data, RefactoringContext refactoringContext) {
     return new ArrayList<SNode>();
   }
 
@@ -128,8 +129,8 @@ public class SafeDelete extends AbstractLoggableRefactoring {
     return false;
   }
 
-  public boolean askForInfo(final ActionContext actionContext, final RefactoringContext refactoringContext) {
-    return this.isApplicable(actionContext, refactoringContext);
+  public boolean askForInfo(final ActionEventData data, final RefactoringContext refactoringContext) {
+    return this.isApplicable(data, refactoringContext);
   }
 
 }

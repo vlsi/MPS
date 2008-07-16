@@ -1,13 +1,13 @@
 package jetbrains.mps.refactoring.framework.tests;
 
 import jetbrains.mps.bootstrap.structureLanguage.scripts.MoveConcepts;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.core.scripts.MoveNodes;
+import jetbrains.mps.workbench.action.ActionEventData;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
                                  final Language testRefactoringLanguage,
                                  final Language testRefactoringTargetLanguage, Runnable continuation) {
     System.err.println("preparing arguments for refactoring");
-    final ActionContext actionContext = new ActionContext(project.createOperationContext());
+    final ActionEventData data = new ActionEventData(project.createOperationContext());
     final String conceptName = "MyVeryGoodConcept1";
     MoveConcepts moveConcepts = new MoveConcepts();
     final RefactoringContext refactoringContext = new RefactoringContext(moveConcepts);
@@ -29,9 +29,9 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         targetStructureModelDescriptor[0] = testRefactoringTargetLanguage.getStructureModelDescriptor();
         SNode concept = structureModelDescriptor.getSModel().getRootByName(conceptName);
-        actionContext.put(SNode.class, concept);
-        actionContext.put(List.class, CollectionUtil.asList(concept));
-        actionContext.put(SModelDescriptor.class, structureModelDescriptor);
+        data.put(SNode.class, concept);
+        data.put(List.class, CollectionUtil.asList(concept));
+        data.put(SModelDescriptor.class, structureModelDescriptor);
         refactoringContext.setParameter(MoveConcepts.targetModel, targetStructureModelDescriptor[0]);
       }
     });
@@ -39,7 +39,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
 
 
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(actionContext, refactoringContext, continuation);
+    new RefactoringProcessor().doExecuteInTest(data, refactoringContext, continuation);
 
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {

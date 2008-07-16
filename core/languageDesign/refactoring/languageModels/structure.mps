@@ -9,17 +9,13 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.core">
-    <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  </language>
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
@@ -29,19 +25,18 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="0" />
-  <maxImportIndex value="14" />
+  <maxImportIndex value="15" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="3" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
   <import index="4" modelUID="java.util@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="6" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <import index="7" modelUID="java.lang@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="9" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.refactoring.framework@java_stub" version="-1" />
   <import index="11" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="0" />
   <import index="14" modelUID="jetbrains.mps.ide.findusages.model@java_stub" version="-1" />
+  <import index="15" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1189693812263">
     <property name="name" value="Refactoring" />
     <property name="rootable" value="true" />
@@ -192,11 +187,11 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1189694841361">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1189694866185">
-        <link role="classifier" targetNodeId="3.~ActionContext" resolveInfo="ActionContext" />
+        <link role="classifier" targetNodeId="15.~ActionEventData" resolveInfo="ActionEventData" />
       </node>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1189695561441">
-      <property name="value" value="actionContext" />
+      <property name="value" value="data" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>

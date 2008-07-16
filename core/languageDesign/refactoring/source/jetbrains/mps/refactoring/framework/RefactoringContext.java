@@ -4,7 +4,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -12,6 +11,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.workbench.action.ActionEventData;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -619,15 +619,15 @@ public class RefactoringContext {
     return mySerializer.deserialize(element);
   }
 
-  public void setActionData(ActionContext actionContext) {
-    mySelectedModel = actionContext.getModel();
-    mySelectedNode = actionContext.getNode();
-    List<SNode> list = actionContext.getNodes();
+  public void setActionData(ActionEventData data) {
+    mySelectedModel = data.getModelDescriptor();
+    mySelectedNode = data.getNode();
+    List<SNode> list = data.getNodes();
     mySelectedNodes = list == null ? new ArrayList<SNode>() : new ArrayList<SNode>(list);
-    mySelectedModule = actionContext.getModule();
-    mySelectedMPSProject = actionContext.getMPSProject();
-    myCurrentScope = actionContext.getScope();
-    myCurrentOperationContext = actionContext.getOperationContext();
+    mySelectedModule = data.getModule();
+    mySelectedMPSProject = data.getMPSProject();
+    myCurrentScope = data.getScope();
+    myCurrentOperationContext = data.getOperationContext();
   }
 
   public SModelDescriptor getSelectedModel() {

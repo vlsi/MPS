@@ -1,11 +1,11 @@
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.workbench.action.ActionEventData;
 
 import java.util.Map;
 import java.util.List;
@@ -20,18 +20,18 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class AbstractLoggableRefactoring implements ILoggableRefactoring {
-  public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public boolean isApplicable(ActionEventData data, RefactoringContext refactoringContext) {
     return false;
   }
 
-  public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public void doRefactor(ActionEventData data, RefactoringContext refactoringContext) {
   }
 
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
   }
 
-  public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
-    return isApplicable(actionContext, refactoringContext);
+  public boolean askForInfo(ActionEventData data, RefactoringContext refactoringContext) {
+    return isApplicable(data, refactoringContext);
   }
 
   public String getUserFriendlyName() {
@@ -58,11 +58,11 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
     return false;
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(ActionEventData data, RefactoringContext refactoringContext) {
     return new HashMap<IModule, List<SModel>>();
   }
 
-  public List<SModel> getModelsToUpdate(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(ActionEventData data, RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
@@ -86,11 +86,11 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
     return false;
   }
 
-  public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public SearchResults getAffectedNodes(ActionEventData data, RefactoringContext refactoringContext) {
     return null;
   }
 
-  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(ActionEventData data, RefactoringContext refactoringContext) {
     return new ArrayList<SNode>();
   }
 }

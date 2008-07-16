@@ -213,7 +213,7 @@
     <property name="name" value="ActionContextReference" />
     <link role="extends" targetNodeId="2.1068431790191" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1185457553027">
-      <property name="value" value="actionContext" />
+      <property name="value" value="data" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1185457564438">

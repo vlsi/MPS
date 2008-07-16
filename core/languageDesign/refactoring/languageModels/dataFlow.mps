@@ -5,10 +5,6 @@
   <language namespace="jetbrains.mps.bootstrap.dataFlow">
     <languageAspect modelUID="jetbrains.mps.bootstrap.dataFlow.constraints" version="4" />
   </language>
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
@@ -17,6 +13,8 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="21" />

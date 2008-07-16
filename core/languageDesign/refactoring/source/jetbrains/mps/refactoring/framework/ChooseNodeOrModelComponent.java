@@ -1,6 +1,5 @@
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;

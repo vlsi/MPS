@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
@@ -27,6 +26,8 @@ import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.workbench.action.ActionEventData;
+
 import java.util.HashMap;
 
 public class SafeDeleteConcept extends AbstractLoggableRefactoring {
@@ -84,7 +85,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     return SafeDelete.getClass_static();
   }
 
-  public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public boolean isApplicable(ActionEventData data, RefactoringContext refactoringContext) {
     return true;
   }
 
@@ -104,10 +105,10 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public SearchResults getAffectedNodes(ActionEventData data, RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
-      SearchResults searchResults = FindUtils.getSearchResults(actionContext.createProgressIndicator(), actionContext.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder", "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
+      SearchResults searchResults = FindUtils.getSearchResults(data.createProgressIndicator(), data.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder", "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
       refactoringContext.setParameter("sourceLanguage", Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor()));
       if (((Language)refactoringContext.getParameter("sourceLanguage")) != null) {
         SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
@@ -140,7 +141,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     }
   }
 
-  public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public void doRefactor(ActionEventData data, RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
       if (((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")) != null) {
@@ -153,7 +154,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(ActionEventData data, RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
       if (((Language)refactoringContext.getParameter("sourceLanguage")) == null) {
@@ -174,14 +175,14 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     }
   }
 
-  public List<SModel> getModelsToUpdate(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(ActionEventData data, RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
   }
 
-  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(ActionEventData data, RefactoringContext refactoringContext) {
     return new ArrayList<SNode>();
   }
 
@@ -189,8 +190,8 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     return false;
   }
 
-  public boolean askForInfo(final ActionContext actionContext, final RefactoringContext refactoringContext) {
-    return this.isApplicable(actionContext, refactoringContext);
+  public boolean askForInfo(final ActionEventData data, final RefactoringContext refactoringContext) {
+    return this.isApplicable(data, refactoringContext);
   }
 
 }

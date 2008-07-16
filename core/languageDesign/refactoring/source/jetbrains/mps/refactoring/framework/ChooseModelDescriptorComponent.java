@@ -3,7 +3,6 @@ package jetbrains.mps.refactoring.framework;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.JPanel;

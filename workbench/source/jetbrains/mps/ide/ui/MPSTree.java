@@ -7,12 +7,12 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.ui.TreeToolTipHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.action.ActionEventData;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -268,8 +268,8 @@ public abstract class MPSTree extends DnDAwareTree {
     }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
-  protected ActionContext getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
-    return new ActionContext(node.getOperationContext());
+  protected ActionEventData getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
+    return new ActionEventData(node.getOperationContext());
   }
 
   protected void doInit(final MPSTreeNode node) {

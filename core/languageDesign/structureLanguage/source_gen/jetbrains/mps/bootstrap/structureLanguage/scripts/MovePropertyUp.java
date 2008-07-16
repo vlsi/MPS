@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
@@ -32,6 +31,7 @@ import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
+import jetbrains.mps.workbench.action.ActionEventData;
 
 public class MovePropertyUp extends AbstractLoggableRefactoring {
   public static final String targetConcept = "targetConcept";
@@ -84,7 +84,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
     return MoveNodes.getClass_static();
   }
 
-  public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public boolean isApplicable(ActionEventData data, RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"))) {
@@ -114,11 +114,11 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
     return false;
   }
 
-  public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public SearchResults getAffectedNodes(ActionEventData data, RefactoringContext refactoringContext) {
     return null;
   }
 
-  public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public void doRefactor(ActionEventData data, RefactoringContext refactoringContext) {
     {
       SNode linkDeclaration = (SNode)refactoringContext.getSelectedNode();
       refactoringContext.moveNodeToNode(linkDeclaration, linkDeclaration.getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
@@ -126,7 +126,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(ActionEventData data, RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
       SModel model = refactoringContext.getSelectedNode().getModel();
@@ -157,7 +157,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
     }
   }
 
-  public List<SModel> getModelsToUpdate(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(ActionEventData data, RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
@@ -165,7 +165,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
     refactoringContext.updateModelWithMaps(model);
   }
 
-  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(ActionEventData data, RefactoringContext refactoringContext) {
     return new ArrayList<SNode>();
   }
 
@@ -173,13 +173,13 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public IChooseComponent<SNode> targetConcept_componentCreator(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public IChooseComponent<SNode> targetConcept_componentCreator(ActionEventData data, RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
     SNode abstractConceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
     return new HierarchicalChooseNodeComponent(refactoringContext.getCurrentOperationContext(), new ConceptAncestorsProvider(), abstractConceptDeclaration);
   }
 
-  public boolean askForInfo(final ActionContext actionContext, final RefactoringContext refactoringContext) {
+  public boolean askForInfo(final ActionEventData data, final RefactoringContext refactoringContext) {
     {
       boolean result = false;
       final List<IChooseComponent> components = new ArrayList<IChooseComponent>();
@@ -188,7 +188,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
         public void run() {
           {
             IChooseComponent<SNode> chooseComponent;
-            chooseComponent = MovePropertyUp.this.targetConcept_componentCreator(actionContext, refactoringContext);
+            chooseComponent = MovePropertyUp.this.targetConcept_componentCreator(data, refactoringContext);
             chooseComponent.setPropertyName("targetConcept");
             chooseComponent.setCaption("chooseTargetConcept");
             chooseComponent.initComponent();
@@ -197,7 +197,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
         }
 
       });
-      ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
+      ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, data, refactoringContext, components);
       dialog.showDialog();
       result = dialog.getResult();
       return result;

@@ -2,7 +2,6 @@ package jetbrains.mps.ide;
 
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.actionSystem.DataProvider;
-import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -158,16 +157,9 @@ public class NodeEditor implements IEditor {
     }
   }
 
-  private class MyPanel extends JPanel implements IActionDataProvider, DataProvider {
+  private class MyPanel extends JPanel implements DataProvider {
     private MyPanel() {
       setLayout(new BorderLayout());
-    }
-
-    public <T> T get(Class<T> cls) {
-      if (cls == IEditor.class) {
-        return (T) NodeEditor.this;
-      }
-      return null;
     }
 
     @Nullable

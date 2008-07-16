@@ -1,6 +1,5 @@
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
 import jetbrains.mps.smodel.INodeAdapter;

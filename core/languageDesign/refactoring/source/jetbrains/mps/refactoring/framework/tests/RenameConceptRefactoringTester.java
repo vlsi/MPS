@@ -2,10 +2,10 @@ package jetbrains.mps.refactoring.framework.tests;
 
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.workbench.action.ActionEventData;
 
 import javax.swing.SwingUtilities;
 
@@ -25,7 +25,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
                                  final Language testRefactoringLanguage,
                                  final Language testRefactoringTargetLanguage, Runnable continuation) {
     System.err.println("preparing arguments for refactoring");
-    final ActionContext actionContext = new ActionContext(project.createOperationContext());
+    final ActionEventData data = new ActionEventData(project.createOperationContext());
     final String newConceptName = "MyVeryGoodConcept2";
     RenameConcept renameConcept = new RenameConcept();
     final RefactoringContext refactoringContext = new RefactoringContext(renameConcept);
@@ -34,14 +34,14 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
         final SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         refactoringContext.setParameter(STRMD, structureModelDescriptor);
         SNode concept = structureModelDescriptor.getSModel().getRootByName("MyVeryGoodConcept1");
-        actionContext.put(SNode.class, concept);
-        actionContext.put(SModelDescriptor.class, structureModelDescriptor);
+        data.put(SNode.class, concept);
+        data.put(SModelDescriptor.class, structureModelDescriptor);
         refactoringContext.setParameter("newName", newConceptName);
       }
     });
 
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(actionContext, refactoringContext, continuation);
+    new RefactoringProcessor().doExecuteInTest(data, refactoringContext, continuation);
 
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {

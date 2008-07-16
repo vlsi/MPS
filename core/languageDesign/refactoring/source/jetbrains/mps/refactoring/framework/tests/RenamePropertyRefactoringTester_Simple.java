@@ -2,11 +2,11 @@ package jetbrains.mps.refactoring.framework.tests;
 
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.scripts.RenameProperty;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.workbench.action.ActionEventData;
 
 public class RenamePropertyRefactoringTester_Simple implements IRefactoringTester {
   public boolean testRefactoring(MPSProject project,
@@ -15,7 +15,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
                                  final Language testRefactoringLanguage,
                                  final Language testRefactoringTargetLanguage, Runnable continuation) {
     System.err.println("preparing arguments for refactoring");
-    final ActionContext actionContext = new ActionContext(project.createOperationContext());
+    final ActionEventData data = new ActionEventData(project.createOperationContext());
     RenameProperty renameProperty = new RenameProperty();
     final RefactoringContext refactoringContext = new RefactoringContext(renameProperty);
     final String newPropertyName = "niceProperty";
@@ -26,14 +26,14 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
         SNode node = structureModelDescriptor.getSModel().getRootByName("YetAnotherGoodConcept");
         ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
         SNode property = concept.getPropertyDeclarations().get(0).getNode();
-        actionContext.put(SNode.class, property);
-        actionContext.put(SModelDescriptor.class, structureModelDescriptor);
+        data.put(SNode.class, property);
+        data.put(SModelDescriptor.class, structureModelDescriptor);
         refactoringContext.setParameter(RenameProperty.newName, newPropertyName);
       }
     });
 
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(actionContext, refactoringContext, continuation);
+    new RefactoringProcessor().doExecuteInTest(data, refactoringContext, continuation);
 
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
