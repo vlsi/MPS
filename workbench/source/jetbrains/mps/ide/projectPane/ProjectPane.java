@@ -16,6 +16,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
@@ -845,23 +846,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       registerMPSAction(new DeleteNodeAction(), SNodeTreeNode.class);
     }
 
-    protected ActionEventData getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
-      ActionEventData data = super.getActionContext(node, nodes);
-      if (node instanceof SNodeTreeNode) {
-        data.put(SNode.class, ((SNodeTreeNode) node).getSNode());
-        List<SNode> otherNodes = new ArrayList<SNode>();
-        for (MPSTreeNode aNode : nodes) {
-          if (aNode instanceof SNodeTreeNode)
-            otherNodes.add(((SNodeTreeNode) aNode).getSNode());
-        }
-        data.put(List.class, otherNodes);
-      } else if (node instanceof SModelTreeNode) {
-        data.put(SModelDescriptor.class, ((SModelTreeNode) node).getSModelDescriptor());
-      }
-
-      return data;
-    }
-
     protected MPSTreeNode rebuild() {
       if (getProject() == null || getProject().isDisposed()) {
         return new TextTreeNode("Empty");
@@ -897,11 +881,13 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       myModulesPool = new ProjectModulesPoolTreeNode(getMPSProject());
       root.add(myModulesPool);
 
-      TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(getMPSProject());
-      root.add(transientModelsNode);
+      if (getMPSProject().getComponentSafe(TransientModelsModule.class).getOwnModelDescriptors().size()!=0){
+        TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(getMPSProject());
+        root.add(transientModelsNode);
+      }
       return root;
     }
-  } // private class MyTree
+  } 
 
   private class ModulesNamespaceTreeBuilder extends NamespaceTreeBuilder {
     private MPSProject myProject;

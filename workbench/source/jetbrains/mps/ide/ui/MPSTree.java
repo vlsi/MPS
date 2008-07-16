@@ -268,10 +268,6 @@ public abstract class MPSTree extends DnDAwareTree {
     }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
-  protected ActionEventData getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
-    return new ActionEventData(node.getOperationContext());
-  }
-
   protected void doInit(final MPSTreeNode node) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
