@@ -400,7 +400,10 @@
               <link role="variableDeclaration" targetNodeId="1216142123839" resolveInfo="lehitraot" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216143552499">
-              <link role="baseMethodDeclaration" targetNodeId="1216142038952" resolveInfo="foof" />
+              <link role="baseMethodDeclaration" targetNodeId="1216196124877" resolveInfo="foof" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216196183449">
+                <property name="value" value="swd" />
+              </node>
             </node>
           </node>
         </node>
@@ -438,6 +441,18 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216142069836">
         <property name="name" value="i" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1216142069837" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1216196124877">
+      <property name="name" value="foof" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1216196124878" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216196124879" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216196124880" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216196138867">
+        <property name="name" value="s" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216196138868">
+          <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+        </node>
       </node>
     </node>
   </node>

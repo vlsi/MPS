@@ -44,7 +44,17 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
     NodeTypesComponent typesComponent = getNodeTypesComponent(node);
 
     for (Pair<SNode, IErrorReporter> errorNode : typesComponent.getNodesWithErrorStrings()) {
+      MessageStatus status = MessageStatus.ERROR;
+      Color color = Color.red;
+      if (errorNode.o2.isWarning()) {
+        status = MessageStatus.WARNING;
+        color = Color.YELLOW;
+      }
+      String errorString = errorNode.o2.reportError();
+      DefaultEditorMessage message =
+        new HighlighterMessage(errorNode.o1, status, color, "TYPE ERROR: " + errorString, typesComponent);
       IntentionProvider intentionProvider = errorNode.o2.getIntentionProvider();
+
       if (intentionProvider != null && intentionProvider.isExecutedImmediately()) {
         final Intention intention = intentionProvider.getIntention();
         if (intention != null) {
@@ -59,18 +69,9 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
           });
         }
       } else {
-        MessageStatus status = MessageStatus.ERROR;
-        Color color = Color.red;
-        if (errorNode.o2.isWarning()) {
-          status = MessageStatus.WARNING;
-          color = Color.YELLOW;
-        }
-        String errorString = errorNode.o2.reportError();
-        DefaultEditorMessage message =
-          new HighlighterMessage(errorNode.o1, status, color, "TYPE ERROR: " + errorString, typesComponent);
         message.setIntentionProvider(intentionProvider);
-        messages.add(message);
       }
+      messages.add(message);
     }
 
     return messages;
