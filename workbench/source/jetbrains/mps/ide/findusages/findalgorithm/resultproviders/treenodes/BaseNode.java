@@ -129,7 +129,6 @@ public abstract class BaseNode implements IResultProvider {
         myChildren.add(child);
         child.setParent(this);
       } catch (Throwable t) {
-        LOG.error("Error while instantiating node: " + t.getMessage(), t);
         throw new CantLoadSomethingException("Error while instantiating node: " + t.getMessage(), t);
       }
     }

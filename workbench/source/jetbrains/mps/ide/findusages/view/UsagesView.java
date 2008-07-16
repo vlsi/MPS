@@ -183,7 +183,6 @@ public abstract class UsagesView implements IExternalizeable {
     try {
       myResultProvider = (IResultProvider) Class.forName(className).newInstance();
     } catch (Throwable t) {
-      LOG.error("Can't instantiate result provider: " + className, t);
       throw new CantLoadSomethingException("Can't instantiate result provider: " + className, t);
     }
     myResultProvider.read(resultProviderXML, project);
