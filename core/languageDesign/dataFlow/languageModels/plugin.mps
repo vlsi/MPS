@@ -6,10 +6,6 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="6"/>
   </language>
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
-  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0"/>
@@ -21,23 +17,22 @@
   <language namespace="jetbrains.mps.baseLanguage.classifiers">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7"/>
   </language>
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6"/>
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.dataFlow.constraints" version="4"/>
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2"/>
   <maxImportIndex value="17"/>
-  <import index="1" modelUID="jetbrains.mps.bootstrap.dataFlow.structure" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.dataFlow@java_stub" version="-1"/>
   <import index="4" modelUID="java.lang@java_stub" version="-1"/>
   <import index="5" modelUID="jetbrains.mps.dataFlow.framework@java_stub" version="-1"/>
   <import index="6" modelUID="java.io@java_stub" version="-1"/>
   <import index="7" modelUID="jetbrains.mps.ide.actions" version="-1"/>
   <import index="8" modelUID="jetbrains.mps.dataFlow.presentation@java_stub" version="-1"/>
-  <import index="9" modelUID="jetbrains.mps.ide.action@java_stub" version="-1"/>
   <import index="10" modelUID="jetbrains.mps.dataFlow.framework.analyzers@java_stub" version="-1"/>
   <import index="11" modelUID="java.util@java_stub" version="-1"/>
-  <import index="14" modelUID="jetbrains.mps.plugins@java_stub" version="-1"/>
   <import index="15" modelUID="jetbrains.mps.dataFlow.framework.instructions@java_stub" version="-1"/>
   <import index="16" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1"/>
   <import index="17" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>

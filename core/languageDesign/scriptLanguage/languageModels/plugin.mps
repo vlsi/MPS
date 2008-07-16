@@ -34,7 +34,6 @@
   <import index="4" modelUID="java.util@java_stub" version="-1"/>
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
   <import index="6" modelUID="jetbrains.mps.ide.scriptLanguage.structure@java_stub" version="-1"/>
-  <import index="7" modelUID="jetbrains.mps.ide.action@java_stub" version="-1"/>
   <import index="8" modelUID="java.lang@java_stub" version="-1"/>
   <import index="9" modelUID="com.intellij.openapi.actionSystem@java_stub" version="-1"/>
   <import index="10" modelUID="jetbrains.mps.workbench@java_stub" version="-1"/>
