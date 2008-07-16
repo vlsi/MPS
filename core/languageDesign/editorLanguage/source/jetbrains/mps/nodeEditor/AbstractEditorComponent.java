@@ -2187,6 +2187,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return new MyPasteProvider();
     } else if (dataId.equals(MPSDataKeys.EDITOR_COMPONENT.getName())) {
       return this;
+    } else if (dataId.equals(MPSDataKeys.MODULES.getName())) {
+      return Arrays.asList(getEditedNode().getModel().getModelDescriptor().getModule());
     }
 
     return null;

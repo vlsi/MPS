@@ -17,10 +17,6 @@ public abstract class GenerateCurrentModelAction extends BaseAction {
 
   public abstract IGenerationType getGenerationType();
 
-  public boolean executeInsideCommand() {
-    return false;
-  }
-
   public void doExecute(AnActionEvent e) {
     ActionEventData data = new ActionEventData(e);
     GeneratorManager manager = data.getMPSProject().getComponentSafe(GeneratorManager.class);

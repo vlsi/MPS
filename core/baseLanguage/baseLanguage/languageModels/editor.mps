@@ -16862,6 +16862,69 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215032720866">
                     <property name="value" value="then use the ConceptFunctionAliased_Component"/>
                   </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216222641030">
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216222641031">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement"
+                            id="1216222672966">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                              id="1216222686868">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                                id="1216222674140">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                                  id="1216222672967">
+                              <link role="variableDeclaration" targetNodeId="1214568089977" resolveInfo="result"/>
+                            </node>
+                            <node role="operation"
+                                  type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
+                                  id="1216222676612">
+                              <link role="baseMethodDeclaration"
+                                    targetNodeId="24.~StringBuilder.append(java.lang.Object):java.lang.StringBuilder"
+                                    resolveInfo="append"/>
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                                    id="1216222681895">
+                                <node role="operand"
+                                      type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node"
+                                      id="1216222680566"/>
+                                <node role="operation"
+                                      type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess"
+                                      id="1216222683914">
+                                  <link role="conceptProperty" targetNodeId="17.1216222465038"
+                                        resolveInfo="conceptFunctionName"/>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
+                                id="1216222689621">
+                            <link role="baseMethodDeclaration"
+                                  targetNodeId="24.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder"
+                                  resolveInfo="append"/>
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral"
+                                  id="1216222693341">
+                              <property name="value" value=" "/>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression"
+                          id="1216222667040">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral"
+                            id="1216222668761"/>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                            id="1216222656973">
+                        <node role="operand"
+                              type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node"
+                              id="1216222655503"/>
+                        <node role="operation"
+                              type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess"
+                              id="1216222664132">
+                          <link role="conceptProperty" targetNodeId="17.1216222465038"
+                                resolveInfo="conceptFunctionName"/>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement"
                         id="1214568089995">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
