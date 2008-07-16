@@ -320,7 +320,6 @@ public class EditorManager {
       // couldn't insert hint cell - create wrapper collection and put hint to last position
       EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(context, node);
       rowWrapper.setSelectable(false);
-      rowWrapper.setDrawBorder(false);
       rowWrapper.addEditorCell(nodeCell);
       if (side == CellSide.RIGHT) {
         rowWrapper.addEditorCell(sideTransformHintCell);
@@ -360,7 +359,6 @@ public class EditorManager {
       putUserObject(EditorCell.CELL_ID, node.getId());
       setDefaultText(" ");
       setEditable(true);
-      setDrawBorder(false);
       setCellBackgroundColor(LightColors.BLUE);
       setCellInfoProvider(new ICellInfoProvider() {
         public CellInfo getCellInfo(EditorCell cell) {

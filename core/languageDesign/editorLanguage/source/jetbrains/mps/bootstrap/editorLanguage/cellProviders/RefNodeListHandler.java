@@ -55,7 +55,6 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   protected EditorCell createEmptyCell(EditorContext editorContext) {
     EditorCell_Constant emptyCell = new EditorCell_Constant(editorContext, getOwner(), null);
     emptyCell.setDefaultText("<< ... >>");
-    emptyCell.setDrawBorder(false);
     emptyCell.setEditable(true);
     emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getOwner(), null, getLinkDeclaration(), editorContext));
     emptyCell.putUserObject(EditorCell.ROLE, getElementRole());

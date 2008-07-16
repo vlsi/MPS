@@ -485,7 +485,6 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     public EditorCell_Demo(EditorContext editorContext, String text) {
       super(editorContext, null, text);
       this.getRenderedTextLine().setCaretPosition(3);
-      this.setDrawBorder(false);
     }
 
     public void changeText(String text) {

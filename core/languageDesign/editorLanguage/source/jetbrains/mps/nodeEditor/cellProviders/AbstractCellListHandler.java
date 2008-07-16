@@ -107,7 +107,6 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
   public EditorCell_Collection createCells(EditorContext editorContext, CellLayout cellLayout) {
     myListEditorCell_Collection = EditorCell_Collection.create(editorContext, myOwnerNode, cellLayout, this);
     myListEditorCell_Collection.setSelectable(false);
-    myListEditorCell_Collection.setDrawBorder(false);
 
     Iterator<SNode> listNodes = getNodesForList().iterator();
     if (!listNodes.hasNext()) {
