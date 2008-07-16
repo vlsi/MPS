@@ -5053,8 +5053,8 @@
           id="1215903886543">
       <property name="name" value="node"/>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1215903886544"/>
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215903890386">
-        <link role="classifier" targetNodeId="40.~SNode" resolveInfo="SNode"/>
+      <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1216229437460">
+        <link role="concept" targetNodeId="93.1071489090640" resolveInfo="ConceptDeclaration"/>
       </node>
     </node>
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration"
