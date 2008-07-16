@@ -1,113 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.core.structure">
-  <persistence version="1" />
-  <refactoringHistory />
+  <persistence version="1"/>
+  <refactoringHistory/>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11"/>
   </language>
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="25" />
-  <import index="25" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21"/>
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6"/>
+  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2"/>
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
+  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2"/>
+  <maxImportIndex value="25"/>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1078489098625">
-    <property name="name" value="NamedConcept" />
-    <link role="extends" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1173467730296">
-      <link role="intfc" targetNodeId="1169194658468" resolveInfo="INamedConcept" />
+    <property name="name" value="NamedConcept"/>
+    <link role="extends" targetNodeId="1133920641626" resolveInfo="BaseConcept"/>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1173467730296">
+      <link role="intfc" targetNodeId="1169194658468" resolveInfo="INamedConcept"/>
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1133922301475">
-      <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" resolveInfo="abstract" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1133922301475">
+      <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" resolveInfo="abstract"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration" id="1082983041843">
-    <property name="name" value="string" />
+    <property name="name" value="string"/>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration" id="1082983657062">
-    <property name="name" value="integer" />
+    <property name="name" value="integer"/>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration" id="1082983657063">
-    <property name="name" value="boolean" />
+    <property name="name" value="boolean"/>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1133920641626">
-    <property name="name" value="BaseConcept" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1156234966388">
-      <property name="name" value="shortDescription" />
-      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+    <property name="name" value="BaseConcept"/>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1156234966388">
+      <property name="name" value="shortDescription"/>
+      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string"/>
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1156235010670">
-      <property name="name" value="alias" />
-      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1156235010670">
+      <property name="name" value="alias"/>
+      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string"/>
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1193676396447">
-      <property name="name" value="virtualPackage" />
-      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1193676396447">
+      <property name="name" value="virtualPackage"/>
+      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string"/>
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration" id="1137473854053">
-      <property name="name" value="abstract" />
+    <node role="conceptPropertyDeclaration"
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration"
+          id="1137473854053">
+      <property name="name" value="abstract"/>
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1137473891462">
-      <property name="name" value="alias" />
+    <node role="conceptPropertyDeclaration"
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration"
+          id="1137473891462">
+      <property name="name" value="alias"/>
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1137473914776">
-      <property name="name" value="short_description" />
+    <node role="conceptPropertyDeclaration"
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration"
+          id="1137473914776">
+      <property name="name" value="short_description"/>
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration" id="1137473994950">
-      <property name="name" value="dontSubstituteByDefault" />
+    <node role="conceptPropertyDeclaration"
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration"
+          id="1137473994950">
+      <property name="name" value="dontSubstituteByDefault"/>
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1154621836409">
-      <property name="name" value="deprecated_314" />
+    <node role="conceptPropertyDeclaration"
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration"
+          id="1154621836409">
+      <property name="name" value="deprecated_314"/>
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1162838948922">
-      <property name="name" value="deprecated_339" />
+    <node role="conceptPropertyDeclaration"
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration"
+          id="1162838948922">
+      <property name="name" value="deprecated_339"/>
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1170898673630">
-      <property name="name" value="deprecated_415" />
+    <node role="conceptPropertyDeclaration"
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration"
+          id="1170898673630">
+      <property name="name" value="deprecated_415"/>
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1180129508254">
-      <property name="name" value="deprecated_470" />
+    <node role="conceptPropertyDeclaration"
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration"
+          id="1180129508254">
+      <property name="name" value="deprecated_470"/>
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1193783916915">
-      <property name="name" value="deprecated_504" />
+    <node role="conceptPropertyDeclaration"
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration"
+          id="1193783916915">
+      <property name="name" value="deprecated_504"/>
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1206652974901">
-      <property name="name" value="deprecated_531" />
+    <node role="conceptPropertyDeclaration"
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration"
+          id="1206652974901">
+      <property name="name" value="deprecated_531"/>
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1208203973962">
-      <property name="name" value="deprecated_578" />
+    <node role="conceptPropertyDeclaration"
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration"
+          id="1208203973962">
+      <property name="name" value="deprecated_578"/>
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1209144793113">
-      <property name="name" value="deprecated_607" />
+    <node role="conceptPropertyDeclaration"
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration"
+          id="1209144793113">
+      <property name="name" value="deprecated_607"/>
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1210365515391">
-      <property name="name" value="deprecated_798" />
+    <node role="conceptPropertyDeclaration"
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration"
+          id="1210365515391">
+      <property name="name" value="deprecated_798"/>
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1215461340299">
-      <property name="name" value="deprecated_next_after_798" />
+    <node role="conceptPropertyDeclaration"
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration"
+          id="1215461340299">
+      <property name="name" value="deprecated_next_after_798"/>
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1133922314101">
-      <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" resolveInfo="abstract" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1133922314101">
+      <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" resolveInfo="abstract"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1169194658468">
-    <property name="name" value="INamedConcept" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1169194664001">
-      <property name="name" value="name" />
-      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+    <property name="name" value="INamedConcept"/>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1169194664001">
+      <property name="name" value="name"/>
+      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196978630214">
-    <property name="name" value="IResolveInfo" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1196978656277">
-      <property name="name" value="resolveInfo" />
-      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+    <property name="name" value="IResolveInfo"/>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1196978656277">
+      <property name="name" value="resolveInfo"/>
+      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string"/>
     </node>
   </node>
 </model>

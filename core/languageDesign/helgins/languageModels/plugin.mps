@@ -35,26 +35,20 @@
   <import index="2" modelUID="jetbrains.mps.helgins.uiActions@java_stub" version="-1"/>
   <import index="3" modelUID="jetbrains.mps.workbench.actions.nodes@java_stub" version="-1"/>
   <import index="4" modelUID="jetbrains.mps.ide.actions" version="-1"/>
-  <import index="5" modelUID="jetbrains.mps.ide.action@java_stub" version="-1"/>
   <import index="6" modelUID="jetbrains.mps.bootstrap.helgins.dependencies@java_stub" version="-1"/>
   <import index="7" modelUID="java.util@java_stub" version="-1"/>
   <import index="8" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
   <import index="9" modelUID="jetbrains.mps.util@java_stub" version="-1"/>
   <import index="10" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1"/>
-  <import index="11" modelUID="java.awt.color@java_stub" version="-1"/>
   <import index="12" modelUID="java.awt@java_stub" version="-1"/>
-  <import index="13" modelUID="jetbrains.mps.ide@java_stub" version="-1"/>
   <import index="14" modelUID="jetbrains.mps.project@java_stub" version="-1"/>
-  <import index="15" modelUID="jetbrains.mps.ide.hierarchy@java_stub" version="-1"/>
   <import index="16" modelUID="jetbrains.mps.ide.toolsPane@java_stub" version="-1"/>
   <import index="17" modelUID="jetbrains.mps.plugins@java_stub" version="-1"/>
-  <import index="19" modelUID="jetbrains.mps.baseLanguage.plugin" version="-1"/>
   <import index="20" modelUID="javax.swing@java_stub" version="-1"/>
   <import index="21" modelUID="jetbrains.mps.helgins.inference@java_stub" version="-1"/>
   <import index="22" modelUID="java.lang@java_stub" version="-1"/>
   <import index="24" modelUID="jetbrains.mps.logging@java_stub" version="-1"/>
   <import index="25" modelUID="jetbrains.mps.helgins.integration@java_stub" version="-1"/>
-  <import index="26" modelUID="jetbrains.mps.smodel.event@java_stub" version="-1"/>
   <import index="27" modelUID="jetbrains.mps.ide.messages@java_stub" version="-1"/>
   <import index="28" modelUID="jetbrains.mps.helgins.checking@java_stub" version="-1"/>
   <import index="29" modelUID="jetbrains.mps.workbench.tools@java_stub" version="-1"/>
