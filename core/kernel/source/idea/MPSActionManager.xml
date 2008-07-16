@@ -31,6 +31,7 @@
     <group id="VcsMappingsFix">
       <!--fix MPS-2142-->
       <action id="NewElement" class="com.intellij.ide.actions.NewElementAction"/>
+      <action id="IncrementalSearch" class="com.intellij.codeInsight.navigation.actions.IncrementalSearchAction"/>
     </group>
 
     <!--fix MPS-2156 after fixing MPS-2142-->

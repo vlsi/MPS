@@ -79,45 +79,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
         gToBase.add(gWhat, constraints);
       }
     }
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(DevkitActions_ActionGroup.ID);
-      ActionGroup gWhat = ActionUtils.getDefaultGroup("VcsGroup");
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      {
-        String labelName = null;
-        labelName = DevkitActions_ActionGroup.LABEL_ID_vcs;
-        Constraints constraints = new Constraints(Anchor.AFTER, labelName);
-        gToBase.add(gWhat, constraints);
-      }
-    }
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(LanguageActions_ActionGroup.ID);
-      ActionGroup gWhat = ActionUtils.getDefaultGroup("VcsGroup");
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      {
-        String labelName = null;
-        labelName = LanguageActions_ActionGroup.LABEL_ID_vcs;
-        Constraints constraints = new Constraints(Anchor.AFTER, labelName);
-        gToBase.add(gWhat, constraints);
-      }
-    }
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(SolutionActions_ActionGroup.ID);
-      ActionGroup gWhat = ActionUtils.getDefaultGroup("VcsGroup");
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      {
-        String labelName = null;
-        labelName = SolutionActions_ActionGroup.LABEL_ID_vcs;
-        Constraints constraints = new Constraints(Anchor.AFTER, labelName);
-        gToBase.add(gWhat, constraints);
-      }
-    }
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {

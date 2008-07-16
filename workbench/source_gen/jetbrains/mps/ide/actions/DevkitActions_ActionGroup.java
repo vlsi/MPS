@@ -5,12 +5,10 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.actions.project.AddModuleToProjectAction;
-import jetbrains.mps.workbench.action.LabelledAnchor;
 
 public class DevkitActions_ActionGroup extends GeneratedActionGroup {
   public static Logger LOG = Logger.getLogger(DevkitActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.DevkitActions";
-  public static final String LABEL_ID_vcs = ID + "vcs";
 
   public DevkitActions_ActionGroup() {
     super("", ID);
@@ -23,8 +21,6 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
       this.add(new AddModuleToProjectAction());
       this.add(new RemoveModuleFromProject_Action());
       this.add(new AnalyzeClasspath_Action());
-      this.addSeparator();
-      this.add(new LabelledAnchor(DevkitActions_ActionGroup.LABEL_ID_vcs));
       this.addSeparator();
       this.add(new DevkitProperties_Action());
     } catch (Throwable t) {
