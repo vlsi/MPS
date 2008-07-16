@@ -309,7 +309,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216204092008">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216204092009">
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216204092010">
-              <link role="baseMethodDeclaration" targetNodeId="1216142061799" resolveInfo="foof" />
+              <link role="baseMethodDeclaration" targetNodeId="1216196124877" resolveInfo="foof" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216204106263">
                 <property name="value" value="" />
               </node>

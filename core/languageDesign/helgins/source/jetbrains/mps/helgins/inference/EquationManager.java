@@ -228,9 +228,10 @@ public class EquationManager {
       return;
     }
     String strongString = isWeak ? "" : " strong";
-    IErrorReporter errorReporter =
+    EquationErrorReporter errorReporter =
       new EquationErrorReporter(this, "type ", subtypeRepresentator,
         " is not a" + strongString + " subtype of ", supertypeRepresentator, "", equationInfo.getRuleModel(), equationInfo.getRuleId());
+    errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
     myTypeChecker.reportTypeError(equationInfo.getNodeWithError(), errorReporter);
 
     //4debug
@@ -302,9 +303,10 @@ public class EquationManager {
       return;
     }
     String strongString = isWeak ? "" : " strongly";
-    IErrorReporter errorReporter =
+    EquationErrorReporter errorReporter =
       new EquationErrorReporter(this, "type ", representator1, " is not" + strongString + " comparable with ",
         representator2, "", errorInfo.getRuleModel(), errorInfo.getRuleId());
+    errorReporter.setIntentionProvider(errorInfo.getIntentionProvider());
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
   }
 
@@ -435,6 +437,9 @@ public class EquationManager {
           new EquationErrorReporter(this, "incompatible types: ",
             rhsRepresentator, " and ", lhsRepresentator, "", ruleModel, ruleId);
       }
+      if (errorInfo != null) {
+        errorReporter.setIntentionProvider(errorInfo.getIntentionProvider());
+      }
       processErrorEquation(lhsRepresentator, rhsRepresentator, errorReporter, nodeWithError);
       return;
     }
@@ -451,8 +456,10 @@ public class EquationManager {
     keepInequationsAndEffects(var, type, false);
     RuntimeTypeVariable typeVar = var.getVariable();
     if (typeVar instanceof RuntimeErrorType) {
+      SimpleErrorReporter reporter = new SimpleErrorReporter(((RuntimeErrorType) typeVar).getErrorText(), errorInfo.getRuleModel(), errorInfo.getRuleId());
+      reporter.setIntentionProvider(errorInfo.getIntentionProvider());
       TypeChecker.getInstance().reportTypeError(
-        errorInfo.getNodeWithError(), new SimpleErrorReporter(((RuntimeErrorType) typeVar).getErrorText(), errorInfo.getRuleModel(), errorInfo.getRuleId()));
+        errorInfo.getNodeWithError(), reporter);
     }
     var.fireRepresentatorSet(type, this);
   }

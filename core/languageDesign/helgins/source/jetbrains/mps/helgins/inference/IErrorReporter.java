@@ -15,4 +15,5 @@ public interface IErrorReporter {
   public String getRuleModel();
   public boolean isWarning();
   public IntentionProvider getIntentionProvider();
+  public void setIntentionProvider(IntentionProvider intentionProvider);
 }

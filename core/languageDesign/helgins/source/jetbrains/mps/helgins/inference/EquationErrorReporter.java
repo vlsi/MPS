@@ -21,6 +21,7 @@ public class EquationErrorReporter implements IErrorReporter {
   private String myRuleId;
   private String myRuleModel;
   private boolean myIsWarning = false;
+  private IntentionProvider myIntentionProvider;
 
   public EquationErrorReporter(EquationManager equationManager, String before,
                                IWrapper wrapper1, String between, IWrapper wrapper2, String after, String ruleModel, String ruleId) {
@@ -40,6 +41,9 @@ public class EquationErrorReporter implements IErrorReporter {
     myIsWarning = isWarning;
   }
 
+  public void setIntentionProvider(IntentionProvider intentionProvider) {
+    myIntentionProvider = intentionProvider;
+  }
 
   public String reportError() {
     IWrapper representator1 = myWrapper1;
@@ -67,6 +71,6 @@ public class EquationErrorReporter implements IErrorReporter {
   }
 
   public IntentionProvider getIntentionProvider() {
-    return null;
+    return myIntentionProvider;
   }
 }

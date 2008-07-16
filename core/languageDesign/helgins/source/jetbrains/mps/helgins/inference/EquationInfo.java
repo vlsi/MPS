@@ -81,6 +81,10 @@ public class EquationInfo {
     return myInequationPriority;
   }
 
+  public IntentionProvider getIntentionProvider() {
+    return myIntentionProvider;
+  }
+
   public SNode findRuleNode() {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(myRuleModel));
     if (modelDescriptor == null) return null;
