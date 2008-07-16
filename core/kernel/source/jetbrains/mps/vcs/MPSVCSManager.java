@@ -290,15 +290,15 @@ public class MPSVCSManager implements ProjectComponent {
     List<IModule> allModules = MPSModuleRepository.getInstance().getAllModules();
     Map<AbstractVcs, Set<VirtualFile>> vcss = new HashMap<AbstractVcs, Set<VirtualFile>>();
 
-    for (VcsDirectoryMapping map : myManager.getDirectoryMappings()){
-      AbstractVcs vcs = myManager.findVcsByName(map.getVcs());
-      Set<VirtualFile> files = vcss.get(vcs);
-      if (files == null) {
-        files = new HashSet<VirtualFile>();
-        vcss.put(vcs, files);
-      }
-      files.add(VFileSystem.getFile(map.getDirectory()));
-    }
+//    for (VcsDirectoryMapping map : myManager.getDirectoryMappings()){
+//      AbstractVcs vcs = myManager.findVcsByName(map.getVcs());
+//      Set<VirtualFile> files = vcss.get(vcs);
+//      if (files == null) {
+//        files = new HashSet<VirtualFile>();
+//        vcss.put(vcs, files);
+//      }
+//      files.add(VFileSystem.getFile(map.getDirectory()));
+//    }
 
     for (IModule module : allModules) {
       if (module.isPackaged()) continue;
@@ -336,6 +336,19 @@ public class MPSVCSManager implements ProjectComponent {
       Collection<String> roots = getRoots(files);
       for (String path : roots) {
         vcsMappings.add(new VcsDirectoryMapping(path, vcs.getName()));
+      }
+    }
+
+    for (VcsDirectoryMapping oldMapping : myManager.getDirectoryMappings()){
+      String oldDir = oldMapping.getDirectory();
+      boolean matched = false;
+      for (VcsDirectoryMapping newMapping : vcsMappings){
+        if (newMapping.getDirectory().equals(oldDir)){
+          matched = true;
+        }
+      }
+      if (!matched){
+        vcsMappings.add(oldMapping);
       }
     }
 
