@@ -382,6 +382,13 @@ public class EditorManager {
       }
     }
 
+    public void setCaretPosition(int position, boolean selection) {
+      if (position != getText().length() && mySide == CellSide.LEFT) {
+        validate(true, false);
+      }
+      super.setCaretPosition(position, selection);
+    }
+
     public CellSide getSide() {
       return mySide;
     }
