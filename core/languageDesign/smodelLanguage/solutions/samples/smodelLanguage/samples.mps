@@ -24,7 +24,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="22" />
   <maxImportIndex value="31" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
@@ -32,7 +32,7 @@
   <import index="5" modelUID="java.util@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="9" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="11" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="0" />
+  <import index="11" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="22" />
   <import index="13" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" version="-1" />
   <import index="25" modelUID="jetbrains.mps.core.constraints" version="2" />
   <import index="27" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />

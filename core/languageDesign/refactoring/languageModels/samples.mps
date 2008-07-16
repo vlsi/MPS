@@ -20,7 +20,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="22" />
   <maxImportIndex value="4" />
 </model>
 

@@ -1,7 +1,228 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.editorLanguage.structure">
   <persistence version="1" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="BackgroundColorStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="BackgroundColorStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="BracketColorStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.BracketColorStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="BracketColorStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.BracketColorStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="3">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="DefaultCaretPositionStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.DefaultCaretPositionStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="DefaultCaretPositionStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.DefaultCaretPositionStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="4">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="DrawBorderStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="DrawBorderStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="5">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="DrawBracketsStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="DrawBracketsStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="6">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="EditableStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="EditableStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="7">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="FirstPositionAllowedStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="FirstPositionAllowedStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="8">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="FloatStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.FloatStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="FloatStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.FloatStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="9">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="FontSizeStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.FontSizeStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="FontSizeStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.FontSizeStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="10">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="FontStyleStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="FontStyleStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="11">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ForegroundColorStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="ForegroundColorStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="12">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ForegroundNullColorStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundNullColorStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="ForegroundNullColorStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundNullColorStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="13">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="IndentedStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.IndentedStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="IndentedStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.IndentedStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="14">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="LastPositionAllowedStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.LastPositionAllowedStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="LastPositionAllowedStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.LastPositionAllowedStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="15">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="LayoutConstraintStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="LayoutConstraintStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="16">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="NextLineStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="NextLineStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="17">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="PaddingLeftStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="PaddingLeftStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="18">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="PaddingRightStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="PaddingRightStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="19">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="RightTransformAnchorTagStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="SideTransformAnchorTagStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.SideTransformAnchorTagStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="20">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="TextBackgroundColorSelectedStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorSelectedStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="TextBackgroundColorSelectedStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorSelectedStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="21">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="TextBackgroundColorStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="TextBackgroundColorStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="22">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="UnderlinedStyleSheetItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" featureKind="CONCEPT" />
+          <value featureName="UnderlinedStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   </language>
@@ -26,11 +247,12 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="22" />
   <maxImportIndex value="41" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="27" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="0" />
+  <import index="27" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="22" />
   <import index="28" modelUID="java.awt.event@java_stub" version="-1" />
   <import index="29" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <import index="33" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -2507,7 +2729,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186403751766">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="FontStyleStyleSheetItem" />
+    <property name="name" value="FontStyleStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186403918499">
       <property name="value" value="font-style" />
@@ -2520,7 +2742,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186404549998">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="ForegroundColorStyleSheetItem" />
+    <property name="name" value="ForegroundColorStyleClassItem" />
     <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215703469851">
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
@@ -2536,7 +2758,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186404574412">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="BackgroundColorStyleSheetItem" />
+    <property name="name" value="BackgroundColorStyleClassItem" />
     <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186404589776">
       <property name="value" value="background-color" />
@@ -2552,7 +2774,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186413799158">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="BracketColorStyleSheetItem" />
+    <property name="name" value="BracketColorStyleClassItem" />
     <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215703461771">
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
@@ -2596,7 +2818,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186414949600">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="DrawBracketsStyleSheetItem" />
+    <property name="name" value="DrawBracketsStyleClassItem" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215702053365">
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
@@ -2612,7 +2834,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186414976055">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="DrawBorderStyleSheetItem" />
+    <property name="name" value="DrawBorderStyleClassItem" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186414988603">
       <property name="value" value="draw-border" />
@@ -2628,7 +2850,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186414999511">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="UnderlinedStyleSheetItem" />
+    <property name="name" value="UnderlinedStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1214316229833">
       <property name="name" value="underlined" />
@@ -2641,7 +2863,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186415722038">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="FontSizeStyleSheetItem" />
+    <property name="name" value="FontSizeStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186415796023">
       <property name="value" value="font-size" />
@@ -2654,7 +2876,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186414860679">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="EditableStyleSheetItem" />
+    <property name="name" value="EditableStyleClassItem" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215702059789">
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
@@ -2670,7 +2892,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1187258617779">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="ForegroundNullColorStyleSheetItem" />
+    <property name="name" value="ForegroundNullColorStyleClassItem" />
     <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215703479915">
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
@@ -2856,7 +3078,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214317859050">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="LayoutConstraintStyleSheetItem" />
+    <property name="name" value="LayoutConstraintStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1214317859051">
       <property name="name" value="layoutConstraint" />
@@ -2869,20 +3091,20 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214320119173">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="RightTransformAnchorTagStyleSheetItem" />
+    <property name="name" value="SideTransformAnchorTagStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1214320119174">
       <property name="name" value="tag" />
       <link role="dataType" targetNodeId="1140813780565" resolveInfo="RightTransformAnchorTag" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1214320119175">
-      <property name="value" value="right transform anchor tag" />
+      <property name="value" value="side transform anchor tag" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214406454886">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="TextBackgroundColorStyleSheetItem" />
+    <property name="name" value="TextBackgroundColorStyleClassItem" />
     <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215703515607">
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
@@ -2898,7 +3120,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214406466686">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="TextBackgroundColorSelectedStyleSheetItem" />
+    <property name="name" value="TextBackgroundColorSelectedStyleClassItem" />
     <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215703491746">
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
@@ -2914,7 +3136,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214472762472">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="DefaultCaretPositionStyleSheetItem" />
+    <property name="name" value="DefaultCaretPositionStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1214472762473">
       <property name="name" value="position" />
@@ -2927,7 +3149,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215007762405">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="FloatStyleSheetItem" />
+    <property name="name" value="FloatStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1215007802031">
       <property name="name" value="value" />
@@ -2939,7 +3161,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215007883204">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="PaddingLeftStyleSheetItem" />
+    <property name="name" value="PaddingLeftStyleClassItem" />
     <link role="extends" targetNodeId="1215007762405" resolveInfo="FloatStyleSheetItem" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215007893986">
       <property name="value" value="padding-left" />
@@ -2948,7 +3170,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215007897487">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="PaddingRightStyleSheetItem" />
+    <property name="name" value="PaddingRightStyleClassItem" />
     <link role="extends" targetNodeId="1215007762405" resolveInfo="FloatStyleSheetItem" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215007897488">
       <property name="value" value="padding-right" />
@@ -2957,7 +3179,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215085112640">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="FirstPositionAllowedStyleSheetItem" />
+    <property name="name" value="FirstPositionAllowedStyleClassItem" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215702064900">
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
@@ -2973,7 +3195,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215085197271">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="LastPositionAllowedStyleSheetItem" />
+    <property name="name" value="LastPositionAllowedStyleClassItem" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215702077186">
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
@@ -2989,7 +3211,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215669771327">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="IndentedStyleSheetItem" />
+    <property name="name" value="IndentedStyleClassItem" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215702070965">
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
@@ -3005,7 +3227,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215855821528">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="NextLineStyleSheetItem" />
+    <property name="name" value="NextLineStyleClassItem" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215855821529">
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
