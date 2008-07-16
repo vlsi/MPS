@@ -84,7 +84,7 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_codePropertyCell7717_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("code");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no code>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_codePropertyCell7717_0_internal(context, node, provider);

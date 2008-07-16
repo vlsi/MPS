@@ -1687,7 +1687,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_parameterQueryFunctionRefNodeCell12325_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("parameterQueryFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no parameterQueryFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_parameterQueryFunctionRefNodeCell12325_0_internal(context, node, provider);
@@ -1716,7 +1716,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_toStringFunctionRefNodeCell12325_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("toStringFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no toStringFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_toStringFunctionRefNodeCell12325_0_internal(context, node, provider);
@@ -1745,7 +1745,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_parameterTypeRefNodeCell12325_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("parameterType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no parameterType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_parameterTypeRefNodeCell12325_0_internal(context, node, provider);
@@ -1774,7 +1774,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_paramSequenceFunctionRefNodeCell12325_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("paramSequenceFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no paramSequenceFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_paramSequenceFunctionRefNodeCell12325_0_internal(context, node, provider);
@@ -1803,7 +1803,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_paramSizeFunctionRefNodeCell12325_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("paramSizeFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no paramSizeFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_paramSizeFunctionRefNodeCell12325_0_internal(context, node, provider);
@@ -1832,7 +1832,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_paramAddFunctionRefNodeCell12325_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("paramAddFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no paramAddFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_paramAddFunctionRefNodeCell12325_0_internal(context, node, provider);
@@ -1861,7 +1861,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_paramRemoveFunctionRefNodeCell12325_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("paramRemoveFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no paramRemoveFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_paramRemoveFunctionRefNodeCell12325_0_internal(context, node, provider);
@@ -1890,7 +1890,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_paramSequenceFunctionRefNodeCell12325_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("paramSequenceFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no paramSequenceFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_paramSequenceFunctionRefNodeCell12325_01_internal(context, node, provider);
@@ -1919,7 +1919,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_paramSizeFunctionRefNodeCell12325_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("paramSizeFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no paramSizeFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_paramSizeFunctionRefNodeCell12325_01_internal(context, node, provider);
@@ -1948,7 +1948,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_oppositeRefCell12325_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("opposite");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no opposite>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_oppositeRefCell12325_0_internal(context, node, provider);
@@ -2000,7 +2000,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell12325_01(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell12325_01_internal(context, node, provider);

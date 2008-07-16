@@ -284,7 +284,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell20377_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell20377_0_internal(context, node, provider);
@@ -313,7 +313,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_exprRefNodeCell20377_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expr");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no expr>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_exprRefNodeCell20377_0_internal(context, node, provider);
@@ -342,7 +342,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_regexpRefNodeCell20377_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("regexp");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no regexp>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_regexpRefNodeCell20377_0_internal(context, node, provider);

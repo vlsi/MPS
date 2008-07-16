@@ -74,7 +74,7 @@ public class ReportErrorExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_errorTextRefNodeCell20933_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("errorText");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no errorText>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_errorTextRefNodeCell20933_0_internal(context, node, provider);

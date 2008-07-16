@@ -173,7 +173,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_expressionRefNodeCell8846_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no expression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_expressionRefNodeCell8846_0_internal(context, node, provider);
@@ -202,7 +202,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_treepathAspectRefCell8846_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("treepathAspect");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no treepathAspect>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_treepathAspectRefCell8846_0_internal(context, node, provider);
@@ -253,7 +253,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell8846_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell8846_0_internal(context, node, provider);

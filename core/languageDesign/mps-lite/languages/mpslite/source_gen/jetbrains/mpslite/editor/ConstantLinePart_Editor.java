@@ -57,7 +57,7 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
   public EditorCell create_textPropertyCell4507_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("text");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no text>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_textPropertyCell4507_0_internal(context, node, provider);

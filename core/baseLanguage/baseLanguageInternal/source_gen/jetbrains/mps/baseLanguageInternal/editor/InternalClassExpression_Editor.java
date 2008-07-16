@@ -72,7 +72,7 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_typeRefNodeCell4834_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no type>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_typeRefNodeCell4834_0_internal(context, node, provider);

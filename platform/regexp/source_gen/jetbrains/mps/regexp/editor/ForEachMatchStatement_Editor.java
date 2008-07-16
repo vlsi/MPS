@@ -321,7 +321,7 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_regexpRefNodeCell11738_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("regexp");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no regexp>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_regexpRefNodeCell11738_0_internal(context, node, provider);
@@ -350,7 +350,7 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_exprRefNodeCell11738_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expr");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no expr>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_exprRefNodeCell11738_0_internal(context, node, provider);
@@ -379,7 +379,7 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell11738_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell11738_0_internal(context, node, provider);

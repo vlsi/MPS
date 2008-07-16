@@ -95,7 +95,7 @@ public class TypeHintExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_typeHintRefNodeCell2405_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("typeHint");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no typeHint>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_typeHintRefNodeCell2405_0_internal(context, node, provider);
@@ -124,7 +124,7 @@ public class TypeHintExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_expressionRefNodeCell2405_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no expression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_expressionRefNodeCell2405_0_internal(context, node, provider);

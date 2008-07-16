@@ -585,7 +585,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
   public EditorCell create_writablePropertyCell12837_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("writable");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no writable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_writablePropertyCell12837_0_internal(context, node, provider);
@@ -614,7 +614,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
   public EditorCell create_targetTypeFunctionRefNodeCell12837_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("targetTypeFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no targetTypeFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_targetTypeFunctionRefNodeCell12837_0_internal(context, node, provider);
@@ -643,7 +643,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
   public EditorCell create_cardinalRefNodeCell12837_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("cardinal");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no cardinal>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_cardinalRefNodeCell12837_0_internal(context, node, provider);
@@ -672,7 +672,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
   public EditorCell create_ascendingPropertyCell12837_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("ascending");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no ascending>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ascendingPropertyCell12837_0_internal(context, node, provider);

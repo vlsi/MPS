@@ -128,7 +128,7 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
   public EditorCell create_fqClassNamePropertyCell11050_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("fqClassName");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no fqClassName>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_fqClassNamePropertyCell11050_0_internal(context, node, provider);
@@ -157,7 +157,7 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
   public EditorCell create_fieldNamePropertyCell11050_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("fieldName");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no fieldName>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_fieldNamePropertyCell11050_0_internal(context, node, provider);

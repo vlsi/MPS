@@ -398,7 +398,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_fqClassNamePropertyCell8036_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("fqClassName");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no fqClassName>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_fqClassNamePropertyCell8036_0_internal(context, node, provider);

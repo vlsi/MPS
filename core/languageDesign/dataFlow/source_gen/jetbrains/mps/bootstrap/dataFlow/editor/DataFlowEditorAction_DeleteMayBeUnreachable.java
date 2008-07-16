@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class DataFlowEditorAction_DeleteMayBeUnreachable {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new DataFlowEditorAction_DeleteMayBeUnreachable.DataFlowEditorAction_DeleteMayBeUnreachable_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new DataFlowEditorAction_DeleteMayBeUnreachable.DataFlowEditorAction_DeleteMayBeUnreachable_DELETE(node));
   }
 
   public static class DataFlowEditorAction_DeleteMayBeUnreachable_DELETE extends EditorCellAction {

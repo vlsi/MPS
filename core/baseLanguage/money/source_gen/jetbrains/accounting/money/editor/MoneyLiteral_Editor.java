@@ -64,7 +64,7 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
   public EditorCell create_amountPropertyCell9825_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("amount");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no amount>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_amountPropertyCell9825_0_internal(context, node, provider);
@@ -93,7 +93,7 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
   public EditorCell create_currencyPropertyCell9825_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("currency");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no currency>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_currencyPropertyCell9825_0_internal(context, node, provider);

@@ -128,7 +128,7 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
   public EditorCell create_parentBlockRefNodeCell4947_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("parentBlock");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no parentBlock>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_parentBlockRefNodeCell4947_0_internal(context, node, provider);
@@ -157,7 +157,7 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
   public EditorCell create_childrenBlockRefNodeCell4947_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("childrenBlock");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no childrenBlock>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_childrenBlockRefNodeCell4947_0_internal(context, node, provider);

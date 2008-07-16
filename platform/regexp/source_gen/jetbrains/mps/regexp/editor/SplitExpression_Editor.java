@@ -105,7 +105,7 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_exprRefNodeCell13609_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expr");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no expr>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_exprRefNodeCell13609_0_internal(context, node, provider);
@@ -134,7 +134,7 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_regexpRefNodeCell13609_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("regexp");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no regexp>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_regexpRefNodeCell13609_0_internal(context, node, provider);

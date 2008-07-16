@@ -88,7 +88,7 @@ public class AttributeConcept_Editor extends DefaultNodeEditor {
   public EditorCell create_attributedNodeRefNodeCell15929_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("attributedNode");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no attributedNode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_attributedNodeRefNodeCell15929_0_internal(context, node, provider);

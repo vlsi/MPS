@@ -56,7 +56,7 @@ public class CharacterSymbolClassPart_Editor extends DefaultNodeEditor {
   public EditorCell create_characterPropertyCell1945_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("character");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no character>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_characterPropertyCell1945_0_internal(context, node, provider);

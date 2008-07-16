@@ -32,7 +32,7 @@ public class _Line_Actions extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -47,12 +47,12 @@ public class _Line_Actions extends EditorCellKeyMap {
       return false;
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode selectedNode = editorContext.getSelectedNode();
       if (selectedNode == null) {
         return;

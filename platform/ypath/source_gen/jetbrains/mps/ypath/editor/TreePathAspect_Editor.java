@@ -1168,7 +1168,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell7950_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell7950_0_internal(context, node, provider);
@@ -1197,7 +1197,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   public EditorCell create_visibilityRefNodeCell7950_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("visibility");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no visibility>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_visibilityRefNodeCell7950_0_internal(context, node, provider);
@@ -1324,7 +1324,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), " ");
         editorCell.setSelectable(false);
-        editorCell.setLayoutConstraint("");
         return editorCell;
       }
     }
@@ -1393,7 +1392,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), " ");
         editorCell.setSelectable(false);
-        editorCell.setLayoutConstraint("");
         return editorCell;
       }
     }

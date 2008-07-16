@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class SemanticDowncastExpression_Symbol_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new SemanticDowncastExpression_Symbol_Actions.SemanticDowncastExpression_Symbol_Actions_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new SemanticDowncastExpression_Symbol_Actions.SemanticDowncastExpression_Symbol_Actions_DELETE(node));
   }
 
   public static class SemanticDowncastExpression_Symbol_Actions_DELETE extends EditorCellAction {

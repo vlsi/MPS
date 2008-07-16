@@ -322,7 +322,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
   public EditorCell create_usedFeatureRefCell3680_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("usedFeature");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no usedFeature>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_usedFeatureRefCell3680_0_internal(context, node, provider);
@@ -352,7 +352,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
   public EditorCell create_usedFeatureRefCell3680_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("usedFeature");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no usedFeature>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_usedFeatureRefCell3680_01_internal(context, node, provider);
@@ -382,7 +382,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
   public EditorCell create_paramObjectRefNodeCell3680_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("paramObject");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no paramObject>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_paramObjectRefNodeCell3680_0_internal(context, node, provider);
@@ -411,7 +411,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
   public EditorCell create_paramObjectRefNodeCell3680_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("paramObject");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no paramObject>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_paramObjectRefNodeCell3680_01_internal(context, node, provider);
@@ -471,7 +471,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell3680_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell3680_0_internal(context, node, provider);
@@ -523,7 +523,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell3680_01(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell3680_01_internal(context, node, provider);

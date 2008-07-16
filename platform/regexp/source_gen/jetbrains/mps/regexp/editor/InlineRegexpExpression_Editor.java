@@ -641,7 +641,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_regexpRefNodeCell6981_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("regexp");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no regexp>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_regexpRefNodeCell6981_0_internal(context, node, provider);
@@ -670,7 +670,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_dotAllPropertyCell6981_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("dotAll");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no dotAll>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_dotAllPropertyCell6981_0_internal(context, node, provider);
@@ -699,7 +699,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_multiLinePropertyCell6981_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("multiLine");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no multiLine>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_multiLinePropertyCell6981_0_internal(context, node, provider);
@@ -728,7 +728,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_caseInsensitivePropertyCell6981_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("caseInsensitive");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no caseInsensitive>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_caseInsensitivePropertyCell6981_0_internal(context, node, provider);

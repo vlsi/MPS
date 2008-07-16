@@ -101,7 +101,7 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
   public EditorCell create_componentTypeRefCell9131_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("componentType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no componentType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_componentTypeRefCell9131_0_internal(context, node, provider);
@@ -152,7 +152,7 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell9131_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(false);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell9131_0_internal(context, node, provider);

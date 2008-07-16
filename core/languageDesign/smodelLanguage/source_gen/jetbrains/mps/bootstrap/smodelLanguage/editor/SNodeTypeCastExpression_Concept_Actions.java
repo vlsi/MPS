@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class SNodeTypeCastExpression_Concept_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new SNodeTypeCastExpression_Concept_Actions.SNodeTypeCastExpression_Concept_Actions_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new SNodeTypeCastExpression_Concept_Actions.SNodeTypeCastExpression_Concept_Actions_DELETE(node));
   }
 
   public static class SNodeTypeCastExpression_Concept_Actions_DELETE extends EditorCellAction {

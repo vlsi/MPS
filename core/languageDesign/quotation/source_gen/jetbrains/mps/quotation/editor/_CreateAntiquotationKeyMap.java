@@ -54,7 +54,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -69,16 +69,16 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return true;
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode contextNode = editorContext.getSelectedCell().getSNode();
       if (contextNode == null) {
         return;
@@ -114,7 +114,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -129,16 +129,16 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return true;
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode contextNode = editorContext.getSelectedCell().getSNode();
       if (contextNode == null) {
         return;
@@ -175,7 +175,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -190,16 +190,16 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return true;
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell selectedCell = editorContext.getSelectedCell();
       SNode contextNode = (SNode)selectedCell.getSNode();
       SNode linkNode = (SNode)selectedCell.getUserObject(EditorCell_Component.METAINFO_LINK_DECLARATION);
@@ -249,7 +249,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -264,16 +264,16 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return true;
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell selectedCell = editorContext.getSelectedCell();
       SNode contextNode = (SNode)selectedCell.getSNode();
       if (contextNode == null) {

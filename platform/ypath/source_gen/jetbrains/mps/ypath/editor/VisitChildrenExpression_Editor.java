@@ -177,7 +177,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_ConceptPropertyCell18331_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ConceptPropertyCell18331_0_internal(context, node, provider);
@@ -261,7 +261,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
       {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
-        editorCell.setLayoutConstraint("");
         return editorCell;
       }
     }

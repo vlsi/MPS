@@ -65,7 +65,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -77,16 +77,16 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return PatternAddingUtil.isPatternApplicable(editorContext);
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       node.setAttribute(SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.patterns.structure.WildcardPattern", null));
     }
 
@@ -109,7 +109,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -121,16 +121,16 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return PatternAddingUtil.isPatternApplicable(editorContext);
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       AsPattern_AnnotationLink.setAsPattern((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), ((AsPattern)SNodeOperations.getAdapter(SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.patterns.structure.AsPattern", null))));
     }
 
@@ -153,7 +153,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -165,16 +165,16 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return PatternAddingUtil.isPatternApplicable(editorContext);
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       PatternAddingUtil.addVariablePattern(editorContext);
     }
 
@@ -197,7 +197,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -209,16 +209,16 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return (editorContext.getSelectedCell() instanceof EditorCell_Property) && PatternAddingUtil.isPatternApplicable(editorContext);
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell_Property cell = (EditorCell_Property)editorContext.getSelectedCell();
       String propertyName = ((PropertyAccessor)cell.getModelAccessor()).getPropertyName();
       node.setPropertyAttribute(propertyName, SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration", null));
@@ -243,7 +243,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -255,16 +255,16 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return PatternAddingUtil.isPatternApplicable(editorContext) && SNodeOperations.getParent(node, null, false, false) != null;
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       List<SNode> siblings = SNodeOperations.getAllSiblings(node, false);
       AsPattern_AnnotationLink.setAsPattern((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), ((ListPattern)SNodeOperations.getAdapter(SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.patterns.structure.ListPattern", null))));
       for(SNode sibling : siblings) {
@@ -291,7 +291,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -303,16 +303,16 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return true;
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode contextNode = editorContext.getSelectedCell().getSNode();
       if (contextNode == null) {
         return;
@@ -348,7 +348,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -360,16 +360,16 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return true;
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode contextNode = editorContext.getSelectedCell().getSNode();
       if (contextNode == null) {
         return;
@@ -406,7 +406,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return false;
     }
 
-    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
         return false;
@@ -418,16 +418,16 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
 
-    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return true;
     }
 
-    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell selectedCell = editorContext.getSelectedCell();
       SNode contextNode = selectedCell.getSNode();
       SNode linkNode = (SNode)selectedCell.getUserObject(EditorCell_Component.METAINFO_LINK_DECLARATION);

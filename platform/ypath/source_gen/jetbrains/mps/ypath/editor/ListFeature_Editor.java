@@ -1425,7 +1425,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_getFunctionRefNodeCell21469_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("getFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no getFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_getFunctionRefNodeCell21469_0_internal(context, node, provider);
@@ -1454,7 +1454,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_sizeFunctionRefNodeCell21469_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("sizeFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no sizeFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_sizeFunctionRefNodeCell21469_0_internal(context, node, provider);
@@ -1483,7 +1483,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_setFunctionRefNodeCell21469_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("setFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no setFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_setFunctionRefNodeCell21469_0_internal(context, node, provider);
@@ -1512,7 +1512,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_insertFunctionRefNodeCell21469_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("insertFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no insertFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_insertFunctionRefNodeCell21469_0_internal(context, node, provider);
@@ -1541,7 +1541,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_deleteFunctionRefNodeCell21469_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("deleteFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no deleteFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_deleteFunctionRefNodeCell21469_0_internal(context, node, provider);
@@ -1570,7 +1570,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_getFunctionRefNodeCell21469_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("getFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no getFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_getFunctionRefNodeCell21469_01_internal(context, node, provider);
@@ -1599,7 +1599,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_sizeFunctionRefNodeCell21469_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("sizeFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no sizeFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_sizeFunctionRefNodeCell21469_01_internal(context, node, provider);
@@ -1628,7 +1628,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
   public EditorCell create_oppositeRefCell21469_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("opposite");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no opposite>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_oppositeRefCell21469_0_internal(context, node, provider);
@@ -1680,7 +1680,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell21469_01(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell21469_01_internal(context, node, provider);

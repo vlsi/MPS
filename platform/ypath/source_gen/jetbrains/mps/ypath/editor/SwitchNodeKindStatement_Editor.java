@@ -257,7 +257,7 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_nodeExpressionRefNodeCell19466_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeExpression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no nodeExpression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_nodeExpressionRefNodeCell19466_0_internal(context, node, provider);

@@ -146,7 +146,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_regexpRefNodeCell624_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("regexp");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no regexp>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_regexpRefNodeCell624_0_internal(context, node, provider);
@@ -175,7 +175,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_nPropertyCell624_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("n");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no n>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_nPropertyCell624_0_internal(context, node, provider);

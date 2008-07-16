@@ -130,7 +130,7 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_ConceptPropertyCell4356_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ConceptPropertyCell4356_0_internal(context, node, provider);
@@ -159,7 +159,7 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_regexpRefNodeCell4356_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("regexp");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no regexp>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_regexpRefNodeCell4356_0_internal(context, node, provider);

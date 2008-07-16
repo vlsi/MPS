@@ -152,7 +152,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   public EditorCell create_resultRefNodeCell14194_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("result");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no result>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_resultRefNodeCell14194_0_internal(context, node, provider);
@@ -209,7 +209,6 @@ public class FunctionType_Editor extends DefaultNodeEditor {
       {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
-        editorCell.setLayoutConstraint("");
         return editorCell;
       }
     }

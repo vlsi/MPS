@@ -73,7 +73,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_leftRefNodeCell14105_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("left");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no left>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_leftRefNodeCell14105_0_internal(context, node, provider);
@@ -102,7 +102,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_ConceptPropertyCell14105_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ConceptPropertyCell14105_0_internal(context, node, provider);
@@ -131,7 +131,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_rightRefNodeCell14105_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("right");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no right>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_rightRefNodeCell14105_0_internal(context, node, provider);

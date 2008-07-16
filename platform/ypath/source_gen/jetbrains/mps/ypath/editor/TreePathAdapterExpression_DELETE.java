@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class TreePathAdapterExpression_DELETE {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new TreePathAdapterExpression_DELETE.TreePathAdapterExpression_DELETE_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new TreePathAdapterExpression_DELETE.TreePathAdapterExpression_DELETE_DELETE(node));
   }
 
   public static class TreePathAdapterExpression_DELETE_DELETE extends EditorCellAction {

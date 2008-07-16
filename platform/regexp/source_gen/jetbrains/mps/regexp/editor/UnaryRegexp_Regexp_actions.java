@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class UnaryRegexp_Regexp_actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new UnaryRegexp_Regexp_actions.UnaryRegexp_Regexp_actions_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new UnaryRegexp_Regexp_actions.UnaryRegexp_Regexp_actions_DELETE(node));
   }
 
   public static class UnaryRegexp_Regexp_actions_DELETE extends EditorCellAction {

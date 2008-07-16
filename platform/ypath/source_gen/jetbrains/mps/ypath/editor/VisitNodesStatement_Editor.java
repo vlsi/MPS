@@ -40,7 +40,7 @@ public class VisitNodesStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_visitBlockRefNodeCell1766_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("visitBlock");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no visitBlock>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_visitBlockRefNodeCell1766_0_internal(context, node, provider);

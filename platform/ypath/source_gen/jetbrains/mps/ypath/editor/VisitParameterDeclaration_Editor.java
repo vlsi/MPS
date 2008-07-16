@@ -99,7 +99,7 @@ public class VisitParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_typeRefNodeCell17629_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no type>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_typeRefNodeCell17629_0_internal(context, node, provider);
@@ -128,7 +128,7 @@ public class VisitParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell17629_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell17629_0_internal(context, node, provider);
@@ -157,7 +157,7 @@ public class VisitParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_initializerRefNodeCell17629_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("initializer");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no initializer>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_initializerRefNodeCell17629_0_internal(context, node, provider);

@@ -248,7 +248,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_regexpRefNodeCell5520_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("regexp");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no regexp>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_regexpRefNodeCell5520_0_internal(context, node, provider);
@@ -277,7 +277,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_exprRefNodeCell5520_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expr");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no expr>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_exprRefNodeCell5520_0_internal(context, node, provider);
@@ -306,7 +306,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_replaceBlockRefNodeCell5520_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("replaceBlock");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no replaceBlock>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_replaceBlockRefNodeCell5520_0_internal(context, node, provider);

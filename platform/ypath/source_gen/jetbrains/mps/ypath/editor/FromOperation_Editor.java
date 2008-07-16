@@ -88,7 +88,7 @@ public class FromOperation_Editor extends DefaultNodeEditor {
   public EditorCell create_fromExpressionRefNodeCell15423_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("fromExpression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no fromExpression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_fromExpressionRefNodeCell15423_0_internal(context, node, provider);

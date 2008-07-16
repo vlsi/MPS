@@ -43,7 +43,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell10755_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell10755_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -60,7 +60,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell10755_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell10755_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -80,7 +80,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell10755_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10755_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -105,7 +105,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell10755_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell10755_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -126,7 +126,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell10755_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10755_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -139,7 +139,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell10755_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell10755_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -374,7 +374,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   public EditorCell create_contentPaneRefNodeCell10755_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("contentPane");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no contentPane>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_contentPaneRefNodeCell10755_0_internal(context, node, provider);
@@ -403,7 +403,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   public EditorCell create_stretchPropertyCell10755_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("stretch");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no stretch>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_stretchPropertyCell10755_0_internal(context, node, provider);
@@ -432,7 +432,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   public EditorCell create_titlePropertyCell10755_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("title");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no title>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_titlePropertyCell10755_0_internal(context, node, provider);

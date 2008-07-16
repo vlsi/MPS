@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -157,7 +158,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
         }
 
         //if no flow
-        if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(cell.getLayoutConstraint())) {
+        if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(cell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT))) {
           if (!getCurrentLine().isEmpty()) {
             alignLine();
             nextLine();
@@ -324,7 +325,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (;it.hasNext();) {
       EditorCell editorCell = it.next();
-      if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(editorCell.getLayoutConstraint())) {
+      if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(editorCell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT))) {
         return result.appendToTheBottom(editorCell.renderText());
       }
       result = result.appendToTheRight(editorCell.renderText(), !(editorCell.isPunctuationLayout()));

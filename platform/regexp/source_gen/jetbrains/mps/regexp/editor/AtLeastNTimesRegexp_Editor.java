@@ -162,7 +162,7 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_regexpRefNodeCell1189_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("regexp");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no regexp>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_regexpRefNodeCell1189_0_internal(context, node, provider);
@@ -191,7 +191,7 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_nPropertyCell1189_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("n");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no n>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_nPropertyCell1189_0_internal(context, node, provider);

@@ -122,7 +122,7 @@ public class LinkPatternVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_varNamePropertyCell11478_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("varName");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no varName>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_varNamePropertyCell11478_0_internal(context, node, provider);

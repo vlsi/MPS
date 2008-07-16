@@ -217,7 +217,7 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell7419_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell7419_0_internal(context, node, provider);
@@ -246,7 +246,7 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_descriptionPropertyCell7419_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("description");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no description>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_descriptionPropertyCell7419_0_internal(context, node, provider);

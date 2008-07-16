@@ -144,7 +144,7 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_expressionRefNodeCell18011_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no expression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_expressionRefNodeCell18011_0_internal(context, node, provider);
@@ -173,7 +173,7 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_operationRefNodeCell18011_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("operation");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no operation>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_operationRefNodeCell18011_0_internal(context, node, provider);

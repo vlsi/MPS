@@ -64,7 +64,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_leftRefNodeCell2730_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("left");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no left>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_leftRefNodeCell2730_0_internal(context, node, provider);
@@ -93,7 +93,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_rightRefNodeCell2730_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("right");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no right>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_rightRefNodeCell2730_0_internal(context, node, provider);

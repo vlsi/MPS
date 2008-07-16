@@ -107,7 +107,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
   public EditorCell create_startPropertyCell7273_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("start");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no start>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_startPropertyCell7273_0_internal(context, node, provider);
@@ -136,7 +136,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
   public EditorCell create_endPropertyCell7273_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("end");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no end>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_endPropertyCell7273_0_internal(context, node, provider);

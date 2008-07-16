@@ -88,7 +88,7 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
   public EditorCell create_whereBlockRefNodeCell11046_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("whereBlock");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no whereBlock>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_whereBlockRefNodeCell11046_0_internal(context, node, provider);

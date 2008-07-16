@@ -127,7 +127,7 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
   public EditorCell create_amountRefNodeCell14929_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("amount");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no amount>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_amountRefNodeCell14929_0_internal(context, node, provider);
@@ -156,7 +156,7 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
   public EditorCell create_currencyRefNodeCell14929_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("currency");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no currency>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_currencyRefNodeCell14929_0_internal(context, node, provider);

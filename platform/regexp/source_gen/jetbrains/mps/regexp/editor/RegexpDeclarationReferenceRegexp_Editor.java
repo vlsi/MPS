@@ -70,7 +70,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_regexpRefCell11213_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("regexp");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no regexp>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_regexpRefCell11213_0_internal(context, node, provider);
@@ -137,7 +137,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell11213_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell11213_0_internal(context, node, provider);

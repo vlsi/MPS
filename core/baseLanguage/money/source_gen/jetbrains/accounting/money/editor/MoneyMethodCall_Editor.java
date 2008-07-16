@@ -75,7 +75,7 @@ public class MoneyMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell create_instanceRefNodeCell13915_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("instance");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no instance>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_instanceRefNodeCell13915_0_internal(context, node, provider);
@@ -104,7 +104,7 @@ public class MoneyMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell create_ConceptPropertyCell13915_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ConceptPropertyCell13915_0_internal(context, node, provider);

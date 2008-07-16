@@ -137,7 +137,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_exprRefNodeCell20612_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expr");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no expr>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_exprRefNodeCell20612_0_internal(context, node, provider);

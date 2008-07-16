@@ -167,7 +167,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell15418_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell15418_0_internal(context, node, provider);
@@ -196,7 +196,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
   public EditorCell create_regexpRefNodeCell15418_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("regexp");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no regexp>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_regexpRefNodeCell15418_0_internal(context, node, provider);

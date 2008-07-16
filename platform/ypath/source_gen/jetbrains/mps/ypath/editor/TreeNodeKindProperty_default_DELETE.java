@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 public class TreeNodeKindProperty_default_DELETE {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new TreeNodeKindProperty_default_DELETE.TreeNodeKindProperty_default_DELETE_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new TreeNodeKindProperty_default_DELETE.TreeNodeKindProperty_default_DELETE_DELETE(node));
   }
 
   public static class TreeNodeKindProperty_default_DELETE_DELETE extends EditorCellAction {

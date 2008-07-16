@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class BinaryRegexp_Left_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new BinaryRegexp_Left_Actions.BinaryRegexp_Left_Actions_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new BinaryRegexp_Left_Actions.BinaryRegexp_Left_Actions_DELETE(node));
   }
 
   public static class BinaryRegexp_Left_Actions_DELETE extends EditorCellAction {

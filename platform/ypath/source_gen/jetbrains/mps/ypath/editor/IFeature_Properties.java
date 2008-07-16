@@ -376,7 +376,7 @@ public class IFeature_Properties extends AbstractCellProvider {
   public EditorCell create_writablePropertyCell16521_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("writable");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no writable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_writablePropertyCell16521_0_internal(context, node, provider);
@@ -405,7 +405,7 @@ public class IFeature_Properties extends AbstractCellProvider {
   public EditorCell create_ascendingPropertyCell16521_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("ascending");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no ascending>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ascendingPropertyCell16521_0_internal(context, node, provider);

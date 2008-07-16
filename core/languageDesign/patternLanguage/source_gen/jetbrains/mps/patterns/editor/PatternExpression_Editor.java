@@ -148,7 +148,7 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_patternNodeRefNodeCell364_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("patternNode");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no patternNode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_patternNodeRefNodeCell364_0_internal(context, node, provider);

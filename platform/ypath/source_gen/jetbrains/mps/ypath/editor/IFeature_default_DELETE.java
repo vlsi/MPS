@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 public class IFeature_default_DELETE {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new IFeature_default_DELETE.IFeature_default_DELETE_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new IFeature_default_DELETE.IFeature_default_DELETE_DELETE(node));
   }
 
   public static class IFeature_default_DELETE_DELETE extends EditorCellAction {

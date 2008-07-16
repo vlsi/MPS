@@ -194,7 +194,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell20062_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell20062_0_internal(context, node, provider);
@@ -223,7 +223,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
   public EditorCell create_getterRefNodeCell20062_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("getter");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no getter>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_getterRefNodeCell20062_0_internal(context, node, provider);

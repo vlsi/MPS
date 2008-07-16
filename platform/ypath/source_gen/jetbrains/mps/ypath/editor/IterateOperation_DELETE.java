@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class IterateOperation_DELETE {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new IterateOperation_DELETE.IterateOperation_DELETE_DELETE(node));
+    editorCell.setAction(EditorCellAction.DELETE, new IterateOperation_DELETE.IterateOperation_DELETE_DELETE(node));
   }
 
   public static class IterateOperation_DELETE_DELETE extends EditorCellAction {

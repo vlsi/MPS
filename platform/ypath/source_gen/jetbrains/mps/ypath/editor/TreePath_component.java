@@ -63,7 +63,7 @@ public class TreePath_component extends AbstractCellProvider {
   public EditorCell create_treePathTypeRefNodeCell5335_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("treePathType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no treePathType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_treePathTypeRefNodeCell5335_0_internal(context, node, provider);

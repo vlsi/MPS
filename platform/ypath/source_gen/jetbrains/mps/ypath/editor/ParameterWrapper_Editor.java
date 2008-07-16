@@ -165,7 +165,7 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell619_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell619_0_internal(context, node, provider);
