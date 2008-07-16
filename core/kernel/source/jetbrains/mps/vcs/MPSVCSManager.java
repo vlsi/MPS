@@ -20,6 +20,7 @@ import java.rmi.RemoteException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
+import com.intellij.openapi.vcs.impl.VcsDirectoryMappingStorage;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.changes.IgnoredFileBean;
@@ -30,6 +31,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.SwingUtilities;
 
@@ -44,9 +46,8 @@ public class MPSVCSManager implements ProjectComponent {
   private final SModelAdapter myModelInitializationListener = new ModelSavedListener();
   private MetadataCreationListener myMetadataListener = new MetadataCreationListenerImpl();
   private ProjectLevelVcsManager myManager;
-  private List<VcsDirectoryMapping> myOldDirectoryMappings;
 
-  public MPSVCSManager(Project project, ProjectLevelVcsManager manager, MPSProjectHolder holder, MPSModuleRepository repository) {
+  public MPSVCSManager(Project project, ProjectLevelVcsManager manager, MPSProjectHolder holder, MPSModuleRepository repository, VcsDirectoryMappingStorage storage) {
     myProject = project;
     myManager = manager;
     myGenerationListener = new GenerationWhatcher();
@@ -284,72 +285,133 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private void addDirectoryMappings() {
-    VirtualFile projectBasedir = myProject.getBaseDir();
-    if (projectBasedir == null) return;
+    long timeStart = System.currentTimeMillis();
 
-    List<VcsDirectoryMapping> vcsMappings = new LinkedList<VcsDirectoryMapping>();
-    Map<VirtualFile, String> map = new LinkedHashMap<VirtualFile, String>();
-    myOldDirectoryMappings = myManager.getDirectoryMappings();
+    List<VcsDirectoryMapping> vcsMappings = new ArrayList<VcsDirectoryMapping>();
 
-    for (VcsDirectoryMapping mapping : vcsMappings) {
-      VirtualFile vfile = VFileSystem.getFile(mapping.getDirectory());
-      if (vfile != null) {
-        map.put(vfile, mapping.getVcs());
+    List<IModule> allModules = MPSModuleRepository.getInstance().getAllModules();
+    Map<AbstractVcs, Set<VirtualFile>> vcss = new HashMap<AbstractVcs, Set<VirtualFile>>();
+
+    for (VcsDirectoryMapping map : myManager.getDirectoryMappings()){
+      AbstractVcs vcs = myManager.findVcsByName(map.getVcs());
+      Set<VirtualFile> files = vcss.get(vcs);
+      if (files == null) {
+        files = new HashSet<VirtualFile>();
+        vcss.put(vcs, files);
       }
+      files.add(VFileSystem.getFile(map.getDirectory()));
     }
 
-    List<IModule> modules = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getModules();
-    for (IModule module : modules) {
-      if (!module.isPackaged()) {
-        IFile moduleFile = module.getDescriptorFile();
-        IFile moduleBasedir = moduleFile.getParent();
+    for (IModule module : allModules) {
+      if (module.isPackaged()) continue;
+      IFile descriptor = module.getDescriptorFile();
+      if (descriptor == null) continue;
+      VirtualFile file = VFileSystem.getFile(descriptor.getParent());
 
-        if (moduleBasedir.getPath().equals(projectBasedir.getPath())){
+      if (file == null) continue;
+
+      AbstractVcs vcs = myManager.findVersioningVcs(file);
+      if (vcs == null) continue;
+
+      while (true) {
+        VirtualFile parent = file.getParent();
+        if (parent == null) {
           break;
         }
 
-        VirtualFile moduleVFile = VFileSystem.getFile(moduleFile);
-        VirtualFile moduleVBasedir = VFileSystem.getFile(moduleBasedir);
-
-        if (moduleVFile != null) {
-          AbstractVcs vcsFor = myManager.getVcsFor(moduleVFile);
-
-          if (vcsFor != null) {
-            map.put(moduleVBasedir, vcsFor.getName());
-          }
-        }
-      }
-    }
-
-    for (VirtualFile directory : map.keySet()) {
-      boolean hasParents = false;
-      for (VirtualFile directory2 : map.keySet()) {
-        if (isParent(directory2, directory)) {
-          hasParents = true;
+        if (vcs.isVersionedDirectory(parent)) {
+          file = parent;
+        } else {
           break;
         }
       }
+      Set<VirtualFile> files = vcss.get(vcs);
+      if (files == null) {
+        files = new HashSet<VirtualFile>();
+        vcss.put(vcs, files);
+      }
+      files.add(file);
+    }
 
-      if (!hasParents) {
-        vcsMappings.add(new VcsDirectoryMapping(directory.getPath(), map.get(directory)));
+    for (AbstractVcs vcs : vcss.keySet()) {
+      Set<VirtualFile> files = vcss.get(vcs);
+      Collection<String> roots = getRoots(files);
+      for (String path : roots) {
+        vcsMappings.add(new VcsDirectoryMapping(path, vcs.getName()));
       }
     }
 
     myManager.setDirectoryMappings(vcsMappings);
+
+    long timeEnd = System.currentTimeMillis();
+    System.out.println("time " + (timeEnd - timeStart));
   }
 
-  public static boolean isParent(VirtualFile parent, VirtualFile child){
-    if (!parent.isDirectory()){
+  private Collection<String> getRoots(Set<VirtualFile> files) {
+    Iterator<VirtualFile> it = files.iterator();
+
+    Set<VirtualFile> roots = new HashSet<VirtualFile>();
+
+    while (it.hasNext()) {
+      boolean matched = false;
+
+      VirtualFile file2 = it.next();
+
+      for (VirtualFile file1 : roots) {
+        VirtualFile container = getMaxContainingPath(file1, file2);
+        if (container != null) {
+          roots.remove(file1);
+          roots.add(container);
+          matched = true;
+          break;
+        }
+      }
+
+      if (!matched) {
+        roots.add(file2);
+      }
+    }
+
+    List<String> rootPaths = new LinkedList<String>();
+    for (VirtualFile f : roots) {
+      rootPaths.add(f.getPath());
+    }
+
+    return rootPaths;
+  }
+
+  @Nullable
+  public VirtualFile getMaxContainingPath(VirtualFile file1, VirtualFile file2) {
+    AbstractVcs vcs1 = myManager.findVersioningVcs(file1);
+    if ((vcs1 == null) || !vcs1.equals(myManager.findVersioningVcs(file2))) return null;
+
+    if (isParent(file1, file2)) return file1;
+    if (isParent(file2, file1)) return file2;
+
+    VirtualFile parent1 = file1.getParent();
+    VirtualFile parent2 = file2.getParent();
+
+    if ((parent1 == null) && (parent2 == null)) {
+      return null;
+    } else if (parent1 == null) {
+      return getMaxContainingPath(file1, parent2);
+    } else if (parent2 == null) {
+      return getMaxContainingPath(parent1, file2);
+    }
+
+    return getMaxContainingPath(parent1, parent2);
+  }
+
+  public static boolean isParent(VirtualFile parent, VirtualFile child) {
+    if (!parent.isDirectory()) {
       return false;
     }
 
-    if (parent.equals(child)) return false;
+    if (parent.getPath().equals(child.getPath())) return true;
 
-    for (VirtualFile f : parent.getChildren()){
-      if (isParent(f, child)) return true;
-    }
-
-    return false;
+    VirtualFile parentOfChild = child.getParent();
+    if (parentOfChild == null) return false;
+    return isParent(parent, parentOfChild);
   }
 
   public void disposeComponent() {

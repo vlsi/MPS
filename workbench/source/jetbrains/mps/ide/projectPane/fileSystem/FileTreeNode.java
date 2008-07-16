@@ -19,8 +19,8 @@ import com.intellij.ide.FileIconProvider;
 
 public class FileTreeNode extends AbstractFileTreeNode {
 
-  public FileTreeNode(IOperationContext operationContext, VcsFileStatusProvider provider, IFile file) {
-    super(operationContext, provider, file);
+  public FileTreeNode(Project project, VcsFileStatusProvider provider, VirtualFile file) {
+    super(provider, file);
   }
 
   @Override
@@ -36,11 +36,6 @@ public class FileTreeNode extends AbstractFileTreeNode {
   }
 
   private Icon getIcon() {
-    VirtualFile file = VFileSystem.getFile(myFile);
-    if (file != null) {
-      return file.getFileType().getIcon();
-    } else {
-      return FileIcons.FILE_ICON;
-    }
+    return myFile.getFileType().getIcon();
   }
 }

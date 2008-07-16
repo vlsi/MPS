@@ -58,7 +58,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   };
   private VirtualFileManagerListener myVirtualFileManagerListener;
 
-  protected FileViewProjectPane(Project project, final ProjectView projectView) {
+  protected FileViewProjectPane(final Project project, final ProjectView projectView) {
     super(project);
 
     myProject = project;
@@ -66,11 +66,16 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
 
     myTree = new MPSTree() {
       protected MPSTreeNode rebuild() {
+        long startTime = System.currentTimeMillis();
+        MPSTreeNode node;
         if (myProject != null && !myProject.isDisposed()) {
-          return new CompositeTreeNode(new ProjectOperationContext(getProject()));
+          node = new CompositeTreeNode(project, true);
         } else {
-          return new TextTreeNode("No Project");
+          node = new TextTreeNode("No Project");
         }
+        long stopTime = System.currentTimeMillis();
+        System.out.println("tree rebuild took " + (stopTime - startTime) / 1000 + " sec.");
+        return node;
       }
     };
 
@@ -148,7 +153,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
       }
     };
   }
-
+  
   private void openEditor() {
     TreePath selectionPath = getTree().getSelectionPath();
     if (selectionPath == null) return;
@@ -159,7 +164,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
       public void run() {
         myProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
         FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
-        editorManager.openFile(VFileSystem.getFile(fileTreeNode.getFile()), true);
+        editorManager.openFile(fileTreeNode.getFile(), true);
       }
     }, "navigate", "");
   }
@@ -259,7 +264,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
         Object lastPathComponent = tp.getLastPathComponent();
         if (lastPathComponent instanceof AbstractFileTreeNode) {
           AbstractFileTreeNode node = (AbstractFileTreeNode) lastPathComponent;
-          files.add(VFileSystem.getFile(node.getFile()));
+          files.add(node.getFile());
         }
       }
       return files.toArray(new VirtualFile[files.size()]);

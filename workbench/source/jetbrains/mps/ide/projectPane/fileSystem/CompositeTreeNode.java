@@ -10,6 +10,7 @@ import com.intellij.openapi.vcs.VcsDirectoryMapping;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.util.io.FileUtil;
 
 import java.util.Set;
 import java.util.LinkedHashSet;
@@ -17,32 +18,40 @@ import java.util.LinkedHashSet;
 public class CompositeTreeNode extends MPSTreeNode {
   private Project myProject;
 
-  public CompositeTreeNode(IOperationContext operationContext) {
-    super(operationContext);
-    myProject = operationContext.getProject();
+  public CompositeTreeNode(Project project, boolean showVCSRoots) {
+    super(null);
+    myProject = project;
 
     ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(myProject);
     Set<String> roots = new LinkedHashSet<String>();
     for (VcsDirectoryMapping m : manager.getDirectoryMappings()) {
       if (!m.getDirectory().equals("")) {
-        IFile folder = FileSystem.getFile(m.getDirectory());
-        String path = folder.getPath().replace("\\", "/");
+        VirtualFile folder = VFileSystem.getFile(m.getDirectory());
+        String path = FileUtil.toSystemIndependentName(folder.getPath());
         if (!roots.contains(path)) {
           roots.add(path);
-          add(new FolderTreeNode(operationContext, myProject.getComponent(VcsFileStatusProvider.class), folder));
+          add(new FolderTreeNode(project, myProject.getComponent(VcsFileStatusProvider.class), folder));
         }
       } else {
-        VirtualFile basedir = myProject.getBaseDir();
-        if (basedir != null) {
-          String path = basedir.getPath().replace("\\", "/");
-          if (!roots.contains(path)){
-          roots.add(path);
-          add(new FolderTreeNode(operationContext, myProject.getComponent(VcsFileStatusProvider.class), VFileSystem.toIFile(basedir)));
-        }
-        }
+        addBasedirChild(roots);
       }
     }
+    if (!roots.contains("")){
+      addBasedirChild(roots);
+    }
     updatePresentation();
+  }
+
+  private void addBasedirChild(Set<String> roots) {
+    VirtualFile basedir = myProject.getBaseDir();
+    if (basedir != null) {
+      String path = FileUtil.toSystemIndependentName(basedir.getPath());
+      if (!roots.contains(path)) {
+        roots.add(path);
+        roots.add("");
+        add(new FolderTreeNode(myProject, myProject.getComponent(VcsFileStatusProvider.class), basedir));
+      }
+    }
   }
 
   @Override
