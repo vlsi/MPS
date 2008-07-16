@@ -155,12 +155,6 @@ public class RulesManager {
           return (isWeak || !object.isWeak()) && object.isApplicable(node1, node2);
         }
       }));
-    result.addAll(
-      CollectionUtil.filter(myComparisonRules.getRules(node2, node1), new Condition<ComparisonRule_Runtime>() {
-        public boolean met(ComparisonRule_Runtime object) {
-          return (isWeak || !object.isWeak()) && object.isApplicable(node2, node1);
-        }
-      }));
     return result;
   }
 

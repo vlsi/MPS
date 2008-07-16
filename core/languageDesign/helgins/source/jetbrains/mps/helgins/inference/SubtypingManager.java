@@ -407,6 +407,12 @@ public class SubtypingManager {
         if (comparisonRule_runtime.areComparable(term1, term2)) return true;
       }
     }
+    comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(term2, term1, isWeak);
+    if (comparisonRule_runtimes != null) {
+      for (ComparisonRule_Runtime comparisonRule_runtime : comparisonRule_runtimes) {
+        if (comparisonRule_runtime.areComparable(term2, term1)) return true;
+      }
+    }
 
     return false;
   }
