@@ -2492,7 +2492,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public void performCut(DataContext dataContext) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          EditorUtil.executeCellAction(getSelectedCell(), EditorCellAction.CUT, getEditorContext());
+          getSelectedCell().executeAction(EditorCellAction.CUT);
         }
       });
     }
@@ -2501,7 +2501,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
           if (getEditorContext() == null) return false;
-          return EditorUtil.canExecuteCellAction(getSelectedCell(), EditorCellAction.CUT, getEditorContext());
+          return getSelectedCell().canExecuteAction(EditorCellAction.CUT);
         }
       });
     }
@@ -2511,7 +2511,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public void performCopy(DataContext dataContext) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          EditorUtil.executeCellAction(getSelectedCell(), EditorCellAction.COPY, getEditorContext());
+          getSelectedCell().executeAction(EditorCellAction.COPY);
         }
       });
     }
@@ -2520,7 +2520,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
           if (getEditorContext() == null) return false;
-          return EditorUtil.canExecuteCellAction(getSelectedCell(), EditorCellAction.COPY, getEditorContext());
+          return getSelectedCell().canExecuteAction(EditorCellAction.COPY);
         }
       });
     }
@@ -2530,7 +2530,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public void performPaste(DataContext dataContext) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          EditorUtil.executeCellAction(getSelectedCell(), EditorCellAction.PASTE, getEditorContext());
+          getSelectedCell().executeAction(EditorCellAction.PASTE);
         }
       });
     }
@@ -2539,7 +2539,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
           if (getEditorContext() == null) return false;
-          return EditorUtil.canExecuteCellAction(getSelectedCell(), EditorCellAction.PASTE, getEditorContext());
+          return getSelectedCell().canExecuteAction(EditorCellAction.PASTE);
         }
       });
     }

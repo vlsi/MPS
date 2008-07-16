@@ -146,7 +146,7 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
     if (EditorCellAction.INSERT.equals(actionType) ||
             EditorCellAction.INSERT_BEFORE.equals(actionType)) {
       cancelInsertMode(editorContext);
-      EditorUtil.executeAction(myListEditorCell_Collection.getParent(), actionType, editorContext);
+      myListEditorCell_Collection.getParent().executeAction(actionType);
     } else {
       finishInsertMode(editorContext);
       editor.processKeyPressed(keyEvent);
