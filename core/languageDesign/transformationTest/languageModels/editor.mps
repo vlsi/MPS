@@ -351,8 +351,11 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215604459549">
         <property name="text" value="&lt;" />
-        <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LastPositionAllowedStyleSheetItem" id="1215605008129" />
+        <link role="styleClass" targetNodeId="2v.1215087929380" resolveInfo="LeftParen" />
+        <link role="actionMap" targetNodeId="1215524000577" resolveInfo="Annotation_Actions" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1215713471201">
+          <property name="color" value="DARK_GREEN" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1215604465395">
         <property name="separatorText" value="," />
@@ -361,12 +364,18 @@
         <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215604492494">
           <property name="text" value="..." />
           <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
+          <link role="actionMap" targetNodeId="1215524000577" resolveInfo="Annotation_Actions" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleSheetItem" id="1215713948025" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleSheetItem" id="1215713939383" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedNodeCell" id="1215604473288" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215604480993">
         <property name="text" value="&gt;" />
-        <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
+        <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1215713516342">
+          <property name="color" value="DARK_GREEN" />
+        </node>
       </node>
     </node>
   </node>

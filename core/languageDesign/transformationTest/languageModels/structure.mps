@@ -73,6 +73,7 @@
       <link role="target" targetNodeId="1210673684636" resolveInfo="TestNodeAnnotation" />
     </node>
   </node>
+  <visible index="3" modelUID="jetbrains.mps.baseLanguage.unitTest.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1211896175875">
     <property name="name" value="NodesTest" />
     <property name="rootable" value="true" />
@@ -84,6 +85,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1211896369962">
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1216137539359">
+      <link role="intfc" targetNodeId="3v.1216134482493" resolveInfo="ITestMethod" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1211896210986">
       <property name="metaClass" value="aggregation" />
@@ -134,6 +138,9 @@
     <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1212572394344">
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1216137659422">
+      <link role="intfc" targetNodeId="3v.1216130694486" resolveInfo="ITestCase" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214846310980">

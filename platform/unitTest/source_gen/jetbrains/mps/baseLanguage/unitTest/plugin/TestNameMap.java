@@ -6,8 +6,8 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 
 public class TestNameMap <C, M> {
 
@@ -20,7 +20,7 @@ public class TestNameMap <C, M> {
   }
 
   public void put(SNode testCaseNode, C testCase) {
-    MapSequence.fromMap(this.classToTestCase).put(INamedConcept_Behavior.call_getFqName_1213877404258(testCaseNode), testCase);
+    MapSequence.fromMap(this.classToTestCase).put(ITestCase_Behavior.call_getClassName_1216136193905(testCaseNode), testCase);
   }
 
   public C get(String testCaseName) {
@@ -28,13 +28,13 @@ public class TestNameMap <C, M> {
   }
 
   public void put(SNode testCaseNode, SNode testMethodNode, M testMethod) {
-    String testCaseName = INamedConcept_Behavior.call_getFqName_1213877404258(testCaseNode);
+    String testCaseName = ITestCase_Behavior.call_getClassName_1216136193905(testCaseNode);
     Map<String, M> testMethods = MapSequence.fromMap(this.classToMethodToMethodTest).get(testCaseName);
     if (testMethods == null) {
       testMethods = MapSequence.fromMap(new HashMap<String, M>());
       MapSequence.fromMap(this.classToMethodToMethodTest).put(testCaseName, testMethods);
     }
-    MapSequence.fromMap(testMethods).put(SPropertyOperations.getString(testMethodNode, "name"), testMethod);
+    MapSequence.fromMap(testMethods).put(ITestMethod_Behavior.call_getTestName_1216136419751(testMethodNode), testMethod);
   }
 
   public M get(String testCaseName, String testMethodName) {

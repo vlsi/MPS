@@ -46,7 +46,6 @@
   <import index="5" modelUID="java.util@java_stub" version="-1" />
   <import index="8" modelUID="java.lang@java_stub" version="-1" />
   <import index="9" modelUID="jetbrains.mps.util@java_stub" version="-1" />
-  <import index="10" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
   <import index="18" modelUID="jetbrains.mps.ide.findusages.model@java_stub" version="-1" />
   <import index="22" modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
   <import index="23" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />

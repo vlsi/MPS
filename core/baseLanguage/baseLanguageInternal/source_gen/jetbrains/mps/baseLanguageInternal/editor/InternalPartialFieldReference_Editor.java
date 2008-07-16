@@ -248,7 +248,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
   public EditorCell create_fieldTypeRefNodeCell13692_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("fieldType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no fieldType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_fieldTypeRefNodeCell13692_0_internal(context, node, provider);
@@ -306,7 +306,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
   public EditorCell create_fieldNamePropertyCell13692_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("fieldName");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no fieldName>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_fieldNamePropertyCell13692_0_internal(context, node, provider);
@@ -335,7 +335,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
   public EditorCell create_instanceTypeRefNodeCell13692_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("instanceType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no instanceType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_instanceTypeRefNodeCell13692_0_internal(context, node, provider);

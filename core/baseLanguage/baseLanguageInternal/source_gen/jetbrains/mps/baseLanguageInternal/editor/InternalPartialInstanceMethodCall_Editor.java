@@ -239,7 +239,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
   public EditorCell create_methodNamePropertyCell5619_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("methodName");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no methodName>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_methodNamePropertyCell5619_0_internal(context, node, provider);
@@ -268,7 +268,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
   public EditorCell create_returnTypeRefNodeCell5619_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("returnType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no returnType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_returnTypeRefNodeCell5619_0_internal(context, node, provider);

@@ -21,6 +21,9 @@
   <language namespace="jetbrains.mps.baseLanguage.classifiers">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   </language>
+  <language namespace="jetbrains.mps.baseLanguage.unitTest">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
@@ -3725,15 +3728,15 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208523436271">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208523436272">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1208523436274" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208523436273">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216048760020">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216048770647">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1216048770648" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216048770649">
               <link role="baseMethodDeclaration" targetNodeId="1208519619838" resolveInfo="getClasspath" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208523438775">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216048770650">
                 <link role="variableDeclaration" targetNodeId="1208523431032" resolveInfo="module" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1209487825105">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1216048770651">
                 <property name="value" value="true" />
               </node>
             </node>

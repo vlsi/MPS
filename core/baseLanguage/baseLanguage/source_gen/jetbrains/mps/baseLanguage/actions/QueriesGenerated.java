@@ -1949,34 +1949,30 @@ __switch__:
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_IfStatement_1215434760427(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", operationContext.getScope());
-      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", operationContext.getScope());
+      Calculable calculable = new Calculable() {
 
-        public SNode doSubstitute(String pattern) {
-          SLinkOperations.setNewChild(_context.getSourceNode(), "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
-          return SLinkOperations.getTarget(_context.getSourceNode(), "ifFalseStatement", true);
+        public Object calculate() {
+          return ListSequence.<String>fromArray("else{", "else {");
         }
 
-        public String getMatchingText(String pattern) {
-          return "else {";
-        }
+      };
+      Iterable<String> parameterObjects = (Iterable<String>)calculable.calculate();
+      assert parameterObjects != null;
+      for(final String item : parameterObjects) {
+        result.add(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
 
-      });
-    }
-    {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", operationContext.getScope());
-      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+          public SNode doSubstitute(String pattern) {
+            SLinkOperations.setNewChild(_context.getSourceNode(), "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
+            return SLinkOperations.getTarget(_context.getSourceNode(), "ifFalseStatement", true);
+          }
 
-        public SNode doSubstitute(String pattern) {
-          SLinkOperations.setNewChild(_context.getSourceNode(), "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
-          return SLinkOperations.getTarget(_context.getSourceNode(), "ifFalseStatement", true);
-        }
+          public SNode getOutputConcept() {
+            return concept.getNode();
+          }
 
-        public String getMatchingText(String pattern) {
-          return "else{";
-        }
-
-      });
+        });
+      }
     }
     return result;
   }
@@ -1984,34 +1980,34 @@ __switch__:
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_IfStatement_1215436522417(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", operationContext.getScope());
-      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", operationContext.getScope());
+      Calculable calculable = new Calculable() {
 
-        public SNode doSubstitute(String pattern) {
-          SNode elseIf = SLinkOperations.addNewChild(_context.getSourceNode(), "elsifClauses", "jetbrains.mps.baseLanguage.structure.ElsifClause");
-          return elseIf;
+        public Object calculate() {
+          return ListSequence.<String>fromArray("else if", "elseif");
         }
 
-        public String getMatchingText(String pattern) {
-          return "else if";
-        }
+      };
+      Iterable<String> parameterObjects = (Iterable<String>)calculable.calculate();
+      assert parameterObjects != null;
+      for(final String item : parameterObjects) {
+        result.add(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
 
-      });
-    }
-    {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", operationContext.getScope());
-      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+          public SNode doSubstitute(String pattern) {
+            SNode elseIf = SLinkOperations.addNewChild(_context.getSourceNode(), "elsifClauses", "jetbrains.mps.baseLanguage.structure.ElsifClause");
+            return elseIf;
+          }
 
-        public SNode doSubstitute(String pattern) {
-          SNode elseIf = SLinkOperations.addNewChild(_context.getSourceNode(), "elsifClauses", "jetbrains.mps.baseLanguage.structure.ElsifClause");
-          return elseIf;
-        }
+          public SNode getOutputConcept() {
+            return concept.getNode();
+          }
 
-        public String getMatchingText(String pattern) {
-          return "elseif";
-        }
+          public String getMatchingText(String text) {
+            return (item);
+          }
 
-      });
+        });
+      }
     }
     return result;
   }

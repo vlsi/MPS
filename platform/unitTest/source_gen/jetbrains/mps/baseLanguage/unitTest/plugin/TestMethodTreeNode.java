@@ -5,11 +5,10 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.closures.runtime.Wrappers;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class TestMethodTreeNode extends MPSTreeNode {
@@ -26,7 +25,7 @@ public class TestMethodTreeNode extends MPSTreeNode {
   public void updatePresentation() {
     this.setIcon(this.state.getIcon());
     this.setNodeIdentifier(this.testMethod.getId());
-    this.setText(SPropertyOperations.getString(this.testMethod, "name"));
+    this.setText(ITestMethod_Behavior.call_getTestName_1216136419751(this.testMethod));
   }
 
   public TestState getState() {
@@ -50,9 +49,9 @@ public class TestMethodTreeNode extends MPSTreeNode {
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        SNode classConcept = SNodeOperations.getAncestor(TestMethodTreeNode.this.testMethod, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-        if (classConcept != null) {
-          className.value = INamedConcept_Behavior.call_getFqName_1213877404258(classConcept);
+        SNode testCase = ITestMethod_Behavior.call_getTestCase_1216134500045(TestMethodTreeNode.this.testMethod);
+        if (testCase != null) {
+          className.value = ITestCase_Behavior.call_getClassName_1216136193905(testCase);
         }
       }
 
@@ -65,7 +64,7 @@ public class TestMethodTreeNode extends MPSTreeNode {
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        methodName.value = SPropertyOperations.getString(TestMethodTreeNode.this.testMethod, "name");
+        methodName.value = ITestMethod_Behavior.call_getTestName_1216136419751(TestMethodTreeNode.this.testMethod);
       }
 
     });

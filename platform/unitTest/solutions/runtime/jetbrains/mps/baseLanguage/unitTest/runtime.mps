@@ -326,8 +326,10 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208537978987">
               <link role="classifier" targetNodeId="1.~TestResult" resolveInfo="TestResult" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208537984472">
-              <link role="baseMethodDeclaration" targetNodeId="1.~TestResult.&lt;init&gt;()" resolveInfo="TestResult" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216138766162">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216138766164">
+                <link role="baseMethodDeclaration" targetNodeId="1.~TestResult.&lt;init&gt;()" resolveInfo="TestResult" />
+              </node>
             </node>
           </node>
         </node>
@@ -337,11 +339,13 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208869878373">
               <link role="classifier" targetNodeId="1208869019719" resolveInfo="CommandOutputStream" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208869887199">
-              <link role="baseMethodDeclaration" targetNodeId="1208869162850" resolveInfo="CommandOutputStream" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1208869891533">
-                <link role="classifier" targetNodeId="3.~System" resolveInfo="System" />
-                <link role="variableDeclaration" targetNodeId="3.~System.out" resolveInfo="out" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216138771399">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216138771432">
+                <link role="baseMethodDeclaration" targetNodeId="1208869162850" resolveInfo="CommandOutputStream" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1208869891533">
+                  <link role="classifier" targetNodeId="3.~System" resolveInfo="System" />
+                  <link role="variableDeclaration" targetNodeId="3.~System.out" resolveInfo="out" />
+                </node>
               </node>
             </node>
           </node>
@@ -352,11 +356,13 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208869898228">
               <link role="classifier" targetNodeId="1208869019719" resolveInfo="CommandOutputStream" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208869902036">
-              <link role="baseMethodDeclaration" targetNodeId="1208869162850" resolveInfo="CommandOutputStream" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1208869904927">
-                <link role="classifier" targetNodeId="3.~System" resolveInfo="System" />
-                <link role="variableDeclaration" targetNodeId="3.~System.err" resolveInfo="err" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216138776074">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216138776076">
+                <link role="baseMethodDeclaration" targetNodeId="1208869162850" resolveInfo="CommandOutputStream" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1208869904927">
+                  <link role="classifier" targetNodeId="3.~System" resolveInfo="System" />
+                  <link role="variableDeclaration" targetNodeId="3.~System.err" resolveInfo="err" />
+                </node>
               </node>
             </node>
           </node>
@@ -365,10 +371,12 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1208869922294">
             <link role="baseMethodDeclaration" targetNodeId="3.~System.setOut(java.io.PrintStream):void" resolveInfo="setOut" />
             <link role="classConcept" targetNodeId="3.~System" resolveInfo="System" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208869924181">
-              <link role="baseMethodDeclaration" targetNodeId="4.~PrintStream.&lt;init&gt;(java.io.OutputStream)" resolveInfo="PrintStream" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208869936891">
-                <link role="variableDeclaration" targetNodeId="1208869878372" resolveInfo="out" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216138780234">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216138780251">
+                <link role="baseMethodDeclaration" targetNodeId="4.~PrintStream.&lt;init&gt;(java.io.OutputStream)" resolveInfo="PrintStream" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208869936891">
+                  <link role="variableDeclaration" targetNodeId="1208869878372" resolveInfo="out" />
+                </node>
               </node>
             </node>
           </node>
@@ -377,10 +385,12 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1208869942642">
             <link role="baseMethodDeclaration" targetNodeId="3.~System.setErr(java.io.PrintStream):void" resolveInfo="setErr" />
             <link role="classConcept" targetNodeId="3.~System" resolveInfo="System" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208869945144">
-              <link role="baseMethodDeclaration" targetNodeId="4.~PrintStream.&lt;init&gt;(java.io.OutputStream)" resolveInfo="PrintStream" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208869953469">
-                <link role="variableDeclaration" targetNodeId="1208869898227" resolveInfo="err" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216138783081">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216138783083">
+                <link role="baseMethodDeclaration" targetNodeId="4.~PrintStream.&lt;init&gt;(java.io.OutputStream)" resolveInfo="PrintStream" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208869953469">
+                  <link role="variableDeclaration" targetNodeId="1208869898227" resolveInfo="err" />
+                </node>
               </node>
             </node>
           </node>
@@ -392,13 +402,15 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208538868326">
               <link role="baseMethodDeclaration" targetNodeId="1.~TestResult.addListener(junit.framework.TestListener):void" resolveInfo="addListener" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208785920908">
-                <link role="baseMethodDeclaration" targetNodeId="1208538852141" resolveInfo="MyTestListener" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208869912664">
-                  <link role="variableDeclaration" targetNodeId="1208869878372" resolveInfo="out" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208869913998">
-                  <link role="variableDeclaration" targetNodeId="1208869898227" resolveInfo="err" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216138785646">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216138785648">
+                  <link role="baseMethodDeclaration" targetNodeId="1208538852141" resolveInfo="MyTestListener" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208869912664">
+                    <link role="variableDeclaration" targetNodeId="1208869878372" resolveInfo="out" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208869913998">
+                    <link role="variableDeclaration" targetNodeId="1208869898227" resolveInfo="err" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -514,8 +526,10 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208533656065">
               <link role="classifier" targetNodeId="1208532148294" resolveInfo="TestRunner" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208533681475">
-              <link role="baseMethodDeclaration" targetNodeId="1208533676013" resolveInfo="TestRunner" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216142229177">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216142229179">
+                <link role="baseMethodDeclaration" targetNodeId="1208533676013" resolveInfo="TestRunner" />
+              </node>
             </node>
           </node>
         </node>
@@ -841,13 +855,15 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208863110062">
               <link role="classifier" targetNodeId="1208860584607" resolveInfo="Token" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208863113850">
-              <link role="baseMethodDeclaration" targetNodeId="1208860684897" resolveInfo="Token" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208863125978">
-                <link role="variableDeclaration" targetNodeId="1208785707932" resolveInfo="token" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208863128212">
-                <link role="variableDeclaration" targetNodeId="1208858784239" resolveInfo="test" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216138791494">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216138791496">
+                <link role="baseMethodDeclaration" targetNodeId="1208860684897" resolveInfo="TestEvent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208863125978">
+                  <link role="variableDeclaration" targetNodeId="1208785707932" resolveInfo="token" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208863128212">
+                  <link role="variableDeclaration" targetNodeId="1208858784239" resolveInfo="test" />
+                </node>
               </node>
             </node>
           </node>

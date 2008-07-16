@@ -5,11 +5,9 @@ package jetbrains.mps.baseLanguage.unitTest.runtime;
 import java.util.List;
 import junit.framework.Test;
 import junit.framework.TestCase;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestEvent {
   public static String START_TEST_PREFIX = "<START_TEST>";
@@ -41,18 +39,10 @@ public class TestEvent {
 
   public static String isTestEvent(String messageString) {
     String token = null;
-    {
-      ICursor<String> _zCursor1 = CursorFactory.createCursor(TestEvent.ALL_TOKENS);
-      try {
-        while(_zCursor1.moveToNext()) {
-          String expectedToken = _zCursor1.getCurrent();
-          if (messageString.startsWith(expectedToken)) {
-            token = expectedToken;
-            break;
-          }
-        }
-      } finally {
-        _zCursor1.release();
+    for(String expectedToken : ALL_TOKENS) {
+      if (messageString.startsWith(expectedToken)) {
+        token = expectedToken;
+        break;
       }
     }
     return token;
@@ -60,9 +50,9 @@ public class TestEvent {
 
   public static TestEvent parse(String messageString) {
     TestEvent testEvent = null;
-    String expectedToken = TestEvent.isTestEvent(messageString);
+    String expectedToken = isTestEvent(messageString);
     if (expectedToken != null) {
-      testEvent = TestEvent.parse(expectedToken, messageString);
+      testEvent = parse(expectedToken, messageString);
     }
     return testEvent;
   }
@@ -121,7 +111,7 @@ public class TestEvent {
   }
 
   static {
-    TestEvent.ALL_TOKENS = ListOperations.<String>createList(TestEvent.START_TEST_PREFIX, TestEvent.END_TEST_PREFIX, TestEvent.ERROR_TEST_PREFIX, TestEvent.ERROR_TEST_SUFFIX, TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX);
+    ALL_TOKENS = ListSequence.<String>fromArray(START_TEST_PREFIX, END_TEST_PREFIX, ERROR_TEST_PREFIX, ERROR_TEST_SUFFIX, FAILURE_TEST_PREFIX, FAILURE_TEST_SUFFIX);
   }
 
 }

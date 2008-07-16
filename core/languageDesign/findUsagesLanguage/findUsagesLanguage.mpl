@@ -21,7 +21,7 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\lib\jdom\jdom-1.0.jar" />
+    <entry path="${mps_home}\lib\idea-platform\jdom.jar" />
     <entry path="${language_descriptor}\classes" />
   </classPath>
   <languageRuntimeClassPath />

@@ -55,8 +55,15 @@
   </classPath>
   <languageRuntimeClassPath>
     <entry path="${language_descriptor}\classes" />
+    <entry path="${mps_home}\core\kernel\classes" />
+    <entry path="${mps_home}\lib\log4j\log4j-1.2.14.jar" />
+    <entry path="${mps_home}\MPSPlugin\MPSSupport\classes" />
   </languageRuntimeClassPath>
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">JDK</dependency>
+    <dependency reexport="false">MPS.Classpath</dependency>
+  </dependencies>
   <runtime>
     <dependency reexport="false">jetbrains.mps.transformationTest.runtime</dependency>
   </runtime>

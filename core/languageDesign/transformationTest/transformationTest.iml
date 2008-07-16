@@ -23,6 +23,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="baseLanguage" />
+    <orderEntry type="module" module-name="unitTest" />
     <orderEntryProperties />
   </component>
 </module>

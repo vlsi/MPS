@@ -8,9 +8,12 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BTestCase extends ClassConcept {
+public class BTestCase extends ClassConcept implements ITestCase {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase";
   public static String TEST_CASE_NAME = "testCaseName";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String TEST_METHOD_LIST = "testMethodList";
 
   public BTestCase(SNode node) {
@@ -32,6 +35,30 @@ public class BTestCase extends ClassConcept {
 
   public void setTestCaseName(String value) {
     this.setProperty(BTestCase.TEST_CASE_NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(BTestCase.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(BTestCase.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(BTestCase.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(BTestCase.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(BTestCase.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(BTestCase.VIRTUAL_PACKAGE, value);
   }
 
   public TestMethodList getTestMethodList() {

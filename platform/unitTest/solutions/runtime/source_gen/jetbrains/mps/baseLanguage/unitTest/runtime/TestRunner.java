@@ -5,13 +5,11 @@ package jetbrains.mps.baseLanguage.unitTest.runtime;
 import junit.runner.BaseTestRunner;
 import java.util.List;
 import junit.framework.Test;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import junit.framework.TestResult;
 import java.io.PrintStream;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
 public class TestRunner extends BaseTestRunner {
 
@@ -30,12 +28,12 @@ public class TestRunner extends BaseTestRunner {
 
 
   public void start(String[] argv) throws Throwable {
-    List<Test> tests = ListOperations.<Test>createList();
+    List<Test> tests = ListSequence.<Test>fromArray();
     for(int i = 0 ; i < argv.length ; i = i + 1) {
       if ("-c".equals(argv[i])) {
         i = i + 1;
         Test test = this.getTest(argv[i]);
-        ListOperations.addElement(tests, test);
+        ListSequence.fromList(tests).addElement(test);
       } else if ("-m".equals(argv[i])) {
         i = i + 1;
         String s = argv[i];
@@ -44,7 +42,7 @@ public class TestRunner extends BaseTestRunner {
         String method = s.substring(index + 1);
         Class<? extends TestCase> testClass = this.loadSuiteClass(testCase);
         Test test = TestSuite.createTest(testClass, method);
-        ListOperations.addElement(tests, test);
+        ListSequence.fromList(tests).addElement(test);
       }
     }
     TestResult testResult = new TestResult();
@@ -53,16 +51,8 @@ public class TestRunner extends BaseTestRunner {
     System.setOut(new PrintStream(out));
     System.setErr(new PrintStream(err));
     testResult.addListener(new MyTestListener(out, err));
-    {
-      ICursor<Test> _zCursor = CursorFactory.createCursor(tests);
-      try {
-        while(_zCursor.moveToNext()) {
-          Test test = _zCursor.getCurrent();
-          test.run(testResult);
-        }
-      } finally {
-        _zCursor.release();
-      }
+    for(Test test : tests) {
+      test.run(testResult);
     }
   }
 
