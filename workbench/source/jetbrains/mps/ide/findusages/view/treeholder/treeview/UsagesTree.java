@@ -39,7 +39,6 @@ import java.util.*;
 public abstract class UsagesTree extends MPSTree {
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
   private static final String COMMAND_OPEN_NODE_IN_TREE = "open_node_in_tree";
-  private static final String COMMAND_TOGGLE = "toggle";
   private static final String COMMAND_INCLUDE = "include";
   private static final String COMMAND_EXCLUDE = "exclude";
 
@@ -57,6 +56,7 @@ public abstract class UsagesTree extends MPSTree {
     myCountersNeeded = false;
     myAdditionalInfoNeeded = false;
 
+    myResultPathProvider.add(PathItemRole.ROLE_MAIN_RESULTS);
     myResultPathProvider.add(PathItemRole.ROLE_TARGET_NODE);
 
     setRootVisible(false);

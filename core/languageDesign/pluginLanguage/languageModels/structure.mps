@@ -2100,5 +2100,25 @@
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216225441716">
+    <property name="name" value="NoPlugin"/>
+    <property name="rootable" value="true"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216225520214">
+      <property name="value" value="No Plugins"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1216227663668">
+      <property name="name" value="suppressApplicationPlugin"/>
+      <link role="dataType" targetNodeId="6.1082983657063" resolveInfo="boolean"/>
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1216227749011">
+      <property name="name" value="suppressProjectPlugin"/>
+      <link role="dataType" targetNodeId="6.1082983657063" resolveInfo="boolean"/>
+    </node>
+  </node>
 </model>
 

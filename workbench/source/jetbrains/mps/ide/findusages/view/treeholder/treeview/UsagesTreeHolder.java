@@ -89,9 +89,9 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
       try {
         nodeRepresentator = (INodeRepresentator) myNodeRepresentatorClass.newInstance();
       } catch (InstantiationException e) {
-        e.printStackTrace();
+        LOG.error(e);
       } catch (IllegalAccessException e) {
-        e.printStackTrace();
+        LOG.error(e);
       }
     }
     myContents.setContents(contents, nodeRepresentator);
