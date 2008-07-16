@@ -256,6 +256,14 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216200847542">
               <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216214775562">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216214775563">
+                <link role="baseMethodDeclaration" targetNodeId="1.~String.&lt;init&gt;(java.lang.String)" resolveInfo="String" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216214785752">
+                  <property name="value" value="sdsd" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216200852152">

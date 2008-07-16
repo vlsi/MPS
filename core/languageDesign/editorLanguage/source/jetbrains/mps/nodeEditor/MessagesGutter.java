@@ -16,6 +16,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.*;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @author Kostik
@@ -23,7 +24,7 @@ import java.util.List;
 public class MessagesGutter extends JPanel {
   private AbstractEditorComponent myEditorComponent;
   private JLabel myErrosLabel = new JLabel(Icons.OK);
-  private List<IEditorMessage> myMessages = new ArrayList<IEditorMessage>();
+  private List<IEditorMessage> myMessages = new CopyOnWriteArrayList<IEditorMessage>();
   private Map<IEditorMessage, IEditorMessageOwner> myOwners = new HashMap<IEditorMessage, IEditorMessageOwner>();
   private boolean myStatusIsDirty = false;
   private Set<IEditorMessage> myMessagesToRemove = new HashSet<IEditorMessage>();
