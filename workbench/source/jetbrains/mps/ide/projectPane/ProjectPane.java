@@ -10,6 +10,8 @@ import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -49,6 +51,7 @@ import jetbrains.mps.workbench.actions.nodes.CutNodeAction;
 import jetbrains.mps.workbench.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -239,14 +242,22 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
   public SelectInTarget createSelectInTarget() {
     return new SelectInTarget() {
+      public SNode myNode;
+
       public boolean canSelect(SelectInContext context) {
+        MPSNodeVirtualFile file = (MPSNodeVirtualFile) context.getVirtualFile();
+        FileEditor[] editors = FileEditorManager.getInstance(myProject).getEditors(file);
+        assert editors.length != 0 : "editors for node not found";
+        FileEditor editor = editors[0];
+        if (!(editor instanceof MPSFileNodeEditor)) return false;
+        myNode = ((MPSFileNodeEditor) editor).getNodeEditor().getCurrentEditorComponent().getEditedNode();
         return true;
       }
 
       public void selectIn(final SelectInContext context, boolean requestFocus) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            selectNode(((MPSNodeVirtualFile) context.getVirtualFile()).getNode());
+            selectNode(myNode);
             getComponent().requestFocus();
           }
         });
