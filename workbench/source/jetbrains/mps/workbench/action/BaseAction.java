@@ -15,7 +15,7 @@ public abstract class BaseAction extends AnAction {
   public BaseAction() {
     this(null, null, null);
   }
-
+  
   public BaseAction(String text) {
     this(text, null, null);
   }
