@@ -231,7 +231,6 @@ public class EquationManager {
     IErrorReporter errorReporter =
       new EquationErrorReporter(this, "type ", subtypeRepresentator,
         " is not a" + strongString + " subtype of ", supertypeRepresentator, "", equationInfo.getRuleModel(), equationInfo.getRuleId());
-    myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, equationInfo, isWeak);
     myTypeChecker.reportTypeError(equationInfo.getNodeWithError(), errorReporter);
 
     //4debug

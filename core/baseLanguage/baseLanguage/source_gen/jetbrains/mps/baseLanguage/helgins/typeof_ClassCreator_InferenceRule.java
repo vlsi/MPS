@@ -5,8 +5,9 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
@@ -21,11 +22,21 @@ public class typeof_ClassCreator_InferenceRule implements InferenceRule_Runtime 
     if (SLinkOperations.getTarget(creator, "baseMethodDeclaration", false) == null) {
       return;
     }
+    final SNode methodClassifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(creator, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (!(SLinkOperations.getCount(creator, "actualArgument") == SLinkOperations.getCount(SLinkOperations.getTarget(creator, "baseMethodDeclaration", false), "parameter"))) {
-      TypeChecker.getInstance().reportTypeError(creator, "wrong number of arguments", "jetbrains.mps.baseLanguage.helgins", "1212781605955");
+      {
+        BaseIntentionProvider intentionProvider = null;
+        intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins@5_0.ChooseAppropriateConstructorDeclaration_Intention", true);
+        intentionProvider.putArgument("classConcept", methodClassifier);
+        intentionProvider.putArgument("constructorCall", creator);
+        TypeChecker.getInstance().reportTypeError(creator, "wrong number of arguments", "jetbrains.mps.baseLanguage.helgins@5_0", "1216203742574", intentionProvider);
+      }
     }
     if (!(SLinkOperations.getCount(creator, "typeParameter") == 0 || SLinkOperations.getCount(creator, "typeParameter") == SLinkOperations.getCount(SNodeOperations.getAncestor(SLinkOperations.getTarget(creator, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "typeVariableDeclaration"))) {
-      TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "jetbrains.mps.baseLanguage.helgins", "1212781605971");
+      {
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "jetbrains.mps.baseLanguage.helgins@5_0", "1216203742594", intentionProvider);
+      }
     }
     for(SNode parameter : SLinkOperations.getTargets(creator, "typeParameter", true)) {
       if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(new QuotationClass_97().createNode(), "descriptor", false), false, false)))) {
@@ -33,7 +44,6 @@ public class typeof_ClassCreator_InferenceRule implements InferenceRule_Runtime 
       }
     }
     // ---
-    final SNode methodClassifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(creator, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     SNode constructedType = new QuotationClass_98().createNode(SLinkOperations.getTargets(creator, "typeParameter", true), methodClassifier);
     {
       SNode _nodeToCheck_1029348928467 = creator;

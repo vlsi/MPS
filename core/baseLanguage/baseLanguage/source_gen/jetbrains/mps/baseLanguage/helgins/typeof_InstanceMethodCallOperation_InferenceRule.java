@@ -27,10 +27,10 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
     if (!(SLinkOperations.getCount(imco, "actualArgument") == SLinkOperations.getCount(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "parameter"))) {
       {
         BaseIntentionProvider intentionProvider = null;
-        intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins@5_0.ChooseAppropriateInstanceMethodDeclaration_Intention", true);
+        intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins@5_0.ChooseAppropriateMethodDeclaration_Intention", true);
         intentionProvider.putArgument("classifier", methodClassifier);
         intentionProvider.putArgument("methodCall", imco);
-        TypeChecker.getInstance().reportTypeError(imco, "wrong number of parameters", "jetbrains.mps.baseLanguage.helgins@5_0", "1216198998514", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(imco, "wrong number of parameters", "jetbrains.mps.baseLanguage.helgins@5_0", "1216203741253", intentionProvider);
       }
     }
     // ---
