@@ -295,6 +295,11 @@
       <property name="value" value="update"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224511644">
+      <property name="value" value="update"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203082903663">
     <property name="name" value="ConceptFunctionParameter_ActionContext"/>
@@ -341,6 +346,11 @@
           id="1215038387075">
       <property name="value" value="execute"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224520677">
+      <property name="value" value="execute"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203087890642">
@@ -529,6 +539,11 @@
       <property name="value" value="create"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224937329">
+      <property name="value" value="create"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203851983563">
     <property name="package" value="EditorTab.Methods"/>
@@ -678,8 +693,13 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1215038387071">
-      <property name="value" value="getBaseNode"/>
+      <property name="value" value="base node"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224945659">
+      <property name="value" value="base node"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204039194827">
@@ -955,6 +975,11 @@
       <property name="value" value="isApplicable"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216223827044">
+      <property name="value" value="isApplicable"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1205870734285">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
@@ -1055,6 +1080,11 @@
       <property name="value" value="init"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224971568">
+      <property name="value" value="init"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1206110174875">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
@@ -1086,6 +1116,11 @@
           id="1206110151196">
       <property name="value" value="dispose"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224978976">
+      <property name="value" value="dispose"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206111617316">
@@ -1120,6 +1155,11 @@
           id="1207145408195">
       <property name="value" value="build"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224797182">
+      <property name="value" value="build"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1207145440735">
@@ -1227,8 +1267,13 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1207489456633">
-      <property name="value" value="doUpdate"/>
+      <property name="value" value="update"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224557195">
+      <property name="value" value="update"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1207489456635">
@@ -1402,6 +1447,11 @@
       <property name="value" value="on models generated"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224897448">
+      <property name="value" value="on models generated"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210093102728">
     <property name="package" value="GenerationListener"/>
@@ -1464,6 +1514,11 @@
       <property name="value" value="on files generated"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224905669">
+      <property name="value" value="on files generated"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210094300689">
     <property name="package" value="GenerationListener"/>
@@ -1484,6 +1539,11 @@
           id="1215038387068">
       <property name="value" value="before generation"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224782196">
+      <property name="value" value="before generation"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210094339163">
@@ -1649,6 +1709,11 @@
       <property name="value" value="before write"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224885681">
+      <property name="value" value="before write"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210676879526">
     <property name="package" value="Preference"/>
@@ -1669,6 +1734,11 @@
           id="1215038387042">
       <property name="value" value="after read"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224878772">
+      <property name="value" value="after read"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210684385183">
@@ -1843,6 +1913,11 @@
       <property name="value" value="after generation"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224923702">
+      <property name="value" value="after generation"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1213888653896">
     <property name="package" value="Tool.Methods"/>
@@ -1859,6 +1934,11 @@
       <property name="value" value="init"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224853942">
+      <property name="value" value="init"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1213888677711">
     <property name="package" value="Tool.Methods"/>
@@ -1874,6 +1954,11 @@
           id="1215038387072">
       <property name="value" value="dispose"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224838907">
+      <property name="value" value="dispose"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1213888797251">
@@ -1918,6 +2003,11 @@
       <property name="value" value="getComponent"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224846815">
+      <property name="value" value="getComponent"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215278261851">
     <property name="package" value="Custom.ApplicationPlugin"/>
@@ -1927,6 +2017,11 @@
           id="1215278261852">
       <property name="value" value="init"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224765334">
+      <property name="value" value="init"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1215278261853">
@@ -1947,6 +2042,11 @@
           id="1215278396622">
       <property name="value" value="dispose"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1216224755239">
+      <property name="value" value="dispose"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215279025855">

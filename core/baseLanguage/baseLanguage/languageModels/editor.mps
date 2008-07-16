@@ -16867,41 +16867,27 @@
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement"
                             id="1216222672966">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
-                              id="1216222686868">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression"
-                                id="1216222674140">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                                  id="1216222672967">
-                              <link role="variableDeclaration" targetNodeId="1214568089977" resolveInfo="result"/>
-                            </node>
-                            <node role="operation"
-                                  type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
-                                  id="1216222676612">
-                              <link role="baseMethodDeclaration"
-                                    targetNodeId="24.~StringBuilder.append(java.lang.Object):java.lang.StringBuilder"
-                                    resolveInfo="append"/>
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression"
-                                    id="1216222681895">
-                                <node role="operand"
-                                      type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node"
-                                      id="1216222680566"/>
-                                <node role="operation"
-                                      type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess"
-                                      id="1216222683914">
-                                  <link role="conceptProperty" targetNodeId="17.1216222465038"
-                                        resolveInfo="conceptFunctionName"/>
-                                </node>
-                              </node>
-                            </node>
+                              id="1216222674140">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                                id="1216222672967">
+                            <link role="variableDeclaration" targetNodeId="1214568089977" resolveInfo="result"/>
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
-                                id="1216222689621">
+                                id="1216222676612">
                             <link role="baseMethodDeclaration"
-                                  targetNodeId="24.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder"
+                                  targetNodeId="24.~StringBuilder.append(java.lang.Object):java.lang.StringBuilder"
                                   resolveInfo="append"/>
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral"
-                                  id="1216222693341">
-                              <property name="value" value=" "/>
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                                  id="1216222681895">
+                              <node role="operand"
+                                    type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node"
+                                    id="1216222680566"/>
+                              <node role="operation"
+                                    type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess"
+                                    id="1216222683914">
+                                <link role="conceptProperty" targetNodeId="17.1216222465038"
+                                      resolveInfo="conceptFunctionName"/>
+                              </node>
                             </node>
                           </node>
                         </node>

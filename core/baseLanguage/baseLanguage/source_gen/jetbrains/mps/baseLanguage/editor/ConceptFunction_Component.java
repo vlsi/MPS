@@ -210,7 +210,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
         // if you need presentation like alias(...)->..
         // then use the ConceptFunctionAliased_Component
         if (SConceptPropertyOperations.getString(node, "conceptFunctionName") != null) {
-          result.append(SConceptPropertyOperations.getString(node, "conceptFunctionName")).append(" ");
+          result.append(SConceptPropertyOperations.getString(node, "conceptFunctionName"));
         }
         result.append("(");
         List<SNode> parameters = ConceptFunction_Behavior.call_getParameters_1213877374450(node);
