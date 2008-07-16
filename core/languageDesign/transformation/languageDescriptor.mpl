@@ -49,6 +49,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">MPS.Classpath</dependency>
+    <dependency reexport="false">JDK</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>

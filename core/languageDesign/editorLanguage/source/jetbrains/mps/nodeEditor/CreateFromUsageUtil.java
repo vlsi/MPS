@@ -1,5 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
+import javax.swing.JOptionPane;
+
 public final class CreateFromUsageUtil {
 
   private CreateFromUsageUtil() {
@@ -16,8 +18,10 @@ public final class CreateFromUsageUtil {
   }
 
   public static String getText(EditorContext editorContext) {
-    EditorCell_Label editorCell_Label = (EditorCell_Label) editorContext.getSelectedCell();
-    return editorCell_Label.getText();
+    EditorCell cell = editorContext.getSelectedCell();
+    if(cell instanceof EditorCell_Label) {
+      return ((EditorCell_Label)cell).getText();
+    }
+    return null;
   }
-
 }
