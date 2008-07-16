@@ -6,6 +6,7 @@ import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.actionSystem.DataConstants;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.FileStatusListener;
@@ -40,10 +41,12 @@ import java.awt.event.*;
 import java.util.LinkedList;
 import java.util.List;
 
-public class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
-  @NonNls
-  public static final String ID = "FileSystem";
-  public static final String TITLE = "File System";
+public abstract class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
+  
+  @Override
+  public void addToolbarActions(DefaultActionGroup actionGroup) {
+    super.addToolbarActions(actionGroup);
+  }
 
   private Project myProject;
   private ProjectView myProjectView;
@@ -66,15 +69,12 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
 
     myTree = new MPSTree() {
       protected MPSTreeNode rebuild() {
-        long startTime = System.currentTimeMillis();
         MPSTreeNode node;
         if (myProject != null && !myProject.isDisposed()) {
-          node = new CompositeTreeNode(project, true);
+          node = createRoot(project);
         } else {
           node = new TextTreeNode("No Project");
         }
-        long stopTime = System.currentTimeMillis();
-        System.out.println("tree rebuild took " + (stopTime - startTime) / 1000 + " sec.");
         return node;
       }
     };
@@ -153,7 +153,9 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
       }
     };
   }
-  
+
+  protected abstract MPSTreeNode createRoot(Project project);
+
   private void openEditor() {
     TreePath selectionPath = getTree().getSelectionPath();
     if (selectionPath == null) return;
@@ -204,17 +206,8 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     return holder.getMPSProject();
   }
 
-  public String getTitle() {
-    return TITLE;
-  }
-
   public Icon getIcon() {
     return Icons.CLOSED_FOLDER;
-  }
-
-  @NotNull
-  public String getId() {
-    return ID;
   }
 
   public JComponent createComponent() {
@@ -227,11 +220,6 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
 
   public void select(Object element, VirtualFile file, boolean requestFocus) {
 
-  }
-
-  // used for sorting tabs in the tabbed pane
-  public int getWeight() {
-    return 5;
   }
 
   public SelectInTarget createSelectInTarget() {

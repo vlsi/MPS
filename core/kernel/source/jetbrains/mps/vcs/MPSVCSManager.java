@@ -285,8 +285,6 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private void addDirectoryMappings() {
-    long timeStart = System.currentTimeMillis();
-
     List<VcsDirectoryMapping> vcsMappings = new ArrayList<VcsDirectoryMapping>();
 
     List<IModule> allModules = MPSModuleRepository.getInstance().getAllModules();
@@ -342,9 +340,6 @@ public class MPSVCSManager implements ProjectComponent {
     }
 
     myManager.setDirectoryMappings(vcsMappings);
-
-    long timeEnd = System.currentTimeMillis();
-    System.out.println("time " + (timeEnd - timeStart));
   }
 
   private Collection<String> getRoots(Set<VirtualFile> files) {

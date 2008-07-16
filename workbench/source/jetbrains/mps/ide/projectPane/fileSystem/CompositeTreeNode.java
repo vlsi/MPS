@@ -14,49 +14,46 @@ import com.intellij.openapi.util.io.FileUtil;
 
 import java.util.Set;
 import java.util.LinkedHashSet;
+import java.util.Collections;
 
 public class CompositeTreeNode extends MPSTreeNode {
   private Project myProject;
 
-  public CompositeTreeNode(Project project, boolean showVCSRoots) {
+  public CompositeTreeNode(Project project) {
     super(null);
     myProject = project;
 
     ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(myProject);
     Set<String> roots = new LinkedHashSet<String>();
-    for (VcsDirectoryMapping m : manager.getDirectoryMappings()) {
-      if (!m.getDirectory().equals("")) {
-        VirtualFile folder = VFileSystem.getFile(m.getDirectory());
-        String path = FileUtil.toSystemIndependentName(folder.getPath());
-        if (!roots.contains(path)) {
-          roots.add(path);
-          add(new FolderTreeNode(project, myProject.getComponent(VcsFileStatusProvider.class), folder));
-        }
-      } else {
-        addBasedirChild(roots);
-      }
-    }
-    if (!roots.contains("")){
-      addBasedirChild(roots);
-    }
-    updatePresentation();
-  }
 
-  private void addBasedirChild(Set<String> roots) {
-    VirtualFile basedir = myProject.getBaseDir();
-    if (basedir != null) {
-      String path = FileUtil.toSystemIndependentName(basedir.getPath());
-      if (!roots.contains(path)) {
-        roots.add(path);
-        roots.add("");
-        add(new FolderTreeNode(myProject, myProject.getComponent(VcsFileStatusProvider.class), basedir));
+//      collecting roots
+    for (VcsDirectoryMapping m : manager.getDirectoryMappings()) {
+      String dir = m.getDirectory();
+      if (dir.equals("")) {
+        VirtualFile baseDir = myProject.getBaseDir();
+        if (baseDir != null) {
+          dir = baseDir.getPath();
+        } else {
+          continue;
+        }
+      }
+      dir = FileUtil.toSystemIndependentName(dir);
+      if (!roots.contains(dir)) {
+        roots.add(dir);
       }
     }
+
+//      adding roots
+    for (String dir : roots) {
+      add(new FolderTreeNode(project, myProject.getComponent(VcsFileStatusProvider.class), VFileSystem.getFile(dir)));
+    }
+
+    updatePresentation();
   }
 
   @Override
   protected void updatePresentation() {
-    setText(myProject.getName());
+    setText("VCS Roots");
     super.updatePresentation();
   }
 }
