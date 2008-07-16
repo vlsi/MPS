@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class any_type_comparable_with_nulltype_ComparisonRule extends ComparisonRule_Runtime {
@@ -12,6 +13,9 @@ public class any_type_comparable_with_nulltype_ComparisonRule extends Comparison
   }
 
   public boolean areComparable(SNode node1, SNode node2) {
+    if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+      return false;
+    }
     return true;
   }
 

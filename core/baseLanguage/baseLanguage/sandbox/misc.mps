@@ -261,6 +261,20 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216199204297">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216199204298">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1216199204299" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216199208801">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1216199209147">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1216199211525" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216199208802">
+              <link role="variableDeclaration" targetNodeId="1216199204298" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215693870747">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1215693873686">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215693874752">
