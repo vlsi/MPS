@@ -2,6 +2,7 @@ package jetbrains.mps.ide.projectPane.fileSystem;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ide.projectView.ProjectView;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import org.jetbrains.annotations.NonNls;
@@ -17,7 +18,9 @@ public class BaseDirectoryProjectView extends FileViewProjectPane{
   }
 
   protected MPSTreeNode createRoot(Project project) {
-    return new FolderTreeNode(project, project.getComponent(VcsFileStatusProvider.class), project.getBaseDir());
+    VirtualFile folder = project.getBaseDir();
+    assert folder != null;
+    return new FolderTreeNode(project, project.getComponent(VcsFileStatusProvider.class), folder);
   }
 
   public String getTitle() {

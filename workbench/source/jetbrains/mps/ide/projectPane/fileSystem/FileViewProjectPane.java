@@ -70,7 +70,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     myTree = new MPSTree() {
       protected MPSTreeNode rebuild() {
         MPSTreeNode node;
-        if (myProject != null && !myProject.isDisposed()) {
+        if (myProject != null && !myProject.isDisposed() && (myProject.getBaseDir() != null)) {
           node = createRoot(project);
         } else {
           node = new TextTreeNode("No Project");

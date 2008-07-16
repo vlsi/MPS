@@ -19,11 +19,13 @@ import com.intellij.openapi.project.Project;
 
 import javax.swing.tree.DefaultTreeModel;
 
+import org.jetbrains.annotations.NotNull;
+
 public class FolderTreeNode extends AbstractFileTreeNode {
   private boolean myInitialized;
   private Project myProject;
 
-  public FolderTreeNode(Project project, VcsFileStatusProvider provider, VirtualFile folder) {
+  public FolderTreeNode(Project project, VcsFileStatusProvider provider,@NotNull VirtualFile folder) {
     super(provider, folder);
     myProject = project;
   }
