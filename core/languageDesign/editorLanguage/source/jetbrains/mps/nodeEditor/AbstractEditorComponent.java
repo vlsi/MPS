@@ -37,10 +37,10 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.actions.nodes.GoByFirstReferenceAction;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -2165,43 +2165,28 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   @Nullable
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(MPSDataKeys.SNODE.getName())) {
-      if (getSelectedCell() != null) {
-        return getSelectedCell().getSNode();
-      } else {
-        return getRootCell().getSNode();
-      }
-    }
-
-    if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) {
+      if (getSelectedCell() != null) return getSelectedCell().getSNode();
+      else return getRootCell().getSNode();
+    } else if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) {
       return getSelectedCell();
-    }
-
-    if (dataId.equals(MPSDataKeys.SNODES.getName())) {
+    } else if (dataId.equals(MPSDataKeys.SNODES.getName())) {
       return getSelectedNodes();
-    }
-
-    if (dataId.equals(MPSDataKeys.MODEL_DESCRIPTOR.getName())) {
+    } else if (dataId.equals(MPSDataKeys.MODEL_DESCRIPTOR.getName())) {
       return ModelAccess.instance().runReadAction(new Computable() {
         public Object compute() {
           return getRootCell().getSNode().getModel().getModelDescriptor();
         }
       });
-    }
-
-    if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+    } else if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
       return getOperationContext();
-    }
-
-    if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) {
+    } else if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) {
       return new MyCutProvider();
-    }
-
-    if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName())) {
+    } else if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName())) {
       return new MyCopyProvider();
-    }
-
-    if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) {
+    } else if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) {
       return new MyPasteProvider();
+    } else if (dataId.equals(MPSDataKeys.EDITOR_COMPONENT.getName())){
+      return this;
     }
 
     return null;

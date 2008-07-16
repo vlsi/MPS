@@ -3,6 +3,7 @@ package jetbrains.mps.workbench;
 import com.intellij.openapi.actionSystem.DataKey;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -19,4 +20,5 @@ public class MPSDataKeys {
   public static final DataKey<IOperationContext> OPERATION_CONTEXT = DataKey.create("MPS_IOperationContext");
   public static final DataKey<EditorCell> EDITOR_CELL = DataKey.create("MPS_EditorCell");
   public static final DataKey<IEditor> EDITOR = DataKey.create("MPS_IEditor");
+  public static final DataKey<AbstractEditorComponent> EDITOR_COMPONENT = DataKey.create("MPS_AbstractEditorComponent");
 }
