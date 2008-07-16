@@ -142,6 +142,10 @@ public class IntelligentInputUtil {
       editorContext.selectWRTFocusPolicy(item.substitute(editorContext, smallPattern + tail));
       return;
     } else {
+      if (isInAmbigousPosition(substituteInfo, smallPattern, tail)) {
+        cell.setText(smallPattern);
+        editorContext.getNodeEditorComponent().activateNodeSubstituteChooser(cell, substituteInfo, false);
+      }
       return;
     }
 
@@ -263,6 +267,10 @@ public class IntelligentInputUtil {
 
   private static boolean canCompleteTheWholeStringImmediately(INodeSubstituteInfo info, String smallPattern, String tail) {
     return info.hasExactlyNActions(smallPattern + tail, true, 1) && info.hasExactlyNActions(smallPattern + tail, false, 1);
+  }
+
+  private static boolean isInAmbigousPosition(INodeSubstituteInfo info, String smallPattern, String tail) {
+    return info.getMatchingActions(smallPattern, true).size() > 1 && info.getMatchingActions(smallPattern + tail, false).isEmpty();
   }
 
   private static EditorCell_Label prepareSTCell(EditorContext context, EditorCell root, String textToSet) {
