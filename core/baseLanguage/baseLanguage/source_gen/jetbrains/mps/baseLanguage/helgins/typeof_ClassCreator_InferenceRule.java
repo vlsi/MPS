@@ -29,13 +29,13 @@ public class typeof_ClassCreator_InferenceRule implements InferenceRule_Runtime 
         intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins@5_0.ChooseAppropriateConstructorDeclaration_Intention", true);
         intentionProvider.putArgument("classConcept", methodClassifier);
         intentionProvider.putArgument("constructorCall", creator);
-        TypeChecker.getInstance().reportTypeError(creator, "wrong number of arguments", "jetbrains.mps.baseLanguage.helgins@5_0", "1216203742574", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(creator, "wrong number of arguments", "jetbrains.mps.baseLanguage.helgins@5_0", "1216210865499", intentionProvider);
       }
     }
     if (!(SLinkOperations.getCount(creator, "typeParameter") == 0 || SLinkOperations.getCount(creator, "typeParameter") == SLinkOperations.getCount(SNodeOperations.getAncestor(SLinkOperations.getTarget(creator, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "typeVariableDeclaration"))) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "jetbrains.mps.baseLanguage.helgins@5_0", "1216203742594", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "jetbrains.mps.baseLanguage.helgins@5_0", "1216210865519", intentionProvider);
       }
     }
     for(SNode parameter : SLinkOperations.getTargets(creator, "typeParameter", true)) {
@@ -47,12 +47,14 @@ public class typeof_ClassCreator_InferenceRule implements InferenceRule_Runtime 
     SNode constructedType = new QuotationClass_98().createNode(SLinkOperations.getTargets(creator, "typeParameter", true), methodClassifier);
     {
       SNode _nodeToCheck_1029348928467 = creator;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1212781606043", true), constructedType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1212781606039");
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1212781606043", true), constructedType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1212781606039", intentionProvider);
     }
     final SNode instanceType_typevar_1212781606045 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = creator;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1212781606045), constructedType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1212781606046");
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1212781606045), constructedType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1212781606046", intentionProvider);
     }
     // --- following piece of cake is identical for any method call ---
     {

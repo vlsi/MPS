@@ -30,18 +30,20 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
         intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins@5_0.ChooseAppropriateMethodDeclaration_Intention", true);
         intentionProvider.putArgument("classifier", methodClassifier);
         intentionProvider.putArgument("methodCall", imco);
-        TypeChecker.getInstance().reportTypeError(imco, "wrong number of parameters", "jetbrains.mps.baseLanguage.helgins@5_0", "1216203741253", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(imco, "wrong number of parameters", "jetbrains.mps.baseLanguage.helgins@5_0", "1216210864083", intentionProvider);
       }
     }
     // ---
     final SNode instanceType_typevar_1204064731338 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(imco);
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1204064784351", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1204064763142");
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1204064784351", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1204064763142", intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = imco;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_74().createNode(methodClassifier), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1204065906120", true, 0);
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_74().createNode(methodClassifier), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1204065906120", true, 0, intentionProvider);
     }
     // --- following piece of cake is identical for any method call ---
     {

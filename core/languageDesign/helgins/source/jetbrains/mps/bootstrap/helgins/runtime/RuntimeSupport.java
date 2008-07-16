@@ -8,6 +8,7 @@ import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.intentions.IntentionProvider;
 
 import java.util.Map;
 import java.util.Set;
@@ -130,8 +131,22 @@ public class RuntimeSupport {
 
   //-------------------- equations
 
+  @Deprecated
   public void createEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
     myTypeChecker.getEquationManager().addEquation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0));
+  }
+
+  public void createEquation(SNode node1,
+                             SNode node2,
+                             SNode nodeToCheck,
+                             String errorString,
+                             String ruleModel,
+                             String ruleId,
+                             IntentionProvider intentionProvider) {
+    myTypeChecker.getEquationManager().addEquation(
+      node1,
+      node2,
+      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
   }
 
   @Deprecated
@@ -139,8 +154,26 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId), true, checkOnly);
   }
 
+  @Deprecated
   public void createLessThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly, int inequationPriority) {
     myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority), true, checkOnly);
+  }
+
+  public void createLessThanInequation(SNode node1,
+                                       SNode node2,
+                                       SNode nodeToCheck,
+                                       String errorString,
+                                       String ruleModel,
+                                       String ruleId,
+                                       boolean checkOnly,
+                                       int inequationPriority,
+                                       IntentionProvider intentionProvider) {
+    myTypeChecker.getEquationManager().addInequation(
+      node1,
+      node2,
+      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority, intentionProvider),
+      true,
+      checkOnly);
   }
 
   @Deprecated
@@ -148,8 +181,27 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId), false, checkOnly);
   }
 
+
+  @Deprecated
   public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly, int inequationPriority) {
     myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority), false, checkOnly);
+  }
+
+  public void createLessThanInequationStrong(SNode node1,
+                                             SNode node2,
+                                             SNode nodeToCheck,
+                                             String errorString,
+                                             String ruleModel,
+                                             String ruleId,
+                                             boolean checkOnly,
+                                             int inequationPriority,
+                                             IntentionProvider intentionProvider) {
+    myTypeChecker.getEquationManager().addInequation(
+      node1,
+      node2,
+      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority, intentionProvider),
+      false,
+      checkOnly);
   }
 
   @Deprecated
@@ -157,17 +209,63 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addInequation(node2, node1, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId), true, checkOnly);
   }
 
+  @Deprecated
   public void createGreaterThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly, int inequationPriority) {
     myTypeChecker.getEquationManager().addInequation(node2, node1, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority), true, checkOnly);
   }
 
+  public void createGreaterThanInequation(SNode node1,
+                                          SNode node2,
+                                          SNode nodeToCheck,
+                                          String errorString,
+                                          String ruleModel,
+                                          String ruleId,
+                                          boolean checkOnly,
+                                          int inequationPriority,
+                                          IntentionProvider intentionProvider) {
+    myTypeChecker.getEquationManager().addInequation(
+      node2,
+      node1,
+      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority, intentionProvider),
+      true,
+      checkOnly);
+  }
 
+  @Deprecated
   public void createComparableEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
     myTypeChecker.getEquationManager().addInequationComparable(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId));
   }
 
+  public void createComparableEquation(SNode node1,
+                                       SNode node2,
+                                       SNode nodeToCheck,
+                                       String errorString,
+                                       String ruleModel,
+                                       String ruleId,
+                                       IntentionProvider intentionProvider) {
+    myTypeChecker.getEquationManager().addInequationComparable(
+      node1,
+      node2,
+      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
+  }
+
+  @Deprecated
   public void createComparableEquationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
     myTypeChecker.getEquationManager().addInequationComparable(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId), false);
+  }
+
+  public void createComparableEquationStrong(SNode node1,
+                                             SNode node2,
+                                             SNode nodeToCheck,
+                                             String errorString,
+                                             String ruleModel,
+                                             String ruleId,
+                                             IntentionProvider intentionProvider) {
+    myTypeChecker.getEquationManager().addInequationComparable(
+      node1,
+      node2,
+      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider), 
+      false);
   }
 
 

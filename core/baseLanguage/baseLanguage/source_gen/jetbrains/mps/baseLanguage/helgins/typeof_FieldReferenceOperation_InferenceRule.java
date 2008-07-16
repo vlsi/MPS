@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import java.util.List;
@@ -27,12 +28,14 @@ public class typeof_FieldReferenceOperation_InferenceRule implements InferenceRu
     final SNode InstanceType_typevar_1206554174334 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(fieldReference);
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1206554174339", true), TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206554174335");
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1206554174339", true), TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206554174335", intentionProvider);
     }
     final SNode fieldClassifier = SNodeOperations.getAncestor(fieldDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     {
       SNode _nodeToCheck_1029348928467 = fieldReference;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), new QuotationClass_78().createNode(fieldClassifier), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206554174350", false, 0);
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), new QuotationClass_78().createNode(fieldClassifier), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206554174350", false, 0, intentionProvider);
     }
     {
       final SNode IT = TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334);
@@ -44,7 +47,8 @@ public class typeof_FieldReferenceOperation_InferenceRule implements InferenceRu
           SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(SLinkOperations.getTarget(fieldDeclaration, "type", true), mmap);
           {
             SNode _nodeToCheck_1029348928467 = fieldReference;
-            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1206554174385", true), matchedType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206554174383");
+            BaseIntentionProvider intentionProvider = null;
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1206554174385", true), matchedType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206554174383", intentionProvider);
           }
           RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(fieldClassifier, TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), mmap);
           RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);

@@ -83,6 +83,40 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_checkOnlyPropertyCell19992_0");
   }
 
+  private static void setupBasic_CollectionCell19992_04(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19992_04");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_ConstantCell19992_04(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19992_04");
+  }
+
+  private static void setupBasic_helginsIntentionRefNodeCell19992_0(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_ConstantCell19992_05(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19992_05");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_ConstantCell19992_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -104,6 +138,15 @@ public class AbstractEquationInspector extends AbstractCellProvider {
   private static void setupLabel_checkOnlyPropertyCell19992_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_ConstantCell19992_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_helginsIntentionRefNodeCell19992_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell19992_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
 
   public EditorCell createEditorCell(EditorContext context) {
     return this.createEditorCell(context, this.getSNode());
@@ -123,6 +166,8 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     editorCell.addEditorCell(this.create_CollectionCell19992_02(context, node));
     editorCell.addEditorCell(this.create_ConstantCell19992_02(context, node, ""));
     editorCell.addEditorCell(this.create_CollectionCell19992_03(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell19992_05(context, node, ""));
+    editorCell.addEditorCell(this.create_CollectionCell19992_04(context, node));
     return editorCell;
   }
 
@@ -159,6 +204,17 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     return editorCell;
   }
 
+  public EditorCell create_CollectionCell19992_04(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_CollectionCell19992_04(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.create_ConstantCell19992_04(context, node, "intention to fix error"));
+    editorCell.addEditorCell(this.create_helginsIntentionRefNodeCell19992_0(context, node));
+    return editorCell;
+  }
+
   public EditorCell create_ConstantCell19992_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell19992_0(editorCell, node, context);
@@ -187,6 +243,22 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell19992_03(editorCell, node, context);
     setupLabel_ConstantCell19992_03(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell create_ConstantCell19992_04(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_ConstantCell19992_04(editorCell, node, context);
+    setupLabel_ConstantCell19992_04(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell create_ConstantCell19992_05(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_ConstantCell19992_05(editorCell, node, context);
+    setupLabel_ConstantCell19992_05(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -268,6 +340,35 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_checkOnlyPropertyCell19992_0_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell create_helginsIntentionRefNodeCell19992_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_helginsIntentionRefNodeCell19992_0(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_helginsIntentionRefNodeCell19992_0((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell create_helginsIntentionRefNodeCell19992_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("helginsIntention");
+    provider.setNoTargetText("<no helginsIntention>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.create_helginsIntentionRefNodeCell19992_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

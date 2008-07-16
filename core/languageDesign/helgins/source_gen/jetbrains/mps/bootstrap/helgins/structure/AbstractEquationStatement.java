@@ -16,6 +16,7 @@ public class AbstractEquationStatement extends Statement {
   public static String RIGHT_EXPRESSION = "rightExpression";
   public static String NODE_TO_CHECK = "nodeToCheck";
   public static String ERROR_STRING = "errorString";
+  public static String HELGINS_INTENTION = "helginsIntention";
 
   public AbstractEquationStatement(SNode node) {
     super(node);
@@ -68,6 +69,14 @@ public class AbstractEquationStatement extends Statement {
 
   public void setErrorString(Expression node) {
     super.setChild(AbstractEquationStatement.ERROR_STRING, node);
+  }
+
+  public HelginsIntention getHelginsIntention() {
+    return (HelginsIntention)this.getChild(AbstractEquationStatement.HELGINS_INTENTION);
+  }
+
+  public void setHelginsIntention(HelginsIntention node) {
+    super.setChild(AbstractEquationStatement.HELGINS_INTENTION, node);
   }
 
 }

@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.intentions.IntentionProvider;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,6 +20,8 @@ public class EquationInfo {
   private String myRuleModel;
   private String myRuleId;
 
+  private IntentionProvider myIntentionProvider;
+
   private int myInequationPriority;
 
 
@@ -27,21 +30,27 @@ public class EquationInfo {
     myNodeWithError = nodeWithError;
   }
 
-  public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId, int inequationPriority) {
+  public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId, int inequationPriority, IntentionProvider intentionProvider) {
     myErrorString = errorString;
     myNodeWithError = nodeWithError;
     myRuleModel = ruleModel;
     myRuleId = ruleId;
     myInequationPriority = inequationPriority;
+    myIntentionProvider = intentionProvider;
   }
 
   @Deprecated
-    public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
+  public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId, int inequationPriority) {
+    this(nodeWithError, errorString, ruleModel, ruleId, inequationPriority, null);
+  }
+
+  @Deprecated
+  public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     myErrorString = errorString;
     myNodeWithError = nodeWithError;
     myRuleModel = ruleModel;
     myRuleId = ruleId;
-    }
+  }
 
   public EquationInfo(EquationInfo pattern) {
     myErrorString = pattern.myErrorString;
@@ -49,6 +58,7 @@ public class EquationInfo {
     myRuleModel = pattern.myRuleModel;
     myRuleId = pattern.myRuleId;
     myInequationPriority = pattern.myInequationPriority;
+    myIntentionProvider = pattern.myIntentionProvider;
   }
 
   public String getErrorString() {

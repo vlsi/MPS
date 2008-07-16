@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,7 +17,8 @@ public class typeof_Property_InferenceRule implements InferenceRule_Runtime {
   public void applyRule(final SNode property) {
     {
       SNode _nodeToCheck_1029348928467 = property;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1201468307043", true), SLinkOperations.getTarget(property, "type", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1201468313014");
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1201468307043", true), SLinkOperations.getTarget(property, "type", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1201468313014", intentionProvider);
     }
   }
 

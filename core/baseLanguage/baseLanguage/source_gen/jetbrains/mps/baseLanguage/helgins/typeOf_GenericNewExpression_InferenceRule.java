@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,7 +17,8 @@ public class typeOf_GenericNewExpression_InferenceRule implements InferenceRule_
   public void applyRule(final SNode genericNE) {
     {
       SNode _nodeToCheck_1029348928467 = genericNE;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1197929386566", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(genericNE, "creator", true), "jetbrains.mps.baseLanguage.helgins", "1176896993400", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1197929386564");
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1197929386566", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(genericNE, "creator", true), "jetbrains.mps.baseLanguage.helgins", "1176896993400", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1197929386564", intentionProvider);
     }
   }
 

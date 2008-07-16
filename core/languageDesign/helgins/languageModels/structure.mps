@@ -164,6 +164,11 @@
       <property name="role" value="errorString" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216204483513">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="helginsIntention" />
+      <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1174664393854">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>
@@ -1138,6 +1143,11 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="errorString" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216204558370">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="helginsIntention" />
+      <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1215689656618">
       <property name="name" value="checkOnly" />

@@ -9,6 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -31,7 +32,8 @@ public class typeOf_thisExpr_InferenceRule implements InferenceRule_Runtime {
     }
     {
       SNode _nodeToCheck_1029348928467 = thisExpr;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1215004810739", true), new QuotationClass_102().createNode(typeVarRefs, classConcept), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1215004810737");
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1215004810739", true), new QuotationClass_102().createNode(typeVarRefs, classConcept), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1215004810737", intentionProvider);
     }
   }
 
