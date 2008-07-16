@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.action.ActionEventData;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -181,7 +180,6 @@ public abstract class MPSTree extends DnDAwareTree {
                 Presentation presentation = new Presentation();
                 AnActionEvent event = new AnActionEvent(e, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
                 action.update(event);
-                assert event.getPresentation().isEnabled();
                 if (presentation.isEnabled()) return action;
               }
             }

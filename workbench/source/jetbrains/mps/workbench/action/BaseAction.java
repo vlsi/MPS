@@ -15,13 +15,20 @@ public abstract class BaseAction extends AnAction {
   public BaseAction() {
     this(null, null, null);
   }
-  
+
   public BaseAction(String text) {
     this(text, null, null);
   }
 
   public BaseAction(String text, String description, Icon icon) {
     super(text, description, icon);
+    updateShortcuts();
+  }
+
+  /**
+   * Is caslled only by ancestors if getShortcut depends on constructor parameters
+   */
+  protected void updateShortcuts() {
     setShortcutSet(new ShortcutSet() {
       public Shortcut[] getShortcuts() {
         KeyStroke keyStroke = KeyStroke.getKeyStroke(getKeyStroke());
@@ -119,6 +126,11 @@ public abstract class BaseAction extends AnAction {
     return true;
   }
 
+  /**
+   * If the result depends on something, do not forget to call updateShortcuts
+   *
+   * @return
+   */
   @NotNull
   protected String getKeyStroke() {
     return "";

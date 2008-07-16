@@ -10,6 +10,7 @@ import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.projectLanguage.structure.BaseGeneratorConfiguration;
 import jetbrains.mps.projectLanguage.structure.LanguageGeneratorConfiguration;
@@ -21,36 +22,59 @@ import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
+import java.awt.Frame;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GenerateAllModelsInModuleAction extends BaseAction {
   private boolean myRegenerate;
+  private IOperationContext myOperationContext;
+  private MPSProject myProject;
+  private Frame myFrame;
+  private List<IModule> myModules;
 
   public GenerateAllModelsInModuleAction(boolean regenerate) {
     super("Generate Models In Module");
+    myRegenerate = regenerate;
+    updateShortcuts();
     setIsAlwaysVisible(false);
     setExecuteOutsideCommand(true);
-    myRegenerate = regenerate;
   }
 
   @NotNull
   public String getKeyStroke() {
-    if (!myRegenerate) {
-      return "control F9";
-    } else {
-      return "";
-    }
+    if (myRegenerate) return "";
+    return "control F9";
   }
 
   protected void doExecute(AnActionEvent e) {
-    final ActionEventData data = new ActionEventData(e);
-    IOperationContext operationContext = data.getOperationContext();
-    IModule module = operationContext.getModule();
+    List<SModelDescriptor> modelsToGenerate = new ArrayList<SModelDescriptor>();
 
-    if (module instanceof Generator) {
-      module = ((Generator) module).getSourceLanguage();
+    for (IModule module : myModules) {
+      if (module instanceof Generator) {
+        module = ((Generator) module).getSourceLanguage();
+      }
+
+      modelsToGenerate.addAll(getModelsToGenerate(module));
     }
 
-    final IModule module1 = module;
+    if (modelsToGenerate.isEmpty()) {
+      Project project = e.getData(PlatformDataKeys.PROJECT);
+      WindowManager.getInstance().getIdeFrame(project).getStatusBar().setInfo("Nothing to generate");
+      return;
+    }
+
+    GeneratorManager generatorManager = myOperationContext.getComponent(GeneratorManager.class);
+    IGenerationType generationType = generatorManager.getDefaultModuleGenerationType();
+    generatorManager.generateModelsWithProgressWindow(
+      modelsToGenerate,
+      myOperationContext,
+      generationType,
+      false);
+  }
+
+  @NotNull
+  private List<SModelDescriptor> getModelsToGenerate(final IModule module) {
     GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
       public GenParameters compute() {
         SModel tmp = new SModel();
@@ -59,61 +83,55 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
 
         BaseGeneratorConfiguration conf = null;
 
-        if (module1 instanceof Solution) {
+        if (module instanceof Solution) {
           SolutionGeneratorConfiguration solutionConfig = SolutionGeneratorConfiguration.newInstance(tmp);
-          solutionConfig.setSolutionModuleUID(module1.getModuleUID());
+          solutionConfig.setSolutionModuleUID(module.getModuleUID());
           solutionConfig.setName("tmp");
           conf = solutionConfig;
         }
 
-        if (module1 instanceof Language) {
+        if (module instanceof Language) {
           LanguageGeneratorConfiguration languageConfig = LanguageGeneratorConfiguration.newInstance(tmp);
-          languageConfig.setLanguageNamespace(module1.getModuleUID());
+          languageConfig.setLanguageNamespace(module.getModuleUID());
           languageConfig.setName("tmp");
           conf = languageConfig;
         }
 
-
-        if (conf == null) {
-          throw new RuntimeException();
-        }
+        assert conf != null;
 
         try {
-          return GeneratorConfigUtil.calculate(data.getMPSProject(), conf, myRegenerate);
+          return GeneratorConfigUtil.calculate(myProject, conf, myRegenerate);
         } catch (GeneratorConfigUtil.GeneratorConfigurationException e) {
-          JOptionPane.showMessageDialog(data.getFrame(), e.getMessage());
+          JOptionPane.showMessageDialog(myFrame, e.getMessage());
           return null;
         }
       }
     });
 
-    if (params == null) {
-      return;
-    }
-
-    if (params.getModels().isEmpty()) {
-      Project project = e.getData(PlatformDataKeys.PROJECT);
-      WindowManager.getInstance().getIdeFrame(project).getStatusBar().setInfo("Nothing to generate");
-      return;
-    }
-
-    GeneratorManager generatorManager = operationContext.getComponent(GeneratorManager.class);
-    IGenerationType generationType = generatorManager.getDefaultModuleGenerationType();
-    generatorManager.generateModelsWithProgressWindow(
-      params.getModels(),
-      operationContext,
-      generationType,
-      false);
+    if (params == null) return new ArrayList<SModelDescriptor>();
+    return params.getModels();
   }
 
   protected void doUpdate(AnActionEvent e) {
-    ActionEventData data = new ActionEventData(e);
-    IOperationContext opContext = data.getOperationContext();
-    boolean isEnabled = opContext != null && opContext.getModule() != null;
-    setVisible(e.getPresentation(), isEnabled);
-    if (isEnabled) {
-      e.getPresentation().setText((myRegenerate ? "Regenerate" : "Generate") + " " +
-        NameUtil.shortNameFromLongName(opContext.getModule().getClass().getName()));
+    for (IModule module : myModules) {
+      if ((!(module instanceof Solution)) && (!(module instanceof Language))) {
+        disable(e.getPresentation());
+      }
     }
+    String obj = myModules.size() == 1 ? NameUtil.shortNameFromLongName(myModules.get(0).getClass().getName()) : "Modules";
+    String newText = (myRegenerate ? "Regenerate" : "Generate") + " " + obj;
+    e.getPresentation().setText(newText);
+  }
+
+  protected boolean collectActionData(AnActionEvent e) {
+    ActionEventData data = new ActionEventData(e);
+    myProject = data.getMPSProject();
+    myOperationContext = data.getOperationContext();
+    if (myOperationContext == null) return false;
+    myModules = data.getModules();
+    if (myModules.isEmpty()) return false;
+    myFrame = data.getFrame();
+    if (myFrame == null) return false;
+    return true;
   }
 }
