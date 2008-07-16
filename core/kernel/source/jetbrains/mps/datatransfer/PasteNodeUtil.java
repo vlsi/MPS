@@ -149,8 +149,7 @@ public class PasteNodeUtil {
           }
 
           // delete original anchor if it was abstract concept
-          if (anchorNode != null && placeHint == PastePlaceHint.DEFAULT &&
-            anchorNode.getConceptDeclarationAdapter().hasConceptProperty(AbstractConceptDeclaration.CPR_Abstract)) {
+          if (anchorNode != null && anchorNode.getConceptDeclarationAdapter().hasConceptProperty(AbstractConceptDeclaration.CPR_Abstract)) {
             anchorNode.delete();
           }
         }
