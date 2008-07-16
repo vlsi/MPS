@@ -102,37 +102,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216204691760">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216204691761">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216210409232">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216211303633">
-                <link role="variableDeclaration" targetNodeId="1216210373372" resolveInfo="aa" />
-              </node>
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1216211376801">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1216211379757">
-              <property name="value" value="0" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216211373503">
-              <link role="variableDeclaration" targetNodeId="1216210373372" resolveInfo="aa" />
-            </node>
-          </node>
-          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1216211420829">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1216213023497">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1216213024844">
-                <property name="value" value="0" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216213022934">
-                <link role="variableDeclaration" targetNodeId="1216210373372" resolveInfo="aa" />
-              </node>
-            </node>
-            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216211420831" />
-          </node>
-          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1216211487325">
-            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216211487326" />
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216204747078">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216204747079">
             <property name="name" value="a" />
@@ -179,6 +148,10 @@
           <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1216211797526">
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1216211797527" />
             <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216211797528" />
+          </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1216214276256">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1216214276257" />
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216214276258" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216209712596">

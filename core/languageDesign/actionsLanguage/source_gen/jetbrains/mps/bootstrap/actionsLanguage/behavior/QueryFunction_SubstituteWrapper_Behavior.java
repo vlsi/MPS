@@ -24,7 +24,7 @@ public class QueryFunction_SubstituteWrapper_Behavior {
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode hostMenuPart = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart", false, false);
     SNode concept = SLinkOperations.getTarget(hostMenuPart, "concept", false);
-    return new QuotationClass_3().createNode(concept);
+    return new QuotationClass_2().createNode(concept);
   }
 
 }

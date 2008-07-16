@@ -4,7 +4,6 @@ package jetbrains.mps.bootstrap.actionsLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class QueryFunction_ParameterizedSideTransform_Handler_Behavior {
 
@@ -19,12 +18,6 @@ public class QueryFunction_ParameterizedSideTransform_Handler_Behavior {
       return false;
     }
     return true;
-  }
-
-  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart", false, false);
-    SNode expectedConcept = SLinkOperations.getTarget(ancestor, "concept", false);
-    return new QuotationClass_2().createNode(expectedConcept);
   }
 
 }

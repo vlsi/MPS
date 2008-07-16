@@ -22,7 +22,7 @@ public class QueryFunction_ParameterizedSubstitute_Handler_Behavior {
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptPart", false, false);
     SNode conceptOfNodeReturnedByHandler = SLinkOperations.getTarget(ancestor, "concept", false);
-    return new QuotationClass_7().createNode(conceptOfNodeReturnedByHandler);
+    return new QuotationClass_6().createNode(conceptOfNodeReturnedByHandler);
   }
 
 }

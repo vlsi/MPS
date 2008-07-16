@@ -1963,6 +1963,21 @@ __switch__:
 
       });
     }
+    {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", operationContext.getScope());
+      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.setNewChild(_context.getSourceNode(), "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
+          return SLinkOperations.getTarget(_context.getSourceNode(), "ifFalseStatement", true);
+        }
+
+        public String getMatchingText(String pattern) {
+          return "else{";
+        }
+
+      });
+    }
     return result;
   }
 
@@ -1979,6 +1994,21 @@ __switch__:
 
         public String getMatchingText(String pattern) {
           return "else if";
+        }
+
+      });
+    }
+    {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", operationContext.getScope());
+      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode elseIf = SLinkOperations.addNewChild(_context.getSourceNode(), "elsifClauses", "jetbrains.mps.baseLanguage.structure.ElsifClause");
+          return elseIf;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "elseif";
         }
 
       });
