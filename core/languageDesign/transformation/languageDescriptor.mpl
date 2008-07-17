@@ -50,6 +50,7 @@
   <dependencies>
     <dependency reexport="false">MPS.Classpath</dependency>
     <dependency reexport="false">JDK</dependency>
+    <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage#1129914002149</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>

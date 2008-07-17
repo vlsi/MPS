@@ -27,7 +27,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="69" />
+  <maxImportIndex value="70" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -42,6 +42,7 @@
   <import index="67" modelUID="jetbrains.mps.transformation.TLBase.structure@java_stub" version="-1" />
   <import index="68" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
   <import index="69" modelUID="jetbrains.mps.bootstrap.structureLanguage.behavior" version="-1" />
+  <import index="70" modelUID="jetbrains.mps.nodeEditor.cells@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1087903454703">
     <property name="name" value="PropertyMacro_Editor" />
     <property name="package" value="macro" />
@@ -6128,7 +6129,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216153760417">
         <property name="name" value="cell" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216153766435">
-          <link role="classifier" targetNodeId="9.~EditorCell" resolveInfo="EditorCell" />
+          <link role="classifier" targetNodeId="70.~EditorCell" resolveInfo="EditorCell" />
         </node>
       </node>
     </node>
@@ -6225,7 +6226,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216154022633">
         <property name="name" value="cell" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216154022634">
-          <link role="classifier" targetNodeId="9.~EditorCell" resolveInfo="EditorCell" />
+          <link role="classifier" targetNodeId="70.~EditorCell" resolveInfo="EditorCell" />
         </node>
       </node>
     </node>
@@ -6641,7 +6642,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216154379778">
         <property name="name" value="cell" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216154386467">
-          <link role="classifier" targetNodeId="9.~EditorCell" resolveInfo="EditorCell" />
+          <link role="classifier" targetNodeId="70.~EditorCell" resolveInfo="EditorCell" />
         </node>
       </node>
     </node>
@@ -6763,7 +6764,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216154519579">
         <property name="name" value="cell" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216154523550">
-          <link role="classifier" targetNodeId="9.~EditorCell" resolveInfo="EditorCell" />
+          <link role="classifier" targetNodeId="70.~EditorCell" resolveInfo="EditorCell" />
         </node>
       </node>
     </node>
@@ -6998,7 +6999,7 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205880088341">
                 <property name="name" value="modelAccessor" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205880088342">
-                  <link role="classifier" targetNodeId="9.~ModelAccessor" resolveInfo="ModelAccessor" />
+                  <link role="classifier" targetNodeId="70.~ModelAccessor" resolveInfo="ModelAccessor" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205880088343">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1205880088344">
@@ -7007,12 +7008,12 @@
                         <link role="variableDeclaration" targetNodeId="1205880064302" resolveInfo="cell" />
                       </node>
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205880088347">
-                        <link role="classifier" targetNodeId="9.~EditorCell_Property" resolveInfo="EditorCell_Property" />
+                        <link role="classifier" targetNodeId="70.~EditorCell_Property" resolveInfo="EditorCell_Property" />
                       </node>
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205880088348">
-                    <link role="baseMethodDeclaration" targetNodeId="9.~EditorCell_Property.getModelAccessor():jetbrains.mps.nodeEditor.cells.ModelAccessor" resolveInfo="getModelAccessor" />
+                    <link role="baseMethodDeclaration" targetNodeId="70.~EditorCell_Property.getModelAccessor():jetbrains.mps.nodeEditor.cells.ModelAccessor" resolveInfo="getModelAccessor" />
                   </node>
                 </node>
               </node>
@@ -7027,7 +7028,7 @@
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205880088354">
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205880088355">
-                        <link role="baseMethodDeclaration" targetNodeId="9.~PropertyAccessor.getPropertyName():java.lang.String" resolveInfo="getPropertyName" />
+                        <link role="baseMethodDeclaration" targetNodeId="70.~PropertyAccessor.getPropertyName():java.lang.String" resolveInfo="getPropertyName" />
                       </node>
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1205880088356">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1205880088357">
@@ -7035,7 +7036,7 @@
                             <link role="variableDeclaration" targetNodeId="1205880088341" resolveInfo="modelAccessor" />
                           </node>
                           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205880088359">
-                            <link role="classifier" targetNodeId="9.~PropertyAccessor" resolveInfo="PropertyAccessor" />
+                            <link role="classifier" targetNodeId="70.~PropertyAccessor" resolveInfo="PropertyAccessor" />
                           </node>
                         </node>
                       </node>
@@ -7050,7 +7051,7 @@
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1205880088369">
                 <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205880088370">
-                  <link role="classifier" targetNodeId="9.~PropertyAccessor" resolveInfo="PropertyAccessor" />
+                  <link role="classifier" targetNodeId="70.~PropertyAccessor" resolveInfo="PropertyAccessor" />
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205880088371">
                   <link role="variableDeclaration" targetNodeId="1205880088341" resolveInfo="modelAccessor" />
@@ -7060,7 +7061,7 @@
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1205880088372">
             <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205880088373">
-              <link role="classifier" targetNodeId="9.~EditorCell_Property" resolveInfo="EditorCell_Property" />
+              <link role="classifier" targetNodeId="70.~EditorCell_Property" resolveInfo="EditorCell_Property" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205880089672">
               <link role="variableDeclaration" targetNodeId="1205880064302" resolveInfo="cell" />
@@ -7074,7 +7075,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1205880064302">
         <property name="name" value="cell" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205880064303">
-          <link role="classifier" targetNodeId="9.~EditorCell" resolveInfo="EditorCell" />
+          <link role="classifier" targetNodeId="70.~EditorCell" resolveInfo="EditorCell" />
         </node>
       </node>
     </node>
@@ -7092,10 +7093,10 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205879900226">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205879900227">
-                <link role="baseMethodDeclaration" targetNodeId="9.~EditorCell.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
+                <link role="baseMethodDeclaration" targetNodeId="70.~EditorCell.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205879900228">
-                  <link role="classifier" targetNodeId="9.~EditorCell" resolveInfo="EditorCell" />
-                  <link role="variableDeclaration" targetNodeId="9.~EditorCell.METAINFO_LINK_DECLARATION" resolveInfo="METAINFO_LINK_DECLARATION" />
+                  <link role="classifier" targetNodeId="70.~EditorCell" resolveInfo="EditorCell" />
+                  <link role="variableDeclaration" targetNodeId="70.~EditorCell.METAINFO_LINK_DECLARATION" resolveInfo="METAINFO_LINK_DECLARATION" />
                 </node>
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205879901519">
@@ -7112,10 +7113,10 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205879900233">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205879900234">
-                <link role="baseMethodDeclaration" targetNodeId="9.~EditorCell.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
+                <link role="baseMethodDeclaration" targetNodeId="70.~EditorCell.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205879900235">
-                  <link role="classifier" targetNodeId="9.~EditorCell" resolveInfo="EditorCell" />
-                  <link role="variableDeclaration" targetNodeId="9.~EditorCell.METAINFO_SOURCE_NODE" resolveInfo="METAINFO_SOURCE_NODE" />
+                  <link role="classifier" targetNodeId="70.~EditorCell" resolveInfo="EditorCell" />
+                  <link role="variableDeclaration" targetNodeId="70.~EditorCell.METAINFO_SOURCE_NODE" resolveInfo="METAINFO_SOURCE_NODE" />
                 </node>
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205879901613">
@@ -7175,7 +7176,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1205879822862">
         <property name="name" value="cell" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205879822863">
-          <link role="classifier" targetNodeId="9.~EditorCell" resolveInfo="EditorCell" />
+          <link role="classifier" targetNodeId="70.~EditorCell" resolveInfo="EditorCell" />
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207155547149" />
@@ -7192,10 +7193,10 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205881894867">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205881894868">
-                <link role="baseMethodDeclaration" targetNodeId="9.~EditorCell.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
+                <link role="baseMethodDeclaration" targetNodeId="70.~EditorCell.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205881894869">
-                  <link role="classifier" targetNodeId="9.~EditorCell" resolveInfo="EditorCell" />
-                  <link role="variableDeclaration" targetNodeId="9.~EditorCell.METAINFO_SOURCE_NODE" resolveInfo="METAINFO_SOURCE_NODE" />
+                  <link role="classifier" targetNodeId="70.~EditorCell" resolveInfo="EditorCell" />
+                  <link role="variableDeclaration" targetNodeId="70.~EditorCell.METAINFO_SOURCE_NODE" resolveInfo="METAINFO_SOURCE_NODE" />
                 </node>
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205881894870">
@@ -7216,7 +7217,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1205881894892">
         <property name="name" value="cell" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205881894893">
-          <link role="classifier" targetNodeId="9.~EditorCell" resolveInfo="EditorCell" />
+          <link role="classifier" targetNodeId="70.~EditorCell" resolveInfo="EditorCell" />
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207155548978" />
