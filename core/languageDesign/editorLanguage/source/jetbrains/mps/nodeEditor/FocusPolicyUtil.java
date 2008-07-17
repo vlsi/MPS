@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class FocusPolicyUtil {

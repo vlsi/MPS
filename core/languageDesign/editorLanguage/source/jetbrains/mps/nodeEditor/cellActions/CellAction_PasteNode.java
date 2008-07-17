@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.CellFinders;
 
 import java.util.List;
 import java.util.Set;

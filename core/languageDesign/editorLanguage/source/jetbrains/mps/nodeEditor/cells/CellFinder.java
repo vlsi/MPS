@@ -1,4 +1,4 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
