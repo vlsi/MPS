@@ -38,6 +38,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -45,6 +46,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
         }
 
       };
@@ -58,6 +60,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -65,6 +68,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
         }
 
       };
@@ -173,6 +177,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
