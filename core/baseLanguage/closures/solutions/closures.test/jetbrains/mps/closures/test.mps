@@ -5105,7 +5105,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209070870060">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1202928345076" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209070870061">
-                <link role="baseMethodDeclaration" targetNodeId="1202928326902" resolveInfo="acceptWorker" />
+                <link role="baseMethodDeclaration" targetNodeId="1202929413117" resolveInfo="acceptWorker" />
                 <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1202928346611">
                   <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1202929623015">
                     <property name="name" value="i" />

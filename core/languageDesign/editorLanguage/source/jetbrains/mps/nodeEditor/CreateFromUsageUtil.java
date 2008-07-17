@@ -3,6 +3,38 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.ide.SystemInfo;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.Setter;
+import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.core.structure.INamedConcept;
+import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.ui.popup.ListPopup;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.openapi.util.Computable;
+import com.intellij.ide.DataManager;
+import com.intellij.ide.IdeBundle;
+import com.intellij.ui.awt.RelativePoint;
+
+import javax.swing.JPopupMenu;
+import javax.swing.Icon;
+import java.awt.event.KeyEvent;
+import java.awt.Rectangle;
+import java.awt.Point;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public final class CreateFromUsageUtil {
 
@@ -21,9 +53,76 @@ public final class CreateFromUsageUtil {
 
   public static String getText(EditorContext editorContext) {
     EditorCell cell = editorContext.getSelectedCell();
-    if(cell instanceof EditorCell_Label) {
-      return ((EditorCell_Label)cell).getText();
+    if (cell instanceof EditorCell_Label) {
+      return ((EditorCell_Label) cell).getText();
     }
     return null;
+  }
+
+
+  public static void showCreateNewRootMenu(final EditorContext editorContext, final Condition<SNode> conceptsFilter, final Setter<SNode> newRootHandler) {
+    final EditorCell selectedCell = editorContext.getSelectedCell();
+    int x = selectedCell.getX();
+    int y = selectedCell.getY();
+    if (selectedCell instanceof EditorCell_Label) {
+      y += ((EditorCell_Label) selectedCell).getHeight();
+    }
+    final DataContext dataContext = DataManager.getInstance().getDataContext(editorContext.getNodeEditorComponent(), x, y);
+    ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
+      public ListPopup compute() {
+        ActionGroup group = getQuickCreateGroup(selectedCell.getSNode().getModel(), editorContext.getScope(), conceptsFilter, newRootHandler);
+        ListPopup popup = null;
+        if (group != null) {
+          popup = JBPopupFactory.getInstance()
+            .createActionGroupPopup(IdeBundle.message("title.popup.new.element"),
+              group,
+              dataContext,
+              JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
+              false);
+        }
+        return popup;
+      }
+    });
+//    popup.showInBestPositionFor(dataContext);
+    popup.show(new RelativePoint(editorContext.getNodeEditorComponent(), new Point(x, y)));
+  }
+
+  private static BaseGroup getQuickCreateGroup(final SModel model, final IScope scope, Condition<SNode> conceptsFilter, final Setter<SNode> newRootHandler) {
+    BaseGroup group = new BaseGroup("");
+
+    List<Language> modelLanguages = model.getLanguages(scope);
+    Collections.sort(modelLanguages, new ToStringComparator());
+    for (final Language language : modelLanguages) {
+      boolean hasChildren = false;
+      for (final ConceptDeclaration concept : language.getConceptDeclarations()) {
+        if (concept.getRootable() && (conceptsFilter == null || conceptsFilter.met(concept.getNode()))) {
+          BaseAction action = new BaseAction(NodePresentationUtil.matchingText(concept.getNode())) {
+            protected void doExecute(AnActionEvent e) {
+              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                public void run() {
+                  SNode result = NodeFactoryManager.createNode(concept, null, null, model, scope);
+                  model.addRoot(result);
+                  if (newRootHandler != null) {
+                    newRootHandler.set(result);
+                  }
+                }
+              });
+            }
+          };
+          Icon icon = IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept.getNode()));
+          action.getTemplatePresentation().setIcon(icon);
+          action.setExecuteOutsideCommand(true);
+
+          group.add(action);
+          hasChildren = true;
+        }
+      }
+
+      if (hasChildren) {
+        group.addSeparator();
+      }
+    }
+
+    return group;
   }
 }
