@@ -4,6 +4,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
+import jetbrains.mps.nodeEditor.cells.CellInfo;
 
 import java.util.*;
 import java.util.List;

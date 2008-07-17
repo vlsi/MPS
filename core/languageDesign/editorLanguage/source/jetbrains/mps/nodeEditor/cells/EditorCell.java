@@ -134,8 +134,6 @@ public interface EditorCell extends Cloneable {
   void addAdditionalKeyboardHandler(IKeyboardHandler handler);
   void removeAdditionalKeyboardHandler(IKeyboardHandler handler);
 
-  void setCellInfoProvider(ICellInfoProvider provider);
-
   Iterator<EditorCell_Collection> parents();
 
   boolean isUnderFolded();

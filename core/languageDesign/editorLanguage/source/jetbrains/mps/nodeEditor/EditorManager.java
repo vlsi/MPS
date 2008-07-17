@@ -361,16 +361,15 @@ public class EditorManager {
       setDefaultText(" ");
       setEditable(true);
       setCellBackgroundColor(LightColors.BLUE);
-      setCellInfoProvider(new ICellInfoProvider() {
-        public CellInfo getCellInfo(EditorCell cell) {
-          return new STHintCellInfo(EditorCell_STHint.this, myAnchorCell);
-        }
-      });
 
       getStyle().set(StyleAttributes.PADDING_LEFT, 0.0);
       getStyle().set(StyleAttributes.PADDING_RIGHT, 0.0);
 
       mySide = side;
+    }
+
+    public CellInfo getCellInfo() {
+      return new STHintCellInfo(EditorCell_STHint.this, myAnchorCell);
     }
 
     public void changeText(String text) {
@@ -425,7 +424,7 @@ public class EditorManager {
   }
 
 
-  private static class STHintCellInfo extends CellInfo {
+  private static class STHintCellInfo extends DefaultCellInfo {
     CellInfo myAnchorCellInfo;
 
     public STHintCellInfo(EditorCell_Constant rightTransformHintCell, EditorCell anchorCell) {

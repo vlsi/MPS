@@ -937,11 +937,10 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       myBraceTextLine.setCaretEnabled(false);
       setEditable(false);
       setEnabled(false);
-      setCellInfoProvider(new ICellInfoProvider() {
-        public CellInfo getCellInfo(EditorCell cell) {
-          return new BraceCellInfo(EditorCell_Brace.this);
-        }
-      });
+    }
+
+    public CellInfo getCellInfo() {
+      return new BraceCellInfo(EditorCell_Brace.this);
     }
 
     private String getBraceText() {
@@ -983,7 +982,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
   }
 
-  private static class BraceCellInfo extends CellInfo {
+  private static class BraceCellInfo extends DefaultCellInfo {
     private CellInfo myCollectionCellInfo;
     private boolean myOpeningBrace;
 

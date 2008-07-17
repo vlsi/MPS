@@ -1,4 +1,4 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.smodel.IScope;
@@ -7,10 +7,11 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import org.jdom.Element;
 
 
-public class CellInfo {
+public class DefaultCellInfo implements CellInfo {
 
   private SNodePointer myNodePointer;
   private String myCellId;
@@ -19,8 +20,7 @@ public class CellInfo {
 
   protected CellInfo myParentInfo;
 
-  // use only within EditorCell.getSelectedCellInfo
-  public CellInfo(EditorCell cell) {
+  public DefaultCellInfo(EditorCell cell) {
     myNodePointer = cell.getSNodePointer();
     myCellId = (String) cell.getUserObject(EditorCell.CELL_ID);
 
@@ -34,7 +34,7 @@ public class CellInfo {
     }
   }
 
-  public CellInfo(Element cellElement, IScope scope) {
+  public DefaultCellInfo(Element cellElement, IScope scope) {
     Element nodeElement = cellElement.getChild(ComponentsUtil.NODE);
     Element parentInfoElement = cellElement.getChild(ComponentsUtil.CELL_INFO);
     String cellId = cellElement.getAttributeValue(ComponentsUtil.ID);
@@ -49,40 +49,16 @@ public class CellInfo {
       if (isInList != null) {
         myIsInList = "true".equals(isInList);
       }
-      myParentInfo = new CellInfo(parentInfoElement, scope);
+      myParentInfo = new DefaultCellInfo(parentInfoElement, scope);
     }
   }
-
-  public Element marshallCellInfo() {
-    Element cellElement = new Element(ComponentsUtil.CELL_INFO);
-    if (myCellId != null) {
-      cellElement.setAttribute(ComponentsUtil.ID, myCellId);
-    }
-    SNode node = myNodePointer.getNode();
-    if (node != null) {
-      Element nodeElement = ComponentsUtil.nodeToElement(node);
-      cellElement.addContent(nodeElement);
-    }
-    if (myParentInfo != null) {
-      Element parentInfoElement = myParentInfo.marshallCellInfo();
-      cellElement.addContent(parentInfoElement);
-      if (myIsInList) {
-        cellElement.setAttribute(ComponentsUtil.IS_IN_LIST, "true");
-      }
-      if (myIsInList || myCellId == null) {
-        cellElement.setAttribute(ComponentsUtil.NUMBER, myCellNumber+"");
-      }
-    }
-    return cellElement;
-  }
-
 
   public int hashCode() {
     return (myParentInfo == null ? 0 : myParentInfo.hashCode()) +
         (myNodePointer == null?0: myNodePointer.hashCode()) + (myCellId == null?0:myCellId.hashCode()) + myCellNumber;
   }
 
-  public EditorCell findCell(AbstractEditorComponent editorComponent) {    
+  public EditorCell findCell(AbstractEditorComponent editorComponent) {
     if (myNodePointer == null) {
       return null;
     }
@@ -95,7 +71,7 @@ public class CellInfo {
 
   public boolean equals(Object o) {
     if (!(o instanceof CellInfo)) return false;
-    CellInfo cellInfo = (CellInfo) o;
+    DefaultCellInfo cellInfo = (DefaultCellInfo) o;
     if (!EqualUtil.equals(cellInfo.myParentInfo, myParentInfo)) return false;
     if (cellInfo.myNodePointer == null) return false;
     boolean idsBothNull = false;

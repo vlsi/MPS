@@ -54,7 +54,6 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   private boolean myNextIsPunctuation = false;
   private List<IKeyboardHandler> myAdditionalKeyboardHandlers = new ArrayList<IKeyboardHandler>();
-  private ICellInfoProvider myCellInfoProvider = new DefaultCellInfoProvider();
 
   private List<IEditorMessage> myMessages = new ArrayList<IEditorMessage>();  
   private Style myStyle = new Style(this);
@@ -607,12 +606,8 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   }
 
-  public void setCellInfoProvider(ICellInfoProvider provider) {
-    myCellInfoProvider = provider;
-  }
-
-  public final CellInfo getCellInfo() {
-    return myCellInfoProvider.getCellInfo(this);
+  public CellInfo getCellInfo() {
+    return new DefaultCellInfo(this);
   }
 
   public void setRightTransformAnchorTag(String tag) {

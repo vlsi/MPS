@@ -2,7 +2,7 @@ package jetbrains.mps.ide.components;
 
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.CellInfo;
+import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
@@ -78,14 +78,6 @@ public class ComponentsUtil {
 
     SNode node = modelDescriptor.getSModel().getNodeById(id);
     return new NodeWithContext(node, new ModuleContext(module, project));
-  }
-
-  public static CellInfo cellInfoFromElement(Element cellElement, IScope scope) {
-    return new CellInfo(cellElement, scope);
-  }
-
-  public static Element cellInfoToElement(CellInfo cellInfo) {
-    return cellInfo.marshallCellInfo();
   }
 
   public static Element rectangleToElement(Rectangle rect) {

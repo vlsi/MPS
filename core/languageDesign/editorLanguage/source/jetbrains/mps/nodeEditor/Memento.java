@@ -1,9 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.*;
 
 import java.util.*;
 import java.util.Map.Entry;
