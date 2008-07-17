@@ -1,4 +1,4 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
@@ -9,7 +9,7 @@ import jetbrains.mps.util.WindowsUtil;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.cells.TextLine;
+import jetbrains.mps.nodeEditor.*;
 
 import javax.swing.*;
 import javax.swing.event.ListDataListener;
@@ -45,7 +45,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     myEditorComponent = editorComponent;
   }
 
-  Window getWindow() {
+  public Window getWindow() {
     return myPopupWindow;
   }
 

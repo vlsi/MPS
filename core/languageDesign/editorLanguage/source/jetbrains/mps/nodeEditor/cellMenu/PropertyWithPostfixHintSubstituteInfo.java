@@ -1,17 +1,14 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.nodeEditor.AbstractNodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration;
 
 import java.util.List;
 import java.util.LinkedList;
-import java.util.Iterator;
 
 public abstract class PropertyWithPostfixHintSubstituteInfo extends AbstractNodeSubstituteInfo {
 

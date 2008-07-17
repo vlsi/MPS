@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_CopyLabelText;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_CutLabelText;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_PasteIntoLabelText;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 

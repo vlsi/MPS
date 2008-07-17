@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 
 import java.awt.event.KeyEvent;
 import java.util.*;

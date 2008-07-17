@@ -1,6 +1,8 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.nodeEditor.cells.TextLine;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.KeyboardUtil;
 
 import javax.swing.JWindow;
 import java.awt.*;

@@ -1,12 +1,5 @@
 package jetbrains.mps.nodeEditor.cellProviders;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 13.02.2006
- * Time: 19:58:17
- * To change this template use File | Settings | File Templates.
- */
 public class CellProviderNameUtil {
   public static final String CELL_PROVIDER_POSTFIX = "CellProvider";
   public static final String CELL_MODEL_PREFIX = "CellModel_";
@@ -28,10 +21,4 @@ public class CellProviderNameUtil {
     if (!name.startsWith(CELL_MODEL_PREFIX)) return null;
     return prefix + CELL_PROVIDERS_PACKAGE + "." + name.substring(CELL_MODEL_PREFIX.length()) + CELL_LIST_HANDLER_POSTFIX;
   }
-
-
-  public static void main(String[] args) {
-    System.err.println(getProviderClassName("jetbrains.mps.bootstrap.editorLanguage.CellModel_Property"));
-  }
-
 }
