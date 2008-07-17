@@ -3241,5 +3241,34 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1216308376568">
+    <property name="name" value="_NextLine_Enum" />
+    <link role="memberDataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1216308507057">
+      <property name="externalValue" value="none" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1216308502931">
+      <property name="externalValue" value="not indented" />
+      <property name="internalValue" value="not indented" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1216308376569">
+      <property name="externalValue" value="indented" />
+      <property name="internalValue" value="indented" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216308599511">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="LayoutNextLineStyleClassItem" />
+    <property name="rootable" value="false" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1216308761668">
+      <property name="name" value="nextLine" />
+      <link role="dataType" targetNodeId="1216308376568" resolveInfo="_NextLine_Enum" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216308818747">
+      <property name="value" value="layout-next-line" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

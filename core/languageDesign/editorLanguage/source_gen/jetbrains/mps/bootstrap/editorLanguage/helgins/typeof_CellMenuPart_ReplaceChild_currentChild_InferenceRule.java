@@ -26,7 +26,7 @@ public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule impleme
     }
     {
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().reportTypeError(node, "couldn't define concept of child node", "jetbrains.mps.bootstrap.editorLanguage.helgins@27_0", "1216041730146", intentionProvider);
+      TypeChecker.getInstance().reportTypeError(node, "couldn't define concept of child node", "jetbrains.mps.bootstrap.editorLanguage.helgins@22_0", "1216311101109", intentionProvider);
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_4().createNode(), node, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1179766709137");
   }

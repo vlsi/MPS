@@ -12568,5 +12568,22 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1216309269724">
+    <property name="package" value="Stylesheet" />
+    <link role="conceptDeclaration" targetNodeId="2.1216308599511" resolveInfo="LayoutNextLine" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1216309284179">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1216309284180">
+        <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
+        <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216309284181">
+        <property name="text" value=":" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1216309284182">
+        <link role="relationDeclaration" targetNodeId="2.1216308761668" resolveInfo="nextLine" />
+      </node>
+    </node>
+  </node>
 </model>
 

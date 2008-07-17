@@ -2440,6 +2440,7 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.IndentedStyleClassItem" id="1215865255526">
           <property name="flag" value="true" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216311101712" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1206063692153">
         <property name="vertical" value="true" />
