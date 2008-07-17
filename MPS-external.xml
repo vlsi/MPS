@@ -272,6 +272,9 @@
       <fileset dir="core/baseLanguage/classifiers/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
+      <fileset dir="core/baseLanguage/unitTest/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="core/runtime/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
@@ -331,6 +334,8 @@
     <antcall target="pack.MPS.Classpath" />
     <antcall target="pack.refactoring" />
     <antcall target="pack.jetbrains.mps.baseLanguage.classifiers" />
+    <antcall target="pack.jetbrains.mps.baseLanguage.unitTest" />
+    <antcall target="pack.jetbrains.mps.baseLanguage.unitTest.runtime" />
     <antcall target="pack.jetbrains.mps.bootstrap.actionsLanguage" />
     <antcall target="pack.jetbrains.mps.annotations" />
     <antcall target="pack.jetbrains.mps.bootstrap.constraintsLanguage" />
@@ -370,8 +375,6 @@
     <antcall target="pack.jetbrains.mps.textLanguage.formula" />
     <antcall target="pack.jetbrains.mps.textLanguage.table" />
     <antcall target="pack.jetbrains.mps.uiLanguage" />
-    <antcall target="pack.jetbrains.mps.baseLanguage.unitTest" />
-    <antcall target="pack.jetbrains.mps.baseLanguage.unitTest.runtime" />
     <antcall target="pack.jetbrains.mps.xml" />
     <antcall target="pack.jetbrains.springframework.configuration" />
     <antcall target="pack.jetbrains.springframework.configurationInternal" />
