@@ -1,6 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
-import javax.swing.JOptionPane;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public final class CreateFromUsageUtil {
 

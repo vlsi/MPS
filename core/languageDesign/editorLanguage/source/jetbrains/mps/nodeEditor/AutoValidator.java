@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import javax.swing.SwingUtilities;
 

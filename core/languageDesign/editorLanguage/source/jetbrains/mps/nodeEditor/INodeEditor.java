@@ -7,6 +7,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public interface INodeEditor {
   EditorCell createEditorCell(EditorContext editorContext, SNode node);

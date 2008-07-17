@@ -1,7 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.cells.TextLine;
+
 import javax.swing.JWindow;
-import javax.swing.JDialog;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 

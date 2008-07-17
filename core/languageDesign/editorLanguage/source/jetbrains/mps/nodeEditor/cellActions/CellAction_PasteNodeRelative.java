@@ -15,6 +15,8 @@ import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 import java.util.List;
 import java.util.Set;

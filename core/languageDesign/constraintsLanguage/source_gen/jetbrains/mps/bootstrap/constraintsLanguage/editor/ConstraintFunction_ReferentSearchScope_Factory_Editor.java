@@ -4,7 +4,10 @@ package jetbrains.mps.bootstrap.constraintsLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -12,10 +15,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.baseLanguage.editor.ConceptFunction_Component;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends DefaultNodeEditor {
 

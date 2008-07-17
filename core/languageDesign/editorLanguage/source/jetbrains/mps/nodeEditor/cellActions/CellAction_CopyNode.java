@@ -7,6 +7,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.text.TextRenderUtil;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Mapper;

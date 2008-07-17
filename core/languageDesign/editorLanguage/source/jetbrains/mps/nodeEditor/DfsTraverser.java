@@ -1,5 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+
 class DfsTraverser {
   private EditorCell myCurrent;
   private boolean myForward;

@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.nodeEditor.CaretBlinker.MyState;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;

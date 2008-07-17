@@ -1,13 +1,12 @@
 package jetbrains.mps.helgins.checking;
 
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
-import jetbrains.mps.util.TimePresentationUtil;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.

@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public class ChildrenCollectionFinder {
   private EditorCell myCurrent;

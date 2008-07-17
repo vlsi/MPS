@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public class Styles_StyleSheet {
   public static final Style REF_LINK_ROLE = new Style() {

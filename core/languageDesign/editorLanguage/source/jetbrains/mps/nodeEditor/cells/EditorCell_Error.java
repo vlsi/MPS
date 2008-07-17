@@ -1,0 +1,32 @@
+package jetbrains.mps.nodeEditor.cells;
+
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorContext;
+
+/**
+ * Author: Sergey Dmitriev
+ * Created Oct 2, 2003
+ */
+public class EditorCell_Error extends EditorCell_Label {
+  private String myDefaultText;
+
+  public EditorCell_Error(EditorContext editorContext, SNode node, String errorText) {
+    super(editorContext, node, null);
+    myDefaultText = errorText;
+    setDefaultText(errorText);
+    setErrorState(true);
+  }
+
+  public boolean canPasteText() {
+    return isEditable();
+  }
+
+  public boolean isValidText(String text) {
+    return text.equals(myDefaultText);
+  }
+
+  public void synchronizeViewWithModel() {
+    setText("");
+    setDefaultText(myDefaultText);
+  }
+}

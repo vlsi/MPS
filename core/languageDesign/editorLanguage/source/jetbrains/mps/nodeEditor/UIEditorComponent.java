@@ -1,20 +1,14 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.GenericContext;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 import javax.swing.border.LineBorder;
-import javax.swing.event.ChangeListener;
 import java.awt.Color;
 import java.util.List;
 

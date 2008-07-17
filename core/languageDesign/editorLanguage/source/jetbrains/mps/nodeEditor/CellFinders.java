@@ -1,6 +1,10 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
 import java.util.Iterator;
 

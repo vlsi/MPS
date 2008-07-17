@@ -28,6 +28,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.cellActions.*;
+import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -619,7 +620,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public JToolTip createToolTip() {
     JMultiLineToolTip toolTip = new JMultiLineToolTip();
-    toolTip.setFont(new TextLine("aaa").getFont());
+    toolTip.setFont(EditorSettings.getInstance().getDefaultEditorFont());
     return toolTip;
   }
 
@@ -1065,7 +1066,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return false;
   }
 
-  EditorCellAction getComponentAction(String actionType) {
+  public EditorCellAction getComponentAction(String actionType) {
     EditorCellAction action = myActionMap.get(actionType);
     if (action != null && action.canExecute(getEditorContext())) {
       return action;
@@ -1897,7 +1898,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myExecutingCommand;
   }
 
-  boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
+  public boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
     if (myNodeSubstituteChooser.isVisible()) {
       return true;
     }

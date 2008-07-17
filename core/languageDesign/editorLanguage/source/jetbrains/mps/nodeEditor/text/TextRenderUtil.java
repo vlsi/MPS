@@ -1,6 +1,8 @@
 package jetbrains.mps.nodeEditor.text;
 
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.logging.Logger;
 

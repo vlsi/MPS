@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;

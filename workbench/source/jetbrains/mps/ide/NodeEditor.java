@@ -3,6 +3,7 @@ package jetbrains.mps.ide;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;

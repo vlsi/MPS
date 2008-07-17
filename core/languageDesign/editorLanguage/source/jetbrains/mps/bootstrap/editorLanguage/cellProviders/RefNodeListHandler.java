@@ -5,15 +5,13 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 

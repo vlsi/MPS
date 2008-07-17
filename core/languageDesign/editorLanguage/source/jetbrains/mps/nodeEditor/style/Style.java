@@ -4,7 +4,7 @@ import com.intellij.util.containers.HashMap;
 
 import java.util.*;
 
-import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public class Style {
   private Style myParent;

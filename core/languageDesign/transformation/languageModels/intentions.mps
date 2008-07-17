@@ -814,7 +814,7 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216159318312">
                 <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1216159317171" />
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216159321722">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.EditorCell" resolveInfo="getSelectedCell" />
+                  <link role="baseMethodDeclaration" targetNodeId="5.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getSelectedCell" />
                 </node>
               </node>
             </node>
@@ -881,7 +881,7 @@
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216159287319">
               <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1216159280006" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216159290088">
-                <link role="baseMethodDeclaration" targetNodeId="5.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.EditorCell" resolveInfo="getSelectedCell" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getSelectedCell" />
               </node>
             </node>
           </node>
@@ -916,7 +916,7 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216159395865">
                 <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1216159394161" />
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216159397665">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.EditorCell" resolveInfo="getSelectedCell" />
+                  <link role="baseMethodDeclaration" targetNodeId="5.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getSelectedCell" />
                 </node>
               </node>
             </node>
@@ -983,7 +983,7 @@
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216159369793">
               <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1216159368495" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216159373062">
-                <link role="baseMethodDeclaration" targetNodeId="5.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.EditorCell" resolveInfo="getSelectedCell" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getSelectedCell" />
               </node>
             </node>
           </node>

@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.Color;
 import java.awt.Graphics;

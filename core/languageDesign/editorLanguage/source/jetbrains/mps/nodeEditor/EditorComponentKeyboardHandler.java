@@ -10,6 +10,8 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 import java.awt.event.KeyEvent;
 import java.util.List;

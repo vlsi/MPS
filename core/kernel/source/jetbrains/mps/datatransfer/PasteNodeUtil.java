@@ -1,9 +1,8 @@
 package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
-import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 

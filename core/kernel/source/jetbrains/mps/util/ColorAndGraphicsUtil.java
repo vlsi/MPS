@@ -1,6 +1,6 @@
 package jetbrains.mps.util;
 
-import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

@@ -6,6 +6,9 @@ import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.TypeCheckingMode;
 
@@ -311,7 +314,7 @@ public class IntelligentInputUtil {
           label.changeText(textToSet);
           component.relayout();
         }
-        label.getRenderedTextLine().end();
+        label.end();
       }
     }
   }

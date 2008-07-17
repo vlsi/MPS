@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTag;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public class CellAction_SideTransform extends EditorCellAction {
   private CellSide mySide;

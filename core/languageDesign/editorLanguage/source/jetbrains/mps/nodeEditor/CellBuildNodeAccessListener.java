@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.util.HashSet;
 import java.util.Set;

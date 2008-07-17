@@ -1,5 +1,10 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.TextLine;
+
 import java.awt.*;
 
 
@@ -54,20 +59,6 @@ public class NodeEditorActions {
       nodeEditorComponent.clearSelectionStack();
       EditorCell target = findTarget(selection);
       nodeEditorComponent.changeSelection(target);
-      if (selection.isPunctuationLayout() && target instanceof EditorCell_Label) {
-        EditorCell_Label targetLabel = (EditorCell_Label) target;
-        TextLine textLine = targetLabel.getRenderedTextLine();
-        int textLength = textLine.getText().length();
-        if (textLength > 0) {
-          if (textLine == targetLabel.getNullTextLine()) {
-            textLine.setCaretPosition(0);
-          } else {
-            textLine.setCaretPosition(textLength -1);
-          }
-        } else {
-          if (this.canExecute(context)) this.execute(context);
-        }
-      } else
       if (target instanceof EditorCell_Label) {
         ((EditorCell_Label) target).end();
       }
@@ -75,9 +66,7 @@ public class NodeEditorActions {
 
     private EditorCell findTarget(EditorCell cell) {
       EditorCell_Collection parent = cell.getParent();
-      if (parent == null) /*{
-        return (EditorUtil.isCollection(cell))?findTarget((EditorCell_Collection) cell):null;
-      }*/  return null;
+      if (parent == null) return null;
       EditorCell nextToLeft = parent.findNextToLeft(cell);
       if (nextToLeft != null) return nextToLeft;
 

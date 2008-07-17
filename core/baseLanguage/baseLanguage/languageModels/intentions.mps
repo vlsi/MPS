@@ -346,7 +346,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332444533">
                 <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1199914529086" />
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332444534">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.getContextCell():jetbrains.mps.nodeEditor.EditorCell" resolveInfo="getContextCell" />
+                  <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.getContextCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getContextCell" />
                 </node>
               </node>
             </node>

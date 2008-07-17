@@ -1248,7 +1248,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215870204609">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215870204610">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215870290960">
-              <link role="baseMethodDeclaration" targetNodeId="66.~CellPropertiesWindow.&lt;init&gt;(jetbrains.mps.nodeEditor.EditorCell,java.awt.Frame)" resolveInfo="CellPropertiesWindow" />
+              <link role="baseMethodDeclaration" targetNodeId="66.~CellPropertiesWindow.&lt;init&gt;(jetbrains.mps.nodeEditor.cells.EditorCell,java.awt.Frame)" resolveInfo="CellPropertiesWindow" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215870294571">
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1215870294572" />
                 <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1215870294573">
@@ -5774,7 +5774,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216123986734">
-              <link role="baseMethodDeclaration" targetNodeId="66.~CellExplorerView.showCell(jetbrains.mps.nodeEditor.EditorCell):void" resolveInfo="showCell" />
+              <link role="baseMethodDeclaration" targetNodeId="66.~CellExplorerView.showCell(jetbrains.mps.nodeEditor.cells.EditorCell):void" resolveInfo="showCell" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216123988470">
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1216123988471" />
                 <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1216123988472">

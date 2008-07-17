@@ -1,8 +1,8 @@
 package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.*;
 

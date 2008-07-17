@@ -1,0 +1,125 @@
+package jetbrains.mps.nodeEditor.cells;
+
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.bootstrap.editorLanguage.structure._ImageAlignment_Enum;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.util.Macros;
+import jetbrains.mps.nodeEditor.EditorContext;
+
+import java.awt.Image;
+import java.awt.Graphics;
+import java.awt.Toolkit;
+import java.util.Set;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: User
+ * Date: 12.02.2006
+ * Time: 3:01:11
+ * To change this template use File | Settings | File Templates.
+ */
+public class EditorCell_Image extends EditorCell_Basic {
+
+  private _ImageAlignment_Enum myAlignment = _ImageAlignment_Enum.alignmentJustify;
+  private Image myImage;
+
+  private int myDescent = -1;
+
+  protected EditorCell_Image(EditorContext editorContext, SNode node) {
+    super(editorContext, node);
+  }
+
+  public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, String imageFileName) {
+    EditorCell_Image result = new EditorCell_Image(editorContext, node);
+    result.setImageFileName(expandIconPath(imageFileName, node));
+    return result;
+  }
+
+  public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, Image image) {
+    EditorCell_Image result = new EditorCell_Image(editorContext, node);
+    result.setImage(image);
+    return result;
+  }
+
+  public void paintContent(Graphics g) {
+    if (myImage == null) return;
+    switch (myAlignment) {
+      case alignmentJustify: {
+        g.drawImage(myImage, myX, myY, myWidth, myHeight, getEditor());
+        break;
+      }
+      case alignmentCenter: {
+        int x = myX + (myWidth - myImage.getWidth(getEditor())) / 2;
+        int y = myY + (myHeight - myImage.getHeight(getEditor())) / 2;
+        g.drawImage(myImage, x, y, getEditor());
+        break;
+      }
+      case alignmentTile: {
+        break;
+      }
+    }
+  }
+
+  protected void relayoutImpl() {
+    if (myImage == null) return;
+    if (myAlignment == _ImageAlignment_Enum.alignmentJustify) {
+      myWidth = myImage.getWidth(getEditor());
+      myHeight = myImage.getHeight(getEditor());
+    }
+  }
+
+  public int getAscent() {
+    return myHeight - getDescent();
+  }
+
+  public int getDescent() {
+    return myDescent >= 0 ? myDescent : 0;
+  }
+
+  public void setDescent(int descent) {
+    myDescent = descent;
+  }
+
+  public void setAlignment(_ImageAlignment_Enum alignment) {
+    myAlignment = alignment;
+  }
+
+  protected void setImageFileName(String fileName) {
+    if (fileName != null && FileSystem.getFile(fileName).exists()) {
+      myImage = Toolkit.getDefaultToolkit().getImage(fileName);
+    }
+  }
+
+  private static String expandIconPath(String path, SNode sourceNode) {
+    IModule module = findAnchorModule(sourceNode.getModel());
+    final Macros macros = Macros.moduleDescriptor(module);
+    String filename = module == null ? null : macros.expandPath(path, module.getDescriptorFile());
+    return filename;
+  }
+
+  private static IModule findAnchorModule(SModel sourceModel) {
+    IModule module = null;
+    SModelDescriptor modelDescriptor = sourceModel.getModelDescriptor();
+    Language modelLang = Language.getLanguageFor(modelDescriptor);
+    if (modelLang != null) {
+      module = modelLang;
+    } else {
+      Set<Solution> ownerSet = SModelRepository.getInstance().getOwners(modelDescriptor, Solution.class);
+      if (!(ownerSet.isEmpty())) {
+        module = ownerSet.iterator().next();
+      }
+    }
+    return module;
+  }
+
+  protected void setImage(Image image) {
+    myImage = image;
+  }
+
+  public enum ImageAlignment {
+    alignmentJustify, alignmentCenter, alignmentTile
+  }
+
+}

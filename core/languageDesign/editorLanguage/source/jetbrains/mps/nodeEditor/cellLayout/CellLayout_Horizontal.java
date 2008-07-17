@@ -2,8 +2,8 @@ package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout;
-import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 /**
  * User: Sergey Dmitriev

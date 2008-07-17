@@ -7,6 +7,9 @@ import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.WindowsUtil;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.TextLine;
 
 import javax.swing.*;
 import javax.swing.event.ListDataListener;
@@ -359,7 +362,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       owner.addComponentListener(myComponentListener);
 
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-      myList.setFont(new TextLine("").getFont());
+      myList.setFont(EditorSettings.getInstance().getDefaultEditorFont());
       myList.setBackground(UIManager.getColor("TextArea.selectionBackground").brighter());
 
       myList.addMouseListener(new MouseAdapter() {
@@ -523,8 +526,8 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     private NodeItemCellRenderer() {
       setLayout(new BorderLayout());
-      myLeft.setFont(new TextLine("").getFont());
-      myRight.setFont(new TextLine("").getFont());
+      myLeft.setFont(EditorSettings.getInstance().getDefaultEditorFont());
+      myRight.setFont(EditorSettings.getInstance().getDefaultEditorFont());
       add(myLeft, BorderLayout.WEST);
       add(myRight, BorderLayout.EAST);
     }

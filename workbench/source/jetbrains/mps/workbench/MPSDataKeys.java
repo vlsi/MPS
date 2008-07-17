@@ -2,7 +2,7 @@ package jetbrains.mps.workbench;
 
 import com.intellij.openapi.actionSystem.DataKey;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;

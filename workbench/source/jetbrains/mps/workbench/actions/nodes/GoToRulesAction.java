@@ -7,7 +7,7 @@ import jetbrains.mps.bootstrap.helgins.structure.PatternCondition;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionEventData;

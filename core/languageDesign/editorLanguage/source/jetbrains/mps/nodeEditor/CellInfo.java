@@ -5,6 +5,8 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import org.jdom.Element;
 
 

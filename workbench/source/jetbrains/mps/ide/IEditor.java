@@ -1,7 +1,7 @@
 package jetbrains.mps.ide;
 
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
-import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.ICellSelectionListener;
 import jetbrains.mps.smodel.IOperationContext;
@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
 
-import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import org.jetbrains.annotations.NotNull;
 

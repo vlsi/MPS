@@ -1,6 +1,9 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import org.jetbrains.annotations.NotNull;
 
 public class DefaultNodeEditor implements INodeEditor {

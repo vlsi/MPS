@@ -9,6 +9,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public abstract class AbstractCellProvider {
   private SNode myNode;

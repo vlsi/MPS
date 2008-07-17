@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.*;
 
 import java.awt.event.KeyEvent;
 import java.util.*;
@@ -344,12 +345,12 @@ public class EditorManager {
     if (newlySelectedCell == null) return;
     context.getNodeEditorComponent().changeSelection(newlySelectedCell);
     if (newlySelectedCell instanceof EditorCell_Label) {
-      ((EditorCell_Label) newlySelectedCell).getRenderedTextLine().end();
+      ((EditorCell_Label) newlySelectedCell).end();
     }
   }
 
 
-  /*package*/ static class EditorCell_STHint extends EditorCell_Constant {
+  public static class EditorCell_STHint extends EditorCell_Constant {
 
     private EditorCell myAnchorCell;
     private CellSide mySide;

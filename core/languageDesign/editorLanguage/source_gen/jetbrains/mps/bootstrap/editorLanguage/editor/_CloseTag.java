@@ -4,15 +4,16 @@ package jetbrains.mps.bootstrap.editorLanguage.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+
 import jetbrains.mps.nodeEditor.ModelAccessor;
-import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel;

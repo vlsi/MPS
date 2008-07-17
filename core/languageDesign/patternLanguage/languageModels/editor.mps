@@ -309,7 +309,7 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1163603151512">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1163603151513">
-                  <link role="baseMethodDeclaration" targetNodeId="14.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.EditorCell" resolveInfo="getSelectedCell" />
+                  <link role="baseMethodDeclaration" targetNodeId="14.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getSelectedCell" />
                   <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1163603151514" />
                 </node>
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1163603151515">
@@ -376,7 +376,7 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1163603090979">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1163603090980">
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1163603090981">
-                    <link role="baseMethodDeclaration" targetNodeId="14.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.EditorCell" resolveInfo="getSelectedCell" />
+                    <link role="baseMethodDeclaration" targetNodeId="14.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getSelectedCell" />
                     <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1163603090982" />
                   </node>
                   <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1163603090983">
@@ -500,7 +500,7 @@
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1176736750303">
                 <link role="baseMethodDeclaration" targetNodeId="14.~EditorCell.getSNode():jetbrains.mps.smodel.SNode" resolveInfo="getSNode" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1176736750304">
-                  <link role="baseMethodDeclaration" targetNodeId="14.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.EditorCell" resolveInfo="getSelectedCell" />
+                  <link role="baseMethodDeclaration" targetNodeId="14.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getSelectedCell" />
                   <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1176736750305" />
                 </node>
               </node>
@@ -640,7 +640,7 @@
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1176736750365">
                 <link role="baseMethodDeclaration" targetNodeId="14.~EditorCell.getSNode():jetbrains.mps.smodel.SNode" resolveInfo="getSNode" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1176736750366">
-                  <link role="baseMethodDeclaration" targetNodeId="14.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.EditorCell" resolveInfo="getSelectedCell" />
+                  <link role="baseMethodDeclaration" targetNodeId="14.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getSelectedCell" />
                   <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1176736750367" />
                 </node>
               </node>
@@ -789,7 +789,7 @@
                 <link role="classifier" targetNodeId="14.~EditorCell" resolveInfo="EditorCell" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1176736750429">
-                <link role="baseMethodDeclaration" targetNodeId="14.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.EditorCell" resolveInfo="getSelectedCell" />
+                <link role="baseMethodDeclaration" targetNodeId="14.~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getSelectedCell" />
                 <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1176736750430" />
               </node>
             </node>

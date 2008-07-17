@@ -1,6 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.EditorCellKeyMap.ActionKey;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;

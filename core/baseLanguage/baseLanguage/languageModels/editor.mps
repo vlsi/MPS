@@ -6851,7 +6851,7 @@
                           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall"
                                 id="1207578525153">
                             <link role="baseMethodDeclaration"
-                                  targetNodeId="21.~EditorCell_Collection.createVertical(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.EditorCell_Collection"
+                                  targetNodeId="21.~EditorCell_Collection.createVertical(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.cells.EditorCell_Collection"
                                   resolveInfo="createVertical"/>
                             <link role="classConcept" targetNodeId="21.~EditorCell_Collection"
                                   resolveInfo="EditorCell_Collection"/>
@@ -6875,7 +6875,7 @@
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                                 id="1207578672693">
                             <link role="baseMethodDeclaration"
-                                  targetNodeId="21.~EditorCell_Collection.addEditorCell(jetbrains.mps.nodeEditor.EditorCell):void"
+                                  targetNodeId="21.~EditorCell_Collection.addEditorCell(jetbrains.mps.nodeEditor.cells.EditorCell):void"
                                   resolveInfo="addEditorCell"/>
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression"
                                   id="1213034571089">
@@ -6914,7 +6914,7 @@
                                     type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                                     id="1207579577121">
                                 <link role="baseMethodDeclaration"
-                                      targetNodeId="21.~EditorCell_Collection.addEditorCell(jetbrains.mps.nodeEditor.EditorCell):void"
+                                      targetNodeId="21.~EditorCell_Collection.addEditorCell(jetbrains.mps.nodeEditor.cells.EditorCell):void"
                                       resolveInfo="addEditorCell"/>
                                 <node role="actualArgument"
                                       type="jetbrains.mps.baseLanguage.structure.GenericNewExpression"
@@ -6989,7 +6989,7 @@
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                                 id="1207579613381">
                             <link role="baseMethodDeclaration"
-                                  targetNodeId="21.~EditorCell_Collection.addEditorCell(jetbrains.mps.nodeEditor.EditorCell):void"
+                                  targetNodeId="21.~EditorCell_Collection.addEditorCell(jetbrains.mps.nodeEditor.cells.EditorCell):void"
                                   resolveInfo="addEditorCell"/>
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression"
                                   id="1213034572246">
@@ -7024,7 +7024,7 @@
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                                 id="1207579630539">
                             <link role="baseMethodDeclaration"
-                                  targetNodeId="21.~EditorCell_Collection.addEditorCell(jetbrains.mps.nodeEditor.EditorCell):void"
+                                  targetNodeId="21.~EditorCell_Collection.addEditorCell(jetbrains.mps.nodeEditor.cells.EditorCell):void"
                                   resolveInfo="addEditorCell"/>
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression"
                                   id="1213034570163">
@@ -7199,7 +7199,7 @@
                                     type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                                     id="1207578661670">
                                 <link role="baseMethodDeclaration"
-                                      targetNodeId="21.~EditorCell_Collection.addEditorCell(jetbrains.mps.nodeEditor.EditorCell):void"
+                                      targetNodeId="21.~EditorCell_Collection.addEditorCell(jetbrains.mps.nodeEditor.cells.EditorCell):void"
                                       resolveInfo="addEditorCell"/>
                                 <node role="actualArgument"
                                       type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"

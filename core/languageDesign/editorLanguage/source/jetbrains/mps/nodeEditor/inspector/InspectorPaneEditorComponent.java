@@ -1,7 +1,6 @@
 package jetbrains.mps.nodeEditor.inspector;
 
-import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;

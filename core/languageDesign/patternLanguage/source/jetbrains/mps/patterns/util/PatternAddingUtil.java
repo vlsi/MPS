@@ -1,7 +1,7 @@
 package jetbrains.mps.patterns.util;
 
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.patterns.structure.PatternExpression;
 import jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration;

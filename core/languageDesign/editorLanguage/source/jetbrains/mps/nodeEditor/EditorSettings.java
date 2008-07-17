@@ -5,6 +5,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorSettings.MyState;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.TextLine;
 
 import javax.swing.*;
 import javax.swing.Timer;
@@ -484,7 +487,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
   private class EditorCell_Demo extends EditorCell_Constant {
     public EditorCell_Demo(EditorContext editorContext, String text) {
       super(editorContext, null, text);
-      this.getRenderedTextLine().setCaretPosition(3);
+      this.setCaretPosition(3);
     }
 
     public void changeText(String text) {
@@ -503,7 +506,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     }
 
     public void paintContent(Graphics g) {
-      TextLine textLine = getRenderedTextLine();
+      TextLine textLine = new TextLine(getText());
       textLine.setCaretEnabled(true);
       boolean toShowCaret = myCaretIsVisible;
       textLine.paint(g, myX, myY, myWidth, myHeight, isSelected(), toShowCaret);

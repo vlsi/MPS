@@ -7,6 +7,7 @@ import jetbrains.mps.intentions.IntentionsMenu;
 import jetbrains.mps.intentions.LightBulbMenu;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.AbstractAction;

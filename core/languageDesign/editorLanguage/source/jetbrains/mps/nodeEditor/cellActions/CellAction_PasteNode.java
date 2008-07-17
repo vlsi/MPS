@@ -8,6 +8,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
 import java.util.List;
 import java.util.Set;

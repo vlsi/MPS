@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 
 import java.util.Set;
 import java.util.Stack;

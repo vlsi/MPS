@@ -4,6 +4,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
