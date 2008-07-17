@@ -272,8 +272,7 @@ public abstract class CompletionTextField extends JTextField {
         "jetbrains.mps.core.structure",
         "jetbrains.mps.core.editor",
         "jetbrains.mps.core.constraints")
-    )
-    );
+    ));
 
     frame.setSize(800, 600);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
