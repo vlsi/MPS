@@ -1,16 +1,11 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellLayout;
 
-import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
+import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCell;
 
 import java.awt.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 04.11.2005
- * Time: 12:32:03
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractCellLayout implements CellLayout {
   public int getAscent(EditorCell_Collection editorCells) {
     int ascent = 0;

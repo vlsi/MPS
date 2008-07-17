@@ -1,8 +1,9 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.*;
 
 import java.util.ArrayList;
 import java.util.Set;

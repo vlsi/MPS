@@ -43,6 +43,14 @@
       <link role="affectedInstanceConcept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
       <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1214312387029">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214312387030">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216287944620">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216287944621">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1216287944622" />
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1216287944859">
+              <property name="value" value="true" />
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214312445638">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214312445639">
               <property name="name" value="item" />

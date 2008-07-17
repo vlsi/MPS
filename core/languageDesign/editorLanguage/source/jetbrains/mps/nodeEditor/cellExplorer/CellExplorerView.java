@@ -13,6 +13,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;

@@ -1,8 +1,8 @@
 package jetbrains.mps.nodeEditor.text;
 
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
 
 import java.util.List;
 

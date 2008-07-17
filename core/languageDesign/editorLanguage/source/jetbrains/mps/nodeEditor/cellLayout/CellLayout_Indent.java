@@ -1,14 +1,11 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-
-import java.util.ArrayList;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.awt.*;
+import jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout;
+import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCell;
 
 /**
  * Author: Sergey Dmitriev
