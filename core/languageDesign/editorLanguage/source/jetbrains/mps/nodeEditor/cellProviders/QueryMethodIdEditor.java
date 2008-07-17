@@ -8,6 +8,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;

@@ -1,13 +1,11 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 
-/**
- * User: Dmitriev.
- * Date: Jan 16, 2004
- */
 public class PropertyAccessor implements ModelAccessor {
   private SNodePointer myNodePointer;
   private String myPropertyName;

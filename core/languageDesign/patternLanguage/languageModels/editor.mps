@@ -329,7 +329,7 @@
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1163603254210">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1163603254211">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1163603254212">
-                      <link role="baseMethodDeclaration" targetNodeId="14.~EditorCell_Property.getModelAccessor():jetbrains.mps.nodeEditor.ModelAccessor" resolveInfo="getModelAccessor" />
+                      <link role="baseMethodDeclaration" targetNodeId="14.~EditorCell_Property.getModelAccessor():jetbrains.mps.nodeEditor.cells.ModelAccessor" resolveInfo="getModelAccessor" />
                       <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1163603254213">
                         <link role="variableDeclaration" targetNodeId="1163603121641" resolveInfo="cell" />
                       </node>

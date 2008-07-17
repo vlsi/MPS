@@ -7012,7 +7012,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205880088348">
-                    <link role="baseMethodDeclaration" targetNodeId="9.~EditorCell_Property.getModelAccessor():jetbrains.mps.nodeEditor.ModelAccessor" resolveInfo="getModelAccessor" />
+                    <link role="baseMethodDeclaration" targetNodeId="9.~EditorCell_Property.getModelAccessor():jetbrains.mps.nodeEditor.cells.ModelAccessor" resolveInfo="getModelAccessor" />
                   </node>
                 </node>
               </node>

@@ -16,7 +16,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.patterns.structure.AsPattern_AnnotationLink;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.patterns.structure.AsPattern;
-import jetbrains.mps.nodeEditor.PropertyAccessor;
+import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.patterns.structure.ListPattern;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;

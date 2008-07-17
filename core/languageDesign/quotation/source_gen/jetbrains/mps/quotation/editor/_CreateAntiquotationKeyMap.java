@@ -22,7 +22,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink;
 import jetbrains.mps.quotation.structure.ReferenceAntiquotation;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.PropertyAccessor;
+import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.quotation.structure.PropertyAntiquotation_AnnotationLink;
 import jetbrains.mps.quotation.structure.PropertyAntiquotation;
 

@@ -1355,7 +1355,7 @@
                       <link role="classifier" targetNodeId="4.~PropertyAccessor" resolveInfo="PropertyAccessor" />
                     </node>
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1196867287448">
-                      <link role="baseMethodDeclaration" targetNodeId="4.~EditorCell_Property.getModelAccessor():jetbrains.mps.nodeEditor.ModelAccessor" resolveInfo="getModelAccessor" />
+                      <link role="baseMethodDeclaration" targetNodeId="4.~EditorCell_Property.getModelAccessor():jetbrains.mps.nodeEditor.cells.ModelAccessor" resolveInfo="getModelAccessor" />
                       <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196867287449">
                         <link role="variableDeclaration" targetNodeId="1196867115040" resolveInfo="editorCell_Property" />
                       </node>
