@@ -1961,7 +1961,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList"
               id="1214306398855">
           <property name="vertical" value="true"/>
-          <property name="separatorText" value=" "/>
           <link role="relationDeclaration" targetNodeId="1.1214001825955"/>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
