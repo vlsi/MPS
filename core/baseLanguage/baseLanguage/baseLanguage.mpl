@@ -31,6 +31,7 @@
     <dependency reexport="false">jetbrains.mps.quotation</dependency>
     <dependency reexport="false">MPS.Classpath</dependency>
     <dependency reexport="false">jetbrains.mps.transformationTest</dependency>
+    <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.regexp</usedLanguages>
