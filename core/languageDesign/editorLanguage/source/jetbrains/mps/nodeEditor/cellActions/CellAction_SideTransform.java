@@ -1,9 +1,10 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTag;
+import jetbrains.mps.nodeEditor.*;
 
 public class CellAction_SideTransform extends EditorCellAction {
   private CellSide mySide;

@@ -27,6 +27,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
+import jetbrains.mps.nodeEditor.cellActions.*;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -1962,7 +1963,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myLastCaretX;
   }
 
-  void resetLastCaretX() {
+  public void resetLastCaretX() {
     myHasLastCaretX = false;
   }
 

@@ -73,7 +73,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         return true;
       }
 
-
       if (!!selectedCell.isErrorState()) {
         if (endEditKeystroke ||
           EditorCellAction.INSERT.equals(actionType) ||

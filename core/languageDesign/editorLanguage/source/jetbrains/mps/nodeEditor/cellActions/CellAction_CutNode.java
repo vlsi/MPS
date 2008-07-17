@@ -1,7 +1,11 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.NodeRangeSelection;
 
 import java.util.List;
 import java.util.LinkedList;

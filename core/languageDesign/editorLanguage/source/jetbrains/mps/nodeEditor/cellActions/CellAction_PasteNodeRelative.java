@@ -4,10 +4,9 @@
  * Date: Mar 2, 2004
  * Time: 1:14:34 PM
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.datatransfer.PasteNodeUtil;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
@@ -15,7 +14,7 @@ import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
-import jetbrains.mps.util.Condition;
+import jetbrains.mps.nodeEditor.*;
 
 import java.util.List;
 import java.util.Set;

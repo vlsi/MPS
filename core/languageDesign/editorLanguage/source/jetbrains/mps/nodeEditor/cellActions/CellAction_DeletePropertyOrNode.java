@@ -1,6 +1,8 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 /**
  * Author: Sergey Dmitriev.

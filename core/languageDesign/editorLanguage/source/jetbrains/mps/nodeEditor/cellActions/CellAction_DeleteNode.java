@@ -1,7 +1,9 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 import java.util.ArrayList;
 import java.util.List;

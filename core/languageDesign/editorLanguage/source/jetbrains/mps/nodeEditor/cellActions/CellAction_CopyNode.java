@@ -1,4 +1,4 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.smodel.SNode;
@@ -6,10 +6,10 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.text.TextRenderUtil;
+import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Mapper;
-import jetbrains.mps.util.Pair;
 
 import java.util.*;
 

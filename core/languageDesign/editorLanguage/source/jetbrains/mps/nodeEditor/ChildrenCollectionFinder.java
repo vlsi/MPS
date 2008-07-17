@@ -9,10 +9,10 @@ public class ChildrenCollectionFinder {
   private EditorCell myCurrent;
   private boolean myForward;
 
-  public ChildrenCollectionFinder(EditorCell current, boolean forward) {
+  public ChildrenCollectionFinder(EditorCell current, boolean forward) {    
     myCurrent = current;
     myForward = forward;
-  }
+  } 
 
   public EditorCell find() {
     DfsTraverser traverser = new DfsTraverser(myCurrent, myForward);

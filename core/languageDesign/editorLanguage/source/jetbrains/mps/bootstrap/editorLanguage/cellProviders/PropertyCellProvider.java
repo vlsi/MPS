@@ -7,6 +7,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteEasily;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeletePropertyOrNode;
 import jetbrains.mps.nodeEditor.cellMenu.*;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.smodel.Primitives;

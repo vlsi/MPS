@@ -3,8 +3,10 @@ package jetbrains.mps.bootstrap.editorLanguage.cellProviders;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil_new;
 
 /**
  * Created by IntelliJ IDEA.
