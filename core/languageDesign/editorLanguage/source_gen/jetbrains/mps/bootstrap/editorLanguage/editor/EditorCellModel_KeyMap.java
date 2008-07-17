@@ -20,8 +20,6 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
     this.putAction("ctrl+shift", "VK_F", action);
     action = new EditorCellModel_KeyMap.EditorCellModel_KeyMap_Action1();
     this.putAction("ctrl+alt+shift", "VK_F", action);
-    action = new EditorCellModel_KeyMap.EditorCellModel_KeyMap_Action2();
-    this.putAction("ctrl+alt", "VK_S", action);
   }
   public static class EditorCellModel_KeyMap_Action0 extends EditorCellKeyMapAction {
 
@@ -116,54 +114,6 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
 
     public String getKeyStroke() {
       return "ctrl alt shift F";
-    }
-
-}
-  public static class EditorCellModel_KeyMap_Action2 extends EditorCellKeyMapAction {
-
-    public EditorCellModel_KeyMap_Action2() {
-      this.setShownInPopupMenu(true);
-    }
-
-    public String getDescriptionText() {
-      return "toggle [selectable]/[not selectable]";
-    }
-
-    public boolean isMenuAlwaysShown() {
-      return false;
-    }
-
-    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
-      EditorCell contextCell = editorContext.getContextCell();
-      if ((contextCell == null)) {
-        return false;
-      }
-      SNode contextNode = contextCell.getSNode();
-      if (contextNode == null) {
-        return false;
-      }
-      if (contextNode.isInstanceOfConcept("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel")) {
-        return true;
-      }
-      return false;
-    }
-
-    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
-      EditorCell contextCell = editorContext.getContextCell();
-      this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
-    }
-
-    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      if (SPropertyOperations.hasValue(node, "selectable", "false", null)) {
-        SPropertyOperations.set(node, "selectable", "true");
-      } else
-      {
-        SPropertyOperations.set(node, "selectable", "false");
-      }
-    }
-
-    public String getKeyStroke() {
-      return "ctrl alt S";
     }
 
 }

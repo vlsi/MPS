@@ -4,23 +4,24 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
-
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -242,8 +243,8 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public ModelAccessor _modelAcessorFactory_1215032509786(final EditorContext editorContext, final SNode node) {
-    return new ModelAccessor() {
+  public jetbrains.mps.nodeEditor.cells.ModelAccessor _modelAcessorFactory_1215032509786(final EditorContext editorContext, final SNode node) {
+    return new jetbrains.mps.nodeEditor.cells.ModelAccessor() {
 
       public String getText() {
         StringBuilder result = new StringBuilder();

@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -22,6 +21,7 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class StatementList_Editor extends DefaultNodeEditor {
 
