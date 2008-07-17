@@ -116,12 +116,6 @@ public class RefactoringProcessor {
     Thread t = Thread.currentThread();
     System.err.println("current thread is " + t);
 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SModelRepository.getInstance().saveAll();
-      }
-    });
-
     final ILoggableRefactoring refactoring = refactoringContext.getRefactoring();
     Runnable runnable = new Runnable() {
       public void run() {

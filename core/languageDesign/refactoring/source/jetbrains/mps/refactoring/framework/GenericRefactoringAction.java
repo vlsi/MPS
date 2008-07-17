@@ -1,9 +1,7 @@
 package jetbrains.mps.refactoring.framework;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.smodel.RefactoringProcessor;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
@@ -19,6 +17,11 @@ public class GenericRefactoringAction extends BaseAction {
   }
 
   protected void doExecute(AnActionEvent e) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SModelRepository.getInstance().saveAll();
+      }
+    });
     new RefactoringProcessor().execute(new ActionEventData(e), myRefactoring);
   }
 

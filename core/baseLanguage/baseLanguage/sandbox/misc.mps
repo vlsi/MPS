@@ -274,6 +274,20 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216216056049">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216216059597">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1216216056050">
+              <link role="classifier" targetNodeId="1.~System" resolveInfo="System" />
+              <link role="variableDeclaration" targetNodeId="1.~System.out" resolveInfo="out" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216216063928">
+              <link role="baseMethodDeclaration" targetNodeId="124.~PrintStream.print(java.lang.String):void" resolveInfo="print" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216216069210">
+                <link role="variableDeclaration" targetNodeId="1216200840070" resolveInfo="s" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
