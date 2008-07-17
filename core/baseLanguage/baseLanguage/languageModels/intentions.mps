@@ -36,7 +36,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="24" />
+  <maxImportIndex value="25" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
@@ -46,6 +46,7 @@
   <import index="12" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="22" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="24" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
+  <import index="25" modelUID="jetbrains.mps.nodeEditor.cells@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.baseLanguage.behavior" />
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1193744597902">
     <property name="name" value="AddCastStatement" />
@@ -337,11 +338,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1195647385880">
             <property name="name" value="ecProperty" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195647385881">
-              <link role="classifier" targetNodeId="6.~EditorCell_Property" resolveInfo="EditorCell_Property" />
+              <link role="classifier" targetNodeId="25.~EditorCell_Property" resolveInfo="EditorCell_Property" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1195647385882">
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195647385883">
-                <link role="classifier" targetNodeId="6.~EditorCell_Property" resolveInfo="EditorCell_Property" />
+                <link role="classifier" targetNodeId="25.~EditorCell_Property" resolveInfo="EditorCell_Property" />
               </node>
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332444533">
                 <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1199914529086" />
@@ -361,7 +362,7 @@
                 <link role="variableDeclaration" targetNodeId="1195647385880" resolveInfo="ecProperty" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332445671">
-                <link role="baseMethodDeclaration" targetNodeId="6.~EditorCell_Label.getCaretPosition():int" resolveInfo="getCaretPosition" />
+                <link role="baseMethodDeclaration" targetNodeId="25.~EditorCell_Label.getCaretPosition():int" resolveInfo="getCaretPosition" />
               </node>
             </node>
           </node>

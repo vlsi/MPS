@@ -32,6 +32,7 @@
     <dependency reexport="false">MPS.Classpath</dependency>
     <dependency reexport="false">jetbrains.mps.transformationTest</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage</dependency>
+    <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage#1129914002149</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.regexp</usedLanguages>
