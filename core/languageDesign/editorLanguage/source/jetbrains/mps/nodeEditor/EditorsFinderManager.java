@@ -1,10 +1,16 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 import java.util.*;
 import java.lang.reflect.Constructor;
@@ -22,7 +28,6 @@ public class EditorsFinderManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(EditorsFinderManager.class);
   }
 
-  private Map<String, IGeneralizingEntityEditorFinder> myLanguageNamespaceToGEEditorFinders = new HashMap<String, IGeneralizingEntityEditorFinder>();
   private Map<String, Constructor> myCachedEditors = new HashMap<String, Constructor>();
   private final Object myLock = new Object();
 
@@ -51,11 +56,6 @@ public class EditorsFinderManager implements ApplicationComponent {
 
   public INodeEditor loadEditor(EditorContext context, SNode node) {
     synchronized (myLock) {
-      IGeneralizingEntityEditorFinder finder = getGEFinder(node);
-      if (finder == null) {
-        finder = new DefaultGeneralizingEntityEditorFinder();
-      }
-
       if (node.getLanguage(context.getScope()) == null) {
         return new ErrorNodeEditor();
       }
@@ -76,7 +76,7 @@ public class EditorsFinderManager implements ApplicationComponent {
         return new DefaultNodeEditor();
       }
 
-      INodeEditor result = finder.findEditor(node, context);
+      INodeEditor result = findEditor(node, context);
 
       if (result == null) {
         myCachedEditors.put(node.getConceptFqName(), null);
@@ -95,22 +95,71 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
   }
 
-  public IGeneralizingEntityEditorFinder getGEFinder(SNode node) {
-    synchronized (myLock) {
-      String languageNamespace = NameUtil.namespaceFromConceptFQName(node.getConceptFqName());
-      return myLanguageNamespaceToGEEditorFinders.get(languageNamespace);
+  public INodeEditor findEditor(SNode nodeToEdit, EditorContext context) {
+    IScope scope = context.getOperationContext().getScope();
+    AbstractConceptDeclaration abstractConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(BaseAdapter.fromAdapter(nodeToEdit.getConceptDeclarationAdapter()));
+    if (abstractConcept == null) {
+      LOG.errorWithTrace("error loading editor for node " + nodeToEdit.getDebugText() + "\n" +
+              "couldn't find node concept in scope " + scope);
+      return null;
     }
+    if (abstractConcept instanceof InterfaceConceptDeclaration) {
+      return new DefaultInterfaceEditor();
+    }
+
+    ConceptDeclaration concept = (ConceptDeclaration) abstractConcept;
+    while (concept != null) {
+      INodeEditor nodeEditor = findEditor(concept, /*stereotype*/ scope);
+      if (nodeEditor != null) {
+        return nodeEditor;
+      }
+      concept = concept.getExtends();
+    }
+    LOG.error("Couldn't load editor for node " + nodeToEdit.getDebugText());
+    return null;
   }
 
-  public void registerEditorJavaClassesFinder(String languageNamespace, IGeneralizingEntityEditorFinder finder) {
-    synchronized (myLock) {
-      myLanguageNamespaceToGEEditorFinders.put(languageNamespace, finder);
+  private INodeEditor findEditor(ConceptDeclaration nodeConcept, IScope scope) {
+    Language language = SModelUtil_new.getDeclaringLanguage(nodeConcept, scope);
+    if (language == null) {
+      return null;
     }
+
+    SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
+
+    String editorUID = null;
+
+    if (editorModelDescriptor != null) {
+      editorUID = editorModelDescriptor.getModelUID().toString();
+    }
+
+    try {
+      String editorClassName = editorUID + "." + nodeConcept.getName() + "_Editor";
+      Class editorClass = language.getClass(editorClassName);
+      if (editorClass == null) {
+        return null;
+      }
+      Constructor cons = editorClass.getConstructor();
+      cons.setAccessible(true);
+      return (INodeEditor) cons.newInstance();
+    } catch (InstantiationException e) {
+      LOG.error(e);
+    } catch (IllegalAccessException e) {
+      LOG.error(e);
+    } catch (Exception e) {
+      LOG.error(e);
+    }
+
+    return null;
   }
 
-  public void unregisterEditorJavaClassesFinder(String languageNamespace) {
-    synchronized (myLock) {
-      myLanguageNamespaceToGEEditorFinders.remove(languageNamespace);
+  public static class DefaultInterfaceEditor implements INodeEditor {
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return new EditorCell_Error(editorContext, node, "    ");
+    }
+
+    public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+      return new EditorCell_Constant(editorContext, node, node.getDebugText());
     }
   }
 
