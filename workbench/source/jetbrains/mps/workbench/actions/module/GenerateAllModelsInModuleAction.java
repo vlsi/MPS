@@ -118,6 +118,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
         disable(e.getPresentation());
       }
     }
+    enable(e.getPresentation());
     String obj = myModules.size() == 1 ? NameUtil.shortNameFromLongName(myModules.get(0).getClass().getName()) : "Modules";
     String newText = (myRegenerate ? "Regenerate" : "Generate") + " " + obj;
     e.getPresentation().setText(newText);
