@@ -9,6 +9,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
 import java.util.*;
 
+import com.intellij.openapi.util.Computable;
+
 
 /**
  * Author: Sergey Dmitriev
@@ -246,13 +248,29 @@ public class EditorContext {
     return false;
   }
 
-  public void setContextCell(EditorCell cell) {
-    myContextCell = cell;
-  }
-
   public EditorCell getContextCell() {
     if (myContextCell == null) return getNodeEditorComponent().getSelectedCell();
     return myContextCell;
+  }
+
+  public void runWithContextCell(EditorCell contextCell, Runnable r) {
+    runWithContextCell(contextCell, new Computable<Object>() {
+      public Object compute() {
+        r.run();
+        return null;
+      }
+    });
+  }
+
+
+  public<T> T runWithContextCell(EditorCell contextCell, Computable<T> r) {
+    EditorCell oldContextCell = myContextCell;
+    myContextCell = contextCell;
+    try {
+      return r.compute();
+    } finally {
+      myContextCell = oldContextCell;
+    }
   }
 
   public EditorCell createRoleAttributeCell(Class attributeClass, EditorCell cellWithRole, SNode roleAttribute) {

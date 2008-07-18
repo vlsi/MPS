@@ -21,6 +21,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Rectangle;
 
+import com.intellij.openapi.util.Computable;
+
 /**
  * author: Igor Alshannikov
  * Sep 28, 2006
@@ -209,23 +211,20 @@ public class KeyMapUtil {
   }
 
 
-  public static boolean canExecuteKeyMapAction(EditorCellKeyMapAction action, KeyEvent keyEvent, EditorCell contextCell, EditorContext editorContext) {
-    EditorCell oldContextCell = editorContext.getContextCell();
-    try {
-      editorContext.setContextCell(contextCell);
-      return action.canExecute(keyEvent, editorContext);
-    } finally {
-      editorContext.setContextCell(oldContextCell);
-    }
+  public static boolean canExecuteKeyMapAction(final EditorCellKeyMapAction action, final KeyEvent keyEvent, EditorCell contextCell, final EditorContext editorContext) {
+    return editorContext.runWithContextCell(contextCell, new Computable<Boolean>() {
+      public Boolean compute() {
+        return action.canExecute(keyEvent, editorContext);
+      }
+    });
   }
 
-  public static void executeKeyMapAction(EditorCellKeyMapAction action, KeyEvent keyEvent, EditorCell contextCell, EditorContext editorContext) {
-    EditorCell oldContextCell = editorContext.getContextCell();
-    try {
-      action.execute(keyEvent, editorContext);
-    } finally {
-      editorContext.setContextCell(oldContextCell);
-    }
+  public static void executeKeyMapAction(final EditorCellKeyMapAction action, final KeyEvent keyEvent, EditorCell contextCell, final EditorContext editorContext) {
+    editorContext.runWithContextCell(contextCell, new Runnable() {
+      public void run() {
+        action.execute(keyEvent, editorContext);
+      }
+    });
   }
 
   static void showActionsMenu(List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo, final KeyEvent keyEvent, final EditorContext editorContext, EditorCell selectedCell) {
