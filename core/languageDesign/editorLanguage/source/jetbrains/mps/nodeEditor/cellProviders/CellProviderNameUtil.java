@@ -8,17 +8,9 @@ public class CellProviderNameUtil {
 
   public static String getProviderClassName(String cellModelClassName) {
     int index = cellModelClassName.lastIndexOf(".");
-    String prefix = cellModelClassName.substring(0, index+1);
-    String name = cellModelClassName.substring(index+1);
+    String prefix = cellModelClassName.substring(0, index + 1);
+    String name = cellModelClassName.substring(index+  1);
     if (!name.startsWith(CELL_MODEL_PREFIX)) return null;
     return prefix + CELL_PROVIDERS_PACKAGE + "." + name.substring(CELL_MODEL_PREFIX.length()) + CELL_PROVIDER_POSTFIX;
-  }
-
-  public static String getHandlerClassName(String cellModelClassName) {
-    int index = cellModelClassName.lastIndexOf(".");
-    String prefix = cellModelClassName.substring(0, index+1);
-    String name = cellModelClassName.substring(index+1);
-    if (!name.startsWith(CELL_MODEL_PREFIX)) return null;
-    return prefix + CELL_PROVIDERS_PACKAGE + "." + name.substring(CELL_MODEL_PREFIX.length()) + CELL_LIST_HANDLER_POSTFIX;
   }
 }

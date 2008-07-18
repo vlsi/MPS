@@ -109,6 +109,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENTED, true);
+          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "");
         }
 
       };

@@ -29,7 +29,7 @@
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="22" />
-  <maxImportIndex value="7" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="22" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
@@ -37,14 +37,39 @@
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.editorLanguage@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
+  <import index="8" modelUID="jetbrains.mps.bootstrap.editorLanguage.cellProviders@java_stub" version="-1" />
+  <import index="9" modelUID="jetbrains.mps.nodeEditor.cellProviders@java_stub" version="-1" />
+  <visible index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877183870">
     <property name="package" value="CellModel" />
     <link role="concept" targetNodeId="1.1088013125922" resolveInfo="CellModel_RefCell" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877183871">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877183872" />
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216378142197">
+      <property name="name" value="getRoleForCell" />
+      <link role="overriddenMethod" targetNodeId="1216377898846" resolveInfo="getRoleForCell" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216378142199">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216378145858">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216378160834">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216378147454">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1216378147203" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216378160270">
+                <link role="link" targetNodeId="1.1088013239202" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1216378173384">
+              <link role="property" targetNodeId="2v.1071599776563" resolveInfo="role" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216378144653">
+        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+      </node>
+    </node>
   </node>
-  <visible index="2" modelUID="jetbrains.mps.core.structure" />
+  <visible index="3" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877260635">
     <property name="package" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1186402373407" resolveInfo="StyleSheetClass" />
@@ -61,7 +86,7 @@
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877260641">
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877260642" />
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1213877260643">
-                <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
+                <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
               </node>
             </node>
           </node>
@@ -259,14 +284,13 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877273544" />
     </node>
   </node>
-  <visible index="3" modelUID="jetbrains.mps.baseLanguage.behavior" />
-  <visible index="4" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <visible index="4" modelUID="jetbrains.mps.baseLanguage.behavior" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877280244">
     <property name="package" value="CellMenu" />
     <link role="concept" targetNodeId="1.1165270999881" resolveInfo="CellMenuPart_ReplaceChild_Group_Create" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877280245">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overriddenMethod" targetNodeId="3v.1213877374441" resolveInfo="getExpectedReturnType" />
+      <link role="overriddenMethod" targetNodeId="4v.1213877374441" resolveInfo="getExpectedReturnType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877280246">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877280247">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1213877280248">
@@ -319,7 +343,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877280270">
             <property name="name" value="editedLink" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877280271">
-              <link role="concept" targetNodeId="4v.1071489288298" resolveInfo="LinkDeclaration" />
+              <link role="concept" targetNodeId="2v.1071489288298" resolveInfo="LinkDeclaration" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213877280272">
               <link role="baseMethodDeclaration" targetNodeId="7.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
@@ -339,7 +363,7 @@
                 <link role="variableDeclaration" targetNodeId="1213877280270" resolveInfo="editedLink" />
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1213877280279">
-                <link role="link" targetNodeId="4v.1071599976176" />
+                <link role="link" targetNodeId="2v.1071599976176" />
               </node>
             </node>
           </node>
@@ -377,6 +401,28 @@
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877309982">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877309983" />
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216377943397">
+      <property name="name" value="getRoleForCell" />
+      <link role="overriddenMethod" targetNodeId="1216377898846" resolveInfo="getRoleForCell" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216377943399">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216378083275">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216378085907">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216378084153">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1216378083934" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216378085188">
+                <link role="link" targetNodeId="1.1073389964684" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1216378086910">
+              <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216377946510">
+        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877312933">
     <property name="package" value="CellMenu" />
@@ -398,7 +444,7 @@
     <link role="concept" targetNodeId="1.1165270662927" resolveInfo="CellMenuPart_ReplaceChild_Group_Query" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877323456">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overriddenMethod" targetNodeId="3v.1213877374441" resolveInfo="getExpectedReturnType" />
+      <link role="overriddenMethod" targetNodeId="4v.1213877374441" resolveInfo="getExpectedReturnType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877323457">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877323458">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877323459">
@@ -479,6 +525,67 @@
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877329111">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877329112" />
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216377898846">
+      <property name="name" value="getRoleForCell" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216377914627">
+        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216377898848">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216377921925">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1216377922396" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216378357889">
+      <property name="name" value="getCellProviderClassName" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216378360861">
+        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216378357891">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216378375083">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216378375084">
+            <property name="name" value="conceptFqName" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216378375085">
+              <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216378375086">
+              <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1216378375087">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1216378379019" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216378375089">
+                <link role="baseMethodDeclaration" targetNodeId="7.~SNode.getConceptFqName():java.lang.String" resolveInfo="getConceptFqName" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216378375090">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216378375091">
+            <property name="name" value="something" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216378375092">
+              <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216378375093">
+              <link role="baseMethodDeclaration" targetNodeId="3.~NameUtil.removeStructureFromFqName(java.lang.String):java.lang.String" resolveInfo="removeStructureFromFqName" />
+              <link role="classConcept" targetNodeId="3.~NameUtil" resolveInfo="NameUtil" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216378375094">
+                <link role="variableDeclaration" targetNodeId="1216378375084" resolveInfo="conceptFqName" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216378375095">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216378375096">
+            <link role="baseMethodDeclaration" targetNodeId="9.~CellProviderNameUtil.getProviderClassName(java.lang.String):java.lang.String" resolveInfo="getProviderClassName" />
+            <link role="classConcept" targetNodeId="9.~CellProviderNameUtil" resolveInfo="CellProviderNameUtil" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216378375097">
+              <link role="variableDeclaration" targetNodeId="1216378375091" resolveInfo="something" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877335426">
     <property name="package" value="CellKeyMap" />
@@ -554,6 +661,28 @@
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877341317">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877341318" />
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216378220448">
+      <property name="name" value="getRoleForCell" />
+      <link role="overriddenMethod" targetNodeId="1216377898846" resolveInfo="getRoleForCell" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216378220450">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216378223952">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216378227131">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216378224877">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1216378224610" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216378226771">
+                <link role="link" targetNodeId="1.1073389882824" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1216378227712">
+              <link role="property" targetNodeId="2v.1071599776563" resolveInfo="role" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216378222389">
+        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877342152">
     <property name="package" value="CellModel" />
@@ -586,7 +715,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877372463">
             <property name="name" value="conceptDeclaration" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877372464">
-              <link role="concept" targetNodeId="4v.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+              <link role="concept" targetNodeId="2v.1169125787135" resolveInfo="AbstractConceptDeclaration" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877372465">
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877372466" />
@@ -882,7 +1011,7 @@
     <link role="concept" targetNodeId="1.1165339307433" resolveInfo="CellMenuPart_ReplaceChild_Item_Create" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877438487">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overriddenMethod" targetNodeId="3v.1213877374441" resolveInfo="getExpectedReturnType" />
+      <link role="overriddenMethod" targetNodeId="4v.1213877374441" resolveInfo="getExpectedReturnType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877438488">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877438489">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1213877438490">
@@ -935,7 +1064,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877438512">
             <property name="name" value="editedLink" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877438513">
-              <link role="concept" targetNodeId="4v.1071489288298" resolveInfo="LinkDeclaration" />
+              <link role="concept" targetNodeId="2v.1071489288298" resolveInfo="LinkDeclaration" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213877438514">
               <link role="classConcept" targetNodeId="7.~BaseAdapter" resolveInfo="BaseAdapter" />
@@ -955,7 +1084,7 @@
                 <link role="variableDeclaration" targetNodeId="1213877438512" resolveInfo="editedLink" />
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1213877438521">
-                <link role="link" targetNodeId="4v.1071599976176" />
+                <link role="link" targetNodeId="2v.1071599976176" />
               </node>
             </node>
           </node>
@@ -1080,7 +1209,7 @@
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877515624">
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877515625" />
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1213877515626">
-                <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
+                <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
               </node>
             </node>
           </node>
@@ -1096,7 +1225,7 @@
     <link role="concept" targetNodeId="1.1163613035599" resolveInfo="CellMenuPart_AbstractGroup_Query" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877516037">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overriddenMethod" targetNodeId="3v.1213877374441" resolveInfo="getExpectedReturnType" />
+      <link role="overriddenMethod" targetNodeId="4v.1213877374441" resolveInfo="getExpectedReturnType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877516038">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877516039">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877516040">
@@ -1515,6 +1644,56 @@
     <link role="concept" targetNodeId="1.1186403694788" resolveInfo="ColorStyleClassItem" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1216029180737">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216029180738" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1216378116896">
+    <property name="package" value="CellModel" />
+    <link role="concept" targetNodeId="1.1137553248617" resolveInfo="CellModel_ConceptProperty" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1216378116897">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216378116898" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216378118978">
+      <property name="name" value="getRoleForCell" />
+      <link role="overriddenMethod" targetNodeId="1216377898846" resolveInfo="getRoleForCell" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216378118980">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216378123029">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216378127693">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216378123813">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1216378123593" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216378127333">
+                <link role="link" targetNodeId="1.1137553248621" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1216378128243">
+              <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216378121684">
+        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1216378460069">
+    <property name="package" value="CellModel" />
+    <link role="concept" targetNodeId="1.1184319644772" resolveInfo="CellModel_NonEmptyProperty" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1216378460070">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216378460071" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216378461650">
+      <property name="name" value="getCellProviderClassName" />
+      <link role="overriddenMethod" targetNodeId="1216378357889" resolveInfo="getCellProviderClassName" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216378461652">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216378465264">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216378466828">
+            <property name="value" value="jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216378464122">
+        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+      </node>
     </node>
   </node>
 </model>
