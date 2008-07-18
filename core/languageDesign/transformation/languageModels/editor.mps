@@ -5602,7 +5602,7 @@
         <property name="flag" value="true" />
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.BracketColorStyleClassItem" id="1215516491316">
-        <property name="color" value="pink" />
+        <property name="color" value="LIGHT_BLUE" />
       </node>
     </node>
   </node>

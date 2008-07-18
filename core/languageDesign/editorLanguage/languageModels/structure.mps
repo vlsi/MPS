@@ -790,6 +790,10 @@
       <property name="externalValue" value="blue" />
       <property name="internalValue" value="blue" />
     </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1216404713420">
+      <property name="externalValue" value="lightBlue" />
+      <property name="internalValue" value="LIGHT_BLUE" />
+    </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1101209985304">
       <property name="externalValue" value="darkBlue" />
       <property name="internalValue" value="DARK_BLUE" />
