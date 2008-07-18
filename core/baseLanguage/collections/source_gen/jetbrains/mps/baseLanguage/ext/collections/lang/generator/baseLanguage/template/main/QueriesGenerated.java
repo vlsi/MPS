@@ -135,12 +135,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1170982686718(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode variable_input = SLinkOperations.getTarget(_context.getNode(), "variable", false);
-    /*
-      SNode forEach_input = SNodeOperations.getParent(variable_input, null, false, false);
-      SNode variable_output = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(forEach_input, "loop_variable_declaration");
-      return variable_output;
-    */
-    // test : try dinamic resolve
     return SPropertyOperations.getString(variable_input, "name");
   }
 
