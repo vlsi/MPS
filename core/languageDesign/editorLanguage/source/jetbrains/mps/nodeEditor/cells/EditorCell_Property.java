@@ -32,6 +32,14 @@ public class EditorCell_Property extends EditorCell_Label {
     setText(text);
   }
 
+  public void setSelected(boolean selected) {
+    boolean oldSelected = isSelected();
+    super.setSelected(selected);
+    if (oldSelected && !selected && myModelAccessor instanceof TransactionalModelAccessor) {
+      ((TransactionalModelAccessor) myModelAccessor).commit();      
+    }
+  }
+
   public void changeText(String text) {
     super.changeText(text);
 

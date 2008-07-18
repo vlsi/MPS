@@ -40,9 +40,8 @@ public class PropertyAccessor implements ModelAccessor {
     return myPropertyName;
   }
 
-  public String getText() {                                                                      
-    String value = NodeReadAccessCaster.runEditorCellPropertyAccessAction(this);
-    return fromInternal(value);
+  public String getText() {
+    return fromInternal(doGetValue());
   }
 
   public void setText(String text) {
@@ -51,10 +50,17 @@ public class PropertyAccessor implements ModelAccessor {
         text = null;
       }
       if (isValidText_internal(text)) {
-        String propertyValue = toInternal(text);
-        myNodePointer.getNode().setProperty(myPropertyName, propertyValue);
+        doSetValue(toInternal(text));
       }
     }
+  }
+
+  protected String doGetValue() {
+    return NodeReadAccessCaster.runEditorCellPropertyAccessAction(this);
+  }
+
+  protected void doSetValue(String newText) {
+    myNodePointer.getNode().setProperty(myPropertyName, newText);
   }
 
   @Hack
