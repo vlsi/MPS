@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
@@ -33,7 +34,6 @@ import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
-import jetbrains.mps.workbench.action.ActionEventData;
 
 public class MoveLinkUp extends AbstractLoggableRefactoring {
   public static final String targetConcept = "targetConcept";
@@ -117,7 +117,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   }
 
   public SearchResults getAffectedNodes(ActionEventData data, RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(data.createProgressIndicator(), data.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
+    return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), data.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
   public void doRefactor(ActionEventData data, RefactoringContext refactoringContext) {

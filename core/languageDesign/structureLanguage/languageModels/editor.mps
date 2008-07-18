@@ -27,7 +27,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="31" />
+  <maxImportIndex value="33" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -37,6 +37,8 @@
   <import index="28" modelUID="jetbrains.mps.bootstrap.structureLanguage.editor@java_stub" version="-1" />
   <import index="29" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <import index="31" modelUID="jetbrains.mps.vfs@java_stub" version="-1" />
+  <import index="32" modelUID="javax.swing@java_stub" version="-1" />
+  <import index="33" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1082979388796">
     <property name="name" value="ConstrainedDataTypeDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1082978499127" />
@@ -938,9 +940,73 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1087215312706">
           <property name="text" value="concept" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1087215312707">
-          <property name="noTargetText" value="&lt;no name&gt;" />
-          <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_TransactionalProperty" id="1216387022150">
+          <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
+          <node role="handlerBlock" type="jetbrains.mps.bootstrap.editorLanguage.structure.TransactionalPropertyHandler" id="1216387022151">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216387022152">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216387039092">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216387039093">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216387268556">
+                    <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216387268557">
+                      <property name="name" value="result" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1216387268558" />
+                      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216387268559">
+                        <link role="classConcept" targetNodeId="32.~JOptionPane" resolveInfo="JOptionPane" />
+                        <link role="baseMethodDeclaration" targetNodeId="32.~JOptionPane.showConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int):int" resolveInfo="showConfirmDialog" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216387268560">
+                          <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1216387268561" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216387268562">
+                            <link role="baseMethodDeclaration" targetNodeId="33.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.AbstractEditorComponent" resolveInfo="getNodeEditorComponent" />
+                          </node>
+                        </node>
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216387268563">
+                          <property name="value" value="Renaming concept can break your model. It's advised to use rename refactoring instead. Are you sure?" />
+                        </node>
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216387268564">
+                          <property name="value" value="Rename concept" />
+                        </node>
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1216387268565">
+                          <link role="classifier" targetNodeId="32.~JOptionPane" resolveInfo="JOptionPane" />
+                          <link role="variableDeclaration" targetNodeId="32.~JOptionPane.YES_NO_OPTION" resolveInfo="YES_NO_OPTION" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216387284346">
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216387284347">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216387292995" />
+                    </node>
+                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1216387286191">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1216387290545">
+                        <link role="classifier" targetNodeId="32.~JOptionPane" resolveInfo="JOptionPane" />
+                        <link role="variableDeclaration" targetNodeId="32.~JOptionPane.NO_OPTION" resolveInfo="NO_OPTION" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216387285255">
+                        <link role="variableDeclaration" targetNodeId="1216387268557" resolveInfo="result" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1216387041858">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1216387042859" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.TransactionPropertyHandler_oldValue" id="1216387041311" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216387031856">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216387034234">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216387032872">
+                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1216387031857" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1216387033718">
+                      <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1216387034798">
+                    <node role="value" type="jetbrains.mps.bootstrap.editorLanguage.structure.TransactionPropertyHandler_newValue" id="1216387037000" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1215626330774">
           <property name="vertical" value="true" />
@@ -1464,7 +1530,7 @@
                     <link role="classConcept" targetNodeId="14.~Macros" resolveInfo="Macros" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740201549">
-                    <link role="baseMethodDeclaration" targetNodeId="14.~Macros.expandPath(java.lang.String,java.io.File):java.lang.String" resolveInfo="expandPath" />
+                    <link role="baseMethodDeclaration" targetNodeId="14.~Macros.expandPath(java.lang.String,jetbrains.mps.vfs.IFile):java.lang.String" resolveInfo="expandPath" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648287">
                       <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1161166236733" />
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1161166240923">
@@ -2060,14 +2126,72 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1169126008915">
           <property name="text" value="interface concept" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1169126008916">
-          <property name="noTargetText" value="&lt;no name&gt;" />
-          <link role="relationDeclaration" targetNodeId="2.1169194664001" />
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" id="1214407441944">
-            <property name="color" value="yellow" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorSelectedStyleClassItem" id="1214407442129">
-            <property name="color" value="cyan" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_TransactionalProperty" id="1216387630008">
+          <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
+          <node role="handlerBlock" type="jetbrains.mps.bootstrap.editorLanguage.structure.TransactionalPropertyHandler" id="1216387630009">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216387630010">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216387630011">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216387630012">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216387630013">
+                    <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216387630014">
+                      <property name="name" value="result" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1216387630015" />
+                      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216387630016">
+                        <link role="classConcept" targetNodeId="32.~JOptionPane" resolveInfo="JOptionPane" />
+                        <link role="baseMethodDeclaration" targetNodeId="32.~JOptionPane.showConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int):int" resolveInfo="showConfirmDialog" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216387630017">
+                          <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1216387630018" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216387630019">
+                            <link role="baseMethodDeclaration" targetNodeId="33.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.AbstractEditorComponent" resolveInfo="getNodeEditorComponent" />
+                          </node>
+                        </node>
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216387630020">
+                          <property name="value" value="Renaming concept can break your model. It's advised to use rename refactoring instead. Are you sure?" />
+                        </node>
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216387630021">
+                          <property name="value" value="Rename concept" />
+                        </node>
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1216387630022">
+                          <link role="classifier" targetNodeId="32.~JOptionPane" resolveInfo="JOptionPane" />
+                          <link role="variableDeclaration" targetNodeId="32.~JOptionPane.YES_NO_OPTION" resolveInfo="YES_NO_OPTION" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216387630023">
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216387630024">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216387630025" />
+                    </node>
+                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1216387630026">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1216387630027">
+                        <link role="classifier" targetNodeId="32.~JOptionPane" resolveInfo="JOptionPane" />
+                        <link role="variableDeclaration" targetNodeId="32.~JOptionPane.NO_OPTION" resolveInfo="NO_OPTION" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216387630028">
+                        <link role="variableDeclaration" targetNodeId="1216387630014" resolveInfo="result" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1216387630029">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1216387630030" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.TransactionPropertyHandler_oldValue" id="1216387630031" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216387630032">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216387630033">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216387630034">
+                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1216387630035" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1216387630036">
+                      <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1216387630037">
+                    <node role="value" type="jetbrains.mps.bootstrap.editorLanguage.structure.TransactionPropertyHandler_newValue" id="1216387630038" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1215628239608">

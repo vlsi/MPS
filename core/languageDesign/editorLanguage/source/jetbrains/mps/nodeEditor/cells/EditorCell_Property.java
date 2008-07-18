@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 
 /**
  * Author: Sergey Dmitriev
@@ -10,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
  */
 public class EditorCell_Property extends EditorCell_Label {
   private ModelAccessor myModelAccessor;
+  private boolean myCommitInProgress;
 
   private EditorCell_Property(EditorContext editorContext, ModelAccessor accessor, SNode node) {
     super(editorContext, node, accessor.getText());
@@ -36,7 +38,25 @@ public class EditorCell_Property extends EditorCell_Label {
     boolean oldSelected = isSelected();
     super.setSelected(selected);
     if (oldSelected && !selected && myModelAccessor instanceof TransactionalModelAccessor) {
-      ((TransactionalModelAccessor) myModelAccessor).commit();      
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          commit();
+        }
+      });
+    }
+  }
+  
+  public void commit() {    
+    if (myCommitInProgress) return;
+    myCommitInProgress = true;
+    try {
+      if (myModelAccessor instanceof TransactionalModelAccessor) {
+        ((TransactionalModelAccessor) myModelAccessor).commit();
+        synchronizeViewWithModel();
+        getEditorContext().getNodeEditorComponent().relayout();
+      }
+    } finally {
+      myCommitInProgress = false;
     }
   }
 

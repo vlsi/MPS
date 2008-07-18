@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
@@ -26,8 +27,6 @@ import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.workbench.action.ActionEventData;
-
 import java.util.HashMap;
 
 public class SafeDeleteConcept extends AbstractLoggableRefactoring {
@@ -108,7 +107,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   public SearchResults getAffectedNodes(ActionEventData data, RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
-      SearchResults searchResults = FindUtils.getSearchResults(data.createProgressIndicator(), data.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder", "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
+      SearchResults searchResults = FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), data.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder", "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
       refactoringContext.setParameter("sourceLanguage", Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor()));
       if (((Language)refactoringContext.getParameter("sourceLanguage")) != null) {
         SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();

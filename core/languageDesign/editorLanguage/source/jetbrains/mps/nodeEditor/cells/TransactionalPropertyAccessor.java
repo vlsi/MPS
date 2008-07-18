@@ -8,7 +8,7 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
   private String myOldValue;
   private String myUncommitedValue;
 
-  public TransactionalPropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
+  public  TransactionalPropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
     super(node, propertyName, readOnly, allowEmptyText, editorContext);
   }
 
@@ -32,6 +32,7 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
     if (myUncommitedValue != null) {
       doCommit(myOldValue, myUncommitedValue);
       myUncommitedValue = null;
+      myOldValue = doGetValue();
     }
   }
   

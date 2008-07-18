@@ -65,7 +65,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateColor40(cell);
+              return EnumerationMemberDeclaration_Editor.calculateColor39(cell);
             }
 
           });
@@ -182,7 +182,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateColor43(cell);
+              return EnumerationMemberDeclaration_Editor.calculateColor41(cell);
             }
 
           });
@@ -258,13 +258,13 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor40(EditorCell cell) {
+  private static Color calculateColor39(EditorCell cell) {
     Color result;
     result = Color.cyan;
     return result;
   }
 
-  private static Color calculateColor43(EditorCell cell) {
+  private static Color calculateColor41(EditorCell cell) {
     Color result;
     result = Color.cyan;
     return result;

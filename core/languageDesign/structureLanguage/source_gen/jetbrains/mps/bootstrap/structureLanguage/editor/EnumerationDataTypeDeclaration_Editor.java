@@ -4,6 +4,7 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -16,7 +17,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -81,7 +81,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return EnumerationDataTypeDeclaration_Editor.calculateColor39(cell);
+              return EnumerationDataTypeDeclaration_Editor.calculateColor38(cell);
             }
 
           });
@@ -557,7 +557,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor39(EditorCell cell) {
+  private static Color calculateColor38(EditorCell cell) {
     Color result;
     result = Color.cyan;
     return result;

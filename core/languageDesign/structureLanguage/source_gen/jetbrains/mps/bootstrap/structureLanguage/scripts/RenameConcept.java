@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
@@ -30,7 +31,6 @@ import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
-import jetbrains.mps.workbench.action.ActionEventData;
 
 public class RenameConcept extends AbstractLoggableRefactoring {
   public static final String newName = "newName";
@@ -110,7 +110,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
   }
 
   public SearchResults getAffectedNodes(ActionEventData data, RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(data.createProgressIndicator(), data.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder", "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
+    return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), data.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder", "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
   public void doRefactor(ActionEventData data, RefactoringContext refactoringContext) {

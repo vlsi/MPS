@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
@@ -21,8 +22,6 @@ import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.workbench.action.ActionEventData;
-
 import java.util.HashMap;
 import java.util.ArrayList;
 
@@ -99,7 +98,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
 
   public SearchResults getAffectedNodes(ActionEventData data, RefactoringContext refactoringContext) {
     refactoringContext.setParameter("sourceLanguage", Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor()));
-    return FindUtils.getSearchResults(data.createProgressIndicator(), data.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.LinkExamples_Finder", "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
+    return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), data.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.LinkExamples_Finder", "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
   public void doRefactor(ActionEventData data, RefactoringContext refactoringContext) {

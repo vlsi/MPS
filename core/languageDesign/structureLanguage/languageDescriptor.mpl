@@ -27,6 +27,7 @@
   <dependencies>
     <dependency reexport="false">jetbrains.mps.bootstrap.dataFlow</dependency>
     <dependency reexport="false">jetbrains.mps.logging.refactoring</dependency>
+    <dependency reexport="false">JDK</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>

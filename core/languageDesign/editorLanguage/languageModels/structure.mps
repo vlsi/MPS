@@ -3270,5 +3270,84 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216380990741">
+    <property name="package" value="CellModel" />
+    <property name="name" value="CellModel_TransactionalProperty" />
+    <link role="extends" targetNodeId="1079353555532" resolveInfo="CellModel_AbstractLabel" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216385453572">
+      <property name="value" value="{T &lt;{property}&gt; T}" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216381211800">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="handlerBlock" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1216381054717" resolveInfo="TransactionalPropertyHandler" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216381219207">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="property" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1.1071489288299" resolveInfo="PropertyDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216381054717">
+    <property name="package" value="QueryFunction" />
+    <property name="name" value="TransactionalPropertyHandler" />
+    <link role="extends" targetNodeId="4.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216381097005">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1216381148013" resolveInfo="TransactionPropertyHandler_newValue" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216381170362">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1216381117100" resolveInfo="TransactionPropertyHandler_oldValue" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216384575593">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1161622981231" resolveInfo="ConceptFunctionParameter_editorContext" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216384575594">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1216381091954">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1216381093987" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216381117100">
+    <property name="package" value="QueryFunction" />
+    <property name="name" value="TransactionPropertyHandler_oldValue" />
+    <link role="extends" targetNodeId="4.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216381136570">
+      <property name="value" value="oldValue" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1216381142494">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216381143949">
+        <link role="classifier" targetNodeId="36.~String" resolveInfo="String" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216381148013">
+    <property name="package" value="QueryFunction" />
+    <property name="name" value="TransactionPropertyHandler_newValue" />
+    <link role="extends" targetNodeId="4.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216381148014">
+      <property name="value" value="newValue" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1216383773966">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1216381148015">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216381148016">
+        <link role="classifier" targetNodeId="36.~String" resolveInfo="String" />
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -401,6 +401,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
     EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+
+    addFocusListener(new FocusAdapter() {
+      public void focusLost(FocusEvent e) {
+        commitAll();
+      }
+    });
   }
 
   protected void onEscape() {
@@ -2360,6 +2366,26 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         } else {
           changeSelectionWRTFocusPolicy(nullCell);
         }
+      }
+    }
+  }
+
+  private void commitAll() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        doCommitAll(getRootCell());
+      }
+    });
+  }
+
+  private void doCommitAll(EditorCell current) {
+    if (current instanceof EditorCell_Property) {
+      ((EditorCell_Property) current).commit();
+    }
+    if (current instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) current;
+      for (EditorCell cell : collection) {
+        doCommitAll(cell);
       }
     }
   }

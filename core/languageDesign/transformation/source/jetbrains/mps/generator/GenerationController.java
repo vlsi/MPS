@@ -27,6 +27,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.TimePresentationUtil;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -203,6 +204,7 @@ public class GenerationController {
           LOG.error("Can't apply generation type " + myGenerationType + " to " + inputModel.getModelUID());
           continue;
         }
+
 
         info("");
         String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);

@@ -7,6 +7,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.DataManager;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 public class UndoUtil {    
   public static void addUndoableAction(UndoableAction action) {

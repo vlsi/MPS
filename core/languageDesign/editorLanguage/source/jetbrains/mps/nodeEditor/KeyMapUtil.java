@@ -211,17 +211,21 @@ public class KeyMapUtil {
 
   public static boolean canExecuteKeyMapAction(EditorCellKeyMapAction action, KeyEvent keyEvent, EditorCell contextCell, EditorContext editorContext) {
     EditorCell oldContextCell = editorContext.getContextCell();
-    editorContext.setContextCell(contextCell);
-    boolean b = action.canExecute(keyEvent, editorContext);
-    editorContext.setContextCell(oldContextCell);
-    return b;
+    try {
+      editorContext.setContextCell(contextCell);
+      return action.canExecute(keyEvent, editorContext);
+    } finally {
+      editorContext.setContextCell(oldContextCell);
+    }
   }
 
   public static void executeKeyMapAction(EditorCellKeyMapAction action, KeyEvent keyEvent, EditorCell contextCell, EditorContext editorContext) {
     EditorCell oldContextCell = editorContext.getContextCell();
-    editorContext.setContextCell(contextCell);
-    action.execute(keyEvent, editorContext);
-    editorContext.setContextCell(oldContextCell);
+    try {
+      action.execute(keyEvent, editorContext);
+    } finally {
+      editorContext.setContextCell(oldContextCell);
+    }
   }
 
   static void showActionsMenu(List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo, final KeyEvent keyEvent, final EditorContext editorContext, EditorCell selectedCell) {

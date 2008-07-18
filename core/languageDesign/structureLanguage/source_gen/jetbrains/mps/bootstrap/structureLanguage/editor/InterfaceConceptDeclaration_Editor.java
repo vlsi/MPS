@@ -5,24 +5,23 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
+import javax.swing.JOptionPane;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -36,6 +35,7 @@ import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
@@ -68,32 +68,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell9508_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9508_0");
-  }
-
-  private static void setupBasic_namePropertyCell9508_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell9508_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return InterfaceConceptDeclaration_Editor.calculateColor36(cell);
-            }
-
-          });
-          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return InterfaceConceptDeclaration_Editor.calculateColor41(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_ConstantCell9508_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -428,10 +402,11 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_extendsRefNodeListCell9508_0");
   }
 
-  private static void setupLabel_ConstantCell9508_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_TransactionalPropertyCell9508_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_TransactionalPropertyCell9508_0");
   }
 
-  private static void setupLabel_namePropertyCell9508_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell9508_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell9508_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -512,16 +487,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_extendsRefNodeListCell9508_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor36(EditorCell cell) {
-    Color result;
-    result = Color.yellow;
-    return result;
-  }
-
-  private static Color calculateColor41(EditorCell cell) {
-    Color result;
-    result = Color.cyan;
-    return result;
+  private static void setupLabel_TransactionalPropertyCell9508_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -548,7 +514,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_ConstantCell9508_0(context, node, "interface concept"));
-    editorCell.addEditorCell(this.create_namePropertyCell9508_0(context, node));
+    editorCell.addEditorCell(this.create_TransactionalPropertyCell9508_0(context, node));
     editorCell.addEditorCell(this.create_CollectionCell9508_04(context, node));
     return editorCell;
   }
@@ -758,6 +724,32 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell create_TransactionalPropertyCell9508_0(EditorContext context, SNode node) {
+    ModelAccessor modelAccessor = this._modelAcessorFactory_1216387630008(context, node);
+    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    setupBasic_TransactionalPropertyCell9508_0(editorCell, node, context);
+    setupLabel_TransactionalPropertyCell9508_0(editorCell, node, context);
+    editorCell.setDefaultText("<no name>");
+    return editorCell;
+  }
+
+  public ModelAccessor _modelAcessorFactory_1216387630008(final EditorContext editorContext, final SNode node) {
+    return new TransactionalPropertyAccessor(node, "name", false, true, editorContext) {
+
+      public void doCommit(String oldValue, String newValue) {
+        if (oldValue != null) {
+          int result = JOptionPane.showConfirmDialog(editorContext.getNodeEditorComponent(), "Renaming concept can break your model. It's advised to use rename refactoring instead. Are you sure?", "Rename concept", JOptionPane.YES_NO_OPTION);
+          if (result == JOptionPane.NO_OPTION) {
+            return;
+          }
+        }
+        SPropertyOperations.set(node, "name", newValue);
+      }
+
+    };
+  }
+
   public EditorCell create_propertyDeclarationRefNodeListCell9508_0(EditorContext context, SNode node) {
     if (this.myListHandler_9508_0 == null) {
       this.myListHandler_9508_0 = new InterfaceConceptDeclaration_Editor.propertyDeclarationListHandler_9508_0(node, "propertyDeclaration", context);
@@ -860,35 +852,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_9508_07.getElementRole());
     return editorCell;
-  }
-
-  public EditorCell create_namePropertyCell9508_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_namePropertyCell9508_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_namePropertyCell9508_0((EditorCell_Label)editorCell, node, context);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell create_namePropertyCell9508_0(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_namePropertyCell9508_0_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
   }
 
   public static class propertyDeclarationListHandler_9508_0 extends RefNodeListHandler {
