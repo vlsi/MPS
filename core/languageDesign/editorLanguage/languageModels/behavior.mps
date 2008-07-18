@@ -1660,11 +1660,11 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216378127693">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216378123813">
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1216378123593" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216378127333">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216390418474">
                 <link role="link" targetNodeId="1.1137553248621" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1216378128243">
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1216390420490">
               <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
             </node>
           </node>

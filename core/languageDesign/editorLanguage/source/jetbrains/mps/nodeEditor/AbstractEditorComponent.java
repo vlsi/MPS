@@ -356,7 +356,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
             EditorCell toSelect;
             if (focusPolicyCell == null || (focusPolicyCell == rootCell && !focusPolicyCell.hasFocusPolicy())) {
-              toSelect = rootCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
+              toSelect = rootCell.findChild(CellFinders.or(CellFinders.FIRST_EDITABLE, CellFinders.FIRST_SELECTABLE_LEAF));
             } else {
               toSelect = focusPolicyCell;
             }
@@ -2423,7 +2423,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       cell.synchronizeViewWithModel();
     }
   }
-
 
   private class MySimpleModelListener extends SModelAdapter {
     public void modelReloaded(SModelDescriptor sm) {
