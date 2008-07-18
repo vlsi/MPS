@@ -14,6 +14,7 @@ import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.SystemInfo;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
@@ -99,7 +100,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   };
   private ReloadListener myReloadListener = new ReloadAdapter() {
     public void onAfterReload() {
-      rebuildEditorContent();
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        public void run() {
+          rebuildEditorContent();
+        }
+      });
     }
   };
 
