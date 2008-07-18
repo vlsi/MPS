@@ -5,9 +5,9 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.IntentionsMenu;
 import jetbrains.mps.intentions.LightBulbMenu;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.AbstractAction;
@@ -152,9 +152,6 @@ public class IntentionsSupport {
 
   @NotNull
   private Point getLightBulbLocation(@NotNull EditorCell selectedCell) {
-    EditorCell bigCell = myEditor.getBigCellForNode(selectedCell.getSNode());
-    if (bigCell != null) selectedCell = bigCell;
-
     int x = myEditor.getRootCell().getX() - myEditor.getAdditionalShiftX() - myLightBulb.getWidth() - 6;
     int y = selectedCell.getY();
 
