@@ -1,4 +1,4 @@
-package jetbrains.chemistry.formulae.editor.graph;
+package jetbrains.mps.util.graph;
 
 /**
  * Created by IntelliJ IDEA.

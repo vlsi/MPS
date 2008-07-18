@@ -1,12 +1,9 @@
-package jetbrains.chemistry.formulae.editor.graph;
+package jetbrains.mps.util.graph;
 
 import javax.swing.*;
 import java.awt.HeadlessException;
 import java.awt.Graphics;
 import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
