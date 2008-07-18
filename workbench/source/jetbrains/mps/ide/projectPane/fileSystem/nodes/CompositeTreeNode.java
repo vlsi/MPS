@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.vfs.VFileSystem;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
@@ -50,6 +51,7 @@ public class CompositeTreeNode extends MPSTreeNode {
   @Override
   protected void updatePresentation() {
     setText("VCS Roots");
-    super.updatePresentation();
+    setIcon(Icons.TREE_OPENED, true);
+    setIcon(Icons.TREE_CLOSED, false);
   }
 }

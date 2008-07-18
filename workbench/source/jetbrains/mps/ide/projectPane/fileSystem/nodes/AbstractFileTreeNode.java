@@ -6,6 +6,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import com.intellij.ide.ui.customization.CustomizableActionsSchemas;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.projectPane.Icons;
 
 public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNode {
   protected final VirtualFile myFile;
@@ -43,6 +44,8 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNo
     }
     setNodeIdentifier(myFile.getPath() != null ? myFile.getPath() : "");
     setColor(myProvider.getFileStatus(myFile).getColor());
+    setIcon(Icons.TREE_OPENED, true);
+    setIcon(Icons.TREE_CLOSED, false);
   }
 
   @Override
