@@ -1,22 +1,28 @@
 package jetbrains.mps.plugin;
 
+import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.MPSProjectHolder;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.Frame;
 import java.rmi.NoSuchObjectException;
@@ -24,12 +30,6 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.NonNls;
-import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, ProjectComponent {
   private static final Logger LOG = Logger.getLogger(MPSProjectIDEHandler.class);
@@ -156,7 +156,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         }
         FrameUtil.activateFrame(getMainFrame());
 
-        findUsages(cls.getNode(), GlobalScope.getInstance());
+        findUsages(cls.getNode(), GlobalScope.getInstance(), new NodeUsages_Finder());
       }
     });
   }
@@ -182,12 +182,13 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           return;
         }
         FrameUtil.activateFrame(getMainFrame());
-        findUsages(m.getNode(), GlobalScope.getInstance());
+
+        findUsages(m.getNode(), GlobalScope.getInstance(), new BaseMethodUsages_Finder());
       }
     });
   }
 
-  private void findUsages(final @NotNull SNode node, final IScope scope) {
+  private void findUsages(final @NotNull SNode node, final IScope scope, final BaseFinder finder) {
     new Thread() {
       public void run() {
         SearchQuery query = ModelAccess.instance().runReadAction(new Computable<SearchQuery>() {
@@ -196,7 +197,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           }
         });
 
-        myProject.getComponent(UsagesViewTool.class).findUsages(query, true, true, true, new NodeUsages_Finder());
+        myProject.getComponent(UsagesViewTool.class).findUsages(query, true, true, true, finder);
       }
     }.start();
   }

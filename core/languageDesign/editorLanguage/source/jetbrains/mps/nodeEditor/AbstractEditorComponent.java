@@ -22,15 +22,15 @@ import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.cellActions.*;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
+import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
-import jetbrains.mps.nodeEditor.cellActions.*;
-import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -480,7 +480,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             if (data != null) {
               AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, data);
               ActionUtils.updateGroup((BaseGroup) child, event);
-              registerKeyStrokes((BaseGroup) child, data);
+              if (event.getPresentation().isEnabled()) {
+                registerKeyStrokes((BaseGroup) child, data);
+              }
             }
           } catch (Throwable t) {
             LOG.error(t);

@@ -1,15 +1,14 @@
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
-import java.util.*;
-
-import com.intellij.openapi.util.Computable;
+import java.util.List;
 
 
 /**
@@ -220,7 +219,7 @@ public class EditorContext {
       }
     } else if (editorCell instanceof EditorCell_Collection) {
       EditorCell_Collection editorCell_iterable = (EditorCell_Collection) editorCell;
-      for (EditorCell subEditorCell: editorCell_iterable) {
+      for (EditorCell subEditorCell : editorCell_iterable) {
         newPosition = setCaretPosition(subEditorCell, newPosition);
         if (newPosition < 0) {
           break;
@@ -263,7 +262,7 @@ public class EditorContext {
   }
 
 
-  public<T> T runWithContextCell(EditorCell contextCell, Computable<T> r) {
+  public <T> T runWithContextCell(EditorCell contextCell, Computable<T> r) {
     EditorCell oldContextCell = myContextCell;
     myContextCell = contextCell;
     try {
@@ -274,8 +273,9 @@ public class EditorContext {
   }
 
   public EditorCell createRoleAttributeCell(Class attributeClass, EditorCell cellWithRole, SNode roleAttribute) {
-    if (myCurrentRefNodeContext != null)  {
-      if (attributeClass != jetbrains.mps.annotations.structure.LinkAttributeConcept.class && myCurrentRefNodeContext.hasRoles()) return cellWithRole;
+    if (myCurrentRefNodeContext != null) {
+      if (attributeClass != jetbrains.mps.annotations.structure.LinkAttributeConcept.class && myCurrentRefNodeContext.hasRoles())
+        return cellWithRole;
     }
     return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeClass, cellWithRole, this, roleAttribute);
   }

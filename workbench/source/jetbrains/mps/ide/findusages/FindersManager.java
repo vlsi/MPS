@@ -1,22 +1,20 @@
 package jetbrains.mps.ide.findusages;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.bootstrap.findUsagesLanguage.behavior.FinderDeclaration_Behavior;
 import jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Calculable;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.util.Computable;
 
 public class FindersManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(FindersManager.class);
@@ -62,7 +60,7 @@ public class FindersManager implements ApplicationComponent {
             if (node.isInstanceOfConcept(conceptFQName)) {
               for (GeneratedFinder finder : Collections.unmodifiableSet(myFinders.get(conceptFQName))) {
                 try {
-                  if (finder.isVisible()) {
+                  if (finder.isVisible(node)) {
                     if (finder.isApplicable(node)) {
                       result.add(finder);
                     }
