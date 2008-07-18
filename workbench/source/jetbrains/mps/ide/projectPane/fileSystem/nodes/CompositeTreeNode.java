@@ -1,10 +1,7 @@
-package jetbrains.mps.ide.projectPane.fileSystem;
+package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
@@ -14,7 +11,6 @@ import com.intellij.openapi.util.io.FileUtil;
 
 import java.util.Set;
 import java.util.LinkedHashSet;
-import java.util.Collections;
 
 public class CompositeTreeNode extends MPSTreeNode {
   private Project myProject;
@@ -45,7 +41,7 @@ public class CompositeTreeNode extends MPSTreeNode {
 
 //      adding roots
     for (String dir : roots) {
-      add(new FolderTreeNode(project, myProject.getComponent(VcsFileStatusProvider.class), VFileSystem.getFile(dir)));
+      add(new FolderTreeNode(project, VFileSystem.getFile(dir)));
     }
 
     updatePresentation();

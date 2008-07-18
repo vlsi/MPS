@@ -1,23 +1,13 @@
-package jetbrains.mps.ide.projectPane.fileSystem;
+package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
-import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.ide.projectPane.fileSystem.AbstractFileTreeNode;
-import jetbrains.mps.ide.projectPane.fileSystem.FileTreeNode;
-import jetbrains.mps.util.CollectionUtil;
-
-import java.util.*;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.AbstractFileTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
 
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
-
-import javax.swing.tree.DefaultTreeModel;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -25,8 +15,13 @@ public class FolderTreeNode extends AbstractFileTreeNode {
   private boolean myInitialized;
   private Project myProject;
 
-  public FolderTreeNode(Project project, VcsFileStatusProvider provider,@NotNull VirtualFile folder) {
-    super(provider, folder);
+  public FolderTreeNode(Project project, @NotNull VirtualFile folder) {
+    this(project, folder, false);
+    updatePresentation();
+  }
+
+  public FolderTreeNode(Project project, @NotNull VirtualFile folder, boolean showFullPath) {
+    super(project, folder, showFullPath);
     myProject = project;
   }
 
@@ -45,14 +40,14 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     for (VirtualFile f : myFile.getChildren()) {
       if (f.exists()) {
         if (!FileTypeManager.getInstance().isFileIgnored(f.getName()) && f.isDirectory()) {
-          this.add(createNode(myProject, myProvider, f));
+          this.add(createNode(myProject, f));
         }
       }
     }
     for (VirtualFile f : myFile.getChildren()) {
       if (f.exists()) {
         if (!FileTypeManager.getInstance().isFileIgnored(f.getName()) && !f.isDirectory()) {
-          this.add(createNode(myProject, myProvider, f));
+          this.add(createNode(myProject, f));
         }
       }
     }
@@ -61,11 +56,11 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     myInitialized = true;
   }
 
-  private static MPSTreeNode createNode(Project project, VcsFileStatusProvider provider, VirtualFile file) {
+  private static MPSTreeNode createNode(Project project, VirtualFile file) {
     if (file.isDirectory()) {
-      return new FolderTreeNode(project, provider, file);
+      return new FolderTreeNode(project, file);
     } else {
-      return new FileTreeNode(project, provider, file);
+      return new FileTreeNode(project, file);
     }
   }
 }

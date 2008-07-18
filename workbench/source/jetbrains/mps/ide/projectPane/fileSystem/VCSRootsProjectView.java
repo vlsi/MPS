@@ -3,6 +3,7 @@ package jetbrains.mps.ide.projectPane.fileSystem;
 import com.intellij.openapi.project.Project;
 import com.intellij.ide.projectView.ProjectView;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.CompositeTreeNode;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 

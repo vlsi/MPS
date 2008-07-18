@@ -3,7 +3,6 @@ package jetbrains.mps.ide.projectPane.fileSystem;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
-import com.intellij.openapi.actionSystem.DataConstants;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -15,21 +14,17 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsListener;
 import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.AbstractFileTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vfs.VFileSystem;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -108,7 +103,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       }
     });
     myTimer.setRepeats(false);
-    myTimer.setInitialDelay(2 * SECOND);
+    myTimer.setInitialDelay(SECOND);
 
     myFileStatusListener = new FileStatusListener() {
       public void fileStatusesChanged() {
@@ -244,8 +239,8 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       TreePath[] treePaths = getSelectionPaths();
       for (TreePath tp : treePaths) {
         Object lastPathComponent = tp.getLastPathComponent();
-        if (lastPathComponent instanceof AbstractFileTreeNode) {
-          AbstractFileTreeNode node = (AbstractFileTreeNode) lastPathComponent;
+        if (lastPathComponent instanceof FileNode) {
+          FileNode node = (FileNode) lastPathComponent;
           files.add(node.getFile());
         }
       }

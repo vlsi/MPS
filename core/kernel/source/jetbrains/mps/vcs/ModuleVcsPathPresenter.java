@@ -50,20 +50,6 @@ public class ModuleVcsPathPresenter extends VcsPathPresenter {
   }
 
   public String getPresentableRelativePath(final ContentRevision fromRevision, final ContentRevision toRevision) {
-    // need to use parent path because the old file is already not there
-    FilePath oldPath = fromRevision.getFile().getParentPath();
-    assert oldPath != null;
-    final VirtualFile oldFile = oldPath.getVirtualFile();
-    FilePath newPath = toRevision.getFile().getParentPath();
-    assert newPath != null;
-    final VirtualFile newFile = newPath.getVirtualFile();
-    if (oldFile != null && newFile != null) {
-      Module oldModule = ModuleUtil.findModuleForFile(oldFile, myProject);
-      Module newModule = ModuleUtil.findModuleForFile(newFile, myProject);
-      if (oldModule != newModule) {
-        return getPresentableRelativePathFor(oldFile);
-      }
-    }
     return FileUtil.getRelativePath(toRevision.getFile().getIOFile(), fromRevision.getFile().getIOFile());
   }
 
