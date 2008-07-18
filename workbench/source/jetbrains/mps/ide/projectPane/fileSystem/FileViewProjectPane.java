@@ -37,7 +37,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public abstract class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
-  
+
   @Override
   public void addToolbarActions(DefaultActionGroup actionGroup) {
     super.addToolbarActions(actionGroup);
@@ -237,11 +237,13 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
       List<VirtualFile> files = new LinkedList<VirtualFile>();
       TreePath[] treePaths = getSelectionPaths();
-      for (TreePath tp : treePaths) {
-        Object lastPathComponent = tp.getLastPathComponent();
-        if (lastPathComponent instanceof FileNode) {
-          FileNode node = (FileNode) lastPathComponent;
-          files.add(node.getFile());
+      if (treePaths != null) {
+        for (TreePath tp : treePaths) {
+          Object lastPathComponent = tp.getLastPathComponent();
+          if (lastPathComponent instanceof FileNode) {
+            FileNode node = (FileNode) lastPathComponent;
+            files.add(node.getFile());
+          }
         }
       }
       return files.toArray(new VirtualFile[files.size()]);
