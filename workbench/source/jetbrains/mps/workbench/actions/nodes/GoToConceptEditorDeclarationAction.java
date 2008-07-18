@@ -108,8 +108,8 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
     ActionEventData data = new ActionEventData(e);
     myNode = data.getNode();
     if (myNode == null) return false;
-    if (!(myNode.getAdapter() instanceof ConceptDeclaration)) return false;
-    myConcept = (ConceptDeclaration) myNode.getAdapter();
+    if (!(myNode.getConceptDeclarationAdapter() instanceof ConceptDeclaration)) return false;
+    myConcept = (ConceptDeclaration) myNode.getConceptDeclarationAdapter();
     myScope = data.getScope();
     if (myScope == null) return false;
     myProject = data.getMPSProject();
