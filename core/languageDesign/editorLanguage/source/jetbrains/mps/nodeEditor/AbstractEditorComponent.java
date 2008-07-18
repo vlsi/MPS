@@ -103,7 +103,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public void onAfterReload() {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
               rebuildEditorContent();
             }
