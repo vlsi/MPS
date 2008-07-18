@@ -253,7 +253,7 @@ public class EditorContext {
     return myContextCell;
   }
 
-  public void runWithContextCell(EditorCell contextCell, Runnable r) {
+  public void runWithContextCell(EditorCell contextCell, final Runnable r) {
     runWithContextCell(contextCell, new Computable<Object>() {
       public Object compute() {
         r.run();
