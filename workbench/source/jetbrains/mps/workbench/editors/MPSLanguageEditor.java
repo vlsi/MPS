@@ -13,6 +13,7 @@ import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent;
+import jetbrains.mps.ide.hierarchy.LanguageDiagramComponent2;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -39,6 +40,7 @@ public class MPSLanguageEditor extends UserDataHolderBase implements FileEditor 
       public void run() {
         myFile = file;
         MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
+       // myHierarchiesComponent = new LanguageDiagramComponent2(myFile.getLanguage());
         myHierarchiesComponent = new LanguageHierarchiesComponent(myFile.getLanguage(), mpsProject.createOperationContext());
         myHierarchiesComponent.rebuild();
       }
@@ -46,6 +48,7 @@ public class MPSLanguageEditor extends UserDataHolderBase implements FileEditor 
   }
 
   private MPSLanguageVirtualFile myFile;
+  //private LanguageDiagramComponent2 myHierarchiesComponent;
   private LanguageHierarchiesComponent myHierarchiesComponent;
 
   @NotNull

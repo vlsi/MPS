@@ -3,6 +3,7 @@ package jetbrains.mps.util.graph;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
+import java.awt.Rectangle;
 
 /**
  * Created by IntelliJ IDEA.
@@ -65,5 +66,43 @@ public class Graph implements IGraph {
 
   public int getEdgesCount() {
     return myEdges.size();
+  }
+
+  public void move(int deltaX, int deltaY) {
+    for (IVertex vertex : myVertices) {
+      vertex.setCoords(vertex.getX() + deltaX, vertex.getY() + deltaY);
+    }
+  }
+
+  public Rectangle getFramingRectangle() {
+    double minx = 0;
+    double miny = 0;
+    double maxx = 0;
+    double maxy = 0;
+    boolean first = true;
+    for (IVertex vertex : myVertices) {
+      if (first) {
+        minx = vertex.getX();
+        maxx = vertex.getX();
+        miny = vertex.getY();
+        maxy = vertex.getY();
+        first = false;
+      } else {
+        minx = Math.min(minx, vertex.getX());
+        maxx = Math.max(maxx, vertex.getX());
+        miny = Math.min(miny, vertex.getY());
+        maxy = Math.max(maxy, vertex.getY());
+      }
+    }
+    int x = (int) Math.round(minx);
+    int y = (int) Math.round(miny);
+    int width = (int) Math.round(maxx - minx);
+    int height = (int) Math.round(maxy - miny);
+    return new Rectangle(x, y, width, height);
+  }
+
+  public void setUpperLeftCorner(int x, int y) {
+    Rectangle rect = getFramingRectangle();
+    move(x - rect.x, y - rect.y);
   }
 }

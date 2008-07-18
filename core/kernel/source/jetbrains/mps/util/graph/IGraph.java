@@ -3,6 +3,7 @@ package jetbrains.mps.util.graph;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
+import java.awt.Rectangle;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,4 +21,8 @@ public interface IGraph {
   Pair<Integer,Integer> getBaricenter();
   int getVerticesCount();
   int getEdgesCount();
+
+  public void setUpperLeftCorner(int x, int y);
+  public void move(int deltaX, int deltaY);
+  public Rectangle getFramingRectangle();
 }
