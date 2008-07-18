@@ -80,7 +80,7 @@ class Memento {
     restoreErrors(editor);
 
     EditorCell deepestSelectedCell = editor.getDeepestSelectedCell();
-    if (deepestSelectedCell != null) {
+    if (deepestSelectedCell != null && myCaretX != null) {
       deepestSelectedCell.setCaretX(myCaretX);
     }
   }
