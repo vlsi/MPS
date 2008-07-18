@@ -4,6 +4,7 @@ package jetbrains.mps.bootstrap.helgins.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -17,7 +18,8 @@ public class typeof_WhenConcreteVariableDeclaration_InferenceRule implements Inf
   public void applyRule(final SNode nodeToCheck) {
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1205768025013", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(SNodeOperations.getParent(nodeToCheck, null, false, false), "argument", true), "jetbrains.mps.bootstrap.helgins.helgins", "1205768025018", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1205768025011");
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1205768025013", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(SNodeOperations.getParent(nodeToCheck, null, false, false), "argument", true), "jetbrains.mps.bootstrap.helgins.helgins", "1205768025018", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1205768025011", intentionProvider);
     }
   }
 

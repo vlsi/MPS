@@ -5,9 +5,9 @@ package jetbrains.mps.bootstrap.helgins.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -29,10 +29,6 @@ public class WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint im
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.helgins.structure.WhenConcreteVariableReference", "whenConcreteVar");
   }
 
-  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return true;
-  }
-
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> whenConcreteStatements = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", false);
     List<SNode> declarations = new ArrayList<SNode>();
@@ -40,10 +36,6 @@ public class WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint im
       ListSequence.fromList(declarations).addElement(SLinkOperations.getTarget(whenConcreteStatement, "argumentRepresentator", true));
     }
     return new SimpleSearchScope(declarations);
-  }
-
-  public String getNodeReferentSearchScopeDescription() {
-    return "<no description>";
   }
 
 }
