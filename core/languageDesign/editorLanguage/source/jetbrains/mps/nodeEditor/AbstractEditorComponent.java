@@ -6,6 +6,7 @@ import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.command.undo.UndoManager;
+import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
@@ -102,7 +103,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public void onAfterReload() {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
-          rebuildEditorContent();
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              rebuildEditorContent();
+            }
+          });
         }
       });
     }
