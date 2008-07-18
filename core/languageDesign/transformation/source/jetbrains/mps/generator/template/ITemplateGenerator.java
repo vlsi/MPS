@@ -49,11 +49,6 @@ public interface ITemplateGenerator {
 
   SNode getPreviousInputNodeByMappingName(String mappingName);
 
-  /**
-   * @deprecated for back compatibility with old switches
-   */
-  TemplateDeclaration getTemplateForSwitchCase_deprecated(SNode sourceNode, TemplateSwitch templateSwitch);
-
   RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch);
 
   void showInformationMessage(SNode node, String message);
