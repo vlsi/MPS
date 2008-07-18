@@ -3,6 +3,7 @@ package jetbrains.mps.fileTypes;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.fileTypes.FileType;
+import com.intellij.openapi.fileTypes.PlainTextFileType;
 import com.intellij.openapi.diff.DiffManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NonNls;
@@ -26,6 +27,7 @@ public class MPSFileTypesManager implements ApplicationComponent {
   public static final FileType DEVKIT_FILE_TYPE = new MPSTextFileType("Devkit", "MPS Devkit File Type", MPSExtentions.DEVKIT, Icons.DEVKIT_ICON);
   public static final FileType PROJECT_FILE_TYPE = new MPSTextFileType("Project", "MPS Project File Type", MPSExtentions.PROJECT, Icons.PROJECT_ICON);
   public static final FileType JAVA_FILE_TYPE = new MPSTextFileType("Java", "Java Source File Type", MPSExtentions.JAVAFILE, FileIcons.JAVA_ICON);
+  public static final FileType XML_FILE_TYPE = new MPSTextFileType("XML", "XML File", "xml", FileIcons.XML_ICON);
   public static final FileType CLASS_FILE_TYPE = new FileType() {
     @NotNull
     @NonNls
@@ -63,7 +65,7 @@ public class MPSFileTypesManager implements ApplicationComponent {
       return "utf8";//todo ?
     }
   };
-  private final FileType[] myFileTypes = {MODEL_FILE_TYPE, SOLUTION_FILE_TYPE, LANGUAGE_FILE_TYPE, DEVKIT_FILE_TYPE, PROJECT_FILE_TYPE, CLASS_FILE_TYPE, JAVA_FILE_TYPE};
+  private final FileType[] myFileTypes = {MODEL_FILE_TYPE, SOLUTION_FILE_TYPE, LANGUAGE_FILE_TYPE, DEVKIT_FILE_TYPE, PROJECT_FILE_TYPE, CLASS_FILE_TYPE, JAVA_FILE_TYPE, XML_FILE_TYPE};
 
   private ModelDiffTool myModelDiffTool = new ModelDiffTool();
   private ModelMergeTool myModelMergeTool = new ModelMergeTool();
@@ -80,6 +82,11 @@ public class MPSFileTypesManager implements ApplicationComponent {
     for (FileType f : myFileTypes) {
       FileTypeManager.getInstance().associateExtension(f, f.getDefaultExtension());
     }
+    FileTypeManager.getInstance().associateExtension(XML_FILE_TYPE, "ipr");
+    FileTypeManager.getInstance().associateExtension(XML_FILE_TYPE, "iws");
+    FileTypeManager.getInstance().associateExtension(XML_FILE_TYPE, "iml");
+    FileTypeManager.getInstance().associateExtension(XML_FILE_TYPE, "ipr");
+    FileTypeManager.getInstance().associateExtension(XML_FILE_TYPE, "mws");
   }
 
   public void disposeComponent() {
