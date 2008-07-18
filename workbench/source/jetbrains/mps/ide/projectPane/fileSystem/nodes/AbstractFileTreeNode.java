@@ -4,12 +4,8 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.ide.ui.customization.CustomizableActionsSchemas;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
 
 public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNode {
   protected final VirtualFile myFile;
@@ -28,10 +24,15 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNo
     myProvider = project.getComponent(VcsFileStatusProvider.class);
     myProject = project;
     myShowFullPath = showFullPath;
+    updatePresentationInternal();
   }
 
   @Override
   protected void updatePresentation() {
+    updatePresentationInternal();
+  }
+
+  private void updatePresentationInternal() {
     if (!myFile.exists()) {
       removeFromParent();
       return;
@@ -40,7 +41,7 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNo
     if (myShowFullPath) {
       setAdditionalText(myFile.getUrl());
     }
-    setNodeIdentifier(myFile.getPath());
+    setNodeIdentifier(myFile.getPath() != null ? myFile.getPath() : "");
     setColor(myProvider.getFileStatus(myFile).getColor());
   }
 
