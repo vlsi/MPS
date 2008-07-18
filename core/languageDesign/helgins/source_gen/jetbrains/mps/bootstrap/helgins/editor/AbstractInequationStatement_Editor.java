@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.NonEmptyPropertyCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
@@ -322,7 +321,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell create_inequationPriorityNonEmptyPropertyCell18424_0(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new NonEmptyPropertyCellProvider(node, context);
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("inequationPriority");
     provider.setNoTargetText("<no inequationPriority>");
     provider.setReadOnly(false);
