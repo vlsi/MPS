@@ -995,7 +995,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1207695450179">
-    <property name="package" value="migrations.label" />
+    <property name="package" value="label" />
     <property name="name" value="Replace_ConditionalRootLabelDeclaration" />
     <property name="isErrorIntention" value="true" />
     <link role="forConcept" targetNodeId="1.1200923014784" resolveInfo="ConditionalRootLabelDeclaration" />

@@ -1417,7 +1417,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200911316486">
     <property name="name" value="MappingLabelDeclaration" />
-    <property name="package" value="migrations.label" />
+    <property name="package" value="label" />
     <link role="extends" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206016921545">
       <property name="value" value="label: input -&gt; output" />
@@ -1468,7 +1468,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200923014784">
     <property name="name" value="ConditionalRootLabelDeclaration" />
-    <property name="package" value="migrations.label" />
+    <property name="package" value="label" />
     <link role="extends" targetNodeId="1200911316486" resolveInfo="MappingLabelDeclaration" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206016968147">
       <property name="value" value="label: target" />
