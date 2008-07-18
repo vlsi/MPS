@@ -239,6 +239,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
             indicator.setIndeterminate(true);
             final SearchResults searchResults = FindUtils.getSearchResults(indicator, query, provider);
             showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
+            openToolLater(true);
           }
         });
       }
