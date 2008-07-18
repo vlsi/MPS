@@ -43,29 +43,6 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   }
 
   public SNode doResolve_Tricky(TemplateGenerator generator) {
-//    // todo: hack
-//    SNode outputTargetNode = null;
-//    List<SNode> topOutputNodes = generator.getTopOutputNodesForInputNode(myInputTargetNode);
-//    if (!topOutputNodes.isEmpty()) {
-//      String wasConcept = myInputTargetNode.getConceptFqName();
-//      for (SNode _outputNode : topOutputNodes) {
-//        // same concept?
-//        if (_outputNode.getConceptFqName().equals(wasConcept)) {
-//          if (outputTargetNode != null) {
-//            // no uniquess
-//            outputTargetNode = null;
-//            break;
-//          }
-//          outputTargetNode = _outputNode;
-//        }
-//      }
-//
-//      if (outputTargetNode != null) {
-//        return outputTargetNode;
-//      }
-//    }
-//    return null;
-    // test
     return null;
   }
 

@@ -27,7 +27,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private HashMap<Pair<String, SNode>, SNode> myMappingNameAndOutputNodeToInputNode = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
   private HashMap<SNode, Pair<SNode, Boolean>> myTemplateNodeToOutputNodeMap = new HashMap<SNode, Pair<SNode, Boolean>>();
-  private HashMap<SNode, List<SNode>> myInputeNodeToTopOutputNodesMap = new HashMap<SNode, List<SNode>>();
   private DelayedChanges myDelayedChanges = new DelayedChanges();
   private TemplateSwitchGraph myTemplateSwitchGraph;
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
@@ -68,7 +67,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myMappingNameAndOutputNodeToInputNode.clear();
     myOutputNodeToTemplateNodeMap.clear();
     myTemplateNodeToOutputNodeMap.clear();
-    myInputeNodeToTopOutputNodesMap.clear();
     myDelayedChanges = new DelayedChanges();
     myTemplateSwitchGraph = null;
     myTemplateSwitchToListCache = null;
@@ -323,33 +321,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (!myTemplateNodeAndInputNodeToOutputNodeMap.containsKey(key)) {
       myTemplateNodeAndInputNodeToOutputNodeMap.put(key, outputNode);
     }
-  }
-
-  public List<SNode> getTopOutputNodesForInputNode(SNode inputNode) {
-    List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
-    if (list != null) {
-      return new ArrayList(list);
-    }
-    return Collections.emptyList();
-  }
-
-  /*package*/ void addTopOutputNodeByInputNode(SNode inputNode, SNode outputNode) {
-    List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
-    if (list == null) {
-      list = new ArrayList<SNode>();
-      myInputeNodeToTopOutputNodesMap.put(inputNode, list);
-    }
-    list.add(outputNode);
-  }
-
-  /*package*/ void addTopOutputNodesByInputNode(SNode inputNode, List<SNode> outputNodes) {
-    if (outputNodes == null || outputNodes.isEmpty()) return;
-    List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
-    if (list == null) {
-      list = new ArrayList<SNode>();
-      myInputeNodeToTopOutputNodesMap.put(inputNode, list);
-    }
-    list.addAll(outputNodes);
   }
 
   public Map<String, SNode> setPreviousInputNodesByMappingName(Map<String, SNode> inputNodesByMappingName) {

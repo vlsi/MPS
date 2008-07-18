@@ -47,10 +47,6 @@ public interface ITemplateGenerator {
 
   SNode findCopiedOutputNodeForInputNode(SNode inputNode);
 
-  SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode);
-
-  List<SNode> getTopOutputNodesForInputNode(SNode inputNode);
-
   SNode getPreviousInputNodeByMappingName(String mappingName);
 
   /**

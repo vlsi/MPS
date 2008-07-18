@@ -129,9 +129,6 @@ public class TemplateProcessor {
     generationTracer.pushTemplateNode(templateNode);
     SNode outputNode = new SNode(myOutputModel, templateNode.getConceptFqName(), false);
     outputNodes.add(outputNode);
-    if (registerTopOutput) {
-      myGenerator.addTopOutputNodeByInputNode(inputNode, outputNode);
-    }
     myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
     if (!myInputHistory.isEmpty()) {
       for (SNode historyInputNode : myInputHistory) {
@@ -233,9 +230,6 @@ public class TemplateProcessor {
         try {
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
-          if (registerTopOutput && !inputChanged) {
-            myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
-          }
         } finally {
           if (inputChanged) {
             popInputHistory();
@@ -280,9 +274,6 @@ public class TemplateProcessor {
         }
       }
       if (_outputNodes != null) outputNodes.addAll(_outputNodes);
-      if (registerTopOutput) {
-        myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
-      }
       return outputNodes;
 
     } else if (nodeMacro instanceof MapSrcNodeMacro || nodeMacro instanceof MapSrcListMacro) {
@@ -320,9 +311,6 @@ public class TemplateProcessor {
           } else {
             List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
             if (_outputNodes != null) outputNodes.addAll(_outputNodes);
-            if (registerTopOutput && !inputChanged) {
-              myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
-            }
           }
         } finally {
           if (inputChanged) {
@@ -386,9 +374,6 @@ public class TemplateProcessor {
           _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
         }
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
-        if (registerTopOutput && !inputChanged) {
-          myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
-        }
       } catch (AbandonRuleInputException e) {
         // it's ok. just ignore.
       } finally {
@@ -430,9 +415,6 @@ public class TemplateProcessor {
         mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
         List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, newInputNode, inputChanged);
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
-        if (registerTopOutput && !inputChanged) {
-          myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
-        }
       } finally {
         if (inputChanged) {
           popInputHistory();
@@ -454,9 +436,6 @@ public class TemplateProcessor {
       try {
         List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
-        if (registerTopOutput && !inputChanged) {
-          myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
-        }
       } finally {
         if (inputChanged) {
           popInputHistory();
