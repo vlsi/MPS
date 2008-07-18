@@ -50,7 +50,7 @@ public class TemplateProcessor {
     TemplateProcessor templateProcessor = new TemplateProcessor(generator);
     Map<String, SNode> old = generator.setPreviousInputNodesByMappingName(templateProcessor.myInputNodesByMappingName);
     try {
-      List<SNode> outputNodels = templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
+      List<SNode> outputNodels = templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0);
       if (outputNodels == null) {
         throw new TemplateProcessingFailureException();
       }
@@ -99,8 +99,7 @@ public class TemplateProcessor {
   private List<SNode> createOutputNodesForTemplateNode(String mappingName,
                                                        SNode templateNode,
                                                        @Nullable SNode inputNode,
-                                                       int nodeMacrosToSkip,
-                                                       boolean registerTopOutput)
+                                                       int nodeMacrosToSkip)
     throws
     DismissTopMappingRuleException,
     GenerationFailueException, GenerationCanceledException {
@@ -119,7 +118,7 @@ public class TemplateProcessor {
 
       generationTracer.pushMacro(nodeMacro.getNode());
       try {
-        return createOutputNodesForTemplateNodeWithMacro(nodeMacro, templateNode, inputNode, nodeMacrosToSkip, registerTopOutput);
+        return createOutputNodesForTemplateNodeWithMacro(nodeMacro, templateNode, inputNode, nodeMacrosToSkip);
       } finally {
         generationTracer.closeMacro(nodeMacro.getNode());
       }
@@ -191,7 +190,7 @@ public class TemplateProcessor {
     // process children
     try {
       for (INodeAdapter templateChildNode : templateChildNodes) {
-        List<SNode> outputChildNodes = createOutputNodesForTemplateNode(null, templateChildNode.getNode(), inputNode, 0, false);
+        List<SNode> outputChildNodes = createOutputNodesForTemplateNode(null, templateChildNode.getNode(), inputNode, 0);
         if (outputChildNodes != null) {
           String role = templateChildNode.getRole_();
           for (SNode outputChildNode : outputChildNodes) {
@@ -213,7 +212,7 @@ public class TemplateProcessor {
     return outputNodes;
   }
 
-  private List<SNode> createOutputNodesForTemplateNodeWithMacro(NodeMacro nodeMacro, SNode templateNode, SNode inputNode, int nodeMacrosToSkip, boolean registerTopOutput) throws DismissTopMappingRuleException, GenerationFailueException, GenerationCanceledException {
+  private List<SNode> createOutputNodesForTemplateNodeWithMacro(NodeMacro nodeMacro, SNode templateNode, SNode inputNode, int nodeMacrosToSkip) throws DismissTopMappingRuleException, GenerationFailueException, GenerationCanceledException {
     GenerationTracer generationTracer = myGenerator.getGeneratorSessionContext().getGenerationTracer();
     List<SNode> outputNodes = new ArrayList<SNode>();
     String mappingName = GeneratorUtil.getMappingName(nodeMacro, null);
@@ -228,7 +227,7 @@ public class TemplateProcessor {
           generationTracer.pushInputNode(newInputNode);
         }
         try {
-          List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
+          List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1);
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
         } finally {
           if (inputChanged) {
@@ -252,7 +251,7 @@ public class TemplateProcessor {
       // $IF$
       List<SNode> _outputNodes = null;
       if (MacroUtil.checkConditionForIfMacro(inputNode, (IfMacro) nodeMacro, myGenerator)) {
-        _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, nodeMacrosToSkip + 1, false);
+        _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, nodeMacrosToSkip + 1);
       } else {
         // alternative consequence
         RuleConsequence altConsequence = ((IfMacro) nodeMacro).getAlternativeConsequence();
@@ -267,7 +266,7 @@ public class TemplateProcessor {
             if (nodeAndMappingName.o2 != null) {
               mappingName = nodeAndMappingName.o2;
             }
-            _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, altTemplateNode, inputNode, false);
+            _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, altTemplateNode, inputNode);
           } catch (AbandonRuleInputException e) {
             // it's ok. just ignore
           }
@@ -309,7 +308,7 @@ public class TemplateProcessor {
               new HashMap<String, SNode>(myInputNodesByMappingName),
               myGenerator);
           } else {
-            List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
+            List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1);
             if (_outputNodes != null) outputNodes.addAll(_outputNodes);
           }
         } finally {
@@ -368,10 +367,10 @@ public class TemplateProcessor {
 
         List<SNode> _outputNodes;
         if (templateNodeForCase != null) {
-          _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateNodeForCase, newInputNode, inputChanged);
+          _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateNodeForCase, newInputNode);
         } else {
           // no switch-case found for the inputNode - continue with templateNode under the $switch$
-          _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
+          _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1);
         }
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
       } catch (AbandonRuleInputException e) {
@@ -413,7 +412,7 @@ public class TemplateProcessor {
       try {
         SNode templateForInclude = fragment.getParent().getNode();
         mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
-        List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, newInputNode, inputChanged);
+        List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, newInputNode);
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
       } finally {
         if (inputChanged) {
@@ -434,7 +433,7 @@ public class TemplateProcessor {
         generationTracer.pushInputNode(newInputNode);
       }
       try {
-        List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
+        List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1);
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
       } finally {
         if (inputChanged) {
@@ -524,8 +523,7 @@ public class TemplateProcessor {
 
   private List<SNode> createOutputNodesForExternalTemplateNode(String mappingName,
                                                                SNode templateNode,
-                                                               SNode inputNode,
-                                                               boolean registerTopOutput)
+                                                               SNode inputNode)
     throws
     DismissTopMappingRuleException,
     GenerationFailueException, GenerationCanceledException {
@@ -533,7 +531,7 @@ public class TemplateProcessor {
     TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator);
     Map<String, SNode> old = myGenerator.setPreviousInputNodesByMappingName(templateProcessor.myInputNodesByMappingName);
     try {
-      return templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, registerTopOutput);
+      return templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0);
     } finally {
       myGenerator.setPreviousInputNodesByMappingName(old);
     }
