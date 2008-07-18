@@ -2932,7 +2932,7 @@
         <property name="text" value="arguments:" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1216386674145">
-        <link role="relationDeclaration" targetNodeId="28.1210781340676" />
+        <link role="relationDeclaration" targetNodeId="1.1216383476350" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216386674146">
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1216386674147">
