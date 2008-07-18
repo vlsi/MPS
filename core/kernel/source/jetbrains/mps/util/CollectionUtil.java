@@ -114,8 +114,7 @@ public class CollectionUtil {
     return result;
   }
 
-
-  public static <T> Set<T> asSet(T... ts) {
+ public static <T> Set<T> asSet(T... ts) {
     Set<T> result = new HashSet<T>();
     result.addAll(Arrays.asList(ts));
     return result;

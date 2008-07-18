@@ -25,10 +25,11 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.unitTest.structure" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.baseLanguage.unitTest.runtime" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877238815">
     <link role="concept" targetNodeId="1.1171931690126" resolveInfo="TestMethod" />
@@ -371,6 +372,20 @@
         <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216140860598">
           <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216389141390">
+      <property name="name" value="getTestRunner" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216389144475">
+        <link role="classifier" targetNodeId="2.~Class" resolveInfo="Class" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216389141392">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216389260528">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1216389265249">
+            <link role="classifier" targetNodeId="4.1208532148294" resolveInfo="TestRunner" />
+          </node>
         </node>
       </node>
     </node>

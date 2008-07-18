@@ -75,7 +75,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215706887037">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215706887038">
-                <link role="baseMethodDeclaration" targetNodeId="11.~ArrayList.&lt;init&gt;(int)" resolveInfo="ArrayList" />
+                <link role="baseMethodDeclaration" targetNodeId="11.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
                 <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215706887039">
                   <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
                 </node>
@@ -229,6 +229,20 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216389563289">
+      <property name="name" value="getTestRunner" />
+      <link role="overriddenMethod" targetNodeId="2v.1216389141390" resolveInfo="getTestRunner" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216389563291">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216389584338">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1216389584339">
+            <link role="classifier" targetNodeId="9.1216388077847" resolveInfo="TransformationTestRuner" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216389576620">
+        <link role="classifier" targetNodeId="10.~Class" resolveInfo="Class" />
+      </node>
+    </node>
     <node role="staticMethod" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.StaticConceptMethodDeclaration" id="1215604099083">
       <property name="name" value="isIntentionApplicable" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1215604105805" />
@@ -311,7 +325,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216137900099">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216137900100">
-                <link role="baseMethodDeclaration" targetNodeId="11.~ArrayList.&lt;init&gt;(int)" resolveInfo="ArrayList" />
+                <link role="baseMethodDeclaration" targetNodeId="11.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
                 <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216137900101">
                   <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
                 </node>
@@ -673,6 +687,20 @@
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216143764158">
           <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
         </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216389606097">
+      <property name="name" value="getTestRunner" />
+      <link role="overriddenMethod" targetNodeId="2v.1216389141390" resolveInfo="getTestRunner" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216389606099">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216389622572">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1216389622573">
+            <link role="classifier" targetNodeId="9.1216388077847" resolveInfo="TransformationTestRuner" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216389617116">
+        <link role="classifier" targetNodeId="10.~Class" resolveInfo="Class" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216138156829">
