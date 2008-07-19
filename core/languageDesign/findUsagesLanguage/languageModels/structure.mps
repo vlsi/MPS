@@ -52,10 +52,9 @@
       <property name="value" value="find"/>
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias"/>
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1216396741918">
-      <property name="value" value="find"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1216470178260">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197044488845">
@@ -136,10 +135,9 @@
       <property name="value" value="isApplicable"/>
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias"/>
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1216396750265">
-      <property name="value" value="isApplicable"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1216470271480">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197386047362">
@@ -233,10 +231,9 @@
       <property name="value" value="getCategory"/>
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias"/>
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1216224817309">
-      <property name="value" value="getCategory"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1216469941916">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName"/>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1206461261180">
@@ -261,10 +258,9 @@
       <property name="value" value="getSearchedNodes"/>
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias"/>
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1216396769267">
-      <property name="value" value="getSearchedNodes"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1216470366479">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName"/>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1206462037517">
@@ -303,10 +299,9 @@
       <property name="value" value="isVisible"/>
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias"/>
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1216396788051">
-      <property name="value" value="isVisible"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1216222465038" resolveInfo="conceptFunctionName"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1216470285334">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName"/>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1216396788052">

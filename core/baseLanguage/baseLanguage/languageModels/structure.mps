@@ -1741,9 +1741,9 @@
       <property name="name" value="usesParameterObject"/>
     </node>
     <node role="conceptPropertyDeclaration"
-          type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration"
-          id="1216222465038">
-      <property name="name" value="conceptFunctionName"/>
+          type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration"
+          id="1216468774225">
+      <property name="name" value="showName"/>
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1137022507850">
