@@ -81,6 +81,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1212573111855">
       <property name="metaClass" value="reference" />
       <property name="role" value="category" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1212572376577" resolveInfo="TestCategory" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1211896369962">
