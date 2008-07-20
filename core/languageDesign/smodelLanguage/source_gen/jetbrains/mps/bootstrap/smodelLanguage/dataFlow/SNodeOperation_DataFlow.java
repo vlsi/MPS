@@ -15,7 +15,7 @@ public class SNodeOperation_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for(SNode expr : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Expression", false)) {
-      _context.getBuilder().build(expr);
+      _context.getBuilder().build((SNode)expr);
     }
   }
 

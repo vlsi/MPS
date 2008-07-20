@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Link_SetTargetOperation_InferenceRule implements InferenceRule_Runtime {
@@ -22,7 +23,8 @@ public class typeOf_Link_SetTargetOperation_InferenceRule implements InferenceRu
       SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060393994", true);
       {
         SNode _nodeToCheck_1029348928467 = op;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101371703), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060404653", false, 0);
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101371703), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060404653", false, 0, intentionProvider);
       }
     }
   }

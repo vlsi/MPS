@@ -159,7 +159,7 @@ public class RulesUtil {
     }
     {
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().reportTypeError(nodeToReportError, "" + errorTextPrefix + "\nexpected: " + SPropertyOperations.getString(toConcept, "name") + "\nwas: " + SPropertyOperations.getString(fromConcept, "name"), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179506569646", intentionProvider);
+      TypeChecker.getInstance().reportTypeError(nodeToReportError, "" + errorTextPrefix + "\nexpected: " + SPropertyOperations.getString(toConcept, "name") + "\nwas: " + SPropertyOperations.getString(fromConcept, "name"), "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1179506569646", intentionProvider);
     }
     return false;
   }
@@ -171,7 +171,7 @@ public class RulesUtil {
       if (!(ListSequence.fromList(applicableParmConcepts).contains(SNodeOperations.getConceptDeclaration(parm)))) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(parm, "not applicable here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178302007667", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(parm, "not applicable here", "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1216551781349", intentionProvider);
         }
         noProblem = false;
       }
@@ -217,7 +217,8 @@ public class RulesUtil {
           }
           {
             SNode _nodeToCheck_1029348928467 = null;
-            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, conceptDeclaration, _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1208202100494");
+            BaseIntentionProvider intentionProvider = null;
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, conceptDeclaration, _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1208202100494", intentionProvider);
           }
         }
 
@@ -230,8 +231,9 @@ public class RulesUtil {
     final SNode Concept_typevar_1206099042246 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246));
     {
-      SNode _nodeToCheck_1029348928467 = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, new QuotationClass_75().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099071408");
+      SNode _nodeToCheck_1029348928467 = op;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, new QuotationClass_75().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099071408", intentionProvider);
     }
   }
 
@@ -240,20 +242,23 @@ public class RulesUtil {
     SNode opParm = SNodeOperation_Behavior.call_getParameter_1213877508972(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"));
     if (opParm == null) {
       {
-        SNode _nodeToCheck_1029348928467 = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352395113");
+        SNode _nodeToCheck_1029348928467 = op;
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352395113", intentionProvider);
       }
     } else
     if (SLinkOperations.getTarget(opParm, "concept", false) != null) {
       {
-        SNode _nodeToCheck_1029348928467 = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(opParm, "concept", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352428450");
+        SNode _nodeToCheck_1029348928467 = op;
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(opParm, "concept", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352428450", intentionProvider);
       }
     } else
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
       {
-        SNode _nodeToCheck_1029348928467 = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(SLinkOperations.getTarget(opParm, "conceptArgument", true), "conceptDeclaration", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352483830");
+        SNode _nodeToCheck_1029348928467 = op;
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(SLinkOperations.getTarget(opParm, "conceptArgument", true), "conceptDeclaration", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352483830", intentionProvider);
       }
     } else
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression")) {
@@ -266,13 +271,15 @@ public class RulesUtil {
             if (SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false) != null) {
               {
                 SNode _nodeToCheck_1029348928467 = null;
-                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210624466615");
+                BaseIntentionProvider intentionProvider = null;
+                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210624466615", intentionProvider);
               }
             } else
             {
               {
                 SNode _nodeToCheck_1029348928467 = null;
-                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210624867499");
+                BaseIntentionProvider intentionProvider = null;
+                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210624867499", intentionProvider);
               }
             }
           }
