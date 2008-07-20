@@ -109,7 +109,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENTED, true);
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "");
+          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "indented");
         }
 
       };
@@ -233,7 +233,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.NEXT_LINE, true);
+          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "not indented");
         }
 
       };
@@ -261,7 +261,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.NEXT_LINE, true);
+          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "not indented");
         }
 
       };

@@ -3353,5 +3353,18 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216560327200">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="NextLineChildrenStyleClassItem" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1216560518566">
+      <property name="name" value="nextLine" />
+      <link role="dataType" targetNodeId="1216308376568" resolveInfo="_NextLine_Enum" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216560546489">
+      <property name="value" value="next-line-children" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

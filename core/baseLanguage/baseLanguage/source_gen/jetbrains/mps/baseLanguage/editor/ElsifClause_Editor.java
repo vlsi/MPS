@@ -21,6 +21,15 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell16141_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell16141_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "not indented");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell16141_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -29,7 +38,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.NEXT_LINE, true);
         }
 
       };

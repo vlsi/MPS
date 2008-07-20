@@ -39,4 +39,5 @@ public class StyleAttributes {
   public static final StyleAttribute<Boolean> INDENTED = new SimpleStyleAttribute<Boolean>("indented", false);
   public static final StyleAttribute<Boolean> NEXT_LINE = new SimpleStyleAttribute<Boolean>("nextLine", false);
   public static final StyleAttribute<String> LAYOUT_NEXT_LINE = new SimpleStyleAttribute<String>("layout-next-line");
+  public static final StyleAttribute<String> NEXT_LINE_CHILDREN = new SimpleStyleAttribute<String>("next-line-children");
 }

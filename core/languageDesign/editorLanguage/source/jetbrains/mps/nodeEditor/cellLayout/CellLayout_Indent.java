@@ -52,14 +52,19 @@ public class CellLayout_Indent extends AbstractCellLayout {
     int totalWidth = 0;
     int totalHeight = 0;
     int currentLineHeight = 0;
+    String nextLineForChildren = editorCells.getStyle().get(StyleAttributes.NEXT_LINE_CHILDREN);
 
     for (EditorCell editorCell : cells) {
-      if (editorCell.getStyle().get(StyleAttributes.INDENTED)) {
+      String nextLine = editorCell.getStyle().get(StyleAttributes.LAYOUT_NEXT_LINE);
+      if(nextLine != null) {
+        System.out.println("nextLine = "+nextLine);
+      }
+      if ("indented".equals(nextLine) || (nextLine == null && "indented".equals(nextLineForChildren))) {
         currentLineWidth = INDENT;
         totalHeight += currentLineHeight;
         currentLineHeight=0;
       }
-      else if(editorCell.getStyle().get(StyleAttributes.NEXT_LINE)) {
+      else if("not indented".equals(nextLine) || (nextLine == null && "not indented".equals(nextLineForChildren))) {
         currentLineWidth = 0;
         totalHeight += currentLineHeight;
         currentLineHeight=0;
