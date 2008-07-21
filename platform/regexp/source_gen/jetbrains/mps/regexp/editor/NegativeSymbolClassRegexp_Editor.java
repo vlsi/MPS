@@ -39,7 +39,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return NegativeSymbolClassRegexp_Editor.calculateColor31(cell);
+              return NegativeSymbolClassRegexp_Editor.calculateColor30(cell);
             }
 
           });
@@ -88,7 +88,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor31(EditorCell cell) {
+  private static Color calculateColor30(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

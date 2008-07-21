@@ -4,14 +4,13 @@ package jetbrains.mps.regexp.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
-
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -60,7 +59,7 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return MatchVariableReferenceRegexp_Editor.calculateColor42(cell);
+              return MatchVariableReferenceRegexp_Editor.calculateColor40(cell);
             }
 
           });
@@ -86,13 +85,13 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor36(EditorCell cell) {
+  private static Color calculateColor34(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor42(EditorCell cell) {
+  private static Color calculateColor40(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -175,7 +174,7 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return MatchVariableReferenceRegexp_Editor.calculateColor36(cell);
+                return MatchVariableReferenceRegexp_Editor.calculateColor34(cell);
               }
 
             });

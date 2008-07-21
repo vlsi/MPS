@@ -34,7 +34,7 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
   private static void setupLabel_symbolClassRefCell6780_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor38(EditorCell cell) {
+  private static Color calculateColor36(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
@@ -99,7 +99,7 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return PredefinedSymbolClassRegexp_Editor.calculateColor38(cell);
+                return PredefinedSymbolClassRegexp_Editor.calculateColor36(cell);
               }
 
             });
