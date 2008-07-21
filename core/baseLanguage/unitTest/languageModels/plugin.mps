@@ -3544,26 +3544,13 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216223093558">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216223096075">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216223093559">
-              <link role="variableDeclaration" targetNodeId="1208535535118" resolveInfo="params" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1216223104563">
-              <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216223106816">
-                <property name="value" value="-Xdebug" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216223118272">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216223119727">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216223118273">
-              <link role="variableDeclaration" targetNodeId="1208535535118" resolveInfo="params" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1216223123980">
-              <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216223134358">
-                <property name="value" value="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216633290423">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216633290424">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1216633290425" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216633290426">
+              <link role="baseMethodDeclaration" targetNodeId="1216633290388" resolveInfo="addDebugParameters" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216633290427">
+                <link role="variableDeclaration" targetNodeId="1208535535118" resolveInfo="params" />
               </node>
             </node>
           </node>
@@ -3865,6 +3852,45 @@
         <property name="name" value="tests" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1208523198806">
           <link role="elementConcept" targetNodeId="1.1215620452633" resolveInfo="ITestable" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1216633290388">
+      <property name="name" value="addDebugParameters" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216633290389">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216633290395">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216633290396">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1216633290405">
+              <link role="variableDeclaration" targetNodeId="1216633290392" resolveInfo="params" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1216633290398">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216633290399">
+                <property name="value" value="-Xdebug" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216633290400">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216633290401">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1216633290406">
+              <link role="variableDeclaration" targetNodeId="1216633290392" resolveInfo="params" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1216633290403">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216633290404">
+                <property name="value" value="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216633290390" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1216633290391" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216633290392">
+        <property name="name" value="params" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1216633290393">
+          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216633290394">
+            <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+          </node>
         </node>
       </node>
     </node>

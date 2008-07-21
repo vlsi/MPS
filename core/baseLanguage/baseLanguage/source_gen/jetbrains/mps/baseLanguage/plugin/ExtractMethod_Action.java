@@ -76,7 +76,7 @@ public class ExtractMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      final Wrappers._T<ExtractMethodKind> kind = new Wrappers._T<ExtractMethodKind>(null);
+      final Wrappers._T<ExtractMethodKind> kind = new Wrappers._T<ExtractMethodKind>();
       final List<SNode> n = this.nodes;
       ModelAccess.instance().runReadAction(new Runnable() {
 
