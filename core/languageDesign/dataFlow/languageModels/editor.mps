@@ -64,13 +64,9 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206442864088">
           <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="2v.1215091279307" resolveInfo="LeftBrace" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994830">
-          <property name="flag" value="false" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206442838669">
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995695">
           <property name="flag" value="false" />
         </node>
       </node>
@@ -86,6 +82,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206442866871">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="2v.1215091331565" resolveInfo="RightBrace" />
       </node>
     </node>
   </node>
