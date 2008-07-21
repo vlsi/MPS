@@ -188,27 +188,6 @@ public abstract class MPSTree extends DnDAwareTree {
         return null;
       }
 
-      private JMenuItem findMenuItem(KeyStroke eventKeyStroke, JPopupMenu menu) {
-        for (int i = 0; i < menu.getComponentCount(); i++) {
-          if (menu.getComponent(i) instanceof JMenuItem) {
-            JMenuItem item = (JMenuItem) menu.getComponent(i);
-            KeyStroke keyStroke = item.getAccelerator();
-            if (eventKeyStroke.equals(keyStroke)) {
-              return item;
-            }
-          }
-
-          if (menu.getComponent(i) instanceof JMenu) {
-            JMenuItem result = findMenuItem(eventKeyStroke, (JMenu) menu.getComponent(i));
-            if (result != null) {
-              return result;
-            }
-          }
-        }
-
-        return null;
-      }
-
       private JMenuItem findMenuItem(KeyStroke eventKeyStroke, JMenu menu) {
         menu.getModel().setSelected(true);
 
@@ -263,7 +242,7 @@ public abstract class MPSTree extends DnDAwareTree {
         Rectangle r = getRowBounds(rowNum);
         showPopup(r.x, r.y);
       }
-    }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, KeyStroke.getKeyStroke(KeyEvent.VK_CONTEXT_MENU, 0), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
   protected void doInit(final MPSTreeNode node) {

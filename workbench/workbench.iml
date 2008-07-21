@@ -20,7 +20,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MPS_HOME$/lib/idea-rt/forms_rt.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/idea-rt/forms_rt.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
