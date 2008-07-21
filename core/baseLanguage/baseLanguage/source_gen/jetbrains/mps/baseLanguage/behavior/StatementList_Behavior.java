@@ -94,7 +94,7 @@ public class StatementList_Behavior {
           }
           {
             BaseIntentionProvider intentionProvider = null;
-            intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.constraints.RemoveUnusedAssignment_Intention");
+            intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.constraints.RemoveUnusedAssignment_QuickFix");
             TypeChecker.getInstance().reportWarning(assignment, "Unused assignment", "jetbrains.mps.baseLanguage.behavior", "1213877327543", intentionProvider);
           }
         }
@@ -105,7 +105,7 @@ public class StatementList_Behavior {
         }
         {
           BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.constraints.RemoveUnusedAssignment_Intention");
+          intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.constraints.RemoveUnusedAssignment_QuickFix");
           TypeChecker.getInstance().reportWarning(write, "Unused assignment", "jetbrains.mps.baseLanguage.behavior", "1213877327573", intentionProvider);
         }
       }

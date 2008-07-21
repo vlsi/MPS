@@ -505,12 +505,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1210838058221(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode intentionDeclaration = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "intentionDeclaration", false);
-    return SNodeOperations.getModel(intentionDeclaration) + "." + SPropertyOperations.getString(intentionDeclaration, "name") + "_Intention";
+    SNode quickFix = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "quickFix", false);
+    return SNodeOperations.getModel(quickFix) + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
 
   public static Object propertyMacro_GetPropertyValue_1210838268824(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "intentionArgument", false), "name");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1210840004747(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -522,12 +522,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1210840022621(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode intentionDeclaration = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "intentionDeclaration", false);
-    return SNodeOperations.getModel(intentionDeclaration) + "." + SPropertyOperations.getString(intentionDeclaration, "name") + "_Intention";
+    SNode quickFix = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "quickFix", false);
+    return SNodeOperations.getModel(quickFix) + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
 
   public static Object propertyMacro_GetPropertyValue_1210840022660(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "intentionArgument", false), "name");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1212597246468(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -665,8 +665,8 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1216206633084(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode intentionDeclaration = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "intentionDeclaration", false);
-    return SNodeOperations.getModel(intentionDeclaration) + "." + SPropertyOperations.getString(intentionDeclaration, "name") + "_Intention";
+    SNode quickFix = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "quickFix", false);
+    return SNodeOperations.getModel(quickFix) + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
 
   public static Object propertyMacro_GetPropertyValue_1216206633109(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -674,7 +674,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1216206633133(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "intentionArgument", false), "name");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1216643034991(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1216644811639(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name") + "_QuickFix";
   }
 
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1596,6 +1604,18 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1216210638495(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true);
+  }
+
+  public static SNode sourceNodeQuery_1216642148506(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "descriptionBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1216642186049(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1216643035001(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "argumentType", true);
   }
 
   public static List sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

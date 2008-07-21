@@ -2,6 +2,7 @@ package jetbrains.mps.intentions;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.bootstrap.helgins.runtime.quickfix.QuickFix_Runtime;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,5 +13,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
  */
 public interface IntentionProvider {
   public Intention getIntention();
+  public QuickFix_Runtime getQuickFix();
   public boolean isExecutedImmediately();
 }

@@ -17,7 +17,7 @@ public class GenericRefactoringAction extends BaseAction {
   }
 
   protected void doExecute(AnActionEvent e) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModelRepository.getInstance().saveAll();
       }

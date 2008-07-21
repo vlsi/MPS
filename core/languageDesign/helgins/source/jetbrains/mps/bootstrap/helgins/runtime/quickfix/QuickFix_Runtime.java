@@ -29,4 +29,6 @@ public abstract class QuickFix_Runtime {
   }
 
   public abstract void execute(SNode node);
+
+  public abstract String getDescription();
 }

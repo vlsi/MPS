@@ -13,10 +13,13 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.bootstrap.helgins.runtime.quickfix.QuickFix_Runtime;
 
 import java.awt.Color;
 import java.util.LinkedHashSet;
 import java.util.Set;
+
+import com.intellij.codeInspection.QuickFix;
 
 /**
  * Created by IntelliJ IDEA.
@@ -56,13 +59,13 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
       IntentionProvider intentionProvider = errorNode.o2.getIntentionProvider();
 
       if (intentionProvider != null && intentionProvider.isExecutedImmediately()) {
-        final Intention intention = intentionProvider.getIntention();
+        final QuickFix_Runtime intention = intentionProvider.getQuickFix();
         if (intention != null) {
           ThreadUtils.runInUIThreadNoWait(new Runnable() {
             public void run() {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {
-                  intention.execute(node, null);
+                  intention.execute(node);
                 }
               });
             }

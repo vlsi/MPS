@@ -1,12 +1,12 @@
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.bootstrap.helgins.runtime.quickfix.QuickFix_Runtime;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -21,8 +21,8 @@ import java.util.HashMap;
 public class BaseIntentionProvider implements IntentionProvider {
   private static Logger LOG = Logger.getLogger(IntentionProvider.class);
 
-  private Intention myIntention;
-  private boolean myIntentionTaken;
+  private QuickFix_Runtime myQuickFix;
+  private boolean myQuickFixTaken;
   private final String myClassFQName;
   private boolean myExecuteImmediately = false;
   private Map<String, Object> myMap = new HashMap<String, Object>();
@@ -30,8 +30,8 @@ public class BaseIntentionProvider implements IntentionProvider {
   public BaseIntentionProvider(String classFQName) {
     myClassFQName = SModelUID.fromString(NameUtil.namespaceFromLongName(classFQName)).getLongName() +
       "." + NameUtil.shortNameFromLongName(classFQName);
-    myIntention = null;
-    myIntentionTaken = false;
+    myQuickFix = null;
+    myQuickFixTaken = false;
   }
 
   public BaseIntentionProvider(String classFQName, boolean executeImmediately) {
@@ -48,27 +48,62 @@ public class BaseIntentionProvider implements IntentionProvider {
   }
 
   public Intention getIntention() {
-    if (myIntentionTaken) {
-      return myIntention;
+    final QuickFix_Runtime quickFix = getQuickFix();
+    if (quickFix == null) {
+      return null;
+    }
+    return new Intention() {
+      public String getConcept() {
+        return null;
+      }
+
+      public String getDescription(SNode node, EditorContext editorContext) {
+        return quickFix.getDescription();
+      }
+
+      public boolean isApplicable(SNode node, EditorContext editorContext) {
+        return false;
+      }
+
+      public void execute(SNode node, EditorContext editorContext) {
+        quickFix.execute(node);
+      }
+
+      public boolean isErrorIntention() {
+        return true;
+      }
+
+      public void putArgument(String key, Object argument) {
+      }
+
+      public String getSourceModelUID() {
+        return null;  //todo?
+      }
+    };
+  }
+
+  public QuickFix_Runtime getQuickFix() {
+    if (myQuickFixTaken) {
+      return myQuickFix;
     }
     try {
       String languageNamespace = NameUtil.namespaceFromLongName(NameUtil.namespaceFromLongName(myClassFQName));
       Class aClass = MPSModuleRepository.getInstance().getLanguage(languageNamespace).getClass(myClassFQName);
       if (aClass == null) {
         LOG.error("class " + myClassFQName + " not found in a module " + languageNamespace);
-        myIntentionTaken = true;
+        myQuickFixTaken = true;
         return null;
       }
-      Intention intention = (Intention) aClass.getConstructor().newInstance();
+      QuickFix_Runtime quickFix = (QuickFix_Runtime) aClass.getConstructor().newInstance();
       for (String s : myMap.keySet()) {
-        intention.putArgument(s, myMap.get(s));
+        quickFix.putArgument(s, myMap.get(s));
       }
-      myIntention = intention;
-      myIntentionTaken = true;
-      return intention;
+      myQuickFix = quickFix;
+      myQuickFixTaken = true;
+      return quickFix;
     } catch (Throwable t) {
       LOG.error(t);
-      myIntentionTaken = true;
+      myQuickFixTaken = true;
       return null;
     }
   }

@@ -23,14 +23,14 @@ public class typeof_BaseAssignmentExpression_InferenceRule implements InferenceR
       TypeChecker.getInstance().reportTypeError(lval, "unexpected in left part or assignment", "jetbrains.mps.baseLanguage.helgins", "1175519229331");
     }
     {
-      SNode _nodeToCheck_1029348928467 = rval;
+      SNode _nodeToCheck_1029348928467 = baseAssignmentExpression;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1175519338112", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(lval, "jetbrains.mps.baseLanguage.helgins", "1175519345897", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1175519336188", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(rval, "jetbrains.mps.baseLanguage.helgins", "1175519338112", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(lval, "jetbrains.mps.baseLanguage.helgins", "1175519345897", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1175519336188", false, 0, intentionProvider);
     }
     {
-      SNode _nodeToCheck_1029348928467 = ae;
+      SNode _nodeToCheck_1029348928467 = baseAssignmentExpression;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1206550949101", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(lval, "jetbrains.mps.baseLanguage.helgins", "1175519357200", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206550949099", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(ae, "jetbrains.mps.baseLanguage.helgins", "1206550949101", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(lval, "jetbrains.mps.baseLanguage.helgins", "1175519357200", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206550949099", intentionProvider);
     }
   }
 

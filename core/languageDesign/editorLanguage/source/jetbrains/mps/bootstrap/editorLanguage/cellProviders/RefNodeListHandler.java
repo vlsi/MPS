@@ -88,7 +88,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
       resultList.addAll(myOwnerNode.getChildren(getElementRole()));
     } else {
       List<SNode> children = myOwnerNode.getChildren(getElementRole());
-      Collections.reverse(children);
+      Collections.reverse(children);   
       resultList.addAll(children);
     }
 
