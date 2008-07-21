@@ -1,5 +1,7 @@
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.util.EqualUtil;
+
 public class ConstantModelAccessor implements ModelAccessor {
   private String myValue;
 
@@ -15,6 +17,6 @@ public class ConstantModelAccessor implements ModelAccessor {
   }
 
   public boolean isValidText(String text) {
-    return myValue.equals(text);
+    return EqualUtil.equals(myValue, text);
   }
 }

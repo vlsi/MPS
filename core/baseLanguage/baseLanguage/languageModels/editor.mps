@@ -4904,6 +4904,9 @@
           <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1216667486012">
+            <property name="value" value="0.0" />
+          </node>
         </node>
       </node>
     </node>
