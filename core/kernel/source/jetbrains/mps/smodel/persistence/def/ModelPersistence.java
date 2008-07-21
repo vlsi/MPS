@@ -77,9 +77,9 @@ public class ModelPersistence {
     try {
       document = JDOMUtil.loadDocument(file);
     } catch (JDOMException e) {
-      throw new RuntimeException(e);
+      throw new RuntimeException("Exception in file " + file, e);
     } catch (IOException e) {
-      throw new RuntimeException(e);
+      throw new RuntimeException("Exception in file " + file, e);
     }
     return document;
   }
@@ -170,7 +170,7 @@ public class ModelPersistence {
       JDOMUtil.writeDocument(document, file);
       SModelRepository.getInstance().markUnchanged(model);
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error("Error in file " + file, e);
     }
   }
 

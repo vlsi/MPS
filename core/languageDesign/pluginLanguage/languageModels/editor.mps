@@ -2094,6 +2094,7 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210179742423">
           <property name="text" value="=" />
+          <link role="styleClass" targetNodeId="17.1215010940130" resolveInfo="Operator" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1210179752787">
           <link role="relationDeclaration" targetNodeId="15.1068431790190" />
