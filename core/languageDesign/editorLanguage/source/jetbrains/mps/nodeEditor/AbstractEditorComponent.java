@@ -409,11 +409,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
 
-    addFocusListener(new FocusAdapter() {
-      public void focusLost(FocusEvent e) {
-        commitAll();
-      }
-    });
+//    addFocusListener(new FocusAdapter() {
+//      public void focusLost(FocusEvent e) {
+//        commitAll();
+//      }
+//    });
   }
 
   protected void onEscape() {
