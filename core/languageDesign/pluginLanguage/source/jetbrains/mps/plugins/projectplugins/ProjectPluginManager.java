@@ -3,6 +3,7 @@ package jetbrains.mps.plugins.projectplugins;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
@@ -40,6 +41,7 @@ public class ProjectPluginManager implements ProjectComponent {
     public void onAfterReload() {
     }
   };
+  private Ide_ProjectPlugin myIdePlugin;
 
   public ProjectPluginManager(Project project) {
     myProject = project;
@@ -115,6 +117,8 @@ public class ProjectPluginManager implements ProjectComponent {
       }
     }
 
+    addIdePlugin();
+
     for (IProjectPlugin plugin : myPlugins) {
       try {
         plugin.init(mpsProject);
@@ -139,6 +143,10 @@ public class ProjectPluginManager implements ProjectComponent {
     }
   }
 
+  private void addIdePlugin() {
+    myIdePlugin = new Ide_ProjectPlugin();
+    myPlugins.add(myIdePlugin);
+  }
 
   private void disposePlugins() {
     for (IProjectPlugin plugin : myPlugins) {
@@ -168,6 +176,10 @@ public class ProjectPluginManager implements ProjectComponent {
     } catch (Throwable t) {
       LOG.error(t);
     }
+  }
+
+  public BaseProjectPlugin getIdePlugin() {
+    return myIdePlugin;
   }
 
   //----------------COMPONENT STUFF---------------------

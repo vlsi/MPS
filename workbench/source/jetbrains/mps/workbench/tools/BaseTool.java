@@ -1,7 +1,6 @@
 package jetbrains.mps.workbench.tools;
 
 import com.intellij.ide.actions.ActivateToolWindowAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
@@ -12,7 +11,6 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -207,11 +205,7 @@ public abstract class BaseTool {
   }
 
   protected BaseAction createCloseAction() {
-    return new BaseAction("Close", "Close tool", Icons.CLOSE_ICON) {
-      public void doExecute(AnActionEvent e) {
-        unregister();
-      }
-    };
+    return new CloseAction(this);
   }
 
   protected boolean isInitiallyAvailable() {
@@ -273,4 +267,5 @@ public abstract class BaseTool {
   protected MPSProject getMPSProject() {
     return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
+
 }

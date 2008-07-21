@@ -4,6 +4,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
@@ -13,18 +14,18 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class ApplicationPluginManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ApplicationPluginManager.class);
 
-  private Map<String,IApplicationPlugin> myPlugins = new HashMap<String, IApplicationPlugin>();
+  private Map<String, IApplicationPlugin> myPlugins = new HashMap<String, IApplicationPlugin>();
 
   private ReloadListener myReloadListener = new ReloadListener() {
     public void onBeforeReload() {
@@ -38,17 +39,6 @@ public class ApplicationPluginManager implements ApplicationComponent {
     public void onAfterReload() {
     }
   };
-
-  @Nullable
-  public BaseGroup getGroup(String id) {
-    for (IApplicationPlugin plugin : myPlugins.values()) {
-      if (plugin instanceof BaseApplicationPlugin) {
-        BaseGroup g = ((BaseApplicationPlugin) plugin).getGroup(id);
-        if (g != null) return g;
-      }
-    }
-    return ActionUtils.getGroup(id);
-  }
 
   //----------------RELOAD STUFF---------------------
 
@@ -85,6 +75,8 @@ public class ApplicationPluginManager implements ApplicationComponent {
       }
     }
 
+    addIdePlugin();
+
     //todo: uncomment when plugin model will be added to devkits
     /*
     for (DevKit dk : devkits) {
@@ -96,7 +88,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
     for (IApplicationPlugin plugin : myPlugins.values()) {
       try {
-        plugin.init();
+        plugin.preInit();
       } catch (Throwable t1) {
         LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
       }
@@ -104,11 +96,15 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
     for (IApplicationPlugin plugin : myPlugins.values()) {
       try {
-        plugin.afterInit();
+        plugin.init();
       } catch (Throwable t1) {
         LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
       }
     }
+  }
+
+  private void addIdePlugin() {
+    myPlugins.put(Ide_ApplicationPlugin.class.getName(), new Ide_ApplicationPlugin());
   }
 
   private void addPlugin(IModule contextModule, String pluginClassFqName) {
@@ -122,7 +118,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
       if (myPlugins.containsKey(pluginClassFqName)) return;
 
       IApplicationPlugin plugin = (IApplicationPlugin) pluginClass.newInstance();
-      myPlugins.put(pluginClassFqName,plugin);
+      myPlugins.put(pluginClassFqName, plugin);
     } catch (Throwable t) {
       LOG.error(t);
     }
@@ -137,6 +133,10 @@ public class ApplicationPluginManager implements ApplicationComponent {
       }
     }
     myPlugins.clear();
+  }
+
+  public BaseApplicationPlugin getIdePlugin() {
+    return (BaseApplicationPlugin) myPlugins.get(Ide_ApplicationPlugin.class.getName());
   }
 
   //----------------COMPONENT STUFF---------------------

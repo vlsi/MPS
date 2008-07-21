@@ -1,9 +1,8 @@
-package jetbrains.mps.ide.projectPane;
+package jetbrains.mps.bootstrap.structureLanguage.plugin;
 
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.uiActions.PresentationManager;
-import jetbrains.mps.ide.toolsPane.DefaultTool;
-import jetbrains.mps.ide.toolsPane.ToolsPane;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -15,72 +14,32 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
 
-import javax.swing.Icon;
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import java.awt.BorderLayout;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 27.11.2006
- * Time: 17:24:00
- * To change this template use File | Settings | File Templates.
- */
-public class NodeExplorerView extends DefaultTool {
+public class NodeExplorerComponent {
   private MyTree myTree = new MyTree();
   private SNodePointer myNode;
-  private JPanel myComponent = new JPanel(new BorderLayout());
-//  private JCheckBox myHelginsCheckBox;
-//  private JCheckBox myTypeCheckBox;
-//  private boolean myShowHelgins = true;
+  private JScrollPane myScrollPane;
 
-  public NodeExplorerView() {
+  public NodeExplorerComponent() {
+    myScrollPane = new JScrollPane(myTree);
     myTree.setRootVisible(true);
-    myTree.rebuildNow();
-    myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
-
-  }
-
-  public String getName() {
-    return "Node Explorer";
-  }
-
-  public Icon getIcon() {
-    return Icons.DEFAULT_ICON;
   }
 
   public JComponent getComponent() {
-    return myComponent;
+    return myScrollPane;
   }
 
   public void showNode(SNode node, MPSProject project) {
-    if (!getToolsPane().isVisible(this)) {
-      getToolsPane().selectTool(this);
-    }
     myNode = node == null ? null : new SNodePointer(node);
     myTree.setOperationContext(new ProjectOperationContext(project));
     myTree.rebuildNow();
   }
 
-//  public void setShowHelgins(boolean show) {
-//    myShowHelgins = show;
-//    myTree.rebuildTree();
-//  }
-
   public void clear() {
     myNode = null;
-    myTree.rebuildNow();
-  }
-
-
-  public void close() {
-    clear();
-  }
-
-  private ToolsPane getToolsPane() {
-    return null;
+    myTree.rebuildLater();
   }
 
   private class MyTree extends MPSTree {
@@ -123,7 +82,7 @@ public class NodeExplorerView extends DefaultTool {
     protected void doInit() {
       this.removeAllChildren();
 
-      add(new TextTreeNode("Concept = " +getSNode().getConceptFqName()));      
+      add(new TextTreeNode("Concept = " + getSNode().getConceptFqName()));
 
       if (getSNode() == null) return;
       for (SNode childNode : getSNode().getChildren()) {

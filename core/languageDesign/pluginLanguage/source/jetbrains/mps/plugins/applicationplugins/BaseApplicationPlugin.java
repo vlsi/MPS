@@ -27,22 +27,21 @@ public abstract class BaseApplicationPlugin implements IApplicationPlugin {
     return new ArrayList<BaseCustomApplicationPlugin>();
   }
 
-  public void init() {
+  public void preInit() {
     initGroups();
+  }
+
+  public void init() {
+    adjustGroups();
     myCustomParts = initCustomParts();
   }
 
-  public void afterInit() {
-    adjustGroups();
-  }
-
   public void dispose() {
-    for (String actionId : myActions) {
-      ActionUtils.unregisterAction(actionId);
-    }
-
     for (BaseCustomApplicationPlugin part : myCustomParts) {
       part.dispose();
+    }
+    for (String actionId : myActions) {
+      ActionUtils.unregisterAction(actionId);
     }
   }
 

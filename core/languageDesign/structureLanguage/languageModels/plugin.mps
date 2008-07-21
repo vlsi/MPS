@@ -24,11 +24,13 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2"/>
-  <maxImportIndex value="8"/>
+  <maxImportIndex value="10"/>
   <import index="5" modelUID="jetbrains.mps.project@java_stub" version="-1"/>
   <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>
   <import index="7" modelUID="jetbrains.mps.bootstrap.structureLanguage.plugin@java_stub" version="-1"/>
   <import index="8" modelUID="jetbrains.mps.workbench.tools@java_stub" version="-1"/>
+  <import index="9" modelUID="jetbrains.mps.ide.projectPane@java_stub" version="-1"/>
+  <import index="10" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.Tool" id="1216648908320">
     <property name="name" value="StructureView"/>
     <property name="caption" value="Concept Structure"/>

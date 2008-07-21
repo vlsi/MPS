@@ -18,6 +18,7 @@
       <implementation-class>com.intellij.openapi.project.impl.ProjectManagerImpl</implementation-class>
     </component>
   </application-components>
+
   <project-components>
     <component>
       <implementation-class>com.intellij.openapi.components.impl.ServiceManagerImpl</implementation-class>
@@ -29,7 +30,6 @@
     <component>
       <implementation-class>jetbrains.mps.vcs.MPSVCSManager</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.workbench.projectPaths.MPSProjectPaths</implementation-class>
     </component>
@@ -122,11 +122,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.workbench.action.MPSIdeActions</implementation-class>
-    </component>
-
-
-    <component>
       <implementation-class>jetbrains.mps.findUsages.FindUsagesManager</implementation-class>
     </component>
 
@@ -157,7 +152,6 @@
     <component>
       <implementation-class>jetbrains.mps.ide.DialogDimensionsSettings</implementation-class>
     </component>
-
 
     <component>
       <implementation-class>jetbrains.mps.ide.progress.TaskProgressSettings</implementation-class>
