@@ -11,15 +11,15 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
-public class ShowModuleRepository_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(ShowModuleRepository_Action.class);
+public class ShowModelRepository_Action extends GeneratedAction {
+  public static final Logger LOG = Logger.getLogger(ShowModelRepository_Action.class);
   public static final Icon ICON = null;
 
   private MPSProject project;
 
-  public ShowModuleRepository_Action() {
-    super("Show Module Repository", "", ICON);
-    this.setIsAlwaysVisible(true);
+  public ShowModelRepository_Action() {
+    super("Show Model Repository", "", ICON);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
@@ -32,7 +32,7 @@ public class ShowModuleRepository_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowModuleRepository", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowModelRepository", t);
       this.disable(event.getPresentation());
     }
   }
@@ -52,11 +52,11 @@ public class ShowModuleRepository_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ModuleRepository_Tool tool = this.project.getPluginManager().getTool(ModuleRepository_Tool.class);
+      ModelRepository_Tool tool = this.project.getPluginManager().getTool(ModelRepository_Tool.class);
       assert tool != null;
       tool.openTool(true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowModuleRepository", t);
+      LOG.error("User's action execute method failed. Action:" + "ShowModelRepository", t);
     }
   }
 

@@ -21,6 +21,7 @@ public class Ide_ProjectPlugin extends BaseProjectPlugin {
     tools.add(new NodeExplorer_Tool(project));
     tools.add(new ModelDiff_Tool(project));
     tools.add(new ModuleRepository_Tool(project));
+    tools.add(new ModelRepository_Tool(project));
     return tools;
   }
 

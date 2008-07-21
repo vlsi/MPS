@@ -23,6 +23,7 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       this.add(new ShowModuleRepository_Action());
+      this.add(new ShowModelRepository_Action());
       this.addSeparator();
       this.add(new ReloadAllAction());
       this.addSeparator();

@@ -20,7 +20,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.BaseAction;
 
-import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 import java.awt.Color;
@@ -28,32 +27,18 @@ import java.awt.Color;
 /**
  * @author Kostik
  */
-public class ModelRepositoryView extends DefaultTool {
+public class ModelRepositoryComponent {
   private MPSTree myTree = new MyTree();
   private JScrollPane myComponent = new JScrollPane(myTree);
   private DeferringEventHandler myDeferringEventHandler = new DeferringEventHandler();
 
-  public ModelRepositoryView(ToolsPane pane) {
-    if (pane.isVisible(this)) {
-      myTree.rebuildNow();
-    }
-  }
-
-  public void toolShown() {
+  public void install() {
     myTree.rebuildLater();
     myDeferringEventHandler.installListeners();
   }
 
-  public void toolHidden() {
+  public void uninstall() {
     myDeferringEventHandler.unInstallListeners();
-  }
-
-  public String getName() {
-    return "Model Repository Viewer";
-  }
-
-  public Icon getIcon() {
-    return Icons.MODEL_ICON;
   }
 
   public JComponent getComponent() {
