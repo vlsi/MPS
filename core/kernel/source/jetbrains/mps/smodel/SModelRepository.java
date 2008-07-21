@@ -366,6 +366,8 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public void saveAll() {
+    LOG.assertInCommand();
+
     List<SModelDescriptor> descriptors = new ArrayList(myChangedModels.keySet());
     for (SModelDescriptor modelDescriptor : descriptors) {
       try {

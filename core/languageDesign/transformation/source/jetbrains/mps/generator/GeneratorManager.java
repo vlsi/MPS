@@ -267,9 +267,8 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
     final boolean[] result = new boolean[1];
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        MPSProject project = inputModels.get(0).o2.getMPSProject();
+        final MPSProject project = inputModels.get(0).o2.getMPSProject();
         project.getComponentSafe(TransientModelsModule.class).clearAll();
-        project.saveModels();
         if (saveTransientModels) {
           project.getComponentSafe(GenerationTracer.class).startTracing();
         }

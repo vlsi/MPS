@@ -75,14 +75,7 @@
                       <property name="value" value="23" />
                     </node>
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1216210158445">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1216210159635">
-                      <property name="value" value="23" />
-                    </node>
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1216210221336">
-                      <property name="value" value="23" />
-                    </node>
-                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216648903886" />
                 </node>
               </node>
             </node>
