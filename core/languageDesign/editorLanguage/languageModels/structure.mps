@@ -3365,5 +3365,10 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216672142186">
+    <property name="package" value="CellLayout" />
+    <property name="name" value="CellLayout_Indent" />
+    <link role="extends" targetNodeId="1106270491082" resolveInfo="CellLayout" />
+  </node>
 </model>
 

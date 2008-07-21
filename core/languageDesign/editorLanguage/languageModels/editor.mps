@@ -12686,5 +12686,15 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1216672309006">
+    <property name="package" value="CellLayout" />
+    <link role="conceptDeclaration" targetNodeId="2.1216672142186" resolveInfo="CellLayout_Indent" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216672312102">
+      <property name="text" value="Indent" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleClassItem" id="1216672312103">
+        <property name="flag" value="true" />
+      </node>
+    </node>
+  </node>
 </model>
 
