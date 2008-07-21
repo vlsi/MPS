@@ -1,25 +1,20 @@
-package jetbrains.mps.ide.structure;
+package jetbrains.mps.bootstrap.structureLanguage.plugin;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.toolsPane.DefaultTool;
-import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
-import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 import java.awt.Color;
 
-public class StructureView extends DefaultTool {
-  private MPSProject myProject;
+public class StructureViewComponent {
   private AbstractConceptDeclaration myConcept;
   private IOperationContext myContext;
   private MPSTree myTree = new MPSTree() {
@@ -29,8 +24,7 @@ public class StructureView extends DefaultTool {
   };
   private JComponent myComponent = new JScrollPane(myTree);
 
-  public StructureView(MPSProject project) {
-    myProject = project;
+  public StructureViewComponent() {
     updateView();
   }
 
@@ -39,15 +33,6 @@ public class StructureView extends DefaultTool {
     myContext = context;
     updateView();
     myTree.expandAll();
-    myProject.getComponentSafe(ToolsPane.class).selectTool(this);
-  }
-
-  public String getName() {
-    return "Concept Structure";
-  }
-
-  public Icon getIcon() {
-    return IconManager.EMPTY_ICON;
   }
 
   public JComponent getComponent() {
@@ -55,8 +40,7 @@ public class StructureView extends DefaultTool {
   }
 
   public void updateView() {
-    myTree.rebuildNow();
-
+    myTree.rebuildLater();
   }
 
   private MPSTreeNode buildTree() {
