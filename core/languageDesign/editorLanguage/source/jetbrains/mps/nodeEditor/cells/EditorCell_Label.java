@@ -417,7 +417,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         deleteIfPossible();
         return true;
       } else {
-        if (allowErrors && getPrevLeaf() instanceof EditorCell_Label && getPrevLeaf().isSelectable()) {
+        if (allowErrors && getPrevLeaf() instanceof EditorCell_Label && 
+          getPrevLeaf().isSelectable() &&
+          ((EditorCell_Label) getPrevLeaf()).isEditable()) {
           EditorCell_Label label = (EditorCell_Label) getPrevLeaf();
           getEditorContext().getNodeEditorComponent().changeSelection(label);
           label.end();
@@ -443,6 +445,15 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         deleteIfPossible();
         return true;
       } else {
+        if (allowErrors && getNextLeaf() instanceof EditorCell_Label &&
+          getNextLeaf().isSelectable() &&
+          ((EditorCell_Label) getNextLeaf()).isEditable()) {
+          EditorCell_Label label = (EditorCell_Label) getNextLeaf();
+          getEditorContext().getNodeEditorComponent().changeSelection(label);
+          label.home();
+          label.doProcessKeyPressed(keyEvent, true);
+          return true;
+        }
         return false;
       }
     }

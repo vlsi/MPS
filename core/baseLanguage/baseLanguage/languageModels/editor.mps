@@ -7982,6 +7982,7 @@
         <link role="actionMap" targetNodeId="1140734304236" resolveInfo="BinaryOperation_LeftArgument_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1166063984223">
+        <property name="noTargetText" value="&lt;no operator&gt;" />
         <link role="relationDeclaration" targetNodeId="18.1137473891462" />
         <link role="keyMap" targetNodeId="1158938292640" resolveInfo="CastExpression_KeyMap" />
         <link role="styleClass" targetNodeId="1215010940130" resolveInfo="Operator" />

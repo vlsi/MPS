@@ -4,10 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -41,16 +38,13 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
   public EditorCell createEditorCell(EditorContext editorContext) {
     String text = getSNode().getConceptProperty(myConceptPropertyName);
     EditorCell_Label editorCell;
-    if (text == null) {
-      String errorText = myNoTargetText;
-      if ((errorText == null) || (errorText.length() == 0)) {
-        errorText = " <no  " + myConceptPropertyName + "  value> ";
-      }
-      editorCell = new EditorCell_Error(myEditorContext, getSNode(), errorText);
-    } else {
-      editorCell = new EditorCell_Constant(myEditorContext, getSNode(), text);
-      editorCell.setEditable(true);
+    String errorText = myNoTargetText;
+    if ((errorText == null) || (errorText.length() == 0)) {
+      errorText = " <no  " + myConceptPropertyName + "  value> ";
     }
+    editorCell = EditorCell_Property.create(myEditorContext, new ConstantModelAccessor(text), getSNode());
+    ((EditorCell_Property) editorCell).setDefaultText(errorText);
+    editorCell.setEditable(true);
     return editorCell;
   }
 
