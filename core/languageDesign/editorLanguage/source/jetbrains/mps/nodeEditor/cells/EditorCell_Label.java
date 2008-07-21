@@ -417,9 +417,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         deleteIfPossible();
         return true;
       } else {
-        if (allowErrors && getPrevLeaf() instanceof EditorCell_Label && 
-          getPrevLeaf().isSelectable() &&
-          ((EditorCell_Label) getPrevLeaf()).isEditable()) {
+        if (allowErrors && canDeleteFrom(getPrevLeaf())) {
           EditorCell_Label label = (EditorCell_Label) getPrevLeaf();
           getEditorContext().getNodeEditorComponent().changeSelection(label);
           label.end();
@@ -445,9 +443,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         deleteIfPossible();
         return true;
       } else {
-        if (allowErrors && getNextLeaf() instanceof EditorCell_Label &&
-          getNextLeaf().isSelectable() &&
-          ((EditorCell_Label) getNextLeaf()).isEditable()) {
+        if (allowErrors && canDeleteFrom(getNextLeaf())) {
           EditorCell_Label label = (EditorCell_Label) getNextLeaf();
           getEditorContext().getNodeEditorComponent().changeSelection(label);
           label.home();
@@ -477,6 +473,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return false;
   }
 
+  private boolean canDeleteFrom(EditorCell cell) {
+    if (getText().length() == 0) return false;
+    if (!(cell instanceof EditorCell_Label)) return false;
+    EditorCell_Label label = (EditorCell_Label) cell;
+    return label.isEditable() && label.isSelectable();
+  }
 
   private void deleteIfPossible() {
     if ("".equals(getText()) && isBigCell()) {
