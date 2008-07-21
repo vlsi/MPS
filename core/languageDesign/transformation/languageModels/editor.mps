@@ -5797,31 +5797,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1198101594289">
-    <link role="conceptDeclaration" targetNodeId="1.1198101033452" resolveInfo="TypeOrStringType" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198101602026">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198101605403">
-        <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="1198104170947" resolveInfo="literal" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198101616733">
-        <property name="noTargetText" value="&lt;none&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1198101462928" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198101623813">
-        <property name="text" value="or string" />
-        <link role="styleClass" targetNodeId="1198104170947" resolveInfo="literal" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996123">
-          <property name="flag" value="false" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198101722129">
-        <property name="text" value=")" />
-        <link role="styleClass" targetNodeId="1198104170947" resolveInfo="literal" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1200911357797">
     <property name="package" value="label" />
     <link role="conceptDeclaration" targetNodeId="1.1200911316486" resolveInfo="LabelDeclaration" />

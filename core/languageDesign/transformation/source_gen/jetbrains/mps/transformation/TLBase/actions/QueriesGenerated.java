@@ -6,11 +6,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -29,12 +28,6 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule");
   }
 
-  public static void nodeFactory_NodeSetup_SNodeOrStringType_1198265067453(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "equivalentType", _context.getSampleNode(), true);
-    }
-  }
-
   public static void nodeFactory_NodeSetup_Node_FindOutputNode_1205663677153(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNode cf = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", true, false);
     if (cf != null && ListSequence.fromList(SLinkOperations.getConceptLinkTargets(cf, "applicableConceptFunctionParameter")).contains(SConceptOperations.findConceptDeclaration("jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_generator"))) {
@@ -44,7 +37,6 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_MapSrcNodeMacro_1207674454117(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.transformation.TLBase.structure.NodeMacro")) {
-      SPropertyOperations.set(_context.getNewNode(), "mappingId", SPropertyOperations.getString(_context.getSampleNode(), "mappingId"));
       SLinkOperations.setTarget(_context.getNewNode(), "mappingLabel", SLinkOperations.getTarget(_context.getSampleNode(), "mappingLabel", false), false);
     }
   }

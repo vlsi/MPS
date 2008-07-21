@@ -1394,27 +1394,6 @@
       <property name="externalValue" value="post-process output model" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198101033452">
-    <property name="name" value="SNodeOrStringType" />
-    <link role="extends" targetNodeId="6.1068431790189" resolveInfo="Type" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1198101504257">
-      <property name="name" value="stringDescription" />
-      <link role="dataType" targetNodeId="2.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1198101462928">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="equivalentType" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="11.1138055754698" resolveInfo="SNodeType" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198104623627">
-      <property name="value" value="type or string" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1198104959103">
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200911316486">
     <property name="name" value="MappingLabelDeclaration" />
     <property name="package" value="label" />
