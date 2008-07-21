@@ -38,7 +38,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return RegexpDeclaration_Editor.calculateColor48(cell);
+              return RegexpDeclaration_Editor.calculateColor42(cell);
             }
 
           });
@@ -124,7 +124,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return RegexpDeclaration_Editor.calculateColor14(cell);
+              return RegexpDeclaration_Editor.calculateColor11(cell);
             }
 
           });
@@ -143,7 +143,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return RegexpDeclaration_Editor.calculateColor37(cell);
+              return RegexpDeclaration_Editor.calculateColor32(cell);
             }
 
           });
@@ -181,19 +181,19 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_descriptionPropertyCell9918_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor14(EditorCell cell) {
+  private static Color calculateColor11(EditorCell cell) {
     Color result;
     result = Color.darkGray;
     return result;
   }
 
-  private static Color calculateColor37(EditorCell cell) {
+  private static Color calculateColor32(EditorCell cell) {
     Color result;
     result = Color.darkGray;
     return result;
   }
 
-  private static Color calculateColor48(EditorCell cell) {
+  private static Color calculateColor42(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

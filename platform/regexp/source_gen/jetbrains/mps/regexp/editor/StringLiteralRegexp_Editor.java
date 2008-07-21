@@ -34,7 +34,7 @@ public class StringLiteralRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StringLiteralRegexp_Editor.calculateColor29(cell);
+              return StringLiteralRegexp_Editor.calculateColor24(cell);
             }
 
           });
@@ -48,7 +48,7 @@ public class StringLiteralRegexp_Editor extends DefaultNodeEditor {
   private static void setupLabel_textPropertyCell17177_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor29(EditorCell cell) {
+  private static Color calculateColor24(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;

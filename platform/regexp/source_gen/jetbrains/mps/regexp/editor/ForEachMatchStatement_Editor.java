@@ -8,12 +8,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -40,25 +42,12 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell11738_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11738_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return ForEachMatchStatement_Editor.calculateColor6(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell11738_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11738_01");
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell11738_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -69,7 +58,7 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ForEachMatchStatement_Editor.calculateColor46(cell);
+              return ForEachMatchStatement_Editor.calculateColor40(cell);
             }
 
           });
@@ -85,16 +74,11 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell11738_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11738_03");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return ForEachMatchStatement_Editor.calculateColor3(cell);
-            }
-
-          });
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
         }
 
       };
@@ -107,14 +91,17 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell11738_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11738_04");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell11738_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11738_05");
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell11738_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11738_06");
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell11738_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -130,20 +117,11 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_ConstantCell11738_07(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11738_07");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+  private static void setupBasic_bodyRefNodeCell11738_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_bodyRefNodeCell11738_0(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_IndentCell11738_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_IndentCell11738_0");
   }
 
   private static void setupLabel_ConstantCell11738_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -173,25 +151,10 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell11738_06(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell11738_07(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_bodyRefNodeCell11738_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor3(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
-  private static Color calculateColor6(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
-  private static Color calculateColor46(EditorCell cell) {
+  private static Color calculateColor40(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
@@ -237,7 +200,7 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell11738_07(context, node, "  "));
+    editorCell.addEditorCell(this.createIndentCell1(context, node));
     editorCell.addEditorCell(this.create_bodyRefNodeCell11738_0(context, node));
     return editorCell;
   }
@@ -298,12 +261,9 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell create_ConstantCell11738_07(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell11738_07(editorCell, node, context);
-    setupLabel_ConstantCell11738_07(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
+  public EditorCell createIndentCell1(EditorContext context, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(context, node);
+    return result;
   }
 
   public EditorCell create_regexpRefNodeCell11738_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {

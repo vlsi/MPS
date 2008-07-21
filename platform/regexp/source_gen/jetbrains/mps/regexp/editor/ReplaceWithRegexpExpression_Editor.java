@@ -37,7 +37,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ReplaceWithRegexpExpression_Editor.calculateColor35(cell);
+              return ReplaceWithRegexpExpression_Editor.calculateColor30(cell);
             }
 
           });
@@ -59,7 +59,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ReplaceWithRegexpExpression_Editor.calculateColor44(cell);
+              return ReplaceWithRegexpExpression_Editor.calculateColor38(cell);
             }
 
           });
@@ -107,7 +107,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ReplaceWithRegexpExpression_Editor.calculateColor9(cell);
+              return ReplaceWithRegexpExpression_Editor.calculateColor7(cell);
             }
 
           });
@@ -142,19 +142,19 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   private static void setupLabel_replaceBlockRefNodeCell5520_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor9(EditorCell cell) {
+  private static Color calculateColor7(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor35(EditorCell cell) {
+  private static Color calculateColor30(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor44(EditorCell cell) {
+  private static Color calculateColor38(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

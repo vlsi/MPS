@@ -29,7 +29,7 @@ public class LineStartRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return LineStartRegexp_Editor.calculateColor42(cell);
+              return LineStartRegexp_Editor.calculateColor36(cell);
             }
 
           });
@@ -43,7 +43,7 @@ public class LineStartRegexp_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell14351_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor42(EditorCell cell) {
+  private static Color calculateColor36(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

@@ -65,7 +65,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return PredefinedSymbolClasses_Editor.calculateColor43(cell);
+              return PredefinedSymbolClasses_Editor.calculateColor37(cell);
             }
 
           });
@@ -116,7 +116,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
   private static void setupLabel_symbolClassRefNodeListCell9149_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor43(EditorCell cell) {
+  private static Color calculateColor37(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

@@ -34,7 +34,7 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
   private static void setupLabel_matchRefCell20506_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor21(EditorCell cell) {
+  private static Color calculateColor17(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
@@ -99,10 +99,11 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return MatchVariableReference_Editor.calculateColor21(cell);
+                return MatchVariableReference_Editor.calculateColor17(cell);
               }
 
             });
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }
 
         };

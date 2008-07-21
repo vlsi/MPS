@@ -29,7 +29,7 @@ public class DotRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return DotRegexp_Editor.calculateColor10(cell);
+              return DotRegexp_Editor.calculateColor8(cell);
             }
 
           });
@@ -43,7 +43,7 @@ public class DotRegexp_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell150_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor10(EditorCell cell) {
+  private static Color calculateColor8(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

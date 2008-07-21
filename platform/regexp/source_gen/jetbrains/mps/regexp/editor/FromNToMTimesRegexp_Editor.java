@@ -37,7 +37,7 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return FromNToMTimesRegexp_Editor.calculateColor32(cell);
+              return FromNToMTimesRegexp_Editor.calculateColor27(cell);
             }
 
           });
@@ -65,7 +65,7 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return FromNToMTimesRegexp_Editor.calculateColor22(cell);
+              return FromNToMTimesRegexp_Editor.calculateColor18(cell);
             }
 
           });
@@ -99,13 +99,13 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
   private static void setupLabel_mPropertyCell1435_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor22(EditorCell cell) {
+  private static Color calculateColor18(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor32(EditorCell cell) {
+  private static Color calculateColor27(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

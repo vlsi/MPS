@@ -34,7 +34,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
   private static void setupLabel_regexpRefCell11213_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor26(EditorCell cell) {
+  private static Color calculateColor21(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -99,7 +99,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return RegexpDeclarationReferenceRegexp_Editor.calculateColor26(cell);
+                return RegexpDeclarationReferenceRegexp_Editor.calculateColor21(cell);
               }
 
             });

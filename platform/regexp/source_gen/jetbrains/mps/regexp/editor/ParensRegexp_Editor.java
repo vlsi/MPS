@@ -33,7 +33,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ParensRegexp_Editor.calculateColor28(cell);
+              return ParensRegexp_Editor.calculateColor23(cell);
             }
 
           });
@@ -56,7 +56,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ParensRegexp_Editor.calculateColor31(cell);
+              return ParensRegexp_Editor.calculateColor26(cell);
             }
 
           });
@@ -77,13 +77,13 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell20612_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor28(EditorCell cell) {
+  private static Color calculateColor23(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor31(EditorCell cell) {
+  private static Color calculateColor26(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

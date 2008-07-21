@@ -37,7 +37,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return NTimesRegexp_Editor.calculateColor18(cell);
+              return NTimesRegexp_Editor.calculateColor14(cell);
             }
 
           });
@@ -61,7 +61,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return NTimesRegexp_Editor.calculateColor11(cell);
+              return NTimesRegexp_Editor.calculateColor9(cell);
             }
 
           });
@@ -85,13 +85,13 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell624_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor11(EditorCell cell) {
+  private static Color calculateColor9(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor18(EditorCell cell) {
+  private static Color calculateColor14(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

@@ -252,7 +252,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return InlineRegexpExpression_Editor.calculateColor20(cell);
+              return InlineRegexpExpression_Editor.calculateColor16(cell);
             }
 
           });
@@ -271,7 +271,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return InlineRegexpExpression_Editor.calculateColor17(cell);
+              return InlineRegexpExpression_Editor.calculateColor13(cell);
             }
 
           });
@@ -290,7 +290,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return InlineRegexpExpression_Editor.calculateColor24(cell);
+              return InlineRegexpExpression_Editor.calculateColor20(cell);
             }
 
           });
@@ -376,19 +376,19 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor17(EditorCell cell) {
+  private static Color calculateColor13(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor16(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
   private static Color calculateColor20(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor24(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

@@ -8,13 +8,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -42,46 +40,21 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell20377_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return MatchRegexpStatement_Editor.calculateColor16(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell20377_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_01");
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell20377_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_02");
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell20377_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20377_02");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_ConstantCell20377_03(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_03");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -99,8 +72,8 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_exprRefNodeCell20377_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_ConstantCell20377_04(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_04");
+  private static void setupBasic_ConstantCell20377_03(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_03");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -116,12 +89,18 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_regexpRefNodeCell20377_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_ConstantCell20377_05(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_05");
+  private static void setupBasic_ConstantCell20377_04(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_04");
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
-  private static void setupBasic_ConstantCell20377_06(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_06");
+  private static void setupBasic_ConstantCell20377_05(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_05");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+  }
+
+  private static void setupBasic_IndentCell20377_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_IndentCell20377_0");
   }
 
   private static void setupLabel_ConstantCell20377_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -133,31 +112,22 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell20377_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell20377_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_bodyRefNodeCell20377_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_exprRefNodeCell20377_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell20377_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell20377_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_regexpRefNodeCell20377_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_ConstantCell20377_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_ConstantCell20377_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ConstantCell20377_06(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor16(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
   }
 
 
@@ -184,11 +154,11 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_ConstantCell20377_0(context, node, "if"));
-    editorCell.addEditorCell(this.create_ConstantCell20377_05(context, node, "("));
+    editorCell.addEditorCell(this.create_ConstantCell20377_04(context, node, "("));
     editorCell.addEditorCell(this.create_exprRefNodeCell20377_0(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell20377_04(context, node, "matches"));
+    editorCell.addEditorCell(this.create_ConstantCell20377_03(context, node, "matches"));
     editorCell.addEditorCell(this.create_regexpRefNodeCell20377_0(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell20377_06(context, node, ")"));
+    editorCell.addEditorCell(this.create_ConstantCell20377_05(context, node, ")"));
     editorCell.addEditorCell(this.create_ConstantCell20377_01(context, node, "{"));
     return editorCell;
   }
@@ -199,7 +169,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell20377_03(context, node, "  "));
+    editorCell.addEditorCell(this.createIndentCell2(context, node));
     editorCell.addEditorCell(this.create_bodyRefNodeCell20377_0(context, node));
     return editorCell;
   }
@@ -252,12 +222,9 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell create_ConstantCell20377_06(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell20377_06(editorCell, node, context);
-    setupLabel_ConstantCell20377_06(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
+  public EditorCell createIndentCell2(EditorContext context, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(context, node);
+    return result;
   }
 
   public EditorCell create_bodyRefNodeCell20377_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {

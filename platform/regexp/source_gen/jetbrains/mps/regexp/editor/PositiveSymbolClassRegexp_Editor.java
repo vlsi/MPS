@@ -39,7 +39,7 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return PositiveSymbolClassRegexp_Editor.calculateColor49(cell);
+              return PositiveSymbolClassRegexp_Editor.calculateColor43(cell);
             }
 
           });
@@ -62,7 +62,7 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return PositiveSymbolClassRegexp_Editor.calculateColor7(cell);
+              return PositiveSymbolClassRegexp_Editor.calculateColor5(cell);
             }
 
           });
@@ -82,13 +82,13 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell5681_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor7(EditorCell cell) {
+  private static Color calculateColor5(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor49(EditorCell cell) {
+  private static Color calculateColor43(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

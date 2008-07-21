@@ -6,12 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -30,16 +28,11 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell13609_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13609_0");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return SplitExpression_Editor.calculateColor12(cell);
-            }
-
-          });
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
         }
 
       };
@@ -57,12 +50,6 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_regexpRefNodeCell13609_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor12(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
   }
 
 

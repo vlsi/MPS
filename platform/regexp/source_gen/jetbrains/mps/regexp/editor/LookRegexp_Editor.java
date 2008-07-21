@@ -34,7 +34,7 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return LookRegexp_Editor.calculateColor45(cell);
+              return LookRegexp_Editor.calculateColor39(cell);
             }
 
           });
@@ -54,7 +54,7 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return LookRegexp_Editor.calculateColor47(cell);
+              return LookRegexp_Editor.calculateColor41(cell);
             }
 
           });
@@ -78,13 +78,13 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
   private static void setupLabel_regexpRefNodeCell4356_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor45(EditorCell cell) {
+  private static Color calculateColor39(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor47(EditorCell cell) {
+  private static Color calculateColor41(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

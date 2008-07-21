@@ -37,7 +37,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return IntervalSymbolClassPart_Editor.calculateColor33(cell);
+              return IntervalSymbolClassPart_Editor.calculateColor28(cell);
             }
 
           });
@@ -61,7 +61,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
   private static void setupLabel_endPropertyCell7273_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor33(EditorCell cell) {
+  private static Color calculateColor28(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

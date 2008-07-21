@@ -35,7 +35,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return MatchParensRegexp_Editor.calculateColor38(cell);
+              return MatchParensRegexp_Editor.calculateColor33(cell);
             }
 
           });
@@ -54,7 +54,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return MatchParensRegexp_Editor.calculateColor15(cell);
+              return MatchParensRegexp_Editor.calculateColor12(cell);
             }
 
           });
@@ -74,7 +74,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return MatchParensRegexp_Editor.calculateColor27(cell);
+              return MatchParensRegexp_Editor.calculateColor22(cell);
             }
 
           });
@@ -100,19 +100,19 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
   private static void setupLabel_regexpRefNodeCell15418_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor15(EditorCell cell) {
+  private static Color calculateColor12(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor27(EditorCell cell) {
+  private static Color calculateColor22(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor38(EditorCell cell) {
+  private static Color calculateColor33(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

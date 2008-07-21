@@ -56,7 +56,7 @@ public class Regexps_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return Regexps_Editor.calculateColor4(cell);
+              return Regexps_Editor.calculateColor3(cell);
             }
 
           });
@@ -127,7 +127,7 @@ public class Regexps_Editor extends DefaultNodeEditor {
   private static void setupLabel_regexpRefNodeListCell18930_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor4(EditorCell cell) {
+  private static Color calculateColor3(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
