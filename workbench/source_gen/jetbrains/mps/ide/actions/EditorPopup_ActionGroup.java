@@ -4,18 +4,11 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.actions.nodes.GoByReferenceGroup;
-import jetbrains.mps.workbench.actions.nodes.GoByFirstReferenceAction;
-import jetbrains.mps.workbench.actions.nodes.HighlightUsagesAction;
-import jetbrains.mps.workbench.actions.nodes.HighlightInstancesAction;
-import jetbrains.mps.workbench.actions.nodes.SelectInActionAdapter;
-import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationAction;
-import jetbrains.mps.workbench.actions.nodes.GoToRulesAction;
+import jetbrains.mps.workbench.actions.nodes.GoByCurrentReferenceAction;
 import jetbrains.mps.workbench.actions.generate.GenerateFilesFromCurrentModelAction;
 import jetbrains.mps.workbench.actions.generate.GenerateTextFromCurrentModelAction;
 import jetbrains.mps.transformation.TLBase.plugin.debug.actions.ShowGenerationTraceAction;
-import jetbrains.mps.workbench.actions.nodes.FindSpecificNodeUsagesAction;
-import jetbrains.mps.workbench.actions.nodes.FastFindUsagesNodeAction;
+import jetbrains.mps.workbench.actions.nodes.*;
 import jetbrains.mps.workbench.actions.cells.ShowCellKeymapsAction;
 import jetbrains.mps.workbench.actions.baseLanguage.ShowParametersAction;
 import jetbrains.mps.workbench.actions.model.ModelPropertiesActionWOShortcuts;
@@ -31,7 +24,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       this.add(new GoByReferenceGroup());
-      this.add(new GoByFirstReferenceAction());
+      this.add(new GoByCurrentReferenceAction());
       this.add(new HighlightUsagesAction());
       this.add(new HighlightInstancesAction());
       this.addSeparator();

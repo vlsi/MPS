@@ -6,7 +6,6 @@ import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.command.undo.UndoManager;
-import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
@@ -47,7 +46,7 @@ import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.actions.nodes.GoByFirstReferenceAction;
+import jetbrains.mps.workbench.actions.nodes.GoByCurrentReferenceAction;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -1480,22 +1479,22 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
     if (mouseEvent.getButton() == MouseEvent.BUTTON2) {
-      goByFirstReference();
+      goByCurrentReference();
     }
 
     if (mouseEvent.isControlDown()) {
       if (mouseEvent.isAltDown()) {
         showCellError();
       } else {
-        goByFirstReference();
+        goByCurrentReference();
       }
     }
   }
 
-  private void goByFirstReference() {
+  private void goByCurrentReference() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        GoByFirstReferenceAction action = new GoByFirstReferenceAction();
+        GoByCurrentReferenceAction action = new GoByCurrentReferenceAction();
         AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, createActionContext());
         action.update(event);
         if (event.getPresentation().isEnabled()) {
