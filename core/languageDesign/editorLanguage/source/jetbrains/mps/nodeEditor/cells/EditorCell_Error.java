@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 /**
  * Author: Sergey Dmitriev
@@ -15,6 +16,10 @@ public class EditorCell_Error extends EditorCell_Label {
     myDefaultText = errorText;
     setDefaultText(errorText);
     setErrorState(true);
+
+
+    getStyle().set(StyleAttributes.PADDING_LEFT, 0.0);
+    getStyle().set(StyleAttributes.PADDING_RIGHT, 0.0);
   }
 
   public boolean canPasteText() {
