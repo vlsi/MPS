@@ -63,6 +63,7 @@
   <dependencies>
     <dependency reexport="false">JDK</dependency>
     <dependency reexport="false">MPS.Classpath</dependency>
+    <dependency reexport="false">jetbrains.mps.baseLanguage.unitTest.runtime</dependency>
   </dependencies>
   <runtime>
     <dependency reexport="false">jetbrains.mps.transformationTest.runtime</dependency>

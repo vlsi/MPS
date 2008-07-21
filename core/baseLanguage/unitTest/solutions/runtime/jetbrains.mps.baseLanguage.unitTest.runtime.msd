@@ -7,6 +7,9 @@
     <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
   </classPath>
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">JDK</dependency>
+  </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage</usedLanguages>
     <usedLanguages>jetbrains.mps.regexp</usedLanguages>

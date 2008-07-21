@@ -25,5 +25,11 @@
   <import index="1" modelUID="jetbrains.mps.closures.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.behavior" version="-1" />
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1216646381341">
+    <link role="conceptDeclaration" targetNodeId="1.1199569711397" resolveInfo="ClosureLiteral" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1216646381342">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216646381343" />
+    </node>
+  </node>
 </model>
 
