@@ -5,91 +5,93 @@ import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
 
 public class JavaModelUtil_new {
+  private static final Logger LOG = Logger.getLogger(JavaModelUtil_new.class);
 
-  public static InstanceMethodDeclaration findMethod(Classifier classifier, String methodName, String[] parmTypes) {
-    Iterator<InstanceMethodDeclaration> methods = classifier.methods();
-    while (methods.hasNext()) {
-      InstanceMethodDeclaration method = methods.next();
-      if (methodName.equals(method.getName())) {
-        if (areParametersCompatible(method, parmTypes)) {
-          return method;
-        }
-      }
-    }
-    if (classifier instanceof ClassConcept) {
-      ClassConcept extendedClass = BaseLanguageUtil.getSuperclass((ClassConcept) classifier);
-      if (extendedClass != null) {
-        InstanceMethodDeclaration method = findMethod(extendedClass, methodName, parmTypes);
-        if (method != null) {
-          return method;
-        }
-      }
-    }
+//  public static InstanceMethodDeclaration findMethod(Classifier classifier, String methodName, String[] parmTypes) {
+//    Iterator<InstanceMethodDeclaration> methods = classifier.methods();
+//    while (methods.hasNext()) {
+//      InstanceMethodDeclaration method = methods.next();
+//      if (methodName.equals(method.getName())) {
+//        if (areParametersCompatible(method, parmTypes)) {
+//          return method;
+//        }
+//      }
+//    }
+//    if (classifier instanceof ClassConcept) {
+//      ClassConcept extendedClass = BaseLanguageUtil.getSuperclass((ClassConcept) classifier);
+//      if (extendedClass != null) {
+//        InstanceMethodDeclaration method = findMethod(extendedClass, methodName, parmTypes);
+//        if (method != null) {
+//          return method;
+//        }
+//      }
+//    }
+//
+//    Iterator<ClassifierType> interfaces;
+//    if (classifier instanceof Interface) {
+//      interfaces = ((Interface) classifier).extendedInterfaces();
+//    } else if (classifier instanceof ClassConcept) {
+//      interfaces = ((ClassConcept) classifier).implementedInterfaces();
+//    } else {
+//      throw new RuntimeException("This can't happen");
+//    }
+//
+//    while (interfaces.hasNext()) {
+//      ClassifierType classifierType = interfaces.next();
+//      InstanceMethodDeclaration method = findMethod(classifierType.getClassifier(), methodName, parmTypes);
+//      if (method != null) {
+//        return method;
+//      }
+//    }
+//    return null;
+//  }
 
-    Iterator<ClassifierType> interfaces;
-    if (classifier instanceof Interface) {
-      interfaces = ((Interface) classifier).extendedInterfaces();
-    } else if (classifier instanceof ClassConcept) {
-      interfaces = ((ClassConcept) classifier).implementedInterfaces();
-    } else {
-      throw new RuntimeException("This can't happen");
-    }
+//  public static StaticMethodDeclaration findStaticMethod(Classifier classifier, String methodName, String[] parmTypes) {
+//    if (!(classifier instanceof ClassConcept)) return null;
+//    ClassConcept javaClass = (ClassConcept) classifier;
+//    while (javaClass != null) {
+//      Iterator<StaticMethodDeclaration> methods = javaClass.staticMethods();
+//      while (methods.hasNext()) {
+//        StaticMethodDeclaration method = methods.next();
+//        if (methodName.equals(method.getName())) {
+//          if (areParametersCompatible(method, parmTypes)) {
+//            return method;
+//          }
+//        }
+//      }
+//      javaClass = BaseLanguageUtil.getSuperclass(javaClass);
+//    }
+//    return null;
+//  }
 
-    while (interfaces.hasNext()) {
-      ClassifierType classifierType = interfaces.next();
-      InstanceMethodDeclaration method = findMethod(classifierType.getClassifier(), methodName, parmTypes);
-      if (method != null) {
-        return method;
-      }
-    }
-    return null;
-  }
-
-  public static StaticMethodDeclaration findStaticMethod(Classifier classifier, String methodName, String[] parmTypes) {
-    if (!(classifier instanceof ClassConcept)) return null;
-    ClassConcept javaClass = (ClassConcept) classifier;
-    while (javaClass != null) {
-      Iterator<StaticMethodDeclaration> methods = javaClass.staticMethods();
-      while (methods.hasNext()) {
-        StaticMethodDeclaration method = methods.next();
-        if (methodName.equals(method.getName())) {
-          if (areParametersCompatible(method, parmTypes)) {
-            return method;
-          }
-        }
-      }
-      javaClass = BaseLanguageUtil.getSuperclass(javaClass);
-    }
-    return null;
-  }
-
-  private static boolean areParametersCompatible(BaseMethodDeclaration method, String[] parmTypes) {
-    int parametersCount = method.getParametersCount();
-    if (parametersCount == 0 && parmTypes.length == 0) {
-      return true;
-    } else if (parametersCount != parmTypes.length) {
-      return false;
-    }
-    int count = 0;
-    for (Iterator<ParameterDeclaration> parms = method.parameters(); parms.hasNext(); count++) {
-      Type parmType = parms.next().getType();
-      // hack ?
-      if (parmType instanceof TypeVariableReference) {
-        // compatible to any type
-        if (parmTypes[count] != null) continue;
-      }
-      if (parmTypes[count] != null && parmType.getName() != null &&
-              !parmTypes[count].equals(parmType.getName())) {
-        return false;
-      }
-    }
-    return true;
-  }
+//  private static boolean areParametersCompatible(BaseMethodDeclaration method, String[] parmTypes) {
+//    int parametersCount = method.getParametersCount();
+//    if (parametersCount == 0 && parmTypes.length == 0) {
+//      return true;
+//    } else if (parametersCount != parmTypes.length) {
+//      return false;
+//    }
+//    int count = 0;
+//    for (Iterator<ParameterDeclaration> parms = method.parameters(); parms.hasNext(); count++) {
+//      Type parmType = parms.next().getType();
+//      // hack ?
+//      if (parmType instanceof TypeVariableReference) {
+//        // compatible to any type
+//        if (parmTypes[count] != null) continue;
+//      }
+//      if (parmTypes[count] != null && parmType.getName() != null &&
+//              !parmTypes[count].equals(parmType.getName())) {
+//        return false;
+//      }
+//    }
+//    return true;
+//  }
 
   @Nullable
   public static Classifier findClassifier(Class cls) {
@@ -100,10 +102,21 @@ public class JavaModelUtil_new {
   }
 
   public static SNode findClassifier(String packageName, String shortClassName) {
+    return findClassifier(packageName, shortClassName, false);
+  }
+
+  public static SNode findClassifier(String packageName, String shortClassName, boolean reportErrors) {
     SModelUID modelUID = new SModelUID(packageName, SModelStereotype.JAVA_STUB);
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
-    if (modelDescriptor == null) return null;
-    return modelDescriptor.getSModel().getRootByName(shortClassName);
+    if (modelDescriptor == null) {
+      if (reportErrors) LOG.error("couldn't find model '" + modelUID + "'");
+      return null;
+    }
+    SNode rootByName = modelDescriptor.getSModel().getRootByName(shortClassName);
+    if (rootByName == null && reportErrors) {
+      LOG.error("couldn't find root '" + shortClassName + "' in model '" + modelUID + "'");
+    }
+    return rootByName;
   }
 
   public static FieldDeclaration findField(Classifier classifier, String fieldName) {
@@ -122,39 +135,39 @@ public class JavaModelUtil_new {
     return null;
   }
 
-  public static InstanceMethodDeclaration findMethod(Classifier classifier, Condition<InstanceMethodDeclaration> condition) {
-    Iterator<InstanceMethodDeclaration> methods = classifier.methods();
-    while (methods.hasNext()) {
-      InstanceMethodDeclaration method = methods.next();
-      if (condition.met(method)) return method;
-    }
-    if (classifier instanceof ClassConcept) {
-      ClassConcept extendedClass = BaseLanguageUtil.getSuperclass((ClassConcept) classifier);
-      if (extendedClass != null) {
-        InstanceMethodDeclaration method = findMethod(extendedClass, condition);
-        if (method != null) {
-          return method;
-        }
-      }
-    }
-
-    Iterator<ClassifierType> interfaces;
-    if (classifier instanceof Interface) {
-      interfaces = ((Interface) classifier).extendedInterfaces();
-    } else if (classifier instanceof ClassConcept) {
-      interfaces = ((ClassConcept) classifier).implementedInterfaces();
-    } else {
-      throw new RuntimeException("This can't happen");
-    }
-    while (interfaces.hasNext()) {
-      ClassifierType classifierType = interfaces.next();
-      InstanceMethodDeclaration method = findMethod(classifierType.getClassifier(), condition);
-      if (method != null) {
-        return method;
-      }
-    }
-    return null;
-  }
+//  public static InstanceMethodDeclaration findMethod(Classifier classifier, Condition<InstanceMethodDeclaration> condition) {
+//    Iterator<InstanceMethodDeclaration> methods = classifier.methods();
+//    while (methods.hasNext()) {
+//      InstanceMethodDeclaration method = methods.next();
+//      if (condition.met(method)) return method;
+//    }
+//    if (classifier instanceof ClassConcept) {
+//      ClassConcept extendedClass = BaseLanguageUtil.getSuperclass((ClassConcept) classifier);
+//      if (extendedClass != null) {
+//        InstanceMethodDeclaration method = findMethod(extendedClass, condition);
+//        if (method != null) {
+//          return method;
+//        }
+//      }
+//    }
+//
+//    Iterator<ClassifierType> interfaces;
+//    if (classifier instanceof Interface) {
+//      interfaces = ((Interface) classifier).extendedInterfaces();
+//    } else if (classifier instanceof ClassConcept) {
+//      interfaces = ((ClassConcept) classifier).implementedInterfaces();
+//    } else {
+//      throw new RuntimeException("This can't happen");
+//    }
+//    while (interfaces.hasNext()) {
+//      ClassifierType classifierType = interfaces.next();
+//      InstanceMethodDeclaration method = findMethod(classifierType.getClassifier(), condition);
+//      if (method != null) {
+//        return method;
+//      }
+//    }
+//    return null;
+//  }
 
   public static StaticFieldDeclaration findStaticField(Classifier classifier, String constantName) {
     if (classifier == null) return null;
