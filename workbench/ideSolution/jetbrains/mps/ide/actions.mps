@@ -22,8 +22,10 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   </language>
   <language namespace="jetbrains.mps.baseLanguageInternal"/>
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2"/>
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <language namespace="jetbrains.mps.closures">
+    <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2"/>
+    <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  </language>
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2"/>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
   <languageAspect modelUID="jetbrains.mps.ide.uiLanguage.constraints" version="3"/>
@@ -9612,10 +9614,42 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216661632047">
         <link role="classifier" targetNodeId="98.~ModelDifferenceComponent" resolveInfo="ModelDifferenceComponent"/>
       </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216661641895">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216661641896">
-          <link role="baseMethodDeclaration" targetNodeId="98.~ModelDifferenceComponent.&lt;init&gt;()"
-                resolveInfo="ModelDifferenceComponent"/>
+    </node>
+    <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginInitBlock"
+          id="1216662710875">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216662710876">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216662966151">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216662969278">
+            <link role="classConcept" targetNodeId="80.~ThreadUtils" resolveInfo="ThreadUtils"/>
+            <link role="baseMethodDeclaration"
+                  targetNodeId="80.~ThreadUtils.runInUIThreadNoWait(java.lang.Runnable):void"
+                  resolveInfo="runInUIThreadNoWait"/>
+            <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1216662982421">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216662982422">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement"
+                      id="1216662990065">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression"
+                        id="1216663031061">
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression"
+                          id="1216663031424">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216663031425">
+                        <link role="baseMethodDeclaration" targetNodeId="98.~ModelDifferenceComponent.&lt;init&gt;()"
+                              resolveInfo="ModelDifferenceComponent"/>
+                      </node>
+                    </node>
+                    <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"
+                          id="1216663047150">
+                      <property name="name" value="myView"/>
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216663117819">
+                        <link role="classifier" targetNodeId="98.~ModelDifferenceComponent"
+                              resolveInfo="ModelDifferenceComponent"/>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
