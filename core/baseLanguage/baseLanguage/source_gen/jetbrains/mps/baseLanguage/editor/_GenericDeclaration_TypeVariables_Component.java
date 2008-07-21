@@ -47,6 +47,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           this.set(StyleAttributes.SELECTABLE, false);
         }
 

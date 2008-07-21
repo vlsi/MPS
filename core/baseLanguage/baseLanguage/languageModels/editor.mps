@@ -4796,6 +4796,9 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1140573670192">
         <property name="text" value="&lt;" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1216668414108">
+          <property name="value" value="0.0" />
+        </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995758">
           <property name="flag" value="false" />
         </node>
@@ -4826,6 +4829,9 @@
         <property name="noTargetText" value="&lt;no name&gt;" />
         <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
         <link role="actionMap" targetNodeId="1214997316768" resolveInfo="TypeVariableDeclaration_addBound" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1216668044915">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1214997970620">
         <property name="vertical" value="false" />
@@ -4835,6 +4841,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215090982339">
           <property name="text" value="extends" />
           <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" id="1216667990544">
+            <property name="value" value="1.0" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1214997985454">
           <link role="relationDeclaration" targetNodeId="17.1214996921760" />
