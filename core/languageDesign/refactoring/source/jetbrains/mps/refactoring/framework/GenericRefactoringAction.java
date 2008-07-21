@@ -44,6 +44,6 @@ public class GenericRefactoringAction extends BaseAction {
         enabled = myRefactoring.isApplicableWRTConcept(node);
       }
     }
-    setEnabled(e.getPresentation(), enabled);
+    setEnabledState(e.getPresentation(), enabled);
   }
 }

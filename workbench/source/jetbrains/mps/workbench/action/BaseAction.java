@@ -94,26 +94,18 @@ public abstract class BaseAction extends AnAction {
   }
 
   protected void disable(Presentation p) {
-    setEnabled(p, false);
-    setVisible(p, myIsAlwaysVisible);
+    p.setEnabled(false);
+    p.setVisible(myIsAlwaysVisible);
   }
 
   protected void enable(Presentation p) {
-    setEnabled(p, true);
-    setVisible(p, true);
+    p.setEnabled(true);
+    p.setVisible(true);
   }
 
   protected void setEnabledState(Presentation p, boolean state) {
     if (state) enable(p);
     else disable(p);
-  }
-
-  protected void setEnabled(Presentation p, boolean isEnabled) {
-    p.setEnabled(isEnabled);
-  }
-
-  protected void setVisible(Presentation p, boolean isVisible) {
-    p.setVisible(isVisible);
   }
 
   /**

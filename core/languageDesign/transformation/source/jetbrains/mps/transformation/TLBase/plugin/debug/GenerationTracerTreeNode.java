@@ -69,7 +69,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
 
         protected void doUpdate(AnActionEvent e) {
           boolean enabled = enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelUID());
-          setEnabled(e.getPresentation(), enabled);
+          setEnabledState(e.getPresentation(), enabled);
         }
       });
     }
@@ -81,7 +81,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
 
       protected void doUpdate(AnActionEvent e) {
         boolean enabled = enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelUID());
-        setEnabled(e.getPresentation(), enabled);
+        setEnabledState(e.getPresentation(), enabled);
       }
     });
     return group;
@@ -106,7 +106,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
 
         protected void doUpdate(AnActionEvent e) {
           boolean enabled = enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelUID());
-          setEnabled(e.getPresentation(), enabled);
+          setEnabledState(e.getPresentation(), enabled);
         }
       });
     }
@@ -118,7 +118,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
 
       protected void doUpdate(AnActionEvent e) {
         boolean enabled = enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelUID());
-        setEnabled(e.getPresentation(), enabled);
+        setEnabledState(e.getPresentation(), enabled);
       }
     });
     return group;

@@ -1,6 +1,5 @@
 package jetbrains.mps.workbench.action;
 
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class LabelledAnchor extends BaseAction {
@@ -16,7 +15,8 @@ public class LabelledAnchor extends BaseAction {
   }
 
   protected void doUpdate(AnActionEvent e) {
-    setVisible(e.getPresentation(),false);
+    e.getPresentation().setEnabled(false);
+    e.getPresentation().setVisible(false);
   }
 
   public void doExecute(AnActionEvent e) {

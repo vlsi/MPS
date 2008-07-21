@@ -31,7 +31,7 @@ public abstract class GenerateCurrentModelAction extends BaseAction {
   protected void doUpdate(AnActionEvent e) {
     ActionEventData data = new ActionEventData(e);
     SModelDescriptor model = data.getModelDescriptor();
-    setEnabled(e.getPresentation(), model != null && getGenerationType().isApplicable(model));
+    setEnabledState(e.getPresentation(), model != null && getGenerationType().isApplicable(model));
   }
 }
 
