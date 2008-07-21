@@ -10,12 +10,12 @@ import java.awt.HeadlessException;
 
 public class ModelDifferenceDialog extends BaseDialog {
 
-  private ModelDifferenceView myDifferenceView;
+  private ModelDifferenceComponent myDifferenceComponent;
 
   public ModelDifferenceDialog(Frame parent, SModel oldModel, SModel newModel, String windowTitle) throws HeadlessException {
     super(parent, windowTitle);
-    myDifferenceView = new ModelDifferenceView();
-    myDifferenceView.showDifference(oldModel, newModel);
+    myDifferenceComponent = new ModelDifferenceComponent();
+    myDifferenceComponent.showDifference(oldModel, newModel);
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
@@ -23,7 +23,7 @@ public class ModelDifferenceDialog extends BaseDialog {
   }
 
   protected JComponent getMainComponent() {
-    return myDifferenceView;
+    return myDifferenceComponent;
   }
 
   @Button(name = "Close", position = 0, defaultButton = true)

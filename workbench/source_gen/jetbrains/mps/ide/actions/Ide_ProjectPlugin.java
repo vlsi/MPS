@@ -19,6 +19,8 @@ public class Ide_ProjectPlugin extends BaseProjectPlugin {
   public List<GeneratedTool> initTools(Project project) {
     List<GeneratedTool> tools = new ArrayList<GeneratedTool>();
     tools.add(new NodeExplorer_Tool(project));
+    tools.add(new ModelDiff_Tool(project));
+    tools.add(new ModuleRepository_Tool(project));
     return tools;
   }
 

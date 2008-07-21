@@ -10,7 +10,6 @@ import com.intellij.openapi.command.CommandProcessorEx;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
-import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -21,37 +20,28 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.RepositoryListener;
 import jetbrains.mps.workbench.action.BaseAction;
 
-import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 
-public class ModuleRepositoryView extends DefaultTool {
+public class ModuleRepositoryComponent {
   private MPSTree myTree = new MyTree();
   private JScrollPane myComponent = new JScrollPane(myTree);
   private DeferringEventHandler myDeferringEventHandler = new DeferringEventHandler();
 
-  public ModuleRepositoryView() {
-    myTree.rebuildNow();
-  }
-
-  public String getName() {
-    return "Module Repository Viewer";
-  }
-
-  public Icon getIcon() {
-    return Icons.PROJECT_ICON;
+  public ModuleRepositoryComponent() {
+    myTree.rebuildLater();
   }
 
   public JComponent getComponent() {
     return myComponent;
   }
 
-  public void toolShown() {
+  public void install() {
     myTree.rebuildNow();
     myDeferringEventHandler.installListeners();
   }
 
-  public void toolHidden() {
+  public void uninstall() {
     myDeferringEventHandler.unInstallListeners();
   }
 
@@ -162,5 +152,4 @@ public class ModuleRepositoryView extends DefaultTool {
     public void commandStarted(CommandEvent event) {
     }
   }
-
 }

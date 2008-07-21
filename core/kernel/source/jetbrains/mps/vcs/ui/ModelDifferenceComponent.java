@@ -1,5 +1,6 @@
 package jetbrains.mps.vcs.ui;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -20,9 +21,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
-
-public class ModelDifferenceView extends JPanel {
+public class ModelDifferenceComponent extends JPanel {
   private MPSTree myModelTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
       if (myNewModel == null) {
@@ -48,19 +47,19 @@ public class ModelDifferenceView extends JPanel {
   private SModel myNewModel;
   private List<Change> myChanges;
 
-  public ModelDifferenceView() {
+  public ModelDifferenceComponent() {
     setLayout(new BorderLayout());
 
     JSplitPane splitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
-            new JScrollPane(myModelTree),
-            new JScrollPane(myChangesTree));
+      new JScrollPane(myModelTree),
+      new JScrollPane(myChangesTree));
     splitter.setDividerLocation(500);
-    
+
     add(splitter, BorderLayout.CENTER);
     updateView();
   }
 
-  public ModelDifferenceView showDifference(SModel oldModel, SModel newModel) {
+  public ModelDifferenceComponent showDifference(SModel oldModel, SModel newModel) {
     myNewModel = newModel;
 
     DiffBuilder builder = new DiffBuilder(oldModel, newModel);
@@ -72,7 +71,7 @@ public class ModelDifferenceView extends JPanel {
     }
 
     for (AddNodeChange an : CollectionUtil.filter(AddNodeChange.class, changes)) {
-      myAddedNodes.add(an.getNodeId());      
+      myAddedNodes.add(an.getNodeId());
     }
 
     for (SetNodeChange c : CollectionUtil.filter(SetNodeChange.class, changes)) {
@@ -99,7 +98,7 @@ public class ModelDifferenceView extends JPanel {
               expandNode(c.getAffectedNodeId());
             }
           } else if (c instanceof SetPropertyChange ||
-                  c instanceof SetReferenceChange) {
+            c instanceof SetReferenceChange) {
             SNodeId id = c.getAffectedNodeId();
             if (!myAddedNodes.contains(id)) {
               expandNode(id);
@@ -202,10 +201,10 @@ public class ModelDifferenceView extends JPanel {
         return;
       }
       super.updatePresentation();
-    }                                                            
+    }
 
     public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
-      return new MySNodeTreeNode(node, role, operationContext);      
+      return new MySNodeTreeNode(node, role, operationContext);
     }
 
 
@@ -213,7 +212,7 @@ public class ModelDifferenceView extends JPanel {
       return myModel;
     }
 
-    public void doubleClick() {      
+    public void doubleClick() {
     }
 
     public SModelDescriptor getSModelDescriptor() {
@@ -245,7 +244,7 @@ public class ModelDifferenceView extends JPanel {
     }
 
     public ActionGroup getActionGroup() {
-      return null; 
+      return null;
     }
 
     public void doubleClick() {
