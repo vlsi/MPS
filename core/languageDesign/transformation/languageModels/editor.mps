@@ -6242,6 +6242,34 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216666083523">
+          <property name="value" value="not inside 'root template annotation'" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216666103697">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216666103698">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216666489310">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1216666492453">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1216666476400">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1216666479247" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216666115280">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1216666111544">
+                <link role="variableDeclaration" targetNodeId="1216145971156" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1216666118751">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1216666118752">
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1216666122848">
+                    <link role="conceptDeclaration" targetNodeId="1.1168619357332" resolveInfo="RootTemplateAnnotation" />
+                  </node>
+                </node>
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1216666469790" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216146498155">
           <property name="value" value="inside 'root template'" />
         </node>
