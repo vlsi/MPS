@@ -95,8 +95,17 @@ public abstract class MPSTree extends DnDAwareTree {
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(MouseEvent e) {
-        requestFocus();
-        myMousePressed(e);
+        //this is a workaround for handling context menu button
+        if (e.getButton() == 0) {
+          TreePath path = getSelectionPath();
+          if (path == null) return;
+          int rowNum = getRowForPath(path);
+          Rectangle r = getRowBounds(rowNum);
+          showPopup(r.x, r.y);
+        } else {
+          requestFocus();
+          myMousePressed(e);
+        }
       }
 
       public void mouseReleased(MouseEvent e) {
@@ -233,16 +242,6 @@ public abstract class MPSTree extends DnDAwareTree {
       }
     };
     registerKeyboardAction(refreshTreeAction, KeyStroke.getKeyStroke("F5"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        TreePath path = getSelectionPath();
-        if (path == null) return;
-        int rowNum = getRowForPath(path);
-        Rectangle r = getRowBounds(rowNum);
-        showPopup(r.x, r.y);
-      }
-    }, KeyStroke.getKeyStroke(KeyEvent.VK_CONTEXT_MENU, 0), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
   protected void doInit(final MPSTreeNode node) {
