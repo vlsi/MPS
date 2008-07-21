@@ -51,16 +51,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell6031_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6031_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENTED, true);
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "not indented");
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_CollectionCell6031_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -125,7 +115,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "not indented");
+          this.set(StyleAttributes.POSITION, "next-line");
         }
 
       };
@@ -139,7 +129,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.NEXT_LINE_CHILDREN, "indented");
+          this.set(StyleAttributes.POSITION_CHILDREN, "indented");
         }
 
       };
@@ -153,7 +143,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "not indented");
+          this.set(StyleAttributes.POSITION, "next-line");
         }
 
       };
@@ -167,7 +157,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.NEXT_LINE_CHILDREN, "indented");
+          this.set(StyleAttributes.POSITION_CHILDREN, "indented");
         }
 
       };
@@ -181,7 +171,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "not indented");
+          this.set(StyleAttributes.POSITION, "next-line");
         }
 
       };
@@ -195,7 +185,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.NEXT_LINE_CHILDREN, "indented");
+          this.set(StyleAttributes.POSITION_CHILDREN, "indented");
         }
 
       };
@@ -208,7 +198,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "not indented");
+          this.set(StyleAttributes.POSITION, "next-line");
         }
 
       };
@@ -222,7 +212,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.NEXT_LINE_CHILDREN, "indented");
+          this.set(StyleAttributes.POSITION_CHILDREN, "indented");
         }
 
       };
@@ -292,7 +282,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "not indented");
+          this.set(StyleAttributes.POSITION, "next-line");
         }
 
       };
@@ -306,7 +296,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.EDITABLE, false);
-          this.set(StyleAttributes.NEXT_LINE_CHILDREN, "indented");
+          this.set(StyleAttributes.POSITION_CHILDREN, "indented");
         }
 
       };
@@ -317,15 +307,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell6031_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6031_010");
     BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "not indented");
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_CollectionCell6031_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -334,7 +315,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "indented");
+          this.set(StyleAttributes.POSITION, "indented");
         }
 
       };
@@ -384,7 +365,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "not indented");
+          this.set(StyleAttributes.POSITION, "next-line");
         }
 
       };
@@ -398,7 +379,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "indented");
+          this.set(StyleAttributes.POSITION, "indented");
         }
 
       };
@@ -410,7 +391,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.NEXT_LINE_CHILDREN, "not indented");
+          this.set(StyleAttributes.POSITION_CHILDREN, "next-line");
         }
 
       };
@@ -527,7 +508,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "not indented");
+          this.set(StyleAttributes.POSITION, "next-line");
         }
 
       };
@@ -541,7 +522,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.NEXT_LINE_CHILDREN, "indented");
+          this.set(StyleAttributes.POSITION_CHILDREN, "indented");
         }
 
       };
@@ -580,7 +561,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.NEXT_LINE_CHILDREN, "not indented");
+          this.set(StyleAttributes.POSITION_CHILDREN, "next-line");
         }
 
       };
@@ -640,7 +621,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "not indented");
+          this.set(StyleAttributes.POSITION, "next-line");
         }
 
       };
@@ -653,7 +634,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.NEXT_LINE_CHILDREN, "indented");
+          this.set(StyleAttributes.POSITION_CHILDREN, "indented");
         }
 
       };
@@ -684,7 +665,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "indented");
+          this.set(StyleAttributes.POSITION, "indented");
         }
 
       };

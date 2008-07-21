@@ -24,7 +24,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "not indented");
+          this.set(StyleAttributes.POSITION, "next-line");
         }
 
       };
@@ -79,7 +79,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.INDENTED, true);
+          this.set(StyleAttributes.POSITION, "indented");
         }
 
       };

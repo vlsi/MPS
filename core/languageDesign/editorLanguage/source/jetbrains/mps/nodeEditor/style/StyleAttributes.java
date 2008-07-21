@@ -36,8 +36,6 @@ public class StyleAttributes {
   public static final StyleAttribute<Boolean> FIRST_POSITION_ALLOWED = new SimpleStyleAttribute<Boolean>("first-position-allowed", true);
   public static final StyleAttribute<Boolean> LAST_POSITION_ALLOWED = new SimpleStyleAttribute<Boolean>("last-position-allowed", true);
 
-  public static final StyleAttribute<Boolean> INDENTED = new SimpleStyleAttribute<Boolean>("indented", false);
-  public static final StyleAttribute<Boolean> NEXT_LINE = new SimpleStyleAttribute<Boolean>("nextLine", false);
-  public static final StyleAttribute<String> LAYOUT_NEXT_LINE = new SimpleStyleAttribute<String>("layout-next-line");
-  public static final StyleAttribute<String> NEXT_LINE_CHILDREN = new SimpleStyleAttribute<String>("next-line-children");
+  public static final StyleAttribute<String> POSITION = new SimpleStyleAttribute<String>("position");
+  public static final StyleAttribute<String> POSITION_CHILDREN = new SimpleStyleAttribute<String>("position-children");
 }

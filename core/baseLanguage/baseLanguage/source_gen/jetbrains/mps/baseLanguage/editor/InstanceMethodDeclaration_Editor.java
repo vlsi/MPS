@@ -51,7 +51,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.NEXT_LINE, true);
         }
 
       };
@@ -107,7 +106,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.LAYOUT_NEXT_LINE, "indented");
+          this.set(StyleAttributes.POSITION, "indented");
         }
 
       };
@@ -126,7 +125,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.EDITABLE, true);
-          this.set(StyleAttributes.NEXT_LINE, true);
+          this.set(StyleAttributes.POSITION, "next-line");
         }
 
       };

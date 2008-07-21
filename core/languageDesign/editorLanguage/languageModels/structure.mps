@@ -222,6 +222,36 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="23">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameProperty" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="nextLine" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.PositionStyleClassItem" featureKind="PROPERTY" />
+          <value featureName="position" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structurePositionStyleClassItem" featureKind="PROPERTY" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="24">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="NextLineChildrenStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineChildrenStyleClassItem" featureKind="CONCEPT" />
+          <value featureName="PositionChildrenStyleClassItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.PositionChildrenStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="25">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameProperty" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="nextLine" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.PositionChildrenStyleClassItem" featureKind="PROPERTY" />
+          <value featureName="position" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structurePositionChildrenStyleClassItem" featureKind="PROPERTY" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
@@ -247,12 +277,12 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="22" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
   <maxImportIndex value="41" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="27" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="22" />
+  <import index="27" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
   <import index="28" modelUID="java.awt.event@java_stub" version="-1" />
   <import index="29" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <import index="33" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -3213,47 +3243,15 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215669771327">
-    <property name="package" value="Stylesheet" />
-    <property name="name" value="IndentedStyleClassItem" />
-    <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215702070965">
-      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215702070966">
-        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.INDENTED" resolveInfo="INDENTED" />
-      </node>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215669861455">
-      <property name="value" value="indented" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215855821528">
-    <property name="package" value="Stylesheet" />
-    <property name="name" value="NextLineStyleClassItem" />
-    <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215855821529">
-      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215855821530">
-        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.NEXT_LINE" resolveInfo="NEXT_LINE" />
-      </node>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215855821531">
-      <property name="value" value="nextLine" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1216308376568">
     <property name="name" value="_NextLine_Enum" />
     <link role="memberDataType" targetNodeId="3.1082983041843" resolveInfo="string" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1216308507057">
-      <property name="externalValue" value="none" />
+      <property name="externalValue" value="right" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1216308502931">
-      <property name="externalValue" value="not indented" />
-      <property name="internalValue" value="not indented" />
+      <property name="externalValue" value="next-line" />
+      <property name="internalValue" value="next-line" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1216308376569">
       <property name="externalValue" value="indented" />
@@ -3262,15 +3260,15 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216308599511">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="LayoutNextLineStyleClassItem" />
+    <property name="name" value="PositionStyleClassItem" />
     <property name="rootable" value="false" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1216308761668">
-      <property name="name" value="nextLine" />
+      <property name="name" value="position" />
       <link role="dataType" targetNodeId="1216308376568" resolveInfo="_NextLine_Enum" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216308818747">
-      <property name="value" value="layout-next-line" />
+      <property name="value" value="position" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
@@ -3355,14 +3353,15 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216560327200">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="NextLineChildrenStyleClassItem" />
+    <property name="name" value="PositionChildrenStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1216560518566">
-      <property name="name" value="nextLine" />
+      <property name="name" value="position" />
       <link role="dataType" targetNodeId="1216308376568" resolveInfo="_NextLine_Enum" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216560546489">
-      <property name="value" value="next-line-children" />
+      <property name="value" value="position-children" />
+      <property name="name" value="position-children" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>

@@ -16,7 +16,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
   private static final int INDENT = 20;
   private static Logger LOG = Logger.getLogger(CellLayout_Indent.class);
 
-  public static final boolean DO_INDENT_EVERYWHERE = true;
+  public static final boolean DO_INDENT_EVERYWHERE = false;
+  public static final String INDENTED = "indented";
+  public static final String NEXT_LINE = "next-line";
 
   public void doLayout(EditorCell_Collection editorCells) {
     _doLayout(editorCells);
@@ -52,19 +54,19 @@ public class CellLayout_Indent extends AbstractCellLayout {
     int totalWidth = 0;
     int totalHeight = 0;
     int currentLineHeight = 0;
-    String nextLineForChildren = editorCells.getStyle().get(StyleAttributes.NEXT_LINE_CHILDREN);
+    String nextLineForChildren = editorCells.getStyle().get(StyleAttributes.POSITION_CHILDREN);
 
     for (EditorCell editorCell : cells) {
-      String nextLine = editorCell.getStyle().get(StyleAttributes.LAYOUT_NEXT_LINE);
+      String nextLine = editorCell.getStyle().get(StyleAttributes.POSITION);
       if(nextLine != null) {
         System.out.println("nextLine = "+nextLine);
       }
-      if ("indented".equals(nextLine) || (nextLine == null && "indented".equals(nextLineForChildren))) {
+      if (INDENTED.equals(nextLine) || (nextLine == null && INDENTED.equals(nextLineForChildren))) {
         currentLineWidth = INDENT;
         totalHeight += currentLineHeight;
         currentLineHeight=0;
       }
-      else if("not indented".equals(nextLine) || (nextLine == null && "not indented".equals(nextLineForChildren))) {
+      else if(NEXT_LINE.equals(nextLine) || (nextLine == null && NEXT_LINE.equals(nextLineForChildren))) {
         currentLineWidth = 0;
         totalHeight += currentLineHeight;
         currentLineHeight=0;

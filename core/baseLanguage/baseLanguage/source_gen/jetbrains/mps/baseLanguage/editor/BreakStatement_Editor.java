@@ -34,15 +34,6 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell2369_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell2369_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.NEXT_LINE, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_ConstantCell2369_0(EditorCell editorCell, SNode node, EditorContext context) {

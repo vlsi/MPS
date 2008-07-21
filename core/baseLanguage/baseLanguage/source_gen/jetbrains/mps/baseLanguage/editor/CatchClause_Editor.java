@@ -74,7 +74,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.INDENTED, true);
+          this.set(StyleAttributes.POSITION, "next-line");
         }
 
       };
@@ -83,6 +83,15 @@ public class CatchClause_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_catchBodyRefNodeCell6964_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.POSITION_CHILDREN, "indented");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell6964_04(EditorCell editorCell, SNode node, EditorContext context) {

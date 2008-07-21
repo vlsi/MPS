@@ -20,7 +20,6 @@ public class Statement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-          this.set(StyleAttributes.NEXT_LINE, true);
         }
 
       };

@@ -401,7 +401,7 @@
   <languageAspect modelUID="jetbrains.mps.logging.refactoring.constraints" version="4" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="22" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
   <maxImportIndex value="8" />
   <import index="1" modelUID="jetbrains.mps.logging.refactoring.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />

@@ -31,15 +31,6 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell18678_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18678_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.NEXT_LINE, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_CollectionCell18678_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -80,7 +71,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.INDENTED, true);
+          this.set(StyleAttributes.POSITION, "indented");
         }
 
       };
@@ -96,7 +87,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.NEXT_LINE, true);
+          this.set(StyleAttributes.POSITION, "next-line");
         }
 
       };
@@ -110,7 +101,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.NEXT_LINE, true);
+          this.set(StyleAttributes.POSITION, "next-line");
         }
 
       };
