@@ -32,7 +32,6 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -1466,10 +1465,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void goByCurrentReference() {
+    final ActionEventData data = new ActionEventData(DataManager.getInstance().getDataContext(this));
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         GoByCurrentReferenceAction action = new GoByCurrentReferenceAction();
-        AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, createEventData());
+        AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, data);
         action.update(event);
         if (event.getPresentation().isEnabled()) {
           action.actionPerformed(event);
@@ -1868,9 +1868,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     try {
       myExecutingCommand = true;
       // all other processing should be performed inside command
+      final ActionEventData data = new ActionEventData(DataManager.getInstance().getDataContext(this));
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          updateMPSActionsWithKeyStrokes(createEventData());
+          updateMPSActionsWithKeyStrokes(data);
           EditorContext editorContext = getEditorContext();
           if (editorContext == null) {
             return; //i.e. editor is disposed
@@ -2157,37 +2158,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myReadOnly = readOnly;
   }
 
-  private ActionEventData createEventData() {
-    return ModelAccess.instance().runReadAction(new Computable<ActionEventData>() {
-      public ActionEventData compute() {
-        ActionEventData data = new ActionEventData(getOperationContext());
-        data.put(Project.class, getOperationContext().getProject());
-        data.put(MPSProject.class, getOperationContext().getMPSProject());
-        EditorCell cell_ = getSelectedCell();
-        if (cell_ != null) {
-          final SNode selectedNode = cell_.getSNode();
-          if (selectedNode != null) {
-            EditorContext editorContext_ = createEditorContextForActions();
-            List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
-            if (selectedNodes.size() == 0) {
-              selectedNodes.add(selectedNode);
-            }
-            data.put(SNode.class, selectedNode);
-            data.put(List.class, selectedNodes);
-            data.put(EditorContext.class, editorContext_);
-            data.put(EditorCell.class, cell_);
-          }
-        }
-        return data;
-      }
-    });
-  }
-
-
   @Nullable
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
       return getOperationContext().getProject();
+    } else if (dataId.equals(MPSDataKeys.MPS_PROJECT.getName())) {
+      return getOperationContext().getMPSProject();
+    } else if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) {
+      return createEditorContextForActions();
     } else if (dataId.equals(MPSDataKeys.SNODE.getName())) {
       if (getSelectedCell() != null) return getSelectedCell().getSNode();
       else return getRootCell().getSNode();
@@ -2471,7 +2449,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public void actionPerformed(ActionEvent e) {
       for (final BaseAction action : myActions) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
-          DataContext context = ActionUtils.createDataContext(DataManager.getInstance().getDataContext(AbstractEditorComponent.this), createEventData());
+          DataContext context = DataManager.getInstance().getDataContext(AbstractEditorComponent.this);
           AnActionEvent event = ActionUtils.createEvent(myPlace, context);
 
           action.update(event);

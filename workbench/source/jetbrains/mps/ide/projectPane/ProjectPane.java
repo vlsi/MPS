@@ -365,6 +365,14 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       return getContextForSelection();
     }
 
+    if (dataId.equals(MPSDataKeys.MPS_PROJECT.getName())) {
+      return getMPSProject();
+    }
+
+    if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
+      return getProject();
+    }
+
     if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName())) {
       return new MyCopyProvider();
     }

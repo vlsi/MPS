@@ -3,6 +3,7 @@ package jetbrains.mps.ide.hierarchy;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.nodeEditor.EditorSettings;
@@ -11,9 +12,9 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -36,7 +37,7 @@ import java.util.List;
  * Time: 15:56:56
  * To change this template use File | Settings | File Templates.
  */
-public class LanguageHierarchiesComponent extends JComponent implements Scrollable,  DataProvider {
+public class LanguageHierarchiesComponent extends JComponent implements Scrollable, DataProvider {
   private static final int SPACING = 10;
   private static final int PADDING_X = 5;
   private static final int PADDING_Y = 5;
@@ -307,10 +308,14 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(MPSDataKeys.SNODE.getName())) {
       return getSelectedConcept();
-    }
-
-    if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+    } else if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
       return myOperationContext;
+    } else if (dataId.equals(MPSDataKeys.MPS_PROJECT.getName())) {
+      if (myOperationContext == null) return null;
+      return myOperationContext.getMPSProject();
+    } else if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
+      if (myOperationContext == null) return null;
+      return myOperationContext.getProject();
     }
 
     return null;
