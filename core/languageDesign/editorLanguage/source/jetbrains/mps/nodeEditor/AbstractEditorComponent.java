@@ -258,8 +258,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.RIGHT_TRANSFORM, new CellAction_SideTransform(CellSide.RIGHT));
     myActionMap.put(EditorCellAction.LEFT_TRANSFORM, new CellAction_SideTransform(CellSide.LEFT));
 
-    updateMPSActionsWithKeyStrokes();
-
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         EditorCell cell = getSelectedCell();
@@ -453,11 +451,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
-  private void updateMPSActionsWithKeyStrokes() {
-    updateMPSActionsWithKeyStrokes(null);
-  }
-
-  private void updateMPSActionsWithKeyStrokes(@Nullable ActionEventData data) {
+  private void updateMPSActionsWithKeyStrokes(@NotNull ActionEventData data) {
     myActionProxies.clear();
     for (BaseAction a : myMPSActionsWithShortcuts) {
       Shortcut[] shortcuts = a.getShortcutSet().getShortcuts();
@@ -474,25 +468,32 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myOwner;
   }
 
-  private void registerKeyStrokes(BaseGroup group, @Nullable final ActionEventData data) {
+  private void registerKeyStrokes(BaseGroup group, @NotNull final ActionEventData data) {
     if (group != null) {
+      AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, data);
+      group.update(event);
+      if (!event.getPresentation().isEnabled()) return;
+
       for (final AnAction child : group.getChildren(null)) {
         if (child instanceof BaseAction) {
-          BaseAction action = (BaseAction) child;
-          if (action.getShortcutSet().getShortcuts().length > 0) {
-            registerNodeAction(action);
-            myMPSActionsWithShortcuts.add(action);
+          BaseAction childAction = (BaseAction) child;
+          try {
+            childAction.update(event);
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
+          if (!event.getPresentation().isEnabled()) continue;
+          if (childAction.getShortcutSet().getShortcuts().length > 0) {
+            registerNodeAction(childAction);
+            myMPSActionsWithShortcuts.add(childAction);
           }
         }
         if (child instanceof BaseGroup) {
           try {
-            if (data != null) {
-              AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, data);
-              ActionUtils.updateGroup((BaseGroup) child, event);
-              if (event.getPresentation().isEnabled()) {
-                registerKeyStrokes((BaseGroup) child, data);
-              }
-            }
+            BaseGroup childGroup = (BaseGroup) child;
+            childGroup.update(event);
+            if (!event.getPresentation().isEnabled()) continue;
+            registerKeyStrokes(childGroup, data);
           } catch (Throwable t) {
             LOG.error(t);
           }
@@ -746,32 +747,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     popupMenu.add(keyMapActions);
 
     popupMenu.show(AbstractEditorComponent.this, x, y);
-  }
-
-  private ActionEventData createActionContext() {
-    return ModelAccess.instance().runReadAction(new Computable<ActionEventData>() {
-      public ActionEventData compute() {
-        ActionEventData context = new ActionEventData(getOperationContext());
-        context.put(Project.class, getOperationContext().getProject());
-        context.put(MPSProject.class, getOperationContext().getMPSProject());
-        EditorCell cell_ = getSelectedCell();
-        if (cell_ != null) {
-          final SNode selectedNode = cell_.getSNode();
-          if (selectedNode != null) {
-            EditorContext editorContext_ = createEditorContextForActions();
-            List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
-            if (selectedNodes.size() == 0) {
-              selectedNodes.add(selectedNode);
-            }
-            context.put(SNode.class, selectedNode);
-            context.put(List.class, selectedNodes);
-            context.put(EditorContext.class, editorContext_);
-            context.put(EditorCell.class, cell_);
-          }
-        }
-        return context;
-      }
-    });
   }
 
   private EditorContext createEditorContextForActions() {
@@ -1409,7 +1384,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void rebuildEditorContent() {
     clearCaches();
     clearUserData();
-    updateMPSActionsWithKeyStrokes();
     rebuildEditorContent(null);
   }
 
@@ -1495,7 +1469,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         GoByCurrentReferenceAction action = new GoByCurrentReferenceAction();
-        AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, createActionContext());
+        AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, createEventData());
         action.update(event);
         if (event.getPresentation().isEnabled()) {
           action.actionPerformed(event);
@@ -1896,7 +1870,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       // all other processing should be performed inside command
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          updateMPSActionsWithKeyStrokes(createActionContext());
+          updateMPSActionsWithKeyStrokes(createEventData());
           EditorContext editorContext = getEditorContext();
           if (editorContext == null) {
             return; //i.e. editor is disposed
@@ -2183,9 +2157,38 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myReadOnly = readOnly;
   }
 
+  private ActionEventData createEventData() {
+    return ModelAccess.instance().runReadAction(new Computable<ActionEventData>() {
+      public ActionEventData compute() {
+        ActionEventData data = new ActionEventData(getOperationContext());
+        data.put(Project.class, getOperationContext().getProject());
+        data.put(MPSProject.class, getOperationContext().getMPSProject());
+        EditorCell cell_ = getSelectedCell();
+        if (cell_ != null) {
+          final SNode selectedNode = cell_.getSNode();
+          if (selectedNode != null) {
+            EditorContext editorContext_ = createEditorContextForActions();
+            List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
+            if (selectedNodes.size() == 0) {
+              selectedNodes.add(selectedNode);
+            }
+            data.put(SNode.class, selectedNode);
+            data.put(List.class, selectedNodes);
+            data.put(EditorContext.class, editorContext_);
+            data.put(EditorCell.class, cell_);
+          }
+        }
+        return data;
+      }
+    });
+  }
+
+
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(MPSDataKeys.SNODE.getName())) {
+    if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
+      return getOperationContext().getProject();
+    } else if (dataId.equals(MPSDataKeys.SNODE.getName())) {
       if (getSelectedCell() != null) return getSelectedCell().getSNode();
       else return getRootCell().getSNode();
     } else if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) {
@@ -2468,7 +2471,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public void actionPerformed(ActionEvent e) {
       for (final BaseAction action : myActions) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
-          DataContext context = ActionUtils.createDataContext(DataManager.getInstance().getDataContext(AbstractEditorComponent.this), createActionContext());
+          DataContext context = ActionUtils.createDataContext(DataManager.getInstance().getDataContext(AbstractEditorComponent.this), createEventData());
           AnActionEvent event = ActionUtils.createEvent(myPlace, context);
 
           action.update(event);
