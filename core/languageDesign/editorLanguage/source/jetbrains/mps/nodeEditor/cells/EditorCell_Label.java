@@ -417,6 +417,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         deleteIfPossible();
         return true;
       } else {
+        if (allowErrors && getPrevLeaf() instanceof EditorCell_Label && getPrevLeaf().isSelectable()) {
+          EditorCell_Label label = (EditorCell_Label) getPrevLeaf();
+          getEditorContext().getNodeEditorComponent().changeSelection(label);
+          label.end();
+          label.doProcessKeyPressed(keyEvent, true);
+          return true;
+        }
         return false;
       }
     }

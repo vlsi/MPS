@@ -1172,6 +1172,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216650845634">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216650845635">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216650845636">
+              <link role="baseMethodDeclaration" targetNodeId="1216650817509" resolveInfo="bcef" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1216650845637" />
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1154984147638">
         <property name="name" value="c" />
@@ -1190,6 +1198,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1179231297632" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1179231297633" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179231297634">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1216652117653" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1179231383420">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1179231383421">
             <property name="name" value="aaa" />
