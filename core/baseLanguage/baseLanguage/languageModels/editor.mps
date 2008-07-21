@@ -103,6 +103,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1188208586950">
           <property name="vertical" value="true" />
           <link role="relationDeclaration" targetNodeId="17.1188208488637" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineChildrenStyleClassItem" id="1216566211212">
+            <property name="nextLine" value="not indented" />
+          </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1188208597248">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188208597249">
@@ -294,6 +297,9 @@
           <property name="vertical" value="true" />
           <link role="relationDeclaration" targetNodeId="17.1128555889557" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214579393133" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineChildrenStyleClassItem" id="1216566348028">
+            <property name="nextLine" value="indented" />
+          </node>
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214579470629">
             <property name="nullText" value="&lt;&lt;static fields&gt;&gt;" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214579474942">
@@ -302,7 +308,7 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216548745828">
-          <property name="nextLine" value="indented" />
+          <property name="nextLine" value="not indented" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1074866421484">
@@ -329,8 +335,8 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997720">
           <property name="flag" value="false" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineChildrenStyleClassItem" id="1216562406837">
-          <property name="nextLine" value="indented" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216566326542">
+          <property name="nextLine" value="not indented" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1201374274549">
@@ -353,7 +359,7 @@
           <property name="flag" value="false" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216548782458">
-          <property name="nextLine" value="indented" />
+          <property name="nextLine" value="not indented" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1201374347714">
@@ -378,12 +384,15 @@
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994125">
             <property name="flag" value="false" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineChildrenStyleClassItem" id="1216566382702">
+            <property name="nextLine" value="indented" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995583">
           <property name="flag" value="false" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216548797179">
-          <property name="nextLine" value="indented" />
+          <property name="nextLine" value="not indented" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1104451665639">
@@ -408,12 +417,15 @@
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994014">
             <property name="flag" value="false" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineChildrenStyleClassItem" id="1216566410438">
+            <property name="nextLine" value="indented" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996119">
           <property name="flag" value="false" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216548822057">
-          <property name="nextLine" value="indented" />
+          <property name="nextLine" value="not indented" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1104451669405">
@@ -437,9 +449,12 @@
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997375">
             <property name="flag" value="false" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineChildrenStyleClassItem" id="1216566429331">
+            <property name="nextLine" value="indented" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216548847762">
-          <property name="nextLine" value="indented" />
+          <property name="nextLine" value="not indented" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171627059323">
@@ -464,9 +479,12 @@
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994205">
             <property name="flag" value="false" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineChildrenStyleClassItem" id="1216566463771">
+            <property name="nextLine" value="indented" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216548864608">
-          <property name="nextLine" value="indented" />
+          <property name="nextLine" value="not indented" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1178616883202">
@@ -495,6 +513,9 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1215091523476" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1171626461862">
               <link role="relationDeclaration" targetNodeId="17.1171626359898" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineChildrenStyleClassItem" id="1216566545537">
+                <property name="nextLine" value="not indented" />
+              </node>
             </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994046">
               <property name="flag" value="false" />
@@ -506,6 +527,9 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171626450231">
             <property name="text" value="}" />
             <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216566562851">
+              <property name="nextLine" value="not indented" />
+            </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993720">
             <property name="flag" value="false" />
@@ -536,15 +560,15 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171626379134">
         <property name="text" value="}" />
         <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215856040325">
-          <property name="flag" value="true" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216566599617">
+          <property name="nextLine" value="not indented" />
         </node>
       </node>
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.IndentedStyleClassItem" id="1215852745081">
         <property name="flag" value="true" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215946848556">
-        <property name="flag" value="true" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216566166492">
+        <property name="nextLine" value="not indented" />
       </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1171628247797">
@@ -682,6 +706,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075139052656">
     <property name="name" value="ConstructorDeclaration_Editor" />
+    <property name="package" value="method" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123140" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1075139052657">
       <property name="name" value="methodBox" />
@@ -848,8 +873,8 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995896">
           <property name="flag" value="false" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.IndentedStyleClassItem" id="1215856624076">
-          <property name="flag" value="true" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216571449523">
+          <property name="nextLine" value="indented" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1075139395584">
@@ -861,8 +886,8 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214398032085">
           <property name="flag" value="true" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215857219682">
-          <property name="flag" value="true" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216571468932">
+          <property name="nextLine" value="not indented" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208702945942">
@@ -887,9 +912,6 @@
         </node>
       </node>
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993675">
-        <property name="flag" value="true" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215943743357">
         <property name="flag" value="true" />
       </node>
     </node>
@@ -1133,8 +1155,8 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996672">
           <property name="flag" value="false" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.IndentedStyleClassItem" id="1215946652499">
-          <property name="flag" value="true" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216570946167">
+          <property name="nextLine" value="indented" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1075233459449">
@@ -1160,8 +1182,8 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214398031927">
           <property name="flag" value="true" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215946670360">
-          <property name="flag" value="true" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216643990641">
+          <property name="nextLine" value="not indented" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208703059008">
@@ -1186,9 +1208,6 @@
         </node>
       </node>
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995882">
-        <property name="flag" value="true" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215946574544">
         <property name="flag" value="true" />
       </node>
     </node>
@@ -1409,15 +1428,12 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214398032011">
           <property name="flag" value="true" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215946788663">
-          <property name="flag" value="true" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216644091348">
+          <property name="nextLine" value="not indented" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208703075942" />
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996363">
-        <property name="flag" value="true" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215946726471">
         <property name="flag" value="true" />
       </node>
     </node>
@@ -1524,9 +1540,6 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993689">
           <property name="flag" value="false" />
         </node>
-      </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215942792174">
-        <property name="flag" value="true" />
       </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1188210582852">
@@ -2344,9 +2357,6 @@
         <property name="text" value=";" />
         <link role="styleClass" targetNodeId="1215094139260" resolveInfo="Semicolon" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215859942397">
-        <property name="flag" value="true" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075379419312">
@@ -2599,6 +2609,9 @@
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996545">
               <property name="flag" value="false" />
             </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216568596946">
+              <property name="nextLine" value="not indented" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177555034720">
             <property name="name" value="ifFalseBranch" />
@@ -2606,12 +2619,15 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1215011031993" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1177555034722">
               <link role="relationDeclaration" targetNodeId="17.1082485599094" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineChildrenStyleClassItem" id="1216568638465">
+                <property name="nextLine" value="indented" />
+              </node>
             </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994884">
               <property name="flag" value="false" />
             </node>
-            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.IndentedStyleClassItem" id="1215865281809">
-              <property name="flag" value="true" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216568625964">
+              <property name="nextLine" value="not indented" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177555034723">
@@ -2650,23 +2666,23 @@
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995794">
               <property name="flag" value="false" />
             </node>
-            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215865415566">
-              <property name="flag" value="true" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216643963951">
+              <property name="nextLine" value="not indented" />
             </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995734">
             <property name="flag" value="false" />
           </node>
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215937651828">
-            <property name="flag" value="true" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216569380982">
+            <property name="nextLine" value="not indented" />
           </node>
         </node>
         <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1177555034734">
           <link role="relationDeclaration" targetNodeId="17.1082485599094" />
         </node>
       </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215860274243">
-        <property name="flag" value="true" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216569933920">
+        <property name="nextLine" value="not indented" />
       </node>
     </node>
   </node>
@@ -2682,9 +2698,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1075380566831">
         <property name="text" value=";" />
         <link role="styleClass" targetNodeId="1215094139260" resolveInfo="Semicolon" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215943357065">
-        <property name="flag" value="true" />
       </node>
     </node>
   </node>
@@ -2744,9 +2757,6 @@
         <property name="text" value=";" />
         <link role="styleClass" targetNodeId="1215094139260" resolveInfo="Semicolon" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215947102854">
-        <property name="flag" value="true" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075381298843">
@@ -2760,9 +2770,6 @@
       </node>
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1215092480198">
         <property name="value" value="0.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215938715141">
-        <property name="flag" value="true" />
       </node>
     </node>
   </node>
@@ -2999,12 +3006,9 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994475">
           <property name="flag" value="false" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215944013829">
-          <property name="flag" value="true" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216644191781">
+          <property name="nextLine" value="not indented" />
         </node>
-      </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215943961387">
-        <property name="flag" value="true" />
       </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1199465755590">
@@ -3943,9 +3947,6 @@
         <property name="text" value=";" />
         <link role="styleClass" targetNodeId="1215094139260" resolveInfo="Semicolon" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215944067427">
-        <property name="flag" value="true" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1081942381484">
@@ -4123,9 +4124,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1101210485462">
         <property name="text" value=";" />
         <link role="styleClass" targetNodeId="1215094139260" resolveInfo="Semicolon" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215944100854">
-        <property name="flag" value="true" />
       </node>
     </node>
   </node>
@@ -7829,8 +7827,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1164903583459">
         <property name="vertical" value="true" />
         <link role="relationDeclaration" targetNodeId="17.1164903496223" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215947768508">
-          <property name="flag" value="true" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216644115694">
+          <property name="nextLine" value="not indented" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1164911197638">
@@ -7847,12 +7845,9 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995400">
           <property name="flag" value="false" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215947875369">
-          <property name="flag" value="true" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutNextLineStyleClassItem" id="1216644134899">
+          <property name="nextLine" value="not indented" />
         </node>
-      </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.NextLineStyleClassItem" id="1215947139980">
-        <property name="flag" value="true" />
       </node>
     </node>
   </node>

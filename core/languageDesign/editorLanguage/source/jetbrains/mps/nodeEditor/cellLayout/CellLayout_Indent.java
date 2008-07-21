@@ -16,7 +16,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
   private static final int INDENT = 20;
   private static Logger LOG = Logger.getLogger(CellLayout_Indent.class);
 
-  public static final boolean DO_INDENT_EVERYWHERE = false;
+  public static final boolean DO_INDENT_EVERYWHERE = true;
 
   public void doLayout(EditorCell_Collection editorCells) {
     _doLayout(editorCells);
