@@ -448,8 +448,16 @@ public class ChildSubstituteActionsHelper {
     private final ConceptDeclaration myReferenceNodeConcept;
     private final LinkDeclaration myReferenceLink_final;
 
-    public SmartRefChildNodeSubstituteAction(SNode referentNode, SNode parentNode, SNode currentChild, IChildNodeSetter childSetter, IScope scope, ConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLink_final) {
-      super(referentNode, parentNode, currentChild, childSetter, scope);
+    public SmartRefChildNodeSubstituteAction(
+      SNode referentNode,
+      SNode parentNode,
+      SNode currentChild,
+      IChildNodeSetter childSetter,
+      IScope scope,
+      ConceptDeclaration referenceNodeConcept,
+      LinkDeclaration referenceLink_final) {
+
+      super(referenceNodeConcept, referentNode, parentNode, currentChild, childSetter, scope);
       myReferentNode = referentNode;
       myParentNode = parentNode;
       myCurrentChild = currentChild;
