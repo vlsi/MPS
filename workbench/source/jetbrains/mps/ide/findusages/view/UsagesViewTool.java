@@ -37,6 +37,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -196,7 +197,9 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             semanticNode[0] = data.getNode();
-            operationNode[0] = data.getEditorCell().getSNodeWRTReference();
+
+            EditorCell editorCell = data.getEditorCell();
+            operationNode[0] = editorCell != null ? editorCell.getSNodeWRTReference() : semanticNode[0];
           }
         });
 
