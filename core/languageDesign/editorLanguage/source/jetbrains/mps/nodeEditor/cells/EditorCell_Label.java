@@ -401,6 +401,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
       if (myTextLine.hasNonTrivialSelection()) {
         deleteSelection();
+        deleteIfPossible();
         return true;
       }
 
@@ -413,6 +414,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         if (!isCaretPositionAllowed(caretPosition - 1)) return false;
         setCaretPosition(caretPosition - 1);
         ensureCaretVisible();
+        deleteIfPossible();
         return true;
       } else {
         return false;
@@ -422,6 +424,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE) {
       if (myTextLine.hasNonTrivialSelection()) {
         deleteSelection();
+        deleteIfPossible();
         return true;
       } else if (caretPosition < myText.length()) {
         String newText = myText.substring(0, caretPosition) + myText.substring(caretPosition + 1);
@@ -430,6 +433,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         }
         changeText(newText);
         ensureCaretVisible();
+        deleteIfPossible();
         return true;
       } else {
         return false;
@@ -455,6 +459,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return false;
   }
 
+
+  private void deleteIfPossible() {
+    if ("".equals(getText()) && isBigCell()) {
+      getSNode().delete();
+    }
+  }
 
   public boolean processImmutableKeyPressed(KeyEvent keyEvent) {
     if (isNotApplicableKeyEvent(keyEvent)) return false;
