@@ -20,7 +20,7 @@ public class typeof_SNodeCreator_InferenceRule implements InferenceRule_Runtime 
       if (SLinkOperations.getTarget(createdType, "concept", false) == null) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(createdType, "concrete node type is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1216551768096", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(createdType, "concrete node type is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins@33_0", "1216638130299", intentionProvider);
         }
         return;
       }

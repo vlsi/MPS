@@ -4,13 +4,13 @@ package jetbrains.mps.bootstrap.smodelLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;

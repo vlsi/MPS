@@ -22,7 +22,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     if (SLinkOperations.getCount(subtype, "parameterType") != SLinkOperations.getCount(supertype, "parameterType")) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), "different parameter numbers", "jetbrains.mps.closures.helgins@31_0", "1216629874140", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), "different parameter numbers", "jetbrains.mps.closures.helgins@34_0", "1216638435576", intentionProvider);
       }
       return;
     }

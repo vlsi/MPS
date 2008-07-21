@@ -59,7 +59,7 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
     {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(op, "unknown type of concept property: " + conceptPropertyDecl, "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1216551764517", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(op, "unknown type of concept property: " + conceptPropertyDecl, "jetbrains.mps.bootstrap.smodelLanguage.helgins@33_0", "1216638126951", intentionProvider);
       }
     }
   }

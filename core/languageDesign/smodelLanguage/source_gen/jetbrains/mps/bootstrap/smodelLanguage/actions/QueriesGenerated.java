@@ -30,11 +30,11 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.nodeEditor.CellSide;
 
 public class QueriesGenerated {
 
