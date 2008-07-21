@@ -67,9 +67,13 @@ public class YesNoToAllDialog extends JDialog {
   }
 
   public static ResponseValue showDialog(Frame frame, String message) {
+    return showDialog(frame, message, message);
+  }
+
+  public static ResponseValue showDialog(Frame frame, String title, String message) {
     final YesNoToAllDialog dialog = new YesNoToAllDialog(frame, message);
     dialog.setUndecorated(false);
-    dialog.setTitle(message);
+    dialog.setTitle(title);
     dialog.pack();
     dialog.setResizable(false);
     dialog.setLocation(ColorAndGraphicsUtil.getCentralPosition(frame, dialog));

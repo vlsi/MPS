@@ -61,31 +61,37 @@ public class DeleteNodesHelper {
     if (fromProjectPane) {
       nextNode = projectPane.findNextTreeNode(node);
     }
-    doDelete(node, context);
-    if (fromProjectPane) {
+    boolean result = doDelete(node, context);
+    if (result && fromProjectPane) {
       projectPane.getTree().selectNode(nextNode);
     }
   }
 
-  private void doDelete(SNode node, IOperationContext context) {
+  private boolean doDelete(SNode node, IOperationContext context) {
     if (BaseAdapter.fromNode(node) instanceof ConceptDeclaration && node.isRoot()) {
       if (mySafeConceptDeletion) {
         safeDelete(context, node);
+        return false;
       } else if (myUnsafeConceptDeletion) {
         node.delete();
+        return true;
       } else {
         YesNoToAllDialog.ResponseValue response = YesNoToAllDialog.showDialog(context.getMainFrame(),
+          "Delete concept",
           "do you want to search for usages before delete concept " + node.getName() + " ?");
         if (response.isPositive()) {
           if (response.isToAll()) mySafeConceptDeletion = true;
           safeDelete(context, node);
+          return false;
         } else {
           if (response.isToAll()) myUnsafeConceptDeletion = true;
           node.delete();
+          return true;
         }
       }
     } else {
       node.delete();
+      return true;
     }
   }
 
