@@ -2,7 +2,6 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -62,7 +61,7 @@ public class DefaultCellInfo implements CellInfo {
     if (myNodePointer == null) {
       return null;
     }
-    return editorComponent.findCellWithId(myCellId, myNodePointer.getNode());
+    return editorComponent.findCellWithId(myNodePointer.getNode(), myCellId);
   }
 
   public EditorCell findClosestCell(AbstractEditorComponent editorComponent) {

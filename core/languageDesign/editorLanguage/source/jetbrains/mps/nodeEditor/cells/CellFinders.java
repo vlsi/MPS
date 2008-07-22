@@ -27,6 +27,14 @@ public class CellFinders {
     return new ByConditionCellCellFinder(condition, first);
   }
 
+  public static CellFinder<EditorCell> byId(final String cellId) {
+    return byCondition(new Condition<EditorCell>() {
+      public boolean met(EditorCell object) {
+        return cellId.equals(object.getUserObject(EditorCell.CELL_ID));
+      }
+    }, true);
+  }
+
   public static CellFinder<EditorCell> or(CellFinder<? extends EditorCell>... finders) {
     return new OrConditionFinder(finders);
   }

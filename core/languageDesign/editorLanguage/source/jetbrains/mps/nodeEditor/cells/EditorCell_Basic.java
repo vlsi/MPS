@@ -520,7 +520,8 @@ public abstract class EditorCell_Basic implements EditorCell {
         }
       }
     } else {
-      EditorCell anchorCell = getEditor().findCellWithId(bigCell, anchorId.toString());
+      EditorCell anchorCell = getEditor().findCellWithId(node, anchorId.toString());
+
       int indexInParent = anchorCell.getParent().indexOf(anchorCell);
 
       if (indexInParent + 1 < anchorCell.getParent().getChildCount()) {
