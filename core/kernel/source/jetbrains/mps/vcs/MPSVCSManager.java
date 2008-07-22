@@ -46,6 +46,7 @@ public class MPSVCSManager implements ProjectComponent {
   private final SModelAdapter myModelInitializationListener = new ModelSavedListener();
   private MetadataCreationListener myMetadataListener = new MetadataCreationListenerImpl();
   private ProjectLevelVcsManager myManager;
+  private static final String IGNORE_PATTERN = ".svn*";
 
   public MPSVCSManager(Project project, ProjectLevelVcsManager manager, MPSProjectHolder holder, MPSModuleRepository repository, VcsDirectoryMappingStorage storage) {
     myProject = project;
@@ -274,14 +275,14 @@ public class MPSVCSManager implements ProjectComponent {
     IgnoredFileBean[] filesToIgnore = m.getFilesToIgnore();
     for (IgnoredFileBean bean : filesToIgnore) {
       if ((bean != null) && (bean.getMask() != null)) {
-        if (".svn*".equalsIgnoreCase(bean.getMask())) {
+        if (IGNORE_PATTERN.equalsIgnoreCase(bean.getMask())) {
           return;
         }
       }
     }
 
     IgnoredFileBean svnIgnoreBean = new IgnoredFileBean();
-    svnIgnoreBean.setMask(".svn*");
+    svnIgnoreBean.setMask(IGNORE_PATTERN);
     m.addFilesToIgnore(svnIgnoreBean);
   }
 
