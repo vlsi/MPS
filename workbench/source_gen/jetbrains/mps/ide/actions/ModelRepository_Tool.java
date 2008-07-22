@@ -32,10 +32,10 @@ public class ModelRepository_Tool extends GeneratedTool {
 
   public void init(Project project) {
 //    this.myPanel.add(this.myComponent.getComponent(), BorderLayout.CENTER);
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(new CloseAction(this));
-    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
-    this.myPanel.add(toolbar, BorderLayout.WEST);
+//    DefaultActionGroup group = new DefaultActionGroup();
+//    group.add(new CloseAction(this));
+//    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
+//    this.myPanel.add(toolbar, BorderLayout.WEST);
 //    this.myComponent.install();
   }
 
