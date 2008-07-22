@@ -81,42 +81,46 @@ public class FunctionTypeUtil {
     return typesList;
   }
 
-  public static void prepAdaptations(SNode ltype, SNode rtype, SNode expr, ITemplateGenerator generator) {
+  public static void prepAdaptations(SNode ltype, SNode rexpr, ITemplateGenerator generator) {
     SNode lCType = (SNodeOperations.isInstanceOf(ltype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
       ltype :
-      null
-    );
-    SNode rCType = (SNodeOperations.isInstanceOf(rtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-      rtype :
       null
     );
     SNode lFType = (SNodeOperations.isInstanceOf(ltype, "jetbrains.mps.closures.structure.FunctionType") ?
       ltype :
       null
     );
+    if ((lFType == null) && (lCType == null)) {
+      return;
+    }
+    SNode rtype = TypeChecker.getInstance().getTypeOf(rexpr);
     SNode rFType = (SNodeOperations.isInstanceOf(rtype, "jetbrains.mps.closures.structure.FunctionType") ?
       rtype :
       null
     );
+    SNode rCType = (SNodeOperations.isInstanceOf(rtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
+      rtype :
+      null
+    );
     if ((lCType != null) && (rFType != null)) {
-      if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.closures.structure.ClosureLiteral")) {
-        ClosureLiteralUtil.addAdaptableClosureLiteralTarget(expr, lCType, generator);
+      if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.closures.structure.ClosureLiteral")) {
+        ClosureLiteralUtil.addAdaptableClosureLiteralTarget(rexpr, lCType, generator);
       } else
       {
         FunctionTypeUtil.addAdaptableClassifierTypeTarget(ClassifierTypeUtil.getDeclarationClassifierType(rFType), lCType, generator);
-        FunctionTypeUtil.putPrepData(expr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(lCType, "classifier", false)), generator);
+        FunctionTypeUtil.putPrepData(rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(lCType, "classifier", false)), generator);
       }
     } else
     if ((lFType != null) && (rCType != null)) {
       FunctionTypeUtil.addAdaptableClassifierTypeTarget(rCType, ClassifierTypeUtil.getDeclarationClassifierType(lFType), generator);
-      FunctionTypeUtil.putPrepData(expr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)), generator);
+      FunctionTypeUtil.putPrepData(rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)), generator);
     } else
     if ((lFType != null) && (rFType != null)) {
-      if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.closures.structure.ClosureLiteral")) {
-        ClosureLiteralUtil.addAdaptableClosureLiteralTarget(expr, ClassifierTypeUtil.getClassifierType(lFType, SLinkOperations.getTargets(rFType, "parameterType", true)), generator);
+      if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.closures.structure.ClosureLiteral")) {
+        ClosureLiteralUtil.addAdaptableClosureLiteralTarget(rexpr, ClassifierTypeUtil.getClassifierType(lFType, SLinkOperations.getTargets(rFType, "parameterType", true)), generator);
       } else if (SLinkOperations.getCount(lFType, "throwsType") != SLinkOperations.getCount(rFType, "throwsType")) {
         FunctionTypeUtil.addAdaptableClassifierTypeTarget(ClassifierTypeUtil.getDeclarationClassifierType(rFType), ClassifierTypeUtil.getDeclarationClassifierType(lFType), generator);
-        FunctionTypeUtil.putPrepData(expr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)), generator);
+        FunctionTypeUtil.putPrepData(rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)), generator);
       }
     }
   }
