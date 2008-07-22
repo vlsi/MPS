@@ -9,6 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.bootstrap.smodelLanguage.behavior.SNodeOperation_Behavior;
@@ -80,6 +81,11 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1200924580714(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
+  }
+
+  public static Object referenceMacro_GetReferent_1216760915758(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    // method parameter
+    return "_context";
   }
 
   public static SNode sourceNodeQuery_1168025330833(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

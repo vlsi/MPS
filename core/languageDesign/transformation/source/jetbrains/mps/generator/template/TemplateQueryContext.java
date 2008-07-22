@@ -16,6 +16,7 @@ public class TemplateQueryContext {
   public TemplateQueryContext(SNode inputNode, ITemplateGenerator generator) {
     this(inputNode, null, generator);
   }
+
   public TemplateQueryContext(SNode inputNode, SNode templateNode, ITemplateGenerator generator) {
     myInputNode = inputNode;
     myTemplateNode = templateNode;
@@ -39,7 +40,7 @@ public class TemplateQueryContext {
   }
 
   /**
-   * 'generator' mapping 
+   * 'generator' mapping
    */
   public ITemplateGenerator getGenerator() {
     return myGenerator;
@@ -50,5 +51,21 @@ public class TemplateQueryContext {
    */
   public IScope getScope() {
     return myGenerator.getGeneratorSessionContext().getScope();
+  }
+
+  public SNode getOutputNodeByMappingLabel(String label) {
+    return myGenerator.findOutputNodeByInputNodeAndMappingName(null, label);
+  }
+
+  public SNode getOutputNodeByInputNodeAndMappingLabel(SNode inputNode, String label) {
+    return myGenerator.findOutputNodeByInputNodeAndMappingName(inputNode, label);
+  }
+
+  public SNode getCopiedOutputNodeForInputNode(SNode inputNode) {
+    return myGenerator.findCopiedOutputNodeForInputNode(inputNode);
+  }
+
+  public SNode getPreviousInputNodeByMappingLabel(String label) {
+    return myGenerator.getPreviousInputNodeByMappingName(label);
   }
 }

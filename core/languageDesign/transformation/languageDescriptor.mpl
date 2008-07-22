@@ -8,7 +8,7 @@
     <model modelUID="jetbrains.mps.generator@java_stub" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mps.transformation.TLBase#1167163152317">
+    <generator name="default" generatorUID="jetbrains.mps.transformation.TLBase#1167163152317">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.transformation.TLBase.generator.baseLanguage.template" />
       </models>
@@ -32,6 +32,9 @@
               </mapping-set-element>
               <mapping-set-element>
                 <mapping-node modelUID="jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.main@templates" nodeID="1200915686141" />
+              </mapping-set-element>
+              <mapping-set-element>
+                <mapping-node modelUID="jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.main@templates" nodeID="1216760363068" />
               </mapping-set-element>
             </mapping-set>
           </greater-priority-mapping>
