@@ -48,6 +48,9 @@ public class ModelRepositoryComponent {
   }
 
   private class MyTree extends MPSTree {
+    private MyTree() {
+    }
+
     protected MPSTreeNode rebuild() {
       final TextTreeNode[] root = new TextTreeNode[1];
 
@@ -74,9 +77,9 @@ public class ModelRepositoryComponent {
             }
           };
 
-          for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {
-            root[0].add(new ModelTreeNode(modelDescriptor));
-          }
+//          for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {
+//            root[0].add(new ModelTreeNode(modelDescriptor));
+//          }
         }
       });
 
