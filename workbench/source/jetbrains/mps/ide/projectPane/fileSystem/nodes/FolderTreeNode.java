@@ -11,6 +11,11 @@ import com.intellij.openapi.project.Project;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class FolderTreeNode extends AbstractFileTreeNode {
   private boolean myInitialized;
   private Project myProject;
@@ -37,14 +42,22 @@ public class FolderTreeNode extends AbstractFileTreeNode {
   protected void doInit() {
     removeAllChildren();
 
-    for (VirtualFile f : myFile.getChildren()) {
+    VirtualFile[] files = myFile.getChildren();
+    ArrayList<VirtualFile> sortedFiles = new ArrayList<VirtualFile>();
+    sortedFiles.addAll(Arrays.asList(files));
+    Collections.sort(sortedFiles, new Comparator<VirtualFile>() {
+      public int compare(VirtualFile o1, VirtualFile o2) {
+        return o1.getPath().compareTo(o2.getPath());
+      }
+    });
+    for (VirtualFile f : sortedFiles) {
       if (f.exists()) {
         if (!FileTypeManager.getInstance().isFileIgnored(f.getName()) && f.isDirectory()) {
           this.add(createNode(myProject, f));
         }
       }
     }
-    for (VirtualFile f : myFile.getChildren()) {
+    for (VirtualFile f : sortedFiles) {
       if (f.exists()) {
         if (!FileTypeManager.getInstance().isFileIgnored(f.getName()) && !f.isDirectory()) {
           this.add(createNode(myProject, f));
