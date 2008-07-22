@@ -2,26 +2,25 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SNode;
 
-public class TemplateFragmentContext {
-  private SNode myNode;
+public class TemplateFragmentContext extends TemplateQueryContext {
   private SNode myMainContextNode;
-  private ITemplateGenerator myGenerator;
 
   public TemplateFragmentContext(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
-    myNode = node;
+    super(node, generator);
     myMainContextNode = mainContextNode;
-    myGenerator = generator;
   }
 
+  /**
+   * 'node' mapping
+   */
   public SNode getNode() {
-    return myNode;
+    return getInputNode();
   }
 
+  /**
+   * 'mainContextNode' mapping
+   */
   public SNode getMainContextNode() {
     return myMainContextNode;
-  }
-
-  public ITemplateGenerator getGenerator() {
-    return myGenerator;
   }
 }

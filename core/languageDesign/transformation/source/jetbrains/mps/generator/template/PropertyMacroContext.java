@@ -3,38 +3,32 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 
-public class PropertyMacroContext {
-  private SNode myNode;
+public class PropertyMacroContext extends TemplateQueryContext {
   private String myTemplateValue;
-  private SNode myTemplateNode;
-  private SModel mySourceModel;
-  private ITemplateGenerator myGenerator;
 
   public PropertyMacroContext(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator) {
-    myNode = node;
+    super(node, templateNode, generator);
     myTemplateValue = templateValue;
-    myTemplateNode = templateNode;
-    mySourceModel = sourceModel;
-    myGenerator = generator;
   }
 
+  /**
+   * 'node' mapping
+   */
   public SNode getNode() {
-    return myNode;
+    return getInputNode();
   }
 
+  /**
+   * 'templateValue' mapping
+   */
   public String getTemplateValue() {
     return myTemplateValue;
   }
 
-  public SNode getTemplateNode() {
-    return myTemplateNode;
-  }
-
+  /**
+   * 'sourceModel' mapping (deprecated)
+   */
   public SModel getSourceModel() {
-    return mySourceModel;
-  }
-
-  public ITemplateGenerator getGenerator() {
-    return myGenerator;
+    return getInputModel();
   }
 }

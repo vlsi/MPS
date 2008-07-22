@@ -2,20 +2,16 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SModel;
 
-public class CreateRootRuleContext {
-  private SModel mySourceModel;
-  private ITemplateGenerator myGenerator;
+public class CreateRootRuleContext extends TemplateQueryContext {
 
-  public CreateRootRuleContext(SModel sourceModel, ITemplateGenerator generator) {
-    mySourceModel = sourceModel;
-    myGenerator = generator;
+  public CreateRootRuleContext(SModel inputModel, ITemplateGenerator generator) {
+    super(null, generator);
   }
 
+  /**
+   * 'sourceModel' mapping
+   */
   public SModel getSourceModel() {
-    return mySourceModel;
-  }
-
-  public ITemplateGenerator getGenerator() {
-    return myGenerator;
+    return getInputModel();
   }
 }

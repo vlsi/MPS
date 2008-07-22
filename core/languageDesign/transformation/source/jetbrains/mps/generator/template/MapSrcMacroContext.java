@@ -2,26 +2,25 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SNode;
 
-public class MapSrcMacroContext {
-  private SNode myNode;
+public class MapSrcMacroContext  extends TemplateQueryContext {
   private SNode myParentOutputNode;
-  private ITemplateGenerator myGenerator;
 
   public MapSrcMacroContext(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    myNode = node;
+    super(node, generator);
     myParentOutputNode = parentOutputNode;
-    myGenerator = generator;
   }
 
+  /**
+   * 'node' mapping
+   */
   public SNode getNode() {
-    return myNode;
+    return getInputNode();
   }
 
+  /**
+   * 'parentOutputNode' mapping
+   */
   public SNode getParentOutputNode() {
     return myParentOutputNode;
-  }
-
-  public ITemplateGenerator getGenerator() {
-    return myGenerator;
   }
 }

@@ -2,20 +2,16 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SNode;
 
-public class WeavingMappingRuleContext {
-  private SNode myNode;
-  private ITemplateGenerator myGenerator;
+public class WeavingMappingRuleContext extends TemplateQueryContext{
 
   public WeavingMappingRuleContext(SNode node, ITemplateGenerator generator) {
-    myNode = node;
-    myGenerator = generator;
+    super(node, generator);
   }
 
+  /**
+   * 'node' mapping
+   */
   public SNode getNode() {
-    return myNode;
-  }
-
-  public ITemplateGenerator getGenerator() {
-    return myGenerator;
+    return getInputNode();
   }
 }
