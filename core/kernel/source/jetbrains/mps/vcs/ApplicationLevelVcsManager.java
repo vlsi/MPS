@@ -7,23 +7,14 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vcs.*;
-import com.intellij.openapi.ui.Messages;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.persistence.ConflictModelException;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
-import jetbrains.mps.vcs.merge.Merger;
-import jetbrains.mps.vcs.hacks.HacksManager;
-import jetbrains.mps.ide.IdeMain;
-
-import javax.swing.SwingUtilities;
-import java.io.File;
+import jetbrains.mps.vcs.merge.CustomMergeSupport;
 
 public class ApplicationLevelVcsManager implements ApplicationComponent {
 
@@ -87,7 +78,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     IFile ifile = modelDescriptor.getModelFile();
     if (ApplicationLevelVcsManager.instance().isInConflict(ifile)) {
       AbstractVcs vcs = getVcsForFile(VFileSystem.getFile(ifile));
-      if ((vcs != null) && HacksManager.getInstance().tryToMergeConflictedModel(modelDescriptor, vcs.getName())){
+      if ((vcs != null) && CustomMergeSupport.getInstance().tryToMergeConflictedModel(modelDescriptor, vcs.getName())){
       } else {
         ConflictModelException conflictModelException = new ConflictModelException(modelDescriptor);
         throw conflictModelException;

@@ -18,7 +18,6 @@ import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.AbstractFileTreeNode;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -48,7 +47,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private FileStatusListener myFileStatusListener;
   private VirtualFileAdapter myFileListener;
   private Timer myTimer;
-  private static final int SECOND = 1000;
+  private static final int DELAY = 1000;
   private VcsListener myDirectoryMappingListener = new VcsListener() {
     public void directoryMappingChanged() {
       rebuildTreeLater();
@@ -93,7 +92,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       }
     });
 
-    myTimer = new Timer(SECOND, new ActionListener() {
+    myTimer = new Timer(DELAY, new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         ModelAccess.instance().runReadInEDT(new Runnable() {
           public void run() {
@@ -103,7 +102,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       }
     });
     myTimer.setRepeats(false);
-    myTimer.setInitialDelay(SECOND);
+    myTimer.setInitialDelay(DELAY);
 
     myFileStatusListener = new FileStatusListener() {
       public void fileStatusesChanged() {
