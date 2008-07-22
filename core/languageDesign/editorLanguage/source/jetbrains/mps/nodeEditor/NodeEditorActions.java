@@ -347,7 +347,7 @@ public class NodeEditorActions {
     EditorCell target = rowCell.findNearestCell(caretX, newY, true);*/
     EditorCell target = editor.findNearestCell(caretX, newY);
     if (target == null) {
-      target = isDown ? editor.findLastSelectableCell() : editor.findFirstSelectableCell();
+      target = isDown ? editor.myRootCell.findChild(CellFinders.LAST_SELECTABLE_LEAF) : editor.myRootCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
       editor.changeSelection(target);
     } else {
       target.setCaretX(caretX);

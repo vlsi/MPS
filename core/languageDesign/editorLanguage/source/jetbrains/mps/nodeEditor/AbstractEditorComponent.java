@@ -1212,14 +1212,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return null;
   }
 
-  public EditorCell findFirstSelectableCell() {
-    return myRootCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
-  }
-
-  public EditorCell findLastSelectableCell() {
-    return myRootCell.findChild(CellFinders.LAST_SELECTABLE_LEAF);
-  }
-
   public EditorCell findNextSelectableCell(final EditorCell cell) {
     return findNextSelectableOrEditableCell(cell, false);
   }
@@ -1740,8 +1732,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myUserDataMap.clear();
   }
 
-  // ---- keyboard handling ---
-
   public void sendKeyEvent(KeyEvent keyEvent) {
     if (keyEvent.getID() == KeyEvent.KEY_PRESSED) {
       processKeyPressed(keyEvent);
@@ -2012,7 +2002,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     return result;
   }
-
 
   public EditorCell changeSelectionWRTFocusPolicy(EditorCell cell) {
     EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
