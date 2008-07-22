@@ -8257,10 +8257,12 @@
                 <link role="concept" targetNodeId="14.1068581242863" resolveInfo="LocalVariableDeclaration" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1207130155307">
-              <link role="baseMethodDeclaration" targetNodeId="21.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-              <node role="typeParameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207130155308">
-                <link role="concept" targetNodeId="14.1068581242863" resolveInfo="LocalVariableDeclaration" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216729374955">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216729374958">
+                <link role="baseMethodDeclaration" targetNodeId="21.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+                <node role="typeParameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207130155308">
+                  <link role="concept" targetNodeId="14.1068581242863" resolveInfo="LocalVariableDeclaration" />
+                </node>
               </node>
             </node>
           </node>

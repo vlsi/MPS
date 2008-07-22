@@ -28,9 +28,9 @@ public class typeof_InvokeExpression_InferenceRule implements InferenceRule_Runt
         public void run() {
           SNode ft = TypeChecker.getInstance().getRuntimeSupport().typeOf(cl, "jetbrains.mps.closures.helgins", "1199711616632", true);
           {
-            SNode _nodeToCheck_1029348928467 = invoke;
+            SNode _nodeToCheck_1029348928467 = null;
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.closures.helgins", "1199711815333", true), SLinkOperations.getTarget(ft, "resultType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins", "1199711813747", intentionProvider);
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(invoke, "jetbrains.mps.closures.helgins", "1199711815333", true), SLinkOperations.getTarget(ft, "resultType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins", "1199711813747", intentionProvider);
           }
           if (!(SLinkOperations.getCount(ft, "parameterType") == SLinkOperations.getCount(invoke, "parameter"))) {
             TypeChecker.getInstance().reportTypeError(invoke, "Wrong parameters number", "jetbrains.mps.closures.helgins", "1199711857568");
@@ -50,9 +50,9 @@ public class typeof_InvokeExpression_InferenceRule implements InferenceRule_Runt
               pt = pt_iterator.next();
               p = p_iterator.next();
               {
-                SNode _nodeToCheck_1029348928467 = p;
+                SNode _nodeToCheck_1029348928467 = null;
                 BaseIntentionProvider intentionProvider = null;
-                TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.closures.helgins", "1202920161360", true), pt, _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins", "1202920161358", false, 0, intentionProvider);
+                TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(p, "jetbrains.mps.closures.helgins", "1202920161360", true), pt, _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins", "1202920161358", false, 0, intentionProvider);
               }
             }
           }
