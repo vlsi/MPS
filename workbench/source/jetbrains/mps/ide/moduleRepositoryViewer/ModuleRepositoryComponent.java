@@ -60,6 +60,10 @@ public class ModuleRepositoryComponent {
               setIcon(Icons.PROJECT_ICON);
             }
 
+            protected boolean propogateErrorUpwards() {
+              return false;
+            }
+
             public ActionGroup getActionGroup() {
               DefaultActionGroup group = new DefaultActionGroup();
               group.add(new BaseAction("Refresh") {

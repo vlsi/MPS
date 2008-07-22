@@ -58,6 +58,10 @@ public class ModelRepositoryComponent {
               setIcon(Icons.PROJECT_MODELS_ICON);
             }
 
+            protected boolean propogateErrorUpwards() {
+              return false;
+            }
+
             public ActionGroup getActionGroup() {
               DefaultActionGroup group = new DefaultActionGroup();
               group.add(new BaseAction("Refresh") {
@@ -70,11 +74,9 @@ public class ModelRepositoryComponent {
             }
           };
 
-          /*
           for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {
             root[0].add(new ModelTreeNode(modelDescriptor));
           }
-          */
         }
       });
 
