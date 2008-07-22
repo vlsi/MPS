@@ -90,6 +90,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1216770360672(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
+  }
+
   public static Object referenceMacro_GetReferent_1216760915758(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     // method parameter
     return "_context";
@@ -166,6 +170,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1216765709974(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1216770360660(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1216770411036(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "inputNode", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619599466(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
