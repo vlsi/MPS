@@ -1523,6 +1523,13 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1200911316486" resolveInfo="MappingLabelDeclaration" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1216769209997">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216769158386">
+      <property name="value" value="this expression is replaced with genctx.get output... operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202776937179">
     <property name="package" value="rule.consequence" />

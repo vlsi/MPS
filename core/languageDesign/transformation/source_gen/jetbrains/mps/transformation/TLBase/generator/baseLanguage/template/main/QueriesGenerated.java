@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.bootstrap.smodelLanguage.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
-import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
@@ -174,44 +173,43 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619796790(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
+    return _context.getOutputNodeByMappingLabel("queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619844945(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
+    return _context.getOutputNodeByMappingLabel("queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619847603(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
+    return _context.getOutputNodeByMappingLabel("queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619852561(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
+    return _context.getOutputNodeByMappingLabel("queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619865210(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
+    return _context.getOutputNodeByMappingLabel("queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619868267(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
+    return _context.getOutputNodeByMappingLabel("queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619877062(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
+    return _context.getOutputNodeByMappingLabel("queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619879860(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    QueriesUtil.getQueriesGeneratedClass(_context.getGenerator());
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
+    return _context.getOutputNodeByMappingLabel("queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619882833(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
+    return _context.getOutputNodeByMappingLabel("queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1195503404236(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
+    return _context.getOutputNodeByMappingLabel("queriesGenerated");
   }
 
   public static void mappingScript_CodeBlock_1199965771120(final IOperationContext operationContext, final MappingScriptContext _context) {
