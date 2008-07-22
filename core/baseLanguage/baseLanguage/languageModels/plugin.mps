@@ -2684,6 +2684,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216741908466">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216741917092">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216741908467">
+              <link role="variableDeclaration" targetNodeId="1207309763640" resolveInfo="dialog" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216741923893">
+              <link role="baseMethodDeclaration" targetNodeId="17.~Window.pack():void" resolveInfo="pack" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1207231065615">
@@ -4891,6 +4901,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216743081199">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216743083342">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216743081200">
+              <link role="variableDeclaration" targetNodeId="1213018990316" resolveInfo="dialog" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216743085220">
+              <link role="baseMethodDeclaration" targetNodeId="17.~Window.pack():void" resolveInfo="pack" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="keystroke" type="jetbrains.mps.bootstrap.pluginLanguage.structure.KeyMapKeystroke" id="1213008791177">
@@ -4993,6 +5013,16 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215172130237">
               <link role="baseMethodDeclaration" targetNodeId="30.~BaseDialog.showDialog():void" resolveInfo="showDialog" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216743098800">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216743100021">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216743098801">
+              <link role="variableDeclaration" targetNodeId="1215172130227" resolveInfo="dialog" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216743101399">
+              <link role="baseMethodDeclaration" targetNodeId="17.~Window.pack():void" resolveInfo="pack" />
             </node>
           </node>
         </node>

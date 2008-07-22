@@ -94,6 +94,7 @@ public class ExtractMethod_Action extends GeneratedAction {
       });
       ExtractMethodDialog dialog = new ExtractMethodDialog(kind.value, new ActionEventData(event));
       dialog.showDialog();
+      dialog.pack();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);
     }

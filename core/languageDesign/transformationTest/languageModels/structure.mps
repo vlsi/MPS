@@ -137,6 +137,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1212572376577">
     <property name="name" value="TestCategory" />
+    <property name="iconPath" value="${language_descriptor}\icons\nodesTest.png" />
     <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1212572394344">
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />

@@ -12,8 +12,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.action.ActionEventData;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
@@ -57,18 +55,10 @@ public class CommentStatements_Action extends GeneratedAction {
         List<SNode> nodes = new ActionEventData(event).getNodes();
         boolean error = false;
         if (nodes != null) {
-          {
-            ICursor<SNode> _zCursor = CursorFactory.createCursor(nodes);
-            try {
-              while (_zCursor.moveToNext()) {
-                SNode node = _zCursor.getCurrent();
-                if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
-                  error = true;
-                  break;
-                }
-              }
-            } finally {
-              _zCursor.release();
+          for(SNode node : nodes) {
+            if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
+              error = true;
+              break;
             }
           }
         }

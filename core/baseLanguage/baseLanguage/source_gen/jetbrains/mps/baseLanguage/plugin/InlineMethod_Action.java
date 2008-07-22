@@ -83,6 +83,7 @@ public class InlineMethod_Action extends GeneratedAction {
     try {
       InlineMethodDialog dialog = new InlineMethodDialog(new ActionEventData(event));
       dialog.tryToShow();
+      dialog.pack();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "InlineMethod", t);
     }
