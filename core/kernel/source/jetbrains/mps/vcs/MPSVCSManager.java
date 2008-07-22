@@ -218,6 +218,19 @@ public class MPSVCSManager implements ProjectComponent {
               if (vf == null) {
                 continue;
               }
+              VirtualFile file = vf;
+              while (true){
+                VirtualFile parent = file.getParent();
+                if (parent == null){
+                  continue;
+                }
+                if (isUnderVCS(myProject, parent)){
+                  break;
+                } else {
+                  file = parent;
+                  sceduleUnversionedFileForAdditionInternal(parent);
+                }
+              }
               sceduleUnversionedFileForAdditionInternal(vf);
             }
           }
@@ -241,9 +254,12 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public static boolean isUnderVCS(Project project, VirtualFile f) {
+    if (f.isDirectory()){
+      return ProjectLevelVcsManager.getInstance(project).findVersioningVcs(f) != null;
+    }
 
+    VcsDirtyScopeManager.getInstance(project).fileDirty(f);
     VcsFileStatusProvider provider = project.getComponent(VcsFileStatusProvider.class);
-
     FileStatus status = provider.getFileStatus(f);
     return !(status.equals(FileStatus.UNKNOWN) || status.equals(FileStatus.IGNORED));
   }
