@@ -1133,12 +1133,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return result;
   }
 
-  public EditorCell findNodeCell(final SNode node, String id) {
-    EditorCell rootCell = findNodeCell(node);
-    if (rootCell == null) return null;
-    return findCellWithId(rootCell, id);
-  }
-
   public EditorCell findNodeCellWithRole(SNode node, String role) {
     EditorCell rootCell = findNodeCell(node);
     if (rootCell == null) return null;
