@@ -338,7 +338,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
       getEditor().relayout();
 
-      if (!!isErrorState()) {
+      if (isErrorState()) {
         if (allowsIntelligentInputKeyStroke(keyEvent)) {
           String pattern = this.getRenderedText();
           IntelligentInputUtil.processCell(this, getEditorContext(), pattern, side);

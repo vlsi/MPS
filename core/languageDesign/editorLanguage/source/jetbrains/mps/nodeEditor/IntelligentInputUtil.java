@@ -131,11 +131,11 @@ public class IntelligentInputUtil {
         editorContext.getNodeEditorComponent().relayout();
         return;
       }
-    } else if (canCompleteTheWholeStringImmediately(substituteInfo, smallPattern, tail) ||
-      canCompleteTheWholeStringImmediately(substituteInfo, smallPattern.trim(), tail)) {
+    } else if (canCompleteTheWholeStringImmediately(substituteInfo, smallPattern + tail) ||
+      canCompleteTheWholeStringImmediately(substituteInfo, smallPattern.trim() + tail)) {
 
-      if (!canCompleteTheWholeStringImmediately(substituteInfo, smallPattern, tail) &&
-        canCompleteTheWholeStringImmediately(substituteInfo, smallPattern.trim(), tail)) {
+      if (!canCompleteTheWholeStringImmediately(substituteInfo, smallPattern + tail) &&
+        canCompleteTheWholeStringImmediately(substituteInfo, smallPattern.trim() + tail)) {
         smallPattern = smallPattern.trim();
       }
 
@@ -211,7 +211,7 @@ public class IntelligentInputUtil {
     }
   }
 
-  private static void processCellAtStart(EditorCell_Label cell, final EditorContext editorContext, String head, final String smallPattern) {
+  private static void processCellAtStart(EditorCell_Label cell, final EditorContext editorContext, String head, String smallPattern) {
     INodeSubstituteInfo info = cell.getSubstituteInfo();
     if (info == null) {
       info = new NullSubstituteInfo();
@@ -229,6 +229,18 @@ public class IntelligentInputUtil {
     } else if (canCompleteSmallPatternImmediately(info, smallPattern, "")) {
       newNode = info.getMatchingActions(smallPattern, true).get(0).substitute(editorContext, smallPattern);
       cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
+    } else if (canCompleteTheWholeStringImmediately(info, head + smallPattern) ||
+      canCompleteTheWholeStringImmediately(info, head + smallPattern.trim())) {
+
+      if (!canCompleteTheWholeStringImmediately(info, head + smallPattern) &&
+        canCompleteTheWholeStringImmediately(info, head + smallPattern.trim())) {
+        smallPattern = smallPattern.trim();
+      }
+
+      List<INodeSubstituteAction> matchingActions = info.getMatchingActions(head + smallPattern, true);
+      INodeSubstituteAction item = matchingActions.get(0);
+      editorContext.selectWRTFocusPolicy(item.substitute(editorContext, head + smallPattern));
+      return;
     } else {
       return;
     }
@@ -267,8 +279,8 @@ public class IntelligentInputUtil {
     return info.hasExactlyNActions(smallPattern, true, 1) && (tail.equals("*") || info.hasExactlyNActions(smallPattern + tail, false, 0));
   }
 
-  private static boolean canCompleteTheWholeStringImmediately(INodeSubstituteInfo info, String smallPattern, String tail) {
-    return info.hasExactlyNActions(smallPattern + tail, true, 1) && info.hasExactlyNActions(smallPattern + tail, false, 1);
+  private static boolean canCompleteTheWholeStringImmediately(INodeSubstituteInfo info, String pattern) {
+    return info.hasExactlyNActions(pattern, true, 1) && info.hasExactlyNActions(pattern, false, 1);
   }
 
   private static boolean isInAmbigousPosition(INodeSubstituteInfo info, String smallPattern, String tail) {
