@@ -48,7 +48,7 @@ public class BootstrapTest extends BaseMPSTest {
     assertTrue(res, res == null);
   }
 
-  public void testRefactoringLanguage() {                                                                   
+  public void testRefactoringLanguage() {
     String res = testProject(new File("core/languageDesign/refactoring/refactoring.ipr"));
     assertTrue(res, res == null);
   }
@@ -62,15 +62,15 @@ public class BootstrapTest extends BaseMPSTest {
     String res = testProject(new File("core/baseLanguage/collections/collections.ipr"));
     assertTrue(res, res == null);
   }
-  
+
   public void testClosures() {
-      String res = testProject(new File("core/baseLanguage/closures/closures.mpr"));
-      assertTrue(res, res == null);
+    String res = testProject(new File("core/baseLanguage/closures/closures.ipr"));
+    assertTrue(res, res == null);
   }
- 
-  public void testInternalCollections () {
-      String res = testProject(new File("core/baseLanguage/internalCollections/internalCollections.mpr"));
-      assertTrue(res, res == null);
+
+  public void testInternalCollections() {
+    String res = testProject(new File("core/baseLanguage/internalCollections/internalCollections.ipr"));
+    assertTrue(res, res == null);
   }
 
   public void testProjectLanguage() {
