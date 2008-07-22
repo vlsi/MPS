@@ -29,7 +29,6 @@ public class ModuleRepositoryComponent {
   private DeferringEventHandler myDeferringEventHandler = new DeferringEventHandler();
 
   public ModuleRepositoryComponent() {
-    myTree.rebuildLater();
   }
 
   public JComponent getComponent() {
@@ -37,7 +36,11 @@ public class ModuleRepositoryComponent {
   }
 
   public void install() {
-    myTree.rebuildNow();
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        myTree.rebuildNow();
+      }
+    });
     myDeferringEventHandler.installListeners();
   }
 
@@ -138,7 +141,11 @@ public class ModuleRepositoryComponent {
       if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
         myDeferredUpdate = true;
       } else {
-        myTree.rebuildLater();
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          public void run() {
+            myTree.rebuildNow();
+          }
+        });
       }
     }
 
@@ -148,7 +155,11 @@ public class ModuleRepositoryComponent {
     public void commandFinished(CommandEvent event) {
       if (myDeferredUpdate) {
         myDeferredUpdate = false;
-        myTree.rebuildLater();
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          public void run() {
+            myTree.rebuildNow();
+          }
+        });
       }
     }
 
