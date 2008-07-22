@@ -1201,6 +1201,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216753429170">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1216753170795" resolveInfo="TemplateFunctionParameter_generationContext" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1184616041895">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
@@ -1487,6 +1491,71 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1202776989353">
       <property name="value" value="&lt;abandon input&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216753170795">
+    <property name="name" value="TemplateFunctionParameter_generationContext" />
+    <property name="package" value="genctx" />
+    <link role="extends" targetNodeId="6.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216753170798">
+      <property name="value" value="genctx" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216754218225">
+      <property name="value" value="generation context" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1216753170799">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216753261457">
+    <property name="package" value="genctx" />
+    <property name="name" value="GenerationContextType" />
+    <link role="extends" targetNodeId="6.1068431790189" resolveInfo="Type" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216753289864">
+      <property name="value" value="genctx" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216754455198">
+    <property name="package" value="genctx" />
+    <property name="name" value="GenerationContextOp_GetOutputByLabel" />
+    <link role="extends" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216754779279">
+      <property name="role" value="label" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1200911316486" resolveInfo="MappingLabelDeclaration" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1216754680464">
+      <link role="intfc" targetNodeId="6.1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216754690731">
+      <property name="value" value="get output by label" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216756400719">
+    <property name="package" value="genctx" />
+    <property name="name" value="GenerationContextOp_GetOutputByLabelAndInput" />
+    <link role="extends" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216756400720">
+      <property name="role" value="label" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1200911316486" resolveInfo="MappingLabelDeclaration" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1216756400721">
+      <link role="intfc" targetNodeId="6.1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216756400722">
+      <property name="value" value="get output by label and input" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216756400723">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="inputNode" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="6.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
 </model>

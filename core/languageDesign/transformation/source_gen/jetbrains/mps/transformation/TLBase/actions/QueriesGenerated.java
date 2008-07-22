@@ -41,6 +41,18 @@ public class QueriesGenerated {
     }
   }
 
+  public static void nodeFactory_NodeSetup_GenerationContextOp_GetOutputByLabel_1216757419802(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.transformation.TLBase.structure.GenerationContextOp_GetOutputByLabelAndInput")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(_context.getSampleNode(), "label", false), false);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_GenerationContextOp_GetOutputByLabelAndInput_1216757494033(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.transformation.TLBase.structure.GenerationContextOp_GetOutputByLabel")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(_context.getSampleNode(), "label", false), false);
+    }
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_RuleConsequence_1169570930693(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {

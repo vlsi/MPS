@@ -194,6 +194,82 @@
         </node>
       </node>
     </node>
+    <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory" id="1216757419801">
+      <link role="applicableConcept" targetNodeId="1.1216754455198" resolveInfo="GenerationContextOp_GetOutputByLabel" />
+      <node role="setupFunction" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction" id="1216757419802">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216757419803">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216757435100">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216757440808">
+              <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_SampleNode" id="1216757438010" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1216757443936">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1216757457421">
+                  <link role="conceptDeclaration" targetNodeId="1.1216756400719" resolveInfo="GenerationContextOp_GetOutputByLabelAndInput" />
+                </node>
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216757435102">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216757464750">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1216757469069">
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216757465940">
+                    <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_NewNode" id="1216757464751" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216757467286">
+                      <link role="link" targetNodeId="1.1216754779279" />
+                    </node>
+                  </node>
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216757485746">
+                    <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1216757474338">
+                      <link role="concept" targetNodeId="1.1216756400719" resolveInfo="GenerationContextOp_GetOutputByLabelAndInput" />
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_SampleNode" id="1216757473056" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216757488578">
+                      <link role="link" targetNodeId="1.1216756400720" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory" id="1216757494032">
+      <link role="applicableConcept" targetNodeId="1.1216756400719" resolveInfo="GenerationContextOp_GetOutputByLabelAndInput" />
+      <node role="setupFunction" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction" id="1216757494033">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216757494034">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216757494035">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216757494036">
+              <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_SampleNode" id="1216757494037" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1216757494038">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1216757513925">
+                  <link role="conceptDeclaration" targetNodeId="1.1216754455198" resolveInfo="GenerationContextOp_GetOutputByLabel" />
+                </node>
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216757494040">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216757494041">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1216757494042">
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216757494043">
+                    <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_NewNode" id="1216757494044" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216757517707">
+                      <link role="link" targetNodeId="1.1216756400720" />
+                    </node>
+                  </node>
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216757494046">
+                    <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1216757494047">
+                      <link role="concept" targetNodeId="1.1216754455198" resolveInfo="GenerationContextOp_GetOutputByLabel" />
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_SampleNode" id="1216757494048" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216757527145">
+                      <link role="link" targetNodeId="1.1216754779279" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
