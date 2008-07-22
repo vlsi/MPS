@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="MPS-languages" default="pack.jetbrains.mps.baseLanguageInternal">
-  <property file=".\MPS.properties" />
+  <property file="./MPS2.properties" />
   <target name="pack.jetbrains.mps.baseLanguageInternal">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguageInternal.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguageInternal.tmp/module" />
