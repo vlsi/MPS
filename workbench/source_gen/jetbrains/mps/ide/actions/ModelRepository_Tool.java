@@ -19,7 +19,7 @@ import java.awt.BorderLayout;
 
 public class ModelRepository_Tool extends GeneratedTool {
 
-  private ModelRepositoryComponent myComponent = new ModelRepositoryComponent();
+//  private ModelRepositoryComponent myComponent = new ModelRepositoryComponent();
   private JPanel myPanel = new JPanel(new BorderLayout());
 
   public ModelRepository_Tool(Project project) {
@@ -31,17 +31,17 @@ public class ModelRepository_Tool extends GeneratedTool {
   }
 
   public void init(Project project) {
-    this.myPanel.add(this.myComponent.getComponent(), BorderLayout.CENTER);
+//    this.myPanel.add(this.myComponent.getComponent(), BorderLayout.CENTER);
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(new CloseAction(this));
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
     this.myPanel.add(toolbar, BorderLayout.WEST);
     // 
-    this.myComponent.install();
+//    this.myComponent.install();
   }
 
   public void dispose() {
-    this.myComponent.uninstall();
+//    this.myComponent.uninstall();
   }
 
 }
