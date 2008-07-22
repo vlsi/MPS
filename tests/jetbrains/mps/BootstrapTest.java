@@ -48,7 +48,7 @@ public class BootstrapTest extends BaseMPSTest {
     assertTrue(res, res == null);
   }
 
-  public void testRefactoringLanguage() {
+  public void testRefactoringLanguage() {                                                                   
     String res = testProject(new File("core/languageDesign/refactoring/refactoring.ipr"));
     assertTrue(res, res == null);
   }
