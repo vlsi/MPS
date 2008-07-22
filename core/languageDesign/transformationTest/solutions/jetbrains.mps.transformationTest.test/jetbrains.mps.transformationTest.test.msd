@@ -5,6 +5,9 @@
   </models>
   <classPath />
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">JDK</dependency>
+  </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.transformationTest</usedLanguages>
   </usedLanguages>
