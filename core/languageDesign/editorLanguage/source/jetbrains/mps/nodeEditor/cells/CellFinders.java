@@ -18,7 +18,6 @@ public class CellFinders {
   public static final CellFinder<EditorCell> FIRST_SELECTABLE_LEAF = new SelectableLeafCellFinder(true);
   public static final CellFinder<EditorCell> LAST_SELECTABLE_LEAF = new SelectableLeafCellFinder(false);
 
-
   public static<C extends EditorCell> CellFinder<C> byClass(final Class<C> cls, final boolean first) {
     return new ByClassCellCellFinder<C>(cls, first);
   }

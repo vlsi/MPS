@@ -433,7 +433,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return getSelectedCell().getSNode();
   }
 
-
   public List<SNode> getSelectedNodes() {
     return ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
       public List<SNode> compute() {
