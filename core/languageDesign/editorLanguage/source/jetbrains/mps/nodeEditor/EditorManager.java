@@ -305,7 +305,7 @@ public class EditorManager {
     // decide position of the hint cell
     EditorCell resultCell;
     Object anchorId = node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID);
-    EditorCell anchorCell = anchorId == null ? null : nodeCell.findChild(CellFinders.byId(anchorId.toString()), true);
+    EditorCell anchorCell = anchorId == null ? null : nodeCell.findChild(CellFinders.byId(node, anchorId.toString()), true);
     if (anchorCell != null && anchorCell != nodeCell) {
       EditorCell_Collection cellCollection = anchorCell.getParent();
       int index;

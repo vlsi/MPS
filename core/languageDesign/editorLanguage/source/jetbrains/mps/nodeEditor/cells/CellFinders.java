@@ -5,6 +5,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.smodel.SNode;
 
 import java.util.Iterator;
 
@@ -26,10 +27,10 @@ public class CellFinders {
     return new ByConditionCellCellFinder(condition, first);
   }
 
-  public static CellFinder<EditorCell> byId(final String cellId) {
+  public static CellFinder<EditorCell> byId(final SNode node, final String cellId) {
     return byCondition(new Condition<EditorCell>() {
       public boolean met(EditorCell object) {
-        return cellId.equals(object.getUserObject(EditorCell.CELL_ID));
+        return object.getSNode() == node && cellId.equals(object.getUserObject(EditorCell.CELL_ID));
       }
     }, true);
   }
