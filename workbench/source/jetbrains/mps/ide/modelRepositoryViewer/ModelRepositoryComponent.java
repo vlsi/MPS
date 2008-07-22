@@ -13,6 +13,7 @@ import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
@@ -78,6 +79,8 @@ public class ModelRepositoryComponent {
               return group;
             }
           };
+
+          if (IdeMain.isTestMode()) return;
 
           for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {
             root[0].add(new ModelTreeNode(modelDescriptor));
@@ -157,8 +160,6 @@ public class ModelRepositoryComponent {
   }
 
   private class DeferringEventHandler extends SModelAdapter implements CommandListener {
-    private boolean myDeferredUpdate = false;
-
     private SModelRepositoryListener myRepoListener = new SModelRepositoryAdapter() {
       public void modelRepositoryChanged() {
         DeferringEventHandler.this.repositoryChanged();

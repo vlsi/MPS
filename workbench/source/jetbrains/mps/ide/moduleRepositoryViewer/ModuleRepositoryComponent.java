@@ -13,6 +13,7 @@ import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -75,6 +76,8 @@ public class ModuleRepositoryComponent {
             }
 
           };
+
+          if (IdeMain.isTestMode()) return;
 
           for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
             root[0].add(new LanguageTreeNode(module));
