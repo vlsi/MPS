@@ -208,10 +208,10 @@ public class GenerationSession implements IGenerationSession {
 
     for (MappingScript preMappingScript : preMappingScripts) {
       if (preMappingScript.getScriptKind() != MappingScriptKind.pre_process_input_model) {
-        addMessage(MessageKind.WARNING, "skip script '" + preMappingScript + "' (" + preMappingScript.getModel().getUID() + ") - wrong script kind");
+        addMessage(MessageKind.WARNING, "skip script '" + preMappingScript + "' (" + preMappingScript.getModel().getUID() + ") - wrong script kind", preMappingScript.getNode());
         continue;
       }
-      addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getUID() + ")");
+      addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getUID() + ")", preMappingScript.getNode());
       GeneratorUtil.executeMappingScript(preMappingScript, currentInputModel, generator);
     }
 
@@ -291,10 +291,10 @@ public class GenerationSession implements IGenerationSession {
 
     for (MappingScript postMappingScript : postMappingScripts) {
       if (postMappingScript.getScriptKind() != MappingScriptKind.post_process_output_model) {
-        addMessage(MessageKind.WARNING, "skip script '" + postMappingScript + "' (" + postMappingScript.getModel().getUID() + ") - wrong script kind");
+        addMessage(MessageKind.WARNING, "skip script '" + postMappingScript + "' (" + postMappingScript.getModel().getUID() + ") - wrong script kind", postMappingScript.getNode());
         continue;
       }
-      addMessage(MessageKind.INFORMATION, "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")");
+      addMessage(MessageKind.INFORMATION, "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")", postMappingScript.getNode());
       GeneratorUtil.executeMappingScript(postMappingScript, currentOutputModel, generator);
     }
 
@@ -322,15 +322,19 @@ public class GenerationSession implements IGenerationSession {
     }
   }
 
-  private void addMessage(final Message message) {
+  private void addMessage(Message message) {
     myMessagesHandler.handle(message);
   }
 
-  private void addMessage(final MessageKind kind, final String text) {
+  private void addMessage(MessageKind kind, String text) {
     addMessage(new Message(kind, text));
   }
 
-  private void addProgressMessage(final MessageKind kind, final String text) {
+  private void addMessage(MessageKind kind, String text, SNode hintObject) {
+    addMessage(new Message(kind, text, hintObject));
+  }
+
+  private void addProgressMessage(MessageKind kind, String text) {
     //myProgressMonitor.addText(text);
     addMessage(new Message(kind, text));
   }
