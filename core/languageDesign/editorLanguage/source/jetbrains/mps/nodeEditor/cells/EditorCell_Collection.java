@@ -320,7 +320,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     if (editorCell == null) return;
     addCell(editorCell);
     ((EditorCell_Basic) editorCell).setParent(this);
-    editorCell.putUserObject(NUMBER, myEditorCells.size());
   }
 
   public boolean containsCell(EditorCell editorCell) {

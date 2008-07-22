@@ -297,8 +297,6 @@ public class CellExplorerView extends BaseProjectTool {
       if (myCell.getSNode() != null) result += "[" + myCell.getSNode().getId() + "]";
       if (myCell.getUserObject(EditorCell.CELL_ID) != null)
         result += "[" + myCell.getUserObject(EditorCell.CELL_ID).toString() + "]";
-      if (myCell.getUserObject(EditorCell.NUMBER) != null)
-        result += "[" + myCell.getUserObject(EditorCell.NUMBER) + "]";
       return result;
     }
   }

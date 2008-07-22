@@ -40,7 +40,6 @@ public class CellProperties {
     myCellEffectiveWidth = myCell.getEffectiveWidth() + "";
     myRootCell = (myCell.getEditorContext().getNodeEditorComponent().getRootCell() == myCell)?"Yes":"No";
     myCellID = (String) (myCell.getUserObject(EditorCell.CELL_ID));
-    myCellNumber = "" + (myCell.getUserObject(EditorCell.NUMBER));
     myCellRole = "" + (myCell.getCellRole());
 
     mySNode = myCell.getSNode();
