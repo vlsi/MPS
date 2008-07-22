@@ -2418,7 +2418,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private class MySimpleModelListener extends SModelAdapter {
     public void modelReloaded(SModelDescriptor sm) {
-      rebuildEditorContent();
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        public void run() {
+          rebuildEditorContent();
+        }
+      });
     }
   }
 
