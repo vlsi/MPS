@@ -274,7 +274,7 @@ public class MPSVCSManager implements ProjectComponent {
     IgnoredFileBean[] filesToIgnore = m.getFilesToIgnore();
     for (IgnoredFileBean bean : filesToIgnore) {
       if ((bean != null) && (bean.getMask() != null)) {
-        if (bean.getMask().equalsIgnoreCase(".svn*")) {
+        if (".svn*".equalsIgnoreCase(bean.getMask())) {
           return;
         }
       }
