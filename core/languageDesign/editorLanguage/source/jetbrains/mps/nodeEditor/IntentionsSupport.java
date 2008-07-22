@@ -197,7 +197,7 @@ public class IntentionsSupport {
       }
     });
 
-    EditorCell bigCell = myEditor.getBigCellForNode(cell.getSNode());
+    EditorCell bigCell = myEditor.findNodeCell(cell.getSNode());
     assert bigCell != null : "selected cell mustn't be null";
 
     Point loc = getIntentionsMenuLocation(bigCell, intentionsMenu);

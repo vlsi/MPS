@@ -1089,7 +1089,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myLeftHighlighter.relayout(updateFolding);
   }
 
-
   public void leftHighlightCell(EditorCell cell, Color c) {
     myLeftHighlighter.highlight(cell, c);
   }
@@ -1125,30 +1124,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public EditorCell findNodeCell(final SNode node) {
-    if (myRootCell == null) return null;
-    if (myRootCell.getSNode() == node) {
-      return myRootCell;
-    }
-    if (node == null || !(myRootCell instanceof EditorCell_Collection)) {
+    WeakReference<EditorCell> weakReference = myNodesToBigCellsMap.get(node);
+    if (weakReference == null) return null;
+    EditorCell result = weakReference.get();
+    if (result != null && result.getRootParent() != getRootCell()) {
       return null;
     }
-    EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
-    class SelectNodeCondition extends EditorCellCondition {
-      public void checkLeafCell(EditorCell editorCell) {
-        checkNotLeafCell(editorCell);
-      }
-
-      public boolean checkNotLeafCell(EditorCell editorCell) {
-        if (editorCell.getSNode() == node) {
-          setFoundCell(editorCell);
-          setToStop(true);
-        }
-        return true;
-      }
-    }
-    SelectNodeCondition condition = new SelectNodeCondition();
-    cellCollection.iterateTreeUntilCondition(condition, true);
-    return condition.getFoundCell();
+    return result;
   }
 
   public EditorCell findNodeCell(final SNode node, String id) {
@@ -1188,7 +1170,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public EditorCell findCellWithId(String id, SNode node) {
-    EditorCell bigCell = getBigCellForNode(node);
+    EditorCell bigCell = findNodeCell(node);
 
     if (bigCell == null) {
       return null;
@@ -1995,18 +1977,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return weakReference.get();
   }
 
-  EditorCell getBigCellForNode(SNode node) {
-    WeakReference<EditorCell> weakReference = myNodesToBigCellsMap.get(node);
-    if (weakReference == null) return null;
-    EditorCell result = weakReference.get(); //todo this is a hack. need to make myNodesToBigCellsMap not weak
-    if (result != null && result.getRootParent() != getRootCell()) {
-      return null;
-    }
-    return result;
-  }
-
   public EditorCell getBigValidCellForNode(SNode node) {
-    EditorCell result = getBigCellForNode(node);
+    EditorCell result = findNodeCell(node);
     if (isValid(result)) return result;
     return null;
   }
@@ -2312,18 +2284,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         } else {
           changeSelectionWRTFocusPolicy(nullCell);
         }
-      }
-    }
-  }
-
-  private void doCommitAll(EditorCell current) {
-    if (current instanceof EditorCell_Property) {
-      ((EditorCell_Property) current).commit();
-    }
-    if (current instanceof EditorCell_Collection) {
-      EditorCell_Collection collection = (EditorCell_Collection) current;
-      for (EditorCell cell : collection) {
-        doCommitAll(cell);
       }
     }
   }
