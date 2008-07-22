@@ -219,26 +219,37 @@ public class MPSVCSManager implements ProjectComponent {
               if (vf == null) {
                 continue;
               }
-              VirtualFile file = vf;
-              while (true){
-                VirtualFile parent = file.getParent();
-                if (parent == null){
-                  break;
-                }
-                if (isUnderVCS(myProject, parent)){
-                  break;
-                } else {
-                  file = parent;
-                  sceduleUnversionedFileForAdditionInternal(parent);
-                }
+              List<VirtualFile> path = getPathMaxUnversionedParent(vf);
+              for (VirtualFile f : path) {
+                sceduleUnversionedFileForAdditionInternal(f);
               }
-              sceduleUnversionedFileForAdditionInternal(vf);
             }
           }
+          
         });
       }
     });
     return result;
+  }
+
+  private List<VirtualFile> getPathMaxUnversionedParent(VirtualFile vf) {
+    List<VirtualFile> path = new LinkedList<VirtualFile>();
+    path.add(vf);
+
+    while (true) {
+      VirtualFile parent = path.get(0).getParent();
+      if (parent == null){
+        break;
+      }
+
+      if (isUnderVCS(myProject, parent)){
+        break;
+      } else {
+        path.add(0, parent);
+      }
+    }
+
+    return path;
   }
 
   private void sceduleUnversionedFileForAdditionInternal(VirtualFile vf) {
@@ -256,7 +267,7 @@ public class MPSVCSManager implements ProjectComponent {
 
   /**
    * This method can say that file is not changed when it actually unversioned. Don't know how to fix.
-   *
+   * <p/>
    * For directories it should work fine.
    *
    * @param project
@@ -265,7 +276,7 @@ public class MPSVCSManager implements ProjectComponent {
    */
   @Deprecated
   private static boolean isUnderVCS(Project project, VirtualFile f) {
-    if (f.isDirectory()){
+    if (f.isDirectory()) {
       return ProjectLevelVcsManager.getInstance(project).findVersioningVcs(f) != null;
     }
 
@@ -366,15 +377,15 @@ public class MPSVCSManager implements ProjectComponent {
       }
     }
 
-    for (VcsDirectoryMapping oldMapping : myManager.getDirectoryMappings()){
+    for (VcsDirectoryMapping oldMapping : myManager.getDirectoryMappings()) {
       String oldDir = oldMapping.getDirectory();
       boolean matched = false;
-      for (VcsDirectoryMapping newMapping : vcsMappings){
-        if (newMapping.getDirectory().equals(oldDir)){
+      for (VcsDirectoryMapping newMapping : vcsMappings) {
+        if (newMapping.getDirectory().equals(oldDir)) {
           matched = true;
         }
       }
-      if (!matched){
+      if (!matched) {
         vcsMappings.add(oldMapping);
       }
     }
