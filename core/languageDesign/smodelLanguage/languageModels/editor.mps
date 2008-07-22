@@ -169,6 +169,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1138406102625">
         <property name="text" value="&gt;" />
         <link role="styleClass" targetNodeId="5.1215010871495" resolveInfo="Bracket" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleClassItem" id="1216732355245" />
       </node>
     </node>
   </node>

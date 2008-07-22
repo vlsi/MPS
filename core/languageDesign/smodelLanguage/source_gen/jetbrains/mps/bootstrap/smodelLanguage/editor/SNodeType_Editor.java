@@ -67,6 +67,15 @@ public class SNodeType_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell2853_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2853_02");
     BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConstantCell2853_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
