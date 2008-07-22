@@ -64,7 +64,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testClosures() {
-    String res = testProject(new File("core/baseLanguage/closures/closures.mpr"));
+    String res = testProject(new File("core/baseLanguage/closures/closures.ipr"));
     assertTrue(res, res == null);
   }
 
