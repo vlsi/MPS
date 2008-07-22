@@ -65,9 +65,12 @@ public class ModelRepositoryComponent {
               return group;
             }
           };
+
+          /*
           for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {
             root[0].add(new ModelTreeNode(modelDescriptor));
           }
+          */
         }
       });
 
