@@ -9,11 +9,6 @@ public class ApplicationsTest extends BaseMPSTest {
     assertTrue(res, res == null);
   }
 
-  public void testClosures() {
-      String res = testProject(new File("core/baseLanguage/closures/closures.mpr"));
-      assertTrue(res, res == null);
-  }
- 
 //  public void testYPath() {
 //    String res = testProject(new File("platform/ypath/YPath.mpr"));
 //    assertTrue(res, res == null);
