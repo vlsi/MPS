@@ -225,6 +225,10 @@ public class Logger {
     assertLog(CommandProcessor.getInstance().getCurrentCommand() != null, "This action must be performed in command");
   }
 
+  public void assertInEDT() {
+    assertLog(ThreadUtils.isEventDispatchThread(), "You should do this in EDT");
+  }
+
   public void assertNotInCommand() {
     assertLog(CommandProcessor.getInstance().getCurrentCommand() == null, "This action should be performed outside of command");
   }

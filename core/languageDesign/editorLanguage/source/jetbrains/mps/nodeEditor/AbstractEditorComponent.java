@@ -1381,6 +1381,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void rebuildEditorContent() {
+    LOG.assertInEDT();
+
     clearCaches();
     clearUserData();
     rebuildEditorContent(null);
