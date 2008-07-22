@@ -1050,6 +1050,9 @@
               <link role="relationDeclaration" targetNodeId="1.1169129564478" />
               <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215626977393">
                 <property name="nullText" value="&lt;none&gt;" />
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1216760715846">
+                  <property name="flag" value="true" />
+                </node>
               </node>
             </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1215626385759">
