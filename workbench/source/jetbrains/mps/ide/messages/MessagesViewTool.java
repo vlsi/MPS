@@ -177,9 +177,6 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         return this;
       }
     });
-
-    myBlameDialog = new BlameDialog(null);
-    myBlameDialog.loadState(myDialogState);
   }
 
   protected boolean isInitiallyAvailable() {
@@ -281,13 +278,13 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   private void submitToTracker(Message msg) {
-    myBlameDialog.setMessage(msg.getText());
-    myBlameDialog.setEx(msg.getException());
-    if (myBlameDialog.showAuthDialog()) {
-      if (myBlameDialog.getStatusCode() == 200) {
-        JOptionPane.showMessageDialog(null, myBlameDialog.getResponseString(), "Submit OK", JOptionPane.INFORMATION_MESSAGE);
+    getBlameDialog().setMessage(msg.getText());
+    getBlameDialog().setEx(msg.getException());
+    if (getBlameDialog().showAuthDialog()) {
+      if (getBlameDialog().getStatusCode() == 200) {
+        JOptionPane.showMessageDialog(null, getBlameDialog().getResponseString(), "Submit OK", JOptionPane.INFORMATION_MESSAGE);
       } else {
-        JOptionPane.showMessageDialog(null, myBlameDialog.getResponseString(), "Submit Failed", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, getBlameDialog().getResponseString(), "Submit Failed", JOptionPane.ERROR_MESSAGE);
       }
     }
   }
@@ -379,7 +376,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   public MyState getState() {
-    return new MyState(myErrorsAction.isSelected(null), myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myBlameDialog.getState());
+    return new MyState(myErrorsAction.isSelected(null), myWarningsAction.isSelected(null), myInfoAction.isSelected(null), getBlameDialog().getState());
   }
 
   public void loadState(MyState state) {
@@ -387,6 +384,14 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     myWarningsAction.setSelected(null, state.isWarnings());
     myInfoAction.setSelected(null, state.isInfo());
     myDialogState = state.getDialogState();
+  }
+
+  public BlameDialog getBlameDialog() {
+    if (myBlameDialog == null) {
+      myBlameDialog= new BlameDialog(null);
+      myBlameDialog.loadState(myDialogState);
+    }
+    return myBlameDialog;
   }
 
   public static class MyState {
