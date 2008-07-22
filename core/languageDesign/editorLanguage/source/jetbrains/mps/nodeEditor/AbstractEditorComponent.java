@@ -1109,7 +1109,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
-
   public void selectRefCell(SReference reference) {
     SNode sourceNode = reference.getSourceNode();
     String role = reference.getRole();
@@ -1125,25 +1124,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     changeSelectionWRTFocusPolicy(cell);
   }
 
-  public EditorCell findNodeCell(SNode node) {
-    return findNodeCell(node, false);
-  }
-
-  public EditorCell findNodeCell(final SNode node, boolean biggest) {
+  public EditorCell findNodeCell(final SNode node) {
     if (myRootCell == null) return null;
     if (myRootCell.getSNode() == node) {
       return myRootCell;
     }
     if (node == null || !(myRootCell instanceof EditorCell_Collection)) {
       return null;
-    }
-    if (!biggest) {
-      WeakReference<EditorCell> weakReference = myRefNodeContextsToBigCellsMap.get(ReferencedNodeContext.createNodeContext(node));
-      EditorCell foundCell = null;
-      if (weakReference != null) {
-        foundCell = weakReference.get();
-      }
-      if (foundCell != null) return foundCell;
     }
     EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
     class SelectNodeCondition extends EditorCellCondition {
@@ -1521,10 +1508,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     return null;
   }
-
-//  public Stack<EditorCell> getSelectionStackCopy() {
-//    return (Stack<EditorCell>) mySelectedStack.clone();
-//  }
 
   public boolean selectionStackContains(EditorCell cell) {
     return mySelectedStack.contains(cell);
@@ -2225,7 +2208,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-
   private void updateSelection(List<SModelEvent> events) {
     SModelEvent lastAdd = null;
     SModelEvent lastRemove = null;
@@ -2332,14 +2314,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
     }
-  }
-
-  private void commitAll() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        doCommitAll(getRootCell());
-      }
-    });
   }
 
   private void doCommitAll(EditorCell current) {

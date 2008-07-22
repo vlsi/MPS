@@ -66,7 +66,7 @@ public class CellAction_PasteNode extends EditorCellAction {
 
     // set selection
     editorComponent.flushEvents();
-    EditorCell nodeCell = editorComponent.findNodeCell(pasteNodes.get(0), true);
+    EditorCell nodeCell = editorComponent.findNodeCell(pasteNodes.get(0));
     if (nodeCell == null) return; // after 'set reference'?
     editorComponent.changeSelection(nodeCell);
     

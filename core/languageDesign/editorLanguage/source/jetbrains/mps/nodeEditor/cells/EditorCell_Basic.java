@@ -511,7 +511,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       return null;
     }
 
-    EditorCell bigCell = getEditor().findNodeCell(node, true);
+    EditorCell bigCell = getEditor().findNodeCell(node);
     Object anchorId = node.getUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID);
     if (anchorId == null) {
       for (EditorCell child : bigCell.getParent()) {

@@ -306,7 +306,7 @@ public class IntelligentInputUtil {
   }
 
   private static EditorCell_Label prepareRTCell(EditorContext context, SNode node, String textToSet) {
-    EditorCell root = context.getNodeEditorComponent().findNodeCell(node, true);
+    EditorCell root = context.getNodeEditorComponent().findNodeCell(node);
     if (root == null) {
       return null;
     }
