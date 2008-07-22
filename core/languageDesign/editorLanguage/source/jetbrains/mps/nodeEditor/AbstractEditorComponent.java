@@ -1886,7 +1886,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     dependentCells.add(cell);
   }
 
-
   public void addCellDependentOnNodePropertyWhichExistenceWasChecked(EditorCell cell, Pair<SNodePointer, String> pair) {
     WeakSet<EditorCell> dependentCells = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
     if (dependentCells == null) {
@@ -1895,7 +1894,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     dependentCells.add(cell);
   }
-
 
   public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes, Set<SNodePointer> refTargets) {
     myCellsToNodesToDependOnMap.put(cell, nodes);

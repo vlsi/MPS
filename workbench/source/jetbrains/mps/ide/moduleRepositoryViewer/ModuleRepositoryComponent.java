@@ -53,7 +53,7 @@ public class ModuleRepositoryComponent {
     protected MPSTreeNode rebuild() {
       final TextTreeNode[] root = new TextTreeNode[1];
 
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           root[0] = new TextTreeNode("Loaded Modules") {
             {
