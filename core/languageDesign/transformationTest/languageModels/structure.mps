@@ -77,6 +77,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1211896175875">
     <property name="name" value="NodesTest" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}\icons\nodesTest.png" />
     <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1212573111855">
       <property name="metaClass" value="reference" />

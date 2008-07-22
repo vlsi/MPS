@@ -323,9 +323,6 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215791357982">
               <link role="classifier" targetNodeId="136.~IntentionProvider" resolveInfo="IntentionProvider" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215791383719">
-              <link role="variableDeclaration" targetNodeId="1215791344523" resolveInfo="provider" />
-            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216204092008">
