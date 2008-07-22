@@ -16,6 +16,7 @@
       </models>
       <external-templates>
         <generator generatorUID="jetbrains.mps.baseLanguage.classifiers#1205839057922" />
+        <generator generatorUID="jetbrains.mps.closures#1199623535494" />
       </external-templates>
       <dependencies>
         <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
@@ -31,7 +32,19 @@
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguage.classifiers</usedLanguages>
       </usedLanguages>
-      <mapping-priorities />
+      <mapping-priorities>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template.main@templates" nodeID="*" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="jetbrains.mps.closures#1199623535494" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+      </mapping-priorities>
     </generator>
   </generators>
   <classPath>
