@@ -10,7 +10,7 @@ public class IdeMain {
   private static boolean ourTestMode = false;
 
   public static Date expirationDate() {
-    GregorianCalendar calendar = new GregorianCalendar(2008, Calendar.AUGUST, 31);
+    GregorianCalendar calendar = new GregorianCalendar(2008, Calendar.OCTOBER, 31);
     return new Date(calendar.getTimeInMillis());
   }
 
