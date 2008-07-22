@@ -40,7 +40,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   private ManyToManyMap<IModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<IModule, MPSModuleOwner>();
 
   private List<ModuleRepositoryListener> myModuleListeners = new ArrayList<ModuleRepositoryListener>();
-  private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
+  private List<MPSModuleRepositoryListener> myListeners = new ArrayList<MPSModuleRepositoryListener>();
 
   private boolean myDirtyFlag = false;
 
@@ -78,18 +78,18 @@ public class MPSModuleRepository implements ApplicationComponent {
     return new HashSet<String>(myExtensionsToModuleTypes.keySet());
   }
 
-  public void addRepositoryListener(RepositoryListener l) {
+  public void addRepositoryListener(MPSModuleRepositoryListener l) {
     myListeners.add(l);
   }
 
-  public void removeRepositoryListener(RepositoryListener l) {
+  public void removeRepositoryListener(MPSModuleRepositoryListener l) {
     myListeners.remove(l);
   }
 
   private void fireRepositoryChanged() {
     invalidateCaches();
 
-    for (RepositoryListener l : myListeners) {
+    for (MPSModuleRepositoryListener l : myListeners) {
       l.repositoryChanged();
     }
   }

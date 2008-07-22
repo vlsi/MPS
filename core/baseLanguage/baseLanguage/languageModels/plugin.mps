@@ -5036,27 +5036,5 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216724067342">
-    <property name="package" value="Actions" />
-    <property name="name" value="ABC" />
-    <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1216724067343">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216724067344">
-        <node role="statement" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExecuteLightweightCommandStatement" id="1216724149389">
-          <node role="commandClosureLiteral" type="jetbrains.mps.bootstrap.smodelLanguage.structure.CommandClosureLiteral" id="1216724149390">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216724149391">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216724150626">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216724152886">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1216724150627" />
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216724155687">
-                    <link role="baseMethodDeclaration" targetNodeId="9.~Object.clone():java.lang.Object" resolveInfo="clone" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
 </model>
 

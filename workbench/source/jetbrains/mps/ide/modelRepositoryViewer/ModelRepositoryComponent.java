@@ -30,6 +30,9 @@ public class ModelRepositoryComponent {
   private JScrollPane myComponent = new JScrollPane(myTree);
   private DeferringEventHandler myDeferringEventHandler = new DeferringEventHandler();
 
+  private final Object myLock = new Object();
+  private boolean myUpdateNeeded = false;
+
   public void install() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
@@ -53,7 +56,6 @@ public class ModelRepositoryComponent {
 
     protected MPSTreeNode rebuild() {
       final TextTreeNode[] root = new TextTreeNode[1];
-
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           root[0] = new TextTreeNode("Loaded Models") {
@@ -77,9 +79,9 @@ public class ModelRepositoryComponent {
             }
           };
 
-//          for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {
-//            root[0].add(new ModelTreeNode(modelDescriptor));
-//          }
+          for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {
+            root[0].add(new ModelTreeNode(modelDescriptor));
+          }
         }
       });
 
@@ -142,6 +144,18 @@ public class ModelRepositoryComponent {
     }
   }
 
+  private void requestUpdate() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        synchronized (myLock) {
+          if (!myUpdateNeeded) return;
+          myUpdateNeeded = false;
+        }
+        myTree.rebuildNow();
+      }
+    });
+  }
+
   private class DeferringEventHandler extends SModelAdapter implements CommandListener {
     private boolean myDeferredUpdate = false;
 
@@ -164,41 +178,17 @@ public class ModelRepositoryComponent {
     }
 
     public void modelInitialized(SModelDescriptor modelDescriptor) {
-      if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
-        myDeferredUpdate = true;
-      } else {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            myTree.rebuildNow();
-          }
-        });
-      }
+      requestUpdate();
     }
 
     private void repositoryChanged() {
-      if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
-        myDeferredUpdate = true;
-      } else {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            myTree.rebuildNow();
-          }
-        });
-      }
+      requestUpdate();
     }
 
     public void beforeCommandFinished(CommandEvent event) {
     }
 
     public void commandFinished(CommandEvent event) {
-      if (myDeferredUpdate) {
-        myDeferredUpdate = false;
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            myTree.rebuildLater();
-          }
-        });
-      }
     }
 
     public void commandStarted(CommandEvent event) {

@@ -323,7 +323,6 @@ public abstract class MPSTree extends DnDAwareTree {
     }
   }
 
-
   private HashMap<Pair, BaseAction> myKeyStrokesToActionsMap = new HashMap<Pair, BaseAction>();
 
   public final void registerMPSAction(BaseAction action, Class<? extends MPSTreeNode> nodeClass) {

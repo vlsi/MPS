@@ -17,7 +17,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.RepositoryListener;
+import jetbrains.mps.smodel.MPSModuleRepositoryListener;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.JComponent;
@@ -50,7 +50,6 @@ public class ModuleRepositoryComponent {
 
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
-
       final TextTreeNode[] root = new TextTreeNode[1];
 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -77,11 +76,9 @@ public class ModuleRepositoryComponent {
 
           };
 
-          /*
           for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
             root[0].add(new LanguageTreeNode(module));
           }
-          */
         }
       });
 
@@ -128,7 +125,7 @@ public class ModuleRepositoryComponent {
     }
   }
 
-  private class DeferringEventHandler extends CommandAdapter implements RepositoryListener {
+  private class DeferringEventHandler extends CommandAdapter implements MPSModuleRepositoryListener {
     private boolean myDeferredUpdate = false;
 
     public void installListeners() {
