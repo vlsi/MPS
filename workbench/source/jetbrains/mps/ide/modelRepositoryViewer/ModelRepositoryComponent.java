@@ -127,6 +127,7 @@ public class ModelRepositoryComponent {
       }
 
       protected void updatePresentation() {
+
         if (myOwner instanceof Generator) {
           setIcon(Icons.GENERATOR_ICON);
         } else if (myOwner instanceof Language) {
