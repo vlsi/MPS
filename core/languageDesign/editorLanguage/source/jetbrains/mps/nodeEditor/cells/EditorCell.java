@@ -27,7 +27,6 @@ public interface EditorCell extends Cloneable {
   static final Object METAINFO_LINK_DECLARATION = new Object();
   static final Object METAINFO_SOURCE_NODE = new Object();
   static final Object CELL_ID = new Object();
-  static final Object NUMBER = new Object();
   static final Object ROLE = new Object();
   static final Object IS_INSPECTOR_CELL = new Object();
 
