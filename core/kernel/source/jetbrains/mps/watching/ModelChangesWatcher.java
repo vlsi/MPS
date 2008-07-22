@@ -67,7 +67,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
             IFile ifile = VFileSystem.toIFile(vfile);
             if ((ifile == null) || (!ifile.exists())) continue;
             final SModelDescriptor model = ApplicationManager.getApplication().getComponent(SModelRepository.class).findModel(ifile);
-            if (model.needsReloading()) {
+            if ((model != null) && model.needsReloading()) {
               ProgressManager.getInstance().run(new Modal(null, "Reloading Updated Models", false) {
                 public void run(@NotNull final ProgressIndicator indicator) {
                   ModelAccess.instance().runReadAction(new Runnable() {
