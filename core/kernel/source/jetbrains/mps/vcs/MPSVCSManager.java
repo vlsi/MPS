@@ -223,7 +223,7 @@ public class MPSVCSManager implements ProjectComponent {
               while (true){
                 VirtualFile parent = file.getParent();
                 if (parent == null){
-                  continue;
+                  break;
                 }
                 if (isUnderVCS(myProject, parent)){
                   break;
@@ -245,7 +245,7 @@ public class MPSVCSManager implements ProjectComponent {
     AbstractVcs vcs = myManager.getVcsFor(vf);
     if (vcs != null) {
       CheckinEnvironment ci = vcs.getCheckinEnvironment();
-      if (ci != null && !isUnderVCS(myProject, vf)) {
+      if (ci != null) {
         List<VirtualFile> vfs = new ArrayList<VirtualFile>();
         vfs.add(vf);
         List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
@@ -254,7 +254,17 @@ public class MPSVCSManager implements ProjectComponent {
     }
   }
 
-  public static boolean isUnderVCS(Project project, VirtualFile f) {
+  /**
+   * This method can say that file is not changed when it actually unversioned. Don't know how to fix.
+   *
+   * For directories it should work fine.
+   *
+   * @param project
+   * @param f
+   * @return
+   */
+  @Deprecated
+  private static boolean isUnderVCS(Project project, VirtualFile f) {
     if (f.isDirectory()){
       return ProjectLevelVcsManager.getInstance(project).findVersioningVcs(f) != null;
     }
