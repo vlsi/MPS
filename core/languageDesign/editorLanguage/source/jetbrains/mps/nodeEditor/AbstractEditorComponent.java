@@ -1125,16 +1125,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     changeSelectionWRTFocusPolicy(cell);
   }
 
-  public void selectFirstEditableCellOf(final SNode node) {
-    EditorCell cell = findNodeCell(node);
-    EditorCell editable = cell.findChild(CellFinders.FIRST_EDITABLE);
-    if (editable == null) {
-      changeSelection(cell);
-    } else {
-      changeSelection(editable);
-    }
-  }
-
   public EditorCell findNodeCell(SNode node) {
     return findNodeCell(node, false);
   }
@@ -2449,8 +2439,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private class MyCutProvider implements CutProvider {
-    private CellAction_CutNode myCutAction = new CellAction_CutNode();
-
     public void performCut(DataContext dataContext) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
