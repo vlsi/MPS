@@ -28,7 +28,34 @@
   <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1216646381341">
     <link role="conceptDeclaration" targetNodeId="1.1199569711397" resolveInfo="ClosureLiteral" />
     <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1216646381342">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216646381343" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216646381343">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1216727098943">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216727098944">
+            <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitReadStatement" id="1216727098945">
+              <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216727098946">
+                <link role="variableDeclaration" targetNodeId="1216727098947" resolveInfo="var" />
+              </node>
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216727098947">
+            <property name="name" value="var" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1216727098948">
+              <link role="concept" targetNodeId="2.1068581242863" resolveInfo="LocalVariableDeclaration" />
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216727098949">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216727098950">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216727098954">
+                <link role="link" targetNodeId="1.1199569916463" />
+              </node>
+              <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1216727110902" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1216727098955">
+              <link role="conceptMethodDeclaration" targetNodeId="3.1214501165480" resolveInfo="getExternalVariablesDeclarations" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

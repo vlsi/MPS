@@ -5,6 +5,9 @@ package jetbrains.mps.closures.dataFlow;
 import jetbrains.mps.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.dataFlow.DataFlowBuilderContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class ClosureLiteral_DataFlow extends DataFlowBuilder {
 
@@ -12,6 +15,9 @@ public class ClosureLiteral_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
+    for(SNode var : StatementList_Behavior.call_getExternalVariablesDeclarations_1214501165480(SLinkOperations.getTarget(_context.getNode(), "body", true))) {
+      _context.getBuilder().emitRead(var);
+    }
   }
 
 }
