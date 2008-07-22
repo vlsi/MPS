@@ -18,6 +18,9 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
+  <language namespace="jetbrains.mps.bootstrap.helgins">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
@@ -27,6 +30,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
@@ -268,6 +272,44 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1216761604080">
+    <property name="name" value="dotOperation" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1216761646982">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="2v.1197027803184" resolveInfo="IOperation" />
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1216761666326">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216761666327">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216761723563">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216761798278">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216761741524">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216761732457">
+                  <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1216761724908">
+                    <link role="concept" targetNodeId="2v.1197027756228" resolveInfo="DotExpression" />
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1216761723564" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216761739695">
+                    <link role="link" targetNodeId="2v.1197027771414" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1216761765527" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1216761800843">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1216761807735">
+                  <link role="conceptDeclaration" targetNodeId="1.1216753261457" resolveInfo="GenerationContextType" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1216761826706">
+        <link role="concept" targetNodeId="1.1216754455198" resolveInfo="GenerationContextOp_GetOutputByLabel" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1216761857894">
+        <link role="concept" targetNodeId="1.1216756400719" resolveInfo="GenerationContextOp_GetOutputByLabelAndInput" />
       </node>
     </node>
   </node>
