@@ -16,9 +16,6 @@ import com.intellij.openapi.module.ModuleUtil;
 
 import java.io.File;
 
-/**
- * @author yole
- */
 public class ModuleVcsPathPresenter extends VcsPathPresenter {
   private Project myProject;
 
@@ -30,21 +27,11 @@ public class ModuleVcsPathPresenter extends VcsPathPresenter {
     if (file == null) return "";
     return ApplicationManager.getApplication().runReadAction(new Computable<String>() {
       public String compute() {
-        ProjectFileIndex fileIndex = ProjectRootManager.getInstance(myProject).getFileIndex();
-        Module module = fileIndex.getModuleForFile(file);
-        VirtualFile contentRoot = fileIndex.getContentRootForFile(file);
-        if (module == null || contentRoot == null) return file.getPresentableUrl();
-        StringBuffer result = new StringBuffer();
-        result.append("[");
-        result.append(module.getName());
-        result.append("] ");
-        result.append(contentRoot.getName());
-        String relativePath = VfsUtil.getRelativePath(file, contentRoot, File.separatorChar);
-        if (relativePath.length() > 0) {
-          result.append(File.separatorChar);
-          result.append(relativePath);
-        }
-        return result.toString();
+        /*In IDEA this method return string in following form:
+        * [module name]/relativeToModuleRootPath
+        * see ModuleVcsPathPresenter in IDEA
+        * */
+        return file.getPath();
       }
     });
   }
