@@ -33,7 +33,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1171931851043">
     <property name="rootable" value="true" />
     <property name="name" value="BTestCase" />
-    <property name="iconPath" value="${language_descriptor}\icons\test.png" />
+    <property name="iconPath" value="${language_descriptor}\icons\testCase.png" />
     <link role="extends" targetNodeId="2.1068390468198" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1216131245363">
       <link role="intfc" targetNodeId="1216130694486" resolveInfo="ITestCase" />
