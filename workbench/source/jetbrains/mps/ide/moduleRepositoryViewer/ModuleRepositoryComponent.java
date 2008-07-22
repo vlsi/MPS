@@ -69,9 +69,12 @@ public class ModuleRepositoryComponent {
             }
 
           };
+
+          /*
           for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
             root[0].add(new LanguageTreeNode(module));
           }
+          */
         }
       });
 
