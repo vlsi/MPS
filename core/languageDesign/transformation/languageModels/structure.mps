@@ -534,10 +534,14 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1167087518662">
     <property name="name" value="CreateRootRule_Condition" />
     <property name="package" value="rule" />
-    <link role="extends" targetNodeId="6.1137021947720" />
+    <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1167087518663">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1167087557171" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216768145017">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1216753170795" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167087518666">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -566,7 +570,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1167168920554">
     <property name="name" value="BaseMappingRule_Condition" />
     <property name="package" value="rule" />
-    <link role="extends" targetNodeId="6.1137021947720" />
+    <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1167168920555">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1167168920556" />
@@ -574,6 +578,10 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167169278214">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216768088657">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1216753170795" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167168920557">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -730,7 +738,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1167756080639">
     <property name="name" value="PropertyMacro_GetPropertyValue" />
     <property name="package" value="macro" />
-    <link role="extends" targetNodeId="6.1137021947720" />
+    <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167756080642">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
@@ -738,6 +746,10 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167756287363">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1167756221419" resolveInfo="TemplateFunctionParameter_templatePropertyValue" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216768261415">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1216753170795" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167774423713">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -788,18 +800,22 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1167770111131">
     <property name="name" value="ReferenceMacro_GetReferent" />
     <property name="package" value="macro" />
-    <link role="extends" targetNodeId="6.1137021947720" />
+    <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167770111134">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167774389898">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
-      <link role="target" targetNodeId="1167774355440" resolveInfo="TemplateFunctionParameter_templateNode" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167770111136">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1184690432998" resolveInfo="TemplateFunctionParameter_outputNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216768285244">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1216753170795" resolveInfo="TemplateFunctionParameter_generationContext" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167774389898">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1167774355440" resolveInfo="TemplateFunctionParameter_templateNode" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1184693809049">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -860,7 +876,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1167945743726">
     <property name="name" value="IfMacro_Condition" />
     <property name="package" value="macro" />
-    <link role="extends" targetNodeId="6.1137021947720" />
+    <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1167945743727">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1167945743728" />
@@ -868,6 +884,10 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167945743729">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216768162409">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1216753170795" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167945743730">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -912,7 +932,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1167951910403">
     <property name="name" value="SourceSubstituteMacro_SourceNodesQuery" />
     <property name="package" value="macro" />
-    <link role="extends" targetNodeId="6.1137021947720" />
+    <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1167954020900">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
       <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1178640291186" />
@@ -920,6 +940,10 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167951910406">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216768337605">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1216753170795" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167951910407">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -948,7 +972,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1168024337012">
     <property name="name" value="SourceSubstituteMacro_SourceNodeQuery" />
     <property name="package" value="macro" />
-    <link role="extends" targetNodeId="6.1137021947720" />
+    <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1168024337013">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
       <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1168024360319" />
@@ -956,6 +980,10 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1168024337016">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216768328589">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1216753170795" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1168024337017">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -1089,7 +1117,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1170725621272">
     <property name="name" value="MapSrcMacro_MapperFunction" />
     <property name="package" value="macro" />
-    <link role="extends" targetNodeId="6.1137021947720" />
+    <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1170725621273">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
       <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1170725621274" />
@@ -1101,6 +1129,10 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1170725621276">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1184792613450" resolveInfo="TemplateFunctionParameter_parentOutputNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216768203350">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1216753170795" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1170725621277">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -1140,7 +1172,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1184373935793">
     <property name="name" value="TemplateFragment_ContextNodeQuery" />
     <property name="package" value="template" />
-    <link role="extends" targetNodeId="6.1137021947720" />
+    <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1184373935794">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
       <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1184373935795" />
@@ -1152,6 +1184,10 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1184374199490">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1184374096829" resolveInfo="TemplateFunctionParameter_mainContextNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216768347231">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1216753170795" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1184373935798">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -1192,7 +1228,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1184616041890">
     <property name="name" value="Weaving_MappingRule_ContextNodeQuery" />
     <property name="package" value="rule" />
-    <link role="extends" targetNodeId="6.1137021947720" />
+    <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1184616041891">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
       <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1184616041892" />
@@ -1353,10 +1389,14 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195500722856">
     <property name="package" value="script" />
     <property name="name" value="MappingScript_CodeBlock" />
-    <link role="extends" targetNodeId="6.1137021947720" resolveInfo="ConceptFunction" />
+    <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195500885782">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="8.1161622665029" resolveInfo="ConceptFunctionParameter_model" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216768235023">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1216753170795" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195508442712">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -1572,6 +1612,13 @@
       <link role="intfc" targetNodeId="6.1197027803184" resolveInfo="IOperation" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1216761222033">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216768419888">
+    <property name="name" value="TemplateQueryBase" />
+    <link role="extends" targetNodeId="6.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1216768445577">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
