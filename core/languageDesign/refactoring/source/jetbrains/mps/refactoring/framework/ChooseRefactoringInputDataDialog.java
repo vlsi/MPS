@@ -42,35 +42,56 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     constraints.weightx = 1;
     constraints.weighty = 0;
     myInnerPanel.setLayout(layout);
-    JPanel checkBoxPanel = new JPanel(new GridLayout(1,2));
+
+    //components
+    myFirstComponent = null;
+    for (IChooseComponent component : myComponents) {
+      if (myFirstComponent == null && component instanceof JComponent) {
+        myFirstComponent = component;
+      }
+      myInnerPanel.add(component.getMainComponent(), constraints);
+    }
+    //~components
+
+    //strut
+    constraints.weighty = 1;
+    myInnerPanel.add(new JPanel(), constraints);
+    //~strut
+
+    //checkBoxPanel
+    JPanel checkBoxPanel = new JPanel(new GridBagLayout());
+    GridBagConstraints checkBoxPanelConstraints = new GridBagConstraints();
+    checkBoxPanelConstraints.gridy = 0;
+    checkBoxPanelConstraints.weightx = 0;
+    checkBoxPanelConstraints.weighty = 0;
 
     boolean isLocalByDefault = true;
     IModule module = refactoringContext.getSelectedModule();
     if (module instanceof Language) {
       Language l = (Language) module;
       if (l.isBootstrap()) {
-         isLocalByDefault = false;
+        isLocalByDefault = false;
       }
     }
-    myInnerPanel.add(checkBoxPanel, constraints);
+
     if (myRefactoring.doesUpdateModel()) {
       myIsLocalCheckBox = new JCheckBox("is local");
       myIsLocalCheckBox.setSelected(isLocalByDefault);
-      checkBoxPanel.add(myIsLocalCheckBox, constraints);
+      checkBoxPanelConstraints.gridx = 0;
+      checkBoxPanel.add(myIsLocalCheckBox, checkBoxPanelConstraints);
     }
-    checkBoxPanel.add(myGenerateModelsCheckBox = new JCheckBox("generate models"));
+    checkBoxPanelConstraints.gridx = 1;
+    checkBoxPanel.add(myGenerateModelsCheckBox = new JCheckBox("generate models"), checkBoxPanelConstraints);
     myGenerateModelsCheckBox.setSelected(true);
-    myFirstComponent = null;
-    for (int i = 0; i < myComponents.size(); i++) {
-      IChooseComponent component = myComponents.get(i);
-      if (myFirstComponent == null && component instanceof JComponent) {
-        myFirstComponent = component;
-      }
-      if (i == myComponents.size() -1) {
-        constraints.weighty = 1;
-      }
-      myInnerPanel.add(component.getMainComponent(), constraints);
-    }
+
+    checkBoxPanelConstraints.gridx = 2;
+    checkBoxPanelConstraints.weightx = 1;
+    checkBoxPanel.add(new JPanel(), checkBoxPanelConstraints);
+
+    constraints.weighty = 0;
+    myInnerPanel.add(checkBoxPanel, constraints);
+    //~checkBoxPanel
+
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
