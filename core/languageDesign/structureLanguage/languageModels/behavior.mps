@@ -1987,5 +1987,59 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877540485" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1216822949793">
+    <link role="concept" targetNodeId="1.1071489288299" resolveInfo="PropertyDeclaration" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1216822949794">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216822949795" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216822951265">
+      <property name="name" value="getCellId" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216822963461">
+        <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216822951267">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216822968618">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1216822976179">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216822977354">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1216822977025" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1216822977998">
+                <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216822969605">
+              <property name="value" value="property_" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1216822987999">
+    <link role="concept" targetNodeId="1.1105725006687" resolveInfo="ConceptPropertyDeclaration" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1216822988000">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216822988001" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216822989252">
+      <property name="name" value="getCellId" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216822992724">
+        <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216822989254">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216823001991">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1216823007182">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216823007748">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1216823007591" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1216823008267">
+                <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216823002477">
+              <property name="value" value="conceptProperty_" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

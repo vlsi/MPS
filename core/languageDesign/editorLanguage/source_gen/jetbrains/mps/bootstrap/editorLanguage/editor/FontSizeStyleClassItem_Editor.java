@@ -29,8 +29,8 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_size");
   }
 
-  private static void setupBasic_ConceptProperty_11864158119151186415811915(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ConceptProperty_1186415811915");
+  private static void setupBasic_conceptProperty_alias1186415811915(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
     Styles_StyleSheet.ITEM.apply(editorCell);
   }
 
@@ -40,7 +40,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_size_1186415784052(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConceptProperty_1186415811915_1186415811915(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_conceptProperty_alias_1186415811915(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -101,9 +101,9 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_11864158119151186415811915(editorCell, node, context);
+    setupBasic_conceptProperty_alias1186415811915(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_1186415811915_1186415811915((EditorCell_Label)editorCell, node, context);
+      setupLabel_conceptProperty_alias_1186415811915((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

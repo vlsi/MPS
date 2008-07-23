@@ -21,8 +21,8 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1186414564066");
   }
 
-  private static void setupBasic_ConceptProperty_11864145654271186414565427(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ConceptProperty_1186414565427");
+  private static void setupBasic_conceptProperty_alias1186414565427(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
     Styles_StyleSheet.ITEM.apply(editorCell);
   }
 
@@ -34,7 +34,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_flag");
   }
 
-  private static void setupLabel_ConceptProperty_1186414565427_1186414565427(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_conceptProperty_alias_1186414565427(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1186414568289_1186414568289(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -72,9 +72,9 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_11864145654271186414565427(editorCell, node, context);
+    setupBasic_conceptProperty_alias1186414565427(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_1186414565427_1186414565427((EditorCell_Label)editorCell, node, context);
+      setupLabel_conceptProperty_alias_1186414565427((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

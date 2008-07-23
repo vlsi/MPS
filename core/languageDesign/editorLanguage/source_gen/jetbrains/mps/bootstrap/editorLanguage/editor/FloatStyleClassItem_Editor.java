@@ -21,8 +21,8 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1215007842118");
   }
 
-  private static void setupBasic_ConceptProperty_12150078444011215007844401(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ConceptProperty_1215007844401");
+  private static void setupBasic_conceptProperty_alias1215007844401(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
     Styles_StyleSheet.ITEM.apply(editorCell);
   }
 
@@ -34,7 +34,7 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_value");
   }
 
-  private static void setupLabel_ConceptProperty_1215007844401_1215007844401(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_conceptProperty_alias_1215007844401(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1215007846091_1215007846091(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -72,9 +72,9 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_12150078444011215007844401(editorCell, node, context);
+    setupBasic_conceptProperty_alias1215007844401(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_1215007844401_1215007844401((EditorCell_Label)editorCell, node, context);
+      setupLabel_conceptProperty_alias_1215007844401((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

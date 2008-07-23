@@ -25,8 +25,8 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1186403834898");
   }
 
-  private static void setupBasic_ConceptProperty_11864038394171186403839417(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ConceptProperty_1186403839417");
+  private static void setupBasic_conceptProperty_alias1186403839417(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
     Styles_StyleSheet.ITEM.apply(editorCell);
   }
 
@@ -41,7 +41,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_refNode_query1186412603348(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConceptProperty_1186403839417_1186403839417(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_conceptProperty_alias_1186403839417(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1186403841966_1186403841966(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -95,9 +95,9 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_11864038394171186403839417(editorCell, node, context);
+    setupBasic_conceptProperty_alias1186403839417(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_1186403839417_1186403839417((EditorCell_Label)editorCell, node, context);
+      setupLabel_conceptProperty_alias_1186403839417((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

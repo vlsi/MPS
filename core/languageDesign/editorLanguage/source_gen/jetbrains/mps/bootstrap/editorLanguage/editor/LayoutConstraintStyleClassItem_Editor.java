@@ -21,8 +21,8 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1214317920059");
   }
 
-  private static void setupBasic_ConceptProperty_12143179200601214317920060(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ConceptProperty_1214317920060");
+  private static void setupBasic_conceptProperty_alias1214317920060(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
     Styles_StyleSheet.ITEM.apply(editorCell);
   }
 
@@ -34,7 +34,7 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_layoutConstraint");
   }
 
-  private static void setupLabel_ConceptProperty_1214317920060_1214317920060(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_conceptProperty_alias_1214317920060(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1214317920061_1214317920061(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -72,9 +72,9 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_12143179200601214317920060(editorCell, node, context);
+    setupBasic_conceptProperty_alias1214317920060(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_1214317920060_1214317920060((EditorCell_Label)editorCell, node, context);
+      setupLabel_conceptProperty_alias_1214317920060((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

@@ -21,8 +21,8 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1214320157195");
   }
 
-  private static void setupBasic_ConceptProperty_12143201571961214320157196(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ConceptProperty_1214320157196");
+  private static void setupBasic_conceptProperty_alias1214320157196(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
     Styles_StyleSheet.ITEM.apply(editorCell);
   }
 
@@ -34,7 +34,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     editorCell.putUserObject(EditorCell.CELL_ID, "property_tag");
   }
 
-  private static void setupLabel_ConceptProperty_1214320157196_1214320157196(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_conceptProperty_alias_1214320157196(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1214320157197_1214320157197(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -72,9 +72,9 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_12143201571961214320157196(editorCell, node, context);
+    setupBasic_conceptProperty_alias1214320157196(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_1214320157196_1214320157196((EditorCell_Label)editorCell, node, context);
+      setupLabel_conceptProperty_alias_1214320157196((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
