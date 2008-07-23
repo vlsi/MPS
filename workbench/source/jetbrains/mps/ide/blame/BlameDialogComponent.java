@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 )
 public class BlameDialogComponent implements ApplicationComponent, PersistentStateComponent<BlameDialog.MyState> {
   private BlameDialog myDialog;
-  private BlameDialog.MyState myDialogState;
+  private BlameDialog.MyState myDialogState = new MyState();
 
   @NonNls
   @NotNull
