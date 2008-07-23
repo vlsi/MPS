@@ -121,7 +121,9 @@ public class GenerationSession implements IGenerationSession {
 
     //we need this in order to prevent memory leaks from nodes which are reported to message view
     //since session objects might include objects with disposed class loaders
-    mySessionContext.clearTransientObjects();
+    if (mySessionContext != null) {
+      mySessionContext.clearTransientObjects();
+    }
 
     return new GenerationStatus(status.getInputModel(), status.getOutputModel(), status.getTraceMap(), wasErrors, wasWarnings, status.isCanceled());
   }
