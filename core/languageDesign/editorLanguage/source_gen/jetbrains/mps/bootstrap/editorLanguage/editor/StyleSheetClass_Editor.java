@@ -30,7 +30,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class StyleSheetClass_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandle8;
+  /* package */AbstractCellListHandler myListHandler_1186402497606;
 
   private static void setupBasic_Collection_11864024394141186402439414(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1186402439414");
@@ -241,15 +241,15 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1186402497606(EditorContext context, SNode node) {
-    if (this.myListHandle8 == null) {
-      this.myListHandle8 = new StyleSheetClass_Editor.itemListHandler_2(node, "item", context);
+    if (this.myListHandler_1186402497606 == null) {
+      this.myListHandler_1186402497606 = new StyleSheetClass_Editor.itemListHandler_2(node, "item", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle8.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1186402497606.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_item1186402497606(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle8.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1186402497606.getElementRole());
     return editorCell;
   }
 

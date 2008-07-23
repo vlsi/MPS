@@ -37,7 +37,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandle3;
+  /* package */AbstractCellListHandler myListHandler_1139532930478;
 
   private static void setupBasic_Collection_11395329304631139532930463(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1139532930463");
@@ -269,15 +269,15 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1139532930478(EditorContext context, SNode node) {
-    if (this.myListHandle3 == null) {
-      this.myListHandle3 = new CellActionMapDeclaration_Editor.itemListHandler_1(node, "item", context);
+    if (this.myListHandler_1139532930478 == null) {
+      this.myListHandler_1139532930478 = new CellActionMapDeclaration_Editor.itemListHandler_1(node, "item", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle3.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1139532930478.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_item1139532930478(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle3.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1139532930478.getElementRole());
     return editorCell;
   }
 

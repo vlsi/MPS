@@ -31,7 +31,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class CellKeyMapItem_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandle12;
+  /* package */AbstractCellListHandler myListHandler_1216158369218;
 
   private static void setupBasic_Collection_12161583691991216158369199(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1216158369199");
@@ -766,15 +766,15 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1216158369218(EditorContext context, SNode node) {
-    if (this.myListHandle12 == null) {
-      this.myListHandle12 = new CellKeyMapItem_Editor.keystrokeListHandler_(node, "keystroke", context);
+    if (this.myListHandler_1216158369218 == null) {
+      this.myListHandler_1216158369218 = new CellKeyMapItem_Editor.keystrokeListHandler_(node, "keystroke", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle12.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1216158369218.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_keystroke1216158369218(editorCell, node, context);
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle12.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1216158369218.getElementRole());
     return editorCell;
   }
 

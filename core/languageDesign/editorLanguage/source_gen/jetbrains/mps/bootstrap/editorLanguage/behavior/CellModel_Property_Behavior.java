@@ -5,6 +5,7 @@ package jetbrains.mps.bootstrap.editorLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.PropertyDeclaration_Behavior;
 
 public class CellModel_Property_Behavior {
 
@@ -16,7 +17,7 @@ public class CellModel_Property_Behavior {
   }
 
   public static String virtual_getCellId_1216737839993(SNode thisNode) {
-    return "property_" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "name");
+    return PropertyDeclaration_Behavior.call_getCellId_1216822951265(SLinkOperations.getTarget(thisNode, "relationDeclaration", false));
   }
 
 }

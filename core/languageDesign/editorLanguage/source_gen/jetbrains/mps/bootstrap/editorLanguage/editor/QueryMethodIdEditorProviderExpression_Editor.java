@@ -34,8 +34,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandle5;
-  /* package */AbstractCellListHandler myListHandle6;
+  /* package */AbstractCellListHandler myListHandler_1176795396043;
+  /* package */AbstractCellListHandler myListHandler_1176795396048;
 
   private static void setupBasic_Collection_11767508484961176750848496(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176750848496");
@@ -363,28 +363,28 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   }
 
   public EditorCell createRefNodeList1176795396043(EditorContext context, SNode node) {
-    if (this.myListHandle5 == null) {
-      this.myListHandle5 = new QueryMethodIdEditorProviderExpression_Editor.parameterListHandler_(node, "parameter", context);
+    if (this.myListHandler_1176795396043 == null) {
+      this.myListHandler_1176795396043 = new QueryMethodIdEditorProviderExpression_Editor.parameterListHandler_(node, "parameter", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle5.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1176795396043.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_parameter1176795396043(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle5.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1176795396043.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1176795396048(EditorContext context, SNode node) {
-    if (this.myListHandle6 == null) {
-      this.myListHandle6 = new QueryMethodIdEditorProviderExpression_Editor.additionalImportListHandler_(node, "additionalImport", context);
+    if (this.myListHandler_1176795396048 == null) {
+      this.myListHandler_1176795396048 = new QueryMethodIdEditorProviderExpression_Editor.additionalImportListHandler_(node, "additionalImport", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle6.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1176795396048.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_additionalImport1176795396048(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle6.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1176795396048.getElementRole());
     return editorCell;
   }
 

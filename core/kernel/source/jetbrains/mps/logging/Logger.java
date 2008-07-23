@@ -10,6 +10,7 @@ import java.util.Map;
 
 import org.apache.log4j.Level;
 import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.application.ApplicationManager;
 
 public class Logger {
   private static Map<String, Logger> ourLoggers = new HashMap<String, Logger>();
