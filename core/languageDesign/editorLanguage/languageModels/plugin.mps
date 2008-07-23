@@ -52,6 +52,13 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207226167042" />
       <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207226169451" />
     </node>
+    <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1216845136742">
+      <property name="name" value="editor" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216845136743" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216845141895">
+        <link role="classifier" targetNodeId="10.~AbstractEditorComponent" resolveInfo="AbstractEditorComponent" />
+      </node>
+    </node>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1207225803604">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207225803605">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207226213782">
@@ -161,6 +168,27 @@
                         <link role="variableDeclaration" targetNodeId="1207226933325" resolveInfo="role" />
                       </node>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207226944038">
+                        <link role="variableDeclaration" targetNodeId="1207226863765" resolveInfo="copy" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216844827424">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216844829428">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216845165951">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216844827425">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1216844827426" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1216845148552">
+                          <link role="member" targetNodeId="1216845136742" resolveInfo="editor" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216845168439">
+                        <link role="baseMethodDeclaration" targetNodeId="10.~AbstractEditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolveInfo="getEditorContext" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216844836413">
+                      <link role="baseMethodDeclaration" targetNodeId="10.~EditorContext.selectWRTFocusPolicy(jetbrains.mps.smodel.SNode):void" resolveInfo="selectWRTFocusPolicy" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216844837820">
                         <link role="variableDeclaration" targetNodeId="1207226863765" resolveInfo="copy" />
                       </node>
                     </node>

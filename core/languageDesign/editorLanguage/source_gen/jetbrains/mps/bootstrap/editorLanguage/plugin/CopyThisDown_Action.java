@@ -6,6 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.ActionEventData;
@@ -18,6 +19,7 @@ public class CopyThisDown_Action extends GeneratedAction {
   public static final Icon ICON = null;
 
   private SNode inputNode;
+  private AbstractEditorComponent editor;
 
   public CopyThisDown_Action() {
     super("Duplicate Node", "", ICON);
@@ -56,6 +58,10 @@ public class CopyThisDown_Action extends GeneratedAction {
       if (this.inputNode == null) {
         return false;
       }
+      this.editor = new ActionEventData(event).getAbstractEditorComponent();
+      if (this.editor == null) {
+        return false;
+      }
     } catch (Throwable t) {
       return false;
     }
@@ -75,6 +81,7 @@ public class CopyThisDown_Action extends GeneratedAction {
         if (!(LinkDeclaration_Behavior.call_isSingular_1213877254557(link))) {
           SNode copy = SNodeOperations.copyNode(nodeToCopy);
           parent.insertChild(nodeToCopy, role, copy);
+          this.editor.getEditorContext().selectWRTFocusPolicy(copy);
           return;
         }
         nodeToCopy = parent;
