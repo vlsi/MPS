@@ -69,7 +69,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     (this.getGroup(Build_ActionGroup.ID)).adjust();
     {
       BaseGroup gToBase = ActionUtils.getGroup(ProjectPaneModelActions_ActionGroup.ID);
-      ActionGroup gWhat = ActionUtils.getDefaultGroup("VcsGroups");
+      ActionGroup gWhat = ActionUtils.getDefaultGroup("VcsGroup");
       if (gToBase == null || gWhat == null) {
         return;
       }
