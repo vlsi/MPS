@@ -33,8 +33,8 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     BinaryOperation_RightArgument_Actions.setCellActions(editorCell, node, context);
   }
 
-  private static void setupBasic_ConceptProperty_11660639842231166063984223(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ConceptProperty_1166063984223");
+  private static void setupBasic_conceptProperty_alias1166063984223(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -55,7 +55,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNode_rightExpression_1166063955825(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConceptProperty_1166063984223_1166063984223(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_conceptProperty_alias_1166063984223(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -137,9 +137,9 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_11660639842231166063984223(editorCell, node, context);
+    setupBasic_conceptProperty_alias1166063984223(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_1166063984223_1166063984223((EditorCell_Label)editorCell, node, context);
+      setupLabel_conceptProperty_alias_1166063984223((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new BinaryOperation_Editor.BinaryOperation_Editor_replaceWith_BinaryOperation_cellMenu()}));

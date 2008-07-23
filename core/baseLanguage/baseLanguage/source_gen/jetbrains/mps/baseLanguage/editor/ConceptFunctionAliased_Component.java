@@ -116,8 +116,8 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
   }
 
-  private static void setupBasic_ConceptProperty_12150327878571215032787857(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ConceptProperty_1215032787857");
+  private static void setupBasic_conceptProperty_alias1215032787857(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -149,7 +149,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
   private static void setupLabel_Constant_1215032509903_1215032509903(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConceptProperty_1215032787857_1215032787857(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_conceptProperty_alias_1215032787857(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static Color calculateColor42(EditorCell cell) {
@@ -318,9 +318,9 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_12150327878571215032787857(editorCell, node, context);
+    setupBasic_conceptProperty_alias1215032787857(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_1215032787857_1215032787857((EditorCell_Label)editorCell, node, context);
+      setupLabel_conceptProperty_alias_1215032787857((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

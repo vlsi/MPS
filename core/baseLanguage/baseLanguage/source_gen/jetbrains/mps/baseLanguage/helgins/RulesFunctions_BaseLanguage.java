@@ -284,7 +284,7 @@ __switch__:
           {
             SNode _nodeToCheck_1029348928467 = mc;
             BaseIntentionProvider intentionProvider = null;
-            intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins@5_0.ChooseAppropriateMethodDeclaration_QuickFix", true);
+            intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins@40_0.ChooseAppropriateMethodDeclaration_QuickFix", true);
             intentionProvider.putArgument("methodCall", mc);
             intentionProvider.putArgument("classifier", SNodeOperations.getAncestor(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
             TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg, "jetbrains.mps.baseLanguage.helgins", "1203441371331", true), matchedType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1203441371327", false, 1, intentionProvider);
@@ -479,9 +479,9 @@ __switch__:
           }
           {
             BaseIntentionProvider intentionProvider = null;
-            intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins@5_0.AddExceptionToMethodSignature_QuickFix", false);
+            intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins@40_0.AddExceptionToMethodSignature_QuickFix", false);
             intentionProvider.putArgument("throwableType", throwables.iterator().next());
-            TypeChecker.getInstance().reportTypeError(mainNode, errorString, "jetbrains.mps.baseLanguage.helgins@5_0", "1210182111558", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(mainNode, errorString, "jetbrains.mps.baseLanguage.helgins@40_0", "1210182111558", intentionProvider);
           }
         }
         return;

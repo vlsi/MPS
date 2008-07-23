@@ -173,7 +173,7 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1170874089896(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return QueriesUtil.getTypeVars_from_Closure_enclosingClass(_context.getNode(), operationContext.getScope());
+    return QueriesUtil.getTypeVars_from_Closure_enclosingClass(_context.getNode(), _context.getScope());
   }
 
   public static SNode mapSrcMacro_mapper_1170898169592(final IOperationContext operationContext, final MapSrcMacroContext _context) {

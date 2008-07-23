@@ -16,8 +16,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ArrayLengthOperation_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConceptProperty_12088908289901208890828990(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ConceptProperty_1208890828990");
+  private static void setupBasic_conceptProperty_alias1208890828990(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -30,7 +30,7 @@ public class ArrayLengthOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_ConceptProperty_1208890828990_1208890828990(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_conceptProperty_alias_1208890828990(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -42,9 +42,9 @@ public class ArrayLengthOperation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_12088908289901208890828990(editorCell, node, context);
+    setupBasic_conceptProperty_alias1208890828990(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_1208890828990_1208890828990((EditorCell_Label)editorCell, node, context);
+      setupLabel_conceptProperty_alias_1208890828990((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

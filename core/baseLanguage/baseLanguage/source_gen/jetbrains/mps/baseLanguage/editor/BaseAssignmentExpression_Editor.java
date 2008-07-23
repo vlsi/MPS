@@ -57,8 +57,8 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     AssignmentExpression_RightArgument_Actions.setCellActions(editorCell, node, context);
   }
 
-  private static void setupBasic_ConceptProperty_12156943311961215694331196(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ConceptProperty_1215694331196");
+  private static void setupBasic_conceptProperty_alias1215694331196(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
   }
 
@@ -68,7 +68,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNode_rValue_1075310480286(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConceptProperty_1215694331196_1215694331196(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_conceptProperty_alias_1215694331196(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -150,9 +150,9 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_12156943311961215694331196(editorCell, node, context);
+    setupBasic_conceptProperty_alias1215694331196(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_1215694331196_1215694331196((EditorCell_Label)editorCell, node, context);
+      setupLabel_conceptProperty_alias_1215694331196((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

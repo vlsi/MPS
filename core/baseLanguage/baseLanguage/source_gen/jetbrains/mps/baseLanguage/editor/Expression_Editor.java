@@ -30,8 +30,8 @@ public class Expression_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "Custom_1209147315298");
   }
 
-  private static void setupBasic_ConceptProperty_12097488684051209748868405(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ConceptProperty_1209748868405");
+  private static void setupBasic_conceptProperty_alias1209748868405(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -44,7 +44,7 @@ public class Expression_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_ConceptProperty_1209748868405_1209748868405(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_conceptProperty_alias_1209748868405(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition75(SNode node, EditorContext editorContext, IScope scope) {
@@ -96,9 +96,9 @@ public class Expression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_12097488684051209748868405(editorCell, node, context);
+    setupBasic_conceptProperty_alias1209748868405(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_1209748868405_1209748868405((EditorCell_Label)editorCell, node, context);
+      setupLabel_conceptProperty_alias_1209748868405((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
