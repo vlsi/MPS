@@ -140,7 +140,7 @@ public class GenerationSession implements IGenerationSession {
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + inputModel.getUID() + "\"");
 
     if (stepController.getCurrentMappings().isEmpty()) {
-      addProgressMessage(MessageKind.WARNING, "skip model \"" + inputModel.getUID() + "\" : no generator avalable");
+      addProgressMessage(MessageKind.WARNING, "skip model \"" + inputModel.getUID() + "\" : no generator available");
       return new GenerationStatus(inputModel, null, null, false, false, false);
     }
     printGenerationStepData(stepController, inputModel);
