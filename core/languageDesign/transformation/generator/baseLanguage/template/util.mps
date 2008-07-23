@@ -33,9 +33,5 @@
   <import index="3" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="5" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1184619194061">
-    <property name="name" value="QueriesUtil" />
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184619194062" />
-  </node>
 </model>
 
