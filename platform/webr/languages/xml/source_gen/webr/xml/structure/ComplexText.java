@@ -13,7 +13,7 @@ public class ComplexText extends BaseText {
   public static final String concept = "webr.xml.structure.ComplexText";
   public static String TEXT = "text";
 
-  public  ComplexText(SNode node) {
+  public ComplexText(SNode node) {
     super(node);
   }
 

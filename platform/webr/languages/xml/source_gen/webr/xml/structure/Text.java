@@ -11,7 +11,7 @@ public class Text extends BaseText {
   public static final String concept = "webr.xml.structure.Text";
   public static String TEXT = "text";
 
-  public  Text(SNode node) {
+  public Text(SNode node) {
     super(node);
   }
 

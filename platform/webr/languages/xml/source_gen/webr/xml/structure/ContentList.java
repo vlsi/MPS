@@ -14,7 +14,7 @@ public class ContentList extends Content {
   public static String IS_HORIZONTAL = "isHorizontal";
   public static String CONTENT = "content";
 
-  public  ContentList(SNode node) {
+  public ContentList(SNode node) {
     super(node);
   }
 

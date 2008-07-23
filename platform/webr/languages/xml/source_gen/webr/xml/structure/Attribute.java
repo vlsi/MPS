@@ -13,7 +13,7 @@ public class Attribute extends BaseAttribute {
   public static String ATTRIBUTE_DECLARATION = "attributeDeclaration";
   public static String VALUE = "value";
 
-  public  Attribute(SNode node) {
+  public Attribute(SNode node) {
     super(node);
   }
 

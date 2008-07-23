@@ -11,7 +11,7 @@ public class CDATA extends Content {
   public static final String concept = "webr.xml.structure.CDATA";
   public static String CONTENT_LIST = "contentList";
 
-  public  CDATA(SNode node) {
+  public CDATA(SNode node) {
     super(node);
   }
 

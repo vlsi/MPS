@@ -13,7 +13,7 @@ public class Element extends BaseElement {
   public static String IS_EMPTY = "isEmpty";
   public static String ELEMENT_DECLARATION = "elementDeclaration";
 
-  public  Element(SNode node) {
+  public Element(SNode node) {
     super(node);
   }
 

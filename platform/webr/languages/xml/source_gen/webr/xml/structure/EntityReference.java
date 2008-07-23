@@ -12,7 +12,7 @@ public class EntityReference extends BaseText {
   public static final String concept = "webr.xml.structure.EntityReference";
   public static String ENTITY_DECLARATION = "entityDeclaration";
 
-  public  EntityReference(SNode node) {
+  public EntityReference(SNode node) {
     super(node);
   }
 

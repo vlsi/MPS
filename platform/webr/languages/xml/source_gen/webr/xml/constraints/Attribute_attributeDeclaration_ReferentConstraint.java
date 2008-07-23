@@ -5,9 +5,9 @@ package webr.xml.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -28,10 +28,6 @@ public class Attribute_attributeDeclaration_ReferentConstraint implements IModel
     manager.unRegisterNodeReferentSearchScopeProvider("webr.xml.structure.Attribute", "attributeDeclaration");
   }
 
-  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return true;
-  }
-
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     ISearchScope searchScope;
     SNode element = SNodeOperations.getAncestor(_context.getEnclosingNode(), "webr.xml.structure.Element", false, false);
@@ -42,10 +38,6 @@ public class Attribute_attributeDeclaration_ReferentConstraint implements IModel
       searchScope = new SimpleSearchScope(ElementDeclaration_Behavior.call_getAttributeDeclarations_1213877429821(SLinkOperations.getTarget(element, "elementDeclaration", false)));
     }
     return searchScope;
-  }
-
-  public String getNodeReferentSearchScopeDescription() {
-    return "<no description>";
   }
 
 }

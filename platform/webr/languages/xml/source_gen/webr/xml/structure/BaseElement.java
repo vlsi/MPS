@@ -14,7 +14,7 @@ public class BaseElement extends Content {
   public static String CONTENT_LIST = "contentList";
   public static String ATTRIBUTE = "attribute";
 
-  public  BaseElement(SNode node) {
+  public BaseElement(SNode node) {
     super(node);
   }
 
