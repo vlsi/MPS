@@ -939,11 +939,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1206451286951(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "condition", true), "pattern", true), "patternClass").getChild("constructor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "condition", true), "pattern", true), "patternClass").getChild("constructor");
   }
 
   public static Object referenceMacro_GetReferent_1206451534749(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "condition", true), "pattern", true), "patternClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "condition", true), "pattern", true), "patternClass");
   }
 
   public static Object referenceMacro_GetReferent_1215596987510(final IOperationContext operationContext, final ReferenceMacroContext _context) {

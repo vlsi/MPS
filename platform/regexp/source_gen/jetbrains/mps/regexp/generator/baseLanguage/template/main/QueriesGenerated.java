@@ -149,7 +149,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1194610323562(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "precompiledRegexp");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "precompiledRegexp");
   }
 
   public static SNode sourceNodeQuery_1174512824855(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

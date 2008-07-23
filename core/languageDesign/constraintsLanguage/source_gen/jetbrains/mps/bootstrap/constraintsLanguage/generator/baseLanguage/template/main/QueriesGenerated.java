@@ -265,33 +265,33 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1194605811159(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "parameters");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "parameters");
   }
 
   public static Object referenceMacro_GetReferent_1194605886822(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "parameters");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "parameters");
   }
 
   public static Object referenceMacro_GetReferent_1194605928349(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "parameters");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "parameters");
   }
 
   public static Object referenceMacro_GetReferent_1194605982656(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "parameters");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "parameters");
   }
 
   public static Object referenceMacro_GetReferent_1194966901464(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode snode = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "class_for_concept");
+    SNode snode = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "class_for_concept");
     return ListSequence.fromList(SLinkOperations.getTargets(snode, "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1194967347554(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode snode = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "class_for_concept");
+    SNode snode = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "class_for_concept");
     return ListSequence.fromList(SLinkOperations.getTargets(snode, "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1194967351492(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode snode = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "class_for_concept");
+    SNode snode = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "class_for_concept");
     return ListSequence.fromList(SLinkOperations.getTargets(snode, "constructor", true)).first();
   }
 
@@ -596,23 +596,23 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1187042952593(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "class_for_concept");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "class_for_concept");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1187043119199(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "class_for_concept");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "class_for_concept");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1187043273468(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "class_for_concept");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "class_for_concept");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1187043341571(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "class_for_concept");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "class_for_concept");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1212104879922(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "class_for_concept");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "class_for_concept");
   }
 
 }
