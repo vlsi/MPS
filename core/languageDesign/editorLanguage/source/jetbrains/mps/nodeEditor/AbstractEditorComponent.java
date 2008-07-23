@@ -1629,11 +1629,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     EditorCell deepestCell = getDeepestSelectedCell();
     if (deepestCell instanceof EditorCell_Label) {
+      EditorCell_Label label = (EditorCell_Label) deepestCell;
+
       g.setColor(new Color(255, 255, 215));
       g.fillRect(0, deepestCell.getY(), getWidth(), deepestCell.getHeight());
 
       g.setColor(new Color(230, 230, 190));
-      g.fillRect(deepestCell.getX(), deepestCell.getY(), deepestCell.getWidth(), deepestCell.getHeight());
+      g.fillRect(deepestCell.getX() + label.getLeftInternalInset(), deepestCell.getY(),
+        deepestCell.getWidth() - label.getLeftInternalInset() - label.getRightInternalInset(), deepestCell.getHeight());
     }
 
     myLeftHighlighter.paint(g);
