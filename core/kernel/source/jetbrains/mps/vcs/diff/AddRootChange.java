@@ -22,7 +22,6 @@ public class AddRootChange extends NewNodeChange {
     n.setId(getNodeId());
     m.addRoot(n);
     return true;
-
   }
 
 }

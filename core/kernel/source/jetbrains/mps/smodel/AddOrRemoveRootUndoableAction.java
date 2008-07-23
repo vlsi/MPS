@@ -10,6 +10,10 @@ class AddOrRemoveRootUndoableAction extends SNodeUndoableAction {
     myDelete = delete;
   }
 
+  public boolean isComplex() {
+    return true;
+  }
+
   protected void doUndo() {
     if (myDelete) {
       myRoot.getModel().addRoot(myRoot);
