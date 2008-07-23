@@ -18,8 +18,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class IntegerConstant_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_valuePropertyCell19369_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_valuePropertyCell19369_0");
+  private static void setupBasic_property_value1083091696640(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "property_value");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -39,7 +39,7 @@ public class IntegerConstant_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_valuePropertyCell19369_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_property_value_1083091696640(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static Color calculateColor32(EditorCell cell) {
@@ -50,28 +50,28 @@ public class IntegerConstant_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_valuePropertyCell19369_0(context, node);
+    return this.createProperty1083091696640(context, node);
   }
 
-  public EditorCell create_valuePropertyCell19369_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty1083091696640_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_valuePropertyCell19369_0(editorCell, node, context);
+    setupBasic_property_value1083091696640(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_valuePropertyCell19369_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_property_value_1083091696640((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell create_valuePropertyCell19369_0(EditorContext context, SNode node) {
+  public EditorCell createProperty1083091696640(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<int constant>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_valuePropertyCell19369_0_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty1083091696640_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

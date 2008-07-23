@@ -15,50 +15,50 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AnnotationInstanceExpression_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_CollectionCell2938_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell2938_0");
+  private static void setupBasic_Collection_11882145206211188214520621(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188214520621");
   }
 
-  private static void setupBasic_annotationInstanceRefNodeCell2938_0(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_refNode_annotationInstance1188214522482(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_annotationInstanceRefNodeCell2938_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNode_annotationInstance_1188214522482(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_CollectionCell2938_0(context, node);
+    return this.createCollection1188214520621(context, node);
   }
 
-  public EditorCell create_CollectionCell2938_0(EditorContext context, SNode node) {
+  public EditorCell createCollection1188214520621(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_CollectionCell2938_0(editorCell, node, context);
+    setupBasic_Collection_11882145206211188214520621(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_annotationInstanceRefNodeCell2938_0(context, node));
+    editorCell.addEditorCell(this.createRefNode1188214522482(context, node));
     return editorCell;
   }
 
-  public EditorCell create_annotationInstanceRefNodeCell2938_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode1188214522482_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_annotationInstanceRefNodeCell2938_0(editorCell, node, context);
+    setupBasic_refNode_annotationInstance1188214522482(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_annotationInstanceRefNodeCell2938_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_annotationInstance_1188214522482((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell create_annotationInstanceRefNodeCell2938_0(EditorContext context, SNode node) {
+  public EditorCell createRefNode1188214522482(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("annotationInstance");
     provider.setNoTargetText("<no annotationInstance>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_annotationInstanceRefNodeCell2938_0_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode1188214522482_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

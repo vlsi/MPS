@@ -18,38 +18,38 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider myConceptFunction_Component;
   /* package */AbstractCellProvider myCellProvider;
 
-  private static void setupBasic_ConceptFunction_ComponentComponentCell10882_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptFunction_ComponentComponentCell10882_0");
+  private static void setupBasic_component_ConceptFunction_Component1196975582231(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "component_ConceptFunction_Component");
   }
 
-  private static void setupBasic_CustomCell10882_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CustomCell10882_0");
+  private static void setupBasic_Custom_12075779223241207577922324(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Custom_1207577922324");
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ConceptFunction_ComponentComponentCell10882_0(context, node);
+    return this.createComponent1196975582231(context, node);
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.create_CustomCell10882_0(context, node);
+    return this.createCustom1207577922324(context, node);
   }
 
-  public EditorCell create_ConceptFunction_ComponentComponentCell10882_0(EditorContext context, SNode node) {
+  public EditorCell createComponent1196975582231(EditorContext context, SNode node) {
     if (this.myConceptFunction_Component == null) {
       this.myConceptFunction_Component = new ConceptFunction_Component(node);
     }
     EditorCell editorCell = this.myConceptFunction_Component.createEditorCell(context);
-    setupBasic_ConceptFunction_ComponentComponentCell10882_0(editorCell, node, context);
+    setupBasic_component_ConceptFunction_Component1196975582231(editorCell, node, context);
     return editorCell;
   }
 
-  public EditorCell create_CustomCell10882_0(EditorContext context, SNode node) {
+  public EditorCell createCustom1207577922324(EditorContext context, SNode node) {
     if (this.myCellProvider == null) {
       this.myCellProvider = this._cellProviderFactory_1207577922324(node, context);
     }
     EditorCell editorCell = this.myCellProvider.createEditorCell(context);
-    setupBasic_CustomCell10882_0(editorCell, node, context);
+    setupBasic_Custom_12075779223241207577922324(editorCell, node, context);
     return editorCell;
   }
 

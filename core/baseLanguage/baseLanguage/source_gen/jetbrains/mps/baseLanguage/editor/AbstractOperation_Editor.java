@@ -13,21 +13,21 @@ public class AbstractOperation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myCellProvider1;
 
-  private static void setupBasic_CustomCell1343_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CustomCell1343_0");
+  private static void setupBasic_Custom_12086235265021208623526502(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Custom_1208623526502");
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_CustomCell1343_0(context, node);
+    return this.createCustom1208623526502(context, node);
   }
 
-  public EditorCell create_CustomCell1343_0(EditorContext context, SNode node) {
+  public EditorCell createCustom1208623526502(EditorContext context, SNode node) {
     if (this.myCellProvider1 == null) {
       this.myCellProvider1 = this._cellProviderFactory_1208623526502(node, context);
     }
     EditorCell editorCell = this.myCellProvider1.createEditorCell(context);
-    setupBasic_CustomCell1343_0(editorCell, node, context);
+    setupBasic_Custom_12086235265021208623526502(editorCell, node, context);
     return editorCell;
   }
 

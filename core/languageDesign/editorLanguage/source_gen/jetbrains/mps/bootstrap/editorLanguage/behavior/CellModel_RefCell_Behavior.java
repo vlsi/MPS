@@ -15,4 +15,8 @@ public class CellModel_RefCell_Behavior {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "role");
   }
 
+  public static String virtual_getCellId_1216737839993(SNode thisNode) {
+    return "refCell_" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "role");
+  }
+
 }

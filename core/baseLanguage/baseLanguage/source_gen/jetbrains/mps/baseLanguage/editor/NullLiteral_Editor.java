@@ -13,8 +13,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class NullLiteral_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell6877_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6877_0");
+  private static void setupBasic_Constant_10796057165411079605716541(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1079605716541");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -30,18 +30,18 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_ConstantCell6877_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1079605716541_1079605716541(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ConstantCell6877_0(context, node, "null");
+    return this.createConstant1079605716541(context, node, "null");
   }
 
-  public EditorCell create_ConstantCell6877_0(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1079605716541(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell6877_0(editorCell, node, context);
-    setupLabel_ConstantCell6877_0(editorCell, node, context);
+    setupBasic_Constant_10796057165411079605716541(editorCell, node, context);
+    setupLabel_Constant_1079605716541_1079605716541(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

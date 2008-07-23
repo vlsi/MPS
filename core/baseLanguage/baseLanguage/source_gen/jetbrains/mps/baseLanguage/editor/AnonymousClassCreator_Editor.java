@@ -15,50 +15,50 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_CollectionCell15463_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15463_0");
+  private static void setupBasic_Collection_11821601758041182160175804(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1182160175804");
   }
 
-  private static void setupBasic_clsRefNodeCell15463_0(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_refNode_cls1182160175805(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_clsRefNodeCell15463_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNode_cls_1182160175805(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_CollectionCell15463_0(context, node);
+    return this.createCollection1182160175804(context, node);
   }
 
-  public EditorCell create_CollectionCell15463_0(EditorContext context, SNode node) {
+  public EditorCell createCollection1182160175804(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_CollectionCell15463_0(editorCell, node, context);
+    setupBasic_Collection_11821601758041182160175804(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_clsRefNodeCell15463_0(context, node));
+    editorCell.addEditorCell(this.createRefNode1182160175805(context, node));
     return editorCell;
   }
 
-  public EditorCell create_clsRefNodeCell15463_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode1182160175805_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_clsRefNodeCell15463_0(editorCell, node, context);
+    setupBasic_refNode_cls1182160175805(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_clsRefNodeCell15463_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_cls_1182160175805((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell create_clsRefNodeCell15463_0(EditorContext context, SNode node) {
+  public EditorCell createRefNode1182160175805(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("cls");
     provider.setNoTargetText("<no cls>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_clsRefNodeCell15463_0_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode1182160175805_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

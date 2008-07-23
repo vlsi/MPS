@@ -12,53 +12,53 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class DefaultGetAccessor_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_CollectionCell440_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell440_0");
+  private static void setupBasic_Collection_12020652743421202065274342(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1202065274342");
   }
 
-  private static void setupBasic_ConstantCell440_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell440_0");
+  private static void setupBasic_Constant_12020652759851202065275985(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202065275985");
   }
 
-  private static void setupBasic_ConstantCell440_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell440_01");
+  private static void setupBasic_Constant_12020652929401202065292940(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202065292940");
     BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
   }
 
-  private static void setupLabel_ConstantCell440_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1202065275985_1202065275985(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell440_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1202065292940_1202065292940(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_CollectionCell440_0(context, node);
+    return this.createCollection1202065274342(context, node);
   }
 
-  public EditorCell create_CollectionCell440_0(EditorContext context, SNode node) {
+  public EditorCell createCollection1202065274342(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_CollectionCell440_0(editorCell, node, context);
+    setupBasic_Collection_12020652743421202065274342(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell440_0(context, node, "get"));
-    editorCell.addEditorCell(this.create_ConstantCell440_01(context, node, ";"));
+    editorCell.addEditorCell(this.createConstant1202065275985(context, node, "get"));
+    editorCell.addEditorCell(this.createConstant1202065292940(context, node, ";"));
     return editorCell;
   }
 
-  public EditorCell create_ConstantCell440_0(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1202065275985(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell440_0(editorCell, node, context);
-    setupLabel_ConstantCell440_0(editorCell, node, context);
+    setupBasic_Constant_12020652759851202065275985(editorCell, node, context);
+    setupLabel_Constant_1202065275985_1202065275985(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell create_ConstantCell440_01(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1202065292940(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell440_01(editorCell, node, context);
-    setupLabel_ConstantCell440_01(editorCell, node, context);
+    setupBasic_Constant_12020652929401202065292940(editorCell, node, context);
+    setupLabel_Constant_1202065292940_1202065292940(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

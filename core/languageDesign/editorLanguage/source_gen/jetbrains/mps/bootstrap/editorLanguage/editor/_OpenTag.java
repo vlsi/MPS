@@ -24,8 +24,8 @@ public class _OpenTag extends AbstractCellProvider {
     super(node);
   }
 
-  private static void setupBasic_ModelAccessCell15352_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ModelAccessCell15352_0");
+  private static void setupBasic_ModelAccess_11767168785961176716878596(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "ModelAccess_1176716878596");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -45,7 +45,7 @@ public class _OpenTag extends AbstractCellProvider {
     }
   }
 
-  private static void setupLabel_ModelAccessCell15352_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ModelAccess_1176716878596_1176716878596(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static Color _QueryFunction_Color_1214396913666(SNode node, EditorContext editorContext) {
@@ -70,15 +70,15 @@ public class _OpenTag extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ModelAccessCell15352_0(context, node);
+    return this.createModelAccess1176716878596(context, node);
   }
 
-  public EditorCell create_ModelAccessCell15352_0(EditorContext context, SNode node) {
+  public EditorCell createModelAccess1176716878596(EditorContext context, SNode node) {
     ModelAccessor modelAccessor = this._modelAcessorFactory_1176716878596(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    setupBasic_ModelAccessCell15352_0(editorCell, node, context);
-    setupLabel_ModelAccessCell15352_0(editorCell, node, context);
+    setupBasic_ModelAccess_11767168785961176716878596(editorCell, node, context);
+    setupLabel_ModelAccess_1176716878596_1176716878596(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

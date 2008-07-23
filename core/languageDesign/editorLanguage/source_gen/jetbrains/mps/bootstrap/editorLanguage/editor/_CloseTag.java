@@ -24,8 +24,8 @@ public class _CloseTag extends AbstractCellProvider {
     super(node);
   }
 
-  private static void setupBasic_ModelAccessCell12479_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ModelAccessCell12479_0");
+  private static void setupBasic_ModelAccess_11767169182721176716918272(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "ModelAccess_1176716918272");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -45,7 +45,7 @@ public class _CloseTag extends AbstractCellProvider {
     }
   }
 
-  private static void setupLabel_ModelAccessCell12479_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ModelAccess_1176716918272_1176716918272(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static Color _QueryFunction_Color_1214396913636(SNode node, EditorContext editorContext) {
@@ -70,15 +70,15 @@ public class _CloseTag extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ModelAccessCell12479_0(context, node);
+    return this.createModelAccess1176716918272(context, node);
   }
 
-  public EditorCell create_ModelAccessCell12479_0(EditorContext context, SNode node) {
+  public EditorCell createModelAccess1176716918272(EditorContext context, SNode node) {
     ModelAccessor modelAccessor = this._modelAcessorFactory_1176716918272(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    setupBasic_ModelAccessCell12479_0(editorCell, node, context);
-    setupLabel_ModelAccessCell12479_0(editorCell, node, context);
+    setupBasic_ModelAccess_11767169182721176716918272(editorCell, node, context);
+    setupLabel_ModelAccess_1176716918272_1176716918272(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

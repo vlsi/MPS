@@ -14,8 +14,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ErrorCell9457_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ErrorCell9457_0");
+  private static void setupBasic_Error_11648414107651164841410765(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1164841410765");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -27,18 +27,18 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_ErrorCell9457_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Error_1164841410765_1164841410765(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ErrorCell9457_0(context, node);
+    return this.createError1164841410765(context, node);
   }
 
-  public EditorCell create_ErrorCell9457_0(EditorContext context, SNode node) {
+  public EditorCell createError1164841410765(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose menu part>");
-    setupBasic_ErrorCell9457_0(editorCell, node, context);
-    setupLabel_ErrorCell9457_0(editorCell, node, context);
+    setupBasic_Error_11648414107651164841410765(editorCell, node, context);
+    setupLabel_Error_1164841410765_1164841410765(editorCell, node, context);
     return editorCell;
   }
 

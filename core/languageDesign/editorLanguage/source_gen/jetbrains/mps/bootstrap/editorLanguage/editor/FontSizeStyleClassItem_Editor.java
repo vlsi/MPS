@@ -17,76 +17,76 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellP
 
 public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_CollectionCell2149_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell2149_0");
+  private static void setupBasic_Collection_11864157490741186415749074(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1186415749074");
   }
 
-  private static void setupBasic_ConstantCell2149_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2149_0");
+  private static void setupBasic_Constant_11864157825501186415782550(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1186415782550");
   }
 
-  private static void setupBasic_sizePropertyCell2149_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_sizePropertyCell2149_0");
+  private static void setupBasic_property_size1186415784052(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "property_size");
   }
 
-  private static void setupBasic_ConceptPropertyCell2149_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell2149_0");
+  private static void setupBasic_ConceptProperty_11864158119151186415811915(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "ConceptProperty_1186415811915");
     Styles_StyleSheet.ITEM.apply(editorCell);
   }
 
-  private static void setupLabel_ConstantCell2149_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1186415782550_1186415782550(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_sizePropertyCell2149_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_property_size_1186415784052(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConceptPropertyCell2149_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConceptProperty_1186415811915_1186415811915(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_CollectionCell2149_0(context, node);
+    return this.createCollection1186415749074(context, node);
   }
 
-  public EditorCell create_CollectionCell2149_0(EditorContext context, SNode node) {
+  public EditorCell createCollection1186415749074(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_CollectionCell2149_0(editorCell, node, context);
+    setupBasic_Collection_11864157490741186415749074(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConceptPropertyCell2149_0(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell2149_0(context, node, ":"));
-    editorCell.addEditorCell(this.create_sizePropertyCell2149_0(context, node));
+    editorCell.addEditorCell(this.createConceptProperty1186415811915(context, node));
+    editorCell.addEditorCell(this.createConstant1186415782550(context, node, ":"));
+    editorCell.addEditorCell(this.createProperty1186415784052(context, node));
     return editorCell;
   }
 
-  public EditorCell create_ConstantCell2149_0(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1186415782550(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell2149_0(editorCell, node, context);
-    setupLabel_ConstantCell2149_0(editorCell, node, context);
+    setupBasic_Constant_11864157825501186415782550(editorCell, node, context);
+    setupLabel_Constant_1186415782550_1186415782550(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell create_sizePropertyCell2149_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty1186415784052_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_sizePropertyCell2149_0(editorCell, node, context);
+    setupBasic_property_size1186415784052(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_sizePropertyCell2149_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_property_size_1186415784052((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell create_sizePropertyCell2149_0(EditorContext context, SNode node) {
+  public EditorCell createProperty1186415784052(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("size");
     provider.setNoTargetText("<no size>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_sizePropertyCell2149_0_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty1186415784052_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -97,25 +97,25 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell create_ConceptPropertyCell2149_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConceptProperty1186415811915_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptPropertyCell2149_0(editorCell, node, context);
+    setupBasic_ConceptProperty_11864158119151186415811915(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptPropertyCell2149_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_ConceptProperty_1186415811915_1186415811915((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell create_ConceptPropertyCell2149_0(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty1186415811915(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_ConceptPropertyCell2149_0_internal(context, node, provider);
+    EditorCell cellWithRole = this.createConceptProperty1186415811915_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
