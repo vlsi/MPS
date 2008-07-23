@@ -56,8 +56,8 @@
               <property name="name" value="editedFeature" />
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1199894698985" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1199894728585">
-                <link role="baseMethodDeclaration" targetNodeId="10.~CellMenuUtil.getEditedFeature(jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor):jetbrains.mps.smodel.INodeAdapter" resolveInfo="getEditedFeature" />
                 <link role="classConcept" targetNodeId="10.~CellMenuUtil" resolveInfo="CellMenuUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="10.~CellMenuUtil.getEditedFeature(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getEditedFeature" />
                 <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1199894729584" />
               </node>
             </node>
@@ -94,7 +94,7 @@
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1199894948635" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1199894948636">
                 <link role="classConcept" targetNodeId="10.~CellMenuUtil" resolveInfo="CellMenuUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="10.~CellMenuUtil.getEditedFeature(jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor):jetbrains.mps.smodel.INodeAdapter" resolveInfo="getEditedFeature" />
+                <link role="baseMethodDeclaration" targetNodeId="10.~CellMenuUtil.getEditedFeature(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getEditedFeature" />
                 <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1199894948637" />
               </node>
             </node>
@@ -148,7 +148,7 @@
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1199895015800" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1199895015801">
                 <link role="classConcept" targetNodeId="10.~CellMenuUtil" resolveInfo="CellMenuUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="10.~CellMenuUtil.getEditedFeature(jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor):jetbrains.mps.smodel.INodeAdapter" resolveInfo="getEditedFeature" />
+                <link role="baseMethodDeclaration" targetNodeId="10.~CellMenuUtil.getEditedFeature(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getEditedFeature" />
                 <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1199895015802" />
               </node>
             </node>

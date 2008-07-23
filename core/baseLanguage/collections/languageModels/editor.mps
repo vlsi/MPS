@@ -667,6 +667,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215706303213">
         <property name="text" value="(" />
         <link role="styleClass" targetNodeId="15.1215087929380" resolveInfo="LeftParen" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleClassItem" id="1216803865149" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1160612601119">
         <property name="attractsFocus" value="1" />
@@ -696,6 +697,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215706193217">
         <property name="text" value="(" />
         <link role="styleClass" targetNodeId="15.1215087929380" resolveInfo="LeftParen" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleClassItem" id="1216804087599" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1160666834203">
         <property name="attractsFocus" value="1" />
