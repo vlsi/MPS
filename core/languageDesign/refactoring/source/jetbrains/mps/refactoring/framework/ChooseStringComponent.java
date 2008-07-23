@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
 
@@ -37,8 +39,24 @@ public class ChooseStringComponent extends JPanel implements IChooseComponent<St
         System.err.println("ancestor changed");
       }
     });*/
-    setLayout(new GridLayout(1, 2));
-    add(new JLabel(myCaption), BorderLayout.NORTH);
+    GridBagLayout gridBagLayout = new GridBagLayout();
+    setLayout(gridBagLayout);
+    JLabel label = new JLabel(myCaption);
+    GridBagConstraints constraints = new GridBagConstraints();
+    constraints.gridx = 0;
+    constraints.gridy = 0;
+    constraints.weightx = 0;
+    constraints.weighty = 0;
+    gridBagLayout.setConstraints(label, constraints);
+    add(label);
+    constraints = new GridBagConstraints();
+    constraints.gridx = 1;
+    constraints.gridy = 0;
+    constraints.weightx = 1;
+    constraints.weighty = 0;
+    constraints.anchor = GridBagConstraints.NORTHWEST;
+    constraints.fill = GridBagConstraints.HORIZONTAL;
+    gridBagLayout.setConstraints(myTextField, constraints);
     add(myTextField);
   }
 
