@@ -12,6 +12,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.BlameDialog;
+import jetbrains.mps.ide.blame.BlameDialogComponent;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
@@ -62,9 +63,6 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
       return hasInfo();
     }
   });
-
-  private BlameDialog myBlameDialog;
-  private BlameDialog.MyState myDialogState;
 
   private Queue<Message> myMessages = new LinkedList<Message>();
   private DefaultListModel myModel = new DefaultListModel();
@@ -376,46 +374,31 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   public MyState getState() {
-    return new MyState(myErrorsAction.isSelected(null), myWarningsAction.isSelected(null), myInfoAction.isSelected(null), getBlameDialog().getState());
+    return new MyState(myErrorsAction.isSelected(null), myWarningsAction.isSelected(null), myInfoAction.isSelected(null));
   }
 
   public void loadState(MyState state) {
     myErrorsAction.setSelected(null, state.isErrors());
     myWarningsAction.setSelected(null, state.isWarnings());
     myInfoAction.setSelected(null, state.isInfo());
-    myDialogState = state.getDialogState();
   }
 
   public BlameDialog getBlameDialog() {
-    if (myBlameDialog == null) {
-      myBlameDialog = new BlameDialog(null);
-      myBlameDialog.loadState(myDialogState);
-    }
-    return myBlameDialog;
+    return BlameDialogComponent.getInstance().getDialog();
   }
 
   public static class MyState {
     private boolean myErrors;
     private boolean myWarnings;
     private boolean myInfo;
-    private BlameDialog.MyState myDialogState;
 
     public MyState() {
     }
 
-    public MyState(boolean errors, boolean warnings, boolean info, BlameDialog.MyState dialogState) {
+    public MyState(boolean errors, boolean warnings, boolean info) {
       myErrors = errors;
       myWarnings = warnings;
       myInfo = info;
-      myDialogState = dialogState;
-    }
-
-    public BlameDialog.MyState getDialogState() {
-      return myDialogState;
-    }
-
-    public void setDialogState(BlameDialog.MyState dialogState) {
-      myDialogState = dialogState;
     }
 
     public boolean isErrors() {

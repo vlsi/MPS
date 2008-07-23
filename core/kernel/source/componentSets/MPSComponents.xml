@@ -242,6 +242,10 @@
     <component>
       <implementation-class>jetbrains.mps.vcs.ApplicationLevelVcsManager</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.blame.BlameDialogComponent</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

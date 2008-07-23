@@ -4,13 +4,17 @@ import com.intellij.openapi.diagnostic.ErrorReportSubmitter;
 import com.intellij.openapi.diagnostic.IdeaLoggingEvent;
 import com.intellij.openapi.diagnostic.SubmittedReportInfo;
 import com.intellij.openapi.diagnostic.SubmittedReportInfo.SubmissionStatus;
+import com.intellij.openapi.components.PersistentStateComponent;
 import jetbrains.mps.ide.blame.BlameDialog;
+import jetbrains.mps.ide.blame.BlameDialogComponent;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 
 import java.awt.Component;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class CharismaReporter extends ErrorReportSubmitter {
+
   public String getReportActionText() {
     return "Report To JetBrains MPS Tracker";
   }
@@ -20,7 +24,7 @@ public class CharismaReporter extends ErrorReportSubmitter {
       return new SubmittedReportInfo(null, null, SubmissionStatus.FAILED);
     }
 
-    BlameDialog blameDialog = new BlameDialog(null);
+    BlameDialog blameDialog = BlameDialogComponent.getInstance().getDialog();
     blameDialog.setEx(events[0].getThrowable());
     blameDialog.setMessage(events[0].getMessage());
 
