@@ -63,14 +63,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
     myList.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-          final Item selectedItem = (Item) myList.getSelectedValue();
-          if (selectedItem == null) return;
-          ModelAccess.instance().runReadAction(new Runnable() {
-                  public void run() {
-                    doChoose(selectedItem);
-                  }
-                });
-          askForDispose();
+          doComplete();
         }
       }
     });
@@ -79,14 +72,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
 
     myMainPanel.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        final Item selectedItem = (Item) myList.getSelectedValue();
-        if (selectedItem == null) return;
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                doChoose(selectedItem);
-              }
-            });
-        askForDispose();
+        doComplete();
       }
     }, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     myMainPanel.registerKeyboardAction(new AbstractAction() {
@@ -129,6 +115,17 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
         updateState();
       }
     });
+  }
+
+  private void doComplete() {
+    final Item selectedItem = (Item) myList.getSelectedValue();
+    if (selectedItem == null) return;
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        doChoose(selectedItem);
+      }
+    });
+    askForDispose();
   }
 
   public void askForDispose() {
