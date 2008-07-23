@@ -19,8 +19,6 @@ public class EventsCollector {
   private SModelListener myListeners = createCommandEventsCollector();
   private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
   private CommandListener myCommandListener;
-  private boolean myInsideOfCommand = false;
-
   private CommandProcessor myCommandProcessor;
 
   public EventsCollector() {
