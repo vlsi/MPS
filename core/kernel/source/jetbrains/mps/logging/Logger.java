@@ -210,7 +210,7 @@ public class Logger {
 
   public void assertLog(boolean condition, String message) {
     if (!condition) {
-      error(message, new Throwable());
+      error(message, new Throwable(message));
     }
   }
 
