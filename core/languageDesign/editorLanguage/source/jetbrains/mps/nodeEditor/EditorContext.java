@@ -157,6 +157,12 @@ public class EditorContext {
 
     getNodeEditorComponent().selectNode(node);
   }
+  
+  public void select(final SNode node, String cellId) {
+    flushEvents();
+
+    getNodeEditorComponent().selectNode(node, cellId);
+  }
 
   public void selectBefore(final SNode node) {
     flushEvents();

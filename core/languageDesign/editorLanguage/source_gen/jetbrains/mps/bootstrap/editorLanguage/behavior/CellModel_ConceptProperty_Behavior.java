@@ -15,4 +15,8 @@ public class CellModel_ConceptProperty_Behavior {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "name");
   }
 
+  public static String virtual_getCellId_1216737839993(SNode thisNode) {
+    return "conceptProperty_" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "name");
+  }
+
 }

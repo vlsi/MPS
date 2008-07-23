@@ -1107,6 +1107,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
+  public void selectNode(final SNode node, final String cellId) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        EditorCell nodeCell = findCellWithId(node, cellId);
+        if (nodeCell != null) {
+          changeSelection(nodeCell);
+        }
+      }
+    });
+  }
+
   public void selectRefCell(SReference reference) {
     SNode sourceNode = reference.getSourceNode();
     String role = reference.getRole();

@@ -141,7 +141,7 @@ public class IntelligentInputUtil {
 
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern + tail, true);
       INodeSubstituteAction item = matchingActions.get(0);
-      editorContext.selectWRTFocusPolicy(item.substitute(editorContext, smallPattern + tail));
+      item.substitute(editorContext, smallPattern + tail);
       return;
     } else {
       if (isInAmbigousPosition(substituteInfo, smallPattern, tail)) {
@@ -239,7 +239,7 @@ public class IntelligentInputUtil {
 
       List<INodeSubstituteAction> matchingActions = info.getMatchingActions(head + smallPattern, true);
       INodeSubstituteAction item = matchingActions.get(0);
-      editorContext.selectWRTFocusPolicy(item.substitute(editorContext, head + smallPattern));
+      item.substitute(editorContext, head + smallPattern);
       return;
     } else {
       return;

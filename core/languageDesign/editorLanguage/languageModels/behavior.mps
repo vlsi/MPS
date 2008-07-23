@@ -1940,6 +1940,33 @@
         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216814775868">
+      <property name="name" value="getCellId" />
+      <link role="overriddenMethod" targetNodeId="1216737839993" resolveInfo="getCellId" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216814775870">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216814795182">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1216814801919">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216814816572">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216814812115">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1216814802359" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216814816180">
+                  <link role="link" targetNodeId="1.1137553248621" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1216814816997">
+                <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216814795777">
+              <property name="value" value="conceptProperty_" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216814792806">
+        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1216378460069">
     <property name="package" value="CellModel" />
