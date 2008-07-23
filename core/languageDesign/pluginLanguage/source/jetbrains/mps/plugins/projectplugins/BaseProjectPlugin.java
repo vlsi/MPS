@@ -1,7 +1,5 @@
 package jetbrains.mps.plugins.projectplugins;
 
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.logging.Logger;
@@ -9,12 +7,11 @@ import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.LabelledAnchor;
 
 import javax.swing.SwingUtilities;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public abstract class BaseProjectPlugin extends DefaultPlugin {
   private static Logger LOG = Logger.getLogger(BaseProjectPlugin.class);
@@ -25,18 +22,7 @@ public abstract class BaseProjectPlugin extends DefaultPlugin {
   private List<GeneratedTool> myInitializedTools = new ArrayList<GeneratedTool>();
   private List<BaseCustomProjectPlugin> myCustomPartsToDispose = new ArrayList<BaseCustomProjectPlugin>();
 
-  private HashMap<String, BaseGroup> myGroups = new HashMap<String, BaseGroup>();
-  private List<String> myActions = new ArrayList<String>();
-
   //------------------stuff to generate-----------------------
-
-  protected void initGroups(MPSProject project) {
-
-  }
-
-  protected void initGroups(Project project) {
-
-  }
 
   protected abstract void initEditors(MPSProject project);
 
@@ -57,8 +43,6 @@ public abstract class BaseProjectPlugin extends DefaultPlugin {
     myProject = project.getComponent(Project.class);
     myCustomPartsToDispose = initCustomParts(project);
 
-    initGroups(project);
-    initGroups(project.getComponent(Project.class));
     initEditors(project);
     myTools = (List) (initTools(myProject));
     final Project ideaProject = getIDEAProject();
@@ -79,10 +63,6 @@ public abstract class BaseProjectPlugin extends DefaultPlugin {
   }
 
   public void dispose() {
-    for (String actionId : myActions) {
-      ActionUtils.unregisterAction(actionId);
-    }
-
     for (BaseCustomProjectPlugin customPart : myCustomPartsToDispose) {
       customPart.dispose(getProject());
     }
@@ -123,38 +103,5 @@ public abstract class BaseProjectPlugin extends DefaultPlugin {
         });
       }
     });
-  }
-
-  //------------------groups stuff-----------------------
-
-  protected void addGroup(BaseGroup group) {
-    myGroups.put(group.getId(), group);
-    register(ActionManager.getInstance(), group);
-  }
-
-  private void register(ActionManager m, AnAction action) {
-    String id = null;
-    if (action instanceof BaseGroup) {
-      BaseGroup group = (BaseGroup) action;
-      id = group.getId();
-      if (m.getAction(id) == null) m.registerAction(id, group);
-      for (AnAction a : group.getChildren(null)) {
-        register(m, a);
-      }
-    } else if (action instanceof LabelledAnchor) {
-      id = ((LabelledAnchor) action).getId();
-      if (id != null && m.getAction(id) == null) {
-        m.registerAction(id, action);
-      }
-    }
-    if (id != null && !myActions.contains(id)) myActions.add(id);
-  }
-
-  public BaseGroup getGroup(String id) {
-    return myGroups.get(id);
-  }
-
-  public Collection<BaseGroup> getGroups() {
-    return myGroups.values();
   }
 }
