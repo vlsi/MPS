@@ -931,7 +931,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1203434823199(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(_context.getNode(), "listVarDeclaration", false), "listVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "listVarDeclaration", false), "listVar");
   }
 
   public static Object referenceMacro_GetReferent_1203530166954(final IOperationContext operationContext, final ReferenceMacroContext _context) {
