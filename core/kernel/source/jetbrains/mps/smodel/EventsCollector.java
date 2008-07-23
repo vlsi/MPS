@@ -21,16 +21,18 @@ public class EventsCollector {
   private CommandListener myCommandListener;
   private boolean myInsideOfCommand = false;
 
+  private CommandProcessor myCommandProcessor;
+
   public EventsCollector() {
-    CommandProcessor.getInstance().addCommandListener(myCommandListener = new CommandAdapter() {
+    myCommandProcessor = CommandProcessor.getInstance();
+
+    myCommandProcessor.addCommandListener(myCommandListener = new CommandAdapter() {
       public void commandStarted(CommandEvent event) {
         myEvents.clear();
-        myInsideOfCommand = true;
       }
 
       public void beforeCommandFinished(CommandEvent event) {
         flush();
-        myInsideOfCommand = false;
       }
     });
   }
@@ -51,7 +53,7 @@ public class EventsCollector {
 
           if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
             SModelEvent e = (SModelEvent) args[0];
-            assert myInsideOfCommand;
+            assert myCommandProcessor.getCurrentCommand() != null;
             myEvents.add(e);
           }
 
