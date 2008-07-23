@@ -632,7 +632,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return false;
   }
 
-  public static Color getSelectionColor() {
+  public Color getSelectionColor() {
     return EditorSettings.getInstance().getSelectionBackgroundColor();
   }
 

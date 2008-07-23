@@ -1631,6 +1631,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (deepestCell instanceof EditorCell_Label) {
       g.setColor(new Color(255, 255, 215));
       g.fillRect(0, deepestCell.getY(), getWidth(), deepestCell.getHeight());
+
+      g.setColor(new Color(230, 230, 190));
+      g.fillRect(deepestCell.getX(), deepestCell.getY(), deepestCell.getWidth(), deepestCell.getHeight());
     }
 
     myLeftHighlighter.paint(g);
