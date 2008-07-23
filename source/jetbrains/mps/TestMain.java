@@ -250,10 +250,12 @@ public class TestMain {
         sandbox1[0],
         sandbox2[0],
         testRefactoringLanguage[0],
-        testRefactoringTargetLanguage[0], continuation);
+        testRefactoringTargetLanguage[0], null/*continuation*/);
     } catch (Throwable t) {
       t.printStackTrace();
       return false;
+    } finally {
+      ThreadUtils.runInUIThreadAndWait(continuation);
     }
   }
 
