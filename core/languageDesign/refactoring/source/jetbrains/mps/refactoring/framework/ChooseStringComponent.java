@@ -6,10 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JComponent;
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
+import java.awt.*;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
 
@@ -24,21 +21,7 @@ public class ChooseStringComponent extends JPanel implements IChooseComponent<St
   }
 
   public void initComponent() {
-    myTextField = new JTextField() {
-      public void addNotify() {
-        super.addNotify();
-        System.err.println("ancestor changed");
-      }
-
-      protected Object clone() throws CloneNotSupportedException {
-        return super.clone();    //To change body of overridden methods use File | Settings | File Templates.
-      }
-    };
-   /* myTextField.addPropertyChangeListener("ancestor", new PropertyChangeListener() {
-      public void propertyChange(PropertyChangeEvent evt) {
-        System.err.println("ancestor changed");
-      }
-    });*/
+    myTextField = new JTextField();
     GridBagLayout gridBagLayout = new GridBagLayout();
     setLayout(gridBagLayout);
     JLabel label = new JLabel(myCaption);
@@ -56,6 +39,7 @@ public class ChooseStringComponent extends JPanel implements IChooseComponent<St
     constraints.weighty = 0;
     constraints.anchor = GridBagConstraints.NORTHWEST;
     constraints.fill = GridBagConstraints.HORIZONTAL;
+    myTextField.setColumns(20);
     gridBagLayout.setConstraints(myTextField, constraints);
     add(myTextField);
   }
