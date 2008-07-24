@@ -5,7 +5,18 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.transformation.generationContext" />
   </models>
   <accessoryModels />
-  <generators />
+  <generators>
+    <generator generatorUID="jetbrains.mps.transformation.generationContext#1216862161405">
+      <models>
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.transformation.generationContext.generator.baseLanguage.template" />
+      </models>
+      <external-templates />
+      <dependencies>
+        <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
+      </dependencies>
+      <mapping-priorities />
+    </generator>
+  </generators>
   <classPath>
     <entry path="${mps_home}\core\languageDesign\transformation\classes" />
   </classPath>
