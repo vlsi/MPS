@@ -359,6 +359,7 @@
     <antcall target="pack.jetbrains.mps.transformation.TLBase" />
     <antcall target="pack.jetbrains.mps.transformationTest" />
     <antcall target="pack.jetbrains.mps.transformationTest.runtime" />
+    <antcall target="pack.jetbrains.mps.transformation.generationContext" />
     <antcall target="pack.jetbrains.mps.projectLanguage" />
     <antcall target="pack.transform" />
     <antcall target="pack.ypath.main" />

@@ -794,6 +794,20 @@
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformationTest.runtime.tmp" />
   </target>
+  <target name="pack.jetbrains.mps.transformation.generationContext">
+    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.generationContext.tmp" />
+    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.generationContext.tmp/module" />
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.generationContext.tmp/module">
+      <fileset file="core/languageDesign/transformation/languages/generationContext/generationContext.mpl" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.generationContext.tmp/module">
+      <fileset dir="core/languageDesign/transformation/languages/generationContext" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.generationContext.mpsarch.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.generationContext.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.generationContext.tmp" />
+  </target>
   <target name="pack.jetbrains.mps.projectLanguage">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/jetbrains.mps.projectLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/jetbrains.mps.projectLanguage.tmp/module" />
