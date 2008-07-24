@@ -102,7 +102,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1196351886638(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true), "parametersFromExpressions");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true), "parametersFromExpressions");
   }
 
   public static Object referenceMacro_GetReferent_1196351886954(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -111,11 +111,11 @@ public class QueriesGenerated {
     if (antiquotation == null) {
       return null;
     }
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
   }
 
   public static Object referenceMacro_GetReferent_1196351887055(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode parentTargetNode = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_context.getNode(), null, false, false), "quotationClass");
+    SNode parentTargetNode = _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode(), null, false, false), "quotationClass");
     ClassConcept quotationClass = (ClassConcept)BaseAdapter.fromNode(parentTargetNode);
     InstanceMethodDeclaration methodDecl = quotationClass.getMethods().get(0);
     StatementList statementList = methodDecl.getBody();
@@ -124,7 +124,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1196351887115(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SNode)_context.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_context.getNode(), null, false, false), "nodeVariable");
+    return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode(), null, false, false), "nodeVariable");
   }
 
   public static Object referenceMacro_GetReferent_1196351887203(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -139,7 +139,7 @@ public class QueriesGenerated {
     if (antiquotation == null) {
       return null;
     }
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
   }
 
   public static Object referenceMacro_GetReferent_1196351887411(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -154,19 +154,19 @@ public class QueriesGenerated {
     if (antiquotation == null) {
       return null;
     }
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
   }
 
   public static Object referenceMacro_GetReferent_1196351887466(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SNode)_context.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_context.getNode(), null, false, false), "nodeVariable");
+    return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode(), null, false, false), "nodeVariable");
   }
 
   public static Object referenceMacro_GetReferent_1196860192984(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SNode)_context.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_context.getNode(), null, false, false), "nodeVariable");
+    return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode(), null, false, false), "nodeVariable");
   }
 
   public static Object referenceMacro_GetReferent_1196860200838(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode parentTargetNode = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_context.getNode(), null, false, false), "quotationClass");
+    SNode parentTargetNode = _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode(), null, false, false), "quotationClass");
     ClassConcept quotationClass = (ClassConcept)BaseAdapter.fromNode(parentTargetNode);
     InstanceMethodDeclaration methodDecl = quotationClass.getMethods().get(0);
     StatementList statementList = methodDecl.getBody();
@@ -180,31 +180,31 @@ public class QueriesGenerated {
     if (antiquotation == null) {
       return null;
     }
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
   }
 
   public static Object referenceMacro_GetReferent_1201866023924(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SNode)_context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode().getReferent("targetNode"), "nodeVariable");
+    return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode().getReferent("targetNode"), "nodeVariable");
   }
 
   public static Object referenceMacro_GetReferent_1201868277247(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SNode)_context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode().getReferent("sourceNode"), "nodeVariable");
+    return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode().getReferent("sourceNode"), "nodeVariable");
   }
 
   public static Object referenceMacro_GetReferent_1201868923347(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SNode)_context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "nodeVariable");
+    return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeVariable");
   }
 
   public static Object referenceMacro_GetReferent_1201868926381(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SNode)_context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "nodeVariable");
+    return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeVariable");
   }
 
   public static Object referenceMacro_GetReferent_1201870201455(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SNode)_context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "nodeVariable");
+    return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeVariable");
   }
 
   public static Object referenceMacro_GetReferent_1201870241921(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SNode)_context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "nodeVariable");
+    return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeVariable");
   }
 
   public static boolean ifMacro_Condition_1196351886745(final IOperationContext operationContext, final IfMacroContext _context) {
