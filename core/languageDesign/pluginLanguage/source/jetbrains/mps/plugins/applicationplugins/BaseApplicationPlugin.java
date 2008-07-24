@@ -80,11 +80,6 @@ public abstract class BaseApplicationPlugin implements IApplicationPlugin {
     return myGroups.values();
   }
 
-  /*
-    todo: now it's very slow
-    Note: the action could be removed before this call by another call to this method with outer
-    group as a parameter
-   */
   private void unregisterGroup(String groupId) {
     ActionManager manager = ActionManager.getInstance();
 
