@@ -1,29 +1,28 @@
 package jetbrains.mps.plugins.pluginparts.custom;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.projectplugins.DefaultPlugin;
+import jetbrains.mps.plugins.projectplugins.IProjectPlugin;
 import jetbrains.mps.project.MPSProject;
 
-public abstract class BaseCustomProjectPlugin extends DefaultPlugin {
-
+public abstract class BaseCustomProjectPlugin implements IProjectPlugin {
   private static Logger LOG = Logger.getLogger(BaseCustomProjectPlugin.class);
+  private MPSProject myProject;
 
   public void init(MPSProject project) {
-    super.init(project);
     try {
+      myProject = project;
       doInit(project);
     } catch (Throwable t) {
       LOG.error("User custom plugin init method failed: ", t);
     }
   }
 
-  public void dispose(MPSProject project) {
+  public void dispose() {
     try {
-      doDispose(project);
+      doDispose(myProject);
     } catch (Throwable t) {
       LOG.error("User custom plugin dispose method failed: ", t);
     }
-    super.dispose();
   }
 
   public void doInit(MPSProject project) {

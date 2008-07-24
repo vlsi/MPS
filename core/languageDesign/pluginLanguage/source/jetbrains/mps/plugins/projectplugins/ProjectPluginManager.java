@@ -117,11 +117,6 @@ public class ProjectPluginManager implements ProjectComponent {
     for (IProjectPlugin plugin : myPlugins) {
       try {
         plugin.init(mpsProject);
-        if (plugin instanceof DefaultPlugin) {
-          if (!((DefaultPlugin) plugin).isInitCalled()) {
-            LOG.error("WARNINIG: Plugin " + plugin + " hasn't called super init method");
-          }
-        }
       } catch (Throwable t1) {
         LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
       }
@@ -147,11 +142,6 @@ public class ProjectPluginManager implements ProjectComponent {
     for (IProjectPlugin plugin : myPlugins) {
       try {
         plugin.dispose();
-        if (plugin instanceof DefaultPlugin) {
-          if (!((DefaultPlugin) plugin).isDisposeCalled()) {
-            LOG.error("WARNINIG: Plugin " + plugin + " hasn't called super dispose method");
-          }
-        }
       } catch (Throwable t) {
         LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
       }
