@@ -7266,7 +7266,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1216754956003">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216754959724">
-        <property name="text" value="get output" />
+        <property name="text" value="old get output" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1216754967179">
         <property name="noTargetText" value="&lt;choose mapping label&gt;" />
@@ -7288,7 +7288,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1216756552211">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216756552212">
-        <property name="text" value="get output" />
+        <property name="text" value="old get output" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1216756552213">
         <property name="noTargetText" value="&lt;choose mapping label&gt;" />
