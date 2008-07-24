@@ -1247,6 +1247,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
               id="1203852213283">
+          <property name="noTargetText" value="&lt;tab caption&gt;"/>
           <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem"
@@ -1324,6 +1325,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
               id="1203852433964">
+          <property name="noTargetText" value="&lt;tab caption&gt;"/>
           <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem"
@@ -1369,7 +1371,7 @@
                 id="1204038044668"/>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
                 id="1204038044669">
-            <property name="noTargetText" value="&lt;get tab text from snode's name&gt;"/>
+            <property name="noTargetText" value="&lt;inner tab text : use node name&gt;"/>
             <link role="relationDeclaration" targetNodeId="1.1203852102915"/>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
