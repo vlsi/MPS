@@ -151,13 +151,13 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1189764427569(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode conceptFunction = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
-    SNode method = (SNode)_context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
+    SNode method = (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
     return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(1);
   }
 
   public static Object referenceMacro_GetReferent_1198175268220(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode conceptFunction = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
-    SNode method = (SNode)_context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
+    SNode method = (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
     return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(1);
   }
 
@@ -167,15 +167,15 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1215507182386(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "componentCreator");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "componentCreator");
   }
 
   public static Object referenceMacro_GetReferent_1215507182539(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "initialValue");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "initialValue");
   }
 
   public static Object referenceMacro_GetReferent_1215507182563(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "conditionConstructor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "conditionConstructor");
   }
 
   public static boolean ifMacro_Condition_1190724916731(final IOperationContext operationContext, final IfMacroContext _context) {
