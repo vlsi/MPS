@@ -2401,6 +2401,7 @@
       </node>
     </node>
   </node>
+  <visible index="3" modelUID="jetbrains.mps.transformation.generationContext.structure" />
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1216768722260">
     <property name="name" value="Convert_CondRootExprToGenctxGetOutput" />
     <property name="isErrorIntention" value="true" />
@@ -2444,7 +2445,7 @@
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216768939196">
               <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1216768940916">
                 <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1216768940917">
-                  <link role="concept" targetNodeId="1.1216753170795" resolveInfo="TemplateFunctionParameter_generationContext" />
+                  <link role="concept" targetNodeId="3v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
                 </node>
               </node>
             </node>
@@ -2454,12 +2455,12 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216769061006">
             <property name="name" value="getOper" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1216769061007">
-              <link role="concept" targetNodeId="1.1216754455198" resolveInfo="GenerationContextOp_GetOutputByLabel" />
+              <link role="concept" targetNodeId="3v.1216860049622" resolveInfo="GenerationContextOp_GetOutputByLabel" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216769061008">
               <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1216769061009">
                 <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1216769061010">
-                  <link role="concept" targetNodeId="1.1216754455198" resolveInfo="GenerationContextOp_GetOutputByLabel" />
+                  <link role="concept" targetNodeId="3v.1216860049622" resolveInfo="GenerationContextOp_GetOutputByLabel" />
                 </node>
               </node>
             </node>
@@ -2471,8 +2472,8 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216769031986">
                 <link role="variableDeclaration" targetNodeId="1216769061006" resolveInfo="getOper" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216769076954">
-                <link role="link" targetNodeId="1.1216754779279" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216868511600">
+                <link role="link" targetNodeId="3v.1216860049623" />
               </node>
             </node>
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216769084412">
@@ -2590,7 +2591,7 @@
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216837075112">
               <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1216837075113">
                 <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1216837075114">
-                  <link role="concept" targetNodeId="1.1216753170795" resolveInfo="TemplateFunctionParameter_generationContext" />
+                  <link role="concept" targetNodeId="3v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
                 </node>
               </node>
             </node>
@@ -2600,12 +2601,12 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216837075116">
             <property name="name" value="getOper" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1216837075117">
-              <link role="concept" targetNodeId="1.1216756400719" resolveInfo="GenerationContextOp_GetOutputByLabelAndInput" />
+              <link role="concept" targetNodeId="3v.1216860049627" resolveInfo="GenerationContextOp_GetOutputByLabelAndInput" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216837075118">
               <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1216837075119">
                 <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1216837075120">
-                  <link role="concept" targetNodeId="1.1216756400719" resolveInfo="GenerationContextOp_GetOutputByLabelAndInput" />
+                  <link role="concept" targetNodeId="3v.1216860049627" resolveInfo="GenerationContextOp_GetOutputByLabelAndInput" />
                 </node>
               </node>
             </node>
@@ -2617,8 +2618,8 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216837075124">
                 <link role="variableDeclaration" targetNodeId="1216837075116" resolveInfo="getOper" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216837542740">
-                <link role="link" targetNodeId="1.1216756400720" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216868497302">
+                <link role="link" targetNodeId="3v.1216860049628" />
               </node>
             </node>
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216837075126">
@@ -2635,8 +2636,8 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216837709785">
                 <link role="variableDeclaration" targetNodeId="1216837075116" resolveInfo="getOper" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216837713930">
-                <link role="link" targetNodeId="1.1216756400723" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216868499256">
+                <link role="link" targetNodeId="3v.1216860049632" />
               </node>
             </node>
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216837728222">
