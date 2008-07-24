@@ -1016,10 +1016,10 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
-      <option name="VM_PARAMETERS" value="-ea -Xmx1024m -XX:MaxPermSize=92m -Xss1024k -Dmps.internal=true" />
+      <option name="VM_PARAMETERS" value="-ea -Xmx1024m -XX:MaxPermSize=92m -Xss1024k -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError " />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk1.6.0_03" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
@@ -1567,6 +1567,7 @@
         <root url="jar://$PROJECT_DIR$/lib/idea-platform/picocontainer.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/idea-platform/microba.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/idea-platform/yjp-controller-api-redist.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/idea-platform/xmlrpc-2.0.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
