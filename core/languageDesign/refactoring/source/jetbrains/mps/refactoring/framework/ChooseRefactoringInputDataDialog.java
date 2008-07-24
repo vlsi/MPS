@@ -53,11 +53,6 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     }
     //~components
 
-    //strut
-    constraints.weighty = 1;
-    myInnerPanel.add(new JPanel(), constraints);
-    //~strut
-
     //checkBoxPanel
     JPanel checkBoxPanel = new JPanel(new GridBagLayout());
     GridBagConstraints checkBoxPanelConstraints = new GridBagConstraints();
@@ -89,9 +84,14 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     checkBoxPanel.add(new JPanel(), checkBoxPanelConstraints);
 
     constraints.weighty = 0;
+    constraints.insets = new Insets(7,0,0,0);
     myInnerPanel.add(checkBoxPanel, constraints);
     //~checkBoxPanel
 
+     //strut
+    constraints.weighty = 1;
+    myInnerPanel.add(new JPanel(), constraints);
+    //~strut
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
