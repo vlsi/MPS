@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.plugins.pluginparts.tabbedEditor.BaseSingleTab;
 import jetbrains.mps.plugins.pluginparts.tabbedEditor.BaseTabbedEditor;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.uiLanguage.behavior.ComponentDeclaration_Behavior;
@@ -83,7 +84,7 @@ public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {
     public SNode createNode(SNode node) {
       {
         ComponentController controller = ComponentController.newInstance(SNodeOperations.getModel(node), true);
-        controller.setComponent(((ComponentDeclaration) SNodeOperations.getAdapter(node)));
+        controller.setComponent((ComponentDeclaration) ((INodeAdapter) SNodeOperations.getAdapter(node)));
         SModelOperations.addRootNode(SNodeOperations.getModel(node), controller.getNode());
         String virtualPackage = ((SNode) node).getProperty(SModelTreeNode.PACK);
         controller.setProperty(SModelTreeNode.PACK, virtualPackage);
