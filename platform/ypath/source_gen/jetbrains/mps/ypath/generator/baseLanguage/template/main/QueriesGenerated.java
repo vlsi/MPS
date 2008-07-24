@@ -259,16 +259,16 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1172647377697(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true), "closure_adapterClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true), "closure_adapterClass");
   }
 
   public static Object referenceMacro_GetReferent_1172647667138(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true), "closure_adapterClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true), "closure_adapterClass");
   }
 
   public static Object referenceMacro_GetReferent_1172658935860(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode tpCreator = SLinkOperations.getTarget(_context.getNode(), "creator", true);
-    SNode klass = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(tpCreator, "treePathCreator_class");
+    SNode klass = _context.getOutputNodeByInputNodeAndMappingLabel(tpCreator, "treePathCreator_class");
     return ListSequence.fromList(SNodeOperations.getDescendants(klass, null, false)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
@@ -279,48 +279,48 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1179316632549(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(_context.getNode(), "parentBlock", true), "closure_adapterClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "parentBlock", true), "closure_adapterClass");
   }
 
   public static Object referenceMacro_GetReferent_1179324381847(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(_context.getNode(), "parentBlock", true), "closure_adapterClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "parentBlock", true), "closure_adapterClass");
   }
 
   public static Object referenceMacro_GetReferent_1179324381879(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true), "closure_adapterClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true), "closure_adapterClass");
   }
 
   public static Object referenceMacro_GetReferent_1179324381920(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true), "closure_adapterClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true), "closure_adapterClass");
   }
 
   public static Object referenceMacro_GetReferent_1179399834672(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(_context.getNode(), "getter", true), "closure_adapterClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "getter", true), "closure_adapterClass");
   }
 
   public static Object referenceMacro_GetReferent_1179399838693(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(_context.getNode(), "getter", true), "closure_adapterClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "getter", true), "closure_adapterClass");
   }
 
   public static Object referenceMacro_GetReferent_1180087636529(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_context.getNode(), null, false, false), "mn_foundCaseVariable");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode(), null, false, false), "mn_foundCaseVariable");
   }
 
   public static Object referenceMacro_GetReferent_1180087675936(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_context.getNode(), null, false, false), "mn_foundCaseVariable");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode(), null, false, false), "mn_foundCaseVariable");
   }
 
   public static Object referenceMacro_GetReferent_1180088156283(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_context.getNode(), null, false, false), "mn_foundCaseVariable");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode(), null, false, false), "mn_foundCaseVariable");
   }
 
   public static Object referenceMacro_GetReferent_1180088156337(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_context.getNode(), null, false, false), "mn_foundCaseVariable");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode(), null, false, false), "mn_foundCaseVariable");
   }
 
   public static Object referenceMacro_GetReferent_1183990372956(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode fun = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
-    SNode body = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(fun, "body", true), "function_body");
+    SNode body = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(fun, "body", true), "function_body");
     SNode imd = SNodeOperations.getAncestor(body, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
     return ListSequence.fromList(SLinkOperations.getTargets(imd, "parameter", true)).where(new IWhereFilter <SNode>() {
 
@@ -333,7 +333,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1183991612087(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode fun = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
-    SNode body = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(fun, "body", true), "function_body");
+    SNode body = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(fun, "body", true), "function_body");
     SNode imd = SNodeOperations.getAncestor(body, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
     return ListSequence.fromList(SLinkOperations.getTargets(imd, "parameter", true)).where(new IWhereFilter <SNode>() {
 
@@ -346,7 +346,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1184059521295(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode feature = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.IFeature", false, false);
-    SNode featureClass = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(feature, "feature_class");
+    SNode featureClass = _context.getOutputNodeByInputNodeAndMappingLabel(feature, "feature_class");
     return ListSequence.fromList(SLinkOperations.getTargets(featureClass, "field", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
@@ -357,18 +357,18 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1184236913540(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode featureClass = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "feature_class");
+    SNode featureClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "feature_class");
     return ListSequence.fromList(SLinkOperations.getTargets(featureClass, "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1184237709773(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode descClass = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "feature_descriptor");
+    SNode descClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "feature_descriptor");
     return ListSequence.fromList(SLinkOperations.getTargets(descClass, "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1184674316408(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode feature = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.IFeature", false, false);
-    SNode featureClass = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(feature, "feature_class");
+    SNode featureClass = _context.getOutputNodeByInputNodeAndMappingLabel(feature, "feature_class");
     return ListSequence.fromList(SLinkOperations.getTargets(featureClass, "field", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
@@ -379,14 +379,14 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1184680030750(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode descClass = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "feature_descriptor");
+    SNode descClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "feature_descriptor");
     return ListSequence.fromList(SLinkOperations.getTargets(descClass, "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1184763478621(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     final SNode fun = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode feature = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature", false, false);
-    SNode designClass = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(feature, "feature_design");
+    SNode designClass = _context.getOutputNodeByInputNodeAndMappingLabel(feature, "feature_design");
     SNode method = ListSequence.fromList(SLinkOperations.getTargets(designClass, "method", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
@@ -405,7 +405,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1184771402282(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode df = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.IDesignFunction", false, false);
-    SNode stmts = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(df, "body", true), "body");
+    SNode stmts = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(df, "body", true), "body");
     final String paramAlias = SConceptPropertyOperations.getString(_context.getNode(), "alias");
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(stmts, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false), "parameter", true)).where(new IWhereFilter <SNode>() {
 
@@ -1265,10 +1265,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "visitBlock", true), "expression", true);
   }
 
-  public static SNode sourceNodeQuery_1180090818686(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "visitBlock", true);
-  }
-
   public static SNode sourceNodeQuery_1180090844902(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "type", true);
   }
@@ -2005,6 +2001,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1198195892742(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true);
+  }
+
+  public static SNode sourceNodeQuery_1216934019535(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "visitBlock", true);
   }
 
   public static List sourceNodesQuery_1179331802560(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
