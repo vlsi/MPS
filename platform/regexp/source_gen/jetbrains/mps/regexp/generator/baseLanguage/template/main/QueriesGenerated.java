@@ -137,15 +137,15 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1174655509856(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return GeneratorUtil.findOutputMatcher(_context.getGenerator(), _context.getNode());
+    return _context.getOutputNodeByInputNodeAndMappingLabel(GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode()), "matcher");
   }
 
   public static Object referenceMacro_GetReferent_1175155997041(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return GeneratorUtil.findOutputMatcher(_context.getGenerator(), _context.getNode());
+    return _context.getOutputNodeByInputNodeAndMappingLabel(GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode()), "matcher");
   }
 
   public static Object referenceMacro_GetReferent_1175170026388(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return GeneratorUtil.findOutputMatcher(_context.getGenerator(), _context.getNode());
+    return _context.getOutputNodeByInputNodeAndMappingLabel(GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode()), "matcher");
   }
 
   public static Object referenceMacro_GetReferent_1194610323562(final IOperationContext operationContext, final ReferenceMacroContext _context) {

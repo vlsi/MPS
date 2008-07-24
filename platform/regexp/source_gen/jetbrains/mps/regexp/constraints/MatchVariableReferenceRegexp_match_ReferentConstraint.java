@@ -5,9 +5,9 @@ package jetbrains.mps.regexp.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -27,14 +27,10 @@ public class MatchVariableReferenceRegexp_match_ReferentConstraint implements IM
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.regexp.structure.MatchVariableReferenceRegexp", "match");
   }
 
-  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return true;
-  }
-
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> matches = ListSequence.<SNode>fromArray();
     SNode top = _context.getEnclosingNode();
-    while(SNodeOperations.getParent(top, null, false, false) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(top, null, false, false), "jetbrains.mps.regexp.structure.Regexp")) {
+    while (SNodeOperations.getParent(top, null, false, false) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(top, null, false, false), "jetbrains.mps.regexp.structure.Regexp")) {
       top = SNodeOperations.getParent(top, null, false, false);
     }
     ListSequence.fromList(matches).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(top, "jetbrains.mps.regexp.structure.MatchParensRegexp", true)));
@@ -42,10 +38,6 @@ public class MatchVariableReferenceRegexp_match_ReferentConstraint implements IM
       ListSequence.fromList(matches).addElement(top);
     }
     return new SimpleSearchScope(matches);
-  }
-
-  public String getNodeReferentSearchScopeDescription() {
-    return "<no description>";
   }
 
 }

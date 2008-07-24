@@ -186,44 +186,6 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546096763" />
     </node>
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1187209089331">
-      <property name="name" value="findOutputMatcher" />
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1187209136585">
-        <property name="name" value="generator" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1187209136586">
-          <link role="classifier" targetNodeId="2.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1187209136603">
-        <property name="name" value="ref" />
-        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1187209136604">
-          <link role="concept" targetNodeId="1.1174565027678" />
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1187209203802" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1187209089333" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187209089334">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1187209144582">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210020424847">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1187209195158">
-              <link role="variableDeclaration" targetNodeId="1187209136585" resolveInfo="generator" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210020424848">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1187209195159">
-                <link role="baseMethodDeclaration" targetNodeId="1174923515098" resolveInfo="findRegexpUsingConstructionFor" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1187209195160">
-                  <link role="variableDeclaration" targetNodeId="1187209136603" resolveInfo="ref" />
-                </node>
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1187209195161">
-                <property name="value" value="matcher" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550081257" />
   </node>
 </model>
