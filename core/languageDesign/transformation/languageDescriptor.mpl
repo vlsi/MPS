@@ -36,6 +36,9 @@
               <mapping-set-element>
                 <mapping-node modelUID="jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.main@templates" nodeID="1216760363068" />
               </mapping-set-element>
+              <mapping-set-element>
+                <mapping-node modelUID="jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.main@templates" nodeID="1216865397995" />
+              </mapping-set-element>
             </mapping-set>
           </greater-priority-mapping>
           <lesser-priority-mapping>
