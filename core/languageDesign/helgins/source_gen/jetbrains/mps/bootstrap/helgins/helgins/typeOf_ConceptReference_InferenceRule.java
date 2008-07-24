@@ -17,9 +17,9 @@ public class typeOf_ConceptReference_InferenceRule implements InferenceRule_Runt
   public void applyRule(final SNode cr) {
     SNode conceptReference = cr;
     {
-      SNode _nodeToCheck_1029348928467 = conceptReference;
+      SNode _nodeToCheck_1029348928467 = cr;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1201876231886", true), new QuotationClass_().createNode(SLinkOperations.getTarget(conceptReference, "concept", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1201876231884", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(conceptReference, "jetbrains.mps.bootstrap.helgins.helgins", "1201876231886", true), new QuotationClass_().createNode(SLinkOperations.getTarget(conceptReference, "concept", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1201876231884", intentionProvider);
     }
   }
 

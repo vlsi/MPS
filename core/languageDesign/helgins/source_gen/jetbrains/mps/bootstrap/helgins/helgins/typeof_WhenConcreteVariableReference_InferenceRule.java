@@ -18,7 +18,7 @@ public class typeof_WhenConcreteVariableReference_InferenceRule implements Infer
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.helgins.helgins", "1205762761609", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "whenConcreteVar", false), "jetbrains.mps.bootstrap.helgins.helgins", "1205762764972", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1205762759668", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.helgins.helgins", "1205762761609", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "whenConcreteVar", false), "jetbrains.mps.bootstrap.helgins.helgins", "1205762764972", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1205762759668", intentionProvider);
     }
   }
 
