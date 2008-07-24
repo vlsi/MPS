@@ -7,7 +7,7 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import java.util.ArrayList;
 
-public class BaseLanguage_1129914002933_ApplicationPlugin extends BaseApplicationPlugin {
+public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void initGroups() {
     this.addGroup(new BaseLanguageEditorPopup_ActionGroup());

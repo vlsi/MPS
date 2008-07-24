@@ -10,7 +10,7 @@ import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 
-public class BaseLanguage_1129914002933_ProjectPlugin extends BaseProjectPlugin {
+public class BaseLanguage_ProjectPlugin extends BaseProjectPlugin {
 
   private GeneratedFileGeneratorPlugin myFileGeneratorPlugin = new GeneratedFileGeneratorPlugin();
 
