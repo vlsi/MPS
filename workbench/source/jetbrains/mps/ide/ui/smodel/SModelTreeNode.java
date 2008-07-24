@@ -18,10 +18,10 @@ import jetbrains.mps.util.AndCondition;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 
 import javax.swing.JOptionPane;
@@ -374,7 +374,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   protected void doInit() {
     try {
       myInitializing = true;
+
       removeAllChildren();
+      myPackageNodes.clear();
+      myRootGroups.clear();
+
       SModelDescriptor sm = getSModelDescriptor();
       if (sm instanceof StubModelDescriptor) {
         return;
