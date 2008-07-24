@@ -8,13 +8,14 @@ import java.lang.reflect.Proxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
-import com.intellij.util.containers.HashSet;
 import com.intellij.openapi.command.CommandListener;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
 
 public class EventsCollector {
+  private static CommandListenersSupport ourListenersSupport = new CommandListenersSupport();
+
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
   private SModelListener myListeners = createCommandEventsCollector();
   private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
@@ -23,8 +24,7 @@ public class EventsCollector {
 
   public EventsCollector() {
     myCommandProcessor = CommandProcessor.getInstance();
-
-    myCommandProcessor.addCommandListener(myCommandListener = new CommandAdapter() {
+    ourListenersSupport.addCommandListener(myCommandListener = new CommandAdapter() {
       public void commandStarted(CommandEvent event) {
         myEvents.clear();
       }
@@ -89,6 +89,89 @@ public class EventsCollector {
     for (SModelDescriptor sm : new LinkedHashSet<SModelDescriptor>(myModelDescriptors)) {
       remove(sm);
     }
-    CommandProcessor.getInstance().removeCommandListener(myCommandListener);
+    ourListenersSupport.removeCommandListener(myCommandListener);
+  }
+
+  private static class CommandListenersSupport {
+    private final Object myLock = new Object();
+    private List<CommandListener> myListeners = new ArrayList<CommandListener>();
+
+    private CommandListenersSupport() {
+      CommandProcessor.getInstance().addCommandListener(new MyListener());
+    }
+
+    public void addCommandListener(CommandListener l) {
+      synchronized (myLock) {
+        myListeners.add(l);
+      }
+    }
+
+    public void removeCommandListener(CommandListener l) {
+      synchronized (myLock) {
+        myListeners.remove(l);
+      }
+    }
+
+    private void fireCommandStarted(CommandEvent e) {
+      synchronized (myLock) {
+        for (CommandListener l : myListeners) {
+          l.commandStarted(e);
+        }
+      }
+    }
+
+    private void fireBeforeCommandFinished(CommandEvent e) {
+      synchronized (myLock) {
+        for (CommandListener l : myListeners) {
+          l.beforeCommandFinished(e);
+        }
+      }
+    }
+
+    private void fireCommandFinished(CommandEvent e) {
+      synchronized (myLock) {
+        for (CommandListener l : myListeners) {
+          l.commandFinished(e);
+        }
+      }
+    }
+
+    private void fireUndoTransparentActionStarted() {
+      synchronized (myLock) {
+        for (CommandListener l : myListeners) {
+          l.undoTransparentActionStarted();
+        }
+      }
+    }
+
+    private void fireUndoTransparentActionFinished() {
+      synchronized (myLock) {
+        for (CommandListener l : myListeners) {
+          l.undoTransparentActionFinished();
+        }
+      }
+    }
+
+    private class MyListener implements CommandListener {
+      public void commandStarted(CommandEvent event) {
+        fireCommandStarted(event);
+      }
+
+      public void beforeCommandFinished(CommandEvent event) {
+        fireBeforeCommandFinished(event);
+      }
+
+      public void commandFinished(CommandEvent event) {
+        fireCommandFinished(event);
+      }
+
+      public void undoTransparentActionStarted() {
+        fireUndoTransparentActionStarted();
+      }
+
+      public void undoTransparentActionFinished() {
+        fireUndoTransparentActionFinished();
+      }
+    }
   }
 }
