@@ -225,7 +225,7 @@ public class MPSVCSManager implements ProjectComponent {
               }
             }
           }
-          
+
         });
       }
     });
@@ -238,11 +238,11 @@ public class MPSVCSManager implements ProjectComponent {
 
     while (true) {
       VirtualFile parent = path.get(0).getParent();
-      if (parent == null){
+      if (parent == null) {
         break;
       }
 
-      if (isUnderVCS(myProject, parent)){
+      if (isUnderVCS(myProject, parent)) {
         break;
       } else {
         path.add(0, parent);
@@ -474,9 +474,9 @@ public class MPSVCSManager implements ProjectComponent {
         VirtualFile f = VFileSystem.getFile(ifile);
         if (f != null) {
           addInternal(Collections.singletonList(f));
+          sm.removeModelListener(this);
         }
       }
-      sm.removeModelListener(this);
     }
   }
 
@@ -527,7 +527,6 @@ public class MPSVCSManager implements ProjectComponent {
     @Override
     public void modelCreated(SModelDescriptor modelDescriptor) {
       modelDescriptor.addModelListener(myModelInitializationListener);
-
     }
 
     @Override
