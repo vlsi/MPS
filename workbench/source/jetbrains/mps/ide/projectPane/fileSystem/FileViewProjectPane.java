@@ -4,8 +4,10 @@ import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.FileStatusListener;
@@ -13,16 +15,12 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsListener;
 import com.intellij.openapi.vfs.*;
-import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 
@@ -193,11 +191,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     } else {
       myTimer.restart();
     }
-  }
-
-  private MPSProject getProject() {
-    MPSProjectHolder holder = myProject.getComponent(MPSProjectHolder.class);
-    return holder.getMPSProject();
   }
 
   public Icon getIcon() {

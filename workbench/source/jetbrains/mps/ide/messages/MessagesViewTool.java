@@ -44,23 +44,24 @@ import java.util.Queue;
 public class MessagesViewTool extends BaseProjectTool implements PersistentStateComponent<MyState> {
   private static final int MAX_MESSAGES_SIZE = 30000;
 
-  public static final Icon INFORMATION_ICON = new ImageIcon(MessagesViewTool.class.getResource("information.png"));
-  public static final Icon ERROR_ICON = new ImageIcon(MessagesViewTool.class.getResource("error.png"));
-  public static final Icon WARNING_ICON = new ImageIcon(MessagesViewTool.class.getResource("warning.png"));
-
-  private MyToggleAction myErrorsAction = new MyToggleAction("Show Error Messages", ERROR_ICON, new Computable<Boolean>() {
+  private MyToggleAction myErrorsAction = new MyToggleAction("Show Error Messages", jetbrains.mps.ide.messages.Icons.ERROR_ICON, new Computable<Boolean>() {
     public Boolean compute() {
       return hasErrors();
     }
   });
-  private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", WARNING_ICON, new Computable<Boolean>() {
+  private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", jetbrains.mps.ide.messages.Icons.WARNING_ICON, new Computable<Boolean>() {
     public Boolean compute() {
       return hasWarnings();
     }
   });
-  private MyToggleAction myInfoAction = new MyToggleAction("Show Information Messages", INFORMATION_ICON, new Computable<Boolean>() {
+  private MyToggleAction myInfoAction = new MyToggleAction("Show Information Messages", jetbrains.mps.ide.messages.Icons.INFORMATION_ICON, new Computable<Boolean>() {
     public Boolean compute() {
       return hasInfo();
+    }
+  });
+  private MyToggleAction myAutoscrollToSourceAction = new MyToggleAction("Autoscroll To Source", jetbrains.mps.ide.messages.Icons.AUTOSCROLLS_ICON, new Computable<Boolean>() {
+    public Boolean compute() {
+      return hasHintObjects();
     }
   });
 
@@ -86,6 +87,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     group.add(myErrorsAction);
     group.add(myWarningsAction);
     group.add(myInfoAction);
+    group.add(myAutoscrollToSourceAction);
 
     panel.add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent(), BorderLayout.NORTH);
 
@@ -110,7 +112,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
     myList.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
-        if (e.getClickCount() == 1 && e.getButton() == MouseEvent.BUTTON1) {
+        if (e.getClickCount() == 1 && e.getButton() == MouseEvent.BUTTON1 && myAutoscrollToSourceAction.isSelected(null)) {
           openCurrentMessageNodeIfPossible();
         }
       }
@@ -140,7 +142,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
           item = (Message) myModel.get(index);
         }
 
-        if (item != null && item.getHintObject() != null) {
+        if (item != null && item.getHintObject() != null && myAutoscrollToSourceAction.isSelected(null)) {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         } else {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
@@ -163,13 +165,13 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
         switch (msg.getKind()) {
           case INFORMATION:
-            setIcon(INFORMATION_ICON);
+            setIcon(jetbrains.mps.ide.messages.Icons.INFORMATION_ICON);
             break;
           case WARNING:
-            setIcon(WARNING_ICON);
+            setIcon(jetbrains.mps.ide.messages.Icons.WARNING_ICON);
             break;
           case ERROR:
-            setIcon(ERROR_ICON);
+            setIcon(jetbrains.mps.ide.messages.Icons.ERROR_ICON);
             break;
         }
         return this;
@@ -230,6 +232,14 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   public boolean hasInfo() {
     for (Message m : myMessages) {
       if (m.getKind() == MessageKind.INFORMATION) return true;
+    }
+
+    return false;
+  }
+
+  public boolean hasHintObjects() {
+    for (Message m : myMessages) {
+      if (m.getHintObject() != null) return true;
     }
 
     return false;
@@ -374,13 +384,14 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   public MyState getState() {
-    return new MyState(myErrorsAction.isSelected(null), myWarningsAction.isSelected(null), myInfoAction.isSelected(null));
+    return new MyState(myErrorsAction.isSelected(null), myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myAutoscrollToSourceAction.isSelected(null));
   }
 
   public void loadState(MyState state) {
     myErrorsAction.setSelected(null, state.isErrors());
     myWarningsAction.setSelected(null, state.isWarnings());
     myInfoAction.setSelected(null, state.isInfo());
+    myAutoscrollToSourceAction.setSelected(null, state.isAutoscrollToSource());
   }
 
   public BlameDialog getBlameDialog() {
@@ -391,14 +402,16 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     private boolean myErrors;
     private boolean myWarnings;
     private boolean myInfo;
+    private boolean myAutoscrollToSource;
 
     public MyState() {
     }
 
-    public MyState(boolean errors, boolean warnings, boolean info) {
+    public MyState(boolean errors, boolean warnings, boolean info, boolean autoscrollToSource) {
       myErrors = errors;
       myWarnings = warnings;
       myInfo = info;
+      myAutoscrollToSource = autoscrollToSource;
     }
 
     public boolean isErrors() {
@@ -423,6 +436,14 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
     public void setInfo(boolean info) {
       myInfo = info;
+    }
+
+    public boolean isAutoscrollToSource() {
+      return myAutoscrollToSource;
+    }
+
+    public void setAutoscrollToSource(boolean autoscrollToSource) {
+      myAutoscrollToSource = autoscrollToSource;
     }
   }
 
