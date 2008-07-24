@@ -90,6 +90,19 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="7">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept"/>
+      <moveMap/>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="Tool" conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.Tool"
+               featureKind="CONCEPT"/>
+          <value featureName="ToolDeclaration"
+                 conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.ToolDeclaration"
+                 featureKind="CONCEPT"/>
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11"/>
@@ -107,7 +120,7 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   </language>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="6"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="7"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7"/>
@@ -223,7 +236,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203071677434">
-    <property name="name" value="Tool"/>
+    <property name="name" value="ToolDeclaration"/>
     <property name="package" value="Tool"/>
     <property name="rootable" value="true"/>
     <property name="iconPath" value="${language_descriptor}\icons\tool.png"/>

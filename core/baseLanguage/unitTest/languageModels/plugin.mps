@@ -4,7 +4,7 @@
   <refactoringHistory/>
   <language namespace="jetbrains.mps.bootstrap.pluginLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="6"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="7"/>
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6"/>
@@ -335,7 +335,7 @@
       <link role="modifiedGroup" targetNodeId="6.1204991231476" resolveInfo="EditorPopup"/>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.Tool" id="1208269069496">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ToolDeclaration" id="1208269069496">
     <property name="name" value="JUnitTest"/>
     <property name="package" value="tool"/>
     <property name="icon" value="${language_descriptor}\icons\junit.png"/>

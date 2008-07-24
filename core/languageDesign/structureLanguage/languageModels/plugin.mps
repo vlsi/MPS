@@ -4,7 +4,7 @@
   <refactoringHistory/>
   <language namespace="jetbrains.mps.bootstrap.pluginLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="6"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="7"/>
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83"/>
@@ -31,7 +31,7 @@
   <import index="8" modelUID="jetbrains.mps.workbench.tools@java_stub" version="-1"/>
   <import index="9" modelUID="jetbrains.mps.ide.projectPane@java_stub" version="-1"/>
   <import index="10" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.Tool" id="1216648908320">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ToolDeclaration" id="1216648908320">
     <property name="name" value="StructureView"/>
     <property name="caption" value="Concept Structure"/>
     <node role="methodDeclaration"
