@@ -84,6 +84,10 @@ public class BaseGroup extends DefaultActionGroup {
     }
   }
 
+  public void addAnchor(String id) {
+    add(new LabelledAnchor(id));
+  }
+
   public void adjust() {
 
   }
