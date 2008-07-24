@@ -10,12 +10,12 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class DefaultClassifierMethodCallOperation_DataFlow extends DataFlowBuilder {
 
-  public  DefaultClassifierMethodCallOperation_DataFlow() {
+  public DefaultClassifierMethodCallOperation_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode arg : SLinkOperations.getTargets(_context.getNode(), "actualArgument", true)) {
-      _context.getBuilder().build(arg);
+    for(SNode argument : SLinkOperations.getTargets(_context.getNode(), "actualArgument", true)) {
+      _context.getBuilder().build((SNode)argument);
     }
   }
 
