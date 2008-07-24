@@ -36,7 +36,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204115898932">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="configuration" />
-      <property name="sourceCardinality" value="0..n" />
+      <property name="sourceCardinality" value="1..n" />
       <link role="target" targetNodeId="1204115658627" resolveInfo="Configuration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203599325709">
@@ -73,6 +73,10 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204116114324">
       <property name="name" value="setBasedir" />
+      <link role="dataType" targetNodeId="2v.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1216901049448">
+      <property name="name" value="compile" />
       <link role="dataType" targetNodeId="2v.1082983657063" resolveInfo="boolean" />
     </node>
   </node>
