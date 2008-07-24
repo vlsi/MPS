@@ -108,8 +108,24 @@
           <property name="flag" value="false" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1211896425816">
-        <property name="text" value="test code {" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1216897849902">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1216897849903">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216897854124">
+          <property name="text" value="test code" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1216898009523">
+            <property name="value" value="0.0" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216897874844">
+          <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="2v.1215091279307" resolveInfo="LeftBrace" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1216897849905">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1211897748815">
         <property name="vertical" value="false" />
@@ -123,6 +139,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1211896453305">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="2v.1215091331565" resolveInfo="RightBrace" />
       </node>
     </node>
   </node>
@@ -295,6 +312,7 @@
         <property name="text" value="&gt;" />
         <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
         <link role="actionMap" targetNodeId="1215524000577" resolveInfo="Annotation_Actions" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleClassItem" id="1216895890694" />
       </node>
     </node>
   </node>

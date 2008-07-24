@@ -1955,6 +1955,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216893361172">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216893362009">
+            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1216893361173" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1216893367878">
+              <link role="conceptMethodDeclaration" targetNodeId="1216892728097" resolveInfo="checkUnusedVariables" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877327397">
@@ -2498,6 +2506,47 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1216892728097">
+      <property name="name" value="checkUnusedVariables" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216892728099">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216892818403">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216892818404">
+            <property name="name" value="unusedVariables" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216892818405">
+              <link role="classifier" targetNodeId="8.~Set" resolveInfo="Set" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216892824280">
+                <link role="classifier" targetNodeId="9.~SNode" resolveInfo="SNode" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216893095165">
+              <link role="baseMethodDeclaration" targetNodeId="10.~DataFlow.getUnusedVariables(jetbrains.mps.smodel.SNode):java.util.Set" resolveInfo="getUnusedVariables" />
+              <link role="classConcept" targetNodeId="10.~DataFlow" resolveInfo="DataFlow" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1216893096610" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1216893111720">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216893111721">
+            <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.WarningStatement" id="1216893128692">
+              <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216893130720">
+                <property name="value" value="Unused variable" />
+              </node>
+              <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216893148824">
+                <link role="variableDeclaration" targetNodeId="1216893111724" resolveInfo="var" />
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216893118932">
+            <link role="variableDeclaration" targetNodeId="1216892818404" resolveInfo="unusedVariables" />
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216893111724">
+            <property name="name" value="var" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1216893113391" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1216892757154" />
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877327584">
       <property name="name" value="getVariablesReferencedInClosures" />

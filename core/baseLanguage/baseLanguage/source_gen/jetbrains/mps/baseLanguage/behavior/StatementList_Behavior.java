@@ -24,6 +24,7 @@ public class StatementList_Behavior {
     StatementList_Behavior.call_checkUnreachable_1213877327433(thisNode);
     StatementList_Behavior.call_checkUninitializedReads_1213877327450(thisNode);
     StatementList_Behavior.call_checkUnusedAssignments_1213877327497(thisNode);
+    StatementList_Behavior.call_checkUnusedVariables_1216892728097(thisNode);
   }
 
   public static void call_checkReturns_1213877327397(SNode thisNode) {
@@ -41,13 +42,13 @@ public class StatementList_Behavior {
         if (nodeToSelect != null) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(nodeToSelect, "Return expected", "jetbrains.mps.baseLanguage.behavior@10_0", "1215433086400", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(nodeToSelect, "Return expected", "jetbrains.mps.baseLanguage.behavior@5_0", "1215433086400", intentionProvider);
           }
         } else
         {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(n, "Return expected", "jetbrains.mps.baseLanguage.behavior@10_0", "1215433086408", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(n, "Return expected", "jetbrains.mps.baseLanguage.behavior@5_0", "1215433086408", intentionProvider);
           }
         }
       }
@@ -59,7 +60,7 @@ public class StatementList_Behavior {
     for(SNode n : unreachable) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(n, "Unreachable node", "jetbrains.mps.baseLanguage.behavior@10_0", "1213877327444", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(n, "Unreachable node", "jetbrains.mps.baseLanguage.behavior@5_0", "1213877327444", intentionProvider);
       }
     }
   }
@@ -75,7 +76,7 @@ public class StatementList_Behavior {
         }
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(read, "Variable used before it is initialized", "jetbrains.mps.baseLanguage.behavior@10_0", "1213877327487", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(read, "Variable used before it is initialized", "jetbrains.mps.baseLanguage.behavior@5_0", "1213877327487", intentionProvider);
         }
       }
     }
@@ -108,6 +109,16 @@ public class StatementList_Behavior {
           intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.constraints.RemoveUnusedAssignment_QuickFix");
           TypeChecker.getInstance().reportWarning(write, "Unused assignment", "jetbrains.mps.baseLanguage.behavior", "1213877327573", intentionProvider);
         }
+      }
+    }
+  }
+
+  public static void call_checkUnusedVariables_1216892728097(SNode thisNode) {
+    Set<SNode> unusedVariables = DataFlow.getUnusedVariables(thisNode);
+    for(SNode var : unusedVariables) {
+      {
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().reportWarning(var, "Unused variable", "jetbrains.mps.baseLanguage.behavior", "1216893128692", intentionProvider);
       }
     }
   }

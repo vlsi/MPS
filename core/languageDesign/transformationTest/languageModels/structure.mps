@@ -127,6 +127,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1212572311199">
     <property name="name" value="CategoriesList" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}\icons\nodesTest.png" />
     <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1212572483111">
       <property name="metaClass" value="aggregation" />

@@ -179,7 +179,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215604006110">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215604028387">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215604028388">
-            <property name="value" value="Add node operations annotation" />
+            <property name="value" value="Add test operations annotation" />
           </node>
         </node>
       </node>
