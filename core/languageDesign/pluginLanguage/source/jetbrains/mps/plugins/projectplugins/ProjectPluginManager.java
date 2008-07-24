@@ -121,16 +121,6 @@ public class ProjectPluginManager implements ProjectComponent {
         LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
       }
     }
-
-    for (IProjectPlugin plugin : myPlugins) {
-      if (plugin instanceof BaseProjectPlugin) {
-        try {
-          ((BaseProjectPlugin) plugin).adjustGroups();
-        } catch (Throwable t1) {
-          LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
-        }
-      }
-    }
   }
 
   private void addIdePlugin() {

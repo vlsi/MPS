@@ -4,6 +4,7 @@ package jetbrains.mps.bootstrap.structureLanguage.plugin;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.project.MPSProject;
@@ -75,7 +76,7 @@ public class ShowConceptStructure_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       StructureView_Tool tool = this.project.getPluginManager().getTool(StructureView_Tool.class);
-      tool.getStructureView().inspect(((INodeAdapter) SNodeOperations.getAdapter(this.node)), new ProjectOperationContext(this.project));
+      tool.getStructureView().inspect((AbstractConceptDeclaration) ((INodeAdapter) SNodeOperations.getAdapter(this.node)), new ProjectOperationContext(this.project));
       tool.openToolLater(true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowConceptStructure", t);

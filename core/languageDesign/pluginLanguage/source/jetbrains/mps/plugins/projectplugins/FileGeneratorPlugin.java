@@ -4,7 +4,7 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.project.MPSProject;
 
-public abstract class FileGeneratorPlugin implements IProjectPlugin {
+public abstract class FileGeneratorPlugin {
   private IFileGenerator myFileGenerator;
   private MPSProject myProject;
 
@@ -28,5 +28,4 @@ public abstract class FileGeneratorPlugin implements IProjectPlugin {
       generatorManager.removeFileGenerator(myFileGenerator);
     }
   }
-
 }
