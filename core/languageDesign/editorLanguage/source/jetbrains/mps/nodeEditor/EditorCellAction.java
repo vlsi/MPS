@@ -25,8 +25,8 @@ public abstract class EditorCellAction {
   public static final String RIGHT_SPECIAL = "RIGHT_SPECIAL";
   public static final String UP_SPECIAL = "UP_SPECIAL";
   public static final String DOWN_SPECIAL = "DOWN_SPECIAL";
-  public static final String CTRL_HOME = "CTRL_HOME";
-  public static final String CTRL_END = "CTRL_END";
+  public static final String HOME_SPECIAL = "HOME_SPECIAL";
+  public static final String END_SPECIAL = "END_SPECIAL";
   public static final String HOME = "HOME";
   public static final String END = "END";
   public static final String PAGE_UP = "PAGE_UP";

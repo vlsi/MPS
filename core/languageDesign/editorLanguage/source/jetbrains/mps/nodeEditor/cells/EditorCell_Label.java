@@ -39,6 +39,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     setAction(EditorCellAction.COPY, new CellAction_CopyLabelText());
     setAction(EditorCellAction.PASTE, new CellAction_PasteIntoLabelText());
     setAction(EditorCellAction.CUT, new CellAction_CutLabelText());
+
+    setAction(EditorCellAction.HOME_SPECIAL, new CellAction_HomeSpecial());
+    setAction(EditorCellAction.END_SPECIAL, new CellAction_EndSpecial());
   }
 
   public CaretPosition getDefaultCaretPosition() {
@@ -161,7 +164,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public boolean isLastCaretPosition() {
-    if (isLastPositionAllowed()) {
+    if (!isLastPositionAllowed()) {
       return getCaretPosition() == getText().length() - 1;
     } else {
       return getCaretPosition() == getText().length();
@@ -742,5 +745,25 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   public int getCharWidth() {
     return getRenderedTextLine().charWidth();
+  }
+
+  private class CellAction_HomeSpecial extends EditorCellAction {
+    public boolean canExecute(EditorContext context) {
+      return !isFirstCaretPosition();
+    }
+
+    public void execute(EditorContext context) {
+      home();
+    }
+  }
+
+  private class CellAction_EndSpecial extends EditorCellAction {
+    public boolean canExecute(EditorContext context) {
+      return !isLastCaretPosition();
+    }
+
+    public void execute(EditorContext context) {
+      end();
+    }
   }
 }

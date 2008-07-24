@@ -236,8 +236,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.RIGHT_SPECIAL, new NodeEditorActions.RIGHT());
     myActionMap.put(EditorCellAction.UP_SPECIAL, new NodeEditorActions.UP_SPECIAL());
     myActionMap.put(EditorCellAction.DOWN_SPECIAL, new NodeEditorActions.DOWN_SPECIAL());
-    myActionMap.put(EditorCellAction.CTRL_HOME, new NodeEditorActions.CTRL_HOME());
-    myActionMap.put(EditorCellAction.CTRL_END, new NodeEditorActions.CTRL_END());
+    myActionMap.put(EditorCellAction.HOME_SPECIAL, new NodeEditorActions.CTRL_HOME());
+    myActionMap.put(EditorCellAction.END_SPECIAL, new NodeEditorActions.CTRL_END());
     myActionMap.put(EditorCellAction.HOME, new NodeEditorActions.HOME());
     myActionMap.put(EditorCellAction.END, new NodeEditorActions.END());
     myActionMap.put(EditorCellAction.PAGE_DOWN, new NodeEditorActions.PAGE_DOWN());
@@ -935,10 +935,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return EditorCellAction.DOWN_SPECIAL;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return EditorCellAction.CTRL_HOME;
+      return EditorCellAction.HOME_SPECIAL;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_END && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return EditorCellAction.CTRL_END;
+      return EditorCellAction.END_SPECIAL;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.getModifiers() == 0) {
       return EditorCellAction.HOME;
