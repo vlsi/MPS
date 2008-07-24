@@ -36,11 +36,18 @@ public class ModuleRepository_Tool extends GeneratedTool {
     group.add(new CloseAction(this));
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
     this.myPanel.add(toolbar, BorderLayout.WEST);
-    // 
-    this.myComponent.install();
   }
 
   public void dispose() {
+  }
+
+  public void makeAvailable() {
+    super.makeAvailable();
+    this.myComponent.install();
+  }
+
+  public void makeUnavailable() {
+    super.makeUnavailable();
     this.myComponent.uninstall();
   }
 
