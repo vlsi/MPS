@@ -429,13 +429,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   private void loadConstraints(String languageNamespace, List<IModelConstraints> loadedConstraints) {
     // load constraints
-
     Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
-
     assert l != null;
-
     String packageName = languageNamespace + ".constraints";
-
     SModelDescriptor constraintsModelDescriptor = l.getConstraintsModelDescriptor();
     if (constraintsModelDescriptor == null) {
       return;
@@ -444,9 +440,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
     try {
       String className = packageName + "." + "ConstraintsDescriptor";
       Class constraintsClass = l.getClass(className);
-
       if (constraintsClass == null) {
-        LOG.error("Can't find " + className);
+//        LOG.error("Can't find " + className);
+        // it is ok: constraints model can be empty 
         return;
       }
 
