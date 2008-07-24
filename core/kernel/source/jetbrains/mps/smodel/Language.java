@@ -434,10 +434,6 @@ public class Language extends AbstractModule {
     return myLanguageDescriptor;
   }
 
-  public String getLanguagePluginClass() {
-    return getLanguageDescriptor().getLanguagePluginClass();
-  }
-
   public String getGeneratedPluginClassLongName() {
     return getPluginModelDescriptor().getLongName() + "." + PluginNameUtils.getPluginName(this);
   }

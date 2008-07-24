@@ -98,11 +98,6 @@ public class ProjectPluginManager implements ProjectComponent {
     }
 
     for (Language language : languages) {
-      //todo:remove this
-      if (language.getLanguagePluginClass() != null) {
-        addPlugin(language, language.getLanguagePluginClass());
-      }
-
       if (language.getPluginModelDescriptor() != null) {
         Class pluginClass = language.getClass(language.getGeneratedPluginClassLongName());
         if (pluginClass != null) {
