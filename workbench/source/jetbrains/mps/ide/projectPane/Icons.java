@@ -49,12 +49,10 @@ public class Icons {
   public static final Icon CONSTRAINTS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/constraintsModel.png"));
   public static final Icon ACCESSORY_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/accessoryModel.png"));
 
-  public static final Icon OPENED_FOLDER = new ImageIcon(Icons.class.getResource("other/openedFolder.png"));
-  public static final Icon CLOSED_FOLDER = new ImageIcon(Icons.class.getResource("other/closedFolder.png"));
+  public static final Icon OPENED_FOLDER = new ImageIcon(Icons.class.getResource("fileSystem/icons/TreeOpened.png"));
+  public static final Icon CLOSED_FOLDER = new ImageIcon(Icons.class.getResource("fileSystem/icons/TreeClosed.png"));
   public static final Icon OPENED_FOLDER_GOTHIC = new ImageIcon(Icons.class.getResource("other/openedFolder_gothic.png"));
   public static final Icon CLOSED_FOLDER_GOTHIC = new ImageIcon(Icons.class.getResource("other/closedFolder_gothic.png"));
-  public static final Icon TREE_OPENED = new ImageIcon(Icons.class.getResource("fileSystem/icons/TreeOpened.png"));
-  public static final Icon TREE_CLOSED = new ImageIcon(Icons.class.getResource("fileSystem/icons/TreeClosed.png"));
 
   public static final Icon USAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/usages.png"));
   public static final Icon CELL_EXPLORER_ICON = new ImageIcon(Icons.class.getResource("nodes/cellExplorer.png"));

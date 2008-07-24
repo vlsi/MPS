@@ -51,7 +51,5 @@ public class CompositeTreeNode extends MPSTreeNode {
   @Override
   protected void updatePresentation() {
     setText("VCS Roots");
-    setIcon(Icons.TREE_OPENED, true);
-    setIcon(Icons.TREE_CLOSED, false);
   }
 }
