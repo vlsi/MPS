@@ -5,6 +5,8 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 
+import javax.swing.SwingUtilities;
+
 /**
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
@@ -38,9 +40,13 @@ public class EditorCell_Property extends EditorCell_Label {
     boolean oldSelected = isSelected();
     super.setSelected(selected);
     if (oldSelected && !selected && myModelAccessor instanceof TransactionalModelAccessor) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          commit();
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              commit();
+            }
+          });
         }
       });
     }
