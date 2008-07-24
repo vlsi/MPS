@@ -54,7 +54,6 @@
     <dependency reexport="false">MPS.Classpath</dependency>
     <dependency reexport="false">JDK</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage#1129914002149</dependency>
-    <dependency reexport="false">jetbrains.mps.transformation.test.inputLang</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.transformation.generationContext</extendedLanguage>
