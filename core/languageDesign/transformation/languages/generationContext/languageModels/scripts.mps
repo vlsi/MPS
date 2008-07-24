@@ -107,6 +107,24 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216866134130">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1216866141245">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216866143749">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1216866143076" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216866145752">
+                  <link role="link" targetNodeId="2.1216756400723" />
+                </node>
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216866135976">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216866134131">
+                  <link role="variableDeclaration" targetNodeId="1216863604060" resolveInfo="newOp" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1216866137651">
+                  <link role="link" targetNodeId="1.1216860049632" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
