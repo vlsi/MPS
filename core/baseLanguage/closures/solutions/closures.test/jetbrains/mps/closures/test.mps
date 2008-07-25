@@ -17,8 +17,10 @@
   <language namespace="jetbrains.mps.baseLanguage.unitTest">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
   </language>
+  <language namespace="jetbrains.mps.internal.collections">
+    <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="java.util@java_stub" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
@@ -5471,27 +5473,29 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215542924120">
-            <node role="expression" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1215542924121">
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215542924122">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215543306710">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215543308047">
-                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215543308831">
-                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreator" id="1215543308832">
-                        <node role="dimensionExpression" type="jetbrains.mps.baseLanguage.structure.DimensionExpression" id="1215543308833">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215543312554">
-                            <property name="value" value="3" />
+            <node role="expression" type="jetbrains.mps.closures.structure.InvokeFunctionExpression" id="1216997575226">
+              <node role="function" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1215542924121">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215542924122">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215543306710">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215543308047">
+                      <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215543308831">
+                        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreator" id="1215543308832">
+                          <node role="dimensionExpression" type="jetbrains.mps.baseLanguage.structure.DimensionExpression" id="1215543308833">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215543312554">
+                              <property name="value" value="3" />
+                            </node>
                           </node>
+                          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ByteType" id="1215543308834" />
                         </node>
-                        <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ByteType" id="1215543308834" />
+                      </node>
+                      <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215543306711">
+                        <link role="variableDeclaration" targetNodeId="1215542895879" resolveInfo="bytes" />
                       </node>
                     </node>
-                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215543306711">
-                      <link role="variableDeclaration" targetNodeId="1215542895879" resolveInfo="bytes" />
-                    </node>
                   </node>
-                </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215601769693">
-                  <property name="value" value=" no return value" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215601769693">
+                    <property name="value" value=" no return value" />
+                  </node>
                 </node>
               </node>
             </node>

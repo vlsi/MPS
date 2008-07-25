@@ -101,7 +101,7 @@ __switch__:
         //  no return value
       }
 
-    };
+    }.invoke();
     Assert.assertSame(3, bytes.value.length);
   }
 
