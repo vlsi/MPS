@@ -39,6 +39,10 @@ public class TemplateQueryContext {
     return myGenerator.getOutputModel();
   }
 
+  public SModel getOriginalModel() {
+    return myGenerator.getGeneratorSessionContext().getOriginalInputModel();
+  }
+
   /**
    * 'sourceModel' mapping
    * @deprecated

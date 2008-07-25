@@ -168,7 +168,7 @@ public class GenerationController {
     return totalJob;
   }
 
-  private boolean generateModelsInModule(IModule module, List<SModelDescriptor> descriptors, final long totalJob, long startJobTime) throws Exception {
+  private boolean generateModelsInModule(IModule module, List<SModelDescriptor> inputModels, final long totalJob, long startJobTime) throws Exception {
     boolean currentGenerationOK = true;
 
     IOperationContext invocationContext = myModulesToContexts.get(module);
@@ -199,7 +199,7 @@ public class GenerationController {
       }
       Logger.addLoggingHandler(generationSession.getLoggingHandler());
       TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.GENERATION);
-      for (SModelDescriptor inputModel : descriptors) {
+      for (SModelDescriptor inputModel : inputModels) {
         if (!myGenerationType.isApplicable(inputModel)) {
           LOG.error("Can't apply generation type " + myGenerationType + " to " + inputModel.getModelUID());
           continue;
