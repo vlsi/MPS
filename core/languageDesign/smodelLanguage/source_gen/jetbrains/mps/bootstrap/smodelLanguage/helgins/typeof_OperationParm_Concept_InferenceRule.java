@@ -20,9 +20,9 @@ public class typeof_OperationParm_Concept_InferenceRule implements InferenceRule
     if (SNodeOperations.isInstanceOf(conceptArg, "jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression")) {
       // concept expected
       {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(conceptArg, "expression", true);
+        SNode _nodeToCheck_1029348928467 = opp;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207344198915", false), new QuotationClass_87().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207344198913", false, 0, intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(conceptArg, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207344198915", false), new QuotationClass_87().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207344198913", false, 0, intentionProvider);
       }
     }
   }

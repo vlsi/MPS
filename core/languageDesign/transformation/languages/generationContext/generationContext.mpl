@@ -24,6 +24,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
+    <dependency reexport="false">jetbrains.mps.transformationTest#1210261198005</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>

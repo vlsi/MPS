@@ -30,7 +30,7 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule implements Infere
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204926978425", true), T, _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204926978423", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204926978425", true), T, _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204926978423", intentionProvider);
     }
     // ---
     if (!(SPropertyOperations.hasValue(annotationLink, "stereotype", "link", "node"))) {
@@ -40,9 +40,9 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule implements Infere
     if (SNodeOperations.isInstanceOf(linkQualifier, "jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression")) {
       // link role expected
       {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(linkQualifier, "expression", true);
+        SNode _nodeToCheck_1029348928467 = nodeToCheck;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792163", false), new QuotationClass_65().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792161", false, 0, intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(linkQualifier, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792163", false), new QuotationClass_65().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792161", false, 0, intentionProvider);
       }
     }
   }

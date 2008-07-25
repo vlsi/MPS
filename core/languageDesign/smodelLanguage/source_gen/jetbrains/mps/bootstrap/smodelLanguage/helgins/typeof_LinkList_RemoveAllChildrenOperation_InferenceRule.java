@@ -23,9 +23,9 @@ public class typeof_LinkList_RemoveAllChildrenOperation_InferenceRule implements
 
         public void run() {
           {
-            SNode _nodeToCheck_1029348928467 = op;
+            SNode _nodeToCheck_1029348928467 = null;
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1215104325502", true), new QuotationClass_101().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1215104325500", intentionProvider);
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1215104325502", true), new QuotationClass_101().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1215104325500", intentionProvider);
           }
         }
 

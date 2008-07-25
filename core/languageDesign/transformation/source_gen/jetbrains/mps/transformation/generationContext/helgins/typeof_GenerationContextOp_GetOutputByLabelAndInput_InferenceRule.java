@@ -36,7 +36,7 @@ public class typeof_GenerationContextOp_GetOutputByLabelAndInput_InferenceRule i
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
 }
