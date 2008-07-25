@@ -19,8 +19,10 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.SwingUtilities;
 import java.util.*;
 
 public class DefaultSModelDescriptor extends BaseSModelDescriptor {
@@ -208,7 +210,15 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
         refactoringContext.getRefactoring().updateModel(mySModel, refactoringContext);
       }
       mySModel.updateImportedModelUsedVersion(modelDescriptor.getModelUID(), currentVersion);
-      save();
+   /*   SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              save();
+            }
+          });
+        }
+      });*/
     }
     return;
   }
