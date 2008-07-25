@@ -301,10 +301,14 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return myScrollPane;
   }
 
-  protected void editNode(SNode node, IOperationContext context) {
-    MPSEditorOpener opener = getProject().getComponent(MPSEditorOpener.class);
-    assert opener != null;
-    opener.openNode(node, context);
+  protected void editNode(final SNode node, final IOperationContext context) {
+    ModelAccess.instance().executeCommand(new Runnable() {
+      public void run() {
+        MPSEditorOpener opener = getProject().getComponent(MPSEditorOpener.class);
+        assert opener != null;
+        opener.openNode(node, context);
+      }
+    });
   }
 
   public void projectOpened() {

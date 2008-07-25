@@ -144,6 +144,10 @@ public class ModelAccess {
     });
   }
 
+  public void executeCommand(Runnable r) {
+    CommandProcessor.getInstance().executeCommand(null, r, "name", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+  }
+
   public void runWriteActionInCommand(final Runnable r) {
     runWriteActionInCommand(r, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
