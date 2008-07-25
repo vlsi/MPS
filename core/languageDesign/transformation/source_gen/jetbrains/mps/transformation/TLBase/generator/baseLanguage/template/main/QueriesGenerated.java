@@ -184,6 +184,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "inputNode", true);
   }
 
+  public static SNode sourceNodeQuery_1216946028703(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+  }
+
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619599466(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByMappingLabel("queriesGenerated");
   }
