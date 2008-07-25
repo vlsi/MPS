@@ -183,7 +183,9 @@ public abstract class BaseTool {
       );
     }
 
-    ToolWindow toolWindow = myWindowManager.registerToolWindow(myId, myCanCloseContent, myAnchor);
+    //if we create a new project, tool windows are created for it automatically
+    ToolWindow toolWindow=myWindowManager.getToolWindow(myId);
+    if (toolWindow==null) toolWindow = myWindowManager.registerToolWindow(myId, myCanCloseContent, myAnchor);
 
     if (myComponent == null) myComponent = getComponent();
     if (myComponent != null) {
