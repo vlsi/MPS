@@ -15,7 +15,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.helgins">
     <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
@@ -44,7 +44,7 @@
   <import index="38" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
   <import index="39" modelUID="jetbrains.mps.ypath.constraints" version="49" />
   <import index="40" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="45" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  <import index="45" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   <import index="46" modelUID="jetbrains.mps.ypath.runtime@java_stub" version="-1" />
   <import index="47" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1168462842641">

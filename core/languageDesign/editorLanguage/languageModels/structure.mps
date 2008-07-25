@@ -262,7 +262,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
@@ -292,7 +292,7 @@
   <import index="37" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
   <import index="38" modelUID="javax.swing@java_stub" version="-1" />
   <import index="39" modelUID="java.awt@java_stub" version="-1" />
-  <import index="40" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  <import index="40" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   <import index="41" modelUID="jetbrains.mps.nodeEditor.style@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1071666914219">
     <property name="name" value="ConceptEditorDeclaration" />

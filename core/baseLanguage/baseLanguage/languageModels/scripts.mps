@@ -8,7 +8,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
@@ -48,7 +48,7 @@
   <import index="9" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="18" modelUID="jetbrains.mps.ide.findusages.model@java_stub" version="-1" />
   <import index="22" modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
-  <import index="23" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  <import index="23" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   <import index="24" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="25" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="26" modelUID="jetbrains.mps.bootstrap.editorLanguage.editor" version="-1" />

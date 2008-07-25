@@ -7,7 +7,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.core">
     <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
@@ -31,7 +31,7 @@
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.patterns.structure" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  <import index="5" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.structure" version="-1" />
   <import index="7" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
   <import index="8" modelUID="java.lang@java_stub" version="-1" />
@@ -431,7 +431,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1179359262666">
-      <link role="conceptLinkDeclaration" targetNodeId="5.1179351420610" />
+      <link role="conceptLinkDeclaration" targetNodeId="2.1217022095863" />
       <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1179359267449" />
     </node>
   </node>

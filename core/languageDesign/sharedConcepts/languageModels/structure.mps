@@ -11,7 +11,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.core">
     <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
@@ -28,7 +28,7 @@
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  <import index="5" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1161622665029">
     <property name="name" value="ConceptFunctionParameter_model" />
     <link role="extends" targetNodeId="2.1107135704075" />

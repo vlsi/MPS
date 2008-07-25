@@ -8,7 +8,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
@@ -33,7 +33,7 @@
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
-  <import index="3" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  <import index="3" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1169570915271">
     <property name="name" value="TL_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1169570930693">

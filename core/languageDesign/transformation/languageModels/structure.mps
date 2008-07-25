@@ -7,7 +7,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
@@ -29,7 +29,7 @@
   <import index="7" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
   <import index="9" modelUID="java.lang@java_stub" version="-1" />
-  <import index="11" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  <import index="11" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1087833241328">
     <property name="name" value="PropertyMacro" />
     <property name="package" value="macro" />
