@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_NameCellComponent;
@@ -84,6 +85,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
 
   private static void setupBasic_Constant_12057698556941205769855694(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205769855694");
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_Collection_12057698556951205769855695(EditorCell editorCell, SNode node, EditorContext context) {
@@ -108,6 +110,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
 
   private static void setupBasic_Constant_12057698556981205769855698(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205769855698");
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_refNode_visibility1205838275288(EditorCell editorCell, SNode node, EditorContext context) {

@@ -79,9 +79,16 @@
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
           </node>
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217000754335">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205769425501">
         <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="4.1215087929380" resolveInfo="LeftParen" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217000555400">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1205769434991">
         <property name="vertical" value="false" />
@@ -95,6 +102,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205769437461">
         <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="4.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>
@@ -135,6 +143,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205769855694">
           <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="4.1215091279307" resolveInfo="LeftBrace" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996478">
           <property name="flag" value="false" />
@@ -152,6 +161,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205769855698">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="4.1215091331565" resolveInfo="RightBrace" />
       </node>
     </node>
   </node>
