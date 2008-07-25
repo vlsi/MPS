@@ -8,6 +8,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
 import jetbrains.mps.ide.ThreadUtils;
@@ -397,7 +398,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   public BlameDialog getBlameDialog() {
-    return BlameDialogComponent.getInstance().getDialog();
+    return BlameDialogComponent.getInstance().createDialog(WindowManager.getInstance().getFrame(getProject()));
   }
 
   public static class MyState {

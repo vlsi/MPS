@@ -17,13 +17,14 @@ import javax.swing.event.ChangeListener;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Insets;
+import java.awt.Dialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-public class BlameDialog extends BaseDialog implements PersistentStateComponent<MyState> {
+public class BlameDialog extends BaseDialog {
   public static final String teamsys = "http://teamsys.intellij.net/teamsys";
   public static final String login = "/rest/user/login";
   public static final String issue = "XX-1";
@@ -49,9 +50,13 @@ public class BlameDialog extends BaseDialog implements PersistentStateComponent<
   private String myResponseString;
   private boolean mySent;
 
+  public BlameDialog(Dialog dialog) {
+    super(dialog, "Submit system exception to developers");
+    init();
+  }
+
   public BlameDialog(Frame mainFrame) {
     super(mainFrame, "Submit system exception to developers");
-
     init();
   }
 
@@ -78,6 +83,8 @@ public class BlameDialog extends BaseDialog implements PersistentStateComponent<
   }
 
   private void init() {
+    setModal(true);
+
     myLoginPanel.setVisible(false);
     myAnonymous.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
@@ -145,6 +152,8 @@ public class BlameDialog extends BaseDialog implements PersistentStateComponent<
     }
 
     mySent = true;
+
+    BlameDialogComponent.getInstance().loadState(getState());
     setVisible(false);
   }
 

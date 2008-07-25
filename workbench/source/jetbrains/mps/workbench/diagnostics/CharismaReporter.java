@@ -9,7 +9,9 @@ import jetbrains.mps.ide.blame.BlameDialog;
 import jetbrains.mps.ide.blame.BlameDialogComponent;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 
+import javax.swing.SwingUtilities;
 import java.awt.Component;
+import java.awt.Frame;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -24,7 +26,7 @@ public class CharismaReporter extends ErrorReportSubmitter {
       return new SubmittedReportInfo(null, null, SubmissionStatus.FAILED);
     }
 
-    BlameDialog blameDialog = BlameDialogComponent.getInstance().getDialog();
+    BlameDialog blameDialog = BlameDialogComponent.getInstance().createDialog(parentComponent);
     blameDialog.setEx(events[0].getThrowable());
     blameDialog.setMessage(events[0].getMessage());
 

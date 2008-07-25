@@ -9,6 +9,13 @@ import jetbrains.mps.ide.blame.BlameDialog.MyState;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.SwingUtilities;
+import java.awt.Frame;
+import java.awt.Dialog;
+import java.awt.Component;
+
 @State(
   name = "CharismaBlameDialog",
   storages = {
@@ -19,7 +26,6 @@ import org.jetbrains.annotations.NotNull;
   }
 )
 public class BlameDialogComponent implements ApplicationComponent, PersistentStateComponent<BlameDialog.MyState> {
-  private BlameDialog myDialog;
   private BlameDialog.MyState myDialogState = new MyState();
 
   @NonNls
@@ -32,13 +38,9 @@ public class BlameDialogComponent implements ApplicationComponent, PersistentSta
   }
 
   public void disposeComponent() {
-    myDialog = null;
   }
 
   public MyState getState() {
-    if (myDialog != null) {
-      myDialogState = myDialog.getState();
-    }
     return myDialogState;
   }
 
@@ -46,12 +48,20 @@ public class BlameDialogComponent implements ApplicationComponent, PersistentSta
     myDialogState = state;
   }
 
-  public BlameDialog getDialog() {
-    if (myDialog == null) {
-      myDialog = new BlameDialog(null);
-      myDialog.loadState(myDialogState);
+  public BlameDialog createDialog(Component component) {
+    component = SwingUtilities.getRoot(component);
+
+    BlameDialog result;
+    if (component instanceof Dialog) {
+      result = new BlameDialog((Dialog) component);
+    } else if (component instanceof Frame) {
+      result = new BlameDialog((Frame) component);
+    } else {
+      throw new IllegalArgumentException("Can't show on " + component);
     }
-    return myDialog;
+
+    result.loadState(myDialogState);
+    return result;
   }
 
   public static BlameDialogComponent getInstance() {
