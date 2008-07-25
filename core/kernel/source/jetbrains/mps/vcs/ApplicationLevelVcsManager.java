@@ -7,6 +7,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vcs.*;
+import com.intellij.openapi.vcs.changes.*;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -15,6 +17,8 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.persistence.ConflictModelException;
 import jetbrains.mps.vcs.merge.CustomMergeSupport;
+
+import java.util.List;
 
 public class ApplicationLevelVcsManager implements ApplicationComponent {
 
@@ -29,20 +33,19 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-
   }
 
   public void disposeComponent() {
 
   }
 
-  public boolean isInConflict(IFile ifile) {
+  public boolean isInConflict(final IFile ifile) {
     VirtualFile vfile = VFileSystem.getFile(ifile);
     if ((vfile != null) && (vfile.exists())) {
       Project[] projects = ApplicationManager.getApplication().getComponent(ProjectManager.class).getOpenProjects();
       for (Project project : projects) {
-        VcsFileStatusProvider statusProvider = project.getComponent(VcsFileStatusProvider.class);
-        if (statusProvider.getFileStatus(vfile).equals(FileStatus.MERGED_WITH_CONFLICTS)) {
+        boolean isInConflict = MPSVCSManager.getInstance(project).isInConflict(vfile);
+        if (isInConflict){
           return true;
         }
       }
@@ -78,7 +81,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     IFile ifile = modelDescriptor.getModelFile();
     if (ApplicationLevelVcsManager.instance().isInConflict(ifile)) {
       AbstractVcs vcs = getVcsForFile(VFileSystem.getFile(ifile));
-      if ((vcs != null) && CustomMergeSupport.getInstance().tryToMergeConflictedModel(modelDescriptor, vcs.getName())){
+      if ((vcs != null) && CustomMergeSupport.getInstance().tryToMergeConflictedModel(modelDescriptor, vcs.getName())) {
       } else {
         ConflictModelException conflictModelException = new ConflictModelException(modelDescriptor);
         throw conflictModelException;

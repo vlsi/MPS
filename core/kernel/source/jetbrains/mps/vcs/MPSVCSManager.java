@@ -9,6 +9,7 @@ import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.watching.ModelChangesWatcher.MetadataCreationListener;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationListener;
@@ -21,14 +22,13 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vcs.impl.VcsDirectoryMappingStorage;
-import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
-import com.intellij.openapi.vcs.changes.ChangeListManager;
-import com.intellij.openapi.vcs.changes.IgnoredFileBean;
+import com.intellij.openapi.vcs.changes.*;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -47,12 +47,18 @@ public class MPSVCSManager implements ProjectComponent {
   private MetadataCreationListener myMetadataListener = new MetadataCreationListenerImpl();
   private ProjectLevelVcsManager myManager;
   private static final String IGNORE_PATTERN = ".svn*";
+  private ChangeListManager myChangeListManager;
 
-  public MPSVCSManager(Project project, ProjectLevelVcsManager manager, MPSProjectHolder holder, MPSModuleRepository repository, VcsDirectoryMappingStorage storage) {
+  public MPSVCSManager(Project project, ProjectLevelVcsManager manager, MPSProjectHolder holder, MPSModuleRepository repository, VcsDirectoryMappingStorage storage, ChangeListManager clmanager) {
     myProject = project;
     myManager = manager;
+    myChangeListManager = clmanager;
     myGenerationListener = new GenerationWhatcher();
     myModelRepositoryListener = new SModelRepositoryListenerImpl();
+  }
+
+  public static MPSVCSManager getInstance(Project project){
+    return project.getComponent(MPSVCSManager.class);    
   }
 
   private void renameInternal(final VirtualFile from, final VirtualFile to) {
@@ -287,8 +293,48 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public void projectOpened() {
+    myChangeListManager.ensureUpToDate(false);
     addDotSvnToIgnore();
     addDirectoryMappings();
+  }
+
+  @Hack
+  public boolean isInConflict(final VirtualFile file) {
+
+    myManager.updateActiveVcss();
+    AbstractVcs vcs = myManager.getVcsFor(file);
+
+    if (vcs == null) {
+      return false;
+    }
+
+    VcsDirtyScopeImpl scope = new VcsDirtyScopeImpl(vcs, myProject); // TODO don't use Impl classes
+    scope.addDirtyFile(new FilePathImpl(file)); // TODO don't use Impl classes
+    ChangeProvider changeProvider = vcs.getChangeProvider();
+
+    if (changeProvider == null){
+      return false;
+    }
+
+    final boolean[] result = new boolean[1];
+    try {
+      changeProvider.getChanges(scope, new EmptyChangelistBuilder() {
+        public void processChange(Change change) {
+          if (change.getFileStatus().equals(FileStatus.MERGED_WITH_CONFLICTS)) {
+            ContentRevision contentRevision = change.getAfterRevision();
+            if (contentRevision != null) {
+              if (contentRevision.getFile().getPresentableUrl().equals(file.getPresentableUrl())){
+                result[0] = true;
+              }
+            }
+          }
+        }
+      }, new EmptyProgressIndicator());
+    } catch (VcsException e) {
+      LOG.error(e);
+    }
+
+    return result[0];
   }
 
   private void addDotSvnToIgnore() {

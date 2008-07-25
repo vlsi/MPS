@@ -18,6 +18,7 @@ import jetbrains.mps.vcs.merge.Merger;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -29,6 +30,7 @@ import java.io.Reader;
 import java.util.*;
 
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
 
 import javax.swing.SwingUtilities;
 
