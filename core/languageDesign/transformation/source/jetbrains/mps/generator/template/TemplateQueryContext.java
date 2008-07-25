@@ -39,7 +39,7 @@ public class TemplateQueryContext {
     return myGenerator.getOutputModel();
   }
 
-  public SModel getOriginalModel() {
+  public SModel getOriginalInputModel() {
     return myGenerator.getGeneratorSessionContext().getOriginalInputModel();
   }
 
