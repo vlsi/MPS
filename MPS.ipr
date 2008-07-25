@@ -1358,15 +1358,6 @@
     </Base>
   </component>
   <component name="libraryTable">
-    <library name="XMLRPC">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/xmlrpc/xmlrpc-1.2-b1.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/xmlrpc/xmlrpc-1.2-b1-src.zip.zip!/" />
-      </SOURCES>
-    </library>
     <library name="XStream">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/xstream/xstream.jar!/" />
@@ -1524,19 +1515,6 @@
       </SOURCES>
       <jarDirectory url="file://$PROJECT_DIR$/lib/beansbinding" recursive="false" />
     </library>
-    <library name="SVNKit">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/svnkit/svnkit.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/svnkit/jna.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/svnkit/trilead.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/svnkit/svnkit-cli.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/svnkit/svnkit-javahl.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/svnkit/svnkitsrc.zip!/" />
-      </SOURCES>
-    </library>
     <library name="IDEA-plaform">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/idea-platform/oromatcher.jar!/" />
@@ -1582,14 +1560,6 @@
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/junit4/junit-4.1-src.jar!/" />
       </SOURCES>
-    </library>
-    <library name="IDEA-addon">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/addon/platform-impl.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/addon/platform-api.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
     </library>
   </component>
   <component name="uidesigner-configuration">
