@@ -113,11 +113,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216945228272">
     <property name="name" value="GenerationContextOp_GetScope" />
     <link role="extends" targetNodeId="1216860049619" resolveInfo="GenerationContextOp_Base" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216945228273">
-      <property name="role" value="label" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1200911316486" resolveInfo="MappingLabelDeclaration" />
-    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1216945228274">
       <link role="intfc" targetNodeId="3.1197027803184" resolveInfo="IOperation" />
     </node>
@@ -126,6 +121,20 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1216945228276">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217004708011">
+    <property name="name" value="GenerationContextOp_GetInputModel" />
+    <link role="extends" targetNodeId="1216860049619" resolveInfo="GenerationContextOp_Base" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1217004708013">
+      <link role="intfc" targetNodeId="3.1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217004708014">
+      <property name="value" value="inputModel" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1217004708015">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>

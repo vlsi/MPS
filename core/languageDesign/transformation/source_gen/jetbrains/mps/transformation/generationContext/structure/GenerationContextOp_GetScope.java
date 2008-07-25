@@ -7,14 +7,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.transformation.TLBase.structure.MappingLabelDeclaration;
 
 public class GenerationContextOp_GetScope extends GenerationContextOp_Base implements IOperation {
   public static final String concept = "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetScope";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String LABEL = "label";
 
   public GenerationContextOp_GetScope(SNode node) {
     super(node);
@@ -51,14 +49,6 @@ public class GenerationContextOp_GetScope extends GenerationContextOp_Base imple
 
   public void setVirtualPackage(String value) {
     this.setProperty(GenerationContextOp_GetScope.VIRTUAL_PACKAGE, value);
-  }
-
-  public MappingLabelDeclaration getLabel() {
-    return (MappingLabelDeclaration)this.getReferent(GenerationContextOp_GetScope.LABEL);
-  }
-
-  public void setLabel(MappingLabelDeclaration node) {
-    super.setReferent(GenerationContextOp_GetScope.LABEL, node);
   }
 
 }

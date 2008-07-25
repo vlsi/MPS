@@ -78,10 +78,10 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1216945268542">
-    <link role="conceptDeclaration" targetNodeId="1.1216945228272" resolveInfo="GenerationContextOp_GetScope" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216945276873">
-      <property name="text" value="scope" />
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1217004808034">
+    <link role="conceptDeclaration" targetNodeId="1.1216860049619" resolveInfo="GenerationContextOp_Base" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1217004816051">
+      <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>
