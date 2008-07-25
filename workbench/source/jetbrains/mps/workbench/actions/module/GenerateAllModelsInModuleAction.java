@@ -54,36 +54,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
     for (IModule module : myModules) {
       if (module instanceof Generator) {
         module = ((Generator) module).getSourceLanguage();
-        final IModule moduleCopy = module;
-        invocationContext = new IOperationContext() {
-          public <T> T getComponent(Class<T> clazz) {
-            return myOperationContext.getComponent(clazz);
-          }
-
-          public Frame getMainFrame() {
-            return myOperationContext.getMainFrame();
-          }
-
-          public IModule getModule() {
-            return moduleCopy;
-          }
-
-          public MPSProject getMPSProject() {
-            return myOperationContext.getMPSProject();
-          }
-
-          public Project getProject() {
-            return myOperationContext.getProject();
-          }
-
-          public IScope getScope() {
-            return myOperationContext.getScope();
-          }
-
-          public boolean isTestMode() {
-            return myOperationContext.isTestMode();
-          }
-        };
+        invocationContext = new MyContext(module,myOperationContext);
       }
 
       modelsToGenerate.addAll(getModelsToGenerate(module));
@@ -165,5 +136,43 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
     myFrame = data.getFrame();
     if (myFrame == null) return false;
     return true;
+  }
+
+  private static class MyContext implements IOperationContext {
+    private final IModule myModule;
+    private IOperationContext myOperationContext;
+
+    public MyContext(IModule module, IOperationContext operationContext) {
+      myModule = module;
+      myOperationContext=operationContext;
+    }
+
+    public <T> T getComponent(Class<T> clazz) {
+      return myOperationContext.getComponent(clazz);
+    }
+
+    public Frame getMainFrame() {
+      return myOperationContext.getMainFrame();
+    }
+
+    public IModule getModule() {
+      return myModule;
+    }
+
+    public MPSProject getMPSProject() {
+      return myOperationContext.getMPSProject();
+    }
+
+    public Project getProject() {
+      return myOperationContext.getProject();
+    }
+
+    public IScope getScope() {
+      return myOperationContext.getScope();
+    }
+
+    public boolean isTestMode() {
+      return myOperationContext.isTestMode();
+    }
   }
 }
