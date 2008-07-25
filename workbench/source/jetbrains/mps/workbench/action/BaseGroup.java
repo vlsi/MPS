@@ -47,22 +47,14 @@ public class BaseGroup extends DefaultActionGroup {
     return myId;
   }
 
-  public void setVisible(Presentation p, boolean isVisible) {
-    p.setVisible(isVisible);
-  }
-
-  public void setEnabled(Presentation p, boolean isEnabled) {
-    p.setEnabled(isEnabled);
-  }
-
   public void disable(Presentation p) {
-    setEnabled(p, false);
-    setVisible(p, myIsAlwaysVisible);
+    p.setEnabled(false);
+    p.setVisible(myIsAlwaysVisible);
   }
 
   public void enable(Presentation p) {
-    setEnabled(p, true);
-    setVisible(p, true);
+    p.setEnabled(true);
+    p.setVisible(true);
   }
 
   protected void setEnabledState(Presentation p, boolean state) {

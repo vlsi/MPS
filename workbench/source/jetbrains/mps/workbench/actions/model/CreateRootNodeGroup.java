@@ -98,8 +98,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       }
     }
 
-    setVisible(event.getPresentation(), true);
-    //todo:setVisible(event.getPresentation(),data.hasOneSelectedItem());
+    setEnabledState(event.getPresentation(),data.hasOneSelectedItem());
   }
 
   private BaseAction newRootNodeAction(final SNodePointer nodeConcept, final SModelDescriptor modelDescriptor) {
