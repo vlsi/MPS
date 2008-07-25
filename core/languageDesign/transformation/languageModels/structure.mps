@@ -954,10 +954,6 @@
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167951910409">
-      <link role="target" targetNodeId="8.1161622878565" />
-      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167951910410">
       <link role="target" targetNodeId="8.1161622753914" />
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
