@@ -1,31 +1,32 @@
 package jetbrains.mps.workbench.editors;
 
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.*;
-import jetbrains.mps.workbench.editors.MPSEditorOpenHandlerOwner;
-import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints;
 import jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration;
+import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.ide.ConceptDeclarationEditor;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.NodeEditor;
+import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import java.util.*;
@@ -97,7 +98,7 @@ public class MPSEditorOpener implements ProjectComponent {
 
   }
 
-  public SNode getBaseNode(IOperationContext context, SNode node) {    
+  public SNode getBaseNode(IOperationContext context, SNode node) {
     List<MPSEditorOpenHandler> badHandlers = new ArrayList<MPSEditorOpenHandler>();
     for (MPSEditorOpenHandler h : myEditorOpenHandlers) {
       try {
@@ -156,15 +157,23 @@ public class MPSEditorOpener implements ProjectComponent {
   }
 
   public IEditor openNode(final SNode node) {
+    return openNode(node, true);
+  }
+
+  public IEditor openNode(final SNode node, boolean focus) {
     ModuleContext context = ModelAccess.instance().runReadAction(new Computable<ModuleContext>() {
       public ModuleContext compute() {
         return ModuleContext.create(node, myProject.getComponent(MPSProjectHolder.class).getMPSProject());
       }
     });
-    return openNode(node, context);
+    return openNode(node, context, focus);
   }
 
   public IEditor openNode(final SNode node, final IOperationContext context) {
+    return openNode(node, context, true);
+  }
+
+  public IEditor openNode(final SNode node, final IOperationContext context, final boolean focus) {
     return ModelAccess.instance().runReadAction(new Computable<IEditor>() {
       public IEditor compute() {
         final IEditor[] result = new IEditor[1];
@@ -172,7 +181,7 @@ public class MPSEditorOpener implements ProjectComponent {
         com.intellij.openapi.command.CommandProcessor.getInstance().executeCommand(ideaProject, new Runnable() {
           public void run() {
             ideaProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
-            result[0] = doOpenNode(node, context);
+            result[0] = doOpenNode(node, context, focus);
           }
         }, "navigate", "");
         return result[0];
@@ -180,7 +189,7 @@ public class MPSEditorOpener implements ProjectComponent {
     });
   }
 
-  private IEditor doOpenNode(SNode node, IOperationContext context) {
+  private IEditor doOpenNode(SNode node, IOperationContext context, final boolean focus) {
     SNode containingRoot = node.getContainingRoot();
 
     SNode baseNode = getBaseNode(context, containingRoot);
@@ -191,7 +200,7 @@ public class MPSEditorOpener implements ProjectComponent {
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
 
-    FileEditor[] result = editorManager.openFile(file, true);
+    FileEditor[] result = editorManager.openFile(file, focus);
 
     MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) result[0];
 
@@ -199,7 +208,7 @@ public class MPSEditorOpener implements ProjectComponent {
     IEditor nodeEditor = fileNodeEditor.getNodeEditor();
     if (nodeEditor instanceof TabbedEditor) {
       ((TabbedEditor) nodeEditor).selectLinkedEditor(containingRoot);
-      nodeEditor.getCurrentEditorComponent().requestFocus();
+      if (focus) nodeEditor.getCurrentEditorComponent().requestFocus();
     }
 
     if (!node.isRoot()) {
@@ -215,7 +224,7 @@ public class MPSEditorOpener implements ProjectComponent {
       }
 
       if (currentSelectionTarget == null) {
-        component.changeSelection(component.getRootCell());  
+        component.changeSelection(component.getRootCell());
       }
 
       if (nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent) {
@@ -234,18 +243,20 @@ public class MPSEditorOpener implements ProjectComponent {
             public void run() {
               nec.showInspector();
               inspector.changeSelection(cellToSelect);
-              inspector.requestFocus();
+              if (focus) inspector.requestFocus();
             }
           });
         } else {
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-              nec.requestFocus();
-            }
-          });
+          if (focus) {
+            SwingUtilities.invokeLater(new Runnable() {
+              public void run() {
+                nec.requestFocus();
+              }
+            });
+          }
         }
       }
-    }
+    }     
 
     return nodeEditor;
   }

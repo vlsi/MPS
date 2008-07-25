@@ -6,6 +6,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.SystemInfo;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.ToolWindowType;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.BaseNodeData;
@@ -14,6 +16,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.Modul
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.NodeNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataTree;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -89,13 +92,13 @@ public abstract class UsagesTree extends MPSTree {
 
     getActionMap().put(COMMAND_OPEN_NODE_IN_PROJECT, new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        openCurrentNodeLink(false);
+        openCurrentNodeLink(false,!isAutoHide());
       }
     });
 
     getActionMap().put(COMMAND_OPEN_NODE_IN_TREE, new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        openCurrentNodeLink(true);
+        openCurrentNodeLink(true,!isAutoHide());
       }
     });
 
@@ -113,9 +116,11 @@ public abstract class UsagesTree extends MPSTree {
 
     addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
-        boolean gotoAction = (e.getClickCount() == 2) || (e.getClickCount() == 1 && myAutoscroll);
-        if ((e.getButton() == MouseEvent.BUTTON1) && gotoAction) {
-          openCurrentNodeLink(false);
+        boolean goOneClick = e.getClickCount() == 1 && myAutoscroll &&e.getButton() == MouseEvent.BUTTON1;
+        boolean goTwoClick = e.getClickCount() == 2 && e.getButton() == MouseEvent.BUTTON1;
+        if (goOneClick ||goTwoClick) {
+          boolean focus = goTwoClick || !isAutoHide(); 
+          openCurrentNodeLink(false, focus);
         }
       }
     });
@@ -394,20 +399,20 @@ public abstract class UsagesTree extends MPSTree {
     if (useAdjust) myContents.setAdjusting(false);
   }
 
-  private void openCurrentNodeLinkIfLeaf(boolean inProject) {
+  private void openCurrentNodeLinkIfLeaf(boolean inProject,boolean focus) {
     UsagesTreeNode treeNode = getCurrentNode();
     if (treeNode == null) return;
     if (treeNode.getChildCount() != 0) return;
-    goByNodeLink(treeNode, inProject);
+    goByNodeLink(treeNode, inProject,focus);
   }
 
-  private void openCurrentNodeLink(boolean inProjectIfPossible) {
+  private void openCurrentNodeLink(boolean inProjectIfPossible,boolean focus) {
     UsagesTreeNode treeNode = getCurrentNode();
     if (treeNode == null) return;
-    goByNodeLink(treeNode, inProjectIfPossible);
+    goByNodeLink(treeNode, inProjectIfPossible,focus);
   }
 
-  private void goByNodeLink(final UsagesTreeNode treeNode, final boolean inProjectIfPossible) {
+  private void goByNodeLink(final UsagesTreeNode treeNode, final boolean inProjectIfPossible, final boolean focus) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (treeNode.getUserObject() == null) {
@@ -419,9 +424,9 @@ public abstract class UsagesTree extends MPSTree {
           SNode node = ((NodeNodeData) data).getNode();
           if (node != null) {
             if (!inProjectIfPossible) {
-              navigateToNode(node);
+              navigateToNode(node,focus);
             } else {
-              navigateInTree(node);
+              navigateInTree(node, focus);
             }
           } else {
             LOG.info("clicked node was deleted");
@@ -429,12 +434,12 @@ public abstract class UsagesTree extends MPSTree {
         } else if (data instanceof ModelNodeData) {
           SModel model = (SModel) ((ModelNodeData) data).getIdObject();
           if (model != null) {
-            navigateInTree(model);
+            navigateInTree(model, focus);
           }
         } else if (data instanceof ModuleNodeData) {
           IModule module = (IModule) ((ModuleNodeData) data).getIdObject();
           if (module != null) {
-            navigateInTree(module);
+            navigateInTree(module, focus);
           }
         }
       }
@@ -537,7 +542,7 @@ public abstract class UsagesTree extends MPSTree {
 
     if (next != null) {
       setCurrentNode(next);
-      openCurrentNodeLink(false);
+      openCurrentNodeLink(false,!isAutoHide());
     }
   }
 
@@ -555,7 +560,7 @@ public abstract class UsagesTree extends MPSTree {
 
     if (next != null) {
       setCurrentNode(next);
-      openCurrentNodeLink(false);
+      openCurrentNodeLink(false,!isAutoHide());
     }
   }
 
@@ -565,11 +570,11 @@ public abstract class UsagesTree extends MPSTree {
     return inResults((UsagesTreeNode) node.getParent());
   }
 
-  public void navigateToNode(SNode node) {
-    getProject().getComponentSafe(MPSEditorOpener.class).openNode(node);
+  public void navigateToNode(SNode node,boolean focus) {
+    getProject().getComponentSafe(MPSEditorOpener.class).openNode(node,focus);
   }
 
-  private void navigateInTree(Object o) {
+  private void navigateInTree(Object o, boolean focus) {
     ProjectPane projectPane = getProject().getComponentSafe(ProjectPane.class);
     if (o instanceof SNode) {
       projectPane.selectNode((SNode) o, new ProjectOperationContext(getProject()));
@@ -580,7 +585,8 @@ public abstract class UsagesTree extends MPSTree {
     } else {
       throw new IllegalArgumentException();
     }
-    projectPane.getTree().requestFocus();
+
+    if (focus) projectPane.getTree().requestFocus();
   }
 
   public abstract MPSProject getProject();
@@ -593,7 +599,7 @@ public abstract class UsagesTree extends MPSTree {
   public void setAutoscroll(boolean autoscroll) {
     myAutoscroll = autoscroll;
     if (getCurrentNode() != null) {
-      goByNodeLink(getCurrentNode(), false);
+      goByNodeLink(getCurrentNode(), false,false);
     }
   }
 
@@ -619,5 +625,9 @@ public abstract class UsagesTree extends MPSTree {
       if (children == null) return new ArrayList<UsagesTreeNode>();
       return children;
     }
+  }
+
+  protected boolean isAutoHide(){
+    return getProject().getComponent(Project.class).getComponent(UsagesViewTool.class).getToolWindow().getType()== ToolWindowType.SLIDING;
   }
 }

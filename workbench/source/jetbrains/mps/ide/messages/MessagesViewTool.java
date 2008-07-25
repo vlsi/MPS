@@ -114,7 +114,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     myList.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         boolean oneClickOpen = e.getClickCount() == 1 && e.getButton() == MouseEvent.BUTTON1 && myAutoscrollToSourceAction.isSelected(null);
-        boolean twoClickOpen = e.getClickCount() == 2;
+        boolean twoClickOpen = e.getClickCount() == 2 && e.getButton() == MouseEvent.BUTTON1;
         if (oneClickOpen || twoClickOpen) {
           openCurrentMessageNodeIfPossible();
         }
