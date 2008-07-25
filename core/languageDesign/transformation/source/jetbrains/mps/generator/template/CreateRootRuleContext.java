@@ -8,10 +8,4 @@ public class CreateRootRuleContext extends TemplateQueryContext {
     super(null, generator);
   }
 
-  /**
-   * 'sourceModel' mapping
-   */
-  public SModel getSourceModel() {
-    return getInputModel();
-  }
 }

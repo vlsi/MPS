@@ -24,11 +24,4 @@ public class PropertyMacroContext extends TemplateQueryContext {
   public String getTemplateValue() {
     return myTemplateValue;
   }
-
-  /**
-   * 'sourceModel' mapping (deprecated)
-   */
-  public SModel getSourceModel() {
-    return getInputModel();
-  }
 }

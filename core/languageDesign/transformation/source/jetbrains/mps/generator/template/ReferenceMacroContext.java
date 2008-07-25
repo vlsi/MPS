@@ -24,11 +24,4 @@ public class ReferenceMacroContext extends TemplateQueryContext {
   public SNode getOutputNode() {
     return myOutputNode;
   }
-
-  /**
-   * 'sourceModel' mapping (deprecated)
-   */
-  public SModel getSourceModel() {
-    return getInputModel();
-  }
 }

@@ -16,10 +16,4 @@ public class IfMacroContext  extends TemplateQueryContext {
     return getInputNode();
   }
 
-  /**
-   * 'sourceModel' mapping
-   */
-  public SModel getSourceModel() {
-    return getInputModel();
-  }
 }

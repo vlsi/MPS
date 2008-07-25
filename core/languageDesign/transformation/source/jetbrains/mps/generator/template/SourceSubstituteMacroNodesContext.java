@@ -16,11 +16,4 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
     return getInputNode();
   }
 
-  /**
-   * 'sourceModel' mapping (deprecated)
-   */
-  public SModel getSourceModel() {
-    return getInputModel();
-  }
-
 }

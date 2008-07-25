@@ -40,6 +40,14 @@ public class TemplateQueryContext {
   }
 
   /**
+   * 'sourceModel' mapping
+   * @deprecated
+   */
+  public SModel getSourceModel() {
+    return getInputModel();
+  }
+
+  /**
    * 'generator' mapping
    */
   public ITemplateGenerator getGenerator() {

@@ -14,11 +14,4 @@ public class BaseMappingRuleContext  extends TemplateQueryContext {
   public SNode getNode() {
     return getInputNode();
   }
-
-  /**
-   * 'sourceModel' mapping
-   */
-  public SModel getSourceModel() {
-    return getInputModel();
-  }
 }
