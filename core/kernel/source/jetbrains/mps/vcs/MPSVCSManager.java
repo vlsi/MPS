@@ -20,7 +20,6 @@ import java.rmi.RemoteException;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.*;
-import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vcs.impl.VcsDirectoryMappingStorage;
 import com.intellij.openapi.vcs.changes.*;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
@@ -31,7 +30,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.SwingUtilities;
 
@@ -78,7 +76,7 @@ public class MPSVCSManager implements ProjectComponent {
     AbstractVcs fromVCS = myManager.getVcsFor(file);
     if (fromVCS != null) {
       CheckinEnvironment ci = fromVCS.getCheckinEnvironment();
-      if (ci != null && isUnderVCS(myProject, file)) {
+      if (ci != null && StatusUtil.isUnderVCS(myProject, file)) {
         FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
         ci.scheduleMissingFileForDeletion(Collections.singletonList(path));
       }
@@ -248,7 +246,7 @@ public class MPSVCSManager implements ProjectComponent {
         return Collections.EMPTY_LIST;
       }
 
-      if (isUnderVCS(myProject, parent)) {
+      if (StatusUtil.isUnderVCS(myProject, parent)) {
         break;
       } else {
         path.add(0, parent);
@@ -271,70 +269,9 @@ public class MPSVCSManager implements ProjectComponent {
     }
   }
 
-  /**
-   * This method can say that file is not changed when it actually unversioned. Don't know how to fix.
-   * <p/>
-   * For directories it should work fine.
-   *
-   * @param project
-   * @param f
-   * @return
-   */
-  @Deprecated
-  private static boolean isUnderVCS(Project project, VirtualFile f) {
-    if (f.isDirectory()) {
-      return ProjectLevelVcsManager.getInstance(project).findVersioningVcs(f) != null;
-    }
-
-    VcsDirtyScopeManager.getInstance(project).fileDirty(f);
-    VcsFileStatusProvider provider = project.getComponent(VcsFileStatusProvider.class);
-    FileStatus status = provider.getFileStatus(f);
-    return !(status.equals(FileStatus.UNKNOWN) || status.equals(FileStatus.IGNORED));
-  }
-
   public void projectOpened() {
     myChangeListManager.ensureUpToDate(false);
     addDotSvnToIgnore();
-    addDirectoryMappings();
-  }
-
-  @Hack
-  public boolean isInConflict(final VirtualFile file) {
-
-    myManager.updateActiveVcss();
-    AbstractVcs vcs = myManager.getVcsFor(file);
-
-    if (vcs == null) {
-      return false;
-    }
-
-    VcsDirtyScopeImpl scope = new VcsDirtyScopeImpl(vcs, myProject); // TODO don't use Impl classes
-    scope.addDirtyFile(new FilePathImpl(file)); // TODO don't use Impl classes
-    ChangeProvider changeProvider = vcs.getChangeProvider();
-
-    if (changeProvider == null){
-      return false;
-    }
-
-    final boolean[] result = new boolean[1];
-    try {
-      changeProvider.getChanges(scope, new EmptyChangelistBuilder() {
-        public void processChange(Change change) {
-          if (change.getFileStatus().equals(FileStatus.MERGED_WITH_CONFLICTS)) {
-            ContentRevision contentRevision = change.getAfterRevision();
-            if (contentRevision != null) {
-              if (contentRevision.getFile().getPresentableUrl().equals(file.getPresentableUrl())){
-                result[0] = true;
-              }
-            }
-          }
-        }
-      }, new EmptyProgressIndicator());
-    } catch (VcsException e) {
-      LOG.error(e);
-    }
-
-    return result[0];
   }
 
   private void addDotSvnToIgnore() {
@@ -366,144 +303,6 @@ public class MPSVCSManager implements ProjectComponent {
     myProject.getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
     ModelChangesWatcher.instance().addMetadataListener(myMetadataListener);
-  }
-
-  private void addDirectoryMappings() {
-    List<VcsDirectoryMapping> vcsMappings = new ArrayList<VcsDirectoryMapping>();
-
-    List<IModule> allModules = MPSModuleRepository.getInstance().getAllModules();
-    Map<AbstractVcs, Set<VirtualFile>> vcss = new HashMap<AbstractVcs, Set<VirtualFile>>();
-
-//    for (VcsDirectoryMapping map : myManager.getDirectoryMappings()){
-//      AbstractVcs vcs = myManager.findVcsByName(map.getVcs());
-//      Set<VirtualFile> files = vcss.get(vcs);
-//      if (files == null) {
-//        files = new HashSet<VirtualFile>();
-//        vcss.put(vcs, files);
-//      }
-//      files.add(VFileSystem.getFile(map.getDirectory()));
-//    }
-
-    for (IModule module : allModules) {
-      if (module.isPackaged()) continue;
-      IFile descriptor = module.getDescriptorFile();
-      if (descriptor == null) continue;
-      VirtualFile file = VFileSystem.getFile(descriptor.getParent());
-
-      if (file == null) continue;
-
-      AbstractVcs vcs = myManager.findVersioningVcs(file);
-      if (vcs == null) continue;
-
-      while (true) {
-        VirtualFile parent = file.getParent();
-        if (parent == null) {
-          break;
-        }
-
-        if (vcs.isVersionedDirectory(parent)) {
-          file = parent;
-        } else {
-          break;
-        }
-      }
-      Set<VirtualFile> files = vcss.get(vcs);
-      if (files == null) {
-        files = new HashSet<VirtualFile>();
-        vcss.put(vcs, files);
-      }
-      files.add(file);
-    }
-
-    for (AbstractVcs vcs : vcss.keySet()) {
-      Set<VirtualFile> files = vcss.get(vcs);
-      Collection<String> roots = getRoots(files);
-      for (String path : roots) {
-        vcsMappings.add(new VcsDirectoryMapping(path, vcs.getName()));
-      }
-    }
-
-    for (VcsDirectoryMapping oldMapping : myManager.getDirectoryMappings()) {
-      String oldDir = oldMapping.getDirectory();
-      boolean matched = false;
-      for (VcsDirectoryMapping newMapping : vcsMappings) {
-        if (newMapping.getDirectory().equals(oldDir)) {
-          matched = true;
-        }
-      }
-      if (!matched) {
-        vcsMappings.add(oldMapping);
-      }
-    }
-
-    myManager.setDirectoryMappings(vcsMappings);
-  }
-
-  private Collection<String> getRoots(Set<VirtualFile> files) {
-    Iterator<VirtualFile> it = files.iterator();
-
-    Set<VirtualFile> roots = new HashSet<VirtualFile>();
-
-    while (it.hasNext()) {
-      boolean matched = false;
-
-      VirtualFile file2 = it.next();
-
-      for (VirtualFile file1 : roots) {
-        VirtualFile container = getMaxContainingPath(file1, file2);
-        if (container != null) {
-          roots.remove(file1);
-          roots.add(container);
-          matched = true;
-          break;
-        }
-      }
-
-      if (!matched) {
-        roots.add(file2);
-      }
-    }
-
-    List<String> rootPaths = new LinkedList<String>();
-    for (VirtualFile f : roots) {
-      rootPaths.add(f.getPath());
-    }
-
-    return rootPaths;
-  }
-
-  @Nullable
-  public VirtualFile getMaxContainingPath(VirtualFile file1, VirtualFile file2) {
-    AbstractVcs vcs1 = myManager.findVersioningVcs(file1);
-    if ((vcs1 == null) || !vcs1.equals(myManager.findVersioningVcs(file2))) return null;
-
-    if (isParent(file1, file2)) return file1;
-    if (isParent(file2, file1)) return file2;
-
-    VirtualFile parent1 = file1.getParent();
-    VirtualFile parent2 = file2.getParent();
-
-    if ((parent1 == null) && (parent2 == null)) {
-      return null;
-    } else if (parent1 == null) {
-      return getMaxContainingPath(file1, parent2);
-    } else if (parent2 == null) {
-      return getMaxContainingPath(parent1, file2);
-    }
-
-    return getMaxContainingPath(parent1, parent2);
-  }
-
-  public static boolean isParent(VirtualFile parent, VirtualFile child) {
-    if (!parent.isDirectory()) {
-      return false;
-    }
-
-    if (parent.getPath().equals(child.getPath())) return true;
-
-    VirtualFile parentOfChild = child.getParent();
-    if (parentOfChild == null) return false;
-    return isParent(parent, parentOfChild);
   }
 
   public void disposeComponent() {
