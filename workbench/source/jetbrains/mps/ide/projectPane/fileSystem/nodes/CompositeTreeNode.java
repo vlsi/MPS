@@ -42,7 +42,10 @@ public class CompositeTreeNode extends MPSTreeNode {
 
 //      adding roots
     for (String dir : roots) {
-      add(new FolderTreeNode(project, VFileSystem.getFile(dir), true));
+      VirtualFile file = VFileSystem.getFile(dir);
+      if (file != null) {
+        add(new FolderTreeNode(project, file, true));
+      }
     }
 
     updatePresentation();
