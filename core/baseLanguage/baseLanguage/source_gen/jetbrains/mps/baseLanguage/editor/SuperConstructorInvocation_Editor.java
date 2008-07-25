@@ -23,7 +23,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandle5;
+  /* package */AbstractCellListHandler myListHandler_1085475861768;
 
   private static void setupBasic_Collection_10850595330491085059533049(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1085059533049");
@@ -130,15 +130,15 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1085475861768(EditorContext context, SNode node) {
-    if (this.myListHandle5 == null) {
-      this.myListHandle5 = new SuperConstructorInvocation_Editor.actualArgumentListHandler_(node, "actualArgument", context);
+    if (this.myListHandler_1085475861768 == null) {
+      this.myListHandler_1085475861768 = new SuperConstructorInvocation_Editor.actualArgumentListHandler_(node, "actualArgument", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle5.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1085475861768.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_actualArgument1085475861768(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle5.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1085475861768.getElementRole());
     return editorCell;
   }
 

@@ -28,7 +28,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class IMethodCall_actualArguments extends AbstractCellProvider {
 
-  /* package */AbstractCellListHandler myListHandle35;
+  /* package */AbstractCellListHandler myListHandler_1173990956439;
 
   public IMethodCall_actualArguments(SNode node) {
     super(node);
@@ -139,15 +139,15 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
   }
 
   public EditorCell createRefNodeList1173990956439(EditorContext context, SNode node) {
-    if (this.myListHandle35 == null) {
-      this.myListHandle35 = new IMethodCall_actualArguments.actualArgumentListHandler_5(node, "actualArgument", context);
+    if (this.myListHandler_1173990956439 == null) {
+      this.myListHandler_1173990956439 = new IMethodCall_actualArguments.actualArgumentListHandler_5(node, "actualArgument", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle35.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1173990956439.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_actualArgument1173990956439(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle35.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1173990956439.getElementRole());
     return editorCell;
   }
 

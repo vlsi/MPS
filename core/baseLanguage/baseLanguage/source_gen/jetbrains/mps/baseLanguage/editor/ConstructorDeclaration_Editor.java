@@ -37,10 +37,10 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_Component_Visibility2;
   /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component5;
-  /* package */AbstractCellListHandler myListHandle17;
-  /* package */AbstractCellListHandler myListHandle29;
-  /* package */AbstractCellListHandler myListHandle47;
-  /* package */AbstractCellListHandler myListHandle48;
+  /* package */AbstractCellListHandler myListHandler_1138337100850;
+  /* package */AbstractCellListHandler myListHandler_1165410808126;
+  /* package */AbstractCellListHandler myListHandler_1188210475918;
+  /* package */AbstractCellListHandler myListHandler_1188210485994;
 
   private static void setupBasic_Collection_10751390526571075139052657(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1075139052657");
@@ -501,54 +501,54 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1138337100850(EditorContext context, SNode node) {
-    if (this.myListHandle17 == null) {
-      this.myListHandle17 = new ConstructorDeclaration_Editor.parameterListHandler_(node, "parameter", context);
+    if (this.myListHandler_1138337100850 == null) {
+      this.myListHandler_1138337100850 = new ConstructorDeclaration_Editor.parameterListHandler_(node, "parameter", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle17.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1138337100850.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_parameter1138337100850(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle17.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1138337100850.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1165410808126(EditorContext context, SNode node) {
-    if (this.myListHandle29 == null) {
-      this.myListHandle29 = new ConstructorDeclaration_Editor.throwsItemListHandler_1(node, "throwsItem", context);
+    if (this.myListHandler_1165410808126 == null) {
+      this.myListHandler_1165410808126 = new ConstructorDeclaration_Editor.throwsItemListHandler_1(node, "throwsItem", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle29.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1165410808126.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_throwsItem1165410808126(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle29.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1165410808126.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1188210475918(EditorContext context, SNode node) {
-    if (this.myListHandle47 == null) {
-      this.myListHandle47 = new ConstructorDeclaration_Editor.annotationListHandler_6(node, "annotation", context);
+    if (this.myListHandler_1188210475918 == null) {
+      this.myListHandler_1188210475918 = new ConstructorDeclaration_Editor.annotationListHandler_6(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle47.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1188210475918.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotation1188210475918(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle47.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210475918.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1188210485994(EditorContext context, SNode node) {
-    if (this.myListHandle48 == null) {
-      this.myListHandle48 = new ConstructorDeclaration_Editor.annotationListHandler_7(node, "annotation", context);
+    if (this.myListHandler_1188210485994 == null) {
+      this.myListHandler_1188210485994 = new ConstructorDeclaration_Editor.annotationListHandler_7(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle48.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1188210485994.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotation1188210485994(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle48.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210485994.getElementRole());
     return editorCell;
   }
 

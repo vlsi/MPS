@@ -31,9 +31,9 @@ public class Annotation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_Component_Visibility5;
   /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component2;
-  /* package */AbstractCellListHandler myListHandle40;
-  /* package */AbstractCellListHandler myListHandle45;
-  /* package */AbstractCellListHandler myListHandle46;
+  /* package */AbstractCellListHandler myListHandler_1188206420424;
+  /* package */AbstractCellListHandler myListHandler_1188210091999;
+  /* package */AbstractCellListHandler myListHandler_1188210101998;
 
   private static void setupBasic_Collection_11882064203971188206420397(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188206420397");
@@ -423,41 +423,41 @@ public class Annotation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1188206420424(EditorContext context, SNode node) {
-    if (this.myListHandle40 == null) {
-      this.myListHandle40 = new Annotation_Editor.annotationMethodListHandler_(node, "annotationMethod", context);
+    if (this.myListHandler_1188206420424 == null) {
+      this.myListHandler_1188206420424 = new Annotation_Editor.annotationMethodListHandler_(node, "annotationMethod", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle40.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1188206420424.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotationMethod1188206420424(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle40.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188206420424.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1188210091999(EditorContext context, SNode node) {
-    if (this.myListHandle45 == null) {
-      this.myListHandle45 = new Annotation_Editor.annotationListHandler_4(node, "annotation", context);
+    if (this.myListHandler_1188210091999 == null) {
+      this.myListHandler_1188210091999 = new Annotation_Editor.annotationListHandler_4(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle45.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1188210091999.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotation1188210091999(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle45.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210091999.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1188210101998(EditorContext context, SNode node) {
-    if (this.myListHandle46 == null) {
-      this.myListHandle46 = new Annotation_Editor.annotationListHandler_5(node, "annotation", context);
+    if (this.myListHandler_1188210101998 == null) {
+      this.myListHandler_1188210101998 = new Annotation_Editor.annotationListHandler_5(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle46.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1188210101998.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotation1188210101998(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle46.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210101998.getElementRole());
     return editorCell;
   }
 

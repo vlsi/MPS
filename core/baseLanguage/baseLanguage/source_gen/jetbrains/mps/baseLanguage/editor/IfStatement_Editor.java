@@ -31,7 +31,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class IfStatement_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandle66;
+  /* package */AbstractCellListHandler myListHandler_1206063692153;
 
   private static void setupBasic_Collection_11775550346471177555034647(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1177555034647");
@@ -597,15 +597,15 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1206063692153(EditorContext context, SNode node) {
-    if (this.myListHandle66 == null) {
-      this.myListHandle66 = new IfStatement_Editor.elsifClausesListHandler_(node, "elsifClauses", context);
+    if (this.myListHandler_1206063692153 == null) {
+      this.myListHandler_1206063692153 = new IfStatement_Editor.elsifClausesListHandler_(node, "elsifClauses", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle66.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1206063692153.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_elsifClauses1206063692153(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle66.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1206063692153.getElementRole());
     return editorCell;
   }
 

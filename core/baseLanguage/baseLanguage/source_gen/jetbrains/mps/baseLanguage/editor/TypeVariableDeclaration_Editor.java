@@ -31,7 +31,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandle70;
+  /* package */AbstractCellListHandler myListHandler_1215091315701;
 
   private static void setupBasic_Collection_12149970312631214997031263(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1214997031263");
@@ -188,15 +188,15 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1215091315701(EditorContext context, SNode node) {
-    if (this.myListHandle70 == null) {
-      this.myListHandle70 = new TypeVariableDeclaration_Editor.auxBoundsListHandler_(node, "auxBounds", context);
+    if (this.myListHandler_1215091315701 == null) {
+      this.myListHandler_1215091315701 = new TypeVariableDeclaration_Editor.auxBoundsListHandler_(node, "auxBounds", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle70.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1215091315701.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_auxBounds1215091315701(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle70.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1215091315701.getElementRole());
     return editorCell;
   }
 

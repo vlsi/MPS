@@ -40,10 +40,10 @@ import jetbrains.mps.smodel.SModel;
 
 public class AnonymousClass_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandle31;
-  /* package */AbstractCellListHandler myListHandle32;
-  /* package */AbstractCellListHandler myListHandle33;
-  /* package */AbstractCellListHandler myListHandle63;
+  /* package */AbstractCellListHandler myListHandler_1170345922036;
+  /* package */AbstractCellListHandler myListHandler_1170345922046;
+  /* package */AbstractCellListHandler myListHandler_1170346136560;
+  /* package */AbstractCellListHandler myListHandler_1201186153043;
 
   private static void setupBasic_Collection_11703459219931170345921993(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1170345921993");
@@ -497,54 +497,54 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1170345922036(EditorContext context, SNode node) {
-    if (this.myListHandle31 == null) {
-      this.myListHandle31 = new AnonymousClass_Editor.fieldListHandler_2(node, "field", context);
+    if (this.myListHandler_1170345922036 == null) {
+      this.myListHandler_1170345922036 = new AnonymousClass_Editor.fieldListHandler_2(node, "field", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle31.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1170345922036.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_field1170345922036(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle31.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1170345922036.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1170345922046(EditorContext context, SNode node) {
-    if (this.myListHandle32 == null) {
-      this.myListHandle32 = new AnonymousClass_Editor.methodListHandler_3(node, "method", context);
+    if (this.myListHandler_1170345922046 == null) {
+      this.myListHandler_1170345922046 = new AnonymousClass_Editor.methodListHandler_3(node, "method", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle32.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1170345922046.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_method1170345922046(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle32.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1170345922046.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1170346136560(EditorContext context, SNode node) {
-    if (this.myListHandle33 == null) {
-      this.myListHandle33 = new AnonymousClass_Editor.parameterListHandler_3(node, "parameter", context);
+    if (this.myListHandler_1170346136560 == null) {
+      this.myListHandler_1170346136560 = new AnonymousClass_Editor.parameterListHandler_3(node, "parameter", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle33.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1170346136560.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_parameter1170346136560(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle33.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1170346136560.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1201186153043(EditorContext context, SNode node) {
-    if (this.myListHandle63 == null) {
-      this.myListHandle63 = new AnonymousClass_Editor.typeParameterListHandler_1(node, "typeParameter", context);
+    if (this.myListHandler_1201186153043 == null) {
+      this.myListHandler_1201186153043 = new AnonymousClass_Editor.typeParameterListHandler_1(node, "typeParameter", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle63.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1201186153043.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_typeParameter1201186153043(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle63.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1201186153043.getElementRole());
     return editorCell;
   }
 

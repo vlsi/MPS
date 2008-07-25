@@ -12857,6 +12857,9 @@
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214568090082">
               <property name="flag" value="false" />
             </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217001627981">
+              <property name="value" value="0.0" />
+            </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214568090083">
               <property name="color" value="DARK_BLUE" />
             </node>

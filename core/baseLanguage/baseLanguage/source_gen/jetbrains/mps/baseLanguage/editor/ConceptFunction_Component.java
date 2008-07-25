@@ -71,6 +71,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {

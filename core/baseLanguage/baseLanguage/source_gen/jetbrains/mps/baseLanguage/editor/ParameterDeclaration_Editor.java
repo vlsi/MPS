@@ -32,8 +32,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 public class ParameterDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent3;
-  /* package */AbstractCellListHandler myListHandle58;
-  /* package */AbstractCellListHandler myListHandle60;
+  /* package */AbstractCellListHandler myListHandler_1188212263054;
+  /* package */AbstractCellListHandler myListHandler_1188220825039;
 
   private static void setupBasic_Collection_11767189562311176718956231(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176718956231");
@@ -269,28 +269,28 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1188212263054(EditorContext context, SNode node) {
-    if (this.myListHandle58 == null) {
-      this.myListHandle58 = new ParameterDeclaration_Editor.annotationListHandler_17(node, "annotation", context);
+    if (this.myListHandler_1188212263054 == null) {
+      this.myListHandler_1188212263054 = new ParameterDeclaration_Editor.annotationListHandler_17(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle58.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1188212263054.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotation1188212263054(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle58.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188212263054.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1188220825039(EditorContext context, SNode node) {
-    if (this.myListHandle60 == null) {
-      this.myListHandle60 = new ParameterDeclaration_Editor.annotationListHandler_18(node, "annotation", context);
+    if (this.myListHandler_1188220825039 == null) {
+      this.myListHandler_1188220825039 = new ParameterDeclaration_Editor.annotationListHandler_18(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle60.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1188220825039.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotation1188220825039(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle60.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188220825039.getElementRole());
     return editorCell;
   }
 

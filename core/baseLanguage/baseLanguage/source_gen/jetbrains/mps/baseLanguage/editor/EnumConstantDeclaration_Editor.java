@@ -31,7 +31,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandle11;
+  /* package */AbstractCellListHandler myListHandler_1085485112431;
 
   private static void setupBasic_Collection_10854851124281085485112428(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1085485112428");
@@ -124,15 +124,15 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1085485112431(EditorContext context, SNode node) {
-    if (this.myListHandle11 == null) {
-      this.myListHandle11 = new EnumConstantDeclaration_Editor.actualArgumentListHandler_1(node, "actualArgument", context);
+    if (this.myListHandler_1085485112431 == null) {
+      this.myListHandler_1085485112431 = new EnumConstantDeclaration_Editor.actualArgumentListHandler_1(node, "actualArgument", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle11.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1085485112431.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_actualArgument1085485112431(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle11.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1085485112431.getElementRole());
     return editorCell;
   }
 

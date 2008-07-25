@@ -33,8 +33,8 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_Component_Visibility7;
   /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent1;
-  /* package */AbstractCellListHandler myListHandle55;
-  /* package */AbstractCellListHandler myListHandle56;
+  /* package */AbstractCellListHandler myListHandler_1188210613756;
+  /* package */AbstractCellListHandler myListHandler_1188210623223;
 
   private static void setupBasic_Collection_11841560442141184156044214(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184156044214");
@@ -363,28 +363,28 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1188210613756(EditorContext context, SNode node) {
-    if (this.myListHandle55 == null) {
-      this.myListHandle55 = new StaticFieldDeclaration_Editor.annotationListHandler_14(node, "annotation", context);
+    if (this.myListHandler_1188210613756 == null) {
+      this.myListHandler_1188210613756 = new StaticFieldDeclaration_Editor.annotationListHandler_14(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle55.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1188210613756.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotation1188210613756(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle55.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210613756.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1188210623223(EditorContext context, SNode node) {
-    if (this.myListHandle56 == null) {
-      this.myListHandle56 = new StaticFieldDeclaration_Editor.annotationListHandler_15(node, "annotation", context);
+    if (this.myListHandler_1188210623223 == null) {
+      this.myListHandler_1188210623223 = new StaticFieldDeclaration_Editor.annotationListHandler_15(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle56.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1188210623223.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotation1188210623223(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle56.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210623223.getElementRole());
     return editorCell;
   }
 

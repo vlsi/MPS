@@ -30,12 +30,12 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class EnumClass_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandle6;
-  /* package */AbstractCellListHandler myListHandle7;
-  /* package */AbstractCellListHandler myListHandle8;
-  /* package */AbstractCellListHandler myListHandle9;
-  /* package */AbstractCellListHandler myListHandle10;
-  /* package */AbstractCellListHandler myListHandle30;
+  /* package */AbstractCellListHandler myListHandler_1085483273080;
+  /* package */AbstractCellListHandler myListHandler_1085483277590;
+  /* package */AbstractCellListHandler myListHandler_1085483457772;
+  /* package */AbstractCellListHandler myListHandler_1085483457776;
+  /* package */AbstractCellListHandler myListHandler_1085483457780;
+  /* package */AbstractCellListHandler myListHandler_1169763677000;
 
   private static void setupBasic_Collection_10854832730781085483273078(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1085483273078");
@@ -460,80 +460,80 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1085483273080(EditorContext context, SNode node) {
-    if (this.myListHandle6 == null) {
-      this.myListHandle6 = new EnumClass_Editor.fieldListHandler_1(node, "field", context);
+    if (this.myListHandler_1085483273080 == null) {
+      this.myListHandler_1085483273080 = new EnumClass_Editor.fieldListHandler_1(node, "field", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle6.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1085483273080.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_field1085483273080(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle6.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1085483273080.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1085483277590(EditorContext context, SNode node) {
-    if (this.myListHandle7 == null) {
-      this.myListHandle7 = new EnumClass_Editor.enumConstantListHandler_(node, "enumConstant", context);
+    if (this.myListHandler_1085483277590 == null) {
+      this.myListHandler_1085483277590 = new EnumClass_Editor.enumConstantListHandler_(node, "enumConstant", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle7.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1085483277590.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_enumConstant1085483277590(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle7.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1085483277590.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1085483457772(EditorContext context, SNode node) {
-    if (this.myListHandle8 == null) {
-      this.myListHandle8 = new EnumClass_Editor.constructorListHandler_1(node, "constructor", context);
+    if (this.myListHandler_1085483457772 == null) {
+      this.myListHandler_1085483457772 = new EnumClass_Editor.constructorListHandler_1(node, "constructor", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle8.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1085483457772.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_constructor1085483457772(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle8.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1085483457772.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1085483457776(EditorContext context, SNode node) {
-    if (this.myListHandle9 == null) {
-      this.myListHandle9 = new EnumClass_Editor.methodListHandler_1(node, "method", context);
+    if (this.myListHandler_1085483457776 == null) {
+      this.myListHandler_1085483457776 = new EnumClass_Editor.methodListHandler_1(node, "method", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle9.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1085483457776.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_method1085483457776(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle9.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1085483457776.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1085483457780(EditorContext context, SNode node) {
-    if (this.myListHandle10 == null) {
-      this.myListHandle10 = new EnumClass_Editor.staticMethodListHandler_1(node, "staticMethod", context);
+    if (this.myListHandler_1085483457780 == null) {
+      this.myListHandler_1085483457780 = new EnumClass_Editor.staticMethodListHandler_1(node, "staticMethod", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle10.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1085483457780.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_staticMethod1085483457780(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle10.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1085483457780.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNodeList1169763677000(EditorContext context, SNode node) {
-    if (this.myListHandle30 == null) {
-      this.myListHandle30 = new EnumClass_Editor.implementedInterfaceListHandler_1(node, "implementedInterface", context);
+    if (this.myListHandler_1169763677000 == null) {
+      this.myListHandler_1169763677000 = new EnumClass_Editor.implementedInterfaceListHandler_1(node, "implementedInterface", context);
     }
-    EditorCell_Collection editorCell = this.myListHandle30.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1169763677000.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_implementedInterface1169763677000(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandle30.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1169763677000.getElementRole());
     return editorCell;
   }
 
