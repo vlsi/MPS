@@ -19,7 +19,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1202245164352(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return QueriesUtil.isTest1(_context.getSourceModel());
+    return QueriesUtil.isTest1(_context.getInputModel());
   }
 
   public static boolean baseMappingRule_Condition_1195172400866(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

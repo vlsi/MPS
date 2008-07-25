@@ -199,7 +199,7 @@ public class QueriesGenerated {
 
   public static List sourceNodesQuery_1210160088643(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> possibleScalarTypes = new ArrayList<SNode>();
-    for(SNode root : SModelOperations.getRoots(_context.getSourceModel(), null)) {
+    for(SNode root : SModelOperations.getRoots(_context.getInputModel(), null)) {
       for(SNode t : SNodeOperations.getDescendants(root, "jetbrains.mps.matrixLanguage.structure.MatrixLiteral", false)) {
         ListSequence.fromList(possibleScalarTypes).addElement(SLinkOperations.getTarget(t, "scalarType", true));
       }

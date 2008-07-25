@@ -1623,11 +1623,11 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1175249249128(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return BaseAdapter.toNodes(_context.getSourceModel().getRootsAdapters(InferenceRule.class));
+    return BaseAdapter.toNodes(_context.getInputModel().getRootsAdapters(InferenceRule.class));
   }
 
   public static List sourceNodesQuery_1175440294397(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return BaseAdapter.toNodes(_context.getSourceModel().getRootsAdapters(SubtypingRule.class));
+    return BaseAdapter.toNodes(_context.getInputModel().getRootsAdapters(SubtypingRule.class));
   }
 
   public static List sourceNodesQuery_1176548514510(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1671,11 +1671,11 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1188816571779(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return BaseAdapter.toNodes(_context.getSourceModel().getRootsAdapters(ComparisonRule.class));
+    return BaseAdapter.toNodes(_context.getInputModel().getRootsAdapters(ComparisonRule.class));
   }
 
   public static List sourceNodesQuery_1193740670223(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getNodes(_context.getSourceModel(), "jetbrains.mps.bootstrap.helgins.structure.Dependency");
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.bootstrap.helgins.structure.Dependency");
   }
 
   public static List sourceNodesQuery_1194972375179(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1686,7 +1686,7 @@ public class QueriesGenerated {
     DependenciesCollector dependenciesCollector = new DependenciesCollector();
     Map<SNode, Pair<SNode, SNode>> dependencies = new HashMap<SNode, Pair<SNode, SNode>>();
     Set<SNode> leaves = new HashSet<SNode>();
-    for(SNode inferenceRule : SModelOperations.getRoots(_context.getSourceModel(), "jetbrains.mps.bootstrap.helgins.structure.InferenceRule")) {
+    for(SNode inferenceRule : SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.bootstrap.helgins.structure.InferenceRule")) {
       dependenciesCollector.collectDependencies(inferenceRule, dependencies, leaves);
     }
     List<SNode> result = new ArrayList<SNode>();
@@ -1707,15 +1707,15 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1195214710294(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return BaseAdapter.toNodes(_context.getSourceModel().getRootsAdapters(NonTypesystemRule.class));
+    return BaseAdapter.toNodes(_context.getInputModel().getRootsAdapters(NonTypesystemRule.class));
   }
 
   public static List sourceNodesQuery_1201610301765(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return BaseAdapter.toNodes(_context.getSourceModel().getRootsAdapters(InequationReplacementRule.class));
+    return BaseAdapter.toNodes(_context.getInputModel().getRootsAdapters(InequationReplacementRule.class));
   }
 
   public static List sourceNodesQuery_1203529514730(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> variableProviders = SModelOperations.getRoots(_context.getSourceModel(), "jetbrains.mps.bootstrap.helgins.structure.VariableProviders");
+    List<SNode> variableProviders = SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.bootstrap.helgins.structure.VariableProviders");
     List<SNode> result = new ArrayList<SNode>();
     for(SNode varProviders : variableProviders) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(varProviders, "item", true)));

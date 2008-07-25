@@ -37,7 +37,7 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1194967181314(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return SModelOperations.getModelName(_context.getSourceModel()).endsWith(".constraints");
+    return SModelOperations.getModelName(_context.getInputModel()).endsWith(".constraints");
   }
 
   public static boolean baseMappingRule_Condition_1187043003325(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -536,15 +536,15 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1194966878188(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getNodes(_context.getSourceModel(), "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint");
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint");
   }
 
   public static List sourceNodesQuery_1194966950464(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getNodes(_context.getSourceModel(), "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint");
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint");
   }
 
   public static List sourceNodesQuery_1194966965000(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getNodes(_context.getSourceModel(), "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeDefaultSearchScope");
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeDefaultSearchScope");
   }
 
   public static List sourceNodesQuery_1206018562524(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

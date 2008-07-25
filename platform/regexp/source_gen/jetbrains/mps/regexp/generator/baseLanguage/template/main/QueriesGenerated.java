@@ -221,7 +221,7 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1194610249636(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getNodes(_context.getSourceModel(), "jetbrains.mps.regexp.structure.InlineRegexpExpression");
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.regexp.structure.InlineRegexpExpression");
   }
 
 }

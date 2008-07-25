@@ -46,7 +46,7 @@ public class QueriesGenerated {
   }
 
   public static boolean createRootRule_Condition_1216996889747(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return "jetbrains.mps.closures.runtime".equals(SModelOperations.getModelName(_context.getSourceModel()));
+    return "jetbrains.mps.closures.runtime".equals(SModelOperations.getModelName(_context.getInputModel()));
   }
 
   public static boolean baseMappingRule_Condition_1201016704101(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -753,11 +753,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1215605038732(final IOperationContext operationContext, final IfMacroContext _context) {
-    return "jetbrains.mps.closures.runtime".equals(SModelOperations.getModelName(_context.getSourceModel()));
+    return "jetbrains.mps.closures.runtime".equals(SModelOperations.getModelName(_context.getInputModel()));
   }
 
   public static boolean ifMacro_Condition_1215605064512(final IOperationContext operationContext, final IfMacroContext _context) {
-    return "jetbrains.mps.closures.runtime".equals(SModelOperations.getModelName(_context.getSourceModel()));
+    return "jetbrains.mps.closures.runtime".equals(SModelOperations.getModelName(_context.getInputModel()));
   }
 
   public static SNode sourceNodeQuery_1199624915150(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1162,7 +1162,7 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1201782654025(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return FunctionTypeUtil.getAllFunctionTypes(_context.getSourceModel());
+    return FunctionTypeUtil.getAllFunctionTypes(_context.getInputModel());
   }
 
   public static List sourceNodesQuery_1201783317579(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

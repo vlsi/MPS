@@ -81,7 +81,7 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1206456525472(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getSourceModel(), "jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration");
+    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration");
   }
 
 }
