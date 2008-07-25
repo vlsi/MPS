@@ -15,6 +15,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionEventData;
@@ -146,7 +147,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
         }
       }
 
-      NamespaceNode newChild = new NamespaceNode(first, context);
+      NamespaceNode newChild = new NamespaceNode(first, new MyContext(null,context));
 
       add(newChild);
 
@@ -241,6 +242,44 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
 
     public String getName() {
       return myName;
+    }
+  }
+
+  private static class MyContext implements IOperationContext {
+    private final IModule myModule;
+    private IOperationContext myOperationContext;
+
+    public MyContext(IModule module, IOperationContext operationContext) {
+      myModule = module;
+      myOperationContext=operationContext;
+    }
+
+    public <T> T getComponent(Class<T> clazz) {
+      return myOperationContext.getComponent(clazz);
+    }
+
+    public Frame getMainFrame() {
+      return myOperationContext.getMainFrame();
+    }
+
+    public IModule getModule() {
+      return myModule;
+    }
+
+    public MPSProject getMPSProject() {
+      return myOperationContext.getMPSProject();
+    }
+
+    public Project getProject() {
+      return myOperationContext.getProject();
+    }
+
+    public IScope getScope() {
+      return myOperationContext.getScope();
+    }
+
+    public boolean isTestMode() {
+      return myOperationContext.isTestMode();
     }
   }
 }

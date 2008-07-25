@@ -638,7 +638,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
-        MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
         MPSTreeNode languageTreeNode = findModuleTreeNode(module);
         if (languageTreeNode != null) {
           TreePath treePath = new TreePath(languageTreeNode.getPath());
