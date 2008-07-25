@@ -239,7 +239,7 @@ public class MPSVCSManager implements ProjectComponent {
     while (true) {
       VirtualFile parent = path.get(0).getParent();
       if (parent == null) {
-        break;
+        return Collections.EMPTY_LIST;
       }
 
       if (isUnderVCS(myProject, parent)) {
