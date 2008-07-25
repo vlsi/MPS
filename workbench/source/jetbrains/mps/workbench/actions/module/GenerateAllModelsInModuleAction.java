@@ -50,9 +50,40 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
   protected void doExecute(AnActionEvent e) {
     List<SModelDescriptor> modelsToGenerate = new ArrayList<SModelDescriptor>();
 
+    IOperationContext invocationContext=myOperationContext;
     for (IModule module : myModules) {
       if (module instanceof Generator) {
         module = ((Generator) module).getSourceLanguage();
+        final IModule moduleCopy = module;
+        invocationContext = new IOperationContext() {
+          public <T> T getComponent(Class<T> clazz) {
+            return myOperationContext.getComponent(clazz);
+          }
+
+          public Frame getMainFrame() {
+            return myOperationContext.getMainFrame();
+          }
+
+          public IModule getModule() {
+            return moduleCopy;
+          }
+
+          public MPSProject getMPSProject() {
+            return myOperationContext.getMPSProject();
+          }
+
+          public Project getProject() {
+            return myOperationContext.getProject();
+          }
+
+          public IScope getScope() {
+            return myOperationContext.getScope();
+          }
+
+          public boolean isTestMode() {
+            return myOperationContext.isTestMode();
+          }
+        };
       }
 
       modelsToGenerate.addAll(getModelsToGenerate(module));
@@ -68,7 +99,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
     IGenerationType generationType = generatorManager.getDefaultModuleGenerationType();
     generatorManager.generateModelsWithProgressWindow(
       modelsToGenerate,
-      myOperationContext,
+      invocationContext,
       generationType,
       false);
   }
