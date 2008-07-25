@@ -144,6 +144,9 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1216861714175">
         <link role="concept" targetNodeId="1.1216860049627" resolveInfo="GenerationContextOp_GetOutputByLabelAndInput" />
       </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1216945574938">
+        <link role="concept" targetNodeId="1.1216945228272" resolveInfo="GenerationContextOp_GetScope" />
+      </node>
     </node>
   </node>
 </model>

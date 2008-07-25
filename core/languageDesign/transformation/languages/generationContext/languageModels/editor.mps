@@ -78,5 +78,11 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1216945268542">
+    <link role="conceptDeclaration" targetNodeId="1.1216945228272" resolveInfo="GenerationContextOp_GetScope" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216945276873">
+      <property name="text" value="scope" />
+    </node>
+  </node>
 </model>
 
