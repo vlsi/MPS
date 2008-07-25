@@ -454,7 +454,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
 
     public void commit() {
       ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
+          public void run() {         
             String fontName = myFontsComboBox.getSelectedItem().toString();
             int fontSize = Integer.parseInt(myFontSizesComboBox.getSelectedItem().toString());
 
