@@ -207,6 +207,10 @@ public class NameUtil {
   }
 
   public static String toValidIdentifier(String s) {
+    if (s == null) {
+      return null;
+    }
+
     if (VALID_IDENTIFIER_PATTERN.matcher(s).matches()) {
       return s;
     }
