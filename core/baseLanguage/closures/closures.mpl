@@ -19,24 +19,7 @@
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
       </usedLanguages>
-      <mapping-priorities>
-        <mapping-priority-rule kind="strictly_before">
-          <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.closures.generator.baseLanguage.template.main@templates" nodeID="1201781391753" />
-          </greater-priority-mapping>
-          <lesser-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.closures.generator.baseLanguage.template.main@templates" nodeID="1201780727229" />
-          </lesser-priority-mapping>
-        </mapping-priority-rule>
-        <mapping-priority-rule kind="strictly_before">
-          <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.closures.generator.baseLanguage.template.main@templates" nodeID="1201780727229" />
-          </greater-priority-mapping>
-          <lesser-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.closures.generator.baseLanguage.template.main@templates" nodeID="1199623542211" />
-          </lesser-priority-mapping>
-        </mapping-priority-rule>
-      </mapping-priorities>
+      <mapping-priorities />
     </generator>
   </generators>
   <classPath>

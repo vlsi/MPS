@@ -6,8 +6,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.closures.generator.baseLanguage.template.helper.FunctionTypeUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.closures.generator.baseLanguage.template.helper.ClosureLiteralUtil;
 import jetbrains.mps.closures.generator.baseLanguage.template.helper.PrepStatementUtil;
@@ -36,18 +36,6 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 
 public class QueriesGenerated {
 
-  public static boolean createRootRule_Condition_1201781414993(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    if (true) {
-      return false;
-    }
-    List<SNode> nodes = SModelOperations.getNodes(_context.getSourceModel(), "jetbrains.mps.closures.structure.ClosureLiteral");
-    return !(nodes.isEmpty());
-  }
-
-  public static boolean createRootRule_Condition_1215604140830(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return "jetbrains.mps.closures.runtime".equals(SModelOperations.getModelName(_context.getSourceModel()));
-  }
-
   public static boolean createRootRule_Condition_1216995080029(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     List<SNode> adapters = FunctionTypeUtil.getAllAdaptableClassifierTypes(_context.getGenerator());
     if (adapters != null && adapters.size() > 0) {
@@ -55,6 +43,10 @@ public class QueriesGenerated {
       return true;
     }
     return false;
+  }
+
+  public static boolean createRootRule_Condition_1216996889747(final IOperationContext operationContext, final CreateRootRuleContext _context) {
+    return "jetbrains.mps.closures.runtime".equals(SModelOperations.getModelName(_context.getSourceModel()));
   }
 
   public static boolean baseMappingRule_Condition_1201016704101(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -129,34 +121,12 @@ public class QueriesGenerated {
     return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
   }
 
-  public static boolean baseMappingRule_Condition_1201782499822(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (true) {
-      return false;
-    }
-    if (_context.getGenerator().getGeneratorSessionContext().getStepObject("done_weaving_interface_for_FunctionType") == null) {
-      _context.getGenerator().getGeneratorSessionContext().putStepObject("done_weaving_interface_for_FunctionType", Boolean.TRUE);
-      return true;
-    }
-    return false;
-  }
-
   public static boolean baseMappingRule_Condition_1201782893971(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (true) {
       return false;
     }
     if (_context.getGenerator().getGeneratorSessionContext().getStepObject("done_weaving_class_for_YieldStatement") == null) {
       _context.getGenerator().getGeneratorSessionContext().putStepObject("done_weaving_class_for_YieldStatement", Boolean.TRUE);
-      return true;
-    }
-    return false;
-  }
-
-  public static boolean baseMappingRule_Condition_1201789497558(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (true) {
-      return false;
-    }
-    if (_context.getGenerator().getGeneratorSessionContext().getStepObject("done_weaving_interface_for_FunctionType") == null) {
-      _context.getGenerator().getGeneratorSessionContext().putStepObject("done_weaving_interface_for_FunctionType", Boolean.TRUE);
       return true;
     }
     return false;
@@ -1511,15 +1481,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false), "closure_switch");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1201781946944(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().getOutputModel().getRootByName("_FunctionTypes");
-  }
-
   public static SNode weaving_MappingRule_ContextNodeQuery_1201782869830(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().getOutputModel().getRootByName("_FunctionTypes");
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1201789469030(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getGenerator().getOutputModel().getRootByName("_FunctionTypes");
   }
 
@@ -1559,8 +1521,7 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1201703119163(final IOperationContext operationContext, final MappingScriptContext _context) {
-      System.out.println("+++ DEBUG ++++ AE");
-      List<SNode> aes = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+    List<SNode> aes = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
     for(SNode ae : aes) {
       FunctionTypeUtil.prepAdaptations(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ae, "lValue", true)), SLinkOperations.getTarget(ae, "rValue", true), _context.getGenerator());
     }
