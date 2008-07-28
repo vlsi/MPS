@@ -19,10 +19,18 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1216862267927(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (SPropertyOperations.getString(_context.getNode(), "labelName_intern") != null) {
+      // operation has been preprocessed by mapping script in TLBase
+      return SPropertyOperations.getString(_context.getNode(), "labelName_intern");
+    }
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1216862267963(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (SPropertyOperations.getString(_context.getNode(), "labelName_intern") != null) {
+      // operation has been preprocessed by mapping script in TLBase
+      return SPropertyOperations.getString(_context.getNode(), "labelName_intern");
+    }
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
   }
 
