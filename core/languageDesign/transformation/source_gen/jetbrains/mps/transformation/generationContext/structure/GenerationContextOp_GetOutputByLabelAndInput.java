@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class GenerationContextOp_GetOutputByLabelAndInput extends GenerationContextOp_Base {
   public static final String concept = "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput";
+  public static String LABEL_NAME_INTERN = "labelName_intern";
   public static String LABEL = "label";
   public static String INPUT_NODE = "inputNode";
 
@@ -26,6 +27,14 @@ public class GenerationContextOp_GetOutputByLabelAndInput extends GenerationCont
     return GenerationContextOp_GetOutputByLabelAndInput.newInstance(sm, false);
   }
 
+
+  public String getLabelName_intern() {
+    return this.getProperty(GenerationContextOp_GetOutputByLabelAndInput.LABEL_NAME_INTERN);
+  }
+
+  public void setLabelName_intern(String value) {
+    this.setProperty(GenerationContextOp_GetOutputByLabelAndInput.LABEL_NAME_INTERN, value);
+  }
 
   public MappingLabelDeclaration getLabel() {
     return (MappingLabelDeclaration)this.getReferent(GenerationContextOp_GetOutputByLabelAndInput.LABEL);

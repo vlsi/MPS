@@ -250,4 +250,37 @@ public class QueriesGenerated {
     }
   }
 
+  public static void mappingScript_CodeBlock_1217270660171(final IOperationContext operationContext, final MappingScriptContext _context) {
+    // references on mapping label will be lost because
+    // TLBase generator executes first and doesn't copy
+    // mapping configs (where labels are declared) to output model
+    // 
+    {
+      // references in 'get by label'
+      List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabel");
+      for(SNode op : ops) {
+        SNode label = SLinkOperations.getTarget(op, "label", false);
+        if (label == null) {
+          _context.getGenerator().showErrorMessage(op, "reference on mapping label is broken");
+          continue;
+        }
+        SPropertyOperations.set(op, "labelName_intern", SPropertyOperations.getString(label, "name"));
+        SLinkOperations.setTarget(op, "label", null, false);
+      }
+    }
+    {
+      // references in 'get by label and node'
+      List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput");
+      for(SNode op : ops) {
+        SNode label = SLinkOperations.getTarget(op, "label", false);
+        if (label == null) {
+          _context.getGenerator().showErrorMessage(op, "reference on mapping label is broken");
+          continue;
+        }
+        SPropertyOperations.set(op, "labelName_intern", SPropertyOperations.getString(label, "name"));
+        SLinkOperations.setTarget(op, "label", null, false);
+      }
+    }
+  }
+
 }
