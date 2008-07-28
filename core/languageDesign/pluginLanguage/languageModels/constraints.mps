@@ -2894,8 +2894,10 @@
   <language namespace="jetbrains.mps.bootstrap.helgins">
     <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
   </language>
+  <language namespace="jetbrains.mps.core">
+    <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.strings.constraints" version="1" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="7" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19" />
@@ -2904,13 +2906,14 @@
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="32" />
+  <maxImportIndex value="33" />
   <import index="7" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="7" />
   <import index="10" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="11" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
   <import index="21" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="29" modelUID="com.intellij.openapi.actionSystem@java_stub" version="-1" />
   <import index="31" modelUID="jetbrains.mps.baseLanguage.behavior" version="-1" />
+  <import index="33" modelUID="jetbrains.mps.workbench@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104844944">
     <link role="concept" targetNodeId="7.1203071646776" resolveInfo="ActionDeclaration" />
     <node role="canBeChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1215776990684">
@@ -3573,6 +3576,42 @@
               </node>
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215777035530" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1217253124985">
+    <property name="package" value="Actions.Action" />
+    <link role="concept" targetNodeId="7.1217252042208" resolveInfo="ActionDataParameterDeclaration" />
+    <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1217254447581">
+      <link role="applicableLink" targetNodeId="7.1217252646389" />
+      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1217254460030">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217254460031">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1217254466155">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217254466156">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217254466157">
+                <link role="baseMethodDeclaration" targetNodeId="11.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217254466158">
+                  <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1217254466159">
+                    <link role="concept" targetNodeId="10.1068390468198" resolveInfo="ClassConcept" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217254466160">
+                      <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1217254466161">
+                        <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217254466162">
+                          <link role="classifier" targetNodeId="33.~MPSDataKeys" resolveInfo="MPSDataKeys" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1217254466163">
+                        <link role="link" targetNodeId="10.1107535924139" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1217254466164">
+                    <link role="link" targetNodeId="10.1128555889557" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

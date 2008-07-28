@@ -96,6 +96,9 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
+  <language namespace="jetbrains.mps.bootstrap.helgins">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="7" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
@@ -103,6 +106,7 @@
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <maxImportIndex value="24" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -129,6 +133,12 @@
       <property name="role" value="parameterDeclaration" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1205679047295" resolveInfo="ActionParameterDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217252949286">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="dataParameterDeclaration" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1217252042208" resolveInfo="ActionDataParameterDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203083196627">
       <property name="metaClass" value="aggregation" />
@@ -1792,6 +1802,37 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1216227749011">
       <property name="name" value="suppressProjectPlugin" />
       <link role="dataType" targetNodeId="6.1082983657063" resolveInfo="boolean" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217252042208">
+    <property name="package" value="Actions.Action" />
+    <property name="name" value="ActionDataParameterDeclaration" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1217252116819">
+      <link role="intfc" targetNodeId="14.1205752032448" resolveInfo="IMember" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217252646389">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="key" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1070462154015" resolveInfo="StaticFieldDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217252428768">
+    <property name="package" value="Actions.Action" />
+    <property name="name" value="ActionDataParameterReferenceOperation" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1217252428769">
+      <link role="intfc" targetNodeId="14.1205756064662" resolveInfo="IMemberOperation" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1217252428770">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1197029536315" resolveInfo="lvalue" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217252428771">
+      <property name="role" value="parameterDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="specializedLink" targetNodeId="14.1205756909548" />
+      <link role="target" targetNodeId="1217252042208" resolveInfo="ActionDataParameterDeclaration" />
     </node>
   </node>
 </model>
