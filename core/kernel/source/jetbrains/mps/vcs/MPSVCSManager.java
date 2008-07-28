@@ -9,7 +9,6 @@ import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.watching.ModelChangesWatcher.MetadataCreationListener;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationListener;
@@ -27,7 +26,6 @@ import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -64,15 +62,15 @@ public class MPSVCSManager implements ProjectComponent {
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           public void run() {
-            sheduleMissingFileInternal(from);
-            sceduleUnversionedFileForAdditionInternal(to);
+            scheduleMissingFileInternal(from);
+            scheduleUnversionedFileForAdditionInternal(to);
           }
         });
       }
     });
   }
 
-  private void sheduleMissingFileInternal(VirtualFile file) {
+  private void scheduleMissingFileInternal(VirtualFile file) {
     AbstractVcs fromVCS = myManager.getVcsFor(file);
     if (fromVCS != null) {
       CheckinEnvironment ci = fromVCS.getCheckinEnvironment();
@@ -157,7 +155,7 @@ public class MPSVCSManager implements ProjectComponent {
             LocalFileSystem lfs = LocalFileSystem.getInstance();
             for (VirtualFile vfile : inVCS) {
               if (vfile != null) {
-                sheduleMissingFileInternal(vfile);
+                scheduleMissingFileInternal(vfile);
               }
             }
           }
@@ -225,7 +223,7 @@ public class MPSVCSManager implements ProjectComponent {
               }
               List<VirtualFile> path = getPathMaxUnversionedParent(vf);
               for (VirtualFile f : path) {
-                sceduleUnversionedFileForAdditionInternal(f);
+                scheduleUnversionedFileForAdditionInternal(f);
               }
             }
           }
@@ -256,13 +254,12 @@ public class MPSVCSManager implements ProjectComponent {
     return path;
   }
 
-  private void sceduleUnversionedFileForAdditionInternal(VirtualFile vf) {
+  private void scheduleUnversionedFileForAdditionInternal(VirtualFile vf) {
     AbstractVcs vcs = myManager.getVcsFor(vf);
     if (vcs != null) {
       CheckinEnvironment ci = vcs.getCheckinEnvironment();
       if (ci != null) {
-        List<VirtualFile> vfs = new ArrayList<VirtualFile>();
-        vfs.add(vf);
+        List<VirtualFile> vfs = Collections.singletonList(vf);
         List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
         VcsDirtyScopeManager.getInstance(myProject).fileDirty(vf);
       }
