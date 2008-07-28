@@ -122,20 +122,24 @@ public class CloneModelDialog extends BaseNodeDialog {
     assert module != null;
     SModelDescriptor modelDescriptor = module.createModel(new SModelUID(modelName, stereotype), modelRoot);
 
-    SModel model = modelDescriptor.getSModel();
-    Set<String> modelsInProps = getModelsInProperties();
-    for (String modelUID : modelsInProps) {
-      model.addImportedModel(SModelUID.fromString(modelUID));
-    }
+    final SModel model = modelDescriptor.getSModel();
+    model.runLoadingAction(new Runnable() {
+      public void run() {
+        Set<String> modelsInProps = getModelsInProperties();
+        for (String modelUID : modelsInProps) {
+          model.addImportedModel(SModelUID.fromString(modelUID));
+        }
 
-    for (jetbrains.mps.projectLanguage.structure.Language l : myCloneModelProperties.getLanguages()) {
-      String name = l.getName();
-      assert name != null;
-      Language language = getOperationContext().getScope().getLanguage(name);
-      assert language != null;
-      model.addLanguage(language);
-    }
-    
+        for (jetbrains.mps.projectLanguage.structure.Language l : myCloneModelProperties.getLanguages()) {
+          String name = l.getName();
+          assert name != null;
+          Language language = getOperationContext().getScope().getLanguage(name);
+          assert language != null;
+          model.addLanguage(language);
+        }
+      }
+    });
+
     CloneModelUtil.cloneModel(mySModel, modelDescriptor.getSModel(), getScope());
 
     Project project = getOperationContext().getProject();
