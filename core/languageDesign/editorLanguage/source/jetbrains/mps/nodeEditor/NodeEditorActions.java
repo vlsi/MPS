@@ -202,7 +202,7 @@ public class NodeEditorActions {
       context.getNodeEditorComponent().clearSelectionStack();
       EditorCell target = findTarget(selection);
       context.getNodeEditorComponent().changeSelection(target);
-      if (target.isPunctuationLayout()) {
+      if (target.isPunctuationLayout() && ((EditorCell_Label) target).isCaretPositionAllowed(1)) {
         ((EditorCell_Label)target).setCaretPosition(1);
       } else if (target instanceof EditorCell_Label) {
         ((EditorCell_Label)target).home();

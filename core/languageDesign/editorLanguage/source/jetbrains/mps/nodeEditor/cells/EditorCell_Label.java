@@ -119,7 +119,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myTextLine.setCaretPosition(position, selection);
   }
 
-  private boolean isCaretPositionAllowed(int position) {
+  public boolean isCaretPositionAllowed(int position) {
     if (!isFirstPositionAllowed() && position == 0) return false;
     if (!isLastPositionAllowed() && position == myTextLine.getText().length()) return false;
     return position >= 0 && position <= myTextLine.getText().length();
