@@ -6,7 +6,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.action.ActionEventData;
 
 public class RenamePropertyRefactoringTester_Simple implements IRefactoringTester {
   public boolean testRefactoring(MPSProject project,
@@ -15,9 +14,9 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
                                  final Language testRefactoringLanguage,
                                  final Language testRefactoringTargetLanguage, Runnable continuation) {
     System.err.println("preparing arguments for refactoring");
-    final ActionEventData data = new ActionEventData(project.createOperationContext());
     RenameProperty renameProperty = new RenameProperty();
     final RefactoringContext refactoringContext = new RefactoringContext(renameProperty);
+    refactoringContext.setCurrentOperationContext(project.createOperationContext());
     final String newPropertyName = "niceProperty";
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -26,8 +25,8 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
         SNode node = structureModelDescriptor.getSModel().getRootByName("YetAnotherGoodConcept");
         ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
         SNode property = concept.getPropertyDeclarations().get(0).getNode();
-        data.put(SNode.class, property);
-        data.put(SModelDescriptor.class, structureModelDescriptor);
+        refactoringContext.setSelectedNode(property);
+        refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter(RenameProperty.newName, newPropertyName);
       }
     });

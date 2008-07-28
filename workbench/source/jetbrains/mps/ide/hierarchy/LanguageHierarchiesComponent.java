@@ -9,10 +9,8 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -172,9 +170,6 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   }
 
   private void processPopupMenu(MouseEvent e) {
-    ActionEventData context = new ActionEventData(myOperationContext);
-    context.put(SNode.class, BaseAdapter.fromAdapter(getSelectedConcept()));
-    context.put(List.class, CollectionUtil.asList(getSelectedConcept()));
     BaseGroup group = ActionUtils.getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS);
     ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent().show(this, e.getX(), e.getY());
   }

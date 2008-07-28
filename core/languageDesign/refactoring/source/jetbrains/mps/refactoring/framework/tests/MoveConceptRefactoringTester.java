@@ -6,9 +6,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.workbench.action.ActionEventData;
-
-import java.util.List;
 
 public class MoveConceptRefactoringTester implements IRefactoringTester {
   public boolean testRefactoring(MPSProject project,
@@ -17,10 +14,10 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
                                  final Language testRefactoringLanguage,
                                  final Language testRefactoringTargetLanguage, Runnable continuation) {
     System.err.println("preparing arguments for refactoring");
-    final ActionEventData data = new ActionEventData(project.createOperationContext());
     final String conceptName = "MyVeryGoodConcept1";
     MoveConcepts moveConcepts = new MoveConcepts();
     final RefactoringContext refactoringContext = new RefactoringContext(moveConcepts);
+    refactoringContext.setCurrentOperationContext(project.createOperationContext());
     final SModelDescriptor targetStructureModelDescriptor[] = new SModelDescriptor[]{null};
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -28,9 +25,9 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         targetStructureModelDescriptor[0] = testRefactoringTargetLanguage.getStructureModelDescriptor();
         SNode concept = structureModelDescriptor.getSModel().getRootByName(conceptName);
-        data.put(SNode.class, concept);
-        data.put(List.class, CollectionUtil.asList(concept));
-        data.put(SModelDescriptor.class, structureModelDescriptor);
+        refactoringContext.setSelectedNode(concept);
+        refactoringContext.setSelectedNodes(CollectionUtil.asList(concept));
+        refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter(MoveConcepts.targetModel, targetStructureModelDescriptor[0]);
       }
     });

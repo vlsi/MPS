@@ -6,7 +6,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.action.ActionEventData;
 
 public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
   public boolean testRefactoring(MPSProject project,
@@ -15,10 +14,10 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
                                  final Language testRefactoringLanguage,
                                  final Language testRefactoringTargetLanguage, Runnable continuation) {
     System.err.println("preparing arguments for refactoring");
-    final ActionEventData data = new ActionEventData(project.createOperationContext());
     final String newLinkName = "sister";
     RenameLink renameLink = new RenameLink();
     final RefactoringContext refactoringContext = new RefactoringContext(renameLink);
+    refactoringContext.setCurrentOperationContext(project.createOperationContext());
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -26,8 +25,8 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
         SNode node = structureModelDescriptor.getSModel().getRootByName("MyVeryGoodConcept1");
         ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
         SNode link = concept.getLinkDeclarations().get(0).getNode();
-        data.put(SNode.class, link);
-        data.put(SModelDescriptor.class, structureModelDescriptor);
+        refactoringContext.setSelectedNode(link);
+        refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter(RenameLink.newName, newLinkName);
       }
     });
