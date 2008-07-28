@@ -11,7 +11,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.action.ActionEventData;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -71,6 +70,7 @@ public class RefactoringContext {
   private IScope myCurrentScope;
   private MPSProject mySelectedMPSProject;
   private IModule mySelectedModule;
+
   //-----------------
 
   public RefactoringContext(ILoggableRefactoring refactoring) {
@@ -619,15 +619,32 @@ public class RefactoringContext {
     return mySerializer.deserialize(element);
   }
 
-  public void setActionData(ActionEventData data) {
-    mySelectedModel = data.getModelDescriptor();
-    mySelectedNode = data.getNode();
-    List<SNode> list = data.getNodes();
-    mySelectedNodes = list == null ? new ArrayList<SNode>() : new ArrayList<SNode>(list);
-    mySelectedModule = data.getModule();
-    mySelectedMPSProject = data.getMPSProject();
-    myCurrentScope = data.getScope();
-    myCurrentOperationContext = data.getOperationContext();
+  public void setSelectedModel(SModelDescriptor selectedModel) {
+    mySelectedModel = selectedModel;
+  }
+
+  public void setSelectedNode(SNode selectedNode) {
+    mySelectedNode = selectedNode;
+  }
+
+  public void setSelectedNodes(List<SNode> selectedNodes) {
+    mySelectedNodes = selectedNodes;
+  }
+
+  public void setSelectedModule(IModule selectedModule) {
+    mySelectedModule = selectedModule;
+  }
+
+  public void setSelectedMPSProject(MPSProject selectedMPSProject) {
+    mySelectedMPSProject = selectedMPSProject;
+  }
+
+  public void setCurrentScope(IScope currentScope) {
+    myCurrentScope = currentScope;
+  }
+
+  public void setCurrentOperationContext(IOperationContext currentOperationContext) {
+    myCurrentOperationContext = currentOperationContext;
   }
 
   public SModelDescriptor getSelectedModel() {

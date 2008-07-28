@@ -1,7 +1,7 @@
 package jetbrains.mps.workbench;
 
-import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.DataConstants;
+import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
@@ -10,16 +10,18 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 
-import java.util.List;
-import java.lang.annotation.Target;
+import java.awt.Frame;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.util.List;
 
-public class MPSDataKeys{
+public class MPSDataKeys {
   @MPSDescription(description = "MPS Project")
   public static final DataKey<MPSProject> MPS_PROJECT = DataKey.create("MPS_MPSProject");
 
@@ -53,12 +55,16 @@ public class MPSDataKeys{
   @MPSDescription(description = "Current Editor")
   public static final DataKey<IEditor> EDITOR = DataKey.create("MPS_IEditor");
 
+  public static final DataKey<Frame> FRAME = DataKey.create("MPS_Frame");
+  public static final DataKey<IScope> SCOPE = DataKey.create("MPS_IScope");
+  public static final DataKey<IModule> MODULE = DataKey.create("MPS_IModule");
+
   @MPSDescription(description = "Editor Component")
   public static final DataKey<AbstractEditorComponent> EDITOR_COMPONENT = DataKey.create("MPS_AbstractEditorComponent");
 
   @Target(ElementType.FIELD)
   @Retention(RetentionPolicy.CLASS)
-  public @interface MPSDescription{
+  public @interface MPSDescription {
     String description();
   }
 }

@@ -1,18 +1,19 @@
 package jetbrains.mps.refactoring.framework;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.workbench.action.ActionEventData;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
 
-import javax.swing.*;
-import java.util.*;
-import java.util.List;
+import javax.swing.JCheckBox;
+import javax.swing.JComponent;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import java.awt.*;
-
-import com.intellij.openapi.util.Computable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChooseRefactoringInputDataDialog extends BaseDialog {
 
@@ -20,16 +21,14 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   private boolean myResult = false;
   private List<IChooseComponent> myComponents;
   private ILoggableRefactoring myRefactoring;
-  private ActionEventData myActionContext;
   private RefactoringContext myRefactoringContext;
   private IChooseComponent myFirstComponent = null;
   public JCheckBox myIsLocalCheckBox;
   public JCheckBox myGenerateModelsCheckBox;
 
-  public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, ActionEventData data, RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
-    super(data.getOperationContext().getMainFrame(), "Input data for refactoring");
+  public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
+    super(refactoringContext.getCurrentOperationContext().getMainFrame(), "Input data for refactoring");
     myRefactoring = refactoring;
-    myActionContext = data;
     myRefactoringContext = refactoringContext;
     myComponents = new ArrayList<IChooseComponent>(components);
     myInnerPanel = new JPanel();
@@ -84,11 +83,11 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     checkBoxPanel.add(new JPanel(), checkBoxPanelConstraints);
 
     constraints.weighty = 0;
-    constraints.insets = new Insets(7,0,0,0);
+    constraints.insets = new Insets(7, 0, 0, 0);
     myInnerPanel.add(checkBoxPanel, constraints);
     //~checkBoxPanel
 
-     //strut
+    //strut
     constraints.weighty = 1;
     myInnerPanel.add(new JPanel(), constraints);
     //~strut
@@ -153,7 +152,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
 
       boolean applicable = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
-          return myRefactoring.isApplicable(myActionContext, myRefactoringContext);
+          return myRefactoring.isApplicable(myRefactoringContext);
         }
       });
 

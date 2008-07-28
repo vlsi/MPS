@@ -1,13 +1,11 @@
 package jetbrains.mps.refactoring.framework.tests;
 
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionEventData;
-
-import javax.swing.SwingUtilities;
 
 /**
  * Created by IntelliJ IDEA.
@@ -41,7 +39,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
     });
 
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(data, refactoringContext, continuation);
+    new RefactoringProcessor().doExecuteInTest(refactoringContext, continuation);
 
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -55,7 +53,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
                 result[0] = false;
                 return;
               }
-              ((DefaultSModelDescriptor)sandbox1).setTestRefactoringMode(true);
+              ((DefaultSModelDescriptor) sandbox1).setTestRefactoringMode(true);
               SModel sModel = sandbox1.getSModel();
               String conceptFqName = sModel.getRoots().get(0).getConceptFqName();
               System.err.println("Inspected concept FQ name = " + conceptFqName);

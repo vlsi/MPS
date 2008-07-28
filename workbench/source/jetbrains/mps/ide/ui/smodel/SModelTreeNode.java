@@ -11,14 +11,12 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.AndCondition;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -27,7 +25,6 @@ import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreePath;
 import java.awt.Color;
 import java.awt.Frame;
 import java.util.*;
@@ -283,29 +280,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_MODEL_ACTIONS);
   }
 
-  private JPopupMenu createMenu(ActionEventData context, BaseGroup group) {
+  private JPopupMenu createMenu(BaseGroup group) {
     ActionManager manager = ActionManager.getInstance();
     return manager.createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
-  }
-
-  protected ActionEventData getActionContext() {
-    SModelDescriptor model = getSModelDescriptor();
-
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-    for (TreePath p : getTree().getSelectionPaths()) {
-      if (p.getLastPathComponent() instanceof SModelTreeNode) {
-        models.add(((SModelTreeNode) p.getLastPathComponent()).getSModelDescriptor());
-      }
-
-    }
-
-    ActionEventData context = new ActionEventData(getOperationContext());
-    context.put(SModelDescriptor.class, model);
-    if (getOperationContext() != null) {
-      context.put(MPSProject.class, getOperationContext().getMPSProject());
-    }
-    context.put(List.class, models);
-    return context;
   }
 
   public void flush() {
@@ -314,8 +291,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   public JPopupMenu getQuickCreatePopupMenu() {
     BaseGroup group = new CreateRootNodeGroup();
-    ActionEventData context = getActionContext();
-    return createMenu(context, group);
+    return createMenu(group);
   }
 
   protected CreateRootNodeGroup getQuickCreateGroup(boolean plain) {

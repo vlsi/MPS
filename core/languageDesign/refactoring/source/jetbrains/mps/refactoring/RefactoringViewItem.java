@@ -1,5 +1,6 @@
 package jetbrains.mps.refactoring;
 
+import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -8,7 +9,7 @@ import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.action.ActionEventData;
+import jetbrains.mps.workbench.MPSDataKeys;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -26,7 +27,6 @@ import java.awt.event.ActionEvent;
  */
 public class RefactoringViewItem {
   private RefactoringViewAction myRefactoringViewAction;
-  private ActionEventData myActionContext;
   private SearchResults mySearchResults;
   private UsagesView myUsagesView;
   private JPanel myPanel;
@@ -35,19 +35,18 @@ public class RefactoringViewItem {
   private JButton myCancelButton;
   private NewRefactoringView myNewRefactoringView;
 
-  public RefactoringViewItem(@NotNull ActionEventData data,
-                             @NotNull RefactoringViewAction refactoringViewAction,
-                             SearchResults searchResults,
-                             NewRefactoringView refactoringView) {
+  public RefactoringViewItem(
+    @NotNull RefactoringViewAction refactoringViewAction,
+    SearchResults searchResults,
+    NewRefactoringView refactoringView) {
     myNewRefactoringView = refactoringView;
     myRefactoringViewAction = refactoringViewAction;
     mySearchResults = searchResults;
     if (mySearchResults == null) {
       throw new IllegalArgumentException("search result is null");
     }
-    myActionContext = data;
     myPanel = new JPanel(new BorderLayout());
-    myUsagesView = new UsagesView(data.getMPSProject(), new ViewOptions()) {
+    myUsagesView = new UsagesView(MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()), new ViewOptions()) {
       public void close() {
         cancel();
       }
@@ -109,7 +108,7 @@ public class RefactoringViewItem {
   }
 
   private void doRefactor() {
-    myRefactoringViewAction.performAction(myActionContext, myNewRefactoringView);
+    myRefactoringViewAction.performAction(myNewRefactoringView);
   }
 
 }

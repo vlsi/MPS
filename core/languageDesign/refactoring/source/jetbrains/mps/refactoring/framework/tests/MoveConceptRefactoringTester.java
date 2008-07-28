@@ -6,7 +6,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.core.scripts.MoveNodes;
 import jetbrains.mps.workbench.action.ActionEventData;
 
 import java.util.List;
@@ -37,9 +36,8 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
     });
 
 
-
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(data, refactoringContext, continuation);
+    new RefactoringProcessor().doExecuteInTest(refactoringContext, continuation);
 
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {

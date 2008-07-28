@@ -2,6 +2,7 @@ package jetbrains.mps.refactoring.framework;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
@@ -22,7 +23,18 @@ public class GenericRefactoringAction extends BaseAction {
         SModelRepository.getInstance().saveAll();
       }
     });
-    new RefactoringProcessor().execute(new ActionEventData(e), myRefactoring);
+
+    RefactoringContext context = new RefactoringContext(myRefactoring);
+    context.setCurrentOperationContext(e.getData(MPSDataKeys.OPERATION_CONTEXT));
+    context.setSelectedModel(e.getData(MPSDataKeys.MODEL_DESCRIPTOR));
+    context.setSelectedNode(e.getData(MPSDataKeys.SNODE));
+    context.setSelectedNodes(e.getData(MPSDataKeys.SNODES));
+    context.setSelectedModule(e.getData(MPSDataKeys.MODULE));
+    context.setSelectedMPSProject(e.getData(MPSDataKeys.MPS_PROJECT));
+    context.setCurrentScope(e.getData(MPSDataKeys.SCOPE));
+    context.setCurrentOperationContext(e.getData(MPSDataKeys.OPERATION_CONTEXT));
+
+    new RefactoringProcessor().execute(myRefactoring, context);
   }
 
   @NotNull

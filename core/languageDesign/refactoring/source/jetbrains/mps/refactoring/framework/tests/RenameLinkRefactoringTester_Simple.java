@@ -34,7 +34,7 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
 
 
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(data, refactoringContext, continuation);
+    new RefactoringProcessor().doExecuteInTest(refactoringContext, continuation);
 
     final boolean[] result = new boolean[]{false};
 

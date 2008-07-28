@@ -1,12 +1,11 @@
 package jetbrains.mps.refactoring.framework.tests;
 
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.scripts.SafeDeleteLink;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.workbench.action.ActionEventData;
+import jetbrains.mps.smodel.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,9 +21,9 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
                                  final Language testRefactoringLanguage,
                                  final Language testRefactoringTargetLanguage, Runnable continuation) {
     System.err.println("preparing arguments for refactoring");
-    final ActionEventData data = new ActionEventData(project.createOperationContext());
     SafeDeleteLink safeDeleteLink = new SafeDeleteLink();
     final RefactoringContext refactoringContext = new RefactoringContext(safeDeleteLink);
+    refactoringContext.setCurrentOperationContext(project.createOperationContext());
     final String[] linkName = new String[]{null};
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -34,14 +33,14 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
         ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
         SNode link = concept.getLinkDeclarations().get(0).getNode();
         linkName[0] = link.getProperty("role");
-        data.put(SNode.class, link);
-        data.put(SModelDescriptor.class, structureModelDescriptor);
+        refactoringContext.setSelectedNode(link);
+        refactoringContext.setSelectedModel(structureModelDescriptor);
       }
     });
 
 
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(data, refactoringContext, continuation);
+    new RefactoringProcessor().doExecuteInTest(refactoringContext, continuation);
 
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {

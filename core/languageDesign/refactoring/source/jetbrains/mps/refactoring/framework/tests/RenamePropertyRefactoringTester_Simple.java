@@ -1,11 +1,11 @@
 package jetbrains.mps.refactoring.framework.tests;
 
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.scripts.RenameProperty;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionEventData;
 
 public class RenamePropertyRefactoringTester_Simple implements IRefactoringTester {
@@ -33,7 +33,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
     });
 
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(data, refactoringContext, continuation);
+    new RefactoringProcessor().doExecuteInTest(refactoringContext, continuation);
 
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {

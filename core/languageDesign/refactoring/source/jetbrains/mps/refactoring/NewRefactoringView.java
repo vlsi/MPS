@@ -9,7 +9,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
-import jetbrains.mps.workbench.action.ActionEventData;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
@@ -40,10 +39,9 @@ public class NewRefactoringView extends BaseProjectTool {
     myComponent.add(toolbar, BorderLayout.WEST);
   }
 
-  public void showRefactoringView(@NotNull ActionEventData data,
-                                  @NotNull RefactoringViewAction refactoringViewAction,
+  public void showRefactoringView(@NotNull RefactoringViewAction refactoringViewAction,
                                   SearchResults searchResults) {
-    myRefactoringViewItem = new RefactoringViewItem(data, refactoringViewAction, searchResults, this);
+    myRefactoringViewItem = new RefactoringViewItem(refactoringViewAction, searchResults, this);
     myComponent.remove(myLabel);
     myComponent.add(myRefactoringViewItem.getComponent(), BorderLayout.CENTER);
     myRefactoringViewItem.initUsagesView();
