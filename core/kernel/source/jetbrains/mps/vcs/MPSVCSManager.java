@@ -85,11 +85,9 @@ public class MPSVCSManager implements ProjectComponent {
     synchronized (myMonitor) {
       if (myGenerationRunning) {
         myTasks.add(task);
-        LOG.debug("shedule task");
         return;
       }
 
-      LOG.debug("invoke task");
       SwingUtilities.invokeLater(task);
     }
   }
@@ -196,7 +194,7 @@ public class MPSVCSManager implements ProjectComponent {
       }
     }
 
-    boolean result = addInternal(inVCS);
+    addInternal(inVCS);
 
     IProjectHandler projectHandler = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
     if (projectHandler != null) {
@@ -208,11 +206,10 @@ public class MPSVCSManager implements ProjectComponent {
       }
     }
 
-    return result;
+    return true;
   }
 
-  private boolean addInternal(final List<VirtualFile> inVCS) {
-    boolean result = true;
+  private void addInternal(final List<VirtualFile> inVCS) {
     invokeLater(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -231,7 +228,6 @@ public class MPSVCSManager implements ProjectComponent {
         });
       }
     });
-    return result;
   }
 
   private List<VirtualFile> getPathMaxUnversionedParent(VirtualFile vf) {

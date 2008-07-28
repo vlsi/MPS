@@ -14,6 +14,9 @@ import com.intellij.openapi.vcs.FileStatusListener;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsListener;
+import com.intellij.openapi.vcs.changes.ChangeListListener;
+import com.intellij.openapi.vcs.changes.ChangeListAdapter;
+import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vfs.*;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileNode;
@@ -34,6 +37,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public abstract class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
+  private ChangeListListener myChangeListListener;
 
   @Override
   public void addToolbarActions(DefaultActionGroup actionGroup) {
@@ -144,6 +148,13 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
         rebuildTreeLater();
       }
     };
+
+    myChangeListListener = new ChangeListAdapter(){
+      @Override
+      public void changeListUpdateDone() {
+        rebuildTreeLater();
+      }
+    };
   }
 
   protected abstract MPSTreeNode createRoot(Project project);
@@ -168,6 +179,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     VirtualFileManager.getInstance().addVirtualFileListener(myFileListener);
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myVirtualFileManagerListener);
     myProject.getComponent(ProjectLevelVcsManager.class).addVcsListener(myDirectoryMappingListener);
+    ChangeListManager.getInstance(myProject).addChangeListListener(myChangeListListener);
   }
 
   public void dispose() {
@@ -183,6 +195,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
     VirtualFileManager.getInstance().removeVirtualFileManagerListener(myVirtualFileManagerListener);
     myProject.getComponent(ProjectLevelVcsManager.class).removeVcsListener(myDirectoryMappingListener);
+    ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
   }
 
   private void rebuildTreeLater() {
