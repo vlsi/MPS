@@ -73,7 +73,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     }
   }
 
-  private boolean isInConflict(IFile ifile) {
+  public boolean isInConflict(IFile ifile) {
     return StatusUtil.isInConflict(ifile, ApplicationManager.getApplication().getComponent(ProjectManager.class).getOpenProjects());
   }
 
