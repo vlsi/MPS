@@ -259,7 +259,8 @@ public class MPSVCSManager implements ProjectComponent {
     if (vcs != null) {
       CheckinEnvironment ci = vcs.getCheckinEnvironment();
       if (ci != null) {
-        List<VirtualFile> vfs = Collections.singletonList(vf);
+        List<VirtualFile> vfs = new ArrayList<VirtualFile>();
+        vfs.add(vf);
         List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
         VcsDirtyScopeManager.getInstance(myProject).fileDirty(vf);
       }
