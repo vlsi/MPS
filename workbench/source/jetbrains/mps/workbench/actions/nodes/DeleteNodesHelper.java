@@ -1,7 +1,9 @@
 package jetbrains.mps.workbench.actions.nodes;
 
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.core.scripts.SafeDelete;
 import jetbrains.mps.dialogs.YesNoToAllDialog;
@@ -11,10 +13,12 @@ import jetbrains.mps.refactoring.framework.GenericRefactoringAction;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.ActionEventData;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -95,11 +99,21 @@ public class DeleteNodesHelper {
     }
   }
 
-  private void safeDelete(IOperationContext context, SNode node) {
+  private void safeDelete(final IOperationContext context, final SNode node) {
     final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(new SafeDelete());
-    final ActionEventData newContext = new ActionEventData(context, node);
-    newContext.put(List.class, CollectionUtil.asList(node));
-    AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, newContext);
+
+    DataContext dc = new DataContext() {
+      private DataContext myRealContext = DataManager.getInstance().getDataContext();
+
+      @Nullable
+      public Object getData(@NonNls String dataId) {
+        if (dataId.equals(MPSDataKeys.SNODE.getName())) return node;
+        else if (dataId.equals(MPSDataKeys.SNODES.getName())) return Collections.singletonList(node);
+        else if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return context;
+        else return myRealContext.getData(dataId);
+      }
+    };
+    AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, dc);
     safeDeleteAction.update(event);
     if (event.getPresentation().isEnabled()) {
       safeDeleteAction.actionPerformed(event);
