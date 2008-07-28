@@ -41,7 +41,6 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -449,7 +448,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
-  private void updateMPSActionsWithKeyStrokes(@NotNull ActionEventData data) {
+  private void updateMPSActionsWithKeyStrokes(@NotNull DataContext data) {
     myActionProxies.clear();
     for (BaseAction a : myMPSActionsWithShortcuts) {
       Shortcut[] shortcuts = a.getShortcutSet().getShortcuts();
@@ -466,7 +465,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myOwner;
   }
 
-  private void registerKeyStrokes(BaseGroup group, @NotNull final ActionEventData data) {
+  private void registerKeyStrokes(BaseGroup group, @NotNull final DataContext data) {
     if (group != null) {
       AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, data);
       group.update(event);
@@ -1383,11 +1382,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void goByCurrentReference() {
-    final ActionEventData data = new ActionEventData(DataManager.getInstance().getDataContext(this));
+    final DataContext dataContext = DataManager.getInstance().getDataContext(this);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         GoByCurrentReferenceAction action = new GoByCurrentReferenceAction();
-        AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, data);
+        AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, dataContext);
         action.update(event);
         if (event.getPresentation().isEnabled()) {
           action.actionPerformed(event);
@@ -1786,10 +1785,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     try {
       myExecutingCommand = true;
       // all other processing should be performed inside command
-      final ActionEventData data = new ActionEventData(DataManager.getInstance().getDataContext(this));
+      final DataContext dataContext = DataManager.getInstance().getDataContext(this);
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          updateMPSActionsWithKeyStrokes(data);
+          updateMPSActionsWithKeyStrokes(dataContext);
           EditorContext editorContext = getEditorContext();
           if (editorContext == null) {
             return; //i.e. editor is disposed
