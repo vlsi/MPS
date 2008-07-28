@@ -49,7 +49,7 @@ public interface ITemplateGenerator {
 
   SNode getPreviousInputNodeByMappingName(String mappingName);
 
-  RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch);
+  RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch) throws GenerationFailueException;
 
   void showInformationMessage(SNode node, String message);
 

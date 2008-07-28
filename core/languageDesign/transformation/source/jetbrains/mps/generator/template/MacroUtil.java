@@ -115,15 +115,20 @@ public class MacroUtil {
           methodName,
           generator.getGeneratorSessionContext(),
           new IfMacroContext(inputNode, generator.getInputModel(), generator),
-          ifMacro.getModel());
+          ifMacro.getModel(),
+          true);
         return res;
-      } catch (Exception e) {
-        generator.showErrorMessage(inputNode, null, BaseAdapter.fromAdapter(ifMacro), "couldn't evaluate if-macro condition");
-        LOG.error(e);
-        return false;
+      } catch (ClassNotFoundException e) {
+        generator.showWarningMessage(BaseAdapter.fromAdapter(ifMacro), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+      } catch (NoSuchMethodException e) {
+        generator.showWarningMessage(BaseAdapter.fromAdapter(ifMacro), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+      } catch (Throwable t) {
+        throw new GenerationFailueException("error executing condition ", BaseAdapter.fromAdapter(ifMacro), t);
       } finally {
         Statistics.getStatistic(Statistics.TPL).add(ifMacro.getModel(), methodName, startTime, res);
       }
+
+      return false;
     }
 
     // old

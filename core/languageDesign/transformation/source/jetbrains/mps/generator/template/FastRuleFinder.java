@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule;
 import jetbrains.mps.generator.template.GeneratorUtil;
+import jetbrains.mps.generator.GenerationFailueException;
 
 import java.util.*;
 
@@ -105,7 +106,7 @@ public class FastRuleFinder {
     }
   }
 
-  /*package*/ Reduction_MappingRule findReductionRule(SNode node) {
+  /*package*/ Reduction_MappingRule findReductionRule(SNode node) throws GenerationFailueException {
     AbstractConceptDeclaration concept = (AbstractConceptDeclaration) node.getConceptDeclarationAdapter();
     if (concept == null) {
       myGenerator.showWarningMessage(node, "skip reduction: couldn't find concept declaration adapter for " + node.getDebugText());

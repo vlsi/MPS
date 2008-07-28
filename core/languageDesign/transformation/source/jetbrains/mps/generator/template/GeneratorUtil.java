@@ -79,7 +79,7 @@ public class GeneratorUtil {
     return mappingName;
   }
 
-  public static boolean checkPremiseForBaseMappingRule(SNode inputNode, ConceptDeclaration sourceNodeConcept, BaseMappingRule rule, ITemplateGenerator generator) {
+  public static boolean checkPremiseForBaseMappingRule(SNode inputNode, ConceptDeclaration sourceNodeConcept, BaseMappingRule rule, ITemplateGenerator generator) throws GenerationFailueException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept != null) {
       if (rule.getApplyToConceptInheritors()) {
@@ -91,7 +91,7 @@ public class GeneratorUtil {
     return checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), generator);
   }
 
-  public static boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
+  public static boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws GenerationFailueException {
     if (condition == null) {
       if (required) {
         generator.showErrorMessage(inputNode, null, ruleNode, "rule condition required");
@@ -108,18 +108,19 @@ public class GeneratorUtil {
         methodName,
         generator.getGeneratorSessionContext(),
         new BaseMappingRuleContext(inputNode, generator.getInputModel(), generator),
-        ruleNode.getModel());
+        ruleNode.getModel(),
+        true);
       return res;
+    } catch (ClassNotFoundException e) {
+      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(ruleNode, "condition query method '" + methodName + "' not found. evaluate to FALSE");
-      return false;
-    } catch (Exception e) {
-      generator.showErrorMessage(inputNode, null, ruleNode, "couldn't evaluate rule condition");
-      LOG.error(e);
-      return false;
+      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+    } catch (Throwable t) {
+      throw new GenerationFailueException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
     } finally {
       Statistics.getStatistic(Statistics.TPL).add(ruleNode.getModel(), methodName, startTime, res);
     }
+    return false;
   }
 
   public static void executeMappingScript(MappingScript mappingScript, SModel model, ITemplateGenerator generator) throws GenerationFailueException {
@@ -136,7 +137,8 @@ public class GeneratorUtil {
         methodName,
         generator.getGeneratorSessionContext(),
         new MappingScriptContext(model, generator),
-        mappingScript.getModel());
+        mappingScript.getModel(),
+        true);
     } catch (ClassNotFoundException e) {
       generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no generated code found");
     } catch (NoSuchMethodException e) {
@@ -208,7 +210,7 @@ public class GeneratorUtil {
     }
   }
 
-  private static boolean checkCondition(CreateRootRule createRootRule, ITemplateGenerator generator) {
+  private static boolean checkCondition(CreateRootRule createRootRule, ITemplateGenerator generator) throws GenerationFailueException {
     CreateRootRule_Condition conditionFunction = createRootRule.getConditionFunction();
     if (conditionFunction == null) {
       return true;
@@ -219,12 +221,16 @@ public class GeneratorUtil {
         methodName,
         generator.getGeneratorSessionContext(),
         new CreateRootRuleContext(generator.getInputModel(), generator),
-        createRootRule.getModel());
-    } catch (Exception e) {
-      generator.showErrorMessage(null, null, BaseAdapter.fromAdapter(createRootRule), "couldn't evaluate rule condition");
-      LOG.error(e);
-      return false;
+        createRootRule.getModel(),
+        true);
+    } catch (ClassNotFoundException e) {
+      generator.showWarningMessage(BaseAdapter.fromAdapter(createRootRule), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+    } catch (NoSuchMethodException e) {
+      generator.showWarningMessage(BaseAdapter.fromAdapter(createRootRule), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+    } catch (Throwable t) {
+      throw new GenerationFailueException("error executing condition ", BaseAdapter.fromAdapter(createRootRule), t);
     }
+    return false;
   }
 
   public static void applyRoot_MappingRule(Root_MappingRule rule, TemplateGenerator generator) throws GenerationFailueException, GenerationCanceledException {
@@ -305,7 +311,7 @@ public class GeneratorUtil {
     throws
     GenerationFailueException,
     GenerationCanceledException {
-    
+
     generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
     try {
       weaveTemplateDeclaration_intern(inputNode, template, outputContextNode, rule, generator);
@@ -505,7 +511,7 @@ public class GeneratorUtil {
 
 
   @Nullable
-  /*package*/ static Pair<SNode, String> getTemplateNodeFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException {
+  /*package*/ static Pair<SNode, String> getTemplateNodeFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailueException {
     if (ruleConsequence == null) {
       generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
       return null;

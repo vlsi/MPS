@@ -4,7 +4,6 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 
@@ -76,7 +75,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
         }
         ourClassesReportedAsNotFound.add(queriesClassName);
       }
-      throw new ClassNotFoundException("Can't find " + queriesClassName + " in module " + module.getModuleUID());
+      throw new ClassNotFoundException("'" + queriesClassName + "' in module " + module.getModuleUID());
     }
 
     Method method = null;
@@ -90,7 +89,9 @@ public class QueryMethodGenerated implements ApplicationComponent {
     }
 
     if (method == null) {
-      LOG.error("couldn't find method '" + methodName + "' in '" + queriesClassName + "' : TRY TO GENERATE model '" + sourceModel.getUID() + "'");
+      if (!suppressErrorLogging) {
+        LOG.error("couldn't find method '" + methodName + "' in '" + queriesClassName + "' : TRY TO GENERATE model '" + sourceModel.getUID() + "'");
+      }
       throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + queriesClassName + "'");
     }
 
@@ -101,13 +102,15 @@ public class QueryMethodGenerated implements ApplicationComponent {
   }
 
   public static Object invoke(String methodName, IOperationContext context, Object contextObject, SModel sourceModel) throws ClassNotFoundException, NoSuchMethodException {
-    return invoke(methodName, new Object[] { context, contextObject }, sourceModel);
+    return invoke(methodName, context, contextObject, sourceModel, false);
   }
 
-  private static Object invoke(String methodName, Object[] arguments, SModel sourceModel) throws ClassNotFoundException, NoSuchMethodException {
-    Method method = QueryMethodGenerated.getQueryMethod(sourceModel, methodName, false);
+  public static Object invoke(String methodName, IOperationContext context, Object contextObject, SModel sourceModel, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
+    Object[] arguments = new Object[]{context, contextObject};
+    Object result;
+    Method method = QueryMethodGenerated.getQueryMethod(sourceModel, methodName, suppressErrorLogging);
     try {
-      return method.invoke(null, arguments);
+      result = method.invoke(null, arguments);
     } catch (IllegalArgumentException e) {
       throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     } catch (IllegalAccessException e) {
@@ -119,6 +122,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
       LOG.error(e.getCause());
       throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     }
+    return result;
   }
 
   private ClassLoaderManager myClassLoaderManager;
