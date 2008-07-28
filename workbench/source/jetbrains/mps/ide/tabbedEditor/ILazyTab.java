@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.tabbedEditor;
 
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JComponent;
 import java.util.List;
@@ -14,5 +15,7 @@ public interface ILazyTab {
 
   void createNewItem();
 
-  List<AbstractEditorComponent> getEditorComponents();    
+  List<AbstractEditorComponent> getEditorComponents();
+
+  //SNode getEditedNode();
 }
