@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.Frame;
 import java.util.Set;
 
+import com.intellij.openapi.util.Computable;
+
 /**
 
  */
@@ -41,7 +43,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
   public MPSProject getMPSProject() {
     return myProject;
-  }
+  }                                                                        
 
   public IScope getScope() {
     return getModule().getScope();
@@ -51,16 +53,31 @@ public class ModuleContext extends StandaloneMPSContext {
     return "module context: " + myModuleUID;
   }
 
-  public static ModuleContext create(SNode node, MPSProject project) {
-    return create(node.getModel(), project, true);
+  public static ModuleContext create(final SNode node, MPSProject project) {
+    SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
+      public SModel compute() {
+        return node.getModel();
+      }
+    });
+    return create(model, project, true);
   }
 
-  public static ModuleContext create(SModel model, MPSProject project, boolean askIfMany) {
-    return create(model.getModelDescriptor(), project, askIfMany);
+  public static ModuleContext create(final SModel model, MPSProject project, boolean askIfMany) {
+    SModelDescriptor modelDescriptor = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
+      public SModelDescriptor compute() {
+        return model.getModelDescriptor();
+      }
+    });
+    return create(modelDescriptor, project, askIfMany);
   }
 
-  public static ModuleContext create(@NotNull SModelDescriptor model, MPSProject project, boolean askIfMany) {
-    Set<IModule> owningModules = SModelRepository.getInstance().getOwners(model, IModule.class);
+  public static ModuleContext create(@NotNull final SModelDescriptor model, MPSProject project, boolean askIfMany) {
+    Set<IModule> owningModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
+      public Set<IModule> compute() {
+        return SModelRepository.getInstance().getOwners(model, IModule.class);
+      }
+    });
+
     if (owningModules.isEmpty()) {
       LOG.error("couldn't create module context for node:" +
         "\ncouldn't find owner module for model '" + model.getModelUID() + "'");

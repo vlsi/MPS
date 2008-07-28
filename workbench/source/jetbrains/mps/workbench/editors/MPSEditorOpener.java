@@ -161,11 +161,7 @@ public class MPSEditorOpener implements ProjectComponent {
   }
 
   public IEditor openNode(final SNode node, boolean focus) {
-    ModuleContext context = ModelAccess.instance().runReadAction(new Computable<ModuleContext>() {
-      public ModuleContext compute() {
-        return ModuleContext.create(node, myProject.getComponent(MPSProjectHolder.class).getMPSProject());
-      }
-    });
+    ModuleContext context = ModuleContext.create(node, myProject.getComponent(MPSProjectHolder.class).getMPSProject());
     return openNode(node, context, focus);
   }
 
