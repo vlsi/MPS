@@ -16,20 +16,16 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Igor Alshannikov
- * Oct 9, 2007
- */
 public class ModelReader1 implements IModelReader {
   private static final Logger LOG = Logger.getLogger(ModelReader1.class);
-
 
   public SModel readModel(Document document, String modelShortName, String stereotype) {
     Element rootElement = document.getRootElement();
     String modelLongName = rootElement.getAttributeValue(ModelPersistence.NAME);
 
     String shortName = NameUtil.shortNameFromLongName(modelLongName);
-    LOG.assertLog(shortName.equals(modelShortName));
+
+    LOG.assertLog(shortName.equals(modelShortName), "Short name should be equal " + modelShortName + " (in model " + modelLongName + ")");
 
     SModelUID modelUID = new SModelUID(modelLongName, stereotype);
     SModel model = new SModel(modelUID);
