@@ -45,9 +45,10 @@
   <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   <maxImportIndex value="7" />
-  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="1" />
+  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.core.constraints" version="2" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
@@ -62,14 +63,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104844721">
               <property name="name" value="test" />
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213104844722">
-                <link role="concept" targetNodeId="1.1211896175875" resolveInfo="NodesTest" />
+                <link role="concept" targetNodeId="1.1216913645126" resolveInfo="NodesTestCase" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104844723">
                 <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1213104844724" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1213104844725">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1213104844726">
-                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1213104844727">
-                      <link role="conceptDeclaration" targetNodeId="1.1211896175875" resolveInfo="NodesTest" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217252459539">
+                      <link role="conceptDeclaration" targetNodeId="1.1216913645126" resolveInfo="NodesTestCase" />
                     </node>
                   </node>
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1213104844728" />
@@ -146,12 +147,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1215434953648">
-    <link role="concept" targetNodeId="1.1215434692368" resolveInfo="TestCategoryReference" />
-    <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1215435081471">
-      <link role="applicableLink" targetNodeId="1.1215434730716" />
     </node>
   </node>
 </model>

@@ -43,14 +43,20 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   <maxImportIndex value="7" />
-  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="1" />
+  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="0" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="5" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="6" modelUID="jetbrains.mps.transformationTest.intentions" version="-1" />
   <import index="7" modelUID="jetbrains.mps.transformationTest.matcher@java_stub" version="-1" />
+  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1216915795103">
+    <property name="migrationFromBuild" value="798" />
+    <property name="name" value="NodesTest2NodesTestCase" />
+    <property name="title" value="Replace NodesTest with NodesTestCase" />
+  </node>
 </model>
 

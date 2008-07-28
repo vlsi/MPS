@@ -31,9 +31,10 @@
   <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   <maxImportIndex value="2" />
-  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="1" />
+  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.transformationTest.behavior" />
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1210673906861">
@@ -96,8 +97,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210674015604">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215604078224">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.StaticConceptMethodCall" id="1215604078225">
-            <link role="concept" targetNodeId="1.1211896175875" resolveInfo="NodesTest" />
-            <link role="baseMethodDeclaration" targetNodeId="2v.1215604099083" resolveInfo="isIntentionApplicable" />
+            <link role="concept" targetNodeId="1.1216913645126" resolveInfo="NodesTestCase" />
+            <link role="baseMethodDeclaration" targetNodeId="2v.1217250498008" resolveInfo="isIntentionApplicable" />
             <node role="actualArgument" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1215604086772" />
           </node>
         </node>
@@ -164,8 +165,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215508387814">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215604098601">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.StaticConceptMethodCall" id="1215604098602">
-            <link role="concept" targetNodeId="1.1211896175875" resolveInfo="NodesTest" />
-            <link role="baseMethodDeclaration" targetNodeId="2v.1215604099083" resolveInfo="isIntentionApplicable" />
+            <link role="concept" targetNodeId="1.1216913645126" resolveInfo="NodesTestCase" />
+            <link role="baseMethodDeclaration" targetNodeId="2v.1217250498008" resolveInfo="isIntentionApplicable" />
             <node role="actualArgument" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1215604102930" />
           </node>
         </node>
@@ -232,8 +233,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215604047634">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215604111884">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.StaticConceptMethodCall" id="1215604111885">
-            <link role="concept" targetNodeId="1.1211896175875" resolveInfo="NodesTest" />
-            <link role="baseMethodDeclaration" targetNodeId="2v.1215604099083" resolveInfo="isIntentionApplicable" />
+            <link role="concept" targetNodeId="1.1216913645126" resolveInfo="NodesTestCase" />
+            <link role="baseMethodDeclaration" targetNodeId="2v.1217250498008" resolveInfo="isIntentionApplicable" />
             <node role="actualArgument" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1215604116276" />
           </node>
         </node>
