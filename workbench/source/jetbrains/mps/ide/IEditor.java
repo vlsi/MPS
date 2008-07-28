@@ -31,7 +31,7 @@ public interface IEditor {
   IOperationContext getOperationContext();
   EditorContext getEditorContext();
 
-  EditorCell  getSelectedCell();
+  EditorCell getSelectedCell();
   EditorCell getRootCell();
   SNode getEditedNode();
   SNodePointer getEditedNodePointer();

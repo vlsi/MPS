@@ -227,11 +227,7 @@ public class TabbedEditor implements IEditor {
   }
 
   public AbstractEditorComponent getCurrentEditorComponent() {
-    List<AbstractEditorComponent> components = myTabbedPane.getCurrentTab().getEditorComponents();
-    if (components.isEmpty()) {
-      return null;
-    }
-    return components.get(0);
+    return myTabbedPane.getCurrentTab().getCurrentEditorComponent();
   }
 
   public boolean removeFromRecentEditorsOnClose() {

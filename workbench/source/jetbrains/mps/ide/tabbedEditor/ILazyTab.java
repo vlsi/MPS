@@ -11,11 +11,11 @@ public interface ILazyTab {
 
   String getNullText();
 
+  List<AbstractEditorComponent> getEditorComponents();
+
+  AbstractEditorComponent getCurrentEditorComponent();
+
   JComponent getComponent();
 
   void createNewItem();
-
-  List<AbstractEditorComponent> getEditorComponents();
-
-  //SNode getEditedNode();
 }

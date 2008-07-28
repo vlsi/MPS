@@ -105,12 +105,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     return myTabbedEditor;
   }
 
-  public AbstractEditorComponent getCurrentEditor() {
-    JPanel panel = (JPanel) getComponent();
-    if (panel == null) return null;
-    return myEditors.get(myInnerTabbedPane.getSelectedIndex());
-  }
-                                                                        
   public JComponent getComponent() {
     if (myInnerTabbedPane == null) {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -172,6 +166,12 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
 
   public List<AbstractEditorComponent> getEditorComponents() {
     return new ArrayList<AbstractEditorComponent>(myEditors);
+  }
+
+  public AbstractEditorComponent getCurrentEditorComponent() {
+    JPanel panel = (JPanel) getComponent();
+    if (panel == null) return null;
+    return myEditors.get(myInnerTabbedPane.getSelectedIndex());
   }
 
   private void createNewInnerTab() {
