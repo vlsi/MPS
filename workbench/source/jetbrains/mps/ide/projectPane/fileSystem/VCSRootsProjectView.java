@@ -2,6 +2,7 @@ package jetbrains.mps.ide.projectPane.fileSystem;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.ide.projectView.ProjectView;
+import com.intellij.util.messages.MessageBus;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.CompositeTreeNode;
 import org.jetbrains.annotations.NonNls;
@@ -12,8 +13,8 @@ public class VCSRootsProjectView extends FileViewProjectPane {
   public static final String ID = "VCSRoots";
   public static final String TITLE = "Roots Under Version Control";
 
-  protected VCSRootsProjectView(final Project project, final ProjectView projectView) {
-    super(project, projectView);
+  protected VCSRootsProjectView(final Project project, final ProjectView projectView, final MessageBus bus) {
+    super(project, projectView, bus);
   }
 
   protected MPSTreeNode createRoot(Project project) {

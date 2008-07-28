@@ -4,6 +4,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ide.projectView.ProjectView;
+import com.intellij.util.messages.MessageBus;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.FolderTreeNode;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
@@ -15,8 +16,8 @@ public class BaseDirectoryProjectView extends FileViewProjectPane{
   public static final String ID = "FileSystem";
   public static final String TITLE = "File System";
 
-  protected BaseDirectoryProjectView(final Project project, final ProjectView projectView) {
-    super(project, projectView);
+  protected BaseDirectoryProjectView(final Project project, final ProjectView projectView, final MessageBus bus) {
+    super(project, projectView, bus);
   }
 
   protected MPSTreeNode createRoot(Project project) {
