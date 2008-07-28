@@ -6,6 +6,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vcs.*;
+import com.intellij.ui.content.MessageView;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -14,8 +15,10 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.persistence.ConflictModelException;
 import jetbrains.mps.vcs.merge.CustomMergeSupport;
+import jetbrains.mps.logging.Logger;
 
 public class ApplicationLevelVcsManager implements ApplicationComponent {
+  public static final Logger LOG = Logger.getLogger(ApplicationLevelVcsManager.class);
 
   public static ApplicationLevelVcsManager instance() {
     return ApplicationManager.getApplication().getComponent(ApplicationLevelVcsManager.class);
@@ -32,20 +35,6 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
 
   public void disposeComponent() {
 
-  }
-
-  public boolean isInConflict(final IFile ifile) {
-    VirtualFile vfile = VFileSystem.getFile(ifile);
-    if ((vfile != null) && (vfile.exists())) {
-      Project[] projects = ApplicationManager.getApplication().getComponent(ProjectManager.class).getOpenProjects();
-      for (Project project : projects) {
-        boolean isInConflict = StatusUtil.isInConflict(project, vfile);
-        if (isInConflict){
-          return true;
-        }
-      }
-    }
-    return false;
   }
 
   @Nullable
@@ -74,7 +63,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
 
   public void assertModelFileNotInConflict(final SModelDescriptor modelDescriptor) {
     IFile ifile = modelDescriptor.getModelFile();
-    if (ApplicationLevelVcsManager.instance().isInConflict(ifile)) {
+    if (isInConflict(ifile)) {
       AbstractVcs vcs = getVcsForFile(VFileSystem.getFile(ifile));
       if ((vcs != null) && CustomMergeSupport.getInstance().tryToMergeConflictedModel(modelDescriptor, vcs.getName())) {
       } else {
@@ -82,6 +71,10 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
         throw conflictModelException;
       }
     }
+  }
+
+  private boolean isInConflict(IFile ifile) {
+    return StatusUtil.isInConflict(ifile, ApplicationManager.getApplication().getComponent(ProjectManager.class).getOpenProjects());
   }
 
 }
