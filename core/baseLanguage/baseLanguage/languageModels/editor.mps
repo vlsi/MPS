@@ -1515,6 +1515,22 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1188210576814">
           <link role="editorComponent" targetNodeId="1178547675197" resolveInfo="_Component_Visibility" />
         </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217351603902">
+          <property name="text" value="final" />
+          <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1217351603903">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217351603904">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217351603905">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217351603906">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1217351603907" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1217351916791">
+                    <link role="property" targetNodeId="17.1176718929932" resolveInfo="isFinal" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1188210576815">
           <property name="noTargetText" value="&lt;no type&gt;" />
           <property name="nullRefText" value="&lt;no type&gt;" />

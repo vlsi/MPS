@@ -14,7 +14,6 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
 
   public BaseLanguageEditorPopup_ActionGroup() {
     super("", ID);
-    this.setIsAlwaysVisible(true);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

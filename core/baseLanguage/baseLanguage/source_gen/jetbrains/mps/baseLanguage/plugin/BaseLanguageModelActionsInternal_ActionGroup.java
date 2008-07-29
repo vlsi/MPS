@@ -14,7 +14,6 @@ public class BaseLanguageModelActionsInternal_ActionGroup extends GeneratedActio
 
   public BaseLanguageModelActionsInternal_ActionGroup() {
     super("", ID);
-    this.setIsAlwaysVisible(true);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

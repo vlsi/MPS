@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
@@ -131,6 +132,11 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_annotation");
   }
 
+  private static void setupBasic_Constant_12173516039021217351603902(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217351603902");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+  }
+
   private static void setupLabel_refNode_type_1188210576815(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -152,12 +158,19 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_annotation_1188210594842(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_Constant_1217351603902_1217351603902(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   public static boolean renderingCondition32(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 
   public static boolean renderingCondition33(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
+  }
+
+  public static boolean renderingCondition83(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
 
@@ -189,6 +202,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent1188210576814(context, node));
+    if (renderingCondition83(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant1217351603902(context, node, "final"));
+    }
     editorCell.addEditorCell(this.createRefNode1188210576815(context, node));
     editorCell.addEditorCell(this.createComponent1188210576816(context, node));
     if (renderingCondition32(node, context, context.getOperationContext().getScope())) {
@@ -278,6 +294,14 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11882105832601188210583260(editorCell, node, context);
     setupLabel_Constant_1188210583260_1188210583260(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1217351603902(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12173516039021217351603902(editorCell, node, context);
+    setupLabel_Constant_1217351603902_1217351603902(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

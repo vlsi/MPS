@@ -312,6 +312,17 @@
         </node>
       </node>
     </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1217351508954">
+      <property name="name" value="abc" />
+      <property name="isFinal" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1217351508955" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1217351522410" />
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1217351529849">
+      <property name="name" value="abc" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1217351529850" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1217351531383" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1215776939750">
     <property name="name" value="sss" />
