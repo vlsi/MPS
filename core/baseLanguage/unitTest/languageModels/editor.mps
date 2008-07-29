@@ -152,6 +152,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171978153884">
         <property name="text" value="equals" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" id="1217339980887">
+          <property name="value" value="1.0" />
+        </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399678333">
           <property name="color" value="blue" />
         </node>
