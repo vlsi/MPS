@@ -450,12 +450,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   public void dispose(final boolean reloadAll) {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        IdeEventQueue.getInstance().flushQueue();
-      }
-    });
-
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         MPSProjects projects = MPSProjects.instance();
