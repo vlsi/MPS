@@ -101,7 +101,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_value_1197651366849(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition44(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition43(SNode node, EditorContext editorContext, IScope scope) {
     return !(RemarkStatement_Behavior.call_isTodo_1213877427548(node));
   }
 
@@ -130,7 +130,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createAlternation1197651363305(EditorContext context, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = RemarkStatement_Editor.renderingCondition44(node, context, context.getOperationContext().getScope());
+    alternationCondition = RemarkStatement_Editor.renderingCondition43(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createProperty1197651363306(context, node);

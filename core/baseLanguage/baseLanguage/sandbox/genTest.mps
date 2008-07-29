@@ -39,6 +39,12 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1215776922963">
     <property name="name" value="ABCDEFEDED" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215776922964" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1217334324702">
+      <property name="isAbstract" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217334324703" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217334324704" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217334324705" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1216145869068">
       <property name="name" value="abc" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1216145869069" />
@@ -917,6 +923,24 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215776939833" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Interface" id="1217333605644">
+    <property name="name" value="ABC" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217333605645" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1217333615542">
+      <property name="isAbstract" value="true" />
+      <property name="name" value="abc" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217333615543" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217333615544" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217333615545" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1217334315586">
+      <property name="isAbstract" value="true" />
+      <property name="name" value="cde" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217334315587" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217334315588" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217334315589" />
+    </node>
   </node>
 </model>
 

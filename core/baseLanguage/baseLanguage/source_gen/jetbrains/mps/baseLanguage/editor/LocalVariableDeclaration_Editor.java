@@ -176,15 +176,15 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_annotation_1188220842771(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition38(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition37(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
-  public static boolean renderingCondition39(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition38(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 
-  public static boolean renderingCondition42(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition41(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
@@ -236,15 +236,15 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition42(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition41(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188220842770(context, node));
     }
-    if (renderingCondition38(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition37(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1188212207005(context, node, "final"));
     }
     editorCell.addEditorCell(this.createRefNode1188212207012(context, node));
     editorCell.addEditorCell(this.createComponent1188212207013(context, node));
-    if (renderingCondition39(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition38(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188212207014(context, node));
     }
     return editorCell;

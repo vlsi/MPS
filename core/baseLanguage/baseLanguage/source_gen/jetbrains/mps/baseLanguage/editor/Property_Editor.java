@@ -24,8 +24,8 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class Property_Editor extends DefaultNodeEditor {
 
+  /* package */AbstractCellProvider my_Component_Visibility7;
   /* package */AbstractCellProvider my_Component_Visibility8;
-  /* package */AbstractCellProvider my_Component_Visibility9;
 
   private static void setupBasic_Alternation_12013998951411201399895141(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Alternation_1201399895141");
@@ -149,7 +149,7 @@ public class Property_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNode_propertyImplementation_1201400042749(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition57(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition56(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"));
   }
 
@@ -160,7 +160,7 @@ public class Property_Editor extends DefaultNodeEditor {
 
   public EditorCell createAlternation1201399895141(EditorContext context, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = Property_Editor.renderingCondition57(node, context, context.getOperationContext().getScope());
+    alternationCondition = Property_Editor.renderingCondition56(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection1201399896614(context, node);
@@ -224,19 +224,19 @@ public class Property_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1201399896615(EditorContext context, SNode node) {
-    if (this.my_Component_Visibility8 == null) {
-      this.my_Component_Visibility8 = new _Component_Visibility(node);
+    if (this.my_Component_Visibility7 == null) {
+      this.my_Component_Visibility7 = new _Component_Visibility(node);
     }
-    EditorCell editorCell = this.my_Component_Visibility8.createEditorCell(context);
+    EditorCell editorCell = this.my_Component_Visibility7.createEditorCell(context);
     setupBasic_component__Component_Visibility1201399896615(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createComponent1201400013362(EditorContext context, SNode node) {
-    if (this.my_Component_Visibility9 == null) {
-      this.my_Component_Visibility9 = new _Component_Visibility(node);
+    if (this.my_Component_Visibility8 == null) {
+      this.my_Component_Visibility8 = new _Component_Visibility(node);
     }
-    EditorCell editorCell = this.my_Component_Visibility9.createEditorCell(context);
+    EditorCell editorCell = this.my_Component_Visibility8.createEditorCell(context);
     setupBasic_component__Component_Visibility1201400013362(editorCell, node, context);
     return editorCell;
   }

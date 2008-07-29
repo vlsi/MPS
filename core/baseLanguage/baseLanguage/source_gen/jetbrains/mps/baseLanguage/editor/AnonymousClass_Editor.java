@@ -288,31 +288,31 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNode_instanceInitializer_1208707031953(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition55(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition54(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty();
   }
 
-  public static boolean renderingCondition64(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition63(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
   }
 
-  public static boolean renderingCondition67(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition66(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
   }
 
-  public static boolean renderingCondition68(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition67(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "instanceInitializer", true) != null && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
   }
 
-  public static boolean renderingCondition70(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition69(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty();
   }
 
-  public static boolean renderingCondition71(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition70(SNode node, EditorContext editorContext, IScope scope) {
     return !(ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty() && SLinkOperations.getTarget(node, "instanceInitializer", true) != null);
   }
 
-  public static boolean renderingCondition73(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition72(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "instanceInitializer", true) != null;
   }
 
@@ -328,22 +328,22 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection1170345921994(context, node));
-    if (renderingCondition73(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition72(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1208707027636(context, node));
     }
-    if (renderingCondition68(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition67(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1208703336193(context, node, ""));
     }
-    if (renderingCondition67(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition66(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1170345922034(context, node));
     }
-    if (renderingCondition64(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition63(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1208702395065(context, node, ""));
     }
-    if (renderingCondition70(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition69(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1170345922044(context, node));
     }
-    if (renderingCondition71(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition70(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1208704398872(context, node));
     }
     editorCell.addEditorCell(this.createConstant1170345922053(context, node, "}"));
@@ -357,7 +357,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefCell1170346086721(context, node));
-    if (renderingCondition55(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition54(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1201186145334(context, node));
     }
     editorCell.addEditorCell(this.createConstant1170346096289(context, node, "("));

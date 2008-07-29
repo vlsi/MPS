@@ -78,7 +78,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_charConstant_1208859230495(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition74(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition73(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "charConstant", null) || !(SPropertyOperations.getString(node, "charConstant").startsWith("\\"));
   }
 
@@ -89,7 +89,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
 
   public EditorCell createAlternation1208859155872(EditorContext context, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = CharConstant_Editor.renderingCondition74(node, context, context.getOperationContext().getScope());
+    alternationCondition = CharConstant_Editor.renderingCondition73(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createProperty1208859155873(context, node);

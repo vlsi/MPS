@@ -963,21 +963,49 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1075233459439">
         <property name="name" value="headerRow" />
         <property name="vertical" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1178547804783">
-          <link role="editorComponent" targetNodeId="1178547675197" resolveInfo="_Component_Visibility" />
-          <link role="actionMap" targetNodeId="1178609533048" resolveInfo="_InstanceMethodDeclaration_AddAbstract" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1178608691960">
-          <property name="text" value="abstract" />
-          <link role="actionMap" targetNodeId="1178609859861" resolveInfo="_InstanceMethodDeclaration_RemoveAbstract" />
-          <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1178608724220">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178608724221">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178608787902">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977951832">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1178608791382" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1178608794964">
-                    <link role="property" targetNodeId="17.1178608670077" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1217333737237">
+          <property name="vertical" value="false" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1217333737238">
+            <property name="flag" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1217333745851">
+            <link role="editorComponent" targetNodeId="1178547675197" resolveInfo="_Component_Visibility" />
+            <link role="actionMap" targetNodeId="1178609533048" resolveInfo="_InstanceMethodDeclaration_AddAbstract" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217333745852">
+            <property name="text" value="abstract" />
+            <link role="actionMap" targetNodeId="1178609859861" resolveInfo="_InstanceMethodDeclaration_RemoveAbstract" />
+            <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+            <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1217333745853">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217333745854">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1217333745855">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217333745856">
+                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1217333745857" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1217334053327">
+                      <link role="property" targetNodeId="17.1178608670077" resolveInfo="isAbstract" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1217333737240">
+            <property name="flag" value="false" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1217333753218">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217333753219">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217333757049">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1217333769586">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217333769587">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217333769588">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1217333769589" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1217333769590" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1217333769591">
+                      <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217333769592">
+                        <link role="conceptDeclaration" targetNodeId="17.1107796713796" resolveInfo="Interface" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

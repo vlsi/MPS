@@ -240,7 +240,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_label_1199468012874(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition51(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition50(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
@@ -271,7 +271,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition51(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition50(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1199467993438(context, node));
     }
     editorCell.addEditorCell(this.createConstant1144226437079(context, node, "for"));

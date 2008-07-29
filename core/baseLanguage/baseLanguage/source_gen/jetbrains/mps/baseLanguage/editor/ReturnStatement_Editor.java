@@ -76,7 +76,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "expression", true) != null;
   }
 
-  public static boolean renderingCondition80(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition79(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "expression", true) != null;
   }
 
@@ -92,7 +92,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1075722075640(context, node, "return"));
-    if (renderingCondition80(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition79(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1215094211150(context, node, ""));
     }
     if (renderingCondition7(node, context, context.getOperationContext().getScope())) {

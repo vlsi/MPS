@@ -115,7 +115,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1188995315206_1188995315206(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition43(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition42(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "annotation", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "annotation", false), "method", true)).isNotEmpty();
   }
 
@@ -138,7 +138,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1188208064966(context, node, "@"));
     editorCell.addEditorCell(this.createRefCell1188208083159(context, node));
-    if (renderingCondition43(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition42(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188995299491(context, node));
     }
     return editorCell;

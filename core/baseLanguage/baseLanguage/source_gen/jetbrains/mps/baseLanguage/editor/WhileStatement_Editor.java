@@ -218,7 +218,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1215012301005_1215012301005(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition49(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition48(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
@@ -249,7 +249,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition49(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition48(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1199465510502(context, node));
     }
     editorCell.addEditorCell(this.createConstant1081264296765(context, node, "while"));

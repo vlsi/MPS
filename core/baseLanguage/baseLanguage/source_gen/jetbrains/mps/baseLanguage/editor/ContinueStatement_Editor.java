@@ -102,7 +102,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_label_1199470083776(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition54(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition53(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
@@ -124,7 +124,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1101210485461(context, node, "continue"));
-    if (renderingCondition54(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition53(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1199470083774(context, node));
     }
     editorCell.addEditorCell(this.createConstant1101210485462(context, node, ";"));

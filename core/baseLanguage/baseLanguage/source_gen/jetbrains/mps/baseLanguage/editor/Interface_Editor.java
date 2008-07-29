@@ -31,7 +31,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 public class Interface_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
-  /* package */AbstractCellProvider my_Component_Visibility4;
+  /* package */AbstractCellProvider my_Component_Visibility3;
   /* package */AbstractCellListHandler myListHandler_1107796852539;
   /* package */AbstractCellListHandler myListHandler_1107797338699;
   /* package */AbstractCellListHandler myListHandler_1128556090209;
@@ -281,7 +281,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }
 
-  public static boolean renderingCondition28(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition27(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
@@ -300,7 +300,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition28(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition27(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188208760860(context, node));
     }
     editorCell.addEditorCell(this.createCollection1107796852507(context, node));
@@ -393,10 +393,10 @@ public class Interface_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1178550117011(EditorContext context, SNode node) {
-    if (this.my_Component_Visibility4 == null) {
-      this.my_Component_Visibility4 = new _Component_Visibility(node);
+    if (this.my_Component_Visibility3 == null) {
+      this.my_Component_Visibility3 = new _Component_Visibility(node);
     }
-    EditorCell editorCell = this.my_Component_Visibility4.createEditorCell(context);
+    EditorCell editorCell = this.my_Component_Visibility3.createEditorCell(context);
     setupBasic_component__Component_Visibility1178550117011(editorCell, node, context);
     return editorCell;
   }

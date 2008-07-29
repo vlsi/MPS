@@ -148,11 +148,11 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_annotation_1188220825039(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition40(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition39(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
-  public static boolean renderingCondition41(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition40(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
@@ -204,10 +204,10 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition41(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition40(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188220825038(context, node));
     }
-    if (renderingCondition40(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition39(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1188212252092(context, node, "final"));
     }
     editorCell.addEditorCell(this.createRefNode1188212252099(context, node));

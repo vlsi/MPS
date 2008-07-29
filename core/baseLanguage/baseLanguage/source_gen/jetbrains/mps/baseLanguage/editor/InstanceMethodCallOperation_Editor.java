@@ -76,7 +76,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    if (renderingCondition59(node, context, context.getScope())) {
+    if (renderingCondition58(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
   }
@@ -93,7 +93,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1202948938338_1202948938338(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition59(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition58(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
   }
 

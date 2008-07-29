@@ -95,7 +95,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_label_1199466160621(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition50(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition49(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
@@ -111,7 +111,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1101210485459(context, node, "break"));
-    if (renderingCondition50(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition49(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1199466153260(context, node));
     }
     editorCell.addEditorCell(this.createConstant1101210485460(context, node, ";"));

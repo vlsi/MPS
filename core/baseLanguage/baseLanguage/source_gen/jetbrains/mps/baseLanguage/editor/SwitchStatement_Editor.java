@@ -295,7 +295,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_label_1201381511013(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition56(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition55(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
@@ -327,7 +327,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition56(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition55(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1201381428282(context, node));
     }
     editorCell.addEditorCell(this.createConstant1163670796715(context, node, "switch"));

@@ -100,7 +100,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1211505175171_1211505175171(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition76(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition75(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "parameter") > 0;
   }
 
@@ -116,7 +116,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefCell1211505069982(context, node));
-    if (renderingCondition76(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition75(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1211505168856(context, node));
     }
     return editorCell;

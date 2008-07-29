@@ -36,7 +36,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_Component_Visibility1;
+  /* package */AbstractCellProvider my_Component_Visibility;
   /* package */AbstractCellProvider myBaseMethodDeclaration_NameCellComponent1;
   /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component3;
   /* package */AbstractCellListHandler myListHandler_1138337151587;
@@ -321,11 +321,11 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "throwsItem") > 0;
   }
 
-  public static boolean renderingCondition32(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition31(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
-  public static boolean renderingCondition60(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition59(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }
 
@@ -364,7 +364,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition32(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition31(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188210532999(context, node));
     }
     editorCell.addEditorCell(this.createCollection1075287750860(context, node));
@@ -393,7 +393,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent1178547832236(context, node));
     editorCell.addEditorCell(this.createConstant1080826270968(context, node, "static"));
-    if (renderingCondition60(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition59(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createComponent1203413131108(context, node));
     }
     editorCell.addEditorCell(this.createRefNode1075287750861(context, node));
@@ -449,10 +449,10 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1178547832236(EditorContext context, SNode node) {
-    if (this.my_Component_Visibility1 == null) {
-      this.my_Component_Visibility1 = new _Component_Visibility(node);
+    if (this.my_Component_Visibility == null) {
+      this.my_Component_Visibility = new _Component_Visibility(node);
     }
-    EditorCell editorCell = this.my_Component_Visibility1.createEditorCell(context);
+    EditorCell editorCell = this.my_Component_Visibility.createEditorCell(context);
     setupBasic_component__Component_Visibility1178547832236(editorCell, node, context);
     return editorCell;
   }

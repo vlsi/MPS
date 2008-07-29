@@ -29,7 +29,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_Component_Visibility6;
+  /* package */AbstractCellProvider my_Component_Visibility5;
   /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent;
   /* package */AbstractCellListHandler myListHandler_1188210583261;
   /* package */AbstractCellListHandler myListHandler_1188210594842;
@@ -152,11 +152,11 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_annotation_1188210594842(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition33(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition32(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 
-  public static boolean renderingCondition34(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition33(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
@@ -175,7 +175,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition34(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition33(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188210594841(context, node));
     }
     editorCell.addEditorCell(this.createCollection1188210576813(context, node));
@@ -191,7 +191,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent1188210576814(context, node));
     editorCell.addEditorCell(this.createRefNode1188210576815(context, node));
     editorCell.addEditorCell(this.createComponent1188210576816(context, node));
-    if (renderingCondition33(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition32(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188210576817(context, node));
     }
     editorCell.addEditorCell(this.createConstant1188210576828(context, node, ";"));
@@ -241,10 +241,10 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1188210576814(EditorContext context, SNode node) {
-    if (this.my_Component_Visibility6 == null) {
-      this.my_Component_Visibility6 = new _Component_Visibility(node);
+    if (this.my_Component_Visibility5 == null) {
+      this.my_Component_Visibility5 = new _Component_Visibility(node);
     }
-    EditorCell editorCell = this.my_Component_Visibility6.createEditorCell(context);
+    EditorCell editorCell = this.my_Component_Visibility5.createEditorCell(context);
     setupBasic_component__Component_Visibility1188210576814(editorCell, node, context);
     return editorCell;
   }

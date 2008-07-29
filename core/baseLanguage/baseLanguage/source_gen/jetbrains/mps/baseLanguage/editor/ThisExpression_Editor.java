@@ -86,7 +86,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1182955075319_1182955075319(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition25(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition24(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "classConcept", false) != null);
   }
 
@@ -97,7 +97,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createAlternation1182954960781(EditorContext context, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = ThisExpression_Editor.renderingCondition25(node, context, context.getOperationContext().getScope());
+    alternationCondition = ThisExpression_Editor.renderingCondition24(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection1182954969191(context, node);

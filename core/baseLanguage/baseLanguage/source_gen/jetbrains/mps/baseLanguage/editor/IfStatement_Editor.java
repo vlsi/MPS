@@ -363,11 +363,11 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement");
   }
 
-  public static boolean renderingCondition63(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition62(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty();
   }
 
-  public static boolean renderingCondition81(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition80(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "ifFalseStatement", true) == null;
   }
 
@@ -398,10 +398,10 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection1177555034648(context, node));
     editorCell.addEditorCell(this.createCollection1177555034676(context, node));
-    if (renderingCondition63(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition62(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNodeList1206063692153(context, node));
     }
-    if (renderingCondition81(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition80(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1215436040088(context, node));
     }
     if (renderingCondition15(node, context, context.getOperationContext().getScope())) {

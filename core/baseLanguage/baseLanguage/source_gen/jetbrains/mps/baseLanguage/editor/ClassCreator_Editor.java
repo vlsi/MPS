@@ -95,7 +95,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1212699852040_1212699852040(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition77(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition76(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeParameter") > 0;
   }
 
@@ -111,7 +111,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefCell1212699852034(context, node));
-    if (renderingCondition77(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition76(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1212699852037(context, node));
     }
     editorCell.addEditorCell(this.createComponent1212699852051(context, node));

@@ -120,11 +120,11 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_auxBounds_1215091315701(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition78(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition77(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "bound", true) != null);
   }
 
-  public static boolean renderingCondition79(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition78(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "auxBounds", true)).isNotEmpty();
   }
 
@@ -140,7 +140,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createProperty1214997032054(context, node));
-    if (renderingCondition78(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition77(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1214997970620(context, node));
     }
     return editorCell;
@@ -154,7 +154,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1215090982339(context, node, "extends"));
     editorCell.addEditorCell(this.createRefNode1214997985454(context, node));
-    if (renderingCondition79(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition78(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1215091303999(context, node));
     }
     return editorCell;

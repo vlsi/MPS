@@ -238,7 +238,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1215011910530_1215011910530(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition53(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition52(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
@@ -281,7 +281,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition53(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition52(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1199468161440(context, node));
     }
     editorCell.addEditorCell(this.createConstant1177666726274(context, node, "do"));

@@ -74,7 +74,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_10917094813051091709481305(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1091709481305");
     BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
-    if (renderingCondition48(node, context, context.getScope())) {
+    if (renderingCondition47(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
   }
@@ -105,7 +105,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_actualArgument_1138337224101(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition48(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition47(SNode node, EditorContext editorContext, IScope scope) {
     if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
       return false;
     }

@@ -37,7 +37,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandlerEl
 public class ClassConcept_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component1;
-  /* package */AbstractCellProvider my_Component_Visibility3;
+  /* package */AbstractCellProvider my_Component_Visibility2;
   /* package */AbstractCellListHandler myListHandler_1074866421486;
   /* package */AbstractCellListHandler myListHandler_1074867634396;
   /* package */AbstractCellListHandler myListHandler_1074868243547;
@@ -877,15 +877,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "staticInitializer", true) != null;
   }
 
-  public static boolean renderingCondition24(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition23(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "abstractClass");
   }
 
-  public static boolean renderingCondition27(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition26(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
-  public static boolean renderingCondition69(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition68(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "instanceInitializer", true) != null;
   }
 
@@ -916,12 +916,12 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition27(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition26(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188208584323(context, node));
     }
     editorCell.addEditorCell(this.createCollection1074794604361(context, node));
     editorCell.addEditorCell(this.createCollection1208706593487(context, node));
-    if (renderingCondition69(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition68(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1208701429469(context, node, ""));
     }
     editorCell.addEditorCell(this.createCollection1128555992206(context, node));
@@ -950,7 +950,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent1178550101404(context, node));
-    if (renderingCondition24(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition23(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1178610212801(context, node, "abstract"));
     }
     editorCell.addEditorCell(this.createConstant1074794604362(context, node, "class"));
@@ -1189,10 +1189,10 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1178550101404(EditorContext context, SNode node) {
-    if (this.my_Component_Visibility3 == null) {
-      this.my_Component_Visibility3 = new _Component_Visibility(node);
+    if (this.my_Component_Visibility2 == null) {
+      this.my_Component_Visibility2 = new _Component_Visibility(node);
     }
-    EditorCell editorCell = this.my_Component_Visibility3.createEditorCell(context);
+    EditorCell editorCell = this.my_Component_Visibility2.createEditorCell(context);
     setupBasic_component__Component_Visibility1178550101404(editorCell, node, context);
     return editorCell;
   }

@@ -52,7 +52,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_11720587322591172058732259(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172058732259");
     BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
-    if (renderingCondition47(node, context, context.getScope())) {
+    if (renderingCondition46(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
   }
@@ -73,7 +73,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_actualArgument_1172058760745(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition47(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition46(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
   }
 

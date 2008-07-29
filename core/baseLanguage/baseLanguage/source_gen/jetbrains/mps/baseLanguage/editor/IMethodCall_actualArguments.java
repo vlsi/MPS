@@ -80,7 +80,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
       };
       inlineStyle.apply(editorCell);
     }
-    if (renderingCondition45(node, context, context.getScope())) {
+    if (renderingCondition44(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
   }
@@ -94,7 +94,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
   private static void setupLabel_Constant_1173990956441_1173990956441(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition45(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition44(SNode node, EditorContext editorContext, IScope scope) {
     if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
       return false;
     }
