@@ -4,19 +4,19 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.JComponent;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 
 public class TodoViewer_Tool extends GeneratedTool {
 
-  private JComponent myComponent = new JPanel(new BorderLayout());
+  private JComponent myComponent;
 
   public TodoViewer_Tool(Project project) {
     super(project, "TODO", 2, IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\source\\jetbrains\\mps\\baseLanguage\\plugin\\todo.png", "jetbrains.mps.baseLanguage"), true), ToolWindowAnchor.BOTTOM, false);
@@ -27,6 +27,7 @@ public class TodoViewer_Tool extends GeneratedTool {
   }
 
   public void init(Project project) {
+    this.myComponent = new JPanel(new BorderLayout());
     this.myComponent.add(new TodoViewer(this.getMPSProject()), BorderLayout.CENTER);
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(this.createCloseAction());

@@ -4735,6 +4735,26 @@
     </node>
     <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginInitBlock" id="1216657102102">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216657102103">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217360680510">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1217360684342">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217360680511">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1217360680512" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1217360680513">
+                <link role="member" targetNodeId="1216657110747" resolveInfo="myComponent" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217360685454">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217360685455">
+                <link role="baseMethodDeclaration" targetNodeId="16.~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolveInfo="JPanel" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217360685456">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217360685457">
+                    <link role="baseMethodDeclaration" targetNodeId="17.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216657107458">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216657107459">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216657139633">
@@ -4851,16 +4871,6 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216657110748" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216657116782">
         <link role="classifier" targetNodeId="16.~JComponent" resolveInfo="JComponent" />
-      </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216657122346">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216657126395">
-          <link role="baseMethodDeclaration" targetNodeId="16.~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolveInfo="JPanel" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216657129974">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216657132945">
-              <link role="baseMethodDeclaration" targetNodeId="17.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </node>

@@ -7023,27 +7023,12 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216652708483">
         <link role="classifier" targetNodeId="104.~NodeExplorerComponent" resolveInfo="NodeExplorerComponent" />
       </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216652708484">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216652708485">
-          <link role="baseMethodDeclaration" targetNodeId="104.~NodeExplorerComponent.&lt;init&gt;()" resolveInfo="NodeExplorerComponent" />
-        </node>
-      </node>
     </node>
     <node role="fieldDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1216657526318">
       <property name="name" value="myPanel" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216657526319" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216657534105">
         <link role="classifier" targetNodeId="72.~JPanel" resolveInfo="JPanel" />
-      </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216657550607">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216657550608">
-          <link role="baseMethodDeclaration" targetNodeId="72.~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolveInfo="JPanel" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216657552219">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216657563915">
-              <link role="baseMethodDeclaration" targetNodeId="67.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node role="methodDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1216652708486">
@@ -7065,6 +7050,41 @@
     </node>
     <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginInitBlock" id="1216657523754">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216657523755">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217361631551">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1217361632383">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217361631552">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1217361631553" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1217361631554">
+                <link role="member" targetNodeId="1216652708481" resolveInfo="myNodeExplorer" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217361637933">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217361637934">
+                <link role="baseMethodDeclaration" targetNodeId="104.~NodeExplorerComponent.&lt;init&gt;()" resolveInfo="NodeExplorerComponent" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217361646499">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1217361647457">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217361646500">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1217361646501" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1217361646502">
+                <link role="member" targetNodeId="1216657526318" resolveInfo="myPanel" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217361652538">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217361652539">
+                <link role="baseMethodDeclaration" targetNodeId="72.~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolveInfo="JPanel" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217361652540">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217361652541">
+                    <link role="baseMethodDeclaration" targetNodeId="67.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216657568635">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216657570592">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216657568636">
@@ -7403,11 +7423,6 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216662221216">
         <link role="classifier" targetNodeId="105.~ModuleRepositoryComponent" resolveInfo="ModuleRepositoryComponent" />
       </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216662229881">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216662229882">
-          <link role="baseMethodDeclaration" targetNodeId="105.~ModuleRepositoryComponent.&lt;init&gt;()" resolveInfo="ModuleRepositoryComponent" />
-        </node>
-      </node>
     </node>
     <node role="fieldDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1216662241210">
       <property name="name" value="myPanel" />
@@ -7415,19 +7430,44 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216662245037">
         <link role="classifier" targetNodeId="72.~JPanel" resolveInfo="JPanel" />
       </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216662250986">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216662250987">
-          <link role="baseMethodDeclaration" targetNodeId="72.~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolveInfo="JPanel" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216662252643">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216662256610">
-              <link role="baseMethodDeclaration" targetNodeId="67.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
     <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginInitBlock" id="1216662260514">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216662260515">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217361599434">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1217361600219">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217361599435">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1217361599436" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1217361610928">
+                <link role="member" targetNodeId="1216662180495" resolveInfo="myComponent" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217361605847">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217361605848">
+                <link role="baseMethodDeclaration" targetNodeId="105.~ModuleRepositoryComponent.&lt;init&gt;()" resolveInfo="ModuleRepositoryComponent" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217361613726">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1217361614371">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217361613727">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1217361613728" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1217361613729">
+                <link role="member" targetNodeId="1216662241210" resolveInfo="myPanel" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217361620312">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217361620313">
+                <link role="baseMethodDeclaration" targetNodeId="72.~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolveInfo="JPanel" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217361620314">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217361620315">
+                    <link role="baseMethodDeclaration" targetNodeId="67.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216662265854">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216662267029">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216662265855">
@@ -7666,27 +7706,12 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216663717786">
         <link role="classifier" targetNodeId="106.~ModelRepositoryComponent" resolveInfo="ModelRepositoryComponent" />
       </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216663717787">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216663717788">
-          <link role="baseMethodDeclaration" targetNodeId="106.~ModelRepositoryComponent.&lt;init&gt;()" resolveInfo="ModelRepositoryComponent" />
-        </node>
-      </node>
     </node>
     <node role="fieldDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1216663717789">
       <property name="name" value="myPanel" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216663717790" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216663717791">
         <link role="classifier" targetNodeId="72.~JPanel" resolveInfo="JPanel" />
-      </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216663717792">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216663717793">
-          <link role="baseMethodDeclaration" targetNodeId="72.~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolveInfo="JPanel" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216663717794">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216663717795">
-              <link role="baseMethodDeclaration" targetNodeId="67.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node role="getComponentBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetComponentBlock" id="1216663323017">
@@ -7703,6 +7728,41 @@
     </node>
     <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginInitBlock" id="1216663846206">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216663846207">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217361556522">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1217361557651">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217361556523">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1217361556524" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1217361556525">
+                <link role="member" targetNodeId="1216663717784" resolveInfo="myComponent" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217361572966">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217361572967">
+                <link role="baseMethodDeclaration" targetNodeId="106.~ModelRepositoryComponent.&lt;init&gt;()" resolveInfo="ModelRepositoryComponent" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217361575782">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1217361579364">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217361575783">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1217361575784" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1217361575785">
+                <link role="member" targetNodeId="1216663717789" resolveInfo="myPanel" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217361586742">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217361586743">
+                <link role="baseMethodDeclaration" targetNodeId="72.~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolveInfo="JPanel" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217361586744">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217361586745">
+                    <link role="baseMethodDeclaration" targetNodeId="67.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216663846208">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216663846209">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216663846210">

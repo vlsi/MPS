@@ -10,7 +10,7 @@ import javax.swing.JComponent;
 
 public class StructureView_Tool extends GeneratedTool {
 
-  private StructureViewComponent myComponent = new StructureViewComponent();
+  private StructureViewComponent myComponent;
 
   public StructureView_Tool(Project project) {
     super(project, "Concept Structure", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, false);
@@ -18,6 +18,10 @@ public class StructureView_Tool extends GeneratedTool {
 
   public JComponent getComponent() {
     return this.myComponent.getComponent();
+  }
+
+  public void init(Project project) {
+    this.myComponent = new StructureViewComponent();
   }
 
   public StructureViewComponent getStructureView() {

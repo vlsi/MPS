@@ -17,7 +17,6 @@ public class Structure_ActionGroup extends GeneratedActionGroup {
 
   public Structure_ActionGroup() {
     super("", ID);
-    this.setIsAlwaysVisible(true);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
