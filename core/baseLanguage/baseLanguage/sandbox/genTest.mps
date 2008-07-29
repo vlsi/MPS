@@ -41,6 +41,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215776922964" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1217334324702">
       <property name="isAbstract" value="true" />
+      <property name="name" value="abc" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217334324703" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217334324704" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217334324705" />

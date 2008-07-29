@@ -11,22 +11,22 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class TypeClause_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ErrorCell2500_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ErrorCell2500_0");
+  private static void setupBasic_Error_11979367344971197936734497(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1197936734497");
   }
 
-  private static void setupLabel_ErrorCell2500_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Error_1197936734497_1197936734497(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ErrorCell2500_0(context, node);
+    return this.createError1197936734497(context, node);
   }
 
-  public EditorCell create_ErrorCell2500_0(EditorContext context, SNode node) {
+  public EditorCell createError1197936734497(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "type clause");
-    setupBasic_ErrorCell2500_0(editorCell, node, context);
-    setupLabel_ErrorCell2500_0(editorCell, node, context);
+    setupBasic_Error_11979367344971197936734497(editorCell, node, context);
+    setupLabel_Error_1197936734497_1197936734497(editorCell, node, context);
     return editorCell;
   }
 

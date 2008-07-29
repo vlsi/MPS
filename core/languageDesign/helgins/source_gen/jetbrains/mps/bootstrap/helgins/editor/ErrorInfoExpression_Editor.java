@@ -12,23 +12,23 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class ErrorInfoExpression_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell119_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell119_0");
+  private static void setupBasic_Constant_12016183286921201618328692(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1201618328692");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
-  private static void setupLabel_ConstantCell119_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1201618328692_1201618328692(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ConstantCell119_0(context, node, "equationInfo");
+    return this.createConstant1201618328692(context, node, "equationInfo");
   }
 
-  public EditorCell create_ConstantCell119_0(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1201618328692(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell119_0(editorCell, node, context);
-    setupLabel_ConstantCell119_0(editorCell, node, context);
+    setupBasic_Constant_12016183286921201618328692(editorCell, node, context);
+    setupLabel_Constant_1201618328692_1201618328692(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

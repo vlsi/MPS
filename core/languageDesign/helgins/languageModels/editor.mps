@@ -363,6 +363,9 @@
               </node>
             </node>
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217336056978">
+            <property name="value" value="0.0" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198243462905">
           <property name="text" value="{" />
@@ -430,6 +433,9 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198243759898">
               <property name="text" value="do" />
               <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217336064715">
+                <property name="value" value="0.0" />
+              </node>
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214398032203">
                 <property name="flag" value="false" />
               </node>
@@ -776,6 +782,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198243858337">
           <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="27.1215091279307" resolveInfo="LeftBrace" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994499">
             <property name="flag" value="false" />
           </node>
@@ -783,12 +790,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198243869687">
         <property name="vertical" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198243871721">
-          <property name="text" value="  " />
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994837">
-            <property name="flag" value="false" />
-          </node>
-        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1217335288846" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198243875549">
           <property name="vertical" value="true" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198243875826">
@@ -836,21 +838,20 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198243909543">
               <property name="text" value="rule" />
               <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217335470371">
+                <property name="value" value="0.0" />
+              </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198243911030">
               <property name="text" value="{" />
+              <link role="styleClass" targetNodeId="27.1215091279307" resolveInfo="LeftBrace" />
             </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997859">
               <property name="flag" value="false" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198243875822">
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198243875823">
-              <property name="text" value="  " />
-              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994869">
-                <property name="flag" value="false" />
-              </node>
-            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1217335294347" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198243875824">
               <link role="relationDeclaration" targetNodeId="1.1175147624276" />
             </node>
@@ -860,6 +861,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198243875825">
             <property name="text" value="}" />
+            <link role="styleClass" targetNodeId="27.1215091331565" resolveInfo="RightBrace" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997196">
               <property name="flag" value="false" />
             </node>
@@ -877,6 +879,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198243861558">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="27.1215091331565" resolveInfo="RightBrace" />
       </node>
     </node>
   </node>
@@ -1074,31 +1077,30 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1176548000091">
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1176548000092">
           <property name="text" value="foreach" />
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399678042">
-            <property name="color" value="DARK_BLUE" />
-          </node>
+          <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1176548004531">
           <property name="text" value="(" />
+          <link role="styleClass" targetNodeId="27.1215087929380" resolveInfo="LeftParen" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1176548009689">
           <property name="separatorText" value=";" />
           <link role="relationDeclaration" targetNodeId="1.1176547942567" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1176548017457">
-          <property name="text" value=") {" />
+          <property name="text" value=")" />
+          <link role="styleClass" targetNodeId="27.1215088010675" resolveInfo="RightParen" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217334619979">
+          <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="27.1215091279307" resolveInfo="LeftBrace" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994708">
           <property name="flag" value="false" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1176548036430">
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1176548036431">
-          <property name="text" value="  " />
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996813">
-            <property name="flag" value="false" />
-          </node>
-        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1217334631746" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1176548041823">
           <link role="relationDeclaration" targetNodeId="20.1154032183016" />
         </node>
@@ -1108,6 +1110,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1176548046138">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="27.1215091331565" resolveInfo="RightBrace" />
       </node>
     </node>
   </node>
@@ -2073,9 +2076,13 @@
               </node>
             </node>
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217335861914">
+            <property name="value" value="0.0" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198242165437">
           <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="27.1215091279307" resolveInfo="LeftBrace" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993806">
           <property name="flag" value="false" />
@@ -2083,12 +2090,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198242177973">
         <property name="vertical" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198242180288">
-          <property name="text" value="  " />
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993755">
-            <property name="flag" value="false" />
-          </node>
-        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1217335697550" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198242185288">
           <property name="vertical" value="true" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198242185697">
@@ -2135,9 +2137,13 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198242249168">
               <property name="text" value="do" />
               <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217335870697">
+                <property name="value" value="0.0" />
+              </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198242245494">
               <property name="text" value="{" />
+              <link role="styleClass" targetNodeId="27.1215091279307" resolveInfo="LeftBrace" />
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214398032153">
                 <property name="flag" value="false" />
               </node>
@@ -2147,18 +2153,14 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198242185705">
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198242185706">
-              <property name="text" value="  " />
-              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994118">
-                <property name="flag" value="false" />
-              </node>
-            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1217335705708" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198242185707">
               <link role="relationDeclaration" targetNodeId="1.1195213635060" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198242185708">
             <property name="text" value="}" />
+            <link role="styleClass" targetNodeId="27.1215091331565" resolveInfo="RightBrace" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214398032089">
               <property name="flag" value="false" />
             </node>
@@ -2173,6 +2175,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198242332213">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="27.1215091331565" resolveInfo="RightBrace" />
       </node>
     </node>
   </node>
@@ -2235,30 +2238,30 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1201608009625">
           <property name="text" value="rule" />
           <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217335490983">
+            <property name="value" value="0.0" />
+          </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214398032199">
             <property name="flag" value="false" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1201608009626">
           <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="27.1215091279307" resolveInfo="LeftBrace" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214398032010">
             <property name="flag" value="false" />
           </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1201608009627">
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1201608009628">
-          <property name="text" value="  " />
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994639">
-            <property name="flag" value="false" />
-          </node>
-        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1217335117666" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1201608009629">
           <link role="relationDeclaration" targetNodeId="1.1175147624276" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1201608009630">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="27.1215091331565" resolveInfo="RightBrace" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214398032131">
           <property name="flag" value="false" />
         </node>
