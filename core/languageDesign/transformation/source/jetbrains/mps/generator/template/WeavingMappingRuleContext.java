@@ -4,14 +4,7 @@ import jetbrains.mps.smodel.SNode;
 
 public class WeavingMappingRuleContext extends TemplateQueryContext{
 
-  public WeavingMappingRuleContext(SNode node, ITemplateGenerator generator) {
-    super(node, generator);
-  }
-
-  /**
-   * 'node' mapping
-   */
-  public SNode getNode() {
-    return getInputNode();
+  public WeavingMappingRuleContext(SNode node, SNode ruleNode, ITemplateGenerator generator) {
+    super(node, null, generator);
   }
 }

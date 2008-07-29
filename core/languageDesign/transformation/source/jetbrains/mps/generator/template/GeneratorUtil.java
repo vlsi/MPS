@@ -107,7 +107,7 @@ public class GeneratorUtil {
       res = (Boolean) QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new BaseMappingRuleContext(inputNode, generator.getInputModel(), generator),
+        new BaseMappingRuleContext(inputNode, ruleNode, generator),
         ruleNode.getModel(),
         true);
       return res;
@@ -136,7 +136,7 @@ public class GeneratorUtil {
       QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new MappingScriptContext(model, generator),
+        new MappingScriptContext(model, mappingScript.getNode(), generator),
         mappingScript.getModel(),
         true);
     } catch (ClassNotFoundException e) {
@@ -150,14 +150,17 @@ public class GeneratorUtil {
     }
   }
 
-  public static List<SNode> evaluateSourceNodesQuery(SNode inputNode, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {
+  /**
+   * used to evaluate 'sourceNodesQuery' in macros and in rules
+   */
+  public static List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
     long startTime = System.currentTimeMillis();
     try {
       List<SNode> result = (List<SNode>) QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new SourceSubstituteMacroNodesContext(inputNode, generator.getInputModel(), generator),
+        new SourceSubstituteMacroNodesContext(inputNode, ruleNode, macroNode, generator),
         query.getModel());
       return result;
     } catch (Exception e) {
@@ -169,14 +172,14 @@ public class GeneratorUtil {
     }
   }
 
-  public static SNode evaluateSourceNodeQuery(SNode inputNode, SourceSubstituteMacro_SourceNodeQuery query, ITemplateGenerator generator) {
+  public static SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query, ITemplateGenerator generator) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query.getNode());
     long startTime = System.currentTimeMillis();
     try {
       return (SNode) QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new SourceSubstituteMacroNodeContext(inputNode, generator.getInputModel(), generator),
+        new SourceSubstituteMacroNodeContext(inputNode, macroNode, generator),
         query.getModel());
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
@@ -220,7 +223,7 @@ public class GeneratorUtil {
       return (Boolean) QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new CreateRootRuleContext(generator.getInputModel(), generator),
+        new CreateRootRuleContext(createRootRule.getNode(), generator),
         createRootRule.getModel(),
         true);
     } catch (ClassNotFoundException e) {
@@ -297,7 +300,7 @@ public class GeneratorUtil {
         return (SNode) QueryMethodGenerated.invoke(
           methodName,
           generator.getGeneratorSessionContext(),
-          new WeavingMappingRuleContext(inputNode, generator),
+          new WeavingMappingRuleContext(inputNode, rule.getNode(), generator),
           query.getModel());
       } catch (Exception e) {
         generator.showErrorMessage(inputNode, null, rule.getNode(), "couldn't evaluate rule context query");
@@ -429,7 +432,7 @@ public class GeneratorUtil {
         return (SNode) QueryMethodGenerated.invoke(
           methodName,
           generator.getGeneratorSessionContext(),
-          new TemplateFragmentContext(inputNode, mainContextNode, generator),
+          new TemplateFragmentContext(inputNode, mainContextNode, templateFragmentNode, generator),
           query.getModel());
       } catch (Exception e) {
         generator.showErrorMessage(inputNode, null, templateFragmentNode, "couldn't evaluate template fragment context query");
@@ -486,7 +489,7 @@ public class GeneratorUtil {
                   break;
                 }
                 template = weaveEach.getTemplate();
-                List<SNode> queryNodes = evaluateSourceNodesQuery(applicableNode, query, generator);
+                List<SNode> queryNodes = evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, generator);
                 if (queryNodes.isEmpty()) {
                   someOutputGenerated = false;
                 }

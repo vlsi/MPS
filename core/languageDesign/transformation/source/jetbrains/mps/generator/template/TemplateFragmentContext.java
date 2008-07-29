@@ -5,16 +5,9 @@ import jetbrains.mps.smodel.SNode;
 public class TemplateFragmentContext extends TemplateQueryContext {
   private SNode myMainContextNode;
 
-  public TemplateFragmentContext(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
-    super(node, generator);
+  public TemplateFragmentContext(SNode node, SNode mainContextNode, SNode templateFragmentNode, ITemplateGenerator generator) {
+    super(node, templateFragmentNode.getParent(), generator);
     myMainContextNode = mainContextNode;
-  }
-
-  /**
-   * 'node' mapping
-   */
-  public SNode getNode() {
-    return getInputNode();
   }
 
   /**

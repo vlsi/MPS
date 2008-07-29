@@ -6,24 +6,27 @@ import jetbrains.mps.smodel.SNode;
 public class MappingScriptContext  extends TemplateQueryContext {
   private SModel myModel;
 
-  public MappingScriptContext(SModel model, ITemplateGenerator generator) {
-    super(null, generator);
+  public MappingScriptContext(SModel model, SNode mappingScript, ITemplateGenerator generator) {
+    super(null, null, generator);
     myModel = model;
   }
 
+  /**
+   * 'model'  parameter mapping
+   */
   public SModel getModel() {
     return myModel;
   }
 
   public SNode getInputNode() {
-    throw new RuntimeException("'inputNode' is not applicable in mapping script context");
+    return null;
   }
 
   public SModel getInputModel() {
-    throw new RuntimeException("'inputModel' is not applicable in mapping script context");
+    return myModel;
   }
 
   public SModel getOutputModel() {
-    throw new RuntimeException("'outputModel' is not applicable in mapping script context");
+    return myModel;
   }
 }

@@ -5,16 +5,9 @@ import jetbrains.mps.smodel.SNode;
 public class MapSrcMacroContext  extends TemplateQueryContext {
   private SNode myParentOutputNode;
 
-  public MapSrcMacroContext(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    super(node, generator);
+  public MapSrcMacroContext(SNode node, SNode macroNode, SNode parentOutputNode, ITemplateGenerator generator) {
+    super(node, macroNode.getParent(), generator);
     myParentOutputNode = parentOutputNode;
-  }
-
-  /**
-   * 'node' mapping
-   */
-  public SNode getNode() {
-    return getInputNode();
   }
 
   /**

@@ -5,15 +5,11 @@ import jetbrains.mps.smodel.SNode;
 
 public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
 
-  public SourceSubstituteMacroNodesContext(SNode node, SModel sourceModel, ITemplateGenerator generator) {
-    super(node, generator);
-  }
-
   /**
-   * 'node' mapping
+   * actually this parameter is passed not only to 'sourceNodesQuery' in macros but also to similar queries in rules
    */
-  public SNode getNode() {
-    return getInputNode();
+  public SourceSubstituteMacroNodesContext(SNode node, SNode ruleNode, SNode macroNode, ITemplateGenerator generator) {
+    super(node, macroNode != null ? macroNode.getParent() : null, generator);
   }
 
 }

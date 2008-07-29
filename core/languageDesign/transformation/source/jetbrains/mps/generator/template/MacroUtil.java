@@ -27,8 +27,6 @@ public class MacroUtil {
   private static final Logger LOG = Logger.getLogger(MacroUtil.class);
 
   public static void expandPropertyMacro(ITemplateGenerator generator, PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode) {
-//    String propertyName = propertyMacro.getProperty().getName();
-//    assert propertyName != null;
     String attributeRole = propertyMacro.getRole_();
     String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(attributeRole);
     String propertyValue;
@@ -43,7 +41,7 @@ public class MacroUtil {
         Object macroValue = QueryMethodGenerated.invoke(
           methodName,
           generator.getGeneratorSessionContext(),
-          new PropertyMacroContext(inputNode, templateValue, templateNode, generator.getInputModel(), generator),
+          new PropertyMacroContext(inputNode, templateValue, templateNode, generator),
           propertyMacro.getModel());
         propertyValue = macroValue == null ? null : String.valueOf(macroValue);
       } catch (Exception e) {
@@ -81,7 +79,7 @@ public class MacroUtil {
         return (SNode) QueryMethodGenerated.invoke(
           methodName,
           generator.getGeneratorSessionContext(),
-          new MapSrcMacroContext(inputNode, parentOutputNode, generator),
+          new MapSrcMacroContext(inputNode, mapSrcNodeOrListMacro, parentOutputNode, generator),
           mapSrcNodeOrListMacro.getModel());
       } catch (Exception e) {
         generator.showErrorMessage(inputNode, null, mapSrcNodeOrListMacro, "couldn't evaluate macro query");
@@ -114,7 +112,7 @@ public class MacroUtil {
         res = (Boolean) QueryMethodGenerated.invoke(
           methodName,
           generator.getGeneratorSessionContext(),
-          new IfMacroContext(inputNode, generator.getInputModel(), generator),
+          new IfMacroContext(inputNode, BaseAdapter.fromAdapter(ifMacro), generator),
           ifMacro.getModel(),
           true);
         return res;
@@ -226,14 +224,14 @@ public class MacroUtil {
       throw new GenerationFailueException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
     }
 
-    SNode resultNode = GeneratorUtil.evaluateSourceNodeQuery(currentInputNode, query, generator);
+    SNode resultNode = GeneratorUtil.evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, generator);
     return resultNode;
   }
 
   private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) throws GenerationFailueException {
     // new
     if (query != null) {
-      List<SNode> list = GeneratorUtil.evaluateSourceNodesQuery(currentInputNode, query, generator);
+      List<SNode> list = GeneratorUtil.evaluateSourceNodesQuery(currentInputNode, null, macro.getNode(), query, generator);
       if (list != null) {
         return list;
       }
@@ -271,7 +269,7 @@ public class MacroUtil {
 
     // new
     if (query != null) {
-      return GeneratorUtil.evaluateSourceNodeQuery(currentInputNode, query, generator);
+      return GeneratorUtil.evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, generator);
     }
 
     // old (returns list in switch)

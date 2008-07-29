@@ -13,15 +13,19 @@ public class TemplateQueryContext {
   private SNode myTemplateNode;
   private ITemplateGenerator myGenerator;
 
-  public TemplateQueryContext(SNode inputNode, ITemplateGenerator generator) {
-    this(inputNode, null, generator);
-  }
-
   public TemplateQueryContext(SNode inputNode, SNode templateNode, ITemplateGenerator generator) {
     myInputNode = inputNode;
     myTemplateNode = templateNode;
     myGenerator = generator;
   }
+
+  /**
+   * 'node' mapping
+   */
+  public SNode getNode() {
+    return getInputNode();
+  }
+
 
   public SNode getInputNode() {
     return myInputNode;
@@ -45,6 +49,7 @@ public class TemplateQueryContext {
 
   /**
    * 'sourceModel' mapping
+   *
    * @deprecated
    */
   public SModel getSourceModel() {
