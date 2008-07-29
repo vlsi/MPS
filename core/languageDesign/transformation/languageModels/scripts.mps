@@ -2977,6 +2977,66 @@
         </node>
       </node>
     </node>
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1217370495368">
+      <property name="description" value="update 'templateNode'" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1167774355440" resolveInfo="TemplateFunctionParameter_templateNode" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1217370495369">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217370495370">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217370495371">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217370495372">
+              <property name="name" value="dotExpression" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1217370495373">
+                <link role="concept" targetNodeId="5.1197027756228" resolveInfo="DotExpression" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217370495374">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1217370495375" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation" id="1217370495376">
+                  <link role="concept" targetNodeId="5.1197027756228" resolveInfo="DotExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217370495377">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1217370495378">
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217370495379">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217370495380">
+                  <link role="variableDeclaration" targetNodeId="1217370495372" resolveInfo="dotExpression" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1217370495381">
+                  <link role="link" targetNodeId="5.1197027771414" />
+                </node>
+              </node>
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217370495382">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1217370495383">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1217370495384">
+                    <link role="concept" targetNodeId="3v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217370495385">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1217370495386">
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217370495387">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217370495388">
+                  <link role="variableDeclaration" targetNodeId="1217370495372" resolveInfo="dotExpression" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1217370495389">
+                  <link role="link" targetNodeId="5.1197027833540" />
+                </node>
+              </node>
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217370495390">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1217370495391">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1217370495392">
+                    <link role="concept" targetNodeId="3v.1217369610610" resolveInfo="GenerationContextOp_GetTemplateNode" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
