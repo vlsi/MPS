@@ -222,7 +222,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1201608009614(context, node, "replacement rule "));
+    editorCell.addEditorCell(this.createConstant1201608009614(context, node, "replacement rule"));
     editorCell.addEditorCell(this.createProperty1201608009615(context, node));
     return editorCell;
   }
