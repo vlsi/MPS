@@ -5908,33 +5908,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1146644925113">
-    <link role="conceptDeclaration" targetNodeId="17.1146644602865" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1146644928271">
-      <property name="text" value="public" />
-      <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1146644985742">
-    <link role="conceptDeclaration" targetNodeId="17.1146644623116" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1146644988135">
-      <property name="text" value="private" />
-      <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1214314934236">
-        <property name="style" value="BOLD" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1146645052825">
-    <link role="conceptDeclaration" targetNodeId="17.1146644641414" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1146645055811">
-      <property name="text" value="protected" />
-      <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1214314934301">
-        <property name="style" value="BOLD" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1152311212234">
     <property name="name" value="ReturnStatement_Actions" />
     <link role="applicableConcept" targetNodeId="17.1068581242878" />
@@ -16346,6 +16319,17 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1217329365829">
+    <property name="package" value="visibility" />
+    <link role="conceptDeclaration" targetNodeId="17.1146644584814" resolveInfo="Visibility" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1217329434998">
+      <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1217329442280">
+        <property name="flag" value="true" />
       </node>
     </node>
   </node>
