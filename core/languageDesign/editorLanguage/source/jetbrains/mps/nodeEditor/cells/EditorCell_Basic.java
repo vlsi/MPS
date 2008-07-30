@@ -772,7 +772,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public boolean isToRight(EditorCell cell) {
-    return cell.isToLeft(cell);
+    return cell.isToLeft(this);
   }
 
   private static int horizontalDistance(EditorCell cell, int x) {
@@ -832,28 +832,22 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public EditorCell getEndCell(Condition<EditorCell> condition) {
     EditorCell current = this;
-    while (current.getNextLeaf(condition) != null) {
-      if (current.getNextLeaf(condition).isBelow(this)) {
-        return current;
-      }
-      current = current.getNextLeaf(condition);
+    while (current.getLeafToRight(condition) != null) {
+      current = current.getLeafToRight(condition);
     }
     return current;
   }
 
   public EditorCell getHomeCell(Condition<EditorCell> condition) {
     EditorCell current = this;
-    while (current.getPrevLeaf(condition) != null) {
-      if (current.getPrevLeaf(condition).isAbove(this)) {
-        return current;
-      }
-      current = current.getPrevLeaf(condition);
+    while (current.getLeafToLeft(condition) != null) {
+      current = current.getLeafToLeft(condition);
     }
     return current;
   }
 
   public EditorCell getLeafToLeft(Condition<EditorCell> condition) {
-    return getNextLeaf(new Condition<EditorCell>() {
+    return getPrevLeaf(new Condition<EditorCell>() {
       public boolean met(EditorCell current) {
         return current.isSelectable() && !isAbove(current) && !isBelow(current) && isToRight(current);
       }
