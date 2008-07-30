@@ -1,9 +1,12 @@
 package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.actions.FileActions_ActionGroup;
+import jetbrains.mps.ide.actions.ModuleActions_ActionGroup;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -33,5 +36,10 @@ public class ModuleTreeNode extends AbstractFileTreeNode {
 
   public IModule getModule() {
     return myModule;
+  }
+
+  @Override
+  public ActionGroup getActionGroup() {
+    return ActionUtils.getGroup(ModuleActions_ActionGroup.ID);
   }
 }

@@ -7,6 +7,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.ide.ui.customization.CustomizableActionsSchemas;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNode {
   protected final VirtualFile myFile;
@@ -48,7 +50,7 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNo
 
   @Override
   public ActionGroup getActionGroup() {
-    return (ActionGroup) CustomizableActionsSchemas.getInstance().getCorrectedAction("FileSystemViewPopupMenu");
+    return ActionUtils.getGroup(AbstractFileActions_ActionGroup.ID);
   }
 
   public VirtualFile getFile() {
