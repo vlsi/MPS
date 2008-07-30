@@ -33,33 +33,35 @@ import javax.swing.SwingUtilities;
 
 public class MPSVCSManager implements ProjectComponent {
   public static final Logger LOG = Logger.getLogger(MPSVCSManager.class);
+
   private final Project myProject;
-  private GenerationListener myGenerationListener;
+  private final ProjectLevelVcsManager myManager;
+  private final ChangeListManager myChangeListManager;
+
   private boolean myGenerationRunning;
+  private boolean myIsInitialized = false;
+  private volatile boolean myChangeListManagerInitialized = false;
+
   private final Object myMonitor = new Object();
   private final List<Runnable> myTasks = new LinkedList<Runnable>();
-  private final SModelRepositoryListener myModelRepositoryListener;
+
+  private final GenerationListener myGenerationListener = new GenerationWhatcher();
+  private final SModelRepositoryListener myModelRepositoryListener = new SModelRepositoryListenerImpl();
   private final SModelAdapter myModelInitializationListener = new ModelSavedListener();
-  private MetadataCreationListener myMetadataListener = new MetadataCreationListenerImpl();
-  private ProjectLevelVcsManager myManager;
+  private final MetadataCreationListener myMetadataListener = new MetadataCreationListenerImpl();
+  private final ChangeListAdapter myChangeListUpdateListener = new ChangeListAdapter() {
+    @Override
+    public void changeListUpdateDone() {
+      myChangeListManagerInitialized = true;
+    }
+  };
+
   private static final String IGNORE_PATTERN = ".svn*";
-  private ChangeListManager myChangeListManager;
-  private boolean myIsInitialized = false;
-  private boolean myChangeListManagerInitialized = false;
-  private volatile ChangeListAdapter myChangeListUpdateListener;
 
   public MPSVCSManager(Project project, ProjectLevelVcsManager manager, MPSProjectHolder holder, MPSModuleRepository repository, VcsDirectoryMappingStorage storage, ChangeListManager clmanager) {
     myProject = project;
     myManager = manager;
     myChangeListManager = clmanager;
-    myGenerationListener = new GenerationWhatcher();
-    myModelRepositoryListener = new SModelRepositoryListenerImpl();
-    myChangeListUpdateListener = new ChangeListAdapter(){
-      @Override
-      public void changeListUpdateDone() {
-        myChangeListManagerInitialized = true;
-      }
-    };
   }
 
   public static MPSVCSManager getInstance(Project project) {
@@ -114,43 +116,8 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean deleteVFilesAndRemoveFromVCS(List<VirtualFile> files) {
-    final List<VirtualFile> inVCS = new LinkedList<VirtualFile>();
-    List<File> notInVCS = new LinkedList<File>();
-
-    final ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
-    for (VirtualFile f : files) {
-      if (f != null) {
-        AbstractVcs vcs = manager.getVcsFor(f);
-        if (vcs != null) {
-          inVCS.add(f);
-        } else {
-          File iofile = VFileSystem.toFile(f);
-          if (iofile != null) {
-            notInVCS.add(iofile);
-          }
-        }
-      }
-    }
-
-    boolean result = true;
-
-    deleteInternal(inVCS);
-
-    IProjectHandler projectHandler = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
-    if (projectHandler != null) {
-      try {
-        projectHandler.deleteFilesAndRemoveFromVCS(notInVCS);
-      } catch (RemoteException e) {
-        LOG.error(e);
-        return false;
-      }
-    } else {
-      for (File f : notInVCS) {
-        f.delete();
-      }
-    }
-
-    return result;
+    deleteInternal(files);
+    return true;
   }
 
   private void deleteInternal(final List<VirtualFile> inVCS) {
@@ -174,68 +141,51 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean addFilesToVCS(final List<File> files) {
-    List<VirtualFile> list = new LinkedList<VirtualFile>();
-    for (File f : files) {
-      VirtualFile file = VFileSystem.getFile(f);
-      if (file != null) {
-        list.add(file);
-      }
-    }
-
-    return addVFilesToVCS(list);
-  }
-
-  public boolean addVFilesToVCS(final List<VirtualFile> files) {
-    final List<VirtualFile> inVCS = new LinkedList<VirtualFile>();
-    List<File> notInVCS = new LinkedList<File>();
-
-    for (VirtualFile f : files) {
-      if (f != null) {
-        AbstractVcs vcs = myManager.getVcsFor(f);
-        if (vcs != null) {
-          inVCS.add(f);
-        } else {
-          File iofile = VFileSystem.toFile(f);
-          if (iofile != null) {
-            notInVCS.add(iofile);
+    invokeLater(new Runnable() {
+      public void run() {
+        List<VirtualFile> virtualFileList = new LinkedList<VirtualFile>();
+        for (File f : files) {
+          VirtualFile virtualFile = VFileSystem.refreshAndGetFile(f);
+          if (virtualFile != null) {
+            virtualFileList.add(virtualFile);
+          } else {
+            LOG.error("Cannot find virtual file for File " + f);
           }
         }
+        addInternal(virtualFileList);
       }
-    }
-
-    addInternal(inVCS);
-
-    IProjectHandler projectHandler = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
-    if (projectHandler != null) {
-      try {
-        projectHandler.addFilesToVCS(notInVCS);
-      } catch (RemoteException e) {
-        LOG.error(e);
-        return false;
-      }
-    }
-
+    });
     return true;
   }
 
-  private void addInternal(final List<VirtualFile> inVCS) {
+  public boolean addVFilesToVCS(final List<VirtualFile> files) {
     invokeLater(new Runnable() {
       public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            for (VirtualFile vf : inVCS) {
-              if (vf == null) {
-                continue;
-              }
-              List<VirtualFile> path = getPathMaxUnversionedParent(vf);
-              for (VirtualFile f : path) {
-                scheduleUnversionedFileForAdditionInternal(f);
-              }
-            }
-          }
-
-        });
+        addInternal(files);
       }
+    });
+    return true;
+  }
+
+  /**
+   * Should only be called from addVFilesToVcs or from addFilesToVcs.
+   *
+   * @param inVCS
+   */
+  private void addInternal(final List<VirtualFile> inVCS) {
+    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      public void run() {
+        for (VirtualFile vf : inVCS) {
+          if (vf == null) {
+            continue;
+          }
+          List<VirtualFile> path = getPathMaxUnversionedParent(vf);
+          for (VirtualFile f : path) {
+            scheduleUnversionedFileForAdditionInternal(f);
+          }
+        }
+      }
+
     });
   }
 
@@ -267,6 +217,11 @@ public class MPSVCSManager implements ProjectComponent {
         List<VirtualFile> vfs = new ArrayList<VirtualFile>();
         vfs.add(vf);
         List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
+        if (result != null) {
+          for (VcsException e : result) {
+            LOG.error(e);
+          }
+        }
         VcsDirtyScopeManager.getInstance(myProject).fileDirty(vf);
       }
     }
@@ -332,11 +287,8 @@ public class MPSVCSManager implements ProjectComponent {
     public void modelSaved(SModelDescriptor sm) {
       final IFile ifile = sm.getModelFile();
       if (ifile != null) {
-        VirtualFile f = VFileSystem.getFile(ifile);
-        if (f != null) {
-          addInternal(Collections.singletonList(f));
-          sm.removeModelListener(this);
-        }
+        addFilesToVCS(Collections.singletonList(ifile.toFile()));
+        sm.removeModelListener(this);
       }
     }
   }
@@ -344,18 +296,7 @@ public class MPSVCSManager implements ProjectComponent {
   private class MetadataCreationListenerImpl implements MetadataCreationListener {
     public void metadataFileCreated(IFile ifile) {
       if (ifile != null) {
-        VirtualFile vfile = VFileSystem.getFile(ifile);
-        if (vfile != null) {
-          AbstractVcs vcs = null;
-          try {
-            vcs = myManager.getVcsFor(vfile);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-          if (vcs != null) {
-            addInternal(Collections.singletonList(vfile));
-          }
-        }
+        addFilesToVCS(Collections.singletonList(ifile.toFile()));
       }
     }
   }

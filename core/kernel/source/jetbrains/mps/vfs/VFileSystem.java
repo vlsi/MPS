@@ -42,6 +42,19 @@ public class VFileSystem {
     return lfs.findFileByIoFile(file);
   }
 
+  /**
+   * This method refresh filesystem from disk when searching for file.
+   * It call LocalFileSystem.refreshAndFindFileByIoFile, which take some locks (consider IDEA code for details),
+   * so CALL THIS METHOD CAREFULLY!
+   * 
+   * @param file - IO file to find.
+   * @return virtual file corresponding to IO file, or none if no such file exists.
+   */
+  public static VirtualFile refreshAndGetFile(File file) {
+    LocalFileSystem lfs = LocalFileSystem.getInstance();
+    return lfs.refreshAndFindFileByIoFile(file);
+  }
+
   public static VirtualFile getJarFileRoot(File file) {
     JarFileSystem jfs = JarFileSystem.getInstance();
     return jfs.getJarRootForLocalFile(getFile(file));
