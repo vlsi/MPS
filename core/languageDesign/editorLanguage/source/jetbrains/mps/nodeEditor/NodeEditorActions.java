@@ -24,33 +24,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      EditorCell_Collection parent = cell.getParent();
-      if (parent == null) return null;
-      EditorCell nextToLeft = parent.findNextToLeft(cell);
-      if (nextToLeft != null) return nextToLeft;
-
-      //to the prev line:
-      EditorCell_Collection parentCollection = parent.getParent();
-      if (parentCollection == null) return null;
-      EditorCell target = parent.getPrevSibling();
-      while (target != null && !(target.isUnfoldedCollection() || target.isSelectable())) {
-        target = target.getPrevSibling();
-      }
-
-      while (target == null || !(target.isUnfoldedCollection() || target.isSelectable())) {
-        parent = parentCollection;
-        parentCollection = parentCollection.getParent();
-        if (parentCollection == null) return null;
-        target = parent.getPrevSibling();
-        while (target != null && !(target.isUnfoldedCollection() || target.isSelectable())) {
-          target = target.getPrevSibling();
-        }
-      }
-
-      if (!(target.isUnfoldedCollection())) return target;
-
-      return ((EditorCell_Collection) target).findChild(CellFinders.LAST_SELECTABLE_LEAF);
-      //---
+      return cell.getPrevLeaf(CellConditions.SELECTABLE);
     }
   }
 
@@ -172,36 +146,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      EditorCell_Collection parent = cell.getParent();
-      if (parent == null) {
-        return (cell.isUnfoldedCollection())? ((EditorCell_Collection) cell).findChild(CellFinders.FIRST_SELECTABLE_LEAF) :null;
-      }
-
-      EditorCell nextToRight = parent.findNextToRight(cell);
-      if (nextToRight != null) return nextToRight;
-
-      //to the next line:
-      EditorCell_Collection parentCollection = parent.getParent();
-      if (parentCollection == null) return null;
-      EditorCell target = parent.getNextSibling();
-      while (target != null && !(target.isUnfoldedCollection() || target.isSelectable())) {
-        target = target.getNextSibling();
-      }
-
-      while (target == null || !(target.isUnfoldedCollection() || target.isSelectable())) {
-        parent = parentCollection;
-        parentCollection = parentCollection.getParent();
-        if (parentCollection == null) return null;
-        target = parent.getNextSibling();
-        while (target != null && !(target.isUnfoldedCollection() || target.isSelectable())) {
-          target = target.getNextSibling();
-        }
-      }
-
-      if (!(target.isUnfoldedCollection())) return target;
-
-      return ((EditorCell_Collection) target).findChild(CellFinders.FIRST_SELECTABLE_LEAF);
-      //---
+      return cell.getNextLeaf(CellConditions.SELECTABLE);
     }
   }
 

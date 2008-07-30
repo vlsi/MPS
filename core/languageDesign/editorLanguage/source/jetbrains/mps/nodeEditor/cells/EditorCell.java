@@ -189,5 +189,4 @@ public interface EditorCell extends Cloneable {
 
   EditorCell getUpper(Condition<EditorCell> condition, int baseX);
   EditorCell getLower(Condition<EditorCell> condition, int baseX);
-
 }
