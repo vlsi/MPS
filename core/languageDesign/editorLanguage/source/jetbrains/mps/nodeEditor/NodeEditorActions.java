@@ -6,44 +6,6 @@ import java.awt.*;
 
 
 public class NodeEditorActions {
-  private static EditorCell findRightmostOrLeftmostSelectableCell(final EditorCell cell, final boolean isLeftmost) {
-    EditorCell_Collection rootCell = cell.isUnfoldedCollection() ? (EditorCell_Collection) cell : cell.getParent();
-    while (rootCell.getParent() != null) rootCell = rootCell.getParent();
-
-    class RightmostCellCondition extends EditorCellCondition {
-      private int myY = cell.getBaseline();
-
-      public void checkLeafCell(EditorCell editorCell) {
-        if (editorCell.getY() > myY) {
-          return;
-        }
-        if (editorCell.getY() + editorCell.getHeight() < myY) {
-          return;
-        }
-        if (getFoundCell() == null) {
-          if (editorCell.isSelectable()) {
-            setFoundCell(editorCell);
-          }
-          return;
-        }
-
-        if (editorCell.getX() > getFoundCell().getX() && editorCell.isSelectable()) {
-          if (!isLeftmost) setFoundCell(editorCell);
-          return;
-        }
-        if (editorCell.getX() < getFoundCell().getX() && editorCell.isSelectable()) {
-          if (isLeftmost) {
-            setFoundCell(editorCell);
-          }
-        }
-      }
-    }
-
-    RightmostCellCondition rightmostCellCondition = new RightmostCellCondition();
-    rootCell.iterateTreeUntilCondition(rightmostCellCondition);
-    return rightmostCellCondition.getFoundCell();
-  }
-
   public static class LEFT extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
@@ -160,7 +122,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      return findRightmostOrLeftmostSelectableCell(cell, true);
+      return cell.getHomeCell(CellConditions.SELECTABLE);
     }
 
   }
@@ -185,7 +147,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      return findRightmostOrLeftmostSelectableCell(cell, false);
+      return cell.getEndCell(CellConditions.SELECTABLE);
     }
 
   }

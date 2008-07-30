@@ -821,6 +821,28 @@ public abstract class EditorCell_Basic implements EditorCell {
     return bestMatch;
   }
 
+  public EditorCell getEndCell(Condition<EditorCell> condition) {
+    EditorCell current = this;
+    while (current.getNextLeaf(condition) != null) {
+      if (current.getNextLeaf(condition).isBelow(this)) {
+        return current;
+      }
+      current = current.getNextLeaf(condition);
+    }
+    return current;
+  }
+
+  public EditorCell getHomeCell(Condition<EditorCell> condition) {
+    EditorCell current = this;
+    while (current.getPrevLeaf(condition) != null) {
+      if (current.getPrevLeaf(condition).isAbove(this)) {
+        return current;
+      }
+      current = current.getPrevLeaf(condition);
+    }
+    return current;
+  }
+
   public EditorCell getNextSibling() {
     if (myParent == null) {
       return null;

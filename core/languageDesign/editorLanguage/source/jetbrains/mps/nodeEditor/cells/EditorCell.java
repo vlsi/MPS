@@ -181,6 +181,9 @@ public interface EditorCell extends Cloneable {
   EditorCell getLastChild();
   EditorCell getFirstChild();
 
+  EditorCell getEndCell(Condition<EditorCell> condition);
+  EditorCell getHomeCell(Condition<EditorCell> condition);
+
   boolean isAbove(EditorCell cell);
   boolean isBelow(EditorCell cell);
 
