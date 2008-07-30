@@ -253,7 +253,9 @@ public class NodeEditorActions {
         EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
         context.getNodeEditorComponent().clearSelectionStack();
         int caretX = selection.getCaretX();
-        if (context.getNodeEditorComponent().hasLastCaretX()) caretX = context.getNodeEditorComponent().getLastCaretX();
+        if (context.getNodeEditorComponent().hasLastCaretX()) {
+          caretX = context.getNodeEditorComponent().getLastCaretX();
+        }
         context.getNodeEditorComponent().saveLastCaretX(caretX);
         EditorCell target = findTarget(selection, caretX);
         target.setCaretX(caretX);
@@ -261,21 +263,23 @@ public class NodeEditorActions {
       }
 
       private EditorCell findTarget(EditorCell cell, int caretX) {
-        return cell.getParent().findNextToUp(caretX, cell.getY() - 1);
+        return cell.getUpper(CellConditions.SELECTABLE, caretX);
       }
     }
 
   public static class DOWN extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
-      return selection != null /*&& selection.getParent() != null*/ && findTarget(selection, selection.getCaretX()) != null;
+      return selection != null && findTarget(selection, selection.getCaretX()) != null;
     }
 
     public void execute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
       context.getNodeEditorComponent().clearSelectionStack();
       int caretX = selection.getCaretX();
-      if (context.getNodeEditorComponent().hasLastCaretX()) caretX = context.getNodeEditorComponent().getLastCaretX();
+      if (context.getNodeEditorComponent().hasLastCaretX()) {
+        caretX = context.getNodeEditorComponent().getLastCaretX();
+      }
       context.getNodeEditorComponent().saveLastCaretX(caretX);
       EditorCell target = findTarget(selection, caretX);
       target.setCaretX(caretX);
@@ -283,27 +287,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell, int caretX) {
-       if (cell.getParent() == null) {
-         return (cell.isUnfoldedCollection())?findTarget((EditorCell_Collection) cell, caretX):null;
-      }
-      return cell.getParent().findNextToDown(caretX, cell.getY() + cell.getHeight());
-    }
-
-
-    private EditorCell findTarget(EditorCell_Collection collection, int caretX) {
-      EditorCell target = collection.firstCell();
-      while (target != null) {
-        if (target.isUnfoldedCollection()) {
-          EditorCell childTarget = findTarget((EditorCell_Collection) target, caretX);
-          if (childTarget != null) {
-            return childTarget;
-          }
-        } else if (target.isSelectable()) {
-          return target;
-        }
-        target = collection.findNextToDown(caretX, target.getY());
-      }
-      return null;
+      return cell.getLower(CellConditions.SELECTABLE, caretX);
     }
   }
 

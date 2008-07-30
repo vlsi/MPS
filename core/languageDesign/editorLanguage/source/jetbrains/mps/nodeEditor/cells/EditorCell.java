@@ -164,17 +164,27 @@ public interface EditorCell extends Cloneable {
 
   EditorCell_Label getSTHintCell();
 
+  Style getStyle();
+
   EditorCell getNextSibling();
   EditorCell getPrevSibling();
 
   EditorCell getNextLeaf();
+  EditorCell getNextLeaf(Condition<EditorCell> condition);
+
   EditorCell getPrevLeaf();
+  EditorCell getPrevLeaf(Condition<EditorCell> condition);
 
   EditorCell getFirstLeaf();
   EditorCell getLastLeaf();
 
   EditorCell getLastChild();
-  EditorCell getFirstChild();  
+  EditorCell getFirstChild();
 
-  Style getStyle();
+  boolean isAbove(EditorCell cell);
+  boolean isBelow(EditorCell cell);
+
+  EditorCell getUpper(Condition<EditorCell> condition, int baseX);
+  EditorCell getLower(Condition<EditorCell> condition, int baseX);
+
 }
