@@ -30,7 +30,7 @@ public class check_PropertyDeclaration_NonTypesystemRule implements NonTypesyste
     if (prop != propInConcept) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(prop, "property '" + SPropertyOperations.getString(prop, "name") + "' is already declared in " + SPropertyOperations.getString(SNodeOperations.getAncestor(propInConcept, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false), "name"), "jetbrains.mps.bootstrap.structureLanguage.helgins@31_0", "1215626040380", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(prop, "property '" + SPropertyOperations.getString(prop, "name") + "' is already declared in " + SPropertyOperations.getString(SNodeOperations.getAncestor(propInConcept, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false), "name"), "jetbrains.mps.bootstrap.structureLanguage.helgins@4_0", "1217448124982", intentionProvider);
       }
     }
   }
