@@ -8,9 +8,9 @@ import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.ICellSelectionListener;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -326,14 +326,14 @@ public class TabbedEditor implements IEditor {
     }
   }
 
-  private class MyLazyTabbedPane extends LazyTabbedPane implements  DataProvider {
+  private class MyLazyTabbedPane extends LazyTabbedPane implements DataProvider {
     private MyLazyTabbedPane(TabbedEditor tabbedEditor) {
       super(tabbedEditor);
     }
 
     @Nullable
     public Object getData(@NonNls String dataId) {
-      if (dataId.equals(MPSDataKeys.EDITOR.getName())) {
+      if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) {
         return TabbedEditor.this;
       }
 

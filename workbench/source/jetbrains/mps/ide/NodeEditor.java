@@ -1,8 +1,11 @@
 package jetbrains.mps.ide;
 
-import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.actionSystem.DataProvider;
-import jetbrains.mps.nodeEditor.*;
+import com.intellij.openapi.fileEditor.FileEditorStateLevel;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.ICellSelectionListener;
+import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -165,7 +168,7 @@ public class NodeEditor implements IEditor {
 
     @Nullable
     public Object getData(@NonNls String dataId) {
-      if (dataId.equals(MPSDataKeys.EDITOR.getName())) {
+      if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) {
         return NodeEditor.this;
       }
 
