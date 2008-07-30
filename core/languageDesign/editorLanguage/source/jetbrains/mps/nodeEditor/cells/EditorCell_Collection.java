@@ -397,7 +397,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
       AbstractEditorComponent editor = getEditor();
       editor.relayout();
-      EditorCell deepestSelected = EditorCell_Collection.this.findFirstSelectableLeaf();
+      EditorCell deepestSelected = findChild(CellFinders.FIRST_SELECTABLE_LEAF);
       editor.pushSelection(deepestSelected);
       editor.setSelectionDontClearStack(EditorCell_Collection.this, true);
     }
@@ -539,33 +539,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
         removeBraces();
       }
     }
-  }
-
-  public EditorCell findFirstSelectableLeaf() {
-    EditorCellCondition condition = new EditorCellCondition() {
-      public void checkLeafCell(EditorCell cell) {
-        if (cell.isSelectable() && !(cell instanceof EditorCell_Brace)) {
-          setToStop(true);
-          setFoundCell(cell);
-        }
-      }
-    };
-    this.iterateTreeUntilCondition(condition);
-    return condition.getFoundCell();
-  }
-
-  public EditorCell findLastSelectableLeaf() {
-    EditorCellCondition condition = new EditorCellCondition() {
-
-      public void checkLeafCell(EditorCell cell) {
-        if (cell.isSelectable() && !(cell instanceof EditorCell_Brace)) {
-          //setToStop(true);
-          setFoundCell(cell);
-        }
-      }
-    };
-    this.iterateTreeUntilCondition(condition);
-    return condition.getFoundCell();
   }
 
   public EditorCell firstCell() {
@@ -817,16 +790,16 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
         return;
       }
       EditorCell deepestSelection = editor.getDeepestSelectedCell();
-      EditorCell lastSelectableLeaf = findLastSelectableLeaf();
-      EditorCell firstSelectableLeaf = findFirstSelectableLeaf();
+      EditorCell lastSelectableLeaf = findChild(CellFinders.LAST_SELECTABLE_LEAF);
+      EditorCell firstSelectableLeaf = findChild(CellFinders.FIRST_SELECTABLE_LEAF);
       if (deepestSelection instanceof EditorCell_Brace) {
         EditorCell_Collection braceOwner = deepestSelection.getParent();
-        if (braceOwner.myClosingBrace == deepestSelection && braceOwner.findLastSelectableLeaf() == lastSelectableLeaf)
+        if (braceOwner.myClosingBrace == deepestSelection && braceOwner.findChild(CellFinders.LAST_SELECTABLE_LEAF) == lastSelectableLeaf)
         {
           enableBraces();
           return;
         }
-        if (braceOwner.myOpeningBrace == deepestSelection && braceOwner.findFirstSelectableLeaf() == firstSelectableLeaf)
+        if (braceOwner.myOpeningBrace == deepestSelection && braceOwner.findChild(CellFinders.FIRST_SELECTABLE_LEAF) == firstSelectableLeaf)
         {
           enableBraces();
           return;
@@ -839,24 +812,4 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       }
     }
   }
-
-
-  @SuppressWarnings({"UnusedDeclaration"})
-  private @ForDebug class MyKeyboardHandler implements IKeyboardHandler {
-
-    public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
-      if (!isSelected()) return false;
-      if (keyEvent.isAltDown() && keyEvent.isControlDown() &&
-              keyEvent.isShiftDown() && (keyEvent.getKeyCode() == KeyEvent.VK_F)) {
-        fold();
-        return true;
-      }
-      return false;
-    }
-
-    public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
-      return false;
-    }
-  }
-
 }

@@ -209,13 +209,13 @@ public class NodeEditorActions {
   public static class NEXT extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && context.getNodeEditorComponent().findNextSelectableOrEditableCell(selection, true) != null;
+      return selection != null && selection.getNextLeaf(CellConditions.EDITABLE) != null;
     }
 
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      context.getNodeEditorComponent().changeSelection(context.getNodeEditorComponent().findNextSelectableOrEditableCell(selection, true));
+      context.getNodeEditorComponent().changeSelection(selection.getNextLeaf(CellConditions.EDITABLE));
     }
   }
 

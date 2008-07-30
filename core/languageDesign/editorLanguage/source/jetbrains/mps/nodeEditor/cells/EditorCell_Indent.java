@@ -10,6 +10,7 @@ public class EditorCell_Indent extends EditorCell_Label {
   public EditorCell_Indent(@NotNull EditorContext editorContext, SNode node) {
     super(editorContext, node, getIndentText());
     setSelectable(false);
+    setEditable(false);
 
     getStyle().set(StyleAttributes.PADDING_LEFT, 0.0);
     getStyle().set(StyleAttributes.PADDING_RIGHT, 0.0);

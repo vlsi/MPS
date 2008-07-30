@@ -1199,59 +1199,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return null;
   }
 
-  public EditorCell findNextSelectableCell(final EditorCell cell) {
-    return findNextSelectableOrEditableCell(cell, false);
-  }
-
-  public EditorCell findNextSelectableOrEditableCell(final EditorCell cell, final boolean editable) {
-    return findNextCellWhichMeetsCondition(cell, new Condition<EditorCell>() {
-      public boolean met(EditorCell editorCell) {
-        if (editable) {
-          return editorCell instanceof EditorCell_Label && ((EditorCell_Label) editorCell).isEditable();
-        } else {
-          return true;
-        }
-      }
-    });
-  }
-
-  public EditorCell findNextCellWhichMeetsCondition(final EditorCell cell, final Condition<EditorCell> condition) {
-    if (!(myRootCell instanceof EditorCell_Collection)) {
-      return null;
-    }
-    EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
-    class SelectNodeCondition extends EditorCellCondition {
-      private boolean myToStart = false;
-
-      public boolean checkNotLeafCell(EditorCell editorCell) {
-        if (editorCell == cell) {
-          myToStart = true;
-          return false;
-        }
-        if (myToStart && editorCell.isSelectable() && condition.met(editorCell)) {
-          setFoundCell(editorCell);
-          setToStop(true);
-        }
-        return true;
-      }
-
-      public void checkLeafCell(EditorCell editorCell) {
-        if (editorCell == cell) {
-          myToStart = true;
-          return;
-        }
-
-        if (myToStart && editorCell.isSelectable() && condition.met(editorCell)) {
-          setFoundCell(editorCell);
-          setToStop(true);
-        }
-      }
-    }
-    SelectNodeCondition selectNodeCondition = new SelectNodeCondition();
-    cellCollection.iterateTreeUntilCondition(selectNodeCondition);
-    return selectNodeCondition.getFoundCell();
-  }
-
   public EditorCell findPrevSelectableCell(final EditorCell cell) {
     return findPrevSelectableOrEditableCell(cell, false);
   }
