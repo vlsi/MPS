@@ -1603,21 +1603,52 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1177334764542">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977962473">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956930">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1177334764545">
-                      <link role="variableDeclaration" targetNodeId="1177334764519" resolveInfo="intConst" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1177334764546">
-                      <link role="property" targetNodeId="1.1068580320021" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="1217428504817">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217428504818">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1177334764542">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977962473">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956930">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1177334764545">
+                          <link role="variableDeclaration" targetNodeId="1177334764519" resolveInfo="intConst" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1177334764546">
+                          <link role="property" targetNodeId="1.1068580320021" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1177334764547">
+                        <node role="value" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1177334764548">
+                          <link role="classConcept" targetNodeId="20.~Integer" resolveInfo="Integer" />
+                          <link role="baseMethodDeclaration" targetNodeId="20.~Integer.parseInt(java.lang.String):int" resolveInfo="parseInt" />
+                          <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_pattern" id="1177334764549" />
+                        </node>
+                      </node>
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1177334764547">
-                    <node role="value" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1177334764548">
-                      <link role="classConcept" targetNodeId="20.~Integer" resolveInfo="Integer" />
-                      <link role="baseMethodDeclaration" targetNodeId="20.~Integer.parseInt(java.lang.String):int" resolveInfo="parseInt" />
-                      <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_pattern" id="1177334764549" />
+                </node>
+                <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1217428504820">
+                  <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217428504821">
+                    <property name="name" value="e" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217428508684">
+                      <link role="classifier" targetNodeId="20.~NumberFormatException" resolveInfo="NumberFormatException" />
+                    </node>
+                  </node>
+                  <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217428504823">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217428515544">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217428518358">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217428516031">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217428515545">
+                            <link role="variableDeclaration" targetNodeId="1177334764519" resolveInfo="intConst" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1217428517810">
+                            <link role="property" targetNodeId="1.1068580320021" resolveInfo="value" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1217428519189">
+                          <node role="value" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1217428520207">
+                            <property name="value" value="0" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

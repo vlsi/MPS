@@ -23,7 +23,11 @@ public final class TextGenBuffer {
   public String getText() {
     String topBufferText = myBuffers[TOP].toString();
     String defaultBufferText = myBuffers[DEFAULT].toString();
-    return topBufferText.length() <= 0 ? defaultBufferText : topBufferText + "\n\n" + defaultBufferText;
+    return topBufferText.length() <= 0 ? defaultBufferText : topBufferText + getLineSeparator() + getLineSeparator() + defaultBufferText;
+  }
+
+  String getLineSeparator() {
+    return System.getProperty("line.separator");
   }
 
   public boolean hasErrors() {

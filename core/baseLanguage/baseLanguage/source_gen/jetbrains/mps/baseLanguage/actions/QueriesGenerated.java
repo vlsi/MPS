@@ -386,7 +386,11 @@ __switch__:
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode intConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
-            SPropertyOperations.set(intConst, "value", "" + (Integer.parseInt(pattern)));
+            try {
+              SPropertyOperations.set(intConst, "value", "" + (Integer.parseInt(pattern)));
+            } catch (NumberFormatException e) {
+              SPropertyOperations.set(intConst, "value", "" + (0));
+            }
             return intConst;
           }
 
