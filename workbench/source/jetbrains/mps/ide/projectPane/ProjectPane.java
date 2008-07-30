@@ -21,6 +21,7 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.SplashScreen;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
@@ -65,6 +66,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.Component;
+import java.awt.Frame;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -391,6 +393,23 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
     if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
       return getSelectedFiles();
+    }
+
+    if (dataId.equals(MPSDataKeys.FRAME.getName())) {
+      MPSProject project = getContextForSelection().getMPSProject();
+      if (project != null && project.getComponent(Frame.class) != null) {
+        return project.getComponentSafe(Frame.class);
+      }
+
+      return SplashScreen.getInstance();
+    }
+
+    if (dataId.equals(MPSDataKeys.SCOPE.getName())) {
+      return getContextForSelection().getScope();
+    }
+
+    if (dataId.equals(MPSDataKeys.MODULE.getName())) {
+      return getContextForSelection().getModule();
     }
 
     return null;

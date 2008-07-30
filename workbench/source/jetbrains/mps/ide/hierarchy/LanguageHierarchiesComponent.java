@@ -5,8 +5,10 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.ide.SplashScreen;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
@@ -311,6 +313,13 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     } else if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
       if (myOperationContext == null) return null;
       return myOperationContext.getProject();
+    } else if (dataId.equals(MPSDataKeys.FRAME.getName())) {
+      MPSProject project = myOperationContext.getMPSProject();
+      if (project != null && project.getComponent(Frame.class) != null) {
+        return project.getComponentSafe(Frame.class);
+      }
+
+      return SplashScreen.getInstance();
     }
 
     return null;

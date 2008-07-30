@@ -13,6 +13,7 @@ import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.ide.SplashScreen;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
@@ -32,6 +33,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -2095,6 +2097,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return this;
     } else if (dataId.equals(MPSDataKeys.MODULES.getName())) {
       return Arrays.asList(getEditedNode().getModel().getModelDescriptor().getModule());
+    } else if (dataId.equals(MPSDataKeys.FRAME.getName())) {
+      MPSProject project = getOperationContext().getMPSProject();
+      if (project != null && project.getComponent(Frame.class) != null) {
+        return project.getComponentSafe(Frame.class);
+      }
+
+      return SplashScreen.getInstance();
+    } else if (dataId.equals(MPSDataKeys.SCOPE.getName())) {
+      return getOperationContext().getScope();
+    } else if (dataId.equals(MPSDataKeys.MODULE.getName())) {
+      return getOperationContext().getModule();
     }
 
     return null;
