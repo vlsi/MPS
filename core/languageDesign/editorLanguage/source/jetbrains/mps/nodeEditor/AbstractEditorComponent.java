@@ -2068,8 +2068,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       updateSelection(events);
-      revertErrorCells(events);
     }
+    revertErrorCells(events);
   }
 
   private void updateSelection(List<SModelEvent> events) {
