@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.transformation.TLBase" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.transformation.TLBase" generatorOutputPath="${mps_home}\core\languageDesign\transformation\source_gen" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.transformation.TLBase" />
   </models>
@@ -43,7 +43,7 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}\classes" />
+    <entry path="${mps_home}\core\languageDesign\transformation\classes" />
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
