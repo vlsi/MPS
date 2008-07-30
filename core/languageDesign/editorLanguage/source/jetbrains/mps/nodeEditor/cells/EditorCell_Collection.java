@@ -541,65 +541,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     }
   }
 
-  public EditorCell findNextToLeft(EditorCell editorCell) {
-    EditorCell_Collection rootCell = this;
-    while (rootCell.getParent() != null && (!(rootCell.getParent().getCellLayout() instanceof CellLayout_Vertical) || rootCell.getParent().firstCell() == rootCell))
-    {
-      rootCell = rootCell.getParent();
-    }
-
-    class NextToLeftCondition extends EditorCellCondition {
-      private EditorCell myCellToCompare;
-      private boolean myCollection;
-
-      public NextToLeftCondition(EditorCell cellToCompare) {
-        this.myCellToCompare = cellToCompare;
-        myCollection = cellToCompare instanceof EditorCell_Collection;
-      }
-
-      public void checkLeafCell(EditorCell cell) {
-        if (cell == myCellToCompare) {
-          setToStop(true);
-          return;
-        }
-        if (!cell.isSelectable()) {
-        } else {
-          setFoundCell(cell);
-        }
-      }
-
-      public boolean checkNotLeafCell(EditorCell editorCell) {
-        if (!myCollection) return true;
-        if (editorCell == myCellToCompare) {
-          setToStop(true);
-        }
-        return true;
-      }
-    }
-
-    NextToLeftCondition nextToLeftCondition = new NextToLeftCondition(editorCell);
-    rootCell.iterateTreeUntilCondition(nextToLeftCondition);
-    return nextToLeftCondition.getFoundCell();
-  }
-
-  @SuppressWarnings({"UnusedDeclaration"})
-  public EditorCell findFirstErrorCell() {
-    class FirstErrorCellCondition extends EditorCellCondition {
-      public void checkLeafCell(EditorCell cell) {
-        if (cell instanceof EditorCell_Label) {
-          if (cell.isErrorState()) {
-            setToStop(true);
-            setFoundCell(cell);
-          }
-        }
-      }
-    }
-
-    FirstErrorCellCondition condition = new FirstErrorCellCondition();
-    this.iterateTreeUntilCondition(condition);
-    return condition.getFoundCell();
-  }
-
   public EditorCell findFirstSelectableLeaf() {
     EditorCellCondition condition = new EditorCellCondition() {
       public void checkLeafCell(EditorCell cell) {
@@ -666,56 +607,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       return myEditorCells.get(myEditorCells.size() - (1 + shift));
     }
     return null;
-  }
-
-  public EditorCell findNextToRight(EditorCell editorCell) {
-    EditorCell_Collection rootCell = this;
-    while (rootCell.getParent() != null &&
-            (!(rootCell.getParent().getCellLayout() instanceof CellLayout_Vertical) || rootCell.getParent().lastCell() == rootCell))
-    {
-      rootCell = rootCell.getParent();
-    }
-
-    class NextToRightCondition extends EditorCellCondition {
-      private EditorCell myCellToCompare;
-      private boolean myToStart = false;
-      private boolean myCollection;
-
-
-      public NextToRightCondition(EditorCell cellToCompare) {
-        this.myCellToCompare = cellToCompare;
-        myCollection = cellToCompare instanceof EditorCell_Collection;
-      }
-
-      public void checkLeafCell(EditorCell cell) {
-        if (cell == myCellToCompare) {
-          myToStart = true;
-          return;
-        }
-        if (myToStart && !cell.isSelectable()) {
-        } else if (myToStart) {
-          setFoundCell(cell);
-          setToStop(true);
-        }
-      }
-
-      public boolean checkNotLeafCell(EditorCell editorCell) {
-        if (!myCollection) return true;
-        if (editorCell == myCellToCompare) {
-          myToStart = true;
-          return false;
-        }
-        if (myToStart) {
-          setFoundCell(editorCell);
-          setToStop(true);
-        }
-        return true;
-      }
-    }
-
-    NextToRightCondition nextToRightCondition = new NextToRightCondition(editorCell);
-    rootCell.iterateTreeUntilCondition(nextToRightCondition);
-    return nextToRightCondition.getFoundCell();
   }
 
   public void iterateTreeUntilCondition(EditorCellCondition condition) {
