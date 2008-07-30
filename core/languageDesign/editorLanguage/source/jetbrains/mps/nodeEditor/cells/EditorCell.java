@@ -167,7 +167,10 @@ public interface EditorCell extends Cloneable {
   Style getStyle();
 
   EditorCell getNextSibling();
+  EditorCell getNextSibling(Condition<EditorCell> condition);
+
   EditorCell getPrevSibling();
+  EditorCell getPrevSibling(Condition<EditorCell> condition);
 
   EditorCell getNextLeaf();
   EditorCell getNextLeaf(Condition<EditorCell> condition);
@@ -175,7 +178,8 @@ public interface EditorCell extends Cloneable {
   EditorCell getPrevLeaf();
   EditorCell getPrevLeaf(Condition<EditorCell> condition);
 
-  EditorCell getFirstLeaf();
+  EditorCell getFirstLeaf();  
+  
   EditorCell getLastLeaf();
 
   EditorCell getLastChild();
@@ -184,8 +188,13 @@ public interface EditorCell extends Cloneable {
   EditorCell getEndCell(Condition<EditorCell> condition);
   EditorCell getHomeCell(Condition<EditorCell> condition);
 
+  EditorCell getLeafToLeft(Condition<EditorCell> condition);
+  EditorCell getLeafToRight(Condition<EditorCell> condition);
+
   boolean isAbove(EditorCell cell);
   boolean isBelow(EditorCell cell);
+  boolean isToLeft(EditorCell cell);
+  boolean isToRight(EditorCell cell);
 
   EditorCell getUpper(Condition<EditorCell> condition, int baseX);
   EditorCell getLower(Condition<EditorCell> condition, int baseX);

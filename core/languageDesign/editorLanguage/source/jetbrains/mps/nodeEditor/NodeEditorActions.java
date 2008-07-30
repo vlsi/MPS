@@ -24,6 +24,10 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
+      EditorCell toLeft = cell.getLeafToLeft(CellConditions.SELECTABLE);
+      if (toLeft != null) {
+        return toLeft;
+      }      
       return cell.getPrevLeaf(CellConditions.SELECTABLE);
     }
   }
@@ -146,6 +150,10 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
+      EditorCell toRight = cell.getLeafToRight(CellConditions.SELECTABLE);
+      if (toRight != null) {
+        return toRight;
+      }      
       return cell.getNextLeaf(CellConditions.SELECTABLE);
     }
   }

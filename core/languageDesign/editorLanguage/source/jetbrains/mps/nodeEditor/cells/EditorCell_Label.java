@@ -39,9 +39,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     setAction(EditorCellAction.COPY, new CellAction_CopyLabelText());
     setAction(EditorCellAction.PASTE, new CellAction_PasteIntoLabelText());
     setAction(EditorCellAction.CUT, new CellAction_CutLabelText());
-
-    setAction(EditorCellAction.HOME_SPECIAL, new CellAction_HomeSpecial());
-    setAction(EditorCellAction.END_SPECIAL, new CellAction_EndSpecial());
   }
 
   public CaretPosition getDefaultCaretPosition() {
@@ -502,53 +499,20 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       if (caretPosition <= 0) {
         return false;
       }
-      boolean isWhitespace = Character.isWhitespace(myText.charAt(caretPosition-1));
-      boolean isUnderline = myText.charAt(caretPosition-1) == '_';
-      boolean isUppercase = caretPosition - 2 >= 0 && Character.isUpperCase(myText.charAt(caretPosition - 1)) &&
-        Character.isUpperCase(myText.charAt(caretPosition - 2));
-      int position = caretPosition - 1;
-      while (position > 0) {
-        char c = myText.charAt(position);
-        if (isWhitespace) {
-          if (!Character.isWhitespace(c)) {
-            position++;
-            break;
-          }
-        } else if (isUnderline) {
-          if (c != '_') {
-            position++;
-            break;
-          }
-        } else if (isUppercase) {
-          if (!Character.isUpperCase(c)) {
-            position++;
-            break;
-          }
-        } else {
-          if (Character.isUpperCase(c)) {
-            if (position - 1 >= 0 && Character.isUpperCase(myText.charAt(position - 1))) {
-              position++;
-            }
-            break;
-          }
-          if (Character.isWhitespace(c)) {
-            position++;
-            break;
-          }
-          if (c == '_') {
-            position++;
-            break;
-          }
-        }
-        position--;
-      }
-      if (isUppercase) {
-        if (!Character.isUpperCase(myText.charAt(position))) {
-          position++;
-        }
+
+      int position = 0;
+      if (!isFirstPositionAllowed()) {
+        position++;
       }
 
-      if (!isCaretPositionAllowed(position)) return false;
+      if (!isCaretPositionAllowed(position)) {
+        return false;
+      }
+
+      if (position == getCaretPosition()) {
+        return false;
+      }
+
       setCaretPosition(position, keyEvent.isShiftDown());
       editor.resetLastCaretX();
       ensureCaretVisible();
@@ -556,42 +520,23 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
 
     if (keyEvent.isControlDown() && keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
-      if (caretPosition >= myText.length()) return false;
-      boolean isWhitespace = Character.isWhitespace(myText.charAt(caretPosition));
-      boolean isUnderline = myText.charAt(caretPosition) == '_';
-      boolean isUppercase = caretPosition + 1 < myText.length() && Character.isUpperCase(myText.charAt(caretPosition)) &&
-        Character.isUpperCase(myText.charAt(caretPosition + 1));
-      int position = caretPosition+1;
-      while (position < myText.length()) {
-        char c = myText.charAt(position);
-        if (isWhitespace) {
-          if (!Character.isWhitespace(c)) {
-            break;
-          }
-        } else if (isUnderline) {
-          if (c != '_') {
-            break;
-          }
-        } else if (isUppercase) {
-          if (!Character.isUpperCase(c)) {
-            break;
-          }
-        } else {
-          if (Character.isUpperCase(c)) {
-            break;
-          }
-          if (Character.isWhitespace(c)) {
-            break;
-          }
-          if (c == '_') {
-            break;
-          }
-        }
-        position++;
+      if (caretPosition >= myText.length()) {
+        return false;
       }
+
+      int position = myText.length();
+      if (!isLastPositionAllowed()) {
+        position--;
+      }
+
       if (!isCaretPositionAllowed(position)) {
         return false;
       }
+
+      if (position == getCaretPosition()) {
+        return false;
+      }
+
       setCaretPosition(position, keyEvent.isShiftDown());
       editor.resetLastCaretX();
       ensureCaretVisible();
@@ -745,25 +690,5 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   public int getCharWidth() {
     return getRenderedTextLine().charWidth();
-  }
-
-  private class CellAction_HomeSpecial extends EditorCellAction {
-    public boolean canExecute(EditorContext context) {
-      return !isFirstCaretPosition();
-    }
-
-    public void execute(EditorContext context) {
-      home();
-    }
-  }
-
-  private class CellAction_EndSpecial extends EditorCellAction {
-    public boolean canExecute(EditorContext context) {
-      return !isLastCaretPosition();
-    }
-
-    public void execute(EditorContext context) {
-      end();
-    }
   }
 }

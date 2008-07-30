@@ -767,6 +767,14 @@ public abstract class EditorCell_Basic implements EditorCell {
     return cell.isAbove(this);
   }
 
+  public boolean isToLeft(EditorCell cell) {
+    return getX() + getWidth() <= cell.getX();
+  }
+
+  public boolean isToRight(EditorCell cell) {
+    return cell.isToLeft(cell);
+  }
+
   private static int horizontalDistance(EditorCell cell, int x) {
     if (cell.getX() <= x && x <= cell.getX() + cell.getWidth()) return 0;
     return Math.min(Math.abs(cell.getX() - x), Math.abs(cell.getX() + cell.getWidth() - x));
@@ -844,6 +852,22 @@ public abstract class EditorCell_Basic implements EditorCell {
     return current;
   }
 
+  public EditorCell getLeafToLeft(Condition<EditorCell> condition) {
+    return getNextLeaf(new Condition<EditorCell>() {
+      public boolean met(EditorCell current) {
+        return current.isSelectable() && !isAbove(current) && !isBelow(current) && isToRight(current);
+      }
+    });
+  }
+
+  public EditorCell getLeafToRight(Condition<EditorCell> condition) {
+    return getNextLeaf(new Condition<EditorCell>() {
+      public boolean met(EditorCell current) {
+        return current.isSelectable() && !isAbove(current) && !isBelow(current) && isToLeft(current);
+      }
+    });
+  }
+
   public EditorCell getNextSibling() {
     if (myParent == null) {
       return null;
@@ -855,6 +879,17 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  public EditorCell getNextSibling(Condition<EditorCell> condition) {
+    EditorCell current = getNextSibling();
+    while (current != null) {
+      if (condition.met(current)) {
+        return current;
+      }
+      current = current.getNextSibling();
+    }
+    return null;
+  }
+
   public EditorCell getPrevSibling() {
     if (myParent == null) {
       return null;
@@ -862,6 +897,17 @@ public abstract class EditorCell_Basic implements EditorCell {
     int index = myParent.indexOf(this);
     if (index > 0) {
       return myParent.getChildAt(index - 1);
+    }
+    return null;
+  }
+
+  public EditorCell getPrevSibling(Condition<EditorCell> condition) {
+    EditorCell current = getPrevSibling();
+    while (current != null) {
+      if (condition.met(current)) {
+        return current;
+      }
+      current = current.getPrevSibling();
     }
     return null;
   }
