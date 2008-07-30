@@ -582,30 +582,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     return null;
   }
 
-  public void iterateTreeUntilCondition(EditorCellCondition condition) {
-    iterateTreeUntilCondition(condition, false);
-  }
-
-  public void iterateTreeUntilCondition(EditorCellCondition condition, boolean mayBeFolded) {
-    if (!mayBeFolded && isFolded()) {
-      condition.checkLeafCell(this);
-    } else {
-      for (EditorCell myEditorCell : myEditorCells) {
-        if (myEditorCell instanceof EditorCell_Collection && (mayBeFolded || !((EditorCell_Collection) myEditorCell).isFolded())) {
-          if (condition.checkNotLeafCell(myEditorCell) && !condition.toStop()) {
-            ((EditorCell_Collection) myEditorCell).iterateTreeUntilCondition(condition, mayBeFolded);
-          }
-        } else {
-          condition.checkLeafCell(myEditorCell);
-        }
-
-        if (condition.toStop()) {
-          return;
-        }
-      }
-    }
-  }
-
   public EditorCell getFirstLeaf() {
     if (myEditorCells.isEmpty()) return this;
     return getFirstChild().getFirstLeaf();

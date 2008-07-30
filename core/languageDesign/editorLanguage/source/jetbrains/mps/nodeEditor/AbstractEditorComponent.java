@@ -1199,52 +1199,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return null;
   }
 
-  public EditorCell findPrevSelectableCell(final EditorCell cell) {
-    return findPrevSelectableOrEditableCell(cell, false);
-  }
-
-  public EditorCell findPrevSelectableOrEditableCell(final EditorCell cell, final boolean editable) {
-    return findPrevCellWhichMeetsCondition(cell, new Condition<EditorCell>() {
-      public boolean met(EditorCell editorCell) {
-        if (editable) {
-          return editorCell instanceof EditorCell_Label && ((EditorCell_Label) editorCell).isEditable();
-        } else {
-          return true;
-        }
-      }
-    });
-  }
-
-  public EditorCell findPrevCellWhichMeetsCondition(final EditorCell cell, final Condition<EditorCell> editorCellCondition) {
-    if (!(myRootCell instanceof EditorCell_Collection)) {
-      return null;
-    }
-    EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
-    class SelectNodeCondition extends EditorCellCondition {
-      public boolean checkNotLeafCell(EditorCell editorCell) {
-        boolean goodCell = editorCellCondition.met(editorCell);
-        if (editorCell == cell) {
-          setToStop(true);
-        } else if (goodCell && editorCell.isSelectable() /*&& editorCell.getParent() == cell.getParent()*/) {
-          setFoundCell(editorCell);
-        }
-        return true;
-      }
-
-      public void checkLeafCell(EditorCell editorCell) {
-        boolean goodCell = editorCellCondition.met(editorCell);
-        if (editorCell == cell) {
-          setToStop(true);
-        } else if (goodCell && editorCell.isSelectable()) {
-          setFoundCell(editorCell);
-        }
-      }
-    }
-    SelectNodeCondition condition = new SelectNodeCondition();
-    cellCollection.iterateTreeUntilCondition(condition);
-    return condition.getFoundCell();
-  }
-
   public void rebuildEditorContent() {
     LOG.assertInEDT();
 

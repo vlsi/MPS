@@ -222,13 +222,13 @@ public class NodeEditorActions {
   public static class PREV extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && context.getNodeEditorComponent().findPrevSelectableOrEditableCell(selection, true) != null;
+      return selection != null && selection.getPrevLeaf(CellConditions.EDITABLE) != null;
     }
 
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      context.getNodeEditorComponent().changeSelection(context.getNodeEditorComponent().findPrevSelectableOrEditableCell(selection, true));
+      context.getNodeEditorComponent().changeSelection(selection.getPrevLeaf(CellConditions.EDITABLE));
     }
   }
 
@@ -242,8 +242,6 @@ public class NodeEditorActions {
     int caretX = selection.getCaretX();
     int y = selection.getY() + (selection.getHeight()/2);
     int newY = y + height;
-  /*  EditorCell rowCell = editor.getRootCell().findNearestRow(newY);
-    EditorCell target = rowCell.findNearestCell(caretX, newY, true);*/
     EditorCell target = editor.findNearestCell(caretX, newY);
     if (target == null) {
       target = isDown ? editor.myRootCell.findChild(CellFinders.LAST_SELECTABLE_LEAF) : editor.myRootCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
@@ -310,5 +308,4 @@ public class NodeEditorActions {
       context.getNodeEditorComponent().setSelectionDontClearStack(context.getNodeEditorComponent().popSelection(), true);
     }
   }
-
 }
