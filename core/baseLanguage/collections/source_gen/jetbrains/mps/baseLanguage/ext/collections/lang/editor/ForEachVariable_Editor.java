@@ -26,8 +26,8 @@ import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 
 public class ForEachVariable_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_CollectionCell6137_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6137_0");
+  private static void setupBasic_Collection_11847724151081184772415108(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184772415108");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -39,48 +39,48 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_namePropertyCell6137_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell6137_0");
+  private static void setupBasic_property_name1184772415109(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
   }
 
-  private static void setupLabel_namePropertyCell6137_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_property_name_1184772415109(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_CollectionCell6137_0(context, node);
+    return this.createCollection1184772415108(context, node);
   }
 
-  public EditorCell create_CollectionCell6137_0(EditorContext context, SNode node) {
+  public EditorCell createCollection1184772415108(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_CollectionCell6137_0(editorCell, node, context);
+    setupBasic_Collection_11847724151081184772415108(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_namePropertyCell6137_0(context, node));
+    editorCell.addEditorCell(this.createProperty1184772415109(context, node));
     return editorCell;
   }
 
-  public EditorCell create_namePropertyCell6137_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty1184772415109_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_namePropertyCell6137_0(editorCell, node, context);
+    setupBasic_property_name1184772415109(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_namePropertyCell6137_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_property_name_1184772415109((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new ForEachVariable_Editor.ForEachVariable_name_postfixCellMenu()}));
     return editorCell;
   }
 
-  public EditorCell create_namePropertyCell6137_0(EditorContext context, SNode node) {
+  public EditorCell createProperty1184772415109(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_namePropertyCell6137_0_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty1184772415109_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

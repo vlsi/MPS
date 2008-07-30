@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -17,12 +18,14 @@ public class typeof_GetKeysOperation_InferenceRule implements InferenceRule_Runt
     final SNode KEY_typevar_1201874360962 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     final SNode VALUE_typevar_1201874371667 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
-      SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(getKeysOperation);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902820", true), new QuotationClass_58().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1201874360962), TypeChecker.getInstance().getEquationManager().getRepresentator(VALUE_typevar_1201874371667)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902817", false, 0);
+      SNode _nodeToCheck_1029348928467 = getKeysOperation;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(getKeysOperation), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201874356659", true), new QuotationClass_58().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1201874360962), TypeChecker.getInstance().getEquationManager().getRepresentator(VALUE_typevar_1201874371667)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201874387564", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = getKeysOperation;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902827", true), new QuotationClass_59().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1201874360962)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902823");
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(getKeysOperation, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201874348006", true), new QuotationClass_59().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1201874360962)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201874414202", intentionProvider);
     }
   }
 

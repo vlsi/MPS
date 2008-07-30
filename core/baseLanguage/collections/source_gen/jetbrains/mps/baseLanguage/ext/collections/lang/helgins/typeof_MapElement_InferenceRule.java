@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -17,16 +18,19 @@ public class typeof_MapElement_InferenceRule implements InferenceRule_Runtime {
     final SNode keyType_typevar_1198083488673 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     final SNode valueType_typevar_1198083495346 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(mapElement, "map", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902527", true), new QuotationClass_53().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(keyType_typevar_1198083488673), TypeChecker.getInstance().getEquationManager().getRepresentator(valueType_typevar_1198083495346)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902524", false, 0);
+      SNode _nodeToCheck_1029348928467 = mapElement;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(mapElement, "map", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1198083507709", true), new QuotationClass_53().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(keyType_typevar_1198083488673), TypeChecker.getInstance().getEquationManager().getRepresentator(valueType_typevar_1198083495346)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1198083568591", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = mapElement;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902533", true), TypeChecker.getInstance().getEquationManager().getRepresentator(valueType_typevar_1198083495346), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902530");
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(mapElement, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1198083609561", true), TypeChecker.getInstance().getEquationManager().getRepresentator(valueType_typevar_1198083495346), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1198083621785", intentionProvider);
     }
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(mapElement, "key", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902536", true), TypeChecker.getInstance().getEquationManager().getRepresentator(keyType_typevar_1198083488673), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902534", false, 0);
+      SNode _nodeToCheck_1029348928467 = mapElement;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(mapElement, "key", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1198084142392", true), TypeChecker.getInstance().getEquationManager().getRepresentator(keyType_typevar_1198083488673), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1198084142390", false, 0, intentionProvider);
     }
   }
 

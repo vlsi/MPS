@@ -782,6 +782,10 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1167380251306">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1173946461259">
         <link role="relationDeclaration" targetNodeId="2.1137473891462" />
+        <link role="styleClass" targetNodeId="1215707981329" resolveInfo="Operation" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1217431779584">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167380253167">
         <property name="text" value="(" />
@@ -1006,6 +1010,10 @@
     <link role="conceptDeclaration" targetNodeId="1.1175845471038" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1175845495995">
       <link role="relationDeclaration" targetNodeId="2.1137473891462" />
+      <link role="styleClass" targetNodeId="1215707981329" resolveInfo="Operation" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1217431803690">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1176501531228">
@@ -1070,6 +1078,10 @@
     <link role="conceptDeclaration" targetNodeId="1.1178894719932" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1178896397231">
       <link role="relationDeclaration" targetNodeId="2.1137473891462" />
+      <link role="styleClass" targetNodeId="1215707981329" resolveInfo="Operation" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1217427202755">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1184766078651">
@@ -1167,6 +1179,10 @@
     <link role="conceptDeclaration" targetNodeId="1.1195127791705" resolveInfo="CountOperation" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1195127812696">
       <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="1215707981329" resolveInfo="Operation" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1217429284559">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197683426865">

@@ -4,8 +4,9 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SkipOperation_InferenceRule implements InferenceRule_Runtime {
@@ -15,8 +16,9 @@ public class typeof_SkipOperation_InferenceRule implements InferenceRule_Runtime
 
   public void applyRule(final SNode op) {
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "elementsToSkip", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709899118", true), new QuotationClass_6().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709899115", false, 0);
+      SNode _nodeToCheck_1029348928467 = op;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "elementsToSkip", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847100456", true), new QuotationClass_6().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847107857", false, 0, intentionProvider);
     }
     RulesFunctions_Collections.setInputSequenceType(op, op);
   }

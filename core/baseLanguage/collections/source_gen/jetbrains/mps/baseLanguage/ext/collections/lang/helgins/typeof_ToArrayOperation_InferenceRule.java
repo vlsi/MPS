@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ToArrayOperation_InferenceRule implements InferenceRule_Runtime {
@@ -16,12 +17,14 @@ public class typeof_ToArrayOperation_InferenceRule implements InferenceRule_Runt
     SNode input = RulesFunctions_Collections.getInput(toArrayOperation);
     final SNode elementType_typevar_1184970400760 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
-      SNode _nodeToCheck_1029348928467 = input;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902154", true), new QuotationClass_45().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184970400760)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902151", false, 0);
+      SNode _nodeToCheck_1029348928467 = toArrayOperation;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184970400767", true), new QuotationClass_45().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184970400760)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184970400761", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = toArrayOperation;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902158", true), new QuotationClass_46().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184970400760)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902156");
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(toArrayOperation, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1215607319886", true), new QuotationClass_46().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184970400760)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1215607319884", intentionProvider);
     }
   }
 

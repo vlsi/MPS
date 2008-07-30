@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -17,17 +18,20 @@ public class typeof_ContainsKeyOperation_InferenceRule implements InferenceRule_
   public void applyRule(final SNode containsKeyOperation) {
     {
       SNode _nodeToCheck_1029348928467 = containsKeyOperation;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902729", true), new QuotationClass_56().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902726");
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(containsKeyOperation, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201873003944", true), new QuotationClass_56().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201873006966", intentionProvider);
     }
     final SNode KEY_typevar_1201873088202 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     final SNode VALUE_typevar_1201874216771 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
-      SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(containsKeyOperation);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902732", true), new QuotationClass_57().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(VALUE_typevar_1201874216771), TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1201873088202)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902730", false, 0);
+      SNode _nodeToCheck_1029348928467 = containsKeyOperation;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(containsKeyOperation), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201874242447", true), new QuotationClass_57().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(VALUE_typevar_1201874216771), TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1201873088202)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201874242445", false, 0, intentionProvider);
     }
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(containsKeyOperation, "key", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902740", true), TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1201873088202), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@34_0", "1215709902736", false, 0);
+      SNode _nodeToCheck_1029348928467 = containsKeyOperation;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(containsKeyOperation, "key", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201873021716", true), TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1201873088202), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201873049497", false, 0, intentionProvider);
     }
   }
 
