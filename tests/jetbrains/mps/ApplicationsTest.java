@@ -35,7 +35,7 @@ public class ApplicationsTest extends BaseMPSTest {
   }
 
   public void testBuildLanguage(){
-    String res = testProject(new File("platform/buildlanguage/BuildLanguage.mpr"));
+    String res = testProject(new File("platform/buildlanguage/BuildLanguage.ipr"));
     assertTrue(res, res == null);
   }
 
