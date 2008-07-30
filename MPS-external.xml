@@ -3,7 +3,7 @@
   <import file="MPS-languages.xml" />
   <import file="MPS-multystep.xml" />
   <import file="build-helpers.xml" />
-  <property file="./MPS.properties" />
+  <property file=".\MPS.properties" />
   <target name="main" depends="clean.before,folders.create,do.the.job,clean.after" />
   <target name="clean.before">
     <delete dir="${deploy.dir}" />
