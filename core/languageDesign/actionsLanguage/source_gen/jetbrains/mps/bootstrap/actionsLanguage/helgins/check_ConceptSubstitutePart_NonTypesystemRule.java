@@ -25,7 +25,7 @@ public class check_ConceptSubstitutePart_NonTypesystemRule implements NonTypesys
     if (!(SConceptOperations.isSubConceptOf(conceptToAdd, NameUtil.nodeFQName(substituteConcept)))) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(nodeToCheck, "Wrong concept to add. Use subtype of " + SPropertyOperations.getString(substituteConcept, "name"), "jetbrains.mps.bootstrap.actionsLanguage.helgins@27_0", "1216751233530", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(nodeToCheck, "Wrong concept to add. Use subtype of " + SPropertyOperations.getString(substituteConcept, "name"), "jetbrains.mps.bootstrap.actionsLanguage.helgins@13_0", "1217378054153", intentionProvider);
       }
     }
   }
