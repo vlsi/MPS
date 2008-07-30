@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dev-kit name="jetbrains.mps.devkit.general-purpose">
+  <exported-language name="jetbrains.mps.baseLanguage" />
+  <exported-language name="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <exported-language name="jetbrains.mps.baseLanguage.strings" />
+  <exported-language name="jetbrains.mps.closures" />
+  <classPath />
+</dev-kit>
+

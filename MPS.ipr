@@ -947,6 +947,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" group="core/baseLanguage/collections" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" group="core/baseLanguage/collections" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/constraintsLanguage/constraintsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/constraintsLanguage/constraintsLanguage.iml" group="core/languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/devkits/core-devkits.iml" filepath="$PROJECT_DIR$/core/devkits/core-devkits.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" filepath="$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" group="core/baseLanguage/csharp" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/csharp/runtime/csharp-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/csharp/runtime/csharp-runtime.iml" group="core/baseLanguage/csharp" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/dataFlow/dataFlow.iml" filepath="$PROJECT_DIR$/core/languageDesign/dataFlow/dataFlow.iml" group="core/languageDesign/dataFlow" />
