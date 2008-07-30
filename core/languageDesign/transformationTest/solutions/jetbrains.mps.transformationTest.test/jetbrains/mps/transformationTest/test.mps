@@ -32,6 +32,12 @@
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1216561660079">
     <property name="name" value="ForEach" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1217416181643">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217416181644" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217416181645" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217416181646" />
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216561660080" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1216561660081">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1216561660082" />
@@ -66,6 +72,20 @@
           </node>
           <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216561952592">
             <link role="variableDeclaration" targetNodeId="1216561926117" resolveInfo="list" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExecuteLightweightCommandStatement" id="1217416189338">
+          <node role="commandClosureLiteral" type="jetbrains.mps.bootstrap.smodelLanguage.structure.CommandClosureLiteral" id="1217416189339">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217416189340">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217416191794">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217416191795">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217416191796">
+                    <link role="baseMethodDeclaration" targetNodeId="1217416181643" resolveInfo="foo" />
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1217416191797" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
