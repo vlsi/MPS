@@ -1,6 +1,8 @@
 package jetbrains.mps.ide.ui.smodel;
 
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.annotations.structure.AttributeConcept;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
@@ -18,15 +20,12 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 
-import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.Color;
-import java.awt.Frame;
 import java.util.*;
 
 public class SModelTreeNode extends MPSTreeNodeEx {
@@ -160,7 +159,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         pack += aPackage;
 
         if (!myPackageNodes.containsKey(pack)) {
-          current = new PackageNode(aPackage, current);
+          current = new PackageNode(this, aPackage, current);
           myPackageNodes.put(pack, current);
         }
 
@@ -744,92 +743,4 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
   }
 
-  private class PackageNode extends SNodeGroupTreeNode {
-    private String myName;
-
-    public PackageNode(String name, PackageNode parent) {
-      super(SModelTreeNode.this, parent, name, true);
-      if (parent != null) {
-        myName = parent.getPackage() + "." + name;
-      } else {
-        myName = name;
-      }
-    }
-
-    public ActionGroup getActionGroup() {
-      DefaultActionGroup group = new DefaultActionGroup();
-
-      CreateRootNodeGroup cg = new CreateRootNodeGroup(getPackage());
-      cg.setPopup(false);
-      group.add(cg);
-
-      group.addSeparator();
-      group.add(new BaseAction("Rename", "", IconManager.EMPTY_ICON) {
-        protected void doExecute(AnActionEvent e) {
-          Frame frame = SModelTreeNode.this.getOperationContext().getMainFrame();
-          final String newName = JOptionPane.showInputDialog(frame, "Enter New Package Name", myName);
-          if (newName != null) {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                for (SNode n : getNodesUnderPackage()) {
-                  String oldPackage = n.getProperty(PACK);
-                  String newPack = newName + oldPackage.substring(myName.length());
-                  if (newPack.length() > 0) {
-                    n.setProperty(PACK, newPack);
-                  } else {
-                    n.setProperty(PACK, null);
-                  }
-                }
-              }
-            });
-          }
-        }
-      });
-
-      return group;
-    }
-
-    protected ActionGroup getQuickCreateGroup(boolean plain) {
-      return new CreateRootNodeGroup(getPackage(), plain);
-    }
-
-    public IOperationContext getOperationContext() {
-      return SModelTreeNode.this.getOperationContext();
-    }
-
-    private Set<SNode> getNodesUnderPackage() {
-      Set<SNode> result = new LinkedHashSet<SNode>();
-
-      if (getOperationContext().getModule() instanceof Language) {
-        Language l = (Language) getOperationContext().getModule();
-
-        for (SModelDescriptor sm : l.getAspectModelDescriptors()) {
-          result.addAll(getNodesUnderPackage(sm));
-        }
-      }
-
-      result.addAll(getNodesUnderPackage(SModelTreeNode.this.getSModelDescriptor()));
-
-      return result;
-    }
-
-    private Set<SNode> getNodesUnderPackage(SModelDescriptor sm) {
-      Set<SNode> nodes = new LinkedHashSet<SNode>();
-      for (SNode root : sm.getSModel().getRoots()) {
-        String rootPack = root.getProperty(PACK);
-        if (rootPack != null && rootPack.startsWith(getFullPackage())) {
-          nodes.add(root);
-        }
-      }
-      return nodes;
-    }
-
-    private String getFullPackage() {
-      return getPackage();
-    }
-
-    private String getPackage() {
-      return myName;
-    }
-  }
 }

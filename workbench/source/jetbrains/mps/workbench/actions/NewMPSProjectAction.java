@@ -24,7 +24,7 @@ public class NewMPSProjectAction extends BaseAction {
     NewProjectDialog dialog = new NewProjectDialog(frame);
     dialog.showDialog();
 
-    Project result = dialog.getResult();
+    final Project result = dialog.getResult();
 
     if (result == null) {
       return;

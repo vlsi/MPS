@@ -30,6 +30,7 @@ import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
@@ -412,6 +413,16 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       return getContextForSelection().getModule();
     }
 
+    if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGE.getName())) {
+      List<String> selectedPackages = getSelectedPackages();
+      if (selectedPackages.size() != 1) return null;
+      return selectedPackages.get(0);
+    }
+
+    if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGES.getName())) {
+      return getSelectedPackages();
+    }
+
     return null;
   }
 
@@ -765,6 +776,21 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return result;
   }
 
+  List<String> getSelectedPackages() {
+    List<String> result = new ArrayList<String>();
+    TreePath[] paths = getTree().getSelectionPaths();
+    if (paths == null) return result;
+    for (TreePath path : paths) {
+      MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+      while (node != null && !(node instanceof PackageNode)) {
+        node = (MPSTreeNode) node.getParent();
+      }
+      if (node != null) {
+        result.add(((PackageNode) node).getFullPackage());
+      }
+    }
+    return result;
+  }
 
   public List<SNode> getNormalizedSelectedNodes() {
     List<SNode> selectedNodes = new ArrayList<SNode>(getSelectedNodes());

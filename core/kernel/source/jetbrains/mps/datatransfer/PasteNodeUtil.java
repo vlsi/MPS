@@ -1,13 +1,17 @@
 package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Author: Sergey Dmitriev.
@@ -28,7 +32,7 @@ public class PasteNodeUtil {
   public static boolean canPaste(EditorCell targetCell, List<SNode> pasteNodes) {
     String role = getRoleFromCell(targetCell);
     SNode pasteTarget = targetCell.getSNode();
-    if(pasteTarget == null) return false;
+    if (pasteTarget == null) return false;
     return (canPaste_internal(pasteTarget, pasteNodes, role, PasteEnv.NODE_EDITOR) != PASTE_N_A);
   }
 
@@ -43,13 +47,20 @@ public class PasteNodeUtil {
     paste_internal(pasteTarget, pasteNodes, role_, pasteEnv);
   }
 
+  public static void pasteAsRoots(List<SNode> pasteNodes, SModel model, String dstPackage) {
+    pasteAsRoots(pasteNodes, model);
+    for (SNode node : pasteNodes) {
+      node.setProperty(SModelTreeNode.PACK, dstPackage);
+    }
+  }
+
   public static void pasteAsRoots(List<SNode> pasteNodes, SModel model) {
     for (SNode pasteNode : pasteNodes) {
       model.addRoot(pasteNode);
     }
   }
 
-  public static boolean canPasteAsRoots(List<SNode> pasteNodes) {        
+  public static boolean canPasteAsRoots(List<SNode> pasteNodes) {
     for (SNode pasteNode : pasteNodes) {
       AbstractConceptDeclaration nodeConcept = pasteNode.getConceptDeclarationAdapter();
       if (!(nodeConcept instanceof ConceptDeclaration && ((ConceptDeclaration) nodeConcept).getRootable())) {

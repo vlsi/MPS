@@ -34,4 +34,6 @@ public class MPSDataKeys extends PlatformDataKeys {
   public static final DataKey<IScope> SCOPE = DataKey.create("MPS_IScope");
   public static final DataKey<IModule> MODULE = DataKey.create("MPS_IModule");
   public static final DataKey<AbstractEditorComponent> EDITOR_COMPONENT = DataKey.create("MPS_AbstractEditorComponent");
+  public static final DataKey<String> VIRTUAL_PACKAGE = DataKey.create("MPS_VirtualPackage");
+  public static final DataKey<List<String>> VIRTUAL_PACKAGES = DataKey.create("MPS_VirtualPackage_List");
 }
