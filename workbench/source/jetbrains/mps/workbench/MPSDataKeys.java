@@ -55,8 +55,13 @@ public class MPSDataKeys {
   @MPSDescription(description = "Current Editor")
   public static final DataKey<IEditor> EDITOR = DataKey.create("MPS_IEditor");
 
+  @MPSDescription(description = "Frame")
   public static final DataKey<Frame> FRAME = DataKey.create("MPS_Frame");
+
+  @MPSDescription(description = "Scope")
   public static final DataKey<IScope> SCOPE = DataKey.create("MPS_IScope");
+
+  @MPSDescription(description = "Current Module")
   public static final DataKey<IModule> MODULE = DataKey.create("MPS_IModule");
 
   @MPSDescription(description = "Editor Component")
