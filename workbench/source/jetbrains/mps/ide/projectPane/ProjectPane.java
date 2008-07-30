@@ -261,6 +261,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             selectNode(myNode);
+            myProjectView.changeView(getId());
             getComponent().requestFocus();
           }
         });
@@ -317,7 +318,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public void projectOpened() {
     myReloadListener.onAfterReload();
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
-    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
+    StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
       public void run() {
         myProjectView.addProjectPane(ProjectPane.this);
       }
