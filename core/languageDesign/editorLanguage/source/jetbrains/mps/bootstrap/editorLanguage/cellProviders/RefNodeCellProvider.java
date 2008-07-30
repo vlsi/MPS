@@ -31,12 +31,12 @@ public class RefNodeCellProvider extends AbstractReferentCellProvider {
       editorCell = context.createReferentCell(getSNode(), referencedNode, myGenuineRole);
     }
     if (myIsCardinality1) {
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
     }
     if (myIsAggregation) {
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(referencedNode));
     } else {
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteReference(node, myGenuineRole));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(node, myGenuineRole));
     }
     return editorCell;
   }

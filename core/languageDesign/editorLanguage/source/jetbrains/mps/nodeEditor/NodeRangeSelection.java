@@ -168,24 +168,24 @@ public class NodeRangeSelection implements IKeyboardHandler {
     }
 
 
-    String actionType = myEditorComponent.getActionType(keyEvent, editorContext);
+    CellActionType actionType = myEditorComponent.getActionType(keyEvent, editorContext);
     if (actionType == null) {
       if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE || keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-        actionType = EditorCellAction.DELETE;
+        actionType = CellActionType.DELETE;
       }
     }
     // only DELETE and COPY and CUT and RENDER_TEXT are supported in this mode
     if (actionType != null) {
-      if (actionType.equals(EditorCellAction.DELETE)) {
+      if (actionType == CellActionType.DELETE) {
         doDeleteNodes(editorContext);
         return true;
       }
-      if (actionType.equals(EditorCellAction.COPY)) {
-        myEditorComponent.executeComponentAction(EditorCellAction.COPY);
+      if (actionType == CellActionType.COPY) {
+        myEditorComponent.executeComponentAction(CellActionType.COPY);
         return true;
       }
-      if (actionType.equals(EditorCellAction.CUT)) {
-        myEditorComponent.executeComponentAction(EditorCellAction.CUT);
+      if (actionType == CellActionType.CUT) {
+        myEditorComponent.executeComponentAction(CellActionType.CUT);
         return true;
       }
     }
@@ -250,7 +250,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
     } else {
       for (SNode semanticNode : getNodes()) {
         EditorCell nodeCell = myEditorComponent.findNodeCell(semanticNode);
-        EditorCellAction action = nodeCell.getAction(EditorCellAction.DELETE);
+        EditorCellAction action = nodeCell.getAction(CellActionType.DELETE);
         if (action != null && action.canExecute(editorContext)) {
           action.execute(editorContext);
         }

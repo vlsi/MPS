@@ -92,7 +92,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
       }
     });
     editorCell.setDefaultText(getIdNotSetString());
-    editorCell.setAction(EditorCellAction.DELETE, new EditorCellAction() {
+    editorCell.setAction(CellActionType.DELETE, new EditorCellAction() {
       public boolean canExecute(EditorContext context) {
         return true;
       }

@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
 import javax.swing.JOptionPane;
@@ -727,7 +727,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createTransactionalProperty1216387630008(EditorContext context, SNode node) {
     ModelAccessor modelAccessor = this._modelAcessorFactory_1216387630008(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_TransactionalProperty_12163876300081216387630008(editorCell, node, context);
     setupLabel_TransactionalProperty_1216387630008_1216387630008(editorCell, node, context);
     editorCell.setDefaultText("<no name>");
@@ -884,7 +884,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         SNode substituteInfoNode = listOwner;
         if (elementNode != null) {
           substituteInfoNode = elementNode;
-          elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
@@ -927,7 +927,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         SNode substituteInfoNode = listOwner;
         if (elementNode != null) {
           substituteInfoNode = elementNode;
-          elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
@@ -970,7 +970,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         SNode substituteInfoNode = listOwner;
         if (elementNode != null) {
           substituteInfoNode = elementNode;
-          elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
@@ -1013,7 +1013,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         SNode substituteInfoNode = listOwner;
         if (elementNode != null) {
           substituteInfoNode = elementNode;
-          elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
@@ -1056,7 +1056,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         SNode substituteInfoNode = listOwner;
         if (elementNode != null) {
           substituteInfoNode = elementNode;
-          elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
@@ -1105,7 +1105,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         SNode substituteInfoNode = listOwner;
         if (elementNode != null) {
           substituteInfoNode = elementNode;
-          elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
         elementCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new ISubstituteInfoPart[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu()}));
       }
@@ -1156,7 +1156,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         SNode substituteInfoNode = listOwner;
         if (elementNode != null) {
           substituteInfoNode = elementNode;
-          elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
         elementCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new ISubstituteInfoPart[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu1()}));
       }
@@ -1213,7 +1213,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         SNode substituteInfoNode = listOwner;
         if (elementNode != null) {
           substituteInfoNode = elementNode;
-          elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));

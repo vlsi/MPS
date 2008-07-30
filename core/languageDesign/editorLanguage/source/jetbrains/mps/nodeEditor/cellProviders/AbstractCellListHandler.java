@@ -129,8 +129,8 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
     }
 
     // add insert/insert-before actions
-    myListEditorCell_Collection.setAction(EditorCellAction.INSERT, new CellAction_Insert(this, false));
-    myListEditorCell_Collection.setAction(EditorCellAction.INSERT_BEFORE, new CellAction_Insert(this, true));
+    myListEditorCell_Collection.setAction(CellActionType.INSERT, new CellAction_Insert(this, false));
+    myListEditorCell_Collection.setAction(CellActionType.INSERT_BEFORE, new CellAction_Insert(this, true));
 
     return myListEditorCell_Collection;
   }
@@ -147,9 +147,8 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
 
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
-    String actionType = editor.getActionType(keyEvent, editorContext);
-    if (EditorCellAction.INSERT.equals(actionType) ||
-            EditorCellAction.INSERT_BEFORE.equals(actionType)) {
+    CellActionType actionType = editor.getActionType(keyEvent, editorContext);
+    if (actionType == CellActionType.INSERT || actionType == CellActionType.INSERT_BEFORE) {
       cancelInsertMode(editorContext);
       myListEditorCell_Collection.getParent().executeAction(actionType);
     } else {
@@ -161,9 +160,8 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
 
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
-    String actionType = editor.getActionType(keyEvent, editorContext);
-    if (!(EditorCellAction.INSERT.equals(actionType) ||
-            EditorCellAction.INSERT_BEFORE.equals(actionType)) ||
+    CellActionType actionType = editor.getActionType(keyEvent, editorContext);
+    if (!(actionType == CellActionType.INSERT || actionType == CellActionType.INSERT_BEFORE) ||
             keyEvent.getModifiers() == 0) { // disable this feature if 'insert' keystroke doesn't contain modifiers
       finishInsertMode(editorContext);
       return true;

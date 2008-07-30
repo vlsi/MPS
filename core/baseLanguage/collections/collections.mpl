@@ -18,7 +18,7 @@
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
-        <mapping-priority-rule kind="strictly_together">
+        <mapping-priority-rule type="strictly_together">
           <greater-priority-mapping>
             <all-local-mappings />
           </greater-priority-mapping>

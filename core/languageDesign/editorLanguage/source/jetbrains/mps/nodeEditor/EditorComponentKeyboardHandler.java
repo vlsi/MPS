@@ -60,7 +60,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       }
     }
 
-    String actionType = editor.getActionType(keyEvent, editorContext);
+    CellActionType actionType = editor.getActionType(keyEvent, editorContext);
 
     // pre-process action
 
@@ -68,7 +68,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     if (selectedCell != null) {
       boolean endEditKeystroke = isEndEditKeystroke(keyEvent);      
-      boolean strictMatching = endEditKeystroke || EditorCellAction.RIGHT_TRANSFORM.equals(actionType) || EditorCellAction.LEFT_TRANSFORM.equals(actionType);
+      boolean strictMatching = endEditKeystroke || CellActionType.RIGHT_TRANSFORM.equals(actionType) || CellActionType.LEFT_TRANSFORM.equals(actionType);
 
       if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
         nodeEditor.showMessageTooltip();
@@ -77,13 +77,13 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
       if (!!selectedCell.isErrorState()) {
         if (endEditKeystroke ||
-          EditorCellAction.INSERT.equals(actionType) ||
-          EditorCellAction.INSERT_BEFORE.equals(actionType)) {
+          actionType == CellActionType.INSERT ||
+          actionType == CellActionType.INSERT_BEFORE) {
           selectedCell.validate(strictMatching, true);
           return true;
         }
 
-        if (EditorCellAction.RIGHT_TRANSFORM.equals(actionType) || EditorCellAction.LEFT_TRANSFORM.equals(actionType)) {
+        if (actionType == CellActionType.RIGHT_TRANSFORM || actionType == CellActionType.LEFT_TRANSFORM) {
           // !side effect: can change selection!
           if (selectedCell.validate(strictMatching, false)) {
             return true;
@@ -96,7 +96,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
       }
 
-      if (EditorCellAction.RIGHT_TRANSFORM.equals(actionType)) {
+      if (actionType == CellActionType.RIGHT_TRANSFORM) {
         if (selectedCell instanceof EditorCell_Label && selectedCell.isErrorState()) {
           //return true;
           dontExecuteRT = true;
@@ -106,15 +106,15 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     // process action
     if (selectedCell != null) {
-      if (selectedCell instanceof EditorCell_Label && selectedCell.getUserObject(EditorCell.ROLE) == null && (EditorCellAction.INSERT.equals(actionType) || EditorCellAction.INSERT_BEFORE.equals(actionType))) {
-        EditorCell cellWithRole = new ChildrenCollectionFinder(selectedCell, EditorCellAction.INSERT.equals(actionType)).find();
+      if (selectedCell instanceof EditorCell_Label && selectedCell.getUserObject(EditorCell.ROLE) == null && (CellActionType.INSERT.equals(actionType) || CellActionType.INSERT_BEFORE.equals(actionType))) {
+        EditorCell cellWithRole = new ChildrenCollectionFinder(selectedCell, CellActionType.INSERT.equals(actionType)).find();
         if (cellWithRole != null && cellWithRole.executeAction(actionType)) {
           return true;
         }
       }
 
-      if (actionType != null && !actionType.equals(EditorCellAction.DELETE)) {
-        if (!(EditorCellAction.RIGHT_TRANSFORM.equals(actionType) && dontExecuteRT)) {
+      if (actionType != null && !actionType.equals(CellActionType.DELETE)) {
+        if (!(actionType == CellActionType.RIGHT_TRANSFORM && dontExecuteRT)) {
           if (selectedCell.executeAction(actionType)) {
             return true;
           }
@@ -144,7 +144,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
       }
 
-      if (EditorCellAction.DELETE.equals(actionType)) {
+      if (CellActionType.DELETE.equals(actionType)) {
         if (selectedCell.executeAction(actionType)) {
           return true;
         }

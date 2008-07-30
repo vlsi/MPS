@@ -26,7 +26,7 @@
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
-        <mapping-priority-rule kind="strictly_before">
+        <mapping-priority-rule type="strictly_before">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mpslite.generator.baseLanguage.template.main@templates" nodeID="*" />
           </greater-priority-mapping>
@@ -37,7 +37,7 @@
             </external-mapping>
           </lesser-priority-mapping>
         </mapping-priority-rule>
-        <mapping-priority-rule kind="strictly_before">
+        <mapping-priority-rule type="strictly_before">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mpslite.generator.baseLanguage.template.main@templates" nodeID="*" />
           </greater-priority-mapping>

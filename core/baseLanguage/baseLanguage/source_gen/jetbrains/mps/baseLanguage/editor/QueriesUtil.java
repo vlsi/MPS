@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
@@ -26,13 +27,13 @@ public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_StaticFieldReference_getParameterObjects(SNode node) {
     ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "classifier", false))), node, IClassifiersSearchScope.STATIC_MEMBER);
     List<SNode> members = (List<SNode>)searchScope.getNodes();
-    return ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
+    return Sequence.fromIterable(ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
       }
 
-    }).toListSequence();
+    })).toListSequence();
   }
 
   public static SNode replaceNodeMenu_StaticFieldReference_createReplacementNode(SNode node, SNode parameterObject) {
@@ -54,13 +55,13 @@ public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_StaticMethodCall_getParameterObjects(SNode node) {
     ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "classConcept", false))), node, IClassifiersSearchScope.STATIC_MEMBER);
     List<SNode> members = (List<SNode>)searchScope.getNodes();
-    return ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
+    return Sequence.fromIterable(ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
       }
 
-    }).toListSequence();
+    })).toListSequence();
   }
 
   public static SNode replaceNodeMenu_StaticMethodCall_createReplacementNode(SNode node, SNode parameterObject) {
@@ -82,13 +83,13 @@ public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_EnumConstantReference_getParameterObjects(SNode node) {
     ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(((EnumClass)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "enumClass", false))), node, IClassifiersSearchScope.STATIC_MEMBER);
     List<SNode> members = (List<SNode>)searchScope.getNodes();
-    return ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
+    return Sequence.fromIterable(ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
       }
 
-    }).toListSequence();
+    })).toListSequence();
   }
 
   public static SNode replaceNodeMenu_EnumConstantReference_createReplacementNode(SNode node, SNode parameterObject) {

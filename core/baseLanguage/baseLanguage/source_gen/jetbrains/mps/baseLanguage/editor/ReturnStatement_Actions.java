@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -12,8 +13,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 public class ReturnStatement_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(EditorCellAction.RIGHT_TRANSFORM, new ReturnStatement_Actions.ReturnStatement_Actions_RIGHT_TRANSFORM(node));
-    editorCell.setAction(EditorCellAction.DELETE, new ReturnStatement_Actions.ReturnStatement_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.RIGHT_TRANSFORM, new ReturnStatement_Actions.ReturnStatement_Actions_RIGHT_TRANSFORM(node));
+    editorCell.setAction(CellActionType.DELETE, new ReturnStatement_Actions.ReturnStatement_Actions_DELETE(node));
   }
 
   public static class ReturnStatement_Actions_RIGHT_TRANSFORM extends EditorCellAction {

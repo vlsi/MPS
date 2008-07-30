@@ -42,9 +42,9 @@ public class PropertyCellProvider extends CellProviderWithRole {
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, getSNode());
     editorCell.setDefaultText(myNoTargetText);
     if (!myReadOnly) {
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeletePropertyOrNode(getSNode(), myPropertyName));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeletePropertyOrNode(getSNode(), myPropertyName));
     } else {
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteEasily(getSNode()));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode()));
     }
     return editorCell;
   }

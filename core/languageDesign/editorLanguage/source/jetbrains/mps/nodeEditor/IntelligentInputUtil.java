@@ -151,7 +151,7 @@ public class IntelligentInputUtil {
       return;
     }
 
-    EditorCellAction rtAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(EditorCellAction.RIGHT_TRANSFORM);
+    EditorCellAction rtAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.RIGHT_TRANSFORM);
     TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.COMPLETION);
     boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.RIGHT, tail);
     TypeChecker.getInstance().resetTypeCheckingMode();
@@ -246,7 +246,7 @@ public class IntelligentInputUtil {
     }
 
 
-    EditorCellAction ltAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(EditorCellAction.LEFT_TRANSFORM);
+    EditorCellAction ltAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.LEFT_TRANSFORM);
     TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.COMPLETION);
     boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.LEFT, head);
     TypeChecker.getInstance().resetTypeCheckingMode();

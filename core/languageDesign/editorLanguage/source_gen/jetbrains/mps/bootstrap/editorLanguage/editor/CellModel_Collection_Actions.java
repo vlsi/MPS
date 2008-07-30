@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -13,7 +14,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class CellModel_Collection_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(EditorCellAction.DELETE, new CellModel_Collection_Actions.CellModel_Collection_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.DELETE, new CellModel_Collection_Actions.CellModel_Collection_Actions_DELETE(node));
   }
 
   public static class CellModel_Collection_Actions_DELETE extends EditorCellAction {

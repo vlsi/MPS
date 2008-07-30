@@ -52,7 +52,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private EditorCell_Collection myParent = null;
   private SNodePointer myNodePointer;
   private INodeSubstituteInfo mySubstitueInfo;
-  private Map<String, EditorCellAction> myActionMap = new HashMap<String, EditorCellAction>();
+  private Map<CellActionType, EditorCellAction> myActionMap = new HashMap<CellActionType, EditorCellAction>();
 
   private boolean myNextIsPunctuation = false;
   private List<IKeyboardHandler> myAdditionalKeyboardHandlers = new ArrayList<IKeyboardHandler>();
@@ -131,23 +131,23 @@ public abstract class EditorCell_Basic implements EditorCell {
     return getStyle().get(StyleAttributes.BRACKETS_COLOR);
   }
 
-  public EditorCellAction getAction(String type) {
+  public EditorCellAction getAction(CellActionType type) {
     return myActionMap.get(type);
   }
 
-  public Set<String> getAvailableActions() {
-    return new HashSet<String>(myActionMap.keySet());
+  public Set<CellActionType> getAvailableActions() {
+    return new HashSet<CellActionType>(myActionMap.keySet());
   }
 
-  public void setAction(String type, EditorCellAction action) {
+  public void setAction(CellActionType type, EditorCellAction action) {
     myActionMap.put(type, action);
   }
 
-  public boolean canExecuteAction(String type) {
+  public boolean canExecuteAction(CellActionType type) {
     return getApplicableCellAction(type) != null;
   }
 
-  public boolean executeAction(String type) {
+  public boolean executeAction(CellActionType type) {
     EditorCellAction action = getApplicableCellAction(type);
     if (action == null) return false;
     if (!action.canExecute(myEditorContext)) return false;
@@ -155,7 +155,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return true;
   }
 
-  public EditorCellAction getApplicableCellAction(String type) {
+  public EditorCellAction getApplicableCellAction(CellActionType type) {
     EditorCell current = this;
     while (current != null) {
       EditorCellAction currentAction = current.getAction(type);

@@ -1212,6 +1212,9 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1212170587518">
       <link role="intfc" targetNodeId="1212170275853" resolveInfo="IValidIdentifier" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1217444047480">
+      <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IResolveInfo" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1189675724652">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
     </node>

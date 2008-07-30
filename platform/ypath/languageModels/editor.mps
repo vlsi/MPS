@@ -883,7 +883,7 @@
             <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1175165391445">
               <link role="conceptDeclaration" targetNodeId="1.1172240563057" />
               <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1175165391446">
-                <property name="noTargetText" value="&lt;&lt; kind &gt;&gt;" />
+                <property name="noTargetText" value="&lt;&lt; type &gt;&gt;" />
                 <property name="readOnly" value="true" />
                 <link role="relationDeclaration" targetNodeId="2.1169194664001" />
               </node>
@@ -1052,7 +1052,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1175165417012" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1175167690330">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1175256342830">
-        <property name="noTargetText" value="kind?" />
+        <property name="noTargetText" value="type?" />
         <property name="attractsFocus" value="2" />
         <link role="relationDeclaration" targetNodeId="1.1175167444487" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1175256342831">
@@ -1078,7 +1078,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1175169854239">
-        <property name="noTargetText" value="kind?" />
+        <property name="noTargetText" value="type?" />
         <link role="relationDeclaration" targetNodeId="1.1175165403535" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995514">
           <property name="flag" value="false" />
@@ -1624,7 +1624,7 @@
           <link role="relationDeclaration" targetNodeId="1.1180023956589" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1180024000485">
-          <property name="text" value="kind" />
+          <property name="text" value="type" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399678173">
             <property name="color" value="DARK_BLUE" />
           </node>

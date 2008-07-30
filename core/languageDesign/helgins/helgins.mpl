@@ -23,7 +23,7 @@
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
-        <mapping-priority-rule kind="strictly_before">
+        <mapping-priority-rule type="strictly_before">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main@templates" nodeID="1174411222995" />
           </greater-priority-mapping>

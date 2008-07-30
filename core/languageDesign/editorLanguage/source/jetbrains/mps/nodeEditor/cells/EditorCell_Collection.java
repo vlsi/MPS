@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.util.NameUtil;
 
 import javax.swing.JComponent;
@@ -19,7 +18,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
-import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.*;
@@ -151,8 +149,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     super(editorContext, node);
     myCellLayout = cellLayout;
     myCellListHandler = handler;
-    this.setAction(EditorCellAction.LEFT_SPECIAL, new SelectFirstChild());
-    this.setAction(EditorCellAction.RIGHT_SPECIAL, new SelectLastChild());
+    this.setAction(CellActionType.LEFT_SPECIAL, new SelectFirstChild());
+    this.setAction(CellActionType.RIGHT_SPECIAL, new SelectLastChild());
     myOpeningBrace = new EditorCell_Brace(editorContext, node, true);
     myClosingBrace = new EditorCell_Brace(editorContext, node, false);
   //  addAdditionalKeyboardHandler(new MyKeyboardHandler());

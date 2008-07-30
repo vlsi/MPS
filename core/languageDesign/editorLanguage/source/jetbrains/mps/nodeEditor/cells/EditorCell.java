@@ -98,12 +98,12 @@ public interface EditorCell extends Cloneable {
   void setSubstituteInfo(INodeSubstituteInfo substitueInfo);
   INodeSubstituteInfo getSubstituteInfo();
 
-  EditorCellAction getAction(String type);
-  void setAction(String type, EditorCellAction action);
-  boolean canExecuteAction(String type);
-  boolean executeAction(String type);
-  EditorCellAction getApplicableCellAction(String type);
-  Set<String> getAvailableActions();
+  EditorCellAction getAction(CellActionType type);
+  void setAction(CellActionType type, EditorCellAction action);
+  boolean canExecuteAction(CellActionType type);
+  boolean executeAction(CellActionType type);
+  EditorCellAction getApplicableCellAction(CellActionType type);
+  Set<CellActionType> getAvailableActions();
 
   void addKeyMap(EditorCellKeyMap keyMap);
 

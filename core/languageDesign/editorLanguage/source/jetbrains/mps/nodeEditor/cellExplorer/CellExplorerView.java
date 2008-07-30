@@ -305,9 +305,9 @@ public class CellExplorerView extends BaseProjectTool {
 
     public CellActionsTreeNode(EditorCell cell, IOperationContext operationContext) {
       super(cell, operationContext);
-      Set<String> actions = new TreeSet<String>(cell.getAvailableActions());
-      for (String action : actions) {
-        add(new TextTreeNode(action));
+      Set<CellActionType> actions = new TreeSet<CellActionType>(cell.getAvailableActions());
+      for (CellActionType action : actions) {
+        add(new TextTreeNode(action + ""));
       }
       setNodeIdentifier("Actions");
     }

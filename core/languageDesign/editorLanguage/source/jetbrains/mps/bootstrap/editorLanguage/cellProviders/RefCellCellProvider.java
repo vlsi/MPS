@@ -47,12 +47,12 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     setSemanticNodeToCells(editorCell, node);
 
     if (myIsCardinality1) {
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     } else {
       if (myIsAggregation) {
-        editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(node));
+        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));
       } else {
-        editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteReference(node, myGenuineRole));
+        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(node, myGenuineRole));
       }
     }
     return editorCell;
@@ -74,7 +74,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
     EditorCell_Error errorCell = new EditorCell_Error(context, node, null);
     errorCell.setText(error);
-    errorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteOnErrorReference(node, myGenuineRole));
+    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(node, myGenuineRole));
     return errorCell;
   }
 

@@ -256,19 +256,19 @@ public class EditorManager {
     final CellInfo nodeCellInfo = context.getNodeEditorComponent().getRecentlySelectedCellInfo();
 
     // delete the hint when pressed ctrl-delete, delete or backspace
-    sideTransformHintCell.setAction(EditorCellAction.DELETE, new EditorCellAction() {
+    sideTransformHintCell.setAction(CellActionType.DELETE, new EditorCellAction() {
       public void execute(final EditorContext context) {
         removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
     // delete the hint when double press 'space'
-    sideTransformHintCell.setAction(EditorCellAction.RIGHT_TRANSFORM, new EditorCellAction() {
+    sideTransformHintCell.setAction(CellActionType.RIGHT_TRANSFORM, new EditorCellAction() {
       public void execute(EditorContext context) {
         removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
 
-    sideTransformHintCell.setAction(EditorCellAction.LEFT_TRANSFORM, new EditorCellAction() {
+    sideTransformHintCell.setAction(CellActionType.LEFT_TRANSFORM, new EditorCellAction() {
       public void execute(EditorContext context) {
         removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }

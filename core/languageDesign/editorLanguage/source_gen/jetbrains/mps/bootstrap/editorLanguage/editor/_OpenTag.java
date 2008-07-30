@@ -13,7 +13,7 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -76,7 +76,7 @@ public class _OpenTag extends AbstractCellProvider {
   public EditorCell createModelAccess1176716878596(EditorContext context, SNode node) {
     ModelAccessor modelAccessor = this._modelAcessorFactory_1176716878596(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ModelAccess_11767168785961176716878596(editorCell, node, context);
     setupLabel_ModelAccess_1176716878596_1176716878596(editorCell, node, context);
     editorCell.setDefaultText("");

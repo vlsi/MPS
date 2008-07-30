@@ -5,13 +5,14 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class TypeVariableDeclaration_deleteBound {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(EditorCellAction.DELETE, new TypeVariableDeclaration_deleteBound.TypeVariableDeclaration_deleteBound_DELETE(node));
+    editorCell.setAction(CellActionType.DELETE, new TypeVariableDeclaration_deleteBound.TypeVariableDeclaration_deleteBound_DELETE(node));
   }
 
   public static class TypeVariableDeclaration_deleteBound_DELETE extends EditorCellAction {

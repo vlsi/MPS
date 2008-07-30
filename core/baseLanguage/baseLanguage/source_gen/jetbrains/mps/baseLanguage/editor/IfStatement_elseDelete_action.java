@@ -5,13 +5,14 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class IfStatement_elseDelete_action {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(EditorCellAction.DELETE, new IfStatement_elseDelete_action.IfStatement_elseDelete_action_DELETE(node));
+    editorCell.setAction(CellActionType.DELETE, new IfStatement_elseDelete_action.IfStatement_elseDelete_action_DELETE(node));
   }
 
   public static class IfStatement_elseDelete_action_DELETE extends EditorCellAction {

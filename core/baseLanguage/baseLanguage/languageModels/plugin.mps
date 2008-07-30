@@ -3248,7 +3248,7 @@
               id="1207312028925">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"
                 id="1207312028926">
-            <property name="name" value="kind"/>
+            <property name="name" value="type"/>
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207330085006">
               <link role="classifier" targetNodeId="33.~ExtractMethodKind" resolveInfo="ExtractMethodKind"/>
             </node>
@@ -3291,7 +3291,7 @@
                       </node>
                       <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
                             id="1216219281630">
-                        <link role="variableDeclaration" targetNodeId="1207312028926" resolveInfo="kind"/>
+                        <link role="variableDeclaration" targetNodeId="1207312028926" resolveInfo="type"/>
                       </node>
                     </node>
                   </node>
@@ -3311,7 +3311,7 @@
                         </node>
                         <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
                               id="1216219281636">
-                          <link role="variableDeclaration" targetNodeId="1207312028926" resolveInfo="kind"/>
+                          <link role="variableDeclaration" targetNodeId="1207312028926" resolveInfo="type"/>
                         </node>
                       </node>
                     </node>
@@ -3348,7 +3348,7 @@
                       resolveInfo="ExtractMethodDialog"/>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
                       id="1207312204030">
-                  <link role="variableDeclaration" targetNodeId="1207312028926" resolveInfo="kind"/>
+                  <link role="variableDeclaration" targetNodeId="1207312028926" resolveInfo="type"/>
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression"
                       id="1213874106574">

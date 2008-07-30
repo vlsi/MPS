@@ -132,7 +132,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private Stack<EditorCell> mySelectedStack = new Stack<EditorCell>();
   private Stack<IKeyboardHandler> myKbdHandlersStack;
-  private HashMap<String, EditorCellAction> myActionMap;
+  private HashMap<CellActionType, EditorCellAction> myActionMap;
 
   private NodeSubstituteChooser myNodeSubstituteChooser;
   private HashMap myUserDataMap = new HashMap();
@@ -175,12 +175,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     setFocusCycleRoot(true);
     setFocusTraversalPolicy(new FocusTraversalPolicy() {
       public Component getComponentAfter(Container aContainer, Component aComponent) {
-        executeComponentAction(EditorCellAction.NEXT);
+        executeComponentAction(CellActionType.NEXT);
         return aContainer;
       }
 
       public Component getComponentBefore(Container aContainer, Component aComponent) {
-        executeComponentAction(EditorCellAction.PREV);
+        executeComponentAction(CellActionType.PREV);
         return aContainer;
       }
 
@@ -225,38 +225,38 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myKbdHandlersStack.push(new EditorComponentKeyboardHandler());
 
     // --- init action map --
-    myActionMap = new HashMap<String, EditorCellAction>();
+    myActionMap = new HashMap<CellActionType, EditorCellAction>();
     // -- navigation
-    myActionMap.put(EditorCellAction.LEFT, new NodeEditorActions.LEFT());
-    myActionMap.put(EditorCellAction.RIGHT, new NodeEditorActions.RIGHT());
-    myActionMap.put(EditorCellAction.UP, new NodeEditorActions.UP());
-    myActionMap.put(EditorCellAction.DOWN, new NodeEditorActions.DOWN());
-    myActionMap.put(EditorCellAction.NEXT, new NodeEditorActions.NEXT());
-    myActionMap.put(EditorCellAction.PREV, new NodeEditorActions.PREV());
-    myActionMap.put(EditorCellAction.LEFT_SPECIAL, new NodeEditorActions.LEFT());
-    myActionMap.put(EditorCellAction.RIGHT_SPECIAL, new NodeEditorActions.RIGHT());
-    myActionMap.put(EditorCellAction.UP_SPECIAL, new NodeEditorActions.UP_SPECIAL());
-    myActionMap.put(EditorCellAction.DOWN_SPECIAL, new NodeEditorActions.DOWN_SPECIAL());
-    myActionMap.put(EditorCellAction.HOME_SPECIAL, new NodeEditorActions.CTRL_HOME());
-    myActionMap.put(EditorCellAction.END_SPECIAL, new NodeEditorActions.CTRL_END());
-    myActionMap.put(EditorCellAction.HOME, new NodeEditorActions.HOME());
-    myActionMap.put(EditorCellAction.END, new NodeEditorActions.END());
-    myActionMap.put(EditorCellAction.PAGE_DOWN, new NodeEditorActions.PAGE_DOWN());
-    myActionMap.put(EditorCellAction.PAGE_UP, new NodeEditorActions.PAGE_UP());
+    myActionMap.put(CellActionType.LEFT, new NodeEditorActions.LEFT());
+    myActionMap.put(CellActionType.RIGHT, new NodeEditorActions.RIGHT());
+    myActionMap.put(CellActionType.UP, new NodeEditorActions.UP());
+    myActionMap.put(CellActionType.DOWN, new NodeEditorActions.DOWN());
+    myActionMap.put(CellActionType.NEXT, new NodeEditorActions.NEXT());
+    myActionMap.put(CellActionType.PREV, new NodeEditorActions.PREV());
+    myActionMap.put(CellActionType.LEFT_SPECIAL, new NodeEditorActions.LEFT());
+    myActionMap.put(CellActionType.RIGHT_SPECIAL, new NodeEditorActions.RIGHT());
+    myActionMap.put(CellActionType.UP_SPECIAL, new NodeEditorActions.UP_SPECIAL());
+    myActionMap.put(CellActionType.DOWN_SPECIAL, new NodeEditorActions.DOWN_SPECIAL());
+    myActionMap.put(CellActionType.HOME_SPECIAL, new NodeEditorActions.CTRL_HOME());
+    myActionMap.put(CellActionType.END_SPECIAL, new NodeEditorActions.CTRL_END());
+    myActionMap.put(CellActionType.HOME, new NodeEditorActions.HOME());
+    myActionMap.put(CellActionType.END, new NodeEditorActions.END());
+    myActionMap.put(CellActionType.PAGE_DOWN, new NodeEditorActions.PAGE_DOWN());
+    myActionMap.put(CellActionType.PAGE_UP, new NodeEditorActions.PAGE_UP());
     // ----
-    myActionMap.put(EditorCellAction.COPY, new CellAction_CopyNode());
-    myActionMap.put(EditorCellAction.CUT, new CellAction_CutNode());
-    myActionMap.put(EditorCellAction.PASTE, new CellAction_PasteNode());
-    myActionMap.put(EditorCellAction.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
-    myActionMap.put(EditorCellAction.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
+    myActionMap.put(CellActionType.COPY, new CellAction_CopyNode());
+    myActionMap.put(CellActionType.CUT, new CellAction_CutNode());
+    myActionMap.put(CellActionType.PASTE, new CellAction_PasteNode());
+    myActionMap.put(CellActionType.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
+    myActionMap.put(CellActionType.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
     // ----
-    myActionMap.put(EditorCellAction.FOLD, new CellAction_FoldCell());
-    myActionMap.put(EditorCellAction.UNFOLD, new CellAction_UnfoldCell());
-    myActionMap.put(EditorCellAction.FOLD_ALL, new CellAction_FoldAll());
-    myActionMap.put(EditorCellAction.UNFOLD_ALL, new CellAction_UnfoldAll());
+    myActionMap.put(CellActionType.FOLD, new CellAction_FoldCell());
+    myActionMap.put(CellActionType.UNFOLD, new CellAction_UnfoldCell());
+    myActionMap.put(CellActionType.FOLD_ALL, new CellAction_FoldAll());
+    myActionMap.put(CellActionType.UNFOLD_ALL, new CellAction_UnfoldAll());
 
-    myActionMap.put(EditorCellAction.RIGHT_TRANSFORM, new CellAction_SideTransform(CellSide.RIGHT));
-    myActionMap.put(EditorCellAction.LEFT_TRANSFORM, new CellAction_SideTransform(CellSide.LEFT));
+    myActionMap.put(CellActionType.RIGHT_TRANSFORM, new CellAction_SideTransform(CellSide.RIGHT));
+    myActionMap.put(CellActionType.LEFT_TRANSFORM, new CellAction_SideTransform(CellSide.LEFT));
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -896,69 +896,69 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myHighlightManager;
   }
 
-  public String getActionType(KeyEvent keyEvent, EditorContext editorContext) {
+  public CellActionType getActionType(KeyEvent keyEvent, EditorContext editorContext) {
     if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.getModifiers() == 0) {
-      return EditorCellAction.LEFT;
+      return CellActionType.LEFT;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && keyEvent.getModifiers() == 0) {
-      return EditorCellAction.RIGHT;
+      return CellActionType.RIGHT;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.getModifiers() == 0) {
-      return EditorCellAction.UP;
+      return CellActionType.UP;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.getModifiers() == 0) {
-      return EditorCellAction.DOWN;
+      return CellActionType.DOWN;
     }
     if (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.getModifiers() == 0) {
-      return EditorCellAction.INSERT_BEFORE;
+      return CellActionType.INSERT_BEFORE;
     }
     if (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.getModifiers() == KeyEvent.SHIFT_MASK) {
-      return EditorCellAction.INSERT_BEFORE;
+      return CellActionType.INSERT_BEFORE;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return EditorCellAction.INSERT;
+      return CellActionType.INSERT;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return EditorCellAction.LEFT_SPECIAL;
+      return CellActionType.LEFT_SPECIAL;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return EditorCellAction.RIGHT_SPECIAL;
+      return CellActionType.RIGHT_SPECIAL;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return EditorCellAction.UP_SPECIAL;
+      return CellActionType.UP_SPECIAL;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_W && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return EditorCellAction.UP_SPECIAL;
+      return CellActionType.UP_SPECIAL;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return EditorCellAction.DOWN_SPECIAL;
+      return CellActionType.DOWN_SPECIAL;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_W && keyEvent.isControlDown() && keyEvent.isShiftDown() && !keyEvent.isAltDown()) {
-      return EditorCellAction.DOWN_SPECIAL;
+      return CellActionType.DOWN_SPECIAL;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return EditorCellAction.HOME_SPECIAL;
+      return CellActionType.HOME_SPECIAL;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_END && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return EditorCellAction.END_SPECIAL;
+      return CellActionType.END_SPECIAL;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.getModifiers() == 0) {
-      return EditorCellAction.HOME;
+      return CellActionType.HOME;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_END && keyEvent.getModifiers() == 0) {
-      return EditorCellAction.END;
+      return CellActionType.END;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN && keyEvent.getModifiers() == 0) {
-      return EditorCellAction.PAGE_DOWN;
+      return CellActionType.PAGE_DOWN;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP && keyEvent.getModifiers() == 0) {
-      return EditorCellAction.PAGE_UP;
+      return CellActionType.PAGE_UP;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.getModifiers() == 0) {
-      return EditorCellAction.NEXT;
+      return CellActionType.NEXT;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.isShiftDown() && !(keyEvent.isControlDown() || keyEvent.isAltDown())) {
-      return EditorCellAction.PREV;
+      return CellActionType.PREV;
     }
 
     // ---
@@ -967,11 +967,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
       if (!(selectedCell instanceof EditorCell_STHint)) {
         if (!(selectedCell instanceof EditorCell_Label)) {
-          return EditorCellAction.RIGHT_TRANSFORM;
+          return CellActionType.RIGHT_TRANSFORM;
         }
         EditorCell_Label labelCell = (EditorCell_Label) selectedCell;
         if (!labelCell.isEditable()) {
-          return EditorCellAction.RIGHT_TRANSFORM;
+          return CellActionType.RIGHT_TRANSFORM;
         }
 
         // caret at the end of text ?
@@ -979,18 +979,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         int caretPosition = labelCell.getCaretPosition();
         //System.out.println("text:" + text + " len:" + text.length() + "caret at:" + caretPosition);
         if (caretPosition == text.length()) {
-          return EditorCellAction.RIGHT_TRANSFORM;
+          return CellActionType.RIGHT_TRANSFORM;
         }
 
         if (caretPosition == 0) {
-          return EditorCellAction.LEFT_TRANSFORM;
+          return CellActionType.LEFT_TRANSFORM;
         }
       }
     }
 
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && keyEvent.isControlDown()) {
-      return EditorCellAction.DELETE;
+      return CellActionType.DELETE;
     }
 
     if ((keyEvent.getKeyCode() == KeyEvent.VK_DELETE || keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE)
@@ -998,61 +998,61 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
       EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
       if (selectedCell.isBigCell()) {
-        return EditorCellAction.DELETE;
+        return CellActionType.DELETE;
       }
 
       if (selectedCell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) selectedCell;
         if (label.getText().length() == 0 ||
           (label instanceof EditorCell_Constant && !label.isEditable() && !(label.getSNode().getAdapter() instanceof INamedConcept))) {
-          return EditorCellAction.DELETE;
+          return CellActionType.DELETE;
         }
       }
     }
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_ADD && keyEvent.isControlDown()) {
       if (keyEvent.isShiftDown()) {
-        return EditorCellAction.UNFOLD_ALL;
+        return CellActionType.UNFOLD_ALL;
       } else {
-        return EditorCellAction.UNFOLD;
+        return CellActionType.UNFOLD;
       }
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_SUBTRACT && keyEvent.isControlDown()) {
       if (keyEvent.isShiftDown()) {
-        return EditorCellAction.FOLD_ALL;
+        return CellActionType.FOLD_ALL;
       } else {
-        return EditorCellAction.FOLD;
+        return CellActionType.FOLD;
       }
     }
 
     // ---
     if (keyEvent.getKeyCode() == KeyEvent.VK_C && keyEvent.isControlDown() && !keyEvent.isShiftDown()) {
-      return EditorCellAction.COPY;
+      return CellActionType.COPY;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_X && keyEvent.isControlDown()) {
-      return EditorCellAction.CUT;
+      return CellActionType.CUT;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_V && keyEvent.isControlDown()) {
       if (keyEvent.isShiftDown() && !keyEvent.isAltDown()) {
-        return EditorCellAction.PASTE_BEFORE;
+        return CellActionType.PASTE_BEFORE;
       } else if (!keyEvent.isShiftDown() && keyEvent.isAltDown()) {
-        return EditorCellAction.PASTE_AFTER;
+        return CellActionType.PASTE_AFTER;
       }
-      return EditorCellAction.PASTE;
+      return CellActionType.PASTE;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.isControlDown()) {
-      return EditorCellAction.COPY;
+      return CellActionType.COPY;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.isShiftDown()) {
-      return EditorCellAction.PASTE;
+      return CellActionType.PASTE;
     }
 
 
     return null;
   }
 
-  boolean executeComponentAction(String actionType) {
-    EditorCellAction action = getComponentAction(actionType);
+  boolean executeComponentAction(CellActionType type) {
+    EditorCellAction action = getComponentAction(type);
     if (action != null) {
       action.execute(getEditorContext());
       return true;
@@ -1060,8 +1060,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return false;
   }
 
-  public EditorCellAction getComponentAction(String actionType) {
-    EditorCellAction action = myActionMap.get(actionType);
+  public EditorCellAction getComponentAction(CellActionType type) {
+    EditorCellAction action = myActionMap.get(type);
     if (action != null && action.canExecute(getEditorContext())) {
       return action;
     }
@@ -2294,7 +2294,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public void performCut(DataContext dataContext) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          getSelectedCell().executeAction(EditorCellAction.CUT);
+          getSelectedCell().executeAction(CellActionType.CUT);
         }
       });
     }
@@ -2304,7 +2304,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         public Boolean compute() {
           if (getEditorContext() == null) return false;
           if (getSelectedCell() == null) return false;
-          return getSelectedCell().canExecuteAction(EditorCellAction.CUT);
+          return getSelectedCell().canExecuteAction(CellActionType.CUT);
         }
       });
     }
@@ -2314,7 +2314,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public void performCopy(DataContext dataContext) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          getSelectedCell().executeAction(EditorCellAction.COPY);
+          getSelectedCell().executeAction(CellActionType.COPY);
         }
       });
     }
@@ -2324,7 +2324,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         public Boolean compute() {
           if (getEditorContext() == null) return false;
           if (getSelectedCell() == null) return false;
-          return getSelectedCell().canExecuteAction(EditorCellAction.COPY);
+          return getSelectedCell().canExecuteAction(CellActionType.COPY);
         }
       });
     }
@@ -2334,7 +2334,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public void performPaste(DataContext dataContext) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          getSelectedCell().executeAction(EditorCellAction.PASTE);
+          getSelectedCell().executeAction(CellActionType.PASTE);
         }
       });
     }
@@ -2344,7 +2344,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         public Boolean compute() {
           if (getEditorContext() == null) return false;
           if (getSelectedCell() == null) return false;
-          return getSelectedCell().canExecuteAction(EditorCellAction.PASTE);
+          return getSelectedCell().canExecuteAction(CellActionType.PASTE);
         }
       });
     }

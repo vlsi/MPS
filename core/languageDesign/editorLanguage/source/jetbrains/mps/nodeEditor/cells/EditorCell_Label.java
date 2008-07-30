@@ -36,9 +36,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myNullTextLine.setCaretEnabled(true);
     setText(text);
 
-    setAction(EditorCellAction.COPY, new CellAction_CopyLabelText());
-    setAction(EditorCellAction.PASTE, new CellAction_PasteIntoLabelText());
-    setAction(EditorCellAction.CUT, new CellAction_CutLabelText());
+    setAction(CellActionType.COPY, new CellAction_CopyLabelText());
+    setAction(CellActionType.PASTE, new CellAction_PasteIntoLabelText());
+    setAction(CellActionType.CUT, new CellAction_CutLabelText());
   }
 
   public CaretPosition getDefaultCaretPosition() {

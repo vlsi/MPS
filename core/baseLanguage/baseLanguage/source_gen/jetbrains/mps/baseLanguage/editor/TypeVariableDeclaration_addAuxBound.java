@@ -5,13 +5,14 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class TypeVariableDeclaration_addAuxBound {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(EditorCellAction.RIGHT_TRANSFORM, new TypeVariableDeclaration_addAuxBound.TypeVariableDeclaration_addAuxBound_RIGHT_TRANSFORM(node));
+    editorCell.setAction(CellActionType.RIGHT_TRANSFORM, new TypeVariableDeclaration_addAuxBound.TypeVariableDeclaration_addAuxBound_RIGHT_TRANSFORM(node));
   }
 
   public static class TypeVariableDeclaration_addAuxBound_RIGHT_TRANSFORM extends EditorCellAction {

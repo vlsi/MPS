@@ -3164,13 +3164,14 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1197547619396">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197547619397">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201270233816">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977966240">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201270233817">
-                    <link role="variableDeclaration" targetNodeId="1191842879659" resolveInfo="castExpression" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectLaterOperation" id="1201270237040">
-                    <node role="editorContext" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1201270239933" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217445712271">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217445713632">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1217445712272" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217445719027">
+                    <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217445721012">
+                      <link role="variableDeclaration" targetNodeId="1191842879659" resolveInfo="castExpression" />
+                    </node>
                   </node>
                 </node>
               </node>

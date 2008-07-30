@@ -481,7 +481,7 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1180026401346">
-      <property name="description" value="Allow &quot;switch node kind&quot; in visit statement" />
+      <property name="description" value="Allow &quot;switch node type&quot; in visit statement" />
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="4.1068580123157" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1180026445925">
@@ -4990,7 +4990,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198013650732">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198013650733">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198013650734">
-                  <property name="value" value="match node kind" />
+                  <property name="value" value="match node type" />
                 </node>
               </node>
             </node>

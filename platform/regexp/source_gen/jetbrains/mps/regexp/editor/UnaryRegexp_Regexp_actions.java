@@ -6,13 +6,14 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class UnaryRegexp_Regexp_actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(EditorCellAction.DELETE, new UnaryRegexp_Regexp_actions.UnaryRegexp_Regexp_actions_DELETE(node));
+    editorCell.setAction(CellActionType.DELETE, new UnaryRegexp_Regexp_actions.UnaryRegexp_Regexp_actions_DELETE(node));
   }
 
   public static class UnaryRegexp_Regexp_actions_DELETE extends EditorCellAction {

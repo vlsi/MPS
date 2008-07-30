@@ -21,7 +21,7 @@
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
-        <mapping-priority-rule kind="strictly_before">
+        <mapping-priority-rule type="strictly_before">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@templates" nodeID="1196434407478" />
           </greater-priority-mapping>
@@ -29,7 +29,7 @@
             <mapping-node modelUID="jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@templates" nodeID="1154466410557" />
           </lesser-priority-mapping>
         </mapping-priority-rule>
-        <mapping-priority-rule kind="strictly_together">
+        <mapping-priority-rule type="strictly_together">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@templates" nodeID="1154466410557" />
           </greater-priority-mapping>
