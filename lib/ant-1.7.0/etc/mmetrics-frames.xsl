@@ -673,7 +673,7 @@ will increase this number.
     <tr>
     <td style="text-align: justify;">
     Note: Metrics evaluate the quality of software by analyzing the program source and quantifying
-    various type of complexity. Complexity is a common source of problems and defects in software.
+    various kind of complexity. Complexity is a common source of problems and defects in software.
     High complexity makes it more difficult to develop, understand, maintain, extend, test and debug
     a program.
     <p/>
@@ -721,7 +721,7 @@ will increase this number.
       <tr>
       <td style="text-align: justify;">
       Note: Metrics evaluate the quality of software by analyzing the program source and quantifying
-      various type of complexity. Complexity is a common source of problems and defects in software.
+      various kind of complexity. Complexity is a common source of problems and defects in software.
       High complexity makes it more difficult to develop, understand, maintain, extend, test and debug
       a program.
       <p/>

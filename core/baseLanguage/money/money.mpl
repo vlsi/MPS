@@ -17,7 +17,7 @@
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
       </dependencies>
       <mapping-priorities>
-        <mapping-priority-rule type="strictly_before">
+        <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.accounting.money.generator.baseLanguage.template.main@templates" nodeID="*" />
           </greater-priority-mapping>

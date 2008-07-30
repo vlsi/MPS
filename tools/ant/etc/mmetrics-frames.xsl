@@ -8,19 +8,19 @@
 <xsl:decimal-format decimal-separator="." grouping-separator="," />
 <!--
     Copyright  2001-2004 The Apache Software Foundation
-   
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-   
+
          http://www.apache.org/licenses/LICENSE-2.0
-   
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
      limitations under the License.
-   
+
 -->
 <!--
   @author Stephane Bailliez <a href="mailto:sbailliez@apache.org"/>
@@ -673,7 +673,7 @@ will increase this number.
     <tr>
     <td style="text-align: justify;">
     Note: Metrics evaluate the quality of software by analyzing the program source and quantifying
-    various type of complexity. Complexity is a common source of problems and defects in software.
+    various kind of complexity. Complexity is a common source of problems and defects in software.
     High complexity makes it more difficult to develop, understand, maintain, extend, test and debug
     a program.
     <p/>
@@ -721,7 +721,7 @@ will increase this number.
       <tr>
       <td style="text-align: justify;">
       Note: Metrics evaluate the quality of software by analyzing the program source and quantifying
-      various type of complexity. Complexity is a common source of problems and defects in software.
+      various kind of complexity. Complexity is a common source of problems and defects in software.
       High complexity makes it more difficult to develop, understand, maintain, extend, test and debug
       a program.
       <p/>

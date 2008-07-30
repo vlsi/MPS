@@ -29,7 +29,7 @@
         <usedLanguages>jetbrains.mps.closures</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
-        <mapping-priority-rule type="strictly_before">
+        <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates"
                           nodeID="1191841379233"/>
@@ -39,7 +39,7 @@
                           nodeID="1197288608511"/>
           </lesser-priority-mapping>
         </mapping-priority-rule>
-        <mapping-priority-rule type="strictly_before">
+        <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates"
                           nodeID="1197288608511"/>
@@ -49,7 +49,7 @@
                           nodeID="1195732300474"/>
           </lesser-priority-mapping>
         </mapping-priority-rule>
-        <mapping-priority-rule type="strictly_before">
+        <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates"
                           nodeID="1195732300474"/>
@@ -59,7 +59,7 @@
                           nodeID="1196711340877"/>
           </lesser-priority-mapping>
         </mapping-priority-rule>
-        <mapping-priority-rule type="strictly_before">
+        <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates"
                           nodeID="1196711340877"/>
@@ -69,7 +69,7 @@
                           nodeID="1190373998785"/>
           </lesser-priority-mapping>
         </mapping-priority-rule>
-        <mapping-priority-rule type="strictly_before">
+        <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates"
                           nodeID="1190373998785"/>
@@ -78,7 +78,7 @@
             <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.main@templates" nodeID="*"/>
           </lesser-priority-mapping>
         </mapping-priority-rule>
-        <mapping-priority-rule type="strictly_together">
+        <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.main@templates"
                           nodeID="1168438163478"/>

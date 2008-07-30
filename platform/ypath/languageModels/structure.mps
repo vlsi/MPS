@@ -783,7 +783,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1179740276628">
-      <property name="value" value="reference to tree node type" />
+      <property name="value" value="reference to tree node kind" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1179740217128">
@@ -905,7 +905,7 @@
       <link role="target" targetNodeId="1180007355512" resolveInfo="NodeKindCase" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1180023792261">
-      <property name="value" value="switch node type" />
+      <property name="value" value="switch node kind" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1180023790290">

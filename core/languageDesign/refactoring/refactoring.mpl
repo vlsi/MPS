@@ -25,7 +25,7 @@
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
-        <mapping-priority-rule type="before_or_together ">
+        <mapping-priority-rule kind="before_or_together ">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.logging.refactoring.generator.baseLanguage.template.main@templates" nodeID="*" />
           </greater-priority-mapping>

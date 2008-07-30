@@ -20,7 +20,7 @@
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
-        <mapping-priority-rule type="strictly_together">
+        <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.bootstrap.intentionsLanguage.generator.baseLanguage.template.main@templates" nodeID="1192798704064" />
           </greater-priority-mapping>
