@@ -45,6 +45,8 @@ public class MPSVCSManager implements ProjectComponent {
   private static final String IGNORE_PATTERN = ".svn*";
   private ChangeListManager myChangeListManager;
   private boolean myIsInitialized = false;
+  private boolean myChangeListManagerInitialized = false;
+  private volatile ChangeListAdapter myChangeListUpdateListener;
 
   public MPSVCSManager(Project project, ProjectLevelVcsManager manager, MPSProjectHolder holder, MPSModuleRepository repository, VcsDirectoryMappingStorage storage, ChangeListManager clmanager) {
     myProject = project;
@@ -52,6 +54,12 @@ public class MPSVCSManager implements ProjectComponent {
     myChangeListManager = clmanager;
     myGenerationListener = new GenerationWhatcher();
     myModelRepositoryListener = new SModelRepositoryListenerImpl();
+    myChangeListUpdateListener = new ChangeListAdapter(){
+      @Override
+      public void changeListUpdateDone() {
+        myChangeListManagerInitialized = true;
+      }
+    };
   }
 
   public static MPSVCSManager getInstance(Project project) {
@@ -301,16 +309,22 @@ public class MPSVCSManager implements ProjectComponent {
     }
   }
 
+  public boolean isChangeListManagerInitialized() {
+    return myChangeListManagerInitialized;
+  }
+
   public void initComponent() {
     myProject.getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
     ModelChangesWatcher.instance().addMetadataListener(myMetadataListener);
+    myChangeListManager.addChangeListListener(myChangeListUpdateListener);
   }
 
   public void disposeComponent() {
     myProject.getComponent(GeneratorManager.class).removeGenerationListener(myGenerationListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
     ModelChangesWatcher.instance().addMetadataListener(myMetadataListener);
+    myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
   }
 
   private class ModelSavedListener extends SModelAdapter {
