@@ -740,7 +740,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           myAction.execute(null, editorContext);
         }
       };
-      keyMapActions.add(ActionUtils.createComponent(ActionPlaces.EDITOR_POPUP, mpsAction));
+      JComponent component = ActionManager.getInstance().createButtonToolbar(ActionPlaces.EDITOR_POPUP, ActionUtils.groupFromActions(mpsAction));
+      keyMapActions.add(component);
     }
 
     popupMenu.add(keyMapActions);
