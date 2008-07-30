@@ -251,7 +251,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       getTree().setSelectionPath(treePath);
       getTree().scrollPathToVisible(treePath);
     } else {
-      LOG.warning("Can not find file " + file + " in tree.");
+      LOG.info("Can not find file " + file + " in tree.");
     }
   }
 

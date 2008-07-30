@@ -44,6 +44,7 @@ public class MPSVCSManager implements ProjectComponent {
   private ProjectLevelVcsManager myManager;
   private static final String IGNORE_PATTERN = ".svn*";
   private ChangeListManager myChangeListManager;
+  private boolean myIsInitialized = false;
 
   public MPSVCSManager(Project project, ProjectLevelVcsManager manager, MPSProjectHolder holder, MPSModuleRepository repository, VcsDirectoryMappingStorage storage, ChangeListManager clmanager) {
     myProject = project;
@@ -53,8 +54,8 @@ public class MPSVCSManager implements ProjectComponent {
     myModelRepositoryListener = new SModelRepositoryListenerImpl();
   }
 
-  public static MPSVCSManager getInstance(Project project){
-    return project.getComponent(MPSVCSManager.class);    
+  public static MPSVCSManager getInstance(Project project) {
+    return project.getComponent(MPSVCSManager.class);
   }
 
   private void renameInternal(final VirtualFile from, final VirtualFile to) {
@@ -291,6 +292,13 @@ public class MPSVCSManager implements ProjectComponent {
   @NotNull
   public String getComponentName() {
     return "VCS Manager";
+  }
+
+  public void ensureVcssInitialized() {
+    if (!myIsInitialized) {
+      myManager.updateActiveVcss();
+      myIsInitialized = true;
+    }
   }
 
   public void initComponent() {
