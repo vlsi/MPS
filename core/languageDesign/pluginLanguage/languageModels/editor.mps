@@ -2024,6 +2024,13 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
               id="1214305410687"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList"
+              id="1217423946970">
+          <property name="vertical" value="true"/>
+          <link role="relationDeclaration" targetNodeId="1.1214001825955"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1217423946971"/>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
               id="1214305695646">
           <property name="noTargetText" value="&lt;init block&gt;"/>
@@ -2045,13 +2052,6 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
               id="1208271608577"/>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList"
-              id="1214306398855">
-          <property name="vertical" value="true"/>
-          <link role="relationDeclaration" targetNodeId="1.1214001825955"/>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-              id="1214306398856"/>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList"
               id="1213889031469">
           <property name="vertical" value="true"/>
