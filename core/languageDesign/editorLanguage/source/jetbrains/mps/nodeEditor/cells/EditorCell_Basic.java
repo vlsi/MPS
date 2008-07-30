@@ -34,6 +34,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public static final Logger LOG = Logger.getLogger(EditorCell_Basic.class);
 
   public static final int BRACKET_WIDTH = 7;
+  
 
   private HashMap myUserObjects = new HashMap();
 
