@@ -99,11 +99,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public void setCellLayout(CellLayout cellLayout) {
-    myCellLayout = cellLayout;
-  }
-
-  @SuppressWarnings({"UnusedDeclaration"})
   public AbstractCellListHandler getCellListHandler() {
     return myCellListHandler;
   }
@@ -632,8 +627,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     getEditor().removeCellSelectionListener(myLastCellSelectionListener);
   }
 
-  // --- actions ----
-
   private class SelectFirstChild extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       return EditorCell_Collection.this.isSelected() && findChild(CellFinders.FIRST_SELECTABLE_LEAF) != null;
@@ -643,8 +636,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       context.getNodeEditorComponent().clearSelectionStack();
       context.getNodeEditorComponent().changeSelection(findChild(CellFinders.FIRST_SELECTABLE_LEAF));
     }
-
-  } // private class SelectFirstChild
+  }
 
   private class SelectLastChild extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
@@ -655,8 +647,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       context.getNodeEditorComponent().clearSelectionStack();
       context.getNodeEditorComponent().changeSelection(findChild(CellFinders.LAST_SELECTABLE_LEAF));
     }
-
-  } // private class SelectLastChild
+  }
 
 
   private class EditorCell_Brace extends EditorCell_Constant {
