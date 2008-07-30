@@ -9,6 +9,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.IdeMain;
 
 public class UndoUtil {
   private static Logger LOG = Logger.getLogger(UndoUtil.class);
@@ -23,8 +24,10 @@ public class UndoUtil {
         undoManager.undoableActionPerformed(action);
       }
     } else {
-      LOG.warning("Can't add undoable action ", new Throwable());
-      PlatformDataKeys.PROJECT.getData(dataContext);
+      if (!IdeMain.isTestMode()) {
+        LOG.warning("Can't add undoable action ", new Throwable());
+        PlatformDataKeys.PROJECT.getData(dataContext);
+      }
     }
   }
 }
