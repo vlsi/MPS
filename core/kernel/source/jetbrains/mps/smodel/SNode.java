@@ -983,6 +983,11 @@ public final class SNode {
     if (!myRegisteredInModelFlag) return;
     UnregisteredNodes.instance().put(this);
     myRegisteredInModelFlag = false;
+
+    if (myAdapter != null) {
+      UnregisteredNodesWithAdapters.getInstance().add(this);
+    }
+
     if (myId != null) {
       myModel.removeNodeId(myId);
     }
@@ -1002,6 +1007,11 @@ public final class SNode {
     }
 
     UnregisteredNodes.instance().remove(this);
+
+    if (myAdapter != null) {
+      UnregisteredNodesWithAdapters.getInstance().remove(this);
+    }
+
     myRegisteredInModelFlag = true;
     myModel = model;
     myModel.putNodeId(getSNodeId(), this);
@@ -1603,6 +1613,11 @@ public final class SNode {
       if (c != null) {
         myAdapter = (BaseAdapter) c.newInstance(this);
         assert myAdapter.getNode() == this;
+
+        if (!myRegisteredInModelFlag) {
+          UnregisteredNodesWithAdapters.getInstance().add(this);
+        }
+
         return myAdapter;
       }
     } catch (IllegalAccessException e) {
