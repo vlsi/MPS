@@ -2128,15 +2128,6 @@
             <property name="flag" value="false" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1210093389331">
-          <link role="relationDeclaration" targetNodeId="1.1210093324517" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210093392967">
-          <property name="text" value="" />
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996899">
-            <property name="flag" value="false" />
-          </node>
-        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1210093381586">
           <link role="relationDeclaration" targetNodeId="1.1210070670675" />
         </node>
