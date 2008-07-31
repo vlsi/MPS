@@ -696,6 +696,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(myEditor);
       if (cell != null) {
         cell.changeText(myOldText);
+        cell.getEditorContext().getNodeEditorComponent().relayout();
       }
     }
 
@@ -703,6 +704,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(myEditor);
       if (cell != null) {
         cell.changeText(myText);
+        cell.getEditorContext().getNodeEditorComponent().relayout();
       }
     }
   }
