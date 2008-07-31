@@ -17,11 +17,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 
-/**
- * Created Jul 26, 2008 2:54:53 AM.
- *
- * @author julia
- */
 public class VcsRootsManager  implements ProjectComponent {
   private final Project myProject;
   private final ProjectLevelVcsManager myVcsManager;
