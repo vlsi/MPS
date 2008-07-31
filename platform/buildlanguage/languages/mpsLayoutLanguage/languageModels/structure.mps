@@ -303,7 +303,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204737220833">
-    <property name="name" value="RuntimeClassPath" />
+    <property name="name" value="PathHolder" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1208952075958">
       <property name="name" value="fullPath" />
@@ -477,6 +477,16 @@
       <property name="role" value="second" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1205339194346" resolveInfo="IStringExpression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216905728562">
+    <property name="name" value="ModuleCycle" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216905744819">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="module" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1203599702327" resolveInfo="Module" />
     </node>
   </node>
 </model>

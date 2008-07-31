@@ -6,10 +6,12 @@
     <output-test url="file://$MODULE_DIR$/classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/languages/buildlanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/languages/moduleDependencyLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/mpsLayoutLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/mpsProjectLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/propertylanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/taskLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.build.moduleDependencyLanguage.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.build.taskLanguage.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.buildlanguage.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.mpsLayoutLanguage.mpsbuild/source_gen" isTestSource="false" />
