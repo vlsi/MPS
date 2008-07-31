@@ -347,7 +347,8 @@ public class TestMain {
       public void run() {
         project.dispose();
 
-        IdeEventQueue.getInstance().flushQueue();
+        IdeEventQueue.getInstance().flushQueue();        
+        gc();
       }
     });
 
