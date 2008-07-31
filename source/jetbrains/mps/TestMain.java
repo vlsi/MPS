@@ -28,6 +28,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.idea.IdeaTestApplication;
+import com.intellij.ide.IdeEventQueue;
 
 import javax.swing.SwingUtilities;
 
@@ -345,9 +346,10 @@ public class TestMain {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         project.dispose();
+
+        IdeEventQueue.getInstance().flushQueue();
       }
     });
-
 
     result.dump(System.out);
     String message = null;
