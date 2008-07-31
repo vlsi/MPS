@@ -1983,14 +1983,9 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104781869">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104781870">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104781871">
-                <link role="baseMethodDeclaration" targetNodeId="7.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104781872">
-                  <link role="variableDeclaration" targetNodeId="1213104781863" resolveInfo="methods" />
-                </node>
-              </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1217542744628">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217542746755">
+              <link role="variableDeclaration" targetNodeId="1213104781863" resolveInfo="methods" />
             </node>
           </node>
         </node>
@@ -2298,14 +2293,9 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104782016">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104782017">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104782018">
-                <link role="baseMethodDeclaration" targetNodeId="7.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104782019">
-                  <link role="variableDeclaration" targetNodeId="1213104782008" resolveInfo="concepts" />
-                </node>
-              </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1217542443417">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217542446716">
+              <link role="variableDeclaration" targetNodeId="1213104782008" resolveInfo="concepts" />
             </node>
           </node>
         </node>
