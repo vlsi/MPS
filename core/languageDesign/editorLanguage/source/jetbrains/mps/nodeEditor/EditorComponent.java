@@ -801,7 +801,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void dispose() {
-    myHighlightManager.dispose();
+    myHighlightManager.dispose();    
+    myMPSActionsWithShortcuts.clear();
 
     removeOurListeners();
 
