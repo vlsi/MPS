@@ -148,7 +148,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     return false;
   }
 
-  public void createNewItem() {
+  public void create() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         createEditor();

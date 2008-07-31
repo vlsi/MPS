@@ -16,5 +16,7 @@ public interface ILazyTab {
 
   JComponent getComponent();
 
-  void createNewItem();
+  boolean canCreate();
+
+  void create();
 }

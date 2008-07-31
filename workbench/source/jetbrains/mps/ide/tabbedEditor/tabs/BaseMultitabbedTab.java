@@ -116,7 +116,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     return myComponent;
   }
 
-  protected boolean allowsToCreateNewNode() {
+  public boolean canCreate() {
     return true;
   }
 
@@ -132,7 +132,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
 
       myComponent.add(myInnerTabbedPane, BorderLayout.CENTER);
 
-      if (allowsToCreateNewNode()) {
+      if (canCreate()) {
         JPanel panel = new JPanel(new BorderLayout());
         panel.add(new JButton(new AbstractAction("Create new") {
           public void actionPerformed(ActionEvent e) {
@@ -187,7 +187,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     });
   }
 
-  public void createNewItem() {
+  public void create() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         createEditor();

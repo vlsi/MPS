@@ -71,7 +71,7 @@ public class TabbedEditor implements IEditor {
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         ILazyTab currentTab = myTabbedPane.getCurrentTab();
-        currentTab.createNewItem();
+        currentTab.create();
         myTabbedPane.initTab(currentTab);
       }
     }, KeyStroke.getKeyStroke("INSERT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);

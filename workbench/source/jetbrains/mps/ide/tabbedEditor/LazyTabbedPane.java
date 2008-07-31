@@ -62,7 +62,7 @@ public class LazyTabbedPane extends JPanel {
 
   public void add(ILazyTab lazyTab) {
     myLazyTabs.add(lazyTab);
-    myTabbedPane.addTab(lazyTab.getTitle(), new JPanel(new BorderLayout()));    
+    myTabbedPane.addTab(lazyTab.getTitle(), new JPanel(new BorderLayout()));
     updateTabColor(lazyTab);
   }
 
@@ -81,11 +81,11 @@ public class LazyTabbedPane extends JPanel {
     JComponent component = tab.getComponent();
     if (component == null) {
       panel.removeAll();
-      JLabel label = new JLabel("<html><p align='center'>" + tab.getNullText() + "<br>(Click here or press insert to create)</p>", JLabel.CENTER);
+      JLabel label = new JLabel("<html><p align='center'>" + tab.getNullText() + (tab.canCreate() ? "<br>(Click here or press insert to create)" : "") + "</p>", JLabel.CENTER);
 
       label.addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
-          tab.createNewItem();
+          tab.create();
           initTab(tab);
         }
       });
@@ -98,12 +98,12 @@ public class LazyTabbedPane extends JPanel {
       panel.repaint();
       updateTabColor(tab);
       return;
-    }    
+    }
     updateTabColor(tab);
     panel.removeAll();
     panel.add(component, BorderLayout.CENTER);
     panel.validate();
-    panel.repaint();    
+    panel.repaint();
     myInitializedTabs.add(tab);
 
     for (EditorComponent c : tab.getEditorComponents()) {
