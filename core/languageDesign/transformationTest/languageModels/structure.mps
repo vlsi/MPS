@@ -198,12 +198,16 @@
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <visible index="3" modelUID="jetbrains.mps.baseLanguage.unitTest.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215601147424">
     <property name="name" value="NodeOperation" />
     <property name="package" value="nodeOperation" />
     <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1215604868357">
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1217511329647">
+      <link role="intfc" targetNodeId="3v.1216134482493" resolveInfo="ITestMethod" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215603922101">
@@ -280,8 +284,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>
-  <visible index="3" modelUID="jetbrains.mps.baseLanguage.classifiers.structure" />
-  <visible index="4" modelUID="jetbrains.mps.baseLanguage.unitTest.structure" />
+  <visible index="4" modelUID="jetbrains.mps.baseLanguage.classifiers.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216913645126">
     <property name="name" value="NodesTestCase" />
     <property name="rootable" value="true" />
@@ -303,16 +306,16 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="methodDeclaraiotns" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="3v.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
+      <link role="target" targetNodeId="4v.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1216914133328">
-      <link role="intfc" targetNodeId="4v.1216130694486" resolveInfo="ITestCase" />
+      <link role="intfc" targetNodeId="3v.1216130694486" resolveInfo="ITestCase" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1216914250339">
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1216993436650">
-      <link role="intfc" targetNodeId="3v.1205751982837" resolveInfo="IClassifier" />
+      <link role="intfc" targetNodeId="4v.1205751982837" resolveInfo="IClassifier" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216913689992">
@@ -326,7 +329,7 @@
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1217250730750">
-      <link role="intfc" targetNodeId="4v.1216134482493" resolveInfo="ITestMethod" />
+      <link role="intfc" targetNodeId="3v.1216134482493" resolveInfo="ITestMethod" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216913719839">
       <property name="metaClass" value="aggregation" />

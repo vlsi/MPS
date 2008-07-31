@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class TestMethod_Behavior {
@@ -16,14 +14,6 @@ public class TestMethod_Behavior {
   public static SNode virtual_getTestCase_1216134500045(SNode thisNode) {
     SNode method = thisNode;
     return SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", false, false);
-  }
-
-  public static List<String> virtual_getParametersPart_1215620460293(SNode thisNode) {
-    List<String> parms = new ArrayList<String>();
-    SNode testCase = ITestMethod_Behavior.call_getTestCase_1216134500045(thisNode);
-    parms.add("-m");
-    parms.add(ITestCase_Behavior.call_getClassName_1216136193905(testCase) + "." + ITestMethod_Behavior.call_getTestName_1216136419751(thisNode));
-    return parms;
   }
 
   public static String virtual_getTestName_1216136419751(SNode thisNode) {

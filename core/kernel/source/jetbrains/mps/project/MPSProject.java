@@ -477,7 +477,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     if (getComponent(Project.class) != null) {
       Project project = getComponentSafe(Project.class);
       if (IdeMain.isTestMode()) {
-        com.intellij.openapi.command.undo.UndoManager.getGlobalInstance().dropHistory();
+//        com.intellij.openapi.command.undo.UndoManager.getGlobalInstance().dropHistory();
         ProjectUtil.closeProject(project);
       }
     }
