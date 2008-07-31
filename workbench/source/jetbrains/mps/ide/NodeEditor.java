@@ -2,9 +2,9 @@ package jetbrains.mps.ide;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.ICellSelectionListener;
+import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
@@ -26,7 +26,7 @@ import java.util.List;
 
 public class NodeEditor implements IEditor {
 
-  protected AbstractEditorComponent myEditorComponent;
+  protected EditorComponent myEditorComponent;
   private JPanel myComponent = new MyPanel();
 
   public NodeEditor(IOperationContext context, SNode node) {
@@ -62,11 +62,11 @@ public class NodeEditor implements IEditor {
     return false;
   }
 
-  public void addCellSelectionListener(@NotNull ICellSelectionListener listener) {
+  public void addCellSelectionListener(@NotNull CellSelectionListener listener) {
     myEditorComponent.addCellSelectionListener(listener);
   }
 
-  public void removeCellSelectionListener(@NotNull ICellSelectionListener listener) {
+  public void removeCellSelectionListener(@NotNull CellSelectionListener listener) {
     myEditorComponent.removeCellSelectionListener(listener);
   }
 
@@ -107,7 +107,7 @@ public class NodeEditor implements IEditor {
     myEditorComponent.repaint();
   }
 
-  public AbstractEditorComponent getCurrentEditorComponent() {
+  public EditorComponent getCurrentEditorComponent() {
     return myEditorComponent;
   }
 

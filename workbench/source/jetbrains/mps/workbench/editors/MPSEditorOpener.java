@@ -6,7 +6,6 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.command.CommandProcessor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.*;
@@ -23,7 +22,7 @@ import jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.MPSProjectHolder;
@@ -203,7 +202,7 @@ public class MPSEditorOpener implements ProjectComponent {
 
     if (!node.isRoot()) {
       SNode currentSelectionTarget = node;
-      AbstractEditorComponent component = nodeEditor.getCurrentEditorComponent();
+      EditorComponent component = nodeEditor.getCurrentEditorComponent();
       while (currentSelectionTarget != null) {
         EditorCell cell = component.findNodeCell(currentSelectionTarget);
         if (cell != null) {

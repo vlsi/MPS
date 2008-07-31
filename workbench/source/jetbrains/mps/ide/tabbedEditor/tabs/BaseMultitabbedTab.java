@@ -5,7 +5,7 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
@@ -31,7 +31,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   private SNodePointer myBaseNode;
   private JTabbedPane myInnerTabbedPane;
   private JPanel myComponent;
-  private List<AbstractEditorComponent> myEditors = new ArrayList<AbstractEditorComponent>();
+  private List<EditorComponent> myEditors = new ArrayList<EditorComponent>();
   private Class<? extends BaseAdapter> myClass;
   private TabbedEditor myTabbedEditor;
 
@@ -149,7 +149,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   }
 
   private JComponent addInnerTab(SNode loadableNode, IOperationContext operationContext) {
-    AbstractEditorComponent component = new NodeEditorComponent(operationContext);
+    EditorComponent component = new NodeEditorComponent(operationContext);
     component.editNode(loadableNode, operationContext);
     SNodePointer pointer = new SNodePointer(loadableNode);
     myLoadableNodes.add(pointer);
@@ -164,11 +164,11 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     return jComponent;
   }
 
-  public List<AbstractEditorComponent> getEditorComponents() {
-    return new ArrayList<AbstractEditorComponent>(myEditors);
+  public List<EditorComponent> getEditorComponents() {
+    return new ArrayList<EditorComponent>(myEditors);
   }
 
-  public AbstractEditorComponent getCurrentEditorComponent() {
+  public EditorComponent getCurrentEditorComponent() {
     JPanel panel = (JPanel) getComponent();
     if (panel == null) return null;
     return myEditors.get(myInnerTabbedPane.getSelectedIndex());

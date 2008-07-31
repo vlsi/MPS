@@ -26,16 +26,16 @@ import java.util.List;
 
 // ----- range selection ----
 
-public class NodeRangeSelection implements IKeyboardHandler {
-  private AbstractEditorComponent myEditorComponent;
+public class NodeRangeSelection implements KeyboardHandler {
+  private EditorComponent myEditorComponent;
   private boolean myActive;
   private String myRole;
   private SNode myParentNode;
   private SNode myFirstNode;
   private SNode myLastNode;
 
-  public NodeRangeSelection(AbstractEditorComponent abstractEditorComponent) {
-    myEditorComponent = abstractEditorComponent;
+  public NodeRangeSelection(EditorComponent editorComponent) {
+    myEditorComponent = editorComponent;
   }
 
   public boolean isSelectionKeystroke(KeyEvent keyEvent) {
@@ -151,7 +151,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
 
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
     if (getNodes().size() != 0) {
-      AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
+      EditorComponent editor = editorContext.getNodeEditorComponent();
       SNode node = getNodes().get(0);
       EditorCell cell = editor.findNodeCell(node);
       List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo = KeyMapUtil.getKeyMapActionsForEvent(cell, keyEvent, editorContext);

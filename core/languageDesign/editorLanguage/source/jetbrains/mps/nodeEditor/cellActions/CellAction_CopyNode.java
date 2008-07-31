@@ -29,7 +29,7 @@ public class CellAction_CopyNode extends EditorCellAction {
 
   public void execute(EditorContext context) {
     List<SNode> nodeList = new LinkedList<SNode>();
-    AbstractEditorComponent editorComponent = context.getNodeEditorComponent();
+    EditorComponent editorComponent = context.getNodeEditorComponent();
     TextBuilder textBuilder = TextRenderUtil.getTextBuilderForSelectedCellsOfEditor(editorComponent);
 
     NodeRangeSelection nodeRangeSelection = editorComponent.getNodeRangeSelection();

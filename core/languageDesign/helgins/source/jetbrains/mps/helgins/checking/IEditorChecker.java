@@ -1,14 +1,11 @@
 package jetbrains.mps.helgins.checking;
 
-import jetbrains.mps.nodeEditor.IEditorMessageOwner;
-import jetbrains.mps.nodeEditor.IEditorMessage;
-import jetbrains.mps.helgins.checking.HighlighterMessage;
+import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.event.SModelEvent;
 
-import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.List;
 
@@ -21,9 +18,9 @@ import java.util.List;
  */
 public interface IEditorChecker {
   
-  public Set<IEditorMessage> createMessages(SNode rootNode, IOperationContext operationContext);
+  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext);
 
-  public IEditorMessageOwner getOwner(SNode rootNode);
+  public EditorMessageOwner getOwner(SNode rootNode);
 
   public boolean hasDramaticalEvent(List<SModelEvent> events);
 }

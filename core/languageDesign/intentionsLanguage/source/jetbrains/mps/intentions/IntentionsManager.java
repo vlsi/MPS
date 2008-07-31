@@ -4,10 +4,9 @@ import jetbrains.mps.bootstrap.intentionsLanguage.behavior.IntentionDeclaration_
 import jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.IEditorMessage;
+import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Calculable;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import org.jetbrains.annotations.Nullable;
@@ -93,8 +92,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         }
       }
     }
-    List<IEditorMessage> messages = context.getNodeEditorComponent().getHighlightManager().getMessagesFor(node);
-    for (IEditorMessage message : messages) {
+    List<EditorMessage> messages = context.getNodeEditorComponent().getHighlightManager().getMessagesFor(node);
+    for (EditorMessage message : messages) {
       IntentionProvider intentionProvider = message.getIntentionProvider();
       if (intentionProvider != null) {
         Intention intention = intentionProvider.getIntention();

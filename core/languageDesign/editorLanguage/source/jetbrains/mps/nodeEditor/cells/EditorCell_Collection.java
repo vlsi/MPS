@@ -354,7 +354,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   public void fold(boolean programmaticaly) {
     if (!canBeFolded()) return;
     setFolded(true);
-    final AbstractEditorComponent editorComponent = getEditor();
+    final EditorComponent editorComponent = getEditor();
     editorComponent.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         if (getBounds().contains(e.getPoint())) {
@@ -388,7 +388,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     if (!programmaticaly) {
       getEditorContext().flushEvents();
 
-      AbstractEditorComponent editor = getEditor();
+      EditorComponent editor = getEditor();
       editor.relayout();
       EditorCell deepestSelected = findChild(CellFinders.FIRST_SELECTABLE_LEAF);
       editor.pushSelection(deepestSelected);
@@ -725,7 +725,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       myCollectionCellInfo = cell.getParent().getCellInfo();
     }
 
-    public EditorCell findCell(AbstractEditorComponent editorComponent) {
+    public EditorCell findCell(EditorComponent editorComponent) {
       EditorCell cell = myCollectionCellInfo.findCell(editorComponent);
       if (!(cell instanceof EditorCell_Collection)) return null;
       EditorCell_Collection parent = (EditorCell_Collection) cell;
@@ -748,8 +748,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
 
-  private class MyLastCellSelectionListener implements ICellSelectionListener {
-    public void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
+  private class MyLastCellSelectionListener implements CellSelectionListener {
+    public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
       if (myClosingBrace.isSelected() || myOpeningBrace.isSelected()) {
         notifyBraceSelected();
         return;

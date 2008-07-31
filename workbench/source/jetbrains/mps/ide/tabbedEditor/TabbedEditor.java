@@ -7,9 +7,9 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.ICellSelectionListener;
+import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -39,7 +39,7 @@ public class TabbedEditor implements IEditor {
   private LazyTabbedPane myTabbedPane = new MyLazyTabbedPane(this);
   protected IOperationContext myOperationContext;
   private SNodePointer myNodePointer;
-  List<ICellSelectionListener> mySelectionListeners = new ArrayList<ICellSelectionListener>();
+  List<CellSelectionListener> mySelectionListeners = new ArrayList<CellSelectionListener>();
   private List<ChangeListener> myChangeListeners = new ArrayList<ChangeListener>();
 
   public TabbedEditor(IOperationContext context, SNode node) {
@@ -103,7 +103,7 @@ public class TabbedEditor implements IEditor {
   public Set<SNode> getAvailableNodes() {
     Set<SNode> result = new HashSet<SNode>();
     for (ILazyTab tab : myTabbedPane.getTabs()) {
-      for (AbstractEditorComponent c : tab.getEditorComponents()) {
+      for (EditorComponent c : tab.getEditorComponents()) {
         result.add(c.getEditedNode());
       }
     }
@@ -124,33 +124,33 @@ public class TabbedEditor implements IEditor {
   }
 
   public void rebuildEditorContent() {
-    for (AbstractEditorComponent c : getEditors()) {
+    for (EditorComponent c : getEditors()) {
       c.rebuildEditorContent();
     }
   }
 
   public void relayout() {
-    for (AbstractEditorComponent c : getEditors()) {
+    for (EditorComponent c : getEditors()) {
       c.relayout();
     }
   }
 
-  public void addCellSelectionListener(@NotNull ICellSelectionListener listener) {
-    for (AbstractEditorComponent c : getEditors()) {
+  public void addCellSelectionListener(@NotNull CellSelectionListener listener) {
+    for (EditorComponent c : getEditors()) {
       c.addCellSelectionListener(listener);
     }
     mySelectionListeners.add(listener);
   }
 
-  public void removeCellSelectionListener(@NotNull ICellSelectionListener listener) {
+  public void removeCellSelectionListener(@NotNull CellSelectionListener listener) {
     mySelectionListeners.remove(listener);
-    for (AbstractEditorComponent c : getEditors()) {
+    for (EditorComponent c : getEditors()) {
       c.removeCellSelectionListener(listener);
     }
   }
 
-  private List<AbstractEditorComponent> getEditors() {
-    List<AbstractEditorComponent> result = new ArrayList<AbstractEditorComponent>();
+  private List<EditorComponent> getEditors() {
+    List<EditorComponent> result = new ArrayList<EditorComponent>();
     for (ILazyTab tab : myTabbedPane.getTabs()) {
       result.addAll(tab.getEditorComponents());
     }
@@ -163,19 +163,19 @@ public class TabbedEditor implements IEditor {
   }
 
   public EditorContext getEditorContext() {
-    AbstractEditorComponent editor = getCurrentEditorComponent();
+    EditorComponent editor = getCurrentEditorComponent();
     if (editor == null) return null;
     return editor.getEditorContext();
   }
 
   public EditorCell getSelectedCell() {
-    AbstractEditorComponent editor = getCurrentEditorComponent();
+    EditorComponent editor = getCurrentEditorComponent();
     if (editor == null) return null;
     return editor.getSelectedCell();
   }
 
   public EditorCell getRootCell() {
-    AbstractEditorComponent editor = getCurrentEditorComponent();
+    EditorComponent editor = getCurrentEditorComponent();
     if (editor == null) return null;
     return editor.getRootCell();
   }
@@ -188,7 +188,7 @@ public class TabbedEditor implements IEditor {
     List<SNode> result = new ArrayList<SNode>();
     for (ILazyTab tab : myTabbedPane.getTabs()) {
       tab.getComponent();
-      for (AbstractEditorComponent aec : tab.getEditorComponents()) {
+      for (EditorComponent aec : tab.getEditorComponents()) {
         if (aec.getEditedNode() != null) {
           result.add(aec.getEditedNode());
         }
@@ -202,31 +202,31 @@ public class TabbedEditor implements IEditor {
   }
 
   public void selectNode(SNode node) {
-    AbstractEditorComponent editor = getCurrentEditorComponent();
+    EditorComponent editor = getCurrentEditorComponent();
     assert editor != null;
     editor.selectNode(node);
   }
 
   public void requestFocus() {
-    AbstractEditorComponent editor = getCurrentEditorComponent();
+    EditorComponent editor = getCurrentEditorComponent();
     if (editor == null) return;
     editor.requestFocus();
   }
 
   public void dispose() {
-    for (AbstractEditorComponent c : getEditors()) {
+    for (EditorComponent c : getEditors()) {
       c.dispose();
     }
   }
 
   public void repaint() {
-    AbstractEditorComponent current = getCurrentEditorComponent();
+    EditorComponent current = getCurrentEditorComponent();
     if (current != null) {
       current.repaint();
     }
   }
 
-  public AbstractEditorComponent getCurrentEditorComponent() {
+  public EditorComponent getCurrentEditorComponent() {
     return myTabbedPane.getCurrentTab().getCurrentEditorComponent();
   }
 
@@ -270,7 +270,7 @@ public class TabbedEditor implements IEditor {
       if (tab instanceof BaseMultitabbedTab) {
         BaseMultitabbedTab multitabbedTab = (BaseMultitabbedTab) tab;
         int innerIndex = 0;
-        for (AbstractEditorComponent editorComponent : multitabbedTab.getEditorComponents()) {
+        for (EditorComponent editorComponent : multitabbedTab.getEditorComponents()) {
           if (editorComponent.getEditedNode() == node) {
             myTabbedPane.selectTab(index);
             multitabbedTab.selectTab(innerIndex);
@@ -279,7 +279,7 @@ public class TabbedEditor implements IEditor {
           innerIndex++;
         }
       } else {
-        for (AbstractEditorComponent c : tab.getEditorComponents()) {
+        for (EditorComponent c : tab.getEditorComponents()) {
           if (c.getEditedNode() == node) {
             myTabbedPane.selectTab(index);
             return;

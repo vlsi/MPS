@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
@@ -83,8 +83,8 @@ public class EditorCell_Property extends EditorCell_Label {
     return myModelAccessor.isValidText(text);
   }
 
-  public INodeSubstituteInfo getSubstituteInfo() {
-    INodeSubstituteInfo substituteInfo = super.getSubstituteInfo();
+  public NodeSubstituteInfo getSubstituteInfo() {
+    NodeSubstituteInfo substituteInfo = super.getSubstituteInfo();
     if (substituteInfo != null) {
       substituteInfo.setOriginalText(myModelAccessor.getText());
     }

@@ -258,7 +258,7 @@ public class KeyMapUtil {
       menu.add(menuItem);
       index++;
     }
-    AbstractEditorComponent component = editorContext.getNodeEditorComponent();
+    EditorComponent component = editorContext.getNodeEditorComponent();
     int x = selectedCell.getX();
     int y = selectedCell.getY() + selectedCell.getHeight();
     if (component.getParent() instanceof JViewport) {

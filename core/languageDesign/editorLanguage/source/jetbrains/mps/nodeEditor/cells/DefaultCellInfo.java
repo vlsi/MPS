@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jdom.Element;
 
 
@@ -57,14 +57,14 @@ public class DefaultCellInfo implements CellInfo {
         (myNodePointer == null?0: myNodePointer.hashCode()) + (myCellId == null?0:myCellId.hashCode()) + myCellNumber;
   }
 
-  public EditorCell findCell(AbstractEditorComponent editorComponent) {
+  public EditorCell findCell(EditorComponent editorComponent) {
     if (myNodePointer == null) {
       return null;
     }
     return editorComponent.findCellWithId(myNodePointer.getNode(), myCellId);
   }
 
-  public EditorCell findClosestCell(AbstractEditorComponent editorComponent) {
+  public EditorCell findClosestCell(EditorComponent editorComponent) {
     return findCell(editorComponent);    
   }
 

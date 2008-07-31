@@ -15,7 +15,7 @@ import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.*;
@@ -33,7 +33,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
 
@@ -979,7 +979,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
       editorCell = this.create_ConstantCell12325_025(context, node, "");
     }
     setupBasic_AlternationCell12325_01(editorCell, node, context);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new ParamSequenceFeature_Editor.ParamSequenceFeature_generic_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ParamSequenceFeature_Editor.ParamSequenceFeature_generic_cellMenu()}));
     return editorCell;
   }
 
@@ -1576,7 +1576,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     setupBasic_ConstantCell12325_026(editorCell, node, context);
     setupLabel_ConstantCell12325_026(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new ParamSequenceFeature_Editor.ParamSequenceFeature_component_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ParamSequenceFeature_Editor.ParamSequenceFeature_component_cellMenu()}));
     return editorCell;
   }
 
@@ -1585,7 +1585,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     setupBasic_ConstantCell12325_027(editorCell, node, context);
     setupLabel_ConstantCell12325_027(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new ParamSequenceFeature_Editor.ParamSequenceFeature_component_cellMenu1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ParamSequenceFeature_Editor.ParamSequenceFeature_component_cellMenu1()}));
     return editorCell;
   }
 
@@ -1594,7 +1594,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     setupBasic_ConstantCell12325_028(editorCell, node, context);
     setupLabel_ConstantCell12325_028(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new ParamSequenceFeature_Editor.ParamSequenceFeature_component_cellMenu2()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ParamSequenceFeature_Editor.ParamSequenceFeature_component_cellMenu2()}));
     return editorCell;
   }
 
@@ -2055,7 +2055,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class ParamSequenceFeature_component_cellMenu implements ISubstituteInfoPart {
+  public static class ParamSequenceFeature_component_cellMenu implements SubstituteInfoPart {
 
     private menu_FeatureSetOpposite myComponent;
 
@@ -2063,12 +2063,12 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
 
 }
-  public static class ParamSequenceFeature_component_cellMenu1 implements ISubstituteInfoPart {
+  public static class ParamSequenceFeature_component_cellMenu1 implements SubstituteInfoPart {
 
     private menu_FeatureSetOpposite myComponent;
 
@@ -2076,12 +2076,12 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
 
 }
-  public static class ParamSequenceFeature_component_cellMenu2 implements ISubstituteInfoPart {
+  public static class ParamSequenceFeature_component_cellMenu2 implements SubstituteInfoPart {
 
     private menu_FeatureSetOpposite myComponent;
 
@@ -2089,7 +2089,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
 

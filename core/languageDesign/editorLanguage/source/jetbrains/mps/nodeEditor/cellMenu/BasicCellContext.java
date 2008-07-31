@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
  * Igor Alshannikov
  * Date: Nov 29, 2006
  */
-public class BasicCellContext implements ICellContext {
+public class BasicCellContext implements CellContext {
   private Map myValues = new HashMap();
 
   public BasicCellContext(SNode node) {

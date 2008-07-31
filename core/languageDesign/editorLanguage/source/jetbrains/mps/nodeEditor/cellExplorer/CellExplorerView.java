@@ -38,16 +38,16 @@ public class CellExplorerView extends BaseProjectTool {
 
   private JPanel myComponent = new JPanel(new BorderLayout());
   private MyTree myTree = new MyTree();
-  private AbstractEditorComponent myCurrentEditor;
+  private EditorComponent myCurrentEditor;
 
   private CellTreeNode myCashedPropertyCellTreeNode = null;
 
-  private AbstractEditorComponent.RebuildListener myRebuildListener = new AbstractEditorComponent.RebuildListener() {
-    public void editorRebuilt(AbstractEditorComponent editor) {
+  private EditorComponent.RebuildListener myRebuildListener = new EditorComponent.RebuildListener() {
+    public void editorRebuilt(EditorComponent editor) {
       update();
     }
   };
-  private AbstractEditorComponent.CellSynchronizationWithModelListener mySynchronizationListener = new AbstractEditorComponent.CellSynchronizationWithModelListener() {
+  private EditorComponent.CellSynchronizationWithModelListener mySynchronizationListener = new EditorComponent.CellSynchronizationWithModelListener() {
     public void cellSynchronizedWithModel(EditorCell cell) {
       if (cell == null) return;
       CellTreeNode cellTreeNode;
@@ -100,7 +100,7 @@ public class CellExplorerView extends BaseProjectTool {
     makeAvailable();
     openTool(true);
 
-    AbstractEditorComponent cellEditor = cell.getEditorContext().getNodeEditorComponent();
+    EditorComponent cellEditor = cell.getEditorContext().getNodeEditorComponent();
     if (myCurrentEditor != cellEditor) {
       removeListeners();
       myCurrentEditor = cellEditor;

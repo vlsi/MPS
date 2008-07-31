@@ -3,7 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
@@ -39,7 +39,7 @@ public class IntelligentInputUtil {
   }
 
   private static void processRTHintCell(EditorCell_STHint cell, EditorContext editorContext, String pattern) {
-    INodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
+    NodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
     String smallPattern = pattern.substring(0, pattern.length() - 1);
     String tail = "" + pattern.charAt(pattern.length() - 1);
     EditorCell nextCell = cell.getNextLeaf();
@@ -95,7 +95,7 @@ public class IntelligentInputUtil {
 
   private static void processCellAtEnd(EditorCell_Label cell, final EditorContext editorContext, String smallPattern, final String tail) {
     boolean sourceCellRemains = false;
-    INodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
+    NodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
     if (substituteInfo == null) {
       substituteInfo = new NullSubstituteInfo();
     }
@@ -172,7 +172,7 @@ public class IntelligentInputUtil {
     EditorCell rtHintCell = prepareSTCell(editorContext, newCellForNewNode, tail);
 
     if (rtHintCell != null) {
-      INodeSubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
+      NodeSubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
       if (rtSubstituteInfo == null) {
         rtSubstituteInfo = new NullSubstituteInfo();
       }
@@ -197,7 +197,7 @@ public class IntelligentInputUtil {
       editorContext.flushEvents();
 
       if (yetNewNode != null) {
-        AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
+        EditorComponent editor = editorContext.getNodeEditorComponent();
         EditorCell yetNewNodeCell = editor.findNodeCell(yetNewNode);
         EditorCell errorOrEditableCell = yetNewNodeCell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE), true);
         editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
@@ -212,7 +212,7 @@ public class IntelligentInputUtil {
   }
 
   private static void processCellAtStart(EditorCell_Label cell, final EditorContext editorContext, String head, String smallPattern) {
-    INodeSubstituteInfo info = cell.getSubstituteInfo();
+    NodeSubstituteInfo info = cell.getSubstituteInfo();
     if (info == null) {
       info = new NullSubstituteInfo();
     }
@@ -269,7 +269,7 @@ public class IntelligentInputUtil {
     prepareSTCell(editorContext, newCellForNewNode, head);
   }
 
-  private static boolean canCompleteSmallPatternImmediately(INodeSubstituteInfo info, String smallPattern, String tail) {
+  private static boolean canCompleteSmallPatternImmediately(NodeSubstituteInfo info, String smallPattern, String tail) {
     if ("".equals(tail)) {
       return info.hasExactlyNActions(smallPattern, true, 1) && info.hasExactlyNActions(smallPattern, false, 1);
     }
@@ -279,16 +279,16 @@ public class IntelligentInputUtil {
     return info.hasExactlyNActions(smallPattern, true, 1) && (tail.equals("*") || info.hasExactlyNActions(smallPattern + tail, false, 0));
   }
 
-  private static boolean canCompleteTheWholeStringImmediately(INodeSubstituteInfo info, String pattern) {
+  private static boolean canCompleteTheWholeStringImmediately(NodeSubstituteInfo info, String pattern) {
     return info.hasExactlyNActions(pattern, true, 1) && info.hasExactlyNActions(pattern, false, 1);
   }
 
-  private static boolean isInAmbigousPosition(INodeSubstituteInfo info, String smallPattern, String tail) {
+  private static boolean isInAmbigousPosition(NodeSubstituteInfo info, String smallPattern, String tail) {
     return info.getMatchingActions(smallPattern, true).size() > 1 && info.getMatchingActions(smallPattern + tail, false).isEmpty();
   }
 
   private static EditorCell_Label prepareSTCell(EditorContext context, EditorCell root, String textToSet) {
-    AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+    EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell_Label rtCell = root.getSTHintCell();
     if (rtCell == null) {
       EditorCell selectedCell = nodeEditorComponent.getSelectedCell();
@@ -315,7 +315,7 @@ public class IntelligentInputUtil {
 
   private static void putTextInErrorChild(CellInfo cellInfo, String textToSet, EditorContext editorContext) {
     editorContext.flushEvents();
-    AbstractEditorComponent component = editorContext.getNodeEditorComponent();
+    EditorComponent component = editorContext.getNodeEditorComponent();
     EditorCell cellToSelect = cellInfo.findCell(component);
     if (cellToSelect != null) {
       EditorCell errorCell = cellToSelect.findChild(CellFinders.FIRST_ERROR, true);
@@ -332,7 +332,7 @@ public class IntelligentInputUtil {
 
   private static boolean hasSideActions(EditorCell cell, CellSide side, String prefix) {
     final SideTransformHintSubstituteActionsHelper helper = new SideTransformHintSubstituteActionsHelper(cell.getSNode(), side, cell.getRightTransformAnchorTag(), cell.getEditorContext().getOperationContext());
-    INodeSubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getEditorContext()) {
+    NodeSubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getEditorContext()) {
       protected List<INodeSubstituteAction> createActions() {
         return helper.createActions();
       }

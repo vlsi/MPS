@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.core.structure.BaseConcept;
@@ -23,7 +23,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
 
   private SModelRepositoryAdapter myWeakSModelRepositoryListener;
   private SModelListener myListener;
-  private AbstractEditorComponent myComponent;
+  private EditorComponent myComponent;
   private SNodePointer myBaseNode;
   private SNodePointer myLoadableNode;
   private Class<? extends BaseAdapter> myClass = BaseConcept.class;
@@ -109,7 +109,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     return myComponent.getExternalComponent();
   }
 
-  public List<AbstractEditorComponent> getEditorComponents() {
+  public List<EditorComponent> getEditorComponents() {
     if (myComponent != null) {
       return Collections.singletonList(myComponent);
     } else {
@@ -117,7 +117,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     }
   }
 
-  public AbstractEditorComponent getCurrentEditorComponent() {
+  public EditorComponent getCurrentEditorComponent() {
     return myComponent;
   }
 

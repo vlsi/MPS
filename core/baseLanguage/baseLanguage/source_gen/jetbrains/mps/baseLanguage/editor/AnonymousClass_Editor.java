@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -492,7 +492,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     setupBasic_Constant_12087043999211208704399921(editorCell, node, context);
     setupLabel_Constant_1208704399921_1208704399921(editorCell, node, context);
     editorCell.setDefaultText("<add members (ctrl+space)>");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new AnonymousClass_Editor.AnonymousClass_generic_cellMenu2(),new AnonymousClass_Editor.AnonymousClass_generic_cellMenu1(),new AnonymousClass_Editor.AnonymousClass_generic_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new AnonymousClass_Editor.AnonymousClass_generic_cellMenu2(),new AnonymousClass_Editor.AnonymousClass_generic_cellMenu1(),new AnonymousClass_Editor.AnonymousClass_generic_cellMenu()}));
     return editorCell;
   }
 

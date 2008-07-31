@@ -25,7 +25,7 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
   protected HashSet<Pair<SNodePointer,String>> myExistenceReadAccessProperties = new HashSet<Pair<SNodePointer, String>>();
   private static final Logger LOG = Logger.getLogger(CellBuildNodeAccessListener.class);
 
-  public CellBuildNodeAccessListener(AbstractEditorComponent editor) {
+  public CellBuildNodeAccessListener(EditorComponent editor) {
     super(editor);
   }
 

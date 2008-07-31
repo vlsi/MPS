@@ -19,8 +19,8 @@ import java.util.*;
  */
 public class AutoResolver extends EditorCheckerAdapter {
 
-  public Set<IEditorMessage> createMessages(SNode rootNode, IOperationContext operationContext) {
-    Set<IEditorMessage> messages = new LinkedHashSet<IEditorMessage>();
+  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext) {
+    Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
     // disable for transient models
     if(rootNode.getModel().getModelDescriptor().isTransient()) {
       return messages;
@@ -53,7 +53,7 @@ public class AutoResolver extends EditorCheckerAdapter {
 
      // highlight nodes with errors
     for (SReference ref : yetBadReferences) {
-      IEditorMessage message = createErrorMessage(ref.getSourceNode(), "unresolved reference");
+      EditorMessage message = createErrorMessage(ref.getSourceNode(), "unresolved reference");
       messages.add(message);
     }
     return messages;

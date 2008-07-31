@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -112,7 +112,7 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
     setupBasic_Constant_11788709894741178870989474(editorCell, node, context);
     setupLabel_Constant_1178870989474_1178870989474(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new CoerceExpression_Editor.CoerceExpression_Editor_replaceWith_CoerceExpression_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new CoerceExpression_Editor.CoerceExpression_Editor_replaceWith_CoerceExpression_cellMenu()}));
     return editorCell;
   }
 

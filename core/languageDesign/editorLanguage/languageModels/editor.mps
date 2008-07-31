@@ -11644,7 +11644,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207872475555">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1198589407021" />
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207872475556">
-                    <link role="baseMethodDeclaration" targetNodeId="16.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.AbstractEditorComponent" resolveInfo="getNodeEditorComponent" />
+                    <link role="baseMethodDeclaration" targetNodeId="16.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getNodeEditorComponent" />
                   </node>
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198589416985">

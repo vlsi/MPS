@@ -4,7 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeRangeSelection;
 
 import java.util.List;
@@ -25,7 +25,7 @@ public class CellAction_CutNode extends EditorCellAction {
 
   public void execute(EditorContext context) {
     List<SNode> nodeList = new LinkedList<SNode>();
-    AbstractEditorComponent editorComponent = context.getNodeEditorComponent();
+    EditorComponent editorComponent = context.getNodeEditorComponent();
     NodeRangeSelection cellRangeSelection = editorComponent.getNodeRangeSelection();
     if (cellRangeSelection.isActive()) {
       nodeList.addAll(cellRangeSelection.getNodes());

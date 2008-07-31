@@ -46,7 +46,7 @@ public class EditorManager {
 
   private EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
     try {
-      AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+      EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
       EditorCell rootCell = nodeEditorComponent.getRootCell();
       ReferencedNodeContext refContext = ReferencedNodeContext.createNodeContext(node);
       myMap.clear();
@@ -155,7 +155,7 @@ public class EditorManager {
       }
     }
 
-    AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+    EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell oldCell = nodeEditorComponent.getBigCellForRefContext(refContext.contextWihtNoAttributes());
     if (events != null) {
       boolean nodeChanged = false;
@@ -215,9 +215,9 @@ public class EditorManager {
     myCreatingInspectedCell = false;
 
     INodeEditor editor = getEditor(context, node);
-    AbstractEditorComponent abstractEditorComponent = context.getNodeEditorComponent();
+    EditorComponent editorComponent = context.getNodeEditorComponent();
     EditorCell nodeCell = null;
-    CellBuildNodeAccessListener nodeAccessListener = new CellBuildNodeAccessListener(abstractEditorComponent);
+    CellBuildNodeAccessListener nodeAccessListener = new CellBuildNodeAccessListener(editorComponent);
     try {
       //voodoo for editor incremental rebuild support
       NodeReadAccessCaster.setCellBuildNodeReadAccessListener(nodeAccessListener);
@@ -240,7 +240,7 @@ public class EditorManager {
       if (nodeCell != null) {        
         ReferencedNodeContext refContextWithoutAttributes = refContext.contextWihtNoAttributes();
         nodeCell.putUserObject(BIG_CELL_CONTEXT, refContextWithoutAttributes);
-        abstractEditorComponent.registerAsBigCell(nodeCell, refContextWithoutAttributes, this);
+        editorComponent.registerAsBigCell(nodeCell, refContextWithoutAttributes, this);
         nodeAccessListener.recordingFinishedForCell(nodeCell);
       }
       NodeReadAccessCaster.removeCellBuildNodeAccessListener();
@@ -340,7 +340,7 @@ public class EditorManager {
 
     context.flushEvents();
 
-    AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+    EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     if (cellInfoToSelect == null) return;
     EditorCell newlySelectedCell = cellInfoToSelect.findCell(nodeEditorComponent);
     if (newlySelectedCell == null) return;
@@ -433,13 +433,13 @@ public class EditorManager {
       myAnchorCellInfo = anchorCell.getCellInfo();
     }
 
-    public EditorCell findCell(AbstractEditorComponent editorComponent) {
+    public EditorCell findCell(EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       if (anchorCell == null) return super.findCell(editorComponent);
       return anchorCell.getSTHintCell();
     }
 
-    public EditorCell findClosestCell(AbstractEditorComponent editorComponent) {
+    public EditorCell findClosestCell(EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       if (anchorCell == null) return super.findCell(editorComponent);
       EditorCell_Label rtHint = anchorCell.getSTHintCell();

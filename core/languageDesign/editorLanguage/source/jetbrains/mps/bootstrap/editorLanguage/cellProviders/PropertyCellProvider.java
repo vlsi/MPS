@@ -61,7 +61,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
   }
 
 
-  public INodeSubstituteInfo createDefaultSubstituteInfo() {
+  public NodeSubstituteInfo createDefaultSubstituteInfo() {
     if (myPropertyDeclaration == null) {
       LOG.error("no property declaration to create substitute info");
       return null;
@@ -77,7 +77,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
     return null;
   }
 
-  public ICellContext getCellContext() {
+  public CellContext getCellContext() {
     return new PropertyCellContext(getSNode(), myPropertyDeclaration);
   }
 

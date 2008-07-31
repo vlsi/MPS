@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
@@ -28,7 +28,7 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class IterateOperation_Editor extends DefaultNodeEditor {
 
@@ -263,7 +263,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     setupBasic_ConstantCell3680_01(editorCell, node, context);
     setupLabel_ConstantCell3680_01(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new IterateOperation_Editor.IterateOperation_component_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new IterateOperation_Editor.IterateOperation_component_cellMenu()}));
     return editorCell;
   }
 
@@ -282,7 +282,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     setupBasic_ModelAccessCell3680_0(editorCell, node, context);
     setupLabel_ModelAccessCell3680_0(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new IterateOperation_Editor.IterateOperation_component_cellMenu3()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new IterateOperation_Editor.IterateOperation_component_cellMenu3()}));
     return editorCell;
   }
 
@@ -341,7 +341,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       setupLabel_usedFeatureRefCell3680_01((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new IterateOperation_Editor.IterateOperation_component_cellMenu1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new IterateOperation_Editor.IterateOperation_component_cellMenu1()}));
     return editorCell;
   }
 
@@ -371,7 +371,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       setupLabel_paramObjectRefNodeCell3680_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new IterateOperation_Editor.IterateOperation_component_cellMenu2()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new IterateOperation_Editor.IterateOperation_component_cellMenu2()}));
     return editorCell;
   }
 
@@ -534,7 +534,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class IterateOperation_component_cellMenu implements ISubstituteInfoPart {
+  public static class IterateOperation_component_cellMenu implements SubstituteInfoPart {
 
     private menu_SubstituteFeatureAndParameter myComponent;
 
@@ -542,12 +542,12 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_SubstituteFeatureAndParameter();
     }
 
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
 
 }
-  public static class IterateOperation_component_cellMenu1 implements ISubstituteInfoPart {
+  public static class IterateOperation_component_cellMenu1 implements SubstituteInfoPart {
 
     private menu_SubstituteFeatureAndParameter myComponent;
 
@@ -555,12 +555,12 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_SubstituteFeatureAndParameter();
     }
 
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
 
 }
-  public static class IterateOperation_component_cellMenu2 implements ISubstituteInfoPart {
+  public static class IterateOperation_component_cellMenu2 implements SubstituteInfoPart {
 
     private menu_SubstituteFeatureAndParameter myComponent;
 
@@ -568,12 +568,12 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_SubstituteFeatureAndParameter();
     }
 
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
 
 }
-  public static class IterateOperation_component_cellMenu3 implements ISubstituteInfoPart {
+  public static class IterateOperation_component_cellMenu3 implements SubstituteInfoPart {
 
     private menu_SubstituteIterateOperationAxis myComponent;
 
@@ -581,7 +581,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_SubstituteIterateOperationAxis();
     }
 
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
 

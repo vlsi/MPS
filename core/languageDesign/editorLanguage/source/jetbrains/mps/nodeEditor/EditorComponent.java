@@ -25,7 +25,7 @@ import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cellActions.*;
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.*;
@@ -63,8 +63,8 @@ import java.util.*;
 import java.util.List;
 
 
-public abstract class AbstractEditorComponent extends JComponent implements Scrollable, DataProvider {
-  private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
+public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider {
+  private static final Logger LOG = Logger.getLogger(EditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
 
@@ -131,7 +131,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private NodeRangeSelection myNodeRangeSelection;
 
   private Stack<EditorCell> mySelectedStack = new Stack<EditorCell>();
-  private Stack<IKeyboardHandler> myKbdHandlersStack;
+  private Stack<KeyboardHandler> myKbdHandlersStack;
   private HashMap<CellActionType, EditorCellAction> myActionMap;
 
   private NodeSubstituteChooser myNodeSubstituteChooser;
@@ -141,7 +141,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener();
   private Set<SModelDescriptor> myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
 
-  private List<ICellSelectionListener> mySelectionListeners = new LinkedList<ICellSelectionListener>();
+  private List<CellSelectionListener> mySelectionListeners = new LinkedList<CellSelectionListener>();
   private PropertyChangeListener myFocusListener;
   private NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
 
@@ -154,7 +154,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private List<RebuildListener> myRebuildListeners;
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private CellInfo myRecentlySelectedCellInfo = null;
-  private final IEditorMessageOwner myOwner = new IEditorMessageOwner() {
+  private final EditorMessageOwner myOwner = new EditorMessageOwner() {
   };
 
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
@@ -162,11 +162,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private IntentionsSupport myIntentionsSupport;
   private AutoValidator myAutoValidator;
 
-  public AbstractEditorComponent(IOperationContext operationContext) {
+  public EditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
   }
 
-  public AbstractEditorComponent(final IOperationContext operationContext, boolean showErrorsGutter) {
+  public EditorComponent(final IOperationContext operationContext, boolean showErrorsGutter) {
     myOperationContext = operationContext;
 
     setBackground(Color.white);
@@ -221,7 +221,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myNodeRangeSelection = new NodeRangeSelection(this);
 
     // --- keyboard handling ---
-    myKbdHandlersStack = new Stack<IKeyboardHandler>();
+    myKbdHandlersStack = new Stack<KeyboardHandler>();
     myKbdHandlersStack.push(new EditorComponentKeyboardHandler());
 
     // --- init action map --
@@ -263,9 +263,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         EditorCell cell = getSelectedCell();
         if (cell == null) return;
         if (cell.getSNode() == null) return;
-        Frame frame = (Frame) SwingUtilities.getRoot(AbstractEditorComponent.this);
+        Frame frame = (Frame) SwingUtilities.getRoot(EditorComponent.this);
         Point point = new Point(cell.getX() + cell.getWidth(), cell.getY());
-        SwingUtilities.convertPointToScreen(point, AbstractEditorComponent.this);
+        SwingUtilities.convertPointToScreen(point, EditorComponent.this);
 
         new NodeInformationDialog(frame, point, cell.getSNode()).setVisible(true);
       }
@@ -397,9 +397,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", myFocusListener = new PropertyChangeListener() {
       public void propertyChange(PropertyChangeEvent evt) {
         Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
-        if (AbstractEditorComponent.this.isAncestorOf(focusOwner)) {
+        if (EditorComponent.this.isAncestorOf(focusOwner)) {
           Component current = focusOwner;
-          while (current.getParent() != AbstractEditorComponent.this) {
+          while (current.getParent() != EditorComponent.this) {
             current = current.getParent();
           }
           selectComponentCell(current);
@@ -463,7 +463,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyStrokes(group, data);
   }
 
-  public IEditorMessageOwner getHighlightMessagesOwner() {
+  public EditorMessageOwner getHighlightMessagesOwner() {
     return myOwner;
   }
 
@@ -524,7 +524,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void goToNextHighlightedCell(boolean backwards) {
     new CellNavigator(this) {
       boolean isSuitableCell(EditorCell cell) {
-        for (IEditorMessage m : getHighlightManager().getMessagesFor(cell.getSNode())) {
+        for (EditorMessage m : getHighlightManager().getMessagesFor(cell.getSNode())) {
           if (m.getOwner() == getHighlightMessagesOwner()) {
             return true;
           }
@@ -618,7 +618,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         IOperationContext operationContext = getOperationContext();
         myNodePointer = new SNodePointer(node);
         SModel model = node == null ? null : node.getModel();
-        setEditorContext(new EditorContext(AbstractEditorComponent.this, model, operationContext));
+        setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
         rebuildEditorContent();
       }
     });
@@ -660,11 +660,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   protected AbstractAction registerNodeAction(final BaseAction action, KeyStroke keyStroke) {
     if (keyStroke != null) {
       if (!myActionProxies.containsKey(keyStroke)) {
-        AbstractEditorComponent.MPSActionProxy proxy = new MPSActionProxy();
+        EditorComponent.MPSActionProxy proxy = new MPSActionProxy();
         myActionProxies.put(keyStroke, proxy);
         registerKeyboardAction(proxy, keyStroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
       }
-      AbstractEditorComponent.MPSActionProxy proxy = myActionProxies.get(keyStroke);
+      EditorComponent.MPSActionProxy proxy = myActionProxies.get(keyStroke);
       proxy.add(ActionPlaces.EDITOR_POPUP, action);
       return proxy;
     }
@@ -746,7 +746,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     popupMenu.add(keyMapActions);
 
-    popupMenu.show(AbstractEditorComponent.this, x, y);
+    popupMenu.show(EditorComponent.this, x, y);
   }
 
   private EditorContext createEditorContextForActions() {
@@ -1224,11 +1224,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         });
 
         for (JComponent component : myRootCell.getSwingComponents()) {
-          AbstractEditorComponent.this.add(component);
+          EditorComponent.this.add(component);
         }
 
         for (RebuildListener listener : myRebuildListeners) {
-          listener.editorRebuilt(AbstractEditorComponent.this);
+          listener.editorRebuilt(EditorComponent.this);
         }
       }
     });
@@ -1512,17 +1512,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return rectangle;
   }
 
-  public void addCellSelectionListener(ICellSelectionListener l) {
+  public void addCellSelectionListener(CellSelectionListener l) {
     assert l != null;
     mySelectionListeners.add(l);
   }
 
-  public void removeCellSelectionListener(ICellSelectionListener l) {
+  public void removeCellSelectionListener(CellSelectionListener l) {
     mySelectionListeners.remove(l);
   }
 
   protected void fireCellSelectionChanged(EditorCell oldSelection, EditorCell newSelection) {
-    for (ICellSelectionListener cellSelectionListener : mySelectionListeners) {
+    for (CellSelectionListener cellSelectionListener : mySelectionListeners) {
       try {
         cellSelectionListener.selectionChanged(this, oldSelection, newSelection);
       } catch (Exception e) {
@@ -1602,15 +1602,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return mySelectedCell;
   }
 
-  public IKeyboardHandler peekKeyboardHandler() {
+  public KeyboardHandler peekKeyboardHandler() {
     return myKbdHandlersStack.peek();
   }
 
-  public IKeyboardHandler popKeyboardHandler() {
+  public KeyboardHandler popKeyboardHandler() {
     return myKbdHandlersStack.pop();
   }
 
-  public void pushKeyboardHandler(IKeyboardHandler kbdHandler) {
+  public void pushKeyboardHandler(KeyboardHandler kbdHandler) {
     myKbdHandlersStack.push(kbdHandler);
   }
 
@@ -1670,7 +1670,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           }
           Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
           if (highlighter != null) {
-            highlighter.resetCheckedState(AbstractEditorComponent.this);
+            highlighter.resetCheckedState(EditorComponent.this);
           }
           TypeChecker.getInstance().checkRoot(sNode.getContainingRoot(), true);
           rebuildEditorContent();
@@ -1719,7 +1719,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     // try to obtain substitute info
-    INodeSubstituteInfo substituteInfo = null;
+    NodeSubstituteInfo substituteInfo = null;
     if (editorCell != null) {
       substituteInfo = editorCell.getSubstituteInfo();
     }
@@ -1727,7 +1727,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern);
   }
 
-  public boolean activateNodeSubstituteChooser(EditorCell editorCell, INodeSubstituteInfo substituteInfo, boolean resetPattern) {
+  public boolean activateNodeSubstituteChooser(EditorCell editorCell, NodeSubstituteInfo substituteInfo, boolean resetPattern) {
     if (substituteInfo == null) {
       return false;
     }
@@ -2257,7 +2257,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public static interface RebuildListener {
-    public void editorRebuilt(AbstractEditorComponent editor);
+    public void editorRebuilt(EditorComponent editor);
   }
 
   public static interface CellSynchronizationWithModelListener {
@@ -2277,7 +2277,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public void actionPerformed(ActionEvent e) {
       for (final BaseAction action : myActions) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
-          DataContext context = DataManager.getInstance().getDataContext(AbstractEditorComponent.this);
+          DataContext context = DataManager.getInstance().getDataContext(EditorComponent.this);
           AnActionEvent event = ActionUtils.createEvent(myPlace, context);
 
           action.update(event);

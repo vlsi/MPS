@@ -4,7 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.UndoUtil;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_CopyLabelText;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_CutLabelText;
@@ -312,7 +312,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public void ensureCaretVisible() {
-    AbstractEditorComponent editor = getEditorContext().getNodeEditorComponent();
+    EditorComponent editor = getEditorContext().getNodeEditorComponent();
     editor.scrollRectToVisible(new Rectangle(getCaretX() - 2 * myTextLine.charWidth(), myY, 4 * myTextLine.charWidth(), myHeight));
   }
 
@@ -396,7 +396,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   private boolean processMutableKeyPressed_impl(KeyEvent keyEvent, boolean allowErrors) {
     String myText = myTextLine.getText();
     int caretPosition = myTextLine.getCaretPosition();
-    AbstractEditorComponent editor = getEditorContext().getNodeEditorComponent();
+    EditorComponent editor = getEditorContext().getNodeEditorComponent();
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
       if (myTextLine.hasNonTrivialSelection()) {
@@ -493,7 +493,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
     String myText = myTextLine.getText();
     int caretPosition = myTextLine.getCaretPosition();
-    AbstractEditorComponent editor = getEditorContext().getNodeEditorComponent();
+    EditorComponent editor = getEditorContext().getNodeEditorComponent();
 
     if ((keyEvent.isControlDown() && keyEvent.getKeyCode() == KeyEvent.VK_LEFT)) {
       if (caretPosition <= 0) {
@@ -601,7 +601,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   public void deleteSelection() {
     String myText = myTextLine.getText();
-    AbstractEditorComponent editor = getEditorContext().getNodeEditorComponent();
+    EditorComponent editor = getEditorContext().getNodeEditorComponent();
     int stSel = myTextLine.getStartTextSelectionPosition();
     int endSel = myTextLine.getEndTextSelectionPosition();
     changeText(myText.substring(0, stSel) + myText.substring(endSel));
@@ -612,7 +612,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   public void changeText(final String text) {
     final String oldText = getText();
-    final AbstractEditorComponent editor = getEditor();
+    final EditorComponent editor = getEditor();
     final CellInfo cellInfo = getCellInfo();
 
     setText(text);
@@ -672,8 +672,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return pattern;
   }
 
-  public INodeSubstituteInfo getSubstituteInfo() {
-    INodeSubstituteInfo substituteInfo = super.getSubstituteInfo();
+  public NodeSubstituteInfo getSubstituteInfo() {
+    NodeSubstituteInfo substituteInfo = super.getSubstituteInfo();
     if (substituteInfo != null) {
       substituteInfo.setOriginalText(getText() == null || getText().equals("") ? getNullText() : getText());
     }

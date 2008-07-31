@@ -4,18 +4,18 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.IEditorMessageOwner;
+import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import java.awt.Color;
 import java.awt.Graphics;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class ToDoMessage extends DefaultEditorMessage {
 
-  public ToDoMessage(SNode node, String message, IEditorMessageOwner owner) {
+  public ToDoMessage(SNode node, String message, EditorMessageOwner owner) {
     super(node, Color.BLUE, message, owner);
   }
 
-  public void paint(Graphics graphics, AbstractEditorComponent component) {
+  public void paint(Graphics graphics, EditorComponent component) {
   }
 
 }

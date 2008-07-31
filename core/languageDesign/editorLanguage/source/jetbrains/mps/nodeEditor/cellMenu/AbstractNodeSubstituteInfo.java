@@ -2,11 +2,9 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 
 import java.util.*;
@@ -15,7 +13,7 @@ import java.util.*;
  * Author: Sergey Dmitriev.
  * Time: Oct 29, 2003 2:17:38 PM
  */
-public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo {
+public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
   private List<INodeSubstituteAction> myCachedActionList;
   private Map<String, List<INodeSubstituteAction>> myPatternsToActionListsCache = new HashMap<String, List<INodeSubstituteAction>>();
   private Map<String, List<INodeSubstituteAction>> myStrictPatternsToActionListsCache = new HashMap<String, List<INodeSubstituteAction>>();

@@ -4,7 +4,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 
 import java.util.*;
@@ -26,7 +25,7 @@ public class LeftEditorHighlighter {
   private static final Logger LOG = Logger.getLogger(LeftEditorHighlighter.class);
   private static final int BRACKETS_WIDTH = 2;
 
-  private AbstractEditorComponent myEditorComponent;
+  private EditorComponent myEditorComponent;
   private int myWidth = 10;
 
   private HashMap<CellInfo, HighlighterBracket> myBrackets = new HashMap<CellInfo, HighlighterBracket>();
@@ -40,12 +39,12 @@ public class LeftEditorHighlighter {
   private Set<FoldingButton> myUnresolvedFoldingButtons = new HashSet<FoldingButton>();
 
 
-  public LeftEditorHighlighter(AbstractEditorComponent abstractEditorComponent) {
-    myEditorComponent = abstractEditorComponent;
-    abstractEditorComponent.addMouseListener(new MyMouseListener());
-    abstractEditorComponent.addMouseMotionListener(new MyMouseEnterListener());
-    abstractEditorComponent.addRebuildListener(new AbstractEditorComponent.RebuildListener() {
-      public void editorRebuilt(AbstractEditorComponent editor) {
+  public LeftEditorHighlighter(EditorComponent editorComponent) {
+    myEditorComponent = editorComponent;
+    editorComponent.addMouseListener(new MyMouseListener());
+    editorComponent.addMouseMotionListener(new MyMouseEnterListener());
+    editorComponent.addRebuildListener(new EditorComponent.RebuildListener() {
+      public void editorRebuilt(EditorComponent editor) {
         doUpdateCellInfos();
       }
     });
@@ -213,14 +212,14 @@ public class LeftEditorHighlighter {
     private Color myColor;
     private int myCurrentWidth = getCurrentBracketsWidth() * 2;
     private CellInfo myEditorCellInfo;
-    private AbstractEditorComponent myEditor;
+    private EditorComponent myEditor;
     private int myDepth;
 
-    public HighlighterBracket(EditorCell cell, Color c, AbstractEditorComponent editorComponent) {
+    public HighlighterBracket(EditorCell cell, Color c, EditorComponent editorComponent) {
       this(cell.getCellInfo(), c, editorComponent);
     }
 
-    public HighlighterBracket(CellInfo cellInfo, Color c, AbstractEditorComponent editorComponent) {
+    public HighlighterBracket(CellInfo cellInfo, Color c, EditorComponent editorComponent) {
       myColor = c;
       myEditor = editorComponent;
       myEditorCellInfo = cellInfo;
@@ -316,7 +315,7 @@ public class LeftEditorHighlighter {
 
   private class FoldingButton {
     private CellInfo myCellInfo;
-    private AbstractEditorComponent myEditor;
+    private EditorComponent myEditor;
     private int myY1;
     private int myY2;
     private int myX;

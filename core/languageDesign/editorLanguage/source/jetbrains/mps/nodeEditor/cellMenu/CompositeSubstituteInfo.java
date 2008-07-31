@@ -15,11 +15,11 @@ import java.util.List;
 public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
   private static final Logger LOG = Logger.getLogger(CompositeSubstituteInfo.class);
 
-  private ICellContext myCellContext;
-  private ISubstituteInfoPart[] myParts;
+  private CellContext myCellContext;
+  private SubstituteInfoPart[] myParts;
 
 
-  public CompositeSubstituteInfo(EditorContext editorContext, ICellContext cellContext, ISubstituteInfoPart[] parts) {
+  public CompositeSubstituteInfo(EditorContext editorContext, CellContext cellContext, SubstituteInfoPart[] parts) {
     super(editorContext);
     myCellContext = cellContext;
     myParts = parts;
@@ -27,7 +27,7 @@ public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   protected List<INodeSubstituteAction> createActions() {
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
-    for (ISubstituteInfoPart menuPart : myParts) {
+    for (SubstituteInfoPart menuPart : myParts) {
       try {
         actions.addAll(menuPart.createActions(myCellContext, getEditorContext()));
       } catch (Throwable e) {

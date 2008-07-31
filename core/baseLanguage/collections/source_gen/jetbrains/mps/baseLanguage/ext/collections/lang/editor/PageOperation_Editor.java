@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -93,7 +93,7 @@ public class PageOperation_Editor extends DefaultNodeEditor {
     setupBasic_Constant_11726677811871172667781187(editorCell, node, context);
     setupLabel_Constant_1172667781187_1172667781187(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new PageOperation_Editor.PageOperation_Editor_replaceWith_SequenceOperation_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new PageOperation_Editor.PageOperation_Editor_replaceWith_SequenceOperation_cellMenu()}));
     return editorCell;
   }
 

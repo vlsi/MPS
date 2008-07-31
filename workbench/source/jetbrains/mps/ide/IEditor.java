@@ -1,9 +1,9 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.ICellSelectionListener;
+import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -22,8 +22,8 @@ public interface IEditor {
   void rebuildEditorContent();
   void relayout();
 
-  void addCellSelectionListener(ICellSelectionListener listener);
-  void removeCellSelectionListener(ICellSelectionListener listener);
+  void addCellSelectionListener(CellSelectionListener listener);
+  void removeCellSelectionListener(CellSelectionListener listener);
 
   void addChangeListener(ChangeListener listener);
   void removeChangeListener(ChangeListener listener);
@@ -44,7 +44,7 @@ public interface IEditor {
   void dispose();
   void repaint();
 
-  AbstractEditorComponent getCurrentEditorComponent();
+  EditorComponent getCurrentEditorComponent();
   boolean removeFromRecentEditorsOnClose();
 
   MPSEditorState saveState(@NotNull FileEditorStateLevel level);

@@ -7,7 +7,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.bootstrap.structureLanguage.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -20,7 +20,7 @@ public class CopyThisDown_Action extends GeneratedAction {
   public static final Icon ICON = null;
 
   private SNode inputNode;
-  public AbstractEditorComponent editor;
+  public EditorComponent editor;
 
   public CopyThisDown_Action() {
     super("Duplicate Node", "", ICON);

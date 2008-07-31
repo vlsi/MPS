@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class EditorContext {
 
-  private AbstractEditorComponent myNodeEditorComponent;
+  private EditorComponent myNodeEditorComponent;
   private SModelDescriptor myModelDescriptor;
   private IOperationContext myOperationContext;
   private EditorCell myContextCell;
@@ -25,13 +25,13 @@ public class EditorContext {
 
   private ReferencedNodeContext myCurrentRefNodeContext;
 
-  public EditorContext(AbstractEditorComponent editorComponent, SModel model, IOperationContext operationContext) {
+  public EditorContext(EditorComponent editorComponent, SModel model, IOperationContext operationContext) {
     myNodeEditorComponent = editorComponent;
     myModelDescriptor = model == null ? null : model.getModelDescriptor();
     myOperationContext = operationContext;
   }
 
-  public AbstractEditorComponent getNodeEditorComponent() {
+  public EditorComponent getNodeEditorComponent() {
     return myNodeEditorComponent;
   }
 

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.helgins.checking.EditorCheckerAdapter;
 import java.util.Set;
-import jetbrains.mps.nodeEditor.IEditorMessage;
+import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.LinkedHashSet;
@@ -18,8 +18,8 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
   public ToDoHighlighter() {
   }
 
-  public Set<IEditorMessage> createMessages(SNode rootNode, IOperationContext operationContext) {
-    Set<IEditorMessage> messages = new LinkedHashSet<IEditorMessage>();
+  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext) {
+    Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
     SNode node = rootNode;
     for(SNode remark : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.RemarkStatement", false)) {
       if (RemarkStatement_Behavior.call_isTodo_1213877427548(remark)) {

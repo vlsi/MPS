@@ -32,9 +32,9 @@ public class IntentionsSupport {
   private LightBulbMenu myLightBulb;
   private Thread myShowIntentionsThread = new Thread();
 
-  private AbstractEditorComponent myEditor;
+  private EditorComponent myEditor;
 
-  public IntentionsSupport(AbstractEditorComponent editor) {
+  public IntentionsSupport(EditorComponent editor) {
     myEditor = editor;
 
     myLightBulb = new LightBulbMenu() {
@@ -64,8 +64,8 @@ public class IntentionsSupport {
     myEditor.registerKeyboardAction(myShowIntentionsAction, KeyStroke.getKeyStroke("alt ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
 
-    myEditor.addCellSelectionListener(new ICellSelectionListener() {
-      public void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
+    myEditor.addCellSelectionListener(new CellSelectionListener() {
+      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
         myShowIntentionsThread.interrupt();
 
         hideLightBulb();

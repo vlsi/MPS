@@ -13,7 +13,7 @@ public class NodeEditorActions {
     }
 
     public void execute(EditorContext context) {
-      AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+      EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
       EditorCell selection = nodeEditorComponent.getDeepestSelectedCell();
       nodeEditorComponent.clearSelectionStack();
       EditorCell target = findTarget(selection);
@@ -234,7 +234,7 @@ public class NodeEditorActions {
 
 
   private static void navigatePage(EditorContext context, boolean isDown) {
-    AbstractEditorComponent editor = context.getNodeEditorComponent();
+    EditorComponent editor = context.getNodeEditorComponent();
     EditorCell selection = editor.getSelectedCell();
     Rectangle rect = editor.getVisibleRect();
     int height = (int) rect.getHeight();

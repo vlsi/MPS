@@ -15,8 +15,8 @@ import jetbrains.mps.bootstrap.helgins.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
-import jetbrains.mps.nodeEditor.IEditorMessageOwner;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 
 import java.util.*;
@@ -34,7 +34,7 @@ import javax.swing.SwingUtilities;
  * Time: 13:50:13
  * To change this template use File | Settings | File Templates.
  */
-public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
+public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
   private static final char A_CHAR = 'a';
   private static final char Z_CHAR = 'z';
@@ -172,7 +172,7 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
   }
 
   @Nullable
-  private AbstractEditorComponent getEditorComponent() {
+  private EditorComponent getEditorComponent() {
 // todo on IDEA platform this code always returns null. Move it somewhere  
 //    MPSProject project = myTypeChecker.getProject();
 //    if (project == null) return null;
@@ -180,7 +180,7 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
 //    if (editorsPane == null) return null;
 //    IEditor iEditor = editorsPane.getEditorFor(myRootNode);
 //    if (iEditor == null) return null;
-//    AbstractEditorComponent component = iEditor.getCurrentEditorComponent();
+//    EditorComponent component = iEditor.getCurrentEditorComponent();
 //    return component;
     return null;
   }
@@ -197,7 +197,7 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
         clear();
       } else {
         myNotSkippedNodes.clear();
-        AbstractEditorComponent component = getEditorComponent();
+        EditorComponent component = getEditorComponent();
         if (component != null) {
           component.getHighlightManager().clearForOwner(this);
         }
@@ -246,7 +246,7 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
       if (HelginsPreferencesComponent.getInstance().isUsesDebugHighlighting()) {
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
-            AbstractEditorComponent component = (AbstractEditorComponent) getEditorComponent();
+            EditorComponent component = (EditorComponent) getEditorComponent();
             if (component == null) return;
             component.getHighlightManager().clearForOwner(component.getHighlightMessagesOwner()); //todo change an owner
             for (SNodePointer notSkippedNode : notSkippedNodes) {
@@ -264,7 +264,7 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
     }
   }
 
-  private void markNode(AbstractEditorComponent component, SNodePointer notSkippedNode) {
+  private void markNode(EditorComponent component, SNodePointer notSkippedNode) {
     component.getHighlightManager().mark(notSkippedNode.getNode(), new Color(255, 127, 0, 50), "", component.getHighlightMessagesOwner()); //todo change an owner
   }
 

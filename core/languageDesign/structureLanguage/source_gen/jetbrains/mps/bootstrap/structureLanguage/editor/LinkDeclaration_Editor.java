@@ -26,7 +26,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -272,7 +272,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       setupLabel_property_role_1084189569972((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new LinkDeclaration_Editor.LinkDeclaration_role_postfixCellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new LinkDeclaration_Editor.LinkDeclaration_role_postfixCellMenu()}));
     return editorCell;
   }
 
@@ -302,7 +302,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       setupLabel_property_sourceCardinality_1084205682782((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new LinkDeclaration_Editor.LinkDeclaration_sourceCardinality_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new LinkDeclaration_Editor.LinkDeclaration_sourceCardinality_cellMenu()}));
     return editorCell;
   }
 

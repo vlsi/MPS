@@ -1,7 +1,6 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 
 import javax.swing.Icon;

@@ -16,7 +16,7 @@ import java.awt.Graphics;
 * To change this template use File | Settings | File Templates.
 */
 public class HighlighterMessage extends DefaultEditorMessage {
-  public HighlighterMessage(SNode errorNode, MessageStatus status, Color color, String string, IEditorMessageOwner owner) {
+  public HighlighterMessage(SNode errorNode, MessageStatus status, Color color, String string, EditorMessageOwner owner) {
     super(errorNode, status, color, string, owner);
   }
 
@@ -28,7 +28,7 @@ public class HighlighterMessage extends DefaultEditorMessage {
     return getStatus() == MessageStatus.WARNING;
   }
 
-  public void paint(Graphics g, AbstractEditorComponent editorComponent) {
+  public void paint(Graphics g, EditorComponent editorComponent) {
     EditorCell cell = getCell(editorComponent);
     paintDecorations(g, cell);
   }

@@ -11,8 +11,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
-import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -126,7 +126,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   protected abstract EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node);
 
-  public INodeSubstituteInfo createDefaultSubstituteInfo() {
+  public NodeSubstituteInfo createDefaultSubstituteInfo() {
     if (myIsAggregation) return new DefaultChildSubstituteInfo(getSNode(), myLinkDeclaration, myEditorContext);
     return new DefaultReferenceSubstituteInfo(getSNode(), myLinkDeclaration, myEditorContext);
   }
@@ -136,7 +136,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     return myLinkDeclaration;
   }
 
-  public ICellContext getCellContext() {
+  public CellContext getCellContext() {
     if (myIsAggregation) {
       SNode parentNode = getSNode();
       SNode currentChild = parentNode.getChild(myGenuineLinkDeclaration.getRole());

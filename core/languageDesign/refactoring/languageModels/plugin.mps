@@ -281,8 +281,8 @@
               <link role="baseMethodDeclaration" targetNodeId="12.~ActionUtils.getGroup(java.lang.String):jetbrains.mps.workbench.action.BaseGroup" resolveInfo="getGroup" />
               <link role="classConcept" targetNodeId="12.~ActionUtils" resolveInfo="ActionUtils" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215282844808">
-                <link role="classifier" targetNodeId="13.~AbstractEditorComponent" resolveInfo="AbstractEditorComponent" />
-                <link role="variableDeclaration" targetNodeId="13.~AbstractEditorComponent.EDITOR_POPUP_MENU_ACTIONS" resolveInfo="EDITOR_POPUP_MENU_ACTIONS" />
+                <link role="classifier" targetNodeId="13.~EditorComponent" resolveInfo="EditorComponent" />
+                <link role="variableDeclaration" targetNodeId="13.~EditorComponent.EDITOR_POPUP_MENU_ACTIONS" resolveInfo="EDITOR_POPUP_MENU_ACTIONS" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215282833207">
@@ -522,8 +522,8 @@
               <link role="baseMethodDeclaration" targetNodeId="12.~ActionUtils.getGroup(java.lang.String):jetbrains.mps.workbench.action.BaseGroup" resolveInfo="getGroup" />
               <link role="classConcept" targetNodeId="12.~ActionUtils" resolveInfo="ActionUtils" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1216898852013">
-                <link role="classifier" targetNodeId="13.~AbstractEditorComponent" resolveInfo="AbstractEditorComponent" />
-                <link role="variableDeclaration" targetNodeId="13.~AbstractEditorComponent.EDITOR_POPUP_MENU_ACTIONS" resolveInfo="EDITOR_POPUP_MENU_ACTIONS" />
+                <link role="classifier" targetNodeId="13.~EditorComponent" resolveInfo="EditorComponent" />
+                <link role="variableDeclaration" targetNodeId="13.~EditorComponent.EDITOR_POPUP_MENU_ACTIONS" resolveInfo="EDITOR_POPUP_MENU_ACTIONS" />
               </node>
             </node>
           </node>

@@ -4,7 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -17,7 +17,7 @@ public class EditorCell_Component extends EditorCell_Basic {
 
   public EditorCell_Component(EditorContext editorContext, SNode node, JComponent component) {
     super(editorContext, node);
-    final AbstractEditorComponent nodeEditorComponent = editorContext.getNodeEditorComponent();
+    final EditorComponent nodeEditorComponent = editorContext.getNodeEditorComponent();
     myComponent = component;
     myJComponents.add(component);
 

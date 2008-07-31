@@ -20,7 +20,7 @@ import java.awt.event.KeyEvent;
  * Time: 14:29:05
  * To change this template use File | Settings | File Templates.
  */
-public abstract class AbstractCellListHandler implements IKeyboardHandler {
+public abstract class AbstractCellListHandler implements KeyboardHandler {
   public static final Object ELEMENT_CELL_ACTIONS_SET = new Object();
 
   protected SNode myOwnerNode;
@@ -55,7 +55,7 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
     SNode anchorNode = getAnchorNode(anchorCell);
     myInsertedNode = createNodeToInsert(editorContext);
     doInsertNode(anchorNode, insertBefore);
-    AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
+    EditorComponent editor = editorContext.getNodeEditorComponent();
     editor.pushKeyboardHandler(this);
   }
 
@@ -146,7 +146,7 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
   }
 
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
-    AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
+    EditorComponent editor = editorContext.getNodeEditorComponent();
     CellActionType actionType = editor.getActionType(keyEvent, editorContext);
     if (actionType == CellActionType.INSERT || actionType == CellActionType.INSERT_BEFORE) {
       cancelInsertMode(editorContext);
@@ -159,7 +159,7 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
   }
 
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
-    AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
+    EditorComponent editor = editorContext.getNodeEditorComponent();
     CellActionType actionType = editor.getActionType(keyEvent, editorContext);
     if (!(actionType == CellActionType.INSERT || actionType == CellActionType.INSERT_BEFORE) ||
             keyEvent.getModifiers() == 0) { // disable this feature if 'insert' keystroke doesn't contain modifiers

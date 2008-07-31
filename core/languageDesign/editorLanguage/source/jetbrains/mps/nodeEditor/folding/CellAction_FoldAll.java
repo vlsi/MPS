@@ -20,7 +20,7 @@ public class CellAction_FoldAll extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    AbstractEditorComponent component = context.getNodeEditorComponent();
+    EditorComponent component = context.getNodeEditorComponent();
     CollectionUtil.map(
     CollectionUtil.filter(((EditorCell_Collection) component.getRootCell()).dfsCells(), new Condition<EditorCell>() {
       public boolean met(EditorCell object) {

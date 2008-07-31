@@ -1,7 +1,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.nodeEditor.cells.TextLine;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.KeyboardUtil;
 
 import javax.swing.JWindow;
@@ -125,7 +125,7 @@ public class NodeSubstitutePatternEditor {
       g.setColor(Color.GRAY);
       g.drawRect(bounds.x, bounds.y, bounds.width - 1, bounds.height - 1);
 
-      AbstractEditorComponent.turnOnAliasingIfPossible((Graphics2D) g);
+      EditorComponent.turnOnAliasingIfPossible((Graphics2D) g);
 
       TextLine textLine = myTextLine;
       textLine.paint(g, 0, 0, false, true);

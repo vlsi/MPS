@@ -607,7 +607,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
       editorCell = this.create_ConstantCell234_013(context, node, "");
     }
     setupBasic_AlternationCell234_01(editorCell, node, context);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new GenericFeature_Editor.GenericFeature_generic_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new GenericFeature_Editor.GenericFeature_generic_cellMenu()}));
     return editorCell;
   }
 
@@ -948,7 +948,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     setupBasic_ConstantCell234_014(editorCell, node, context);
     setupLabel_ConstantCell234_014(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new GenericFeature_Editor.GenericFeature_component_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new GenericFeature_Editor.GenericFeature_component_cellMenu()}));
     return editorCell;
   }
 
@@ -957,7 +957,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     setupBasic_ConstantCell234_015(editorCell, node, context);
     setupLabel_ConstantCell234_015(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new GenericFeature_Editor.GenericFeature_component_cellMenu1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new GenericFeature_Editor.GenericFeature_component_cellMenu1()}));
     return editorCell;
   }
 
@@ -966,7 +966,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     setupBasic_ConstantCell234_016(editorCell, node, context);
     setupLabel_ConstantCell234_016(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new GenericFeature_Editor.GenericFeature_component_cellMenu2()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new GenericFeature_Editor.GenericFeature_component_cellMenu2()}));
     return editorCell;
   }
 
@@ -1292,7 +1292,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class GenericFeature_component_cellMenu implements ISubstituteInfoPart {
+  public static class GenericFeature_component_cellMenu implements SubstituteInfoPart {
 
     private menu_FeatureSetOpposite myComponent;
 
@@ -1300,12 +1300,12 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
 
 }
-  public static class GenericFeature_component_cellMenu1 implements ISubstituteInfoPart {
+  public static class GenericFeature_component_cellMenu1 implements SubstituteInfoPart {
 
     private menu_FeatureSetOpposite myComponent;
 
@@ -1313,12 +1313,12 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
 
 }
-  public static class GenericFeature_component_cellMenu2 implements ISubstituteInfoPart {
+  public static class GenericFeature_component_cellMenu2 implements SubstituteInfoPart {
 
     private menu_FeatureSetOpposite myComponent;
 
@@ -1326,7 +1326,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
 

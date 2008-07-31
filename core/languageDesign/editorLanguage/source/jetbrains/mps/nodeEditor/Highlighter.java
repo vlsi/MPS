@@ -1,8 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.*;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
@@ -25,7 +23,7 @@ import com.intellij.openapi.command.CommandProcessor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class Highlighter implements IEditorMessageOwner, ProjectComponent {
+public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Logger LOG = Logger.getLogger(Highlighter.class);
   public static final int CHECK_DELAY = 1000;
   private static final Object EVENTS_LOCK = new Object();
@@ -38,7 +36,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
   private HashSet<IEditorChecker> myCheckers = new LinkedHashSet<IEditorChecker>(3);
   private Set<IEditorChecker> myCheckersToRemove = new LinkedHashSet<IEditorChecker>();
   private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
-  private Set<AbstractEditorComponent> myCheckedOnceEditors = new WeakSet<AbstractEditorComponent>();
+  private Set<EditorComponent> myCheckedOnceEditors = new WeakSet<EditorComponent>();
   private EditorsProvider myEditorsProvider;
 
   private ReloadListener myReloadListener = new ReloadAdapter() {
@@ -177,7 +175,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
     List<IEditor> allEditors = getAllEditors();
 
     for (IEditor editor : allEditors) {
-      AbstractEditorComponent component = editor.getCurrentEditorComponent();
+      EditorComponent component = editor.getCurrentEditorComponent();
       if (component != null) {
         if (updateEditorComponent(component, events, checkers, checkersToRemove)) {
           isUpdated = true;
@@ -189,7 +187,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
       IEditor currentEditor = getCurrentEditor();
       if (currentEditor != null) {
         currentEditor.repaint();
-        AbstractEditorComponent component = currentEditor.getCurrentEditorComponent();
+        EditorComponent component = currentEditor.getCurrentEditorComponent();
         if (component != null) {
           component.getMessagesGutter().repaint();
         }
@@ -205,7 +203,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
     return myEditorsProvider.getCurrentEditor();
   }
 
-  private boolean updateEditorComponent(AbstractEditorComponent component, final List<SModelEvent> events, final Set<IEditorChecker> checkers, Set<IEditorChecker> checkersToRemove) {
+  private boolean updateEditorComponent(EditorComponent component, final List<SModelEvent> events, final Set<IEditorChecker> checkers, Set<IEditorChecker> checkersToRemove) {
     final SNode editedNode = component.getEditedNode();
     if (editedNode != null) {
 
@@ -236,15 +234,15 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
     return false;
   }
 
-  private boolean wasCheckedOnce(AbstractEditorComponent editorComponent) {
+  private boolean wasCheckedOnce(EditorComponent editorComponent) {
     return myCheckedOnceEditors.contains(editorComponent);
   }
 
-  public void resetCheckedState(AbstractEditorComponent editorComponent) {
+  public void resetCheckedState(EditorComponent editorComponent) {
     myCheckedOnceEditors.remove(editorComponent);
   }
 
-  private boolean updateEditor(final AbstractEditorComponent editor, Set<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
+  private boolean updateEditor(final EditorComponent editor, Set<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
     if (editor == null || editor.getRootCell() == null) {
       return false;
     }
@@ -257,8 +255,8 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
     NodeHighlightManager highlightManager = editor.getHighlightManager();
     NodeHighlightManager inspectorHighlightManager = inspectorEditorComponent == null ? null : inspectorEditorComponent.getHighlightManager();
     for (final IEditorChecker checker : checkersToRecheck) {
-      final LinkedHashSet<IEditorMessage> messages = new LinkedHashSet<IEditorMessage>();
-      final IEditorMessageOwner[] owners = new IEditorMessageOwner[1];
+      final LinkedHashSet<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
+      final EditorMessageOwner[] owners = new EditorMessageOwner[1];
       Runnable runnable = new Runnable() {
         public void run() {
           SNode node = editor.getEditedNode();
@@ -269,14 +267,14 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
       };
       ModelAccess.instance().runReadAction(runnable);
 
-      IEditorMessageOwner owner = owners[0];
+      EditorMessageOwner owner = owners[0];
       if (owner != null) {
         highlightManager.clearForOwner(owner);
         if (inspectorHighlightManager != null) {
           inspectorHighlightManager.clearForOwner(owner);
         }
       }
-      for (IEditorMessage message : messages) {
+      for (EditorMessage message : messages) {
         highlightManager.mark(message);
         if (inspectorHighlightManager != null) {
           inspectorHighlightManager.mark(message);
@@ -284,7 +282,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
       }
     }
     for (final IEditorChecker checker : checkersToRemove) {
-      final IEditorMessageOwner[] owners = new IEditorMessageOwner[1];
+      final EditorMessageOwner[] owners = new EditorMessageOwner[1];
       Runnable runnable = new Runnable() {
         public void run() {
           SNode node = editor.getEditedNode();

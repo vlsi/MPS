@@ -299,7 +299,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     private JCheckBox myLegacyTypesystemCheckBox = createLegacyTypesystemCheckBox();
     private JCheckBox myUseBraces = createUseBracesCheckBox();
     private JSlider myBlinkingRateSlider = createBlinkingRateSlider();
-    private final AbstractEditorComponent myBlinkingDemo = createBlinkingDemo();
+    private final EditorComponent myBlinkingDemo = createBlinkingDemo();
     Timer myTimer;
 
     public MyPreferencesPage() {
@@ -419,8 +419,8 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
       return new JSlider(intMin, intMax, intValue);
     }
 
-    private AbstractEditorComponent createBlinkingDemo() {
-      return new AbstractEditorComponent(null) {
+    private EditorComponent createBlinkingDemo() {
+      return new EditorComponent(null) {
         {
           setEditorContext(new EditorContext(this, null, null));
           CaretBlinker.getInstance().unregisterEditor(this);

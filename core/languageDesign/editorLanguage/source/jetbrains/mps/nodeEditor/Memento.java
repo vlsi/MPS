@@ -17,7 +17,7 @@ class Memento {
   private Integer myCaretX;
 
   Memento(EditorContext context, boolean full) {
-    AbstractEditorComponent nodeEditor = context.getNodeEditorComponent();
+    EditorComponent nodeEditor = context.getNodeEditorComponent();
     EditorCell selectedCell = nodeEditor.getSelectedCell();
     EditorCell deepestSelectedCell = nodeEditor.getDeepestSelectedCell();
     if (selectedCell != null) {
@@ -57,7 +57,7 @@ class Memento {
 
   }
 
-  void restore(AbstractEditorComponent editor) {
+  void restore(EditorComponent editor) {
     editor.flushEvents();
 
     if (mySelectedCellInfo != null) {
@@ -85,7 +85,7 @@ class Memento {
     }
   }
 
-  private void restoreErrors(AbstractEditorComponent editor) {
+  private void restoreErrors(EditorComponent editor) {
     for (Entry<CellInfo, String> entry : myErrorTexts.entrySet()) {
       EditorCell_Label cell = (EditorCell_Label) entry.getKey().findCell(editor);
       if (cell != null) {

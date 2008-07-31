@@ -6358,7 +6358,7 @@
                     <link role="variableDeclaration" targetNodeId="1213877471382" resolveInfo="editorContext" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213877471291">
-                    <link role="baseMethodDeclaration" targetNodeId="15.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.AbstractEditorComponent" resolveInfo="getNodeEditorComponent" />
+                    <link role="baseMethodDeclaration" targetNodeId="15.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getNodeEditorComponent" />
                   </node>
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877471292">
@@ -6387,7 +6387,7 @@
                         <link role="variableDeclaration" targetNodeId="1213877471382" resolveInfo="editorContext" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213877471304">
-                        <link role="baseMethodDeclaration" targetNodeId="15.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.AbstractEditorComponent" resolveInfo="getNodeEditorComponent" />
+                        <link role="baseMethodDeclaration" targetNodeId="15.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getNodeEditorComponent" />
                       </node>
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877471305">

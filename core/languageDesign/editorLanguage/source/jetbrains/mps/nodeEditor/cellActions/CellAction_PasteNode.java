@@ -47,7 +47,7 @@ public class CellAction_PasteNode extends EditorCellAction {
 
   public void execute(final EditorContext context) {
     LOG.assertInCommand();
-    AbstractEditorComponent editorComponent = context.getNodeEditorComponent();
+    EditorComponent editorComponent = context.getNodeEditorComponent();
     EditorCell selectedCell = getCellToPasteTo(editorComponent.getSelectedCell());
     SNode selectedNode = selectedCell.getSNode();
 

@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -103,7 +103,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
     setupBasic_Constant_11765439985521176543998552(editorCell, node, context);
     setupLabel_Constant_1176543998552_1176543998552(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new IsSubtypeExpression_Editor.IsSubtypeExpression_Editor_replaceWith_IsSubtypeExpression_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new IsSubtypeExpression_Editor.IsSubtypeExpression_Editor_replaceWith_IsSubtypeExpression_cellMenu()}));
     return editorCell;
   }
 

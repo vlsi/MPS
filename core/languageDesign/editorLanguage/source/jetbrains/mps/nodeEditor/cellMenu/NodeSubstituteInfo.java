@@ -5,7 +5,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 
 import java.util.List;
 
-public interface INodeSubstituteInfo {
+public interface NodeSubstituteInfo {
   List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching);
 
   void invalidateActions();

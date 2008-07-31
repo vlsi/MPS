@@ -3,7 +3,7 @@ package jetbrains.mps.nodeEditor.cellProviders;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.smodel.SNode;
 
 /**
@@ -53,7 +53,7 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   public abstract Class getRoleAttributeClass();
 
 
-  public abstract INodeSubstituteInfo createDefaultSubstituteInfo();
+  public abstract NodeSubstituteInfo createDefaultSubstituteInfo();
 
   //sets a text to show in a cell if no target can be obtained by role
   public void setNoTargetText(String text) {

@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -213,7 +213,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
       setupLabel_property_modifiers_1136923542663((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_modifiers_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_modifiers_cellMenu()}));
     return editorCell;
   }
 
@@ -243,7 +243,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
       setupLabel_property_keycode_1136923542665((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_keycode_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_keycode_cellMenu()}));
     return editorCell;
   }
 

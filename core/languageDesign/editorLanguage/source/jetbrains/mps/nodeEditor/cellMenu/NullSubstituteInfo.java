@@ -2,7 +2,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
  * Time: 17:07:51
  * To change this template use File | Settings | File Templates.
  */
-public class NullSubstituteInfo implements INodeSubstituteInfo {
+public class NullSubstituteInfo implements NodeSubstituteInfo {
   public List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
     return new ArrayList<INodeSubstituteAction>();
   }

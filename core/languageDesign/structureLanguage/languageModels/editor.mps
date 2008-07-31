@@ -956,7 +956,7 @@
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216387268560">
                           <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1216387268561" />
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216387268562">
-                            <link role="baseMethodDeclaration" targetNodeId="33.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.AbstractEditorComponent" resolveInfo="getNodeEditorComponent" />
+                            <link role="baseMethodDeclaration" targetNodeId="33.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getNodeEditorComponent" />
                           </node>
                         </node>
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216387268563">
@@ -2145,7 +2145,7 @@
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216387630017">
                           <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1216387630018" />
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216387630019">
-                            <link role="baseMethodDeclaration" targetNodeId="33.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.AbstractEditorComponent" resolveInfo="getNodeEditorComponent" />
+                            <link role="baseMethodDeclaration" targetNodeId="33.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getNodeEditorComponent" />
                           </node>
                         </node>
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216387630020">

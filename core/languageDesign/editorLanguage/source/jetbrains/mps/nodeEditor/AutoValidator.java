@@ -9,15 +9,15 @@ import jetbrains.mps.nodeEditor.cells.CellInfo;
 import javax.swing.SwingUtilities;
 
 class AutoValidator {
-  private AbstractEditorComponent myEditorComponent;
+  private EditorComponent myEditorComponent;
 
-  AutoValidator(AbstractEditorComponent editorComponent) {
+  AutoValidator(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
     myEditorComponent.addCellSelectionListener(new MyCellSelectionListener());
   }
 
-  private class MyCellSelectionListener implements ICellSelectionListener {
-    public void selectionChanged(final AbstractEditorComponent editor, final EditorCell oldSelection, EditorCell newSelection) {
+  private class MyCellSelectionListener implements CellSelectionListener {
+    public void selectionChanged(final EditorComponent editor, final EditorCell oldSelection, EditorCell newSelection) {
       if (editor.isCellSwapInProgress()) return;
       if (oldSelection != null && (!!oldSelection.isErrorState() || oldSelection instanceof EditorCell_STHint)) {
         final SNode node = oldSelection.getSNode();

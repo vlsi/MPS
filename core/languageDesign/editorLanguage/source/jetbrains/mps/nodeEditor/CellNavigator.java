@@ -7,11 +7,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import java.util.Iterator;
 
 abstract class CellNavigator {
-  private AbstractEditorComponent myEditor;
+  private EditorComponent myEditor;
   private EditorCell mySelectedCell;
 
 
-  protected CellNavigator(AbstractEditorComponent editor) {
+  protected CellNavigator(EditorComponent editor) {
     myEditor = editor;
     mySelectedCell = editor.getSelectedCell();
   }

@@ -5,8 +5,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.core.structure.BaseConcept;
 
@@ -49,7 +49,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
   }
 
 
-  public INodeSubstituteInfo createDefaultSubstituteInfo() {
+  public NodeSubstituteInfo createDefaultSubstituteInfo() {
     return null;
   }
 
@@ -62,7 +62,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
   }
 
 
-  public ICellContext getCellContext() {
+  public CellContext getCellContext() {
     return new ConceptPropertyCellContext(getSNode(), myConceptPropertyDeclaration);
   }
 

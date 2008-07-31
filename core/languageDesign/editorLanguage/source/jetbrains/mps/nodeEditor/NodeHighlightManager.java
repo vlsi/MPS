@@ -11,13 +11,13 @@ import java.util.*;
 /**
  * @author Kostik
  */
-public class NodeHighlightManager implements IEditorMessageOwner {
-  private AbstractEditorComponent myEditor;
-  private Map<IEditorMessageOwner, Set<IEditorMessage>> myMessages = new HashMap<IEditorMessageOwner, Set<IEditorMessage>>();
+public class NodeHighlightManager implements EditorMessageOwner {
+  private EditorComponent myEditor;
+  private Map<EditorMessageOwner, Set<EditorMessage>> myMessages = new HashMap<EditorMessageOwner, Set<EditorMessage>>();
   private final Object myMessagesLock = new Object();
   public ReloadAdapter myHandler;
 
-  public NodeHighlightManager(AbstractEditorComponent edtitor) {
+  public NodeHighlightManager(EditorComponent edtitor) {
     myEditor = edtitor;
     myHandler = new ReloadAdapter() {
       public void onReload() {
@@ -29,7 +29,7 @@ public class NodeHighlightManager implements IEditorMessageOwner {
 
   public void clear() {
     synchronized (myMessagesLock) {
-      for (IEditorMessageOwner owner : myMessages.keySet()) {
+      for (EditorMessageOwner owner : myMessages.keySet()) {
         myEditor.getMessagesGutter().removeMessages(owner);
       }
       myMessages.clear();
@@ -37,7 +37,7 @@ public class NodeHighlightManager implements IEditorMessageOwner {
     myEditor.getExternalComponent().repaint();
   }
 
-  public boolean clearForOwner(IEditorMessageOwner owner) {
+  public boolean clearForOwner(EditorMessageOwner owner) {
     boolean result = myEditor.getMessagesGutter().removeMessages(owner);
     synchronized (myMessagesLock) {
       myMessages.remove(owner);
@@ -46,33 +46,33 @@ public class NodeHighlightManager implements IEditorMessageOwner {
     return result;
   }
 
-  private Iterable<IEditorMessage> myMessages() {
-    Set<IEditorMessage> messages = new HashSet<IEditorMessage>();
+  private Iterable<EditorMessage> myMessages() {
+    Set<EditorMessage> messages = new HashSet<EditorMessage>();
     synchronized (myMessagesLock) {
-      for (Set<IEditorMessage> messageForOwner : myMessages.values()) {
+      for (Set<EditorMessage> messageForOwner : myMessages.values()) {
         messages.addAll(messageForOwner);
       }
     }
     return messages;
   }
 
-  public void mark(SNode node, Color color, String messageText, IEditorMessageOwner owner) {
+  public void mark(SNode node, Color color, String messageText, EditorMessageOwner owner) {
     if (node == null) return;
-    IEditorMessage message = new DefaultEditorMessage(node, color, messageText, owner);
+    EditorMessage message = new DefaultEditorMessage(node, color, messageText, owner);
     mark(message);
   }
 
-  public void mark(IEditorMessage message) {
-    IEditorMessageOwner owner = message.getOwner();
+  public void mark(EditorMessage message) {
+    EditorMessageOwner owner = message.getOwner();
     SNode node = message.getNode();
-    for (IEditorMessage msg : myMessages()) {
+    for (EditorMessage msg : myMessages()) {
       if (msg.getNode() == node && msg.getOwner() == owner) return;
     }
 
     synchronized (myMessagesLock) {
-      Set<IEditorMessage> messages = myMessages.get(owner);
+      Set<EditorMessage> messages = myMessages.get(owner);
       if (messages == null) {
-        messages = new HashSet<IEditorMessage>();
+        messages = new HashSet<EditorMessage>();
         myMessages.put(owner, messages);
       }
       messages.add(message);
@@ -81,10 +81,10 @@ public class NodeHighlightManager implements IEditorMessageOwner {
     myEditor.updateMessages();
   }
 
-  public Set<IEditorMessage> getMessages() {
-    Set<IEditorMessage> result = new HashSet<IEditorMessage>();
+  public Set<EditorMessage> getMessages() {
+    Set<EditorMessage> result = new HashSet<EditorMessage>();
     synchronized (myMessagesLock) {
-      for (IEditorMessageOwner owner : myMessages.keySet()) {
+      for (EditorMessageOwner owner : myMessages.keySet()) {
         result.addAll(myMessages.get(owner));
       }
     }
@@ -92,50 +92,50 @@ public class NodeHighlightManager implements IEditorMessageOwner {
   }
 
 
-  public void markOverlaplessly(SNode nodeToHighlight, Color color, String messageText, IEditorMessageOwner owner) {
+  public void markOverlaplessly(SNode nodeToHighlight, Color color, String messageText, EditorMessageOwner owner) {
     if (nodeToHighlight == null) return;
     SNode node = nodeToHighlight;
     while (node != null) {
       if (color.equals(this.getColorFor(node))) return;
       node = node.getParent();
     }
-    Set<IEditorMessage> messagesToRemove = new HashSet<IEditorMessage>();
+    Set<EditorMessage> messagesToRemove = new HashSet<EditorMessage>();
     for (SNode childNode : nodeToHighlight.getDescendants()) {
-      for (IEditorMessage msg : myMessages()) {
+      for (EditorMessage msg : myMessages()) {
         if (msg.getNode() == childNode && msg.getColor().equals(color)) messagesToRemove.add(msg);
       }
     }
-    for (IEditorMessage msg : messagesToRemove) {
+    for (EditorMessage msg : messagesToRemove) {
       synchronized (myMessagesLock) {
-        Set<IEditorMessage> msgs = this.myMessages.get(msg.getOwner());
+        Set<EditorMessage> msgs = this.myMessages.get(msg.getOwner());
         if (msgs != null) {
           msgs.remove(msg);
         }
       }
     }
-    for (IEditorMessage msg : messagesToRemove) {
+    for (EditorMessage msg : messagesToRemove) {
       myEditor.getMessagesGutter().remove(msg);
     }
     this.mark(nodeToHighlight, color, messageText, owner);
   }
 
   public Color getColorFor(SNode node) {
-    for (IEditorMessage msg : myMessages()) {
+    for (EditorMessage msg : myMessages()) {
       if (msg.getNode() == node) return msg.getColor();
     }
     return null;
   }
 
-  public IEditorMessage getMessageFor(SNode node) {
-    for (IEditorMessage msg : myMessages()) {
+  public EditorMessage getMessageFor(SNode node) {
+    for (EditorMessage msg : myMessages()) {
       if (msg.getNode() == node) return msg;
     }
     return null;
   }
 
-  public List<IEditorMessage> getMessagesFor(SNode node) {
-    List<IEditorMessage> result = new ArrayList<IEditorMessage>();
-    for (IEditorMessage msg : myMessages()) {
+  public List<EditorMessage> getMessagesFor(SNode node) {
+    List<EditorMessage> result = new ArrayList<EditorMessage>();
+    for (EditorMessage msg : myMessages()) {
       if (msg.getNode() == node) {
         result.add(msg);
       }

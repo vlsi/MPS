@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 
 import java.util.List;
 
-public class InspectorEditorComponent extends AbstractEditorComponent {
+public class InspectorEditorComponent extends EditorComponent {
   private NodeEditorComponent myContainer;
 
   public InspectorEditorComponent() {
@@ -67,7 +67,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     });
   }
 
-  public AbstractEditorComponent getEditorComponent() {
+  public EditorComponent getEditorComponent() {
     return this;
   }
 

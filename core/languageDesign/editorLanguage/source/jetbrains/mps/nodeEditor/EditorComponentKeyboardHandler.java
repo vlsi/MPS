@@ -16,7 +16,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import java.awt.event.KeyEvent;
 import java.util.List;
 
-public class EditorComponentKeyboardHandler implements IKeyboardHandler {
+public class EditorComponentKeyboardHandler implements KeyboardHandler {
   private static final Logger LOG = Logger.getLogger(EditorComponentKeyboardHandler.class);
 
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
@@ -24,12 +24,12 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
   }
 
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
-    AbstractEditorComponent nodeEditor = editorContext.getNodeEditorComponent();
+    EditorComponent nodeEditor = editorContext.getNodeEditorComponent();
     nodeEditor.hideMessageToolTip();
 
     if (keyEvent.isConsumed()) return false;
 
-    AbstractEditorComponent editor = nodeEditor;
+    EditorComponent editor = nodeEditor;
     SNodePointer pointer = editor.getRootCell().getSNodePointer();
     boolean notEditable = pointer != null &&  pointer.getModel() != null && pointer.getModel().isNotEditable();
     notEditable = (nodeEditor.isReadOnly() || notEditable);

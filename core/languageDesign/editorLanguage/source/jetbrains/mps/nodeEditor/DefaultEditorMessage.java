@@ -15,23 +15,23 @@ import java.awt.Graphics;
 * Time: 14:01:25
 * To change this template use File | Settings | File Templates.
 */
-public class DefaultEditorMessage implements IEditorMessage {
+public class DefaultEditorMessage implements EditorMessage {
   private Color myColor;
   private String myMessage;
-  private IEditorMessageOwner myOwner;
+  private EditorMessageOwner myOwner;
   private SNodePointer myNodePointer;
   private IntentionProvider myIntentionProvider;
   private MessageStatus myStatus = MessageStatus.OK;
 
 
-  public DefaultEditorMessage(SNode node, Color color, String message, IEditorMessageOwner owner) {
+  public DefaultEditorMessage(SNode node, Color color, String message, EditorMessageOwner owner) {
     myNodePointer = new SNodePointer(node);
     myColor = color;
     myMessage = message;
     myOwner = owner;
   }
 
-  public DefaultEditorMessage(SNode node, MessageStatus status, Color color, String message, IEditorMessageOwner owner) {
+  public DefaultEditorMessage(SNode node, MessageStatus status, Color color, String message, EditorMessageOwner owner) {
     this(node, color, message, owner);
     myStatus = status;
   }
@@ -44,23 +44,23 @@ public class DefaultEditorMessage implements IEditorMessage {
     return myColor;
   }
 
-  public IEditorMessageOwner getOwner() {
+  public EditorMessageOwner getOwner() {
     return myOwner;
   }
 
-  public boolean isValid(AbstractEditorComponent editorComponent) {
+  public boolean isValid(EditorComponent editorComponent) {
     return getCell(editorComponent) != null;
   }
 
-  public int getStart(AbstractEditorComponent editorComponent) {
+  public int getStart(EditorComponent editorComponent) {
      return getCell(editorComponent).getY();
    }
 
-  public int getHeight(AbstractEditorComponent editorComponent) {
+  public int getHeight(EditorComponent editorComponent) {
     return getCell(editorComponent).getHeight();
   }
 
-  public void doNavigate(AbstractEditorComponent editorComponent) {
+  public void doNavigate(EditorComponent editorComponent) {
     editorComponent.changeSelection(getCell(editorComponent));
   }
 
@@ -68,7 +68,7 @@ public class DefaultEditorMessage implements IEditorMessage {
     return myStatus;
   }
 
-  public EditorCell getCell(AbstractEditorComponent editor) {
+  public EditorCell getCell(EditorComponent editor) {
     if (editor == null) return null;
     return editor.getBigValidCellForNode(getNode());
   }
@@ -77,7 +77,7 @@ public class DefaultEditorMessage implements IEditorMessage {
     return myNodePointer.getNode();
   }
 
-  public void paint(Graphics g, AbstractEditorComponent editorComponent) {
+  public void paint(Graphics g, EditorComponent editorComponent) {
     EditorCell cell = getCell(editorComponent);
     int x = cell.getX();
     int y = cell.getY();

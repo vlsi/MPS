@@ -34,7 +34,7 @@ public class CaretBlinker implements PersistentStateComponent<MyState> {
 
   private final Object myRegistrationLock = new Object();
 
-  private WeakSet<AbstractEditorComponent> myEditors = new WeakSet<AbstractEditorComponent>();
+  private WeakSet<EditorComponent> myEditors = new WeakSet<EditorComponent>();
 
 
   public CaretBlinker() {
@@ -57,13 +57,13 @@ public class CaretBlinker implements PersistentStateComponent<MyState> {
     myState.myCaretBlinkingRateMillis = timeMillis;
   }
                                                                   
-  public void registerEditor(AbstractEditorComponent editorComponent) {
+  public void registerEditor(EditorComponent editorComponent) {
     synchronized(myRegistrationLock) {
       myEditors.add(editorComponent);
     }
   }
 
-  public void unregisterEditor(AbstractEditorComponent editorComponent) {
+  public void unregisterEditor(EditorComponent editorComponent) {
     synchronized(myRegistrationLock) {
       myEditors.remove(editorComponent);
     }
@@ -82,7 +82,7 @@ public class CaretBlinker implements PersistentStateComponent<MyState> {
     public void run() {
       while (true) {
         synchronized(myRegistrationLock) {
-          for (AbstractEditorComponent editor : myEditors) {
+          for (EditorComponent editor : myEditors) {
             if (editor.hasFocus()) {
               EditorCell selectedCell = editor.getDeepestSelectedCell();
               if (selectedCell == null) continue;

@@ -4,8 +4,8 @@ package jetbrains.mps.core.plugin;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
-import jetbrains.mps.nodeEditor.IEditorMessage;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -20,7 +20,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
   public static final Icon ICON = null;
 
   public SNode node;
-  public AbstractEditorComponent editorComponent;
+  public EditorComponent editorComponent;
 
   public ShowNodeMessages_Action() {
     super("Show Node Messages", "", ICON);
@@ -68,9 +68,9 @@ public class ShowNodeMessages_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      List<IEditorMessage> messages = this.editorComponent.getHighlightManager().getMessagesFor(this.node);
+      List<EditorMessage> messages = this.editorComponent.getHighlightManager().getMessagesFor(this.node);
       StringBuilder sb = new StringBuilder();
-      for (IEditorMessage message : messages) {
+      for (EditorMessage message : messages) {
         sb.append(message.getMessage());
         sb.append("; owner is ");
         sb.append(message.getOwner().toString());

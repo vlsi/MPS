@@ -12,7 +12,7 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.util.List;
 
-public class UIEditorComponent extends AbstractEditorComponent {
+public class UIEditorComponent extends EditorComponent {
   private InspectorEditorComponent myInspector;
 
   public UIEditorComponent(IOperationContext operationContext, InspectorEditorComponent inspector) {
@@ -23,8 +23,8 @@ public class UIEditorComponent extends AbstractEditorComponent {
     myInspector.getExternalComponent().setBorder(new LineBorder(Color.DARK_GRAY));
     getExternalComponent().setBorder(new LineBorder(Color.DARK_GRAY));
 
-    addCellSelectionListener(new ICellSelectionListener() {
-      public void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
+    addCellSelectionListener(new CellSelectionListener() {
+      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
         if (newSelection != null) {
           myInspector.inspectNode(newSelection.getSNode(), editor.getOperationContext());
         }

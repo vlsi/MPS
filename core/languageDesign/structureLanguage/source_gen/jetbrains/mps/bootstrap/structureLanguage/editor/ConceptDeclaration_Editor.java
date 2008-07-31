@@ -49,7 +49,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.AggregationCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -1544,7 +1544,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
           substituteInfoNode = elementNode;
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new ISubstituteInfoPart[]{new ConceptDeclaration_Editor.ConceptDeclaration_generic_cellMenu()}));
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPart[]{new ConceptDeclaration_Editor.ConceptDeclaration_generic_cellMenu()}));
       }
     }
 
@@ -1595,7 +1595,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
           substituteInfoNode = elementNode;
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new ISubstituteInfoPart[]{new ConceptDeclaration_Editor.ConceptDeclaration_generic_cellMenu1()}));
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPart[]{new ConceptDeclaration_Editor.ConceptDeclaration_generic_cellMenu1()}));
       }
     }
 

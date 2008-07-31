@@ -22,7 +22,7 @@ public class CellAction_FoldCell extends EditorCellAction {
 
 
   public void execute(EditorContext context) {
-    AbstractEditorComponent component = context.getNodeEditorComponent();
+    EditorComponent component = context.getNodeEditorComponent();
     EditorCell editorCell = component.getSelectedCell();
     EditorCell_Collection targetCell = findCell(editorCell);
     targetCell.fold();

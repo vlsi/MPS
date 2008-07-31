@@ -2,9 +2,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.nodeEditor.icons.Icons;
-import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
-import jetbrains.mps.helgins.inference.TypesComponentRepositoryListener;
-import jetbrains.mps.helgins.inference.NodeTypesComponent;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -22,14 +19,14 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @author Kostik
  */
 public class MessagesGutter extends JPanel {
-  private AbstractEditorComponent myEditorComponent;
+  private EditorComponent myEditorComponent;
   private JLabel myErrosLabel = new JLabel(Icons.OK);
-  private List<IEditorMessage> myMessages = new CopyOnWriteArrayList<IEditorMessage>();
-  private Map<IEditorMessage, IEditorMessageOwner> myOwners = new HashMap<IEditorMessage, IEditorMessageOwner>();
+  private List<EditorMessage> myMessages = new CopyOnWriteArrayList<EditorMessage>();
+  private Map<EditorMessage, EditorMessageOwner> myOwners = new HashMap<EditorMessage, EditorMessageOwner>();
   private boolean myStatusIsDirty = false;
-  private Set<IEditorMessage> myMessagesToRemove = new HashSet<IEditorMessage>();
+  private Set<EditorMessage> myMessagesToRemove = new HashSet<EditorMessage>();
 
-  public MessagesGutter(AbstractEditorComponent editorComponent) {
+  public MessagesGutter(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
 
     setLayout(new BorderLayout());
@@ -43,13 +40,13 @@ public class MessagesGutter extends JPanel {
     });*/
   }
 
-  public AbstractEditorComponent getEditorComponent() {
+  public EditorComponent getEditorComponent() {
     return myEditorComponent;
   }
 
   private void validateStatus() {
     GutterStatus status = GutterStatus.OK;
-    for (IEditorMessage message : myMessages) {
+    for (EditorMessage message : myMessages) {
       if (message.getStatus() == MessageStatus.WARNING) {
         status = GutterStatus.WARNING;
       }
@@ -65,7 +62,7 @@ public class MessagesGutter extends JPanel {
     repaint();
   }
 
-  private void removeLater(Set<IEditorMessage> messages) {
+  private void removeLater(Set<EditorMessage> messages) {
     myMessagesToRemove.addAll(messages);
     invalidateStatus();
   }
@@ -91,13 +88,13 @@ public class MessagesGutter extends JPanel {
     }
   }
 
-  public void add(IEditorMessage message) {
+  public void add(EditorMessage message) {
     myMessages.add(message);
     myOwners.put(message, message.getOwner());
     validateStatus();
   }
 
-  public void remove(IEditorMessage message) {
+  public void remove(EditorMessage message) {
     myMessages.remove(message);
     myOwners.remove(message);
     validateStatus();
@@ -111,9 +108,9 @@ public class MessagesGutter extends JPanel {
     }
   }
 
-  public boolean removeMessages(IEditorMessageOwner owner) {
+  public boolean removeMessages(EditorMessageOwner owner) {
    boolean removedAnything = false;
-    for (IEditorMessage m : new ArrayList<IEditorMessage>(myMessages)) {
+    for (EditorMessage m : new ArrayList<EditorMessage>(myMessages)) {
       if (myOwners.get(m) == owner) {
         myMessages.remove(m);
         myOwners.remove(m);
@@ -131,7 +128,7 @@ public class MessagesGutter extends JPanel {
 
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
-          List<IEditorMessage> messages = getMessagesAt(e.getY());
+          List<EditorMessage> messages = getMessagesAt(e.getY());
           if (messages.size() > 0) {
             messages.get(0).doNavigate(myEditorComponent);
           }
@@ -140,7 +137,7 @@ public class MessagesGutter extends JPanel {
 
       addMouseMotionListener(new MouseMotionAdapter() {
         public void mouseMoved(MouseEvent e) {
-          List<IEditorMessage> messages = getMessagesAt(e.getY());
+          List<EditorMessage> messages = getMessagesAt(e.getY());
           if (messages.size() > 0) {
             setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
           } else {
@@ -154,14 +151,14 @@ public class MessagesGutter extends JPanel {
       removeBadMessages();
       super.paintComponent(graphics);
       Graphics2D g = (Graphics2D) graphics;
-      //Set<IEditorMessage> messagesToRemove = new HashSet<IEditorMessage>();
-      List<IEditorMessage> iEditorMessages = new ArrayList<IEditorMessage>(myMessages);
-      Collections.sort(iEditorMessages, new Comparator<IEditorMessage>() {
-        public int compare(IEditorMessage o1, IEditorMessage o2) {
+      //Set<EditorMessage> messagesToRemove = new HashSet<EditorMessage>();
+      List<EditorMessage> editorMessages = new ArrayList<EditorMessage>(myMessages);
+      Collections.sort(editorMessages, new Comparator<EditorMessage>() {
+        public int compare(EditorMessage o1, EditorMessage o2) {
           return o1.getStatus().ordinal() - o2.getStatus().ordinal();
         }
       });
-      for (IEditorMessage msg : iEditorMessages) {
+      for (EditorMessage msg : editorMessages) {
         if (!msg.isValid(myEditorComponent)) {
           continue;
         }
@@ -179,21 +176,21 @@ public class MessagesGutter extends JPanel {
       //removeLater(messagesToRemove);
     }
 
-    private int getMessageHeight(IEditorMessage msg) {
+    private int getMessageHeight(EditorMessage msg) {
       return (int) (Math.max(2.0d, msg.getHeight(myEditorComponent) * (((double) getHeight()) / ((double) myEditorComponent.getHeight()))));
     }
 
-    private int getMessageStart(IEditorMessage msg) {
+    private int getMessageStart(EditorMessage msg) {
       return (int) (msg.getStart(myEditorComponent) * (((double) getHeight()) / ((double) myEditorComponent.getHeight())));
     }
 
     public String getToolTipText(MouseEvent event) {
       int y = event.getY();
 
-      List<IEditorMessage> messages = getMessagesAt(y);
+      List<EditorMessage> messages = getMessagesAt(y);
       if (messages.size() > 0) {
         StringBuffer text = new StringBuffer();
-        for (IEditorMessage msg : messages) {
+        for (EditorMessage msg : messages) {
           if (text.length() > 0) {
             text.append("\n");
           }
@@ -206,10 +203,10 @@ public class MessagesGutter extends JPanel {
       return null;
     }
 
-    private List<IEditorMessage> getMessagesAt(int y) {
-      List<IEditorMessage> result = new ArrayList<IEditorMessage>();
-      Set<IEditorMessage> messagesToRemove = new HashSet<IEditorMessage>();
-      for (IEditorMessage msg : myMessages) {
+    private List<EditorMessage> getMessagesAt(int y) {
+      List<EditorMessage> result = new ArrayList<EditorMessage>();
+      Set<EditorMessage> messagesToRemove = new HashSet<EditorMessage>();
+      for (EditorMessage msg : myMessages) {
         if (!msg.isValid(myEditorComponent)) continue;
         int start = getMessageStart(msg);
         int height = getMessageHeight(msg);

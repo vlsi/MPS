@@ -11,15 +11,12 @@ import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.intentions.IntentionProvider;
-import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.bootstrap.helgins.runtime.quickfix.QuickFix_Runtime;
 
 import java.awt.Color;
 import java.util.LinkedHashSet;
 import java.util.Set;
-
-import com.intellij.codeInspection.QuickFix;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,8 +28,8 @@ import com.intellij.codeInspection.QuickFix;
 public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
   private static Logger LOG = Logger.getLogger(HelginsTypesEditorChecker.class);
 
-  public Set<IEditorMessage> createMessages(final SNode node, IOperationContext operationContext) {
-    Set<IEditorMessage> messages = new LinkedHashSet<IEditorMessage>();
+  public Set<EditorMessage> createMessages(final SNode node, IOperationContext operationContext) {
+    Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
     if (!TypeChecker.getInstance().isCheckedRoot(node.getContainingRoot())) {
       try {
         TypeChecker.getInstance().checkRoot(node.getContainingRoot());
@@ -90,7 +87,7 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
     return false;
   }
 
-  public IEditorMessageOwner getOwner(SNode node) {
+  public EditorMessageOwner getOwner(SNode node) {
     if (node == null) return null;
     return getNodeTypesComponent(node);
   }

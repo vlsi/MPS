@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.WindowsUtil;
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.*;
@@ -22,7 +22,7 @@ import java.util.List;
  * Author: Sergey Dmitriev.
  * Created Sep 16, 2003
  */
-public class NodeSubstituteChooser implements IKeyboardHandler {
+public class NodeSubstituteChooser implements KeyboardHandler {
   private static final Logger LOG = Logger.getLogger(NodeSubstituteChooser.class);
 
   public static final int PREFERRED_WIDTH = 300;
@@ -35,13 +35,13 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   private Point myPatternEditorLocation = new Point(10, 10);
   private Dimension myPatternEditorSize = new Dimension(50, 50);
 
-  private AbstractEditorComponent myEditorComponent;
+  private EditorComponent myEditorComponent;
   private NodeSubstitutePatternEditor myPatternEditor;
-  private INodeSubstituteInfo myNodeSubstituteInfo;
+  private NodeSubstituteInfo myNodeSubstituteInfo;
   private List<INodeSubstituteAction> mySubstituteActions = new ArrayList<INodeSubstituteAction>();
   private boolean myMenuEmpty;
 
-  public NodeSubstituteChooser(AbstractEditorComponent editorComponent) {
+  public NodeSubstituteChooser(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
   }
 
@@ -75,7 +75,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     }
   }
 
-  public void setNodeSubstituteInfo(INodeSubstituteInfo nodeSubstituteInfo) {
+  public void setNodeSubstituteInfo(NodeSubstituteInfo nodeSubstituteInfo) {
     myNodeSubstituteInfo = nodeSubstituteInfo;
   }
 

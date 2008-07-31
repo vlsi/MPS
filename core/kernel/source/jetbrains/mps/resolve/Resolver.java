@@ -9,7 +9,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.DefaultReferentNodeSubstituteAction;
@@ -203,7 +203,7 @@ public class Resolver {
       refCell = editorCell;
     }
 
-    INodeSubstituteInfo substituteInfo = refCell.getSubstituteInfo();
+    NodeSubstituteInfo substituteInfo = refCell.getSubstituteInfo();
     if (substituteInfo == null) substituteInfo = new NullSubstituteInfo();
 
     List<INodeSubstituteAction> actions = substituteInfo.getMatchingActions(resolveInfo, false);

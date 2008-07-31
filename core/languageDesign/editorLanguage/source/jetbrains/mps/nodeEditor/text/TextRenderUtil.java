@@ -35,7 +35,7 @@ public class TextRenderUtil {
     return layout.doLayoutText(cells);
   }
 
-  public static TextBuilder getTextBuilderForSelectedCellsOfEditor(AbstractEditorComponent editorComponent) {
+  public static TextBuilder getTextBuilderForSelectedCellsOfEditor(EditorComponent editorComponent) {
     TextBuilder textBuilder;
     NodeRangeSelection nodeRangeSelection = editorComponent.getNodeRangeSelection();
     if (nodeRangeSelection.isActive()) {

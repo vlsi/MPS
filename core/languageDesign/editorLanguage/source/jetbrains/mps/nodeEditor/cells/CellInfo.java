@@ -1,10 +1,9 @@
 package jetbrains.mps.nodeEditor.cells;
 
-import org.jdom.Element;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 
 public interface CellInfo {
-  EditorCell findCell(AbstractEditorComponent editorComponent);
+  EditorCell findCell(EditorComponent editorComponent);
 
-  EditorCell findClosestCell(AbstractEditorComponent editorComponent);
+  EditorCell findClosestCell(EditorComponent editorComponent);
 }

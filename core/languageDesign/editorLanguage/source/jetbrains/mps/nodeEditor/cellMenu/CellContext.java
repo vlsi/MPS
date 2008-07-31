@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
  * Igor Alshannikov
  * Date: Nov 29, 2006
  */
-public interface ICellContext {
+public interface CellContext {
   final Object EDITED_NODE = new Object();
 
   void put(Object key, Object value);

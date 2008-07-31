@@ -1,30 +1,26 @@
 package jetbrains.mps.helgins.checking;
 
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
-import jetbrains.mps.nodeEditor.IEditorMessage;
-import jetbrains.mps.nodeEditor.IEditorMessageOwner;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.LinkedHashSet;
-import java.util.Set;
 import java.util.List;
 
-public abstract class EditorCheckerAdapter implements IEditorChecker, IEditorMessageOwner {
+public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMessageOwner {
 
-  public IEditorMessageOwner getOwner(SNode rootNode) {
+  public EditorMessageOwner getOwner(SNode rootNode) {
     return this;
   }
 
-  protected IEditorMessage createErrorMessage(SNode node, String message) {
+  protected EditorMessage createErrorMessage(SNode node, String message) {
     DefaultEditorMessage error = new DefaultEditorMessage(node, Color.RED, message, getOwner(node.getContainingRoot())) {
-      public void paint(Graphics g, AbstractEditorComponent editorComponent) {
+      public void paint(Graphics g, EditorComponent editorComponent) {
         ColorAndGraphicsUtil.drawWaveUnderCell(g, Color.RED, getCell(editorComponent));
       }
     };

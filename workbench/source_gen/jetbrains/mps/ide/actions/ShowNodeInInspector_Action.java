@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.smodel.SNode;
@@ -18,7 +18,7 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
   public static final Icon ICON = null;
 
   public SNode node;
-  public AbstractEditorComponent editor;
+  public EditorComponent editor;
 
   public ShowNodeInInspector_Action() {
     super("Inspect Node", "", ICON);

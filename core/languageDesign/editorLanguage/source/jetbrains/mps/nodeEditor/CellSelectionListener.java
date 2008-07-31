@@ -8,6 +8,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
-public interface ICellSelectionListener {
-  void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection);
+public interface CellSelectionListener {
+  void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection);
 }

@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -95,8 +95,8 @@ public interface EditorCell extends Cloneable {
   String getCellRole();
 
   NodeSubstitutePatternEditor createSubstitutePatternEditor();
-  void setSubstituteInfo(INodeSubstituteInfo substitueInfo);
-  INodeSubstituteInfo getSubstituteInfo();
+  void setSubstituteInfo(NodeSubstituteInfo substitueInfo);
+  NodeSubstituteInfo getSubstituteInfo();
 
   EditorCellAction getAction(CellActionType type);
   void setAction(CellActionType type, EditorCellAction action);
@@ -114,7 +114,7 @@ public interface EditorCell extends Cloneable {
 
   Set<JComponent> getSwingComponents();
 
-  AbstractEditorComponent getEditor();
+  EditorComponent getEditor();
 
   void setNextIsPunctuation();
 
@@ -131,8 +131,8 @@ public interface EditorCell extends Cloneable {
   String getRightTransformAnchorTag();
   boolean hasRightTransformAnchorTag(String tag);
 
-  void addAdditionalKeyboardHandler(IKeyboardHandler handler);
-  void removeAdditionalKeyboardHandler(IKeyboardHandler handler);
+  void addAdditionalKeyboardHandler(KeyboardHandler handler);
+  void removeAdditionalKeyboardHandler(KeyboardHandler handler);
 
   Iterator<EditorCell_Collection> parents();
 
@@ -159,7 +159,7 @@ public interface EditorCell extends Cloneable {
   void setFocusPolicy(FocusPolicy fp);
 
   void updateMessages();
-  List<IEditorMessage> getMessages();
+  List<EditorMessage> getMessages();
   boolean hasErrorMessages();
 
   EditorCell_Label getSTHintCell();

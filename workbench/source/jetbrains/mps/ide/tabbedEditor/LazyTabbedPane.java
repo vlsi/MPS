@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.tabbedEditor;
 
-import jetbrains.mps.nodeEditor.ICellSelectionListener;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.CellSelectionListener;
+import jetbrains.mps.nodeEditor.EditorComponent;
 
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -106,8 +106,8 @@ public class LazyTabbedPane extends JPanel {
     panel.repaint();    
     myInitializedTabs.add(tab);
 
-    for (AbstractEditorComponent c : tab.getEditorComponents()) {
-      for (ICellSelectionListener listener : myTabbedEditor.mySelectionListeners) {
+    for (EditorComponent c : tab.getEditorComponents()) {
+      for (CellSelectionListener listener : myTabbedEditor.mySelectionListeners) {
         c.addCellSelectionListener(listener);
       }
     }

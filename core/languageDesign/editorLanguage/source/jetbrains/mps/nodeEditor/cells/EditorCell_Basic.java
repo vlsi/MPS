@@ -1,7 +1,7 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
@@ -51,13 +51,13 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   private EditorCell_Collection myParent = null;
   private SNodePointer myNodePointer;
-  private INodeSubstituteInfo mySubstitueInfo;
+  private NodeSubstituteInfo mySubstitueInfo;
   private Map<CellActionType, EditorCellAction> myActionMap = new HashMap<CellActionType, EditorCellAction>();
 
   private boolean myNextIsPunctuation = false;
-  private List<IKeyboardHandler> myAdditionalKeyboardHandlers = new ArrayList<IKeyboardHandler>();
+  private List<KeyboardHandler> myAdditionalKeyboardHandlers = new ArrayList<KeyboardHandler>();
 
-  private List<IEditorMessage> myMessages = new ArrayList<IEditorMessage>();  
+  private List<EditorMessage> myMessages = new ArrayList<EditorMessage>();
   private Style myStyle = new Style(this);
 
   private EditorCellKeyMap myKeyMap;
@@ -71,7 +71,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
   }
 
-  public AbstractEditorComponent getEditor() {
+  public EditorComponent getEditor() {
     return getEditorContext().getNodeEditorComponent();
   }
 
@@ -88,7 +88,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public boolean validate(boolean strict, boolean canActivatePopup) {
-    INodeSubstituteInfo substituteInfo = getSubstituteInfo();
+    NodeSubstituteInfo substituteInfo = getSubstituteInfo();
     if (substituteInfo == null) {
       return false;
     }
@@ -313,7 +313,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public final boolean processKeyPressed(KeyEvent e, boolean allowErrors) {
     if (e.isConsumed()) return false;
     if (allowErrors) {
-      for (IKeyboardHandler handler : myAdditionalKeyboardHandlers) {
+      for (KeyboardHandler handler : myAdditionalKeyboardHandlers) {
         if (handler.processKeyPressed(getEditorContext(), e)) {
           return true;
         }
@@ -325,7 +325,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   protected boolean doProcessKeyPressed(KeyEvent e, boolean allowErrors) {
     if (!getSNode().isRoot() && KeyboardUtil.isDefaultAction(e)) {
       EditorContext editorContext = getEditorContext();
-      AbstractEditorComponent nodeEditor = editorContext.getNodeEditorComponent();
+      EditorComponent nodeEditor = editorContext.getNodeEditorComponent();
 
       SNode node = getSNode();
       LinkDeclaration link = node.getParent().getLinkDeclaration(node.getRole_());
@@ -352,11 +352,11 @@ public abstract class EditorCell_Basic implements EditorCell {
     return false;
   }
 
-  public void addAdditionalKeyboardHandler(IKeyboardHandler handler) {
+  public void addAdditionalKeyboardHandler(KeyboardHandler handler) {
     myAdditionalKeyboardHandlers.add(handler);
   }
 
-  public void removeAdditionalKeyboardHandler(IKeyboardHandler handler) {
+  public void removeAdditionalKeyboardHandler(KeyboardHandler handler) {
     myAdditionalKeyboardHandlers.remove(handler);
   }
 
@@ -406,14 +406,14 @@ public abstract class EditorCell_Basic implements EditorCell {
     return new NodeSubstitutePatternEditor();
   }
 
-  public void setSubstituteInfo(INodeSubstituteInfo substitueInfo) {
+  public void setSubstituteInfo(NodeSubstituteInfo substitueInfo) {
     mySubstitueInfo = substitueInfo;
     if (mySubstitueInfo != null) {
       mySubstitueInfo.setOriginalNode(getSNode());
     }
   }
 
-  public INodeSubstituteInfo getSubstituteInfo() {
+  public NodeSubstituteInfo getSubstituteInfo() {
     return mySubstitueInfo;
   }
 
@@ -441,8 +441,8 @@ public abstract class EditorCell_Basic implements EditorCell {
       g.setColor(getCellBackgroundColor());
       g.fillRect(myX, myY, myWidth, myHeight);
     }
-    List<IEditorMessage> messages = getMessages();
-    for (IEditorMessage message : messages) {
+    List<EditorMessage> messages = getMessages();
+    for (EditorMessage message : messages) {
       if (message != null && message.isBackGround()) {
         message.paint(g, getEditor());
       }
@@ -485,20 +485,20 @@ public abstract class EditorCell_Basic implements EditorCell {
       g.fillRect(myX + effectiveWidth - BRACKET_WIDTH + 1, myY + myHeight - 3, BRACKET_WIDTH - 3, 2);
     }
 
-    List<IEditorMessage> messages = getMessages();
-    for (IEditorMessage message : messages) {
+    List<EditorMessage> messages = getMessages();
+    for (EditorMessage message : messages) {
       if (message != null && !message.isBackGround()) {
         message.paint(g, getEditor());
       }
     }
   }
 
-  public List<IEditorMessage> getMessages() {
-    return new ArrayList<IEditorMessage>(myMessages);
+  public List<EditorMessage> getMessages() {
+    return new ArrayList<EditorMessage>(myMessages);
   }
 
   public boolean hasErrorMessages() {
-    for (IEditorMessage message : getMessages()) {
+    for (EditorMessage message : getMessages()) {
       if (message.getStatus() == MessageStatus.ERROR) {
         return true;
       }
@@ -751,7 +751,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public void updateMessages() {
     myMessages.clear();
     if (getUserObject(EditorManager.BIG_CELL_CONTEXT) != null) {
-      AbstractEditorComponent editor = getEditor();
+      EditorComponent editor = getEditor();
       NodeHighlightManager highlightManager = editor.getHighlightManager();
       if (highlightManager != null)  {
         myMessages.addAll(highlightManager.getMessagesFor(getSNode()));

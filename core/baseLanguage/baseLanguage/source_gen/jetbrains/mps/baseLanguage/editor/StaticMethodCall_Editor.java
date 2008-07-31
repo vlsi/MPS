@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -105,7 +105,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       setupLabel_refCell_staticMethodDeclaration_1088427863670((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new StaticMethodCall_Editor.StaticMethodCall_staticMethodDeclaration_cellMenu(),new StaticMethodCall_Editor.StaticMethodCall_customReplace_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new StaticMethodCall_Editor.StaticMethodCall_staticMethodDeclaration_cellMenu(),new StaticMethodCall_Editor.StaticMethodCall_customReplace_cellMenu()}));
     return editorCell;
   }
 
