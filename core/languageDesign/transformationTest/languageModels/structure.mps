@@ -32,6 +32,16 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="type" conceptFQName="jetbrains.mps.transformationTest.structure.AssertType" featureKind="CHILD" />
+          <value featureName="typeToCheck" conceptFQName="jetbrains.mps.transformationTest.structureAssertType" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
@@ -59,7 +69,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
   <maxImportIndex value="6" />
   <import index="2" modelUID="jetbrains.mps.patterns.util@java_stub" version="-1" />
   <import index="4" modelUID="java.util@java_stub" version="-1" />
@@ -125,7 +135,7 @@
     <property name="name" value="CheckNodeForErrors" />
     <link role="extends" targetNodeId="1214846310980" resolveInfo="AbstractNodeAssert" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215075801596">
-      <property name="value" value="check nodes for type errors" />
+      <property name="value" value="assert nodes type errors" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>
@@ -357,7 +367,22 @@
     <property name="name" value="CheckNodeDataflow" />
     <link role="extends" targetNodeId="1214846310980" resolveInfo="AbstractNodeAssert" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217426260237">
-      <property name="value" value="check node dataflow" />
+      <property name="value" value="assert node dataflow" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217524464944">
+    <property name="package" value="asserts" />
+    <property name="name" value="AssertType" />
+    <link role="extends" targetNodeId="1214846310980" resolveInfo="AbstractNodeAssert" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217524539419">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="typeToCheck" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2v.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217525016260">
+      <property name="value" value="assert type" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>

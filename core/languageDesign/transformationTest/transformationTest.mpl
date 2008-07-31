@@ -15,6 +15,7 @@
         <generator generatorUID="jetbrains.mps.bootstrap.smodelLanguage#1139186730696" />
         <generator generatorUID="jetbrains.mps.baseLanguage.classifiers#1205839057922" />
         <generator generatorUID="jetbrains.mps.closures#1199623535494" />
+        <generator generatorUID="jetbrains.mps.quotation#1196351859310" />
       </external-templates>
       <dependencies>
         <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>

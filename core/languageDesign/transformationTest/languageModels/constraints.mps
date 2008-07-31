@@ -45,10 +45,10 @@
   <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   <maxImportIndex value="7" />
-  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="1" />
   <import index="3" modelUID="jetbrains.mps.core.constraints" version="2" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />

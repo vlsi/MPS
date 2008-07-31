@@ -16,7 +16,7 @@
   </language>
   <language namespace="jetbrains.mps.transformationTest">
     <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
-    <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
   </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />

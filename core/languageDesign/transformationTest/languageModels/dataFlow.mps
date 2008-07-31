@@ -23,10 +23,10 @@
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="1" />
   <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1215198781211">
     <link role="conceptDeclaration" targetNodeId="1.1211979288880" resolveInfo="AssertMatch" />
     <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1215198781212">

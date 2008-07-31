@@ -14,6 +14,7 @@
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.transformationTest.structure.CategoriesList" id="1215432805471">
     <node role="category" type="jetbrains.mps.transformationTest.structure.TestCategory" id="1215432836804">

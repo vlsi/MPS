@@ -26,10 +26,10 @@
   <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   <maxImportIndex value="2" />
-  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="0" />
+  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="1" />
   <import index="2" modelUID="java.util@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.baseLanguage.editor" />
   <visible index="3" modelUID="jetbrains.mps.core.structure" />
@@ -146,14 +146,14 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1215076070570">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215076076257">
-        <property name="text" value="check node" />
+        <property name="text" value="assert" />
         <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1215076089113">
         <link role="relationDeclaration" targetNodeId="1.1214846370530" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215076096329">
-        <property name="text" value=" for type errors" />
+        <property name="text" value=" type errors" />
         <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1215704902632">
           <property name="value" value="0.0" />
@@ -351,47 +351,73 @@
           <property name="flag" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216914099978">
-          <property name="text" value="test case" />
+          <property name="text" value="Test case" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1216914255184">
           <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217501931951">
-        <property name="text" value="Nodes" />
+        <property name="text" value="nodes" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem" id="1217502202643">
           <property name="underlined" value="2" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1217503173248" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1217501988804">
-        <property name="vertical" value="true" />
-        <link role="relationDeclaration" targetNodeId="1.1217501822150" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1217517886998">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1217517886999">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1217517890517" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1217517896205">
+          <property name="vertical" value="true" />
+          <link role="relationDeclaration" targetNodeId="1.1217501822150" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1217517887001">
+          <property name="flag" value="false" />
+        </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1217517299039" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217501970770">
-        <property name="text" value="Test methods" />
+        <property name="text" value="test methods" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem" id="1217502211754">
           <property name="underlined" value="2" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1217503178337" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1217501993931">
-        <property name="vertical" value="true" />
-        <link role="relationDeclaration" targetNodeId="1.1217501895093" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1217517310055">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1217517310056">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1217517312730" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1217517316747">
+          <property name="vertical" value="true" />
+          <link role="relationDeclaration" targetNodeId="1.1217501895093" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1217517310058">
+          <property name="flag" value="false" />
+        </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1217517304242" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216993496134">
-        <property name="text" value="Utilites methods" />
+        <property name="text" value="utility methods" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem" id="1217252215156">
           <property name="underlined" value="2" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1217503182048" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1216993504806">
-        <property name="vertical" value="true" />
-        <property name="separatorText" value=" " />
-        <link role="relationDeclaration" targetNodeId="1.1216993439383" />
-        <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216993650357">
-          <property name="text" value="none" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1217517322934">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1217517322935">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1217517325063" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1217517331970">
+          <property name="vertical" value="true" />
+          <property name="separatorText" value=" " />
+          <link role="relationDeclaration" targetNodeId="1.1216993439383" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1217517322937">
+          <property name="flag" value="false" />
         </node>
       </node>
     </node>
@@ -445,7 +471,6 @@
     <link role="conceptDeclaration" targetNodeId="1.1216989428737" resolveInfo="TestNode" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1216992046541">
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1216992049586" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1216992052771">
         <link role="relationDeclaration" targetNodeId="1.1216989461394" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleClassItem" id="1216992073159">
@@ -460,7 +485,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1217425919667">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217425925326">
-        <property name="text" value="check node" />
+        <property name="text" value="assert" />
         <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1217425938956">
@@ -469,6 +494,30 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217425953194">
         <property name="text" value=" dataflow" />
         <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1217524555391">
+    <property name="package" value="asserts" />
+    <link role="conceptDeclaration" targetNodeId="1.1217524464944" resolveInfo="AssertType" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1217524579625">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217524584768">
+        <property name="text" value="assert" />
+        <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1217524593813">
+        <link role="relationDeclaration" targetNodeId="1.1214846370530" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217524604803">
+        <property name="text" value=" has type" />
+        <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1217524623347">
+        <link role="relationDeclaration" targetNodeId="1.1217524539419" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217524850693">
+        <property name="text" value=";" />
       </node>
     </node>
   </node>
