@@ -44,6 +44,9 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   </language>
+  <language namespace="jetbrains.mps.bootstrap.helgins">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
@@ -53,6 +56,7 @@
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <maxImportIndex value="11" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -154,18 +158,12 @@
     <property name="package" value="Functions" />
     <property name="name" value="ConstraintFunction_ReferentSearchScope_Factory" />
     <link role="extends" targetNodeId="1148934493876" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1148685281814">
-      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1148685793082">
-        <link role="classifier" targetNodeId="9.~ISearchScope" resolveInfo="ISearchScope" />
-      </node>
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1148685212404">
-      <property name="value" value="search scope provider" />
+      <property name="value" value="search scope" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1148685236406">
-      <property name="value" value="embedded block of code" />
+      <property name="value" value="provider function" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>

@@ -19,18 +19,23 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.quotation" />
+  <language namespace="jetbrains.mps.core">
+    <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  </language>
+  <language namespace="jetbrains.mps.bootstrap.helgins">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877234546">
     <property name="package" value="Behavior" />
@@ -972,6 +977,34 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877537286">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877537287" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1217541907773">
+    <property name="package" value="Functions" />
+    <link role="concept" targetNodeId="1.1148684180339" resolveInfo="ConstraintFunction_ReferentSearchScope_Factory" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1217541907774">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217541907775" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1217541911557">
+      <property name="name" value="getExpectedReturnType" />
+      <link role="overriddenMethod" targetNodeId="4v.1213877374441" resolveInfo="getExpectedReturnType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217541911559">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217541920874">
+          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1217541961518">
+            <node role="quotedNode" type="jetbrains.mps.bootstrap.helgins.structure.JoinType" id="1217541961519">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217541961520">
+                <link role="classifier" targetNodeId="5.~ISearchScope" resolveInfo="ISearchScope" />
+              </node>
+              <node role="argument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1217541961521">
+                <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1217541961522" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1217541915185">
+        <link role="concept" targetNodeId="5v.1068431790189" resolveInfo="Type" />
+      </node>
     </node>
   </node>
 </model>
