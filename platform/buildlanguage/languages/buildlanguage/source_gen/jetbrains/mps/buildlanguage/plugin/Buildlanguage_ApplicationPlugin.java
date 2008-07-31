@@ -10,12 +10,10 @@ import java.util.ArrayList;
 public class Buildlanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void initGroups() {
-    this.addGroup(new ProjectPaneModelAddition_ActionGroup());
     this.addGroup(new ProjectPaneLanguageAddition_ActionGroup());
   }
 
   public void adjustGroups() {
-    (this.getGroup(ProjectPaneModelAddition_ActionGroup.ID)).adjust();
     (this.getGroup(ProjectPaneLanguageAddition_ActionGroup.ID)).adjust();
   }
 

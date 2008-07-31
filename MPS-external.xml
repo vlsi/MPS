@@ -367,7 +367,7 @@
     <antcall target="pack.jetbrains.mps.ypath" />
     <antcall target="pack.jetbrains.mps.buildlanguage" />
     <antcall target="pack.jetbrains.mps.mpsLayoutLanguage" />
-    <antcall target="pack.jetbrains.mps.mpsProjectLanguage" />
+    <antcall target="pack.jetbrains.mps.build.moduleDependencyLanguage" />
     <antcall target="pack.jetbrains.mps.propertylanguage" />
     <antcall target="pack.jetbrains.mps.bookLanguage" />
     <antcall target="pack.jetbrains.mps.regexp" />

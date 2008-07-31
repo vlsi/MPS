@@ -57,6 +57,12 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1205335290326" resolveInfo="Variable" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217517833832">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="cycle" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1216905728562" resolveInfo="ModuleCycle" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203013693138">
       <link role="intfc" targetNodeId="1203013653398" resolveInfo="ILayoutComponent" />
     </node>
@@ -183,6 +189,11 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1203607480207">
       <property name="name" value="modulelUID" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217505618278">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="cycle" />
+      <link role="target" targetNodeId="1216905728562" resolveInfo="ModuleCycle" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203601915645">
@@ -481,11 +492,22 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216905728562">
     <property name="name" value="ModuleCycle" />
+    <property name="package" value="compile" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216905744819">
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217524819628">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="module" />
+      <property name="role" value="moduleReference" />
       <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1217524754911" resolveInfo="ModuleReference" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217524754911">
+    <property name="name" value="ModuleReference" />
+    <property name="package" value="compile" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217524800588">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="module" />
       <link role="target" targetNodeId="1203599702327" resolveInfo="Module" />
     </node>
   </node>
