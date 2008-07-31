@@ -1032,6 +1032,7 @@
               <property name="text" value="empty caption:" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1204038006260">
+              <property name="allowEmptyText" value="true" />
               <link role="relationDeclaration" targetNodeId="1.1203851807860" resolveInfo="emptyCaption" />
             </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993916">
@@ -1090,6 +1091,7 @@
               <property name="text" value="empty caption:" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1204038044665">
+              <property name="allowEmptyText" value="true" />
               <link role="relationDeclaration" targetNodeId="1.1203851807860" resolveInfo="emptyCaption" />
             </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994190">
