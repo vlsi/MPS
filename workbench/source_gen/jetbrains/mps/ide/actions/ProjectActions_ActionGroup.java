@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.LabelledAnchor;
 
 public class ProjectActions_ActionGroup extends GeneratedActionGroup {
   public static Logger LOG = Logger.getLogger(ProjectActions_ActionGroup.class);
@@ -16,7 +15,7 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new LabelledAnchor(ProjectActions_ActionGroup.LABEL_ID_projectNew));
+      this.addAnchor(ProjectActions_ActionGroup.LABEL_ID_projectNew);
       this.addSeparator();
       this.add(new MakeProject_Action());
       this.add(new RebuildProject_Action());

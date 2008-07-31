@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.actions.ReloadAllAction;
 import jetbrains.mps.workbench.actions.tools.InstallIDEAPluginAction;
-import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -31,7 +30,7 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
       this.add(new MakeAllModules_Action());
       this.add(new RebuildAllModules_Action());
       this.add(new CleanAllModules_Action());
-      this.add(new LabelledAnchor(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal));
+      this.addAnchor(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

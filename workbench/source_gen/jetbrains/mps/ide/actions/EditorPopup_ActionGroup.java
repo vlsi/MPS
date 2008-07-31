@@ -16,7 +16,6 @@ import jetbrains.mps.workbench.actions.generate.GenerateTextFromCurrentModelActi
 import jetbrains.mps.transformation.TLBase.plugin.debug.actions.ShowGenerationTraceAction;
 import jetbrains.mps.workbench.actions.nodes.FindSpecificNodeUsagesAction;
 import jetbrains.mps.workbench.actions.nodes.FastFindUsagesNodeAction;
-import jetbrains.mps.workbench.action.LabelledAnchor;
 import jetbrains.mps.workbench.actions.cells.ShowCellKeymapsAction;
 import jetbrains.mps.workbench.actions.baseLanguage.ShowParametersAction;
 import jetbrains.mps.workbench.actions.model.ModelPropertiesActionWOShortcuts;
@@ -56,7 +55,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.add(new ShowClassInHierarchy_Action());
       this.add(new ShowConceptInHierarchy_Action());
-      this.add(new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_structure));
+      this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_structure);
       this.addSeparator();
       this.add(new CloneRoot_Action());
       this.addSeparator();

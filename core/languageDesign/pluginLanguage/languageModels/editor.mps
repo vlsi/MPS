@@ -1582,9 +1582,6 @@
     <link role="conceptDeclaration" targetNodeId="1.1205675355325" resolveInfo="ParameterizedAction" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1205675518301">
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205675614550">
-        <property name="text" value="new" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1205675623588">
         <link role="relationDeclaration" targetNodeId="1.1205675413186" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1205675623589">
@@ -1597,13 +1594,22 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205675647475">
         <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="17.1215087929380" resolveInfo="LeftParen" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217518161008">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1205675655112">
         <property name="separatorText" value="," />
         <link role="relationDeclaration" targetNodeId="1.1205675486953" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217518164555">
+          <property name="value" value="0.0" />
+        </node>
+        <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217517527139" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205675651605">
         <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="17.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>

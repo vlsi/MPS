@@ -66,8 +66,8 @@
       <link role="modifiedGroup" targetNodeId="4.1204991231476" resolveInfo="EditorPopup" />
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207148465303">
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205244660047">
-        <link role="javaClass" targetNodeId="3.~ShowNodeTypeAction" resolveInfo="ShowNodeTypeAction" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1217518717159">
+        <link role="constructorDeclaration" targetNodeId="3.~ShowNodeTypeAction.&lt;init&gt;()" resolveInfo="ShowNodeTypeAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1206108013514">
         <link role="action" targetNodeId="1206101816406" resolveInfo="GoToTypeErrorRule" />

@@ -10,7 +10,6 @@ import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
 import jetbrains.mps.workbench.actions.nodes.CutNodeAction;
 import jetbrains.mps.workbench.actions.imports.AddModelImportAction;
 import jetbrains.mps.workbench.actions.imports.AddLanguageImportAction;
-import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -34,7 +33,7 @@ public class Edit_ActionGroup extends GeneratedActionGroup {
       this.add(new AddModelImportAction());
       this.add(new AddLanguageImportAction());
       this.addSeparator();
-      this.add(new LabelledAnchor(Edit_ActionGroup.LABEL_ID_custom));
+      this.addAnchor(Edit_ActionGroup.LABEL_ID_custom);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

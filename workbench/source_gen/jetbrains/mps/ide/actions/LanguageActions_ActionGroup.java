@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.LabelledAnchor;
 import jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction;
 import jetbrains.mps.workbench.actions.language.OptimizeLanguageImportsAction;
 import jetbrains.mps.workbench.actions.module.ShowModuleDependenciesAction;
@@ -20,7 +19,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_newGroup));
+      this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_newGroup);
       this.addSeparator();
       this.add(new GenerateAllModelsInModuleAction(true));
       this.add(new GenerateAllModelsInModuleAction(false));

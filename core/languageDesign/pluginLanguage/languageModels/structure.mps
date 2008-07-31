@@ -380,6 +380,10 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1203071646776" resolveInfo="ActionDeclaration" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217514805740">
+      <property name="value" value="action" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203092361741">
     <property name="package" value="Actions.Groups.GroupModification" />
@@ -766,6 +770,9 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1204903494033">
       <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1217516572491">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204908117386">
     <property name="package" value="Actions.Groups.GroupMembers" />
@@ -799,12 +806,8 @@
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1205675508671">
-      <property name="value" value="new" />
+      <property name="value" value="java action" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1205675591041">
-      <property name="value" value="parameterized action creation" />
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473914776" resolveInfo="short_description" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1205676232975">
       <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember" />

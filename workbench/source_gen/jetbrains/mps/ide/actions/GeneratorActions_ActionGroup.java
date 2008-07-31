@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.LabelledAnchor;
 import jetbrains.mps.workbench.actions.language.GenerateTemplateQueriesAction;
 import jetbrains.mps.workbench.actions.module.ShowModuleDependenciesAction;
 import jetbrains.mps.workbench.actions.language.DeleteGeneratorAction;
@@ -19,7 +18,7 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_generatorNew));
+      this.addAnchor(GeneratorActions_ActionGroup.LABEL_ID_generatorNew);
       this.add(new GenerateTemplateQueriesAction(true));
       this.add(new GenerateTemplateQueriesAction(false));
       this.addSeparator();

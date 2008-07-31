@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.LabelledAnchor;
 import jetbrains.mps.workbench.actions.project.AddModuleToProjectAction;
 import jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction;
 import jetbrains.mps.workbench.actions.solution.GenerateTextFromAllModelsInSolutionAction;
@@ -21,7 +20,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_solutionNew));
+      this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_solutionNew);
       this.addSeparator();
       this.add(new AddModuleToProjectAction());
       this.add(new RemoveModuleFromProject_Action());

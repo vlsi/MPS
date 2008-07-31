@@ -44,8 +44,8 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207488852837">
     <property name="name" value="ExecuteScriptAction" />
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207488987042">
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207489021836">
-        <link role="javaClass" targetNodeId="2.~ExecuteScriptAction" resolveInfo="ExecuteScriptAction" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1217518716864">
+        <link role="constructorDeclaration" targetNodeId="2.~ExecuteScriptAction.&lt;init&gt;()" resolveInfo="ExecuteScriptAction" />
       </node>
     </node>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1207489023681">
