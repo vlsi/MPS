@@ -47,7 +47,6 @@
     <property name="name" value="CopyThisDown"/>
     <property name="caption" value="Duplicate Node"/>
     <property name="shortcut" value="control D"/>
-    <link role="extendedAction" targetNodeId="11.~CurrentProjectAction" resolveInfo="CurrentProjectAction"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1207225803604">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207225803605">

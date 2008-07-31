@@ -40,7 +40,6 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1206459480619">
     <property name="name" value="PrintDFAResult"/>
     <property name="caption" value="Print DFA"/>
-    <link role="extendedAction" targetNodeId="16.~BaseAction" resolveInfo="BaseAction"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1206459480620">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206459480621">
@@ -140,7 +139,6 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1206642260578">
     <property name="name" value="ShowDFA"/>
     <property name="caption" value="Show DFA (under construction)"/>
-    <link role="extendedAction" targetNodeId="16.~BaseAction" resolveInfo="BaseAction"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1206642260579">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206642260580">
@@ -217,7 +215,6 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1207219950955">
     <property name="name" value="PrintReachingDefinintionsInformation"/>
     <property name="caption" value="Print DFA Reaching Definitions Information"/>
-    <link role="extendedAction" targetNodeId="16.~BaseAction" resolveInfo="BaseAction"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1207219950956">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207219950957">
@@ -326,7 +323,6 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1211451948539">
     <property name="name" value="PrintInitializationInformation"/>
     <property name="caption" value="Print DFA Initialization Information"/>
-    <link role="extendedAction" targetNodeId="16.~BaseAction" resolveInfo="BaseAction"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1211451948543">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1211451948544">
