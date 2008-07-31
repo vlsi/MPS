@@ -62,6 +62,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", new PostfixIncrementExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", new PostfixDecrementExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", new BaseAssignmentExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.BaseMethodCall", new BaseMethodCall_DataFlow());
   }
 
 }

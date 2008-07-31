@@ -129,10 +129,20 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217511379744">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217511392668">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1217511399670">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217511402063">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1217511402064" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1217511402065">
-                <link role="conceptMethodDeclaration" targetNodeId="1217435265700" resolveInfo="getName" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1217513806372">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217513821973">
+                <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1217513821174">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1217513814166" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217513826689">
+                  <link role="baseMethodDeclaration" targetNodeId="17.~SNode.getId():java.lang.String" resolveInfo="getId" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217511402063">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1217511402064" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1217511402065">
+                  <link role="conceptMethodDeclaration" targetNodeId="1217435265700" resolveInfo="getName" />
+                </node>
               </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217511392669">
