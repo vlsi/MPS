@@ -9,6 +9,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.vcs.MPSExcludedFileIndex;
 
 public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNode {
   protected final VirtualFile myFile;

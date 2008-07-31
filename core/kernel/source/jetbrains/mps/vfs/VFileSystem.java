@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.zip.ZipFile;
 
 import jetbrains.mps.util.PathManager;
+import org.jetbrains.annotations.NotNull;
 
 public class VFileSystem {
 
@@ -87,7 +88,7 @@ public class VFileSystem {
     }
   }
 
-  public static VirtualFile getFile(IFile file) {
+  public static VirtualFile getFile(@NotNull IFile file) {
     if (file instanceof FileSystemFile) {
       LocalFileSystem lfs = LocalFileSystem.getInstance();
       return lfs.findFileByIoFile(file.toFile());
@@ -105,7 +106,7 @@ public class VFileSystem {
 
       return getJarEntryFile(jfef.getJarFile(), entryPath);
     } else {
-      throw new RuntimeException("Unknown file type.");
+      throw new RuntimeException("Unknown file type. " + file);
     }
   }
 }

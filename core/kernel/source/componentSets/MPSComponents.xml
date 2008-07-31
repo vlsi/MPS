@@ -43,6 +43,12 @@
 
   </project-components>
 
+  <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.vcs.ExcludedFileIndexApplicationComponent</implementation-class>
+    </component>
+  </application-components>
+
   <xi:include href="/componentSets/Platform.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/UICore.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/WindowManagement.xml" xpointer="xpointer(/components/*)"/>
