@@ -618,21 +618,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     setText(text);
 
     if (!isValidText(text) && CommandProcessor.getInstance().getCurrentCommand() != null) {
-      UndoUtil.addUndoableAction(new SNodeUndoableAction(getSNode()) {
-        protected void doUndo() {
-          EditorCell_Label cell = (EditorCell_Label) cellInfo.findCell(editor);
-          if (cell != null) {
-            cell.changeText(oldText);
-          }
-        }
-
-        protected void doRedo() {
-          EditorCell_Label cell = (EditorCell_Label) cellInfo.findCell(editor);
-          if (cell != null) {
-            cell.changeText(text);
-          }
-        }
-      });
+      UndoUtil.addUndoableAction(new MySNodeUndoableAction(getSNode(), cellInfo, editor, oldText, text));
 
       if (getSNode().getContainingRoot() != null) {
         MPSNodesVirtualFileSystem.getInstance().getFileFor(getSNode().getContainingRoot()).setModificationStamp(LocalTimeCounter.currentTime());
@@ -690,5 +676,34 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   public int getCharWidth() {
     return getRenderedTextLine().charWidth();
+  }
+
+  private static class MySNodeUndoableAction extends SNodeUndoableAction {
+    private final CellInfo myCellInfo;
+    private final EditorComponent myEditor;
+    private final String myOldText;
+    private final String myText;
+
+    public MySNodeUndoableAction(SNode node, CellInfo cellInfo, EditorComponent editor, String oldText, String text) {
+      super(node);
+      myCellInfo = cellInfo;
+      myEditor = editor;
+      myOldText = oldText;
+      myText = text;
+    }
+
+    protected void doUndo() {
+      EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(myEditor);
+      if (cell != null) {
+        cell.changeText(myOldText);
+      }
+    }
+
+    protected void doRedo() {
+      EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(myEditor);
+      if (cell != null) {
+        cell.changeText(myText);
+      }
+    }
   }
 }
