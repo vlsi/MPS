@@ -29,21 +29,6 @@
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <node type="jetbrains.mps.transformationTest.structure.NodesTestCase" id="1216989262645">
     <property name="name" value="MyTestCase" />
-    <node role="methodDeclaraiotns" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1216993455114">
-      <property name="name" value="a" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1216993462348" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216993455116">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216995016131">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1216995023555">
-            <property name="value" value="10" />
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1217252563826">
-        <property name="name" value="node" />
-        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1217252563827" />
-      </node>
-    </node>
     <node role="elements" type="jetbrains.mps.transformationTest.structure.TestNode" id="1216992194000">
       <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1216992198282">
         <property name="name" value="Class1" />
@@ -51,43 +36,38 @@
         <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1216992198284">
           <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1216992198285" />
           <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216992198286" />
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216992198287" />
-          <node role="testNode$attribute" type="jetbrains.mps.transformationTest.structure.TestNodeAnnotation" id="1217251746693">
-            <property name="name" value="node1" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="elements" type="jetbrains.mps.transformationTest.structure.NodesTestMethod" id="1216993477938">
-      <property name="name" value="testMethod1" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216993477939">
-        <node role="statement" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExecuteLightweightCommandStatement" id="1217257488898">
-          <node role="commandClosureLiteral" type="jetbrains.mps.bootstrap.smodelLanguage.structure.CommandClosureLiteral" id="1217257488899">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217257488900">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217257494659">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217257494660">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1217257494661" />
-                  <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1217257494662">
-                    <link role="member" targetNodeId="1216993455114" resolveInfo="a" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217257494663">
-                      <node role="operand" type="jetbrains.mps.transformationTest.structure.TestNodeReference" id="1217257494664">
-                        <link role="declaration" targetNodeId="1217251746693" resolveInfo="node1" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1217257494665">
-                        <link role="link" targetNodeId="3.1068580123135" />
-                      </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216992198287">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217426123553">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217426123554">
+                <property name="name" value="a" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1217426123555" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1217426135000">
+                  <property name="value" value="10" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217426130121">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217426130122">
+                <property name="name" value="b" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1217426130123" />
+                <node role="nodePropertiesMarker$attribute" type="jetbrains.mps.transformationTest.structure.NodePropertiesContainer" id="1217426160350">
+                  <node role="properties" type="jetbrains.mps.transformationTest.structure.VariableLive" id="1217426227671">
+                    <node role="var" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217426229111">
+                      <link role="variableDeclaration" targetNodeId="1217426123554" resolveInfo="a" />
                     </node>
                   </node>
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1217426208560">
+                  <property name="value" value="10" />
                 </node>
               </node>
             </node>
           </node>
+          <node role="nodeOpraretionsMark$attribute" type="jetbrains.mps.transformationTest.structure.NodeOperationsContainer" id="1217432152833">
+            <node role="operations" type="jetbrains.mps.transformationTest.structure.CheckDataFlowOperation" id="1217432161828" />
+          </node>
         </node>
       </node>
-    </node>
-    <node role="elements" type="jetbrains.mps.transformationTest.structure.NodesTestMethod" id="1216996691225">
-      <property name="name" value="test2" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216996691226" />
     </node>
   </node>
 </model>

@@ -131,7 +131,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214846310980">
-    <property name="package" value="typeAsserts" />
+    <property name="package" value="asserts" />
     <property name="name" value="AbstractNodeAssert" />
     <link role="extends" targetNodeId="2v.1068580123157" resolveInfo="Statement" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1214846370530">
@@ -145,7 +145,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215075719096">
-    <property name="package" value="typeAsserts" />
+    <property name="package" value="asserts" />
     <property name="name" value="CheckNodeForErrors" />
     <link role="extends" targetNodeId="1214846310980" resolveInfo="AbstractNodeAssert" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215075801596">
@@ -373,15 +373,17 @@
       <link role="target" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216991546674">
-    <property name="name" value="TemporalyConcept" />
-    <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216991610156">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="node1" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217425837708">
+    <property name="package" value="asserts" />
+    <property name="name" value="CheckNodeDataflow" />
+    <link role="extends" targetNodeId="1214846310980" resolveInfo="AbstractNodeAssert" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217426260237">
+      <property name="value" value="check node dataflow" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217501500636">
+    <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
   </node>
 </model>
 

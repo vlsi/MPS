@@ -204,7 +204,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1215076060697">
-    <property name="package" value="typeAsserts" />
+    <property name="package" value="asserts" />
     <link role="conceptDeclaration" targetNodeId="1.1215075719096" resolveInfo="NodeCheckForErrors" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1215076070570">
       <property name="vertical" value="false" />
@@ -248,11 +248,13 @@
         <link role="actionMap" targetNodeId="1215524000577" resolveInfo="Annotation_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedNodeCell" id="1215507949478" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215519954194" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217426780941">
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleClassItem" id="1217426792833" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LastPositionAllowedStyleClassItem" id="1217426867970" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1215518214434">
         <property name="separatorText" value="," />
         <link role="relationDeclaration" targetNodeId="1.1215507909023" />
-        <link role="styleClass" targetNodeId="2v.1215094139260" resolveInfo="Semicolon" />
         <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215518225140">
           <property name="text" value="..." />
           <link role="styleClass" targetNodeId="2v.1198596447279" resolveInfo="Annotation" />
@@ -499,6 +501,24 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleClassItem" id="1216992073159">
           <property name="flag" value="true" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1217425897587">
+    <property name="package" value="asserts" />
+    <link role="conceptDeclaration" targetNodeId="1.1217425837708" resolveInfo="CheckNodeDataflow" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1217425919667">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217425925326">
+        <property name="text" value="check node" />
+        <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1217425938956">
+        <link role="relationDeclaration" targetNodeId="1.1214846370530" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217425953194">
+        <property name="text" value=" dataflow" />
+        <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
       </node>
     </node>
   </node>
