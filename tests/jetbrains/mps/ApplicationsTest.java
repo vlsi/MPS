@@ -5,7 +5,7 @@ import java.io.File;
 public class ApplicationsTest extends BaseMPSTest {
 
   public void testWebQuery() {
-    String res = testProject(new File("platform/web-query/jetbrains.mps.web-query.mpr"));
+    String res = testProject(new File("platform/web-query/jetbrains.mps.web-query.ipr"));
     assertTrue(res, res == null);
   }
 
