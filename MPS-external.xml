@@ -4,8 +4,9 @@
   <import file="MPS-multistep.xml" />
   <import file="build-helpers.xml" />
   <property file="./MPS.properties" />
-  <target name="main" depends="clean.before,folders.create,do.the.job,clean.after" />
-  <target name="clean.before">
+  <target name="main" depends="compile,clean.before,folders.create,do.the.job,clean.after" />
+  <target name="compile" />
+  <target name="clean.before" depends="compile">
     <delete dir="${deploy.dir}" />
     <tstamp />
   </target>
@@ -59,6 +60,7 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/formulaLanguage" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/jetbrains.mps.matrixLanguage" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core" />
+    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/asdadqwd" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform" />
@@ -317,6 +319,7 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/jetbrains.mps.matrixLanguage">
       <fileset dir="app/jetbrains.mps.matrixLanguage" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
+    <antcall target="pack.jetbrains.mps.devkit.general-purpose" />
     <antcall target="pack.jetbrains.mps.baseLanguageInternal" />
     <antcall target="pack.jetbrains.mps.closures" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.collections.lang" />
