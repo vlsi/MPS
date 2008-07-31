@@ -337,19 +337,19 @@ public class TypeChecker implements ApplicationComponent {
         return null;
       }
       setCurrentTypesComponent(temporaryComponent);
-      NodeTypesComponent oldComponent =
-        NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, temporaryComponent);
+      NodeTypesComponent oldComponent = NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, temporaryComponent);
       try {
-      checkWithinRoot(node, new Runnable() {
-        public void run() {
-          result[0] = temporaryComponent.computeTypesForNodeDuringResolving(node, new Runnable() {
-            public void run() {
-              myCheckedRoots.add(node);
-            }
-          });
-        }
-      });
+        checkWithinRoot(node, new Runnable() {
+          public void run() {
+            result[0] = temporaryComponent.computeTypesForNodeDuringResolving(node, new Runnable() {
+              public void run() {
+                myCheckedRoots.add(node);
+              }
+            });
+          }
+        });
       } finally {
+        temporaryComponent.clearListeners(); //I added it in order to fix memory leak. (Kostik)
         NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, oldComponent);
         clearCurrentTypesComponent();
       }
