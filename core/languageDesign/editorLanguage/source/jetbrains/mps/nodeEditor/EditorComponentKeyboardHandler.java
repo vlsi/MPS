@@ -107,13 +107,13 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     // process action
     if (selectedCell != null) {
       if (selectedCell instanceof EditorCell_Label && selectedCell.getUserObject(EditorCell.ROLE) == null && (CellActionType.INSERT.equals(actionType) || CellActionType.INSERT_BEFORE.equals(actionType))) {
-        EditorCell cellWithRole = new ChildrenCollectionFinder(selectedCell, CellActionType.INSERT.equals(actionType)).find();
+        EditorCell cellWithRole = new ChildrenCollectionFinder(selectedCell, actionType == CellActionType.INSERT).find();
         if (cellWithRole != null && cellWithRole.executeAction(actionType)) {
           return true;
         }
       }
 
-      if (actionType != null && !actionType.equals(CellActionType.DELETE)) {
+      if (actionType != null && !(actionType == CellActionType.DELETE)) {
         if (!(actionType == CellActionType.RIGHT_TRANSFORM && dontExecuteRT)) {
           if (selectedCell.executeAction(actionType)) {
             return true;
@@ -144,7 +144,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
       }
 
-      if (CellActionType.DELETE.equals(actionType)) {
+      if (actionType == CellActionType.DELETE) {
         if (selectedCell.executeAction(actionType)) {
           return true;
         }
