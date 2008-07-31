@@ -86,30 +86,6 @@
       <link role="target" targetNodeId="1210673684636" resolveInfo="TestNodeAnnotation" />
     </node>
   </node>
-  <visible index="3" modelUID="jetbrains.mps.baseLanguage.unitTest.structure" />
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1211896175875">
-    <property name="name" value="NodesTest" />
-    <property name="rootable" value="true" />
-    <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1211896369962">
-      <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1216137539359">
-      <link role="intfc" targetNodeId="3v.1216134482493" resolveInfo="ITestMethod" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1211896210986">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="nodeToCheck" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1211896246660">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="testMethod" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2v.1068580123136" resolveInfo="StatementList" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1211979288880">
     <property name="name" value="AssertMatch" />
     <link role="extends" targetNodeId="2v.1068580123157" resolveInfo="Statement" />
@@ -304,37 +280,44 @@
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>
-  <visible index="4" modelUID="jetbrains.mps.baseLanguage.classifiers.structure" />
+  <visible index="3" modelUID="jetbrains.mps.baseLanguage.classifiers.structure" />
+  <visible index="4" modelUID="jetbrains.mps.baseLanguage.unitTest.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216913645126">
     <property name="name" value="NodesTestCase" />
     <property name="rootable" value="true" />
     <property name="iconPath" value="${language_descriptor}\icons\nodesTest.png" />
     <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216913962178">
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217501822150">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="elements" />
-      <property name="sourceCardinality" value="1..n" />
-      <link role="target" targetNodeId="1216988952268" resolveInfo="TestElement" />
+      <property name="role" value="nodesToCheck" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1216989428737" resolveInfo="TestNode" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217501895093">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="methods" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1216913689992" resolveInfo="NodesTestMethod" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216993439383">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="methodDeclaraiotns" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="4v.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
+      <link role="target" targetNodeId="3v.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1216914133328">
-      <link role="intfc" targetNodeId="3v.1216130694486" resolveInfo="ITestCase" />
+      <link role="intfc" targetNodeId="4v.1216130694486" resolveInfo="ITestCase" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1216914250339">
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1216993436650">
-      <link role="intfc" targetNodeId="4v.1205751982837" resolveInfo="IClassifier" />
+      <link role="intfc" targetNodeId="3v.1205751982837" resolveInfo="IClassifier" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216913689992">
     <property name="name" value="NodesTestMethod" />
-    <link role="extends" targetNodeId="1216988952268" resolveInfo="TestElement" />
+    <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216989116695">
       <property name="value" value="test method" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
@@ -343,7 +326,7 @@
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1217250730750">
-      <link role="intfc" targetNodeId="3v.1216134482493" resolveInfo="ITestMethod" />
+      <link role="intfc" targetNodeId="4v.1216134482493" resolveInfo="ITestMethod" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216913719839">
       <property name="metaClass" value="aggregation" />
@@ -352,16 +335,9 @@
       <link role="target" targetNodeId="2v.1068580123136" resolveInfo="StatementList" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216988952268">
-    <property name="name" value="TestElement" />
-    <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1216988967628">
-      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473854053" resolveInfo="abstract" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216989428737">
     <property name="name" value="TestNode" />
-    <link role="extends" targetNodeId="1216988952268" resolveInfo="TestElement" />
+    <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216991831887">
       <property name="value" value="test node" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
@@ -381,9 +357,6 @@
       <property name="value" value="check node dataflow" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217501500636">
-    <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
   </node>
 </model>
 
