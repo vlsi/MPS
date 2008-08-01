@@ -47,7 +47,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       boolean endEditKeystroke = isEndEditKeystroke(keyEvent);      
       boolean strictMatching = endEditKeystroke || CellActionType.RIGHT_TRANSFORM.equals(actionType) || CellActionType.LEFT_TRANSFORM.equals(actionType);
 
-      if (!!selectedCell.isErrorState()) {
+      if (selectedCell.isErrorState()) {
         if (endEditKeystroke ||
           actionType == CellActionType.INSERT ||
           actionType == CellActionType.INSERT_BEFORE) {
