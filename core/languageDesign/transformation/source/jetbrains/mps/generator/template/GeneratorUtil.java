@@ -21,6 +21,7 @@ import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.Templ
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -157,12 +158,16 @@ public class GeneratorUtil {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
     long startTime = System.currentTimeMillis();
     try {
-      List<SNode> result = (List<SNode>) QueryMethodGenerated.invoke(
+      Object result = QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
         new SourceSubstituteMacroNodesContext(inputNode, ruleNode, macroNode, generator),
         query.getModel());
-      return result;
+      if (result instanceof List) {
+        return (List<SNode>) result;
+      }
+      return CollectionUtil.iterableAsList((Iterable<SNode>) result);
+
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
       LOG.error(e);
