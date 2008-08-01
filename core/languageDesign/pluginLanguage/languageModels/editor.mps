@@ -1942,15 +1942,15 @@
                   </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207318325559">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1207318325560">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625345350">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207318325563">
+                      <link role="variableDeclaration" targetNodeId="1207318325548" resolveInfo="keycodes" />
+                    </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation" id="1207318325561">
                       <node role="argument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1207318325562">
                         <link role="classConcept" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
                         <link role="baseMethodDeclaration" targetNodeId="2.~EditorCellKeyMap.getVirtualKeycodes():java.util.List" resolveInfo="getVirtualKeycodes" />
                       </node>
-                    </node>
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207318325563">
-                      <link role="variableDeclaration" targetNodeId="1207318325548" resolveInfo="keycodes" />
                     </node>
                   </node>
                 </node>

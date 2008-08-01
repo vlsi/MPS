@@ -4,29 +4,29 @@ package jetbrains.mps.ypath.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class NodeKindCase_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ErrorCell3716_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ErrorCell3716_0");
+  private static void setupBasic_Error_11800100679301180010067930(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1180010067930");
   }
 
-  private static void setupLabel_ErrorCell3716_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Error_1180010067930_1180010067930(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ErrorCell3716_0(context, node);
+    return this.createError1180010067930(context, node);
   }
 
-  public EditorCell create_ErrorCell3716_0(EditorContext context, SNode node) {
+  public EditorCell createError1180010067930(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "select case");
-    setupBasic_ErrorCell3716_0(editorCell, node, context);
-    setupLabel_ErrorCell3716_0(editorCell, node, context);
+    setupBasic_Error_11800100679301180010067930(editorCell, node, context);
+    setupLabel_Error_1180010067930_1180010067930(editorCell, node, context);
     return editorCell;
   }
 

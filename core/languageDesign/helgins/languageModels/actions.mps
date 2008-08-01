@@ -367,7 +367,10 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199876206212">
-                <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1199876225978">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625334874">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199876270880">
+                    <link role="variableDeclaration" targetNodeId="1199876270871" resolveInfo="subconcepts" />
+                  </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperation" id="1199876227373">
                     <node role="whereClosure" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereBlock" id="1199876227374">
                       <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1199876227375">
@@ -392,9 +395,6 @@
                         </node>
                       </node>
                     </node>
-                  </node>
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199876270880">
-                    <link role="variableDeclaration" targetNodeId="1199876270871" resolveInfo="subconcepts" />
                   </node>
                 </node>
               </node>

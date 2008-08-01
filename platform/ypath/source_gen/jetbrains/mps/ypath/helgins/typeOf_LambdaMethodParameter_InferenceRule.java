@@ -5,6 +5,7 @@ package jetbrains.mps.ypath.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -15,8 +16,16 @@ public class typeOf_LambdaMethodParameter_InferenceRule implements InferenceRule
 
   public void applyRule(final SNode parameter) {
     final SNode T_typevar_1178551166899 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(new QuotationClass_2().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1178551166899)), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(SNodeOperations.getParent(parameter, null, false, false), null, false, false), "jetbrains.mps.ypath.helgins", "1179327748294", true), SNodeOperations.getParent(SNodeOperations.getParent(parameter, null, false, false), null, false, false), null, "jetbrains.mps.ypath.helgins", "1179327739073");
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.ypath.helgins", "1179326834794", true), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1178551166899), parameter, null, "jetbrains.mps.ypath.helgins", "1179326842470");
+    {
+      SNode _nodeToCheck_1029348928467 = parameter;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(new QuotationClass_2().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1178551166899)), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(SNodeOperations.getParent(parameter, null, false, false), null, false, false), "jetbrains.mps.ypath.helgins", "1179327748294", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1179327739073", intentionProvider);
+    }
+    {
+      SNode _nodeToCheck_1029348928467 = parameter;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.ypath.helgins", "1179326834794", true), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1178551166899), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1179326842470", intentionProvider);
+    }
   }
 
   public String getApplicableConceptFQName() {

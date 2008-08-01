@@ -118,17 +118,19 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1179271724094">
-          <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1179271725885">
-            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1179271729004" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625316808">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179271724095">
               <link role="variableDeclaration" targetNodeId="1179271692697" resolveInfo="list" />
             </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1179271729004" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1179939338524">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1179942907357">
-            <link role="variableDeclaration" targetNodeId="1179942913358" resolveInfo="fff" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1179939338525" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625302708">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1179939338525" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1217625302709">
+              <link role="fieldDeclaration" targetNodeId="1179942913358" resolveInfo="fff" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1179944812539">

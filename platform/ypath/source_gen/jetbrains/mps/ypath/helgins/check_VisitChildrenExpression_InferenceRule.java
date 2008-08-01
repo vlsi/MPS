@@ -10,6 +10,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_VisitChildrenExpression_InferenceRule implements InferenceRule_Runtime {
@@ -33,7 +34,7 @@ public class check_VisitChildrenExpression_InferenceRule implements InferenceRul
       SNode param;
       Iterator<SNode> arg_iterator = SLinkOperations.getTargets(visitChildrenExpression, "actualArgument", true).iterator();
       Iterator<SNode> param_iterator = parameters.iterator();
-      while(true) {
+      while (true) {
         if (!(arg_iterator.hasNext())) {
           break;
         }
@@ -42,7 +43,11 @@ public class check_VisitChildrenExpression_InferenceRule implements InferenceRul
         }
         arg = arg_iterator.next();
         param = param_iterator.next();
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg, "jetbrains.mps.ypath.helgins", "1180014730654", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(param, "jetbrains.mps.ypath.helgins", "1180014739452", true), arg, null, "jetbrains.mps.ypath.helgins", "1180014737422", false, 0);
+        {
+          SNode _nodeToCheck_1029348928467 = visitChildrenExpression;
+          BaseIntentionProvider intentionProvider = null;
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg, "jetbrains.mps.ypath.helgins", "1180014730654", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(param, "jetbrains.mps.ypath.helgins", "1180014739452", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1180014737422", false, 0, intentionProvider);
+        }
       }
     }
   }

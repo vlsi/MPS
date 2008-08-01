@@ -117,11 +117,11 @@
             <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1196720899964">
               <property name="value" value="0" />
             </node>
-            <node role="actual" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1196720899965">
-              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1196720899966" />
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625317380">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196720899967">
                 <link role="variableDeclaration" targetNodeId="1196720899956" resolveInfo="attribs" />
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1196720899966" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196720899968">
@@ -703,11 +703,11 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196720900193">
-            <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1196720900194">
-              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1196720900195" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625315506">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196720900196">
                 <link role="variableDeclaration" targetNodeId="1196720900159" resolveInfo="seq" />
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1196720900195" />
             </node>
           </node>
         </node>

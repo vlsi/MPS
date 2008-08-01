@@ -5,8 +5,6 @@ package treepathFeatures;
 import jetbrains.mps.ypath.runtime.TreePath;
 import org.w3c.dom.Node;
 import jetbrains.mps.ypath.runtime.IFilter;
-import treepathFeatures.TryFeatures.foo_BAR_Property;
-import treepathFeatures.TryFeatures.foo_BAZ_Property;
 import java.util.AbstractList;
 import java.util.AbstractCollection;
 import jetbrains.mps.internal.collections.runtime.Sequence;

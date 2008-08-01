@@ -5,6 +5,7 @@ package jetbrains.mps.ypath.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -15,7 +16,11 @@ public class typeof_TreePathAdapterExpression_InferenceRule implements Inference
 
   public void applyRule(final SNode exp) {
     final SNode ExpType_typevar_1190288659521 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(exp, "expression", true), "jetbrains.mps.ypath.helgins", "1190288685890", true), SLinkOperations.getTarget(exp, "expression", true), null, "jetbrains.mps.ypath.helgins", "1190288669877");
+    {
+      SNode _nodeToCheck_1029348928467 = exp;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(exp, "expression", true), "jetbrains.mps.ypath.helgins", "1190288685890", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1190288669877", intentionProvider);
+    }
     {
       final SNode _representatorVar = TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar, new Runnable() {

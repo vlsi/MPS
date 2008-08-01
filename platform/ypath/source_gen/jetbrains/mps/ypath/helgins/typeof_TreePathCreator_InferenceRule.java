@@ -4,6 +4,7 @@ package jetbrains.mps.ypath.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -14,7 +15,11 @@ public class typeof_TreePathCreator_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(final SNode tpCreator) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(tpCreator, "jetbrains.mps.ypath.helgins", "1184578650091", true), SLinkOperations.getTarget(tpCreator, "treePathType", true), tpCreator, null, "jetbrains.mps.ypath.helgins", "1184578650090");
+    {
+      SNode _nodeToCheck_1029348928467 = tpCreator;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(tpCreator, "jetbrains.mps.ypath.helgins", "1184578650091", true), SLinkOperations.getTarget(tpCreator, "treePathType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1184578650090", intentionProvider);
+    }
   }
 
   public String getApplicableConceptFQName() {

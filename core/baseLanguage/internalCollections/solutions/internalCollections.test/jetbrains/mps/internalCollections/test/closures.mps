@@ -240,7 +240,10 @@
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204735610388">
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625324253">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204735610401">
+                  <link role="variableDeclaration" targetNodeId="1204735571102" resolveInfo="seq" />
+                </node>
                 <node role="operation" type="jetbrains.mps.internal.collections.structure.WhereOperation" id="1204735610389">
                   <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204735610390">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204735610391">
@@ -265,9 +268,6 @@
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1204735610399" />
                     </node>
                   </node>
-                </node>
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204735610401">
-                  <link role="variableDeclaration" targetNodeId="1204735571102" resolveInfo="seq" />
                 </node>
               </node>
             </node>
@@ -659,7 +659,11 @@
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204739142388">
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625329754">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204794235762">
+                  <link role="baseMethodDeclaration" targetNodeId="1204793778541" resolveInfo="input5" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204794235763" />
+                </node>
                 <node role="operation" type="jetbrains.mps.internal.collections.structure.TranslateOperation" id="1204739142389">
                   <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204739142390">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204739142391">
@@ -684,10 +688,6 @@
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1204739142399" />
                     </node>
                   </node>
-                </node>
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204794235762">
-                  <link role="baseMethodDeclaration" targetNodeId="1204793778541" resolveInfo="input5" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204794235763" />
                 </node>
               </node>
             </node>

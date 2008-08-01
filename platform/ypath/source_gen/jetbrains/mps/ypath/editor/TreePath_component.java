@@ -5,9 +5,9 @@ package jetbrains.mps.ypath.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -19,14 +19,14 @@ public class TreePath_component extends AbstractCellProvider {
     super(node);
   }
 
-  private static void setupBasic_CollectionCell5335_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5335_0");
+  private static void setupBasic_Collection_11793061980781179306198078(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1179306198078");
   }
 
-  private static void setupBasic_treePathTypeRefNodeCell5335_0(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_refNode_treePathType1179306204982(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_treePathTypeRefNodeCell5335_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNode_treePathType_1179306204982(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -35,38 +35,38 @@ public class TreePath_component extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_CollectionCell5335_0(context, node);
+    return this.createCollection1179306198078(context, node);
   }
 
-  public EditorCell create_CollectionCell5335_0(EditorContext context, SNode node) {
+  public EditorCell createCollection1179306198078(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_CollectionCell5335_0(editorCell, node, context);
+    setupBasic_Collection_11793061980781179306198078(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_treePathTypeRefNodeCell5335_0(context, node));
+    editorCell.addEditorCell(this.createRefNode1179306204982(context, node));
     return editorCell;
   }
 
-  public EditorCell create_treePathTypeRefNodeCell5335_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode1179306204982_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_treePathTypeRefNodeCell5335_0(editorCell, node, context);
+    setupBasic_refNode_treePathType1179306204982(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_treePathTypeRefNodeCell5335_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_treePathType_1179306204982((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell create_treePathTypeRefNodeCell5335_0(EditorContext context, SNode node) {
+  public EditorCell createRefNode1179306204982(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("treePathType");
     provider.setNoTargetText("<no treePathType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_treePathTypeRefNodeCell5335_0_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode1179306204982_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -8,6 +8,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.ypath.constraints.FeatureTargetTypeUtil;
 import jetbrains.mps.ypath.behavior.ParameterWrapper_Behavior;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
@@ -24,7 +25,11 @@ public class typeof_TreePathOperationExpression_InferenceRule implements Inferen
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(op, "usedFeature", false), "jetbrains.mps.ypath.structure.IParamFeature")) {
         if (SPropertyOperations.getString(SLinkOperations.getTarget(op, "paramObject", true), "name") != null) {
           final SNode SourceType_typevar_1186145333005 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(SourceType_typevar_1186145333005), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(tpoe, "expression", true), "jetbrains.mps.ypath.helgins", "1186145352982", true), SLinkOperations.getTarget(tpoe, "expression", true), null, "jetbrains.mps.ypath.helgins", "1186145347351");
+          {
+            SNode _nodeToCheck_1029348928467 = tpoe;
+            BaseIntentionProvider intentionProvider = null;
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(SourceType_typevar_1186145333005), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(tpoe, "expression", true), "jetbrains.mps.ypath.helgins", "1186145352982", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1186145347351", intentionProvider);
+          }
           {
             final SNode _representatorVar1 = TypeChecker.getInstance().getEquationManager().getRepresentator(SourceType_typevar_1186145333005);
             TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar1, new Runnable() {
@@ -54,7 +59,11 @@ public class typeof_TreePathOperationExpression_InferenceRule implements Inferen
       }
     } else
     {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(tpoe, "jetbrains.mps.ypath.helgins", "1184588387870", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(tpoe, "expression", true), "jetbrains.mps.ypath.helgins", "1184588395631", true), tpoe, null, "jetbrains.mps.ypath.helgins", "1184588384882");
+      {
+        SNode _nodeToCheck_1029348928467 = tpoe;
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(tpoe, "jetbrains.mps.ypath.helgins", "1184588387870", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(tpoe, "expression", true), "jetbrains.mps.ypath.helgins", "1184588395631", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1184588384882", intentionProvider);
+      }
     }
   }
 

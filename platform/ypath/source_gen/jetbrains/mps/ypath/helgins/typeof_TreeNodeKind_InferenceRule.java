@@ -4,6 +4,7 @@ package jetbrains.mps.ypath.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -14,7 +15,11 @@ public class typeof_TreeNodeKind_InferenceRule implements InferenceRule_Runtime 
   }
 
   public void applyRule(final SNode kind) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(kind, "jetbrains.mps.ypath.helgins", "1184316264005", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(kind, null, false, false), "jetbrains.mps.ypath.helgins", "1184316290748", true), kind, null, "jetbrains.mps.ypath.helgins", "1184316270386");
+    {
+      SNode _nodeToCheck_1029348928467 = kind;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(kind, "jetbrains.mps.ypath.helgins", "1184316264005", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(kind, null, false, false), "jetbrains.mps.ypath.helgins", "1184316290748", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1184316270386", intentionProvider);
+    }
   }
 
   public String getApplicableConceptFQName() {

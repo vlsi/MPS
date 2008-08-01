@@ -4,9 +4,9 @@ package jetbrains.mps.ypath.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -14,36 +14,36 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class VisitNodesStatement_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_visitBlockRefNodeCell1766_0(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_refNode_visitBlock1180024976538(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_visitBlockRefNodeCell1766_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNode_visitBlock_1180024976538(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_visitBlockRefNodeCell1766_0(context, node);
+    return this.createRefNode1180024976538(context, node);
   }
 
-  public EditorCell create_visitBlockRefNodeCell1766_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode1180024976538_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_visitBlockRefNodeCell1766_0(editorCell, node, context);
+    setupBasic_refNode_visitBlock1180024976538(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_visitBlockRefNodeCell1766_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_visitBlock_1180024976538((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell create_visitBlockRefNodeCell1766_0(EditorContext context, SNode node) {
+  public EditorCell createRefNode1180024976538(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("visitBlock");
     provider.setNoTargetText("<no visitBlock>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_visitBlockRefNodeCell1766_0_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode1180024976538_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

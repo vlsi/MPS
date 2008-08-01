@@ -20,7 +20,7 @@ public class SNODE_GEN_Design {
       return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
-          return "aggregation".equals(SPropertyOperations.getString_def(it, "metaClass", null));
+          return "aggregation".equals(SPropertyOperations.getString_def(it, "metaClass", "reference"));
         }
 
       });
@@ -65,7 +65,7 @@ public class SNODE_GEN_Design {
       return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
-          return SPropertyOperations.getString_def(it, "metaClass", null) == null || "reference".equals(SPropertyOperations.getString_def(it, "metaClass", null));
+          return SPropertyOperations.getString_def(it, "metaClass", "reference") == null || "reference".equals(SPropertyOperations.getString_def(it, "metaClass", "reference"));
         }
 
       });

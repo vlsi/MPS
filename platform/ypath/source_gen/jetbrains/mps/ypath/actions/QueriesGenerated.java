@@ -44,12 +44,12 @@ import jetbrains.mps.util.Triplet;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
 import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
+import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.util.Quadruplet;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
-import jetbrains.mps.nodeEditor.CellSide;
 
 public class QueriesGenerated {
 
@@ -914,7 +914,7 @@ public class QueriesGenerated {
           }
 
           public String getDescriptionText(String text) {
-            return "match node kind";
+            return "match node type";
           }
 
         });
