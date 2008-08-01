@@ -22,7 +22,7 @@
   <language namespace="jetbrains.mps.core">
     <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="7" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="9" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
@@ -33,7 +33,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <maxImportIndex value="23" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="7" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="9" />
   <import index="2" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.editor@java_stub" version="-1" />
   <import index="6" modelUID="java.lang@java_stub" version="-1" />
@@ -963,7 +963,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203682740128">
-    <property name="package" value="Actions.Groups.GroupModification" />
+    <property name="package" value="Actions.Groups" />
     <link role="conceptDeclaration" targetNodeId="1.1203092361741" resolveInfo="ModificationStatement" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1203682746880">
       <property name="vertical" value="false" />
@@ -1170,7 +1170,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1204384430354">
-    <property name="package" value="Actions.Groups.GroupModification.bootstrap" />
+    <property name="package" value="Actions.Groups" />
     <link role="conceptDeclaration" targetNodeId="1.1204383956737" resolveInfo="BootstrapActionGroup" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204384454872">
       <property name="vertical" value="true" />

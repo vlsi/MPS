@@ -4,7 +4,7 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.pluginLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="7" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="9" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
@@ -919,7 +919,7 @@
       <link role="modifiedGroup" targetNodeId="1204991225922" resolveInfo="LanguageNewActions" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapActionGroup" id="1215004007755">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.InterfaceGroup" id="1215004007755">
     <property name="name" value="IDEAWindows" />
     <property name="package" value="Integration" />
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1215004007757" />
@@ -927,7 +927,7 @@
       <property name="value" value="WindowMenu" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapActionGroup" id="1215005292029">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.InterfaceGroup" id="1215005292029">
     <property name="package" value="Integration" />
     <property name="name" value="IDEAGoTo" />
     <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215005307186">
@@ -935,7 +935,7 @@
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1215776825236" />
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapActionGroup" id="1215010709295">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.InterfaceGroup" id="1215010709295">
     <property name="package" value="Integration" />
     <property name="name" value="IDEAEdit" />
     <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215010726564">
@@ -943,7 +943,7 @@
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1215010709297" />
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapActionGroup" id="1215011792193">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.InterfaceGroup" id="1215011792193">
     <property name="package" value="Integration" />
     <property name="name" value="IDEAFile" />
     <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215011833203">
@@ -951,7 +951,7 @@
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1215011792195" />
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapActionGroup" id="1215011911267">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.InterfaceGroup" id="1215011911267">
     <property name="package" value="Integration" />
     <property name="name" value="IDEAView" />
     <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215011918692">
@@ -959,7 +959,7 @@
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1215011911269" />
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapActionGroup" id="1215012161252">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.InterfaceGroup" id="1215012161252">
     <property name="package" value="Integration" />
     <property name="name" value="IDEATools" />
     <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215012167646">
@@ -967,7 +967,7 @@
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1215012161254" />
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapActionGroup" id="1215012343709">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.InterfaceGroup" id="1215012343709">
     <property name="package" value="Integration" />
     <property name="name" value="IDEAVCS" />
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1216225319668">
@@ -983,7 +983,7 @@
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1215012343711" />
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapActionGroup" id="1215012355384">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.InterfaceGroup" id="1215012355384">
     <property name="package" value="Integration" />
     <property name="name" value="IDEAHelp" />
     <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215012361496">
@@ -991,7 +991,7 @@
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1215012355386" />
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapActionGroup" id="1215012744609">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.InterfaceGroup" id="1215012744609">
     <property name="package" value="Integration" />
     <property name="name" value="IDEAMainMenu" />
     <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215012757018">
@@ -999,7 +999,7 @@
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1215012744611" />
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapActionGroup" id="1215013184777">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.InterfaceGroup" id="1215013184777">
     <property name="package" value="Integration" />
     <property name="name" value="IDEAGenerate" />
     <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215013216599">
@@ -1007,7 +1007,7 @@
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1215013184779" />
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapActionGroup" id="1215013225475">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.InterfaceGroup" id="1215013225475">
     <property name="package" value="Integration" />
     <property name="name" value="IDEABuild" />
     <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215013237165">
@@ -1034,7 +1034,7 @@
       <link role="modifiedGroup" targetNodeId="1215013225475" resolveInfo="IDEABuild" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapActionGroup" id="1215606446554">
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.InterfaceGroup" id="1215606446554">
     <property name="package" value="Integration" />
     <property name="name" value="MPSHelpMenu" />
     <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215606458015">

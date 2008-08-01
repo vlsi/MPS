@@ -80,6 +80,26 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="8">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="BootstrapExtentionPoint" conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapExtentionPoint" featureKind="CONCEPT" />
+          <value featureName="InterfaceExtentionPoint" conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.InterfaceExtentionPoint" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="9">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="BootstrapActionGroup" conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.BootstrapActionGroup" featureKind="CONCEPT" />
+          <value featureName="InterfaceGroup" conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.InterfaceGroup" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
@@ -100,7 +120,7 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
   </language>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="7" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="9" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
@@ -386,7 +406,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203092361741">
-    <property name="package" value="Actions.Groups.GroupModification" />
+    <property name="package" value="Actions.Groups" />
     <property name="name" value="ModificationStatement" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203092736097">
@@ -644,8 +664,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204383956737">
-    <property name="package" value="Actions.Groups.GroupModification.bootstrap" />
-    <property name="name" value="BootstrapActionGroup" />
+    <property name="package" value="Actions.Groups" />
+    <property name="name" value="InterfaceGroup" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1205511365503">
@@ -674,8 +694,8 @@
     <property name="name" value="ActionGroupMember" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204397573187">
-    <property name="package" value="Actions.Groups.GroupModification.bootstrap" />
-    <property name="name" value="BootstrapExtentionPoint" />
+    <property name="package" value="Actions.Groups" />
+    <property name="name" value="InterfaceExtentionPoint" />
     <link role="extends" targetNodeId="1203680534665" resolveInfo="ExtentionPoint" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1205510728384">
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
