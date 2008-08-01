@@ -24,7 +24,6 @@ import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
-import jetbrains.mps.nodeEditor.NodeEditorActions.SHOW_MESSAGE;
 import jetbrains.mps.nodeEditor.cellActions.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
