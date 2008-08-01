@@ -116,24 +116,21 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showAspectMethodUsages(final String namespace, final String name) throws RemoteException {
+    final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
         for (final SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
           if (!namespace.equals(descriptor.getModelUID().getLongName())) continue;
           if (!descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
             applicableModelDescriptors.add(descriptor.getSModel());
           }
         }
-        new Thread() {
-          public void run() {
-            SearchQuery searchQuery = new SearchQuery(GlobalScope.getInstance());
-            BaseFinder finder = new AspectMethodsFinder(applicableModelDescriptors, name);
-            myProject.getComponent(UsagesViewTool.class).findUsages(searchQuery, false, true, true, finder);
-          }
-        }.start();
       }
     });
+
+    SearchQuery searchQuery = new SearchQuery(GlobalScope.getInstance());
+    BaseFinder finder = new AspectMethodsFinder(applicableModelDescriptors, name);
+    myProject.getComponent(UsagesViewTool.class).findUsages(searchQuery, false, true, true, finder);
   }
 
   public void showConceptNode(final String fqName) throws RemoteException {
