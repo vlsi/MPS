@@ -9,6 +9,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -30,8 +31,8 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     if (keyEvent.isConsumed()) return false;
 
     EditorComponent editor = nodeEditor;
-    SNodePointer pointer = editor.getRootCell().getSNodePointer();
-    boolean notEditable = pointer != null &&  pointer.getModel() != null && pointer.getModel().isNotEditable();
+    SNode node = editor.getRootCell().getSNode();
+    boolean notEditable = node != null &&  node.getModel() != null && node.getModel().isNotEditable();
     notEditable = (nodeEditor.isReadOnly() || notEditable);
 
     if (notEditable) return false;
