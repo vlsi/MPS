@@ -3,7 +3,6 @@ package jetbrains.mps.vcs;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VfsUtil;
-import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -13,7 +12,6 @@ import java.util.HashSet;
 import java.util.List;
 
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.MPSModuleRepositoryListener;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.IFile;
@@ -24,6 +22,7 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
   private static final Logger LOG = Logger.getLogger(ExcludedFileIndexApplicationComponent.class);
   private final MPSModuleRepository myModuleRepository;
   private final Set<VirtualFile> myExcludedFiles = new HashSet<VirtualFile>();
+  private final String[] myExcludedRegexps = new String[]{".*\\.svn.*"};
   private final ModuleRepositoryAdapter myModuleRepositoryListener = new ModuleRepositoryAdapter() {
     @Override
     public void moduleAdded(IModule module) {
@@ -90,6 +89,14 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
       if (VfsUtil.isAncestor(excludedFile, file, false)) {
         return true;
       }
+    }
+
+    String filePath = file.getPath();
+    for (String regexp : myExcludedRegexps){
+      if (filePath.matches(regexp)){
+        return true;
+      }
+
     }
 
     return false;

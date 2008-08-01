@@ -56,8 +56,6 @@ public class MPSVCSManager implements ProjectComponent {
     }
   };
 
-  private static final String IGNORE_PATTERN = ".svn*";
-
   public MPSVCSManager(Project project, ProjectLevelVcsManager manager, MPSProjectHolder holder, MPSModuleRepository repository, VcsDirectoryMappingStorage storage, ChangeListManager clmanager) {
     myProject = project;
     myManager = manager;
@@ -228,24 +226,6 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public void projectOpened() {
-    myChangeListManager.ensureUpToDate(false);
-    addDotSvnToIgnore();
-  }
-
-  private void addDotSvnToIgnore() {
-    ChangeListManager m = ChangeListManager.getInstance(myProject);
-    IgnoredFileBean[] filesToIgnore = m.getFilesToIgnore();
-    for (IgnoredFileBean bean : filesToIgnore) {
-      if ((bean != null) && (bean.getMask() != null)) {
-        if (IGNORE_PATTERN.equalsIgnoreCase(bean.getMask())) {
-          return;
-        }
-      }
-    }
-
-    IgnoredFileBean svnIgnoreBean = new IgnoredFileBean();
-    svnIgnoreBean.setMask(IGNORE_PATTERN);
-    m.addFilesToIgnore(svnIgnoreBean);
   }
 
   public void projectClosed() {
