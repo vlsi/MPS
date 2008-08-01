@@ -3276,7 +3276,9 @@
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104860323">
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1213104860324">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1213104860325">
-                    <link role="concept" targetNodeId="7.1203087890642" resolveInfo="ActionGroupDeclaration" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635291">
+                      <link role="conceptDeclaration" targetNodeId="7.1203087890642" resolveInfo="ActionGroupDeclaration" />
+                    </node>
                   </node>
                 </node>
                 <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1213104860326" />

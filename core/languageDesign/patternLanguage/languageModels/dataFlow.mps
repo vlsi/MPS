@@ -54,7 +54,9 @@
             <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207243902271" />
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1207243902272">
               <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1207243902273">
-                <link role="concept" targetNodeId="2.1196350785110" resolveInfo="AbstractAntiquotation" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635175">
+                  <link role="conceptDeclaration" targetNodeId="2.1196350785110" resolveInfo="AbstractAntiquotation" />
+                </node>
               </node>
             </node>
           </node>

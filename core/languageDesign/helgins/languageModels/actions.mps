@@ -428,7 +428,9 @@
                     <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1199876655781" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1199876658488">
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1199876659598">
-                        <link role="concept" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+                        <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635228">
+                          <link role="conceptDeclaration" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+                        </node>
                       </node>
                     </node>
                   </node>

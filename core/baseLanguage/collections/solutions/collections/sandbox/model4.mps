@@ -73,7 +73,9 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1180551861117">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1180551864180">
-                    <link role="concept" targetNodeId="1.1068580123136" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635225">
+                      <link role="conceptDeclaration" targetNodeId="1.1068580123136" resolveInfo="StatementList" />
+                    </node>
                   </node>
                 </node>
               </node>

@@ -315,7 +315,9 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227902205">
                   <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_childConcept" id="1178184994472" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation" id="1178108606185">
-                    <link role="conceptDeclaration" targetNodeId="1.1168513806633" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635078">
+                      <link role="conceptDeclaration" targetNodeId="1.1168513806633" resolveInfo="FromOperation" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -391,7 +393,9 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227894943">
                   <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_childConcept" id="1178184988048" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation" id="1178108469924">
-                    <link role="conceptDeclaration" targetNodeId="1.1168524996431" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635079">
+                      <link role="conceptDeclaration" targetNodeId="1.1168524996431" resolveInfo="IterateOperation" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -468,7 +472,9 @@
                 <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1180011290212" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1180011293398">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1180011296234">
-                    <link role="concept" targetNodeId="1.1180024940230" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635117">
+                      <link role="conceptDeclaration" targetNodeId="1.1180024940230" resolveInfo="VisitNodesStatement" />
+                    </node>
                   </node>
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1180011307255" />
                 </node>
@@ -494,7 +500,9 @@
                 <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1180026448925" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1180026452987">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1180026457690">
-                    <link role="concept" targetNodeId="1.1180024940230" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635320">
+                      <link role="conceptDeclaration" targetNodeId="1.1180024940230" resolveInfo="VisitNodesStatement" />
+                    </node>
                   </node>
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1180026465454" />
                 </node>
@@ -599,7 +607,9 @@
                     <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1197710512779" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1197710512776">
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1197710512777">
-                        <link role="concept" targetNodeId="1.1168468602533" resolveInfo="TreePathOperationExpression" />
+                        <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635288">
+                          <link role="conceptDeclaration" targetNodeId="1.1168468602533" resolveInfo="TreePathOperationExpression" />
+                        </node>
                       </node>
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1197710512778" />
                     </node>
@@ -2954,7 +2964,9 @@
                         <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1197320726581" />
                         <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1197320729360">
                           <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1197320732450">
-                            <link role="concept" targetNodeId="1.1190798501119" resolveInfo="GenericParamFeature" />
+                            <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635299">
+                              <link role="conceptDeclaration" targetNodeId="1.1190798501119" resolveInfo="GenericParamFeature" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -3023,7 +3035,9 @@
                           <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1197320800453" />
                           <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1197320800451">
                             <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1197320800452">
-                              <link role="concept" targetNodeId="1.1190798501119" resolveInfo="GenericParamFeature" />
+                              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635116">
+                                <link role="conceptDeclaration" targetNodeId="1.1190798501119" resolveInfo="GenericParamFeature" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -3123,7 +3137,9 @@
                             <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1197320820699" />
                             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1197320820697">
                               <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1197320820698">
-                                <link role="concept" targetNodeId="1.1190798501119" resolveInfo="GenericParamFeature" />
+                                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635360">
+                                  <link role="conceptDeclaration" targetNodeId="1.1190798501119" resolveInfo="GenericParamFeature" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -3412,7 +3428,9 @@
                 <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_EnclosingNode" id="1197319804251" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1197319804249">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1197319804250">
-                    <link role="concept" targetNodeId="1.1190798501119" resolveInfo="GenericParamFeature" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635261">
+                      <link role="conceptDeclaration" targetNodeId="1.1190798501119" resolveInfo="GenericParamFeature" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -3447,7 +3465,9 @@
                 <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_EnclosingNode" id="1197319828544" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1197319828542">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1197319828543">
-                    <link role="concept" targetNodeId="1.1190798501119" resolveInfo="GenericParamFeature" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635248">
+                      <link role="conceptDeclaration" targetNodeId="1.1190798501119" resolveInfo="GenericParamFeature" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -3482,7 +3502,9 @@
                 <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_EnclosingNode" id="1197319845250" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1197319845248">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1197319845249">
-                    <link role="concept" targetNodeId="1.1190798501119" resolveInfo="GenericParamFeature" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635187">
+                      <link role="conceptDeclaration" targetNodeId="1.1190798501119" resolveInfo="GenericParamFeature" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -3941,7 +3963,9 @@
                     <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1198013650265" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1198013650262">
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1198013650263">
-                        <link role="concept" targetNodeId="1.1168468602533" resolveInfo="TreePathOperationExpression" />
+                        <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635249">
+                          <link role="conceptDeclaration" targetNodeId="1.1168468602533" resolveInfo="TreePathOperationExpression" />
+                        </node>
                       </node>
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1198013650264" />
                     </node>
@@ -4883,7 +4907,9 @@
                     <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1198013650669" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1198013650666">
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1198013650667">
-                        <link role="concept" targetNodeId="1.1168468602533" resolveInfo="TreePathOperationExpression" />
+                        <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635333">
+                          <link role="conceptDeclaration" targetNodeId="1.1168468602533" resolveInfo="TreePathOperationExpression" />
+                        </node>
                       </node>
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1198013650668" />
                     </node>
@@ -5056,7 +5082,9 @@
                     <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1198013650746" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1198013650743">
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1198013650744">
-                        <link role="concept" targetNodeId="1.1168468602533" resolveInfo="TreePathOperationExpression" />
+                        <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635146">
+                          <link role="conceptDeclaration" targetNodeId="1.1168468602533" resolveInfo="TreePathOperationExpression" />
+                        </node>
                       </node>
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1198013650745" />
                     </node>

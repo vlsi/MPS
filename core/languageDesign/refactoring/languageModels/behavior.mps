@@ -109,7 +109,9 @@
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877343871" />
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1213877343872">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1213877343873">
-                  <link role="concept" targetNodeId="1.1189693812263" resolveInfo="Refactoring" />
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635147">
+                    <link role="conceptDeclaration" targetNodeId="1.1189693812263" resolveInfo="Refactoring" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -147,7 +149,9 @@
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1213877343888">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1213877343889">
-                  <link role="concept" targetNodeId="1.1189694084608" resolveInfo="RequiredAdditionalArgumentReference" />
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1217631635217">
+                    <link role="conceptDeclaration" targetNodeId="1.1189694084608" resolveInfo="RequiredAdditionalArgumentReference" />
+                  </node>
                 </node>
               </node>
             </node>
