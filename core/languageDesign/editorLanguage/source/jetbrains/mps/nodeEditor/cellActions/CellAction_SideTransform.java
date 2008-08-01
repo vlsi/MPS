@@ -7,6 +7,7 @@ import jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTag;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class CellAction_SideTransform extends EditorCellAction {
   private CellSide mySide;
@@ -23,12 +24,9 @@ public class CellAction_SideTransform extends EditorCellAction {
     EditorContext editorContext = selectedCell.getEditorContext();
     SNode node = selectedCell.getSNode();
     if (node == null) return false;
+    if (getSideTransformHintAnchorCell(selectedCell, mySide) == null) return false;
+    if (selectedCell instanceof EditorCell_Error) return false;
 
-    if (getSideTransformHintAnchorCell(selectedCell, mySide) == null) {
-      return false;
-    }
-
-    // is hint completion menu available for this node?
     String anchorTag = selectedCell.getRightTransformAnchorTag();
     return ModelActions.canCreateSideTransformHintSubstituteActions(node, mySide, anchorTag, editorContext.getOperationContext());
   }
@@ -40,25 +38,22 @@ public class CellAction_SideTransform extends EditorCellAction {
     if (anchorTag != null) {
       anchorCell = selectedCell;
     } else {
-      // find 'default' anchor cell
       EditorCell nodeMainCell = selectedCell.getContainingBigCell();
       EditorCell defAnchorCell = nodeMainCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
         public boolean met(EditorCell object) {
           return object.hasRightTransformAnchorTag(RightTransformAnchorTag.default_.getValueAsString()) && object.getSNode() == node;
         }
       }, true), true);
+
       if (defAnchorCell == null) {
         defAnchorCell = nodeMainCell;
       }
-      // default r-tranform only works if the 'default anchor cell' is
-      //  - the selected cell
-      //  - parent of the selected cell
+
       if (defAnchorCell == selectedCell || defAnchorCell.isParentOf(selectedCell)) {
         anchorCell = defAnchorCell;
       }
     }
 
-    // selected cell must be last selectable cell
     if (side == CellSide.RIGHT && anchorCell != null && anchorCell.findChild(CellFinders.LAST_SELECTABLE_LEAF, true) != selectedCell) {
       return null;
     }

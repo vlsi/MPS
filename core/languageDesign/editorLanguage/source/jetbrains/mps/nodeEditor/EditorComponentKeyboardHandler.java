@@ -41,7 +41,6 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     }
 
     CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
-    boolean dontExecuteRT = false;
     EditorCell selectedCell = editorContext.getSelectedCell();
 
     if (selectedCell != null) {
@@ -68,13 +67,6 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
           return true;
         }
       }
-
-      if (actionType == CellActionType.RIGHT_TRANSFORM) {
-        if (selectedCell instanceof EditorCell_Label && selectedCell.isErrorState()) {
-          //return true;
-          dontExecuteRT = true;
-        }
-      }
     }
 
     // process action
@@ -87,10 +79,8 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       }
 
       if (actionType != null && actionType != CellActionType.DELETE) {
-        if (!(actionType == CellActionType.RIGHT_TRANSFORM && dontExecuteRT)) {
-          if (selectedCell.executeAction(actionType)) {
-            return true;
-          }
+        if (selectedCell.executeAction(actionType)) {
+          return true;
         }
       }
 
