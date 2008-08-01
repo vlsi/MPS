@@ -117,6 +117,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   private MyScrollPane myScrollPane;
   private boolean myLastPropertiesState;
 
+  public static final String ID = ProjectViewPane.ID;
+
   private ReloadListener myReloadListener = new ReloadListener() {
     public void onBeforeReload() {
 
@@ -152,7 +154,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       });
     }
   };
-  public static final String ID = ProjectViewPane.ID;
 
   public ProjectPane(Project project, ProjectView projectView) {
     super(project);
@@ -228,7 +229,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "ProjectPane";
+    return "Project Pane";
   }
 
   public String getTitle() {
