@@ -1,6 +1,7 @@
 package jetbrains.mps.generator;
 
 import com.intellij.ide.IdeEventQueue;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -10,7 +11,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GeneratorManager.MyState;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
@@ -143,8 +143,8 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
 
       generatorManager.generateModelsWithProgressWindow(
         modelsWithContext,
-        generationType,
-        false);
+        generationType
+      );
     } catch (Throwable t) {
       LOG.error(t);
     }
@@ -166,8 +166,8 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
             return new Pair<SModelDescriptor, IOperationContext>(model, invocationContext);
           }
         }),
-      generationType,
-      closeOnExit);
+      generationType
+    );
   }
 
   private void showMessageView() {
@@ -181,8 +181,8 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
    * @return false if canceled
    */
   private boolean generateModelsWithProgressWindow(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
-                                                   final IGenerationType generationType,
-                                                   boolean closeOnExit) {
+                                                   final IGenerationType generationType
+  ) {
     if (inputModels.isEmpty()) {
       return true;
     }

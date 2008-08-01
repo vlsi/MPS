@@ -50,11 +50,11 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
   protected void doExecute(AnActionEvent e) {
     List<SModelDescriptor> modelsToGenerate = new ArrayList<SModelDescriptor>();
 
-    IOperationContext invocationContext=myOperationContext;
+    IOperationContext invocationContext = myOperationContext;
     for (IModule module : myModules) {
       if (module instanceof Generator) {
         module = ((Generator) module).getSourceLanguage();
-        invocationContext = new MyContext(module,myOperationContext);
+        invocationContext = new MyContext(module, myOperationContext);
       }
 
       modelsToGenerate.addAll(getModelsToGenerate(module));
@@ -68,11 +68,10 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
 
     GeneratorManager generatorManager = myOperationContext.getComponent(GeneratorManager.class);
     IGenerationType generationType = generatorManager.getDefaultModuleGenerationType();
-    generatorManager.generateModelsWithProgressWindow(
-      modelsToGenerate,
+    generatorManager.generateModelsFromDifferentModules(
       invocationContext,
-      generationType,
-      false);
+      modelsToGenerate,
+      generationType);
   }
 
   @NotNull
@@ -144,7 +143,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
 
     public MyContext(IModule module, IOperationContext operationContext) {
       myModule = module;
-      myOperationContext=operationContext;
+      myOperationContext = operationContext;
     }
 
     public <T> T getComponent(Class<T> clazz) {
