@@ -28,44 +28,23 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     EditorComponent nodeEditor = editorContext.getNodeEditorComponent();
     nodeEditor.hideMessageToolTip();
 
-    if (keyEvent.isConsumed()) return false;
-
-    EditorComponent editor = nodeEditor;
-    SNode node = editor.getRootCell().getSNode();
-    boolean notEditable = node != null &&  node.getModel() != null && node.getModel().isNotEditable();
-    notEditable = (nodeEditor.isReadOnly() || notEditable);
-
-    if (notEditable) return false;
-
-    EditorCell selectedCell = editor.getSelectedCell();
-
-    if (selectedCell != null) {
-      if (selectedCell.processKeyPressed(keyEvent, false)) {
-        return true;
-      }
+    if (keyEvent.isConsumed() || !editorContext.isEditable()) {
+      return false;
     }
 
-    // process cell keymaps first
-    if (selectedCell != null) {
-      List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo = KeyMapUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
-      if (actionsInfo.size() == 1 && !(actionsInfo.get(0).o1.isMenuAlwaysShown())) {
-        EditorCellKeyMapAction action = actionsInfo.get(0).o1;
-        EditorCell contextCell = actionsInfo.get(0).o2;
-        KeyMapUtil.executeKeyMapAction(action, keyEvent, contextCell, editorContext);
-        return true;
-      } else if (actionsInfo.size() > 1 ||
-        (actionsInfo.size() == 1 && actionsInfo.get(0).o1.isMenuAlwaysShown())) {
-        // show menu
-        KeyMapUtil.showActionsMenu(actionsInfo, keyEvent, editorContext, selectedCell);
-        return true;
-      }
+    if (processSelectedCell(editorContext, keyEvent, false)) {
+      return true;
     }
 
-    CellActionType actionType = editor.getActionType(keyEvent, editorContext);
+    if (processKeyMaps(editorContext, keyEvent)) {
+      return true;
+    }
 
-    // pre-process action
+    CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
 
     boolean dontExecuteRT = false;
+
+    EditorCell selectedCell = editorContext.getSelectedCell();
 
     if (selectedCell != null) {
       boolean endEditKeystroke = isEndEditKeystroke(keyEvent);      
@@ -91,7 +70,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
           }
         }
 
-        selectedCell = editor.getSelectedCell();
+        selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
         if (selectedCell == null) {
           return true;
         }
@@ -114,7 +93,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         }
       }
 
-      if (actionType != null && !(actionType == CellActionType.DELETE)) {
+      if (actionType != null && actionType != CellActionType.DELETE) {
         if (!(actionType == CellActionType.RIGHT_TRANSFORM && dontExecuteRT)) {
           if (selectedCell.executeAction(actionType)) {
             return true;
@@ -126,15 +105,15 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         // auto-completion (AKA node substitution)
         if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown() && !(keyEvent.isAltDown() || keyEvent.isShiftDown())) ||
           (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && (!keyEvent.isAltDown()) && !(keyEvent.isControlDown() || keyEvent.isShiftDown()))) {
-          if (editor.activateNodeSubstituteChooser(selectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
+          if (editorContext.getNodeEditorComponent().activateNodeSubstituteChooser(selectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
             LOG.debug("SUBSTITUTE");
             return true;
           }
           LOG.debug("NO SUBSTITUTE");
         }
 
-        if (editor.getNodeRangeSelection().isSelectionKeystroke(keyEvent)) {
-          if (editor.getNodeRangeSelection().activate(keyEvent)) {
+        if (editorContext.getNodeEditorComponent().getNodeRangeSelection().isSelectionKeystroke(keyEvent)) {
+          if (editorContext.getNodeEditorComponent().getNodeRangeSelection().activate(keyEvent)) {
             return true;
           }
         }
@@ -157,6 +136,36 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       keyEvent.consume();
     }
 
+    return false;
+  }
+
+
+  private boolean processSelectedCell(EditorContext editorContext, KeyEvent event, boolean allowErrors) {
+    EditorCell selectedCell = editorContext.getSelectedCell();
+    if (selectedCell != null) {
+      if (selectedCell.processKeyPressed(event, allowErrors)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private boolean processKeyMaps(EditorContext editorContext, KeyEvent keyEvent) {
+    EditorCell selectedCell = editorContext.getSelectedCell();
+    if (selectedCell != null) {
+      List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo = KeyMapUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
+      if (actionsInfo.size() == 1 && !(actionsInfo.get(0).o1.isMenuAlwaysShown())) {
+        EditorCellKeyMapAction action = actionsInfo.get(0).o1;
+        EditorCell contextCell = actionsInfo.get(0).o2;
+        KeyMapUtil.executeKeyMapAction(action, keyEvent, contextCell, editorContext);
+        return true;
+      } else if (actionsInfo.size() > 1 ||
+        (actionsInfo.size() == 1 && actionsInfo.get(0).o1.isMenuAlwaysShown())) {
+        // show menu
+        KeyMapUtil.showActionsMenu(actionsInfo, keyEvent, editorContext, selectedCell);
+        return true;
+      }
+    }
     return false;
   }
 

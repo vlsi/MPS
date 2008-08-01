@@ -35,6 +35,11 @@ public class EditorContext {
     return myNodeEditorComponent;
   }
 
+  public boolean isEditable() {
+    SNode node = myNodeEditorComponent.getRootCell().getSNode();
+    return node != null && node.getModel() != null && !node.getModel().isNotEditable();
+  }
+
   public boolean isInspector() {
     return myNodeEditorComponent instanceof InspectorEditorComponent;
   }
