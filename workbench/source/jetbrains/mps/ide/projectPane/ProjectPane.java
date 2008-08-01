@@ -3,6 +3,7 @@ package jetbrains.mps.ide.projectPane;
 import com.intellij.ide.*;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
+import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
@@ -151,12 +152,12 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       });
     }
   };
-  public static final String MPS_FILESYSTEM = "MPSFileSystem";
+  public static final String ID = ProjectViewPane.ID;
 
   public ProjectPane(Project project, ProjectView projectView) {
     super(project);
     myProjectView = projectView;
-    myLastPropertiesState = projectView.isShowMembers(MPS_FILESYSTEM);
+    myLastPropertiesState = projectView.isShowMembers(ID);
 
     myTree = new MyTree();
 
@@ -236,7 +237,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
   @NotNull
   public String getId() {
-    return MPS_FILESYSTEM;
+    return ID;
   }
 
   public int getWeight() {
@@ -268,7 +269,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       }
 
       public String getToolWindowId() {
-        return MPS_FILESYSTEM;
+        return ID;
       }
 
       public String getMinorViewId() {
@@ -585,7 +586,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   public void scrollFromSource(SNode node) {
-    if (myProjectView.isAutoscrollFromSource(MPS_FILESYSTEM)) {
+    if (myProjectView.isAutoscrollFromSource(ID)) {
       selectNode(node);
     }
   }
@@ -906,7 +907,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
     @Override
     public boolean isAutoOpen() {
-      return myProjectView.isAutoscrollToSource(MPS_FILESYSTEM);
+      return myProjectView.isAutoscrollToSource(ID);
     }
 
     private void registerActions() {
