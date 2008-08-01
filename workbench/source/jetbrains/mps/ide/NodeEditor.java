@@ -92,6 +92,9 @@ public class NodeEditor implements IEditor {
   }
 
   public List<SNode> getEditedNodes() {
+    if (getEditedNode() == null) {
+      return Collections.emptyList();
+    }
     return Collections.singletonList(getEditedNode());
   }
 
