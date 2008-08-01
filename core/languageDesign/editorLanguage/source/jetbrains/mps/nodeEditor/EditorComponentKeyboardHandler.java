@@ -41,19 +41,12 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     }
 
     CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
-
     boolean dontExecuteRT = false;
-
     EditorCell selectedCell = editorContext.getSelectedCell();
 
     if (selectedCell != null) {
       boolean endEditKeystroke = isEndEditKeystroke(keyEvent);      
       boolean strictMatching = endEditKeystroke || CellActionType.RIGHT_TRANSFORM.equals(actionType) || CellActionType.LEFT_TRANSFORM.equals(actionType);
-
-      if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
-        nodeEditor.showMessageTooltip();
-        return true;
-      }
 
       if (!!selectedCell.isErrorState()) {
         if (endEditKeystroke ||

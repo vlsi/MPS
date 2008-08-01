@@ -34,6 +34,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
+import jetbrains.mps.nodeEditor.NodeEditorActions.SHOW_MESSAGE;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -259,6 +260,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     myActionMap.put(CellActionType.RIGHT_TRANSFORM, new CellAction_SideTransform(CellSide.RIGHT));
     myActionMap.put(CellActionType.LEFT_TRANSFORM, new CellAction_SideTransform(CellSide.LEFT));
+
+    myActionMap.put(CellActionType.SHOW_MESSAGE, new NodeEditorActions.SHOW_MESSAGE());
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -962,6 +965,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.isShiftDown() && !(keyEvent.isControlDown() || keyEvent.isAltDown())) {
       return CellActionType.PREV;
+    }
+
+    if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
+      return CellActionType.SHOW_MESSAGE;
     }
 
     // ---

@@ -30,5 +30,6 @@ public enum CellActionType {
   FOLD,
   UNFOLD,
   FOLD_ALL,
-  UNFOLD_ALL
+  UNFOLD_ALL,
+  SHOW_MESSAGE  
 }

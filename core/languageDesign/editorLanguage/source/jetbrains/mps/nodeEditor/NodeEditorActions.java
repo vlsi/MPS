@@ -308,4 +308,10 @@ public class NodeEditorActions {
       context.getNodeEditorComponent().setSelectionDontClearStack(context.getNodeEditorComponent().popSelection(), true);
     }
   }
+
+  public static class SHOW_MESSAGE extends EditorCellAction {
+    public void execute(EditorContext context) {
+      context.getNodeEditorComponent().showMessageTooltip();
+    }
+  }
 }
