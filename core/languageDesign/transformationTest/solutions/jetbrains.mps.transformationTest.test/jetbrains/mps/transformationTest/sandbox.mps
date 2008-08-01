@@ -45,6 +45,10 @@
         </node>
       </node>
     </node>
+    <node role="methods" type="jetbrains.mps.transformationTest.structure.NodesTestMethod" id="1217590787128">
+      <property name="name" value="wefweqfqw" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217590787129" />
+    </node>
     <node role="nodesToCheck" type="jetbrains.mps.transformationTest.structure.TestNode" id="1217518785865">
       <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1217518789350">
         <property name="name" value="Class1" />
@@ -102,6 +106,11 @@
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217518789351" />
       </node>
+    </node>
+    <node role="methodDeclaraiotns" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1217590794616">
+      <property name="name" value="intadwqdqw" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217590796947" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217590794618" />
     </node>
   </node>
 </model>

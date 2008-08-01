@@ -684,7 +684,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 
     final List<SNode> allRoots = new ArrayList<SNode>(getSModel().getRoots());
-    Collections.sort(allRoots, new ToStringComparator());
+    Collections.sort(allRoots, new ToStringComparator(true));
 
     List<SNode> added = new ArrayList<SNode>(addedRoots);
     Collections.sort(added, new Comparator<SNode>() {
