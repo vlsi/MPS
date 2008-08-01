@@ -15,6 +15,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(new BaseLanguageModelActionsInternal_ActionGroup());
     this.addGroup(new BaseLanguageNodeActionsInternal_ActionGroup());
     this.addGroup(new BaseLanguageProjectNodePopup_ActionGroup());
+    this.addGroup(new BaseLanguageToolsAddition_ActionGroup());
   }
 
   public void adjustGroups() {
@@ -23,6 +24,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     (this.getGroup(BaseLanguageModelActionsInternal_ActionGroup.ID)).adjust();
     (this.getGroup(BaseLanguageNodeActionsInternal_ActionGroup.ID)).adjust();
     (this.getGroup(BaseLanguageProjectNodePopup_ActionGroup.ID)).adjust();
+    (this.getGroup(BaseLanguageToolsAddition_ActionGroup.ID)).adjust();
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {

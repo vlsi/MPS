@@ -79,21 +79,21 @@ public class ExtractMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      final Wrappers._T<ExtractMethodKind> type = new Wrappers._T<ExtractMethodKind>();
+      final Wrappers._T<ExtractMethodKind> kind = new Wrappers._T<ExtractMethodKind>();
       final List<SNode> n = this.nodes;
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
           if (ExtractMethodRefactoringAnalyzer.isStatements(n)) {
-            type.value = ExtractMethodKind.FROM_STATEMENTS;
+            kind.value = ExtractMethodKind.FROM_STATEMENTS;
           } else
           {
-            type.value = ExtractMethodKind.FROM_EXPRESSION;
+            kind.value = ExtractMethodKind.FROM_EXPRESSION;
           }
         }
 
       });
-      ExtractMethodDialog dialog = new ExtractMethodDialog(type.value, new ActionEventData(event));
+      ExtractMethodDialog dialog = new ExtractMethodDialog(kind.value, new ActionEventData(event));
       dialog.showDialog();
       dialog.pack();
     } catch (Throwable t) {

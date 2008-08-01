@@ -13,6 +13,7 @@ import jetbrains.mps.workbench.action.BaseGroup;
 public class Tools_ActionGroup extends GeneratedActionGroup {
   public static Logger LOG = Logger.getLogger(Tools_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Tools";
+  public static final String LABEL_ID_customTools = ID + "customTools";
   public static final String INTERNAL_LABEL_ID_Internal = ID + "Internal";
 
   public Tools_ActionGroup() {
@@ -22,6 +23,7 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
     try {
       this.add(new ShowModuleRepository_Action());
       this.add(new ShowModelRepository_Action());
+      this.addAnchor(Tools_ActionGroup.LABEL_ID_customTools);
       this.addSeparator();
       this.add(new ReloadAllAction());
       this.addSeparator();

@@ -1776,6 +1776,10 @@
       <property name="value" value="simple parameter (java class)" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1217597813578">
+      <link role="conceptLinkDeclaration" targetNodeId="14.1205921683134" resolveInfo="operationConcept" />
+      <link role="target" targetNodeId="1217252428768" resolveInfo="ActionDataParameterReferenceOperation" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217252428768">
     <property name="package" value="Actions.Action" />

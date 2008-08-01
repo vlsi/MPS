@@ -8,11 +8,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
 
 public class TodoViewer_Tool extends GeneratedTool {
 
@@ -27,12 +22,7 @@ public class TodoViewer_Tool extends GeneratedTool {
   }
 
   public void init(Project project) {
-    this.myComponent = new JPanel(new BorderLayout());
-    this.myComponent.add(new TodoViewer(this.getMPSProject()), BorderLayout.CENTER);
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(this.createCloseAction());
-    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
-    this.myComponent.add(toolbar, BorderLayout.WEST);
+    this.myComponent = new TodoViewer(this.getMPSProject());
   }
 
 }

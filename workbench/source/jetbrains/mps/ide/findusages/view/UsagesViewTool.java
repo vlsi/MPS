@@ -189,45 +189,41 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
   //---FIND USAGES STUFF----
 
   public void findUsages(final ActionEventData data) {
-    new Thread(new Runnable() {
+    final SNode[] semanticNode = new SNode[1];
+    final SNode[] operationNode = new SNode[1];
+
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        final SNode[] semanticNode = new SNode[1];
-        final SNode[] operationNode = new SNode[1];
+        semanticNode[0] = data.getNode();
 
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            semanticNode[0] = data.getNode();
-
-            EditorCell editorCell = data.getEditorCell();
-            operationNode[0] = editorCell != null ? editorCell.getSNodeWRTReference() : semanticNode[0];
-          }
-        });
-
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            final FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultFindOptions, operationNode[0], data);
-            findUsagesDialog.showDialog();
-
-            if (!findUsagesDialog.isCancelled()) {
-              myDefaultFindOptions = findUsagesDialog.getResult();
-              final IResultProvider[] provider = new IResultProvider[1];
-              final SearchQuery[] query = new SearchQuery[1];
-              final ViewOptions[] viewOptions = new ViewOptions[1];
-
-              ModelAccess.instance().runReadAction(new Runnable() {
-                public void run() {
-                  provider[0] = myDefaultFindOptions.getOption(FindersOptions.class).getResult(operationNode[0], data);
-                  query[0] = myDefaultFindOptions.getOption(QueryOptions.class).getResult(operationNode[0], data);
-                  viewOptions[0] = myDefaultFindOptions.getOption(ViewOptions.class);
-                }
-              });
-
-              findUsages(provider[0], query[0], true, viewOptions[0].myShowOneResult, viewOptions[0].myNewTab);
-            }
-          }
-        });
+        EditorCell editorCell = data.getEditorCell();
+        operationNode[0] = editorCell != null ? editorCell.getSNodeWRTReference() : semanticNode[0];
       }
-    }).start();
+    });
+
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        final FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultFindOptions, operationNode[0], data);
+        findUsagesDialog.showDialog();
+
+        if (!findUsagesDialog.isCancelled()) {
+          myDefaultFindOptions = findUsagesDialog.getResult();
+          final IResultProvider[] provider = new IResultProvider[1];
+          final SearchQuery[] query = new SearchQuery[1];
+          final ViewOptions[] viewOptions = new ViewOptions[1];
+
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              provider[0] = myDefaultFindOptions.getOption(FindersOptions.class).getResult(operationNode[0], data);
+              query[0] = myDefaultFindOptions.getOption(QueryOptions.class).getResult(operationNode[0], data);
+              viewOptions[0] = myDefaultFindOptions.getOption(ViewOptions.class);
+            }
+          });
+
+          findUsages(provider[0], query[0], true, viewOptions[0].myShowOneResult, viewOptions[0].myNewTab);
+        }
+      }
+    });
   }
 
   public void findUsages(final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab, BaseFinder... finders) {
@@ -243,6 +239,12 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
             final SearchResults searchResults = FindUtils.getSearchResults(indicator, query, provider);
             showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
             openToolLater(true);
+
+            try {
+              Thread.sleep(10000);
+            } catch (InterruptedException e) {
+              e.printStackTrace();
+            }
           }
         });
       }

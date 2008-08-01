@@ -424,5 +424,9 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1217592749201">
+    <property name="migrationFromBuild" value="798" />
+    <property name="name" value="Delete" />
+  </node>
 </model>
 
