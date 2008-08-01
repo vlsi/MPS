@@ -16,7 +16,7 @@ public class DefaultNodeEditor implements INodeEditor {
     return new DefaultInspectorCell(editorContext, node, node.getDebugText(), true);
   }
 
-  public class DefaultInspectorCell extends EditorCell_Constant {
+  public static class DefaultInspectorCell extends EditorCell_Constant {
     public DefaultInspectorCell(@NotNull EditorContext editorContext, SNode node, String text, boolean editable) {
       super(editorContext, node, text, editable);
     }
