@@ -50,9 +50,11 @@
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204982144971">
                 <link role="classConcept" targetNodeId="2.~Sequence" resolveInfo="Sequence" />
                 <link role="baseMethodDeclaration" targetNodeId="2.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204982147170">
-                  <link role="baseMethodDeclaration" targetNodeId="1.1204793778541" resolveInfo="input5" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204982147171" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628892310">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204982147171" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628892311">
+                    <link role="baseMethodDeclaration" targetNodeId="1.1204793778541" resolveInfo="input5" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -150,9 +152,11 @@
                 </node>
               </node>
             </node>
-            <node role="iterable" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204982400788">
-              <link role="baseMethodDeclaration" targetNodeId="1.1204793778541" resolveInfo="input5" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204982400789" />
+            <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628910994">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204982400789" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628910995">
+                <link role="baseMethodDeclaration" targetNodeId="1.1204793778541" resolveInfo="input5" />
+              </node>
             </node>
             <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204982375639">
               <property name="name" value="i" />
@@ -407,9 +411,11 @@
                   <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204982087075">
-                <link role="baseMethodDeclaration" targetNodeId="1.1204793778541" resolveInfo="input5" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204982087076" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628905110">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204982087076" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628905111">
+                  <link role="baseMethodDeclaration" targetNodeId="1.1204793778541" resolveInfo="input5" />
+                </node>
               </node>
             </node>
           </node>
@@ -498,9 +504,11 @@
                 </node>
               </node>
             </node>
-            <node role="iterable" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204991652977">
-              <link role="baseMethodDeclaration" targetNodeId="1.1204793778541" resolveInfo="input5" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204991652978" />
+            <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628904549">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204991652978" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628904550">
+                <link role="baseMethodDeclaration" targetNodeId="1.1204793778541" resolveInfo="input5" />
+              </node>
             </node>
             <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204991646121">
               <property name="name" value="i" />
@@ -551,9 +559,11 @@
               <property name="value" value="true" />
             </node>
             <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625324110">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204991789064">
-                <link role="baseMethodDeclaration" targetNodeId="1.1204991762959" resolveInfo="inputEmpty" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204991789065" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628888573">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204991789065" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628888574">
+                  <link role="baseMethodDeclaration" targetNodeId="1.1204991762959" resolveInfo="inputEmpty" />
+                </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsEmptyOperation" id="1204991802234" />
             </node>
@@ -563,9 +573,11 @@
               <property name="value" value="false" />
             </node>
             <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625305387">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204991797075">
-                <link role="baseMethodDeclaration" targetNodeId="1.1204991762959" resolveInfo="inputEmpty" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204991797076" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628872237">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204991797076" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628872238">
+                  <link role="baseMethodDeclaration" targetNodeId="1.1204991762959" resolveInfo="inputEmpty" />
+                </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1204991805058" />
             </node>

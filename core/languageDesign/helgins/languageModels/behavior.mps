@@ -235,14 +235,16 @@
           <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1213877321601">
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877321602">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877321603">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1213877321604">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213877321605">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628869891">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213877321605">
                     <link role="classifier" targetNodeId="3.~System" resolveInfo="System" />
                     <link role="variableDeclaration" targetNodeId="3.~System.out" resolveInfo="out" />
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877321606">
-                    <property name="value" value="ok" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628869892">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877321606">
+                      <property name="value" value="ok" />
+                    </node>
                   </node>
                 </node>
               </node>

@@ -72,35 +72,39 @@
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178529088012">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178529104619">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178529111636">
-                <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.Object):void" resolveInfo="println" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178529104620">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628896896">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178529104620">
                   <link role="classifier" targetNodeId="1.~System" resolveInfo="System" />
                   <link role="variableDeclaration" targetNodeId="1.~System.out" resolveInfo="out" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178529191622">
-                  <node role="rightExpression" type="jetbrains.mps.regexp.structure.MatchVariableReference" id="1178529193081">
-                    <link role="match" targetNodeId="1178529143402" resolveInfo="user" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178529187745">
-                    <property name="value" value="User name = " />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628896897">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.Object):void" resolveInfo="println" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178529191622">
+                    <node role="rightExpression" type="jetbrains.mps.regexp.structure.MatchVariableReference" id="1178529193081">
+                      <link role="match" targetNodeId="1178529143402" resolveInfo="user" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178529187745">
+                      <property name="value" value="User name = " />
+                    </node>
                   </node>
                 </node>
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178529195950">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178529202941">
-                <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178529195951">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628890745">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178529195951">
                   <link role="classifier" targetNodeId="1.~System" resolveInfo="System" />
                   <link role="variableDeclaration" targetNodeId="1.~System.out" resolveInfo="out" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178529213699">
-                  <node role="rightExpression" type="jetbrains.mps.regexp.structure.MatchVariableReference" id="1178529214957">
-                    <link role="match" targetNodeId="1178529161539" resolveInfo="domain" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178529203707">
-                    <property name="value" value="Domain = " />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628890746">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178529213699">
+                    <node role="rightExpression" type="jetbrains.mps.regexp.structure.MatchVariableReference" id="1178529214957">
+                      <link role="match" targetNodeId="1178529161539" resolveInfo="domain" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178529203707">
+                      <property name="value" value="Domain = " />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -312,35 +316,39 @@
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178535102798">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178535102799">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178535102800">
-                <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.Object):void" resolveInfo="println" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178535102801">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628896560">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178535102801">
                   <link role="classifier" targetNodeId="1.~System" resolveInfo="System" />
                   <link role="variableDeclaration" targetNodeId="1.~System.out" resolveInfo="out" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178535102802">
-                  <node role="rightExpression" type="jetbrains.mps.regexp.structure.MatchVariableReference" id="1178535102803">
-                    <link role="match" targetNodeId="1178535102784" resolveInfo="user" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178535102804">
-                    <property name="value" value="User name = " />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628896561">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.Object):void" resolveInfo="println" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178535102802">
+                    <node role="rightExpression" type="jetbrains.mps.regexp.structure.MatchVariableReference" id="1178535102803">
+                      <link role="match" targetNodeId="1178535102784" resolveInfo="user" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178535102804">
+                      <property name="value" value="User name = " />
+                    </node>
                   </node>
                 </node>
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178535102805">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178535102806">
-                <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178535102807">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628912487">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178535102807">
                   <link role="variableDeclaration" targetNodeId="1.~System.out" resolveInfo="out" />
                   <link role="classifier" targetNodeId="1.~System" resolveInfo="System" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178535102808">
-                  <node role="rightExpression" type="jetbrains.mps.regexp.structure.MatchVariableReference" id="1178535102809">
-                    <link role="match" targetNodeId="1178535102789" resolveInfo="domain" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178535102810">
-                    <property name="value" value="Domain = " />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628912488">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178535102808">
+                    <node role="rightExpression" type="jetbrains.mps.regexp.structure.MatchVariableReference" id="1178535102809">
+                      <link role="match" targetNodeId="1178535102789" resolveInfo="domain" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178535102810">
+                      <property name="value" value="Domain = " />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -366,14 +374,16 @@
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178535140360">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178535159369">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178535163393">
-                <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178535159370">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628872141">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178535159370">
                   <link role="classifier" targetNodeId="1.~System" resolveInfo="System" />
                   <link role="variableDeclaration" targetNodeId="1.~System.out" resolveInfo="out" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.regexp.structure.MatchVariableReference" id="1178535165071">
-                  <link role="match" targetNodeId="1178535150927" resolveInfo="number" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628872142">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+                  <node role="actualArgument" type="jetbrains.mps.regexp.structure.MatchVariableReference" id="1178535165071">
+                    <link role="match" targetNodeId="1178535150927" resolveInfo="number" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -408,18 +418,20 @@
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178535184341">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178535206675">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178535211336">
-                <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178535206676">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628868559">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178535206676">
                   <link role="classifier" targetNodeId="1.~System" resolveInfo="System" />
                   <link role="variableDeclaration" targetNodeId="1.~System.out" resolveInfo="out" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178535216895">
-                  <node role="rightExpression" type="jetbrains.mps.regexp.structure.MatchVariableReference" id="1178535217795">
-                    <link role="match" targetNodeId="1178535197508" resolveInfo="number" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178535212498">
-                    <property name="value" value="number = " />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628868560">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178535216895">
+                    <node role="rightExpression" type="jetbrains.mps.regexp.structure.MatchVariableReference" id="1178535217795">
+                      <link role="match" targetNodeId="1178535197508" resolveInfo="number" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178535212498">
+                      <property name="value" value="number = " />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -520,18 +532,20 @@
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178535286959">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178535319557">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178535324614">
-                <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178535319558">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628911154">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178535319558">
                   <link role="classifier" targetNodeId="1.~System" resolveInfo="System" />
                   <link role="variableDeclaration" targetNodeId="1.~System.out" resolveInfo="out" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178535327570">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1178535328545">
-                    <link role="variableDeclaration" targetNodeId="1178535286957" resolveInfo="st" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178535325255">
-                    <property name="value" value="s = " />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628911155">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178535327570">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1178535328545">
+                      <link role="variableDeclaration" targetNodeId="1178535286957" resolveInfo="st" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178535325255">
+                      <property name="value" value="s = " />
+                    </node>
                   </node>
                 </node>
               </node>

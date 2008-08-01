@@ -102,11 +102,9 @@
                 <property name="value" value="." />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1213877240130">
-              <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getLongName():java.lang.String" resolveInfo="getLongName" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1213877240131">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1213877240132">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628888397">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628867731">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1213877240132">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1213877240133">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877240134">
                       <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877240135" />
@@ -117,6 +115,12 @@
                     </node>
                   </node>
                 </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628867732">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628888398">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getLongName():java.lang.String" resolveInfo="getLongName" />
               </node>
             </node>
           </node>

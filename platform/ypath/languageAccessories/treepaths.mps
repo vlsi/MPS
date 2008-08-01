@@ -32,10 +32,12 @@
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180688366353">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1180688370991">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1180688376914">
-              <link role="baseMethodDeclaration" targetNodeId="2.~File.isDirectory():boolean" resolveInfo="isDirectory" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1180688370992">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628891958">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1180688370992">
                 <link role="closureParameter" targetNodeId="1180688366352" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628891959">
+                <link role="baseMethodDeclaration" targetNodeId="2.~File.isDirectory():boolean" resolveInfo="isDirectory" />
               </node>
             </node>
           </node>
@@ -52,10 +54,12 @@
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180688395940">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1180688415953">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1180688421068">
-                <link role="baseMethodDeclaration" targetNodeId="2.~File.getName():java.lang.String" resolveInfo="getName" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1180688415954">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628916416">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1180688415954">
                   <link role="closureParameter" targetNodeId="1180688395939" resolveInfo="node" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628916417">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~File.getName():java.lang.String" resolveInfo="getName" />
                 </node>
               </node>
             </node>
@@ -75,10 +79,12 @@
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1180688621969">
                   <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1180688512417">
-                  <link role="baseMethodDeclaration" targetNodeId="2.~File.getName():java.lang.String" resolveInfo="getName" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1180688508651">
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628917268">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1180688508651">
                     <link role="closureParameter" targetNodeId="1180688453547" resolveInfo="node" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628917269">
+                    <link role="baseMethodDeclaration" targetNodeId="2.~File.getName():java.lang.String" resolveInfo="getName" />
                   </node>
                 </node>
               </node>
@@ -87,13 +93,15 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1180688501063">
                 <property name="name" value="indexOfLastDot" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1180688501064" />
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1180688519220">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~String.lastIndexOf(java.lang.String):int" resolveInfo="lastIndexOf" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180688621970">
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628902811">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180688621970">
                     <link role="variableDeclaration" targetNodeId="1180688621968" resolveInfo="name" />
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1180688521071">
-                    <property name="value" value="." />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628902812">
+                    <link role="baseMethodDeclaration" targetNodeId="1.~String.lastIndexOf(java.lang.String):int" resolveInfo="lastIndexOf" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1180688521071">
+                      <property name="value" value="." />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -116,13 +124,15 @@
                     <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180688640614">
                       <link role="variableDeclaration" targetNodeId="1180688573084" resolveInfo="ext" />
                     </node>
-                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1180688643575">
-                      <link role="baseMethodDeclaration" targetNodeId="1.~String.substring(int):java.lang.String" resolveInfo="substring" />
-                      <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180688643576">
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628895214">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180688643576">
                         <link role="variableDeclaration" targetNodeId="1180688621968" resolveInfo="name" />
                       </node>
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180688643577">
-                        <link role="variableDeclaration" targetNodeId="1180688501063" resolveInfo="indexOfLastDot" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628895215">
+                        <link role="baseMethodDeclaration" targetNodeId="1.~String.substring(int):java.lang.String" resolveInfo="substring" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180688643577">
+                          <link role="variableDeclaration" targetNodeId="1180688501063" resolveInfo="indexOfLastDot" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -130,10 +140,12 @@
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1180688601545">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LessThanExpression" id="1180688604561">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1180688615405">
-                    <link role="baseMethodDeclaration" targetNodeId="1.~String.length():int" resolveInfo="length" />
-                    <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180688629383">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628901992">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180688629383">
                       <link role="variableDeclaration" targetNodeId="1180688621968" resolveInfo="name" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628901993">
+                      <link role="baseMethodDeclaration" targetNodeId="1.~String.length():int" resolveInfo="length" />
                     </node>
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180688603441">
@@ -164,10 +176,12 @@
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180688380128">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1180688385189">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1180688388902">
-              <link role="baseMethodDeclaration" targetNodeId="2.~File.isFile():boolean" resolveInfo="isFile" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1180688385190">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628894958">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1180688385190">
                 <link role="closureParameter" targetNodeId="1180688380127" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628894959">
+                <link role="baseMethodDeclaration" targetNodeId="2.~File.isFile():boolean" resolveInfo="isFile" />
               </node>
             </node>
           </node>
@@ -186,10 +200,12 @@
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180688328451">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1180688350262">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1180688355338">
-            <link role="baseMethodDeclaration" targetNodeId="2.~File.getParentFile():java.io.File" resolveInfo="getParentFile" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1180688350263">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628896816">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1180688350263">
               <link role="closureParameter" targetNodeId="1180688328450" resolveInfo="node" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628896817">
+              <link role="baseMethodDeclaration" targetNodeId="2.~File.getParentFile():java.io.File" resolveInfo="getParentFile" />
             </node>
           </node>
         </node>
@@ -201,10 +217,12 @@
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180688328454">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1180688357635">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1180688363776">
-            <link role="baseMethodDeclaration" targetNodeId="2.~File.listFiles():java.io.File[]" resolveInfo="listFiles" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1180688357636">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628891702">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1180688357636">
               <link role="closureParameter" targetNodeId="1180688328453" resolveInfo="node" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628891703">
+              <link role="baseMethodDeclaration" targetNodeId="2.~File.listFiles():java.io.File[]" resolveInfo="listFiles" />
             </node>
           </node>
         </node>
@@ -308,9 +326,8 @@
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180689310304">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1180689321547">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1180689342504">
-                <link role="baseMethodDeclaration" targetNodeId="3.~CompositeClassPathItem.getChildren():java.util.List" resolveInfo="getChildren" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1180689337652">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628887229">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1180689337652">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1180689337653">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1180689337654">
                       <link role="closureParameter" targetNodeId="1180689174645" resolveInfo="node" />
@@ -319,6 +336,9 @@
                       <link role="classifier" targetNodeId="3.~CompositeClassPathItem" resolveInfo="CompositeClassPathItem" />
                     </node>
                   </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628887230">
+                  <link role="baseMethodDeclaration" targetNodeId="3.~CompositeClassPathItem.getChildren():java.util.List" resolveInfo="getChildren" />
                 </node>
               </node>
             </node>

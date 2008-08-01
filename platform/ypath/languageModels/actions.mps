@@ -139,9 +139,11 @@
                   <link role="baseMethodDeclaration" targetNodeId="1178974554507" resolveInfo="getTreePathAspects" />
                   <link role="classConcept" targetNodeId="1178974535833" resolveInfo="TreePathAspectUtil" />
                   <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1197449514736" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197449524093">
-                    <link role="baseMethodDeclaration" targetNodeId="6.~IOperationContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
-                    <node role="instance" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1197449518524" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628889706">
+                    <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1197449518524" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628889707">
+                      <link role="baseMethodDeclaration" targetNodeId="6.~IOperationContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2918,10 +2920,12 @@
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1196422353935">
-                        <node role="value" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1196422415510">
-                          <link role="baseMethodDeclaration" targetNodeId="31.~FragmentTypeEnum.getValue():java.lang.String" resolveInfo="getValue" />
-                          <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196422356520">
+                        <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628903718">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196422356520">
                             <link role="variableDeclaration" targetNodeId="1196422149885" resolveInfo="type" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628903719">
+                            <link role="baseMethodDeclaration" targetNodeId="31.~FragmentTypeEnum.getValue():java.lang.String" resolveInfo="getValue" />
                           </node>
                         </node>
                       </node>
@@ -2985,10 +2989,12 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1196422423096">
-                          <node role="value" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1196422423097">
-                            <link role="baseMethodDeclaration" targetNodeId="31.~FragmentTypeEnum.getValue():java.lang.String" resolveInfo="getValue" />
-                            <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196422423098">
+                          <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628882325">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196422423098">
                               <link role="variableDeclaration" targetNodeId="1196422149885" resolveInfo="type" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628882326">
+                              <link role="baseMethodDeclaration" targetNodeId="31.~FragmentTypeEnum.getValue():java.lang.String" resolveInfo="getValue" />
                             </node>
                           </node>
                         </node>
@@ -3083,10 +3089,12 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1196422432572">
-                            <node role="value" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1196422432573">
-                              <link role="baseMethodDeclaration" targetNodeId="31.~FragmentTypeEnum.getValue():java.lang.String" resolveInfo="getValue" />
-                              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196422432574">
+                            <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628914410">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196422432574">
                                 <link role="variableDeclaration" targetNodeId="1196422149885" resolveInfo="type" />
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628914411">
+                                <link role="baseMethodDeclaration" targetNodeId="31.~FragmentTypeEnum.getValue():java.lang.String" resolveInfo="getValue" />
                               </node>
                             </node>
                           </node>
@@ -3178,9 +3186,11 @@
           <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSubstitute_String" id="1196421317993">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196421317994">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196421321630">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1196421325361">
-                  <link role="baseMethodDeclaration" targetNodeId="31.~FragmentTypeEnum.getName():java.lang.String" resolveInfo="getName" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1196421321631" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628889179">
+                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1196421321631" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628889180">
+                    <link role="baseMethodDeclaration" targetNodeId="31.~FragmentTypeEnum.getName():java.lang.String" resolveInfo="getName" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -4167,9 +4177,11 @@
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198013715145">
                       <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198013650365">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.first():java.lang.Object" resolveInfo="first" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650366" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628888477">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650366" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628888478">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.first():java.lang.Object" resolveInfo="first" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -4184,9 +4196,11 @@
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198013650371">
                       <link role="concept" targetNodeId="1.1184066209434" resolveInfo="IFeature" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198013650372">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.second():java.lang.Object" resolveInfo="second" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650373" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628905350">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650373" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628905351">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.second():java.lang.Object" resolveInfo="second" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -4201,9 +4215,11 @@
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198013650378">
                       <link role="concept" targetNodeId="1.1184768155075" resolveInfo="ParameterWrapper" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198013650379">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.third():java.lang.Object" resolveInfo="third" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650380" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628898909">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650380" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628898910">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.third():java.lang.Object" resolveInfo="third" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -4272,10 +4288,12 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1198013650409">
-                    <node role="value" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198013650410">
-                      <link role="baseMethodDeclaration" targetNodeId="46.~TraversalAxis.getValue():java.lang.String" resolveInfo="getValue" />
-                      <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198013650411">
+                    <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628909968">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198013650411">
                         <link role="variableDeclaration" targetNodeId="1198013650361" resolveInfo="axis" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628909969">
+                        <link role="baseMethodDeclaration" targetNodeId="46.~TraversalAxis.getValue():java.lang.String" resolveInfo="getValue" />
                       </node>
                     </node>
                   </node>
@@ -4409,9 +4427,11 @@
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198013689191">
                       <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198013650474">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.first():java.lang.Object" resolveInfo="first" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650475" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628919023">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650475" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628919024">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.first():java.lang.Object" resolveInfo="first" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -4426,9 +4446,11 @@
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198013650480">
                       <link role="concept" targetNodeId="1.1184066209434" resolveInfo="IFeature" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198013650481">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.second():java.lang.Object" resolveInfo="second" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650482" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628908074">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650482" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628908075">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.second():java.lang.Object" resolveInfo="second" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -4443,9 +4465,11 @@
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198013650487">
                       <link role="concept" targetNodeId="1.1184768155075" resolveInfo="ParameterWrapper" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198013650488">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.third():java.lang.Object" resolveInfo="third" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650489" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628917653">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650489" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628917654">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.third():java.lang.Object" resolveInfo="third" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -4579,9 +4603,11 @@
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198013703696">
                       <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198013650551">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.first():java.lang.Object" resolveInfo="first" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650552" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628903558">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650552" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628903559">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.first():java.lang.Object" resolveInfo="first" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -4596,9 +4622,11 @@
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198013650557">
                       <link role="concept" targetNodeId="1.1184066209434" resolveInfo="IFeature" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198013650558">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.second():java.lang.Object" resolveInfo="second" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650559" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628912327">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650559" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628912328">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.second():java.lang.Object" resolveInfo="second" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -4613,9 +4641,11 @@
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198013650564">
                       <link role="concept" targetNodeId="1.1184768155075" resolveInfo="ParameterWrapper" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198013650565">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.third():java.lang.Object" resolveInfo="third" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650566" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628914328">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198013650566" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628914329">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Triplet.third():java.lang.Object" resolveInfo="third" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -4747,10 +4777,12 @@
                         <property name="value" value=" @" />
                       </node>
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198013650622">
-                      <link role="baseMethodDeclaration" targetNodeId="46.~TraversalAxis.getName():java.lang.String" resolveInfo="getName" />
-                      <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198013650623">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628918716">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198013650623">
                         <link role="variableDeclaration" targetNodeId="1198013650547" resolveInfo="axis" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628918717">
+                        <link role="baseMethodDeclaration" targetNodeId="46.~TraversalAxis.getName():java.lang.String" resolveInfo="getName" />
                       </node>
                     </node>
                   </node>
@@ -5585,9 +5617,11 @@
                   <link role="baseMethodDeclaration" targetNodeId="1178974554507" resolveInfo="getTreePathAspects" />
                   <link role="classConcept" targetNodeId="1178974535833" resolveInfo="TreePathAspectUtil" />
                   <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1198015935160" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198015935161">
-                    <link role="baseMethodDeclaration" targetNodeId="6.~IOperationContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
-                    <node role="instance" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1198015935162" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628892134">
+                    <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1198015935162" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628892135">
+                      <link role="baseMethodDeclaration" targetNodeId="6.~IOperationContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -5604,9 +5638,11 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198016243686">
                   <property name="name" value="aspect" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198016243687">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198016243688">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.first():java.lang.Object" resolveInfo="first" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198016243689" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628884701">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198016243689" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628884702">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.first():java.lang.Object" resolveInfo="first" />
+                      </node>
                     </node>
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198016243690">
                       <link role="concept" targetNodeId="1.1168879975004" resolveInfo="TreePathAspect" />
@@ -5627,9 +5663,11 @@
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198016252793">
                       <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198015881146">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.second():java.lang.Object" resolveInfo="second" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881147" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628920819">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881147" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628920820">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.second():java.lang.Object" resolveInfo="second" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -5644,9 +5682,11 @@
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198015881152">
                       <link role="concept" targetNodeId="1.1184066209434" resolveInfo="IFeature" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198015881153">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.third():java.lang.Object" resolveInfo="third" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881154" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628916351">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881154" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628916352">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.third():java.lang.Object" resolveInfo="third" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -5661,9 +5701,11 @@
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198015881159">
                       <link role="concept" targetNodeId="1.1184768155075" resolveInfo="ParameterWrapper" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198015881160">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.fourth():java.lang.Object" resolveInfo="fourth" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881161" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628855762">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881161" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628855763">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.fourth():java.lang.Object" resolveInfo="fourth" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -5766,10 +5808,12 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1198016280284">
-                    <node role="value" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198016280285">
-                      <link role="baseMethodDeclaration" targetNodeId="46.~TraversalAxis.getValue():java.lang.String" resolveInfo="getValue" />
-                      <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198016280286">
+                    <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628866288">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198016280286">
                         <link role="variableDeclaration" targetNodeId="1198015881142" resolveInfo="axis" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628866289">
+                        <link role="baseMethodDeclaration" targetNodeId="46.~TraversalAxis.getValue():java.lang.String" resolveInfo="getValue" />
                       </node>
                     </node>
                   </node>
@@ -5897,9 +5941,11 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198016067548">
                   <property name="name" value="aspect" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198016073529">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198016081684">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.first():java.lang.Object" resolveInfo="first" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198016077497" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628868194">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198016077497" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628868195">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.first():java.lang.Object" resolveInfo="first" />
+                      </node>
                     </node>
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198016227915">
                       <link role="concept" targetNodeId="1.1168879975004" resolveInfo="TreePathAspect" />
@@ -5920,9 +5966,11 @@
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198016091588">
                       <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198015881255">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.second():java.lang.Object" resolveInfo="second" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881256" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628883333">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881256" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628883334">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.second():java.lang.Object" resolveInfo="second" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -5937,9 +5985,11 @@
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198015881261">
                       <link role="concept" targetNodeId="1.1184066209434" resolveInfo="IFeature" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198015881262">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.third():java.lang.Object" resolveInfo="third" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881263" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628919168">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881263" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628919169">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.third():java.lang.Object" resolveInfo="third" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -5954,9 +6004,11 @@
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198015881268">
                       <link role="concept" targetNodeId="1.1184768155075" resolveInfo="ParameterWrapper" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198015881269">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.fourth():java.lang.Object" resolveInfo="fourth" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881270" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628916191">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881270" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628916192">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.fourth():java.lang.Object" resolveInfo="fourth" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -6084,9 +6136,11 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198016122386">
                   <property name="name" value="aspect" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198016122388">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198016122390">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.first():java.lang.Object" resolveInfo="first" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198016122391" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628892820">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198016122391" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628892821">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.first():java.lang.Object" resolveInfo="first" />
+                      </node>
                     </node>
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198016201298">
                       <link role="concept" targetNodeId="1.1168879975004" resolveInfo="TreePathAspect" />
@@ -6107,9 +6161,11 @@
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198016131173">
                       <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198015881333">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.second():java.lang.Object" resolveInfo="second" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881334" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628920386">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881334" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628920387">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.second():java.lang.Object" resolveInfo="second" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -6124,9 +6180,11 @@
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198015881339">
                       <link role="concept" targetNodeId="1.1184066209434" resolveInfo="IFeature" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198015881340">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.third():java.lang.Object" resolveInfo="third" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881341" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628856606">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881341" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628856607">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.third():java.lang.Object" resolveInfo="third" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -6141,9 +6199,11 @@
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198015881346">
                       <link role="concept" targetNodeId="1.1184768155075" resolveInfo="ParameterWrapper" />
                     </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198015881347">
-                      <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.fourth():java.lang.Object" resolveInfo="fourth" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881348" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628906482">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1198015881348" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628906483">
+                        <link role="baseMethodDeclaration" targetNodeId="47.~Quadruplet.fourth():java.lang.Object" resolveInfo="fourth" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -6290,10 +6350,12 @@
                         <property name="value" value=" @" />
                       </node>
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198015881404">
-                      <link role="baseMethodDeclaration" targetNodeId="46.~TraversalAxis.getName():java.lang.String" resolveInfo="getName" />
-                      <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198015881405">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628920900">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198015881405">
                         <link role="variableDeclaration" targetNodeId="1198015881329" resolveInfo="axis" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628920901">
+                        <link role="baseMethodDeclaration" targetNodeId="46.~TraversalAxis.getName():java.lang.String" resolveInfo="getName" />
                       </node>
                     </node>
                   </node>
