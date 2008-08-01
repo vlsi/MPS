@@ -10169,7 +10169,7 @@
                   <link role="concept" targetNodeId="1.1179235924605" resolveInfo="TreePath" />
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1213104837332" />
                 </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccessAsList" id="1213104837333">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1217631029131">
                   <link role="link" targetNodeId="1.1183980376561" />
                 </node>
               </node>

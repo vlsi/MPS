@@ -3007,7 +3007,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184096763489">
                 <link role="variableDeclaration" targetNodeId="1184096763458" resolveInfo="tp" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccessAsList" id="1184096763488">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1217631028244">
                 <link role="link" targetNodeId="1.1183980376561" />
               </node>
             </node>
@@ -3098,7 +3098,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184094897440">
                 <link role="variableDeclaration" targetNodeId="1184094897419" resolveInfo="tp" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccessAsList" id="1184094897439">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1217631028551">
                 <link role="link" targetNodeId="1.1183980376561" />
               </node>
             </node>
