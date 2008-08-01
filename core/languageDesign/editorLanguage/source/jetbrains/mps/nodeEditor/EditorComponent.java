@@ -5,7 +5,6 @@ import com.intellij.ide.CutProvider;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.actionSystem.impl.SimpleDataContext;
 import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
@@ -25,16 +24,16 @@ import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.NodeEditorActions.SHOW_MESSAGE;
 import jetbrains.mps.nodeEditor.cellActions.*;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
-import jetbrains.mps.nodeEditor.NodeEditorActions.SHOW_MESSAGE;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -42,7 +41,10 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.NodesParetoFrontier;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -806,7 +808,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void dispose() {
-    myHighlightManager.dispose();    
+    myHighlightManager.dispose();
     myMPSActionsWithShortcuts.clear();
 
     removeOurListeners();
@@ -2226,13 +2228,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
 
   private void commitAll() {
-    SwingUtilities.invokeLater(new Runnable() {
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            doCommitAll(getRootCell());
-          }
-        });
+        doCommitAll(getRootCell());
       }
     });
   }

@@ -1,19 +1,18 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorWithContinuation;
-import jetbrains.mps.ide.ThreadUtils;
-
-import java.util.concurrent.locks.ReentrantReadWriteLock;
-import java.util.concurrent.locks.Lock;
-
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorWithContinuation;
+import jetbrains.mps.ide.ThreadUtils;
 
 import javax.swing.SwingUtilities;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 // We access IDEA locking mechanism here in order to prevent different way of acquiring locks
+
 // We always first acquire IDEA's lock and only then acquire MPS's lock
 public class ModelAccess {
   private static final ModelAccess ourInstance = new ModelAccess();
@@ -53,6 +52,15 @@ public class ModelAccess {
     });
   }
 
+  public void runWriteAction(final Runnable r) {
+    runWriteAction(new Computable<Object>() {
+      public Object compute() {
+        r.run();
+        return null;
+      }
+    });
+  }
+
   public <T> T runReadAction(final Computable<T> c) {
     return ApplicationManager.getApplication().runReadAction(new Computable<T>() {
       public T compute() {
@@ -66,7 +74,33 @@ public class ModelAccess {
     });
   }
 
-  public boolean tryRead(final Runnable r) {    
+  public <T> T runWriteAction(final Computable<T> c) {
+    Computable<T> computable = new Computable<T>() {
+      public T compute() {
+        getWriteLock().lock();
+        try {
+          return c.compute();
+        } finally {
+          getWriteLock().unlock();
+        }
+      }
+    };
+    if (ThreadUtils.isEventDispatchThread()) {
+      return ApplicationManager.getApplication().runWriteAction(computable);
+    } else {
+      return ApplicationManager.getApplication().runReadAction(computable);
+    }
+  }
+
+  public void runReadInEDT(Runnable r) {
+    myEDTExecutor.invokeReadInEDT(r);
+  }
+
+  public void runCommandInEDT(Runnable r) {
+    myEDTExecutor.invokeCommandInEDT(r);
+  }
+
+  public boolean tryRead(final Runnable r) {
     return ApplicationManager.getApplication().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         if (getReadLock().tryLock()) {
@@ -83,11 +117,45 @@ public class ModelAccess {
     });
   }
 
-  public void runReadInEDT(Runnable r) {
-    myEDTExecutor.invokeInEDT(r);
+  public boolean tryWrite(final Runnable r) {
+    return ApplicationManager.getApplication().runWriteAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        if (getWriteLock().tryLock()) {
+          try {
+            r.run();
+          } finally {
+            getWriteLock().unlock();
+          }
+          return true;
+        } else {
+          return false;
+        }
+      }
+    });
   }
 
-  public<T> T tryRead(Computable<T> c) {
+  public boolean tryCommand(final Runnable r) {
+    final boolean[] res = new boolean[]{false};
+    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      public void run() {
+        executeCommand(new Runnable() {
+          public void run() {
+            if (getWriteLock().tryLock()) {
+              try {
+                r.run();
+              } finally {
+                getWriteLock().unlock();
+              }
+              res[0] = true;
+            }
+          }
+        });
+      }
+    });
+    return res[0];
+  }
+
+  public <T> T tryRead(Computable<T> c) {
     if (getReadLock().tryLock()) {
       try {
         return c.compute();
@@ -99,31 +167,44 @@ public class ModelAccess {
     }
   }
 
-  public void runWriteAction(final Runnable r) {
-    runWriteAction(new Computable<Object>() {
-      public Object compute() {
-        r.run();
-        return null;
+  public <T> T tryWrite(Computable<T> c) {
+    if (getWriteLock().tryLock()) {
+      try {
+        return c.compute();
+      } finally {
+        getWriteLock().unlock();
       }
-    });
+    } else {
+      return null;
+    }
   }
 
-  public <T> T runWriteAction(final Computable<T> c) {
-    Computable<T> computable = new Computable<T>() {
-      public T compute() {
-        getWriteLock().lock();
-        try {
-          return c.compute();
-        } finally {
-          getWriteLock().unlock();
-        }
-      }
-    };    
-    if (ThreadUtils.isEventDispatchThread()) {
-      return ApplicationManager.getApplication().runWriteAction(computable);
+  public boolean canRead() {
+    if (allowSharedRead()) {
+      return true; //todo find a way to check read access
     } else {
-      return ApplicationManager.getApplication().runReadAction(computable);
+      return canWrite();
     }
+  }
+
+  public boolean canWrite() {
+    return myReadWriteLock.isWriteLockedByCurrentThread();
+  }
+
+  public void checkReadAccess() {
+    if (!canRead()) {
+      throw new IllegalStateException();
+    }
+  }
+
+  public void checkWriteAccess() {
+    if (!canWrite()) {
+      throw new IllegalStateException();
+    }
+  }
+
+  public void executeCommand(Runnable r) {
+    CommandProcessor.getInstance().executeCommand(null, r, "name", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
   public <T> T runWriteActionInCommand(final Computable<T> c) {
@@ -142,10 +223,6 @@ public class ModelAccess {
         return (T) result[0];
       }
     });
-  }
-
-  public void executeCommand(Runnable r) {
-    CommandProcessor.getInstance().executeCommand(null, r, "name", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
   public void runWriteActionInCommand(final Runnable r) {
@@ -167,30 +244,6 @@ public class ModelAccess {
         runWriteActionInCommand(r);
       }
     });
-  }
-
-  public boolean canWrite() {
-    return myReadWriteLock.isWriteLockedByCurrentThread();
-  }
-
-  public boolean canRead() {                                                                                   
-    if (allowSharedRead()) {
-      return true; //todo find a way to check read access
-    } else {
-      return canWrite();
-    }
-  }
-
-  public void checkWriteAccess() {
-    if (!canWrite()) {
-      throw new IllegalStateException();
-    }
-  }
-
-  public void checkReadAccess() {
-    if (!canRead()) {
-      throw new IllegalStateException();
-    }
   }
 
   static void assertLegalRead(SNode node) {
