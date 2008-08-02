@@ -18,7 +18,7 @@ public class ModelAccess {
   private static final ModelAccess ourInstance = new ModelAccess();
 
   private ReentrantReadWriteLock myReadWriteLock = new ReentrantReadWriteLock();
-  private EDTReadExecutor myEDTExecutor = new EDTReadExecutor();
+  private EDTExecutor myEDTExecutor = new EDTExecutor();
 
   public static ModelAccess instance() {
     return ourInstance;
