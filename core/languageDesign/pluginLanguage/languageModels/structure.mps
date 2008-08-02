@@ -1614,11 +1614,6 @@
           id="1210183990669">
       <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier"/>
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
-          id="1217671316204">
-      <property name="name" value="isApplicationLevel"/>
-      <link role="dataType" targetNodeId="6.1082983657063" resolveInfo="boolean"/>
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210179190070">
     <property name="package" value="Preference"/>

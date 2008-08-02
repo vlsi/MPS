@@ -2959,23 +2959,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Block" id="1210179865219">
       <node role="body" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1210676947407">
         <property name="vertical" value="true"/>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
-              id="1217671406791">
-          <property name="vertical" value="false"/>
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem"
-                id="1217671406792">
-            <property name="flag" value="false"/>
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-                id="1217671409872">
-            <property name="text" value="is application-wide:"/>
-            <link role="styleClass" targetNodeId="17.1186415544875" resolveInfo="KeyWord"/>
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
-                id="1217671422327">
-            <link role="relationDeclaration" targetNodeId="1.1217671316204" resolveInfo="isApplicationLevel"/>
-          </node>
-        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
               id="1217671379036">
           <property name="text" value=""/>
