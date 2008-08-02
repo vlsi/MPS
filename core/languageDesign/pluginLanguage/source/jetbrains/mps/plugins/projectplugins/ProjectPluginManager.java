@@ -6,6 +6,7 @@ import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
@@ -64,6 +65,16 @@ public class ProjectPluginManager implements ProjectComponent {
       for (GeneratedTool tool : tools) {
         if (tool.getClass() == toolClass) return (T) tool;
       }
+    }
+    return null;
+  }
+
+  public <T extends BaseProjectPrefsComponent> T getPrefsComponent(Class<T> componentClass) {
+    for (IProjectPlugin plugin : myPlugins) {
+      if (!(plugin instanceof BaseProjectPlugin)) continue;
+      BaseProjectPlugin basePlugin = (BaseProjectPlugin) plugin;
+      BaseProjectPrefsComponent component = basePlugin.getPrefsComponent(componentClass);
+      if (component != null) return (T) component;
     }
     return null;
   }

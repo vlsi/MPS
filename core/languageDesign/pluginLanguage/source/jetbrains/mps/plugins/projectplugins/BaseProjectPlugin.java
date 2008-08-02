@@ -5,6 +5,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
+import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
@@ -24,6 +25,7 @@ public abstract class BaseProjectPlugin implements IProjectPlugin, MPSEditorOpen
   private List<GeneratedTool> myTools = new ArrayList<GeneratedTool>();
   private List<GeneratedTool> myInitializedTools = new ArrayList<GeneratedTool>();
   private List<BaseCustomProjectPlugin> myCustomPartsToDispose = new ArrayList<BaseCustomProjectPlugin>();
+  private List<BaseProjectPrefsComponent> myPrefsComponents = new ArrayList<BaseProjectPrefsComponent>();
 
   //------------------stuff to generate-----------------------
 
@@ -32,6 +34,10 @@ public abstract class BaseProjectPlugin implements IProjectPlugin, MPSEditorOpen
   protected abstract List<GeneratedTool> initTools(Project project);
 
   protected abstract List<BaseCustomProjectPlugin> initCustomParts(MPSProject project);
+
+  protected List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
+    return new ArrayList<BaseProjectPrefsComponent>();
+  }
 
   //------------------quick access stuff-----------------------
 
@@ -58,6 +64,12 @@ public abstract class BaseProjectPlugin implements IProjectPlugin, MPSEditorOpen
     myCustomPartsToDispose = initCustomParts(project);
 
     initEditors(project);
+
+    myPrefsComponents = createPreferencesComponents(getIDEAProject());
+    for (BaseProjectPrefsComponent component : myPrefsComponents) {
+      component.init();
+    }
+
     myTools = (List) (initTools(myProject));
     final Project ideaProject = getIDEAProject();
     for (final GeneratedTool tool : myTools) {
@@ -97,6 +109,10 @@ public abstract class BaseProjectPlugin implements IProjectPlugin, MPSEditorOpen
     }
     myTools.clear();
 
+    for (BaseProjectPrefsComponent component : myPrefsComponents) {
+      component.dispose();
+    }
+
     MPSEditorOpener opener = myProject.getComponent(MPSEditorOpener.class);
     if (opener != null) {
       opener.unregisterOpenHandlers(this);
@@ -104,6 +120,13 @@ public abstract class BaseProjectPlugin implements IProjectPlugin, MPSEditorOpen
   }
 
   //------------------tools stuff-----------------------
+
+  public BaseProjectPrefsComponent getPrefsComponent(Class cls) {
+    for (BaseProjectPrefsComponent component : myPrefsComponents) {
+      if (component.getClass() == cls) return component;
+    }
+    return null;
+  }
 
   public List<GeneratedTool> getTools() {
     return Collections.unmodifiableList(myTools);
