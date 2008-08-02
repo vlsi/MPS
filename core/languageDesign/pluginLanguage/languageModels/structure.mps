@@ -130,6 +130,32 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="10">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink"/>
+      <moveMap/>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="validateBlock"
+               conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.PreferencePage" featureKind="CHILD"/>
+          <value featureName="resetBlock" conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structurePreferencePage"
+                 featureKind="CHILD"/>
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="11">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept"/>
+      <moveMap/>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="PreferencePageValidateBlock"
+               conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.PreferencePageValidateBlock"
+               featureKind="CONCEPT"/>
+          <value featureName="PreferencePageResetBlock"
+                 conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.PreferencePageResetBlock"
+                 featureKind="CONCEPT"/>
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11"/>
@@ -150,7 +176,7 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17"/>
   </language>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="9"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="11"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7"/>
@@ -1770,7 +1796,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1210686936988">
       <property name="metaClass" value="aggregation"/>
-      <property name="role" value="validateBlock"/>
+      <property name="role" value="resetBlock"/>
       <property name="sourceCardinality" value="0..1"/>
       <link role="target" targetNodeId="1210686882550" resolveInfo="ValidatePreferencePageBlock"/>
     </node>
@@ -1784,7 +1810,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210686882550">
     <property name="package" value="Preference.Page"/>
-    <property name="name" value="PreferencePageValidateBlock"/>
+    <property name="name" value="PreferencePageResetBlock"/>
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1210686917553">
@@ -1795,7 +1821,7 @@
           id="1210691025105">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
             resolveInfo="applicableConceptFunctionParameter"/>
-      <link role="target" targetNodeId="1204478074808" resolveInfo="ConceptFunctionParameter_MPSProject"/>
+      <link role="target" targetNodeId="1213888797251" resolveInfo="ConceptFunctionParameter_Project"/>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
           id="1210691033218">
@@ -1805,7 +1831,7 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1215038387065">
-      <property name="value" value="validate"/>
+      <property name="value" value="reset"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
@@ -1826,7 +1852,7 @@
           id="1210690833348">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
             resolveInfo="applicableConceptFunctionParameter"/>
-      <link role="target" targetNodeId="1204478074808" resolveInfo="ConceptFunctionParameter_MPSProject"/>
+      <link role="target" targetNodeId="1213888797251" resolveInfo="ConceptFunctionParameter_Project"/>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
           id="1210690842854">
@@ -1876,7 +1902,7 @@
           id="1210763550011">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
             resolveInfo="applicableConceptFunctionParameter"/>
-      <link role="target" targetNodeId="1204478074808" resolveInfo="ConceptFunctionParameter_MPSProject"/>
+      <link role="target" targetNodeId="1213888797251" resolveInfo="ConceptFunctionParameter_Project"/>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
           id="1210763550012">
