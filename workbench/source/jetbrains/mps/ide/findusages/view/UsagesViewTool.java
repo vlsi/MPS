@@ -238,12 +238,6 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
           public void run(@NotNull final ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             searchResults[0] = FindUtils.getSearchResults(indicator, query, provider);
-
-            try {
-              Thread.sleep(10000);
-            } catch (InterruptedException e) {
-              e.printStackTrace();
-            }
           }
         });
         showResults(searchResults[0], showOne, newTab, provider, query, isRerunnable);
