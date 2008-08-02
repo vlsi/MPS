@@ -233,12 +233,11 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
+        final SearchResults[] searchResults = new SearchResults[1];
         ProgressManager.getInstance().run(new Modal(getProject(), "Searching", true) {
           public void run(@NotNull final ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
-            final SearchResults searchResults = FindUtils.getSearchResults(indicator, query, provider);
-            showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
-            openToolLater(true);
+            searchResults[0] = FindUtils.getSearchResults(indicator, query, provider);
 
             try {
               Thread.sleep(10000);
@@ -247,6 +246,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
             }
           }
         });
+        showResults(searchResults[0], showOne, newTab, provider, query, isRerunnable);
       }
     });
   }
