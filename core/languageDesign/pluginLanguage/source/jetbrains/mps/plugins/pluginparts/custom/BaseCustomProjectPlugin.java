@@ -1,10 +1,9 @@
 package jetbrains.mps.plugins.pluginparts.custom;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.projectplugins.IProjectPlugin;
 import jetbrains.mps.project.MPSProject;
 
-public abstract class BaseCustomProjectPlugin implements IProjectPlugin {
+public abstract class BaseCustomProjectPlugin {
   private static Logger LOG = Logger.getLogger(BaseCustomProjectPlugin.class);
   private MPSProject myProject;
 

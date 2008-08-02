@@ -1,12 +1,15 @@
 package jetbrains.mps.plugins.projectplugins;
 
 import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.util.containers.HashMap;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
+import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.MyState;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSEditorOpenHandler;
@@ -18,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class BaseProjectPlugin implements IProjectPlugin, MPSEditorOpenHandlerOwner {
+public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, PersistentStateComponent<MyState> {
   private static Logger LOG = Logger.getLogger(BaseProjectPlugin.class);
 
   private Project myProject;
@@ -151,6 +154,42 @@ public abstract class BaseProjectPlugin implements IProjectPlugin, MPSEditorOpen
     MPSEditorOpener editorsPane = getProject().getComponent(MPSEditorOpener.class);
     if (editorsPane != null) {
       editorsPane.registerOpenHandler(handler, this);
+    }
+  }
+
+  public MyState getState() {
+    MyState state = new MyState();
+    for (BaseProjectPrefsComponent component : myPrefsComponents) {
+      state.myComponentsState.add(new ComponentState(component.getClass().getName(), component.getState()));
+    }
+    return state;
+  }
+
+  public void loadState(MyState state) {
+    HashMap<String, BaseProjectPrefsComponent> components = new HashMap<String, BaseProjectPrefsComponent>();
+    for (BaseProjectPrefsComponent component : myPrefsComponents) {
+      components.put(component.getClass().getName(), component);
+    }
+
+    for (ComponentState componentState : state.myComponentsState) {
+      components.get(componentState.first).loadState(componentState.second);
+    }
+  }
+
+  public static class MyState {
+    public List<ComponentState> myComponentsState = new ArrayList<ComponentState>();
+  }
+
+  public static class ComponentState {
+    public String first;
+    public Object second;
+
+    public ComponentState() {
+    }
+
+    public ComponentState(String first, Object second) {
+      this.first = first;
+      this.second = second;
     }
   }
 }

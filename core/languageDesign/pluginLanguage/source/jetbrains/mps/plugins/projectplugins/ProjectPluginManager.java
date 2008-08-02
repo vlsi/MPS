@@ -1,13 +1,18 @@
 package jetbrains.mps.plugins.projectplugins;
 
+import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
+import com.intellij.util.containers.HashMap;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.MyState;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -24,10 +29,21 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class ProjectPluginManager implements ProjectComponent {
+@State(
+  name = "ProjectPluginManager",
+  storages = {
+  @Storage(
+    id = "other",
+    file = "$WORKSPACE_FILE$"
+  )
+    }
+)
+public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(ProjectPluginManager.class);
 
-  private List<IProjectPlugin> myPlugins = new ArrayList<IProjectPlugin>();
+  private List<BaseProjectPlugin> myPlugins = new ArrayList<BaseProjectPlugin>();
+
+  private MyState myState = new MyState();
 
   private Project myProject;
   private ReloadListener myReloadListener = new ReloadListener() {
@@ -59,8 +75,7 @@ public class ProjectPluginManager implements ProjectComponent {
 
   @Nullable
   public <T extends GeneratedTool> T getTool(Class<T> toolClass) {
-    for (IProjectPlugin plugin : myPlugins) {
-      if (!(plugin instanceof BaseProjectPlugin)) continue;
+    for (BaseProjectPlugin plugin : myPlugins) {
       List<GeneratedTool> tools = ((BaseProjectPlugin) plugin).getTools();
       for (GeneratedTool tool : tools) {
         if (tool.getClass() == toolClass) return (T) tool;
@@ -70,8 +85,7 @@ public class ProjectPluginManager implements ProjectComponent {
   }
 
   public <T extends BaseProjectPrefsComponent> T getPrefsComponent(Class<T> componentClass) {
-    for (IProjectPlugin plugin : myPlugins) {
-      if (!(plugin instanceof BaseProjectPlugin)) continue;
+    for (BaseProjectPlugin plugin : myPlugins) {
       BaseProjectPlugin basePlugin = (BaseProjectPlugin) plugin;
       BaseProjectPrefsComponent component = basePlugin.getPrefsComponent(componentClass);
       if (component != null) return (T) component;
@@ -125,13 +139,14 @@ public class ProjectPluginManager implements ProjectComponent {
 
     addIdePlugin();
 
-    for (IProjectPlugin plugin : myPlugins) {
+    for (BaseProjectPlugin plugin : myPlugins) {
       try {
         plugin.init(mpsProject);
       } catch (Throwable t1) {
         LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
       }
     }
+    spreadState();
   }
 
   private void addIdePlugin() {
@@ -140,7 +155,8 @@ public class ProjectPluginManager implements ProjectComponent {
   }
 
   private void disposePlugins() {
-    for (IProjectPlugin plugin : myPlugins) {
+    collectState();
+    for (BaseProjectPlugin plugin : myPlugins) {
       try {
         plugin.dispose();
       } catch (Throwable t) {
@@ -158,7 +174,7 @@ public class ProjectPluginManager implements ProjectComponent {
         return;
       }
 
-      myPlugins.add((IProjectPlugin) pluginClass.newInstance());
+      myPlugins.add((BaseProjectPlugin) pluginClass.newInstance());
     } catch (Throwable t) {
       LOG.error(t);
     }
@@ -180,5 +196,51 @@ public class ProjectPluginManager implements ProjectComponent {
   }
 
   public void disposeComponent() {
+  }
+
+  //----------------STATE STUFF------------------------
+
+  public MyState getState() {
+    collectState();
+    return myState;
+  }
+
+  public void loadState(MyState state) {
+    myState = state;
+  }
+
+  protected void collectState() {
+    myState.myPluginsState.clear();
+    for (BaseProjectPlugin plugin : myPlugins) {
+      myState.myPluginsState.add(new PluginState(plugin.getClass().getName(), plugin.getState()));
+    }
+  }
+
+  protected void spreadState() {
+    HashMap<String, BaseProjectPlugin> plugins = new HashMap<String, BaseProjectPlugin>();
+    for (BaseProjectPlugin plugin : myPlugins) {
+      plugins.put(plugin.getClass().getName(), plugin);
+    }
+
+    for (PluginState pluginState : myState.myPluginsState) {
+      plugins.get(pluginState.first).loadState((jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.MyState) pluginState.second);
+    }
+  }
+
+  public static class MyState {
+    public List<PluginState> myPluginsState = new ArrayList<PluginState>();
+  }
+
+  public static class PluginState {
+    public String first;
+    public BaseProjectPlugin.MyState second;
+
+    public PluginState() {
+    }
+
+    public PluginState(String first, BaseProjectPlugin.MyState second) {
+      this.first = first;
+      this.second = second;
+    }
   }
 }
