@@ -160,21 +160,46 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     return false;
   }
 
+  private boolean isFirstPosition(EditorCell cell) {
+    if (!(cell instanceof EditorCell_Label)) return false;
+    return ((EditorCell_Label) cell).isFirstCaretPosition();
+  }
+
+  private boolean isLastCaretPosition(EditorCell cell) {
+    if (!(cell instanceof EditorCell_Label)) return false;
+    return ((EditorCell_Label) cell).isLastCaretPosition();
+  }
+
   private boolean processSideDeletes(EditorContext editorContext, KeyEvent keyEvent) {
     EditorCell selectedCell = editorContext.getSelectedCell();
     if (selectedCell == null) return false;
     if (areModifiersPressed(keyEvent)) return false;
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && selectedCell.isLastPositionInBigCell()) {
-      EditorCell nextLeaf = selectedCell.getNextLeaf(CellConditions.SELECTABLE);
-      if (nextLeaf.getSNode().isAncestorOf(selectedCell.getSNode())) return false;
-      return nextLeaf.executeAction(CellActionType.DELETE);
+    if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && isLastCaretPosition(selectedCell)) {
+      EditorCell target;
+      if (selectedCell.isLastPositionInBigCell() && selectedCell.getContainingBigCell().getNextSibling() != null) {
+        target = selectedCell.getContainingBigCell().getNextSibling();
+      } else if (selectedCell.getNextSibling() != null) {
+        target = selectedCell.getNextSibling();
+      } else {
+        target = selectedCell.getNextLeaf(CellConditions.SELECTABLE);
+      }
+
+      if (target == null || target.getSNode().isAncestorOf(selectedCell.getSNode())) return false;
+      return target.executeAction(CellActionType.DELETE);
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE && selectedCell.isFirstPositionInBigCell()) {
-      EditorCell prevLeaf = selectedCell.getPrevLeaf(CellConditions.SELECTABLE);
-      if (prevLeaf.getSNode().isAncestorOf(selectedCell.getSNode())) return false;
-      return prevLeaf.executeAction(CellActionType.DELETE);
+    if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE && isFirstPosition(selectedCell)) {
+      EditorCell target;
+      if (selectedCell.isFirstPositionInBigCell() && selectedCell.getContainingBigCell().getPrevSibling() != null) {
+        target = selectedCell.getContainingBigCell().getPrevSibling();
+      } else if (selectedCell.getPrevSibling() != null) {
+        target = selectedCell.getPrevSibling();
+      } else {
+        target = selectedCell.getPrevLeaf(CellConditions.SELECTABLE);
+      }
+      if (target == null || target.getSNode().isAncestorOf(selectedCell.getSNode())) return false;
+      return target.executeAction(CellActionType.DELETE);
     }
 
     return false;
