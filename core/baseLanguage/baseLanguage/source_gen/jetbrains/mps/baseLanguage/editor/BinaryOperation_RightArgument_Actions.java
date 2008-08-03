@@ -7,8 +7,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.CellConditions;
 
 public class BinaryOperation_RightArgument_Actions {
 
@@ -33,7 +35,12 @@ public class BinaryOperation_RightArgument_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "leftExpression", true));
+      SNode leftExpression = SLinkOperations.getTarget(node, "leftExpression", true);
+      SNodeOperations.replaceWithAnother(node, leftExpression);
+      editorContext.flushEvents();
+      EditorComponent editor = editorContext.getNodeEditorComponent();
+      EditorCell cell = editor.findNodeCell(leftExpression);
+      editor.changeSelection(cell.getLastLeaf(CellConditions.SELECTABLE));
     }
 
 }

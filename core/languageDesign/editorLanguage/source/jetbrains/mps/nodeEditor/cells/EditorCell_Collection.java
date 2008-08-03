@@ -583,7 +583,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   public EditorCell getLastLeaf() {
     if (myEditorCells.isEmpty()) return this;
     return getLastChild().getLastLeaf();
-  }
+  }    
 
   public EditorCell getLastChild() {
     if (myEditorCells.isEmpty()) return null;

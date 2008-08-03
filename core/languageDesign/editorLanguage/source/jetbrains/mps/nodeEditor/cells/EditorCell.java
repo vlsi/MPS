@@ -152,7 +152,7 @@ public interface EditorCell extends Cloneable {
   boolean isFirstPositionInBigCell();
   boolean isLastPositionInBigCell();
   EditorCell getContainingBigCell();
-  boolean isParentOf(EditorCell cell);
+  boolean isAncestorOf(EditorCell cell);
 
   boolean hasFocusPolicy();
   FocusPolicy getFocusPolicy();
@@ -178,9 +178,11 @@ public interface EditorCell extends Cloneable {
   EditorCell getPrevLeaf();
   EditorCell getPrevLeaf(Condition<EditorCell> condition);
 
-  EditorCell getFirstLeaf();  
+  EditorCell getFirstLeaf();
+  EditorCell getFirstLeaf(Condition<EditorCell> condition);
   
   EditorCell getLastLeaf();
+  EditorCell getLastLeaf(Condition<EditorCell> condition);
 
   EditorCell getLastChild();
   EditorCell getFirstChild();

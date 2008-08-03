@@ -14,7 +14,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
@@ -112,11 +111,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(property, "type", true);
   }
 
-  public static List sourceNodesQuery_1201570443454(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1201570443454(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(Property_Behavior.call_getCustomPropertyImplementation_1213877383154(_context.getNode()), "getAccessor", true), "statementList", true), "statement", true);
   }
 
-  public static List sourceNodesQuery_1202009237531(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1202009237531(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(Property_Behavior.call_getCustomPropertyImplementation_1213877383154(_context.getNode()), "setAccessor", true), "statementList", true), "statement", true);
   }
 

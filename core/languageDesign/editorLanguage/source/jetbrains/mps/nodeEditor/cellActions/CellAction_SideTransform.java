@@ -49,7 +49,7 @@ public class CellAction_SideTransform extends EditorCellAction {
         defAnchorCell = nodeMainCell;
       }
 
-      if (defAnchorCell == selectedCell || defAnchorCell.isParentOf(selectedCell)) {
+      if (defAnchorCell == selectedCell || defAnchorCell.isAncestorOf(selectedCell)) {
         anchorCell = defAnchorCell;
       }
     }

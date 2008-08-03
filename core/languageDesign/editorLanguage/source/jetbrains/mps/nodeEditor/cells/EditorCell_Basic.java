@@ -625,7 +625,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return getRightTransformAnchorTag() != null && getRightTransformAnchorTag().equals(tag);
   }
 
-  public boolean isParentOf(EditorCell cell) {
+  public boolean isAncestorOf(EditorCell cell) {
     while (cell != null) {
       cell = cell.getParent();
       if (cell == this) return true;
@@ -954,6 +954,30 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public EditorCell getLastLeaf() {
     return this;
+  }
+
+  public EditorCell getFirstLeaf(final Condition<EditorCell> condition) {
+    EditorCell firstLeaf = getFirstLeaf();
+    if (condition.met(firstLeaf)) {
+      return firstLeaf;
+    }
+    return firstLeaf.getNextLeaf(new Condition<EditorCell>() {
+      public boolean met(EditorCell object) {
+        return isAncestorOf(object) && condition.met(object);
+      }
+    });
+  }
+
+  public EditorCell getLastLeaf(final Condition<EditorCell> condition) {
+    EditorCell lastLeaf = getLastLeaf();
+    if (condition.met(lastLeaf)) {
+      return lastLeaf;
+    }
+    return lastLeaf.getPrevLeaf(new Condition<EditorCell>() {
+      public boolean met(EditorCell object) {
+        return isAncestorOf(object) && condition.met(object);
+      }
+    });
   }
 
   public EditorCell getLastChild() {

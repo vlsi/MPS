@@ -13,8 +13,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil;
-import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import java.util.List;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
@@ -148,31 +148,31 @@ public class QueriesGenerated {
     return QueriesUtil.create_enclosingClassObject(_context.getNode());
   }
 
-  public static List sourceNodesQuery_1170294170225(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1170294170225(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "statement", true);
   }
 
-  public static List sourceNodesQuery_1170295259476(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1170295259476(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), _context.getGenerator());
     return (List<SNode>)list;
   }
 
-  public static List sourceNodesQuery_1170347169279(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1170347169279(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List list = _QueriesUtil.getList_ContextOwner_VariablesUsedInClosure(_context.getNode(), _context.getGenerator());
     return (List<SNode>)list;
   }
 
-  public static List sourceNodesQuery_1170347696338(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1170347696338(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), _context.getGenerator());
     return (List<SNode>)list;
   }
 
-  public static List sourceNodesQuery_1170347787985(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1170347787985(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), _context.getGenerator());
     return (List<SNode>)list;
   }
 
-  public static List sourceNodesQuery_1170874089896(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1170874089896(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return QueriesUtil.getTypeVars_from_Closure_enclosingClass(_context.getNode(), _context.getScope());
   }
 
