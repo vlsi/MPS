@@ -11,6 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class BinaryOperation_RightArgument_Actions {
 
@@ -40,7 +41,11 @@ public class BinaryOperation_RightArgument_Actions {
       editorContext.flushEvents();
       EditorComponent editor = editorContext.getNodeEditorComponent();
       EditorCell cell = editor.findNodeCell(leftExpression);
-      editor.changeSelection(cell.getLastLeaf(CellConditions.SELECTABLE));
+      EditorCell lastLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
+      editor.changeSelection(lastLeaf);
+      if (lastLeaf instanceof EditorCell_Label) {
+        ((EditorCell_Label)lastLeaf).end();
+      }
     }
 
 }
