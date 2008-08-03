@@ -23,6 +23,10 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
+  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.strings.constraints" version="1" />
+  <devkit namespace="jetbrains.mps.devkit.general-purpose" />
   <maxImportIndex value="17" />
   <import index="14" modelUID="java.lang@java_stub" version="-1" />
   <import index="15" modelUID="java.io@java_stub" version="-1" />

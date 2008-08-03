@@ -138,18 +138,14 @@ public class ModelAccess {
     final boolean[] res = new boolean[]{false};
     ApplicationManager.getApplication().runWriteAction(new Runnable() {
       public void run() {
-        executeCommand(new Runnable() {
-          public void run() {
-            if (getWriteLock().tryLock()) {
-              try {
-                r.run();
-              } finally {
-                getWriteLock().unlock();
-              }
-              res[0] = true;
-            }
+        if (getWriteLock().tryLock()) {
+          try {
+            executeCommand(r);
+          } finally {
+            getWriteLock().unlock();
           }
-        });
+          res[0] = true;
+        }
       }
     });
     return res[0];
@@ -212,17 +208,13 @@ public class ModelAccess {
   }
 
   public <T> T runWriteActionInCommand(final Computable<T> c, final String name, final UndoConfirmationPolicy policy) {
-    return runWriteAction(new Computable<T>() {
-      public T compute() {
-        final Object[] result = new Object[1];
-        CommandProcessor.getInstance().executeCommand(null, new Runnable() {
-          public void run() {
-            result[0] = c.compute();
-          }
-        }, name, null, policy);
-        return (T) result[0];
+    final Object[] result = new Object[1];
+    CommandProcessor.getInstance().executeCommand(null, new Runnable() {
+      public void run() {
+        result[0] = runWriteAction(c);
       }
-    });
+    }, name, null, policy);
+    return (T) result[0];
   }
 
   public void runWriteActionInCommand(final Runnable r) {
