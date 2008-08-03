@@ -849,14 +849,9 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215776939757">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215776939758">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217775359773">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1217775360900">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1217775362014">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1217775362126">
-                        <property name="value" value="3" />
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1217775360966">
-                        <property name="value" value="2" />
-                      </node>
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1217777562058">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1217777562217">
+                      <property name="value" value="2" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1217775359774">
                       <property name="value" value="1" />

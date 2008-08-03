@@ -45,9 +45,6 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       return true;
     }
 
-
-    
-
     CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
     EditorCell selectedCell = editorContext.getSelectedCell();
 
