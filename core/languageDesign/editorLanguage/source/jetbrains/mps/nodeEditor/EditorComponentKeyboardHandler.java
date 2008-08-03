@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.CellConditions;
 
 import java.awt.event.KeyEvent;
 import java.util.List;
@@ -39,6 +40,13 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     if (processKeyMaps(editorContext, keyEvent)) {
       return true;
     }
+
+    if (processSideDeletes(editorContext, keyEvent)) {
+      return true;
+    }
+
+
+    
 
     CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
     EditorCell selectedCell = editorContext.getSelectedCell();
@@ -150,6 +158,30 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       }
     }
     return false;
+  }
+
+  private boolean processSideDeletes(EditorContext editorContext, KeyEvent keyEvent) {
+    EditorCell selectedCell = editorContext.getSelectedCell();
+    if (selectedCell == null) return false;
+    if (areModifiersPressed(keyEvent)) return false;
+
+    if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && selectedCell.isLastPositionInBigCell()) {
+      EditorCell nextLeaf = selectedCell.getNextLeaf(CellConditions.SELECTABLE);
+      if (nextLeaf.getSNode().isAncestorOf(selectedCell.getSNode())) return false;
+      return nextLeaf.executeAction(CellActionType.DELETE);
+    }
+
+    if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE && selectedCell.isFirstPositionInBigCell()) {
+      EditorCell prevLeaf = selectedCell.getPrevLeaf(CellConditions.SELECTABLE);
+      if (prevLeaf.getSNode().isAncestorOf(selectedCell.getSNode())) return false;
+      return prevLeaf.executeAction(CellActionType.DELETE);
+    }
+
+    return false;
+  }
+
+  private boolean areModifiersPressed(KeyEvent e) {
+    return e.isControlDown() || e.isAltDown() || e.isShiftDown();
   }
 
   private boolean isEndEditKeystroke(final KeyEvent keyEvent) {

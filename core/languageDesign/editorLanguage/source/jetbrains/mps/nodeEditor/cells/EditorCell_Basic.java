@@ -723,7 +723,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public boolean isLastPositionInBigCell() {
-    return this instanceof EditorCell_Label && getContainingBigCell().getFirstLeaf() == this && ((EditorCell_Label) this).isLastCaretPosition();
+    return this instanceof EditorCell_Label && getContainingBigCell().getLastLeaf() == this && ((EditorCell_Label) this).isLastCaretPosition();
   }
 
   public EditorCell getContainingBigCell() {
