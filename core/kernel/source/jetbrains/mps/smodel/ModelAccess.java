@@ -11,9 +11,10 @@ import javax.swing.SwingUtilities;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-// We access IDEA locking mechanism here in order to prevent different way of acquiring locks
-
-// We always first acquire IDEA's lock and only then acquire MPS's lock
+/**
+ * We access IDEA locking mechanism here in order to prevent different way of acquiring locks
+ * We always first acquire IDEA's lock and only then acquire MPS's lock
+ */
 public class ModelAccess {
   private static final ModelAccess ourInstance = new ModelAccess();
 
@@ -134,8 +135,15 @@ public class ModelAccess {
     });
   }
 
-  public boolean tryCommand(final Runnable r) {
+  public boolean tryWriteInCommand(final Runnable r) {
     final boolean[] res = new boolean[]{false};
+
+    //todo this is a hack but it works
+    if (!getWriteLock().tryLock()) {
+      return false;
+    }
+    getWriteLock().unlock();
+
     ApplicationManager.getApplication().runWriteAction(new Runnable() {
       public void run() {
         if (getWriteLock().tryLock()) {

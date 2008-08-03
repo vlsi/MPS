@@ -74,10 +74,15 @@ class EDTExecutor {
 
       Runnable r = null;
 
-      if (!readEmpty) r = new ReadRunnable();
-      else if (!commandEmpty) r = new CommandRunnable();
+      if (!readEmpty) {
+        r = new ReadRunnable();
+      } else if (!commandEmpty) {
+        r = new CommandRunnable();
+      }
 
-      if (r != null) SwingUtilities.invokeLater(r);
+      if (r != null) {
+        SwingUtilities.invokeLater(r);
+      }
     }
 
     private class ReadRunnable implements Runnable {
@@ -98,7 +103,7 @@ class EDTExecutor {
 
     private class CommandRunnable implements Runnable {
       public void run() {
-        ModelAccess.instance().tryCommand(new Runnable() {
+        ModelAccess.instance().tryWriteInCommand(new Runnable() {
           public void run() {
             long start = System.currentTimeMillis();
             while (true) {
