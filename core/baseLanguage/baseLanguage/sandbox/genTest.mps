@@ -848,9 +848,14 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215776939756">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215776939757">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215776939758">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215776939759">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215776939760">
-                    <property name="value" value="23" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217769824811">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1217769824812">
+                    <property name="value" value="1" />
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217771699201">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1217771699202">
+                    <property name="value" value="2" />
                   </node>
                 </node>
               </node>

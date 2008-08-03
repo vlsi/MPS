@@ -2087,6 +2087,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     SModelEvent lastAdd = null;
     SModelEvent lastRemove = null;
 
+    SNode lastSelectedNode = getSelectedNode();
+
     List<SNode> childAddedEventNodes = new ArrayList<SNode>();
 
     for (SModelEvent e : events) {
@@ -2130,7 +2132,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     if (lastRemove != null) {
-      if (lastRemove instanceof SModelChildEvent) {
+      if (lastRemove instanceof SModelChildEvent && (lastSelectedNode == null || lastSelectedNode.isDeleted())) {
         SModelChildEvent ce = (SModelChildEvent) lastRemove;
         int index = ce.getChildIndex();
         String role = ce.getChildRole();
