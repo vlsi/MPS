@@ -6,6 +6,7 @@ import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.undo.DocumentReferenceByVirtualFile;
+import com.intellij.openapi.editor.Document;
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import org.jetbrains.annotations.NotNull;
@@ -28,7 +29,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
 
-public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentReferenceEditor {
+public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentReferenceEditor, DocumentsEditor {
   private MPSNodeVirtualFile myFile;
   private IEditor myNodeEditor;
 
@@ -50,6 +51,11 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
       docRefs.add(new DocumentReferenceByVirtualFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(node)));
     }
     return docRefs.toArray(new DocumentReference[docRefs.size()]);
+  }
+
+  public Document[] getDocuments() {
+    //todo this is a workaround for MPS-2447: [build:913] update failed for AnAction with ID=$Undo 
+    return new Document[0];
   }
 
   public MPSNodeVirtualFile getFile() {
