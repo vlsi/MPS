@@ -32,26 +32,19 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
         SNode bconst = SLinkOperations.getTarget(_context.getNode(), "condition", true);
         if (!(SPropertyOperations.getBoolean(bconst, "value"))) {
-          _context.getBuilder().emitJump(_context.getBuilder().before(SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true)));
+          _context.getBuilder().emitJump(_context.getBuilder().after(SLinkOperations.getTarget(_context.getNode(), "ifTrue", true)));
         }
       } else
       {
-        _context.getBuilder().emitIfJump(_context.getBuilder().before(SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true)));
+        _context.getBuilder().emitIfJump(_context.getBuilder().after(SLinkOperations.getTarget(_context.getNode(), "ifTrue", true)));
       }
     }
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "ifTrue", true));
-    if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null)) {
-      _context.getBuilder().emitMayBeUnreachable(new Runnable() {
-
-        public void run() {
-          _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
-        }
-
-      });
-      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true));
-    }
     for(SNode elseIf : SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true)) {
       _context.getBuilder().build((SNode)elseIf);
+    }
+    if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null)) {
+      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true));
     }
   }
 
