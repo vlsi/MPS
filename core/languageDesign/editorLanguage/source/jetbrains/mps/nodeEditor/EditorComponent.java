@@ -925,6 +925,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
       return CellActionType.INSERT;
     }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.isShiftDown() && !(keyEvent.isControlDown() || keyEvent.isAltDown())) {
+      return CellActionType.SELECT_LEFT;
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && keyEvent.isShiftDown() && !(keyEvent.isControlDown() || keyEvent.isAltDown())) {
+      return CellActionType.SELECT_RIGHT;
+    }
     if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
       return CellActionType.LEFT_SPECIAL;
     }

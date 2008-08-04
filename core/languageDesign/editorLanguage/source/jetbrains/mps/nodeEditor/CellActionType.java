@@ -15,6 +15,8 @@ public enum CellActionType {
   DOWN,
   NEXT,
   PREV,
+  SELECT_LEFT,
+  SELECT_RIGHT,
   LEFT_SPECIAL,
   RIGHT_SPECIAL,
   UP_SPECIAL,

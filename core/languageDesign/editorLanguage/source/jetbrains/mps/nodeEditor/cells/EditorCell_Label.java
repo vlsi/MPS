@@ -6,13 +6,12 @@ import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_CopyLabelText;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_CutLabelText;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_PasteIntoLabelText;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.datatransfer.CopyPasteUtil;
+import jetbrains.mps.datatransfer.TextPasteUtil;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -36,9 +35,15 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myNullTextLine.setCaretEnabled(true);
     setText(text);
 
-    setAction(CellActionType.COPY, new CellAction_CopyLabelText());
-    setAction(CellActionType.PASTE, new CellAction_PasteIntoLabelText());
-    setAction(CellActionType.CUT, new CellAction_CutLabelText());
+    setAction(CellActionType.LEFT, new MoveLeft(false));
+    setAction(CellActionType.SELECT_LEFT, new MoveLeft(true));
+
+    setAction(CellActionType.RIGHT, new MoveRight(false));
+    setAction(CellActionType.SELECT_RIGHT, new MoveRight(true));
+
+    setAction(CellActionType.COPY, new CopyLabelText());
+    setAction(CellActionType.PASTE, new PasteIntoLabelText());
+    setAction(CellActionType.CUT, new CutLabelText());
   }
 
   public CaretPosition getDefaultCaretPosition() {
@@ -543,30 +548,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       return true;
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && !keyEvent.isControlDown()) {
-      if (caretPosition > 0) {
-        if (!isCaretPositionAllowed(caretPosition - 1)) return false;
-        setCaretPosition(caretPosition - 1, keyEvent.isShiftDown());
-        editor.resetLastCaretX();
-        ensureCaretVisible();
-        return true;
-      } else {
-        return false;
-      }
-    }
-
-    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && !keyEvent.isControlDown()) {
-      if (caretPosition < myText.length()) {
-        if (!isCaretPositionAllowed(caretPosition + 1)) return false;
-        setCaretPosition(caretPosition + 1, keyEvent.isShiftDown());
-        editor.resetLastCaretX();
-        ensureCaretVisible();
-        return true;
-      } else {        
-        return false;
-      }
-    }
-
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.isShiftDown()) {
       if (caretPosition <= 0) return false;
       if (!isCaretPositionAllowed(0)) return false;
@@ -705,6 +686,90 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       if (cell != null) {
         cell.changeText(myText);
         cell.getEditorContext().getNodeEditorComponent().relayout();
+      }
+    }
+  }
+
+  private class MoveLeft extends EditorCellAction {
+    private boolean myWithSelection;
+
+    private MoveLeft(boolean withSelection) {
+      myWithSelection = withSelection;
+    }
+
+    public boolean canExecute(EditorContext context) {
+      return !isFirstCaretPosition();
+    }
+
+    public void execute(EditorContext context) {
+      setCaretPosition(getCaretPosition() - 1, myWithSelection);
+      context.getNodeEditorComponent().resetLastCaretX();
+      ensureCaretVisible();
+    }
+  }
+
+  private class MoveRight extends EditorCellAction {
+    private boolean myWithSelection;
+
+    private MoveRight(boolean withSelection) {
+      myWithSelection = withSelection;
+    }
+
+    public boolean canExecute(EditorContext context) {
+      return !isLastCaretPosition();
+    }
+
+    public void execute(EditorContext context) {
+      setCaretPosition(getCaretPosition() + 1, myWithSelection);
+      context.getNodeEditorComponent().resetLastCaretX();
+      ensureCaretVisible();
+    }
+  }
+
+  private class CopyLabelText extends EditorCellAction {
+    public boolean canExecute(EditorContext context) {
+      if (context.getNodeEditorComponent().getNodeRangeSelection().isActive()) return false;
+      return (context.getSelectedCell() instanceof EditorCell_Label) &&
+        ((EditorCell_Label)context.getSelectedCell()).getSelectedText().length() > 0;
+    }
+
+    public void execute(EditorContext context) {
+      EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
+      CopyPasteUtil.copyTextToClipboard(label.getSelectedText());
+    }
+  }
+
+  private class PasteIntoLabelText extends EditorCellAction {
+    public boolean canExecute(EditorContext context) {
+      if (!(context.getSelectedCell() instanceof EditorCell_Label)) return false;
+      EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
+      SNode node = label.getSNode();
+      return node != null && label.canPasteText() && TextPasteUtil.getStringFromClipboard() != null && !(CopyPasteUtil.doesClipboardContainNode(node.getModel()));
+    }
+
+    public void execute(EditorContext context) {
+      EditorCell_Label cell = (EditorCell_Label) context.getSelectedCell();
+      final String s = TextPasteUtil.getStringFromClipboard();
+      cell.insertText(s);
+      context.getNodeEditorComponent().resetLastCaretX();
+      cell.ensureCaretVisible();
+      context.getNodeEditorComponent().relayout();
+    }
+  }
+
+  private class CutLabelText extends EditorCellAction {
+    public boolean canExecute(EditorContext context) {
+      if (context.getNodeEditorComponent().getNodeRangeSelection().isActive()) return false;
+      return (context.getSelectedCell() instanceof EditorCell_Label) &&
+        ((EditorCell_Label)context.getSelectedCell()).getSelectedText().length() > 0;
+    }
+
+    public void execute(EditorContext context) {
+      EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
+      String toCopy = label.getSelectedText();
+      CopyPasteUtil.copyTextToClipboard(toCopy);
+      if (label.canPasteText()) {
+        label.deleteSelection();
       }
     }
   }
