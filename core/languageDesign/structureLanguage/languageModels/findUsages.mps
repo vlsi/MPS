@@ -102,16 +102,20 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1197635106703">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197635106704">
             <node role="statement" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ResultStatement" id="1200268665345">
-              <node role="foundResult" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1200268665879">
-                <link role="baseMethodDeclaration" targetNodeId="11.~SearchResult.&lt;init&gt;()" resolveInfo="SearchResult" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1200268665880">
-                  <link role="baseMethodDeclaration" targetNodeId="7.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200268665881">
-                    <link role="variableDeclaration" targetNodeId="1197635106707" resolveInfo="node" />
+              <node role="foundResult" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888353583">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888353585">
+                  <link role="baseMethodDeclaration" targetNodeId="11.~SearchResult.&lt;init&gt;()" resolveInfo="SearchResult" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888351687">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888351689">
+                      <link role="baseMethodDeclaration" targetNodeId="7.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200268665881">
+                        <link role="variableDeclaration" targetNodeId="1197635106707" resolveInfo="node" />
+                      </node>
+                    </node>
                   </node>
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1200268665882">
-                  <property name="value" value="Concept Instances" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1200268665882">
+                    <property name="value" value="Concept Instances" />
+                  </node>
                 </node>
               </node>
               <node role="foundNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200306749512">
@@ -651,16 +655,20 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1211301915956">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1211301915957">
             <node role="statement" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ResultStatement" id="1211301915958">
-              <node role="foundResult" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1211301915959">
-                <link role="baseMethodDeclaration" targetNodeId="11.~SearchResult.&lt;init&gt;()" resolveInfo="SearchResult" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1211301915960">
-                  <link role="baseMethodDeclaration" targetNodeId="7.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1211301915961">
-                    <link role="variableDeclaration" targetNodeId="1211301915965" resolveInfo="resNode" />
+              <node role="foundResult" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888359360">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888359362">
+                  <link role="baseMethodDeclaration" targetNodeId="11.~SearchResult.&lt;init&gt;()" resolveInfo="SearchResult" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888370596">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888370598">
+                      <link role="baseMethodDeclaration" targetNodeId="7.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1211301915961">
+                        <link role="variableDeclaration" targetNodeId="1211301915965" resolveInfo="resNode" />
+                      </node>
+                    </node>
                   </node>
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1211301915962">
-                  <property name="value" value="Concept Instances" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1211301915962">
+                    <property name="value" value="Concept Instances" />
+                  </node>
                 </node>
               </node>
               <node role="foundNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1211301915963">

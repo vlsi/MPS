@@ -3293,9 +3293,11 @@
               <link role="classifier" targetNodeId="11.~List" resolveInfo="List" />
               <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210666992319" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1210666992320">
-              <link role="baseMethodDeclaration" targetNodeId="11.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-              <node role="typeParameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210666992321" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888320709">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888320711">
+                <link role="baseMethodDeclaration" targetNodeId="11.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+                <node role="typeParameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210666992321" />
+              </node>
             </node>
           </node>
         </node>
@@ -3306,9 +3308,11 @@
               <link role="classifier" targetNodeId="11.~LinkedList" resolveInfo="LinkedList" />
               <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210666992326" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1210666992327">
-              <link role="baseMethodDeclaration" targetNodeId="11.~LinkedList.&lt;init&gt;()" resolveInfo="LinkedList" />
-              <node role="typeParameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210666992328" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888419654">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888419657">
+                <link role="baseMethodDeclaration" targetNodeId="11.~LinkedList.&lt;init&gt;()" resolveInfo="LinkedList" />
+                <node role="typeParameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210666992328" />
+              </node>
             </node>
           </node>
         </node>

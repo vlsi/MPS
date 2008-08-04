@@ -27,8 +27,10 @@
       <link role="componentDeclaration" targetNodeId="2v.1202816402995" resolveInfo="Panel" />
       <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1203601642060">
         <link role="attribute" targetNodeId="2v.1202393600503" resolveInfo="layout" />
-        <node role="value" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1203601643000">
-          <link role="baseMethodDeclaration" targetNodeId="3.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
+        <node role="value" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888376475">
+          <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888376477">
+            <link role="baseMethodDeclaration" targetNodeId="3.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
+          </node>
         </node>
       </node>
       <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1203601653846">
@@ -111,8 +113,10 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203605648066">
               <link role="classifier" targetNodeId="4.~TreeFileChooser" resolveInfo="TreeFileChooser" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1203605651006">
-              <link role="baseMethodDeclaration" targetNodeId="4.~TreeFileChooser.&lt;init&gt;()" resolveInfo="TreeFileChooser" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888370243">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888370245">
+                <link role="baseMethodDeclaration" targetNodeId="4.~TreeFileChooser.&lt;init&gt;()" resolveInfo="TreeFileChooser" />
+              </node>
             </node>
           </node>
         </node>
@@ -141,10 +145,12 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628918041">
                   <link role="baseMethodDeclaration" targetNodeId="4.~TreeFileChooser.setInitialFile(jetbrains.mps.vfs.IFile):void" resolveInfo="setInitialFile" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1203605704955">
-                    <link role="baseMethodDeclaration" targetNodeId="5.~FileSystemFile.&lt;init&gt;(java.lang.String)" resolveInfo="FileSystemFile" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203605709097">
-                      <link role="variableDeclaration" targetNodeId="1203605544102" resolveInfo="oldPath" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888387895">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888387897">
+                      <link role="baseMethodDeclaration" targetNodeId="5.~FileSystemFile.&lt;init&gt;(java.lang.String)" resolveInfo="FileSystemFile" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203605709097">
+                        <link role="variableDeclaration" targetNodeId="1203605544102" resolveInfo="oldPath" />
+                      </node>
                     </node>
                   </node>
                 </node>

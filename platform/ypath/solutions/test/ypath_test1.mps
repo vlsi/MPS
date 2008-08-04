@@ -42,14 +42,16 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1179329359488">
               <link role="classifier" targetNodeId="2.~InputStream" resolveInfo="InputStream" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1179329359489">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ByteArrayInputStream.&lt;init&gt;(byte[])" resolveInfo="ByteArrayInputStream" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628903067">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1179329366843">
-                  <link role="variableDeclaration" targetNodeId="1179329335510" resolveInfo="xml" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628903068">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~String.getBytes():byte[]" resolveInfo="getBytes" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888397155">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888397157">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ByteArrayInputStream.&lt;init&gt;(byte[])" resolveInfo="ByteArrayInputStream" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628903067">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1179329366843">
+                    <link role="variableDeclaration" targetNodeId="1179329335510" resolveInfo="xml" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628903068">
+                    <link role="baseMethodDeclaration" targetNodeId="3.~String.getBytes():byte[]" resolveInfo="getBytes" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -109,8 +111,10 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1181230794386">
               <link role="classifier" targetNodeId="3.~StringBuilder" resolveInfo="StringBuilder" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1181230806032">
-              <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;()" resolveInfo="StringBuilder" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888390274">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888390276">
+                <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;()" resolveInfo="StringBuilder" />
+              </node>
             </node>
           </node>
         </node>

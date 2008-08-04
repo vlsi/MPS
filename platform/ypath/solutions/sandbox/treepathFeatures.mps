@@ -448,10 +448,12 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184148604082">
               <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1184148604083">
-              <link role="baseMethodDeclaration" targetNodeId="3.~String.&lt;init&gt;()" resolveInfo="String" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1184148604084">
-                <property name="value" value="&lt;root&gt;&lt;a a1=&quot;a1&quot;&gt;&lt;b b1=&quot;b1&quot; b2=&quot;b2&quot;&gt;&lt;c c1=&quot;c1&quot;/&gt;&lt;/b&gt;&lt;/a&gt;&lt;/root&gt;" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888419880">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888419882">
+                <link role="baseMethodDeclaration" targetNodeId="3.~String.&lt;init&gt;()" resolveInfo="String" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1184148604084">
+                  <property name="value" value="&lt;root&gt;&lt;a a1=&quot;a1&quot;&gt;&lt;b b1=&quot;b1&quot; b2=&quot;b2&quot;&gt;&lt;c c1=&quot;c1&quot;/&gt;&lt;/b&gt;&lt;/a&gt;&lt;/root&gt;" />
+                </node>
               </node>
             </node>
           </node>
@@ -464,14 +466,16 @@
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184148621874">
                   <link role="classifier" targetNodeId="4.~InputStream" resolveInfo="InputStream" />
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1184148621875">
-                  <link role="baseMethodDeclaration" targetNodeId="4.~ByteArrayInputStream.&lt;init&gt;(byte[])" resolveInfo="ByteArrayInputStream" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628993142">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184148621877">
-                      <link role="variableDeclaration" targetNodeId="1184148604081" resolveInfo="INPUT" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628993143">
-                      <link role="baseMethodDeclaration" targetNodeId="3.~String.getBytes():byte[]" resolveInfo="getBytes" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888360466">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888360468">
+                    <link role="baseMethodDeclaration" targetNodeId="4.~ByteArrayInputStream.&lt;init&gt;(byte[])" resolveInfo="ByteArrayInputStream" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628993142">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184148621877">
+                        <link role="variableDeclaration" targetNodeId="1184148604081" resolveInfo="INPUT" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628993143">
+                        <link role="baseMethodDeclaration" targetNodeId="3.~String.getBytes():byte[]" resolveInfo="getBytes" />
+                      </node>
                     </node>
                   </node>
                 </node>

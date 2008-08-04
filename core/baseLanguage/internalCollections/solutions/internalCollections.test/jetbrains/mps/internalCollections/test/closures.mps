@@ -1489,10 +1489,12 @@
                 <link role="typeVariableDeclaration" targetNodeId="1205510266049" resolveInfo="T" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1205510305357">
-              <link role="baseMethodDeclaration" targetNodeId="1.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510305358">
-                <link role="typeVariableDeclaration" targetNodeId="1205510266049" resolveInfo="T" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888381892">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888381895">
+                <link role="baseMethodDeclaration" targetNodeId="1.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510305358">
+                  <link role="typeVariableDeclaration" targetNodeId="1205510266049" resolveInfo="T" />
+                </node>
               </node>
             </node>
           </node>
@@ -1632,13 +1634,15 @@
                 <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1205510696463">
-              <link role="baseMethodDeclaration" targetNodeId="1.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510696464">
-                <link role="typeVariableDeclaration" targetNodeId="1205510696507" resolveInfo="T" />
-              </node>
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205510726420">
-                <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888397025">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888397029">
+                <link role="baseMethodDeclaration" targetNodeId="1.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510696464">
+                  <link role="typeVariableDeclaration" targetNodeId="1205510696507" resolveInfo="T" />
+                </node>
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205510726420">
+                  <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+                </node>
               </node>
             </node>
           </node>
@@ -2713,10 +2717,12 @@
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1204981166075">
-                <link role="baseMethodDeclaration" targetNodeId="1.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204981166076">
-                  <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888404736">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888404739">
+                  <link role="baseMethodDeclaration" targetNodeId="1.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204981166076">
+                    <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -2810,10 +2816,12 @@
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1204981460754">
-                <link role="baseMethodDeclaration" targetNodeId="1.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204981460755">
-                  <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888364809">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888364812">
+                  <link role="baseMethodDeclaration" targetNodeId="1.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204981460755">
+                    <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -2900,10 +2908,12 @@
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1205842100256">
-                <link role="baseMethodDeclaration" targetNodeId="1.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205842100257">
-                  <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888360962">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888360965">
+                  <link role="baseMethodDeclaration" targetNodeId="1.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205842100257">
+                    <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -2978,10 +2988,12 @@
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1205847745132">
-                <link role="baseMethodDeclaration" targetNodeId="1.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205847745133">
-                  <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888381410">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888381429">
+                  <link role="baseMethodDeclaration" targetNodeId="1.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205847745133">
+                    <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -3055,10 +3067,12 @@
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1205847939754">
-                <link role="baseMethodDeclaration" targetNodeId="1.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205847939755">
-                  <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888390161">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888390164">
+                  <link role="baseMethodDeclaration" targetNodeId="1.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205847939755">
+                    <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -3835,10 +3849,12 @@
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1205849877309">
-                <link role="baseMethodDeclaration" targetNodeId="1.~ArrayList.&lt;init&gt;(int)" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205849877310">
-                  <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888329903">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888329906">
+                  <link role="baseMethodDeclaration" targetNodeId="1.~ArrayList.&lt;init&gt;(int)" resolveInfo="ArrayList" />
+                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205849877310">
+                    <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+                  </node>
                 </node>
               </node>
             </node>

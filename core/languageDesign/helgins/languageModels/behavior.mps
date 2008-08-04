@@ -187,33 +187,35 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877321582">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877321583">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="1213877321584">
-              <node role="throwable" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213877321585">
-                <link role="baseMethodDeclaration" targetNodeId="3.~RuntimeException.&lt;init&gt;(java.lang.String)" resolveInfo="RuntimeException" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877321586">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877321587">
-                    <property name="value" value="node " />
-                  </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877321588">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877321589">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877321590">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877321591">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877321592">
-                            <link role="variableDeclaration" targetNodeId="1213877321577" resolveInfo="correctType" />
-                          </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877321593">
-                            <property name="value" value=" but should have type " />
-                          </node>
-                        </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877321594">
-                          <link role="variableDeclaration" targetNodeId="1213877321571" resolveInfo="computedType" />
-                        </node>
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877321595">
-                        <property name="value" value=" has type " />
-                      </node>
+              <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888382645">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888382647">
+                  <link role="baseMethodDeclaration" targetNodeId="3.~RuntimeException.&lt;init&gt;(java.lang.String)" resolveInfo="RuntimeException" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877321586">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877321587">
+                      <property name="value" value="node " />
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877321596">
-                      <link role="variableDeclaration" targetNodeId="1213877321563" resolveInfo="term" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877321588">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877321589">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877321590">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877321591">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877321592">
+                              <link role="variableDeclaration" targetNodeId="1213877321577" resolveInfo="correctType" />
+                            </node>
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877321593">
+                              <property name="value" value=" but should have type " />
+                            </node>
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877321594">
+                            <link role="variableDeclaration" targetNodeId="1213877321571" resolveInfo="computedType" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877321595">
+                          <property name="value" value=" has type " />
+                        </node>
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877321596">
+                        <link role="variableDeclaration" targetNodeId="1213877321563" resolveInfo="term" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -326,10 +328,12 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877428172">
               <link role="classifier" targetNodeId="3.~StringBuilder" resolveInfo="StringBuilder" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213877428173">
-              <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877428174">
-                <property name="value" value="MEET(" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888382405">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888382407">
+                <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877428174">
+                  <property name="value" value="MEET(" />
+                </node>
               </node>
             </node>
           </node>
@@ -474,10 +478,12 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877496039">
               <link role="classifier" targetNodeId="3.~StringBuilder" resolveInfo="StringBuilder" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213877496040">
-              <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877496041">
-                <property name="value" value="JOIN(" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888373021">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888373023">
+                <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877496041">
+                  <property name="value" value="JOIN(" />
+                </node>
               </node>
             </node>
           </node>
@@ -669,10 +675,12 @@
                 <link role="concept" targetNodeId="7v.1068431790191" resolveInfo="Expression" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213877521600">
-              <link role="baseMethodDeclaration" targetNodeId="6.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-              <node role="typeParameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877521601">
-                <link role="concept" targetNodeId="7v.1068431790191" resolveInfo="Expression" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888404496">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888404498">
+                <link role="baseMethodDeclaration" targetNodeId="6.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
+                <node role="typeParameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877521601">
+                  <link role="concept" targetNodeId="7v.1068431790191" resolveInfo="Expression" />
+                </node>
               </node>
             </node>
           </node>

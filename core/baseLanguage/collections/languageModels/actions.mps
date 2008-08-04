@@ -746,8 +746,10 @@
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206444901808">
                   <link role="classifier" targetNodeId="1206444812617" resolveInfo="ApplicableTypesInfo" />
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1206444906153">
-                  <link role="baseMethodDeclaration" targetNodeId="1206444910904" resolveInfo="ApplicableTypesInfo" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888389696">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888389698">
+                    <link role="baseMethodDeclaration" targetNodeId="1206444910904" resolveInfo="ApplicableTypesInfo" />
+                  </node>
                 </node>
               </node>
             </node>

@@ -598,8 +598,10 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178897810693">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1178897812172">
-            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1178897831368">
-              <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888375407">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888375409">
+                <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
+              </node>
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1178897810694">
               <property name="value" value="true" />
@@ -619,8 +621,10 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178897838453">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1178897840026">
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1178897845756">
-              <link role="baseMethodDeclaration" targetNodeId="233.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888365875">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888365877">
+                <link role="baseMethodDeclaration" targetNodeId="233.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+              </node>
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1178897861414">
               <link role="variableDeclaration" targetNodeId="1178897854949" resolveInfo="l" />
@@ -943,10 +947,12 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1188473359458">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1188473360679">
-            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1188473374451">
-              <link role="baseMethodDeclaration" targetNodeId="2.~Integer.&lt;init&gt;(int)" resolveInfo="Integer" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1188477028896">
-                <property name="value" value="2" />
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888399184">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888399186">
+                <link role="baseMethodDeclaration" targetNodeId="2.~Integer.&lt;init&gt;(int)" resolveInfo="Integer" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1188477028896">
+                  <property name="value" value="2" />
+                </node>
               </node>
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1188473359459">
@@ -965,10 +971,12 @@
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1188477050636">
                 <property name="value" value="" />
               </node>
-              <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1188477050637">
-                <link role="baseMethodDeclaration" targetNodeId="2.~Integer.&lt;init&gt;(int)" resolveInfo="Integer" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1188477050638">
-                  <property name="value" value="2" />
+              <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888401904">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888401906">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~Integer.&lt;init&gt;(int)" resolveInfo="Integer" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1188477050638">
+                    <property name="value" value="2" />
+                  </node>
                 </node>
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1188477050639">
@@ -1229,7 +1237,9 @@
               <link role="classConcept" targetNodeId="1.~Resolver" resolveInfo="Resolver" />
               <link role="baseMethodDeclaration" targetNodeId="1.~Resolver.resolve1(jetbrains.mps.smodel.SReference,jetbrains.mps.smodel.IOperationContext):boolean" resolveInfo="resolve1" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1135404547718" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1135405140427" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888357123">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888357125" />
+              </node>
             </node>
           </node>
         </node>
@@ -1368,7 +1378,9 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1131709234221">
               <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1135404958750" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888374748">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888374750" />
+            </node>
           </node>
         </node>
       </node>

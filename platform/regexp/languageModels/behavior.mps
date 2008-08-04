@@ -98,10 +98,12 @@
                 <link role="classifier" targetNodeId="5.~MatchParensRegexp" resolveInfo="MatchParensRegexp" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213877475237">
-              <link role="baseMethodDeclaration" targetNodeId="4.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877475238">
-                <link role="classifier" targetNodeId="5.~MatchParensRegexp" resolveInfo="MatchParensRegexp" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888360226">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888360228">
+                <link role="baseMethodDeclaration" targetNodeId="4.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877475238">
+                  <link role="classifier" targetNodeId="5.~MatchParensRegexp" resolveInfo="MatchParensRegexp" />
+                </node>
               </node>
             </node>
           </node>

@@ -677,17 +677,19 @@
                   <link role="variableDeclaration" targetNodeId="1205257005515" resolveInfo="attPairs" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1205257005545">
-                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1205257005546">
-                    <link role="baseMethodDeclaration" targetNodeId="21.~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolveInfo="Pair" />
-                    <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205257005547">
-                      <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-                    </node>
-                    <node role="typeParameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205257005548" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205257005549">
-                      <link role="variableDeclaration" targetNodeId="1205257005530" resolveInfo="roleInParent" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1205257005550">
-                      <link role="variable" targetNodeId="1205257005526" resolveInfo="nodeAttr" />
+                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888412958">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888412960">
+                      <link role="baseMethodDeclaration" targetNodeId="21.~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolveInfo="Pair" />
+                      <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205257005547">
+                        <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+                      </node>
+                      <node role="typeParameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205257005548" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205257005549">
+                        <link role="variableDeclaration" targetNodeId="1205257005530" resolveInfo="roleInParent" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1205257005550">
+                        <link role="variable" targetNodeId="1205257005526" resolveInfo="nodeAttr" />
+                      </node>
                     </node>
                   </node>
                 </node>

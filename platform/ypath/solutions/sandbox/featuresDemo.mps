@@ -492,14 +492,16 @@
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197998576457">
                   <link role="classifier" targetNodeId="4.~InputStream" resolveInfo="InputStream" />
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1197998576458">
-                  <link role="baseMethodDeclaration" targetNodeId="4.~ByteArrayInputStream.&lt;init&gt;(byte[])" resolveInfo="ByteArrayInputStream" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628999790">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197998576460">
-                      <link role="variableDeclaration" targetNodeId="1197998561025" resolveInfo="INPUT" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628999791">
-                      <link role="baseMethodDeclaration" targetNodeId="2.~String.getBytes():byte[]" resolveInfo="getBytes" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888390387">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888390389">
+                    <link role="baseMethodDeclaration" targetNodeId="4.~ByteArrayInputStream.&lt;init&gt;(byte[])" resolveInfo="ByteArrayInputStream" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628999790">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197998576460">
+                        <link role="variableDeclaration" targetNodeId="1197998561025" resolveInfo="INPUT" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628999791">
+                        <link role="baseMethodDeclaration" targetNodeId="2.~String.getBytes():byte[]" resolveInfo="getBytes" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -760,13 +762,15 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198852354930">
               <link role="classifier" targetNodeId="4.~File" resolveInfo="File" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1198852360678">
-              <link role="baseMethodDeclaration" targetNodeId="4.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198861049039">
-                <link role="baseMethodDeclaration" targetNodeId="2.~System.getProperty(java.lang.String):java.lang.String" resolveInfo="getProperty" />
-                <link role="classConcept" targetNodeId="2.~System" resolveInfo="System" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198861050184">
-                  <property name="value" value="user.home" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888366724">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888366726">
+                <link role="baseMethodDeclaration" targetNodeId="4.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198861049039">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~System.getProperty(java.lang.String):java.lang.String" resolveInfo="getProperty" />
+                  <link role="classConcept" targetNodeId="2.~System" resolveInfo="System" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198861050184">
+                    <property name="value" value="user.home" />
+                  </node>
                 </node>
               </node>
             </node>

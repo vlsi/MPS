@@ -2317,13 +2317,15 @@
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206966402423">
                 <link role="baseMethodDeclaration" targetNodeId="2.~MapSequence.fromMap(java.util.Map):jetbrains.mps.internal.collections.runtime.IMapSequence" resolveInfo="fromMap" />
                 <link role="classConcept" targetNodeId="2.~MapSequence" resolveInfo="MapSequence" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1206966402424">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
-                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206966402425">
-                    <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
-                  </node>
-                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206966402426">
-                    <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888375519">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888375521">
+                    <link role="baseMethodDeclaration" targetNodeId="3.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
+                    <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206966402425">
+                      <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
+                    </node>
+                    <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206966402426">
+                      <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+                    </node>
                   </node>
                 </node>
               </node>

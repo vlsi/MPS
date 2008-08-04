@@ -174,14 +174,16 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1180968449701">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1180968449702">
             <property name="name" value="children" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1175083663846">
-              <link role="baseMethodDeclaration" targetNodeId="2.~NodeListIterableAdapter.&lt;init&gt;(org.w3c.dom.NodeList)" resolveInfo="NodeListIterableAdapter" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628910834">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1175084694192">
-                  <link role="closureParameter" targetNodeId="1175083364499" resolveInfo="node" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628910835">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Node.getChildNodes():org.w3c.dom.NodeList" resolveInfo="getChildNodes" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888363380">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888363382">
+                <link role="baseMethodDeclaration" targetNodeId="2.~NodeListIterableAdapter.&lt;init&gt;(org.w3c.dom.NodeList)" resolveInfo="NodeListIterableAdapter" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628910834">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1175084694192">
+                    <link role="closureParameter" targetNodeId="1175083364499" resolveInfo="node" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628910835">
+                    <link role="baseMethodDeclaration" targetNodeId="1.~Node.getChildNodes():org.w3c.dom.NodeList" resolveInfo="getChildNodes" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -197,21 +199,25 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180970606892">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1180970620212">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1187792810192">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1187792810193">
-                  <link role="baseMethodDeclaration" targetNodeId="2.~ChainedIterable.&lt;init&gt;(java.lang.Iterable[])" resolveInfo="ChainedIterable" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1187792810194">
-                    <link role="baseMethodDeclaration" targetNodeId="2.~NamedNodeMapIterableAdapter.&lt;init&gt;(org.w3c.dom.NamedNodeMap)" resolveInfo="NamedNodeMapIterableAdapter" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628918943">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1187792810196">
-                        <link role="closureParameter" targetNodeId="1175083364499" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628918944">
-                        <link role="baseMethodDeclaration" targetNodeId="1.~Node.getAttributes():org.w3c.dom.NamedNodeMap" resolveInfo="getAttributes" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888349092">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888349094">
+                    <link role="baseMethodDeclaration" targetNodeId="2.~ChainedIterable.&lt;init&gt;(java.lang.Iterable[])" resolveInfo="ChainedIterable" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888415539">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888415560">
+                        <link role="baseMethodDeclaration" targetNodeId="2.~NamedNodeMapIterableAdapter.&lt;init&gt;(org.w3c.dom.NamedNodeMap)" resolveInfo="NamedNodeMapIterableAdapter" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628918943">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1187792810196">
+                            <link role="closureParameter" targetNodeId="1175083364499" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628918944">
+                            <link role="baseMethodDeclaration" targetNodeId="1.~Node.getAttributes():org.w3c.dom.NamedNodeMap" resolveInfo="getAttributes" />
+                          </node>
+                        </node>
                       </node>
                     </node>
-                  </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1187792810197">
-                    <link role="variableDeclaration" targetNodeId="1180968449702" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1187792810197">
+                      <link role="variableDeclaration" targetNodeId="1180968449702" />
+                    </node>
                   </node>
                 </node>
                 <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1187792814127">

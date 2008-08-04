@@ -250,10 +250,12 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203609799599">
               <link role="classifier" targetNodeId="2.~File" resolveInfo="File" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1203609802742">
-              <link role="baseMethodDeclaration" targetNodeId="2.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203609806290">
-                <link role="variableDeclaration" targetNodeId="1203609752878" resolveInfo="descriptorPath" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888378382">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888378384">
+                <link role="baseMethodDeclaration" targetNodeId="2.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203609806290">
+                  <link role="variableDeclaration" targetNodeId="1203609752878" resolveInfo="descriptorPath" />
+                </node>
               </node>
             </node>
           </node>
@@ -484,10 +486,12 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203611091674">
               <link role="classifier" targetNodeId="2.~File" resolveInfo="File" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1203611096676">
-              <link role="baseMethodDeclaration" targetNodeId="2.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203611099709">
-                <link role="variableDeclaration" targetNodeId="1203611087420" resolveInfo="path" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888370820">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888370822">
+                <link role="baseMethodDeclaration" targetNodeId="2.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203611099709">
+                  <link role="variableDeclaration" targetNodeId="1203611087420" resolveInfo="path" />
+                </node>
               </node>
             </node>
           </node>

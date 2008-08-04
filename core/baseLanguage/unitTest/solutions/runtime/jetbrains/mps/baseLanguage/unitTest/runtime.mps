@@ -1114,8 +1114,10 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208862417051">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208862687890">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1208862687891">
-                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208861814223">
-                      <link role="baseMethodDeclaration" targetNodeId="1208861780064" resolveInfo="Token" />
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888410480">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888410482">
+                        <link role="baseMethodDeclaration" targetNodeId="1208861780064" resolveInfo="TestEvent" />
+                      </node>
                     </node>
                     <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208862687892">
                       <link role="variableDeclaration" targetNodeId="1208861809753" resolveInfo="token" />
@@ -1501,8 +1503,10 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208861645282">
               <link role="classifier" targetNodeId="3.~StringBuilder" resolveInfo="StringBuilder" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208861645283">
-              <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;()" resolveInfo="StringBuilder" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888418625">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888418627">
+                <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;()" resolveInfo="StringBuilder" />
+              </node>
             </node>
           </node>
         </node>

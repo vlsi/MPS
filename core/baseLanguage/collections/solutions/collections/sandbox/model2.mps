@@ -52,10 +52,12 @@
                 <link role="fieldDeclaration" targetNodeId="1164650208554" resolveInfo="identity" />
               </node>
             </node>
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1164651553023">
-              <link role="baseMethodDeclaration" targetNodeId="1164650453610" resolveInfo="PasswordIdentity" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1164651560633">
-                <link role="variableDeclaration" targetNodeId="1164650342731" resolveInfo="identity" />
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888394579">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888394581">
+                <link role="baseMethodDeclaration" targetNodeId="1164650453610" resolveInfo="PasswordIdentity" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1164651560633">
+                  <link role="variableDeclaration" targetNodeId="1164650342731" resolveInfo="identity" />
+                </node>
               </node>
             </node>
           </node>
@@ -82,16 +84,20 @@
               <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1164650371509">
                 <link role="classifier" targetNodeId="1164650085521" resolveInfo="User" />
               </node>
-              <node role="initValue" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1164650376760">
-                <link role="baseMethodDeclaration" targetNodeId="1164650338478" resolveInfo="User" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1164650406616">
-                  <property name="value" value="user 1" />
+              <node role="initValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888380248">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888380250">
+                  <link role="baseMethodDeclaration" targetNodeId="1164650338478" resolveInfo="User" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1164650406616">
+                    <property name="value" value="user 1" />
+                  </node>
                 </node>
               </node>
-              <node role="initValue" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1164650428948">
-                <link role="baseMethodDeclaration" targetNodeId="1164650338478" resolveInfo="User" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1164650435234">
-                  <property name="value" value="user 2" />
+              <node role="initValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888320596">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888320598">
+                  <link role="baseMethodDeclaration" targetNodeId="1164650338478" resolveInfo="User" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1164650435234">
+                    <property name="value" value="user 2" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -247,10 +253,12 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1164651466582">
               <link role="baseMethodDeclaration" targetNodeId="1164651109606" resolveInfo="findUser" />
               <link role="classConcept" targetNodeId="1164651095574" resolveInfo="FindUserUtil" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1164651473130">
-                <link role="baseMethodDeclaration" targetNodeId="1164650453610" resolveInfo="PasswordIdentity" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1164651480677">
-                  <property name="value" value="user 1" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888357732">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888357734">
+                  <link role="baseMethodDeclaration" targetNodeId="1164650453610" resolveInfo="PasswordIdentity" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1164651480677">
+                    <property name="value" value="user 1" />
+                  </node>
                 </node>
               </node>
             </node>

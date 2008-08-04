@@ -604,8 +604,10 @@
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1170437883326">
               <link role="variableDeclaration" targetNodeId="1170377948150" resolveInfo="node" />
             </node>
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1170437887156">
-              <link role="baseMethodDeclaration" targetNodeId="1.~String.&lt;init&gt;()" resolveInfo="String" />
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888384174">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888384192">
+                <link role="baseMethodDeclaration" targetNodeId="1.~String.&lt;init&gt;()" resolveInfo="String" />
+              </node>
             </node>
           </node>
         </node>

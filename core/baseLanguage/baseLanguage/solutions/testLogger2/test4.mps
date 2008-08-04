@@ -24,13 +24,15 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194436487475">
               <link role="classifier" targetNodeId="3.~Map" resolveInfo="Map" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1194436491821">
-              <link role="baseMethodDeclaration" targetNodeId="3.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1194436502765">
-                <link role="typeVariableDeclaration" targetNodeId="1194436419997" resolveInfo="T" />
-              </node>
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1194436505313">
-                <link role="typeVariableDeclaration" targetNodeId="1194436419997" resolveInfo="T" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888382293">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888382295">
+                <link role="baseMethodDeclaration" targetNodeId="3.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1194436502765">
+                  <link role="typeVariableDeclaration" targetNodeId="1194436419997" resolveInfo="T" />
+                </node>
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1194436505313">
+                  <link role="typeVariableDeclaration" targetNodeId="1194436419997" resolveInfo="T" />
+                </node>
               </node>
             </node>
           </node>

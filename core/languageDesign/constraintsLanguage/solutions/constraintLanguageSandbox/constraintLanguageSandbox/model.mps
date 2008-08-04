@@ -22,10 +22,12 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203331654523">
               <link role="classifier" targetNodeId="2.~List" resolveInfo="List" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1203331656681">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ArrayList.&lt;init&gt;(int)" resolveInfo="ArrayList" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1203331660260">
-                <property name="value" value="23" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888377540">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888377542">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ArrayList.&lt;init&gt;(int)" resolveInfo="ArrayList" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1203331660260">
+                  <property name="value" value="23" />
+                </node>
               </node>
             </node>
           </node>

@@ -1104,10 +1104,12 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104847110">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213104847111">
-              <link role="baseMethodDeclaration" targetNodeId="2.~NodeListChildrenSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="NodeListChildrenSearchScope" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104847112">
-                <link role="variableDeclaration" targetNodeId="1213104847103" resolveInfo="forEachStatements" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888401455">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888401457">
+                <link role="baseMethodDeclaration" targetNodeId="2.~NodeListChildrenSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="NodeListChildrenSearchScope" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104847112">
+                  <link role="variableDeclaration" targetNodeId="1213104847103" resolveInfo="forEachStatements" />
+                </node>
               </node>
             </node>
           </node>

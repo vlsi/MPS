@@ -1071,10 +1071,12 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877403641">
               <link role="classifier" targetNodeId="2.~StringBuilder" resolveInfo="StringBuilder" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213877403642">
-              <link role="baseMethodDeclaration" targetNodeId="2.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877403643">
-                <property name="value" value="[access to " />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888346651">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888346653">
+                <link role="baseMethodDeclaration" targetNodeId="2.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877403643">
+                  <property name="value" value="[access to " />
+                </node>
               </node>
             </node>
           </node>

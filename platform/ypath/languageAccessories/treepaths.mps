@@ -304,8 +304,10 @@
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180689174643">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="1180689261562">
-          <node role="throwable" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1180689264773">
-            <link role="baseMethodDeclaration" targetNodeId="1.~UnsupportedOperationException.&lt;init&gt;()" resolveInfo="UnsupportedOperationException" />
+          <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888373261">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888373263">
+              <link role="baseMethodDeclaration" targetNodeId="1.~UnsupportedOperationException.&lt;init&gt;()" resolveInfo="UnsupportedOperationException" />
+            </node>
           </node>
         </node>
       </node>

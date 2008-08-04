@@ -180,10 +180,12 @@
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213107435769">
                 <link role="classifier" targetNodeId="4.~SimpleSearchScope" resolveInfo="SimpleSearchScope" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213107435770">
-                <link role="baseMethodDeclaration" targetNodeId="4.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213107435771">
-                  <link role="variableDeclaration" targetNodeId="1213107435741" resolveInfo="vars" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888389455">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888389457">
+                  <link role="baseMethodDeclaration" targetNodeId="4.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213107435771">
+                    <link role="variableDeclaration" targetNodeId="1213107435741" resolveInfo="vars" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -310,10 +312,12 @@
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213107436086">
                 <link role="classifier" targetNodeId="4.~SimpleSearchScope" resolveInfo="SimpleSearchScope" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213107436087">
-                <link role="baseMethodDeclaration" targetNodeId="4.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213107436088">
-                  <link role="variableDeclaration" targetNodeId="1213107436048" resolveInfo="vars" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888371896">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888371898">
+                  <link role="baseMethodDeclaration" targetNodeId="4.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213107436088">
+                    <link role="variableDeclaration" targetNodeId="1213107436048" resolveInfo="vars" />
+                  </node>
                 </node>
               </node>
             </node>

@@ -236,8 +236,10 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="1209385248988">
-          <node role="throwable" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1209385261087">
-            <link role="baseMethodDeclaration" targetNodeId="5.~RuntimeException.&lt;init&gt;()" resolveInfo="RuntimeException" />
+          <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888335958">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888335960">
+              <link role="baseMethodDeclaration" targetNodeId="5.~RuntimeException.&lt;init&gt;()" resolveInfo="RuntimeException" />
+            </node>
           </node>
         </node>
       </node>

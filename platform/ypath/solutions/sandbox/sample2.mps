@@ -135,20 +135,22 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1168894296988">
               <link role="classifier" targetNodeId="1.~File" resolveInfo="File" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1168894301406">
-              <link role="baseMethodDeclaration" targetNodeId="1.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628986176">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1168905159252">
-                  <link role="classConcept" targetNodeId="3.~Arrays" resolveInfo="Arrays" />
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1168905161451">
-                    <link role="variableDeclaration" targetNodeId="1168894275019" resolveInfo="args" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888405845">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888405847">
+                <link role="baseMethodDeclaration" targetNodeId="1.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628986176">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1168905159252">
+                    <link role="classConcept" targetNodeId="3.~Arrays" resolveInfo="Arrays" />
+                    <link role="baseMethodDeclaration" targetNodeId="3.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1168905161451">
+                      <link role="variableDeclaration" targetNodeId="1168894275019" resolveInfo="args" />
+                    </node>
                   </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628986177">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~List.get(int):java.lang.Object" resolveInfo="get" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1168905167284">
-                    <property name="value" value="0" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628986177">
+                    <link role="baseMethodDeclaration" targetNodeId="3.~List.get(int):java.lang.Object" resolveInfo="get" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1168905167284">
+                      <property name="value" value="0" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -270,8 +272,10 @@
                 <link role="classifier" targetNodeId="1.~File" resolveInfo="File" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1179154071548">
-              <link role="baseMethodDeclaration" targetNodeId="3.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888365763">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888365765">
+                <link role="baseMethodDeclaration" targetNodeId="3.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+              </node>
             </node>
           </node>
         </node>

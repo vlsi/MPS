@@ -42,14 +42,16 @@
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1169048639112">
                   <link role="classifier" targetNodeId="4.~InputStream" resolveInfo="InputStream" />
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1169048644375">
-                  <link role="baseMethodDeclaration" targetNodeId="4.~ByteArrayInputStream.&lt;init&gt;(byte[])" resolveInfo="ByteArrayInputStream" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628996474">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1169048660235">
-                      <link role="variableDeclaration" targetNodeId="1169048035393" resolveInfo="INPUT" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628996475">
-                      <link role="baseMethodDeclaration" targetNodeId="1.~String.getBytes():byte[]" resolveInfo="getBytes" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888404849">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888404851">
+                    <link role="baseMethodDeclaration" targetNodeId="4.~ByteArrayInputStream.&lt;init&gt;(byte[])" resolveInfo="ByteArrayInputStream" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628996474">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1169048660235">
+                        <link role="variableDeclaration" targetNodeId="1169048035393" resolveInfo="INPUT" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628996475">
+                        <link role="baseMethodDeclaration" targetNodeId="1.~String.getBytes():byte[]" resolveInfo="getBytes" />
+                      </node>
                     </node>
                   </node>
                 </node>
