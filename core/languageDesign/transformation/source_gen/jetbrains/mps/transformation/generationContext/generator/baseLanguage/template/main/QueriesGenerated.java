@@ -20,13 +20,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1217891542034(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_UserObjectAccessBase")) {
-        // delegate reduction to operation
-        return true;
-      }
-    }
-    return false;
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_UserObjectAccessBase");
   }
 
   public static boolean baseMappingRule_Condition_1217892220393(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -125,6 +119,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1217892400236(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    _context.getSessionObject(_context.getNode());
     return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
