@@ -36,10 +36,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     setText(text);
 
     setAction(CellActionType.LEFT, new MoveLeft(false));
+    setAction(CellActionType.RIGHT, new MoveRight(false));
+
+    setAction(CellActionType.SELECT_RIGHT, new MoveRight(true));
     setAction(CellActionType.SELECT_LEFT, new MoveLeft(true));
 
-    setAction(CellActionType.RIGHT, new MoveRight(false));
-    setAction(CellActionType.SELECT_RIGHT, new MoveRight(true));
+    setAction(CellActionType.SELECT_HOME, new SelectHome());
+    setAction(CellActionType.SELECT_END, new SelectEnd());
 
     setAction(CellActionType.COPY, new CopyLabelText());
     setAction(CellActionType.PASTE, new PasteIntoLabelText());
@@ -548,24 +551,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       return true;
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.isShiftDown()) {
-      if (caretPosition <= 0) return false;
-      if (!isCaretPositionAllowed(0)) return false;
-      setCaretPosition(0, true);
-      editor.resetLastCaretX();
-      ensureCaretVisible();
-      return true;
-    }
-
-    if (keyEvent.getKeyCode() == KeyEvent.VK_END && keyEvent.isShiftDown()) {
-      if (caretPosition >= myText.length()) return false;
-      if (!isCaretPositionAllowed(myText.length())) return false;
-      setCaretPosition(myText.length(), true);
-      editor.resetLastCaretX();
-      ensureCaretVisible();
-      return true;
-    }
-
     return false;
   }
 
@@ -721,6 +706,32 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
     public void execute(EditorContext context) {
       setCaretPosition(getCaretPosition() + 1, myWithSelection);
+      context.getNodeEditorComponent().resetLastCaretX();
+      ensureCaretVisible();
+    }
+  }
+
+  private class SelectHome extends EditorCellAction {
+    public boolean canExecute(EditorContext context) {
+      if (!isCaretPositionAllowed(0)) return false;
+      return true;
+    }
+
+    public void execute(EditorContext context) {
+      setCaretPosition(0, true);
+      context.getNodeEditorComponent().resetLastCaretX();
+      ensureCaretVisible();
+    }
+  }
+
+  private class SelectEnd extends EditorCellAction {
+    public boolean canExecute(EditorContext context) {
+      if (!isCaretPositionAllowed(getText().length())) return false;
+      return true;
+    }
+
+    public void execute(EditorContext context) {
+      setCaretPosition(getText().length(), true);
       context.getNodeEditorComponent().resetLastCaretX();
       ensureCaretVisible();
     }
