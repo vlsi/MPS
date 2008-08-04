@@ -23,11 +23,6 @@ public class UndoUtil {
       if (!undoManager.isUndoInProgress() && !undoManager.isRedoInProgress()) {
         undoManager.undoableActionPerformed(action);
       }
-    } else {
-      if (!IdeMain.isTestMode()) {
-        LOG.warning("Can't add undoable action ", new Throwable());
-        PlatformDataKeys.PROJECT.getData(dataContext);
-      }
-    }
+    } 
   }
 }
