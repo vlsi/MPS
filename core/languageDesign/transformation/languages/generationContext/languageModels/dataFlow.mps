@@ -38,5 +38,20 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1217887935348">
+    <link role="conceptDeclaration" targetNodeId="1.1217884725453" resolveInfo="GenerationContextOp_GetCopiedOutputByInput" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1217887935349">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217887935350">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1217887938976">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217887945760">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1217887943712" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1217887947763">
+              <link role="link" targetNodeId="1.1217884725459" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
