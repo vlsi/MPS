@@ -52,9 +52,7 @@ public class NodeEditorActions {
       }
       return rootCell == null ? null : rootCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
     }
-
   }
-
 
   public static class MoveToRootEnd extends EditorCellAction {
 
@@ -79,9 +77,7 @@ public class NodeEditorActions {
 
   }
 
-
   public static class MoveHome extends EditorCellAction {
-
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       return selection != null && findTarget(selection) != null;
@@ -127,9 +123,7 @@ public class NodeEditorActions {
     private EditorCell findTarget(EditorCell cell) {
       return cell.getEndCell(CellConditions.SELECTABLE);
     }
-
   }
-
 
   public static class MoveRight extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
@@ -232,7 +226,6 @@ public class NodeEditorActions {
     }
   }
 
-
   private static void navigatePage(EditorContext context, boolean isDown) {
     EditorComponent editor = context.getNodeEditorComponent();
     EditorCell selection = editor.getSelectedCell();
@@ -306,6 +299,46 @@ public class NodeEditorActions {
 
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().setSelectionDontClearStack(context.getNodeEditorComponent().popSelection(), true);
+    }
+  }
+
+  public static class SideSelect extends EditorCellAction {
+    private CellSide mySide;
+
+    protected SideSelect(CellSide side) {
+      mySide = side;
+    }
+
+    private EditorCell getNextLeaf(EditorCell current) {
+      if (mySide == CellSide.LEFT) {
+        return current.getPrevLeaf();
+      } else {
+        return current.getNextLeaf();
+      }
+    }
+
+    public boolean canExecute(EditorContext context) {
+      EditorCell selectedCell = context.getSelectedCell();
+      if (selectedCell == null) return false;
+      EditorCell nextLeaf = getNextLeaf(selectedCell);
+      return nextLeaf != null && selectedCell.getSNode() == nextLeaf.getSNode() &&
+        getCommonAncestor(selectedCell, nextLeaf) != null;
+    }
+
+    public void execute(EditorContext context) {
+      EditorCell selectedCell = context.getSelectedCell();
+      EditorCell nextLeaf = getNextLeaf(selectedCell);
+      context.getNodeEditorComponent().pushSelection(selectedCell);
+      context.getNodeEditorComponent().setSelectionDontClearStack(getCommonAncestor(selectedCell, nextLeaf), true);
+    }
+
+    protected EditorCell getCommonAncestor(EditorCell c1, EditorCell c2) {
+      EditorCell result = c1;
+      while (result != null) {
+        if (result.isSelectable() && result.isAncestorOf(c1) && result.isAncestorOf(c2)) return result;
+        result = result.getParent();
+      }
+      return null;
     }
   }
 

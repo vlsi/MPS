@@ -242,21 +242,25 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myActionMap.put(CellActionType.PREV, new NodeEditorActions.MovePrev());
     myActionMap.put(CellActionType.LOCAL_HOME, new NodeEditorActions.MoveLeft());
     myActionMap.put(CellActionType.LOCAL_END, new NodeEditorActions.MoveRight());
-    myActionMap.put(CellActionType.SELECT_UP, new SelectUp());
-    myActionMap.put(CellActionType.SELECT_DOWN, new SelectDown());
+
     myActionMap.put(CellActionType.ROOT_HOME, new NodeEditorActions.MoveToRootHome());
     myActionMap.put(CellActionType.ROOT_END, new NodeEditorActions.MoveToRootEnd());
     myActionMap.put(CellActionType.HOME, new NodeEditorActions.MoveHome());
     myActionMap.put(CellActionType.END, new NodeEditorActions.MoveEnd());
     myActionMap.put(CellActionType.PAGE_DOWN, new NodeEditorActions.MovePageUp());
     myActionMap.put(CellActionType.PAGE_UP, new NodeEditorActions.MovePageDown());
-    // ----
+
+    myActionMap.put(CellActionType.SELECT_UP, new NodeEditorActions.SelectUp());
+    myActionMap.put(CellActionType.SELECT_DOWN, new NodeEditorActions.SelectDown());
+    myActionMap.put(CellActionType.SELECT_RIGHT, new NodeEditorActions.SideSelect(CellSide.RIGHT));
+    myActionMap.put(CellActionType.SELECT_LEFT, new NodeEditorActions.SideSelect(CellSide.LEFT));
+
     myActionMap.put(CellActionType.COPY, new CellAction_CopyNode());
     myActionMap.put(CellActionType.CUT, new CellAction_CutNode());
     myActionMap.put(CellActionType.PASTE, new CellAction_PasteNode());
     myActionMap.put(CellActionType.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
     myActionMap.put(CellActionType.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
-    // ----
+
     myActionMap.put(CellActionType.FOLD, new CellAction_FoldCell());
     myActionMap.put(CellActionType.UNFOLD, new CellAction_UnfoldCell());
     myActionMap.put(CellActionType.FOLD_ALL, new CellAction_FoldAll());
