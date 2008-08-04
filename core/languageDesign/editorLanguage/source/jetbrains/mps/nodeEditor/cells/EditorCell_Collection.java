@@ -149,8 +149,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     super(editorContext, node);
     myCellLayout = cellLayout;
     myCellListHandler = handler;
-    this.setAction(CellActionType.LEFT_SPECIAL, new SelectFirstChild());
-    this.setAction(CellActionType.RIGHT_SPECIAL, new SelectLastChild());
+    this.setAction(CellActionType.LOCAL_HOME, new SelectFirstChild());
+    this.setAction(CellActionType.LOCAL_END, new SelectLastChild());
     myOpeningBrace = new EditorCell_Brace(editorContext, node, true);
     myClosingBrace = new EditorCell_Brace(editorContext, node, false);
   //  addAdditionalKeyboardHandler(new MyKeyboardHandler());

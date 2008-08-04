@@ -6,7 +6,7 @@ import java.awt.*;
 
 
 public class NodeEditorActions {
-  public static class LEFT extends EditorCellAction {
+  public static class MoveLeft extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
       return selection != null && findTarget(selection) != null;
@@ -32,7 +32,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class CTRL_HOME extends EditorCellAction {
+  public static class MoveToRootHome extends EditorCellAction {
 
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
@@ -56,7 +56,7 @@ public class NodeEditorActions {
   }
 
 
-  public static class CTRL_END extends EditorCellAction {
+  public static class MoveToRootEnd extends EditorCellAction {
 
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
@@ -80,7 +80,7 @@ public class NodeEditorActions {
   }
 
 
-  public static class HOME extends EditorCellAction {
+  public static class MoveHome extends EditorCellAction {
 
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
@@ -105,7 +105,7 @@ public class NodeEditorActions {
 
   }
 
-  public static class END extends EditorCellAction {
+  public static class MoveEnd extends EditorCellAction {
 
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
@@ -131,7 +131,7 @@ public class NodeEditorActions {
   }
 
 
-  public static class RIGHT extends EditorCellAction {
+  public static class MoveRight extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
       return selection != null && findTarget(selection) != null;
@@ -158,7 +158,7 @@ public class NodeEditorActions {
     }
   }
 
-    public static class UP extends EditorCellAction {
+    public static class MoveUp extends EditorCellAction {
       public boolean canExecute(EditorContext context) {
         EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
         return selection != null && selection.getParent() != null && findTarget(selection, selection.getCaretX()) != null;
@@ -182,7 +182,7 @@ public class NodeEditorActions {
       }
     }
 
-  public static class DOWN extends EditorCellAction {
+  public static class MoveDown extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
       return selection != null && findTarget(selection, selection.getCaretX()) != null;
@@ -206,7 +206,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class NEXT extends EditorCellAction {
+  public static class MoveNext extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       return selection != null && selection.getNextLeaf(CellConditions.EDITABLE) != null;
@@ -219,7 +219,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class PREV extends EditorCellAction {
+  public static class MovePrev extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       return selection != null && selection.getPrevLeaf(CellConditions.EDITABLE) != null;
@@ -252,7 +252,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class PAGE_DOWN extends EditorCellAction {
+  public static class MovePageUp extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       return true;
     }
@@ -262,7 +262,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class PAGE_UP extends EditorCellAction {
+  public static class MovePageDown extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       return true;
     }
@@ -272,7 +272,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class UP_SPECIAL extends EditorCellAction {
+  public static class SelectUp extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       return selection != null && selection.getParent() != null && findTarget(selection) != null;
@@ -299,7 +299,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class DOWN_SPECIAL extends EditorCellAction {
+  public static class SelectDown extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       return context.getNodeEditorComponent().peekSelection() != null;
     }
@@ -309,7 +309,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class SHOW_MESSAGE extends EditorCellAction {
+  public static class ShowMessage extends EditorCellAction {
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().showMessageTooltip();
     }

@@ -33,6 +33,9 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
+import jetbrains.mps.nodeEditor.NodeEditorActions.SelectUp;
+import jetbrains.mps.nodeEditor.NodeEditorActions.SelectDown;
+import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -231,22 +234,22 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     // --- init action map --
     myActionMap = new HashMap<CellActionType, EditorCellAction>();
     // -- navigation
-    myActionMap.put(CellActionType.LEFT, new NodeEditorActions.LEFT());
-    myActionMap.put(CellActionType.RIGHT, new NodeEditorActions.RIGHT());
-    myActionMap.put(CellActionType.UP, new NodeEditorActions.UP());
-    myActionMap.put(CellActionType.DOWN, new NodeEditorActions.DOWN());
-    myActionMap.put(CellActionType.NEXT, new NodeEditorActions.NEXT());
-    myActionMap.put(CellActionType.PREV, new NodeEditorActions.PREV());
-    myActionMap.put(CellActionType.LEFT_SPECIAL, new NodeEditorActions.LEFT());
-    myActionMap.put(CellActionType.RIGHT_SPECIAL, new NodeEditorActions.RIGHT());
-    myActionMap.put(CellActionType.UP_SPECIAL, new NodeEditorActions.UP_SPECIAL());
-    myActionMap.put(CellActionType.DOWN_SPECIAL, new NodeEditorActions.DOWN_SPECIAL());
-    myActionMap.put(CellActionType.HOME_SPECIAL, new NodeEditorActions.CTRL_HOME());
-    myActionMap.put(CellActionType.END_SPECIAL, new NodeEditorActions.CTRL_END());
-    myActionMap.put(CellActionType.HOME, new NodeEditorActions.HOME());
-    myActionMap.put(CellActionType.END, new NodeEditorActions.END());
-    myActionMap.put(CellActionType.PAGE_DOWN, new NodeEditorActions.PAGE_DOWN());
-    myActionMap.put(CellActionType.PAGE_UP, new NodeEditorActions.PAGE_UP());
+    myActionMap.put(CellActionType.LEFT, new NodeEditorActions.MoveLeft());
+    myActionMap.put(CellActionType.RIGHT, new NodeEditorActions.MoveRight());
+    myActionMap.put(CellActionType.UP, new NodeEditorActions.MoveUp());
+    myActionMap.put(CellActionType.DOWN, new NodeEditorActions.MoveDown());
+    myActionMap.put(CellActionType.NEXT, new NodeEditorActions.MoveNext());
+    myActionMap.put(CellActionType.PREV, new NodeEditorActions.MovePrev());
+    myActionMap.put(CellActionType.LOCAL_HOME, new NodeEditorActions.MoveLeft());
+    myActionMap.put(CellActionType.LOCAL_END, new NodeEditorActions.MoveRight());
+    myActionMap.put(CellActionType.SELECT_UP, new SelectUp());
+    myActionMap.put(CellActionType.SELECT_DOWN, new SelectDown());
+    myActionMap.put(CellActionType.ROOT_HOME, new NodeEditorActions.MoveToRootHome());
+    myActionMap.put(CellActionType.ROOT_END, new NodeEditorActions.MoveToRootEnd());
+    myActionMap.put(CellActionType.HOME, new NodeEditorActions.MoveHome());
+    myActionMap.put(CellActionType.END, new NodeEditorActions.MoveEnd());
+    myActionMap.put(CellActionType.PAGE_DOWN, new NodeEditorActions.MovePageUp());
+    myActionMap.put(CellActionType.PAGE_UP, new NodeEditorActions.MovePageDown());
     // ----
     myActionMap.put(CellActionType.COPY, new CellAction_CopyNode());
     myActionMap.put(CellActionType.CUT, new CellAction_CutNode());
@@ -262,7 +265,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myActionMap.put(CellActionType.RIGHT_TRANSFORM, new CellAction_SideTransform(CellSide.RIGHT));
     myActionMap.put(CellActionType.LEFT_TRANSFORM, new CellAction_SideTransform(CellSide.LEFT));
 
-    myActionMap.put(CellActionType.SHOW_MESSAGE, new NodeEditorActions.SHOW_MESSAGE());
+    myActionMap.put(CellActionType.SHOW_MESSAGE, new ShowMessage());
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -932,28 +935,28 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return CellActionType.SELECT_RIGHT;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return CellActionType.LEFT_SPECIAL;
+      return CellActionType.LOCAL_HOME;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return CellActionType.RIGHT_SPECIAL;
+      return CellActionType.LOCAL_END;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return CellActionType.UP_SPECIAL;
+      return CellActionType.SELECT_UP;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_W && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return CellActionType.UP_SPECIAL;
+      return CellActionType.SELECT_UP;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return CellActionType.DOWN_SPECIAL;
+      return CellActionType.SELECT_DOWN;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_W && keyEvent.isControlDown() && keyEvent.isShiftDown() && !keyEvent.isAltDown()) {
-      return CellActionType.DOWN_SPECIAL;
+      return CellActionType.SELECT_DOWN;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return CellActionType.HOME_SPECIAL;
+      return CellActionType.ROOT_HOME;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_END && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      return CellActionType.END_SPECIAL;
+      return CellActionType.ROOT_END;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.getModifiers() == 0) {
       return CellActionType.HOME;
