@@ -28,19 +28,18 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1202327274819(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode node = _context.getGenerator().getPreviousInputNodeByMappingName("ROOT INPUT");
+    SNode node = _context.getPreviousInputNodeByMappingLabel("ROOT INPUT");
     return "ROOT INPUT: " + SPropertyOperations.getString(((SNode)node), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1202327887568(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode inputNode = _context.getPreviousInputNodeByMappingLabel("LEVEL 1");
-    SNode node = _context.getGenerator().getPreviousInputNodeByMappingName("LEVEL 1");
-    return "LEVEL 1: " + SPropertyOperations.getString(((SNode)node), "name");
+    return "LEVEL 1: " + SPropertyOperations.getString(inputNode, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1202327970031(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode node = _context.getGenerator().getPreviousInputNodeByMappingName("LEVEL 2");
-    return "LEVEL 2: " + SPropertyOperations.getString(((SNode)node), "name");
+    SNode inputNode = _context.getPreviousInputNodeByMappingLabel("LEVEL 2");
+    return "LEVEL 2: " + SPropertyOperations.getString(inputNode, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1202338467126(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -77,7 +76,7 @@ public class QueriesGenerated {
 
   public static SNode mapSrcMacro_mapper_1202338546473(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
-    SNode node = _context.getGenerator().getPreviousInputNodeByMappingName("ROOT INPUT");
+    SNode node = _context.getPreviousInputNodeByMappingLabel("ROOT INPUT");
     String text = "ROOT INPUT: " + SPropertyOperations.getString(((SNode)node), "name");
     SPropertyOperations.set(result, "text", text);
     return result;
@@ -85,7 +84,7 @@ public class QueriesGenerated {
 
   public static SNode mapSrcMacro_mapper_1202338683284(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
-    SNode node = _context.getGenerator().getPreviousInputNodeByMappingName("LEVEL 1");
+    SNode node = _context.getPreviousInputNodeByMappingLabel("LEVEL 1");
     String text = "LEVEL 1: " + SPropertyOperations.getString(((SNode)node), "name");
     SPropertyOperations.set(result, "text", text);
     return result;
@@ -93,7 +92,7 @@ public class QueriesGenerated {
 
   public static SNode mapSrcMacro_mapper_1202338740199(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
-    SNode node = _context.getGenerator().getPreviousInputNodeByMappingName("LEVEL 2");
+    SNode node = _context.getPreviousInputNodeByMappingLabel("LEVEL 2");
     String text = "LEVEL 2: " + SPropertyOperations.getString(((SNode)node), "name");
     SPropertyOperations.set(result, "text", text);
     return result;
