@@ -5,10 +5,6 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Evgeny.Kurbatsky
- * Date: 15.05.2008
- * Time: 13:51:26
- * To change this template use File | Settings | File Templates.
  */
 public class NodeDifference extends DifferanceItem {
   private String myName;

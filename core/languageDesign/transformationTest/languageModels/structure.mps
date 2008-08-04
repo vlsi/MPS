@@ -135,7 +135,7 @@
     <property name="name" value="CheckNodeForErrors" />
     <link role="extends" targetNodeId="1214846310980" resolveInfo="AbstractNodeAssert" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215075801596">
-      <property name="value" value="assert nodes type errors" />
+      <property name="value" value="check nodes type errors" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>
@@ -367,7 +367,7 @@
     <property name="name" value="CheckNodeDataflow" />
     <link role="extends" targetNodeId="1214846310980" resolveInfo="AbstractNodeAssert" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217426260237">
-      <property name="value" value="assert node dataflow" />
+      <property name="value" value="check node dataflow" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>

@@ -134,7 +134,7 @@ public class StatementList_Behavior {
     return referencedInClosures;
   }
 
-  public static HashSet<SNode> call_getExternalVariablesDeclarations_1214501165480(SNode thisNode) {
+  public static Set<SNode> call_getExternalVariablesDeclarations_1214501165480(SNode thisNode) {
     HashSet<SNode> declarations = new HashSet<SNode>();
     for(SNode ref : SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false)) {
       boolean statementsContainsVar = false;

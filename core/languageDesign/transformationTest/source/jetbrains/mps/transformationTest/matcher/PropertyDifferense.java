@@ -2,10 +2,6 @@ package jetbrains.mps.transformationTest.matcher;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Evgeny.Kurbatsky
- * Date: 15.05.2008
- * Time: 14:29:43
- * To change this template use File | Settings | File Templates.
  */
 public class PropertyDifferense extends DifferanceItem {
   private String myProperty;

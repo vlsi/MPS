@@ -18,10 +18,6 @@ import javax.swing.SwingUtilities;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Evgeny.Kurbatsky
- * Date: 15.05.2008
- * Time: 12:32:00
- * To change this template use File | Settings | File Templates.
  */
 public class TransformationTests {
 

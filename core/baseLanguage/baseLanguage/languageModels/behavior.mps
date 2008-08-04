@@ -2782,7 +2782,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1214501215141">
-        <link role="classifier" targetNodeId="8.~HashSet" resolveInfo="HashSet" />
+        <link role="classifier" targetNodeId="8.~Set" resolveInfo="Set" />
         <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214501215142">
           <link role="concept" targetNodeId="1.1068581242863" resolveInfo="LocalVariableDeclaration" />
         </node>
