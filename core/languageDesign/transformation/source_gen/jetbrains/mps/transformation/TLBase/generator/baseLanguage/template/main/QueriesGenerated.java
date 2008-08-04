@@ -236,6 +236,19 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(op, "label", null, false);
       }
     }
+    {
+      // references in 'get prev input by label'
+      List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetPrevInputByLabel");
+      for(SNode op : ops) {
+        SNode label = SLinkOperations.getTarget(op, "label", false);
+        if (label == null) {
+          _context.getGenerator().showErrorMessage(op, "reference on mapping label is broken");
+          continue;
+        }
+        SPropertyOperations.set(op, "labelName_intern", SPropertyOperations.getString(label, "name"));
+        SLinkOperations.setTarget(op, "label", null, false);
+      }
+    }
   }
 
 }

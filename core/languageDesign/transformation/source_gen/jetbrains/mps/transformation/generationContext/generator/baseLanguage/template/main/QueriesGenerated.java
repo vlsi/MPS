@@ -34,6 +34,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1217882311150(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (SPropertyOperations.getString(_context.getNode(), "labelName_intern") != null) {
+      // operation has been preprocessed by mapping script in TLBase
+      return SPropertyOperations.getString(_context.getNode(), "labelName_intern");
+    }
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
+  }
+
   public static Object referenceMacro_GetReferent_1216862267882(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     // method parameter
     return "_context";
@@ -73,6 +81,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1217369738546(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1217882311138(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 

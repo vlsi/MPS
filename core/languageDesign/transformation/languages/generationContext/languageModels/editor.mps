@@ -84,5 +84,26 @@
       <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1217882105986">
+    <link role="conceptDeclaration" targetNodeId="1.1217881979074" resolveInfo="GenerationContextOp_GetPrevInputByLabel" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1217882112379">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217882112380">
+        <property name="text" value="get prev input" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1217882112381">
+        <property name="noTargetText" value="&lt;choose mapping label&gt;" />
+        <link role="styleClass" targetNodeId="5.1216755869996" resolveInfo="mappingLableReference" />
+        <link role="relationDeclaration" targetNodeId="1.1217881979075" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1217882112382">
+          <link role="conceptDeclaration" targetNodeId="7.1200911316486" resolveInfo="MappingLabelDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1217882112383">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="3.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

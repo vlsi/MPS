@@ -222,5 +222,29 @@
       <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1217369699850" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217881979074">
+    <property name="name" value="GenerationContextOp_GetPrevInputByLabel" />
+    <link role="extends" targetNodeId="1216860049619" resolveInfo="GenerationContextOp_Base" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217881979075">
+      <property name="role" value="label" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1200911316486" resolveInfo="MappingLabelDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217881979076">
+      <property name="value" value="get prev input by label" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217881979077">
+      <property name="value" value="search preceding input node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1217881979078">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1217881979079">
+      <property name="name" value="labelName_intern" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
+    </node>
+  </node>
 </model>
 
