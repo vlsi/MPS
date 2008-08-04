@@ -27,6 +27,14 @@ public class QueriesGenerated {
     return GenerationContextOp_UserObjectAccessBase_Behavior.call_isLValueInAssignment_1217892546644(_context.getNode());
   }
 
+  public static boolean baseMappingRule_Condition_1217894198725(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return GenerationContextOp_UserObjectAccessBase_Behavior.call_isLValueInAssignment_1217892546644(_context.getNode());
+  }
+
+  public static boolean baseMappingRule_Condition_1217894200267(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return GenerationContextOp_UserObjectAccessBase_Behavior.call_isLValueInAssignment_1217892546644(_context.getNode());
+  }
+
   public static Object propertyMacro_GetPropertyValue_1216862267927(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (SPropertyOperations.getString(_context.getNode(), "labelName_intern") != null) {
       // operation has been preprocessed by mapping script in TLBase
@@ -128,6 +136,46 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1217892428790(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode(), null, false, false), null, false, false), "rValue", true);
+  }
+
+  public static SNode sourceNodeQuery_1217894198738(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1217894198750(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "userKey", true);
+  }
+
+  public static SNode sourceNodeQuery_1217894198758(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode(), null, false, false), null, false, false), "rValue", true);
+  }
+
+  public static SNode sourceNodeQuery_1217894198777(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1217894198789(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "userKey", true);
+  }
+
+  public static SNode sourceNodeQuery_1217894200280(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1217894200292(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "userKey", true);
+  }
+
+  public static SNode sourceNodeQuery_1217894200300(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode(), null, false, false), null, false, false), "rValue", true);
+  }
+
+  public static SNode sourceNodeQuery_1217894200319(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1217894200331(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "userKey", true);
   }
 
 }
