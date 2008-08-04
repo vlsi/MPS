@@ -16,6 +16,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -28,6 +31,9 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior;
 
 public class IfStatement_Editor extends DefaultNodeEditor {
 
@@ -162,6 +168,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -561,6 +568,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     setupBasic_Constant_11775550347091177555034709(editorCell, node, context);
     setupLabel_Constant_1177555034709_1177555034709(editorCell, node, context);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new IfStatement_Editor.IfStatement_generic_cellMenu(),new IfStatement_Editor.IfStatement_generic_cellMenu1()}));
     return editorCell;
   }
 
@@ -775,6 +783,33 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
     public EditorCell createSeparatorCell(EditorContext context) {
       return super.createSeparatorCell(context);
+    }
+
+}
+  public static class IfStatement_generic_cellMenu extends AbstractCellMenuPart_Generic_Item {
+
+    public IfStatement_generic_cellMenu() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    }
+
+    public String getMatchingText() {
+      return "else";
+    }
+
+}
+  public static class IfStatement_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
+
+    public IfStatement_generic_cellMenu1() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      IfStatement_Behavior.call_convertElseToElseIf_1217845914183(node);
+    }
+
+    public String getMatchingText() {
+      return "else if";
     }
 
 }

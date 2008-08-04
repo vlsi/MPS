@@ -9,8 +9,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior;
 
 public class ConvertElseToElseIf_Intention extends BaseIntention implements Intention {
 
@@ -33,15 +32,7 @@ public class ConvertElseToElseIf_Intention extends BaseIntention implements Inte
   }
 
   public void execute(SNode node, EditorContext editorContext) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ElsifClause", null);
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
-      SLinkOperations.setTarget(result, "statementList", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "ifFalseStatement", true), "statements", true)), true);
-    } else
-    {
-      SLinkOperations.addChild(SLinkOperations.getTarget(result, "statementList", true), "statement", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "ifFalseStatement", true)));
-    }
-    SLinkOperations.removeChild(node, "ifFalseStatement");
-    SLinkOperations.addChild(node, "elsifClauses", result);
+    IfStatement_Behavior.call_convertElseToElseIf_1217845914183(node);
   }
 
   public Object[] getField(String key) {
