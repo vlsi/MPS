@@ -305,5 +305,41 @@
       <link role="target" targetNodeId="3.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217894011536">
+    <property name="name" value="GenerationContextOp_StepObjectAccess" />
+    <link role="extends" targetNodeId="1217889960776" resolveInfo="GenerationContextOp_UserObjectAccessBase" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217894011537">
+      <property name="value" value="step object" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217894011538">
+      <property name="value" value="access to user object" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1217894011539">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1197029536315" resolveInfo="lvalue" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1217894011540">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217894033795">
+    <property name="name" value="GenerationContextOp_TransientObjectAccess" />
+    <link role="extends" targetNodeId="1217889960776" resolveInfo="GenerationContextOp_UserObjectAccessBase" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217894033796">
+      <property name="value" value="transient object" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217894033797">
+      <property name="value" value="access to user object" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1217894033798">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1197029536315" resolveInfo="lvalue" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1217894033799">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 

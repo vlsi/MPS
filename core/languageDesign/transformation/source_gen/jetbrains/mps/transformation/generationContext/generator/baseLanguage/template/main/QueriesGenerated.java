@@ -119,7 +119,6 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1217892400236(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getSessionObject(_context.getNode());
     return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
