@@ -12,21 +12,21 @@ public class SNodeOperation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myReplaceableAlias_Comp30;
 
-  private static void setupBasic_ReplaceableAlias_CompComponentCell13087_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ReplaceableAlias_CompComponentCell13087_0");
+  private static void setupBasic_component_ReplaceableAlias_Comp1212009058728(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "component_ReplaceableAlias_Comp");
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ReplaceableAlias_CompComponentCell13087_0(context, node);
+    return this.createComponent1212009058728(context, node);
   }
 
-  public EditorCell create_ReplaceableAlias_CompComponentCell13087_0(EditorContext context, SNode node) {
+  public EditorCell createComponent1212009058728(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp30 == null) {
       this.myReplaceableAlias_Comp30 = new ReplaceableAlias_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAlias_Comp30.createEditorCell(context);
-    setupBasic_ReplaceableAlias_CompComponentCell13087_0(editorCell, node, context);
+    setupBasic_component_ReplaceableAlias_Comp1212009058728(editorCell, node, context);
     return editorCell;
   }
 

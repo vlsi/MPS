@@ -11,11 +11,21 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.behavior.ElsifClause_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SModel;
 
 public class ElsifClause_Editor extends DefaultNodeEditor {
 
@@ -53,6 +63,15 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_12060610598151206061059815(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206061059815");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_12060610688021206061068802(EditorCell editorCell, SNode node, EditorContext context) {
@@ -103,11 +122,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   private static void setupBasic_refNode_statementList1206061106547(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Constant_12162127533791216212753379(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216212753379");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-  }
-
   private static void setupLabel_Constant_1206061055032_1206061055032(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -127,9 +141,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_statementList_1206061106547(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1216212753379_1216212753379(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -155,8 +166,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1206061055032(context, node, "}"));
-    editorCell.addEditorCell(this.createConstant1206061059815(context, node, "else"));
-    editorCell.addEditorCell(this.createConstant1216212753379(context, node, "if"));
+    editorCell.addEditorCell(this.createConstant1206061059815(context, node, "else if"));
     editorCell.addEditorCell(this.createConstant1206061068802(context, node, "("));
     editorCell.addEditorCell(this.createRefNode1206061083792(context, node));
     editorCell.addEditorCell(this.createConstant1206061071100(context, node, ")"));
@@ -188,6 +198,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     setupBasic_Constant_12060610598151206061059815(editorCell, node, context);
     setupLabel_Constant_1206061059815_1206061059815(editorCell, node, context);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu()}));
     return editorCell;
   }
 
@@ -211,14 +222,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12060610745091206061074509(editorCell, node, context);
     setupLabel_Constant_1206061074509_1206061074509(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant1216212753379(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12162127533791216212753379(editorCell, node, context);
-    setupLabel_Constant_1216212753379_1216212753379(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -285,5 +288,39 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
+  public static class ElsifClause_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
+
+    public ElsifClause_generic_cellMenu() {
+    }
+
+    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      // todo this is quite a hackish stuff but we need it
+      // todo but we need it since we can't enable/disable
+      // todo menu items by condition
+      SNode ifStatement = ElsifClause_Behavior.call_getIfStatement_1213877360521(node);
+      List<String> result = ListSequence.<String>fromArray();
+      if ((SLinkOperations.getTarget(ifStatement, "ifFalseStatement", true) == null)) {
+        ListSequence.fromList(result).addElement("else");
+      }
+      ListSequence.fromList(result).addElement("else if");
+      return result;
+    }
+
+    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      this.handleAction_impl((String)parameterObject, node, model, scope, operationContext);
+    }
+
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      if ("else".equals(parameterObject)) {
+        ElsifClause_Behavior.call_convertToElseClause_1217846674032(node);
+      }
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+}
 
 }

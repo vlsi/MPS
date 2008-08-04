@@ -14,36 +14,36 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SNodeListCreator_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_createdTypeRefNodeCell10946_0(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_refNode_createdType1145567624652(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_createdTypeRefNodeCell10946_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNode_createdType_1145567624652(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_createdTypeRefNodeCell10946_0(context, node);
+    return this.createRefNode1145567624652(context, node);
   }
 
-  public EditorCell create_createdTypeRefNodeCell10946_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode1145567624652_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_createdTypeRefNodeCell10946_0(editorCell, node, context);
+    setupBasic_refNode_createdType1145567624652(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_createdTypeRefNodeCell10946_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_createdType_1145567624652((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell create_createdTypeRefNodeCell10946_0(EditorContext context, SNode node) {
+  public EditorCell createRefNode1145567624652(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("createdType");
     provider.setNoTargetText("<no createdType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_createdTypeRefNodeCell10946_0_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode1145567624652_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

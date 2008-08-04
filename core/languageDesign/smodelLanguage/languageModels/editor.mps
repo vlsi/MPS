@@ -277,6 +277,9 @@
             </node>
           </node>
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217847733217">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487861526">
         <property name="text" value=")" />
@@ -648,6 +651,9 @@
       <property name="text" value="delete" />
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214398031925">
         <property name="flag" value="true" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217846801814">
+        <property name="value" value="0.0" />
       </node>
     </node>
   </node>
@@ -2207,6 +2213,9 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1181943477554">
           <link role="relationDeclaration" targetNodeId="1.1181937442359" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217846816034">
+            <property name="value" value="0.0" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1181943477555">
           <property name="text" value=")" />

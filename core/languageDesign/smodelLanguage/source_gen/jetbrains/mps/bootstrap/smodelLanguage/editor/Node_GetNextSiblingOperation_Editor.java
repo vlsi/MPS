@@ -13,8 +13,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class Node_GetNextSiblingOperation_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell14817_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14817_0");
+  private static void setupBasic_Constant_11435129644601143512964460(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1143512964460");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -26,18 +26,18 @@ public class Node_GetNextSiblingOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_ConstantCell14817_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1143512964460_1143512964460(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ConstantCell14817_0(context, node, "next-sibling");
+    return this.createConstant1143512964460(context, node, "next-sibling");
   }
 
-  public EditorCell create_ConstantCell14817_0(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1143512964460(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell14817_0(editorCell, node, context);
-    setupLabel_ConstantCell14817_0(editorCell, node, context);
+    setupBasic_Constant_11435129644601143512964460(editorCell, node, context);
+    setupLabel_Constant_1143512964460_1143512964460(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

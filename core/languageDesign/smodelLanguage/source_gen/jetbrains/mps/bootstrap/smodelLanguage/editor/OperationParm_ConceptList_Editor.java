@@ -25,14 +25,14 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_15249_0;
+  /* package */AbstractCellListHandler myListHandler_1154547221297;
 
-  private static void setupBasic_CollectionCell15249_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15249_0");
+  private static void setupBasic_Collection_11545471983721154547198372(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1154547198372");
   }
 
-  private static void setupBasic_ConstantCell15249_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15249_0");
+  private static void setupBasic_Constant_11545472021851154547202185(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1154547202185");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -50,12 +50,12 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_conceptRefNodeListCell15249_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptRefNodeListCell15249_0");
+  private static void setupBasic_refNodeList_concept1154547221297(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_concept");
   }
 
-  private static void setupBasic_ConstantCell15249_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15249_01");
+  private static void setupBasic_Constant_11545472440331154547244033(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1154547244033");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -73,13 +73,13 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_ConstantCell15249_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1154547202185_1154547202185(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_conceptRefNodeListCell15249_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNodeList_concept_1154547221297(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell15249_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1154547244033_1154547244033(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static Color calculateColor19(EditorCell cell) {
@@ -96,53 +96,53 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_CollectionCell15249_0(context, node);
+    return this.createCollection1154547198372(context, node);
   }
 
-  public EditorCell create_CollectionCell15249_0(EditorContext context, SNode node) {
+  public EditorCell createCollection1154547198372(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_CollectionCell15249_0(editorCell, node, context);
+    setupBasic_Collection_11545471983721154547198372(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell15249_0(context, node, "concept in:["));
-    editorCell.addEditorCell(this.create_conceptRefNodeListCell15249_0(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell15249_01(context, node, "]"));
+    editorCell.addEditorCell(this.createConstant1154547202185(context, node, "concept in:["));
+    editorCell.addEditorCell(this.createRefNodeList1154547221297(context, node));
+    editorCell.addEditorCell(this.createConstant1154547244033(context, node, "]"));
     return editorCell;
   }
 
-  public EditorCell create_ConstantCell15249_0(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1154547202185(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell15249_0(editorCell, node, context);
-    setupLabel_ConstantCell15249_0(editorCell, node, context);
+    setupBasic_Constant_11545472021851154547202185(editorCell, node, context);
+    setupLabel_Constant_1154547202185_1154547202185(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell create_ConstantCell15249_01(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1154547244033(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell15249_01(editorCell, node, context);
-    setupLabel_ConstantCell15249_01(editorCell, node, context);
+    setupBasic_Constant_11545472440331154547244033(editorCell, node, context);
+    setupLabel_Constant_1154547244033_1154547244033(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell create_conceptRefNodeListCell15249_0(EditorContext context, SNode node) {
-    if (this.myListHandler_15249_0 == null) {
-      this.myListHandler_15249_0 = new OperationParm_ConceptList_Editor.conceptListHandler_15249_0(node, "concept", context);
+  public EditorCell createRefNodeList1154547221297(EditorContext context, SNode node) {
+    if (this.myListHandler_1154547221297 == null) {
+      this.myListHandler_1154547221297 = new OperationParm_ConceptList_Editor.conceptListHandler_(node, "concept", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_15249_0.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_conceptRefNodeListCell15249_0(editorCell, node, context);
+    EditorCell_Collection editorCell = this.myListHandler_1154547221297.createCells(context, new CellLayout_Horizontal(), false);
+    setupBasic_refNodeList_concept1154547221297(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_15249_0.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1154547221297.getElementRole());
     return editorCell;
   }
 
-  public static class conceptListHandler_15249_0 extends RefNodeListHandler {
+  public static class conceptListHandler_ extends RefNodeListHandler {
 
-    public conceptListHandler_15249_0(SNode ownerNode, String childRole, EditorContext context) {
+    public conceptListHandler_(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

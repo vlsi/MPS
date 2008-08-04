@@ -13,12 +13,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class Node_DeleteOperation_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell7638_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7638_0");
+  private static void setupBasic_Constant_11401337056341140133705634(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1140133705634");
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
@@ -26,18 +27,18 @@ public class Node_DeleteOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_ConstantCell7638_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1140133705634_1140133705634(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ConstantCell7638_0(context, node, "delete");
+    return this.createConstant1140133705634(context, node, "delete");
   }
 
-  public EditorCell create_ConstantCell7638_0(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1140133705634(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell7638_0(editorCell, node, context);
-    setupLabel_ConstantCell7638_0(editorCell, node, context);
+    setupBasic_Constant_11401337056341140133705634(editorCell, node, context);
+    setupLabel_Constant_1140133705634_1140133705634(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

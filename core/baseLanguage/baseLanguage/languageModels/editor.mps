@@ -15924,12 +15924,131 @@
           <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206061059815">
-          <property name="text" value="else" />
+          <property name="text" value="else if" />
           <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216212753379">
-          <property name="text" value="if" />
-          <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1217846516390">
+            <property name="flag" value="true" />
+          </node>
+          <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1217846542240">
+            <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Generic_Group" id="1217846547788">
+              <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_AbstractGroup_Query" id="1217846547789">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217846547790">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217846631079">
+                    <property name="value" value="todo this is quite a hackish stuff but we need it" />
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217847952836">
+                    <property name="value" value="todo but we need it since we can't enable/disable" />
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217847965370">
+                    <property name="value" value="todo menu items by condition" />
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217846570497">
+                    <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217846570498">
+                      <property name="name" value="ifStatement" />
+                      <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1217846570499">
+                        <link role="concept" targetNodeId="17.1068580123159" resolveInfo="IfStatement" />
+                      </node>
+                      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217846683886">
+                        <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Abstract_editedNode" id="1217846683477" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1217846684891">
+                          <link role="conceptMethodDeclaration" targetNodeId="75.1213877360521" resolveInfo="getIfStatement" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217846612988">
+                    <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217846612989">
+                      <property name="name" value="result" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1217846612990">
+                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217846614557">
+                          <link role="classifier" targetNodeId="24.~String" resolveInfo="String" />
+                        </node>
+                      </node>
+                      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217846616172">
+                        <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1217846616173">
+                          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217846616174">
+                            <link role="classifier" targetNodeId="24.~String" resolveInfo="String" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1217846588552">
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217846588553">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217846618164">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217846618951">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217846618165">
+                            <link role="variableDeclaration" targetNodeId="1217846612989" resolveInfo="result" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1217846621082">
+                            <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217846622619">
+                              <property name="value" value="else" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217846598182">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217846591391">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217846590606">
+                          <link role="variableDeclaration" targetNodeId="1217846570498" resolveInfo="ifStatement" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1217846597272">
+                          <link role="link" targetNodeId="17.1082485599094" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNullOperation" id="1217846599673" />
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217846625658">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217846626271">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217846625659">
+                        <link role="variableDeclaration" targetNodeId="1217846612989" resolveInfo="result" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1217846628869">
+                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217846641285">
+                          <property name="value" value="else if" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1217847251139">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217847251501">
+                      <link role="variableDeclaration" targetNodeId="1217846612989" resolveInfo="result" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="handlerFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Generic_Group_Handler" id="1217846547791">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217846547792">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1217846644476">
+                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217846649370">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217846646354">
+                        <property name="value" value="else" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217846650748">
+                        <link role="baseMethodDeclaration" targetNodeId="24.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                        <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_AbstractGroup_parameterObject" id="1217846651718" />
+                      </node>
+                    </node>
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217846644478">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217846654266">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217846691318">
+                          <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Abstract_editedNode" id="1217846690942" />
+                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1217846693228">
+                            <link role="conceptMethodDeclaration" targetNodeId="75.1217846674032" resolveInfo="convertToElseClause" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217846557450">
+                <link role="classifier" targetNodeId="24.~String" resolveInfo="String" />
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206061068802">
           <property name="text" value="(" />

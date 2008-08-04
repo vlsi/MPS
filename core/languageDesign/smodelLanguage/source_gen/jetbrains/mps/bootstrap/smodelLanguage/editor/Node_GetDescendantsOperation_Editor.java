@@ -12,21 +12,21 @@ public class Node_GetDescendantsOperation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myReplaceableAliasAndParms_Comp5;
 
-  private static void setupBasic_ReplaceableAliasAndParms_CompComponentCell7911_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ReplaceableAliasAndParms_CompComponentCell7911_0");
+  private static void setupBasic_component_ReplaceableAliasAndParms_Comp1207248924093(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "component_ReplaceableAliasAndParms_Comp");
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ReplaceableAliasAndParms_CompComponentCell7911_0(context, node);
+    return this.createComponent1207248924093(context, node);
   }
 
-  public EditorCell create_ReplaceableAliasAndParms_CompComponentCell7911_0(EditorContext context, SNode node) {
+  public EditorCell createComponent1207248924093(EditorContext context, SNode node) {
     if (this.myReplaceableAliasAndParms_Comp5 == null) {
       this.myReplaceableAliasAndParms_Comp5 = new ReplaceableAliasAndParms_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAliasAndParms_Comp5.createEditorCell(context);
-    setupBasic_ReplaceableAliasAndParms_CompComponentCell7911_0(editorCell, node, context);
+    setupBasic_component_ReplaceableAliasAndParms_Comp1207248924093(editorCell, node, context);
     return editorCell;
   }
 

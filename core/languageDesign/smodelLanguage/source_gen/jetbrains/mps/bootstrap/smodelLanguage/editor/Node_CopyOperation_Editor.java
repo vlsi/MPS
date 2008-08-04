@@ -14,8 +14,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class Node_CopyOperation_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell2493_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2493_0");
+  private static void setupBasic_Constant_11441463558791144146355879(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144146355879");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -31,18 +31,18 @@ public class Node_CopyOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_ConstantCell2493_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1144146355879_1144146355879(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ConstantCell2493_0(context, node, "copy");
+    return this.createConstant1144146355879(context, node, "copy");
   }
 
-  public EditorCell create_ConstantCell2493_0(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1144146355879(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell2493_0(editorCell, node, context);
-    setupLabel_ConstantCell2493_0(editorCell, node, context);
+    setupBasic_Constant_11441463558791144146355879(editorCell, node, context);
+    setupLabel_Constant_1144146355879_1144146355879(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

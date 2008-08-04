@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class ElsifClause_Behavior {
 
@@ -12,6 +14,14 @@ public class ElsifClause_Behavior {
 
   public static SNode call_getIfStatement_1213877360521(SNode thisNode) {
     return SNodeOperations.getParent(thisNode, null, false, false);
+  }
+
+  public static void call_convertToElseClause_1217846674032(SNode thisNode) {
+    SNode ifStatement = ElsifClause_Behavior.call_getIfStatement_1213877360521(thisNode);
+    SNode elseStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
+    SLinkOperations.setTarget(elseStatement, "statements", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "statementList", true)), true);
+    SNodeOperations.deleteNode(thisNode);
+    SLinkOperations.setTarget(ifStatement, "ifFalseStatement", elseStatement, true);
   }
 
 }

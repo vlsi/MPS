@@ -19,90 +19,90 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_CollectionCell6053_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6053_0");
+  private static void setupBasic_Collection_12048342224311204834222431(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1204834222431");
   }
 
-  private static void setupBasic_annotationLinkRefCell6053_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_annotationLinkRefCell6053_0");
+  private static void setupBasic_refCell_annotationLink1204834222432(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_annotationLink");
   }
 
-  private static void setupBasic_ConstantCell6053_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6053_0");
+  private static void setupBasic_Constant_12048342371551204834237155(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204834237155");
   }
 
-  private static void setupBasic_propertyQualifierRefNodeCell6053_0(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_refNode_propertyQualifier1204834257832(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_ConstantCell6053_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6053_01");
+  private static void setupBasic_Constant_12048342627091204834262709(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204834262709");
   }
 
-  private static void setupLabel_annotationLinkRefCell6053_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refCell_annotationLink_1204834222432(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell6053_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1204834237155_1204834237155(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_propertyQualifierRefNodeCell6053_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNode_propertyQualifier_1204834257832(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell6053_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1204834262709_1204834262709(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_CollectionCell6053_0(context, node);
+    return this.createCollection1204834222431(context, node);
   }
 
-  public EditorCell create_CollectionCell6053_0(EditorContext context, SNode node) {
+  public EditorCell createCollection1204834222431(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_CollectionCell6053_0(editorCell, node, context);
+    setupBasic_Collection_12048342224311204834222431(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_annotationLinkRefCell6053_0(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell6053_0(context, node, "<"));
-    editorCell.addEditorCell(this.create_propertyQualifierRefNodeCell6053_0(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell6053_01(context, node, ">"));
+    editorCell.addEditorCell(this.createRefCell1204834222432(context, node));
+    editorCell.addEditorCell(this.createConstant1204834237155(context, node, "<"));
+    editorCell.addEditorCell(this.createRefNode1204834257832(context, node));
+    editorCell.addEditorCell(this.createConstant1204834262709(context, node, ">"));
     return editorCell;
   }
 
-  public EditorCell create_ConstantCell6053_0(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1204834237155(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell6053_0(editorCell, node, context);
-    setupLabel_ConstantCell6053_0(editorCell, node, context);
+    setupBasic_Constant_12048342371551204834237155(editorCell, node, context);
+    setupLabel_Constant_1204834237155_1204834237155(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell create_ConstantCell6053_01(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1204834262709(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell6053_01(editorCell, node, context);
-    setupLabel_ConstantCell6053_01(editorCell, node, context);
+    setupBasic_Constant_12048342627091204834262709(editorCell, node, context);
+    setupLabel_Constant_1204834262709_1204834262709(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell create_annotationLinkRefCell6053_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell1204834222432_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new PropertyAttributeAccessQualifier_Editor._Inline31());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_annotationLinkRefCell6053_0(editorCell, node, context);
+    setupBasic_refCell_annotationLink1204834222432(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_annotationLinkRefCell6053_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_refCell_annotationLink_1204834222432((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell create_annotationLinkRefCell6053_0(EditorContext context, SNode node) {
+  public EditorCell createRefCell1204834222432(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("annotationLink");
     provider.setNoTargetText("<no annotationLink>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_annotationLinkRefCell6053_0_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell1204834222432_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -113,25 +113,25 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell create_propertyQualifierRefNodeCell6053_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode1204834257832_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_propertyQualifierRefNodeCell6053_0(editorCell, node, context);
+    setupBasic_refNode_propertyQualifier1204834257832(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_propertyQualifierRefNodeCell6053_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_propertyQualifier_1204834257832((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell create_propertyQualifierRefNodeCell6053_0(EditorContext context, SNode node) {
+  public EditorCell createRefNode1204834257832(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("propertyQualifier");
     provider.setNoTargetText("<property>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_propertyQualifierRefNodeCell6053_0_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode1204834257832_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -148,11 +148,11 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
       super();
     }
 
-    private static void setupBasic_rolePropertyCell6053_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rolePropertyCell6053_0");
+    private static void setupBasic_property_role1204834222434(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, "property_role");
     }
 
-    private static void setupLabel_rolePropertyCell6053_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_property_role_1204834222434(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 
@@ -161,28 +161,28 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.create_rolePropertyCell6053_0(context, node);
+      return this.createProperty1204834222434(context, node);
     }
 
-    public EditorCell create_rolePropertyCell6053_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty1204834222434_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_rolePropertyCell6053_0(editorCell, node, context);
+      setupBasic_property_role1204834222434(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_rolePropertyCell6053_0((EditorCell_Label)editorCell, node, context);
+        setupLabel_property_role_1204834222434((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
 
-    public EditorCell create_rolePropertyCell6053_0(EditorContext context, SNode node) {
+    public EditorCell createProperty1204834222434(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no annotation link>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.create_rolePropertyCell6053_0_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty1204834222434_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
