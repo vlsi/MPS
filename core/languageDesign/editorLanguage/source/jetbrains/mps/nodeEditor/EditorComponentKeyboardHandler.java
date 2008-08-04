@@ -14,6 +14,8 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 
 import java.awt.event.KeyEvent;
 import java.util.List;
@@ -78,9 +80,18 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     // process action
     if (selectedCell != null) {
       if (selectedCell instanceof EditorCell_Label &&
-        selectedCell.getUserObject(EditorCell.ROLE) == null &&
+        !hasOneToManyRole(selectedCell) &&
         (CellActionType.INSERT.equals(actionType) || CellActionType.INSERT_BEFORE.equals(actionType))) {        
         EditorCell cellWithRole = new ChildrenCollectionFinder(selectedCell, actionType == CellActionType.INSERT).find();
+
+        if (cellWithRole == null && actionType == CellActionType.INSERT_BEFORE && selectedCell.isFirstPositionInBigCell()) {
+          cellWithRole = new ChildrenCollectionFinder(selectedCell.getPrevLeaf(), true).find();
+        }
+
+        if (cellWithRole == null && actionType == CellActionType.INSERT && selectedCell.isLastPositionInBigCell()) {
+          cellWithRole = new ChildrenCollectionFinder(selectedCell.getNextLeaf(), true).find();
+        }
+
         if (cellWithRole != null && cellWithRole.executeAction(actionType)) {
           return true;
         }
@@ -201,5 +212,13 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
 
   private boolean isEndEditKeystroke(final KeyEvent keyEvent) {
     return (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
+  }
+
+  private boolean hasOneToManyRole(EditorCell cell) {
+    String role = (String) cell.getUserObject(EditorCell.ROLE);
+    if (role == null) return false;
+    LinkDeclaration link = cell.getSNode().getLinkDeclaration(role);
+    if (link == null) return false;
+    return link.getSourceCardinality() == Cardinality._0__n || link.getSourceCardinality() == Cardinality._1__n;
   }
 }
