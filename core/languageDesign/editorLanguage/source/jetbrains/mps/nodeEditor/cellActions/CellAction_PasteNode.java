@@ -12,6 +12,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.List;
 import java.util.Set;
@@ -55,8 +58,8 @@ public class CellAction_PasteNode extends EditorCellAction {
 
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
-
-    if (selectedCell.isFirstPositionInBigCell() && PasteNodeUtil.canPasteRelative(selectedNode, pasteNodes)) {
+    
+    if (canPasteBefore(selectedCell, pasteNodes)) {
       PasteNodeUtil.pasteRelative(selectedNode, pasteNodes, PastePlaceHint.BEFORE_ANCHOR);
     } else {
       PasteNodeUtil.paste(selectedCell, pasteNodes);
@@ -85,6 +88,19 @@ public class CellAction_PasteNode extends EditorCellAction {
     }
   }
 
+  private boolean canPasteBefore(EditorCell selectedCell, List<SNode> pasteNodes) {
+    if (!selectedCell.isFirstPositionInBigCell()) return false;
+    SNode anchor = selectedCell.getSNode();
+    if (anchor.getParent() == null) return false;
+
+    //todo nice to merge it with code in PasteNodeUtil
+    LinkDeclaration link = anchor.getParent().getLinkDeclaration(anchor.getRole_());
+    for (SNode node : pasteNodes) {
+      if (!SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(link.getTarget()))) return false;
+    }
+
+    return PasteNodeUtil.canPasteRelative(selectedCell.getSNode(), pasteNodes);
+  }
 
   private EditorCell getCellToPasteTo(EditorCell cell) {
     if (cell instanceof EditorCell_Label && cell.getUserObject(EditorCell.ROLE) == null) {
