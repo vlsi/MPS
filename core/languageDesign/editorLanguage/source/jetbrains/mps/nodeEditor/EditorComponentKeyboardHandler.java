@@ -21,8 +21,6 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 
 public class EditorComponentKeyboardHandler implements KeyboardHandler {
-  private static final Logger LOG = Logger.getLogger(EditorComponentKeyboardHandler.class);
-
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
     return false;
   }
