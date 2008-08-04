@@ -9,6 +9,7 @@ import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
+import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 
 public class Buildlanguage_ProjectPlugin extends BaseProjectPlugin {
 
@@ -23,6 +24,11 @@ public class Buildlanguage_ProjectPlugin extends BaseProjectPlugin {
   public List<BaseCustomProjectPlugin> initCustomParts(MPSProject project) {
     List<BaseCustomProjectPlugin> res = new ArrayList<BaseCustomProjectPlugin>();
     return res;
+  }
+
+  public List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
+    List<BaseProjectPrefsComponent> components = new ArrayList<BaseProjectPrefsComponent>();
+    return components;
   }
 
   public void init(MPSProject project) {
