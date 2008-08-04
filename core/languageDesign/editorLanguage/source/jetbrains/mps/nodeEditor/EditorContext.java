@@ -21,7 +21,7 @@ public class EditorContext {
   private SModelDescriptor myModelDescriptor;
   private IOperationContext myOperationContext;
   private EditorCell myContextCell;
-  private java.util.List<SModelEvent> mySModelEvents = null;
+  private List<SModelEvent> mySModelEvents = null;
 
   private ReferencedNodeContext myCurrentRefNodeContext;
 

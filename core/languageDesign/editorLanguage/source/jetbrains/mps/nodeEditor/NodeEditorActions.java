@@ -311,31 +311,70 @@ public class NodeEditorActions {
 
     private EditorCell getNextLeaf(EditorCell current) {
       if (mySide == CellSide.LEFT) {
-        return current.getPrevLeaf();
+        return current.getPrevLeaf(CellConditions.SELECTABLE);
       } else {
-        return current.getNextLeaf();
+        return current.getNextLeaf(CellConditions.SELECTABLE);
       }
     }
 
     public boolean canExecute(EditorContext context) {
-      EditorCell selectedCell = context.getSelectedCell();
-      if (selectedCell == null) return false;
-      EditorCell nextLeaf = getNextLeaf(selectedCell);
-      return nextLeaf != null && selectedCell.getSNode() == nextLeaf.getSNode() &&
-        getCommonAncestor(selectedCell, nextLeaf) != null;
+      EditorCell deepestSelected = context.getNodeEditorComponent().getDeepestSelectedCell();
+      EditorCell selected = context.getSelectedCell();
+      if (selected == null) return false;
+      EditorCell nextLeaf = getNextLeaf(deepestSelected);
+      return nextLeaf != null && getCommonSelectableAncestor(deepestSelected, selected, nextLeaf) != null;
     }
 
     public void execute(EditorContext context) {
-      EditorCell selectedCell = context.getSelectedCell();
-      EditorCell nextLeaf = getNextLeaf(selectedCell);
-      context.getNodeEditorComponent().pushSelection(selectedCell);
-      context.getNodeEditorComponent().setSelectionDontClearStack(getCommonAncestor(selectedCell, nextLeaf), true);
+      EditorComponent editor = context.getNodeEditorComponent();
+      EditorCell deepestSelected = editor.getDeepestSelectedCell();
+      EditorCell selected = context.getSelectedCell();
+      EditorCell nextLeaf = getNextLeaf(deepestSelected);
+
+      editor.clearSelectionStack();
+
+      EditorCell commonAncestor = getCommonSelectableAncestor(deepestSelected, selected, nextLeaf);
+      EditorCell deepestSelection;
+      if (mySide == CellSide.LEFT) {
+        deepestSelection = commonAncestor.getFirstLeaf(CellConditions.SELECTABLE);
+      } else {
+        deepestSelection = commonAncestor.getLastLeaf(CellConditions.SELECTABLE);
+      }
+
+      if (deepestSelection instanceof EditorCell_Label) {
+        EditorCell_Label label = (EditorCell_Label) deepestSelection;
+        if (mySide == CellSide.LEFT) {
+          label.home();
+        } else {
+          label.end();
+        }
+      }
+            
+      EditorCell current = deepestSelection;
+      while (current != commonAncestor) {
+        if (current.isSelectable()) {
+          editor.pushSelection(current);
+        }
+        current = current.getParent();
+      }
+
+      editor.setSelectionDontClearStack(commonAncestor, true);
     }
 
-    protected EditorCell getCommonAncestor(EditorCell c1, EditorCell c2) {
-      EditorCell result = c1;
+    protected EditorCell getCommonSelectableAncestor(EditorCell first, EditorCell... cells) {
+      EditorCell result = first;
       while (result != null) {
-        if (result.isSelectable() && result.isAncestorOf(c1) && result.isAncestorOf(c2)) return result;
+        if (result.isSelectable()) {
+          boolean common = result.isAncestorOf(first);
+          for (EditorCell cell : cells) {
+            if (!result.isAncestorOf(cell)) {
+              common = false;
+              break;
+            }
+          }
+          if (common) return result;
+        }
+
         result = result.getParent();
       }
       return null;
