@@ -156,13 +156,8 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1207740832155">
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207740832156">
                       <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitJumpStatement" id="1207740843728">
-                        <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.AfterPosition" id="1217863787899">
-                          <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217863791809">
-                            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1217863790511" />
-                            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1217863794202">
-                              <link role="link" targetNodeId="1.1068580123161" />
-                            </node>
-                          </node>
+                        <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.LabelPosition" id="1217867451209">
+                          <link role="label" targetNodeId="1217867419051" resolveInfo="endOfTrue" />
                         </node>
                       </node>
                     </node>
@@ -194,13 +189,8 @@
                 <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1207740816368">
                   <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207740816369">
                     <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitIfJumpStatement" id="1206454721345">
-                      <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.AfterPosition" id="1217863800328">
-                        <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217863802331">
-                          <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1217863801752" />
-                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1217863807178">
-                            <link role="link" targetNodeId="1.1068580123161" />
-                          </node>
-                        </node>
+                      <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.LabelPosition" id="1217867439552">
+                        <link role="label" targetNodeId="1217867419051" resolveInfo="endOfTrue" />
                       </node>
                     </node>
                   </node>
@@ -216,6 +206,34 @@
               <link role="link" targetNodeId="1.1068580123161" />
             </node>
           </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1217867461508">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217867461509">
+            <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable" id="1217868916800">
+              <node role="emitStatement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitJumpStatement" id="1217868921099">
+                <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.AfterPosition" id="1217868921100">
+                  <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217868921101">
+                    <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1217868921102" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1217868921103">
+                      <link role="link" targetNodeId="1.1082485599094" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217867479955">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217867466920">
+              <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1217867464559" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1217867478689">
+                <link role="link" targetNodeId="1.1082485599094" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1217867481865" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitLabelStatement" id="1217867419051">
+          <property name="name" value="endOfTrue" />
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1217863442976">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217863442977">
