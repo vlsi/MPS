@@ -52,10 +52,11 @@
       <add-to-group anchor="last" group-id="EditMenu"/>
     </group>
 
-    <group id="FileSystemViewPopupMenu">
-      <!--<reference ref="CutCopyPasteGroup"/>
-      <separator/>-->
-      <reference ref="VcsGroup"/>
+    <group>
+      <separator/>
+      <action id="ShowInFileView" class="jetbrains.mps.vcs.actions.ShowInFileView" text="Show In File System View"/>
+      <action id="ShowInVcsRootsView" class="jetbrains.mps.vcs.actions.ShowInVcsRootsView" text="Show In VCS Roots View"/>
+      <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
     </group>
 
     <group id="SearchMenu" popup="true">

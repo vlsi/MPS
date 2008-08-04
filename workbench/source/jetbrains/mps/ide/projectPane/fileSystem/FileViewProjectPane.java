@@ -141,7 +141,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       @Override
       public void fileOpened(FileEditorManager source, VirtualFile file) {
         if (myProjectView.isAutoscrollFromSource(getId())) {
-          selectNode(file);
+          selectNode(file, false);
         }
       }
 
@@ -150,7 +150,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
         if (myProjectView.isAutoscrollFromSource(getId())) {
           VirtualFile newFile = event.getNewFile();
           if (newFile != null) {
-            selectNode(newFile);
+            selectNode(newFile, false);
           }
         }
       }
@@ -191,7 +191,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   }
 
   public void select(Object element, VirtualFile file, boolean requestFocus) {
-    selectNode(file);
+    selectNode(file, false);
   }
 
   public SelectInTarget createSelectInTarget() {
@@ -243,13 +243,16 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     }, "navigate", "");
   }
 
-  public void selectNode(@NotNull VirtualFile file) {
+  public void selectNode(@NotNull VirtualFile file, boolean changeView) {
     MPSTreeNode nodeToSelect = getNode(file);
 
     if (nodeToSelect != null) {
       TreePath treePath = new TreePath(nodeToSelect.getPath());
       getTree().setSelectionPath(treePath);
       getTree().scrollPathToVisible(treePath);
+      if (changeView) {
+        myProjectView.changeView(getId());
+      }
     } else {
       LOG.info("Can not find file " + file + " in tree.");
     }
@@ -266,8 +269,17 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private MPSTreeNode getNode(MPSTreeNode rootTreeNode, VirtualFile file) {
     if (rootTreeNode instanceof FileNode) {
       VirtualFile nodeFile = ((FileNode) rootTreeNode).getFile();
-      if ((nodeFile != null) && (nodeFile.getUrl().equals(file.getUrl()))) {
-        return rootTreeNode;
+
+      if (nodeFile != null) {
+        if (nodeFile.getUrl().equals(file.getUrl())) {
+          return rootTreeNode;
+        }
+
+        if (!VfsUtil.isAncestor(nodeFile, file, false)) {
+          return null;
+        }
+      } else {
+        return null;
       }
     }
 

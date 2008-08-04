@@ -57,4 +57,8 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNo
   public VirtualFile getFile() {
     return myFile;
   }
+
+  public String toString(){
+    return myFile.getUrl();
+  }
 }
