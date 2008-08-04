@@ -2167,9 +2167,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (role.equals(child.getRole_())) {
             EditorCell cell = findNodeCell(child);
             if (cell != null) {
-              changeSelectionWRTFocusPolicy(cell);
+              EditorCell firstLeaf = cell.getFirstLeaf(CellConditions.SELECTABLE);
+              if (firstLeaf != null) {
+                changeSelection(firstLeaf);
+                firstLeaf.home();
+                return;
+              }
             }
-            return;
           }
         }
 
@@ -2178,9 +2182,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (role.equals(child.getRole_())) {
             EditorCell cell = findNodeCell(child);
             if (cell != null) {
-              changeSelectionWRTFocusPolicy(cell);
+              EditorCell lastLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
+              if (lastLeaf != null) {
+                changeSelection(lastLeaf);
+                lastLeaf.end();
+                return;
+              }
             }
-            return;
           }
         }
 
@@ -2189,13 +2197,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (nullCell == null) {
           EditorCell cell = findNodeCell(parent);
           if (cell != null) {
-            changeSelectionWRTFocusPolicy(cell);
+            EditorCell firstLeaf = cell.getFirstLeaf(CellConditions.SELECTABLE);
+            changeSelection(firstLeaf);
+            firstLeaf.home();
+            return;
           }
         } else {
-          changeSelectionWRTFocusPolicy(nullCell);
+          EditorCell firstLeaf = nullCell.getFirstLeaf(CellConditions.SELECTABLE);
+          changeSelection(firstLeaf);
+          firstLeaf.home();
         }
-
-        return;
       }
 
       //noinspection ConstantConditions

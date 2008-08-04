@@ -368,6 +368,14 @@ public abstract class EditorCell_Basic implements EditorCell {
     return myCaretX;
   }
 
+  public void home() {
+
+  }
+
+  public void end() {
+
+  }
+
   public Rectangle getBounds() {
     return new Rectangle(getX(), getY(), getWidth(), getHeight());
   }
