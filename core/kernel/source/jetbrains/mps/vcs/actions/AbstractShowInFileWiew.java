@@ -20,7 +20,6 @@ public abstract class AbstractShowInFileWiew extends AbstractVcsAction {
     final Project project = e.getProject();
     VirtualFile selectedFile = calculateSelectedFile(e);
     if (selectedFile != null) {
-      System.out.println("goto file " + selectedFile);
       assert project != null;
       FileViewProjectPane view = getView(project);
       view.selectNode(selectedFile, true);
