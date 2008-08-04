@@ -31,7 +31,6 @@ public class VcsRootsManager  implements ProjectComponent {
   }
 
   public void projectClosed() {
-    // TODO
   }
 
   @NonNls
@@ -41,11 +40,9 @@ public class VcsRootsManager  implements ProjectComponent {
   }
 
   public void initComponent() {
-    // TODO
   }
 
   public void disposeComponent() {
-    // TODO
   }
 
   private void addDirectoryMappings() {
@@ -53,16 +50,6 @@ public class VcsRootsManager  implements ProjectComponent {
 
     List<IModule> allModules = MPSModuleRepository.getInstance().getAllModules();
     Map<AbstractVcs, Set<VirtualFile>> vcss = new HashMap<AbstractVcs, Set<VirtualFile>>();
-
-//    for (VcsDirectoryMapping map : myVcsManager.getDirectoryMappings()){
-//      AbstractVcs vcs = myVcsManager.findVcsByName(map.getVcs());
-//      Set<VirtualFile> files = vcss.get(vcs);
-//      if (files == null) {
-//        files = new HashSet<VirtualFile>();
-//        vcss.put(vcs, files);
-//      }
-//      files.add(VFileSystem.getFile(map.getDirectory()));
-//    }
 
     for (IModule module : allModules) {
       if (module.isPackaged()) continue;

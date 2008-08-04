@@ -561,45 +561,18 @@
                   <link role="variableDeclaration" targetNodeId="1203607679500" resolveInfo="modules" />
                 </node>
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203607738016">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1204633664490">
-                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204633664491">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204633709499">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205835512167">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204633709505">
-                            <link role="variableDeclaration" targetNodeId="1203607751022" resolveInfo="result" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1204633709501">
-                            <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204633709502">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1204633709503">
-                                <link role="variable" targetNodeId="1203607738014" resolveInfo="module" />
-                              </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204633709504">
-                                <link role="baseMethodDeclaration" targetNodeId="8.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217860897755">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217860897756">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217860897757">
+                        <link role="variableDeclaration" targetNodeId="1203607751022" resolveInfo="result" />
                       </node>
-                    </node>
-                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1204633714541">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204633715356">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204633715357">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204633715358">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1204633715359">
-                              <link role="variable" targetNodeId="1203607738014" resolveInfo="module" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204633715360">
-                              <link role="baseMethodDeclaration" targetNodeId="8.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
-                            </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1217860897758">
+                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217860897759">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1217860897760">
+                            <link role="variable" targetNodeId="1203607738014" resolveInfo="module" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204633715361">
-                            <link role="baseMethodDeclaration" targetNodeId="6.~String.toLowerCase():java.lang.String" resolveInfo="toLowerCase" />
-                          </node>
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204633715362">
-                          <link role="baseMethodDeclaration" targetNodeId="6.~String.contains(java.lang.CharSequence):boolean" resolveInfo="contains" />
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204633715363">
-                            <property name="value" value="sandbox" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217860897761">
+                            <link role="baseMethodDeclaration" targetNodeId="8.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
                           </node>
                         </node>
                       </node>

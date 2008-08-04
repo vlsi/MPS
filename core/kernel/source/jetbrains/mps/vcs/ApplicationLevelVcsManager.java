@@ -6,7 +6,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vcs.*;
-import com.intellij.ui.content.MessageView;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -24,6 +23,12 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(ApplicationLevelVcsManager.class);
   }
 
+  private final ProjectManager myProjectManager;
+
+  public ApplicationLevelVcsManager(ProjectManager projectManager) {
+    myProjectManager = projectManager;
+  }
+
   @NonNls
   @NotNull
   public String getComponentName() {
@@ -39,9 +44,9 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
 
   @Nullable
   public Project getProjectForFile(VirtualFile f) {
-    Project[] projects = ApplicationManager.getApplication().getComponent(ProjectManager.class).getOpenProjects();
+    Project[] projects = myProjectManager.getOpenProjects();
     for (Project project : projects) {
-      AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(f);
+      AbstractVcs vcs = getVcsForFile(f, project);
       if (vcs != null) {
         return project;
       }
@@ -49,11 +54,15 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     return null;
   }
 
+  private AbstractVcs getVcsForFile(VirtualFile f, Project project) {
+    return ProjectLevelVcsManager.getInstance(project).getVcsFor(f);
+  }
+
   @Nullable
   public AbstractVcs getVcsForFile(VirtualFile f) {
-    Project[] projects = ApplicationManager.getApplication().getComponent(ProjectManager.class).getOpenProjects();
+    Project[] projects = myProjectManager.getOpenProjects();
     for (Project project : projects) {
-      AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(f);
+      AbstractVcs vcs = getVcsForFile(f, project);
       if (vcs != null) {
         return vcs;
       }
@@ -61,7 +70,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     return null;
   }
 
-  public void assertModelFileNotInConflict(final SModelDescriptor modelDescriptor) {
+  public void checkModelFileNotInConflict(final SModelDescriptor modelDescriptor) {
     IFile ifile = modelDescriptor.getModelFile();
     if (isInConflict(ifile)) {
       AbstractVcs vcs = getVcsForFile(VFileSystem.getFile(ifile));
@@ -74,7 +83,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
   }
 
   public boolean isInConflict(IFile ifile) {
-    return StatusUtil.isInConflict(ifile, ApplicationManager.getApplication().getComponent(ProjectManager.class).getOpenProjects());
+    return StatusUtil.isInConflict(ifile, myProjectManager.getOpenProjects());
   }
 
 }

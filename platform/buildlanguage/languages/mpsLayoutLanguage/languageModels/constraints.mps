@@ -6854,15 +6854,15 @@
     <node role="canBeChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1213107435808">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213107435809">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213107435810">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1213107435811">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213107435812">
-              <property name="value" value="delete" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107435813">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_link" id="1213107435814" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1213107435815">
+          <node role="expression" type="jetbrains.mps.baseLanguage.strings.structure.NPEEqualsExpression" id="1217861873988">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217861873989">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_link" id="1217861873991" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1217861873992">
                 <link role="property" targetNodeId="12.1071599776563" resolveInfo="role" />
               </node>
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217861873993">
+              <property name="value" value="delete" />
             </node>
           </node>
         </node>

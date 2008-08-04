@@ -1,9 +1,6 @@
 package jetbrains.mps.smodel.persistence;
 
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
@@ -11,14 +8,10 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
-import jetbrains.mps.vcs.merge.Merger;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -28,11 +21,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.*;
-
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
-
-import javax.swing.SwingUtilities;
 
 /**
  * @author Kostik
@@ -58,7 +46,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       }
     }
 
-    ApplicationLevelVcsManager.instance().assertModelFileNotInConflict(modelDescriptor);
+    ApplicationLevelVcsManager.instance().checkModelFileNotInConflict(modelDescriptor);
 
     SModel model = ModelPersistence.readModel(modelDescriptor.getModelFile());
     LOG.assertLog(model.getUID().equals(modelDescriptor.getModelUID()),

@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.SwingUtilities;
 
@@ -20,6 +21,7 @@ import java.io.IOException;
 import java.io.ByteArrayOutputStream;
 
 public class ModelMergeTool implements DiffTool {
+  private static final Logger LOG = Logger.getLogger(ModelMergeTool.class);
 
   public void show(DiffRequest request) {
     ModelMergeRequest mrequest = (ModelMergeRequest) request;
@@ -55,9 +57,9 @@ public class ModelMergeTool implements DiffTool {
         mrequest.resolved(baos.toByteArray());
       }
     } catch (JDOMException e) {
-      e.printStackTrace();
+      LOG.error(e);
     } catch (IOException e) {
-      e.printStackTrace();
+      LOG.error(e);
     }
   }
 

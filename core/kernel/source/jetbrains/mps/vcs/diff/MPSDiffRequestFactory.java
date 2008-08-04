@@ -13,11 +13,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import jetbrains.mps.logging.Logger;
 
 import java.io.OutputStream;
 import java.io.IOException;
 
 public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
+  private static final Logger LOG = Logger.getLogger(MPSDiffRequestFactory.class);
 
   @Override
   public MergeRequest createMergeRequest(String leftText, String rightText, String originalContent, @NotNull VirtualFile file, Project project, @Nullable ActionButtonPresentation actionButtonPresentation) {
@@ -51,7 +53,7 @@ public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
         outputStream.write(result);
         outputStream.close();
       } catch (IOException e) {
-        e.printStackTrace();
+        LOG.error(e);
       }
     }
   }

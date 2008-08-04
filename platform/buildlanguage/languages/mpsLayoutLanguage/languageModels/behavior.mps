@@ -1831,19 +1831,14 @@
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1213877333837">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1213877333838">
-              <property name="value" value="0" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877333839">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877333840">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877333841" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1213877333842">
-                  <link role="link" targetNodeId="1.1204116468206" />
-                </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877333839">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877333840">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877333841" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1213877333842">
+                <link role="link" targetNodeId="1.1204116468206" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.CountOperation" id="1213877333843" />
             </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsEmptyOperation" id="1217861977209" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement" id="1213877333844">

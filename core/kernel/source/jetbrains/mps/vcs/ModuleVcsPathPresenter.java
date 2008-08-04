@@ -31,10 +31,10 @@ public class ModuleVcsPathPresenter extends VcsPathPresenter {
     if (file == null) return "";
     return ApplicationManager.getApplication().runReadAction(new Computable<String>() {
       public String compute() {
-        /*In IDEA this method return string in following form:
-       * [module name]/relativeToModuleRootPath
-       * see ModuleVcsPathPresenter in IDEA
-       * */
+        // In IDEA this method return string in following form:
+        // [module name]/relativeToModuleRootPath
+        // see ModuleVcsPathPresenter in IDEA
+        //
         VirtualFile baseDir = myProject.getBaseDir();
         if (baseDir != null) {
           if (VfsUtil.isAncestor(baseDir, file, true)) {

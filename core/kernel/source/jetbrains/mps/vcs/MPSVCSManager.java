@@ -34,6 +34,10 @@ import javax.swing.SwingUtilities;
 public class MPSVCSManager implements ProjectComponent {
   public static final Logger LOG = Logger.getLogger(MPSVCSManager.class);
 
+  public static MPSVCSManager getInstance(Project project) {
+    return project.getComponent(MPSVCSManager.class);
+  }
+
   private final Project myProject;
   private final ProjectLevelVcsManager myManager;
   private final ChangeListManager myChangeListManager;
@@ -60,10 +64,6 @@ public class MPSVCSManager implements ProjectComponent {
     myProject = project;
     myManager = manager;
     myChangeListManager = clmanager;
-  }
-
-  public static MPSVCSManager getInstance(Project project) {
-    return project.getComponent(MPSVCSManager.class);
   }
 
   private void renameInternal(final VirtualFile from, final VirtualFile to) {
