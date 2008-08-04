@@ -9,14 +9,16 @@ import com.intellij.openapi.actionSystem.Presentation;
 import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class AbstractShowInFileWiew extends AbstractVcsAction {
 
   protected void actionPerformed(VcsContext e) {
     final Project project = e.getProject();
-    VirtualFile selectedFile = e.getSelectedFile();
+    VirtualFile selectedFile = calculateSelectedFile(e);
     if (selectedFile != null) {
       System.out.println("goto file " + selectedFile);
       assert project != null;
@@ -25,12 +27,22 @@ public abstract class AbstractShowInFileWiew extends AbstractVcsAction {
     }
   }
 
+  @Nullable
+  private VirtualFile calculateSelectedFile(VcsContext e) {
+    VirtualFile[] selectedFiles = e.getSelectedFiles();
+    if (selectedFiles.length == 0){
+      return null;
+    }
+
+    return VfsUtil.getCommonAncestors(selectedFiles)[0];
+  }
+
   protected abstract FileViewProjectPane getView(Project project);
 
   protected void update(VcsContext vcsContext, Presentation presentation) {
     List<VirtualFile> baseDirs = getRoots(vcsContext);
 
-    VirtualFile selectedFile = vcsContext.getSelectedFile();
+    VirtualFile selectedFile = calculateSelectedFile(vcsContext);
     if (selectedFile != null) {
       for (VirtualFile baseDir : baseDirs) {
         if (canScroll(baseDir, selectedFile)) {
