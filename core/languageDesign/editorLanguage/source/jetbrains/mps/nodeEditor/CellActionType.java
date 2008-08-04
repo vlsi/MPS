@@ -36,6 +36,8 @@ public enum CellActionType {
   RIGHT_TRANSFORM,
   LEFT_TRANSFORM,
 
+  COMPLETE,
+
   FOLD,
   UNFOLD,
   FOLD_ALL,

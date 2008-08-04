@@ -56,8 +56,9 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         if (endEditKeystroke ||
           actionType == CellActionType.INSERT ||
           actionType == CellActionType.INSERT_BEFORE) {
-          selectedCell.validate(strictMatching, true);
-          return true;
+          if (selectedCell.validate(strictMatching, true)) {
+            return true;
+          }
         }
 
         if (actionType == CellActionType.RIGHT_TRANSFORM || actionType == CellActionType.LEFT_TRANSFORM) {
@@ -76,7 +77,9 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
 
     // process action
     if (selectedCell != null) {
-      if (selectedCell instanceof EditorCell_Label && selectedCell.getUserObject(EditorCell.ROLE) == null && (CellActionType.INSERT.equals(actionType) || CellActionType.INSERT_BEFORE.equals(actionType))) {
+      if (selectedCell instanceof EditorCell_Label &&
+        selectedCell.getUserObject(EditorCell.ROLE) == null &&
+        (CellActionType.INSERT.equals(actionType) || CellActionType.INSERT_BEFORE.equals(actionType))) {        
         EditorCell cellWithRole = new ChildrenCollectionFinder(selectedCell, actionType == CellActionType.INSERT).find();
         if (cellWithRole != null && cellWithRole.executeAction(actionType)) {
           return true;
@@ -90,16 +93,6 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       }
 
       if (!keyEvent.isConsumed()) {        
-        // auto-completion (AKA node substitution)
-        if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown() && !(keyEvent.isAltDown() || keyEvent.isShiftDown())) ||
-          (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && (!keyEvent.isAltDown()) && !(keyEvent.isControlDown() || keyEvent.isShiftDown()))) {
-          if (editorContext.getNodeEditorComponent().activateNodeSubstituteChooser(selectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
-            LOG.debug("SUBSTITUTE");
-            return true;
-          }
-          LOG.debug("NO SUBSTITUTE");
-        }
-
         if (editorContext.getNodeEditorComponent().getNodeRangeSelection().isSelectionKeystroke(keyEvent)) {
           if (editorContext.getNodeEditorComponent().getNodeRangeSelection().activate(keyEvent)) {
             return true;

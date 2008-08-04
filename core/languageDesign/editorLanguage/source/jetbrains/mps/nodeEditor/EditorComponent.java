@@ -36,6 +36,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.NodeEditorActions.SelectUp;
 import jetbrains.mps.nodeEditor.NodeEditorActions.SelectDown;
 import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
+import jetbrains.mps.nodeEditor.NodeEditorActions.Complete;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -268,6 +269,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     myActionMap.put(CellActionType.RIGHT_TRANSFORM, new CellAction_SideTransform(CellSide.RIGHT));
     myActionMap.put(CellActionType.LEFT_TRANSFORM, new CellAction_SideTransform(CellSide.LEFT));
+
+    myActionMap.put(CellActionType.COMPLETE, new NodeEditorActions.Complete());
 
     myActionMap.put(CellActionType.SHOW_MESSAGE, new ShowMessage());
 
@@ -968,14 +971,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_END && keyEvent.getModifiers() == 0) {
       return CellActionType.END;
     }
-
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.isShiftDown() && !(keyEvent.isControlDown() || keyEvent.isAltDown())) {
       return CellActionType.SELECT_HOME;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_END && keyEvent.isShiftDown() && !(keyEvent.isControlDown() || keyEvent.isAltDown())) {
       return CellActionType.SELECT_END;
     }
-
     if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN && keyEvent.getModifiers() == 0) {
       return CellActionType.PAGE_DOWN;
     }
@@ -988,7 +989,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.isShiftDown() && !(keyEvent.isControlDown() || keyEvent.isAltDown())) {
       return CellActionType.PREV;
     }
-
+    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown() && !(keyEvent.isAltDown() || keyEvent.isShiftDown())) {
+      return CellActionType.COMPLETE;
+    }
     if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
       return CellActionType.SHOW_MESSAGE;
     }
