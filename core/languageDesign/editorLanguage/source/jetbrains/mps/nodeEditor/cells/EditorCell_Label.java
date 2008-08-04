@@ -38,6 +38,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     setAction(CellActionType.LEFT, new MoveLeft(false));
     setAction(CellActionType.RIGHT, new MoveRight(false));
 
+    setAction(CellActionType.LOCAL_HOME, new LocalHome());
+    setAction(CellActionType.LOCAL_END, new LocalEnd());
+
     setAction(CellActionType.SELECT_RIGHT, new MoveRight(true));
     setAction(CellActionType.SELECT_LEFT, new MoveLeft(true));
 
@@ -339,8 +342,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
     if (isNotApplicableKeyEvent(keyEvent)) return false;                                               
 
-    if (processImmutableKeyPressed(keyEvent)) return true;
-
     if (processMutableKeyPressed(keyEvent, allowErrors)) {
       getEditorContext().flushEvents();      
 
@@ -492,66 +493,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     if ("".equals(getText()) && isBigCell()) {
       getSNode().delete();
     }
-  }
-
-  public boolean processImmutableKeyPressed(KeyEvent keyEvent) {
-    if (isNotApplicableKeyEvent(keyEvent)) return false;
-
-    myCaretIsVisible = true;
-
-    String myText = myTextLine.getText();
-    int caretPosition = myTextLine.getCaretPosition();
-    EditorComponent editor = getEditorContext().getNodeEditorComponent();
-
-    if ((keyEvent.isControlDown() && keyEvent.getKeyCode() == KeyEvent.VK_LEFT)) {
-      if (caretPosition <= 0) {
-        return false;
-      }
-
-      int position = 0;
-      if (!isFirstPositionAllowed()) {
-        position++;
-      }
-
-      if (!isCaretPositionAllowed(position)) {
-        return false;
-      }
-
-      if (position == getCaretPosition()) {
-        return false;
-      }
-
-      setCaretPosition(position, keyEvent.isShiftDown());
-      editor.resetLastCaretX();
-      ensureCaretVisible();
-      return true;
-    }
-
-    if (keyEvent.isControlDown() && keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
-      if (caretPosition >= myText.length()) {
-        return false;
-      }
-
-      int position = myText.length();
-      if (!isLastPositionAllowed()) {
-        position--;
-      }
-
-      if (!isCaretPositionAllowed(position)) {
-        return false;
-      }
-
-      if (position == getCaretPosition()) {
-        return false;
-      }
-
-      setCaretPosition(position, keyEvent.isShiftDown());
-      editor.resetLastCaretX();
-      ensureCaretVisible();
-      return true;
-    }
-
-    return false;
   }
 
   public String getSelectedText() {
@@ -747,6 +688,26 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     public void execute(EditorContext context) {
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
       CopyPasteUtil.copyTextToClipboard(label.getSelectedText());
+    }
+  }
+
+  private class LocalHome extends EditorCellAction {
+    public boolean canExecute(EditorContext context) {
+      return !isFirstCaretPosition() && isFirstPositionAllowed();
+    }
+
+    public void execute(EditorContext context) {
+      setCaretPosition(0);
+    }
+  }
+
+  private class LocalEnd extends EditorCellAction {
+    public boolean canExecute(EditorContext context) {
+      return !isLastCaretPosition() && isLastPositionAllowed();
+    }
+
+    public void execute(EditorContext context) {
+      setCaretPosition(getText().length());
     }
   }
 
