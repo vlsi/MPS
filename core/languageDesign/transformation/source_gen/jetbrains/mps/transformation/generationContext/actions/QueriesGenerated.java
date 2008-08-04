@@ -15,11 +15,14 @@ import java.util.ArrayList;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.SNode;
 
 public class QueriesGenerated {
 
@@ -46,7 +49,13 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_Base"), _context.getModel(), operationContext.getScope());
+          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_Base"), _context.getModel(), operationContext.getScope())).where(new IWhereFilter <SNode>() {
+
+            public boolean accept(SNode it) {
+              return !(SConceptPropertyOperations.getBoolean(it, "abstract"));
+            }
+
+          }).toListSequence();
         }
 
       };

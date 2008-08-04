@@ -25,6 +25,7 @@
   <dependencies>
     <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
     <dependency reexport="false">jetbrains.mps.transformationTest#1210261198005</dependency>
+    <dependency reexport="false">JDK</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>

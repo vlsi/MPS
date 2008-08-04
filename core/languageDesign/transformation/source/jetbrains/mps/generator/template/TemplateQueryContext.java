@@ -85,4 +85,33 @@ public class TemplateQueryContext {
   public SNode getPreviousInputNodeByMappingLabel(String label) {
     return myGenerator.getPreviousInputNodeByMappingName(label);
   }
+
+  // user objects
+
+  public Object putTransientObject(Object key, Object o) {
+    myGenerator.getGeneratorSessionContext().putTransientObject(key, o);
+    return o;
+  }
+
+  public Object getTransientObject(Object key) {
+    return myGenerator.getGeneratorSessionContext().getTransientObject(key);
+  }
+
+  public Object putStepObject(Object key, Object o) {
+    myGenerator.getGeneratorSessionContext().putStepObject(key, o);
+    return o;
+  }
+
+  public Object getStepObject(Object key) {
+    return myGenerator.getGeneratorSessionContext().getStepObject(key);
+  }
+
+  public Object putSessionObject(Object key, Object o) {
+    myGenerator.getGeneratorSessionContext().putSessionObject(key, o);
+    return o;
+  }
+
+  public Object getSessionObject(Object key) {
+    return myGenerator.getGeneratorSessionContext().getSessionObject(key);
+  }
 }

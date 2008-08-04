@@ -24,12 +24,13 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <maxImportIndex value="5" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.transformation.generationContext.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
+  <import index="6" modelUID="java.lang@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216860049619">
     <property name="name" value="GenerationContextOp_Base" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
@@ -263,6 +264,43 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217884725459">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="inputNode" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217889725928">
+    <property name="name" value="GenerationContextOp_SessionObjectAccess" />
+    <link role="extends" targetNodeId="1217889960776" resolveInfo="GenerationContextOp_UserObjectAccessBase" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217889725929">
+      <property name="value" value="session object" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217889725930">
+      <property name="value" value="access to user object" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1217891230226">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1197029536315" resolveInfo="lvalue" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1217889725931">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217889960776">
+    <property name="name" value="GenerationContextOp_UserObjectAccessBase" />
+    <link role="extends" targetNodeId="1216860049619" resolveInfo="GenerationContextOp_Base" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1217889977080">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1217889993472">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1217022095863" resolveInfo="returnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217889997318">
+        <link role="classifier" targetNodeId="6.~Object" resolveInfo="Object" />
+      </node>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217890689512">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="userKey" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="3.1068431790191" resolveInfo="Expression" />
     </node>
