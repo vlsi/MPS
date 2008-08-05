@@ -14,5 +14,5 @@ public abstract class EditorCellAction {
     return true;
   }
 
-  public abstract void execute(EditorContext context);
+  public abstract void execute(EditorContext context); 
 }

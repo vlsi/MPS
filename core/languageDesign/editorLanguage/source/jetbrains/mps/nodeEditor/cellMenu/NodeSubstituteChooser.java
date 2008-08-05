@@ -53,7 +53,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (myPopupWindow == null) {
       myPopupWindow = new PopupWindow(getEditorWindow());
     }
-    return myPopupWindow;
+    return myPopupWindow;                                       
   }
 
   private Window getEditorWindow() {
@@ -65,9 +65,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   public void setLocationRelative(EditorCell cell) {
-    Component component = cell.getEditorContext().getNodeEditorComponent();
-    if (component.isShowing()) {
-      Point anchor = component.getLocationOnScreen();
+    if (myEditorComponent.isShowing()) {
+      Point anchor = myEditorComponent.getLocationOnScreen();
       getPopupWindow().setRelativeCell(cell);
       getPopupWindow().relayout();
       myPatternEditorLocation = new Point(anchor.x + cell.getX(), anchor.y + +cell.getY());
