@@ -23,6 +23,7 @@ import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class IntentionsSupport {
   static final long INTENTION_SHOW_DELAY = 700;
@@ -30,7 +31,8 @@ public class IntentionsSupport {
   private AbstractAction myShowIntentionsAction;
   private Point myLightBulbLocation = new Point();
   private LightBulbMenu myLightBulb;
-  private Thread myShowIntentionsThread = new Thread();
+
+  private AtomicReference<Thread> myShowIntentionsThread = new AtomicReference<Thread>();
 
   private EditorComponent myEditor;
 
@@ -66,12 +68,15 @@ public class IntentionsSupport {
 
     myEditor.addCellSelectionListener(new CellSelectionListener() {
       public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
-        myShowIntentionsThread.interrupt();
+        Thread thread = myShowIntentionsThread.get();
+        if (thread != null) {
+          thread.interrupt();
+        }
 
         hideLightBulb();
         myShowIntentionsAction.setEnabled(false);
-
-        myShowIntentionsThread = new Thread("Intentions") {
+               
+        myShowIntentionsThread.set(new Thread("Intentions") {
           public void run() {
             try {
               final boolean[] enabledPresent = new boolean[1];
@@ -105,12 +110,15 @@ public class IntentionsSupport {
                   }
                 }
               });
+
+              myShowIntentionsThread.compareAndSet(this, null);
             } catch (InterruptedException e) {
             } catch (RuntimeInterruptedException e) {
             }
           }
-        };
-        myShowIntentionsThread.start();
+        });
+
+        myShowIntentionsThread.get().start();
       }
     });
   }
