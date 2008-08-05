@@ -69,6 +69,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "referenceNode", true) != null;
   }
 
+  public static boolean ifMacro_Condition_1217970163385(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "referenceNode", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_1217970189759(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "referenceNode", true) != null;
+  }
+
   public static SNode sourceNodeQuery_1216862267891(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // delegate reduction to operation
     return SLinkOperations.getTarget(_context.getNode(), "operation", true);
@@ -193,6 +201,30 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1217963768161(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "referenceNode", true);
+  }
+
+  public static SNode sourceNodeQuery_1217970163373(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1217970163396(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "referenceNode", true);
+  }
+
+  public static SNode sourceNodeQuery_1217970163404(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "messageText", true);
+  }
+
+  public static SNode sourceNodeQuery_1217970189747(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1217970189770(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "referenceNode", true);
+  }
+
+  public static SNode sourceNodeQuery_1217970189778(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "messageText", true);
   }
 
 }
