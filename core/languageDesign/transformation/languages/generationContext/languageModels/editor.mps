@@ -168,7 +168,7 @@
         <property name="text" value="-&gt;" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1217960517730">
-        <property name="noTargetText" value="&lt;no reference node&gt;" />
+        <property name="noTargetText" value="&lt;node&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1217960407512" />
       </node>
     </node>

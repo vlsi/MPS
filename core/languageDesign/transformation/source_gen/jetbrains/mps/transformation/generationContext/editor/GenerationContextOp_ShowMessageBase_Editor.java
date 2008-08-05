@@ -121,7 +121,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
   public EditorCell createRefNode1217960517730(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("referenceNode");
-    provider.setNoTargetText("<no reference node>");
+    provider.setNoTargetText("<node>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode1217960517730_internal(context, node, provider);
