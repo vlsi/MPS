@@ -1009,7 +1009,7 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
-  public static List sourceNodesQuery_1199624932349(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1199624932349(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> paramDecls = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
     int idx = 0;
     List<SNode> res = new ArrayList<SNode>();
@@ -1023,15 +1023,15 @@ public class QueriesGenerated {
     return res;
   }
 
-  public static List sourceNodesQuery_1199644424783(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1199644424783(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
 
-  public static List sourceNodesQuery_1199712173374(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1199712173374(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
 
-  public static List sourceNodesQuery_1201044612684(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1201044612684(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> paramDecls = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
     int idx = 0;
     List<SNode> res = new ArrayList<SNode>();
@@ -1046,7 +1046,7 @@ public class QueriesGenerated {
     return res;
   }
 
-  public static List sourceNodesQuery_1201187449746(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1201187449746(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
     int BEGIN = labels[0];
     int END = labels[1];
@@ -1105,11 +1105,11 @@ public class QueriesGenerated {
     return results;
   }
 
-  public static List sourceNodesQuery_1201382476594(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1201382476594(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "case", true);
   }
 
-  public static List sourceNodesQuery_1201781007728(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1201781007728(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
     int idx = 1;
     List<SNode> ptypes = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
@@ -1131,7 +1131,7 @@ public class QueriesGenerated {
     return res;
   }
 
-  public static List sourceNodesQuery_1201781007797(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1201781007797(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
     int idx = 1;
     List<SNode> res = new ArrayList<SNode>();
@@ -1144,11 +1144,11 @@ public class QueriesGenerated {
     return res;
   }
 
-  public static List sourceNodesQuery_1201781792604(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1201781792604(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return FunctionTypeUtil.getAllAdaptableClassifierTypes(_context.getGenerator());
   }
 
-  public static List sourceNodesQuery_1201781825032(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1201781825032(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     int idx = 1;
     List<SNode> res = new ArrayList<SNode>();
     for(SNode ft : FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(_context.getNode())) {
@@ -1161,15 +1161,15 @@ public class QueriesGenerated {
     return res;
   }
 
-  public static List sourceNodesQuery_1201782654025(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1201782654025(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return FunctionTypeUtil.getAllFunctionTypes(_context.getInputModel());
   }
 
-  public static List sourceNodesQuery_1201783317579(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1201783317579(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return FunctionTypeUtil.getAdaptableClassifierTypeTargets(_context.getNode(), _context.getGenerator());
   }
 
-  public static List sourceNodesQuery_1202148923827(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1202148923827(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> paramTypes = new ArrayList<SNode>();
     if ((SLinkOperations.getTarget(_context.getNode(), "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
       paramTypes.add(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(_context.getNode()));
@@ -1178,7 +1178,7 @@ public class QueriesGenerated {
     return paramTypes;
   }
 
-  public static List sourceNodesQuery_1202761306202(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1202761306202(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> ptypes = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
     List<SNode> result = new ArrayList<SNode>();
     for(SNode pt : ptypes) {
@@ -1187,17 +1187,17 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1202761732426(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1202761732426(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode adaptable = (SNode)((SNode)_context.getNode()).getUserObject("adaptable");
     return SLinkOperations.getTargets(adaptable, "parameter", true);
   }
 
-  public static List sourceNodesQuery_1202761755981(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1202761755981(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode adaptable = (SNode)((SNode)_context.getNode()).getUserObject("adaptable");
     return SLinkOperations.getTargets(adaptable, "parameter", true);
   }
 
-  public static List sourceNodesQuery_1202817925990(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1202817925990(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
     int idx = 0;
     List<SNode> ptypes = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
@@ -1221,7 +1221,7 @@ public class QueriesGenerated {
     return res;
   }
 
-  public static List sourceNodesQuery_1202821929244(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1202821929244(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> ptypes = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
     List<SNode> result = new ArrayList<SNode>();
     for(SNode pt : ptypes) {
@@ -1230,15 +1230,15 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1203250582108(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1203250582108(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(TypeChecker.getInstance().getTypeOf(_context.getNode()));
   }
 
-  public static List sourceNodesQuery_1203250778897(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1203250778897(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(TypeChecker.getInstance().getTypeOf(_context.getNode()));
   }
 
-  public static List sourceNodesQuery_1203268050251(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1203268050251(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
     List<SNode> res = new ArrayList<SNode>();
     for(SNode pt : SLinkOperations.getTargets(ct, "parameter", true)) {
@@ -1247,7 +1247,7 @@ public class QueriesGenerated {
     return res;
   }
 
-  public static List sourceNodesQuery_1203268224153(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1203268224153(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
     List<SNode> res = new ArrayList<SNode>();
     for(SNode pt : SLinkOperations.getTargets(ct, "parameter", true)) {
@@ -1256,7 +1256,7 @@ public class QueriesGenerated {
     return res;
   }
 
-  public static List sourceNodesQuery_1203686370624(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1203686370624(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
     if (true || ct == null || ((SNode)ct).getUserObject("returnType") == null) {
       return Collections.singletonList(FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(TypeChecker.getInstance().getTypeOf(_context.getNode())));
@@ -1267,19 +1267,19 @@ public class QueriesGenerated {
     }
   }
 
-  public static List sourceNodesQuery_1207224822468(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1207224822468(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "statement", true);
   }
 
-  public static List sourceNodesQuery_1209329471483(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1209329471483(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true);
   }
 
-  public static List sourceNodesQuery_1215429180557(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215429180557(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(TypeChecker.getInstance().getTypeOf(_context.getNode()), "throwsType", true);
   }
 
-  public static List sourceNodesQuery_1215429255567(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215429255567(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
@@ -1295,15 +1295,15 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(TypeChecker.getInstance().getTypeOf(_context.getNode()), "throwsType", true);
   }
 
-  public static List sourceNodesQuery_1215446400341(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215446400341(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(_context.getNode());
   }
 
-  public static List sourceNodesQuery_1215446433989(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215446433989(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "throwsType", true);
   }
 
-  public static List sourceNodesQuery_1215457425734(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215457425734(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> paramDecls = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
     if (ct != null) {
@@ -1325,7 +1325,7 @@ public class QueriesGenerated {
     return Collections.emptyList();
   }
 
-  public static List sourceNodesQuery_1215604254028(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215604254028(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.closures.structure.StringPropertyHolder", null);
@@ -1335,7 +1335,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1215604550393(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215604550393(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(int params = 0 ; params <= 10 ; params = params + 1) {
       for(int exceps = 0 ; exceps <= 10 ; exceps = exceps + 1) {
@@ -1348,7 +1348,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1215605025102(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215605025102(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.closures.structure.StringPropertyHolder", null);
@@ -1358,7 +1358,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1215605064292(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215605064292(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.closures.structure.StringPropertyHolder", null);
@@ -1368,7 +1368,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1215605064379(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215605064379(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.closures.structure.StringPropertyHolder", null);
@@ -1378,7 +1378,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1215605064522(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215605064522(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(int params = 0 ; params <= 10 ; params = params + 1) {
       for(int exceps = 0 ; exceps <= 10 ; exceps = exceps + 1) {
@@ -1391,7 +1391,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1215605125444(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215605125444(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.closures.structure.StringPropertyHolder", null);
@@ -1401,7 +1401,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1215605145584(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215605145584(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.closures.structure.StringPropertyHolder", null);
@@ -1411,7 +1411,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1215605172278(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215605172278(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.closures.structure.StringPropertyHolder", null);
@@ -1421,7 +1421,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1215605177163(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1215605177163(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.closures.structure.StringPropertyHolder", null);

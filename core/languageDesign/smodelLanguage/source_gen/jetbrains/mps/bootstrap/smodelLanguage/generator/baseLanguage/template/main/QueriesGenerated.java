@@ -31,8 +31,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDecl
 import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorsOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation;
@@ -1218,27 +1218,27 @@ public class QueriesGenerated {
     return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1213877508920(_context.getNode());
   }
 
-  public static List sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }
 
-  public static List sourceNodesQuery_1183618936177(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1183618936177(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }
 
-  public static List sourceNodesQuery_1203118690610(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1203118690610(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((Node_GetAncestorOperation)SNodeOperations.getAdapter(_context.getNode())));
   }
 
-  public static List sourceNodesQuery_1203119702930(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1203119702930(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((Node_GetAncestorsOperation)SNodeOperations.getAdapter(_context.getNode())));
   }
 
-  public static List sourceNodesQuery_1203457991461(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1203457991461(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((Node_GetDescendantsOperation)SNodeOperations.getAdapter(_context.getNode())));
   }
 
-  public static List sourceNodesQuery_1206021463571(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1206021463571(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }
 

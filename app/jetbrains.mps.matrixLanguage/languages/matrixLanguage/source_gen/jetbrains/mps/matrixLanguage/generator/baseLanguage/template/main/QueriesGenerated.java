@@ -11,8 +11,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -197,7 +197,7 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
-  public static List sourceNodesQuery_1210160088643(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1210160088643(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> possibleScalarTypes = new ArrayList<SNode>();
     for(SNode root : SModelOperations.getRoots(_context.getInputModel(), null)) {
       for(SNode t : SNodeOperations.getDescendants(root, "jetbrains.mps.matrixLanguage.structure.MatrixLiteral", false)) {
@@ -207,15 +207,15 @@ public class QueriesGenerated {
     return possibleScalarTypes;
   }
 
-  public static List sourceNodesQuery_1210245899051(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1210245899051(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }
 
-  public static List sourceNodesQuery_1210252600184(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1210252600184(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "row", true);
   }
 
-  public static List sourceNodesQuery_1210252661231(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1210252661231(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "items", true);
   }
 

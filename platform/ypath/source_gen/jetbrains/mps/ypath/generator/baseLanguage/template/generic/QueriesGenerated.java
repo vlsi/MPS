@@ -29,8 +29,8 @@ import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
-import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ITranslator;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
@@ -1151,7 +1151,7 @@ public class QueriesGenerated {
     return OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "expression", true));
   }
 
-  public static List sourceNodesQuery_1196716118756(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1196716118756(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> newCandidates = ListSequence.<SNode>fromArray();
     for(SNode foo : SLinkOperations.getTargets(_context.getNode(), "candidates", true)) {
       if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.StatementAggregator")) {
@@ -1164,31 +1164,31 @@ public class QueriesGenerated {
     return newCandidates;
   }
 
-  public static List sourceNodesQuery_1199801680531(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1199801680531(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return OperationsUtil.substituteApplicableOperations(_context.getNode());
   }
 
-  public static List sourceNodesQuery_1199802138419(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1199802138419(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return OperationsUtil.substituteApplicableOperations(_context.getNode());
   }
 
-  public static List sourceNodesQuery_1199878823319(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1199878823319(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return OperationsUtil.substituteApplicableOperations(_context.getNode());
   }
 
-  public static List sourceNodesQuery_1199881860506(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1199881860506(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return OperationsUtil.substituteApplicableOperations(_context.getNode());
   }
 
-  public static List sourceNodesQuery_1199998553583(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1199998553583(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return OperationsUtil.substituteApplicableOperations(_context.getNode());
   }
 
-  public static List sourceNodesQuery_1199998563158(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1199998563158(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return OperationsUtil.substituteApplicableOperations(_context.getNode());
   }
 
-  public static List sourceNodesQuery_1200060391110(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1200060391110(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode origOp = (SNode)_context.getGenerator().getGeneratorSessionContext().getTransientObject("siblings_operation");
     final SNode currOpp = SLinkOperations.getTarget(_context.getNode(), "usedFeature", false);
     return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(origOp)).translate(new ITranslator <SNode, SNode>() {
@@ -1248,7 +1248,7 @@ __switch__:
     }).toListSequence();
   }
 
-  public static List sourceNodesQuery_1200060391177(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1200060391177(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
     _context.getGenerator().getGeneratorSessionContext().putTransientObject("traversal_axis", axis);
     _context.getGenerator().getGeneratorSessionContext().putTransientObject("siblings_operation", _context.getNode());
@@ -1311,7 +1311,7 @@ __switch__:
     }).toListSequence();
   }
 
-  public static List sourceNodesQuery_1200223036886(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1200223036886(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode origOp = (SNode)_context.getGenerator().getGeneratorSessionContext().getTransientObject("siblings_operation");
     final SNode currOpp = SLinkOperations.getTarget(_context.getNode(), "usedFeature", false);
     return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(origOp)).translate(new ITranslator <SNode, SNode>() {
@@ -1371,7 +1371,7 @@ __switch__:
     }).toListSequence();
   }
 
-  public static List sourceNodesQuery_1200223045189(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1200223045189(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
     _context.getGenerator().getGeneratorSessionContext().putTransientObject("traversal_axis", axis);
     _context.getGenerator().getGeneratorSessionContext().putTransientObject("siblings_operation", _context.getNode());
@@ -1434,11 +1434,11 @@ __switch__:
     }).toListSequence();
   }
 
-  public static List sourceNodesQuery_1210075313865(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1210075313865(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return OperationsUtil.substituteApplicableOperations(_context.getNode());
   }
 
-  public static List sourceNodesQuery_1210075990407(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1210075990407(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return OperationsUtil.substituteApplicableOperations(_context.getNode());
   }
 

@@ -289,7 +289,7 @@ public class QueriesGenerated {
     return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.quotation.structure.Quotation", false, false);
   }
 
-  public static List sourceNodesQuery_1196351886675(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1196351886675(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     if (SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true) != null) {
       result.add(SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true));
@@ -303,7 +303,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1196351886802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1196351886802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SModel model = _context.getGenerator().getTargetModel();
     List<SNode> result = new ArrayList<SNode>();
     for(String property : _context.getNode().getPropertyNames()) {
@@ -318,7 +318,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1196351886876(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1196351886876(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SModel model = _context.getGenerator().getTargetModel();
     List<SNode> result = new ArrayList<SNode>();
     for(SReference reference : _context.getNode().getReferences()) {
@@ -338,7 +338,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1196351886984(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1196351886984(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(String refRole : _context.getNode().getReferenceRoles()) {
       BaseAdapter attribute = ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(_context.getNode())), refRole);
@@ -349,7 +349,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1196351887023(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1196351887023(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode child : SNodeOperations.getChildren(_context.getNode())) {
       if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation"))) {
@@ -359,7 +359,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1196351887816(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1196351887816(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     if (SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true) != null) {
       result.add(SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true));
@@ -372,7 +372,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1196871487533(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1196871487533(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SModel model = _context.getGenerator().getTargetModel();
     List<SNode> result = new ArrayList<SNode>();
     for(String property : _context.getNode().getPropertyNames()) {
@@ -384,7 +384,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1201866023937(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1201866023937(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode root = SLinkOperations.getTarget(_context.getNode(), "quotedNode", true);
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> frontier = new ArrayList<SNode>();
@@ -418,7 +418,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1201869846065(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1201869846065(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode root = SLinkOperations.getTarget(_context.getNode(), "quotedNode", true);
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> frontier = new ArrayList<SNode>();

@@ -279,7 +279,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "patternNode", true);
   }
 
-  public static List sourceNodesQuery_1174811353234(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1174811353234(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     result.addAll(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.patterns.structure.PatternVariableDeclaration", false));
     result.addAll(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration", false));
@@ -288,7 +288,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1176737298135(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1176737298135(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation")) {
@@ -298,7 +298,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1176737399740(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1176737399740(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation")) {
@@ -308,7 +308,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1176737411271(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1176737411271(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation")) {
@@ -318,7 +318,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1190931377097(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1190931377097(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList();
     SModel model = _context.getGenerator().getTargetModel();
     for(String propertyName : _context.getNode().getPropertyNames()) {
@@ -334,7 +334,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1190931377192(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1190931377192(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList();
     SModel model = _context.getGenerator().getTargetModel();
     for(String propertyName : _context.getNode().getPropertyNames()) {
@@ -348,7 +348,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1190931377388(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1190931377388(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList();
     SModel model = _context.getGenerator().getTargetModel();
     for(String referentRole : _context.getNode().getReferenceRoles()) {
@@ -366,7 +366,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1190931377535(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1190931377535(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList();
     SModel model = _context.getGenerator().getTargetModel();
     for(String referentRole : _context.getNode().getReferenceRoles()) {
@@ -380,13 +380,13 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1190931377752(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1190931377752(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode mainNode = _context.getNode().getReferent("mainNode");
     String role = _context.getNode().getProperty("childRole");
     return mainNode.getChildren(role);
   }
 
-  public static List sourceNodesQuery_1190931377952(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1190931377952(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     SNode mainNode = _context.getNode().getReferent("mainNode");
     String role = _context.getNode().getProperty("childRole");
@@ -394,7 +394,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1190931378020(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1190931378020(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     SModel model = _context.getGenerator().getTargetModel();
     for(String childRole : _context.getNode().getChildRoles()) {
