@@ -42,6 +42,24 @@ public class QueriesGenerated {
     }
   }
 
+  public static void nodeFactory_NodeSetup_GenerationContextOp_SessionObjectAccess_1217895102264(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_UserObjectAccessBase")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "userKey", SLinkOperations.getTarget(_context.getSampleNode(), "userKey", true), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_GenerationContextOp_StepObjectAccess_1217895169605(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_UserObjectAccessBase")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "userKey", SLinkOperations.getTarget(_context.getSampleNode(), "userKey", true), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_GenerationContextOp_TransientObjectAccess_1217895187935(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_UserObjectAccessBase")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "userKey", SLinkOperations.getTarget(_context.getSampleNode(), "userKey", true), true);
+    }
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IOperation_1216861714161(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
