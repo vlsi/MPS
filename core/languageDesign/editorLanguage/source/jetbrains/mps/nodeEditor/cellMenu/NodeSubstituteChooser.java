@@ -108,6 +108,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       } else {
         getPopupWindow().setVisible(false);
         getPatternEditor().done();
+        getPopupWindow().setRelativeCell(null);
         myPopupActivated = false;
         myEditorComponent.popKeyboardHandler();
       }
