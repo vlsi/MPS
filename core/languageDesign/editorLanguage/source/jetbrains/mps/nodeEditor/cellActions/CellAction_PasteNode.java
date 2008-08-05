@@ -4,14 +4,12 @@ import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.PastePlaceHint;
+import jetbrains.mps.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
@@ -93,13 +91,12 @@ public class CellAction_PasteNode extends EditorCellAction {
     SNode anchor = selectedCell.getSNode();
     if (anchor.getParent() == null) return false;
 
-    //todo nice to merge it with code in PasteNodeUtil
-    LinkDeclaration link = anchor.getParent().getLinkDeclaration(anchor.getRole_());
-    for (SNode node : pasteNodes) {
-      if (!SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(link.getTarget()))) return false;
-    }
+    NodeAndRole nodeAndRole = new NodePaster(pasteNodes).getActualAnchorNode(anchor, anchor.getRole_());
+    if (nodeAndRole == null) return false;
 
-    return new NodePaster(pasteNodes).canPasteRelative(selectedCell.getSNode());
+    EditorCell targetCell = selectedCell.getEditor().findNodeCell(nodeAndRole.myNode);
+    return targetCell.getFirstLeaf(CellConditions.SELECTABLE) == selectedCell &&
+      new NodePaster(pasteNodes).canPasteRelative(nodeAndRole.myNode);
   }
 
   private EditorCell getCellToPasteTo(EditorCell cell) {

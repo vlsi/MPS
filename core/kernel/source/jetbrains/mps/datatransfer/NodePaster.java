@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Author: Sergey Dmitriev.
  * Time: Nov 25, 2003 7:27:37 PM
@@ -168,13 +170,13 @@ public class NodePaster {
   }
 
   private boolean canPasteToParent(SNode anchorNode, String role) {
-    NodeAndRole nodeAndRole = defineActualAnchorNode(anchorNode, role);
+    NodeAndRole nodeAndRole = getActualAnchorNode(anchorNode, role);
     return (nodeAndRole != null && nodeAndRole.myNode != null);
   }
 
   private void pasteToParent(SNode pasteTarget, String role, PastePlaceHint placeHint) {
     SNode actualPasteTarget;
-    NodeAndRole nodeAndRole = defineActualAnchorNode(pasteTarget, role);
+    NodeAndRole nodeAndRole = getActualAnchorNode(pasteTarget, role);
     SNode actualAnchorNode = nodeAndRole.myNode;
     String actualRole = nodeAndRole.myRole;
     actualPasteTarget = actualAnchorNode.getParent();
@@ -184,13 +186,13 @@ public class NodePaster {
     pasteToTarget(actualPasteTarget, actualAnchorNode, actualRole, placeHint);
   }
 
-  private NodeAndRole defineActualAnchorNode(SNode anchorNode, String firstRole) {
+  public NodeAndRole getActualAnchorNode(SNode anchorNode, String firstRole) {
     String role = firstRole;
     while (anchorNode != null) {
       SNode container = anchorNode.getParent();
       if (container == null) {
         break;
-      }
+      }                       
       if (canPasteToTarget(container, role)) {
         return new NodeAndRole(anchorNode, role);
       }
@@ -250,7 +252,7 @@ public class NodePaster {
     return role;
   }
 
-  private static class NodeAndRole {
+  public static class NodeAndRole {
     public String myRole;
     public SNode myNode;
 
