@@ -28,7 +28,10 @@ public class CellAction_Insert extends EditorCellAction {
     EditorCell contextCell = context.getContextCell();
     if (!before && contextCell.isFirstPositionInBigCell() && !(contextCell.isLastPositionInBigCell())) {
       before = true;
-    }    
+    }
+    if (before && contextCell.isLastPositionInBigCell() && !(contextCell.isFirstPositionInBigCell())) {
+      before = false;
+    }
     myListHandler.startInsertMode(context, contextCell, before);
   }
 }
