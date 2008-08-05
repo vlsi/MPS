@@ -21,15 +21,6 @@ public class PropertyDeclaration extends BaseConcept implements IProjectComponen
     super(node);
   }
 
-  public static PropertyDeclaration newInstance(SModel sm, boolean init) {
-    return (PropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PropertyDeclaration newInstance(SModel sm) {
-    return PropertyDeclaration.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(PropertyDeclaration.NAME);
   }
@@ -76,6 +67,15 @@ public class PropertyDeclaration extends BaseConcept implements IProjectComponen
 
   public void setPropertyValue(PropertyValueExpression node) {
     super.setChild(PropertyDeclaration.PROPERTY_VALUE, node);
+  }
+
+
+  public static PropertyDeclaration newInstance(SModel sm, boolean init) {
+    return (PropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PropertyDeclaration newInstance(SModel sm) {
+    return PropertyDeclaration.newInstance(sm, false);
   }
 
 }

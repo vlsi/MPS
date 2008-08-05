@@ -16,21 +16,21 @@ public class ImportProject extends BaseConcept {
     super(node);
   }
 
-  public static ImportProject newInstance(SModel sm, boolean init) {
-    return (ImportProject)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.ImportProject", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ImportProject newInstance(SModel sm) {
-    return ImportProject.newInstance(sm, false);
-  }
-
-
   public Project getProject() {
     return (Project)this.getReferent(ImportProject.PROJECT);
   }
 
   public void setProject(Project node) {
     super.setReferent(ImportProject.PROJECT, node);
+  }
+
+
+  public static ImportProject newInstance(SModel sm, boolean init) {
+    return (ImportProject)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.ImportProject", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ImportProject newInstance(SModel sm) {
+    return ImportProject.newInstance(sm, false);
   }
 
 }

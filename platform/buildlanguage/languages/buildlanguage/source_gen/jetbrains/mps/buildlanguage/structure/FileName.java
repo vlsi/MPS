@@ -15,21 +15,21 @@ public class FileName extends PropertyValueExpression {
     super(node);
   }
 
-  public static FileName newInstance(SModel sm, boolean init) {
-    return (FileName)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.FileName", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static FileName newInstance(SModel sm) {
-    return FileName.newInstance(sm, false);
-  }
-
-
   public PropertyValueExpression getValue() {
     return (PropertyValueExpression)this.getChild(FileName.VALUE);
   }
 
   public void setValue(PropertyValueExpression node) {
     super.setChild(FileName.VALUE, node);
+  }
+
+
+  public static FileName newInstance(SModel sm, boolean init) {
+    return (FileName)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.FileName", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static FileName newInstance(SModel sm) {
+    return FileName.newInstance(sm, false);
   }
 
 }

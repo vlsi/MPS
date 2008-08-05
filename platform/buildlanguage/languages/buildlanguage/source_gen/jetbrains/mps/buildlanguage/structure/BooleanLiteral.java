@@ -15,21 +15,21 @@ public class BooleanLiteral extends PropertyValueExpression {
     super(node);
   }
 
-  public static BooleanLiteral newInstance(SModel sm, boolean init) {
-    return (BooleanLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.BooleanLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BooleanLiteral newInstance(SModel sm) {
-    return BooleanLiteral.newInstance(sm, false);
-  }
-
-
   public boolean getValue() {
     return this.getBooleanProperty(BooleanLiteral.VALUE);
   }
 
   public void setValue(boolean value) {
     this.setBooleanProperty(BooleanLiteral.VALUE, value);
+  }
+
+
+  public static BooleanLiteral newInstance(SModel sm, boolean init) {
+    return (BooleanLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.BooleanLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BooleanLiteral newInstance(SModel sm) {
+    return BooleanLiteral.newInstance(sm, false);
   }
 
 }

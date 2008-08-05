@@ -5,11 +5,11 @@ package jetbrains.mps.buildlanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class Project extends BaseConcept implements INamedConcept, IPropertyHolder {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.Project";
@@ -29,15 +29,6 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   public Project(SNode node) {
     super(node);
   }
-
-  public static Project newInstance(SModel sm, boolean init) {
-    return (Project)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.Project", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Project newInstance(SModel sm) {
-    return Project.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(Project.NAME);
@@ -205,6 +196,15 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
 
   public void insertProperty(PropertyDeclaration prev, PropertyDeclaration node) {
     this.insertChild(prev, Project.PROPERTY, node);
+  }
+
+
+  public static Project newInstance(SModel sm, boolean init) {
+    return (Project)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.Project", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Project newInstance(SModel sm) {
+    return Project.newInstance(sm, false);
   }
 
 }

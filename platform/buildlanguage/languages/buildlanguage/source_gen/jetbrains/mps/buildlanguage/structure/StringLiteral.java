@@ -20,15 +20,6 @@ public class StringLiteral extends PropertyValueExpression implements INamedConc
     super(node);
   }
 
-  public static StringLiteral newInstance(SModel sm, boolean init) {
-    return (StringLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.StringLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static StringLiteral newInstance(SModel sm) {
-    return StringLiteral.newInstance(sm, false);
-  }
-
-
   public String getValue() {
     return this.getProperty(StringLiteral.VALUE);
   }
@@ -67,6 +58,15 @@ public class StringLiteral extends PropertyValueExpression implements INamedConc
 
   public void setVirtualPackage(String value) {
     this.setProperty(StringLiteral.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static StringLiteral newInstance(SModel sm, boolean init) {
+    return (StringLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.StringLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static StringLiteral newInstance(SModel sm) {
+    return StringLiteral.newInstance(sm, false);
   }
 
 }

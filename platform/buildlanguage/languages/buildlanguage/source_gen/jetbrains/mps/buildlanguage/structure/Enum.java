@@ -4,11 +4,11 @@ package jetbrains.mps.buildlanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class Enum extends BaseConcept {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.Enum";
@@ -18,15 +18,6 @@ public class Enum extends BaseConcept {
   public Enum(SNode node) {
     super(node);
   }
-
-  public static Enum newInstance(SModel sm, boolean init) {
-    return (Enum)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.Enum", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Enum newInstance(SModel sm) {
-    return Enum.newInstance(sm, false);
-  }
-
 
   public int getConstantsesCount() {
     return this.getChildCount(Enum.CONSTANTS);
@@ -46,6 +37,15 @@ public class Enum extends BaseConcept {
 
   public void insertConstants(PropertyValueExpression prev, PropertyValueExpression node) {
     this.insertChild(prev, Enum.CONSTANTS, node);
+  }
+
+
+  public static Enum newInstance(SModel sm, boolean init) {
+    return (Enum)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.Enum", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Enum newInstance(SModel sm) {
+    return Enum.newInstance(sm, false);
   }
 
 }

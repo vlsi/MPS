@@ -16,21 +16,21 @@ public class TargetReference extends BaseConcept {
     super(node);
   }
 
-  public static TargetReference newInstance(SModel sm, boolean init) {
-    return (TargetReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.TargetReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TargetReference newInstance(SModel sm) {
-    return TargetReference.newInstance(sm, false);
-  }
-
-
   public TargetDeclaration getTargetDeclaration() {
     return (TargetDeclaration)this.getReferent(TargetReference.TARGET_DECLARATION);
   }
 
   public void setTargetDeclaration(TargetDeclaration node) {
     super.setReferent(TargetReference.TARGET_DECLARATION, node);
+  }
+
+
+  public static TargetReference newInstance(SModel sm, boolean init) {
+    return (TargetReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.TargetReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TargetReference newInstance(SModel sm) {
+    return TargetReference.newInstance(sm, false);
   }
 
 }

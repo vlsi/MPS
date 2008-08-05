@@ -15,21 +15,21 @@ public class IntLiteral extends PropertyValueExpression {
     super(node);
   }
 
-  public static IntLiteral newInstance(SModel sm, boolean init) {
-    return (IntLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.IntLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static IntLiteral newInstance(SModel sm) {
-    return IntLiteral.newInstance(sm, false);
-  }
-
-
   public int getValue() {
     return this.getIntegerProperty(IntLiteral.VALUE);
   }
 
   public void setValue(int value) {
     this.setIntegerProperty(IntLiteral.VALUE, value);
+  }
+
+
+  public static IntLiteral newInstance(SModel sm, boolean init) {
+    return (IntLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.IntLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static IntLiteral newInstance(SModel sm) {
+    return IntLiteral.newInstance(sm, false);
   }
 
 }

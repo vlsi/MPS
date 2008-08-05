@@ -18,15 +18,6 @@ public class PropertyValueExpression extends BaseConcept implements ISource {
     super(node);
   }
 
-  public static PropertyValueExpression newInstance(SModel sm, boolean init) {
-    return (PropertyValueExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyValueExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PropertyValueExpression newInstance(SModel sm) {
-    return PropertyValueExpression.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(PropertyValueExpression.SHORT_DESCRIPTION);
   }
@@ -49,6 +40,15 @@ public class PropertyValueExpression extends BaseConcept implements ISource {
 
   public void setVirtualPackage(String value) {
     this.setProperty(PropertyValueExpression.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static PropertyValueExpression newInstance(SModel sm, boolean init) {
+    return (PropertyValueExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyValueExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PropertyValueExpression newInstance(SModel sm) {
+    return PropertyValueExpression.newInstance(sm, false);
   }
 
 }

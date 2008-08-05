@@ -16,21 +16,21 @@ public class CallReference extends PropertyValueExpression {
     super(node);
   }
 
-  public static CallReference newInstance(SModel sm, boolean init) {
-    return (CallReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.CallReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static CallReference newInstance(SModel sm) {
-    return CallReference.newInstance(sm, false);
-  }
-
-
   public GenericCall getCall() {
     return (GenericCall)this.getReferent(CallReference.CALL);
   }
 
   public void setCall(GenericCall node) {
     super.setReferent(CallReference.CALL, node);
+  }
+
+
+  public static CallReference newInstance(SModel sm, boolean init) {
+    return (CallReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.CallReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static CallReference newInstance(SModel sm) {
+    return CallReference.newInstance(sm, false);
   }
 
 }

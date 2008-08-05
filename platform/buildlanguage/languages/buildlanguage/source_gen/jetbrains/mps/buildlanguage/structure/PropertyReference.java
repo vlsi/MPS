@@ -20,15 +20,6 @@ public class PropertyReference extends PropertyValueExpression implements INamed
     super(node);
   }
 
-  public static PropertyReference newInstance(SModel sm, boolean init) {
-    return (PropertyReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PropertyReference newInstance(SModel sm) {
-    return PropertyReference.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(PropertyReference.NAME);
   }
@@ -67,6 +58,15 @@ public class PropertyReference extends PropertyValueExpression implements INamed
 
   public void setPropertyDeclaration(PropertyDeclaration node) {
     super.setReferent(PropertyReference.PROPERTY_DECLARATION, node);
+  }
+
+
+  public static PropertyReference newInstance(SModel sm, boolean init) {
+    return (PropertyReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PropertyReference newInstance(SModel sm) {
+    return PropertyReference.newInstance(sm, false);
   }
 
 }
