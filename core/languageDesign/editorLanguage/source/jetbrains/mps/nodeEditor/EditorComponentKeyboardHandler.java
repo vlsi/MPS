@@ -7,8 +7,6 @@
 package jetbrains.mps.nodeEditor;
 
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -78,15 +76,18 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     // process action
     if (selectedCell != null) {
       if (selectedCell instanceof EditorCell_Label &&
-        !hasOneToManyRole(selectedCell) &&
-        (actionType == CellActionType.INSERT || actionType == CellActionType.INSERT_BEFORE)) {        
+        !isOneToManyCollection(selectedCell) &&
+        (actionType == CellActionType.INSERT || actionType == CellActionType.INSERT_BEFORE)) {
+
         EditorCell cellWithRole = new ChildrenCollectionFinder(selectedCell, actionType == CellActionType.INSERT).find();
 
-        if (cellWithRole == null && actionType == CellActionType.INSERT_BEFORE && selectedCell.isFirstPositionInBigCell()) {
+        if (cellWithRole == null && actionType == CellActionType.INSERT_BEFORE &&
+          selectedCell.isFirstPositionInBigCell() && hasOneToOneOrZeroRole(selectedCell.getSNode())) {
           cellWithRole = new ChildrenCollectionFinder(selectedCell.getPrevLeaf(), true).find();
         }
 
-        if (cellWithRole == null && actionType == CellActionType.INSERT && selectedCell.isLastPositionInBigCell()) {
+        if (cellWithRole == null && actionType == CellActionType.INSERT &&
+          selectedCell.isLastPositionInBigCell() && hasOneToOneOrZeroRole(selectedCell.getSNode())) {
           cellWithRole = new ChildrenCollectionFinder(selectedCell.getNextLeaf(), true).find();
         }
 
@@ -212,20 +213,18 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     return (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
   }
 
-  private boolean hasOneToManyRole(EditorCell cell) {
-    //todo move it elsewhere
+  private boolean isOneToManyCollection(EditorCell cell) {
     String role = (String) cell.getUserObject(EditorCell.ROLE);
-    LinkDeclaration link;
-    if (role != null) {
-      link = cell.getSNode().getLinkDeclaration(role);
-    } else {
-      EditorCell bigCell = cell.getContainingBigCell();
-      SNode ourNode = bigCell.getSNode();
-      role = ourNode.getRole_();
-      if (ourNode.getParent() == null) return false;
-      link = ourNode.getParent().getLinkDeclaration(role);
-    }
+    if (role == null) return false;
+    LinkDeclaration link = cell.getSNode().getLinkDeclaration(role);
     if (link == null) return false;
     return link.getSourceCardinality() == Cardinality._0__n || link.getSourceCardinality() == Cardinality._1__n;
+  }
+
+  private boolean hasOneToOneOrZeroRole(SNode node) {
+    String role = node.getRole_();
+    if (role == null) return false;
+    LinkDeclaration link = node.getParent().getLinkDeclaration(role);
+    return link.getSourceCardinality() == Cardinality._0__1 || link.getSourceCardinality() == Cardinality._1;
   }
 }
