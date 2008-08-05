@@ -79,7 +79,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     if (selectedCell != null) {
       if (selectedCell instanceof EditorCell_Label &&
         !hasOneToManyRole(selectedCell) &&
-        (CellActionType.INSERT.equals(actionType) || CellActionType.INSERT_BEFORE.equals(actionType))) {        
+        (actionType == CellActionType.INSERT || actionType == CellActionType.INSERT_BEFORE)) {        
         EditorCell cellWithRole = new ChildrenCollectionFinder(selectedCell, actionType == CellActionType.INSERT).find();
 
         if (cellWithRole == null && actionType == CellActionType.INSERT_BEFORE && selectedCell.isFirstPositionInBigCell()) {
