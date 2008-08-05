@@ -31,10 +31,10 @@
   <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="3" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   <maxImportIndex value="2" />
-  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="1" />
+  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="3" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.transformationTest.behavior" />
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1210673906861">

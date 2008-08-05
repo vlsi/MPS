@@ -16,7 +16,7 @@
   </language>
   <language namespace="jetbrains.mps.transformationTest">
     <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
-    <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
+    <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="3" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.unitTest">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
@@ -38,7 +38,7 @@
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   <maxImportIndex value="18" />
-  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="1" />
+  <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="3" />
   <import index="3" modelUID="jetbrains.mps.helgins.inference@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.transformationTest.runtime@java_stub" version="-1" />
   <import index="9" modelUID="jetbrains.mps.transformationTest.runtime" version="-1" />

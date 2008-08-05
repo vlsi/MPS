@@ -42,6 +42,26 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="methods" conceptFQName="jetbrains.mps.transformationTest.structure.NodesTestCase" featureKind="CHILD" />
+          <value featureName="testMethods" conceptFQName="jetbrains.mps.transformationTest.structureNodesTestCase" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="3">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="methodDeclaraiotns" conceptFQName="jetbrains.mps.transformationTest.structure.NodesTestCase" featureKind="CHILD" />
+          <value featureName="methods" conceptFQName="jetbrains.mps.transformationTest.structureNodesTestCase" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
@@ -69,7 +89,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="3" />
   <maxImportIndex value="6" />
   <import index="2" modelUID="jetbrains.mps.patterns.util@java_stub" version="-1" />
   <import index="4" modelUID="java.util@java_stub" version="-1" />
@@ -308,13 +328,13 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217501895093">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="methods" />
+      <property name="role" value="testMethods" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1216913689992" resolveInfo="NodesTestMethod" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216993439383">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="methodDeclaraiotns" />
+      <property name="role" value="methods" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="4v.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
     </node>
