@@ -226,7 +226,9 @@ public class IntelligentInputUtil {
       newNode = cell.getSNode();
       cellForNewNode = cell;
       sourceCellRemains = true;
-    } else if (canCompleteSmallPatternImmediately(info, smallPattern, "")) {
+    } else if (canCompleteSmallPatternImmediately(info, smallPattern, "") &&
+      info.getMatchingActions(head, false).isEmpty()) {
+      
       newNode = info.getMatchingActions(smallPattern, true).get(0).substitute(editorContext, smallPattern);
       cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
     } else if (canCompleteTheWholeStringImmediately(info, head + smallPattern) ||
