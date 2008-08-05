@@ -1507,7 +1507,7 @@ public class QueriesGenerated {
       List<SNode> args = SLinkOperations.getTargets(bmc, "actualArgument", true);
       List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false), "parameter", true);
       if ((SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false) != null) && args.size() != pdecls.size()) {
-        _context.getGenerator().showInformationMessage(bmc, "Actual arguments count != parameter declarations count");
+        _context.showInformationMessage(bmc, "Actual arguments count != parameter declarations count");
       }
       int idx = 0;
       for(SNode pdecl : pdecls) {
@@ -1557,7 +1557,7 @@ public class QueriesGenerated {
           }
         } else
         if (thisCC == null) {
-          _context.getGenerator().showWarningMessage(te, "Cound not find the class concept");
+          _context.showWarningMessage(te, "Cound not find the class concept");
         }
       }
     }
@@ -1578,7 +1578,7 @@ public class QueriesGenerated {
         List<SNode> args = SLinkOperations.getTargets(imco, "actualArgument", true);
         List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "parameter", true);
         if ((SLinkOperations.getTarget(imco, "baseMethodDeclaration", false) != null) && args.size() != pdecls.size()) {
-          _context.getGenerator().showInformationMessage(imco, "Actual arguments count != parameter declarations count");
+          _context.showInformationMessage(imco, "Actual arguments count != parameter declarations count");
         }
         int idx = 0;
         for(SNode pdecl : pdecls) {
@@ -1636,7 +1636,7 @@ public class QueriesGenerated {
                     SPropertyOperations.set(ifr, "fieldName", SPropertyOperations.getString(SLinkOperations.getTarget(op, "fieldDeclaration", false), "name"));
                   } else
                   if (SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
-                    _context.getGenerator().showErrorMessage(te, "'this' expression coulnd't be removed");
+                    _context.showErrorMessage(te, "'this' expression coulnd't be removed");
                   }
                 }
               } else
@@ -1648,7 +1648,7 @@ public class QueriesGenerated {
           }
         } else
         if (thisCC == null) {
-          _context.getGenerator().showWarningMessage(te, "Cound not find the class concept");
+          _context.showWarningMessage(te, "Cound not find the class concept");
         }
       }
     }

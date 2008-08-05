@@ -1427,7 +1427,7 @@ __switch__:
       }
     }
     if ((targetInternalValueExpression == null)) {
-      _context.getGenerator().showErrorMessage(enumDataType, "Can't generate value for type " + SPropertyOperations.getString(memberDataType, "name"));
+      _context.showErrorMessage(enumDataType, "Can't generate value for type " + SPropertyOperations.getString(memberDataType, "name"));
     }
     return targetInternalValueExpression;
   }
