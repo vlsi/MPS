@@ -19,7 +19,6 @@
     <dependency reexport="false">jetbrains.mps.ide</dependency>
     <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage</dependency>
-    <dependency reexport="false">C:\mps\core\baseLanguage\baseLanguage\sandbox\sandbox.msd</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>
