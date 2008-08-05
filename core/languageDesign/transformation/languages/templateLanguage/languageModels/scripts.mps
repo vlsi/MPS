@@ -2991,6 +2991,11 @@
                   </node>
                 </node>
               </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1217975068187">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1217975070439">
+                  <property name="value" value="true" />
+                </node>
+              </node>
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216844410637">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216844410638">
