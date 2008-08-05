@@ -41,7 +41,7 @@ public class CellAction_PasteNode extends EditorCellAction {
       return false;
     }
 
-    if (new NodePaster(pasteNodes).canPaste(getCellToPasteTo(selectedCell))) {
+    if (!new NodePaster(pasteNodes).canPaste(getCellToPasteTo(selectedCell))) {
       LOG.debug("Couldn't paste node here");
       return false;
     }
