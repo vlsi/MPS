@@ -21,7 +21,7 @@ import java.awt.event.KeyEvent;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class AbstractCellListHandler implements KeyboardHandler {
-  public static final Object ELEMENT_CELL_ACTIONS_SET = new Object();
+  public static final String ELEMENT_CELL_ACTIONS_SET = "element-cell-actions-set";
 
   protected SNode myOwnerNode;
   protected EditorContext myEditorContext;

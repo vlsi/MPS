@@ -25,10 +25,10 @@ import com.intellij.ui.LightColors;
 public class EditorManager {
   private static final Logger LOG = Logger.getLogger(EditorManager.class);
 
-  public static final Object BIG_CELL_CONTEXT = new Object();
+  public static final String BIG_CELL_CONTEXT = "big-cell-context";
 
-  public static final String SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID = "STHint_Anchor_ID";
-  public static final String SIDE_TRANSFORM_HINT_ANCHOR_TAG = "STHint_Anchor_Tag";
+  public static final String SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID = "st-hint-anchor-cell-id";
+  public static final String SIDE_TRANSFORM_HINT_ANCHOR_TAG = "st-hint-anchor-tag";
 
   private HashMap<ReferencedNodeContext, EditorCell> myMap = new HashMap<ReferencedNodeContext, EditorCell>();
   private boolean myCreatingInspectedCell = false;

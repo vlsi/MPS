@@ -19,10 +19,6 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.List;
 
-/**
- * Author: Sergey Dmitriev
- * Created Sep 14, 2003
- */
 public interface EditorCell extends Cloneable {
   static final Object METAINFO_LINK_DECLARATION = "metainfo-link-declaration";
   static final Object METAINFO_SOURCE_NODE = "metainfo-source-node";
