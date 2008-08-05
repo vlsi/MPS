@@ -2,11 +2,14 @@ package jetbrains.mps.plugins.pluginparts.prefs;
 
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.project.MPSProject;
+import org.jdom.Element;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseProjectPrefsComponent<T> implements PersistentStateComponent<T> {
+public abstract class BaseProjectPrefsComponent implements PersistentStateComponent<Element> {
   private List<BasePrefsPage> myPages = new ArrayList<BasePrefsPage>();
   private Project myProject;
 
@@ -20,6 +23,10 @@ public abstract class BaseProjectPrefsComponent<T> implements PersistentStateCom
 
   public Project getProject() {
     return myProject;
+  }
+
+  public MPSProject getMPSProject() {
+    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
   public void init() {

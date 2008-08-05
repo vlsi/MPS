@@ -680,55 +680,6 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1208772661207"/>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
-              id="1210185839435">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"
-                id="1210185839436">
-            <property name="name" value="component"/>
-            <property name="isFinal" value="false"/>
-            <node role="type" type="jetbrains.mps.bootstrap.pluginLanguage.structure.PreferencesComponentType"
-                  id="1210185839437">
-              <link role="componentDeclaration" targetNodeId="1210182309348" resolveInfo="UnitTest"/>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210185839438">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210185839439">
-                <link role="variableDeclaration" targetNodeId="1210182464964" resolveInfo="project"/>
-              </node>
-              <node role="operation"
-                    type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetPreferencesComponentOperation"
-                    id="1210185839440">
-                <link role="componentDeclaration" targetNodeId="1210182309348" resolveInfo="UnitTest"/>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208772661208">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208772661209">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
-                  id="1208772661210">
-              <link role="baseMethodDeclaration" targetNodeId="7.~JSplitPane.setDividerLocation(int):void"
-                    resolveInfo="setDividerLocation"/>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210188277988">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                      id="1210186840146">
-                  <link role="variableDeclaration" targetNodeId="1210185839436" resolveInfo="component"/>
-                </node>
-                <node role="operation"
-                      type="jetbrains.mps.bootstrap.pluginLanguage.structure.PersistentPropertyReference"
-                      id="1210188281682">
-                  <link role="member" targetNodeId="1210182319938" resolveInfo="unitToolDividerLocation"/>
-                </node>
-              </node>
-            </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210678858085">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"
-                    id="1210678858086">
-                <link role="fieldDeclaration" targetNodeId="1210678810416" resolveInfo="toolSplitPane"/>
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1210678858087"/>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1210182464964">
         <property name="name" value="project"/>
@@ -10165,14 +10116,6 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"
                 id="1208875299640">
             <property name="name" value="testMethods"/>
-            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapType"
-                  id="1208875299641">
-              <node role="keyType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1208875299642"/>
-              <node role="valueType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference"
-                    id="1208875299643">
-                <link role="typeVariableDeclaration" targetNodeId="1208874172881" resolveInfo="M"/>
-              </node>
-            </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement"
                   id="1208875299644">
               <node role="key" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208875299645">
@@ -10186,21 +10129,34 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1208875299648"/>
               </node>
             </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217948147692">
+              <link role="classifier" targetNodeId="24.~Map" resolveInfo="Map"/>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1217948150386"/>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference"
+                    id="1217948156845">
+                <link role="typeVariableDeclaration" targetNodeId="1208874172881" resolveInfo="M"/>
+              </node>
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1208875325296">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208875325297">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208875341780">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression"
-                    id="1208875343169">
-                <node role="rValue" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement"
-                      id="1208875352027">
-                  <node role="key" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208875354035">
-                    <link role="variableDeclaration" targetNodeId="1208875283746" resolveInfo="testMethodName"/>
-                  </node>
-                  <node role="map" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                        id="1208875346586">
+                    id="1217948161676">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217948172127">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                        id="1217948171246">
                     <link role="variableDeclaration" targetNodeId="1208875299640" resolveInfo="testMethods"/>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
+                        id="1217948173973">
+                    <link role="baseMethodDeclaration" targetNodeId="24.~Map.get(java.lang.Object):java.lang.Object"
+                          resolveInfo="get"/>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference"
+                          id="1217948175646">
+                      <link role="variableDeclaration" targetNodeId="1208875283746" resolveInfo="testMethodName"/>
+                    </node>
                   </node>
                 </node>
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
@@ -13829,9 +13785,9 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217941201804">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1217948208190">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                  id="1217941201805">
+                  id="1217948212161">
               <link role="variableDeclaration" targetNodeId="1217941201761" resolveInfo="debugPortOk"/>
             </node>
           </node>

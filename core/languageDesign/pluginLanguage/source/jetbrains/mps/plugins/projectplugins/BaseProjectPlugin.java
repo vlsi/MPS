@@ -4,24 +4,26 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
+import com.intellij.util.xmlb.annotations.Tag;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
-import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.MyState;
+import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSEditorOpenHandler;
 import jetbrains.mps.workbench.editors.MPSEditorOpenHandlerOwner;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import org.jdom.Element;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, PersistentStateComponent<MyState> {
+public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, PersistentStateComponent<PluginState> {
   private static Logger LOG = Logger.getLogger(BaseProjectPlugin.class);
 
   private Project myProject;
@@ -68,26 +70,22 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
     initEditors(project);
 
-    myPrefsComponents = createPreferencesComponents(getIDEAProject());
-    for (BaseProjectPrefsComponent component : myPrefsComponents) {
-      component.init();
-    }
-
     myTools = (List) (initTools(myProject));
     final Project ideaProject = getIDEAProject();
     for (final GeneratedTool tool : myTools) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          if (ideaProject.isDisposed()) return;
-          try {
-            tool.init(ideaProject);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-          doAdd(tool, false);
-          myInitializedTools.add(tool);
-        }
-      });
+      if (ideaProject.isDisposed()) return;
+      try {
+        tool.init(ideaProject);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+      doAdd(tool, false);
+      myInitializedTools.add(tool);
+    }
+
+    myPrefsComponents = createPreferencesComponents(getIDEAProject());
+    for (BaseProjectPrefsComponent component : myPrefsComponents) {
+      component.init();
     }
   }
 
@@ -96,6 +94,10 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       customPart.dispose();
     }
     myCustomPartsToDispose.clear();
+
+    for (BaseProjectPrefsComponent component : myPrefsComponents) {
+      component.dispose();
+    }
 
     for (final GeneratedTool tool : myTools) {
       SwingUtilities.invokeLater(new Runnable() {
@@ -111,10 +113,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       });
     }
     myTools.clear();
-
-    for (BaseProjectPrefsComponent component : myPrefsComponents) {
-      component.dispose();
-    }
 
     MPSEditorOpener opener = myProject.getComponent(MPSEditorOpener.class);
     if (opener != null) {
@@ -157,15 +155,15 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     }
   }
 
-  public MyState getState() {
-    MyState state = new MyState();
+  public PluginState getState() {
+    PluginState state = new PluginState();
     for (BaseProjectPrefsComponent component : myPrefsComponents) {
       state.myComponentsState.add(new ComponentState(component.getClass().getName(), component.getState()));
     }
     return state;
   }
 
-  public void loadState(MyState state) {
+  public void loadState(PluginState state) {
     HashMap<String, BaseProjectPrefsComponent> components = new HashMap<String, BaseProjectPrefsComponent>();
     for (BaseProjectPrefsComponent component : myPrefsComponents) {
       components.put(component.getClass().getName(), component);
@@ -177,19 +175,21 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     }
   }
 
-  public static class MyState {
+  public static class PluginState {
     public List<ComponentState> myComponentsState = new ArrayList<ComponentState>();
   }
 
   public static class ComponentState {
     public String first;
-    public jetbrains.mps.baseLanguage.unitTest.plugin.UnitTest_PreferencesComponent.MyState second;
+    @Tag(value = "params")
+    public Element second;
 
     public ComponentState() {
     }
 
-    public ComponentState(String first, Object second) {
+    public ComponentState(String first, Element second) {
       this.first = first;
+      this.second = second;
     }
   }
 }

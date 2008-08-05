@@ -1836,7 +1836,7 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1210686917553">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1210686918990"/>
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217948522918"/>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
           id="1210691025105">
@@ -1917,7 +1917,7 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1210763550009">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1210763550010"/>
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1217948229819"/>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
           id="1210763550011">

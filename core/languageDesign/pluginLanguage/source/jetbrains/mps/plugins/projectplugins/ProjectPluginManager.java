@@ -2,17 +2,18 @@ package jetbrains.mps.plugins.projectplugins;
 
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
+import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.MyState;
+import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -24,12 +25,10 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import javax.swing.SwingUtilities;
+import java.util.*;
 
-@State(
+@com.intellij.openapi.components.State(
   name = "ProjectPluginManager",
   storages = {
   @Storage(
@@ -38,12 +37,12 @@ import java.util.Set;
   )
     }
 )
-public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<MyState> {
+public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState> {
   private static final Logger LOG = Logger.getLogger(ProjectPluginManager.class);
 
   private List<BaseProjectPlugin> myPlugins = new ArrayList<BaseProjectPlugin>();
 
-  private MyState myState = new MyState();
+  private PluginsState myState = new PluginsState();
 
   private boolean isLoaded = false;
 
@@ -107,7 +106,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     Set<Language> languages = new HashSet<Language>();
     Set<DevKit> devkits = new HashSet<DevKit>();
 
-    MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
 
     for (Solution s : mpsProject.getProjectSolutions()) {
       languages.addAll(s.getScope().getVisibleLanguages());
@@ -142,15 +141,19 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
     addIdePlugin();
 
-    for (BaseProjectPlugin plugin : myPlugins) {
-      try {
-        plugin.init(mpsProject);
-      } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        for (BaseProjectPlugin plugin : myPlugins) {
+          try {
+            plugin.init(mpsProject);
+          } catch (Throwable t1) {
+            LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+          }
+        }
+        spreadState();
+        isLoaded = true;
       }
-    }
-    spreadState();
-    isLoaded = true;
+    });
   }
 
   private void addIdePlugin() {
@@ -206,47 +209,37 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   //----------------STATE STUFF------------------------
 
-  public MyState getState() {
+  public PluginsState getState() {
     collectState();
     return myState;
   }
 
-  public void loadState(MyState state) {
+  public void loadState(PluginsState state) {
     myState = state;
   }
 
   protected void collectState() {
-    myState.myPluginsState.clear();
+    myState.pluginsState.clear();
     for (BaseProjectPlugin plugin : myPlugins) {
-      myState.myPluginsState.add(new PluginState(plugin.getClass().getName(), plugin.getState()));
+      PluginState state = plugin.getState();
+      if (state != null) {
+        myState.pluginsState.put(plugin.getClass().getName(), state);
+      }
     }
   }
 
   protected void spreadState() {
     HashMap<String, BaseProjectPlugin> plugins = new HashMap<String, BaseProjectPlugin>();
     for (BaseProjectPlugin plugin : myPlugins) {
-      plugins.put(plugin.getClass().getName(), plugin);
-    }
-
-    for (PluginState pluginState : myState.myPluginsState) {
-      plugins.get(pluginState.first).loadState((jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.MyState) pluginState.second);
+      PluginState state = myState.pluginsState.get(plugin.getClass().getName());
+      if (state != null) {
+        plugin.loadState(state);
+      }
     }
   }
 
-  public static class MyState {
-    public List<PluginState> myPluginsState = new ArrayList<PluginState>();
-  }
-
-  public static class PluginState {
-    public String first;
-    public BaseProjectPlugin.MyState second;
-
-    public PluginState() {
-    }
-
-    public PluginState(String first, BaseProjectPlugin.MyState second) {
-      this.first = first;
-      this.second = second;
-    }
+  public static class PluginsState {
+    @MapAnnotation(surroundWithTag = false, entryTagName = "option", keyAttributeName = "name", valueAttributeName = "value")
+    public Map<String, PluginState> pluginsState = new HashMap<String, PluginState>();
   }
 }
