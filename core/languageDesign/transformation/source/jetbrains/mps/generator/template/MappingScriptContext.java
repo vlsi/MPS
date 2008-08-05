@@ -4,10 +4,12 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
 public class MappingScriptContext  extends TemplateQueryContext {
+  private SNode myScript;
   private SModel myModel;
 
   public MappingScriptContext(SModel model, SNode mappingScript, ITemplateGenerator generator) {
     super(null, null, generator);
+    myScript = mappingScript;
     myModel = model;
   }
 
@@ -28,5 +30,9 @@ public class MappingScriptContext  extends TemplateQueryContext {
 
   public SModel getOutputModel() {
     return myModel;
+  }
+
+  public SNode getTemplateNodeForLogging() {
+    return myScript;
   }
 }

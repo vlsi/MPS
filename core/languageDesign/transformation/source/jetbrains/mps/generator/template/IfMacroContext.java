@@ -6,9 +6,11 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.transformation.TLBase.structure.IfMacro;
 
 public class IfMacroContext  extends TemplateQueryContext {
+  private SNode myMacro;
 
   public IfMacroContext(SNode node, SNode ifMacro, ITemplateGenerator generator) {
     super(node, ifMacro.getParent(), generator);
+    myMacro = ifMacro;
   }
 
   /**
@@ -18,4 +20,7 @@ public class IfMacroContext  extends TemplateQueryContext {
     return getInputNode();
   }
 
+  public SNode getTemplateNodeForLogging() {
+    return myMacro;
+  }
 }

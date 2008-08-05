@@ -10,6 +10,7 @@ import jetbrains.mps.transformation.generationContext.behavior.GenerationContext
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 
@@ -62,6 +63,10 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1216862267882(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     // method parameter
     return "_context";
+  }
+
+  public static boolean ifMacro_Condition_1217963743178(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "referenceNode", true) != null;
   }
 
   public static SNode sourceNodeQuery_1216862267891(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -176,6 +181,18 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1217894200331(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "userKey", true);
+  }
+
+  public static SNode sourceNodeQuery_1217963666605(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1217963701356(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "messageText", true);
+  }
+
+  public static SNode sourceNodeQuery_1217963768161(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "referenceNode", true);
   }
 
 }

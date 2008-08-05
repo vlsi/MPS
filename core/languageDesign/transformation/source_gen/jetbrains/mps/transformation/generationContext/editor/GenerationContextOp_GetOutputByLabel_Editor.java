@@ -4,40 +4,20 @@ package jetbrains.mps.transformation.generationContext.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.transformation.TLBase.editor.Styles_StyleSheet;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.transformation.TLBase.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_Collection_12168601463471216860146347(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1216860146347");
-  }
-
-  private static void setupBasic_Constant_12168601463481216860146348(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216860146348");
-  }
-
-  private static void setupBasic_refCell_label1216860254150(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_label");
-    Styles_StyleSheet.MAPPING_LABLE_REFERENCE.apply(editorCell);
-  }
-
-  private static void setupLabel_Constant_1216860146348_1216860146348(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refCell_label_1216860254150(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1216860146347(context, node);
@@ -91,19 +71,31 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
     return cellWithRole;
   }
 
+
+  private static void setupBasic_Collection_12168601463471216860146347(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1216860146347");
+  }
+
+  private static void setupBasic_Constant_12168601463481216860146348(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216860146348");
+  }
+
+  private static void setupBasic_refCell_label1216860254150(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_label");
+    Styles_StyleSheet.MAPPING_LABLE_REFERENCE.apply(editorCell);
+  }
+
+  private static void setupLabel_Constant_1216860146348_1216860146348(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refCell_label_1216860254150(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   public static class _Inline1 extends AbstractCellProvider {
 
     public _Inline1() {
       super();
     }
-
-    private static void setupBasic_property_name1216860264996(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-    }
-
-    private static void setupLabel_property_name_1216860264996(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    }
-
 
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
@@ -140,6 +132,14 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
+    }
+
+
+    private static void setupBasic_property_name1216860264996(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    }
+
+    private static void setupLabel_property_name_1216860264996(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

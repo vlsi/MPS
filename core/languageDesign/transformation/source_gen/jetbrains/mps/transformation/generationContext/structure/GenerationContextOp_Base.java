@@ -19,15 +19,6 @@ public class GenerationContextOp_Base extends BaseConcept implements IOperation 
     super(node);
   }
 
-  public static GenerationContextOp_Base newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_Base)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_Base", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GenerationContextOp_Base newInstance(SModel sm) {
-    return GenerationContextOp_Base.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(GenerationContextOp_Base.SHORT_DESCRIPTION);
   }
@@ -50,6 +41,15 @@ public class GenerationContextOp_Base extends BaseConcept implements IOperation 
 
   public void setVirtualPackage(String value) {
     this.setProperty(GenerationContextOp_Base.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static GenerationContextOp_Base newInstance(SModel sm, boolean init) {
+    return (GenerationContextOp_Base)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_Base", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GenerationContextOp_Base newInstance(SModel sm) {
+    return GenerationContextOp_Base.newInstance(sm, false);
   }
 
 }

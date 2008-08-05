@@ -5,10 +5,12 @@ import jetbrains.mps.smodel.SModel;
 
 public class PropertyMacroContext extends TemplateQueryContext {
   private String myTemplateValue;
+  private SNode myMacro;
 
-  public PropertyMacroContext(SNode node, String templateValue, SNode templateNode, ITemplateGenerator generator) {
-    super(node, templateNode, generator);
+  public PropertyMacroContext(SNode node, String templateValue, SNode macroNode, ITemplateGenerator generator) {
+    super(node, macroNode.getParent(), generator);
     myTemplateValue = templateValue;
+    myMacro = macroNode;
   }
 
   /**
@@ -17,4 +19,10 @@ public class PropertyMacroContext extends TemplateQueryContext {
   public String getTemplateValue() {
     return myTemplateValue;
   }
+
+
+  public SNode getTemplateNodeForLogging() {
+    return myMacro;
+  }
+
 }

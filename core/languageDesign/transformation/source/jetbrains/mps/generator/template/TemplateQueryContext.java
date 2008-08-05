@@ -114,4 +114,25 @@ public class TemplateQueryContext {
   public Object getSessionObject(Object key) {
     return myGenerator.getGeneratorSessionContext().getSessionObject(key);
   }
+
+  public void showInformationMessage(SNode node, String message) {
+    myGenerator.showInformationMessage(node, message);
+  }
+
+  public void showWarningMessage(SNode node, String message) {
+    myGenerator.showWarningMessage(node, message);
+  }
+
+  public void showErrorMessage(SNode node, String message) {
+    SNode inputNode = (node != null) ? node : getInputNode();
+    myGenerator.showErrorMessage(inputNode, getTemplateNode(), getRuleNodeForLogging(), message);
+  }
+
+  public SNode getTemplateNodeForLogging() {
+    return getTemplateNode();
+  }
+
+  public SNode getRuleNodeForLogging() {
+    return null;
+  }
 }

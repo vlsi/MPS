@@ -41,7 +41,7 @@ public class MacroUtil {
         Object macroValue = QueryMethodGenerated.invoke(
           methodName,
           generator.getGeneratorSessionContext(),
-          new PropertyMacroContext(inputNode, templateValue, templateNode, generator),
+          new PropertyMacroContext(inputNode, templateValue, propertyMacro.getNode(), generator),
           propertyMacro.getModel());
         propertyValue = macroValue == null ? null : String.valueOf(macroValue);
       } catch (Exception e) {
