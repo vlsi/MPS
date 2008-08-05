@@ -213,9 +213,18 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
   }
 
   private boolean hasOneToManyRole(EditorCell cell) {
+    //todo move it elsewhere
     String role = (String) cell.getUserObject(EditorCell.ROLE);
-    if (role == null) return false;
-    LinkDeclaration link = cell.getSNode().getLinkDeclaration(role);
+    LinkDeclaration link;
+    if (role != null) {
+      link = cell.getSNode().getLinkDeclaration(role);
+    } else {
+      EditorCell bigCell = cell.getContainingBigCell();
+      SNode ourNode = bigCell.getSNode();
+      role = ourNode.getRole_();
+      if (ourNode.getParent() == null) return false;
+      link = ourNode.getParent().getLinkDeclaration(role);
+    }
     if (link == null) return false;
     return link.getSourceCardinality() == Cardinality._0__n || link.getSourceCardinality() == Cardinality._1__n;
   }
