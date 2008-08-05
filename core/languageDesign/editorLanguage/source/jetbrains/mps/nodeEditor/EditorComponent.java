@@ -2203,9 +2203,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             return;
           }
         } else {
-          EditorCell firstLeaf = nullCell.getFirstLeaf(CellConditions.SELECTABLE);
-          changeSelection(firstLeaf);
-          firstLeaf.home();
+          changeSelectionWRTFocusPolicy(nullCell);
         }
       }
 
