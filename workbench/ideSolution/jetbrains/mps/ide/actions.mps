@@ -5201,6 +5201,7 @@
     <property name="package" value="Actions"/>
     <property name="name" value="NewDevKit"/>
     <property name="caption" value="New DevKit"/>
+    <property name="outsideCommandExecution" value="true"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215905183112">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215905397990">
