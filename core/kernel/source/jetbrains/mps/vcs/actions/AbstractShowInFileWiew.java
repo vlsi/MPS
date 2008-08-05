@@ -33,6 +33,10 @@ public abstract class AbstractShowInFileWiew extends AbstractVcsAction {
       return null;
     }
 
+    if (selectedFiles.length == 1){
+      return selectedFiles[0];
+    }
+
     return VfsUtil.getCommonAncestors(selectedFiles)[0];
   }
 
