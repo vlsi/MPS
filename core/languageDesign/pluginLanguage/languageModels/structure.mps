@@ -231,13 +231,6 @@
     <property name="iconPath" value="${language_descriptor}\icons\uiAction.png"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1205679176223">
-      <property name="metaClass" value="aggregation"/>
-      <property name="role" value="parameterDeclaration"/>
-      <property name="sourceCardinality" value="0..n"/>
-      <link role="target" targetNodeId="1205679047295" resolveInfo="ActionParameterDeclaration"/>
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1203083196627">
       <property name="metaClass" value="aggregation"/>
       <property name="role" value="updateBlock"/>
@@ -980,25 +973,6 @@
       <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206185882027">
         <link role="classifier" targetNodeId="15.~MPSProject" resolveInfo="MPSProject"/>
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204903488751">
-    <property name="package" value="Actions.Groups.GroupMembers"/>
-    <property name="name" value="JavaAction"/>
-    <link role="extends" targetNodeId="2.1145552809883" resolveInfo="AbstractCreator"/>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1204903542721">
-      <property name="role" value="javaClass"/>
-      <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="2.1068390468198" resolveInfo="ClassConcept"/>
-    </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
-          id="1204903494033">
-      <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember"/>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
-          id="1217516572491">
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204908117386">
