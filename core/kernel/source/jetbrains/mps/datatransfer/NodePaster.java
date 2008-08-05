@@ -4,7 +4,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
@@ -31,25 +30,37 @@ public class NodePaster {
   }
 
   public boolean canPaste(SNode pasteTarget, PasteEnv pasteEnv) {
-    return (canPaste_internal(pasteTarget, null, pasteEnv) != PASTE_N_A);
+    return canPaste(pasteTarget, null, pasteEnv) != PASTE_N_A;
   }
 
   public boolean canPaste(EditorCell targetCell) {
     String role = getRoleFromCell(targetCell);
     SNode pasteTarget = targetCell.getSNode();
     if (pasteTarget == null) return false;
-    return (canPaste_internal(pasteTarget, role, PasteEnv.NODE_EDITOR) != PASTE_N_A);
+    return canPaste(pasteTarget, role, PasteEnv.NODE_EDITOR) != PASTE_N_A;
   }
 
   public void paste(EditorCell targetCell) {
-    String role = getRoleFromCell(targetCell);
-    SNode pasteTarget = targetCell.getSNode();
-    paste_internal(pasteTarget, role, PasteEnv.NODE_EDITOR);
+    paste(targetCell.getSNode(), getRoleFromCell(targetCell), PasteEnv.NODE_EDITOR);
   }
 
   public void paste(SNode pasteTarget, PasteEnv pasteEnv) {
-    String role_ = pasteTarget.getRole_();
-    paste_internal(pasteTarget, role_, pasteEnv);
+    paste(pasteTarget, pasteTarget.getRole_(), pasteEnv);
+  }
+
+  private void paste(SNode pasteTarget, String role, PasteEnv pasteEnv) {
+    String role_ = role != null ? role : pasteTarget.getRole_();
+    int status = canPaste(pasteTarget, role_, pasteEnv);
+
+    if (status == PASTE_TO_TARGET) {
+      pasteToTarget(pasteTarget, null, role_, PastePlaceHint.DEFAULT);
+    } else if (status == PASTE_TO_PARENT) {
+      pasteToParent(pasteTarget, role_, PastePlaceHint.DEFAULT);
+    } else if (status == PASTE_TO_ROOT) {
+      for (SNode pasteNode : myPasteNodes) {
+        pasteNode.getModel().addRoot(pasteNode);
+      }
+    }
   }
 
   public void pasteAsRoots(SModel model, String dstPackage) {
@@ -87,22 +98,7 @@ public class NodePaster {
     }
   }
 
-  private void paste_internal(SNode pasteTarget, String role, PasteEnv pasteEnv) {
-    String role_ = role != null ? role : pasteTarget.getRole_();
-    int status = canPaste_internal(pasteTarget, role_, pasteEnv);
-
-    if (status == PASTE_TO_TARGET) {
-      pasteToTarget(pasteTarget, null, role_, PastePlaceHint.DEFAULT);
-    } else if (status == PASTE_TO_PARENT) {
-      pasteToParent(pasteTarget, role_, PastePlaceHint.DEFAULT);
-    } else if (status == PASTE_TO_ROOT) {
-      for (SNode pasteNode : myPasteNodes) {
-        pasteNode.getModel().addRoot(pasteNode);
-      }
-    }
-  }
-
-  private int canPaste_internal(SNode pasteTarget, String role, PasteEnv pasteEnv) {
+  private int canPaste(SNode pasteTarget, String role, PasteEnv pasteEnv) {
     if (myPasteNodes == null || myPasteNodes.isEmpty()) {
       return PASTE_N_A;
     }
@@ -143,7 +139,6 @@ public class NodePaster {
   private void pasteToTarget(final SNode pasteTarget, final SNode anchorNode, String role, final PastePlaceHint placeHint) {
     AbstractConceptDeclaration pasteTargetType = pasteTarget.getConceptDeclarationAdapter();
     final LinkDeclaration link = findSuitableLink(pasteTargetType, role);
-
     if (link.getMetaClass() == LinkMetaclass.reference) {
       assert myPasteNodes.size() == 1 : "cannot paste multiple nodes to reference";
       pasteTarget.setReferent(link.getRole(), myPasteNodes.get(0));
@@ -178,12 +173,8 @@ public class NodePaster {
   }
 
   private void pasteToParent(SNode pasteTarget, String role, PastePlaceHint placeHint) {
-    pasteToParent_internal(pasteTarget, role, placeHint);
-  }
-
-  private void pasteToParent_internal(SNode anchorNode, String role, PastePlaceHint placeHint) {
     SNode actualPasteTarget;
-    NodeAndRole nodeAndRole = defineActualAnchorNode(anchorNode, role);
+    NodeAndRole nodeAndRole = defineActualAnchorNode(pasteTarget, role);
     SNode actualAnchorNode = nodeAndRole.myNode;
     String actualRole = nodeAndRole.myRole;
     actualPasteTarget = actualAnchorNode.getParent();
