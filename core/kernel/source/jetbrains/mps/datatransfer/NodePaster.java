@@ -135,52 +135,40 @@ public class NodePaster {
   }
 
   private boolean canPasteToTarget(SNode pasteTarget, String role) {
-    return pasteToTarget_internal(pasteTarget, null, role, PastePlaceHint.DEFAULT, false);
+    AbstractConceptDeclaration pasteTargetType = pasteTarget.getConceptDeclarationAdapter();
+    return findSuitableLink(pasteTargetType, role) != null;
   }
 
-  private void pasteToTarget(SNode pasteTarget, SNode anchorNode, String role, PastePlaceHint placeHint) {
-    pasteToTarget_internal(pasteTarget, anchorNode, role, placeHint, true);
-  }
-
-  private boolean pasteToTarget_internal(final SNode pasteTarget, final SNode anchorNode, String role, final PastePlaceHint placeHint, boolean reallyPaste) {
+  private void pasteToTarget(final SNode pasteTarget, final SNode anchorNode, String role, final PastePlaceHint placeHint) {
     AbstractConceptDeclaration pasteTargetType = pasteTarget.getConceptDeclarationAdapter();
     final LinkDeclaration link = findSuitableLink(pasteTargetType, role);
-    if (link == null) {
-      return false;
+
+    if (link.getMetaClass() == LinkMetaclass.reference) {
+      assert myPasteNodes.size() == 1 : "cannot paste multiple nodes to reference";
+      pasteTarget.setReferent(link.getRole(), myPasteNodes.get(0));
+      return;
     }
-    if (reallyPaste) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          if (link.getMetaClass() == LinkMetaclass.reference) {
-            assert myPasteNodes.size() == 1 : "cannot paste multiple nodes to reference";
-            pasteTarget.setReferent(link.getRole(), myPasteNodes.get(0));
-            return;
-          }
 
-          // unique child?
-          Cardinality cardinality = link.getSourceCardinality();
-          if (cardinality == Cardinality._0__1 || cardinality == Cardinality._1) {
-            assert myPasteNodes.size() == 1 : "cannot paste multiple children for role '" + link.getRole() + "'";
-            pasteTarget.setChild(link.getRole(), myPasteNodes.get(0));
-            return;
-          }
-
-          SNode _anchorNode = anchorNode;
-          boolean insertBefore = placeHint == PastePlaceHint.BEFORE_ANCHOR;
-          for (SNode pasteNode : myPasteNodes) {
-            pasteTarget.insertChild(_anchorNode, link.getRole(), pasteNode, insertBefore);
-            _anchorNode = pasteNode;
-            insertBefore = false;
-          }
-
-          // delete original anchor if it was abstract concept
-          if (anchorNode != null && anchorNode.getConceptDeclarationAdapter().hasConceptProperty(AbstractConceptDeclaration.CPR_Abstract)) {
-            anchorNode.delete();
-          }
-        }
-      });
+    // unique child?
+    Cardinality cardinality = link.getSourceCardinality();
+    if (cardinality == Cardinality._0__1 || cardinality == Cardinality._1) {
+      assert myPasteNodes.size() == 1 : "cannot paste multiple children for role '" + link.getRole() + "'";
+      pasteTarget.setChild(link.getRole(), myPasteNodes.get(0));
+      return;
     }
-    return true;
+
+    SNode _anchorNode = anchorNode;
+    boolean insertBefore = placeHint == PastePlaceHint.BEFORE_ANCHOR;
+    for (SNode pasteNode : myPasteNodes) {
+      pasteTarget.insertChild(_anchorNode, link.getRole(), pasteNode, insertBefore);
+      _anchorNode = pasteNode;
+      insertBefore = false;
+    }
+
+    // delete original anchor if it was abstract concept
+    if (anchorNode != null && anchorNode.getConceptDeclarationAdapter().hasConceptProperty(AbstractConceptDeclaration.CPR_Abstract)) {
+      anchorNode.delete();
+    }
   }
 
   private boolean canPasteToParent(SNode anchorNode, String role) {
