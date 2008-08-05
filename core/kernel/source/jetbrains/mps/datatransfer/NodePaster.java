@@ -131,6 +131,7 @@ public class NodePaster {
     if (canPasteToParent(pasteTarget, role_)) {
       return PASTE_TO_PARENT;
     }
+
     return PASTE_N_A;
   }
 
@@ -172,27 +173,24 @@ public class NodePaster {
   }
 
   private boolean canPasteToParent(SNode anchorNode, String role) {
-    return pasteToParent_internal(anchorNode, role, PastePlaceHint.DEFAULT, false);
+    NodeAndRole nodeAndRole = defineActualAnchorNode(anchorNode, role);
+    return (nodeAndRole != null && nodeAndRole.myNode != null);
   }
 
   private void pasteToParent(SNode pasteTarget, String role, PastePlaceHint placeHint) {
-    pasteToParent_internal(pasteTarget, role, placeHint, true);
+    pasteToParent_internal(pasteTarget, role, placeHint);
   }
 
-  private boolean pasteToParent_internal(SNode anchorNode, String role, PastePlaceHint placeHint, boolean reallyPaste) {
+  private void pasteToParent_internal(SNode anchorNode, String role, PastePlaceHint placeHint) {
     SNode actualPasteTarget;
     NodeAndRole nodeAndRole = defineActualAnchorNode(anchorNode, role);
-    if (!reallyPaste) {
-      return (nodeAndRole != null && nodeAndRole.myNode != null);
-    }
     SNode actualAnchorNode = nodeAndRole.myNode;
     String actualRole = nodeAndRole.myRole;
     actualPasteTarget = actualAnchorNode.getParent();
     if (actualPasteTarget == null) {
-      return false;
+      return;
     }
     pasteToTarget(actualPasteTarget, actualAnchorNode, actualRole, placeHint);
-    return true;
   }
 
   private NodeAndRole defineActualAnchorNode(SNode anchorNode, String firstRole) {
