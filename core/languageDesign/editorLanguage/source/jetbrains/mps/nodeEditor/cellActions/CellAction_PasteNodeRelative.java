@@ -8,7 +8,7 @@ package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.datatransfer.PasteNodeUtil;
+import jetbrains.mps.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
@@ -46,7 +46,7 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
       return false;
     }
 
-    if (!PasteNodeUtil.canPasteRelative(anchorNode, pasteNodes)) {
+    if (!new NodePaster(pasteNodes).canPasteRelative(anchorNode)) {
       LOG.debug("Couldn't paste node relative");
       return false;
     }
@@ -63,7 +63,7 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
-    PasteNodeUtil.pasteRelative(anchorNode, pasteNodes, myPastePlaceHint);
+    new NodePaster(pasteNodes).pasteRelative(anchorNode, myPastePlaceHint);
     Resolver.resolveReferences(requireResolveReferences, context.getOperationContext());
 
     // set selection

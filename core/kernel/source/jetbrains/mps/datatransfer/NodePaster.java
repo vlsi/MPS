@@ -17,51 +17,56 @@ import java.util.List;
  * Author: Sergey Dmitriev.
  * Time: Nov 25, 2003 7:27:37 PM
  */
-public class PasteNodeUtil {
+public class NodePaster {
 
   private static final int PASTE_N_A = 0;
   private static final int PASTE_TO_TARGET = 1;
   private static final int PASTE_TO_PARENT = 2;
   private static final int PASTE_TO_ROOT = 3;
 
+  private List<SNode> myPasteNodes;
 
-  public static boolean canPaste(SNode pasteTarget, List<SNode> pasteNodes, PasteEnv pasteEnv) {
-    return (canPaste_internal(pasteTarget, pasteNodes, null, pasteEnv) != PASTE_N_A);
+  public NodePaster(List<SNode> pasteNodes) {
+    myPasteNodes = pasteNodes;
   }
 
-  public static boolean canPaste(EditorCell targetCell, List<SNode> pasteNodes) {
+  public boolean canPaste(SNode pasteTarget, PasteEnv pasteEnv) {
+    return (canPaste_internal(pasteTarget, null, pasteEnv) != PASTE_N_A);
+  }
+
+  public boolean canPaste(EditorCell targetCell) {
     String role = getRoleFromCell(targetCell);
     SNode pasteTarget = targetCell.getSNode();
     if (pasteTarget == null) return false;
-    return (canPaste_internal(pasteTarget, pasteNodes, role, PasteEnv.NODE_EDITOR) != PASTE_N_A);
+    return (canPaste_internal(pasteTarget, role, PasteEnv.NODE_EDITOR) != PASTE_N_A);
   }
 
-  public static void paste(EditorCell targetCell, List<SNode> pasteNodes) {
+  public void paste(EditorCell targetCell) {
     String role = getRoleFromCell(targetCell);
     SNode pasteTarget = targetCell.getSNode();
-    paste_internal(pasteTarget, pasteNodes, role, PasteEnv.NODE_EDITOR);
+    paste_internal(pasteTarget, role, PasteEnv.NODE_EDITOR);
   }
 
-  public static void paste(SNode pasteTarget, List<SNode> pasteNodes, PasteEnv pasteEnv) {
+  public void paste(SNode pasteTarget, PasteEnv pasteEnv) {
     String role_ = pasteTarget.getRole_();
-    paste_internal(pasteTarget, pasteNodes, role_, pasteEnv);
+    paste_internal(pasteTarget, role_, pasteEnv);
   }
 
-  public static void pasteAsRoots(List<SNode> pasteNodes, SModel model, String dstPackage) {
-    pasteAsRoots(pasteNodes, model);
-    for (SNode node : pasteNodes) {
+  public void pasteAsRoots(SModel model, String dstPackage) {
+    pasteAsRoots(model);
+    for (SNode node : myPasteNodes) {
       node.setProperty(SModelTreeNode.PACK, dstPackage);
     }
   }
 
-  public static void pasteAsRoots(List<SNode> pasteNodes, SModel model) {
-    for (SNode pasteNode : pasteNodes) {
+  public void pasteAsRoots(SModel model) {
+    for (SNode pasteNode : myPasteNodes) {
       model.addRoot(pasteNode);
     }
   }
 
-  public static boolean canPasteAsRoots(List<SNode> pasteNodes) {
-    for (SNode pasteNode : pasteNodes) {
+  public boolean canPasteAsRoots() {
+    for (SNode pasteNode : myPasteNodes) {
       AbstractConceptDeclaration nodeConcept = pasteNode.getConceptDeclarationAdapter();
       if (!(nodeConcept instanceof ConceptDeclaration && ((ConceptDeclaration) nodeConcept).getRootable())) {
         return false;
@@ -70,32 +75,42 @@ public class PasteNodeUtil {
     return true;
   }
 
+  public boolean canPasteRelative(SNode anchorNode) {
+    return canPasteToParent(anchorNode, anchorNode.getRole_());
+  }
 
-  private static void paste_internal(SNode pasteTarget, List<SNode> pasteNodes, String role, PasteEnv pasteEnv) {
+  public void pasteRelative(SNode anchorNode, PastePlaceHint placeHint) {
+    if (anchorNode.getParent() == null) {
+      pasteAsRoots(anchorNode.getModel());
+    } else {
+      pasteToParent(anchorNode, anchorNode.getRole_(), placeHint);
+    }
+  }
+
+  private void paste_internal(SNode pasteTarget, String role, PasteEnv pasteEnv) {
     String role_ = role != null ? role : pasteTarget.getRole_();
-    int status = canPaste_internal(pasteTarget, pasteNodes, role_, pasteEnv);
+    int status = canPaste_internal(pasteTarget, role_, pasteEnv);
 
     if (status == PASTE_TO_TARGET) {
-      pasteToTarget(pasteTarget, pasteNodes, null, role_, PastePlaceHint.DEFAULT);
+      pasteToTarget(pasteTarget, null, role_, PastePlaceHint.DEFAULT);
     } else if (status == PASTE_TO_PARENT) {
-      pasteToParent(pasteTarget, pasteNodes, role_, PastePlaceHint.DEFAULT);
+      pasteToParent(pasteTarget, role_, PastePlaceHint.DEFAULT);
     } else if (status == PASTE_TO_ROOT) {
-      for (SNode pasteNode : pasteNodes) {
+      for (SNode pasteNode : myPasteNodes) {
         pasteNode.getModel().addRoot(pasteNode);
       }
     }
   }
 
-
-  private static int canPaste_internal(SNode pasteTarget, List<SNode> pasteNodes, String role, PasteEnv pasteEnv) {
-    if (pasteNodes == null || pasteNodes.isEmpty()) {
+  private int canPaste_internal(SNode pasteTarget, String role, PasteEnv pasteEnv) {
+    if (myPasteNodes == null || myPasteNodes.isEmpty()) {
       return PASTE_N_A;
     }
 
     String role_ = role != null ? role : pasteTarget.getRole_();
 
-    boolean canPasteAsRoot = (pasteTarget.getParent() == null) && canPasteAsRoots(pasteNodes); // root selected and ..
-    boolean canPasteToTarget = canPasteToTarget(pasteTarget, pasteNodes, role_);
+    boolean canPasteAsRoot = (pasteTarget.getParent() == null) && canPasteAsRoots(); // root selected and ..
+    boolean canPasteToTarget = canPasteToTarget(pasteTarget, role_);
 
     if (pasteEnv == PasteEnv.PROJECT_TREE) {
       // project pane
@@ -113,23 +128,23 @@ public class PasteNodeUtil {
       }
     }
 
-    if (canPasteToParent(pasteTarget, pasteNodes, role_)) {
+    if (canPasteToParent(pasteTarget, role_)) {
       return PASTE_TO_PARENT;
     }
     return PASTE_N_A;
   }
 
-  private static boolean canPasteToTarget(SNode pasteTarget, List<SNode> pasteNodes, String role) {
-    return pasteToTarget_internal(pasteTarget, pasteNodes, null, role, PastePlaceHint.DEFAULT, false);
+  private boolean canPasteToTarget(SNode pasteTarget, String role) {
+    return pasteToTarget_internal(pasteTarget, null, role, PastePlaceHint.DEFAULT, false);
   }
 
-  private static void pasteToTarget(SNode pasteTarget, List<SNode> pasteNodes, SNode anchorNode, String role, PastePlaceHint placeHint) {
-    pasteToTarget_internal(pasteTarget, pasteNodes, anchorNode, role, placeHint, true);
+  private void pasteToTarget(SNode pasteTarget, SNode anchorNode, String role, PastePlaceHint placeHint) {
+    pasteToTarget_internal(pasteTarget, anchorNode, role, placeHint, true);
   }
 
-  private static boolean pasteToTarget_internal(final SNode pasteTarget, final List<SNode> pasteNodes, final SNode anchorNode, String role, final PastePlaceHint placeHint, boolean reallyPaste) {
+  private boolean pasteToTarget_internal(final SNode pasteTarget, final SNode anchorNode, String role, final PastePlaceHint placeHint, boolean reallyPaste) {
     AbstractConceptDeclaration pasteTargetType = pasteTarget.getConceptDeclarationAdapter();
-    final LinkDeclaration link = findSuitableLink(pasteTargetType, pasteNodes, role);
+    final LinkDeclaration link = findSuitableLink(pasteTargetType, role);
     if (link == null) {
       return false;
     }
@@ -137,22 +152,22 @@ public class PasteNodeUtil {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           if (link.getMetaClass() == LinkMetaclass.reference) {
-            assert pasteNodes.size() == 1 : "cannot paste multiple nodes to reference";
-            pasteTarget.setReferent(link.getRole(), pasteNodes.get(0));
+            assert myPasteNodes.size() == 1 : "cannot paste multiple nodes to reference";
+            pasteTarget.setReferent(link.getRole(), myPasteNodes.get(0));
             return;
           }
 
           // unique child?
           Cardinality cardinality = link.getSourceCardinality();
           if (cardinality == Cardinality._0__1 || cardinality == Cardinality._1) {
-            assert pasteNodes.size() == 1 : "cannot paste multiple children for role '" + link.getRole() + "'";
-            pasteTarget.setChild(link.getRole(), pasteNodes.get(0));
+            assert myPasteNodes.size() == 1 : "cannot paste multiple children for role '" + link.getRole() + "'";
+            pasteTarget.setChild(link.getRole(), myPasteNodes.get(0));
             return;
           }
 
           SNode _anchorNode = anchorNode;
           boolean insertBefore = placeHint == PastePlaceHint.BEFORE_ANCHOR;
-          for (SNode pasteNode : pasteNodes) {
+          for (SNode pasteNode : myPasteNodes) {
             pasteTarget.insertChild(_anchorNode, link.getRole(), pasteNode, insertBefore);
             _anchorNode = pasteNode;
             insertBefore = false;
@@ -168,27 +183,17 @@ public class PasteNodeUtil {
     return true;
   }
 
-  private static boolean canPasteToParent(SNode anchorNode, List<SNode> pasteNodes, String role) {
-    return pasteToParent_internal(anchorNode, pasteNodes, role, PastePlaceHint.DEFAULT, false);
+  private boolean canPasteToParent(SNode anchorNode, String role) {
+    return pasteToParent_internal(anchorNode, role, PastePlaceHint.DEFAULT, false);
   }
 
-  private static void pasteToParent(SNode pasteTarget, List<SNode> pasteNodes, String role, PastePlaceHint placeHint) {
-    pasteToParent_internal(pasteTarget, pasteNodes, role, placeHint, true);
+  private void pasteToParent(SNode pasteTarget, String role, PastePlaceHint placeHint) {
+    pasteToParent_internal(pasteTarget, role, placeHint, true);
   }
 
-  private static class NodeAndRole {
-    public String myRole;
-    public SNode myNode;
-
-    public NodeAndRole(SNode node, String role) {
-      this.myRole = role;
-      this.myNode = node;
-    }
-  }
-
-  private static boolean pasteToParent_internal(SNode anchorNode, List<SNode> pasteNodes, String role, PastePlaceHint placeHint, boolean reallyPaste) {
+  private boolean pasteToParent_internal(SNode anchorNode, String role, PastePlaceHint placeHint, boolean reallyPaste) {
     SNode actualPasteTarget;
-    NodeAndRole nodeAndRole = defineActualAnchorNode(anchorNode, pasteNodes, role);
+    NodeAndRole nodeAndRole = defineActualAnchorNode(anchorNode, role);
     if (!reallyPaste) {
       return (nodeAndRole != null && nodeAndRole.myNode != null);
     }
@@ -198,18 +203,18 @@ public class PasteNodeUtil {
     if (actualPasteTarget == null) {
       return false;
     }
-    PasteNodeUtil.pasteToTarget(actualPasteTarget, pasteNodes, actualAnchorNode, actualRole, placeHint);
+    pasteToTarget(actualPasteTarget, actualAnchorNode, actualRole, placeHint);
     return true;
   }
 
-  private static NodeAndRole defineActualAnchorNode(SNode anchorNode, List<SNode> pasteNodes, String firstRole) {
+  private NodeAndRole defineActualAnchorNode(SNode anchorNode, String firstRole) {
     String role = firstRole;
     while (anchorNode != null) {
       SNode container = anchorNode.getParent();
       if (container == null) {
         break;
       }
-      if (PasteNodeUtil.canPasteToTarget(container, pasteNodes, role)) {
+      if (canPasteToTarget(container, role)) {
         return new NodeAndRole(anchorNode, role);
       }
       anchorNode = container;
@@ -218,7 +223,7 @@ public class PasteNodeUtil {
     return null;
   }
 
-  private static LinkDeclaration findSuitableLink(AbstractConceptDeclaration sourceConcept, List<SNode> pasteNodes, String role) {
+  private LinkDeclaration findSuitableLink(AbstractConceptDeclaration sourceConcept, String role) {
     List<LinkDeclaration> links = new ArrayList<LinkDeclaration>();
     if (role != null) {
       LinkDeclaration link = new ConceptAndSuperConceptsScope(sourceConcept).getMostSpecificLinkDeclarationByRole(role);
@@ -231,7 +236,7 @@ public class PasteNodeUtil {
 
     for (LinkDeclaration link : links) {
       boolean suitable = true;
-      for (SNode pasteNode : pasteNodes) {
+      for (SNode pasteNode : myPasteNodes) {
         AbstractConceptDeclaration pasteConcept = pasteNode.getConceptDeclarationAdapter();
         if (!SModelUtil_new.isAssignableConcept(pasteConcept, link.getTarget())) {
           suitable = false;
@@ -240,7 +245,7 @@ public class PasteNodeUtil {
       }
 
       if (suitable) {
-        if (pasteNodes.size() == 1 || (link.getSourceCardinality() == Cardinality._0__n || link.getSourceCardinality() == Cardinality._1__n)) {
+        if (myPasteNodes.size() == 1 || (link.getSourceCardinality() == Cardinality._0__n || link.getSourceCardinality() == Cardinality._1__n)) {
           return link;
         }
       }
@@ -249,9 +254,7 @@ public class PasteNodeUtil {
     return null;
   }
 
-
-  private static String getRoleFromCell(EditorCell targetCell) {
-
+  private String getRoleFromCell(EditorCell targetCell) {
     String role = (String) targetCell.getUserObject(EditorCell.ROLE);
     if (role != null) return role;
 
@@ -279,16 +282,14 @@ public class PasteNodeUtil {
     return role;
   }
 
+  private static class NodeAndRole {
+    public String myRole;
+    public SNode myNode;
 
-  public static boolean canPasteRelative(SNode anchorNode, List<SNode> pasteNodes) {
-    return canPasteToParent(anchorNode, pasteNodes, anchorNode.getRole_());
-  }
-
-  public static void pasteRelative(SNode anchorNode, List<SNode> pasteNodes, PastePlaceHint placeHint) {
-    if (anchorNode.getParent() == null) {
-      pasteAsRoots(pasteNodes, anchorNode.getModel());
-    } else {
-      pasteToParent(anchorNode, pasteNodes, anchorNode.getRole_(), placeHint);
+    public NodeAndRole(SNode node, String role) {
+      this.myRole = role;
+      this.myNode = node;
     }
   }
+
 }
