@@ -216,7 +216,7 @@ public class QueriesGenerated {
       for(SNode op : ops) {
         SNode label = SLinkOperations.getTarget(op, "label", false);
         if (label == null) {
-          _context.getGenerator().showErrorMessage(op, "reference on mapping label is broken");
+          _context.showErrorMessage(op, "reference on mapping label is broken");
           continue;
         }
         SPropertyOperations.set(op, "labelName_intern", SPropertyOperations.getString(label, "name"));
@@ -229,7 +229,7 @@ public class QueriesGenerated {
       for(SNode op : ops) {
         SNode label = SLinkOperations.getTarget(op, "label", false);
         if (label == null) {
-          _context.getGenerator().showErrorMessage(op, "reference on mapping label is broken");
+          _context.showErrorMessage(op, "reference on mapping label is broken");
           continue;
         }
         SPropertyOperations.set(op, "labelName_intern", SPropertyOperations.getString(label, "name"));
@@ -242,7 +242,7 @@ public class QueriesGenerated {
       for(SNode op : ops) {
         SNode label = SLinkOperations.getTarget(op, "label", false);
         if (label == null) {
-          _context.getGenerator().showErrorMessage(op, "reference on mapping label is broken");
+          _context.showErrorMessage(op, "reference on mapping label is broken");
           continue;
         }
         SPropertyOperations.set(op, "labelName_intern", SPropertyOperations.getString(label, "name"));

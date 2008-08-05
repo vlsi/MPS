@@ -4,11 +4,11 @@ package jetbrains.mps.closures.generator.baseLanguage.template.helper;
 
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import java.util.ArrayList;
 
 public class PrepStatementUtil {
 
@@ -19,57 +19,6 @@ public class PrepStatementUtil {
     this.ctx = new PrepStatementUtil.Context();
     this.generator = generator;
   }
-
-  public static void prepStatementList(SNode slist, ITemplateGenerator generator) {
-    PrepStatementUtil psu = new PrepStatementUtil(generator);
-    psu.prepTopStatementList(slist);
-  }
-
-  public static void putPrepData(SNode sn, Object data, ITemplateGenerator generator) {
-    generator.getGeneratorSessionContext().putStepObject("closure_data_" + ((SNode)sn).getId(), data);
-  }
-
-  public static Object getPrepData(SNode sn, ITemplateGenerator generator) {
-    return generator.getGeneratorSessionContext().getStepObject("closure_data_" + ((SNode)sn).getId());
-  }
-
-  public static void copyPrepData(SNode from, SNode to, ITemplateGenerator generator) {
-    copyPrepDataNoRecursion(from, to, generator);
-    List<SNode> toDescendants = new ArrayList<SNode>(SNodeOperations.getDescendants(to, null, false));
-    int idx = 0;
-    for(SNode fromDesc : SNodeOperations.getDescendants(from, null, false)) {
-      copyPrepDataNoRecursion(fromDesc, toDescendants.get(idx), generator);
-      idx = idx + 1;
-    }
-  }
-
-  private static void copyPrepDataNoRecursion(SNode from, SNode to, ITemplateGenerator generator) {
-    Object data = getPrepData(from, generator);
-    if (data != null) {
-      putPrepData(to, data, generator);
-    }
-  }
-
-  public static void setFlag(SNode sn, ITemplateGenerator generator, Object flag) {
-    generator.getGeneratorSessionContext().putStepObject("flag_" + ((SNode)sn).getId(), flag);
-    List<SNode> allFlagged = getAllFlagged(generator);
-    if (allFlagged == null) {
-      allFlagged = new ArrayList<SNode>();
-      generator.getGeneratorSessionContext().putStepObject("all_flagged", allFlagged);
-    }
-    if (!(allFlagged.contains(sn))) {
-      allFlagged.add(sn);
-    }
-  }
-
-  public static Object getFlag(SNode sn, ITemplateGenerator generator) {
-    return generator.getGeneratorSessionContext().getStepObject("flag_" + ((SNode)sn).getId());
-  }
-
-  public static List<SNode> getAllFlagged(ITemplateGenerator generator) {
-    return (List<SNode>)generator.getGeneratorSessionContext().getStepObject("all_flagged");
-  }
-
 
   private void prepTopStatementList(SNode slist) {
     int beginLabel = this.ctx.label;
@@ -306,6 +255,57 @@ public class PrepStatementUtil {
       }
     }
     return this.ctx.incrementLabel();
+  }
+
+
+  public static void prepStatementList(SNode slist, ITemplateGenerator generator) {
+    PrepStatementUtil psu = new PrepStatementUtil(generator);
+    psu.prepTopStatementList(slist);
+  }
+
+  public static void putPrepData(SNode sn, Object data, ITemplateGenerator generator) {
+    generator.getGeneratorSessionContext().putStepObject("closure_data_" + ((SNode)sn).getId(), data);
+  }
+
+  public static Object getPrepData(SNode sn, ITemplateGenerator generator) {
+    return generator.getGeneratorSessionContext().getStepObject("closure_data_" + ((SNode)sn).getId());
+  }
+
+  public static void copyPrepData(SNode from, SNode to, ITemplateGenerator generator) {
+    copyPrepDataNoRecursion(from, to, generator);
+    List<SNode> toDescendants = new ArrayList<SNode>(SNodeOperations.getDescendants(to, null, false));
+    int idx = 0;
+    for(SNode fromDesc : SNodeOperations.getDescendants(from, null, false)) {
+      copyPrepDataNoRecursion(fromDesc, toDescendants.get(idx), generator);
+      idx = idx + 1;
+    }
+  }
+
+  private static void copyPrepDataNoRecursion(SNode from, SNode to, ITemplateGenerator generator) {
+    Object data = getPrepData(from, generator);
+    if (data != null) {
+      putPrepData(to, data, generator);
+    }
+  }
+
+  public static void setFlag(SNode sn, ITemplateGenerator generator, Object flag) {
+    generator.getGeneratorSessionContext().putStepObject("flag_" + ((SNode)sn).getId(), flag);
+    List<SNode> allFlagged = getAllFlagged(generator);
+    if (allFlagged == null) {
+      allFlagged = new ArrayList<SNode>();
+      generator.getGeneratorSessionContext().putStepObject("all_flagged", allFlagged);
+    }
+    if (!(allFlagged.contains(sn))) {
+      allFlagged.add(sn);
+    }
+  }
+
+  public static Object getFlag(SNode sn, ITemplateGenerator generator) {
+    return generator.getGeneratorSessionContext().getStepObject("flag_" + ((SNode)sn).getId());
+  }
+
+  public static List<SNode> getAllFlagged(ITemplateGenerator generator) {
+    return (List<SNode>)generator.getGeneratorSessionContext().getStepObject("all_flagged");
   }
 
   private static class Context {
