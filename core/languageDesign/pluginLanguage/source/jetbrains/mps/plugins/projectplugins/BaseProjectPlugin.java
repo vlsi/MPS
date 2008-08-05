@@ -172,6 +172,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     }
 
     for (ComponentState componentState : state.myComponentsState) {
+      if (componentState.second == null) return;
       components.get(componentState.first).loadState(componentState.second);
     }
   }
@@ -182,14 +183,13 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
   public static class ComponentState {
     public String first;
-    public Object second;
+    public jetbrains.mps.baseLanguage.unitTest.plugin.UnitTest_PreferencesComponent.MyState second;
 
     public ComponentState() {
     }
 
     public ComponentState(String first, Object second) {
       this.first = first;
-      this.second = second;
     }
   }
 }

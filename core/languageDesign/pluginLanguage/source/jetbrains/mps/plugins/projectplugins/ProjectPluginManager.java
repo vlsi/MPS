@@ -45,6 +45,8 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   private MyState myState = new MyState();
 
+  private boolean isLoaded = false;
+
   private Project myProject;
   private ReloadListener myReloadListener = new ReloadListener() {
     public void onBeforeReload() {
@@ -101,6 +103,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   private void loadPlugins() {
+    if (isLoaded) return;
     Set<Language> languages = new HashSet<Language>();
     Set<DevKit> devkits = new HashSet<DevKit>();
 
@@ -147,6 +150,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       }
     }
     spreadState();
+    isLoaded = true;
   }
 
   private void addIdePlugin() {
@@ -155,6 +159,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   private void disposePlugins() {
+    if (!isLoaded) return;
     collectState();
     for (BaseProjectPlugin plugin : myPlugins) {
       try {
@@ -164,6 +169,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       }
     }
     myPlugins.clear();
+    isLoaded = false;
   }
 
   private void addPlugin(IModule contextModule, String pluginClassFqName) {

@@ -156,6 +156,32 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="12">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink"/>
+      <moveMap/>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="initBlock" conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.PreferencePage"
+               featureKind="CHILD"/>
+          <value featureName="isModifiedBlock"
+                 conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structurePreferencePage" featureKind="CHILD"/>
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="13">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept"/>
+      <moveMap/>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="PreferencePageInitBlock"
+               conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.PreferencePageInitBlock"
+               featureKind="CONCEPT"/>
+          <value featureName="PreferencePageIsModifiedBlock"
+                 conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.PreferencePageIsModifiedBlock"
+                 featureKind="CONCEPT"/>
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11"/>
@@ -176,7 +202,7 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17"/>
   </language>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="11"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="13"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7"/>
@@ -1765,11 +1791,6 @@
     <property name="package" value="Preference.Page"/>
     <property name="name" value="PreferencePage"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1210684417353">
-      <property name="value" value="page"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
-    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
           id="1210686769921">
       <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept"/>
@@ -1789,7 +1810,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1210763647050">
       <property name="metaClass" value="aggregation"/>
-      <property name="role" value="initBlock"/>
+      <property name="role" value="isModifiedBlock"/>
       <property name="sourceCardinality" value="1"/>
       <link role="target" targetNodeId="1210763550007" resolveInfo="PreferencePageInitBlock"/>
     </node>
@@ -1891,7 +1912,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210763550007">
     <property name="package" value="Preference.Page"/>
-    <property name="name" value="PreferencePageInitBlock"/>
+    <property name="name" value="PreferencePageIsModifiedBlock"/>
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1210763550009">
@@ -1912,7 +1933,7 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1215038387045">
-      <property name="value" value="init"/>
+      <property name="value" value="isModified"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"

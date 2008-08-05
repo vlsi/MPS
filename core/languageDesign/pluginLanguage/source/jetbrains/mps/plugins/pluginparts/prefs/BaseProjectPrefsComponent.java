@@ -14,6 +14,10 @@ public abstract class BaseProjectPrefsComponent<T> implements PersistentStateCom
     myProject = project;
   }
 
+  public List<BasePrefsPage> getPages() {
+    return myPages;
+  }
+
   public Project getProject() {
     return myProject;
   }
