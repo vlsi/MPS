@@ -1,6 +1,5 @@
 package jetbrains.mps.project;
 
-import com.intellij.ide.IdeEventQueue;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
@@ -8,7 +7,6 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.Highlighter;
@@ -56,6 +54,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   public MPSProject(final File projectFile, final ProjectDescriptor projectDescriptor, Project ideaProject) {
     myIDEAProject = ideaProject;
+
+    if (ideaProject.isDefault()) return;
 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
