@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.actions.goTo.framework.nodes.GoToNodeModel;
+import jetbrains.mps.workbench.actions.goTo.framework.nodes.BaseNodeModel;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -45,7 +45,7 @@ public class GoToConceptNodeAction extends BaseAction {
       }
     };
 
-    GoToNodeModel goToNodeModel = new GoToNodeModel(mpsProject) {
+    BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject) {
       public SNode[] find(IScope scope) {
         final List<SNode> nodes = new ArrayList<SNode>();
         for (Language l : scope.getVisibleLanguages()) {
@@ -57,7 +57,7 @@ public class GoToConceptNodeAction extends BaseAction {
 
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, fakePsiContext);
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, baseNodeModel, fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

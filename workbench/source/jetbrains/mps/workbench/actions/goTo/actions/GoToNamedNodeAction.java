@@ -14,7 +14,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.actions.goTo.framework.nodes.GoToNodeModel;
+import jetbrains.mps.workbench.actions.goTo.framework.nodes.BaseNodeModel;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -44,7 +44,7 @@ public class GoToNamedNodeAction extends BaseAction {
       }
     };
 
-    GoToNodeModel goToNodeModel = new GoToNodeModel(mpsProject) {
+    BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject) {
       public SNode[] find(IScope scope) {
         final List<SNode> nodes = new ArrayList<SNode>();
         List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
@@ -63,7 +63,7 @@ public class GoToNamedNodeAction extends BaseAction {
         return nodes.toArray(new SNode[0]);
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, fakePsiContext);
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, baseNodeModel, fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

@@ -35,10 +35,11 @@ import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.actions.goTo.framework.base.BaseMPSChooseModel;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class GoToNodeModel extends BaseMPSChooseModel<SNode> {
-  public GoToNodeModel(MPSProject project) {
+public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
+  public BaseNodeModel(MPSProject project) {
     super(project);
   }
 
@@ -55,7 +56,13 @@ public abstract class GoToNodeModel extends BaseMPSChooseModel<SNode> {
   }
 
   public NavigationItem doGetNavigationItem(SNode node) {
-    return new NodeNavigationItem(getProject(), node);
+    return new BaseNodeItem(node) {
+      private MPSProject myProject = getProject();
+
+      public void navigate(boolean requestFocus) {
+        myProject.getComponentSafe(MPSEditorOpener.class).openNode(getNode());
+      }
+    };
   }
 
   //---------------------INTERFACE STUFF------------------------

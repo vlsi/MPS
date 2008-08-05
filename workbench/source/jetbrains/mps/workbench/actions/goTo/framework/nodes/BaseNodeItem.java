@@ -3,17 +3,13 @@ package jetbrains.mps.workbench.actions.goTo.framework.nodes;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.Nullable;
 
-public final class NodeNavigationItem implements NavigationItem {
-  private MPSProject myProject;
+public abstract class BaseNodeItem implements NavigationItem {
   private SNode myNode;
 
-  public NodeNavigationItem(MPSProject project, SNode node) {
-    myProject = project;
+  public BaseNodeItem(SNode node) {
     myNode = node;
   }
 
@@ -32,10 +28,6 @@ public final class NodeNavigationItem implements NavigationItem {
 
   public FileStatus getFileStatus() {
     return FileStatus.NOT_CHANGED;
-  }
-
-  public void navigate(boolean requestFocus) {
-    myProject.getComponentSafe(MPSEditorOpener.class).openNode(myNode);
   }
 
   public boolean canNavigate() {

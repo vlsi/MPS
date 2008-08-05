@@ -22,15 +22,13 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   </language>
   <language namespace="jetbrains.mps.baseLanguageInternal"/>
-  <language namespace="jetbrains.mps.closures">
-    <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2"/>
-    <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
-  </language>
+  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2"/>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
   <languageAspect modelUID="jetbrains.mps.ide.uiLanguage.constraints" version="3"/>
   <languageAspect modelUID="jetbrains.mps.uiLanguage.constraints" version="26"/>
-  <maxImportIndex value="107"/>
+  <maxImportIndex value="108"/>
   <import index="1" modelUID="jetbrains.mps.workbench.actions.nodes@java_stub" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.ide.modelchecker@java_stub" version="-1"/>
   <import index="3" modelUID="jetbrains.mps.workbench.actions.model@java_stub" version="-1"/>
@@ -65,7 +63,6 @@
   <import index="68" modelUID="com.intellij.openapi.progress@java_stub" version="-1"/>
   <import index="69" modelUID="org.jetbrains.annotations@java_stub" version="-1"/>
   <import index="70" modelUID="jetbrains.mps.ide.progress@java_stub" version="-1"/>
-  <import index="71" modelUID="com.intellij.openapi.project@java_stub" version="-1"/>
   <import index="72" modelUID="javax.swing@java_stub" version="-1"/>
   <import index="73" modelUID="java.lang@java_stub" version="-1"/>
   <import index="76" modelUID="jetbrains.mps.util@java_stub" version="-1"/>
@@ -92,7 +89,6 @@
   <import index="99" modelUID="jetbrains.mps.nodeEditor.inspector@java_stub" version="-1"/>
   <import index="100" modelUID="com.intellij.openapi.actionSystem@java_stub" version="-1"/>
   <import index="101" modelUID="jetbrains.mps.transformation.TLBase.plugin.debug@java_stub" version="-1"/>
-  <import index="102" modelUID="jetbrains.mps.nodeEditor.cells@java_stub" version="-1"/>
   <import index="104" modelUID="jetbrains.mps.bootstrap.structureLanguage.plugin@java_stub" version="-1"/>
   <import index="105" modelUID="jetbrains.mps.ide.moduleRepositoryViewer@java_stub" version="-1"/>
   <import index="106" modelUID="jetbrains.mps.ide.modelRepositoryViewer@java_stub" version="-1"/>
@@ -837,6 +833,11 @@
             id="1217518715883">
         <link role="constructorDeclaration" targetNodeId="46.~AddModelImportAction.&lt;init&gt;()"
               resolveInfo="AddModelImportAction"/>
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
+            id="1217953950794">
+        <link role="constructorDeclaration" targetNodeId="46.~AddModelImportByRootNodeAction.&lt;init&gt;()"
+              resolveInfo="AddModelImportByRootNodeAction"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
             id="1217518716782">
