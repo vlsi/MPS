@@ -76,7 +76,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     // process action
     if (selectedCell != null) {
       if (selectedCell instanceof EditorCell_Label &&
-        !isOneToManyCollection(selectedCell) &&
+        !isLinkCollection(selectedCell) &&
         (actionType == CellActionType.INSERT || actionType == CellActionType.INSERT_BEFORE)) {
 
         EditorCell cellWithRole = new ChildrenCollectionFinder(selectedCell, actionType == CellActionType.INSERT).find();
@@ -213,12 +213,10 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     return (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
   }
 
-  private boolean isOneToManyCollection(EditorCell cell) {
+  private boolean isLinkCollection(EditorCell cell) {
     String role = (String) cell.getUserObject(EditorCell.ROLE);
     if (role == null) return false;
-    LinkDeclaration link = cell.getSNode().getLinkDeclaration(role);
-    if (link == null) return false;
-    return link.getSourceCardinality() == Cardinality._0__n || link.getSourceCardinality() == Cardinality._1__n;
+    return true;
   }
 
   private boolean hasSingleRolesAtLeftBoundary(EditorCell cell) {

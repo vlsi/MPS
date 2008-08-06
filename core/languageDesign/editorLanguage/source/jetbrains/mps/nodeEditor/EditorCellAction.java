@@ -1,9 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-/**
- * Author: Sergey Dmitriev
- * Created Nov 4, 2003
- */
 public abstract class EditorCellAction {
 
   public String getDescriptionText() {
