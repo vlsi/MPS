@@ -413,6 +413,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myEventsCollector.remove(myModelDescriptor);
     getSModelDescriptor().removeModelListener(mySimpleModelListener);
     ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
+    myEventsCollector.dispose();
   }
 
   private void updateNodePresentation(final boolean reloadSubTree) {
