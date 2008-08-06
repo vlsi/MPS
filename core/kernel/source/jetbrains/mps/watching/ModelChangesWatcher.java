@@ -2,6 +2,7 @@ package jetbrains.mps.watching;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.Application;
 import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
@@ -43,9 +44,10 @@ import java.io.File;
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
   private final MessageBus myBus;
+  private final SModelRepository mySModelRepository;
   private final Set<MetadataCreationListener> myMetadataListeners = new LinkedHashSet<MetadataCreationListener>();
 
-  public static ModelChangesWatcher instance(){
+  public static ModelChangesWatcher instance() {
     return ApplicationManager.getApplication().getComponent(ModelChangesWatcher.class);
   }
 
@@ -55,6 +57,12 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
 
     public void after(List<? extends VFileEvent> events) {
+
+      Application application = ApplicationManager.getApplication();
+      if (application.isDisposeInProgress() || application.isDisposed()) {
+        return;
+      }
+
       final Set<SModelDescriptor> toReload = new LinkedHashSet<SModelDescriptor>();
 
       for (VFileEvent event : events) {
@@ -66,7 +74,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
           if (vfile.getFileType().equals(MPSFileTypesManager.MODEL_FILE_TYPE)) {
             IFile ifile = VFileSystem.toIFile(vfile);
             if ((ifile == null) || (!ifile.exists())) continue;
-            final SModelDescriptor model = ApplicationManager.getApplication().getComponent(SModelRepository.class).findModel(ifile);
+            final SModelDescriptor model = mySModelRepository.findModel(ifile);
             if ((model != null) && model.needsReloading()) {
               ProgressManager.getInstance().run(new Modal(null, "Reloading Updated Models", false) {
                 public void run(@NotNull final ProgressIndicator indicator) {
@@ -74,7 +82,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
                     public void run() {
                       try {
                         indicator.setIndeterminate(true);
-                        List<SModelDescriptor> allModelDescriptors = ApplicationManager.getApplication().getComponent(SModelRepository.class).getAllModelDescriptors();
+                        List<SModelDescriptor> allModelDescriptors = mySModelRepository.getAllModelDescriptors();
 
                         for (SModelDescriptor d : allModelDescriptors) {
                           IFile modelFile = d.getModelFile();
@@ -96,8 +104,9 @@ public class ModelChangesWatcher implements ApplicationComponent {
         } else {
 
           IFile ifile = VFileSystem.toIFile(vfile);
-          if ((ifile == null) || (!ifile.exists()) || (!vfile.getFileType().equals(MPSFileTypesManager.MODEL_FILE_TYPE))) continue;
-          final SModelDescriptor model = ApplicationManager.getApplication().getComponent(SModelRepository.class).findModel(ifile);
+          if ((ifile == null) || (!ifile.exists()) || (!vfile.getFileType().equals(MPSFileTypesManager.MODEL_FILE_TYPE)))
+            continue;
+          final SModelDescriptor model = mySModelRepository.findModel(ifile);
 
           if (model != null) {
             if (ApplicationLevelVcsManager.instance().isInConflict(ifile)) {
@@ -132,9 +141,9 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private MessageBusConnection myConnection;
 
 
-  public ModelChangesWatcher(final MessageBus bus) {
+  public ModelChangesWatcher(final MessageBus bus, SModelRepository sModelRepository) {
     myBus = bus;
-
+    mySModelRepository = sModelRepository;
   }
 
   @NonNls
@@ -152,16 +161,16 @@ public class ModelChangesWatcher implements ApplicationComponent {
     myConnection.disconnect();
   }
 
-  public void addMetadataListener(MetadataCreationListener l){
+  public void addMetadataListener(MetadataCreationListener l) {
     myMetadataListeners.add(l);
   }
 
-  public void removeMetadataListener(MetadataCreationListener l){
+  public void removeMetadataListener(MetadataCreationListener l) {
     myMetadataListeners.remove(l);
   }
 
-  public void fireMetadataFileCreated(IFile f){
-    for (MetadataCreationListener l : myMetadataListeners){
+  public void fireMetadataFileCreated(IFile f) {
+    for (MetadataCreationListener l : myMetadataListeners) {
       l.metadataFileCreated(f);
     }
   }
