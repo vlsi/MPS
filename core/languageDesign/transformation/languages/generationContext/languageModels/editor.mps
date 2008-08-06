@@ -181,7 +181,7 @@
         <property name="text" value="unique name form" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1218048120849">
-        <property name="noTargetText" value="&lt;no base name&gt;" />
+        <property name="noTargetText" value="no base name" />
         <link role="relationDeclaration" targetNodeId="1.1218047638032" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1218049817425">

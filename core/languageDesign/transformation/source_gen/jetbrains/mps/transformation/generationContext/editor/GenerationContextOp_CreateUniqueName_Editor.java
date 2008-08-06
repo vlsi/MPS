@@ -64,7 +64,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
   public EditorCell createRefNode1218048120849(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("baseName");
-    provider.setNoTargetText("<no base name>");
+    provider.setNoTargetText("no base name");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode1218048120849_internal(context, node, provider);
