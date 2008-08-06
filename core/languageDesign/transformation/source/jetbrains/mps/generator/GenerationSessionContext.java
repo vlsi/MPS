@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
+import com.intellij.openapi.project.Project;
+
 /**
  * Igor Alshannikov
  * Sep 19, 2005
@@ -110,9 +112,19 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return getComponent(TransientModelsModule.class);
   }
 
+  /**
+   * Use getProject() instead
+   * @return
+   */
+  @Deprecated
   @NotNull
   public MPSProject getMPSProject() {
     return myInvocationContext.getMPSProject();
+  }
+
+  @NotNull
+  public Project getProject() {
+    return myInvocationContext.getProject();
   }
 
   @NotNull
