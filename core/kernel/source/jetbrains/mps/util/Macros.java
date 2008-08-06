@@ -2,7 +2,6 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.pathVariables.PathVariableManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
@@ -11,6 +10,9 @@ import jetbrains.mps.logging.Logger;
 
 import java.io.File;
 import java.util.Map;
+import java.util.Set;
+
+import com.intellij.openapi.application.PathMacros;
 
 /**
  * Created by IntelliJ IDEA.
@@ -51,14 +53,13 @@ public abstract class Macros {
   public static Macros moduleDescriptor(IModule module) {
     if (module instanceof Language) {
       return Macros.languageDescriptor();
-    } else
-    if (module instanceof Solution) {
+    } else if (module instanceof Solution) {
       return Macros.solutionDescriptor();
-    } else
-    if (module instanceof DevKit) {
+    } else if (module instanceof DevKit) {
       return Macros.devkitMacros();
     }
-    return new Macros() {};
+    return new Macros() {
+    };
   }
 
   public final String expandPath(String path, File anchorFile) {
@@ -66,7 +67,7 @@ public abstract class Macros {
   }
 
   public final String expandPath(String path, IFile anchorFile) {
-    if(path == null) return null;
+    if (path == null) return null;
     path = path.replace('\\', File.separatorChar);
     return expandPath_internal(path, anchorFile);
   }
@@ -76,7 +77,7 @@ public abstract class Macros {
   }
 
   public final String shrinkPath(String absolutePath, IFile anchorFile) {
-    if(absolutePath == null) return null;
+    if (absolutePath == null) return null;
     String fileName = shrinkPath_internal(absolutePath, anchorFile);
     return fileName.replace(File.separatorChar, '\\');
   }
@@ -87,12 +88,12 @@ public abstract class Macros {
       String relativePath = removePrefix(path, MPS_HOME);
       result = FileSystem.getFile(PathManager.getHomePath()).child(relativePath);
     } else {
-      Map<String, String> pathMacros = PathVariableManager.getInstance().getPathVariables();
-      for (String macro : pathMacros.keySet()) {
+      Set<String> macroNames = PathMacros.getInstance().getAllMacroNames();
+      for (String macro : macroNames) {
         String prefix = "${" + macro + "}";
         if (path.startsWith(prefix)) {
           String relativePath = removePrefix(path, prefix);
-          result = FileSystem.getFile(pathMacros.get(macro)).child(relativePath);
+          result = FileSystem.getFile(PathMacros.getInstance().getValue(macro)).child(relativePath);
           break;
         }
       }
@@ -102,7 +103,7 @@ public abstract class Macros {
           int end = path.indexOf("}");
           if (end != -1) {
             LOG.error("Wasn't able to expand path " + path);
-            LOG.error("Please define path variable " + path.substring(2, end)+ " in path variables section of settings");
+            LOG.error("Please define path variable " + path.substring(2, end) + " in path variables section of settings");
           }
           return path;
         }
@@ -119,10 +120,10 @@ public abstract class Macros {
       String relationalPath = shrink(absolutePath, PathManager.getHomePath());
       fileName = MPS_HOME + relationalPath;
     } else {
-      Map<String, String> pathMacros = PathVariableManager.getInstance().getPathVariables();
-      for (String macro : pathMacros.keySet()){
-        String path = pathMacros.get(macro);
-        if (pathStartsWith(absolutePath, path)){
+      Set<String> macroNames = PathMacros.getInstance().getAllMacroNames();
+      for (String macro : macroNames) {
+        String path = PathMacros.getInstance().getValue(macro);
+        if (pathStartsWith(absolutePath, path)) {
           String relationalPath = shrink(absolutePath, path);
           fileName = "${" + macro + "}" + relationalPath;
           return fileName;
@@ -214,7 +215,7 @@ public abstract class Macros {
       } else {
         prefix = projectDescriptor.getCanonicalPath();
       }
-        
+
       if (pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);
         return PROJECT + relationalPath;
@@ -241,7 +242,7 @@ public abstract class Macros {
   private static String shrink(String path, String prefix) {
     assert path.startsWith(prefix);
     String result = path.substring(prefix.length());
-    
+
     if (result.length() == 0) {
       return "\\";
     }
