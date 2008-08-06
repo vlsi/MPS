@@ -96,7 +96,7 @@ public class CreateRootNodeGroup extends BaseGroup {
           this.addSeparator();
         }
       }
-    }
+    }        
 
     setEnabledState(event.getPresentation(),data.hasOneSelectedItem());
   }

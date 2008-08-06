@@ -576,6 +576,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
+  
   public boolean isApplicableInContext(String fqName, IOperationContext context, SNode parentNode, SNode link) {
     Method method = getCanBeChildMethod(fqName, context);
     if (method != null) {

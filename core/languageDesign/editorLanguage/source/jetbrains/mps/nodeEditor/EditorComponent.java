@@ -235,14 +235,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     // --- init action map --
     myActionMap = new HashMap<CellActionType, EditorCellAction>();
     // -- navigation
-    myActionMap.put(CellActionType.LEFT, new NodeEditorActions.MoveLeft());
+    myActionMap.put(CellActionType.LEFT, new NodeEditorActions.MoveLeft());           
     myActionMap.put(CellActionType.RIGHT, new NodeEditorActions.MoveRight());
     myActionMap.put(CellActionType.UP, new NodeEditorActions.MoveUp());
     myActionMap.put(CellActionType.DOWN, new NodeEditorActions.MoveDown());
     myActionMap.put(CellActionType.NEXT, new NodeEditorActions.MoveNext());
     myActionMap.put(CellActionType.PREV, new NodeEditorActions.MovePrev());
-    myActionMap.put(CellActionType.LOCAL_HOME, new NodeEditorActions.MoveLeft());
-    myActionMap.put(CellActionType.LOCAL_END, new NodeEditorActions.MoveRight());
+    myActionMap.put(CellActionType.LOCAL_HOME, new NodeEditorActions.MoveLeft(true));
+    myActionMap.put(CellActionType.LOCAL_END, new NodeEditorActions.MoveRight(false));
 
     myActionMap.put(CellActionType.ROOT_HOME, new NodeEditorActions.MoveToRootHome());
     myActionMap.put(CellActionType.ROOT_END, new NodeEditorActions.MoveToRootEnd());

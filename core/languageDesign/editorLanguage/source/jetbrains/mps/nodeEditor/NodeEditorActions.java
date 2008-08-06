@@ -7,6 +7,16 @@ import java.awt.*;
 
 public class NodeEditorActions {
   public static class MoveLeft extends EditorCellAction {
+    private boolean myHome;
+
+    public MoveLeft() {
+      this(false);
+    }
+
+    public MoveLeft(boolean home) {
+      myHome = home;
+    }
+
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
       return selection != null && findTarget(selection) != null;
@@ -19,7 +29,12 @@ public class NodeEditorActions {
       EditorCell target = findTarget(selection);
       nodeEditorComponent.changeSelection(target);
       if (target instanceof EditorCell_Label) {
-        ((EditorCell_Label) target).end();
+        EditorCell_Label label = (EditorCell_Label) target;
+        if (myHome) {
+          label.home();          
+        } else {
+          label.end();
+        }
       }
     }
 
@@ -31,6 +46,7 @@ public class NodeEditorActions {
       return cell.getPrevLeaf(CellConditions.SELECTABLE);
     }
   }
+    
 
   public static class MoveToRootHome extends EditorCellAction {
 
@@ -126,6 +142,16 @@ public class NodeEditorActions {
   }
 
   public static class MoveRight extends EditorCellAction {
+    private boolean myHome;
+
+    public MoveRight() {
+      this(true);
+    }
+
+    public MoveRight(boolean home) {
+      myHome = home;
+    }
+
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
       return selection != null && findTarget(selection) != null;
@@ -139,7 +165,12 @@ public class NodeEditorActions {
       if (target.isPunctuationLayout() && ((EditorCell_Label) target).isCaretPositionAllowed(1)) {
         ((EditorCell_Label)target).setCaretPosition(1);
       } else if (target instanceof EditorCell_Label) {
-        ((EditorCell_Label)target).home();
+        EditorCell_Label label = (EditorCell_Label) target;
+        if (myHome) {
+          label.home();
+        } else {
+          label.end();
+        }
       }
     }
 
