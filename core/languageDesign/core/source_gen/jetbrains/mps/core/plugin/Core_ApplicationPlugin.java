@@ -4,22 +4,19 @@ package jetbrains.mps.core.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
+import jetbrains.mps.workbench.action.BaseGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Core_ApplicationPlugin extends BaseApplicationPlugin {
 
-  public void initGroups() {
-    this.addGroup(new FindModelUsages_ActionGroup());
-    this.addGroup(new FindLanguageUsages_ActionGroup());
-    this.addGroup(new CoreActions_ActionGroup());
-  }
-
-  public void adjustGroups() {
-    (this.getGroup(FindModelUsages_ActionGroup.ID)).adjust();
-    (this.getGroup(FindLanguageUsages_ActionGroup.ID)).adjust();
-    (this.getGroup(CoreActions_ActionGroup.ID)).adjust();
+  public List<BaseGroup> initGroups() {
+    List<BaseGroup> groups = new ArrayList<BaseGroup>();
+    groups.add(new FindModelUsages_ActionGroup());
+    groups.add(new FindLanguageUsages_ActionGroup());
+    groups.add(new CoreActions_ActionGroup());
+    return groups;
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {

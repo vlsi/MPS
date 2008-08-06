@@ -4,20 +4,18 @@ package jetbrains.mps.buildlanguage.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
+import jetbrains.mps.workbench.action.BaseGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Buildlanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
-  public void initGroups() {
-    this.addGroup(new ProjectPaneModelAddition_ActionGroup());
-    this.addGroup(new ProjectPaneLanguageAddition_ActionGroup());
-  }
-
-  public void adjustGroups() {
-    (this.getGroup(ProjectPaneModelAddition_ActionGroup.ID)).adjust();
-    (this.getGroup(ProjectPaneLanguageAddition_ActionGroup.ID)).adjust();
+  public List<BaseGroup> initGroups() {
+    List<BaseGroup> groups = new ArrayList<BaseGroup>();
+    groups.add(new ProjectPaneModelAddition_ActionGroup());
+    groups.add(new ProjectPaneLanguageAddition_ActionGroup());
+    return groups;
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {

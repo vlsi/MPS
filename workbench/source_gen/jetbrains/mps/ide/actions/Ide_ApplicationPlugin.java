@@ -15,64 +15,39 @@ import java.util.List;
 
 public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
 
-  public void initGroups() {
-    this.addGroup(new ProjectPaneNodeActions_ActionGroup());
-    this.addGroup(new ProjectPaneModelActions_ActionGroup());
-    this.addGroup(new ProjectActions_ActionGroup());
-    this.addGroup(new ProjectNewActions_ActionGroup());
-    this.addGroup(new LanguageActions_ActionGroup());
-    this.addGroup(new LanguageNewActions_ActionGroup());
-    this.addGroup(new SolutionActions_ActionGroup());
-    this.addGroup(new SolutionNewActions_ActionGroup());
-    this.addGroup(new DevkitActions_ActionGroup());
-    this.addGroup(new GeneratorNewActions_ActionGroup());
-    this.addGroup(new GeneratorActions_ActionGroup());
-    this.addGroup(new TransientModulesActions_ActionGroup());
-    this.addGroup(new EditorPopup_ActionGroup());
-    this.addGroup(new EditorInternal_ActionGroup());
-    this.addGroup(new Edit_ActionGroup());
-    this.addGroup(new Generate_ActionGroup());
-    this.addGroup(new Goto_ActionGroup());
-    this.addGroup(new Tools_ActionGroup());
-    this.addGroup(new Help_ActionGroup());
-    this.addGroup(new ProjectPaneNodeActionsInternal_ActionGroup());
-    this.addGroup(new ProjectPaneModelActionsInternal_ActionGroup());
-    this.addGroup(new LanguageNewCustomPartActions_ActionGroup());
-    this.addGroup(new Build_ActionGroup());
-    this.addGroup(new AbstractFileActions_ActionGroup());
-    this.addGroup(new FileActions_ActionGroup());
-    this.addGroup(new FolderActions_ActionGroup());
-    this.addGroup(new ModuleActions_ActionGroup());
+  public List<BaseGroup> initGroups() {
+    List<BaseGroup> groups = new ArrayList<BaseGroup>();
+    groups.add(new ProjectPaneNodeActions_ActionGroup());
+    groups.add(new ProjectPaneModelActions_ActionGroup());
+    groups.add(new ProjectActions_ActionGroup());
+    groups.add(new ProjectNewActions_ActionGroup());
+    groups.add(new LanguageActions_ActionGroup());
+    groups.add(new LanguageNewActions_ActionGroup());
+    groups.add(new SolutionActions_ActionGroup());
+    groups.add(new SolutionNewActions_ActionGroup());
+    groups.add(new DevkitActions_ActionGroup());
+    groups.add(new GeneratorNewActions_ActionGroup());
+    groups.add(new GeneratorActions_ActionGroup());
+    groups.add(new TransientModulesActions_ActionGroup());
+    groups.add(new EditorPopup_ActionGroup());
+    groups.add(new EditorInternal_ActionGroup());
+    groups.add(new Edit_ActionGroup());
+    groups.add(new Generate_ActionGroup());
+    groups.add(new Goto_ActionGroup());
+    groups.add(new Tools_ActionGroup());
+    groups.add(new Help_ActionGroup());
+    groups.add(new ProjectPaneNodeActionsInternal_ActionGroup());
+    groups.add(new ProjectPaneModelActionsInternal_ActionGroup());
+    groups.add(new LanguageNewCustomPartActions_ActionGroup());
+    groups.add(new Build_ActionGroup());
+    groups.add(new AbstractFileActions_ActionGroup());
+    groups.add(new FileActions_ActionGroup());
+    groups.add(new FolderActions_ActionGroup());
+    groups.add(new ModuleActions_ActionGroup());
+    return groups;
   }
 
-  public void adjustGroups() {
-    (this.getGroup(ProjectPaneNodeActions_ActionGroup.ID)).adjust();
-    (this.getGroup(ProjectPaneModelActions_ActionGroup.ID)).adjust();
-    (this.getGroup(ProjectActions_ActionGroup.ID)).adjust();
-    (this.getGroup(ProjectNewActions_ActionGroup.ID)).adjust();
-    (this.getGroup(LanguageActions_ActionGroup.ID)).adjust();
-    (this.getGroup(LanguageNewActions_ActionGroup.ID)).adjust();
-    (this.getGroup(SolutionActions_ActionGroup.ID)).adjust();
-    (this.getGroup(SolutionNewActions_ActionGroup.ID)).adjust();
-    (this.getGroup(DevkitActions_ActionGroup.ID)).adjust();
-    (this.getGroup(GeneratorNewActions_ActionGroup.ID)).adjust();
-    (this.getGroup(GeneratorActions_ActionGroup.ID)).adjust();
-    (this.getGroup(TransientModulesActions_ActionGroup.ID)).adjust();
-    (this.getGroup(EditorPopup_ActionGroup.ID)).adjust();
-    (this.getGroup(EditorInternal_ActionGroup.ID)).adjust();
-    (this.getGroup(Edit_ActionGroup.ID)).adjust();
-    (this.getGroup(Generate_ActionGroup.ID)).adjust();
-    (this.getGroup(Goto_ActionGroup.ID)).adjust();
-    (this.getGroup(Tools_ActionGroup.ID)).adjust();
-    (this.getGroup(Help_ActionGroup.ID)).adjust();
-    (this.getGroup(ProjectPaneNodeActionsInternal_ActionGroup.ID)).adjust();
-    (this.getGroup(ProjectPaneModelActionsInternal_ActionGroup.ID)).adjust();
-    (this.getGroup(LanguageNewCustomPartActions_ActionGroup.ID)).adjust();
-    (this.getGroup(Build_ActionGroup.ID)).adjust();
-    (this.getGroup(AbstractFileActions_ActionGroup.ID)).adjust();
-    (this.getGroup(FileActions_ActionGroup.ID)).adjust();
-    (this.getGroup(FolderActions_ActionGroup.ID)).adjust();
-    (this.getGroup(ModuleActions_ActionGroup.ID)).adjust();
+  public void adjustInterfaceGroups() {
     {
       BaseGroup gToBase = ActionUtils.getGroup(ProjectPaneModelActions_ActionGroup.ID);
       ActionGroup gWhat = ActionUtils.getDefaultGroup("VcsGroup");

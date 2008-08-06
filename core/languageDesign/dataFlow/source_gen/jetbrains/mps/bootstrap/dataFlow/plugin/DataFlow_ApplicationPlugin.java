@@ -4,18 +4,17 @@ package jetbrains.mps.bootstrap.dataFlow.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
+import jetbrains.mps.workbench.action.BaseGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DataFlow_ApplicationPlugin extends BaseApplicationPlugin {
 
-  public void initGroups() {
-    this.addGroup(new DFAActions_ActionGroup());
-  }
-
-  public void adjustGroups() {
-    (this.getGroup(DFAActions_ActionGroup.ID)).adjust();
+  public List<BaseGroup> initGroups() {
+    List<BaseGroup> groups = new ArrayList<BaseGroup>();
+    groups.add(new DFAActions_ActionGroup());
+    return groups;
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {

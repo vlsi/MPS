@@ -10,12 +10,6 @@ import java.util.List;
 
 public class Refactoring_ApplicationPlugin extends BaseApplicationPlugin {
 
-  public void initGroups() {
-  }
-
-  public void adjustGroups() {
-  }
-
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = new ArrayList<BaseCustomApplicationPlugin>();
     {

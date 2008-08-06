@@ -19,26 +19,35 @@ public abstract class BaseApplicationPlugin implements IApplicationPlugin {
   private List<String> myAnchorIds = new ArrayList<String>();
   private List<BaseCustomApplicationPlugin> myCustomParts;
 
-  public void initGroups() {
-  }
-
-  public void adjustGroups() {
-  }
-
-  public List<BaseCustomApplicationPlugin> initCustomParts() {
-    return new ArrayList<BaseCustomApplicationPlugin>();
+  protected List<BaseGroup> initGroups() {
+    return new ArrayList<BaseGroup>();
   }
 
   public void preInit() {
-    initGroups();
+    List<BaseGroup> groups = initGroups();
+    for (BaseGroup group : groups) {
+      myGroups.put(group.getId(), group);
+      register(ActionManager.getInstance(), group);
+    }
   }
 
-  public void init() {
-    adjustGroups();
+  public void adjustInterfaceGroups() {
+
+  }
+
+  protected List<BaseCustomApplicationPlugin> initCustomParts() {
+    return new ArrayList<BaseCustomApplicationPlugin>();
+  }
+
+  public final void init() {
+    adjustInterfaceGroups();
+    for (BaseGroup group : myGroups.values()) {
+      group.adjust();
+    }
     myCustomParts = initCustomParts();
   }
 
-  public void dispose() {
+  public final void dispose() {
     for (BaseCustomApplicationPlugin part : myCustomParts) {
       part.dispose();
     }
@@ -48,11 +57,6 @@ public abstract class BaseApplicationPlugin implements IApplicationPlugin {
     for (String groupId : myGroups.keySet()) {
       unregisterGroup(groupId);
     }
-  }
-
-  protected void addGroup(BaseGroup group) {
-    myGroups.put(group.getId(), group);
-    register(ActionManager.getInstance(), group);
   }
 
   private void register(ActionManager m, AnAction action) {
@@ -72,12 +76,12 @@ public abstract class BaseApplicationPlugin implements IApplicationPlugin {
     }
   }
 
-  protected BaseGroup getGroup(String id) {
-    return myGroups.get(id);
-  }
-
   public Collection<BaseGroup> getGroups() {
     return myGroups.values();
+  }
+
+  protected BaseGroup getGroup(String id) {
+    return myGroups.get(id);
   }
 
   private void unregisterGroup(String groupId) {
@@ -94,7 +98,7 @@ public abstract class BaseApplicationPlugin implements IApplicationPlugin {
     manager.unregisterAction(groupId);
   }
 
-  public static void unregisterAllActionOccurencesInGroup(ActionGroup group, AnAction action) {
+  private static void unregisterAllActionOccurencesInGroup(ActionGroup group, AnAction action) {
     AnAction[] children = group.getChildren(null);
     for (AnAction child : children) {
       if (child instanceof ActionGroup) {
@@ -107,7 +111,7 @@ public abstract class BaseApplicationPlugin implements IApplicationPlugin {
     }
   }
 
-  public static void unregisterAnchor(@NotNull String anchorId) {
+  private static void unregisterAnchor(@NotNull String anchorId) {
     //anchor is only unregistered, cause the group is guaranteed to be in the same plugin
     //and though the anchor will be removed with its containing group
     ActionManager m = ActionManager.getInstance();
