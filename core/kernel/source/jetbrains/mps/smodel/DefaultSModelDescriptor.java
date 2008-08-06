@@ -19,10 +19,8 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.SwingUtilities;
 import java.util.*;
 
 public class DefaultSModelDescriptor extends BaseSModelDescriptor {
@@ -30,7 +28,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private static final String NAME_VERSION = "nameVersion";
 
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
-      
+
   protected SModel mySModel = null;
 
   private Map<String, String> myMetadata;
@@ -58,7 +56,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     updateLastChange();
   }
 
-  private void updateLastChange() {                  
+  private void updateLastChange() {
     if (myModelFile != null) {
       myLastChange = myModelFile.lastModified();
     } else {
@@ -210,7 +208,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
         refactoringContext.getRefactoring().updateModel(mySModel, refactoringContext);
       }
       mySModel.updateImportedModelUsedVersion(modelDescriptor.getModelUID(), currentVersion);
-   /*   SwingUtilities.invokeLater(new Runnable() {
+      /*   SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
@@ -329,7 +327,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (mySModel == null) return;
 
     //we must be in command since model save might change model by adding model/language imports
-    LOG.assertInCommand();
+    if (!mySModel.isLoading()) LOG.assertInCommand();
 
     SModelRepository.getInstance().markUnchanged(mySModel);
     myModelRootManager.saveModel(this);

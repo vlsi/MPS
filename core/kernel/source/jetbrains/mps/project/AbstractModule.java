@@ -400,8 +400,12 @@ public abstract class AbstractModule implements IModule {
       LOG.error("Trying to create model root manager in root which doesn't support new models");
     }
 
-    SModelDescriptor result = manager.createNewModel(root, uid, this);
-    result.save();
+    final SModelDescriptor result = manager.createNewModel(root, uid, this);
+    result.getSModel().runLoadingAction(new Runnable() {
+      public void run() {
+        result.save();
+      }
+    });
     return result;
   }
 
