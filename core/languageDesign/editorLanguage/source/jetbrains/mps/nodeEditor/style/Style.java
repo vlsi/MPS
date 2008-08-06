@@ -5,6 +5,8 @@ import com.intellij.util.containers.HashMap;
 import java.util.*;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.util.EqualUtil;
+import org.apache.commons.collections.map.HashedMap;
 
 public class Style {
   private Style myParent;
@@ -71,12 +73,17 @@ public class Style {
   }
 
   private void updateCache() {
-    myCachedAttributeValues.clear();
+    Map<StyleAttribute, Object> oldCachedValues = myCachedAttributeValues;
+
+    myCachedAttributeValues = new HashMap<StyleAttribute, Object>();
     Set<StyleAttribute> attributes = new HashSet<StyleAttribute>();
     attributes.addAll(myAttributeValues.keySet());
+
     if (getParentStyle() != null) {
       attributes.addAll(getParentStyle().myCachedAttributeValues.keySet());
     }
+
+    boolean changed = false;
 
     for (StyleAttribute attribute : attributes) {
       Object parentValue = getParentStyle() == null ? null : getParentStyle().get(attribute);
@@ -85,11 +92,19 @@ public class Style {
       if (currentValue instanceof AttributeCalculator) {
         currentValue = ((AttributeCalculator) currentValue).calculate(myEditorCell);
       }
-      myCachedAttributeValues.put(attribute, attribute.combine(parentValue, currentValue));
+      Object newValue = attribute.combine(parentValue, currentValue);
+
+      if (!EqualUtil.equals(newValue, oldCachedValues.get(attribute))) {
+        changed = true;
+      }
+
+      myCachedAttributeValues.put(attribute, newValue);
     }
-    
-    for (Style style : myChildren) {
-      style.updateCache();
+
+    if (changed) {
+      for (Style style : myChildren) {
+        style.updateCache();
+      }
     }
   }
 }
