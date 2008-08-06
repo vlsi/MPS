@@ -8,6 +8,7 @@ import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 import jetbrains.mps.transformation.TLBase.structure.MappingScriptReference;
+import jetbrains.mps.core.structure.INamedConcept;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -57,7 +58,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       myUsedNames = prevContext.myUsedNames;
     }
 
-    if(!inputModel.getModelDescriptor().isTransient()) {
+    if (!inputModel.getModelDescriptor().isTransient()) {
       // new original input model
       myOriginalInputModel = inputModel;
       // forget history
@@ -160,13 +161,40 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   public String createUniqueName(String roughName) {
-    int count = 1;
-    String name = roughName;
-    while (myUsedNames.contains(name)) {
-      name = roughName + (count++);
+    return createUniqueName(roughName, null);
+  }
+
+  public String createUniqueName(String roughName, SNode contextNode) {
+    if (contextNode != null) {
+      // find topmost 'named' ancestor
+      INamedConcept topmostNamed = null;
+      INodeAdapter node_ = contextNode.getAdapter();
+      while (node_ != null) {
+        if (node_ instanceof INamedConcept) {
+          topmostNamed = (INamedConcept) node_;
+        }
+        node_ = node_.getParent();
+      }
+
+      if (topmostNamed != null) {
+        String name = topmostNamed.getName();
+        if (name != null) {
+          String contextSuffix = String.valueOf(name.hashCode());
+          contextSuffix = contextSuffix.substring(contextSuffix.length() - 4); // make it a bit shorter
+          // modify roughName
+          roughName = roughName + contextSuffix + "_";
+        }
+      }
+    } // if(contextNode != null)
+
+    String uniqueName;
+    int count = 0;
+    while (true) {
+      uniqueName = roughName + (count++);
+      if (!myUsedNames.contains(uniqueName)) break;
     }
-    myUsedNames.add(name);
-    return name;
+    myUsedNames.add(uniqueName);
+    return uniqueName;
   }
 
 
