@@ -102,7 +102,6 @@ public class EventsCollector {
 
     public void addCommandListener(CommandListener l) {
       synchronized (myLock) {
-        System.out.println("listeners count = " + myListeners.size());
         myListeners.add(l);
       }
     }
