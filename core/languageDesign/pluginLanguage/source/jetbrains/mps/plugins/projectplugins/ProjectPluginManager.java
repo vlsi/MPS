@@ -40,6 +40,8 @@ import java.util.*;
 public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState> {
   private static final Logger LOG = Logger.getLogger(ProjectPluginManager.class);
 
+  private final Object myPluginsLock = new Object();
+
   private List<BaseProjectPlugin> myPlugins = new ArrayList<BaseProjectPlugin>();
   private PluginsState myState = new PluginsState();
   private boolean myLoaded = false;
@@ -74,22 +76,26 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   @Nullable
   public <T extends GeneratedTool> T getTool(Class<T> toolClass) {
-    for (BaseProjectPlugin plugin : myPlugins) {
-      List<GeneratedTool> tools = ((BaseProjectPlugin) plugin).getTools();
-      for (GeneratedTool tool : tools) {
-        if (tool.getClass() == toolClass) return (T) tool;
+    synchronized (myPluginsLock) {
+      for (BaseProjectPlugin plugin : myPlugins) {
+        List<GeneratedTool> tools = ((BaseProjectPlugin) plugin).getTools();
+        for (GeneratedTool tool : tools) {
+          if (tool.getClass() == toolClass) return (T) tool;
+        }
       }
+      return null;
     }
-    return null;
   }
 
   public <T extends BaseProjectPrefsComponent> T getPrefsComponent(Class<T> componentClass) {
-    for (BaseProjectPlugin plugin : myPlugins) {
-      BaseProjectPlugin basePlugin = (BaseProjectPlugin) plugin;
-      BaseProjectPrefsComponent component = basePlugin.getPrefsComponent(componentClass);
-      if (component != null) return (T) component;
+    synchronized (myPluginsLock) {
+      for (BaseProjectPlugin plugin : myPlugins) {
+        BaseProjectPlugin basePlugin = (BaseProjectPlugin) plugin;
+        BaseProjectPrefsComponent component = basePlugin.getPrefsComponent(componentClass);
+        if (component != null) return (T) component;
+      }
+      return null;
     }
-    return null;
   }
 
   //----------------RELOAD STUFF---------------------  
@@ -106,105 +112,119 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
     final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
 
-    for (Solution s : mpsProject.getProjectSolutions()) {
-      languages.addAll(s.getScope().getVisibleLanguages());
-      devkits.addAll(s.getScope().getVisibleDevkits());
-    }
-
-    for (Language l : mpsProject.getProjectLanguages()) {
-      languages.add(l);
-    }
-
-    languages.addAll(LibraryManager.getInstance().getGlobalModules(Language.class));
-    devkits.addAll(LibraryManager.getInstance().getGlobalModules(DevKit.class));
-
-    for (DevKit dk : mpsProject.getProjectDevKits()) {
-      devkits.add(dk);
-    }
-
-    for (Language language : languages) {
-      if (language.getPluginModelDescriptor() != null) {
-        Class pluginClass = language.getClass(language.getGeneratedPluginClassLongName());
-        if (pluginClass != null) {
-          addPlugin(language, language.getGeneratedPluginClassLongName());
-        }
+    synchronized (myPluginsLock) {
+      for (Solution s : mpsProject.getProjectSolutions()) {
+        languages.addAll(s.getScope().getVisibleLanguages());
+        devkits.addAll(s.getScope().getVisibleDevkits());
       }
-    }
 
-    for (DevKit dk : devkits) {
-      if (dk.getDevKitPluginClass() != null) {
-        addPlugin(dk, dk.getDevKitPluginClass());
+      for (Language l : mpsProject.getProjectLanguages()) {
+        languages.add(l);
       }
-    }
 
-    addIdePlugin();
+      languages.addAll(LibraryManager.getInstance().getGlobalModules(Language.class));
+      devkits.addAll(LibraryManager.getInstance().getGlobalModules(DevKit.class));
 
-    for (BaseProjectPlugin plugin : myPlugins) {
-      try {
-        plugin.initNonEDT(mpsProject);
-      } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+      for (DevKit dk : mpsProject.getProjectDevKits()) {
+        devkits.add(dk);
       }
-    }
 
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        for (BaseProjectPlugin plugin : myPlugins) {
-          try {
-            plugin.init(mpsProject);
-          } catch (Throwable t1) {
-            LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+      for (Language language : languages) {
+        if (language.getPluginModelDescriptor() != null) {
+          Class pluginClass = language.getClass(language.getGeneratedPluginClassLongName());
+          if (pluginClass != null) {
+            BaseProjectPlugin plugin = createPlugin(language, language.getGeneratedPluginClassLongName());
+            if (plugin != null) {
+              myPlugins.add(plugin);
+            }
           }
         }
-        spreadState();
       }
-    });
+
+      for (DevKit dk : devkits) {
+        if (dk.getDevKitPluginClass() != null) {
+          BaseProjectPlugin plugin = createPlugin(dk, dk.getDevKitPluginClass());
+          if (plugin != null) {
+            myPlugins.add(plugin);
+          }
+        }
+      }
+
+      addIdePlugin();
+
+      for (BaseProjectPlugin plugin : myPlugins) {
+        try {
+          plugin.initNonEDT(mpsProject);
+        } catch (Throwable t1) {
+          LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+        }
+      }
+
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          for (BaseProjectPlugin plugin : myPlugins) {
+            try {
+              plugin.init(mpsProject);
+            } catch (Throwable t1) {
+              LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+            }
+          }
+          spreadState();
+        }
+      });
+    }
     myLoaded = true;
   }
 
   private void disposePlugins() {
     if (!myLoaded) return;
-    for (BaseProjectPlugin plugin : myPlugins) {
-      try {
-        plugin.disposeNonEDT();
-      } catch (Throwable t) {
-        LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
-      }
-    }
 
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        collectState();
-        for (BaseProjectPlugin plugin : myPlugins) {
-          try {
-            plugin.dispose();
-          } catch (Throwable t) {
-            LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
-          }
+    synchronized (myPluginsLock) {
+      for (BaseProjectPlugin plugin : myPlugins) {
+        try {
+          plugin.disposeNonEDT();
+        } catch (Throwable t) {
+          LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
         }
       }
-    });
-    myPlugins.clear();
+
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          collectState();
+          for (BaseProjectPlugin plugin : myPlugins) {
+            try {
+              plugin.dispose();
+            } catch (Throwable t) {
+              LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
+            }
+          }
+        }
+      });
+      myPlugins.clear();
+    }
     myLoaded = false;
   }
 
-  private void addPlugin(IModule contextModule, String pluginClassFqName) {
+  private BaseProjectPlugin createPlugin(IModule contextModule, String pluginClassFqName) {
     try {
       Class pluginClass = contextModule.getClass(pluginClassFqName);
       if (pluginClass == null) {
         LOG.error("Can't find a class : " + pluginClassFqName);
-        return;
+        return null;
       }
 
-      myPlugins.add((BaseProjectPlugin) pluginClass.newInstance());
+      return (BaseProjectPlugin) pluginClass.newInstance();
     } catch (Throwable t) {
       LOG.error(t);
+      return null;
     }
   }
 
   private void addIdePlugin() {
     myIdePlugin = new Ide_ProjectPlugin();
-    myPlugins.add(myIdePlugin);
+    synchronized (myPluginsLock) {
+      myPlugins.add(myIdePlugin);
+    }
   }
 
   public BaseProjectPlugin getIdePlugin() {
@@ -237,20 +257,24 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   protected void collectState() {
-    myState.pluginsState.clear();
-    for (BaseProjectPlugin plugin : myPlugins) {
-      PluginState state = plugin.getState();
-      if (state != null) {
-        myState.pluginsState.put(plugin.getClass().getName(), state);
+    synchronized (myPluginsLock) {
+      myState.pluginsState.clear();
+      for (BaseProjectPlugin plugin : myPlugins) {
+        PluginState state = plugin.getState();
+        if (state != null) {
+          myState.pluginsState.put(plugin.getClass().getName(), state);
+        }
       }
     }
   }
 
   protected void spreadState() {
-    for (BaseProjectPlugin plugin : myPlugins) {
-      PluginState state = myState.pluginsState.get(plugin.getClass().getName());
-      if (state != null) {
-        plugin.loadState(state);
+    synchronized (myPluginsLock) {
+      for (BaseProjectPlugin plugin : myPlugins) {
+        PluginState state = myState.pluginsState.get(plugin.getClass().getName());
+        if (state != null) {
+          plugin.loadState(state);
+        }
       }
     }
   }
