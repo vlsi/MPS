@@ -82,12 +82,12 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         EditorCell cellWithRole = new ChildrenCollectionFinder(selectedCell, actionType == CellActionType.INSERT).find();
 
         if (cellWithRole == null && actionType == CellActionType.INSERT_BEFORE &&
-          selectedCell.isFirstPositionInBigCell() && hasOneToOneOrZeroRole(selectedCell.getSNode())) {
+          selectedCell.isFirstPositionInBigCell() && hasSingleRole(selectedCell.getSNode())) {
           cellWithRole = new ChildrenCollectionFinder(selectedCell.getPrevLeaf(), false).find();
         }
 
         if (cellWithRole == null && actionType == CellActionType.INSERT &&
-          selectedCell.isLastPositionInBigCell() && hasOneToOneOrZeroRole(selectedCell.getSNode())) {
+          selectedCell.isLastPositionInBigCell() && hasSingleRole(selectedCell.getSNode())) {
           cellWithRole = new ChildrenCollectionFinder(selectedCell.getNextLeaf(), true).find();
         }
 
@@ -221,7 +221,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     return link.getSourceCardinality() == Cardinality._0__n || link.getSourceCardinality() == Cardinality._1__n;
   }
 
-  private boolean hasOneToOneOrZeroRole(SNode node) {
+  private boolean hasSingleRole(SNode node) {
     String role = node.getRole_();
     if (role == null) return false;
     LinkDeclaration link = node.getParent().getLinkDeclaration(role);
