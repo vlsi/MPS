@@ -18,7 +18,6 @@ public class TextLine {
   private FontMetrics myFontMetrics;
 
   private int myCaretPosition = 0;
-
   private int myStartTextSelectionPosition = 0;
   private int myEndTextSelectionPosition = 0;
 
@@ -218,12 +217,16 @@ public class TextLine {
 
   public Font getFont() {
     Font defaultFont = EditorSettings.getInstance().getDefaultEditorFont();
-    Integer fontSize = myStyle.get(StyleAttributes.FONT_SIZE);
-    return new Font(defaultFont.getFamily(), myStyle.get(StyleAttributes.FONT_STYLE), fontSize != null ? fontSize : defaultFont.getSize());
-  }
+    Integer styleFontSize = myStyle.get(StyleAttributes.FONT_SIZE);
+    String family = defaultFont.getFamily();
+    Integer style = myStyle.get(StyleAttributes.FONT_STYLE);
+    int fontSize = styleFontSize != null ? styleFontSize : defaultFont.getSize();
 
-  public void setFont(Font newFont) {
-    myFont = newFont;
+    if (myFont == null || !family.equals(myFont.getFontName()) || fontSize != myFont.getSize() || style != myFont.getStyle()) {
+      myFont = new Font(family, style, fontSize);
+    }
+
+    return myFont;
   }
 
   public void paint(Graphics g, int shiftX, int shiftY, boolean isSelected, boolean toShowCaret) {
