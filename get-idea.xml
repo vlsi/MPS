@@ -55,8 +55,8 @@
                       ui.jar,
                       velocity.jar"/>
     </copy>
-    <delete dir="plugins"/>
-    <mkdir dir="plugins"/>
+    <!--<delete dir="plugins"/>-->
+    <!--<mkdir dir="plugins"/>-->
     <copy todir="plugins" overwrite="true">
       <fileset dir="${idea.new}/idea/plugins/" includes="svn4idea/**"/>
     </copy>
