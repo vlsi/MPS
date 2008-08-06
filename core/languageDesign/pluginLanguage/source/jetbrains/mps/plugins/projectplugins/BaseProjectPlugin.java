@@ -29,7 +29,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   private static Logger LOG = Logger.getLogger(BaseProjectPlugin.class);
 
   private Project myProject;
-  private volatile boolean myEDTInitialized = false;
 
   private List<GeneratedTool> myTools = new ArrayList<GeneratedTool>();
   private List<GeneratedTool> myInitializedTools = new ArrayList<GeneratedTool>();
@@ -40,11 +39,17 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
   //------------------stuff to generate-----------------------
 
-  protected abstract void initEditors(MPSProject project);
+  protected void initEditors(MPSProject project) {
 
-  protected abstract List<GeneratedTool> initTools(Project project);
+  }
 
-  protected abstract List<BaseCustomProjectPlugin> initCustomParts(MPSProject project);
+  protected List<GeneratedTool> initTools(Project project) {
+    return new ArrayList<GeneratedTool>();
+  }
+
+  protected List<BaseCustomProjectPlugin> initCustomParts(MPSProject project) {
+    return new ArrayList<BaseCustomProjectPlugin>();
+  }
 
   protected List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
     return new ArrayList<BaseProjectPrefsComponent>();
@@ -125,18 +130,14 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
     final Project ideaProject = getIDEAProject();
     for (final GeneratedTool tool : myTools) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          if (ideaProject.isDisposed()) return;
-          if (!myInitializedTools.contains(tool)) return;
-          try {
-            tool.dispose();
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-          tool.unregister();
-        }
-      });
+      if (ideaProject.isDisposed()) return;
+      if (!myInitializedTools.contains(tool)) return;
+      try {
+        tool.dispose();
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+      tool.unregister();
     }
     myTools.clear();
 
