@@ -727,11 +727,19 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public boolean isFirstPositionInBigCell() {
-    return this instanceof EditorCell_Label && getContainingBigCell().getFirstLeaf() == this && ((EditorCell_Label) this).isFirstCaretPosition();
+    return false;
   }
 
   public boolean isLastPositionInBigCell() {
-    return this instanceof EditorCell_Label && getContainingBigCell().getLastLeaf() == this && ((EditorCell_Label) this).isLastCaretPosition();
+    return false;
+  }
+
+  public boolean isOnTheLeftBoundary() {
+    return getPrevLeaf() == null || getPrevLeaf().getSNode() != getSNode();
+  }
+
+  public boolean isOnTheRightBoundary() {
+    return getNextLeaf() == null || getNextLeaf().getSNode() != getSNode();
   }
 
   public EditorCell getContainingBigCell() {

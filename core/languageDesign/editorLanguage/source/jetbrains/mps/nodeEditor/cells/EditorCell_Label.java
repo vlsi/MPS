@@ -55,6 +55,14 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     setAction(CellActionType.CUT, new CutLabelText());
   }
 
+  public boolean isFirstPositionInBigCell() {
+    return getContainingBigCell().getFirstLeaf() == this && isFirstCaretPosition();
+  }
+
+  public boolean isLastPositionInBigCell() {
+    return getContainingBigCell().getLastLeaf() == this && isLastCaretPosition();
+  }
+
   public CaretPosition getDefaultCaretPosition() {
     return getStyle().get(StyleAttributes.DEFAULT_CARET_POSITON);
   }

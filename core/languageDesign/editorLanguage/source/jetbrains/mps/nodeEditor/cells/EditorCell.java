@@ -150,6 +150,10 @@ public interface EditorCell extends Cloneable {
   boolean isBigCell();
   boolean isFirstPositionInBigCell();
   boolean isLastPositionInBigCell();
+
+  boolean isOnTheLeftBoundary();
+  boolean isOnTheRightBoundary();
+
   EditorCell getContainingBigCell();
   boolean isAncestorOf(EditorCell cell);
 
