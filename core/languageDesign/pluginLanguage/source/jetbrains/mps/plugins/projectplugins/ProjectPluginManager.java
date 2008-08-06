@@ -160,16 +160,18 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         }
       }
 
+      //it may be disposed before this is called, so copy fields.
+      final List<BaseProjectPlugin> plugins = myPlugins;
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          for (BaseProjectPlugin plugin : myPlugins) {
+          for (BaseProjectPlugin plugin : plugins) {
             try {
               plugin.init(mpsProject);
             } catch (Throwable t1) {
               LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
             }
           }
-          spreadState();
+          spreadState(myPlugins);
         }
       });
     }
@@ -188,10 +190,14 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         }
       }
 
+      collectState(myPlugins);
+
+      //it may be initialized before this is called, so copy fields.
+      final List<BaseProjectPlugin> plugins = new ArrayList<BaseProjectPlugin>();
+      plugins.addAll(myPlugins);
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          collectState();
-          for (BaseProjectPlugin plugin : myPlugins) {
+          for (BaseProjectPlugin plugin : plugins) {
             try {
               plugin.dispose();
             } catch (Throwable t) {
@@ -248,7 +254,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   //----------------STATE STUFF------------------------
 
   public PluginsState getState() {
-    collectState();
+    collectState(myPlugins);
     return myState;
   }
 
@@ -256,25 +262,21 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     myState = state;
   }
 
-  protected void collectState() {
-    synchronized (myPluginsLock) {
-      myState.pluginsState.clear();
-      for (BaseProjectPlugin plugin : myPlugins) {
-        PluginState state = plugin.getState();
-        if (state != null) {
-          myState.pluginsState.put(plugin.getClass().getName(), state);
-        }
+  protected void collectState(List<BaseProjectPlugin> plugins) {
+    myState.pluginsState.clear();
+    for (BaseProjectPlugin plugin : plugins) {
+      PluginState state = plugin.getState();
+      if (state != null) {
+        myState.pluginsState.put(plugin.getClass().getName(), state);
       }
     }
   }
 
-  protected void spreadState() {
-    synchronized (myPluginsLock) {
-      for (BaseProjectPlugin plugin : myPlugins) {
-        PluginState state = myState.pluginsState.get(plugin.getClass().getName());
-        if (state != null) {
-          plugin.loadState(state);
-        }
+  protected void spreadState(List<BaseProjectPlugin> plugins) {
+    for (BaseProjectPlugin plugin : plugins) {
+      PluginState state = myState.pluginsState.get(plugin.getClass().getName());
+      if (state != null) {
+        plugin.loadState(state);
       }
     }
   }
