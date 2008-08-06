@@ -8,6 +8,7 @@ import com.intellij.util.xmlb.annotations.Tag;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
@@ -15,7 +16,6 @@ import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.editors.MPSEditorOpenHandler;
 import jetbrains.mps.workbench.editors.MPSEditorOpenHandlerOwner;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jdom.Element;
@@ -35,7 +35,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   private List<BaseCustomProjectPlugin> myCustomPartsToDispose = new ArrayList<BaseCustomProjectPlugin>();
   private List<BaseProjectPrefsComponent> myPrefsComponents = new ArrayList<BaseProjectPrefsComponent>();
   private List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
-  private FileGeneratorPlugin myFileGenerator = null;
+  private IFileGenerator myFileGenerator = null;
 
   //------------------stuff to generate-----------------------
 
@@ -59,7 +59,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     return new ArrayList<GenerationListener>();
   }
 
-  protected FileGeneratorPlugin initFileGenerator() {
+  protected IFileGenerator initFileGenerator() {
     return null;
   }
 
@@ -99,7 +99,16 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       } catch (Throwable t) {
         LOG.error(t);
       }
-      doAdd(tool, false);
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              tool.registerLater();
+              if (false) tool.openToolLater(false);
+            }
+          });
+        }
+      });
       myInitializedTools.add(tool);
     }
 
@@ -112,12 +121,14 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   public final void initNonEDT(final MPSProject project) {
     myProject = project.getComponent(Project.class);
 
+    GeneratorManager manager = getProject().getComponent(GeneratorManager.class);
+    assert manager != null;
+
     myFileGenerator = initFileGenerator();
     if (myFileGenerator != null) {
-      myFileGenerator.init(getProject());
+      manager.addFileGenerator(myFileGenerator);
     }
     myGenerationListeners = initGenerationListeners(getProject());
-    GeneratorManager manager = getProject().getComponent(GeneratorManager.class);
     for (GenerationListener listener : myGenerationListeners) {
       manager.addGenerationListener(listener);
     }
@@ -153,11 +164,12 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
   public final void disposeNonEDT() {
     GeneratorManager manager = getProject().getComponent(GeneratorManager.class);
+    assert manager != null;
     for (GenerationListener listener : myGenerationListeners) {
       manager.removeGenerationListener(listener);
     }
     if (myFileGenerator != null) {
-      myFileGenerator.dispose();
+      manager.removeFileGenerator(myFileGenerator);
     }
   }
 
@@ -172,28 +184,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
   public List<GeneratedTool> getTools() {
     return Collections.unmodifiableList(myTools);
-  }
-
-  protected void doAdd(final GeneratedTool tool, final boolean isVisibleByDefault) {
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            tool.registerLater();
-            if (isVisibleByDefault) tool.openToolLater(false);
-          }
-        });
-      }
-    });
-  }
-
-  //------------------tabbed editors stuff-------------
-
-  protected void addEditorOpenHandler(MPSEditorOpenHandler handler) {
-    MPSEditorOpener editorsPane = getProject().getComponent(MPSEditorOpener.class);
-    if (editorsPane != null) {
-      editorsPane.registerOpenHandler(handler, this);
-    }
   }
 
   //----------------STATE STUFF------------------------
