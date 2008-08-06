@@ -433,9 +433,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       return "";
     }
 
-
     public void relayout() {
-      Component component = myRelativeCell.getEditorContext().getNodeEditorComponent();
+      Component component = myEditorComponent;
       Point anchor = component.getLocationOnScreen();
       Point location = new Point(anchor.x + myRelativeCell.getX(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
 
