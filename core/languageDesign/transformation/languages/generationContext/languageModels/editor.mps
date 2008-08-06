@@ -167,9 +167,29 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217960507306">
         <property name="text" value="-&gt;" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1217960517730">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1218048531617">
         <property name="noTargetText" value="&lt;node&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1217960407512" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1218047951855">
+    <link role="conceptDeclaration" targetNodeId="1.1218047638031" resolveInfo="GenerationContextOp_GenerateUniqueName" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1218047956123">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1218047962359">
+        <property name="text" value="unique name form" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1218048120849">
+        <property name="noTargetText" value="&lt;no base name&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1218047638032" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1218049817425">
+        <property name="text" value="where context is" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1218049832911">
+        <property name="noTargetText" value="&lt;no context node&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1218049772449" />
       </node>
     </node>
   </node>

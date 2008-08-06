@@ -55,7 +55,7 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
 
   public EditorCell createRefCell1216860146341_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new GenerationContextOp_GetOutputByLabelAndInput_Editor._Inline());
+    provider.setAuxiliaryCellProvider(new GenerationContextOp_GetOutputByLabelAndInput_Editor._Inline0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_label1216860146341(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -144,9 +144,9 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
   private static void setupLabel_refNode_inputNode_1216860146345(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class _Inline extends AbstractCellProvider {
+  public static class _Inline0 extends AbstractCellProvider {
 
-    public _Inline() {
+    public _Inline0() {
       super();
     }
 

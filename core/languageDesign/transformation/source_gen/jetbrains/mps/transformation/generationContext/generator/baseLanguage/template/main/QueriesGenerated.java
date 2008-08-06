@@ -77,6 +77,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "referenceNode", true) != null;
   }
 
+  public static boolean ifMacro_Condition_1218050438807(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "contextNode", true) != null;
+  }
+
   public static SNode sourceNodeQuery_1216862267891(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // delegate reduction to operation
     return SLinkOperations.getTarget(_context.getNode(), "operation", true);
@@ -225,6 +229,18 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1217970189778(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "messageText", true);
+  }
+
+  public static SNode sourceNodeQuery_1218050010029(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1218050010041(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "baseName", true);
+  }
+
+  public static SNode sourceNodeQuery_1218050478654(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "contextNode", true);
   }
 
 }

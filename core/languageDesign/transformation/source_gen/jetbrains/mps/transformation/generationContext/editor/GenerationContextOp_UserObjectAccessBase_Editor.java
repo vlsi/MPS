@@ -64,7 +64,7 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
       setupLabel_conceptProperty_alias_1217890083480((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new GenerationContextOp_UserObjectAccessBase_Editor.GenerationContextOp_UserObjectAccessBase_Editor_replaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new GenerationContextOp_UserObjectAccessBase_Editor.GenerationContextOp_UserObjectAccessBase_Editor_replaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu0()}));
     return editorCell;
   }
 
@@ -155,9 +155,9 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
   private static void setupLabel_refNode_userKey_1217890728561(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class GenerationContextOp_UserObjectAccessBase_Editor_replaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+  public static class GenerationContextOp_UserObjectAccessBase_Editor_replaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
-    public GenerationContextOp_UserObjectAccessBase_Editor_replaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu() {
+    public GenerationContextOp_UserObjectAccessBase_Editor_replaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

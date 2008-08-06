@@ -86,6 +86,11 @@ public class TemplateQueryContext {
     return myGenerator.getPreviousInputNodeByMappingName(label);
   }
 
+  public String createUniqueName(String baseName, SNode contextNode) {
+    return myGenerator.getGeneratorSessionContext().createUniqueName(baseName, contextNode);
+  }
+
+
   // user objects
 
   public Object putTransientObject(Object key, Object o) {

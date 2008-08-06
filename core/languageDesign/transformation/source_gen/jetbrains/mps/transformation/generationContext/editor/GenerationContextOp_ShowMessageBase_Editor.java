@@ -35,7 +35,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     editorCell.addEditorCell(this.createConceptProperty1217960446064(context, node));
     editorCell.addEditorCell(this.createRefNode1217960469679(context, node));
     editorCell.addEditorCell(this.createConstant1217960507306(context, node, "->"));
-    editorCell.addEditorCell(this.createRefNode1217960517730(context, node));
+    editorCell.addEditorCell(this.createRefNode1218048531617(context, node));
     return editorCell;
   }
 
@@ -56,7 +56,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
       setupLabel_conceptProperty_alias_1217960446064((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new GenerationContextOp_ShowMessageBase_Editor.GenerationContextOp_ShowMessageBase_Editor_replaceWith_GenerationContextOp_ShowMessageBase_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new GenerationContextOp_ShowMessageBase_Editor.GenerationContextOp_ShowMessageBase_Editor_replaceWith_GenerationContextOp_ShowMessageBase_cellMenu0()}));
     return editorCell;
   }
 
@@ -106,25 +106,25 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1217960517730_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode1218048531617_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_referenceNode1217960517730(editorCell, node, context);
+    setupBasic_refNode_referenceNode1218048531617(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_referenceNode_1217960517730((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_referenceNode_1218048531617((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1217960517730(EditorContext context, SNode node) {
+  public EditorCell createRefNode1218048531617(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("referenceNode");
     provider.setNoTargetText("<node>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1217960517730_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode1218048531617_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -160,7 +160,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217960507306");
   }
 
-  private static void setupBasic_refNode_referenceNode1217960517730(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_refNode_referenceNode1218048531617(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_conceptProperty_alias_1217960446064(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -172,12 +172,12 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
   private static void setupLabel_Constant_1217960507306_1217960507306(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_referenceNode_1217960517730(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNode_referenceNode_1218048531617(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class GenerationContextOp_ShowMessageBase_Editor_replaceWith_GenerationContextOp_ShowMessageBase_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+  public static class GenerationContextOp_ShowMessageBase_Editor_replaceWith_GenerationContextOp_ShowMessageBase_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
-    public GenerationContextOp_ShowMessageBase_Editor_replaceWith_GenerationContextOp_ShowMessageBase_cellMenu() {
+    public GenerationContextOp_ShowMessageBase_Editor_replaceWith_GenerationContextOp_ShowMessageBase_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
