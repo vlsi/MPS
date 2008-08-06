@@ -221,7 +221,7 @@
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                             id="1216845168439">
                         <link role="baseMethodDeclaration"
-                              targetNodeId="10.~AbstractEditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext"
+                              targetNodeId="10.~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext"
                               resolveInfo="getEditorContext"/>
                       </node>
                     </node>

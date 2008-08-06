@@ -6,6 +6,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.Tag;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.generator.GenerationListener;
+import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
@@ -27,10 +29,14 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   private static Logger LOG = Logger.getLogger(BaseProjectPlugin.class);
 
   private Project myProject;
+  private volatile boolean myEDTInitialized = false;
+
   private List<GeneratedTool> myTools = new ArrayList<GeneratedTool>();
   private List<GeneratedTool> myInitializedTools = new ArrayList<GeneratedTool>();
   private List<BaseCustomProjectPlugin> myCustomPartsToDispose = new ArrayList<BaseCustomProjectPlugin>();
   private List<BaseProjectPrefsComponent> myPrefsComponents = new ArrayList<BaseProjectPrefsComponent>();
+  private List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
+  private FileGeneratorPlugin myFileGenerator = null;
 
   //------------------stuff to generate-----------------------
 
@@ -42,6 +48,14 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
   protected List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
     return new ArrayList<BaseProjectPrefsComponent>();
+  }
+
+  protected List<GenerationListener> initGenerationListeners(MPSProject project) {
+    return new ArrayList<GenerationListener>();
+  }
+
+  protected FileGeneratorPlugin initFileGenerator() {
+    return null;
   }
 
   //------------------quick access stuff-----------------------
@@ -64,8 +78,9 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
   //------------------shared stuff-----------------------
 
-  public void init(MPSProject project) {
+  public final void init(final MPSProject project) {
     myProject = project.getComponent(Project.class);
+
     myCustomPartsToDispose = initCustomParts(project);
 
     initEditors(project);
@@ -73,18 +88,14 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     myTools = (List) (initTools(myProject));
     final Project ideaProject = getIDEAProject();
     for (final GeneratedTool tool : myTools) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          if (ideaProject.isDisposed()) return;
-          try {
-            tool.init(ideaProject);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-          doAdd(tool, false);
-          myInitializedTools.add(tool);
-        }
-      });
+      if (ideaProject.isDisposed()) return;
+      try {
+        tool.init(ideaProject);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+      doAdd(tool, false);
+      myInitializedTools.add(tool);
     }
 
     myPrefsComponents = createPreferencesComponents(getIDEAProject());
@@ -93,12 +104,21 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     }
   }
 
-  public void dispose() {
-    for (BaseCustomProjectPlugin customPart : myCustomPartsToDispose) {
-      customPart.dispose();
-    }
-    myCustomPartsToDispose.clear();
+  public final void initNonEDT(final MPSProject project) {
+    myProject = project.getComponent(Project.class);
 
+    myFileGenerator = initFileGenerator();
+    if (myFileGenerator != null) {
+      myFileGenerator.init(getProject());
+    }
+    myGenerationListeners = initGenerationListeners(getProject());
+    GeneratorManager manager = getProject().getComponent(GeneratorManager.class);
+    for (GenerationListener listener : myGenerationListeners) {
+      manager.addGenerationListener(listener);
+    }
+  }
+
+  public final void dispose() {
     for (BaseProjectPrefsComponent component : myPrefsComponents) {
       component.dispose();
     }
@@ -122,7 +142,21 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
     MPSEditorOpener opener = myProject.getComponent(MPSEditorOpener.class);
     if (opener != null) {
-      opener.unregisterOpenHandlers(this);
+      opener.unregisterOpenHandlers(BaseProjectPlugin.this);
+    }
+
+    for (BaseCustomProjectPlugin customPart : myCustomPartsToDispose) {
+      customPart.dispose();
+    }
+  }
+
+  public final void disposeNonEDT() {
+    GeneratorManager manager = getProject().getComponent(GeneratorManager.class);
+    for (GenerationListener listener : myGenerationListeners) {
+      manager.removeGenerationListener(listener);
+    }
+    if (myFileGenerator != null) {
+      myFileGenerator.dispose();
     }
   }
 
@@ -152,14 +186,16 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     });
   }
 
-  //------------------tabbed editors stuff-----------------------
+  //------------------tabbed editors stuff-------------
 
-  public void addEditorOpenHandler(MPSEditorOpenHandler handler) {
+  protected void addEditorOpenHandler(MPSEditorOpenHandler handler) {
     MPSEditorOpener editorsPane = getProject().getComponent(MPSEditorOpener.class);
     if (editorsPane != null) {
       editorsPane.registerOpenHandler(handler, this);
     }
   }
+
+  //----------------STATE STUFF------------------------
 
   public PluginState getState() {
     PluginState state = new PluginState();

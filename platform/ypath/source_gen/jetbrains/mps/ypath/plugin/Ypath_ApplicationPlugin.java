@@ -19,7 +19,7 @@ public class Ypath_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = new ArrayList<BaseCustomApplicationPlugin>();
     {
-      BaseCustomApplicationPlugin plugin = new DesignPartLoader_CustomProjectPlugin();
+      BaseCustomApplicationPlugin plugin = new DesignPartLoader_CustomApplicationPlugin();
       res.add(plugin);
       plugin.init();
     }

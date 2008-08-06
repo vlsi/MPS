@@ -41,12 +41,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private static final Logger LOG = Logger.getLogger(ProjectPluginManager.class);
 
   private List<BaseProjectPlugin> myPlugins = new ArrayList<BaseProjectPlugin>();
-
   private PluginsState myState = new PluginsState();
-
-  private boolean isLoaded = false;
-
+  private boolean myLoaded = false;
   private Project myProject;
+  private Ide_ProjectPlugin myIdePlugin;
+
   private ReloadListener myReloadListener = new ReloadListener() {
     public void onBeforeReload() {
       disposePlugins();
@@ -59,7 +58,6 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     public void onAfterReload() {
     }
   };
-  private Ide_ProjectPlugin myIdePlugin;
 
   public ProjectPluginManager(Project project) {
     myProject = project;
@@ -102,7 +100,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   private void loadPlugins() {
-    if (isLoaded) return;
+    if (myLoaded) return;
     Set<Language> languages = new HashSet<Language>();
     Set<DevKit> devkits = new HashSet<DevKit>();
 
@@ -143,32 +141,51 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
     for (BaseProjectPlugin plugin : myPlugins) {
       try {
-        plugin.init(mpsProject);
+        plugin.initNonEDT(mpsProject);
       } catch (Throwable t1) {
         LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
       }
     }
-    spreadState();
-    isLoaded = true;
-  }
 
-  private void addIdePlugin() {
-    myIdePlugin = new Ide_ProjectPlugin();
-    myPlugins.add(myIdePlugin);
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        for (BaseProjectPlugin plugin : myPlugins) {
+          try {
+            plugin.init(mpsProject);
+          } catch (Throwable t1) {
+            LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+          }
+        }
+        spreadState();
+      }
+    });
+    myLoaded = true;
   }
 
   private void disposePlugins() {
-    if (!isLoaded) return;
-    collectState();
+    if (!myLoaded) return;
     for (BaseProjectPlugin plugin : myPlugins) {
       try {
-        plugin.dispose();
+        plugin.disposeNonEDT();
       } catch (Throwable t) {
         LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
       }
     }
+
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        collectState();
+        for (BaseProjectPlugin plugin : myPlugins) {
+          try {
+            plugin.dispose();
+          } catch (Throwable t) {
+            LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
+          }
+        }
+      }
+    });
     myPlugins.clear();
-    isLoaded = false;
+    myLoaded = false;
   }
 
   private void addPlugin(IModule contextModule, String pluginClassFqName) {
@@ -183,6 +200,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     } catch (Throwable t) {
       LOG.error(t);
     }
+  }
+
+  private void addIdePlugin() {
+    myIdePlugin = new Ide_ProjectPlugin();
+    myPlugins.add(myIdePlugin);
   }
 
   public BaseProjectPlugin getIdePlugin() {
@@ -225,7 +247,6 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   protected void spreadState() {
-    HashMap<String, BaseProjectPlugin> plugins = new HashMap<String, BaseProjectPlugin>();
     for (BaseProjectPlugin plugin : myPlugins) {
       PluginState state = myState.pluginsState.get(plugin.getClass().getName());
       if (state != null) {

@@ -34,12 +34,4 @@ public class UnitTest_ProjectPlugin extends BaseProjectPlugin {
     return components;
   }
 
-  public void init(MPSProject project) {
-    super.init(project);
-  }
-
-  public void dispose() {
-    super.dispose();
-  }
-
 }
