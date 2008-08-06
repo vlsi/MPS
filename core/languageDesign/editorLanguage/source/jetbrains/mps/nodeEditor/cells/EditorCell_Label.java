@@ -38,14 +38,17 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     setAction(CellActionType.LEFT, new MoveLeft(false));
     setAction(CellActionType.RIGHT, new MoveRight(false));
 
-    setAction(CellActionType.LOCAL_HOME, new LocalHome());
-    setAction(CellActionType.LOCAL_END, new LocalEnd());
+    setAction(CellActionType.LOCAL_HOME, new LocalHome(false));
+    setAction(CellActionType.LOCAL_END, new LocalEnd(false));
 
     setAction(CellActionType.SELECT_RIGHT, new MoveRight(true));
     setAction(CellActionType.SELECT_LEFT, new MoveLeft(true));
 
     setAction(CellActionType.SELECT_HOME, new SelectHome());
     setAction(CellActionType.SELECT_END, new SelectEnd());
+
+    setAction(CellActionType.SELECT_LOCAL_HOME, new LocalHome(true));
+    setAction(CellActionType.SELECT_LOCAL_END, new LocalEnd(true));
 
     setAction(CellActionType.COPY, new CopyLabelText());
     setAction(CellActionType.PASTE, new PasteIntoLabelText());
@@ -692,22 +695,34 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   private class LocalHome extends EditorCellAction {
+    private boolean mySelect;
+
+    private LocalHome(boolean select) {
+      mySelect = select;
+    }
+
     public boolean canExecute(EditorContext context) {
       return !isFirstCaretPosition() && isFirstPositionAllowed();
     }
 
     public void execute(EditorContext context) {
-      setCaretPosition(0);
+      setCaretPosition(0, mySelect);
     }
   }
 
   private class LocalEnd extends EditorCellAction {
+    private boolean mySelect;
+
+    private LocalEnd(boolean select) {
+      mySelect = select;
+    }
+
     public boolean canExecute(EditorContext context) {
       return !isLastCaretPosition() && isLastPositionAllowed();
     }
 
     public void execute(EditorContext context) {
-      setCaretPosition(getText().length());
+      setCaretPosition(getText().length(), mySelect);
     }
   }
 
