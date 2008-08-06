@@ -16,21 +16,21 @@ public class GetAccessor extends BaseConcept {
     super(node);
   }
 
-  public static GetAccessor newInstance(SModel sm, boolean init) {
-    return (GetAccessor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GetAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GetAccessor newInstance(SModel sm) {
-    return GetAccessor.newInstance(sm, false);
-  }
-
-
   public StatementList getStatementList() {
     return (StatementList)this.getChild(GetAccessor.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {
     super.setChild(GetAccessor.STATEMENT_LIST, node);
+  }
+
+
+  public static GetAccessor newInstance(SModel sm, boolean init) {
+    return (GetAccessor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GetAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GetAccessor newInstance(SModel sm) {
+    return GetAccessor.newInstance(sm, false);
   }
 
 }

@@ -4,60 +4,19 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_Collection_10818800104091081880010409(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1081880010409");
-  }
-
-  private static void setupBasic_Constant_10818800104101081880010410(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081880010410");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
-    DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
-    editorCell.addKeyMap(new OpenParenthesis_KeyMap());
-  }
-
-  private static void setupBasic_refNode_expression1081880010411(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_10818800104121081880010412(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081880010412");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.EDITABLE, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-    DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
-    editorCell.addKeyMap(new CloseParenthesis_KeyMap());
-  }
-
-  private static void setupLabel_Constant_1081880010410_1081880010410(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNode_expression_1081880010411(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1081880010412_1081880010412(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1081880010409(context, node);
@@ -118,6 +77,47 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
+  }
+
+
+  private static void setupBasic_Collection_10818800104091081880010409(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1081880010409");
+  }
+
+  private static void setupBasic_Constant_10818800104101081880010410(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081880010410");
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
+    editorCell.addKeyMap(new OpenParenthesis_KeyMap());
+  }
+
+  private static void setupBasic_refNode_expression1081880010411(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_Constant_10818800104121081880010412(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081880010412");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.EDITABLE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+    DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
+    editorCell.addKeyMap(new CloseParenthesis_KeyMap());
+  }
+
+  private static void setupLabel_Constant_1081880010410_1081880010410(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_expression_1081880010411(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1081880010412_1081880010412(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

@@ -15,21 +15,21 @@ public class ParenthesizedExpression extends Expression {
     super(node);
   }
 
-  public static ParenthesizedExpression newInstance(SModel sm, boolean init) {
-    return (ParenthesizedExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ParenthesizedExpression newInstance(SModel sm) {
-    return ParenthesizedExpression.newInstance(sm, false);
-  }
-
-
   public Expression getExpression() {
     return (Expression)this.getChild(ParenthesizedExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
     super.setChild(ParenthesizedExpression.EXPRESSION, node);
+  }
+
+
+  public static ParenthesizedExpression newInstance(SModel sm, boolean init) {
+    return (ParenthesizedExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ParenthesizedExpression newInstance(SModel sm) {
+    return ParenthesizedExpression.newInstance(sm, false);
   }
 
 }

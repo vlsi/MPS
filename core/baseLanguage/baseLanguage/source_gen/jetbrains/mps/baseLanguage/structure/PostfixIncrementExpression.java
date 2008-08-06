@@ -15,21 +15,21 @@ public class PostfixIncrementExpression extends Expression {
     super(node);
   }
 
-  public static PostfixIncrementExpression newInstance(SModel sm, boolean init) {
-    return (PostfixIncrementExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PostfixIncrementExpression newInstance(SModel sm) {
-    return PostfixIncrementExpression.newInstance(sm, false);
-  }
-
-
   public Expression getExpression() {
     return (Expression)this.getChild(PostfixIncrementExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
     super.setChild(PostfixIncrementExpression.EXPRESSION, node);
+  }
+
+
+  public static PostfixIncrementExpression newInstance(SModel sm, boolean init) {
+    return (PostfixIncrementExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PostfixIncrementExpression newInstance(SModel sm) {
+    return PostfixIncrementExpression.newInstance(sm, false);
   }
 
 }

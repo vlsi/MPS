@@ -4,27 +4,16 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_Collection_11821601758041182160175804(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1182160175804");
-  }
-
-  private static void setupBasic_refNode_cls1182160175805(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNode_cls_1182160175805(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1182160175804(context, node);
@@ -67,6 +56,17 @@ public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
+  }
+
+
+  private static void setupBasic_Collection_11821601758041182160175804(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1182160175804");
+  }
+
+  private static void setupBasic_refNode_cls1182160175805(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_cls_1182160175805(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

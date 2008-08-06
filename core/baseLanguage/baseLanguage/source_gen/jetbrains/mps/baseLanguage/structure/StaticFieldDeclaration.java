@@ -20,15 +20,6 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
     super(node);
   }
 
-  public static StaticFieldDeclaration newInstance(SModel sm, boolean init) {
-    return (StaticFieldDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static StaticFieldDeclaration newInstance(SModel sm) {
-    return StaticFieldDeclaration.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(StaticFieldDeclaration.SHORT_DESCRIPTION);
   }
@@ -67,6 +58,15 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
 
   public void setVisibility(Visibility node) {
     super.setChild(StaticFieldDeclaration.VISIBILITY, node);
+  }
+
+
+  public static StaticFieldDeclaration newInstance(SModel sm, boolean init) {
+    return (StaticFieldDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static StaticFieldDeclaration newInstance(SModel sm) {
+    return StaticFieldDeclaration.newInstance(sm, false);
   }
 
 }

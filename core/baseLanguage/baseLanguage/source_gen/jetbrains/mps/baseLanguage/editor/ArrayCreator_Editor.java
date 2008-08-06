@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -24,24 +24,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 public class ArrayCreator_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myListHandler_1209401468678;
-
-  private static void setupBasic_Collection_11849510386301184951038630(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184951038630");
-  }
-
-  private static void setupBasic_refNode_componentType1184951056679(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_refNodeList_dimensionExpression1209401468678(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_dimensionExpression");
-  }
-
-  private static void setupLabel_refNode_componentType_1184951056679(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNodeList_dimensionExpression_1209401468678(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1184951038630(context, node);
@@ -98,6 +80,24 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
+  }
+
+
+  private static void setupBasic_Collection_11849510386301184951038630(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184951038630");
+  }
+
+  private static void setupBasic_refNode_componentType1184951056679(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_refNodeList_dimensionExpression1209401468678(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_dimensionExpression");
+  }
+
+  private static void setupLabel_refNode_componentType_1184951056679(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNodeList_dimensionExpression_1209401468678(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class dimensionExpressionListHandler_ extends RefNodeListHandler {

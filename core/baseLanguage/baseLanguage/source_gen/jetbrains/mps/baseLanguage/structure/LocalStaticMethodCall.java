@@ -14,21 +14,21 @@ public class LocalStaticMethodCall extends BaseMethodCall {
     super(node);
   }
 
-  public static LocalStaticMethodCall newInstance(SModel sm, boolean init) {
-    return (LocalStaticMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static LocalStaticMethodCall newInstance(SModel sm) {
-    return LocalStaticMethodCall.newInstance(sm, false);
-  }
-
-
   public StaticMethodDeclaration getStaticMethodDeclaration() {
     return (StaticMethodDeclaration)this.getBaseMethodDeclaration();
   }
 
   public void setStaticMethodDeclaration(StaticMethodDeclaration node) {
     this.setBaseMethodDeclaration(node);
+  }
+
+
+  public static LocalStaticMethodCall newInstance(SModel sm, boolean init) {
+    return (LocalStaticMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static LocalStaticMethodCall newInstance(SModel sm) {
+    return LocalStaticMethodCall.newInstance(sm, false);
   }
 
 }

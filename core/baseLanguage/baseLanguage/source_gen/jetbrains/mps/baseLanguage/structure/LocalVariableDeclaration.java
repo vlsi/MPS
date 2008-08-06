@@ -19,15 +19,6 @@ public class LocalVariableDeclaration extends VariableDeclaration implements IRe
     super(node);
   }
 
-  public static LocalVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (LocalVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static LocalVariableDeclaration newInstance(SModel sm) {
-    return LocalVariableDeclaration.newInstance(sm, false);
-  }
-
-
   public String getResolveInfo() {
     return this.getProperty(LocalVariableDeclaration.RESOLVE_INFO);
   }
@@ -58,6 +49,15 @@ public class LocalVariableDeclaration extends VariableDeclaration implements IRe
 
   public void setVirtualPackage(String value) {
     this.setProperty(LocalVariableDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static LocalVariableDeclaration newInstance(SModel sm, boolean init) {
+    return (LocalVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static LocalVariableDeclaration newInstance(SModel sm) {
+    return LocalVariableDeclaration.newInstance(sm, false);
   }
 
 }

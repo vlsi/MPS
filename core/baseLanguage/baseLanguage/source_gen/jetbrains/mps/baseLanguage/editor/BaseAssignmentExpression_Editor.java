@@ -4,73 +4,19 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_Collection_10753104802821075310480282(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1075310480282");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_refNode_lValue1075310480284(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-    AssignmentExpression_LeftArgument_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_refNode_rValue1075310480286(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-    AssignmentExpression_RightArgument_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_conceptProperty_alias1215694331196(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
-  }
-
-  private static void setupLabel_refNode_lValue_1075310480284(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNode_rValue_1075310480286(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_conceptProperty_alias_1215694331196(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1075310480282(context, node);
@@ -173,6 +119,60 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
+  }
+
+
+  private static void setupBasic_Collection_10753104802821075310480282(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1075310480282");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_refNode_lValue1075310480284(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+    AssignmentExpression_LeftArgument_Actions.setCellActions(editorCell, node, context);
+  }
+
+  private static void setupBasic_refNode_rValue1075310480286(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+    AssignmentExpression_RightArgument_Actions.setCellActions(editorCell, node, context);
+  }
+
+  private static void setupBasic_conceptProperty_alias1215694331196(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
+  }
+
+  private static void setupLabel_refNode_lValue_1075310480284(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_rValue_1075310480286(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_conceptProperty_alias_1215694331196(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

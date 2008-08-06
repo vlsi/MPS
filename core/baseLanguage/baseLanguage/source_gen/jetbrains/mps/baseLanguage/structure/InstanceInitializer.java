@@ -16,21 +16,21 @@ public class InstanceInitializer extends BaseConcept {
     super(node);
   }
 
-  public static InstanceInitializer newInstance(SModel sm, boolean init) {
-    return (InstanceInitializer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InstanceInitializer newInstance(SModel sm) {
-    return InstanceInitializer.newInstance(sm, false);
-  }
-
-
   public StatementList getStatementList() {
     return (StatementList)this.getChild(InstanceInitializer.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {
     super.setChild(InstanceInitializer.STATEMENT_LIST, node);
+  }
+
+
+  public static InstanceInitializer newInstance(SModel sm, boolean init) {
+    return (InstanceInitializer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InstanceInitializer newInstance(SModel sm) {
+    return InstanceInitializer.newInstance(sm, false);
   }
 
 }

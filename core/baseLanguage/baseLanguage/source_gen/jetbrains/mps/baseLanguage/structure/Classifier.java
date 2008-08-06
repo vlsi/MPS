@@ -4,11 +4,11 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.core.structure.IResolveInfo;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class Classifier extends GenericDeclaration implements HasAnnotation, IMemberContainer, IResolveInfo, IValidIdentifier {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Classifier";
@@ -26,15 +26,6 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   public Classifier(SNode node) {
     super(node);
   }
-
-  public static Classifier newInstance(SModel sm, boolean init) {
-    return (Classifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Classifier newInstance(SModel sm) {
-    return Classifier.newInstance(sm, false);
-  }
-
 
   public String getNestedName() {
     return this.getProperty(Classifier.NESTED_NAME);
@@ -150,6 +141,15 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
 
   public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
     this.insertChild(prev, Classifier.ANNOTATION, node);
+  }
+
+
+  public static Classifier newInstance(SModel sm, boolean init) {
+    return (Classifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Classifier newInstance(SModel sm) {
+    return Classifier.newInstance(sm, false);
   }
 
 }

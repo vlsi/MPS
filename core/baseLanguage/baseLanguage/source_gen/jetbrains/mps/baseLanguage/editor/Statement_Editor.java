@@ -4,14 +4,26 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class Statement_Editor extends DefaultNodeEditor {
+
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
+    return this.createError1078746085984(context, node);
+  }
+
+  public EditorCell createError1078746085984(EditorContext context, SNode node) {
+    EditorCell_Error editorCell = new EditorCell_Error(context, node, "<statement>");
+    setupBasic_Error_10787460859841078746085984(editorCell, node, context);
+    setupLabel_Error_1078746085984_1078746085984(editorCell, node, context);
+    return editorCell;
+  }
+
 
   private static void setupBasic_Error_10787460859841078746085984(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Error_1078746085984");
@@ -28,18 +40,6 @@ public class Statement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Error_1078746085984_1078746085984(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createError1078746085984(context, node);
-  }
-
-  public EditorCell createError1078746085984(EditorContext context, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error(context, node, "<statement>");
-    setupBasic_Error_10787460859841078746085984(editorCell, node, context);
-    setupLabel_Error_1078746085984_1078746085984(editorCell, node, context);
-    return editorCell;
   }
 
 }

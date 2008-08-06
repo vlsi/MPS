@@ -15,21 +15,21 @@ public class CharConstant extends Expression {
     super(node);
   }
 
-  public static CharConstant newInstance(SModel sm, boolean init) {
-    return (CharConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharConstant", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static CharConstant newInstance(SModel sm) {
-    return CharConstant.newInstance(sm, false);
-  }
-
-
   public String getCharConstant() {
     return this.getProperty(CharConstant.CHAR_CONSTANT);
   }
 
   public void setCharConstant(String value) {
     this.setProperty(CharConstant.CHAR_CONSTANT, value);
+  }
+
+
+  public static CharConstant newInstance(SModel sm, boolean init) {
+    return (CharConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static CharConstant newInstance(SModel sm) {
+    return CharConstant.newInstance(sm, false);
   }
 
 }

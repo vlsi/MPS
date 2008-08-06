@@ -5,11 +5,11 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class GenericDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.GenericDeclaration";
@@ -22,15 +22,6 @@ public class GenericDeclaration extends BaseConcept implements INamedConcept {
   public GenericDeclaration(SNode node) {
     super(node);
   }
-
-  public static GenericDeclaration newInstance(SModel sm, boolean init) {
-    return (GenericDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GenericDeclaration newInstance(SModel sm) {
-    return GenericDeclaration.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(GenericDeclaration.NAME);
@@ -82,6 +73,15 @@ public class GenericDeclaration extends BaseConcept implements INamedConcept {
 
   public void insertTypeVariableDeclaration(TypeVariableDeclaration prev, TypeVariableDeclaration node) {
     this.insertChild(prev, GenericDeclaration.TYPE_VARIABLE_DECLARATION, node);
+  }
+
+
+  public static GenericDeclaration newInstance(SModel sm, boolean init) {
+    return (GenericDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GenericDeclaration newInstance(SModel sm) {
+    return GenericDeclaration.newInstance(sm, false);
   }
 
 }

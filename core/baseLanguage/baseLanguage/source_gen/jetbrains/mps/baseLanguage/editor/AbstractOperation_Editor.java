@@ -5,18 +5,13 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class AbstractOperation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myCellProvider1;
-
-  private static void setupBasic_Custom_12086235265021208623526502(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Custom_1208623526502");
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCustom1208623526502(context, node);
@@ -39,6 +34,11 @@ public class AbstractOperation_Editor extends DefaultNodeEditor {
       }
 
     };
+  }
+
+
+  private static void setupBasic_Custom_12086235265021208623526502(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Custom_1208623526502");
   }
 
 }

@@ -16,15 +16,6 @@ public class DotExpression extends Expression {
     super(node);
   }
 
-  public static DotExpression newInstance(SModel sm, boolean init) {
-    return (DotExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static DotExpression newInstance(SModel sm) {
-    return DotExpression.newInstance(sm, false);
-  }
-
-
   public Expression getOperand() {
     return (Expression)this.getChild(DotExpression.OPERAND);
   }
@@ -39,6 +30,15 @@ public class DotExpression extends Expression {
 
   public void setOperation(IOperation node) {
     super.setChild(DotExpression.OPERATION, node);
+  }
+
+
+  public static DotExpression newInstance(SModel sm, boolean init) {
+    return (DotExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static DotExpression newInstance(SModel sm) {
+    return DotExpression.newInstance(sm, false);
   }
 
 }

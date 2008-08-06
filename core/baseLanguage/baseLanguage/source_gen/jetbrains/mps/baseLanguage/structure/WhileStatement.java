@@ -15,21 +15,21 @@ public class WhileStatement extends AbstractLoopStatement {
     super(node);
   }
 
-  public static WhileStatement newInstance(SModel sm, boolean init) {
-    return (WhileStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WhileStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static WhileStatement newInstance(SModel sm) {
-    return WhileStatement.newInstance(sm, false);
-  }
-
-
   public Expression getCondition() {
     return (Expression)this.getChild(WhileStatement.CONDITION);
   }
 
   public void setCondition(Expression node) {
     super.setChild(WhileStatement.CONDITION, node);
+  }
+
+
+  public static WhileStatement newInstance(SModel sm, boolean init) {
+    return (WhileStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WhileStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static WhileStatement newInstance(SModel sm) {
+    return WhileStatement.newInstance(sm, false);
   }
 
 }

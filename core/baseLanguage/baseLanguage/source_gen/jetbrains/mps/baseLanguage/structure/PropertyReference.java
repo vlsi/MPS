@@ -19,15 +19,6 @@ public class PropertyReference extends BaseConcept implements IOperation {
     super(node);
   }
 
-  public static PropertyReference newInstance(SModel sm, boolean init) {
-    return (PropertyReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PropertyReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PropertyReference newInstance(SModel sm) {
-    return PropertyReference.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(PropertyReference.SHORT_DESCRIPTION);
   }
@@ -58,6 +49,15 @@ public class PropertyReference extends BaseConcept implements IOperation {
 
   public void setProperty(Property node) {
     super.setReferent(PropertyReference.PROPERTY, node);
+  }
+
+
+  public static PropertyReference newInstance(SModel sm, boolean init) {
+    return (PropertyReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PropertyReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PropertyReference newInstance(SModel sm) {
+    return PropertyReference.newInstance(sm, false);
   }
 
 }

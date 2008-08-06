@@ -15,21 +15,21 @@ public class BooleanConstant extends Expression {
     super(node);
   }
 
-  public static BooleanConstant newInstance(SModel sm, boolean init) {
-    return (BooleanConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BooleanConstant newInstance(SModel sm) {
-    return BooleanConstant.newInstance(sm, false);
-  }
-
-
   public boolean getValue() {
     return this.getBooleanProperty(BooleanConstant.VALUE);
   }
 
   public void setValue(boolean value) {
     this.setBooleanProperty(BooleanConstant.VALUE, value);
+  }
+
+
+  public static BooleanConstant newInstance(SModel sm, boolean init) {
+    return (BooleanConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BooleanConstant newInstance(SModel sm) {
+    return BooleanConstant.newInstance(sm, false);
   }
 
 }

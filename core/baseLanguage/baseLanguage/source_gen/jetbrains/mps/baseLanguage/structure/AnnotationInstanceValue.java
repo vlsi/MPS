@@ -17,15 +17,6 @@ public class AnnotationInstanceValue extends BaseConcept {
     super(node);
   }
 
-  public static AnnotationInstanceValue newInstance(SModel sm, boolean init) {
-    return (AnnotationInstanceValue)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AnnotationInstanceValue newInstance(SModel sm) {
-    return AnnotationInstanceValue.newInstance(sm, false);
-  }
-
-
   public AnnotationMethodDeclaration getKey() {
     return (AnnotationMethodDeclaration)this.getReferent(AnnotationInstanceValue.KEY);
   }
@@ -40,6 +31,15 @@ public class AnnotationInstanceValue extends BaseConcept {
 
   public void setValue(Expression node) {
     super.setChild(AnnotationInstanceValue.VALUE, node);
+  }
+
+
+  public static AnnotationInstanceValue newInstance(SModel sm, boolean init) {
+    return (AnnotationInstanceValue)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AnnotationInstanceValue newInstance(SModel sm) {
+    return AnnotationInstanceValue.newInstance(sm, false);
   }
 
 }

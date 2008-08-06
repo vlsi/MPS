@@ -16,15 +16,6 @@ public class CustomPropertyImplementation extends PropertyImplementation {
     super(node);
   }
 
-  public static CustomPropertyImplementation newInstance(SModel sm, boolean init) {
-    return (CustomPropertyImplementation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static CustomPropertyImplementation newInstance(SModel sm) {
-    return CustomPropertyImplementation.newInstance(sm, false);
-  }
-
-
   public GetAccessor getGetAccessor() {
     return (GetAccessor)this.getChild(CustomPropertyImplementation.GET_ACCESSOR);
   }
@@ -39,6 +30,15 @@ public class CustomPropertyImplementation extends PropertyImplementation {
 
   public void setSetAccessor(SetAccessor node) {
     super.setChild(CustomPropertyImplementation.SET_ACCESSOR, node);
+  }
+
+
+  public static CustomPropertyImplementation newInstance(SModel sm, boolean init) {
+    return (CustomPropertyImplementation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static CustomPropertyImplementation newInstance(SModel sm) {
+    return CustomPropertyImplementation.newInstance(sm, false);
   }
 
 }

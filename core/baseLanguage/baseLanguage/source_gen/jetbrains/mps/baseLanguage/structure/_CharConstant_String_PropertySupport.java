@@ -14,7 +14,7 @@ public class _CharConstant_String_PropertySupport extends PropertySupport {
     {
       testValue = value;
     }
-    return testValue.matches(".|(\\\\[nrta\\\\])");
+    return testValue.matches(".|(\\\\([btnfr\"'\\\\]|([0-3]?[0-7]{1,2})|(u[0-9a-fA-F]{4})))");
   }
 
 }

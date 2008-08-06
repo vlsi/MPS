@@ -20,15 +20,6 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
     super(node);
   }
 
-  public static StaticMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (StaticMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static StaticMethodDeclaration newInstance(SModel sm) {
-    return StaticMethodDeclaration.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(StaticMethodDeclaration.SHORT_DESCRIPTION);
   }
@@ -67,6 +58,15 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
 
   public void setVisibility(Visibility node) {
     super.setChild(StaticMethodDeclaration.VISIBILITY, node);
+  }
+
+
+  public static StaticMethodDeclaration newInstance(SModel sm, boolean init) {
+    return (StaticMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static StaticMethodDeclaration newInstance(SModel sm) {
+    return StaticMethodDeclaration.newInstance(sm, false);
   }
 
 }

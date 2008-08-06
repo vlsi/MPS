@@ -14,21 +14,21 @@ public class SuperMethodCall extends BaseMethodCall {
     super(node);
   }
 
-  public static SuperMethodCall newInstance(SModel sm, boolean init) {
-    return (SuperMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SuperMethodCall newInstance(SModel sm) {
-    return SuperMethodCall.newInstance(sm, false);
-  }
-
-
   public InstanceMethodDeclaration getInstanceMethodDeclaration() {
     return (InstanceMethodDeclaration)this.getBaseMethodDeclaration();
   }
 
   public void setInstanceMethodDeclaration(InstanceMethodDeclaration node) {
     this.setBaseMethodDeclaration(node);
+  }
+
+
+  public static SuperMethodCall newInstance(SModel sm, boolean init) {
+    return (SuperMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SuperMethodCall newInstance(SModel sm) {
+    return SuperMethodCall.newInstance(sm, false);
   }
 
 }

@@ -15,21 +15,21 @@ public class BlockStatement extends Statement {
     super(node);
   }
 
-  public static BlockStatement newInstance(SModel sm, boolean init) {
-    return (BlockStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BlockStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BlockStatement newInstance(SModel sm) {
-    return BlockStatement.newInstance(sm, false);
-  }
-
-
   public StatementList getStatements() {
     return (StatementList)this.getChild(BlockStatement.STATEMENTS);
   }
 
   public void setStatements(StatementList node) {
     super.setChild(BlockStatement.STATEMENTS, node);
+  }
+
+
+  public static BlockStatement newInstance(SModel sm, boolean init) {
+    return (BlockStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BlockStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BlockStatement newInstance(SModel sm) {
+    return BlockStatement.newInstance(sm, false);
   }
 
 }

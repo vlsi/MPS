@@ -21,15 +21,6 @@ public class ConstructorDeclaration extends BaseMethodDeclaration implements Cla
     super(node);
   }
 
-  public static ConstructorDeclaration newInstance(SModel sm, boolean init) {
-    return (ConstructorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ConstructorDeclaration newInstance(SModel sm) {
-    return ConstructorDeclaration.newInstance(sm, false);
-  }
-
-
   public String getNestedName() {
     return this.getProperty(ConstructorDeclaration.NESTED_NAME);
   }
@@ -76,6 +67,15 @@ public class ConstructorDeclaration extends BaseMethodDeclaration implements Cla
 
   public void setVisibility(Visibility node) {
     super.setChild(ConstructorDeclaration.VISIBILITY, node);
+  }
+
+
+  public static ConstructorDeclaration newInstance(SModel sm, boolean init) {
+    return (ConstructorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ConstructorDeclaration newInstance(SModel sm) {
+    return ConstructorDeclaration.newInstance(sm, false);
   }
 
 }

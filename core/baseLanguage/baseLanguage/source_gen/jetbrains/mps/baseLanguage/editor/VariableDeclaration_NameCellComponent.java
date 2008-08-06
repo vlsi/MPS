@@ -6,15 +6,15 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -28,25 +28,6 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
   public VariableDeclaration_NameCellComponent(SNode node) {
     super(node);
   }
-
-  private static void setupBasic_property_name1181823199382(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-    BaseLanguageStyle_StyleSheet.VARIABLE_NAME.apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
-          this.set(StyleAttributes.PADDING_LEFT, 1.0);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupLabel_property_name_1181823199382(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context) {
     return this.createEditorCell(context, this.getSNode());
@@ -84,6 +65,25 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
+  }
+
+
+  private static void setupBasic_property_name1181823199382(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    BaseLanguageStyle_StyleSheet.VARIABLE_NAME.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupLabel_property_name_1181823199382(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class VariableDeclaration_name_postfixCellMenu extends AbstractCellMenuPart_PropertyPostfixHints {

@@ -16,15 +16,6 @@ public class InstanceOfExpression extends Expression {
     super(node);
   }
 
-  public static InstanceOfExpression newInstance(SModel sm, boolean init) {
-    return (InstanceOfExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceOfExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InstanceOfExpression newInstance(SModel sm) {
-    return InstanceOfExpression.newInstance(sm, false);
-  }
-
-
   public Expression getLeftExpression() {
     return (Expression)this.getChild(InstanceOfExpression.LEFT_EXPRESSION);
   }
@@ -39,6 +30,15 @@ public class InstanceOfExpression extends Expression {
 
   public void setClassType(ClassifierType node) {
     super.setChild(InstanceOfExpression.CLASS_TYPE, node);
+  }
+
+
+  public static InstanceOfExpression newInstance(SModel sm, boolean init) {
+    return (InstanceOfExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceOfExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InstanceOfExpression newInstance(SModel sm) {
+    return InstanceOfExpression.newInstance(sm, false);
   }
 
 }

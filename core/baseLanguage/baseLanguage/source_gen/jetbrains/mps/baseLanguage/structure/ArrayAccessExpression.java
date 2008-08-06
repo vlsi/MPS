@@ -16,15 +16,6 @@ public class ArrayAccessExpression extends Expression {
     super(node);
   }
 
-  public static ArrayAccessExpression newInstance(SModel sm, boolean init) {
-    return (ArrayAccessExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ArrayAccessExpression newInstance(SModel sm) {
-    return ArrayAccessExpression.newInstance(sm, false);
-  }
-
-
   public Expression getArray() {
     return (Expression)this.getChild(ArrayAccessExpression.ARRAY);
   }
@@ -39,6 +30,15 @@ public class ArrayAccessExpression extends Expression {
 
   public void setIndex(Expression node) {
     super.setChild(ArrayAccessExpression.INDEX, node);
+  }
+
+
+  public static ArrayAccessExpression newInstance(SModel sm, boolean init) {
+    return (ArrayAccessExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ArrayAccessExpression newInstance(SModel sm) {
+    return ArrayAccessExpression.newInstance(sm, false);
   }
 
 }

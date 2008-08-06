@@ -4,44 +4,17 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class DimensionExpression_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_Collection_11849529541771184952954177(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184952954177");
-  }
-
-  private static void setupBasic_Constant_11849529556631184952955663(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184952955663");
-    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_11849529580561184952958056(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184952958056");
-    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
-  }
-
-  private static void setupBasic_refNode_expression1184953300484(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1184952955663_1184952955663(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1184952958056_1184952958056(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNode_expression_1184953300484(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1184952954177(context, node);
@@ -102,6 +75,33 @@ public class DimensionExpression_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
+  }
+
+
+  private static void setupBasic_Collection_11849529541771184952954177(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184952954177");
+  }
+
+  private static void setupBasic_Constant_11849529556631184952955663(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184952955663");
+    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
+  }
+
+  private static void setupBasic_Constant_11849529580561184952958056(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184952958056");
+    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
+  }
+
+  private static void setupBasic_refNode_expression1184953300484(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1184952955663_1184952955663(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1184952958056_1184952958056(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_expression_1184953300484(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

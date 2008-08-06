@@ -7,12 +7,12 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -28,6 +28,56 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   public _GenericDeclaration_TypeVariables_Component(SNode node) {
     super(node);
   }
+
+  public EditorCell createEditorCell(EditorContext context) {
+    return this.createEditorCell(context, this.getSNode());
+  }
+
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
+    return this.createCollection1140573670191(context, node);
+  }
+
+  public EditorCell createCollection1140573670191(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_Collection_11405736701911140573670191(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant1140573670192(context, node, "<"));
+    editorCell.addEditorCell(this.createRefNodeList1140573670193(context, node));
+    editorCell.addEditorCell(this.createConstant1140573670194(context, node, ">"));
+    return editorCell;
+  }
+
+  public EditorCell createConstant1140573670192(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_11405736701921140573670192(editorCell, node, context);
+    setupLabel_Constant_1140573670192_1140573670192(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1140573670194(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_11405736701941140573670194(editorCell, node, context);
+    setupLabel_Constant_1140573670194_1140573670194(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createRefNodeList1140573670193(EditorContext context, SNode node) {
+    if (this.myListHandler_1140573670193 == null) {
+      this.myListHandler_1140573670193 = new _GenericDeclaration_TypeVariables_Component.typeVariableDeclarationListHandler_(node, "typeVariableDeclaration", context);
+    }
+    EditorCell_Collection editorCell = this.myListHandler_1140573670193.createCells(context, new CellLayout_Horizontal(), false);
+    setupBasic_refNodeList_typeVariableDeclaration1140573670193(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1140573670193.getElementRole());
+    return editorCell;
+  }
+
 
   private static void setupBasic_Collection_11405736701911140573670191(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1140573670191");
@@ -80,56 +130,6 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   }
 
   private static void setupLabel_Constant_1140573670194_1140573670194(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-
-  public EditorCell createEditorCell(EditorContext context) {
-    return this.createEditorCell(context, this.getSNode());
-  }
-
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1140573670191(context, node);
-  }
-
-  public EditorCell createCollection1140573670191(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11405736701911140573670191(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1140573670192(context, node, "<"));
-    editorCell.addEditorCell(this.createRefNodeList1140573670193(context, node));
-    editorCell.addEditorCell(this.createConstant1140573670194(context, node, ">"));
-    return editorCell;
-  }
-
-  public EditorCell createConstant1140573670192(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11405736701921140573670192(editorCell, node, context);
-    setupLabel_Constant_1140573670192_1140573670192(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant1140573670194(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11405736701941140573670194(editorCell, node, context);
-    setupLabel_Constant_1140573670194_1140573670194(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createRefNodeList1140573670193(EditorContext context, SNode node) {
-    if (this.myListHandler_1140573670193 == null) {
-      this.myListHandler_1140573670193 = new _GenericDeclaration_TypeVariables_Component.typeVariableDeclarationListHandler_(node, "typeVariableDeclaration", context);
-    }
-    EditorCell_Collection editorCell = this.myListHandler_1140573670193.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_refNodeList_typeVariableDeclaration1140573670193(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1140573670193.getElementRole());
-    return editorCell;
   }
 
   public static class typeVariableDeclarationListHandler_ extends RefNodeListHandler {

@@ -16,15 +16,6 @@ public class AbstractLoopStatement extends Statement {
     super(node);
   }
 
-  public static AbstractLoopStatement newInstance(SModel sm, boolean init) {
-    return (AbstractLoopStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AbstractLoopStatement newInstance(SModel sm) {
-    return AbstractLoopStatement.newInstance(sm, false);
-  }
-
-
   public String getLabel() {
     return this.getProperty(AbstractLoopStatement.LABEL);
   }
@@ -39,6 +30,15 @@ public class AbstractLoopStatement extends Statement {
 
   public void setBody(StatementList node) {
     super.setChild(AbstractLoopStatement.BODY, node);
+  }
+
+
+  public static AbstractLoopStatement newInstance(SModel sm, boolean init) {
+    return (AbstractLoopStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AbstractLoopStatement newInstance(SModel sm) {
+    return AbstractLoopStatement.newInstance(sm, false);
   }
 
 }

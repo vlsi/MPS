@@ -15456,13 +15456,16 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200397594526">
         <property name="text" value="'" />
-        <link role="styleClass" targetNodeId="1186415563770" resolveInfo="StringLiteral" />
+        <link role="styleClass" targetNodeId="1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1208859155872">
         <property name="vertical" value="true" />
         <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1208859155873">
           <link role="relationDeclaration" targetNodeId="17.1200397540847" resolveInfo="charConstant" />
           <link role="styleClass" targetNodeId="1186415563770" resolveInfo="StringLiteral" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1218027022697">
+            <property name="value" value="0.0" />
+          </node>
         </node>
         <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1208859155874">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208859155875">
@@ -15501,7 +15504,7 @@
         </node>
         <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1208859230495">
           <link role="relationDeclaration" targetNodeId="17.1200397540847" resolveInfo="charConstant" />
-          <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+          <link role="styleClass" targetNodeId="1215188818086" resolveInfo="CompactKeyWord" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleClassItem" id="1214318684957">
           <property name="layoutConstraint" value="punctuation" />
@@ -15509,10 +15512,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200397598655">
         <property name="text" value="'" />
-        <link role="styleClass" targetNodeId="1186415563770" resolveInfo="StringLiteral" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleClassItem" id="1214318684991">
-          <property name="layoutConstraint" value="punctuation" />
-        </node>
+        <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>

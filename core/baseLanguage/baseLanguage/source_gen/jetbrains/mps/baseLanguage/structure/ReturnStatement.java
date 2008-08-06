@@ -18,15 +18,6 @@ public class ReturnStatement extends Statement implements TypeDerivable {
     super(node);
   }
 
-  public static ReturnStatement newInstance(SModel sm, boolean init) {
-    return (ReturnStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ReturnStatement newInstance(SModel sm) {
-    return ReturnStatement.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(ReturnStatement.SHORT_DESCRIPTION);
   }
@@ -57,6 +48,15 @@ public class ReturnStatement extends Statement implements TypeDerivable {
 
   public void setExpression(Expression node) {
     super.setChild(ReturnStatement.EXPRESSION, node);
+  }
+
+
+  public static ReturnStatement newInstance(SModel sm, boolean init) {
+    return (ReturnStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ReturnStatement newInstance(SModel sm) {
+    return ReturnStatement.newInstance(sm, false);
   }
 
 }

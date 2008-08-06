@@ -15,21 +15,21 @@ public class StringLiteral extends Expression {
     super(node);
   }
 
-  public static StringLiteral newInstance(SModel sm, boolean init) {
-    return (StringLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static StringLiteral newInstance(SModel sm) {
-    return StringLiteral.newInstance(sm, false);
-  }
-
-
   public String getValue() {
     return this.getProperty(StringLiteral.VALUE);
   }
 
   public void setValue(String value) {
     this.setProperty(StringLiteral.VALUE, value);
+  }
+
+
+  public static StringLiteral newInstance(SModel sm, boolean init) {
+    return (StringLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static StringLiteral newInstance(SModel sm) {
+    return StringLiteral.newInstance(sm, false);
   }
 
 }

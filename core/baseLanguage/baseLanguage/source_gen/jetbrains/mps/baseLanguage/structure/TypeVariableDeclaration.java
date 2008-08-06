@@ -5,11 +5,11 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.IResolveInfo;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class TypeVariableDeclaration extends BaseConcept implements IValidIdentifier, IResolveInfo {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration";
@@ -25,15 +25,6 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
   public TypeVariableDeclaration(SNode node) {
     super(node);
   }
-
-  public static TypeVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (TypeVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TypeVariableDeclaration newInstance(SModel sm) {
-    return TypeVariableDeclaration.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(TypeVariableDeclaration.NAME);
@@ -109,6 +100,15 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
 
   public void insertAuxBounds(ClassifierType prev, ClassifierType node) {
     this.insertChild(prev, TypeVariableDeclaration.AUX_BOUNDS, node);
+  }
+
+
+  public static TypeVariableDeclaration newInstance(SModel sm, boolean init) {
+    return (TypeVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TypeVariableDeclaration newInstance(SModel sm) {
+    return TypeVariableDeclaration.newInstance(sm, false);
   }
 
 }

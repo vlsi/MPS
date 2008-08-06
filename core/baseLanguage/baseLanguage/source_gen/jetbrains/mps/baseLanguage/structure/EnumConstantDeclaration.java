@@ -5,11 +5,11 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.IResolveInfo;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class EnumConstantDeclaration extends BaseConcept implements IValidIdentifier, IResolveInfo, ClassifierMember {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration";
@@ -24,15 +24,6 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
   public EnumConstantDeclaration(SNode node) {
     super(node);
   }
-
-  public static EnumConstantDeclaration newInstance(SModel sm, boolean init) {
-    return (EnumConstantDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static EnumConstantDeclaration newInstance(SModel sm) {
-    return EnumConstantDeclaration.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(EnumConstantDeclaration.NAME);
@@ -100,6 +91,15 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, EnumConstantDeclaration.ACTUAL_ARGUMENT, node);
+  }
+
+
+  public static EnumConstantDeclaration newInstance(SModel sm, boolean init) {
+    return (EnumConstantDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static EnumConstantDeclaration newInstance(SModel sm) {
+    return EnumConstantDeclaration.newInstance(sm, false);
   }
 
 }

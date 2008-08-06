@@ -15,21 +15,21 @@ public class ArrayType extends Type {
     super(node);
   }
 
-  public static ArrayType newInstance(SModel sm, boolean init) {
-    return (ArrayType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ArrayType newInstance(SModel sm) {
-    return ArrayType.newInstance(sm, false);
-  }
-
-
   public Type getComponentType() {
     return (Type)this.getChild(ArrayType.COMPONENT_TYPE);
   }
 
   public void setComponentType(Type node) {
     super.setChild(ArrayType.COMPONENT_TYPE, node);
+  }
+
+
+  public static ArrayType newInstance(SModel sm, boolean init) {
+    return (ArrayType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ArrayType newInstance(SModel sm) {
+    return ArrayType.newInstance(sm, false);
   }
 
 }

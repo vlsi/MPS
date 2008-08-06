@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -18,32 +18,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_Collection_11882145826141188214582614(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188214582614");
-  }
-
-  private static void setupBasic_refCell_key1188214583881(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_key");
-  }
-
-  private static void setupBasic_Constant_11882145899801188214589980(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188214589980");
-    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
-  }
-
-  private static void setupBasic_refNode_value1188214613860(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refCell_key_1188214583881(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1188214589980_1188214589980(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNode_value_1188214613860(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1188214582614(context, node);
@@ -127,19 +101,37 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+
+  private static void setupBasic_Collection_11882145826141188214582614(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188214582614");
+  }
+
+  private static void setupBasic_refCell_key1188214583881(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_key");
+  }
+
+  private static void setupBasic_Constant_11882145899801188214589980(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188214589980");
+    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
+  }
+
+  private static void setupBasic_refNode_value1188214613860(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refCell_key_1188214583881(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1188214589980_1188214589980(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_value_1188214613860(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   public static class _Inline19 extends AbstractCellProvider {
 
     public _Inline19() {
       super();
     }
-
-    private static void setupBasic_property_name1188214586947(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-    }
-
-    private static void setupLabel_property_name_1188214586947(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    }
-
 
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
@@ -176,6 +168,14 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
+    }
+
+
+    private static void setupBasic_property_name1188214586947(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    }
+
+    private static void setupLabel_property_name_1188214586947(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

@@ -16,15 +16,6 @@ public class CastExpression extends Expression {
     super(node);
   }
 
-  public static CastExpression newInstance(SModel sm, boolean init) {
-    return (CastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static CastExpression newInstance(SModel sm) {
-    return CastExpression.newInstance(sm, false);
-  }
-
-
   public Type getType() {
     return (Type)this.getChild(CastExpression.TYPE);
   }
@@ -39,6 +30,15 @@ public class CastExpression extends Expression {
 
   public void setExpression(Expression node) {
     super.setChild(CastExpression.EXPRESSION, node);
+  }
+
+
+  public static CastExpression newInstance(SModel sm, boolean init) {
+    return (CastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static CastExpression newInstance(SModel sm) {
+    return CastExpression.newInstance(sm, false);
   }
 
 }

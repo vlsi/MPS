@@ -15,21 +15,21 @@ public class BreakStatement extends Statement {
     super(node);
   }
 
-  public static BreakStatement newInstance(SModel sm, boolean init) {
-    return (BreakStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BreakStatement newInstance(SModel sm) {
-    return BreakStatement.newInstance(sm, false);
-  }
-
-
   public String getLabel() {
     return this.getProperty(BreakStatement.LABEL);
   }
 
   public void setLabel(String value) {
     this.setProperty(BreakStatement.LABEL, value);
+  }
+
+
+  public static BreakStatement newInstance(SModel sm, boolean init) {
+    return (BreakStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BreakStatement newInstance(SModel sm) {
+    return BreakStatement.newInstance(sm, false);
   }
 
 }

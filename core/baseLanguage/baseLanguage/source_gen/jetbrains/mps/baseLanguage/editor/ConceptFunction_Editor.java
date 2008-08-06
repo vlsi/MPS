@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
@@ -17,15 +17,6 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myConceptFunction_Component;
   /* package */AbstractCellProvider myCellProvider;
-
-  private static void setupBasic_component_ConceptFunction_Component1196975582231(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ConceptFunction_Component");
-  }
-
-  private static void setupBasic_Custom_12075779223241207577922324(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Custom_1207577922324");
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createComponent1196975582231(context, node);
@@ -77,6 +68,15 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
       }
 
     };
+  }
+
+
+  private static void setupBasic_component_ConceptFunction_Component1196975582231(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "component_ConceptFunction_Component");
+  }
+
+  private static void setupBasic_Custom_12075779223241207577922324(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Custom_1207577922324");
   }
 
 }

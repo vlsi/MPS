@@ -16,15 +16,6 @@ public class AssertStatement extends Statement {
     super(node);
   }
 
-  public static AssertStatement newInstance(SModel sm, boolean init) {
-    return (AssertStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssertStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AssertStatement newInstance(SModel sm) {
-    return AssertStatement.newInstance(sm, false);
-  }
-
-
   public Expression getCondition() {
     return (Expression)this.getChild(AssertStatement.CONDITION);
   }
@@ -39,6 +30,15 @@ public class AssertStatement extends Statement {
 
   public void setMessage(Expression node) {
     super.setChild(AssertStatement.MESSAGE, node);
+  }
+
+
+  public static AssertStatement newInstance(SModel sm, boolean init) {
+    return (AssertStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssertStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AssertStatement newInstance(SModel sm) {
+    return AssertStatement.newInstance(sm, false);
   }
 
 }

@@ -19,15 +19,6 @@ public class FieldReferenceOperation extends BaseConcept implements IOperation {
     super(node);
   }
 
-  public static FieldReferenceOperation newInstance(SModel sm, boolean init) {
-    return (FieldReferenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static FieldReferenceOperation newInstance(SModel sm) {
-    return FieldReferenceOperation.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(FieldReferenceOperation.SHORT_DESCRIPTION);
   }
@@ -58,6 +49,15 @@ public class FieldReferenceOperation extends BaseConcept implements IOperation {
 
   public void setFieldDeclaration(FieldDeclaration node) {
     super.setReferent(FieldReferenceOperation.FIELD_DECLARATION, node);
+  }
+
+
+  public static FieldReferenceOperation newInstance(SModel sm, boolean init) {
+    return (FieldReferenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static FieldReferenceOperation newInstance(SModel sm) {
+    return FieldReferenceOperation.newInstance(sm, false);
   }
 
 }

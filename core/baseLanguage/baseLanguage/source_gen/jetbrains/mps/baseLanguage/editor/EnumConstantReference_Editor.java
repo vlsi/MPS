@@ -4,25 +4,25 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -30,39 +30,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.PrimaryReferentMenuCellMenuPart;
 
 public class EnumConstantReference_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_Collection_10909286013761090928601376(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1090928601376");
-  }
-
-  private static void setupBasic_Constant_10909286013781090928601378(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1090928601378");
-    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
-  }
-
-  private static void setupBasic_refCell_enumConstantDeclaration1090928601379(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_enumConstantDeclaration");
-  }
-
-  private static void setupBasic_refCell_enumClass1144432986234(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_enumClass");
-  }
-
-  private static void setupLabel_Constant_1090928601378_1090928601378(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refCell_enumConstantDeclaration_1090928601379(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refCell_enumClass_1144432986234(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor37(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1090928601376(context, node);
@@ -147,35 +114,44 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+
+  private static void setupBasic_Collection_10909286013761090928601376(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1090928601376");
+  }
+
+  private static void setupBasic_Constant_10909286013781090928601378(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1090928601378");
+    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
+  }
+
+  private static void setupBasic_refCell_enumConstantDeclaration1090928601379(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_enumConstantDeclaration");
+  }
+
+  private static void setupBasic_refCell_enumClass1144432986234(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_enumClass");
+  }
+
+  private static void setupLabel_Constant_1090928601378_1090928601378(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refCell_enumConstantDeclaration_1090928601379(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refCell_enumClass_1144432986234(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor37(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
   public static class _Inline4 extends AbstractCellProvider {
 
     public _Inline4() {
       super();
     }
-
-    private static void setupBasic_property_name1090928601381(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return EnumConstantReference_Editor.calculateColor37(cell);
-              }
-
-            });
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
-    }
-
-    private static void setupLabel_property_name_1090928601381(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    }
-
 
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
@@ -214,19 +190,20 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       return cellWithRole;
     }
 
-}
-  public static class _Inline10 extends AbstractCellProvider {
 
-    public _Inline10() {
-      super();
-    }
-
-    private static void setupBasic_property_name1144432992143(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_property_name1090928601381(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return EnumConstantReference_Editor.calculateColor37(cell);
+              }
+
+            });
           }
 
         };
@@ -234,9 +211,15 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       }
     }
 
-    private static void setupLabel_property_name_1144432992143(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_property_name_1090928601381(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
+}
+  public static class _Inline10 extends AbstractCellProvider {
+
+    public _Inline10() {
+      super();
+    }
 
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
@@ -273,6 +256,23 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
+    }
+
+
+    private static void setupBasic_property_name1144432992143(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
+    }
+
+    private static void setupLabel_property_name_1144432992143(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

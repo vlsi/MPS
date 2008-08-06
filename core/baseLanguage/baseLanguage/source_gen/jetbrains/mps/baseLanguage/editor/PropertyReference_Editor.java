@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -15,14 +15,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class PropertyReference_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_refCell_property1201385327882(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_property");
-  }
-
-  private static void setupLabel_refCell_property_1201385327882(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRefCell1201385327882(context, node);
@@ -57,20 +49,19 @@ public class PropertyReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+
+  private static void setupBasic_refCell_property1201385327882(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_property");
+  }
+
+  private static void setupLabel_refCell_property_1201385327882(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   public static class _Inline21 extends AbstractCellProvider {
 
     public _Inline21() {
       super();
     }
-
-    private static void setupBasic_property_propertyName1201385330666(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_propertyName");
-      BaseLanguageStyle_StyleSheet.FIELD.apply(editorCell);
-    }
-
-    private static void setupLabel_property_propertyName_1201385330666(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    }
-
 
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
@@ -107,6 +98,15 @@ public class PropertyReference_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
+    }
+
+
+    private static void setupBasic_property_propertyName1201385330666(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, "property_propertyName");
+      BaseLanguageStyle_StyleSheet.FIELD.apply(editorCell);
+    }
+
+    private static void setupLabel_property_propertyName_1201385330666(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

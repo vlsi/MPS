@@ -15,21 +15,21 @@ public class ContinueStatement extends Statement {
     super(node);
   }
 
-  public static ContinueStatement newInstance(SModel sm, boolean init) {
-    return (ContinueStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ContinueStatement newInstance(SModel sm) {
-    return ContinueStatement.newInstance(sm, false);
-  }
-
-
   public String getLabel() {
     return this.getProperty(ContinueStatement.LABEL);
   }
 
   public void setLabel(String value) {
     this.setProperty(ContinueStatement.LABEL, value);
+  }
+
+
+  public static ContinueStatement newInstance(SModel sm, boolean init) {
+    return (ContinueStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ContinueStatement newInstance(SModel sm) {
+    return ContinueStatement.newInstance(sm, false);
   }
 
 }

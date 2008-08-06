@@ -4,37 +4,23 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class ClosureParameterReference_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_refCell_closureParameter1153179576790(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_closureParameter");
-  }
-
-  private static void setupLabel_refCell_closureParameter_1153179576790(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor20(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRefCell1153179576790(context, node);
@@ -69,37 +55,25 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+
+  private static void setupBasic_refCell_closureParameter1153179576790(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_closureParameter");
+  }
+
+  private static void setupLabel_refCell_closureParameter_1153179576790(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor20(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
   public static class _Inline13 extends AbstractCellProvider {
 
     public _Inline13() {
       super();
     }
-
-    private static void setupBasic_property_name1153179665872(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return ClosureParameterReference_Editor.calculateColor20(cell);
-              }
-
-            });
-            this.set(StyleAttributes.PADDING_LEFT, 0.0);
-            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
-    }
-
-    private static void setupLabel_property_name_1153179665872(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    }
-
 
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
@@ -136,6 +110,32 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
+    }
+
+
+    private static void setupBasic_property_name1153179665872(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return ClosureParameterReference_Editor.calculateColor20(cell);
+              }
+
+            });
+            this.set(StyleAttributes.PADDING_LEFT, 0.0);
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
+    }
+
+    private static void setupLabel_property_name_1153179665872(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

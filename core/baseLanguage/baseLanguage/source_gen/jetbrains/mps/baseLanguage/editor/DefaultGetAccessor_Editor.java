@@ -4,33 +4,13 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class DefaultGetAccessor_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_Collection_12020652743421202065274342(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1202065274342");
-  }
-
-  private static void setupBasic_Constant_12020652759851202065275985(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202065275985");
-  }
-
-  private static void setupBasic_Constant_12020652929401202065292940(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202065292940");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
-  }
-
-  private static void setupLabel_Constant_1202065275985_1202065275985(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1202065292940_1202065292940(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1202065274342(context, node);
@@ -61,6 +41,26 @@ public class DefaultGetAccessor_Editor extends DefaultNodeEditor {
     setupLabel_Constant_1202065292940_1202065292940(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+
+  private static void setupBasic_Collection_12020652743421202065274342(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1202065274342");
+  }
+
+  private static void setupBasic_Constant_12020652759851202065275985(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202065275985");
+  }
+
+  private static void setupBasic_Constant_12020652929401202065292940(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202065292940");
+    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+  }
+
+  private static void setupLabel_Constant_1202065275985_1202065275985(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1202065292940_1202065292940(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

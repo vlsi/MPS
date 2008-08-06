@@ -16,15 +16,6 @@ public class BaseAssignmentExpression extends Expression {
     super(node);
   }
 
-  public static BaseAssignmentExpression newInstance(SModel sm, boolean init) {
-    return (BaseAssignmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BaseAssignmentExpression newInstance(SModel sm) {
-    return BaseAssignmentExpression.newInstance(sm, false);
-  }
-
-
   public Expression getLValue() {
     return (Expression)this.getChild(BaseAssignmentExpression.L_VALUE);
   }
@@ -39,6 +30,15 @@ public class BaseAssignmentExpression extends Expression {
 
   public void setRValue(Expression node) {
     super.setChild(BaseAssignmentExpression.R_VALUE, node);
+  }
+
+
+  public static BaseAssignmentExpression newInstance(SModel sm, boolean init) {
+    return (BaseAssignmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BaseAssignmentExpression newInstance(SModel sm) {
+    return BaseAssignmentExpression.newInstance(sm, false);
   }
 
 }

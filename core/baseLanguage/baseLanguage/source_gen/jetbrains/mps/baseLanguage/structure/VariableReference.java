@@ -15,21 +15,21 @@ public class VariableReference extends Expression {
     super(node);
   }
 
-  public static VariableReference newInstance(SModel sm, boolean init) {
-    return (VariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static VariableReference newInstance(SModel sm) {
-    return VariableReference.newInstance(sm, false);
-  }
-
-
   public VariableDeclaration getVariableDeclaration() {
     return (VariableDeclaration)this.getReferent(VariableReference.VARIABLE_DECLARATION);
   }
 
   public void setVariableDeclaration(VariableDeclaration node) {
     super.setReferent(VariableReference.VARIABLE_DECLARATION, node);
+  }
+
+
+  public static VariableReference newInstance(SModel sm, boolean init) {
+    return (VariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static VariableReference newInstance(SModel sm) {
+    return VariableReference.newInstance(sm, false);
   }
 
 }

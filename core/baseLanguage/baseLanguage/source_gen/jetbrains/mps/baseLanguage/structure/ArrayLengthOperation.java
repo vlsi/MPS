@@ -18,15 +18,6 @@ public class ArrayLengthOperation extends BaseConcept implements IOperation {
     super(node);
   }
 
-  public static ArrayLengthOperation newInstance(SModel sm, boolean init) {
-    return (ArrayLengthOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ArrayLengthOperation newInstance(SModel sm) {
-    return ArrayLengthOperation.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(ArrayLengthOperation.SHORT_DESCRIPTION);
   }
@@ -49,6 +40,15 @@ public class ArrayLengthOperation extends BaseConcept implements IOperation {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ArrayLengthOperation.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static ArrayLengthOperation newInstance(SModel sm, boolean init) {
+    return (ArrayLengthOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ArrayLengthOperation newInstance(SModel sm) {
+    return ArrayLengthOperation.newInstance(sm, false);
   }
 
 }

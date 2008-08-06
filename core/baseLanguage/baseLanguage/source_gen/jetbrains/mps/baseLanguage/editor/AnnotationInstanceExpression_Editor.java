@@ -4,27 +4,16 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AnnotationInstanceExpression_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_Collection_11882145206211188214520621(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188214520621");
-  }
-
-  private static void setupBasic_refNode_annotationInstance1188214522482(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNode_annotationInstance_1188214522482(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1188214520621(context, node);
@@ -67,6 +56,17 @@ public class AnnotationInstanceExpression_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
+  }
+
+
+  private static void setupBasic_Collection_11882145206211188214520621(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188214520621");
+  }
+
+  private static void setupBasic_refNode_annotationInstance1188214522482(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_annotationInstance_1188214522482(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

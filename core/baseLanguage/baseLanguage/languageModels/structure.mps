@@ -2494,7 +2494,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration" id="1200397549879">
     <property name="name" value="_CharConstant_String" />
-    <property name="constraint" value=".|(\\\\[nrta\\\\])" />
+    <property name="constraint" value=".|(\\\\([btnfr\&quot;'\\\\]|([0-3]?[0-7]{1,2})|(u[0-9a-fA-F]{4})))" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1201183863028">
     <property name="name" value="TypeDerivable" />

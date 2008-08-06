@@ -17,15 +17,6 @@ public class TernaryOperatorExpression extends Expression {
     super(node);
   }
 
-  public static TernaryOperatorExpression newInstance(SModel sm, boolean init) {
-    return (TernaryOperatorExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TernaryOperatorExpression newInstance(SModel sm) {
-    return TernaryOperatorExpression.newInstance(sm, false);
-  }
-
-
   public Expression getCondition() {
     return (Expression)this.getChild(TernaryOperatorExpression.CONDITION);
   }
@@ -48,6 +39,15 @@ public class TernaryOperatorExpression extends Expression {
 
   public void setIfFalse(Expression node) {
     super.setChild(TernaryOperatorExpression.IF_FALSE, node);
+  }
+
+
+  public static TernaryOperatorExpression newInstance(SModel sm, boolean init) {
+    return (TernaryOperatorExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TernaryOperatorExpression newInstance(SModel sm) {
+    return TernaryOperatorExpression.newInstance(sm, false);
   }
 
 }

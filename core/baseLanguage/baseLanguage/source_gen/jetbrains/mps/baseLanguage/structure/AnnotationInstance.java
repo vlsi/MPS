@@ -4,11 +4,11 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class AnnotationInstance extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AnnotationInstance";
@@ -18,15 +18,6 @@ public class AnnotationInstance extends BaseConcept {
   public AnnotationInstance(SNode node) {
     super(node);
   }
-
-  public static AnnotationInstance newInstance(SModel sm, boolean init) {
-    return (AnnotationInstance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AnnotationInstance newInstance(SModel sm) {
-    return AnnotationInstance.newInstance(sm, false);
-  }
-
 
   public Annotation getAnnotation() {
     return (Annotation)this.getReferent(AnnotationInstance.ANNOTATION);
@@ -54,6 +45,15 @@ public class AnnotationInstance extends BaseConcept {
 
   public void insertValue(AnnotationInstanceValue prev, AnnotationInstanceValue node) {
     this.insertChild(prev, AnnotationInstance.VALUE, node);
+  }
+
+
+  public static AnnotationInstance newInstance(SModel sm, boolean init) {
+    return (AnnotationInstance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AnnotationInstance newInstance(SModel sm) {
+    return AnnotationInstance.newInstance(sm, false);
   }
 
 }

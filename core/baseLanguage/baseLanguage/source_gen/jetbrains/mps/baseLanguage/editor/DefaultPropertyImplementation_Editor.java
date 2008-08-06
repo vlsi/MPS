@@ -4,33 +4,16 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_Collection_12013727518441201372751844(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1201372751844");
-  }
-
-  private static void setupBasic_refNode_defaultGetAccessor1202065379758(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_refNode_defaultSetAccessor1202078100030(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNode_defaultGetAccessor_1202065379758(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNode_defaultSetAccessor_1202078100030(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1201372751844(context, node);
@@ -103,6 +86,23 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
+  }
+
+
+  private static void setupBasic_Collection_12013727518441201372751844(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1201372751844");
+  }
+
+  private static void setupBasic_refNode_defaultGetAccessor1202065379758(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_refNode_defaultSetAccessor1202078100030(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_defaultGetAccessor_1202065379758(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_defaultSetAccessor_1202078100030(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

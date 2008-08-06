@@ -15,15 +15,6 @@ public class StaticFieldReference extends VariableReference {
     super(node);
   }
 
-  public static StaticFieldReference newInstance(SModel sm, boolean init) {
-    return (StaticFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static StaticFieldReference newInstance(SModel sm) {
-    return StaticFieldReference.newInstance(sm, false);
-  }
-
-
   public Classifier getClassifier() {
     return (Classifier)this.getReferent(StaticFieldReference.CLASSIFIER);
   }
@@ -38,6 +29,15 @@ public class StaticFieldReference extends VariableReference {
 
   public void setStaticFieldDeclaration(StaticFieldDeclaration node) {
     this.setVariableDeclaration(node);
+  }
+
+
+  public static StaticFieldReference newInstance(SModel sm, boolean init) {
+    return (StaticFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static StaticFieldReference newInstance(SModel sm) {
+    return StaticFieldReference.newInstance(sm, false);
   }
 
 }

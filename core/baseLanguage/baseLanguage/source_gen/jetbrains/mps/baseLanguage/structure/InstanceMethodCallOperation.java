@@ -4,11 +4,11 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class InstanceMethodCallOperation extends BaseConcept implements IOperation, IMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
@@ -21,15 +21,6 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
   public InstanceMethodCallOperation(SNode node) {
     super(node);
   }
-
-  public static InstanceMethodCallOperation newInstance(SModel sm, boolean init) {
-    return (InstanceMethodCallOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InstanceMethodCallOperation newInstance(SModel sm) {
-    return InstanceMethodCallOperation.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(InstanceMethodCallOperation.SHORT_DESCRIPTION);
@@ -89,6 +80,15 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, InstanceMethodCallOperation.ACTUAL_ARGUMENT, node);
+  }
+
+
+  public static InstanceMethodCallOperation newInstance(SModel sm, boolean init) {
+    return (InstanceMethodCallOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InstanceMethodCallOperation newInstance(SModel sm) {
+    return InstanceMethodCallOperation.newInstance(sm, false);
   }
 
 }

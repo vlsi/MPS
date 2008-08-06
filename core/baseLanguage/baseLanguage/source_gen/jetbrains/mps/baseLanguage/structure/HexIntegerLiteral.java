@@ -15,21 +15,21 @@ public class HexIntegerLiteral extends IntegerLiteral {
     super(node);
   }
 
-  public static HexIntegerLiteral newInstance(SModel sm, boolean init) {
-    return (HexIntegerLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.HexIntegerLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static HexIntegerLiteral newInstance(SModel sm) {
-    return HexIntegerLiteral.newInstance(sm, false);
-  }
-
-
   public String getValue() {
     return this.getProperty(HexIntegerLiteral.VALUE);
   }
 
   public void setValue(String value) {
     this.setProperty(HexIntegerLiteral.VALUE, value);
+  }
+
+
+  public static HexIntegerLiteral newInstance(SModel sm, boolean init) {
+    return (HexIntegerLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.HexIntegerLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static HexIntegerLiteral newInstance(SModel sm) {
+    return HexIntegerLiteral.newInstance(sm, false);
   }
 
 }

@@ -4,11 +4,11 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class VariableDeclaration extends BaseConcept implements IValidIdentifier, HasAnnotation, TypeDerivable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
@@ -24,15 +24,6 @@ public class VariableDeclaration extends BaseConcept implements IValidIdentifier
   public VariableDeclaration(SNode node) {
     super(node);
   }
-
-  public static VariableDeclaration newInstance(SModel sm, boolean init) {
-    return (VariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static VariableDeclaration newInstance(SModel sm) {
-    return VariableDeclaration.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(VariableDeclaration.NAME);
@@ -108,6 +99,15 @@ public class VariableDeclaration extends BaseConcept implements IValidIdentifier
 
   public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
     this.insertChild(prev, VariableDeclaration.ANNOTATION, node);
+  }
+
+
+  public static VariableDeclaration newInstance(SModel sm, boolean init) {
+    return (VariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static VariableDeclaration newInstance(SModel sm) {
+    return VariableDeclaration.newInstance(sm, false);
   }
 
 }

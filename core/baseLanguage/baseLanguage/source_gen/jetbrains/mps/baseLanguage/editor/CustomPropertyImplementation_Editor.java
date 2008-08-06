@@ -4,39 +4,18 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_Collection_12013992443931201399244393(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1201399244393");
-  }
-
-  private static void setupBasic_refNode_getAccessor1202861604000(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_refNode_setAccessor1202861925586(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNode_getAccessor_1202861604000(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNode_setAccessor_1202861925586(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static boolean renderingCondition57(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "setAccessor", true) != null);
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1201399244393(context, node);
@@ -111,6 +90,27 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
+  }
+
+
+  private static void setupBasic_Collection_12013992443931201399244393(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1201399244393");
+  }
+
+  private static void setupBasic_refNode_getAccessor1202861604000(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_refNode_setAccessor1202861925586(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_getAccessor_1202861604000(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_setAccessor_1202861925586(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean renderingCondition57(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "setAccessor", true) != null);
   }
 
 }

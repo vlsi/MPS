@@ -21,15 +21,6 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
     super(node);
   }
 
-  public static InstanceMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (InstanceMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InstanceMethodDeclaration newInstance(SModel sm) {
-    return InstanceMethodDeclaration.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(InstanceMethodDeclaration.SHORT_DESCRIPTION);
   }
@@ -76,6 +67,15 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
 
   public void setVisibility(Visibility node) {
     super.setChild(InstanceMethodDeclaration.VISIBILITY, node);
+  }
+
+
+  public static InstanceMethodDeclaration newInstance(SModel sm, boolean init) {
+    return (InstanceMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InstanceMethodDeclaration newInstance(SModel sm) {
+    return InstanceMethodDeclaration.newInstance(sm, false);
   }
 
 }

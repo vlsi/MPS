@@ -24,15 +24,6 @@ public class Property extends BaseConcept implements ClassifierMember, INamedCon
     super(node);
   }
 
-  public static Property newInstance(SModel sm, boolean init) {
-    return (Property)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Property", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Property newInstance(SModel sm) {
-    return Property.newInstance(sm, false);
-  }
-
-
   public String getPropertyName() {
     return this.getProperty(Property.PROPERTY_NAME);
   }
@@ -95,6 +86,15 @@ public class Property extends BaseConcept implements ClassifierMember, INamedCon
 
   public void setVisibility(Visibility node) {
     super.setChild(Property.VISIBILITY, node);
+  }
+
+
+  public static Property newInstance(SModel sm, boolean init) {
+    return (Property)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Property", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Property newInstance(SModel sm) {
+    return Property.newInstance(sm, false);
   }
 
 }
