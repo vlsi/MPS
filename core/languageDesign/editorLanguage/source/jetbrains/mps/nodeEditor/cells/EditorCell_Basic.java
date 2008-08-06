@@ -734,11 +734,11 @@ public abstract class EditorCell_Basic implements EditorCell {
     return false;
   }
 
-  public boolean isOnTheLeftBoundary() {
+  public boolean isOnLeftBoundary() {
     return getPrevLeaf() == null || getPrevLeaf().getSNode() != getSNode();
   }
 
-  public boolean isOnTheRightBoundary() {
+  public boolean isOnRightBoundary() {
     return getNextLeaf() == null || getNextLeaf().getSNode() != getSNode();
   }
 

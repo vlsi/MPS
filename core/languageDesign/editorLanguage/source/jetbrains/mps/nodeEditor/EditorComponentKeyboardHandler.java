@@ -82,12 +82,12 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         EditorCell cellWithRole = new ChildrenCollectionFinder(selectedCell, actionType == CellActionType.INSERT).find();
 
         if (cellWithRole == null && actionType == CellActionType.INSERT_BEFORE &&
-          selectedCell.isFirstPositionInBigCell() && hasSingleRole(selectedCell.getSNode())) {
+          selectedCell.isFirstPositionInBigCell() && hasSingleRolesAtLeftBoundary(selectedCell)) {
           cellWithRole = new ChildrenCollectionFinder(selectedCell.getPrevLeaf(), false).find();
         }
 
         if (cellWithRole == null && actionType == CellActionType.INSERT &&
-          selectedCell.isLastPositionInBigCell() && hasSingleRole(selectedCell.getSNode())) {
+          selectedCell.isLastPositionInBigCell() && hasSingleRolesAtRightBoundary(selectedCell)) {
           cellWithRole = new ChildrenCollectionFinder(selectedCell.getNextLeaf(), true).find();
         }
 
@@ -219,6 +219,36 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     LinkDeclaration link = cell.getSNode().getLinkDeclaration(role);
     if (link == null) return false;
     return link.getSourceCardinality() == Cardinality._0__n || link.getSourceCardinality() == Cardinality._1__n;
+  }
+
+  private boolean hasSingleRolesAtLeftBoundary(EditorCell cell) {
+    if (!hasSingleRole(cell.getSNode())) return false;
+
+    if (cell.isOnLeftBoundary()) {
+      EditorCell parent = cell.getParent();
+      if (parent == null) {
+        return true;
+      } else {
+        return hasSingleRolesAtLeftBoundary(parent);
+      }
+    }
+
+    return true;
+  }
+
+  private boolean hasSingleRolesAtRightBoundary(EditorCell cell) {
+    if (!hasSingleRole(cell.getSNode())) return false;
+
+    if (cell.isOnRightBoundary()) {
+      EditorCell parent = cell.getParent();
+      if (parent == null) {
+        return true;
+      } else {
+        return hasSingleRolesAtRightBoundary(parent);
+      }
+    }
+
+    return true;
   }
 
   private boolean hasSingleRole(SNode node) {
