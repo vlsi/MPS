@@ -272,6 +272,15 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       }
     };
   }
+  
+  public EditorCell[] getContentCells() {
+    if (usesBraces()) {
+      List<EditorCell> contentList = myEditorCells.subList(1, myEditorCells.size() - 1);
+      return contentList.toArray(new EditorCell[contentList.size()]);
+    } else {
+      return getCells();
+    }
+  }
 
   public EditorCell[] getCells() {
     return myEditorCells.toArray(new EditorCell[myEditorCells.size()]);
