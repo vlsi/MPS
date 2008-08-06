@@ -6,7 +6,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_InsertIntoCollection;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.core.structure.BaseConcept;
 
@@ -129,8 +129,8 @@ public abstract class AbstractCellListHandler implements KeyboardHandler {
     }
 
     // add insert/insert-before actions
-    myListEditorCell_Collection.setAction(CellActionType.INSERT, new CellAction_Insert(this, false));
-    myListEditorCell_Collection.setAction(CellActionType.INSERT_BEFORE, new CellAction_Insert(this, true));
+    myListEditorCell_Collection.setAction(CellActionType.INSERT, new CellAction_InsertIntoCollection(this, false));
+    myListEditorCell_Collection.setAction(CellActionType.INSERT_BEFORE, new CellAction_InsertIntoCollection(this, true));
 
     return myListEditorCell_Collection;
   }

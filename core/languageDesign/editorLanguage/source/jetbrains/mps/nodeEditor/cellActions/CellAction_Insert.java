@@ -5,14 +5,16 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
 
 public class CellAction_Insert extends EditorCellAction {
-  private AbstractCellListHandler myListHandler;
-  private boolean myInsertBefore;
+  private SNode myNode;
+  private String myRole;
 
-  public CellAction_Insert(AbstractCellListHandler listHandler, boolean insertBefore) {
-    this.myListHandler = listHandler;
-    myInsertBefore = insertBefore;
+  public CellAction_Insert(SNode node, String role) {
+    myNode = node;
+    myRole = role;
   }
 
   public boolean canExecute(EditorContext context) {
@@ -20,11 +22,7 @@ public class CellAction_Insert extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    boolean before = myInsertBefore;
-    EditorCell contextCell = context.getContextCell();
-    if (!before && contextCell.isFirstPositionInBigCell() && !(contextCell.isLastPositionInBigCell())) {
-      before = true;
-    }
-    myListHandler.startInsertMode(context, contextCell, before);
+    SNode nodeToInsert = NodeFactoryManager.createNode(myNode, context, myRole);
+    myNode.setChild(myRole, nodeToInsert);
   }
 }

@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
@@ -19,6 +20,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.logging.Logger;
 
 public abstract class AbstractReferentCellProvider extends CellProviderWithRole {
@@ -109,7 +111,14 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       noRefCell.setText("");
       noRefCell.setEditable(true);
       noRefCell.setDefaultText(myNoTargetText);
+
       noRefCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode()));
+
+      if (myIsAggregation) {
+        noRefCell.setAction(CellActionType.INSERT, new CellAction_Insert(getSNode(), myGenuineRole));
+        noRefCell.setAction(CellActionType.INSERT_BEFORE, new CellAction_Insert(getSNode(), myGenuineRole));
+      }
+
       noRefCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_" + myLinkDeclaration.getRole());
       return noRefCell;
     }
