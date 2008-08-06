@@ -111,6 +111,8 @@ public class ModelChangesWatcher implements ApplicationComponent {
         }
       }
 
+      if (toReload.isEmpty()) return;
+
       ProgressManager.getInstance().run(new Modal(null, "Reloading Updated Models", false) {
         public void run(@NotNull final ProgressIndicator indicator) {
           for (final SModelDescriptor model : toReload) {
