@@ -2103,7 +2103,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     } else {// "dramatical" change
       rebuildEditorContent(events);
 
-
       if (!hasFocus() && !myIntentionsSupport.isLightBulbVisible()) {
         return;
       }
@@ -2233,24 +2232,30 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void revertErrorCells(List<SModelEvent> events) {
+    final boolean[] wereReverted = new boolean[1];
     for (SModelEvent e : events) {
       e.accept(new SModelEventVisitorAdapter() {
         public void visitPropertyEvent(SModelPropertyEvent event) {
           EditorCell cell = findNodeCell(event.getNode());
-          if (cell != null) {
+          if (cell != null && cell.isErrorState()) {
             synchronizeWithModelWithinBigCell(cell);
+            wereReverted[0] = true;
           }
         }
 
         public void visitReferenceEvent(SModelReferenceEvent event) {
           EditorCell cell = findNodeCell(event.getReference().getSourceNode());
-          if (cell != null) {
+          if (cell != null && cell.isErrorState()) {
             synchronizeWithModelWithinBigCell(cell);
+            wereReverted[0] = true;
           }
         }
       });
     }
-    relayout();
+    if (wereReverted[0]) {
+      System.out.println("were reverted");
+      relayout();
+    }
   }
 
   private void synchronizeWithModelWithinBigCell(EditorCell cell) {
