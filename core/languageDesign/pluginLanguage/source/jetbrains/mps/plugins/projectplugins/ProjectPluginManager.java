@@ -141,19 +141,15 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
     addIdePlugin();
 
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        for (BaseProjectPlugin plugin : myPlugins) {
-          try {
-            plugin.init(mpsProject);
-          } catch (Throwable t1) {
-            LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
-          }
-        }
-        spreadState();
-        isLoaded = true;
+    for (BaseProjectPlugin plugin : myPlugins) {
+      try {
+        plugin.init(mpsProject);
+      } catch (Throwable t1) {
+        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
       }
-    });
+    }
+    spreadState();
+    isLoaded = true;
   }
 
   private void addIdePlugin() {
