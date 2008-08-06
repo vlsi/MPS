@@ -6,10 +6,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
-/**
- * Author: Sergey Dmitriev.
- * Time: Nov 5, 2003 1:03:02 PM
- */
 public class CellAction_Insert extends EditorCellAction {
   private AbstractCellListHandler myListHandler;
   private boolean myInsertBefore;
@@ -28,9 +24,6 @@ public class CellAction_Insert extends EditorCellAction {
     EditorCell contextCell = context.getContextCell();
     if (!before && contextCell.isFirstPositionInBigCell() && !(contextCell.isLastPositionInBigCell())) {
       before = true;
-    }
-    if (before && contextCell.isLastPositionInBigCell() && !(contextCell.isFirstPositionInBigCell())) {
-      before = false;
     }
     myListHandler.startInsertMode(context, contextCell, before);
   }
