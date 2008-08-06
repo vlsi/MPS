@@ -73,14 +73,18 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     myTools = (List) (initTools(myProject));
     final Project ideaProject = getIDEAProject();
     for (final GeneratedTool tool : myTools) {
-      if (ideaProject.isDisposed()) return;
-      try {
-        tool.init(ideaProject);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-      doAdd(tool, false);
-      myInitializedTools.add(tool);
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          if (ideaProject.isDisposed()) return;
+          try {
+            tool.init(ideaProject);
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
+          doAdd(tool, false);
+          myInitializedTools.add(tool);
+        }
+      });
     }
 
     myPrefsComponents = createPreferencesComponents(getIDEAProject());
@@ -99,9 +103,11 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       component.dispose();
     }
 
+    final Project ideaProject = getIDEAProject();
     for (final GeneratedTool tool : myTools) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
+          if (ideaProject.isDisposed()) return;
           if (!myInitializedTools.contains(tool)) return;
           try {
             tool.dispose();
@@ -158,7 +164,12 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   public PluginState getState() {
     PluginState state = new PluginState();
     for (BaseProjectPrefsComponent component : myPrefsComponents) {
-      state.myComponentsState.add(new ComponentState(component.getClass().getName(), component.getState()));
+      try {
+        Element componentState = component.getState();
+        state.myComponentsState.add(new ComponentState(component.getClass().getName(), componentState));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
     return state;
   }
@@ -171,7 +182,11 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
     for (ComponentState componentState : state.myComponentsState) {
       if (componentState.second == null) return;
-      components.get(componentState.first).loadState(componentState.second);
+      try {
+        components.get(componentState.first).loadState(componentState.second);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
