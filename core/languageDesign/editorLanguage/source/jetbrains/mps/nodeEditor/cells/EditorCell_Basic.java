@@ -323,7 +323,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   protected boolean doProcessKeyPressed(KeyEvent e, boolean allowErrors) {
-    if (!getSNode().isRoot() && KeyboardUtil.isDefaultAction(e)) {
+    if (getSNode() != null && !getSNode().isRoot() && KeyboardUtil.isDefaultAction(e)) {
       EditorContext editorContext = getEditorContext();
       EditorComponent nodeEditor = editorContext.getNodeEditorComponent();
 
