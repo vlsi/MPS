@@ -68,6 +68,7 @@
     <dependency reexport="false">MPS.Classpath</dependency>
     <dependency reexport="false">jetbrains.mps.projectLanguage</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.pluginLanguage#1203080439937</dependency>
+    <dependency reexport="false">jetbrains.mps.transformation.test.outputLang</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.classifiers</usedLanguages>
