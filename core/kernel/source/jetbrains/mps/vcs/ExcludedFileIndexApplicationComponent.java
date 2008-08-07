@@ -4,6 +4,12 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.fileTypes.FileTypeManager;
+import com.intellij.openapi.fileTypes.FileTypeListener;
+import com.intellij.openapi.fileTypes.FileTypeEvent;
+import com.intellij.util.messages.MessageBus;
+import com.intellij.util.messages.MessageBusConnection;
+import com.intellij.AppTopics;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -22,7 +28,6 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
   private static final Logger LOG = Logger.getLogger(ExcludedFileIndexApplicationComponent.class);
   private final MPSModuleRepository myModuleRepository;
   private final Set<VirtualFile> myExcludedFiles = new HashSet<VirtualFile>();
-  private final String[] myExcludedRegexps = new String[]{".*\\.svn.*"};
   private final ModuleRepositoryAdapter myModuleRepositoryListener = new ModuleRepositoryAdapter() {
     @Override
     public void moduleAdded(IModule module) {
@@ -91,14 +96,6 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
       }
     }
 
-    String filePath = file.getPath();
-    for (String regexp : myExcludedRegexps){
-      if (filePath.matches(regexp)){
-        return true;
-      }
-
-    }
-
-    return false;
+    return FileTypeManager.getInstance().isFileIgnored(file.getName());
   }
 }
