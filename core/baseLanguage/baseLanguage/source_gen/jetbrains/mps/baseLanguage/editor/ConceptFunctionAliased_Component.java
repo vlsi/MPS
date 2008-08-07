@@ -83,7 +83,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell43(context, node));
+    editorCell.addEditorCell(this.createIndentCell7219_0(context, node));
     editorCell.addEditorCell(this.createRefNode1215032509901(context, node));
     return editorCell;
   }
@@ -150,7 +150,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     };
   }
 
-  public EditorCell createIndentCell43(EditorContext context, SNode node) {
+  public EditorCell createIndentCell7219_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
@@ -254,7 +254,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ConceptFunctionAliased_Component.calculateColor42(cell);
+              return ConceptFunctionAliased_Component.calculateColor7219_0(cell);
             }
 
           });
@@ -305,7 +305,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ConceptFunctionAliased_Component.calculateColor43(cell);
+              return ConceptFunctionAliased_Component.calculateColor7219_1(cell);
             }
 
           });
@@ -331,13 +331,13 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
   private static void setupLabel_conceptProperty_alias_1215032787857(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor42(EditorCell cell) {
+  private static Color calculateColor7219_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor43(EditorCell cell) {
+  private static Color calculateColor7219_1(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

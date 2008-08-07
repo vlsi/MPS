@@ -54,7 +54,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1116615277650_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ClassifierClassExpression_Editor._Inline7());
+    provider.setAuxiliaryCellProvider(new ClassifierClassExpression_Editor._Inline4221_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_classifier1116615277650(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -118,9 +118,9 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1215012484921_1215012484921(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class _Inline7 extends AbstractCellProvider {
+  public static class _Inline4221_0 extends AbstractCellProvider {
 
-    public _Inline7() {
+    public _Inline4221_0() {
       super();
     }
 

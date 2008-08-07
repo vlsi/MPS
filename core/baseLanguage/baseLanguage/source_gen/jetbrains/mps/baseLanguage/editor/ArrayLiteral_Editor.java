@@ -59,7 +59,7 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1188220217555(EditorContext context, SNode node) {
     if (this.myListHandler_1188220217555 == null) {
-      this.myListHandler_1188220217555 = new ArrayLiteral_Editor.itemListHandler_(node, "item", context);
+      this.myListHandler_1188220217555 = new ArrayLiteral_Editor.itemListHandler_8106_0(node, "item", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1188220217555.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_item1188220217555(editorCell, node, context);
@@ -107,9 +107,9 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_item_1188220217555(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class itemListHandler_ extends RefNodeListHandler {
+  public static class itemListHandler_8106_0 extends RefNodeListHandler {
 
-    public itemListHandler_(SNode ownerNode, String childRole, EditorContext context) {
+    public itemListHandler_8106_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

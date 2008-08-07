@@ -79,7 +79,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1177326980923(EditorContext context, SNode node) {
     if (this.myListHandler_1177326980923 == null) {
-      this.myListHandler_1177326980923 = new CommentedStatementsBlock_Editor.statementListHandler_1(node, "statement", context);
+      this.myListHandler_1177326980923 = new CommentedStatementsBlock_Editor.statementListHandler_9553_0(node, "statement", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1177326980923.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_statement1177326980923(editorCell, node, context);
@@ -103,7 +103,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CommentedStatementsBlock_Editor.calculateColor19(cell);
+              return CommentedStatementsBlock_Editor.calculateColor9553_2(cell);
             }
 
           });
@@ -123,7 +123,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CommentedStatementsBlock_Editor.calculateColor17(cell);
+              return CommentedStatementsBlock_Editor.calculateColor9553_1(cell);
             }
 
           });
@@ -169,7 +169,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CommentedStatementsBlock_Editor.calculateColor8(cell);
+              return CommentedStatementsBlock_Editor.calculateColor9553_0(cell);
             }
 
           });
@@ -192,27 +192,27 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_statement_1177326980923(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor8(EditorCell cell) {
+  private static Color calculateColor9553_0(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;
   }
 
-  private static Color calculateColor17(EditorCell cell) {
+  private static Color calculateColor9553_1(EditorCell cell) {
     Color result;
     result = Color.gray;
     return result;
   }
 
-  private static Color calculateColor19(EditorCell cell) {
+  private static Color calculateColor9553_2(EditorCell cell) {
     Color result;
     result = Color.gray;
     return result;
   }
 
-  public static class statementListHandler_1 extends RefNodeListHandler {
+  public static class statementListHandler_9553_0 extends RefNodeListHandler {
 
-    public statementListHandler_1(SNode ownerNode, String childRole, EditorContext context) {
+    public statementListHandler_9553_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

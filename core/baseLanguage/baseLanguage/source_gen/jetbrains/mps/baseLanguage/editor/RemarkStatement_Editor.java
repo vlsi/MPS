@@ -29,7 +29,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createAlternation1197651363305(EditorContext context, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = RemarkStatement_Editor.renderingCondition43(node, context, context.getOperationContext().getScope());
+    alternationCondition = RemarkStatement_Editor.renderingCondition6285_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createProperty1197651363306(context, node);
@@ -131,7 +131,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return RemarkStatement_Editor.calculateColor18(cell);
+              return RemarkStatement_Editor.calculateColor6285_0(cell);
             }
 
           });
@@ -157,7 +157,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return RemarkStatement_Editor.calculateColor34(cell);
+              return RemarkStatement_Editor.calculateColor6285_1(cell);
             }
 
           });
@@ -177,7 +177,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return RemarkStatement_Editor.calculateColor38(cell);
+              return RemarkStatement_Editor.calculateColor6285_2(cell);
             }
 
           });
@@ -197,23 +197,23 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_value_1197651366849(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition43(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6285_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(RemarkStatement_Behavior.call_isTodo_1213877427548(node));
   }
 
-  private static Color calculateColor18(EditorCell cell) {
+  private static Color calculateColor6285_0(EditorCell cell) {
     Color result;
     result = Color.gray;
     return result;
   }
 
-  private static Color calculateColor34(EditorCell cell) {
+  private static Color calculateColor6285_1(EditorCell cell) {
     Color result;
     result = Color.gray;
     return result;
   }
 
-  private static Color calculateColor38(EditorCell cell) {
+  private static Color calculateColor6285_2(EditorCell cell) {
     Color result;
     result = Color.blue;
     return result;

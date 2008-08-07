@@ -28,7 +28,7 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1153179576790_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ClosureParameterReference_Editor._Inline13());
+    provider.setAuxiliaryCellProvider(new ClosureParameterReference_Editor._Inline8575_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_closureParameter1153179576790(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -63,15 +63,15 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
   private static void setupLabel_refCell_closureParameter_1153179576790(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor20(EditorCell cell) {
+  private static Color calculateColor8575_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  public static class _Inline13 extends AbstractCellProvider {
+  public static class _Inline8575_0 extends AbstractCellProvider {
 
-    public _Inline13() {
+    public _Inline8575_0() {
       super();
     }
 
@@ -122,7 +122,7 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return ClosureParameterReference_Editor.calculateColor20(cell);
+                return ClosureParameterReference_Editor.calculateColor8575_0(cell);
               }
 
             });

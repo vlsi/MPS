@@ -42,7 +42,7 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1209401468678(EditorContext context, SNode node) {
     if (this.myListHandler_1209401468678 == null) {
-      this.myListHandler_1209401468678 = new ArrayCreator_Editor.dimensionExpressionListHandler_(node, "dimensionExpression", context);
+      this.myListHandler_1209401468678 = new ArrayCreator_Editor.dimensionExpressionListHandler_5783_0(node, "dimensionExpression", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1209401468678.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_dimensionExpression1209401468678(editorCell, node, context);
@@ -100,9 +100,9 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_dimensionExpression_1209401468678(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class dimensionExpressionListHandler_ extends RefNodeListHandler {
+  public static class dimensionExpressionListHandler_5783_0 extends RefNodeListHandler {
 
-    public dimensionExpressionListHandler_(SNode ownerNode, String childRole, EditorContext context) {
+    public dimensionExpressionListHandler_5783_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -67,7 +67,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
 
   public EditorCell createRefNodeList1140573670193(EditorContext context, SNode node) {
     if (this.myListHandler_1140573670193 == null) {
-      this.myListHandler_1140573670193 = new _GenericDeclaration_TypeVariables_Component.typeVariableDeclarationListHandler_(node, "typeVariableDeclaration", context);
+      this.myListHandler_1140573670193 = new _GenericDeclaration_TypeVariables_Component.typeVariableDeclarationListHandler_9618_0(node, "typeVariableDeclaration", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1140573670193.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_typeVariableDeclaration1140573670193(editorCell, node, context);
@@ -132,9 +132,9 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   private static void setupLabel_Constant_1140573670194_1140573670194(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class typeVariableDeclarationListHandler_ extends RefNodeListHandler {
+  public static class typeVariableDeclarationListHandler_9618_0 extends RefNodeListHandler {
 
-    public typeVariableDeclarationListHandler_(SNode ownerNode, String childRole, EditorContext context) {
+    public typeVariableDeclarationListHandler_9618_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

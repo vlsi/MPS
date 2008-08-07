@@ -78,7 +78,7 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
       }
       {
         text = text + "\n\ncoerce to Iterable<..>";
-        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, new Pattern_(), true);
+        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, new Pattern_0(), true);
         text = text + "\nweak  : " + coercedType;
         coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, new Pattern_1(), false);
         text = text + "\nstrong: " + coercedType;

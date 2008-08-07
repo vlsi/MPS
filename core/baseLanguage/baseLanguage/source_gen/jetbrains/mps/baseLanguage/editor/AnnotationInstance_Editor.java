@@ -49,7 +49,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1188208064966(context, node, "@"));
     editorCell.addEditorCell(this.createRefCell1188208083159(context, node));
-    if (renderingCondition42(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition4312_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188995299491(context, node));
     }
     return editorCell;
@@ -93,7 +93,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1188995299492(EditorContext context, SNode node) {
     if (this.myListHandler_1188995299492 == null) {
-      this.myListHandler_1188995299492 = new AnnotationInstance_Editor.valueListHandler_(node, "value", context);
+      this.myListHandler_1188995299492 = new AnnotationInstance_Editor.valueListHandler_4312_0(node, "value", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1188995299492.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_value1188995299492(editorCell, node, context);
@@ -106,7 +106,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1188208083159_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new AnnotationInstance_Editor._Inline18());
+    provider.setAuxiliaryCellProvider(new AnnotationInstance_Editor._Inline4312_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_annotation1188208083159(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -146,7 +146,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return AnnotationInstance_Editor.calculateColor26(cell);
+              return AnnotationInstance_Editor.calculateColor4312_0(cell);
             }
 
           });
@@ -212,19 +212,19 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1188995315206_1188995315206(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition42(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition4312_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "annotation", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "annotation", false), "method", true)).isNotEmpty();
   }
 
-  private static Color calculateColor26(EditorCell cell) {
+  private static Color calculateColor4312_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;
   }
 
-  public static class _Inline18 extends AbstractCellProvider {
+  public static class _Inline4312_0 extends AbstractCellProvider {
 
-    public _Inline18() {
+    public _Inline4312_0() {
       super();
     }
 
@@ -275,9 +275,9 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class valueListHandler_ extends RefNodeListHandler {
+  public static class valueListHandler_4312_0 extends RefNodeListHandler {
 
-    public valueListHandler_(SNode ownerNode, String childRole, EditorContext context) {
+    public valueListHandler_4312_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -46,7 +46,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1101210485461(context, node, "continue"));
-    if (renderingCondition53(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition5980_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1199470083774(context, node));
     }
     editorCell.addEditorCell(this.createConstant1101210485462(context, node, ";"));
@@ -88,7 +88,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
       setupLabel_property_label_1199470083776((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ContinueStatement_Editor.ContinueStatement_generic_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ContinueStatement_Editor.ContinueStatement_generic_cellMenu0()}));
     return editorCell;
   }
 
@@ -124,7 +124,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ContinueStatement_Editor.calculateColor33(cell);
+              return ContinueStatement_Editor.calculateColor5980_0(cell);
             }
 
           });
@@ -177,19 +177,19 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_label_1199470083776(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition53(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition5980_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
-  private static Color calculateColor33(EditorCell cell) {
+  private static Color calculateColor5980_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  public static class ContinueStatement_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
+  public static class ContinueStatement_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
 
-    public ContinueStatement_generic_cellMenu() {
+    public ContinueStatement_generic_cellMenu0() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

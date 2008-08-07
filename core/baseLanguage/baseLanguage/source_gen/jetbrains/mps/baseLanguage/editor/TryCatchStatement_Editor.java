@@ -63,7 +63,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell31(context, node));
+    editorCell.addEditorCell(this.createIndentCell2643_0(context, node));
     editorCell.addEditorCell(this.createRefNode1164880067767(context, node));
     return editorCell;
   }
@@ -104,7 +104,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1164903583459(EditorContext context, SNode node) {
     if (this.myListHandler_1164903583459 == null) {
-      this.myListHandler_1164903583459 = new TryCatchStatement_Editor.catchClauseListHandler_(node, "catchClause", context);
+      this.myListHandler_1164903583459 = new TryCatchStatement_Editor.catchClauseListHandler_2643_0(node, "catchClause", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1164903583459.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_catchClause1164903583459(editorCell, node, context);
@@ -115,7 +115,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell31(EditorContext context, SNode node) {
+  public EditorCell createIndentCell2643_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
@@ -264,9 +264,9 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1164911197639_1164911197639(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class catchClauseListHandler_ extends RefNodeListHandler {
+  public static class catchClauseListHandler_2643_0 extends RefNodeListHandler {
 
-    public catchClauseListHandler_(SNode ownerNode, String childRole, EditorContext context) {
+    public catchClauseListHandler_2643_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

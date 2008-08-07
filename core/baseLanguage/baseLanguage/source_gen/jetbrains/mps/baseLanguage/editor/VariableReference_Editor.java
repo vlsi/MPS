@@ -22,7 +22,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1134569731483_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new VariableReference_Editor._Inline8());
+    provider.setAuxiliaryCellProvider(new VariableReference_Editor._Inline9453_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_variableDeclaration1134569731483(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -57,9 +57,9 @@ public class VariableReference_Editor extends DefaultNodeEditor {
   private static void setupLabel_refCell_variableDeclaration_1134569731483(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class _Inline8 extends AbstractCellProvider {
+  public static class _Inline9453_0 extends AbstractCellProvider {
 
-    public _Inline8() {
+    public _Inline9453_0() {
       super();
     }
 

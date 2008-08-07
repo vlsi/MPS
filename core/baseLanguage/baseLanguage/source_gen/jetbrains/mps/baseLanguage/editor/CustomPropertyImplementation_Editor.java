@@ -28,7 +28,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode1202861604000(context, node));
-    if (renderingCondition57(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition0068_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode1202861925586(context, node));
     }
     return editorCell;
@@ -109,7 +109,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNode_setAccessor_1202861925586(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition57(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition0068_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "setAccessor", true) != null);
   }
 

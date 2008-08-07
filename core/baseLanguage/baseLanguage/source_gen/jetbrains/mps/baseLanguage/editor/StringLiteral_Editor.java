@@ -98,7 +98,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StringLiteral_Editor.calculateColor15(cell);
+              return StringLiteral_Editor.calculateColor3246_0(cell);
             }
 
           });
@@ -123,7 +123,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StringLiteral_Editor.calculateColor36(cell);
+              return StringLiteral_Editor.calculateColor3246_1(cell);
             }
 
           });
@@ -149,7 +149,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StringLiteral_Editor.calculateColor40(cell);
+              return StringLiteral_Editor.calculateColor3246_2(cell);
             }
 
           });
@@ -172,19 +172,19 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1079623722231_1079623722231(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor15(EditorCell cell) {
+  private static Color calculateColor3246_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;
   }
 
-  private static Color calculateColor36(EditorCell cell) {
+  private static Color calculateColor3246_1(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;
   }
 
-  private static Color calculateColor40(EditorCell cell) {
+  private static Color calculateColor3246_2(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;

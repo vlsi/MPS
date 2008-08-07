@@ -74,7 +74,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1154543050632(EditorContext context, SNode node) {
     if (this.myListHandler_1154543050632 == null) {
-      this.myListHandler_1154543050632 = new ArrayCreatorWithInitializer_Editor.initValueListHandler_(node, "initValue", context);
+      this.myListHandler_1154543050632 = new ArrayCreatorWithInitializer_Editor.initValueListHandler_0557_0(node, "initValue", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1154543050632.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_initValue1154543050632(editorCell, node, context);
@@ -168,9 +168,9 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1154543071509_1154543071509(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class initValueListHandler_ extends RefNodeListHandler {
+  public static class initValueListHandler_0557_0 extends RefNodeListHandler {
 
-    public initValueListHandler_(SNode ownerNode, String childRole, EditorContext context) {
+    public initValueListHandler_0557_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -45,7 +45,7 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1188214583881_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new AnnotationInstanceValue_Editor._Inline19());
+    provider.setAuxiliaryCellProvider(new AnnotationInstanceValue_Editor._Inline0127_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_key1188214583881(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -127,9 +127,9 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNode_value_1188214613860(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class _Inline19 extends AbstractCellProvider {
+  public static class _Inline0127_0 extends AbstractCellProvider {
 
-    public _Inline19() {
+    public _Inline0127_0() {
       super();
     }
 

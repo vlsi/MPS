@@ -31,8 +31,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_Component_Visibility6;
-  /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent1;
+  /* package */AbstractCellProvider my_Component_Visibility6130_0;
+  /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent6130_0;
   /* package */AbstractCellListHandler myListHandler_1188210613756;
   /* package */AbstractCellListHandler myListHandler_1188210623223;
 
@@ -73,7 +73,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition36(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6130_2(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188210613755(context, node));
     }
     editorCell.addEditorCell(this.createCollection1188210606980(context, node));
@@ -88,12 +88,12 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent1188210606981(context, node));
     editorCell.addEditorCell(this.createConstant1188210606982(context, node, "static"));
-    if (renderingCondition34(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6130_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1188210606983(context, node, "final"));
     }
     editorCell.addEditorCell(this.createRefNode1188210606990(context, node));
     editorCell.addEditorCell(this.createComponent1188210606991(context, node));
-    if (renderingCondition35(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6130_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188210606992(context, node));
     }
     editorCell.addEditorCell(this.createConstant1188210607003(context, node, ";"));
@@ -132,19 +132,19 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1188210606981(EditorContext context, SNode node) {
-    if (this.my_Component_Visibility6 == null) {
-      this.my_Component_Visibility6 = new _Component_Visibility(node);
+    if (this.my_Component_Visibility6130_0 == null) {
+      this.my_Component_Visibility6130_0 = new _Component_Visibility(node);
     }
-    EditorCell editorCell = this.my_Component_Visibility6.createEditorCell(context);
+    EditorCell editorCell = this.my_Component_Visibility6130_0.createEditorCell(context);
     setupBasic_component__Component_Visibility1188210606981(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createComponent1188210606991(EditorContext context, SNode node) {
-    if (this.myVariableDeclaration_NameCellComponent1 == null) {
-      this.myVariableDeclaration_NameCellComponent1 = new VariableDeclaration_NameCellComponent(node);
+    if (this.myVariableDeclaration_NameCellComponent6130_0 == null) {
+      this.myVariableDeclaration_NameCellComponent6130_0 = new VariableDeclaration_NameCellComponent(node);
     }
-    EditorCell editorCell = this.myVariableDeclaration_NameCellComponent1.createEditorCell(context);
+    EditorCell editorCell = this.myVariableDeclaration_NameCellComponent6130_0.createEditorCell(context);
     setupBasic_component_VariableDeclaration_NameCellComponent1188210606991(editorCell, node, context);
     return editorCell;
   }
@@ -199,7 +199,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1188210613756(EditorContext context, SNode node) {
     if (this.myListHandler_1188210613756 == null) {
-      this.myListHandler_1188210613756 = new StaticFieldDeclaration_Editor.annotationListHandler_14(node, "annotation", context);
+      this.myListHandler_1188210613756 = new StaticFieldDeclaration_Editor.annotationListHandler_6130_0(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1188210613756.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotation1188210613756(editorCell, node, context);
@@ -212,7 +212,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1188210623223(EditorContext context, SNode node) {
     if (this.myListHandler_1188210623223 == null) {
-      this.myListHandler_1188210623223 = new StaticFieldDeclaration_Editor.annotationListHandler_15(node, "annotation", context);
+      this.myListHandler_1188210623223 = new StaticFieldDeclaration_Editor.annotationListHandler_6130_1(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1188210623223.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotation1188210623223(editorCell, node, context);
@@ -463,21 +463,21 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_annotation_1188210623223(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition34(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6130_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
-  public static boolean renderingCondition35(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6130_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 
-  public static boolean renderingCondition36(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6130_2(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
-  public static class annotationListHandler_14 extends RefNodeListHandler {
+  public static class annotationListHandler_6130_0 extends RefNodeListHandler {
 
-    public annotationListHandler_14(SNode ownerNode, String childRole, EditorContext context) {
+    public annotationListHandler_6130_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -518,9 +518,9 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class annotationListHandler_15 extends RefNodeListHandler {
+  public static class annotationListHandler_6130_1 extends RefNodeListHandler {
 
-    public annotationListHandler_15(SNode ownerNode, String childRole, EditorContext context) {
+    public annotationListHandler_6130_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

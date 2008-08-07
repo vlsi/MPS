@@ -104,7 +104,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
       setupLabel_conceptProperty_alias_1166063984223((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new BinaryOperation_Editor.BinaryOperation_Editor_replaceWith_BinaryOperation_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new BinaryOperation_Editor.BinaryOperation_Editor_replaceWith_BinaryOperation_cellMenu0()}));
     return editorCell;
   }
 
@@ -163,9 +163,9 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
   private static void setupLabel_conceptProperty_alias_1166063984223(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class BinaryOperation_Editor_replaceWith_BinaryOperation_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+  public static class BinaryOperation_Editor_replaceWith_BinaryOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
-    public BinaryOperation_Editor_replaceWith_BinaryOperation_cellMenu() {
+    public BinaryOperation_Editor_replaceWith_BinaryOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

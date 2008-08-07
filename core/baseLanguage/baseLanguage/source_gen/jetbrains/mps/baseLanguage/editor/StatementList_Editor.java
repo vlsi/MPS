@@ -33,7 +33,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1073416106126(EditorContext context, SNode node) {
     if (this.myListHandler_1073416106126 == null) {
-      this.myListHandler_1073416106126 = new StatementList_Editor.statementListHandler_(node, "statement", context);
+      this.myListHandler_1073416106126 = new StatementList_Editor.statementListHandler_6577_0(node, "statement", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1073416106126.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_statement1073416106126(editorCell, node, context);
@@ -62,15 +62,15 @@ public class StatementList_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_statement_1073416106126(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor14(EditorCell cell) {
+  private static Color calculateColor6577_0(EditorCell cell) {
     Color result;
     result = Color.darkGray;
     return result;
   }
 
-  public static class statementListHandler_ extends RefNodeListHandler {
+  public static class statementListHandler_6577_0 extends RefNodeListHandler {
 
-    public statementListHandler_(SNode ownerNode, String childRole, EditorContext context) {
+    public statementListHandler_6577_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -134,7 +134,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return StatementList_Editor.calculateColor14(cell);
+                return StatementList_Editor.calculateColor6577_0(cell);
               }
 
             });

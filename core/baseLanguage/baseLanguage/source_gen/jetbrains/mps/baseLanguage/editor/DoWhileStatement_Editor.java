@@ -51,7 +51,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition52(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition1261_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1199468161440(context, node));
     }
     editorCell.addEditorCell(this.createConstant1177666726274(context, node, "do"));
@@ -65,7 +65,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell19(context, node));
+    editorCell.addEditorCell(this.createIndentCell1261_0(context, node));
     editorCell.addEditorCell(this.createRefNode1177666726280(context, node));
     return editorCell;
   }
@@ -198,7 +198,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell19(EditorContext context, SNode node) {
+  public EditorCell createIndentCell1261_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
@@ -337,7 +337,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return DoWhileStatement_Editor.calculateColor23(cell);
+              return DoWhileStatement_Editor.calculateColor1261_1(cell);
             }
 
           });
@@ -378,7 +378,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return DoWhileStatement_Editor.calculateColor9(cell);
+              return DoWhileStatement_Editor.calculateColor1261_0(cell);
             }
 
           });
@@ -533,17 +533,17 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1215011910530_1215011910530(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition52(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition1261_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
-  private static Color calculateColor9(EditorCell cell) {
+  private static Color calculateColor1261_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor23(EditorCell cell) {
+  private static Color calculateColor1261_1(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

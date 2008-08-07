@@ -31,10 +31,10 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1075722075640(context, node, "return"));
-    if (renderingCondition79(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition7565_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1215094211150(context, node, ""));
     }
-    if (renderingCondition7(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition7565_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode1075380723767(context, node));
     }
     editorCell.addEditorCell(this.createConstant1075380723768(context, node, ";"));
@@ -147,11 +147,11 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1215094211150_1215094211150(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition7(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition7565_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "expression", true) != null;
   }
 
-  public static boolean renderingCondition79(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition7565_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "expression", true) != null;
   }
 

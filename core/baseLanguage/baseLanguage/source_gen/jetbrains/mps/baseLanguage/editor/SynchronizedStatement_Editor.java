@@ -55,7 +55,7 @@ public class SynchronizedStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell30(context, node));
+    editorCell.addEditorCell(this.createIndentCell6927_0(context, node));
     editorCell.addEditorCell(this.createRefNode1170075860532(context, node));
     return editorCell;
   }
@@ -100,7 +100,7 @@ public class SynchronizedStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell30(EditorContext context, SNode node) {
+  public EditorCell createIndentCell6927_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }

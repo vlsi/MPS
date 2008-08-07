@@ -71,7 +71,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1172058760745(EditorContext context, SNode node) {
     if (this.myListHandler_1172058760745 == null) {
-      this.myListHandler_1172058760745 = new LocalStaticMethodCall_Editor.actualArgumentListHandler_4(node, "actualArgument", context);
+      this.myListHandler_1172058760745 = new LocalStaticMethodCall_Editor.actualArgumentListHandler_2124_0(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1172058760745.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_actualArgument1172058760745(editorCell, node, context);
@@ -84,7 +84,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1172058697111_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new LocalStaticMethodCall_Editor._Inline16());
+    provider.setAuxiliaryCellProvider(new LocalStaticMethodCall_Editor._Inline2124_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_staticMethodDeclaration1172058697111(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -128,7 +128,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_11720587322591172058732259(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172058732259");
     BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
-    if (renderingCondition46(node, context, context.getScope())) {
+    if (renderingCondition2124_0(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
   }
@@ -149,13 +149,13 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_actualArgument_1172058760745(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition46(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition2124_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
   }
 
-  public static class _Inline16 extends AbstractCellProvider {
+  public static class _Inline2124_0 extends AbstractCellProvider {
 
-    public _Inline16() {
+    public _Inline2124_0() {
       super();
     }
 
@@ -216,9 +216,9 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class actualArgumentListHandler_4 extends RefNodeListHandler {
+  public static class actualArgumentListHandler_2124_0 extends RefNodeListHandler {
 
-    public actualArgumentListHandler_4(SNode ownerNode, String childRole, EditorContext context) {
+    public actualArgumentListHandler_2124_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -25,7 +25,7 @@ public class Type_Editor extends DefaultNodeEditor {
 
   public EditorCell createAlternation1138060380694(EditorContext context, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = Type_Editor.renderingCondition6(node, context, context.getOperationContext().getScope());
+    alternationCondition = Type_Editor.renderingCondition9010_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createError1138060384542(context, node);
@@ -113,7 +113,7 @@ public class Type_Editor extends DefaultNodeEditor {
   private static void setupLabel_conceptProperty_alias_1138060501183(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition6(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition9010_0(SNode node, EditorContext editorContext, IScope scope) {
     return SConceptPropertyOperations.getBoolean(node, "abstract");
   }
 

@@ -31,7 +31,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ClassCreator_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myIMethodCall_actualArguments2;
+  /* package */AbstractCellProvider myIMethodCall_actualArguments9368_0;
   /* package */AbstractCellListHandler myListHandler_1212699852039;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -45,7 +45,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefCell1212699852034(context, node));
-    if (renderingCondition76(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition9368_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1212699852037(context, node));
     }
     editorCell.addEditorCell(this.createComponent1212699852051(context, node));
@@ -65,10 +65,10 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1212699852051(EditorContext context, SNode node) {
-    if (this.myIMethodCall_actualArguments2 == null) {
-      this.myIMethodCall_actualArguments2 = new IMethodCall_actualArguments(node);
+    if (this.myIMethodCall_actualArguments9368_0 == null) {
+      this.myIMethodCall_actualArguments9368_0 = new IMethodCall_actualArguments(node);
     }
-    EditorCell editorCell = this.myIMethodCall_actualArguments2.createEditorCell(context);
+    EditorCell editorCell = this.myIMethodCall_actualArguments9368_0.createEditorCell(context);
     setupBasic_component_IMethodCall_actualArguments1212699852051(editorCell, node, context);
     return editorCell;
   }
@@ -91,7 +91,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1212699852039(EditorContext context, SNode node) {
     if (this.myListHandler_1212699852039 == null) {
-      this.myListHandler_1212699852039 = new ClassCreator_Editor.typeParameterListHandler_2(node, "typeParameter", context);
+      this.myListHandler_1212699852039 = new ClassCreator_Editor.typeParameterListHandler_9368_0(node, "typeParameter", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1212699852039.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_typeParameter1212699852039(editorCell, node, context);
@@ -104,7 +104,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1212699852034_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ClassCreator_Editor._Inline24());
+    provider.setAuxiliaryCellProvider(new ClassCreator_Editor._Inline9368_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_constructorDeclaration1212699852034(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -193,13 +193,13 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1212699852040_1212699852040(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition76(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition9368_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeParameter") > 0;
   }
 
-  public static class _Inline24 extends AbstractCellProvider {
+  public static class _Inline9368_0 extends AbstractCellProvider {
 
-    public _Inline24() {
+    public _Inline9368_0() {
       super();
     }
 
@@ -259,9 +259,9 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class typeParameterListHandler_2 extends RefNodeListHandler {
+  public static class typeParameterListHandler_9368_0 extends RefNodeListHandler {
 
-    public typeParameterListHandler_2(SNode ownerNode, String childRole, EditorContext context) {
+    public typeParameterListHandler_9368_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

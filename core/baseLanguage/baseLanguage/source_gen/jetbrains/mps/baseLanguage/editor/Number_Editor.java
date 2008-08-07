@@ -37,7 +37,7 @@ public class Number_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return Number_Editor.calculateColor16(cell);
+              return Number_Editor.calculateColor0029_0(cell);
             }
 
           });
@@ -51,7 +51,7 @@ public class Number_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1157103836672_1157103836672(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor16(EditorCell cell) {
+  private static Color calculateColor0029_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

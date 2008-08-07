@@ -53,14 +53,14 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1088427644683_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new StaticFieldReference_Editor._Inline2());
+    provider.setAuxiliaryCellProvider(new StaticFieldReference_Editor._Inline6051_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_staticFieldDeclaration1088427644683(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
       setupLabel_refCell_staticFieldDeclaration_1088427644683((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu(),new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu0(),new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu0()}));
     return editorCell;
   }
 
@@ -83,7 +83,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1144433124322_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new StaticFieldReference_Editor._Inline11());
+    provider.setAuxiliaryCellProvider(new StaticFieldReference_Editor._Inline6051_1());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_classifier1144433124322(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -147,9 +147,9 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
   private static void setupLabel_refCell_classifier_1144433124322(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class _Inline2 extends AbstractCellProvider {
+  public static class _Inline6051_0 extends AbstractCellProvider {
 
-    public _Inline2() {
+    public _Inline6051_0() {
       super();
     }
 
@@ -209,9 +209,9 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline11 extends AbstractCellProvider {
+  public static class _Inline6051_1 extends AbstractCellProvider {
 
-    public _Inline11() {
+    public _Inline6051_1() {
       super();
     }
 
@@ -270,9 +270,9 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class StaticFieldReference_customReplace_cellMenu extends AbstractCellMenuPart_ReplaceNode_Group {
+  public static class StaticFieldReference_customReplace_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_Group {
 
-    public StaticFieldReference_customReplace_cellMenu() {
+    public StaticFieldReference_customReplace_cellMenu0() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
@@ -292,9 +292,9 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class StaticFieldReference_staticFieldDeclaration_cellMenu extends PrimaryReferentMenuCellMenuPart {
+  public static class StaticFieldReference_staticFieldDeclaration_cellMenu0 extends PrimaryReferentMenuCellMenuPart {
 
-    public StaticFieldReference_staticFieldDeclaration_cellMenu() {
+    public StaticFieldReference_staticFieldDeclaration_cellMenu0() {
     }
 }
 

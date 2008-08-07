@@ -28,7 +28,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createAlternation1182954960781(EditorContext context, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = ThisExpression_Editor.renderingCondition24(node, context, context.getOperationContext().getScope());
+    alternationCondition = ThisExpression_Editor.renderingCondition6954_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection1182954969191(context, node);
@@ -78,7 +78,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1182955053205_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ThisExpression_Editor._Inline17());
+    provider.setAuxiliaryCellProvider(new ThisExpression_Editor._Inline6954_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_classConcept1182955053205(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -170,13 +170,13 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1182955075319_1182955075319(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition24(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6954_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "classConcept", false) != null);
   }
 
-  public static class _Inline17 extends AbstractCellProvider {
+  public static class _Inline6954_0 extends AbstractCellProvider {
 
-    public _Inline17() {
+    public _Inline6954_0() {
       super();
     }
 

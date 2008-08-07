@@ -572,7 +572,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         while (node != null) {
           final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(node);
           if (herror != null) {
-            return herror.reportError();
+            return herror.reportError();                
           }
           node = node.getParent();
         }

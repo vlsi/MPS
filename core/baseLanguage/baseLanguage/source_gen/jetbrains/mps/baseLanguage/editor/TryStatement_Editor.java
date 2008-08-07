@@ -40,7 +40,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createAlternation1164881171028(EditorContext context, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = TryStatement_Editor.renderingCondition9(node, context, context.getOperationContext().getScope());
+    alternationCondition = TryStatement_Editor.renderingCondition8280_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection1164881235374(context, node);
@@ -84,7 +84,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell34(context, node));
+    editorCell.addEditorCell(this.createIndentCell8280_2(context, node));
     editorCell.addEditorCell(this.createRefNode1153952622724(context, node));
     return editorCell;
   }
@@ -95,7 +95,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell32(context, node));
+    editorCell.addEditorCell(this.createIndentCell8280_0(context, node));
     editorCell.addEditorCell(this.createRefNode1164881229405(context, node));
     return editorCell;
   }
@@ -117,7 +117,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell33(context, node));
+    editorCell.addEditorCell(this.createIndentCell8280_1(context, node));
     editorCell.addEditorCell(this.createRefNode1164881240168(context, node));
     return editorCell;
   }
@@ -183,7 +183,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1164903740612(EditorContext context, SNode node) {
     if (this.myListHandler_1164903740612 == null) {
-      this.myListHandler_1164903740612 = new TryStatement_Editor.catchClauseListHandler_1(node, "catchClause", context);
+      this.myListHandler_1164903740612 = new TryStatement_Editor.catchClauseListHandler_8280_0(node, "catchClause", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1164903740612.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_catchClause1164903740612(editorCell, node, context);
@@ -194,17 +194,17 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell32(EditorContext context, SNode node) {
+  public EditorCell createIndentCell8280_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell33(EditorContext context, SNode node) {
+  public EditorCell createIndentCell8280_1(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell34(EditorContext context, SNode node) {
+  public EditorCell createIndentCell8280_2(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
@@ -359,7 +359,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return TryStatement_Editor.calculateColor28(cell);
+              return TryStatement_Editor.calculateColor8280_0(cell);
             }
 
           });
@@ -485,19 +485,19 @@ public class TryStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1215012238826_1215012238826(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition9(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition8280_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "catchClause") > 0;
   }
 
-  private static Color calculateColor28(EditorCell cell) {
+  private static Color calculateColor8280_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  public static class catchClauseListHandler_1 extends RefNodeListHandler {
+  public static class catchClauseListHandler_8280_0 extends RefNodeListHandler {
 
-    public catchClauseListHandler_1(SNode ownerNode, String childRole, EditorContext context) {
+    public catchClauseListHandler_8280_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

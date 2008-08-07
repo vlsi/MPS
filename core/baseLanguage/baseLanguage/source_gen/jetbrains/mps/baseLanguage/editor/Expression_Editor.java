@@ -20,7 +20,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPr
 
 public class Expression_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myCellProvider2;
+  /* package */AbstractCellProvider myCellProvider6116_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createAlternation1209147315297(context, node);
@@ -28,7 +28,7 @@ public class Expression_Editor extends DefaultNodeEditor {
 
   public EditorCell createAlternation1209147315297(EditorContext context, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = Expression_Editor.renderingCondition74(node, context, context.getOperationContext().getScope());
+    alternationCondition = Expression_Editor.renderingCondition6116_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCustom1209147315298(context, node);
@@ -41,10 +41,10 @@ public class Expression_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCustom1209147315298(EditorContext context, SNode node) {
-    if (this.myCellProvider2 == null) {
-      this.myCellProvider2 = this._cellProviderFactory_1209147315298(node, context);
+    if (this.myCellProvider6116_0 == null) {
+      this.myCellProvider6116_0 = this._cellProviderFactory_1209147315298(node, context);
     }
-    EditorCell editorCell = this.myCellProvider2.createEditorCell(context);
+    EditorCell editorCell = this.myCellProvider6116_0.createEditorCell(context);
     setupBasic_Custom_12091473152981209147315298(editorCell, node, context);
     return editorCell;
   }
@@ -117,7 +117,7 @@ public class Expression_Editor extends DefaultNodeEditor {
   private static void setupLabel_conceptProperty_alias_1209748868405(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition74(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6116_0(SNode node, EditorContext editorContext, IScope scope) {
     return SConceptPropertyOperations.getString(node, "alias") == null;
   }
 

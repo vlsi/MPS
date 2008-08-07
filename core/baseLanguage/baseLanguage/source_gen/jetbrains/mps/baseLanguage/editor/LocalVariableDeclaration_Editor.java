@@ -31,7 +31,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent2;
+  /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent2231_0;
   /* package */AbstractCellListHandler myListHandler_1188212219619;
   /* package */AbstractCellListHandler myListHandler_1188220842771;
 
@@ -82,15 +82,15 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition41(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition2231_2(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188220842770(context, node));
     }
-    if (renderingCondition37(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition2231_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1188212207005(context, node, "final"));
     }
     editorCell.addEditorCell(this.createRefNode1188212207012(context, node));
     editorCell.addEditorCell(this.createComponent1188212207013(context, node));
-    if (renderingCondition38(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition2231_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188212207014(context, node));
     }
     return editorCell;
@@ -128,10 +128,10 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1188212207013(EditorContext context, SNode node) {
-    if (this.myVariableDeclaration_NameCellComponent2 == null) {
-      this.myVariableDeclaration_NameCellComponent2 = new VariableDeclaration_NameCellComponent(node);
+    if (this.myVariableDeclaration_NameCellComponent2231_0 == null) {
+      this.myVariableDeclaration_NameCellComponent2231_0 = new VariableDeclaration_NameCellComponent(node);
     }
-    EditorCell editorCell = this.myVariableDeclaration_NameCellComponent2.createEditorCell(context);
+    EditorCell editorCell = this.myVariableDeclaration_NameCellComponent2231_0.createEditorCell(context);
     setupBasic_component_VariableDeclaration_NameCellComponent1188212207013(editorCell, node, context);
     return editorCell;
   }
@@ -170,7 +170,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1188212219619(EditorContext context, SNode node) {
     if (this.myListHandler_1188212219619 == null) {
-      this.myListHandler_1188212219619 = new LocalVariableDeclaration_Editor.annotationListHandler_16(node, "annotation", context);
+      this.myListHandler_1188212219619 = new LocalVariableDeclaration_Editor.annotationListHandler_2231_0(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1188212219619.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotation1188212219619(editorCell, node, context);
@@ -183,7 +183,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1188220842771(EditorContext context, SNode node) {
     if (this.myListHandler_1188220842771 == null) {
-      this.myListHandler_1188220842771 = new LocalVariableDeclaration_Editor.annotationListHandler_19(node, "annotation", context);
+      this.myListHandler_1188220842771 = new LocalVariableDeclaration_Editor.annotationListHandler_2231_1(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1188220842771.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotation1188220842771(editorCell, node, context);
@@ -356,6 +356,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNode_initializer1188212207016(EditorCell editorCell, SNode node, EditorContext context) {
+    LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Collection_11882122196171188212219617(EditorCell editorCell, SNode node, EditorContext context) {
@@ -423,21 +424,21 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_annotation_1188220842771(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition37(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition2231_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
-  public static boolean renderingCondition38(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition2231_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 
-  public static boolean renderingCondition41(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition2231_2(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
-  public static class annotationListHandler_16 extends RefNodeListHandler {
+  public static class annotationListHandler_2231_0 extends RefNodeListHandler {
 
-    public annotationListHandler_16(SNode ownerNode, String childRole, EditorContext context) {
+    public annotationListHandler_2231_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -478,9 +479,9 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class annotationListHandler_19 extends RefNodeListHandler {
+  public static class annotationListHandler_2231_1 extends RefNodeListHandler {
 
-    public annotationListHandler_19(SNode ownerNode, String childRole, EditorContext context) {
+    public annotationListHandler_2231_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

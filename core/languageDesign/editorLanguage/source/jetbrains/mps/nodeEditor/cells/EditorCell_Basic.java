@@ -18,6 +18,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
+import jetbrains.mps.helgins.inference.IErrorReporter;
+import jetbrains.mps.helgins.inference.TypeChecker;
 
 import javax.swing.JComponent;
 import java.awt.*;

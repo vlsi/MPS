@@ -65,7 +65,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell3(context, node));
+    editorCell.addEditorCell(this.createIndentCell1596_0(context, node));
     editorCell.addEditorCell(this.createRefNode1206061106547(context, node));
     return editorCell;
   }
@@ -83,7 +83,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     setupBasic_Constant_12060610598151206061059815(editorCell, node, context);
     setupLabel_Constant_1206061059815_1206061059815(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu0()}));
     return editorCell;
   }
 
@@ -111,7 +111,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell3(EditorContext context, SNode node) {
+  public EditorCell createIndentCell1596_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
@@ -289,9 +289,9 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNode_statementList_1206061106547(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class ElsifClause_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
+  public static class ElsifClause_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
 
-    public ElsifClause_generic_cellMenu() {
+    public ElsifClause_generic_cellMenu0() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

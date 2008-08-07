@@ -68,7 +68,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1085485112431(EditorContext context, SNode node) {
     if (this.myListHandler_1085485112431 == null) {
-      this.myListHandler_1085485112431 = new EnumConstantDeclaration_Editor.actualArgumentListHandler_1(node, "actualArgument", context);
+      this.myListHandler_1085485112431 = new EnumConstantDeclaration_Editor.actualArgumentListHandler_4713_0(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1085485112431.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_actualArgument1085485112431(editorCell, node, context);
@@ -122,7 +122,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return EnumConstantDeclaration_Editor.calculateColor21(cell);
+              return EnumConstantDeclaration_Editor.calculateColor4713_0(cell);
             }
 
           });
@@ -159,15 +159,15 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1085485112432_1085485112432(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor21(EditorCell cell) {
+  private static Color calculateColor4713_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  public static class actualArgumentListHandler_1 extends RefNodeListHandler {
+  public static class actualArgumentListHandler_4713_0 extends RefNodeListHandler {
 
-    public actualArgumentListHandler_1(SNode ownerNode, String childRole, EditorContext context) {
+    public actualArgumentListHandler_4713_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

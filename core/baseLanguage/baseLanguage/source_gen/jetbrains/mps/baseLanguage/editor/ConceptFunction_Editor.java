@@ -15,8 +15,8 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 
 public class ConceptFunction_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myConceptFunction_Component;
-  /* package */AbstractCellProvider myCellProvider;
+  /* package */AbstractCellProvider myConceptFunction_Component3364_0;
+  /* package */AbstractCellProvider myCellProvider3364_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createComponent1196975582231(context, node);
@@ -27,19 +27,19 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1196975582231(EditorContext context, SNode node) {
-    if (this.myConceptFunction_Component == null) {
-      this.myConceptFunction_Component = new ConceptFunction_Component(node);
+    if (this.myConceptFunction_Component3364_0 == null) {
+      this.myConceptFunction_Component3364_0 = new ConceptFunction_Component(node);
     }
-    EditorCell editorCell = this.myConceptFunction_Component.createEditorCell(context);
+    EditorCell editorCell = this.myConceptFunction_Component3364_0.createEditorCell(context);
     setupBasic_component_ConceptFunction_Component1196975582231(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createCustom1207577922324(EditorContext context, SNode node) {
-    if (this.myCellProvider == null) {
-      this.myCellProvider = this._cellProviderFactory_1207577922324(node, context);
+    if (this.myCellProvider3364_0 == null) {
+      this.myCellProvider3364_0 = this._cellProviderFactory_1207577922324(node, context);
     }
-    EditorCell editorCell = this.myCellProvider.createEditorCell(context);
+    EditorCell editorCell = this.myCellProvider3364_0.createEditorCell(context);
     setupBasic_Custom_12075779223241207577922324(editorCell, node, context);
     return editorCell;
   }

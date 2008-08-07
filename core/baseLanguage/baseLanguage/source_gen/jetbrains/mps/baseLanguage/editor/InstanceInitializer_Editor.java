@@ -27,7 +27,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
 
   public EditorCell createAlternation1208705181506(EditorContext context, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = InstanceInitializer_Editor.renderingCondition71(node, context, context.getOperationContext().getScope());
+    alternationCondition = InstanceInitializer_Editor.renderingCondition2081_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection1208705182824(context, node);
@@ -57,7 +57,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell4(context, node));
+    editorCell.addEditorCell(this.createIndentCell2081_0(context, node));
     editorCell.addEditorCell(this.createRefNode1208705182828(context, node));
     return editorCell;
   }
@@ -106,7 +106,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell4(EditorContext context, SNode node) {
+  public EditorCell createIndentCell2081_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
@@ -257,7 +257,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1208705199695_1208705199695(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition71(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition2081_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(SLinkOperations.getTarget(node, "statementList", true), "statement") > 1;
   }
 

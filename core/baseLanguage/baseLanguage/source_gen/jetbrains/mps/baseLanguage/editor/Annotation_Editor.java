@@ -29,8 +29,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Annotation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_Component_Visibility4;
-  /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component2;
+  /* package */AbstractCellProvider my_Component_Visibility9459_0;
+  /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component9459_0;
   /* package */AbstractCellListHandler myListHandler_1188206420424;
   /* package */AbstractCellListHandler myListHandler_1188210091999;
   /* package */AbstractCellListHandler myListHandler_1188210101998;
@@ -49,7 +49,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition28(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition9459_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188210091998(context, node));
     }
     editorCell.addEditorCell(this.createCollection1188206420398(context, node));
@@ -69,7 +69,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent1188206420399(context, node));
     editorCell.addEditorCell(this.createConstant1188206420400(context, node, "@interface"));
     editorCell.addEditorCell(this.createProperty1188206420401(context, node));
-    if (renderingCondition25(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition9459_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createComponent1188206420402(context, node));
     }
     editorCell.addEditorCell(this.createConstant1188206420416(context, node, "{"));
@@ -119,19 +119,19 @@ public class Annotation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1188206420399(EditorContext context, SNode node) {
-    if (this.my_Component_Visibility4 == null) {
-      this.my_Component_Visibility4 = new _Component_Visibility(node);
+    if (this.my_Component_Visibility9459_0 == null) {
+      this.my_Component_Visibility9459_0 = new _Component_Visibility(node);
     }
-    EditorCell editorCell = this.my_Component_Visibility4.createEditorCell(context);
+    EditorCell editorCell = this.my_Component_Visibility9459_0.createEditorCell(context);
     setupBasic_component__Component_Visibility1188206420399(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createComponent1188206420402(EditorContext context, SNode node) {
-    if (this.my_GenericDeclaration_TypeVariables_Component2 == null) {
-      this.my_GenericDeclaration_TypeVariables_Component2 = new _GenericDeclaration_TypeVariables_Component(node);
+    if (this.my_GenericDeclaration_TypeVariables_Component9459_0 == null) {
+      this.my_GenericDeclaration_TypeVariables_Component9459_0 = new _GenericDeclaration_TypeVariables_Component(node);
     }
-    EditorCell editorCell = this.my_GenericDeclaration_TypeVariables_Component2.createEditorCell(context);
+    EditorCell editorCell = this.my_GenericDeclaration_TypeVariables_Component9459_0.createEditorCell(context);
     setupBasic_component__GenericDeclaration_TypeVariables_Component1188206420402(editorCell, node, context);
     return editorCell;
   }
@@ -194,7 +194,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1188206420424(EditorContext context, SNode node) {
     if (this.myListHandler_1188206420424 == null) {
-      this.myListHandler_1188206420424 = new Annotation_Editor.annotationMethodListHandler_(node, "annotationMethod", context);
+      this.myListHandler_1188206420424 = new Annotation_Editor.annotationMethodListHandler_9459_0(node, "annotationMethod", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1188206420424.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotationMethod1188206420424(editorCell, node, context);
@@ -207,7 +207,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1188210091999(EditorContext context, SNode node) {
     if (this.myListHandler_1188210091999 == null) {
-      this.myListHandler_1188210091999 = new Annotation_Editor.annotationListHandler_4(node, "annotation", context);
+      this.myListHandler_1188210091999 = new Annotation_Editor.annotationListHandler_9459_0(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1188210091999.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotation1188210091999(editorCell, node, context);
@@ -220,7 +220,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1188210101998(EditorContext context, SNode node) {
     if (this.myListHandler_1188210101998 == null) {
-      this.myListHandler_1188210101998 = new Annotation_Editor.annotationListHandler_5(node, "annotation", context);
+      this.myListHandler_1188210101998 = new Annotation_Editor.annotationListHandler_9459_1(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1188210101998.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_annotation1188210101998(editorCell, node, context);
@@ -482,17 +482,17 @@ public class Annotation_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_annotation_1188210101998(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition25(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition9459_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }
 
-  public static boolean renderingCondition28(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition9459_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
-  public static class annotationMethodListHandler_ extends RefNodeListHandler {
+  public static class annotationMethodListHandler_9459_0 extends RefNodeListHandler {
 
-    public annotationMethodListHandler_(SNode ownerNode, String childRole, EditorContext context) {
+    public annotationMethodListHandler_9459_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -562,9 +562,9 @@ public class Annotation_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class annotationListHandler_4 extends RefNodeListHandler {
+  public static class annotationListHandler_9459_0 extends RefNodeListHandler {
 
-    public annotationListHandler_4(SNode ownerNode, String childRole, EditorContext context) {
+    public annotationListHandler_9459_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -605,9 +605,9 @@ public class Annotation_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class annotationListHandler_5 extends RefNodeListHandler {
+  public static class annotationListHandler_9459_1 extends RefNodeListHandler {
 
-    public annotationListHandler_5(SNode ownerNode, String childRole, EditorContext context) {
+    public annotationListHandler_9459_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

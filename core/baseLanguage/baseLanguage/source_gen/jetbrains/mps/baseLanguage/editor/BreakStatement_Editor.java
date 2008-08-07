@@ -43,7 +43,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1101210485459(context, node, "break"));
-    if (renderingCondition49(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition0420_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1199466153260(context, node));
     }
     editorCell.addEditorCell(this.createConstant1101210485460(context, node, ";"));
@@ -85,7 +85,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
       setupLabel_property_label_1199466160621((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new BreakStatement_Editor.BreakStatement_generic_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new BreakStatement_Editor.BreakStatement_generic_cellMenu0()}));
     return editorCell;
   }
 
@@ -170,13 +170,13 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_label_1199466160621(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition49(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition0420_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
-  public static class BreakStatement_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
+  public static class BreakStatement_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
 
-    public BreakStatement_generic_cellMenu() {
+    public BreakStatement_generic_cellMenu0() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

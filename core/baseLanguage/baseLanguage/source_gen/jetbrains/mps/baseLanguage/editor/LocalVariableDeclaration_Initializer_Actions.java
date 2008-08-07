@@ -8,6 +8,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.CellConditions;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class LocalVariableDeclaration_Initializer_Actions {
 
@@ -33,6 +36,14 @@ public class LocalVariableDeclaration_Initializer_Actions {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       SLinkOperations.removeChild(node, "initializer");
+      editorContext.flushEvents();
+      EditorComponent editor = editorContext.getNodeEditorComponent();
+      EditorCell nodeCell = editor.findNodeCell(node);
+      EditorCell lastSelectable = nodeCell.getLastLeaf(CellConditions.SELECTABLE);
+      editor.changeSelection(lastSelectable);
+      if (lastSelectable instanceof EditorCell_Label) {
+        ((EditorCell_Label)lastSelectable).end();
+      }
     }
 
 }

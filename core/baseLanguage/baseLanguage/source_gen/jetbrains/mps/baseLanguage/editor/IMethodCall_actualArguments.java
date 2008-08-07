@@ -72,7 +72,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
 
   public EditorCell createRefNodeList1173990956439(EditorContext context, SNode node) {
     if (this.myListHandler_1173990956439 == null) {
-      this.myListHandler_1173990956439 = new IMethodCall_actualArguments.actualArgumentListHandler_5(node, "actualArgument", context);
+      this.myListHandler_1173990956439 = new IMethodCall_actualArguments.actualArgumentListHandler_4497_0(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1173990956439.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_actualArgument1173990956439(editorCell, node, context);
@@ -130,7 +130,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
       };
       inlineStyle.apply(editorCell);
     }
-    if (renderingCondition44(node, context, context.getScope())) {
+    if (renderingCondition4497_0(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
   }
@@ -144,16 +144,16 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
   private static void setupLabel_Constant_1173990956441_1173990956441(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition44(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition4497_0(SNode node, EditorContext editorContext, IScope scope) {
     if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
       return false;
     }
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
   }
 
-  public static class actualArgumentListHandler_5 extends RefNodeListHandler {
+  public static class actualArgumentListHandler_4497_0 extends RefNodeListHandler {
 
-    public actualArgumentListHandler_5(SNode ownerNode, String childRole, EditorContext context) {
+    public actualArgumentListHandler_4497_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

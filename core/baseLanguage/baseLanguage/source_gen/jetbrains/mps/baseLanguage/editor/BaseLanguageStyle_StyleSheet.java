@@ -16,7 +16,7 @@ public class BaseLanguageStyle_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return BaseLanguageStyle_StyleSheet.calculateColor(cell);
+          return BaseLanguageStyle_StyleSheet.calculateColor0216_0(cell);
         }
 
       });
@@ -37,7 +37,7 @@ public class BaseLanguageStyle_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return BaseLanguageStyle_StyleSheet.calculateColor4(cell);
+          return BaseLanguageStyle_StyleSheet.calculateColor0216_4(cell);
         }
 
       });
@@ -50,7 +50,7 @@ public class BaseLanguageStyle_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return BaseLanguageStyle_StyleSheet.calculateColor5(cell);
+          return BaseLanguageStyle_StyleSheet.calculateColor0216_5(cell);
         }
 
       });
@@ -73,7 +73,7 @@ public class BaseLanguageStyle_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return BaseLanguageStyle_StyleSheet.calculateColor3(cell);
+          return BaseLanguageStyle_StyleSheet.calculateColor0216_3(cell);
         }
 
       });
@@ -86,7 +86,7 @@ public class BaseLanguageStyle_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return BaseLanguageStyle_StyleSheet.calculateColor1(cell);
+          return BaseLanguageStyle_StyleSheet.calculateColor0216_1(cell);
         }
 
       });
@@ -99,7 +99,7 @@ public class BaseLanguageStyle_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return BaseLanguageStyle_StyleSheet.calculateColor6(cell);
+          return BaseLanguageStyle_StyleSheet.calculateColor0216_6(cell);
         }
 
       });
@@ -111,7 +111,7 @@ public class BaseLanguageStyle_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return BaseLanguageStyle_StyleSheet.calculateColor2(cell);
+          return BaseLanguageStyle_StyleSheet.calculateColor0216_2(cell);
         }
 
       });
@@ -134,7 +134,7 @@ public class BaseLanguageStyle_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return BaseLanguageStyle_StyleSheet.calculateColor7(cell);
+          return BaseLanguageStyle_StyleSheet.calculateColor0216_7(cell);
         }
 
       });
@@ -237,49 +237,49 @@ public class BaseLanguageStyle_StyleSheet {
 
   };
 
-  private static Color calculateColor(EditorCell cell) {
+  private static Color calculateColor0216_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor1(EditorCell cell) {
+  private static Color calculateColor0216_1(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;
   }
 
-  private static Color calculateColor2(EditorCell cell) {
+  private static Color calculateColor0216_2(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;
   }
 
-  private static Color calculateColor3(EditorCell cell) {
+  private static Color calculateColor0216_3(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor4(EditorCell cell) {
+  private static Color calculateColor0216_4(EditorCell cell) {
     Color result;
     result = Color.darkGray;
     return result;
   }
 
-  private static Color calculateColor5(EditorCell cell) {
+  private static Color calculateColor0216_5(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor6(EditorCell cell) {
+  private static Color calculateColor0216_6(EditorCell cell) {
     Color result;
     result = Color.blue;
     return result;
   }
 
-  private static Color calculateColor7(EditorCell cell) {
+  private static Color calculateColor0216_7(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;

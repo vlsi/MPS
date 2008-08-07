@@ -57,14 +57,14 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1090928601379_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline4());
+    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline0362_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_enumConstantDeclaration1090928601379(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
       setupLabel_refCell_enumConstantDeclaration_1090928601379((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new EnumConstantReference_Editor.EnumConstantReference_enumConstantDeclaration_cellMenu(),new EnumConstantReference_Editor.EnumConstantReference_customReplace_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new EnumConstantReference_Editor.EnumConstantReference_enumConstantDeclaration_cellMenu0(),new EnumConstantReference_Editor.EnumConstantReference_customReplace_cellMenu0()}));
     return editorCell;
   }
 
@@ -87,7 +87,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1144432986234_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline10());
+    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline0362_1());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_enumClass1144432986234(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -141,15 +141,15 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   private static void setupLabel_refCell_enumClass_1144432986234(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor37(EditorCell cell) {
+  private static Color calculateColor0362_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  public static class _Inline4 extends AbstractCellProvider {
+  public static class _Inline0362_0 extends AbstractCellProvider {
 
-    public _Inline4() {
+    public _Inline0362_0() {
       super();
     }
 
@@ -200,7 +200,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return EnumConstantReference_Editor.calculateColor37(cell);
+                return EnumConstantReference_Editor.calculateColor0362_0(cell);
               }
 
             });
@@ -215,9 +215,9 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline10 extends AbstractCellProvider {
+  public static class _Inline0362_1 extends AbstractCellProvider {
 
-    public _Inline10() {
+    public _Inline0362_1() {
       super();
     }
 
@@ -276,9 +276,9 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class EnumConstantReference_customReplace_cellMenu extends AbstractCellMenuPart_ReplaceNode_Group {
+  public static class EnumConstantReference_customReplace_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_Group {
 
-    public EnumConstantReference_customReplace_cellMenu() {
+    public EnumConstantReference_customReplace_cellMenu0() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
@@ -298,9 +298,9 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class EnumConstantReference_enumConstantDeclaration_cellMenu extends PrimaryReferentMenuCellMenuPart {
+  public static class EnumConstantReference_enumConstantDeclaration_cellMenu0 extends PrimaryReferentMenuCellMenuPart {
 
-    public EnumConstantReference_enumConstantDeclaration_cellMenu() {
+    public EnumConstantReference_enumConstantDeclaration_cellMenu0() {
     }
 }
 

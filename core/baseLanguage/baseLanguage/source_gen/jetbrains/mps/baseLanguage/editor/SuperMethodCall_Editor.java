@@ -91,7 +91,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1138337224101(EditorContext context, SNode node) {
     if (this.myListHandler_1138337224101 == null) {
-      this.myListHandler_1138337224101 = new SuperMethodCall_Editor.actualArgumentListHandler_2(node, "actualArgument", context);
+      this.myListHandler_1138337224101 = new SuperMethodCall_Editor.actualArgumentListHandler_4254_0(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1138337224101.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_actualArgument1138337224101(editorCell, node, context);
@@ -104,7 +104,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1091709481300_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new SuperMethodCall_Editor._Inline5());
+    provider.setAuxiliaryCellProvider(new SuperMethodCall_Editor._Inline4254_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_instanceMethodDeclaration1091709481300(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -145,7 +145,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return SuperMethodCall_Editor.calculateColor12(cell);
+              return SuperMethodCall_Editor.calculateColor4254_0(cell);
             }
 
           });
@@ -168,7 +168,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_10917094813051091709481305(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1091709481305");
     BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
-    if (renderingCondition47(node, context, context.getScope())) {
+    if (renderingCondition4254_0(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
   }
@@ -199,22 +199,22 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_actualArgument_1138337224101(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition47(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition4254_0(SNode node, EditorContext editorContext, IScope scope) {
     if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
       return false;
     }
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
   }
 
-  private static Color calculateColor12(EditorCell cell) {
+  private static Color calculateColor4254_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  public static class _Inline5 extends AbstractCellProvider {
+  public static class _Inline4254_0 extends AbstractCellProvider {
 
-    public _Inline5() {
+    public _Inline4254_0() {
       super();
     }
 
@@ -264,9 +264,9 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class actualArgumentListHandler_2 extends RefNodeListHandler {
+  public static class actualArgumentListHandler_4254_0 extends RefNodeListHandler {
 
-    public actualArgumentListHandler_2(SNode ownerNode, String childRole, EditorContext context) {
+    public actualArgumentListHandler_4254_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

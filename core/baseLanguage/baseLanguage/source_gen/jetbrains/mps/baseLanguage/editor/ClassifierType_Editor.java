@@ -44,7 +44,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefCell1211505069982(context, node));
-    if (renderingCondition75(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition9185_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1211505168856(context, node));
     }
     return editorCell;
@@ -80,7 +80,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1211505175170(EditorContext context, SNode node) {
     if (this.myListHandler_1211505175170 == null) {
-      this.myListHandler_1211505175170 = new ClassifierType_Editor.parameterListHandler_4(node, "parameter", context);
+      this.myListHandler_1211505175170 = new ClassifierType_Editor.parameterListHandler_9185_0(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1211505175170.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_parameter1211505175170(editorCell, node, context);
@@ -93,7 +93,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1211505069982_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ClassifierType_Editor._Inline23());
+    provider.setAuxiliaryCellProvider(new ClassifierType_Editor._Inline9185_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_classifier1211505069982(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -188,13 +188,13 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1211505175171_1211505175171(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition75(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition9185_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "parameter") > 0;
   }
 
-  public static class _Inline23 extends AbstractCellProvider {
+  public static class _Inline9185_0 extends AbstractCellProvider {
 
-    public _Inline23() {
+    public _Inline9185_0() {
       super();
     }
 
@@ -253,9 +253,9 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class parameterListHandler_4 extends RefNodeListHandler {
+  public static class parameterListHandler_9185_0 extends RefNodeListHandler {
 
-    public parameterListHandler_4(SNode ownerNode, String childRole, EditorContext context) {
+    public parameterListHandler_9185_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -30,11 +30,11 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition3(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6106_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1144224544543(context, node, "{"));
     }
     editorCell.addEditorCell(this.createCollection1119291719344(context, node));
-    if (renderingCondition5(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6106_2(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1119291721269(context, node, "}"));
     }
     return editorCell;
@@ -46,7 +46,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition4(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6106_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1119291719345(context, node, "  "));
     }
     editorCell.addEditorCell(this.createRefNode1119291719346(context, node));
@@ -174,15 +174,15 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1144224544543_1144224544543(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition3(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6106_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "ifFalseStatement"));
   }
 
-  public static boolean renderingCondition4(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6106_1(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "ifFalseStatement"));
   }
 
-  public static boolean renderingCondition5(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6106_2(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "ifFalseStatement"));
   }
 

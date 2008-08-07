@@ -59,7 +59,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition55(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6015_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1201381428282(context, node));
     }
     editorCell.addEditorCell(this.createConstant1163670796715(context, node, "switch"));
@@ -76,7 +76,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell27(context, node));
+    editorCell.addEditorCell(this.createIndentCell6015_0(context, node));
     editorCell.addEditorCell(this.createRefNodeList1163670928772(context, node));
     return editorCell;
   }
@@ -87,7 +87,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell28(context, node));
+    editorCell.addEditorCell(this.createIndentCell6015_1(context, node));
     editorCell.addEditorCell(this.createCollection1163671008278(context, node));
     return editorCell;
   }
@@ -120,7 +120,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell29(context, node));
+    editorCell.addEditorCell(this.createIndentCell6015_2(context, node));
     editorCell.addEditorCell(this.createRefNode1163671042758(context, node));
     return editorCell;
   }
@@ -240,7 +240,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1163670928772(EditorContext context, SNode node) {
     if (this.myListHandler_1163670928772 == null) {
-      this.myListHandler_1163670928772 = new SwitchStatement_Editor.caseListHandler_(node, "case", context);
+      this.myListHandler_1163670928772 = new SwitchStatement_Editor.caseListHandler_6015_0(node, "case", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1163670928772.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_case1163670928772(editorCell, node, context);
@@ -251,17 +251,17 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell27(EditorContext context, SNode node) {
+  public EditorCell createIndentCell6015_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell28(EditorContext context, SNode node) {
+  public EditorCell createIndentCell6015_1(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell29(EditorContext context, SNode node) {
+  public EditorCell createIndentCell6015_2(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
@@ -646,13 +646,13 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_label_1201381511013(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition55(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6015_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
-  public static class caseListHandler_ extends RefNodeListHandler {
+  public static class caseListHandler_6015_0 extends RefNodeListHandler {
 
-    public caseListHandler_(SNode ownerNode, String childRole, EditorContext context) {
+    public caseListHandler_6015_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

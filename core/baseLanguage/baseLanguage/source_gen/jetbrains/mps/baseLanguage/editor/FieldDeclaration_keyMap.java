@@ -67,7 +67,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode g;
-      g = new QuotationClass_().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), node, FieldDeclaration_Behavior.call_getGetterName_1213877243782(node));
+      g = new QuotationClass_0().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), node, FieldDeclaration_Behavior.call_getGetterName_1213877243782(node));
       SLinkOperations.addChild(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "method", g);
     }
 

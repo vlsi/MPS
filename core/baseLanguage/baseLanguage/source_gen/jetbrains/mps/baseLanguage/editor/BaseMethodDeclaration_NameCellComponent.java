@@ -66,7 +66,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
       setupLabel_property_name_1215517344868((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new BaseMethodDeclaration_NameCellComponent.BaseMethodDeclaration_name_postfixCellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new BaseMethodDeclaration_NameCellComponent.BaseMethodDeclaration_name_postfixCellMenu0()}));
     return editorCell;
   }
 
@@ -127,9 +127,9 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
   private static void setupLabel_Constant_1215517346795_1215517346795(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class BaseMethodDeclaration_name_postfixCellMenu extends AbstractCellMenuPart_PropertyPostfixHints {
+  public static class BaseMethodDeclaration_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
 
-    public BaseMethodDeclaration_name_postfixCellMenu() {
+    public BaseMethodDeclaration_name_postfixCellMenu0() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {

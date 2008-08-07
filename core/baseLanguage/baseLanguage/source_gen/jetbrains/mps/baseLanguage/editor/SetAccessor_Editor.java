@@ -42,7 +42,7 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell1(context, node));
+    editorCell.addEditorCell(this.createIndentCell4227_0(context, node));
     editorCell.addEditorCell(this.createRefNode1202592951658(context, node));
     return editorCell;
   }
@@ -109,7 +109,7 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell1(EditorContext context, SNode node) {
+  public EditorCell createIndentCell4227_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }

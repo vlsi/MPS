@@ -28,7 +28,7 @@ import jetbrains.mps.bootstrap.editorLanguage.generator.internal.PrimaryReferent
 
 public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myIMethodCall_actualArguments;
+  /* package */AbstractCellProvider myIMethodCall_actualArguments7119_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1081149310028(context, node);
@@ -48,10 +48,10 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1173991610903(EditorContext context, SNode node) {
-    if (this.myIMethodCall_actualArguments == null) {
-      this.myIMethodCall_actualArguments = new IMethodCall_actualArguments(node);
+    if (this.myIMethodCall_actualArguments7119_0 == null) {
+      this.myIMethodCall_actualArguments7119_0 = new IMethodCall_actualArguments(node);
     }
-    EditorCell editorCell = this.myIMethodCall_actualArguments.createEditorCell(context);
+    EditorCell editorCell = this.myIMethodCall_actualArguments7119_0.createEditorCell(context);
     setupBasic_component_IMethodCall_actualArguments1173991610903(editorCell, node, context);
     return editorCell;
   }
@@ -66,14 +66,14 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1088427863670_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline3());
+    provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline7119_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_staticMethodDeclaration1088427863670(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
       setupLabel_refCell_staticMethodDeclaration_1088427863670((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new StaticMethodCall_Editor.StaticMethodCall_staticMethodDeclaration_cellMenu(),new StaticMethodCall_Editor.StaticMethodCall_customReplace_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new StaticMethodCall_Editor.StaticMethodCall_staticMethodDeclaration_cellMenu0(),new StaticMethodCall_Editor.StaticMethodCall_customReplace_cellMenu0()}));
     return editorCell;
   }
 
@@ -96,7 +96,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1144433246063_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline12());
+    provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline7119_1());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_classConcept1144433246063(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -155,9 +155,9 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
   private static void setupLabel_refCell_classConcept_1144433246063(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class _Inline3 extends AbstractCellProvider {
+  public static class _Inline7119_0 extends AbstractCellProvider {
 
-    public _Inline3() {
+    public _Inline7119_0() {
       super();
     }
 
@@ -217,9 +217,9 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline12 extends AbstractCellProvider {
+  public static class _Inline7119_1 extends AbstractCellProvider {
 
-    public _Inline12() {
+    public _Inline7119_1() {
       super();
     }
 
@@ -278,9 +278,9 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class StaticMethodCall_customReplace_cellMenu extends AbstractCellMenuPart_ReplaceNode_Group {
+  public static class StaticMethodCall_customReplace_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_Group {
 
-    public StaticMethodCall_customReplace_cellMenu() {
+    public StaticMethodCall_customReplace_cellMenu0() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
@@ -300,9 +300,9 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class StaticMethodCall_staticMethodDeclaration_cellMenu extends PrimaryReferentMenuCellMenuPart {
+  public static class StaticMethodCall_staticMethodDeclaration_cellMenu0 extends PrimaryReferentMenuCellMenuPart {
 
-    public StaticMethodCall_staticMethodDeclaration_cellMenu() {
+    public StaticMethodCall_staticMethodDeclaration_cellMenu0() {
     }
 }
 

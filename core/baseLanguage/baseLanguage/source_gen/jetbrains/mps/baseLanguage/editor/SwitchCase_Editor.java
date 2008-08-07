@@ -52,7 +52,7 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell26(context, node));
+    editorCell.addEditorCell(this.createIndentCell9384_0(context, node));
     editorCell.addEditorCell(this.createRefNode1163670745145(context, node));
     return editorCell;
   }
@@ -73,7 +73,7 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell26(EditorContext context, SNode node) {
+  public EditorCell createIndentCell9384_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }

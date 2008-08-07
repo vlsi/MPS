@@ -44,7 +44,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createProperty1214997032054(context, node));
-    if (renderingCondition77(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition1944_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1214997970620(context, node));
     }
     return editorCell;
@@ -58,7 +58,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1215090982339(context, node, "extends"));
     editorCell.addEditorCell(this.createRefNode1214997985454(context, node));
-    if (renderingCondition78(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition1944_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1215091303999(context, node));
     }
     return editorCell;
@@ -93,7 +93,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1215091315701(EditorContext context, SNode node) {
     if (this.myListHandler_1215091315701 == null) {
-      this.myListHandler_1215091315701 = new TypeVariableDeclaration_Editor.auxBoundsListHandler_(node, "auxBounds", context);
+      this.myListHandler_1215091315701 = new TypeVariableDeclaration_Editor.auxBoundsListHandler_1944_0(node, "auxBounds", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1215091315701.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_auxBounds1215091315701(editorCell, node, context);
@@ -250,17 +250,17 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_auxBounds_1215091315701(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition77(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition1944_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "bound", true) != null);
   }
 
-  public static boolean renderingCondition78(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition1944_1(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "auxBounds", true)).isNotEmpty();
   }
 
-  public static class auxBoundsListHandler_ extends RefNodeListHandler {
+  public static class auxBoundsListHandler_1944_0 extends RefNodeListHandler {
 
-    public auxBoundsListHandler_(SNode ownerNode, String childRole, EditorContext context) {
+    public auxBoundsListHandler_1944_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -39,7 +39,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1160998932010(context, node, "assert"));
     editorCell.addEditorCell(this.createRefNode1160998948730(context, node));
-    if (renderingCondition8(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition7459_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1160998951921(context, node));
     }
     editorCell.addEditorCell(this.createConstant1161001754075(context, node, ";"));
@@ -210,7 +210,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return AssertStatement_Editor.calculateColor35(cell);
+              return AssertStatement_Editor.calculateColor7459_0(cell);
             }
 
           });
@@ -276,11 +276,11 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1161001754075_1161001754075(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition8(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition7459_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "message", true) != null;
   }
 
-  private static Color calculateColor35(EditorCell cell) {
+  private static Color calculateColor7459_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

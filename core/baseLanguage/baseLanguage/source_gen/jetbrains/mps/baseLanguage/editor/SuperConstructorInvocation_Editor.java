@@ -77,7 +77,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1085475861768(EditorContext context, SNode node) {
     if (this.myListHandler_1085475861768 == null) {
-      this.myListHandler_1085475861768 = new SuperConstructorInvocation_Editor.actualArgumentListHandler_(node, "actualArgument", context);
+      this.myListHandler_1085475861768 = new SuperConstructorInvocation_Editor.actualArgumentListHandler_6429_0(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1085475861768.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_actualArgument1085475861768(editorCell, node, context);
@@ -142,9 +142,9 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1178906633172_1178906633172(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class actualArgumentListHandler_ extends RefNodeListHandler {
+  public static class actualArgumentListHandler_6429_0 extends RefNodeListHandler {
 
-    public actualArgumentListHandler_(SNode ownerNode, String childRole, EditorContext context) {
+    public actualArgumentListHandler_6429_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
