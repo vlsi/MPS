@@ -160,11 +160,6 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     return false;
   }
 
-  private boolean isFirstPosition(EditorCell cell) {
-    if (!(cell instanceof EditorCell_Label)) return false;
-    return ((EditorCell_Label) cell).isFirstCaretPosition();
-  }
-
   private boolean isLastCaretPosition(EditorCell cell) {
     if (!(cell instanceof EditorCell_Label)) return false;
     return ((EditorCell_Label) cell).isLastCaretPosition();
@@ -175,7 +170,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     if (selectedCell == null) return false;
     if (areModifiersPressed(keyEvent)) return false;
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && isLastCaretPosition(selectedCell)) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && selectedCell.isLastPositionInBigCell() && !selectedCell.isFirstPositionInBigCell()) {
       EditorCell target;
       if (selectedCell.isLastPositionInBigCell() && selectedCell.getContainingBigCell().getNextSibling() != null) {
         target = selectedCell.getContainingBigCell().getNextSibling();
@@ -189,7 +184,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       return target.executeAction(CellActionType.DELETE);
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE && isFirstPosition(selectedCell)) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE && selectedCell.isFirstPositionInBigCell() && !selectedCell.isLastPositionInBigCell()) {
       EditorCell target;
       if (selectedCell.isFirstPositionInBigCell() && selectedCell.getContainingBigCell().getPrevSibling() != null) {
         target = selectedCell.getContainingBigCell().getPrevSibling();
