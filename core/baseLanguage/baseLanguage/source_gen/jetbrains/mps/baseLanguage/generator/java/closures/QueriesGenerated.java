@@ -77,11 +77,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1170707207731(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("zClosureContext");
+    return _context.createUniqueName("zClosureContext", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1170707554571(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("_zClosureContext");
+    return _context.createUniqueName("_zClosureContext", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1170874110540(final IOperationContext operationContext, final PropertyMacroContext _context) {

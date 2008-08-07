@@ -61,7 +61,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1175150546879(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "body", true));
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_0().createNode());
   }
 
   public static boolean baseMappingRule_Condition_1175150707078(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -210,19 +210,19 @@ public class QueriesGenerated {
       return false;
     }
     do {
-      SNode matchedNode_ = type;
+      SNode matchedNode_0 = type;
       {
-        boolean matches_ = false;
-        Pattern_ matchingPattern = new Pattern_();
-        matches_ = matchingPattern.match(matchedNode_);
-        if (matches_) {
+        boolean matches_0 = false;
+        Pattern_0 matchingPattern = new Pattern_0();
+        matches_0 = matchingPattern.match(matchedNode_0);
+        if (matches_0) {
           return true;
         }
       }
       {
         boolean matches_1 = false;
         Pattern_1 matchingPattern = new Pattern_1();
-        matches_1 = matchingPattern.match(matchedNode_);
+        matches_1 = matchingPattern.match(matchedNode_0);
         if (matches_1) {
           return true;
         }
@@ -270,11 +270,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1176815544545(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("pattern_");
+    return _context.createUniqueName("pattern_", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1176817383122(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("coercedNode_");
+    return _context.createUniqueName("coercedNode_", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1177670027441(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -283,19 +283,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1177675756830(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("matchedNode_");
+    return _context.createUniqueName("matchedNode_", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1177675835821(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("matches_");
+    return _context.createUniqueName("matches_", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1178874415131(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("pattern_");
+    return _context.createUniqueName("pattern_", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1178874415161(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("coercedNode_");
+    return _context.createUniqueName("coercedNode_", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1178874523174(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -471,7 +471,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1203531487305(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("VariableProvider");
+    return _context.createUniqueName("VariableProvider", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1205764543396(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -485,7 +485,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1205764736448(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode variableDeclaration = SLinkOperations.getTarget(_context.getNode(), "argumentRepresentator", true);
     if ((variableDeclaration == null)) {
-      return _context.getGenerator().getGeneratorSessionContext().createUniqueName("_representatorVar");
+      return _context.createUniqueName("_representatorVar", null);
     } else
     {
       return SPropertyOperations.getString(variableDeclaration, "name");
@@ -618,7 +618,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1215079048829(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("matchingNode_");
+    return _context.createUniqueName("matchingNode_", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1215531866925(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1183,9 +1183,9 @@ public class QueriesGenerated {
       {
         boolean matches_2 = false;
         {
-          SNode matchingNode_ = grandparent;
-          if (matchingNode_ != null) {
-            matches_2 = SModelUtil_new.isAssignableConcept(matchingNode_.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement_internal");
+          SNode matchingNode_0 = grandparent;
+          if (matchingNode_0 != null) {
+            matches_2 = SModelUtil_new.isAssignableConcept(matchingNode_0.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement_internal");
           }
         }
         if (matches_2) {

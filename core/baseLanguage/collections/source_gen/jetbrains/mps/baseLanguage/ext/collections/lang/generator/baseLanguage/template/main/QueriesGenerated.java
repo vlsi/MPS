@@ -67,7 +67,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1167778587376(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("_zCursor");
+    return _context.createUniqueName("_zCursor", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1168288151438(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -75,7 +75,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1168509021319(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("zComparator");
+    return _context.createUniqueName("zComparator", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1168512329638(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -89,19 +89,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1170067652651(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("zComparator");
+    return _context.createUniqueName("zComparator", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1170958681801(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("zValueSupplier");
+    return _context.createUniqueName("zValueSupplier", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1170959003472(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("zMapper");
+    return _context.createUniqueName("zMapper", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1170959486472(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("zSelector");
+    return _context.createUniqueName("zSelector", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1170976422667(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -109,7 +109,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1170976644359(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("zForEach");
+    return _context.createUniqueName("zForEach", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1170976734726(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -117,7 +117,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1170977055251(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("zPredicate");
+    return _context.createUniqueName("zPredicate", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1170977112610(final IOperationContext operationContext, final PropertyMacroContext _context) {

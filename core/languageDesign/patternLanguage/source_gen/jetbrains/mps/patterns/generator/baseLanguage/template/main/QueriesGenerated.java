@@ -31,15 +31,15 @@ import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclara
 public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1174811055861(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("Pattern_");
+    return _context.createUniqueName("Pattern_", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1174811358972(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("PatternVar");
+    return _context.createUniqueName("PatternVar", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1176737323510(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("AntiquotationField");
+    return _context.createUniqueName("AntiquotationField", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1176737392657(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -60,7 +60,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1203596854674(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("buttonMethod");
+    return _context.createUniqueName("buttonMethod", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1203598695864(final IOperationContext operationContext, final PropertyMacroContext _context) {

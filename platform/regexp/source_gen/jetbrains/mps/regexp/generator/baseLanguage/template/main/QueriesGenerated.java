@@ -67,7 +67,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1174658262046(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("_Replacer");
+    return _context.createUniqueName("_Replacer", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1174659618559(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -133,7 +133,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1194610650675(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("REGEXP");
+    return _context.createUniqueName("REGEXP", null);
   }
 
   public static Object referenceMacro_GetReferent_1174655509856(final IOperationContext operationContext, final ReferenceMacroContext _context) {

@@ -101,7 +101,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1172650671744(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("WhereFilter");
+    return _context.createUniqueName("WhereFilter", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1172655415629(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -165,7 +165,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1180087156933(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("nodeKindSwitchFoundCase");
+    return _context.createUniqueName("nodeKindSwitchFoundCase", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1180087820031(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -173,7 +173,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1180088520623(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("TreeVisitor");
+    return _context.createUniqueName("TreeVisitor", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1180088771942(final IOperationContext operationContext, final PropertyMacroContext _context) {
