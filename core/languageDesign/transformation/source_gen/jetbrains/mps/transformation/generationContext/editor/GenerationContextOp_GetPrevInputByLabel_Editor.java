@@ -43,7 +43,7 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
 
   public EditorCell createRefCell1217882112381_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new GenerationContextOp_GetPrevInputByLabel_Editor._Inline2());
+    provider.setAuxiliaryCellProvider(new GenerationContextOp_GetPrevInputByLabel_Editor._Inline3465_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_label1217882112381(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -91,9 +91,9 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
   private static void setupLabel_refCell_label_1217882112381(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class _Inline2 extends AbstractCellProvider {
+  public static class _Inline3465_0 extends AbstractCellProvider {
 
-    public _Inline2() {
+    public _Inline3465_0() {
       super();
     }
 
