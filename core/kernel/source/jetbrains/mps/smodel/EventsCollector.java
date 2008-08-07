@@ -49,6 +49,10 @@ public class EventsCollector {
             return this.hashCode();
           }
 
+          if (method.getName().equals("beforeChildRemoved")) {
+            return null;
+          }
+
           if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
             SModelEvent e = (SModelEvent) args[0];
             assert myCommandProcessor.getCurrentCommand() != null;
