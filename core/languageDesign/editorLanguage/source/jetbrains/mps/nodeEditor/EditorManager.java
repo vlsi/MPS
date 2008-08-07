@@ -289,12 +289,16 @@ public class EditorManager {
       protected List<INodeSubstituteAction> createActions() {
         List list = ModelActions.createRightTransformHintSubstituteActions(node, side, transformTag, context.getOperationContext());
         List wrapperList = new LinkedList();
-        for (Object action : list) {
+        for (final Object action : list) {
           wrapperList.add(new NodeSubstituteActionWrapper((INodeSubstituteAction) action) {
             public SNode substitute(@Nullable EditorContext context, String pattern) {
               node.removeRightTransformHint();
               node.removeLeftTransformHint();
               return super.substitute(context, pattern);
+            }
+
+            public String toString() {
+              return "RTWrapper for " + action; 
             }
           });
         }
