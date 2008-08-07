@@ -243,7 +243,7 @@ public class NewSolutionDialogContentPane extends JPanel {
       return;
     }
     myThis.getDialog().dispose();
-    ProgressManager.getInstance().run(new Task.Modal(myThis.getProject().getComponent(Project.class)) {
+    ProgressManager.getInstance().run(new Task.Modal(myThis.getProject().getComponent(Project.class), "Creating", false) {
 
       public void run(@NotNull()ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
