@@ -13,6 +13,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEditor {
 
@@ -123,6 +125,15 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
   private static void setupBasic_Constant_12180498174251218049817425(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218049817425");
     Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_refNode_contextNode1218049832911(EditorCell editorCell, SNode node, EditorContext context) {

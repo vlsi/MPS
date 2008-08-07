@@ -196,6 +196,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1218049817425">
         <property name="text" value="in context" />
         <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" id="1218070537806">
+          <property name="value" value="1.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1218049832911">
         <property name="noTargetText" value="&lt;no node&gt;" />
