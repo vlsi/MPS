@@ -14,7 +14,8 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.transformation.TLBase.editor.Styles_StyleSheet;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
@@ -118,15 +119,26 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
 
   private static void setupBasic_Constant_12168601463401216860146340(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216860146340");
+    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
   }
 
   private static void setupBasic_refCell_label1216860146341(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_label");
-    Styles_StyleSheet.MAPPING_LABLE_REFERENCE.apply(editorCell);
+    jetbrains.mps.transformation.TLBase.editor.Styles_StyleSheet.MAPPING_LABLE_REFERENCE.apply(editorCell);
   }
 
   private static void setupBasic_Constant_12168601463441216860146344(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216860146344");
+    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_refNode_inputNode1216860146345(EditorCell editorCell, SNode node, EditorContext context) {

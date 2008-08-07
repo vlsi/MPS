@@ -28,7 +28,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1218047962359(context, node, "unique name form"));
     editorCell.addEditorCell(this.createRefNode1218048120849(context, node));
-    editorCell.addEditorCell(this.createConstant1218049817425(context, node, "where context is"));
+    editorCell.addEditorCell(this.createConstant1218049817425(context, node, "in context"));
     editorCell.addEditorCell(this.createRefNode1218049832911(context, node));
     return editorCell;
   }
@@ -93,7 +93,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
   public EditorCell createRefNode1218049832911(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("contextNode");
-    provider.setNoTargetText("<no context node>");
+    provider.setNoTargetText("<no node>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode1218049832911_internal(context, node, provider);
@@ -114,6 +114,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
 
   private static void setupBasic_Constant_12180479623591218047962359(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218047962359");
+    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
   }
 
   private static void setupBasic_refNode_baseName1218048120849(EditorCell editorCell, SNode node, EditorContext context) {
@@ -121,6 +122,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
 
   private static void setupBasic_Constant_12180498174251218049817425(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218049817425");
+    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
   }
 
   private static void setupBasic_refNode_contextNode1218049832911(EditorCell editorCell, SNode node, EditorContext context) {

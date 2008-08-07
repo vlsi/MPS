@@ -35,6 +35,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216860146340">
         <property name="text" value="get output" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1216860146341">
         <property name="noTargetText" value="&lt;choose mapping label&gt;" />
@@ -50,6 +51,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216860146344">
         <property name="text" value="for input" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1218067724276" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1216860146345">
         <property name="noTargetText" value="&lt;no input node&gt;" />
@@ -63,6 +66,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216860146348">
         <property name="text" value="get output" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1216860254150">
         <property name="noTargetText" value="&lt;choose mapping label&gt;" />
@@ -82,6 +86,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1216860049619" resolveInfo="GenerationContextOp_Base" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1217004816051">
       <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1217882105986">
@@ -90,6 +95,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217882112380">
         <property name="text" value="get prev input" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1217882112381">
         <property name="noTargetText" value="&lt;choose mapping label&gt;" />
@@ -111,6 +117,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217884861525">
         <property name="text" value="get copied output for input" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1217884861530">
         <property name="noTargetText" value="&lt;no input node&gt;" />
@@ -124,9 +131,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1217890083480">
         <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1217890107356">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1217890114185">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1217890126936">
             <link role="replacementConcept" targetNodeId="1.1217889960776" resolveInfo="GenerationContextOp_UserObjectAccessBase" />
@@ -135,12 +140,15 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217890672213">
         <property name="text" value="[" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1218067748121" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1217890728561">
         <link role="relationDeclaration" targetNodeId="1.1217890689512" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217890683011">
         <property name="text" value="]" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
       </node>
     </node>
   </node>
@@ -151,9 +159,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1217960446064">
         <property name="noTargetText" value="&lt;no alias&gt;" />
         <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1217960564809">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1217960601513">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1217960617889">
             <link role="replacementConcept" targetNodeId="1.1217960314443" resolveInfo="GenerationContextOp_ShowMessageBase" />
@@ -166,6 +172,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1217960507306">
         <property name="text" value="-&gt;" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1218067645851" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1218048531617">
         <property name="noTargetText" value="&lt;node&gt;" />
@@ -179,17 +187,31 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1218047962359">
         <property name="text" value="unique name form" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1218048120849">
         <property name="noTargetText" value="no base name" />
         <link role="relationDeclaration" targetNodeId="1.1218047638032" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1218049817425">
-        <property name="text" value="where context is" />
+        <property name="text" value="in context" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1218049832911">
-        <property name="noTargetText" value="&lt;no context node&gt;" />
+        <property name="noTargetText" value="&lt;no node&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1218049772449" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheet" id="1218067348270">
+    <property name="name" value="Styles" />
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1218067356490">
+      <property name="name" value="genContext_operation" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1218067403570">
+        <property name="flag" value="true" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1218067438887">
+        <property name="style" value="PLAIN" />
       </node>
     </node>
   </node>

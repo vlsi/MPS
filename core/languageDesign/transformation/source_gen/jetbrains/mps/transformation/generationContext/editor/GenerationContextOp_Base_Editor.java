@@ -50,6 +50,7 @@ public class GenerationContextOp_Base_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1217004816051(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
   }
 
   private static void setupLabel_conceptProperty_alias_1217004816051(EditorCell_Label editorCell, SNode node, EditorContext context) {

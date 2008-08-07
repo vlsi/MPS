@@ -13,7 +13,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.transformation.TLBase.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
@@ -78,11 +77,12 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
 
   private static void setupBasic_Constant_12168601463481216860146348(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216860146348");
+    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
   }
 
   private static void setupBasic_refCell_label1216860254150(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_label");
-    Styles_StyleSheet.MAPPING_LABLE_REFERENCE.apply(editorCell);
+    jetbrains.mps.transformation.TLBase.editor.Styles_StyleSheet.MAPPING_LABLE_REFERENCE.apply(editorCell);
   }
 
   private static void setupLabel_Constant_1216860146348_1216860146348(EditorCell_Label editorCell, SNode node, EditorContext context) {
