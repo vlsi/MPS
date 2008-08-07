@@ -406,6 +406,10 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218130746763">
+          <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression"
+                id="1218130746764"/>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
               id="1217961860098">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"
@@ -553,10 +557,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204027091693">
-          <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression"
-                id="1204027091694"/>
         </node>
       </node>
     </node>
