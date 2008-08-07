@@ -4,63 +4,22 @@ package jetbrains.mps.bootstrap.editorLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_Collection_11864038348981186403834898(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1186403834898");
-  }
-
-  private static void setupBasic_conceptProperty_alias1186403839417(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    Styles_StyleSheet.ITEM.apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_11864038419661186403841966(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1186403841966");
-  }
-
-  private static void setupBasic_property_color1186412595080(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_color");
-  }
-
-  private static void setupBasic_refNode_query1186412603348(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_conceptProperty_alias_1186403839417(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1186403841966_1186403841966(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_property_color_1186412595080(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNode_query_1186412603348(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static boolean renderingCondition16(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "query", true) == null;
-  }
-
-  public static boolean renderingCondition17(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "color", "query", null) || SLinkOperations.getTarget(node, "query", true) != null;
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1186403834898(context, node);
@@ -176,6 +135,47 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
+  }
+
+
+  private static void setupBasic_Collection_11864038348981186403834898(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1186403834898");
+  }
+
+  private static void setupBasic_conceptProperty_alias1186403839417(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    Styles_StyleSheet.ITEM.apply(editorCell);
+  }
+
+  private static void setupBasic_Constant_11864038419661186403841966(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1186403841966");
+  }
+
+  private static void setupBasic_property_color1186412595080(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "property_color");
+  }
+
+  private static void setupBasic_refNode_query1186412603348(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_conceptProperty_alias_1186403839417(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1186403841966_1186403841966(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_property_color_1186412595080(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_query_1186412603348(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean renderingCondition16(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "query", true) == null;
+  }
+
+  public static boolean renderingCondition17(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(node, "color", "query", null) || SLinkOperations.getTarget(node, "query", true) != null;
   }
 
 }
