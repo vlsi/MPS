@@ -349,7 +349,6 @@
     <property name="caption" value="Show Supertypes"/>
     <property name="package" value="Actions"/>
     <property name="isAlwaysVisible" value="true"/>
-    <link role="extendedClass" targetNodeId="17.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1205606256134">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205606256135"/>

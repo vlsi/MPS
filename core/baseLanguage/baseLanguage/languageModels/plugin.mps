@@ -133,7 +133,6 @@
     <property name="shortcut" value="control shift SLASH"/>
     <property name="caption" value="Comment Statements"/>
     <property name="package" value="Actions"/>
-    <link role="extendedClass" targetNodeId="8.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1205248417578">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205248417579">
@@ -257,7 +256,6 @@
     <property name="caption" value="Uncomment Statements"/>
     <property name="shortcut" value="control shift SLASH"/>
     <property name="package" value="Actions"/>
-    <link role="extendedClass" targetNodeId="8.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1205604975730">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205604975731">
