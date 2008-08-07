@@ -4,18 +4,19 @@
   <property name="idea.platform.internal.dir" value="lib/idea-platform-internal"/>
   <property name="idea.new" value="idea.new"/>
 
+  <target name="default" depends="download, replace.libraries, clean">
+
+  </target>
+
   <target name="download">
     <mkdir dir="${idea.new}"/>
         <get src="${main.url}/platform15/platform-api.jar" dest="${idea.platform.dir}/platform-api.jar"/>
         <get src="${main.url}/platform15/platform.jar" dest="${idea.platform.dir}/platform.jar"/>
         <get src="${main.url}/platform15/resources.jar" dest="${idea.platform.dir}/resources.jar"/>
         <get src="${main.url}/platform15/resources_en.jar" dest="${idea.platform.dir}/resources_en.jar"/>
+        <get src="${main.url}/platform15/resources_en.jar" dest="${idea.platform.dir}/sources.zip"/>
 
         <get src="${main.url}/idea{build.number}-jdk15.zip" dest="${idea.new}/idea-jdk15.zip"/>
-  </target>
-
-  <target name="default" depends="download, replace.libraries, clean">
-
   </target>
 
   <target name="replace.libraries" depends="download">
