@@ -19,7 +19,7 @@ public class typeOf_andExpression_InferenceRule implements InferenceRule_Runtime
     {
       SNode _nodeToCheck_1029348928467 = andExpr;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ae, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1175495306377", true), new QuotationClass_().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1175495304171", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ae, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1175495306377", true), new QuotationClass_0().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1175495304171", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = andExpr;

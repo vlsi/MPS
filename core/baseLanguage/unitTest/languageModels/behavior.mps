@@ -109,7 +109,7 @@
             <property name="name" value="ret" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216128223211">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216128223212">
-                <link role="baseMethodDeclaration" targetNodeId="3.~ArrayList.&lt;init&gt;(int)" resolveInfo="ArrayList" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
                 <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216128295531">
                   <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                 </node>

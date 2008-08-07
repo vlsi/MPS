@@ -29,13 +29,13 @@ public class typeof_ClassCreator_InferenceRule implements InferenceRule_Runtime 
         intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins@3_0.ChooseAppropriateConstructorDeclaration_QuickFix", true);
         intentionProvider.putArgument("classConcept", methodClassifier);
         intentionProvider.putArgument("constructorCall", creator);
-        TypeChecker.getInstance().reportTypeError(creator, "wrong number of arguments", "jetbrains.mps.baseLanguage.helgins@3_0", "1217949807523", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(creator, "wrong number of arguments", "jetbrains.mps.baseLanguage.helgins@3_0", "1218102081012", intentionProvider);
       }
     }
     if (!(SLinkOperations.getCount(creator, "typeParameter") == 0 || SLinkOperations.getCount(creator, "typeParameter") == SLinkOperations.getCount(SNodeOperations.getAncestor(SLinkOperations.getTarget(creator, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "typeVariableDeclaration"))) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "jetbrains.mps.baseLanguage.helgins@3_0", "1217949807543", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "jetbrains.mps.baseLanguage.helgins@3_0", "1218102081032", intentionProvider);
       }
     }
     for(SNode parameter : SLinkOperations.getTargets(creator, "typeParameter", true)) {

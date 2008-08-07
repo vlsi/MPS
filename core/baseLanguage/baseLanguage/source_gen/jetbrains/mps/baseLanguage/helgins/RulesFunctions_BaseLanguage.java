@@ -199,10 +199,10 @@ __switch__:
       return returnType;
     }
     {
-      Pattern_8 pattern_ = new Pattern_8(genericClassifier);
-      SNode coercedNode_ = TypeChecker.getInstance().getRuntimeSupport().coerce(instanceType, pattern_);
-      if (coercedNode_ != null) {
-        List<SNode> actualParams = pattern_.PatternVar;
+      Pattern_8 pattern_0 = new Pattern_8(genericClassifier);
+      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(instanceType, pattern_0);
+      if (coercedNode_0 != null) {
+        List<SNode> actualParams = pattern_0.PatternVar0;
         for(SNode child : SNodeOperations.getDescendants(returnType, null, true)) {
           if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
             SNode tvr = child;
