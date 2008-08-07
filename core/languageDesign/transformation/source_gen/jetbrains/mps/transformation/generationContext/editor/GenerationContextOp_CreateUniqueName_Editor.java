@@ -26,7 +26,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1218047962359(context, node, "unique name form"));
+    editorCell.addEditorCell(this.createConstant1218047962359(context, node, "unique name from"));
     editorCell.addEditorCell(this.createRefNode1218048120849(context, node));
     editorCell.addEditorCell(this.createConstant1218049817425(context, node, "in context"));
     editorCell.addEditorCell(this.createRefNode1218049832911(context, node));
