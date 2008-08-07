@@ -44,13 +44,13 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   private List<BaseProjectPlugin> myPlugins = new ArrayList<BaseProjectPlugin>();
   private PluginsState myState = new PluginsState();
-  private boolean myLoaded = false;
+  private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
   private Ide_ProjectPlugin myIdePlugin;
 
   private ReloadListener myReloadListener = new ReloadListener() {
     public void onBeforeReload() {
-      disposePlugins();
+      disposePlugins(true);
     }
 
     public void onReload() {
@@ -70,7 +70,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   public void projectClosed() {
-    disposePlugins();
+    disposePlugins(false);
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
   }
 
@@ -101,7 +101,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   //----------------RELOAD STUFF---------------------  
 
   public void reloadPlugins() {
-    disposePlugins();
+    disposePlugins(true);
     loadPlugins();
   }
 
@@ -111,6 +111,8 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     Set<DevKit> devkits = new HashSet<DevKit>();
 
     final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+
+    final List<BaseProjectPlugin> plugins = new ArrayList<BaseProjectPlugin>();
 
     synchronized (myPluginsLock) {
       for (Solution s : mpsProject.getProjectSolutions()) {
@@ -152,35 +154,38 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
       addIdePlugin();
 
-      for (BaseProjectPlugin plugin : myPlugins) {
-        try {
-          plugin.initNonEDT(mpsProject);
-        } catch (Throwable t1) {
-          LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
-        }
-      }
-
       //it may be disposed before this is called, so copy fields.
-      final List<BaseProjectPlugin> plugins = myPlugins;
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          for (BaseProjectPlugin plugin : plugins) {
-            try {
-              plugin.init(mpsProject);
-            } catch (Throwable t1) {
-              LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
-            }
-          }
-          spreadState(myPlugins);
-        }
-      });
+      plugins.addAll(myPlugins);
     }
+
+    for (BaseProjectPlugin plugin : plugins) {
+      try {
+        plugin.initNonEDT(mpsProject);
+      } catch (Throwable t1) {
+        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+      }
+    }
+
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        for (BaseProjectPlugin plugin : plugins) {
+          try {
+            plugin.init(mpsProject);
+          } catch (Throwable t1) {
+            LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+          }
+        }
+        spreadState(plugins);
+      }
+    });
+
     myLoaded = true;
   }
 
-  private void disposePlugins() {
+  private void disposePlugins(boolean later) {
     if (!myLoaded) return;
 
+    final List<BaseProjectPlugin> plugins = new ArrayList<BaseProjectPlugin>();
     synchronized (myPluginsLock) {
       for (BaseProjectPlugin plugin : myPlugins) {
         try {
@@ -193,21 +198,28 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       collectState(myPlugins);
 
       //it may be initialized before this is called, so copy fields.
-      final List<BaseProjectPlugin> plugins = new ArrayList<BaseProjectPlugin>();
       plugins.addAll(myPlugins);
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          for (BaseProjectPlugin plugin : plugins) {
-            try {
-              plugin.dispose();
-            } catch (Throwable t) {
-              LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
-            }
-          }
-        }
-      });
+
       myPlugins.clear();
     }
+
+    Runnable runnable = new Runnable() {
+      public void run() {
+        for (BaseProjectPlugin plugin : plugins) {
+          try {
+            plugin.dispose();
+          } catch (Throwable t) {
+            LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
+          }
+        }
+      }
+    };
+    if (later) {
+      SwingUtilities.invokeLater(runnable);
+    } else {
+      runnable.run();
+    }
+
     myLoaded = false;
   }
 
