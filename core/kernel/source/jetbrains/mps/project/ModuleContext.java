@@ -72,6 +72,11 @@ public class ModuleContext extends StandaloneMPSContext {
   }
 
   public static ModuleContext create(@NotNull final SModelDescriptor model, MPSProject project, boolean askIfMany) {
+
+    if (askIfMany && (ModelAccess.instance().canRead() || ModelAccess.instance().canWrite())) {
+      LOG.errorWithTrace("Invocation of operations which might show dialog with lock held");    
+    }
+
     Set<IModule> owningModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
       public Set<IModule> compute() {
         return SModelRepository.getInstance().getOwners(model, IModule.class);

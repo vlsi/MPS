@@ -155,13 +155,17 @@ public class MPSEditorOpener implements ProjectComponent {
     myEditorOpenHandlersToOwners.remove(owner);
   }
 
-  public IEditor openNode(final SNode node) {
-    return openNode(node, true);
+  public void openNode(final SNode node) {
+    openNode(node, true);
   }
 
-  public IEditor openNode(final SNode node, boolean focus) {
-    ModuleContext context = ModuleContext.create(node, myProject.getComponent(MPSProjectHolder.class).getMPSProject());
-    return openNode(node, context, focus);
+  public void openNode(final SNode node, final boolean focus) {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        ModuleContext context = ModuleContext.create(node, myProject.getComponent(MPSProjectHolder.class).getMPSProject());
+        openNode(node, context, focus);
+      }
+    });
   }
 
   public IEditor openNode(final SNode node, final IOperationContext context) {
