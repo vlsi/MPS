@@ -14,7 +14,7 @@
         <get src="${main.url}/platform15/platform.jar" dest="${idea.platform.dir}/platform.jar"/>
         <get src="${main.url}/platform15/resources.jar" dest="${idea.platform.dir}/resources.jar"/>
         <get src="${main.url}/platform15/resources_en.jar" dest="${idea.platform.dir}/resources_en.jar"/>
-        <get src="${main.url}/platform15/sources.zip" dest="${idea.platform.dir}/sources.zip"/>
+        <get src="${main.url}/sources.zip" dest="${idea.platform.dir}/sources.zip"/>
 
         <get src="${main.url}/idea{build.number}-jdk15.zip" dest="${idea.new}/idea-jdk15.zip"/>
   </target>
