@@ -4,6 +4,7 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Pair;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.MPSProjectHolder;
@@ -48,24 +49,25 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private Project myProject;
   private Ide_ProjectPlugin myIdePlugin;
 
-  private ReloadListener myReloadListener = new ReloadListener() {
-    public void onBeforeReload() {
-      disposePlugins(true);
-    }
-
-    public void onReload() {
-      loadPlugins();
-    }
-
-    public void onAfterReload() {
-    }
-  };
+  private ReloadListener myReloadListener;
 
   public ProjectPluginManager(Project project) {
     myProject = project;
   }
 
   public void projectOpened() {
+    myReloadListener = new ReloadListener() {
+      public void onBeforeReload() {
+        disposePlugins(true);
+      }
+
+      public void onReload() {
+        loadPlugins();
+      }
+
+      public void onAfterReload() {
+      }
+    };
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
@@ -107,55 +109,12 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   private void loadPlugins() {
     if (myLoaded) return;
-    Set<Language> languages = new HashSet<Language>();
-    Set<DevKit> devkits = new HashSet<DevKit>();
 
     final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-
-    final List<BaseProjectPlugin> plugins = new ArrayList<BaseProjectPlugin>();
+    final List<BaseProjectPlugin> plugins = createPlugins(mpsProject);
 
     synchronized (myPluginsLock) {
-      for (Solution s : mpsProject.getProjectSolutions()) {
-        languages.addAll(s.getScope().getVisibleLanguages());
-        devkits.addAll(s.getScope().getVisibleDevkits());
-      }
-
-      for (Language l : mpsProject.getProjectLanguages()) {
-        languages.add(l);
-      }
-
-      languages.addAll(LibraryManager.getInstance().getGlobalModules(Language.class));
-      devkits.addAll(LibraryManager.getInstance().getGlobalModules(DevKit.class));
-
-      for (DevKit dk : mpsProject.getProjectDevKits()) {
-        devkits.add(dk);
-      }
-
-      for (Language language : languages) {
-        if (language.getPluginModelDescriptor() != null) {
-          Class pluginClass = language.getClass(language.getGeneratedPluginClassLongName());
-          if (pluginClass != null) {
-            BaseProjectPlugin plugin = createPlugin(language, language.getGeneratedPluginClassLongName());
-            if (plugin != null) {
-              myPlugins.add(plugin);
-            }
-          }
-        }
-      }
-
-      for (DevKit dk : devkits) {
-        if (dk.getDevKitPluginClass() != null) {
-          BaseProjectPlugin plugin = createPlugin(dk, dk.getDevKitPluginClass());
-          if (plugin != null) {
-            myPlugins.add(plugin);
-          }
-        }
-      }
-
-      addIdePlugin();
-
-      //it may be disposed before this is called, so copy fields.
-      plugins.addAll(myPlugins);
+      myPlugins = new ArrayList<BaseProjectPlugin>(plugins);
     }
 
     for (BaseProjectPlugin plugin : plugins) {
@@ -187,6 +146,9 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
     final List<BaseProjectPlugin> plugins = new ArrayList<BaseProjectPlugin>();
     synchronized (myPluginsLock) {
+
+      collectState(myPlugins);
+
       for (BaseProjectPlugin plugin : myPlugins) {
         try {
           plugin.disposeNonEDT();
@@ -195,9 +157,6 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         }
       }
 
-      collectState(myPlugins);
-
-      //it may be initialized before this is called, so copy fields.
       plugins.addAll(myPlugins);
 
       myPlugins.clear();
@@ -223,11 +182,59 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     myLoaded = false;
   }
 
-  private BaseProjectPlugin createPlugin(IModule contextModule, String pluginClassFqName) {
+  private List<PluginDescriptor> collectPlugins(MPSProject project) {
+    List<PluginDescriptor> result = new ArrayList<PluginDescriptor>();
+
+    Set<Language> languages = new HashSet<Language>();
+    Set<DevKit> devkits = new HashSet<DevKit>();
+    for (Solution s : project.getProjectSolutions()) {
+      languages.addAll(s.getScope().getVisibleLanguages());
+      devkits.addAll(s.getScope().getVisibleDevkits());
+    }
+
+    for (Language l : project.getProjectLanguages()) {
+      languages.add(l);
+    }
+
+    languages.addAll(LibraryManager.getInstance().getGlobalModules(Language.class));
+    devkits.addAll(LibraryManager.getInstance().getGlobalModules(DevKit.class));
+
+    for (DevKit dk : project.getProjectDevKits()) {
+      devkits.add(dk);
+    }
+
+    for (Language language : languages) {
+      if (language.getPluginModelDescriptor() != null) {
+        result.add(new PluginDescriptor(language, language.getGeneratedPluginClassLongName()));
+      }
+    }
+
+    for (DevKit dk : devkits) {
+      if (dk.getDevKitPluginClass() != null) {
+        result.add(new PluginDescriptor(dk, dk.getDevKitPluginClass()));
+      }
+    }
+
+    return result;
+  }
+
+  private List<BaseProjectPlugin> createPlugins(MPSProject project) {
+    final List<BaseProjectPlugin> plugins = new ArrayList<BaseProjectPlugin>();
+    List<PluginDescriptor> pluginDescriptors = collectPlugins(project);
+    for (PluginDescriptor descriptor : pluginDescriptors) {
+      BaseProjectPlugin plugin = createPlugin(descriptor);
+      if (plugin == null) continue;
+      plugins.add(plugin);
+    }
+    plugins.add(createIdePlugin());
+    return plugins;
+  }
+
+  private BaseProjectPlugin createPlugin(PluginDescriptor descriptor) {
     try {
-      Class pluginClass = contextModule.getClass(pluginClassFqName);
+      Class pluginClass = descriptor.first.getClass(descriptor.second);
       if (pluginClass == null) {
-        LOG.error("Can't find a class : " + pluginClassFqName);
+        LOG.error("Can't find a class : " + descriptor.second);
         return null;
       }
 
@@ -238,15 +245,19 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     }
   }
 
-  private void addIdePlugin() {
+  private BaseProjectPlugin createIdePlugin() {
     myIdePlugin = new Ide_ProjectPlugin();
-    synchronized (myPluginsLock) {
-      myPlugins.add(myIdePlugin);
-    }
+    return myIdePlugin;
   }
 
   public BaseProjectPlugin getIdePlugin() {
     return myIdePlugin;
+  }
+
+  private static class PluginDescriptor extends Pair<IModule, String> {
+    private PluginDescriptor(IModule first, String second) {
+      super(first, second);
+    }
   }
 
   //----------------COMPONENT STUFF---------------------
@@ -258,9 +269,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   public void initComponent() {
+
   }
 
   public void disposeComponent() {
+
   }
 
   //----------------STATE STUFF------------------------
