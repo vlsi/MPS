@@ -351,6 +351,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     private EditorCell myRelativeCell;
     ComponentAdapter myComponentListener = new ComponentAdapter() {
       public void componentMoved(ComponentEvent e) {
+        if (myRelativeCell == null) return;
         NodeSubstituteChooser.this.setLocationRelative(myRelativeCell);
         getPatternEditor().setLocation(myPatternEditorLocation);
       }
