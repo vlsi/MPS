@@ -179,7 +179,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       return target.executeAction(CellActionType.DELETE);
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE && selectedCell.isFirstPositionInBigCell()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE && selectedCell.isFirstPositionInBigCell() && !selectedCell.isLastPositionInBigCell()) {
       EditorCell target;
       if (selectedCell.isFirstPositionInBigCell() && selectedCell.getContainingBigCell().getPrevSibling() != null) {
         target = selectedCell.getContainingBigCell().getPrevSibling();
