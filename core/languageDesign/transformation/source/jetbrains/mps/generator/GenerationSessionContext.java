@@ -114,6 +114,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   /**
    * Use getProject() instead
+   *
    * @return
    */
   @Deprecated
@@ -192,7 +193,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
         String name = topmostNamed.getName();
         if (name != null) {
           String contextSuffix = String.valueOf(name.hashCode());
-          contextSuffix = contextSuffix.substring(contextSuffix.length() - 4); // make it a bit shorter
+          if (contextSuffix.length() > 4) {
+            contextSuffix = contextSuffix.substring(contextSuffix.length() - 4); // make it a bit shorter
+          }
           // modify roughName
           roughName = roughName + contextSuffix + "_";
         }
