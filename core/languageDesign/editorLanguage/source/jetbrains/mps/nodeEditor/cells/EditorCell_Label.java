@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.TextPasteUtil;
@@ -535,7 +536,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
     setText(text);
 
-    if (!isValidText(text) && CommandProcessor.getInstance().getCurrentCommand() != null) {
+    if (!EqualUtil.equals(oldText, text) && !isValidText(text) && CommandProcessor.getInstance().getCurrentCommand() != null) {
       UndoUtil.addUndoableAction(new MySNodeUndoableAction(getSNode(), cellInfo, editor, oldText, text));
 
       if (getSNode().getContainingRoot() != null) {
