@@ -142,16 +142,6 @@ public class NodeEditorActions {
   }
 
   public static class MoveRight extends EditorCellAction {
-    private boolean myHome;
-
-    public MoveRight() {
-      this(true);
-    }
-
-    public MoveRight(boolean home) {
-      myHome = home;
-    }
-
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
       return selection != null && findTarget(selection) != null;
@@ -166,11 +156,7 @@ public class NodeEditorActions {
         ((EditorCell_Label)target).setCaretPosition(1);
       } else if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
-        if (myHome) {
-          label.home();
-        } else {
-          label.end();
-        }
+        label.home();
       }
     }
 
