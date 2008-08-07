@@ -160,11 +160,6 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     return false;
   }
 
-  private boolean isLastCaretPosition(EditorCell cell) {
-    if (!(cell instanceof EditorCell_Label)) return false;
-    return ((EditorCell_Label) cell).isLastCaretPosition();
-  }
-
   private boolean processSideDeletes(EditorContext editorContext, KeyEvent keyEvent) {
     EditorCell selectedCell = editorContext.getSelectedCell();
     if (selectedCell == null) return false;
@@ -184,7 +179,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       return target.executeAction(CellActionType.DELETE);
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE && selectedCell.isFirstPositionInBigCell() && !selectedCell.isLastPositionInBigCell()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE && selectedCell.isFirstPositionInBigCell()) {
       EditorCell target;
       if (selectedCell.isFirstPositionInBigCell() && selectedCell.getContainingBigCell().getPrevSibling() != null) {
         target = selectedCell.getContainingBigCell().getPrevSibling();
