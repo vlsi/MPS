@@ -242,7 +242,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myActionMap.put(CellActionType.NEXT, new NodeEditorActions.MoveNext());
     myActionMap.put(CellActionType.PREV, new NodeEditorActions.MovePrev());
     myActionMap.put(CellActionType.LOCAL_HOME, new NodeEditorActions.MoveLeft(true));
-    myActionMap.put(CellActionType.LOCAL_END, new NodeEditorActions.MoveRight(false));
+    myActionMap.put(CellActionType.LOCAL_END, new NodeEditorActions.MoveRight());
 
     myActionMap.put(CellActionType.ROOT_HOME, new NodeEditorActions.MoveToRootHome());
     myActionMap.put(CellActionType.ROOT_END, new NodeEditorActions.MoveToRootEnd());
