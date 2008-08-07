@@ -233,10 +233,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private BaseProjectPlugin createPlugin(PluginDescriptor descriptor) {
     try {
       Class pluginClass = descriptor.first.getClass(descriptor.second);
-      if (pluginClass == null) {
-        LOG.error("Can't find a class : " + descriptor.second);
-        return null;
-      }
+      if (pluginClass == null) return null;
 
       return (BaseProjectPlugin) pluginClass.newInstance();
     } catch (Throwable t) {
