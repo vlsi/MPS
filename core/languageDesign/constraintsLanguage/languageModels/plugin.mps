@@ -4,7 +4,7 @@
   <refactoringHistory/>
   <language namespace="jetbrains.mps.bootstrap.pluginLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="13"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14"/>
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83"/>

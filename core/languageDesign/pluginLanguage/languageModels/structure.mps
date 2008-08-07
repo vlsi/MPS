@@ -182,6 +182,20 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="14">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept"/>
+      <moveMap/>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ConceptFunctionParameter_ActionContext"
+               conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_ActionContext"
+               featureKind="CONCEPT"/>
+          <value featureName="ConceptFunctionParameter_AnActionEvent"
+                 conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_AnActionEvent"
+                 featureKind="CONCEPT"/>
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11"/>
@@ -204,7 +218,7 @@
   <language namespace="jetbrains.mps.core">
     <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
   </language>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="13"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7"/>
@@ -226,7 +240,7 @@
   <import index="22" modelUID="com.intellij.openapi.actionSystem@java_stub" version="-1"/>
   <import index="23" modelUID="com.intellij.openapi.project@java_stub" version="-1"/>
   <import index="24" modelUID="javax.swing@java_stub" version="-1"/>
-  <import index="25" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="13"/>
+  <import index="25" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14"/>
   <import index="26" modelUID="jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template.util"
           version="-1"/>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203071646776">
@@ -402,7 +416,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203082903663">
-    <property name="name" value="ConceptFunctionParameter_ActionContext"/>
+    <property name="name" value="ConceptFunctionParameter_AnActionEvent"/>
     <property name="package" value="Shared"/>
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter"/>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"

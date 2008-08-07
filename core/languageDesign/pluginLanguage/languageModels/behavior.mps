@@ -30,7 +30,7 @@
     <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
   </language>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="13"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2"/>
@@ -40,7 +40,7 @@
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2"/>
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2"/>
   <maxImportIndex value="13"/>
-  <import index="1" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="13"/>
+  <import index="1" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14"/>
   <import index="3" modelUID="java.lang@java_stub" version="-1"/>
   <import index="4" modelUID="jetbrains.mps.util@java_stub" version="-1"/>
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>

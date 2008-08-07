@@ -22,7 +22,7 @@
   <language namespace="jetbrains.mps.core">
     <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
   </language>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="13"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11"/>
@@ -33,7 +33,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17"/>
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2"/>
   <maxImportIndex value="23"/>
-  <import index="1" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="13"/>
+  <import index="1" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14"/>
   <import index="2" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1"/>
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.editor@java_stub" version="-1"/>
   <import index="6" modelUID="java.lang@java_stub" version="-1"/>
