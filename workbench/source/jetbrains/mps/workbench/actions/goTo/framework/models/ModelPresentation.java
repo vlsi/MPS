@@ -1,6 +1,7 @@
 package jetbrains.mps.workbench.actions.goTo.framework.models;
 
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.actions.goTo.framework.base.BasePresentation;
@@ -21,14 +22,20 @@ public class ModelPresentation extends BasePresentation {
   }
 
   public String getParentLocation() {
-    return myModelDescriptor.getModule().getModuleUID();
+    return getModuleUID();
   }
 
   public String doGetLocationString() {
-    return "(" + myModelDescriptor.getModule().getModuleUID() + ")";
+    return "(" + getModuleUID() + ")";
   }
 
   public Icon doGetIcon() {
     return IconManager.getIconFor(myModelDescriptor);
+  }
+
+  private String getModuleUID() {
+    IModule module = myModelDescriptor.getModule();
+    if (module == null) return "no module";
+    return module.getModuleUID();
   }
 }

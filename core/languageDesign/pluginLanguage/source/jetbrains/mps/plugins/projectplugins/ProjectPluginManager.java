@@ -164,6 +164,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
     Runnable runnable = new Runnable() {
       public void run() {
+        assert !myProject.isDisposed();
         for (BaseProjectPlugin plugin : plugins) {
           try {
             plugin.dispose();
