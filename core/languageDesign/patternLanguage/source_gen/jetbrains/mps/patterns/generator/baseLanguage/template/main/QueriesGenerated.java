@@ -320,7 +320,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1190931377097(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList();
-    SModel model = _context.getGenerator().getTargetModel();
+    SModel model = _context.getOutputModel();
     for(String propertyName : _context.getNode().getPropertyNames()) {
       if (BaseAdapter.isInstance(_context.getNode().getPropertyAttribute(propertyName), PropertyPatternVariableDeclaration.class)) {
         continue;
@@ -336,7 +336,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1190931377192(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList();
-    SModel model = _context.getGenerator().getTargetModel();
+    SModel model = _context.getOutputModel();
     for(String propertyName : _context.getNode().getPropertyNames()) {
       if (BaseAdapter.isInstance(_context.getNode().getPropertyAttribute(propertyName), PropertyPatternVariableDeclaration.class)) {
         SNode propertyNode = BaseConcept.newInstance(model).getNode();
@@ -350,7 +350,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1190931377388(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList();
-    SModel model = _context.getGenerator().getTargetModel();
+    SModel model = _context.getOutputModel();
     for(String referentRole : _context.getNode().getReferenceRoles()) {
       if (BaseAdapter.isInstance(_context.getNode().getLinkAttribute(referentRole), LinkPatternVariableDeclaration.class)) {
         continue;
@@ -368,7 +368,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1190931377535(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList();
-    SModel model = _context.getGenerator().getTargetModel();
+    SModel model = _context.getOutputModel();
     for(String referentRole : _context.getNode().getReferenceRoles()) {
       if (BaseAdapter.isInstance(_context.getNode().getLinkAttribute(referentRole), LinkPatternVariableDeclaration.class)) {
         SNode linkNode = BaseConcept.newInstance(model).getNode();
@@ -396,7 +396,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1190931378020(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    SModel model = _context.getGenerator().getTargetModel();
+    SModel model = _context.getOutputModel();
     for(String childRole : _context.getNode().getChildRoles()) {
       SNode childRoleNode = BaseConcept.newInstance(model).getNode();
       childRoleNode.setProperty("childRole", childRole);

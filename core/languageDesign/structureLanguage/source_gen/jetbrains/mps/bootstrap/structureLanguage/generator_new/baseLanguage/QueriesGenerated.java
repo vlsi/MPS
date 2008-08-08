@@ -1398,7 +1398,7 @@ __switch__:
     String internalValue = SPropertyOperations.getString(_context.getNode(), "internalValue");
     SNode memberDataType = SLinkOperations.getTarget(enumDataType, "memberDataType", false);
     SNode targetInternalValueExpression = null;
-    SModel targetModel = _context.getGenerator().getTargetModel();
+    SModel targetModel = _context.getOutputModel();
     if (SPropertyOperations.hasValue(memberDataType, "name", "string")) {
       if (internalValue == null) {
         targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.NullLiteral", null);

@@ -304,7 +304,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1196351886802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SModel model = _context.getGenerator().getTargetModel();
+    SModel model = _context.getOutputModel();
     List<SNode> result = new ArrayList<SNode>();
     for(String property : _context.getNode().getPropertyNames()) {
       if (PropertyAntiquotation_AnnotationLink.getPropertyAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(_context.getNode())), property) != null) {
@@ -319,7 +319,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1196351886876(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SModel model = _context.getGenerator().getTargetModel();
+    SModel model = _context.getOutputModel();
     List<SNode> result = new ArrayList<SNode>();
     for(SReference reference : _context.getNode().getReferences()) {
       if (ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(_context.getNode())), reference.getRole()) != null) {
@@ -373,7 +373,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1196871487533(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SModel model = _context.getGenerator().getTargetModel();
+    SModel model = _context.getOutputModel();
     List<SNode> result = new ArrayList<SNode>();
     for(String property : _context.getNode().getPropertyNames()) {
       BaseAdapter attribute = PropertyAntiquotation_AnnotationLink.getPropertyAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(_context.getNode())), property);
@@ -388,7 +388,7 @@ public class QueriesGenerated {
     SNode root = SLinkOperations.getTarget(_context.getNode(), "quotedNode", true);
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> frontier = new ArrayList<SNode>();
-    SModel model = _context.getGenerator().getTargetModel();
+    SModel model = _context.getOutputModel();
     ListSequence.fromList(frontier).addElement(root);
     List<SNode> newFrontier = new ArrayList<SNode>();
     while (ListSequence.fromList(frontier).isNotEmpty()) {
