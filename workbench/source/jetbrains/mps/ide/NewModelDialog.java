@@ -41,10 +41,7 @@ public class NewModelDialog extends BaseDialog {
     mainPanel.add(new JLabel("Stereotype:"));
 
     myModelStereotype.setEditable(true);
-    myModelStereotype.setModel(new DefaultComboBoxModel(new Object[]{
-      "",
-      "templates"
-    }));
+    myModelStereotype.setModel(new DefaultComboBoxModel(SModelStereotype.values));
 
     mainPanel.add(myModelStereotype);
 

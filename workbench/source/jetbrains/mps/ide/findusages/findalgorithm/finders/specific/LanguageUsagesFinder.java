@@ -91,9 +91,8 @@ public class LanguageUsagesFinder extends BaseFinder {
   }
 
   private void collectUsagesInModels(Language searchedLanguage, IModule owner, SearchResults searchResults) {
-    List<String> kosherStereotypes = Arrays.asList(SModelStereotype.values);
     for (SModelDescriptor modelDescriptor : owner.getOwnModelDescriptors()) {
-      if (!kosherStereotypes.contains(modelDescriptor.getStereotype())) {
+      if (!SModelStereotype.isUserModel(modelDescriptor)) {
         continue;
       }
       if (modelDescriptor.getSModel().hasLanguage(searchedLanguage.getNamespace())) {
