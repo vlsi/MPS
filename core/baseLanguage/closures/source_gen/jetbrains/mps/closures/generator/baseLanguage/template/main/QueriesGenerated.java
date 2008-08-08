@@ -39,7 +39,7 @@ public class QueriesGenerated {
   public static boolean createRootRule_Condition_1216995080029(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     List<SNode> adapters = FunctionTypeUtil.getAllAdaptableClassifierTypes(_context.getGenerator());
     if (adapters != null && adapters.size() > 0) {
-      _context.getGenerator().getGeneratorSessionContext().putStepObject("need_weaving_class_for_ClassifierType_adapter", Boolean.TRUE);
+      _context.putStepObject("need_weaving_class_for_ClassifierType_adapter", Boolean.TRUE);
       return true;
     }
     return false;
@@ -126,7 +126,7 @@ public class QueriesGenerated {
       return false;
     }
     if (_context.getGenerator().getGeneratorSessionContext().getStepObject("done_weaving_class_for_YieldStatement") == null) {
-      _context.getGenerator().getGeneratorSessionContext().putStepObject("done_weaving_class_for_YieldStatement", Boolean.TRUE);
+      _context.putStepObject("done_weaving_class_for_YieldStatement", Boolean.TRUE);
       return true;
     }
     return false;
@@ -245,7 +245,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1216995117221(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (_context.getGenerator().getGeneratorSessionContext().getStepObject("need_weaving_class_for_ClassifierType_adapter") != null) {
-      _context.getGenerator().getGeneratorSessionContext().putStepObject("need_weaving_class_for_ClassifierType_adapter", null);
+      _context.putStepObject("need_weaving_class_for_ClassifierType_adapter", null);
       return true;
     }
     return false;
@@ -253,7 +253,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1216995140846(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (_context.getGenerator().getGeneratorSessionContext().getStepObject("need_weaving_class_for_ClassifierType_adapter") != null) {
-      _context.getGenerator().getGeneratorSessionContext().putStepObject("need_weaving_class_for_ClassifierType_adapter", null);
+      _context.putStepObject("need_weaving_class_for_ClassifierType_adapter", null);
       return true;
     }
     return false;
@@ -312,10 +312,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201048260874(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      IMatchingPattern pattern_ = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_ = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_);
-      if (coercedNode_ != null) {
-        return BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(coercedNode_, "elementType", true));
+      IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_0);
+      if (coercedNode_0 != null) {
+        return BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(coercedNode_0, "elementType", true));
       }
     }
     return null;
@@ -620,7 +620,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1203682419133(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
     if (ct == null || ((SNode)ct).getUserObject("returnType") == null) {
-      return SLinkOperations.getTarget(new QuotationClass_().createNode(), "classifier", false);
+      return SLinkOperations.getTarget(new QuotationClass_0().createNode(), "classifier", false);
     } else
     {
       Object retClassifier = ((SNode)ct).getUserObject("returnType");
@@ -1547,10 +1547,10 @@ public class QueriesGenerated {
           for(SNode cc : SNodeOperations.getAncestors(cl, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)) {
             if (cc == thisCC) {
               if (SNodeOperations.isInstanceOf(thisCC, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-                _context.getGenerator().getGeneratorSessionContext().putStepObject("remove_this_" + ((SNode)te).getId(), thisCC);
+                _context.putStepObject("remove_this_" + ((SNode)te).getId(), thisCC);
               } else
               {
-                _context.getGenerator().getGeneratorSessionContext().putStepObject("set_this_classconcept_" + ((SNode)te).getId(), thisCC);
+                _context.putStepObject("set_this_classconcept_" + ((SNode)te).getId(), thisCC);
               }
               break;
             }
