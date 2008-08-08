@@ -25,21 +25,27 @@ public abstract class CompletionTextField extends JTextField {
 
     getDocument().addDocumentListener(new DocumentListener() {
       public void insertUpdate(DocumentEvent e) {
-        updateCompletion();
+        updatePopup();
       }
 
       public void removeUpdate(DocumentEvent e) {
-        updateCompletion();
+        updatePopup();
       }
 
       public void changedUpdate(DocumentEvent e) {
-        updateCompletion();
+        updatePopup();
+      }
+
+      private void updatePopup() {
+        if (myHint.isVisible() || canShowPopupAutomatically()) {
+          updateCompletion();
+        }
       }
     });
 
     addCaretListener(new CaretListener() {
       public void caretUpdate(CaretEvent e) {
-        if (isFocusOwner()) {
+        if (isFocusOwner() && myHint.isVisible()) {
           updateCompletion();
         }
       }
@@ -66,8 +72,10 @@ public abstract class CompletionTextField extends JTextField {
         if (myHint.isVisible()) {
           myHint.down();
         } else {
-          myHint.show();
-          updateCompletion();
+          if (canShowPopupAutomatically()) {
+            myHint.show();
+            updateCompletion();
+          }
         }
       }
     }, KeyStroke.getKeyStroke("DOWN"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
@@ -93,6 +101,10 @@ public abstract class CompletionTextField extends JTextField {
         myHint.hide();
       }
     });
+  }
+
+  protected boolean canShowPopupAutomatically() {
+    return true;
   }
 
   public void addNotify() {
@@ -121,6 +133,10 @@ public abstract class CompletionTextField extends JTextField {
 
   public boolean isValid() {
     return true;
+  }
+
+  public void showCompletion() {
+    updateCompletion();
   }
 
   private void updateCompletion() {

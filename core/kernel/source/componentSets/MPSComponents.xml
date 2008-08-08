@@ -414,6 +414,9 @@
       <implementation-class>jetbrains.mps.nodeEditor.cellExplorer.CellExplorerView</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.search.SearchHistoryComponent</implementation-class>
+    </component>
 
     <!--project view tool-->
     <component>
