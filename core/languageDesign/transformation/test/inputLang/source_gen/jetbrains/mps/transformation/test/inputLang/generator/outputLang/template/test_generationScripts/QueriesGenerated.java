@@ -56,7 +56,7 @@ public class QueriesGenerated {
     if (!(QueriesUtil.isTest1(_context.getModel()))) {
       return;
     }
-    _context.getGenerator().getGeneratorSessionContext().putStepObject("run post-processing", new Object());
+    _context.putStepObject("run post-processing", new Object());
     System.out.println("!!!test pre-mapping. model=" + _context.getModel().getLongName());
     SNode inputRoot = SModelOperations.createNewRootNode(_context.getModel(), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot", null);
     SPropertyOperations.set(inputRoot, "name", "Input Root created by pre-process script");
@@ -65,7 +65,7 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_1195510384869(final IOperationContext operationContext, final MappingScriptContext _context) {
     // test1 only
-    Object object = _context.getGenerator().getGeneratorSessionContext().getStepObject("run post-processing");
+    Object object = _context.getStepObject("run post-processing");
     if (object == null) {
       return;
     }
