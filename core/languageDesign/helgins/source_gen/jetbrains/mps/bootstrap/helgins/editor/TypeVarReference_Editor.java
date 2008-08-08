@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.helgins.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -16,21 +16,13 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class TypeVarReference_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_refCell_typeVarDeclaration1174666294979(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_typeVarDeclaration");
-  }
-
-  private static void setupLabel_refCell_typeVarDeclaration_1174666294979(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRefCell1174666294979(context, node);
   }
 
   public EditorCell createRefCell1174666294979_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new TypeVarReference_Editor._Inline2());
+    provider.setAuxiliaryCellProvider(new TypeVarReference_Editor._Inline7362_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_typeVarDeclaration1174666294979(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -57,19 +49,19 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline2 extends AbstractCellProvider {
 
-    public _Inline2() {
+  private static void setupBasic_refCell_typeVarDeclaration1174666294979(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_typeVarDeclaration");
+  }
+
+  private static void setupLabel_refCell_typeVarDeclaration_1174666294979(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static class _Inline7362_0 extends AbstractCellProvider {
+
+    public _Inline7362_0() {
       super();
     }
-
-    private static void setupBasic_property_name1174666297138(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-    }
-
-    private static void setupLabel_property_name_1174666297138(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    }
-
 
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
@@ -106,6 +98,14 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
+    }
+
+
+    private static void setupBasic_property_name1174666297138(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    }
+
+    private static void setupLabel_property_name_1174666297138(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

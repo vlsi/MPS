@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.helgins.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class AbstractEquationStatement extends Statement {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement";
@@ -21,15 +21,6 @@ public class AbstractEquationStatement extends Statement {
   public AbstractEquationStatement(SNode node) {
     super(node);
   }
-
-  public static AbstractEquationStatement newInstance(SModel sm, boolean init) {
-    return (AbstractEquationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AbstractEquationStatement newInstance(SModel sm) {
-    return AbstractEquationStatement.newInstance(sm, false);
-  }
-
 
   public boolean getCheckOnly() {
     return this.getBooleanProperty(AbstractEquationStatement.CHECK_ONLY);
@@ -77,6 +68,15 @@ public class AbstractEquationStatement extends Statement {
 
   public void setHelginsIntention(HelginsIntention node) {
     super.setChild(AbstractEquationStatement.HELGINS_INTENTION, node);
+  }
+
+
+  public static AbstractEquationStatement newInstance(SModel sm, boolean init) {
+    return (AbstractEquationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AbstractEquationStatement newInstance(SModel sm) {
+    return AbstractEquationStatement.newInstance(sm, false);
   }
 
 }

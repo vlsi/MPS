@@ -15,21 +15,21 @@ public class InequationReplacementRule extends AbstractSubtypingRule {
     super(node);
   }
 
-  public static InequationReplacementRule newInstance(SModel sm, boolean init) {
-    return (InequationReplacementRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InequationReplacementRule newInstance(SModel sm) {
-    return InequationReplacementRule.newInstance(sm, false);
-  }
-
-
   public ApplicableNodeCondition getSupertypeNode() {
     return (ApplicableNodeCondition)this.getChild(InequationReplacementRule.SUPERTYPE_NODE);
   }
 
   public void setSupertypeNode(ApplicableNodeCondition node) {
     super.setChild(InequationReplacementRule.SUPERTYPE_NODE, node);
+  }
+
+
+  public static InequationReplacementRule newInstance(SModel sm, boolean init) {
+    return (InequationReplacementRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InequationReplacementRule newInstance(SModel sm) {
+    return InequationReplacementRule.newInstance(sm, false);
   }
 
 }

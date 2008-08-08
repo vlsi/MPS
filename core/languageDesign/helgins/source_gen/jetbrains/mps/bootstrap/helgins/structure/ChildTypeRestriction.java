@@ -5,11 +5,11 @@ package jetbrains.mps.bootstrap.helgins.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class ChildTypeRestriction extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ChildTypeRestriction";
@@ -24,15 +24,6 @@ public class ChildTypeRestriction extends BaseConcept implements INamedConcept {
   public ChildTypeRestriction(SNode node) {
     super(node);
   }
-
-  public static ChildTypeRestriction newInstance(SModel sm, boolean init) {
-    return (ChildTypeRestriction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ChildTypeRestriction", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ChildTypeRestriction newInstance(SModel sm) {
-    return ChildTypeRestriction.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(ChildTypeRestriction.NAME);
@@ -89,6 +80,15 @@ public class ChildTypeRestriction extends BaseConcept implements INamedConcept {
 
   public void setType(Expression node) {
     super.setChild(ChildTypeRestriction.TYPE, node);
+  }
+
+
+  public static ChildTypeRestriction newInstance(SModel sm, boolean init) {
+    return (ChildTypeRestriction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ChildTypeRestriction", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ChildTypeRestriction newInstance(SModel sm) {
+    return ChildTypeRestriction.newInstance(sm, false);
   }
 
 }

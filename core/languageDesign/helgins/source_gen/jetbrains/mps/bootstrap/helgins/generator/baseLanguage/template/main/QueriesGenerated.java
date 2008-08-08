@@ -4,14 +4,14 @@ package jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
-import jetbrains.mps.bootstrap.helgins.structure.AbstractRule;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -28,7 +28,6 @@ import jetbrains.mps.bootstrap.helgins.structure.InferenceRule;
 import jetbrains.mps.bootstrap.helgins.structure.SubtypingRule;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.helgins.structure.ComparisonRule;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.helgins.dependencies.DependenciesCollector;
 import java.util.Map;
 import jetbrains.mps.util.Pair;
@@ -42,7 +41,7 @@ import jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule;
 public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1175254554283(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return !(_context.getGenerator().getSourceModel().getRootsAdapters(AbstractRule.class).isEmpty());
+    return !(ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule")).isEmpty());
   }
 
   public static boolean baseMappingRule_Condition_1174661049584(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

@@ -17,7 +17,7 @@ public class FindSourceBlock_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return new QuotationClass_().createNode();
+    return new QuotationClass_0().createNode();
   }
 
   public static boolean call_isSet_1213877521577(SNode thisNode) {

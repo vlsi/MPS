@@ -16,21 +16,21 @@ public class ListVarReference extends Expression {
     super(node);
   }
 
-  public static ListVarReference newInstance(SModel sm, boolean init) {
-    return (ListVarReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ListVarReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ListVarReference newInstance(SModel sm) {
-    return ListVarReference.newInstance(sm, false);
-  }
-
-
   public ListVarDeclaration getListVarDeclaration() {
     return (ListVarDeclaration)this.getReferent(ListVarReference.LIST_VAR_DECLARATION);
   }
 
   public void setListVarDeclaration(ListVarDeclaration node) {
     super.setReferent(ListVarReference.LIST_VAR_DECLARATION, node);
+  }
+
+
+  public static ListVarReference newInstance(SModel sm, boolean init) {
+    return (ListVarReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ListVarReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ListVarReference newInstance(SModel sm) {
+    return ListVarReference.newInstance(sm, false);
   }
 
 }

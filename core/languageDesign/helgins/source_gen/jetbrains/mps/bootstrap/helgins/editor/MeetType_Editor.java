@@ -5,12 +5,12 @@ package jetbrains.mps.bootstrap.helgins.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -22,32 +22,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 public class MeetType_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myListHandler_1188473560036;
-
-  private static void setupBasic_Collection_11884735600341188473560034(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188473560034");
-  }
-
-  private static void setupBasic_Constant_11884735600351188473560035(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188473560035");
-  }
-
-  private static void setupBasic_refNodeList_argument1188473560036(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_argument");
-  }
-
-  private static void setupBasic_Constant_12022285086571202228508657(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202228508657");
-  }
-
-  private static void setupLabel_Constant_1188473560035_1188473560035(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNodeList_argument_1188473560036(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1202228508657_1202228508657(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1188473560034(context, node);
@@ -83,7 +57,7 @@ public class MeetType_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1188473560036(EditorContext context, SNode node) {
     if (this.myListHandler_1188473560036 == null) {
-      this.myListHandler_1188473560036 = new MeetType_Editor.argumentListHandler_1(node, "argument", context);
+      this.myListHandler_1188473560036 = new MeetType_Editor.argumentListHandler_1323_0(node, "argument", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1188473560036.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_argument1188473560036(editorCell, node, context);
@@ -94,9 +68,35 @@ public class MeetType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class argumentListHandler_1 extends RefNodeListHandler {
 
-    public argumentListHandler_1(SNode ownerNode, String childRole, EditorContext context) {
+  private static void setupBasic_Collection_11884735600341188473560034(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188473560034");
+  }
+
+  private static void setupBasic_Constant_11884735600351188473560035(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188473560035");
+  }
+
+  private static void setupBasic_refNodeList_argument1188473560036(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_argument");
+  }
+
+  private static void setupBasic_Constant_12022285086571202228508657(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202228508657");
+  }
+
+  private static void setupLabel_Constant_1188473560035_1188473560035(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNodeList_argument_1188473560036(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1202228508657_1202228508657(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static class argumentListHandler_1323_0 extends RefNodeListHandler {
+
+    public argumentListHandler_1323_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

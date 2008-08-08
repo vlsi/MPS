@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.helgins.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class GivetypeStatement extends Statement {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.GivetypeStatement";
@@ -17,15 +17,6 @@ public class GivetypeStatement extends Statement {
   public GivetypeStatement(SNode node) {
     super(node);
   }
-
-  public static GivetypeStatement newInstance(SModel sm, boolean init) {
-    return (GivetypeStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.GivetypeStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GivetypeStatement newInstance(SModel sm) {
-    return GivetypeStatement.newInstance(sm, false);
-  }
-
 
   public Expression getTypeExpression() {
     return (Expression)this.getChild(GivetypeStatement.TYPE_EXPRESSION);
@@ -41,6 +32,15 @@ public class GivetypeStatement extends Statement {
 
   public void setTermExpression(Expression node) {
     super.setChild(GivetypeStatement.TERM_EXPRESSION, node);
+  }
+
+
+  public static GivetypeStatement newInstance(SModel sm, boolean init) {
+    return (GivetypeStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.GivetypeStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GivetypeStatement newInstance(SModel sm) {
+    return GivetypeStatement.newInstance(sm, false);
   }
 
 }

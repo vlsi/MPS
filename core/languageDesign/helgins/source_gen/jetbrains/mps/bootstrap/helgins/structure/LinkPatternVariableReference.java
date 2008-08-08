@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.helgins.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration;
 
 public class LinkPatternVariableReference extends Expression {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.LinkPatternVariableReference";
@@ -17,21 +17,21 @@ public class LinkPatternVariableReference extends Expression {
     super(node);
   }
 
-  public static LinkPatternVariableReference newInstance(SModel sm, boolean init) {
-    return (LinkPatternVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.LinkPatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static LinkPatternVariableReference newInstance(SModel sm) {
-    return LinkPatternVariableReference.newInstance(sm, false);
-  }
-
-
   public LinkPatternVariableDeclaration getPatternVarDecl() {
     return (LinkPatternVariableDeclaration)this.getReferent(LinkPatternVariableReference.PATTERN_VAR_DECL);
   }
 
   public void setPatternVarDecl(LinkPatternVariableDeclaration node) {
     super.setReferent(LinkPatternVariableReference.PATTERN_VAR_DECL, node);
+  }
+
+
+  public static LinkPatternVariableReference newInstance(SModel sm, boolean init) {
+    return (LinkPatternVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.LinkPatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static LinkPatternVariableReference newInstance(SModel sm) {
+    return LinkPatternVariableReference.newInstance(sm, false);
   }
 
 }

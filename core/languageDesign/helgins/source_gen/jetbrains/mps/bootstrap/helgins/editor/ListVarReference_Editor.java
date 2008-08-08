@@ -4,26 +4,18 @@ package jetbrains.mps.bootstrap.helgins.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class ListVarReference_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_refCell_listVarDeclaration1203432771309(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_listVarDeclaration");
-  }
-
-  private static void setupLabel_refCell_listVarDeclaration_1203432771309(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRefCell1203432771309(context, node);
@@ -31,7 +23,7 @@ public class ListVarReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1203432771309_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ListVarReference_Editor._Inline6());
+    provider.setAuxiliaryCellProvider(new ListVarReference_Editor._Inline2406_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_listVarDeclaration1203432771309(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -58,20 +50,19 @@ public class ListVarReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline6 extends AbstractCellProvider {
 
-    public _Inline6() {
+  private static void setupBasic_refCell_listVarDeclaration1203432771309(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_listVarDeclaration");
+  }
+
+  private static void setupLabel_refCell_listVarDeclaration_1203432771309(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static class _Inline2406_0 extends AbstractCellProvider {
+
+    public _Inline2406_0() {
       super();
     }
-
-    private static void setupBasic_property_name1203432777530(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      BaseLanguageStyle_StyleSheet.VARIABLE_NAME.apply(editorCell);
-    }
-
-    private static void setupLabel_property_name_1203432777530(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    }
-
 
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
@@ -108,6 +99,15 @@ public class ListVarReference_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
+    }
+
+
+    private static void setupBasic_property_name1203432777530(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      BaseLanguageStyle_StyleSheet.VARIABLE_NAME.apply(editorCell);
+    }
+
+    private static void setupLabel_property_name_1203432777530(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

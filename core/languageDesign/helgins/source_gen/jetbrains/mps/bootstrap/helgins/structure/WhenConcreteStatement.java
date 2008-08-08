@@ -5,11 +5,11 @@ package jetbrains.mps.bootstrap.helgins.structure;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.baseLanguage.structure.Closureoid;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.StatementList;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.StatementList;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class WhenConcreteStatement extends Statement implements Closureoid {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement";
@@ -23,15 +23,6 @@ public class WhenConcreteStatement extends Statement implements Closureoid {
   public WhenConcreteStatement(SNode node) {
     super(node);
   }
-
-  public static WhenConcreteStatement newInstance(SModel sm, boolean init) {
-    return (WhenConcreteStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static WhenConcreteStatement newInstance(SModel sm) {
-    return WhenConcreteStatement.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(WhenConcreteStatement.SHORT_DESCRIPTION);
@@ -79,6 +70,15 @@ public class WhenConcreteStatement extends Statement implements Closureoid {
 
   public void setArgumentRepresentator(WhenConcreteVariableDeclaration node) {
     super.setChild(WhenConcreteStatement.ARGUMENT_REPRESENTATOR, node);
+  }
+
+
+  public static WhenConcreteStatement newInstance(SModel sm, boolean init) {
+    return (WhenConcreteStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static WhenConcreteStatement newInstance(SModel sm) {
+    return WhenConcreteStatement.newInstance(sm, false);
   }
 
 }

@@ -4,11 +4,11 @@ package jetbrains.mps.bootstrap.helgins.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class MeetType extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.MeetType";
@@ -17,15 +17,6 @@ public class MeetType extends BaseConcept {
   public MeetType(SNode node) {
     super(node);
   }
-
-  public static MeetType newInstance(SModel sm, boolean init) {
-    return (MeetType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MeetType", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MeetType newInstance(SModel sm) {
-    return MeetType.newInstance(sm, false);
-  }
-
 
   public int getArgumentsCount() {
     return this.getChildCount(MeetType.ARGUMENT);
@@ -45,6 +36,15 @@ public class MeetType extends BaseConcept {
 
   public void insertArgument(BaseConcept prev, BaseConcept node) {
     this.insertChild(prev, MeetType.ARGUMENT, node);
+  }
+
+
+  public static MeetType newInstance(SModel sm, boolean init) {
+    return (MeetType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MeetType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MeetType newInstance(SModel sm) {
+    return MeetType.newInstance(sm, false);
   }
 
 }

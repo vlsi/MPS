@@ -17,15 +17,6 @@ public class IsSubtypeExpression extends Expression {
     super(node);
   }
 
-  public static IsSubtypeExpression newInstance(SModel sm, boolean init) {
-    return (IsSubtypeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static IsSubtypeExpression newInstance(SModel sm) {
-    return IsSubtypeExpression.newInstance(sm, false);
-  }
-
-
   public Expression getSubtypeExpression() {
     return (Expression)this.getChild(IsSubtypeExpression.SUBTYPE_EXPRESSION);
   }
@@ -40,6 +31,15 @@ public class IsSubtypeExpression extends Expression {
 
   public void setSupertypeExpression(Expression node) {
     super.setChild(IsSubtypeExpression.SUPERTYPE_EXPRESSION, node);
+  }
+
+
+  public static IsSubtypeExpression newInstance(SModel sm, boolean init) {
+    return (IsSubtypeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static IsSubtypeExpression newInstance(SModel sm) {
+    return IsSubtypeExpression.newInstance(sm, false);
   }
 
 }

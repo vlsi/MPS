@@ -17,15 +17,6 @@ public class RuntimeErrorType extends RuntimeTypeVariable {
     super(node);
   }
 
-  public static RuntimeErrorType newInstance(SModel sm, boolean init) {
-    return (RuntimeErrorType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static RuntimeErrorType newInstance(SModel sm) {
-    return RuntimeErrorType.newInstance(sm, false);
-  }
-
-
   public String getErrorText() {
     return this.getProperty(RuntimeErrorType.ERROR_TEXT);
   }
@@ -48,6 +39,15 @@ public class RuntimeErrorType extends RuntimeTypeVariable {
 
   public void setNodeModel(String value) {
     this.setProperty(RuntimeErrorType.NODE_MODEL, value);
+  }
+
+
+  public static RuntimeErrorType newInstance(SModel sm, boolean init) {
+    return (RuntimeErrorType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static RuntimeErrorType newInstance(SModel sm) {
+    return RuntimeErrorType.newInstance(sm, false);
   }
 
 }

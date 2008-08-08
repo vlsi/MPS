@@ -21,15 +21,6 @@ public class RuntimeTypeVariable extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-  public static RuntimeTypeVariable newInstance(SModel sm, boolean init) {
-    return (RuntimeTypeVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static RuntimeTypeVariable newInstance(SModel sm) {
-    return RuntimeTypeVariable.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(RuntimeTypeVariable.NAME);
   }
@@ -68,6 +59,15 @@ public class RuntimeTypeVariable extends BaseConcept implements INamedConcept {
 
   public void setNullable(boolean value) {
     this.setBooleanProperty(RuntimeTypeVariable.NULLABLE, value);
+  }
+
+
+  public static RuntimeTypeVariable newInstance(SModel sm, boolean init) {
+    return (RuntimeTypeVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static RuntimeTypeVariable newInstance(SModel sm) {
+    return RuntimeTypeVariable.newInstance(sm, false);
   }
 
 }

@@ -5,13 +5,13 @@ package jetbrains.mps.bootstrap.helgins.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -23,42 +23,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 public class JoinType_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myListHandler_1179479667160;
-
-  private static void setupBasic_Collection_11794796098241179479609824(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1179479609824");
-  }
-
-  private static void setupBasic_Constant_11794796271701179479627170(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1179479627170");
-    BaseLanguageStyle_StyleSheet.COMPACT_KEY_WORD.apply(editorCell);
-  }
-
-  private static void setupBasic_refNodeList_argument1179479667160(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_argument");
-  }
-
-  private static void setupBasic_Constant_12060153963701206015396370(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206015396370");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_12154350205791215435020579(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215435020579");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
-  }
-
-  private static void setupLabel_Constant_1179479627170_1179479627170(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNodeList_argument_1179479667160(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1206015396370_1206015396370(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1215435020579_1215435020579(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1179479609824(context, node);
@@ -103,7 +67,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1179479667160(EditorContext context, SNode node) {
     if (this.myListHandler_1179479667160 == null) {
-      this.myListHandler_1179479667160 = new JoinType_Editor.argumentListHandler_(node, "argument", context);
+      this.myListHandler_1179479667160 = new JoinType_Editor.argumentListHandler_3192_0(node, "argument", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1179479667160.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_argument1179479667160(editorCell, node, context);
@@ -114,9 +78,45 @@ public class JoinType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class argumentListHandler_ extends RefNodeListHandler {
 
-    public argumentListHandler_(SNode ownerNode, String childRole, EditorContext context) {
+  private static void setupBasic_Collection_11794796098241179479609824(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1179479609824");
+  }
+
+  private static void setupBasic_Constant_11794796271701179479627170(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1179479627170");
+    BaseLanguageStyle_StyleSheet.COMPACT_KEY_WORD.apply(editorCell);
+  }
+
+  private static void setupBasic_refNodeList_argument1179479667160(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_argument");
+  }
+
+  private static void setupBasic_Constant_12060153963701206015396370(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206015396370");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+  }
+
+  private static void setupBasic_Constant_12154350205791215435020579(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215435020579");
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+  }
+
+  private static void setupLabel_Constant_1179479627170_1179479627170(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNodeList_argument_1179479667160(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1206015396370_1206015396370(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1215435020579_1215435020579(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static class argumentListHandler_3192_0 extends RefNodeListHandler {
+
+    public argumentListHandler_3192_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

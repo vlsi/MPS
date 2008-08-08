@@ -21,15 +21,6 @@ public class TypeVarDeclaration extends Statement implements INamedConcept {
     super(node);
   }
 
-  public static TypeVarDeclaration newInstance(SModel sm, boolean init) {
-    return (TypeVarDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.TypeVarDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TypeVarDeclaration newInstance(SModel sm) {
-    return TypeVarDeclaration.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(TypeVarDeclaration.NAME);
   }
@@ -68,6 +59,15 @@ public class TypeVarDeclaration extends Statement implements INamedConcept {
 
   public void setNullable(boolean value) {
     this.setBooleanProperty(TypeVarDeclaration.NULLABLE, value);
+  }
+
+
+  public static TypeVarDeclaration newInstance(SModel sm, boolean init) {
+    return (TypeVarDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.TypeVarDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TypeVarDeclaration newInstance(SModel sm) {
+    return TypeVarDeclaration.newInstance(sm, false);
   }
 
 }

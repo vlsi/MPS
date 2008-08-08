@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.helgins.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class Dependency extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.Dependency";
@@ -18,15 +18,6 @@ public class Dependency extends BaseConcept {
   public Dependency(SNode node) {
     super(node);
   }
-
-  public static Dependency newInstance(SModel sm, boolean init) {
-    return (Dependency)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.Dependency", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Dependency newInstance(SModel sm) {
-    return Dependency.newInstance(sm, false);
-  }
-
 
   public AbstractConceptDeclaration getTargetConcept() {
     return (AbstractConceptDeclaration)this.getReferent(Dependency.TARGET_CONCEPT);
@@ -50,6 +41,15 @@ public class Dependency extends BaseConcept {
 
   public void setFindSourceBlock(FindSourceBlock node) {
     super.setChild(Dependency.FIND_SOURCE_BLOCK, node);
+  }
+
+
+  public static Dependency newInstance(SModel sm, boolean init) {
+    return (Dependency)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.Dependency", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Dependency newInstance(SModel sm) {
+    return Dependency.newInstance(sm, false);
   }
 
 }

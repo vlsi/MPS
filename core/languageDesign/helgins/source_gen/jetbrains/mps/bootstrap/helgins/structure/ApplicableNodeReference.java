@@ -16,21 +16,21 @@ public class ApplicableNodeReference extends Expression {
     super(node);
   }
 
-  public static ApplicableNodeReference newInstance(SModel sm, boolean init) {
-    return (ApplicableNodeReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ApplicableNodeReference newInstance(SModel sm) {
-    return ApplicableNodeReference.newInstance(sm, false);
-  }
-
-
   public ApplicableNodeCondition getApplicableNode() {
     return (ApplicableNodeCondition)this.getReferent(ApplicableNodeReference.APPLICABLE_NODE);
   }
 
   public void setApplicableNode(ApplicableNodeCondition node) {
     super.setReferent(ApplicableNodeReference.APPLICABLE_NODE, node);
+  }
+
+
+  public static ApplicableNodeReference newInstance(SModel sm, boolean init) {
+    return (ApplicableNodeReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ApplicableNodeReference newInstance(SModel sm) {
+    return ApplicableNodeReference.newInstance(sm, false);
   }
 
 }

@@ -4,11 +4,11 @@ package jetbrains.mps.bootstrap.helgins.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class JoinType extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.JoinType";
@@ -17,15 +17,6 @@ public class JoinType extends BaseConcept {
   public JoinType(SNode node) {
     super(node);
   }
-
-  public static JoinType newInstance(SModel sm, boolean init) {
-    return (JoinType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.JoinType", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static JoinType newInstance(SModel sm) {
-    return JoinType.newInstance(sm, false);
-  }
-
 
   public int getArgumentsCount() {
     return this.getChildCount(JoinType.ARGUMENT);
@@ -45,6 +36,15 @@ public class JoinType extends BaseConcept {
 
   public void insertArgument(BaseConcept prev, BaseConcept node) {
     this.insertChild(prev, JoinType.ARGUMENT, node);
+  }
+
+
+  public static JoinType newInstance(SModel sm, boolean init) {
+    return (JoinType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.JoinType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static JoinType newInstance(SModel sm) {
+    return JoinType.newInstance(sm, false);
   }
 
 }

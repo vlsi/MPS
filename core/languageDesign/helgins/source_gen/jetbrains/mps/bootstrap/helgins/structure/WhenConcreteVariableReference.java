@@ -16,21 +16,21 @@ public class WhenConcreteVariableReference extends Expression {
     super(node);
   }
 
-  public static WhenConcreteVariableReference newInstance(SModel sm, boolean init) {
-    return (WhenConcreteVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.WhenConcreteVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static WhenConcreteVariableReference newInstance(SModel sm) {
-    return WhenConcreteVariableReference.newInstance(sm, false);
-  }
-
-
   public WhenConcreteVariableDeclaration getWhenConcreteVar() {
     return (WhenConcreteVariableDeclaration)this.getReferent(WhenConcreteVariableReference.WHEN_CONCRETE_VAR);
   }
 
   public void setWhenConcreteVar(WhenConcreteVariableDeclaration node) {
     super.setReferent(WhenConcreteVariableReference.WHEN_CONCRETE_VAR, node);
+  }
+
+
+  public static WhenConcreteVariableReference newInstance(SModel sm, boolean init) {
+    return (WhenConcreteVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.WhenConcreteVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static WhenConcreteVariableReference newInstance(SModel sm) {
+    return WhenConcreteVariableReference.newInstance(sm, false);
   }
 
 }

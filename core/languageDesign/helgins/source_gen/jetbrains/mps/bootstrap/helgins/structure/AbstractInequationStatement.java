@@ -15,15 +15,6 @@ public class AbstractInequationStatement extends AbstractEquationStatement {
     super(node);
   }
 
-  public static AbstractInequationStatement newInstance(SModel sm, boolean init) {
-    return (AbstractInequationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractInequationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AbstractInequationStatement newInstance(SModel sm) {
-    return AbstractInequationStatement.newInstance(sm, false);
-  }
-
-
   public InequationPriority getInequationPriority() {
     String value = super.getProperty(AbstractInequationStatement.INEQUATION_PRIORITY);
     return InequationPriority.parseValue(value);
@@ -31,6 +22,15 @@ public class AbstractInequationStatement extends AbstractEquationStatement {
 
   public void setInequationPriority(InequationPriority value) {
     super.setProperty(AbstractInequationStatement.INEQUATION_PRIORITY, value.getValueAsString());
+  }
+
+
+  public static AbstractInequationStatement newInstance(SModel sm, boolean init) {
+    return (AbstractInequationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractInequationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AbstractInequationStatement newInstance(SModel sm) {
+    return AbstractInequationStatement.newInstance(sm, false);
   }
 
 }

@@ -20,15 +20,6 @@ public class ListVarDeclaration extends Statement implements INamedConcept {
     super(node);
   }
 
-  public static ListVarDeclaration newInstance(SModel sm, boolean init) {
-    return (ListVarDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ListVarDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ListVarDeclaration newInstance(SModel sm) {
-    return ListVarDeclaration.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(ListVarDeclaration.NAME);
   }
@@ -59,6 +50,15 @@ public class ListVarDeclaration extends Statement implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ListVarDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static ListVarDeclaration newInstance(SModel sm, boolean init) {
+    return (ListVarDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ListVarDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ListVarDeclaration newInstance(SModel sm) {
+    return ListVarDeclaration.newInstance(sm, false);
   }
 
 }

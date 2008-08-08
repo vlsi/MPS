@@ -17,15 +17,6 @@ public class CoerceExpression extends Expression {
     super(node);
   }
 
-  public static CoerceExpression newInstance(SModel sm, boolean init) {
-    return (CoerceExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.CoerceExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static CoerceExpression newInstance(SModel sm) {
-    return CoerceExpression.newInstance(sm, false);
-  }
-
-
   public ApplicableNodeCondition getPattern() {
     return (ApplicableNodeCondition)this.getChild(CoerceExpression.PATTERN);
   }
@@ -40,6 +31,15 @@ public class CoerceExpression extends Expression {
 
   public void setNodeToCoerce(Expression node) {
     super.setChild(CoerceExpression.NODE_TO_COERCE, node);
+  }
+
+
+  public static CoerceExpression newInstance(SModel sm, boolean init) {
+    return (CoerceExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.CoerceExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static CoerceExpression newInstance(SModel sm) {
+    return CoerceExpression.newInstance(sm, false);
   }
 
 }

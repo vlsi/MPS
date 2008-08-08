@@ -15,21 +15,21 @@ public class ComparisonRule extends AbstractSubtypingRule {
     super(node);
   }
 
-  public static ComparisonRule newInstance(SModel sm, boolean init) {
-    return (ComparisonRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ComparisonRule", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ComparisonRule newInstance(SModel sm) {
-    return ComparisonRule.newInstance(sm, false);
-  }
-
-
   public ApplicableNodeCondition getAnotherNode() {
     return (ApplicableNodeCondition)this.getChild(ComparisonRule.ANOTHER_NODE);
   }
 
   public void setAnotherNode(ApplicableNodeCondition node) {
     super.setChild(ComparisonRule.ANOTHER_NODE, node);
+  }
+
+
+  public static ComparisonRule newInstance(SModel sm, boolean init) {
+    return (ComparisonRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ComparisonRule", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ComparisonRule newInstance(SModel sm) {
+    return ComparisonRule.newInstance(sm, false);
   }
 
 }

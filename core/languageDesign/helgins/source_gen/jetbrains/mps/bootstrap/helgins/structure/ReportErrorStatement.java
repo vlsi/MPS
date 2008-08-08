@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.helgins.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class ReportErrorStatement extends Statement {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ReportErrorStatement";
@@ -18,15 +18,6 @@ public class ReportErrorStatement extends Statement {
   public ReportErrorStatement(SNode node) {
     super(node);
   }
-
-  public static ReportErrorStatement newInstance(SModel sm, boolean init) {
-    return (ReportErrorStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ReportErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ReportErrorStatement newInstance(SModel sm) {
-    return ReportErrorStatement.newInstance(sm, false);
-  }
-
 
   public Expression getErrorString() {
     return (Expression)this.getChild(ReportErrorStatement.ERROR_STRING);
@@ -50,6 +41,15 @@ public class ReportErrorStatement extends Statement {
 
   public void setHelginsIntention(HelginsIntention node) {
     super.setChild(ReportErrorStatement.HELGINS_INTENTION, node);
+  }
+
+
+  public static ReportErrorStatement newInstance(SModel sm, boolean init) {
+    return (ReportErrorStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ReportErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ReportErrorStatement newInstance(SModel sm) {
+    return ReportErrorStatement.newInstance(sm, false);
   }
 
 }

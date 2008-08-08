@@ -15,15 +15,6 @@ public class CreateEquationStatement extends AbstractEquationStatement {
     super(node);
   }
 
-  public static CreateEquationStatement newInstance(SModel sm, boolean init) {
-    return (CreateEquationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static CreateEquationStatement newInstance(SModel sm) {
-    return CreateEquationStatement.newInstance(sm, false);
-  }
-
-
   public EquationDirection_Enum getDirection() {
     String value = super.getProperty(CreateEquationStatement.DIRECTION);
     return EquationDirection_Enum.parseValue(value);
@@ -31,6 +22,15 @@ public class CreateEquationStatement extends AbstractEquationStatement {
 
   public void setDirection(EquationDirection_Enum value) {
     super.setProperty(CreateEquationStatement.DIRECTION, value.getValueAsString());
+  }
+
+
+  public static CreateEquationStatement newInstance(SModel sm, boolean init) {
+    return (CreateEquationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static CreateEquationStatement newInstance(SModel sm) {
+    return CreateEquationStatement.newInstance(sm, false);
   }
 
 }

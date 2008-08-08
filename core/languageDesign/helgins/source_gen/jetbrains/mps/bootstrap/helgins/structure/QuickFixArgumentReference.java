@@ -16,21 +16,21 @@ public class QuickFixArgumentReference extends Expression {
     super(node);
   }
 
-  public static QuickFixArgumentReference newInstance(SModel sm, boolean init) {
-    return (QuickFixArgumentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.QuickFixArgumentReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static QuickFixArgumentReference newInstance(SModel sm) {
-    return QuickFixArgumentReference.newInstance(sm, false);
-  }
-
-
   public QuickFixArgument getQuickFixArgument() {
     return (QuickFixArgument)this.getReferent(QuickFixArgumentReference.QUICK_FIX_ARGUMENT);
   }
 
   public void setQuickFixArgument(QuickFixArgument node) {
     super.setReferent(QuickFixArgumentReference.QUICK_FIX_ARGUMENT, node);
+  }
+
+
+  public static QuickFixArgumentReference newInstance(SModel sm, boolean init) {
+    return (QuickFixArgumentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.QuickFixArgumentReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static QuickFixArgumentReference newInstance(SModel sm) {
+    return QuickFixArgumentReference.newInstance(sm, false);
   }
 
 }

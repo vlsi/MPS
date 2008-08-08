@@ -16,21 +16,21 @@ public class ChildTypeRestrictionReference extends Expression {
     super(node);
   }
 
-  public static ChildTypeRestrictionReference newInstance(SModel sm, boolean init) {
-    return (ChildTypeRestrictionReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ChildTypeRestrictionReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ChildTypeRestrictionReference newInstance(SModel sm) {
-    return ChildTypeRestrictionReference.newInstance(sm, false);
-  }
-
-
   public ChildTypeRestriction getTypeRestriction() {
     return (ChildTypeRestriction)this.getReferent(ChildTypeRestrictionReference.TYPE_RESTRICTION);
   }
 
   public void setTypeRestriction(ChildTypeRestriction node) {
     super.setReferent(ChildTypeRestrictionReference.TYPE_RESTRICTION, node);
+  }
+
+
+  public static ChildTypeRestrictionReference newInstance(SModel sm, boolean init) {
+    return (ChildTypeRestrictionReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ChildTypeRestrictionReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ChildTypeRestrictionReference newInstance(SModel sm) {
+    return ChildTypeRestrictionReference.newInstance(sm, false);
   }
 
 }

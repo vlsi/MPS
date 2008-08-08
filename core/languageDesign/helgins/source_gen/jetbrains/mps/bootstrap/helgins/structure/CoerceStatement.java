@@ -4,11 +4,11 @@ package jetbrains.mps.bootstrap.helgins.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
+import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
-import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class CoerceStatement extends Statement {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement";
@@ -19,15 +19,6 @@ public class CoerceStatement extends Statement {
   public CoerceStatement(SNode node) {
     super(node);
   }
-
-  public static CoerceStatement newInstance(SModel sm, boolean init) {
-    return (CoerceStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static CoerceStatement newInstance(SModel sm) {
-    return CoerceStatement.newInstance(sm, false);
-  }
-
 
   public ApplicableNodeCondition getPattern() {
     return (ApplicableNodeCondition)this.getChild(CoerceStatement.PATTERN);
@@ -51,6 +42,15 @@ public class CoerceStatement extends Statement {
 
   public void setBody(StatementList node) {
     super.setChild(CoerceStatement.BODY, node);
+  }
+
+
+  public static CoerceStatement newInstance(SModel sm, boolean init) {
+    return (CoerceStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static CoerceStatement newInstance(SModel sm) {
+    return CoerceStatement.newInstance(sm, false);
   }
 
 }

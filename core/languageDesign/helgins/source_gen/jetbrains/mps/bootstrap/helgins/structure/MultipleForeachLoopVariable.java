@@ -4,11 +4,11 @@ package jetbrains.mps.bootstrap.helgins.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class MultipleForeachLoopVariable extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.MultipleForeachLoopVariable";
@@ -18,15 +18,6 @@ public class MultipleForeachLoopVariable extends BaseConcept {
   public MultipleForeachLoopVariable(SNode node) {
     super(node);
   }
-
-  public static MultipleForeachLoopVariable newInstance(SModel sm, boolean init) {
-    return (MultipleForeachLoopVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MultipleForeachLoopVariable", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MultipleForeachLoopVariable newInstance(SModel sm) {
-    return MultipleForeachLoopVariable.newInstance(sm, false);
-  }
-
 
   public LocalVariableDeclaration getVariable() {
     return (LocalVariableDeclaration)this.getChild(MultipleForeachLoopVariable.VARIABLE);
@@ -42,6 +33,15 @@ public class MultipleForeachLoopVariable extends BaseConcept {
 
   public void setIterable(Expression node) {
     super.setChild(MultipleForeachLoopVariable.ITERABLE, node);
+  }
+
+
+  public static MultipleForeachLoopVariable newInstance(SModel sm, boolean init) {
+    return (MultipleForeachLoopVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MultipleForeachLoopVariable", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MultipleForeachLoopVariable newInstance(SModel sm) {
+    return MultipleForeachLoopVariable.newInstance(sm, false);
   }
 
 }

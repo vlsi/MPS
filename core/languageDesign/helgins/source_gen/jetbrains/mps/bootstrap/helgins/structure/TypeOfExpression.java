@@ -17,15 +17,6 @@ public class TypeOfExpression extends Expression {
     super(node);
   }
 
-  public static TypeOfExpression newInstance(SModel sm, boolean init) {
-    return (TypeOfExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TypeOfExpression newInstance(SModel sm) {
-    return TypeOfExpression.newInstance(sm, false);
-  }
-
-
   public boolean getSkipDependencyOnCurrent() {
     return this.getBooleanProperty(TypeOfExpression.SKIP_DEPENDENCY_ON_CURRENT);
   }
@@ -40,6 +31,15 @@ public class TypeOfExpression extends Expression {
 
   public void setTerm(Expression node) {
     super.setChild(TypeOfExpression.TERM, node);
+  }
+
+
+  public static TypeOfExpression newInstance(SModel sm, boolean init) {
+    return (TypeOfExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TypeOfExpression newInstance(SModel sm) {
+    return TypeOfExpression.newInstance(sm, false);
   }
 
 }

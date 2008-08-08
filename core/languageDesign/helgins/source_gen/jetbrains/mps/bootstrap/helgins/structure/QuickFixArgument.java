@@ -5,10 +5,10 @@ package jetbrains.mps.bootstrap.helgins.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Type;
 
 public class QuickFixArgument extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.QuickFixArgument";
@@ -21,15 +21,6 @@ public class QuickFixArgument extends BaseConcept implements INamedConcept {
   public QuickFixArgument(SNode node) {
     super(node);
   }
-
-  public static QuickFixArgument newInstance(SModel sm, boolean init) {
-    return (QuickFixArgument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.QuickFixArgument", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static QuickFixArgument newInstance(SModel sm) {
-    return QuickFixArgument.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(QuickFixArgument.NAME);
@@ -69,6 +60,15 @@ public class QuickFixArgument extends BaseConcept implements INamedConcept {
 
   public void setArgumentType(Type node) {
     super.setChild(QuickFixArgument.ARGUMENT_TYPE, node);
+  }
+
+
+  public static QuickFixArgument newInstance(SModel sm, boolean init) {
+    return (QuickFixArgument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.QuickFixArgument", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static QuickFixArgument newInstance(SModel sm) {
+    return QuickFixArgument.newInstance(sm, false);
   }
 
 }

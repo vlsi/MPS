@@ -4,11 +4,11 @@ package jetbrains.mps.bootstrap.helgins.structure;
 
 import jetbrains.mps.baseLanguage.structure.AbstractLoopStatement;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class MultipleForeachLoop extends AbstractLoopStatement {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.MultipleForeachLoop";
@@ -17,15 +17,6 @@ public class MultipleForeachLoop extends AbstractLoopStatement {
   public MultipleForeachLoop(SNode node) {
     super(node);
   }
-
-  public static MultipleForeachLoop newInstance(SModel sm, boolean init) {
-    return (MultipleForeachLoop)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MultipleForeachLoop", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MultipleForeachLoop newInstance(SModel sm) {
-    return MultipleForeachLoop.newInstance(sm, false);
-  }
-
 
   public int getLoopVariablesCount() {
     return this.getChildCount(MultipleForeachLoop.LOOP_VARIABLE);
@@ -45,6 +36,15 @@ public class MultipleForeachLoop extends AbstractLoopStatement {
 
   public void insertLoopVariable(MultipleForeachLoopVariable prev, MultipleForeachLoopVariable node) {
     this.insertChild(prev, MultipleForeachLoop.LOOP_VARIABLE, node);
+  }
+
+
+  public static MultipleForeachLoop newInstance(SModel sm, boolean init) {
+    return (MultipleForeachLoop)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MultipleForeachLoop", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MultipleForeachLoop newInstance(SModel sm) {
+    return MultipleForeachLoop.newInstance(sm, false);
   }
 
 }

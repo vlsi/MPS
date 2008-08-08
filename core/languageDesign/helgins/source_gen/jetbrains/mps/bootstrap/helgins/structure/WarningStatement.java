@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.helgins.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class WarningStatement extends Statement {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.WarningStatement";
@@ -18,15 +18,6 @@ public class WarningStatement extends Statement {
   public WarningStatement(SNode node) {
     super(node);
   }
-
-  public static WarningStatement newInstance(SModel sm, boolean init) {
-    return (WarningStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.WarningStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static WarningStatement newInstance(SModel sm) {
-    return WarningStatement.newInstance(sm, false);
-  }
-
 
   public Expression getWarningText() {
     return (Expression)this.getChild(WarningStatement.WARNING_TEXT);
@@ -50,6 +41,15 @@ public class WarningStatement extends Statement {
 
   public void setHelginsIntention(HelginsIntention node) {
     super.setChild(WarningStatement.HELGINS_INTENTION, node);
+  }
+
+
+  public static WarningStatement newInstance(SModel sm, boolean init) {
+    return (WarningStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.WarningStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static WarningStatement newInstance(SModel sm) {
+    return WarningStatement.newInstance(sm, false);
   }
 
 }

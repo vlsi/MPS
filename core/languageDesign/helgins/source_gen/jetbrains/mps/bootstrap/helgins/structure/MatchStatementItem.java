@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.helgins.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class MatchStatementItem extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem";
@@ -17,15 +17,6 @@ public class MatchStatementItem extends BaseConcept {
   public MatchStatementItem(SNode node) {
     super(node);
   }
-
-  public static MatchStatementItem newInstance(SModel sm, boolean init) {
-    return (MatchStatementItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MatchStatementItem newInstance(SModel sm) {
-    return MatchStatementItem.newInstance(sm, false);
-  }
-
 
   public ApplicableNodeCondition getCondition() {
     return (ApplicableNodeCondition)this.getChild(MatchStatementItem.CONDITION);
@@ -41,6 +32,15 @@ public class MatchStatementItem extends BaseConcept {
 
   public void setIfTrue(StatementList node) {
     super.setChild(MatchStatementItem.IF_TRUE, node);
+  }
+
+
+  public static MatchStatementItem newInstance(SModel sm, boolean init) {
+    return (MatchStatementItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MatchStatementItem newInstance(SModel sm) {
+    return MatchStatementItem.newInstance(sm, false);
   }
 
 }
