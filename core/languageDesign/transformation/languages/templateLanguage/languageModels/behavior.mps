@@ -1610,5 +1610,24 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1217016631380" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1218217780885">
+    <property name="package" value="functionParameter" />
+    <link role="concept" targetNodeId="1.1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1218217780886">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218217780887" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1218217798185">
+      <property name="name" value="getFromParameterObject" />
+      <link role="overriddenMethod" targetNodeId="2v.1213877522908" resolveInfo="getFromParameterObject" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218217798187">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218217805595">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1218217805596">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1218217802188" />
+    </node>
+  </node>
 </model>
 

@@ -483,7 +483,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1217017180351">
-      <property name="value" value="not shown in parameters any more. genContext" />
+      <property name="value" value="not shown in parameters any more: use 'genContext'" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
     </node>
   </node>
@@ -503,6 +503,10 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1166749287098">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1218217766134">
+      <property name="value" value="not shown in parameters any more: use 'genContext'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1167087469898">
@@ -550,10 +554,6 @@
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="2v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167087518667">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
-      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167087518669">
       <link role="target" targetNodeId="8.1161622753914" />
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -581,10 +581,6 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216768088657">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="2v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167168920558">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
-      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167168920560">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -742,10 +738,6 @@
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="2v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167756080644">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
-      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167756080646">
       <link role="target" targetNodeId="8.1161622753914" />
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -791,10 +783,6 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216863154867">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="2v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167770111137">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
-      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1199973818083">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -860,10 +848,6 @@
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="2v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167945743731">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
-      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167945743733">
       <link role="target" targetNodeId="8.1161622753914" />
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -910,10 +894,6 @@
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="2v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167951910408">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
-      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1167951910410">
       <link role="target" targetNodeId="8.1161622753914" />
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -941,10 +921,6 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216863158837">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="2v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1168024337018">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
-      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1168024337020">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -1083,10 +1059,6 @@
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="2v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1170725621277">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
-      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1199973848017">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="8.1161622753914" resolveInfo="ConceptFunctionParameter_operationContext" />
@@ -1134,10 +1106,6 @@
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="2v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1184373935798">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
-      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1199973856613">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="8.1161622753914" resolveInfo="ConceptFunctionParameter_operationContext" />
@@ -1181,10 +1149,6 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216863199183">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="2v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1184616041895">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
-      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1199973862429">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -1334,10 +1298,6 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1216863144007">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="2v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195508442712">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1199973867463">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
