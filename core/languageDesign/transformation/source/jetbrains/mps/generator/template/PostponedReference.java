@@ -1,8 +1,6 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TemplateLanguageUtil;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -120,7 +118,7 @@ public class PostponedReference extends SReference {
 
     SModel referentNodeModel = outputTargetNode.getModel();
     if (referentNodeModel != outputNode.getModel()) {
-      if (TemplateLanguageUtil.isTemplatesModel(referentNodeModel)) {
+      if (SModelStereotype.isGeneratorModel(referentNodeModel)) {
         // references on template nodes are not acceptable
         myGenerator.showErrorMessage(outputNode, "unacceptable referent [template node]: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
         return false;

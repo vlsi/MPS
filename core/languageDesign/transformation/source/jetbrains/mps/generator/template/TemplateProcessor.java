@@ -1,13 +1,12 @@
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationFailueException;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import jetbrains.mps.transformation.TLBase.structure.*;
-import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.generator.GenerationFailueException;
-import jetbrains.mps.generator.GenerationCanceledException;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -505,7 +504,7 @@ public class TemplateProcessor {
           // check child
           if (!GeneratorUtil.checkChild(outputNode, childRole, outputChildNode)) {
             LOG.warning(" -- was input: " + inputNode.getDebugText(), inputNode);
-            if (TemplateLanguageUtil.isTemplatesModel(templateNode.getModel())) {
+            if (SModelStereotype.isGeneratorModel(templateNode.getModel())) {
               LOG.warning(" -- was template: " + templateNode.getDebugText(), templateNode);
             }
           }
