@@ -56,7 +56,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1194727667091(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true));
     SNode targType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "writePath", true)), "targetType", true);
-    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_().createNode(targType)));
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_0().createNode(targType)));
   }
 
   public static boolean baseMappingRule_Condition_1194727970307(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -369,7 +369,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1199806555903(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getGenerator().getGeneratorSessionContext().getTransientObject("traversal_axis");
+    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
     return (TraversalAxisUtil.isSelfFirst(axis) ?
       "closure" :
       "parents"
@@ -377,7 +377,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1200060391054(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getGenerator().getGeneratorSessionContext().getTransientObject("traversal_axis");
+    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
     return (TraversalAxisUtil.isSelfFirst(axis) ?
       "closure" :
       "parents"
@@ -465,22 +465,22 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1199803923829(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getGenerator().getGeneratorSessionContext().getTransientObject("traversal_axis");
+    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
     return TraversalAxisUtil.isIncludingSelf(axis);
   }
 
   public static boolean ifMacro_Condition_1199803953270(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getGenerator().getGeneratorSessionContext().getTransientObject("traversal_axis");
+    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
     return TraversalAxisUtil.isSelfFirst(axis);
   }
 
   public static boolean ifMacro_Condition_1199806552619(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getGenerator().getGeneratorSessionContext().getTransientObject("traversal_axis");
+    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
     return !(TraversalAxisUtil.isSelfFirst(axis));
   }
 
   public static boolean ifMacro_Condition_1199806656619(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getGenerator().getGeneratorSessionContext().getTransientObject("traversal_axis");
+    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
     return TraversalAxisUtil.isSelfFirst(axis);
   }
 
@@ -505,7 +505,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1199971572683(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getGenerator().getGeneratorSessionContext().getTransientObject("traversal_axis");
+    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
     return !(TraversalAxisUtil.isSelfFirst(axis));
   }
 
@@ -522,27 +522,27 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1200060391003(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getGenerator().getGeneratorSessionContext().getTransientObject("traversal_axis");
+    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
     return TraversalAxisUtil.isIncludingSelf(axis);
   }
 
   public static boolean ifMacro_Condition_1200060391022(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getGenerator().getGeneratorSessionContext().getTransientObject("traversal_axis");
+    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
     return TraversalAxisUtil.isSelfFirst(axis);
   }
 
   public static boolean ifMacro_Condition_1200060391038(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getGenerator().getGeneratorSessionContext().getTransientObject("traversal_axis");
+    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
     return !(TraversalAxisUtil.isSelfFirst(axis));
   }
 
   public static boolean ifMacro_Condition_1200060391077(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getGenerator().getGeneratorSessionContext().getTransientObject("traversal_axis");
+    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
     return TraversalAxisUtil.isSelfFirst(axis);
   }
 
   public static boolean ifMacro_Condition_1200060391094(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getGenerator().getGeneratorSessionContext().getTransientObject("traversal_axis");
+    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
     return !(TraversalAxisUtil.isSelfFirst(axis));
   }
 
@@ -668,7 +668,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197288625644(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_byIndex" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -682,10 +682,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197288625705(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_ = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_ = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_);
-      if (coercedNode_ != null) {
-        return SLinkOperations.getTarget(coercedNode_, "elementType", true);
+      IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_0);
+      if (coercedNode_0 != null) {
+        return SLinkOperations.getTarget(coercedNode_0, "elementType", true);
       }
     }
     return null;
@@ -727,7 +727,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197288625968(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_byIndex" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -740,7 +740,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197288626041(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_byIndex" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -799,7 +799,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197288626364(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_byIndex" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -812,7 +812,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197288626429(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_byIndex" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -825,7 +825,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197288626494(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_byIndex" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -838,7 +838,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197288626566(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_byIndex" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -897,7 +897,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197299882472(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_replaceDemux" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_replaceDemux" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -918,7 +918,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197299882664(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_replaceDemux" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_replaceDemux" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -939,7 +939,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197299882848(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_replaceDemux" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_replaceDemux" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -956,7 +956,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197299914350(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_insertBefore" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_insertBefore" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -969,7 +969,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197299914425(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_insertBefore" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_insertBefore" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -1001,7 +1001,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197299914556(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_insertBefore" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_insertBefore" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -1014,7 +1014,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197299931069(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_removeSingle" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_removeSingle" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -1027,7 +1027,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197299931186(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_removeSingle" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_removeSingle" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -1048,7 +1048,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1197304288533(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_removeSingle" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
+    _context.putTransientObject("aggregate_removeSingle" + ((SNode)_context.getNode()).getId(), Boolean.TRUE);
     return _context.getNode();
   }
 
@@ -1102,12 +1102,12 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1200485834660(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode op = (SNode)_context.getGenerator().getGeneratorSessionContext().getTransientObject("siblings_operation");
+    SNode op = (SNode)_context.getTransientObject("siblings_operation");
     return SLinkOperations.getTarget(SLinkOperations.getTarget(ITreePathExpression_Behavior.call_getTreePath_1213877496973(SNodeOperations.getAncestor(op, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false)), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1200485902317(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode op = (SNode)_context.getGenerator().getGeneratorSessionContext().getTransientObject("siblings_operation");
+    SNode op = (SNode)_context.getTransientObject("siblings_operation");
     return SLinkOperations.getTarget(SLinkOperations.getTarget(ITreePathExpression_Behavior.call_getTreePath_1213877496973(SNodeOperations.getAncestor(op, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false)), "treePathType", true), "nodeType", true);
   }
 
@@ -1189,7 +1189,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1200060391110(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode origOp = (SNode)_context.getGenerator().getGeneratorSessionContext().getTransientObject("siblings_operation");
+    SNode origOp = (SNode)_context.getTransientObject("siblings_operation");
     final SNode currOpp = SLinkOperations.getTarget(_context.getNode(), "usedFeature", false);
     return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(origOp)).translate(new ITranslator <SNode, SNode>() {
 
@@ -1250,8 +1250,8 @@ __switch__:
 
   public static Iterable sourceNodesQuery_1200060391177(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("traversal_axis", axis);
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("siblings_operation", _context.getNode());
+    _context.putTransientObject("traversal_axis", axis);
+    _context.putTransientObject("siblings_operation", _context.getNode());
     final List<SNode> oppFeats = ListSequence.<SNode>fromArray();
     return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(_context.getNode())).translate(new ITranslator <SNode, SNode>() {
 
@@ -1312,7 +1312,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1200223036886(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode origOp = (SNode)_context.getGenerator().getGeneratorSessionContext().getTransientObject("siblings_operation");
+    SNode origOp = (SNode)_context.getTransientObject("siblings_operation");
     final SNode currOpp = SLinkOperations.getTarget(_context.getNode(), "usedFeature", false);
     return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(origOp)).translate(new ITranslator <SNode, SNode>() {
 
@@ -1373,8 +1373,8 @@ __switch__:
 
   public static Iterable sourceNodesQuery_1200223045189(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("traversal_axis", axis);
-    _context.getGenerator().getGeneratorSessionContext().putTransientObject("siblings_operation", _context.getNode());
+    _context.putTransientObject("traversal_axis", axis);
+    _context.putTransientObject("siblings_operation", _context.getNode());
     final List<SNode> oppFeats = ListSequence.<SNode>fromArray();
     return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(_context.getNode())).translate(new ITranslator <SNode, SNode>() {
 
