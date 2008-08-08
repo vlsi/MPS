@@ -515,7 +515,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1211467971390">
-              <link role="baseMethodDeclaration" targetNodeId="11.~MPSEditorOpener.openNode(jetbrains.mps.smodel.SNode):jetbrains.mps.ide.IEditor" resolveInfo="openNode" />
+              <link role="baseMethodDeclaration" targetNodeId="11.~MPSEditorOpener.openNode(jetbrains.mps.smodel.SNode):void" resolveInfo="openNode" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1211467973032">
                 <link role="variableDeclaration" targetNodeId="1195491745932" resolveInfo="nonTypesystemRule" />
               </node>
