@@ -739,7 +739,7 @@ public class QueriesGenerated {
       return SLinkOperations.getTarget(new QuotationClass_2().createNode(_context.getGenerator().getTargetModel()), "classifier", false);
     }
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule")) {
-      return SLinkOperations.getTarget(new QuotationClass_3().createNode(_context.getGenerator().getTargetModel()), "classifier", false);
+      return SLinkOperations.getTarget(new QuotationClass_3().createNode(_context.getOutputModel()), "classifier", false);
     }
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule")) {
       return SLinkOperations.getTarget(new QuotationClass_4().createNode(_context.getGenerator().getTargetModel()), "classifier", false);
