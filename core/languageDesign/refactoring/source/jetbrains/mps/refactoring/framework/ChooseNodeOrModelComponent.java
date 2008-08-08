@@ -97,7 +97,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   private Set<SModelDescriptor> getModelsFrom(IOperationContext context, Condition condition) {
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(context.getMPSProject().getScope().getModelDescriptors());
     for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
-      if (!model.getStereotype().equals(SModelStereotype.NONE) && !model.getStereotype().equals(SModelStereotype.TEMPLATES)) {
+      if (!SModelStereotype.isUserModel(model)) {
         models.remove(model);
       }
       if (myReturnLoadedModels) {

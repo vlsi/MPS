@@ -123,8 +123,7 @@ public class IconManager {
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
     if (aspect != null) {
       return aspect.getIcon();
-    } else if (modelDescriptor.getStereotype() != null &&
-      modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
+    } else if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
       return Icons.TEMPLATES_MODEL_ICON;
     } else if (Language.isAccessoryModel(modelDescriptor)) {
       return Icons.ACCESSORY_MODEL_ICON;

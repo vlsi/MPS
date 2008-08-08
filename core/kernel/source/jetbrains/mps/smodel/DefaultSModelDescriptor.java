@@ -145,8 +145,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   private void updateModelWithRefactorings() {
     assert mySModel != null;
-    String stereotype = mySModel.getStereotype();
-    if (!SModelStereotype.NONE.equals(stereotype) && !SModelStereotype.TEMPLATES.equals(stereotype)) {
+    if (!SModelStereotype.isUserModel(mySModel)) {
       return;
     }
     boolean wasLoading = mySModel.isLoading();

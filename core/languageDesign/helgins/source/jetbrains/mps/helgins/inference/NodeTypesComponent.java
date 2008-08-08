@@ -236,8 +236,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
         if (sm != null) {
           addOurListener(sm);
         } else {
-          String stereotype = sModel.getStereotype();
-          if (stereotype.equals(SModelStereotype.NONE) || stereotype.equals(SModelStereotype.TEMPLATES)) {
+          if (SModelStereotype.isUserModel(sModel)) {
             LOG.error("model descriptor is null: " + sModel);
           }
         }

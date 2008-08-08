@@ -45,8 +45,7 @@ public class MappingRuleTemplateNodeSearchScope extends AbstractSearchScope {
       ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(myModel, true, myScope);
       Condition<SNode> condition = new Condition<SNode>() {
         public boolean met(SNode object) {
-          // templates model ?
-          if (!SModelStereotype.TEMPLATES.equals(object.getModel().getStereotype())) {
+          if (!SModelStereotype.isGeneratorModel(object.getModel())) {
             return false;
           }
 

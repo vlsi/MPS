@@ -30,7 +30,7 @@ public class RootTemplateAnnotator implements ApplicationComponent {
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(new SModelAdapter() {
       public void rootAdded(SModelRootEvent event) {
         SNode node = event.getRoot();
-        if (node.getModel().getStereotype().equals(SModelStereotype.TEMPLATES)) {
+        if (SModelStereotype.isGeneratorModel(node.getModel())) {
           if (node.getNodeLanguage() != BootstrapLanguagesManager.getInstance().getTLBase()) {
             if (node.getAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION) == null) {
               SNode annotation = RootTemplateAnnotation.newInstance(node.getModel(), true).getNode();

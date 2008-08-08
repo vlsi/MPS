@@ -74,7 +74,7 @@ public class MPSEditorOpener implements ProjectComponent {
         if (baseNode != null &&
           SModelUtil_new.getDeclaringLanguage(baseNode, context.getScope()) != null &&
           (Language.getModelAspect(node.getModel().getModelDescriptor()) != null
-            || node.getModel().getStereotype().equals(SModelStereotype.TEMPLATES))) {
+            || SModelStereotype.isGeneratorModel(node.getModel()))) {
           return baseNode.getNode();
         }
         return null;

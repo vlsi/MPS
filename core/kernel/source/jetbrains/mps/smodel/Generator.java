@@ -65,7 +65,7 @@ public class Generator extends AbstractModule {
   public List<SModelDescriptor> getOwnTemplateModels() {
     List<SModelDescriptor> templateModels = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : getOwnModelDescriptors()) {
-      if (SModelStereotype.TEMPLATES.equals(modelDescriptor.getStereotype())) {
+      if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
         templateModels.add(modelDescriptor);
       }
     }
@@ -235,7 +235,7 @@ public class Generator extends AbstractModule {
 
   public Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
     Set<Language> result = new LinkedHashSet<Language>(super.getImplicitlyImportedLanguages(sm));
-    if (SModelStereotype.TEMPLATES.equals(sm.getStereotype())) {
+    if (SModelStereotype.isGeneratorModel(sm)) {
       result.add(getSourceLanguage());
       result.addAll(getSourceLanguage().getExtendedLanguages());
     }

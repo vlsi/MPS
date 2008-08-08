@@ -64,10 +64,8 @@ public class GoToModelAction extends BaseAction {
         List<SModelDescriptor> modelDescriptors =
           CollectionUtil.filter(scope.getModelDescriptors(), new Condition<SModelDescriptor>() {
             public boolean met(SModelDescriptor modelDescriptor) {
-              String stereotype = modelDescriptor.getStereotype();
-              boolean rightStereotype = stereotype.equals(SModelStereotype.NONE)
-                || stereotype.equals(SModelStereotype.TEMPLATES)
-                || stereotype.equals(SModelStereotype.JAVA_STUB);
+              boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
+                || SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype());
               boolean hasModule = modelDescriptor.getModule() != null;
               return rightStereotype && hasModule;
             }

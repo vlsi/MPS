@@ -28,7 +28,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
     SModelDescriptor smd = sourceModel.getModelDescriptor();
 
     for (ModelOwner owner : SModelRepository.getInstance().getOwners(smd)) {
-      if (owner instanceof Generator && SModelStereotype.TEMPLATES.equals(smd.getStereotype())) {
+      if (owner instanceof Generator && SModelStereotype.isGeneratorModel(smd)) {
         Generator g = (Generator) owner;
         return g;
       }
@@ -62,7 +62,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
 
     String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
     String queriesClassName = packageName + ".QueriesGenerated";
-    Class queriesClass = null;
+    Class queriesClass;
     IModule module = findModuleForModel(sourceModel);
     assert module != null;
 

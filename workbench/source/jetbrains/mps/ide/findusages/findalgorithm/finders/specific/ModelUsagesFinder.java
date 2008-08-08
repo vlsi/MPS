@@ -24,8 +24,7 @@ public class ModelUsagesFinder extends BaseFinder {
       if (modelDescriptor instanceof StubModelDescriptor) {
         continue;
       }
-      String stereotype = modelDescriptor.getStereotype();
-      if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
+      if (!SModelStereotype.isUserModel(modelDescriptor)) {
         continue;
       }
       if (modelDescriptor.hasUsages(CollectionUtil.asSet(modelUID))) {

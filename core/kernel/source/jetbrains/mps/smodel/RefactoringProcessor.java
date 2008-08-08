@@ -178,8 +178,7 @@ public class RefactoringProcessor {
   public void writeInLogAndUpdateModels(SModelUID initialModelUID, SModel model, RefactoringContext refactoringContext) {
     writeIntoLog(model, refactoringContext);
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
-      String stereotype = anotherDescriptor.getStereotype();
-      if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
+      if (!SModelStereotype.isUserModel(anotherDescriptor)) {
         continue;
       }
       if (!anotherDescriptor.isInitialized()) continue;
