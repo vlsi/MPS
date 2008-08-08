@@ -168,16 +168,5 @@ public class LibraryManagerPreferences {
   }
 
   public void commit() {
-    if (myChanged) {
-      ProgressManager.getInstance().run(new Modal(null, "Applying settings", false) {
-        public void run(@NotNull final ProgressIndicator indicator) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-                  public void run() {
-                    ClassLoaderManager.getInstance().reloadAll(indicator);
-                  }
-                });
-        }
-      });
-    }
   }
 }
