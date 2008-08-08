@@ -22,9 +22,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class CellModel_Custom_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_OpenTag5;
-  /* package */AbstractCellProvider my_CloseTag5;
-  /* package */AbstractCellProvider myStyle_Component0;
+  /* package */AbstractCellProvider my_OpenTag8637_0;
+  /* package */AbstractCellProvider my_CloseTag8637_0;
+  /* package */AbstractCellProvider myStyle_Component8637_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1080749245407(context, node);
@@ -66,19 +66,19 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition53(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition8637_2(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1129573376612(context, node));
     }
-    if (renderingCondition61(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition8637_3(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1214321200143(context, node));
     }
-    if (renderingCondition38(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition8637_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1145902530448(context, node));
     }
-    if (renderingCondition32(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition8637_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1145902530451(context, node));
     }
-    if (renderingCondition70(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition8637_4(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1145902530454(context, node));
     }
     return editorCell;
@@ -161,28 +161,28 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1176717110252(EditorContext context, SNode node) {
-    if (this.my_OpenTag5 == null) {
-      this.my_OpenTag5 = new _OpenTag(node);
+    if (this.my_OpenTag8637_0 == null) {
+      this.my_OpenTag8637_0 = new _OpenTag(node);
     }
-    EditorCell editorCell = this.my_OpenTag5.createEditorCell(context);
+    EditorCell editorCell = this.my_OpenTag8637_0.createEditorCell(context);
     setupBasic_component__OpenTag1176717110252(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createComponent1176717118113(EditorContext context, SNode node) {
-    if (this.my_CloseTag5 == null) {
-      this.my_CloseTag5 = new _CloseTag(node);
+    if (this.my_CloseTag8637_0 == null) {
+      this.my_CloseTag8637_0 = new _CloseTag(node);
     }
-    EditorCell editorCell = this.my_CloseTag5.createEditorCell(context);
+    EditorCell editorCell = this.my_CloseTag8637_0.createEditorCell(context);
     setupBasic_component__CloseTag1176717118113(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createComponent1214306512753(EditorContext context, SNode node) {
-    if (this.myStyle_Component0 == null) {
-      this.myStyle_Component0 = new Style_Component(node);
+    if (this.myStyle_Component8637_0 == null) {
+      this.myStyle_Component8637_0 = new Style_Component(node);
     }
-    EditorCell editorCell = this.myStyle_Component0.createEditorCell(context);
+    EditorCell editorCell = this.myStyle_Component8637_0.createEditorCell(context);
     setupBasic_component_Style_Component1214306512753(editorCell, node, context);
     return editorCell;
   }
@@ -781,23 +781,23 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1214478684731_1214478684731(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition32(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition8637_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "drawBrackets", null, null));
   }
 
-  public static boolean renderingCondition38(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition8637_1(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "drawBorder", null, null));
   }
 
-  public static boolean renderingCondition53(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition8637_2(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "layoutConstraint", null, null));
   }
 
-  public static boolean renderingCondition61(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition8637_3(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "rightTransformAnchorTag", null, null));
   }
 
-  public static boolean renderingCondition70(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition8637_4(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "bracketsColor", null, null));
   }
 

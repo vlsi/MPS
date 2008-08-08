@@ -27,9 +27,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_OpenTag9;
-  /* package */AbstractCellProvider my_CloseTag9;
-  /* package */AbstractCellProvider my_CellModel_Common17;
+  /* package */AbstractCellProvider my_OpenTag8529_0;
+  /* package */AbstractCellProvider my_CloseTag8529_0;
+  /* package */AbstractCellProvider my_CellModel_Common8529_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1088068732167(context, node);
@@ -49,7 +49,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant1088499484891(context, node, "%"));
     editorCell.addEditorCell(this.createRefCell1140223272145(context, node));
     editorCell.addEditorCell(this.createConstant1088499484893(context, node, "%"));
-    if (renderingCondition4(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition8529_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode1088499484894(context, node));
     }
     editorCell.addEditorCell(this.createComponent1176717206314(context, node));
@@ -111,7 +111,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection1088069661257(context, node));
     editorCell.addEditorCell(this.createCollection1088446348285(context, node));
     editorCell.addEditorCell(this.createCollection1138332625583(context, node));
-    if (renderingCondition145(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition8529_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1214560567393(context, node));
     }
     return editorCell;
@@ -129,28 +129,28 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1176717200032(EditorContext context, SNode node) {
-    if (this.my_OpenTag9 == null) {
-      this.my_OpenTag9 = new _OpenTag(node);
+    if (this.my_OpenTag8529_0 == null) {
+      this.my_OpenTag8529_0 = new _OpenTag(node);
     }
-    EditorCell editorCell = this.my_OpenTag9.createEditorCell(context);
+    EditorCell editorCell = this.my_OpenTag8529_0.createEditorCell(context);
     setupBasic_component__OpenTag1176717200032(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createComponent1176717206314(EditorContext context, SNode node) {
-    if (this.my_CloseTag9 == null) {
-      this.my_CloseTag9 = new _CloseTag(node);
+    if (this.my_CloseTag8529_0 == null) {
+      this.my_CloseTag8529_0 = new _CloseTag(node);
     }
-    EditorCell editorCell = this.my_CloseTag9.createEditorCell(context);
+    EditorCell editorCell = this.my_CloseTag8529_0.createEditorCell(context);
     setupBasic_component__CloseTag1176717206314(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createComponent1214511121193(EditorContext context, SNode node) {
-    if (this.my_CellModel_Common17 == null) {
-      this.my_CellModel_Common17 = new _CellModel_Common(node);
+    if (this.my_CellModel_Common8529_0 == null) {
+      this.my_CellModel_Common8529_0 = new _CellModel_Common(node);
     }
-    EditorCell editorCell = this.my_CellModel_Common17.createEditorCell(context);
+    EditorCell editorCell = this.my_CellModel_Common8529_0.createEditorCell(context);
     setupBasic_component__CellModel_Common1214511121193(editorCell, node, context);
     return editorCell;
   }
@@ -279,7 +279,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1140223272145_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline9());
+    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline8529_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_linkDeclaration1140223272145(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -308,7 +308,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1140223422095_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline10());
+    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline8529_1());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_linkDeclaration1140223422095(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -337,7 +337,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1147110301563_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline13());
+    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline8529_2());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_editorComponent1147110301563(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -695,11 +695,11 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_emptyNoTargetText_1214560567395(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition4(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition8529_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "relationDeclaration", false) != null;
   }
 
-  public static boolean renderingCondition145(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition8529_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "noTargetText") == null;
   }
 
@@ -727,9 +727,9 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  public static class _Inline9 extends AbstractCellProvider {
+  public static class _Inline8529_0 extends AbstractCellProvider {
 
-    public _Inline9() {
+    public _Inline8529_0() {
       super();
     }
 
@@ -790,9 +790,9 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline10 extends AbstractCellProvider {
+  public static class _Inline8529_1 extends AbstractCellProvider {
 
-    public _Inline10() {
+    public _Inline8529_1() {
       super();
     }
 
@@ -851,9 +851,9 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline13 extends AbstractCellProvider {
+  public static class _Inline8529_2 extends AbstractCellProvider {
 
-    public _Inline13() {
+    public _Inline8529_2() {
       super();
     }
 
@@ -867,7 +867,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
     public EditorCell createRefCell1147110319487_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline14());
+      provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline8529_3());
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_refCell_conceptDeclaration1147110319487(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
@@ -903,9 +903,9 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline14 extends AbstractCellProvider {
+  public static class _Inline8529_3 extends AbstractCellProvider {
 
-    public _Inline14() {
+    public _Inline8529_3() {
       super();
     }
 

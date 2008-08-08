@@ -24,9 +24,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_OpenTag10;
-  /* package */AbstractCellProvider my_CloseTag10;
-  /* package */AbstractCellProvider my_CellModel_Common1;
+  /* package */AbstractCellProvider my_OpenTag4233_0;
+  /* package */AbstractCellProvider my_CloseTag4233_0;
+  /* package */AbstractCellProvider my_CellModel_Common4233_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1088613173864(context, node);
@@ -43,10 +43,10 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent1176717215565(context, node));
-    if (renderingCondition1(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition4233_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1088613626183(context, node));
     }
-    if (renderingCondition3(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition4233_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1088613626187(context, node));
     }
     editorCell.addEditorCell(this.createComponent1176717222675(context, node));
@@ -139,19 +139,19 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition48(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition4233_4(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1129573248173(context, node));
     }
-    if (renderingCondition56(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition4233_5(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1214321165369(context, node));
     }
-    if (renderingCondition36(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition4233_3(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1145901619026(context, node));
     }
-    if (renderingCondition27(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition4233_2(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1145901619029(context, node));
     }
-    if (renderingCondition65(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition4233_6(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1145901619032(context, node));
     }
     return editorCell;
@@ -246,28 +246,28 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1176717215565(EditorContext context, SNode node) {
-    if (this.my_OpenTag10 == null) {
-      this.my_OpenTag10 = new _OpenTag(node);
+    if (this.my_OpenTag4233_0 == null) {
+      this.my_OpenTag4233_0 = new _OpenTag(node);
     }
-    EditorCell editorCell = this.my_OpenTag10.createEditorCell(context);
+    EditorCell editorCell = this.my_OpenTag4233_0.createEditorCell(context);
     setupBasic_component__OpenTag1176717215565(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createComponent1176717222675(EditorContext context, SNode node) {
-    if (this.my_CloseTag10 == null) {
-      this.my_CloseTag10 = new _CloseTag(node);
+    if (this.my_CloseTag4233_0 == null) {
+      this.my_CloseTag4233_0 = new _CloseTag(node);
     }
-    EditorCell editorCell = this.my_CloseTag10.createEditorCell(context);
+    EditorCell editorCell = this.my_CloseTag4233_0.createEditorCell(context);
     setupBasic_component__CloseTag1176717222675(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createComponent1214476961659(EditorContext context, SNode node) {
-    if (this.my_CellModel_Common1 == null) {
-      this.my_CellModel_Common1 = new _CellModel_Common(node);
+    if (this.my_CellModel_Common4233_0 == null) {
+      this.my_CellModel_Common4233_0 = new _CellModel_Common(node);
     }
-    EditorCell editorCell = this.my_CellModel_Common1.createEditorCell(context);
+    EditorCell editorCell = this.my_CellModel_Common4233_0.createEditorCell(context);
     setupBasic_component__CellModel_Common1214476961659(editorCell, node, context);
     return editorCell;
   }
@@ -1313,31 +1313,31 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNode_alternationCondition_1214668014340(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition1(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition4233_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "vertical");
   }
 
-  public static boolean renderingCondition3(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition4233_1(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "vertical"));
   }
 
-  public static boolean renderingCondition27(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition4233_2(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "drawBrackets", null, null));
   }
 
-  public static boolean renderingCondition36(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition4233_3(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "drawBorder", null, null));
   }
 
-  public static boolean renderingCondition48(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition4233_4(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "layoutConstraint", null, null));
   }
 
-  public static boolean renderingCondition56(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition4233_5(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "rightTransformAnchorTag", null, null));
   }
 
-  public static boolean renderingCondition65(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition4233_6(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "bracketsColor", null, null));
   }
 

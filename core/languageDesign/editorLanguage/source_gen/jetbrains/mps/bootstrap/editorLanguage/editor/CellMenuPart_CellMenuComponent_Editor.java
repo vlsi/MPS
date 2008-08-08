@@ -95,7 +95,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1166059755673_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new CellMenuPart_CellMenuComponent_Editor._Inline19());
+    provider.setAuxiliaryCellProvider(new CellMenuPart_CellMenuComponent_Editor._Inline8123_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_cellMenuComponent1166059755673(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -249,9 +249,9 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  public static class _Inline19 extends AbstractCellProvider {
+  public static class _Inline8123_0 extends AbstractCellProvider {
 
-    public _Inline19() {
+    public _Inline8123_0() {
       super();
     }
 

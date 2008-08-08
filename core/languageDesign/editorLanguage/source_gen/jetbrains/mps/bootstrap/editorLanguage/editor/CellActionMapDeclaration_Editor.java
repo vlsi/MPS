@@ -131,7 +131,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1139532930478(EditorContext context, SNode node) {
     if (this.myListHandler_1139532930478 == null) {
-      this.myListHandler_1139532930478 = new CellActionMapDeclaration_Editor.itemListHandler_1(node, "item", context);
+      this.myListHandler_1139532930478 = new CellActionMapDeclaration_Editor.itemListHandler_9910_0(node, "item", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1139532930478.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_item1139532930478(editorCell, node, context);
@@ -174,7 +174,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1139532930472_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new CellActionMapDeclaration_Editor._Inline5());
+    provider.setAuxiliaryCellProvider(new CellActionMapDeclaration_Editor._Inline9910_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_applicableConcept1139532930472(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -340,9 +340,9 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNodeList_item_1139532930478(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class _Inline5 extends AbstractCellProvider {
+  public static class _Inline9910_0 extends AbstractCellProvider {
 
-    public _Inline5() {
+    public _Inline9910_0() {
       super();
     }
 
@@ -402,9 +402,9 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class itemListHandler_1 extends RefNodeListHandler {
+  public static class itemListHandler_9910_0 extends RefNodeListHandler {
 
-    public itemListHandler_1(SNode ownerNode, String childRole, EditorContext context) {
+    public itemListHandler_9910_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

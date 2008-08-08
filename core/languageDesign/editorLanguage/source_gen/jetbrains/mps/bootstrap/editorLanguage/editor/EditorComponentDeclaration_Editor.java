@@ -182,7 +182,7 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1106261028889_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new EditorComponentDeclaration_Editor._Inline0());
+    provider.setAuxiliaryCellProvider(new EditorComponentDeclaration_Editor._Inline6270_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_conceptDeclaration1106261028889(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -485,9 +485,9 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNode_cellModel_1140213026969(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class _Inline0 extends AbstractCellProvider {
+  public static class _Inline6270_0 extends AbstractCellProvider {
 
-    public _Inline0() {
+    public _Inline6270_0() {
       super();
     }
 

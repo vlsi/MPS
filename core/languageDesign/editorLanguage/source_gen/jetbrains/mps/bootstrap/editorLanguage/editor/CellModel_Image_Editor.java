@@ -26,7 +26,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 
 public class CellModel_Image_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_CellModel_Common14;
+  /* package */AbstractCellProvider my_CellModel_Common5161_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createConstant1139746611466(context, node, "$image$");
@@ -46,19 +46,19 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant1214480472392(context, node, ""));
     editorCell.addEditorCell(this.createConstant1139746652473(context, node, "Image cell:"));
     editorCell.addEditorCell(this.createCollection1214480445694(context, node));
-    if (renderingCondition54(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition5161_2(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1139749668595(context, node));
     }
-    if (renderingCondition62(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition5161_3(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1214321208799(context, node));
     }
-    if (renderingCondition39(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition5161_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1139749668607(context, node));
     }
-    if (renderingCondition33(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition5161_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1139749668610(context, node));
     }
-    if (renderingCondition71(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition5161_4(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1139749668613(context, node));
     }
     return editorCell;
@@ -176,10 +176,10 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1214480472391(EditorContext context, SNode node) {
-    if (this.my_CellModel_Common14 == null) {
-      this.my_CellModel_Common14 = new _CellModel_Common(node);
+    if (this.my_CellModel_Common5161_0 == null) {
+      this.my_CellModel_Common5161_0 = new _CellModel_Common(node);
     }
-    EditorCell editorCell = this.my_CellModel_Common14.createEditorCell(context);
+    EditorCell editorCell = this.my_CellModel_Common5161_0.createEditorCell(context);
     setupBasic_component__CellModel_Common1214480472391(editorCell, node, context);
     return editorCell;
   }
@@ -941,23 +941,23 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1214480472392_1214480472392(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition33(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition5161_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "drawBrackets", null, null));
   }
 
-  public static boolean renderingCondition39(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition5161_1(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "drawBorder", null, null));
   }
 
-  public static boolean renderingCondition54(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition5161_2(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "layoutConstraint", null, null));
   }
 
-  public static boolean renderingCondition62(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition5161_3(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "rightTransformAnchorTag", null, null));
   }
 
-  public static boolean renderingCondition71(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition5161_4(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "bracketsColor", null, null));
   }
 

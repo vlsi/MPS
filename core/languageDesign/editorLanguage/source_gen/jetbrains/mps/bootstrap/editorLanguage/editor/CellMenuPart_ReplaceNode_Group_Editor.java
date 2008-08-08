@@ -69,10 +69,10 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection1165005705257(context, node));
     editorCell.addEditorCell(this.createCollection1165005705291(context, node));
     editorCell.addEditorCell(this.createCollection1165005705261(context, node));
-    if (renderingCondition5(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition0097_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1165005705265(context, node));
     }
-    if (renderingCondition6(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition0097_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1165005705278(context, node));
     }
     editorCell.addEditorCell(this.createCollection1165005705295(context, node));
@@ -779,11 +779,11 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1165005715519_1165005715519(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition5(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition0097_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "presentation", "custom", null);
   }
 
-  public static boolean renderingCondition6(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition0097_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "presentation", "custom", null);
   }
 

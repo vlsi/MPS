@@ -56,7 +56,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell3(context, node));
+    editorCell.addEditorCell(this.createIndentCell7895_0(context, node));
     editorCell.addEditorCell(this.createCollection1078168412377(context, node));
     return editorCell;
   }
@@ -78,7 +78,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell4(context, node));
+    editorCell.addEditorCell(this.createIndentCell7895_1(context, node));
     editorCell.addEditorCell(this.createRefNode1128364838801(context, node));
     return editorCell;
   }
@@ -89,7 +89,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell5(context, node));
+    editorCell.addEditorCell(this.createIndentCell7895_2(context, node));
     editorCell.addEditorCell(this.createCollection1078232807736(context, node));
     return editorCell;
   }
@@ -112,7 +112,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell6(context, node));
+    editorCell.addEditorCell(this.createIndentCell7895_3(context, node));
     editorCell.addEditorCell(this.createRefNode1078232807741(context, node));
     return editorCell;
   }
@@ -149,22 +149,22 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell3(EditorContext context, SNode node) {
+  public EditorCell createIndentCell7895_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell4(EditorContext context, SNode node) {
+  public EditorCell createIndentCell7895_1(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell5(EditorContext context, SNode node) {
+  public EditorCell createIndentCell7895_2(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell6(EditorContext context, SNode node) {
+  public EditorCell createIndentCell7895_3(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
@@ -200,7 +200,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1106262846792_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ConceptEditorDeclaration_Editor._Inline1());
+    provider.setAuxiliaryCellProvider(new ConceptEditorDeclaration_Editor._Inline7895_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_conceptDeclaration1106262846792(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -453,9 +453,9 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNode_cellModel_1128364838801(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class _Inline1 extends AbstractCellProvider {
+  public static class _Inline7895_0 extends AbstractCellProvider {
 
-    public _Inline1() {
+    public _Inline7895_0() {
       super();
     }
 

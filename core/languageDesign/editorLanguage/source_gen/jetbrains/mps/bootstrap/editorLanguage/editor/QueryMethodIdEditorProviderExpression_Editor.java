@@ -171,7 +171,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
   public EditorCell createRefNodeList1176795396043(EditorContext context, SNode node) {
     if (this.myListHandler_1176795396043 == null) {
-      this.myListHandler_1176795396043 = new QueryMethodIdEditorProviderExpression_Editor.parameterListHandler_0(node, "parameter", context);
+      this.myListHandler_1176795396043 = new QueryMethodIdEditorProviderExpression_Editor.parameterListHandler_9522_0(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1176795396043.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_parameter1176795396043(editorCell, node, context);
@@ -184,7 +184,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
   public EditorCell createRefNodeList1176795396048(EditorContext context, SNode node) {
     if (this.myListHandler_1176795396048 == null) {
-      this.myListHandler_1176795396048 = new QueryMethodIdEditorProviderExpression_Editor.additionalImportListHandler_0(node, "additionalImport", context);
+      this.myListHandler_1176795396048 = new QueryMethodIdEditorProviderExpression_Editor.additionalImportListHandler_9522_0(node, "additionalImport", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1176795396048.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_additionalImport1176795396048(editorCell, node, context);
@@ -284,7 +284,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
   public EditorCell createRefCell1176800612979_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new QueryMethodIdEditorProviderExpression_Editor._Inline20());
+    provider.setAuxiliaryCellProvider(new QueryMethodIdEditorProviderExpression_Editor._Inline9522_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_queryIdProperty1176800612979(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -504,9 +504,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return result;
   }
 
-  public static class _Inline20 extends AbstractCellProvider {
+  public static class _Inline9522_0 extends AbstractCellProvider {
 
-    public _Inline20() {
+    public _Inline9522_0() {
       super();
     }
 
@@ -556,9 +556,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     }
 
 }
-  public static class parameterListHandler_0 extends RefNodeListHandler {
+  public static class parameterListHandler_9522_0 extends RefNodeListHandler {
 
-    public parameterListHandler_0(SNode ownerNode, String childRole, EditorContext context) {
+    public parameterListHandler_9522_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -604,9 +604,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     }
 
 }
-  public static class additionalImportListHandler_0 extends RefNodeListHandler {
+  public static class additionalImportListHandler_9522_0 extends RefNodeListHandler {
 
-    public additionalImportListHandler_0(SNode ownerNode, String childRole, EditorContext context) {
+    public additionalImportListHandler_9522_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

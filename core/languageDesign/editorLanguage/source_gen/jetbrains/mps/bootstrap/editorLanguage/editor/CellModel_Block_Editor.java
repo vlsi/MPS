@@ -25,7 +25,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class CellModel_Block_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_CellModel_Common10;
+  /* package */AbstractCellProvider my_CellModel_Common0905_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1198490019130(context, node);
@@ -64,7 +64,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell0(context, node));
+    editorCell.addEditorCell(this.createIndentCell0905_0(context, node));
     editorCell.addEditorCell(this.createRefNode1198490067105(context, node));
     return editorCell;
   }
@@ -86,10 +86,10 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition51(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition0905_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1198502611127(context, node));
     }
-    if (renderingCondition59(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition0905_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1214321177485(context, node));
     }
     return editorCell;
@@ -118,10 +118,10 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1214478832452(EditorContext context, SNode node) {
-    if (this.my_CellModel_Common10 == null) {
-      this.my_CellModel_Common10 = new _CellModel_Common(node);
+    if (this.my_CellModel_Common0905_0 == null) {
+      this.my_CellModel_Common0905_0 = new _CellModel_Common(node);
     }
-    EditorCell editorCell = this.my_CellModel_Common10.createEditorCell(context);
+    EditorCell editorCell = this.my_CellModel_Common0905_0.createEditorCell(context);
     setupBasic_component__CellModel_Common1214478832452(editorCell, node, context);
     return editorCell;
   }
@@ -142,7 +142,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell0(EditorContext context, SNode node) {
+  public EditorCell createIndentCell0905_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
@@ -546,11 +546,11 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_rightTransformAnchorTag_1214321177489(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition51(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition0905_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "layoutConstraint", null, null));
   }
 
-  public static boolean renderingCondition59(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition0905_1(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "rightTransformAnchorTag", null, null));
   }
 

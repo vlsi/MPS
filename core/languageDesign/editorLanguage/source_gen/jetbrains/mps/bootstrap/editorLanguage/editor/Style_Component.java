@@ -61,7 +61,7 @@ public class Style_Component extends AbstractCellProvider {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell1(context, node));
+    editorCell.addEditorCell(this.createIndentCell7233_0(context, node));
     editorCell.addEditorCell(this.createRefNodeList1214305846330(context, node));
     return editorCell;
   }
@@ -112,7 +112,7 @@ public class Style_Component extends AbstractCellProvider {
 
   public EditorCell createRefNodeList1214305846330(EditorContext context, SNode node) {
     if (this.myListHandler_1214305846330 == null) {
-      this.myListHandler_1214305846330 = new Style_Component.styleItemListHandler_0(node, "styleItem", context);
+      this.myListHandler_1214305846330 = new Style_Component.styleItemListHandler_7233_0(node, "styleItem", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1214305846330.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_styleItem1214305846330(editorCell, node, context);
@@ -123,14 +123,14 @@ public class Style_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createIndentCell1(EditorContext context, SNode node) {
+  public EditorCell createIndentCell7233_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
   public EditorCell createRefCell1214306234345_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new Style_Component._Inline25());
+    provider.setAuxiliaryCellProvider(new Style_Component._Inline7233_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_styleClass1214306234345(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -244,9 +244,9 @@ public class Style_Component extends AbstractCellProvider {
   private static void setupLabel_Constant_1214306426285_1214306426285(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class _Inline25 extends AbstractCellProvider {
+  public static class _Inline7233_0 extends AbstractCellProvider {
 
-    public _Inline25() {
+    public _Inline7233_0() {
       super();
     }
 
@@ -296,9 +296,9 @@ public class Style_Component extends AbstractCellProvider {
     }
 
 }
-  public static class styleItemListHandler_0 extends RefNodeListHandler {
+  public static class styleItemListHandler_7233_0 extends RefNodeListHandler {
 
-    public styleItemListHandler_0(SNode ownerNode, String childRole, EditorContext context) {
+    public styleItemListHandler_7233_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

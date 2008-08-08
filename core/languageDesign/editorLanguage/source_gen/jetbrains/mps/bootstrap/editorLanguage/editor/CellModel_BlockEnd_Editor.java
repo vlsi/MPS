@@ -23,7 +23,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_CellModel_Common8;
+  /* package */AbstractCellProvider my_CellModel_Common3910_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createProperty1198506789109(context, node);
@@ -50,10 +50,10 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition49(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition3910_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1198506653666(context, node));
     }
-    if (renderingCondition57(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition3910_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1214321170043(context, node));
     }
     return editorCell;
@@ -82,10 +82,10 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1214478788536(EditorContext context, SNode node) {
-    if (this.my_CellModel_Common8 == null) {
-      this.my_CellModel_Common8 = new _CellModel_Common(node);
+    if (this.my_CellModel_Common3910_0 == null) {
+      this.my_CellModel_Common3910_0 = new _CellModel_Common(node);
     }
-    EditorCell editorCell = this.my_CellModel_Common8.createEditorCell(context);
+    EditorCell editorCell = this.my_CellModel_Common3910_0.createEditorCell(context);
     setupBasic_component__CellModel_Common1214478788536(editorCell, node, context);
     return editorCell;
   }
@@ -340,11 +340,11 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_rightTransformAnchorTag_1214321170047(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition49(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition3910_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "layoutConstraint", null, null));
   }
 
-  public static boolean renderingCondition57(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition3910_1(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "rightTransformAnchorTag", null, null));
   }
 

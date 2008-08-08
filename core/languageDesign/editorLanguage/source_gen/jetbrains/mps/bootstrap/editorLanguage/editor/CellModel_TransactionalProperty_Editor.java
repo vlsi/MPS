@@ -21,9 +21,9 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_CloseTag13;
-  /* package */AbstractCellProvider my_OpenTag13;
-  /* package */AbstractCellProvider my_CellModel_Common18;
+  /* package */AbstractCellProvider my_CloseTag3190_0;
+  /* package */AbstractCellProvider my_OpenTag3190_0;
+  /* package */AbstractCellProvider my_CellModel_Common3190_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1216381326735(context, node);
@@ -92,28 +92,28 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1216381326743(EditorContext context, SNode node) {
-    if (this.my_CloseTag13 == null) {
-      this.my_CloseTag13 = new _CloseTag(node);
+    if (this.my_CloseTag3190_0 == null) {
+      this.my_CloseTag3190_0 = new _CloseTag(node);
     }
-    EditorCell editorCell = this.my_CloseTag13.createEditorCell(context);
+    EditorCell editorCell = this.my_CloseTag3190_0.createEditorCell(context);
     setupBasic_component__CloseTag1216381326743(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createComponent1216381983842(EditorContext context, SNode node) {
-    if (this.my_OpenTag13 == null) {
-      this.my_OpenTag13 = new _OpenTag(node);
+    if (this.my_OpenTag3190_0 == null) {
+      this.my_OpenTag3190_0 = new _OpenTag(node);
     }
-    EditorCell editorCell = this.my_OpenTag13.createEditorCell(context);
+    EditorCell editorCell = this.my_OpenTag3190_0.createEditorCell(context);
     setupBasic_component__OpenTag1216381983842(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createComponent1216382040438(EditorContext context, SNode node) {
-    if (this.my_CellModel_Common18 == null) {
-      this.my_CellModel_Common18 = new _CellModel_Common(node);
+    if (this.my_CellModel_Common3190_0 == null) {
+      this.my_CellModel_Common3190_0 = new _CellModel_Common(node);
     }
-    EditorCell editorCell = this.my_CellModel_Common18.createEditorCell(context);
+    EditorCell editorCell = this.my_CellModel_Common3190_0.createEditorCell(context);
     setupBasic_component__CellModel_Common1216382040438(editorCell, node, context);
     return editorCell;
   }
@@ -152,7 +152,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1216381326738_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new CellModel_TransactionalProperty_Editor._Inline31());
+    provider.setAuxiliaryCellProvider(new CellModel_TransactionalProperty_Editor._Inline3190_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_property1216381326738(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -210,7 +210,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1216382092311_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new CellModel_TransactionalProperty_Editor._Inline32());
+    provider.setAuxiliaryCellProvider(new CellModel_TransactionalProperty_Editor._Inline3190_1());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_property1216382092311(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -412,9 +412,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private static void setupLabel_refCell_property_1216382092311(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class _Inline31 extends AbstractCellProvider {
+  public static class _Inline3190_0 extends AbstractCellProvider {
 
-    public _Inline31() {
+    public _Inline3190_0() {
       super();
     }
 
@@ -473,9 +473,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline32 extends AbstractCellProvider {
+  public static class _Inline3190_1 extends AbstractCellProvider {
 
-    public _Inline32() {
+    public _Inline3190_1() {
       super();
     }
 

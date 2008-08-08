@@ -95,7 +95,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
 
   public EditorCell createRefCell1165261271536_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new CellMenuPart_ReplaceNode_CustomNodeConcept_Editor._Inline15());
+    provider.setAuxiliaryCellProvider(new CellMenuPart_ReplaceNode_CustomNodeConcept_Editor._Inline7061_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_replacementConcept1165261271536(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -255,9 +255,9 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     return result;
   }
 
-  public static class _Inline15 extends AbstractCellProvider {
+  public static class _Inline7061_0 extends AbstractCellProvider {
 
-    public _Inline15() {
+    public _Inline7061_0() {
       super();
     }
 

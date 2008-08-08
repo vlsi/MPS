@@ -69,7 +69,7 @@ public class _CellModel_Common extends AbstractCellProvider {
     editorCell.addEditorCell(this.createCollection1214478377070(context, node));
     editorCell.addEditorCell(this.createCollection1214478377081(context, node));
     editorCell.addEditorCell(this.createCollection1214478377088(context, node));
-    if (renderingCondition134(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition7442_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1214478377096(context, node));
     }
     editorCell.addEditorCell(this.createCollection1214478377110(context, node));
@@ -171,7 +171,7 @@ public class _CellModel_Common extends AbstractCellProvider {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell2(context, node));
+    editorCell.addEditorCell(this.createIndentCell7442_0(context, node));
     editorCell.addEditorCell(this.createRefNodeList1214478379749(context, node));
     return editorCell;
   }
@@ -266,7 +266,7 @@ public class _CellModel_Common extends AbstractCellProvider {
 
   public EditorCell createRefNodeList1214478379749(EditorContext context, SNode node) {
     if (this.myListHandler_1214478379749 == null) {
-      this.myListHandler_1214478379749 = new _CellModel_Common.styleItemListHandler_1(node, "styleItem", context);
+      this.myListHandler_1214478379749 = new _CellModel_Common.styleItemListHandler_7442_0(node, "styleItem", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1214478379749.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_styleItem1214478379749(editorCell, node, context);
@@ -277,14 +277,14 @@ public class _CellModel_Common extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createIndentCell2(EditorContext context, SNode node) {
+  public EditorCell createIndentCell7442_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
   public EditorCell createRefCell1214478377063_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new _CellModel_Common._Inline28());
+    provider.setAuxiliaryCellProvider(new _CellModel_Common._Inline7442_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_actionMap1214478377063(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -313,7 +313,7 @@ public class _CellModel_Common extends AbstractCellProvider {
 
   public EditorCell createRefCell1214478377074_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new _CellModel_Common._Inline29());
+    provider.setAuxiliaryCellProvider(new _CellModel_Common._Inline7442_1());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_keyMap1214478377074(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -458,7 +458,7 @@ public class _CellModel_Common extends AbstractCellProvider {
 
   public EditorCell createRefCell1214478379742_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new _CellModel_Common._Inline30());
+    provider.setAuxiliaryCellProvider(new _CellModel_Common._Inline7442_2());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_styleClass1214478379742(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -792,13 +792,13 @@ public class _CellModel_Common extends AbstractCellProvider {
   private static void setupLabel_Constant_1214479891064_1214479891064(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition134(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition7442_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
   }
 
-  public static class _Inline28 extends AbstractCellProvider {
+  public static class _Inline7442_0 extends AbstractCellProvider {
 
-    public _Inline28() {
+    public _Inline7442_0() {
       super();
     }
 
@@ -857,9 +857,9 @@ public class _CellModel_Common extends AbstractCellProvider {
     }
 
 }
-  public static class _Inline29 extends AbstractCellProvider {
+  public static class _Inline7442_1 extends AbstractCellProvider {
 
-    public _Inline29() {
+    public _Inline7442_1() {
       super();
     }
 
@@ -918,9 +918,9 @@ public class _CellModel_Common extends AbstractCellProvider {
     }
 
 }
-  public static class _Inline30 extends AbstractCellProvider {
+  public static class _Inline7442_2 extends AbstractCellProvider {
 
-    public _Inline30() {
+    public _Inline7442_2() {
       super();
     }
 
@@ -970,9 +970,9 @@ public class _CellModel_Common extends AbstractCellProvider {
     }
 
 }
-  public static class styleItemListHandler_1 extends RefNodeListHandler {
+  public static class styleItemListHandler_7442_0 extends RefNodeListHandler {
 
-    public styleItemListHandler_1(SNode ownerNode, String childRole, EditorContext context) {
+    public styleItemListHandler_7442_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

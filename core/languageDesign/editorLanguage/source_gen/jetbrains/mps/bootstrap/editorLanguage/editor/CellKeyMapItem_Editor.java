@@ -289,7 +289,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1216158369218(EditorContext context, SNode node) {
     if (this.myListHandler_1216158369218 == null) {
-      this.myListHandler_1216158369218 = new CellKeyMapItem_Editor.keystrokeListHandler_0(node, "keystroke", context);
+      this.myListHandler_1216158369218 = new CellKeyMapItem_Editor.keystrokeListHandler_9930_0(node, "keystroke", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1216158369218.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_keystroke1216158369218(editorCell, node, context);
@@ -952,9 +952,9 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  public static class keystrokeListHandler_0 extends RefNodeListHandler {
+  public static class keystrokeListHandler_9930_0 extends RefNodeListHandler {
 
-    public keystrokeListHandler_0(SNode ownerNode, String childRole, EditorContext context) {
+    public keystrokeListHandler_9930_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

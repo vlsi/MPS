@@ -23,7 +23,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_CellModel_Common5;
+  /* package */AbstractCellProvider my_CellModel_Common5840_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1136564583726(context, node);
@@ -62,10 +62,10 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition28(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition5840_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1149850649320(context, node));
     }
-    if (renderingCondition66(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition5840_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1149850649323(context, node));
     }
     return editorCell;
@@ -94,10 +94,10 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1214478688195(EditorContext context, SNode node) {
-    if (this.my_CellModel_Common5 == null) {
-      this.my_CellModel_Common5 = new _CellModel_Common(node);
+    if (this.my_CellModel_Common5840_0 == null) {
+      this.my_CellModel_Common5840_0 = new _CellModel_Common(node);
     }
-    EditorCell editorCell = this.my_CellModel_Common5.createEditorCell(context);
+    EditorCell editorCell = this.my_CellModel_Common5840_0.createEditorCell(context);
     setupBasic_component__CellModel_Common1214478688195(editorCell, node, context);
     return editorCell;
   }
@@ -396,11 +396,11 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_bracketsColor_1149850649325(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition28(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition5840_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "drawBrackets", null, null));
   }
 
-  public static boolean renderingCondition66(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition5840_1(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "bracketsColor", null, null));
   }
 

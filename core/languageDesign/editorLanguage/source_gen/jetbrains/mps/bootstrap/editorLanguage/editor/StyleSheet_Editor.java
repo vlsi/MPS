@@ -104,7 +104,7 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1186402426928(EditorContext context, SNode node) {
     if (this.myListHandler_1186402426928 == null) {
-      this.myListHandler_1186402426928 = new StyleSheet_Editor.styleClassListHandler_0(node, "styleClass", context);
+      this.myListHandler_1186402426928 = new StyleSheet_Editor.styleClassListHandler_6590_0(node, "styleClass", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1186402426928.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_styleClass1186402426928(editorCell, node, context);
@@ -247,9 +247,9 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  public static class styleClassListHandler_0 extends RefNodeListHandler {
+  public static class styleClassListHandler_6590_0 extends RefNodeListHandler {
 
-    public styleClassListHandler_0(SNode ownerNode, String childRole, EditorContext context) {
+    public styleClassListHandler_6590_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

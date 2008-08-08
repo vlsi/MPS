@@ -52,7 +52,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1164826358683(EditorContext context, SNode node) {
     if (this.myListHandler_1164826358683 == null) {
-      this.myListHandler_1164826358683 = new CellMenuDescriptor_Editor.cellMenuPartListHandler_0(node, "cellMenuPart", context);
+      this.myListHandler_1164826358683 = new CellMenuDescriptor_Editor.cellMenuPartListHandler_1820_0(node, "cellMenuPart", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1164826358683.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_cellMenuPart1164826358683(editorCell, node, context);
@@ -88,9 +88,9 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  public static class cellMenuPartListHandler_0 extends RefNodeListHandler {
+  public static class cellMenuPartListHandler_1820_0 extends RefNodeListHandler {
 
-    public cellMenuPartListHandler_0(SNode ownerNode, String childRole, EditorContext context) {
+    public cellMenuPartListHandler_1820_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

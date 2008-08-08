@@ -10279,24 +10279,13 @@
         <link role="relationDeclaration" targetNodeId="2.1140524450554" />
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1182948746816">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182948746817">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182948825245">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207872475529">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1182948825246">
-                  <property name="value" value="templates" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207872475530">
-                  <link role="baseMethodDeclaration" targetNodeId="14.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207872475578">
-                    <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1182948845669">
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227880457">
-                        <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1182948832248" />
-                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" id="1182948834391" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207872475579">
-                      <link role="baseMethodDeclaration" targetNodeId="17.~SModel.getStereotype():java.lang.String" resolveInfo="getStereotype" />
-                    </node>
-                  </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218239030901">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218239043762">
+                <link role="baseMethodDeclaration" targetNodeId="17.~SModelStereotype.isGeneratorModel(jetbrains.mps.smodel.SModel):boolean" resolveInfo="isGeneratorModel" />
+                <link role="classConcept" targetNodeId="17.~SModelStereotype" resolveInfo="SModelStereotype" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218239049108">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1218239047341" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" id="1218239049642" />
                 </node>
               </node>
             </node>

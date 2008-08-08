@@ -33,10 +33,10 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConceptProperty1186403839417(context, node));
     editorCell.addEditorCell(this.createConstant1186403841966(context, node, ":"));
-    if (renderingCondition16(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition4607_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createProperty1186412595080(context, node));
     }
-    if (renderingCondition17(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition4607_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode1186412603348(context, node));
     }
     return editorCell;
@@ -170,11 +170,11 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNode_query_1186412603348(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean renderingCondition16(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition4607_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "query", true) == null;
   }
 
-  public static boolean renderingCondition17(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition4607_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "color", "query", null) || SLinkOperations.getTarget(node, "query", true) != null;
   }
 

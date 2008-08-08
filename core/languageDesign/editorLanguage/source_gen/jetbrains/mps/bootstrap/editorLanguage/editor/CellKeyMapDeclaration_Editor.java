@@ -162,7 +162,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1136930934885(EditorContext context, SNode node) {
     if (this.myListHandler_1136930934885 == null) {
-      this.myListHandler_1136930934885 = new CellKeyMapDeclaration_Editor.itemListHandler_0(node, "item", context);
+      this.myListHandler_1136930934885 = new CellKeyMapDeclaration_Editor.itemListHandler_6671_0(node, "item", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1136930934885.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_item1136930934885(editorCell, node, context);
@@ -205,7 +205,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1139446249850_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new CellKeyMapDeclaration_Editor._Inline4());
+    provider.setAuxiliaryCellProvider(new CellKeyMapDeclaration_Editor._Inline6671_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_applicableConcept1139446249850(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -449,9 +449,9 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  public static class _Inline4 extends AbstractCellProvider {
+  public static class _Inline6671_0 extends AbstractCellProvider {
 
-    public _Inline4() {
+    public _Inline6671_0() {
       super();
     }
 
@@ -517,9 +517,9 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class itemListHandler_0 extends RefNodeListHandler {
+  public static class itemListHandler_6671_0 extends RefNodeListHandler {
 
-    public itemListHandler_0(SNode ownerNode, String childRole, EditorContext context) {
+    public itemListHandler_6671_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
