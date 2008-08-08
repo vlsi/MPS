@@ -37,6 +37,7 @@ import jetbrains.mps.nodeEditor.NodeEditorActions.SelectUp;
 import jetbrains.mps.nodeEditor.NodeEditorActions.SelectDown;
 import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
 import jetbrains.mps.nodeEditor.NodeEditorActions.Complete;
+import jetbrains.mps.nodeEditor.search.SearchPanel;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -169,6 +170,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private CellSpeedSearch myCellSpeedSearch;
   private IntentionsSupport myIntentionsSupport;
   private AutoValidator myAutoValidator;
+  private SearchPanel mySearchPanel = new SearchPanel(this);
 
   public EditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -218,6 +220,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myContainer.setMinimumSize(new Dimension(0, 0));
     myContainer.setLayout(new BorderLayout());
     myContainer.add(myScrollPane, BorderLayout.CENTER);
+    myContainer.add(mySearchPanel, BorderLayout.NORTH);
 
     myScrollPane.setBorder(new LineBorder(Color.LIGHT_GRAY));
 
@@ -338,6 +341,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         showPopupMenu(cell.getX(), cell.getY());
       }
     }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        mySearchPanel.activate();
+      }
+    }, KeyStroke.getKeyStroke("control F"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
