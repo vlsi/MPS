@@ -4,19 +4,32 @@ package jetbrains.mps.core.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class BaseConcept_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell5616_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5616_0");
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
+    return this.createConstant1133921115694(context, node, "");
+  }
+
+  public EditorCell createConstant1133921115694(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_11339211156941133921115694(editorCell, node, context);
+    setupLabel_Constant_1133921115694_1133921115694(editorCell, node, context);
+    editorCell.setDefaultText("<abstract concept>");
+    return editorCell;
+  }
+
+
+  private static void setupBasic_Constant_11339211156941133921115694(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1133921115694");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -24,7 +37,7 @@ public class BaseConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return BaseConcept_Editor.calculateColor(cell);
+              return BaseConcept_Editor.calculateColor0843_0(cell);
             }
 
           });
@@ -35,26 +48,13 @@ public class BaseConcept_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_ConstantCell5616_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1133921115694_1133921115694(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor(EditorCell cell) {
+  private static Color calculateColor0843_0(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;
-  }
-
-
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ConstantCell5616_0(context, node, "");
-  }
-
-  public EditorCell create_ConstantCell5616_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell5616_0(editorCell, node, context);
-    setupLabel_ConstantCell5616_0(editorCell, node, context);
-    editorCell.setDefaultText("<abstract concept>");
-    return editorCell;
   }
 
 }

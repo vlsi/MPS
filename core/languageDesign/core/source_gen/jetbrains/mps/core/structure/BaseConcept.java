@@ -32,15 +32,6 @@ public class BaseConcept extends BaseAdapter {
     super(node);
   }
 
-  public static BaseConcept newInstance(SModel sm, boolean init) {
-    return (BaseConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.structure.BaseConcept", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BaseConcept newInstance(SModel sm) {
-    return BaseConcept.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(BaseConcept.SHORT_DESCRIPTION);
   }
@@ -63,6 +54,15 @@ public class BaseConcept extends BaseAdapter {
 
   public void setVirtualPackage(String value) {
     this.setProperty(BaseConcept.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static BaseConcept newInstance(SModel sm, boolean init) {
+    return (BaseConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.structure.BaseConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BaseConcept newInstance(SModel sm) {
+    return BaseConcept.newInstance(sm, false);
   }
 
 }
