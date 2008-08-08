@@ -17,20 +17,26 @@ public class SModelStereotype {
   public static final String[] values = new String[]{NONE, GENERATOR};
 
   public static boolean isUserModel(SModel model) {
-    String stereotype = model.getStereotype();
-    return NONE.equals(stereotype) || GENERATOR.equals(stereotype) || TEMPLATES.equals(stereotype);
+    return isUserModelStereotype(model.getStereotype());
   }
 
   public static boolean isUserModel(SModelDescriptor model) {
-    return isUserModel(model.getSModel());
+    return isUserModelStereotype(model.getStereotype());
+  }
+
+  private static boolean isUserModelStereotype(String stereotype) {
+    return NONE.equals(stereotype) || GENERATOR.equals(stereotype) || TEMPLATES.equals(stereotype);
   }
 
   public static boolean isGeneratorModel(SModel model) {
-    String stereotype = model.getStereotype();
-    return GENERATOR.equals(stereotype) || TEMPLATES.equals(stereotype);
+    return isGeneratorModelStereotype(model.getStereotype());
   }
 
   public static boolean isGeneratorModel(SModelDescriptor model) {
-    return isGeneratorModel(model.getSModel());
+    return isGeneratorModelStereotype(model.getStereotype());
+  }
+
+  private static boolean isGeneratorModelStereotype(String stereotype) {
+    return GENERATOR.equals(stereotype) || TEMPLATES.equals(stereotype);
   }
 }

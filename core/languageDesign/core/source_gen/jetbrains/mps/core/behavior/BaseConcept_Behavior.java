@@ -18,7 +18,7 @@ public class BaseConcept_Behavior {
   }
 
   public static boolean call_isInTemplates_1213877396627(SNode thisNode) {
-    return SModelStereotype.TEMPLATES.equals(SNodeOperations.getModel(thisNode).getStereotype());
+    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(thisNode));
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
