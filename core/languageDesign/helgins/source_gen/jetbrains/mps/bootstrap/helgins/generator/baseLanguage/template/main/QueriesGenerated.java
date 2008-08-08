@@ -736,15 +736,15 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1175002064909(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode clt;
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.InferenceRule")) {
-      return SLinkOperations.getTarget(new QuotationClass_2().createNode(_context.getGenerator().getTargetModel()), "classifier", false);
+      return SLinkOperations.getTarget(new QuotationClass_2().createNode(_context.getOutputModel()), "classifier", false);
     }
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule")) {
       return SLinkOperations.getTarget(new QuotationClass_3().createNode(_context.getOutputModel()), "classifier", false);
     }
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule")) {
-      return SLinkOperations.getTarget(new QuotationClass_4().createNode(_context.getGenerator().getTargetModel()), "classifier", false);
+      return SLinkOperations.getTarget(new QuotationClass_4().createNode(_context.getOutputModel()), "classifier", false);
     }
-    return SLinkOperations.getTarget(new QuotationClass_5().createNode(_context.getGenerator().getTargetModel()), "classifier", false);
+    return SLinkOperations.getTarget(new QuotationClass_5().createNode(_context.getOutputModel()), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_1175149443385(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1689,7 +1689,7 @@ public class QueriesGenerated {
       dependenciesCollector.collectDependencies(inferenceRule, dependencies, leaves);
     }
     List<SNode> result = new ArrayList<SNode>();
-    SModel targetModel = _context.getGenerator().getTargetModel();
+    SModel targetModel = _context.getOutputModel();
     for(SNode leaf : leaves) {
       SNode composite = SModelOperations.createNewNode(targetModel, "jetbrains.mps.core.structure.BaseConcept", null);
       composite.setReferent("leaf", leaf);
