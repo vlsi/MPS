@@ -54,7 +54,7 @@ public class QueriesUtil {
     SNode enclosingMethodOrClosure = SNodeOperations.getAncestorWhereConceptInList(nodeInsideClosure, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration","jetbrains.mps.baseLanguage.structure.Closure"}, false, false);
     // --- in closure
     if (SNodeOperations.isInstanceOf(enclosingMethodOrClosure, "jetbrains.mps.baseLanguage.structure.Closure")) {
-      SNode fieldRef = new QuotationClass_().createNode();
+      SNode fieldRef = new QuotationClass_0().createNode();
       SNode typeOfField = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(typeOfField, "classifier", enclosingClass, false);
       SLinkOperations.setTarget(fieldRef, "fieldType", typeOfField, true);
