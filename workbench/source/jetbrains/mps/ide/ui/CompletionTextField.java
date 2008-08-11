@@ -19,6 +19,15 @@ public abstract class CompletionTextField extends JTextField {
       myHint.updateBounds();
     }
   };
+  private MouseListener myMouseListener = new MouseAdapter() {
+    public void mousePressed(MouseEvent e) {
+      myHint.hide();
+      e.consume();
+    }
+  };
+
+  private UpAction myUpAction = new UpAction();
+  private DownAction myDownAction = new DownAction();
 
   public CompletionTextField() {
     super(20);
@@ -40,6 +49,7 @@ public abstract class CompletionTextField extends JTextField {
         if (myHint.isVisible() || canShowPopupAutomatically()) {
           updateCompletion();
         }
+        updateActions();
       }
     });
 
@@ -61,24 +71,8 @@ public abstract class CompletionTextField extends JTextField {
       }
     });
 
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        myHint.up();
-      }
-    }, KeyStroke.getKeyStroke("UP"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        if (myHint.isVisible()) {
-          myHint.down();
-        } else {
-          if (canShowPopupAutomatically()) {
-            myHint.show();
-            updateCompletion();
-          }
-        }
-      }
-    }, KeyStroke.getKeyStroke("DOWN"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    registerKeyboardAction(myUpAction, KeyStroke.getKeyStroke("UP"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    registerKeyboardAction(myDownAction, KeyStroke.getKeyStroke("DOWN"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -101,10 +95,22 @@ public abstract class CompletionTextField extends JTextField {
         myHint.hide();
       }
     });
+
+    updateActions();
   }
 
   protected boolean canShowPopupAutomatically() {
     return true;
+  }
+
+  public void setHideComplitionOnClick(boolean hide) {
+    if (hide) {
+      addMouseListener(myMouseListener);
+      getParent().addMouseListener(myMouseListener);
+    } else {
+      removeMouseListener(myMouseListener);
+      getParent().removeMouseListener(myMouseListener);
+    }
   }
 
   public void addNotify() {
@@ -133,6 +139,10 @@ public abstract class CompletionTextField extends JTextField {
 
   public boolean isValid() {
     return true;
+  }
+
+  public boolean completionIsVisible() {
+    return myHint.isVisible();
   }
 
   public void showCompletion() {
@@ -167,6 +177,11 @@ public abstract class CompletionTextField extends JTextField {
     }
 
     myHint.setProposals(proposals);
+  }
+
+  private void updateActions() {
+    myUpAction.setEnabled(myHint.isVisible());
+    myDownAction.setEnabled(myHint.isVisible() || canShowPopupAutomatically());
   }
 
   private class PopupHint {
@@ -208,6 +223,8 @@ public abstract class CompletionTextField extends JTextField {
       updateBounds();
 
       myWindow.setVisible(true);
+
+      updateActions();
     }
 
     void updateBounds() {
@@ -236,6 +253,8 @@ public abstract class CompletionTextField extends JTextField {
         myWindow.dispose();
         myWindow = null;
       }
+
+      updateActions();
     }
 
     void up() {
@@ -279,19 +298,25 @@ public abstract class CompletionTextField extends JTextField {
     }
   }
 
-  public static void main(String[] args) {
-    JFrame frame = new JFrame();
-
-    frame.setLayout(new FlowLayout());
-    frame.add(new DefaultCompletionTextField(
-      Arrays.asList(
-        "jetbrains.mps.core.structure",
-        "jetbrains.mps.core.editor",
-        "jetbrains.mps.core.constraints")
-    ));
-
-    frame.setSize(800, 600);
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setVisible(true);
+  private class DownAction extends AbstractAction {
+    public void actionPerformed(ActionEvent e) {
+      if (myHint.isVisible()) {
+        myHint.down();
+      } else {
+        if (canShowPopupAutomatically()) {
+          myHint.show();
+          updateCompletion();
+        }
+      }
+    }
   }
+
+  private class UpAction extends AbstractAction {
+    public void actionPerformed(ActionEvent e) {
+      if (myHint.isVisible()) {
+        myHint.up();
+      }
+    }
+  }
+
 }

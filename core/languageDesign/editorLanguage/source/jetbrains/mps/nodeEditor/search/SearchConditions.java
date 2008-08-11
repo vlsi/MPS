@@ -4,69 +4,37 @@ import jetbrains.mps.util.Condition;
 
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.regex.PatternSyntaxException;
 
 public class SearchConditions {
-  public static Condition<String> equals(final String pattern) {
-    return new Condition<String>() {
-      public boolean met(String object) {
-        return object.equals(pattern);
-      }
-    };
+  public static Condition<String> containsWholeWord(final String pattern, final boolean ignoreCase) {
+    return contains("\\b" + Pattern.quote(pattern) + "\\b", ignoreCase);
   }
 
-  public static Condition<String> equalsIgnoreCase(final String pattern) {
-    return new Condition<String>() {
-      public boolean met(String object) {
-        return object.equalsIgnoreCase(pattern);
-      }
-    };
+  public static Condition<String> containsString(final String string, boolean ignoreCase) {
+    return contains(Pattern.quote(string), ignoreCase);
   }
 
-  public static Condition<String> contains(final String pattern) {
-    return new Condition<String>() {
-      public boolean met(String object) {
-        return object.contains(pattern);
-      }
-    };
+  public static Condition<String> containsRegexp(final String pattern, final boolean ignoreCase) {
+    try {
+      return contains(pattern, ignoreCase);
+    } catch (PatternSyntaxException pse) {
+      return new Condition<String>() {
+        public boolean met(String object) {
+          return false;
+        }
+      };
+    }
   }
 
-  public static Condition<String> containsIgnoreCase(final String pattern) {
+  private static Condition<String> contains(String pattern, boolean ignoreCase) {
+    final Pattern p = Pattern.compile(pattern, ignoreCase ? 0 : Pattern.CASE_INSENSITIVE);
     return new Condition<String>() {
       public boolean met(String object) {
-        int beginIndex = object.toLowerCase().indexOf(pattern.toLowerCase()),
-          endIndex = beginIndex + pattern.length();
-        if (beginIndex != -1
-            && object.substring(beginIndex, endIndex).equalsIgnoreCase(pattern)) {
+        Matcher m = p.matcher(object);
+        if (m.find()) {
           return true;
         } else {
-          return false;
-        }
-      }
-    };
-  }
-
-  public static Condition<String> matches(final String patternString) {
-    return new Condition<String>() {
-      public boolean met(String object) {
-        try {
-          Pattern pattern = Pattern.compile(patternString);
-          Matcher matcher = pattern.matcher(object);
-          return matcher.matches();
-        } catch (Exception e) {
-          return false;
-        }
-      }
-    };
-  }
-
-  public static Condition<String> matchesIgnoreCase(final String pattenrString) {
-    return new Condition<String>() {
-      public boolean met(String object) {
-        try {
-          Pattern pattern = Pattern.compile(pattenrString, Pattern.CASE_INSENSITIVE);
-          Matcher matcher = pattern.matcher(object);
-          return matcher.matches();
-        } catch (Exception e) {
           return false;
         }
       }

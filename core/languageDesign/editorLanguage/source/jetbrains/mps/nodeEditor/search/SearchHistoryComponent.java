@@ -52,8 +52,7 @@ public class SearchHistoryComponent implements ProjectComponent, PersistentState
   }
 
   public boolean addSearch(String text) {
-    boolean added = (myState.getSearches().isEmpty())
-      || !myState.getSearches().get(0).equals(text);
+    boolean added = myState.getSearches().isEmpty() || !myState.getSearches().get(0).equals(text);
     if (added) {
       myState.mySearches.add(0, text);
     }
@@ -64,6 +63,10 @@ public class SearchHistoryComponent implements ProjectComponent, PersistentState
     return Collections.unmodifiableList(myState.mySearches);
   }
 
+  public void setSearches(List<String> searches) {
+    myState.setSearches(searches);  
+  }
+
   public static class MyState {
     private List<String> mySearches = new ArrayList<String>();
 
@@ -72,7 +75,9 @@ public class SearchHistoryComponent implements ProjectComponent, PersistentState
     }
 
     public void setSearches(List<String> searches) {
-      mySearches = searches;
+      mySearches.clear();
+      mySearches.addAll(searches);
+   //   mySearches = searches;
     }
   }
 }
