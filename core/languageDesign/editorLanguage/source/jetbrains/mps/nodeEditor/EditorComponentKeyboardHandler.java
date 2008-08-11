@@ -27,7 +27,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     EditorComponent nodeEditor = editorContext.getNodeEditorComponent();
     nodeEditor.hideMessageToolTip();
 
-    if (keyEvent.isConsumed() || !editorContext.isEditable()) {
+    if (keyEvent.isConsumed()) {
       return false;
     }
 

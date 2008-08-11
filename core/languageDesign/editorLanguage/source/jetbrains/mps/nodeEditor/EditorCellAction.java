@@ -1,7 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
 public abstract class EditorCellAction {
-
   public String getDescriptionText() {
     return "no description : " + this.getClass().getName();
   }
