@@ -453,12 +453,35 @@
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218479324346">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218479324347">
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218479324348">
-                            <link role="baseMethodDeclaration" targetNodeId="1214431379231" resolveInfo="me" />
+                            <link role="baseMethodDeclaration" targetNodeId="1218479283511" resolveInfo="memep" />
                           </node>
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1218479324349" />
                         </node>
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1218481189881">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1218481189882">
+            <property name="name" value="runnable" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218481189883">
+              <link role="classifier" targetNodeId="1.~Runnable" resolveInfo="Runnable" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1218481202636">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1218481205638">
+                <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1218481205639">
+                  <link role="classifier" targetNodeId="1.~Runnable" resolveInfo="Runnable" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1218481205640" />
+                  <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1218481205641">
+                    <property name="isAbstract" value="false" />
+                    <property name="name" value="run" />
+                    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1218481205642" />
+                    <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1218481205643" />
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218481205644" />
                   </node>
                 </node>
               </node>
