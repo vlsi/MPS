@@ -1463,19 +1463,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       resetLastCaretX();
     }
 
-    if (newSelectedCell == mySelectedCell) {
-      return;
-    }
-    myNodeSubstituteChooser.setVisible(false);
-    myNodeRangeSelection.deactivate();
 
-    final EditorCell oldSelection = mySelectedCell;
-    if (mySelectedCell != null) {
-      mySelectedCell.setSelected(false);
-    }
-    mySelectedCell = newSelectedCell;
-    if (mySelectedCell != null) {
-      mySelectedCell.setSelected(true);
+    if (newSelectedCell != mySelectedCell) {
+      myNodeSubstituteChooser.setVisible(false);
+      myNodeRangeSelection.deactivate();
+
+      final EditorCell oldSelection = mySelectedCell;
+      if (mySelectedCell != null) {
+        mySelectedCell.setSelected(false);
+      }
+      mySelectedCell = newSelectedCell;
+      if (mySelectedCell != null) {
+        mySelectedCell.setSelected(true);
+      }
+
+      fireCellSelectionChanged(oldSelection, newSelectedCell);
     }
 
     if (mySelectedCell != null) {
@@ -1484,8 +1486,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }
     repaint();
-
-    fireCellSelectionChanged(oldSelection, newSelectedCell);
   }
 
   public void scrollToNode(SNode node) {
