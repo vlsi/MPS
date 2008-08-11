@@ -155,22 +155,6 @@
         </node>
       </node>
     </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1153773758797">
-      <property name="useNewActions" value="true" />
-      <link role="applicableConcept" targetNodeId="1.1151701983961" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart" id="1199875273782">
-        <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_NodeQuery" id="1199875273783">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199875273784">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199875277347">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227883985">
-                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1199875277348" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1199875279071" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1197932848431">
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1068431790191" resolveInfo="Expression" />
