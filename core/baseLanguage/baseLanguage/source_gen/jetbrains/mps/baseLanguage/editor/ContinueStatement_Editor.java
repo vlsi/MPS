@@ -128,6 +128,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
@@ -160,6 +161,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
         }
 
       };

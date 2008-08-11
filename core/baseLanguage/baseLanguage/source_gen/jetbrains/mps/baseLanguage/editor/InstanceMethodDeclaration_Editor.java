@@ -553,6 +553,15 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_11786091598561178609159856(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178609159856");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_refNodeList_throwsItem1178609159857(EditorCell editorCell, SNode node, EditorContext context) {
