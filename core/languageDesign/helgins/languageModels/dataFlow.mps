@@ -696,5 +696,20 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1218479451687">
+    <link role="conceptDeclaration" targetNodeId="1.1178870617262" resolveInfo="CoerceExpression" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1218479451688">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218479451689">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1218479455612">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218479458537">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1218479458192" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1218479461207">
+              <link role="link" targetNodeId="1.1178870894645" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
