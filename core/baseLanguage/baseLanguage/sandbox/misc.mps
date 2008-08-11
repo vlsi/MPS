@@ -481,7 +481,33 @@
                     <property name="name" value="run" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1218481205642" />
                     <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1218481205643" />
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218481205644" />
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218481205644">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218487935387">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1218487935388">
+                          <link role="baseMethodDeclaration" targetNodeId="1215450696623" resolveInfo="aaa" />
+                        </node>
+                      </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218487079915">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218487079916">
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218487079917">
+                            <link role="baseMethodDeclaration" targetNodeId="1214431379231" resolveInfo="me" />
+                          </node>
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1218492127156">
+                            <link role="classConcept" targetNodeId="1214431324743" resolveInfo="C1" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218492100775">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218492102261">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1218492100776">
+                            <link role="classConcept" targetNodeId="1214431324743" resolveInfo="C1" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218492110014">
+                            <link role="baseMethodDeclaration" targetNodeId="1218479283511" resolveInfo="memep" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

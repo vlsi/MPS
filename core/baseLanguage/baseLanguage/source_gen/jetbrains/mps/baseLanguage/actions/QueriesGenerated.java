@@ -400,7 +400,7 @@ __switch__:
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             if (strictly) {
-              return _PrecompiledPatterns.REGEXP.matcher(pattern).matches();
+              return _PrecompiledPatterns.REGEXP0.matcher(pattern).matches();
             } else
             {
               return _PrecompiledPatterns.REGEXP1.matcher(pattern).matches();
@@ -954,6 +954,46 @@ __switch__:
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        Calculable calc = new Calculable() {
+
+          public Object calculate() {
+            return ListSequence.fromList(SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false)).where(new IWhereFilter <SNode>() {
+
+              public boolean accept(SNode it) {
+                return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
+              }
+
+            }).toListSequence();
+          }
+
+        };
+        Iterable<SNode> queryResult = (Iterable)calc.calculate();
+        assert queryResult != null;
+        for(final SNode item : queryResult) {
+          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+              SNode thisEx = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
+              SLinkOperations.setTarget(thisEx, "classConcept", (item), false);
+              return thisEx;
+            }
+
+            public String getMatchingText(String pattern) {
+              return (item) + ".this";
+            }
+
+            public String getDescriptionText(String pattern) {
+              return "qualified this";
+            }
+
+          });
+        }
+      }
+    }
     return result;
   }
 
@@ -986,7 +1026,7 @@ __switch__:
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return new QuotationClass_().createNode();
+            return new QuotationClass_0().createNode();
           }
 
           public String getDescriptionText(String pattern) {

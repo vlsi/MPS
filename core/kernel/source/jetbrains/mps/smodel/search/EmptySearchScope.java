@@ -1,23 +1,29 @@
 package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Apr 4, 2006
- * Time: 9:16:11 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Apr 4, 2006
  */
 public class EmptySearchScope extends AbstractSearchScope {
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
-    return new ArrayList<SNode>(); // do not use Collections.emptyList(),
-    //  otherwise you can't successfully attach another scopes to this one
+    return new ArrayList<SNode>();
+  }
+
+  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
+    return new IReferenceInfoResolver() {
+      public SNode resolve(String referenceInfo, SModelUID targetModelUID) {
+        return null;
+      }
+    };
   }
 }
