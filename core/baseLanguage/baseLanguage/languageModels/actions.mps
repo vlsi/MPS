@@ -4891,11 +4891,23 @@
           </node>
           <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSubstitute_Query" id="1218491527254">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218491527255">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1218494507034">
+                <property name="value" value=" 'qualified this' - only in inner classes" />
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218491730977">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218491800661">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218491750421">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218491733854">
-                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1218491730978" />
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218494472928">
+                        <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1218491730978" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1218494474623">
+                          <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1218494474624">
+                            <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1218494571884">
+                              <link role="conceptDeclaration" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorsOperation" id="1218491748623">
                         <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1218491793123">
                           <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1218491797003">

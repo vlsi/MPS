@@ -551,7 +551,16 @@
       <property name="name" value="memep" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1218479283512" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1218479292094" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218479283514" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218479283514">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218494353459">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218494353460">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218494353461">
+              <link role="baseMethodDeclaration" targetNodeId="1214431379231" resolveInfo="me" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1218494353462" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214431324744" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1214431324745">

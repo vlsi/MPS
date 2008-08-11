@@ -654,10 +654,11 @@ __switch__:
 
       };
       Iterable queryResult = (Iterable)calc.calculate();
-      assert queryResult != null;
-      for(Object item : queryResult) {
-        List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-        result.addAll(defaultActions);
+      if (queryResult != null) {
+        for(Object item : queryResult) {
+          List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+          result.addAll(defaultActions);
+        }
       }
     }
     return result;
@@ -676,10 +677,11 @@ __switch__:
 
       };
       Iterable queryResult = (Iterable)calc.calculate();
-      assert queryResult != null;
-      for(Object item : queryResult) {
-        List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-        result.addAll(defaultActions);
+      if (queryResult != null) {
+        for(Object item : queryResult) {
+          List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+          result.addAll(defaultActions);
+        }
       }
     }
     return result;
@@ -1005,7 +1007,8 @@ __switch__:
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            return ListSequence.fromList(SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false)).where(new IWhereFilter <SNode>() {
+            //  'qualified this' - only in inner classes
+            return ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", false)).where(new IWhereFilter <SNode>() {
 
               public boolean accept(SNode it) {
                 return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
