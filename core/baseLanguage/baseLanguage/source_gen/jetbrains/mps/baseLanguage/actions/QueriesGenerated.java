@@ -537,6 +537,43 @@ __switch__:
         }
       }
     }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        Calculable calc = new Calculable() {
+
+          public Object calculate() {
+            //  in anonymous classes
+            SNode anonymousClass = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false);
+            if (anonymousClass == null) {
+              return null;
+            }
+            List<SNode> result = new ArrayList<SNode>();
+            List<SNode> outerClassifiers = SNodeOperations.getAncestors(anonymousClass, "jetbrains.mps.baseLanguage.structure.Classifier", false);
+            for(SNode outerClassifier : outerClassifiers) {
+              ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(outerClassifier, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_METHOD)));
+            }
+            return result;
+          }
+
+        };
+        Iterable<SNode> queryResult = (Iterable)calc.calculate();
+        assert queryResult != null;
+        for(final SNode item : queryResult) {
+          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+              SNode operationExpression = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", _context.getCurrentTargetNode());
+              SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", (item), false);
+              SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", SNodeOperations.getAncestor((item), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), false);
+              return operationExpression;
+            }
+
+          });
+        }
+      }
+    }
     return result;
   }
 
@@ -987,7 +1024,7 @@ __switch__:
             }
 
             public String getDescriptionText(String pattern) {
-              return "qualified this";
+              return "qualified 'this'";
             }
 
           });
