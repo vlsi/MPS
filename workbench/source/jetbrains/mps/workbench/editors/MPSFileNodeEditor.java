@@ -184,6 +184,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
     }
 
     myComponent.add(myNodeEditor.getComponent(), BorderLayout.CENTER);
+    myComponent.validate();
   }
 
 }
