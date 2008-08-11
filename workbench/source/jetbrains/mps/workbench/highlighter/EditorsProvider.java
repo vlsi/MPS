@@ -27,8 +27,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 public class EditorsProvider {
   private Project myProject;
 
-  private List<IEditor> myEditors = new ArrayList<IEditor>();
-  private IEditor myCurrentEditor;
+  private List<MPSFileNodeEditor> myEditors = new ArrayList<MPSFileNodeEditor>();
+  private MPSFileNodeEditor myCurrentEditor;
 
   private final Object myLock = new Object();
 
@@ -60,7 +60,7 @@ public class EditorsProvider {
           MPSFileNodeEditor mpsFileNodeEditor = (MPSFileNodeEditor) fileEditor;
           IEditor nodeEditor = mpsFileNodeEditor.getNodeEditor();
           if (nodeEditor != null) {
-            myEditors.add(nodeEditor);
+            myEditors.add(mpsFileNodeEditor);
           }
         }
       }
@@ -70,7 +70,7 @@ public class EditorsProvider {
         FileEditor fileEditor = selectedEditors[0];
         if (fileEditor instanceof MPSFileNodeEditor) {
           MPSFileNodeEditor mpsFileNodeEditor = (MPSFileNodeEditor) fileEditor;
-          myCurrentEditor = mpsFileNodeEditor.getNodeEditor();
+          myCurrentEditor = mpsFileNodeEditor;
         }
       }
     }
@@ -78,13 +78,17 @@ public class EditorsProvider {
 
   public List<IEditor> getAllEditors() {
     synchronized (myLock) {
-      return new ArrayList<IEditor>(myEditors);
+      List<IEditor> result = new ArrayList<IEditor>();
+      for (MPSFileNodeEditor e : myEditors) {
+        result.add(e.getNodeEditor());
+      }
+      return result;
     }
   }
 
   public IEditor getCurrentEditor() {
     synchronized (myLock) {
-      return myCurrentEditor;
+      return myCurrentEditor.getNodeEditor();
     }
   }
 }

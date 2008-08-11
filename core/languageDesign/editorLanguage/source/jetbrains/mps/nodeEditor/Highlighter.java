@@ -33,7 +33,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
   protected Thread myThread;
-  private HashSet<IEditorChecker> myCheckers = new LinkedHashSet<IEditorChecker>(3);
+  private Set<IEditorChecker> myCheckers = new LinkedHashSet<IEditorChecker>(3);
   private Set<IEditorChecker> myCheckersToRemove = new LinkedHashSet<IEditorChecker>();
   private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
   private Set<EditorComponent> myCheckedOnceEditors = new WeakSet<EditorComponent>();
@@ -70,33 +70,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
     myClassLoaderManager.addReloadHandler(myReloadListener);
     myGlobalSModelEventsManager.addGlobalCommandListener(myCommandListener);
-    myThread = new Thread("Highlighter") {
-      {
-        setDaemon(true);
-      }
-
-      public void run() {
-        if (IdeMain.isTestMode()) return;
-
-        CommandProcessor commandProcessor = CommandProcessor.getInstance();
-        while (true) {
-          try {
-            while (commandProcessor.getCurrentCommand() != null) {
-              Thread.sleep(200);
-            }
-            doUpdate();
-            if (myStopThread) {
-              break;
-            }
-            Thread.sleep(300);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-
-      }
-
-    };
+    myThread = new HighlighterThread();
     myThread.start();
   }
 
@@ -298,5 +272,34 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
 
     return true;
+  }
+
+  private class HighlighterThread extends Thread {
+    public HighlighterThread() {
+      super("Highlighter");
+      setDaemon(true);
+    }
+
+    public void run() {
+      if (IdeMain.isTestMode()) return;
+
+      CommandProcessor commandProcessor = CommandProcessor.getInstance();
+      while (true) {
+        try {
+          while (commandProcessor.getCurrentCommand() != null) {
+            Thread.sleep(200);
+          }
+          doUpdate();
+          if (myStopThread) {
+            break;
+          }
+          Thread.sleep(300);
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
+      }
+
+    }
+
   }
 }
