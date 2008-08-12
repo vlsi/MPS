@@ -15,21 +15,21 @@ public class ConstrainedDataTypeDeclaration extends DataTypeDeclaration {
     super(node);
   }
 
-  public static ConstrainedDataTypeDeclaration newInstance(SModel sm, boolean init) {
-    return (ConstrainedDataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ConstrainedDataTypeDeclaration newInstance(SModel sm) {
-    return ConstrainedDataTypeDeclaration.newInstance(sm, false);
-  }
-
-
   public String getConstraint() {
     return this.getProperty(ConstrainedDataTypeDeclaration.CONSTRAINT);
   }
 
   public void setConstraint(String value) {
     this.setProperty(ConstrainedDataTypeDeclaration.CONSTRAINT, value);
+  }
+
+
+  public static ConstrainedDataTypeDeclaration newInstance(SModel sm, boolean init) {
+    return (ConstrainedDataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ConstrainedDataTypeDeclaration newInstance(SModel sm) {
+    return ConstrainedDataTypeDeclaration.newInstance(sm, false);
   }
 
 }

@@ -14,21 +14,21 @@ public class BooleanConceptProperty extends ConceptProperty {
     super(node);
   }
 
-  public static BooleanConceptProperty newInstance(SModel sm, boolean init) {
-    return (BooleanConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BooleanConceptProperty newInstance(SModel sm) {
-    return BooleanConceptProperty.newInstance(sm, false);
-  }
-
-
   public BooleanConceptPropertyDeclaration getBooleanConceptPropertyDeclaration() {
     return (BooleanConceptPropertyDeclaration)this.getConceptPropertyDeclaration();
   }
 
   public void setBooleanConceptPropertyDeclaration(BooleanConceptPropertyDeclaration node) {
     this.setConceptPropertyDeclaration(node);
+  }
+
+
+  public static BooleanConceptProperty newInstance(SModel sm, boolean init) {
+    return (BooleanConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BooleanConceptProperty newInstance(SModel sm) {
+    return BooleanConceptProperty.newInstance(sm, false);
   }
 
 }

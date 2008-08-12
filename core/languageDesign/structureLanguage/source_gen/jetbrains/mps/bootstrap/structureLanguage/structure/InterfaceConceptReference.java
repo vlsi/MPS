@@ -16,21 +16,21 @@ public class InterfaceConceptReference extends BaseConcept {
     super(node);
   }
 
-  public static InterfaceConceptReference newInstance(SModel sm, boolean init) {
-    return (InterfaceConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InterfaceConceptReference newInstance(SModel sm) {
-    return InterfaceConceptReference.newInstance(sm, false);
-  }
-
-
   public InterfaceConceptDeclaration getIntfc() {
     return (InterfaceConceptDeclaration)this.getReferent(InterfaceConceptReference.INTFC);
   }
 
   public void setIntfc(InterfaceConceptDeclaration node) {
     super.setReferent(InterfaceConceptReference.INTFC, node);
+  }
+
+
+  public static InterfaceConceptReference newInstance(SModel sm, boolean init) {
+    return (InterfaceConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InterfaceConceptReference newInstance(SModel sm) {
+    return InterfaceConceptReference.newInstance(sm, false);
   }
 
 }

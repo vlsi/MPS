@@ -5,11 +5,11 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class AbstractConceptDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration";
@@ -27,15 +27,6 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
   public AbstractConceptDeclaration(SNode node) {
     super(node);
   }
-
-  public static AbstractConceptDeclaration newInstance(SModel sm, boolean init) {
-    return (AbstractConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AbstractConceptDeclaration newInstance(SModel sm) {
-    return AbstractConceptDeclaration.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(AbstractConceptDeclaration.NAME);
@@ -187,6 +178,15 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
 
   public void insertConceptLinkDeclaration(ConceptLinkDeclaration prev, ConceptLinkDeclaration node) {
     this.insertChild(prev, AbstractConceptDeclaration.CONCEPT_LINK_DECLARATION, node);
+  }
+
+
+  public static AbstractConceptDeclaration newInstance(SModel sm, boolean init) {
+    return (AbstractConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AbstractConceptDeclaration newInstance(SModel sm) {
+    return AbstractConceptDeclaration.newInstance(sm, false);
   }
 
 }

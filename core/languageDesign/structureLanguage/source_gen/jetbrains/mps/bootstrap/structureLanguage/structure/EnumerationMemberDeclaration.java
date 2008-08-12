@@ -18,15 +18,6 @@ public class EnumerationMemberDeclaration extends BaseConcept {
     super(node);
   }
 
-  public static EnumerationMemberDeclaration newInstance(SModel sm, boolean init) {
-    return (EnumerationMemberDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static EnumerationMemberDeclaration newInstance(SModel sm) {
-    return EnumerationMemberDeclaration.newInstance(sm, false);
-  }
-
-
   public String getInternalValue() {
     return this.getProperty(EnumerationMemberDeclaration.INTERNAL_VALUE);
   }
@@ -49,6 +40,15 @@ public class EnumerationMemberDeclaration extends BaseConcept {
 
   public void setJavaIdentifier(String value) {
     this.setProperty(EnumerationMemberDeclaration.JAVA_IDENTIFIER, value);
+  }
+
+
+  public static EnumerationMemberDeclaration newInstance(SModel sm, boolean init) {
+    return (EnumerationMemberDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static EnumerationMemberDeclaration newInstance(SModel sm) {
+    return EnumerationMemberDeclaration.newInstance(sm, false);
   }
 
 }

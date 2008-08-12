@@ -15,15 +15,6 @@ public class StringConceptProperty extends ConceptProperty {
     super(node);
   }
 
-  public static StringConceptProperty newInstance(SModel sm, boolean init) {
-    return (StringConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static StringConceptProperty newInstance(SModel sm) {
-    return StringConceptProperty.newInstance(sm, false);
-  }
-
-
   public String getValue() {
     return this.getProperty(StringConceptProperty.VALUE);
   }
@@ -38,6 +29,15 @@ public class StringConceptProperty extends ConceptProperty {
 
   public void setStringConceptPropertyDeclaration(StringConceptPropertyDeclaration node) {
     this.setConceptPropertyDeclaration(node);
+  }
+
+
+  public static StringConceptProperty newInstance(SModel sm, boolean init) {
+    return (StringConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static StringConceptProperty newInstance(SModel sm) {
+    return StringConceptProperty.newInstance(sm, false);
   }
 
 }

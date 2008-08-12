@@ -15,19 +15,11 @@ public class ConceptPropertyDeclaration extends BaseConcept implements INamedCon
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String INHERITABLE = "inheritable";
 
   public ConceptPropertyDeclaration(SNode node) {
     super(node);
   }
-
-  public static ConceptPropertyDeclaration newInstance(SModel sm, boolean init) {
-    return (ConceptPropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ConceptPropertyDeclaration newInstance(SModel sm) {
-    return ConceptPropertyDeclaration.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(ConceptPropertyDeclaration.NAME);
@@ -59,6 +51,23 @@ public class ConceptPropertyDeclaration extends BaseConcept implements INamedCon
 
   public void setVirtualPackage(String value) {
     this.setProperty(ConceptPropertyDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getInheritable() {
+    return this.getBooleanProperty(ConceptPropertyDeclaration.INHERITABLE);
+  }
+
+  public void setInheritable(boolean value) {
+    this.setBooleanProperty(ConceptPropertyDeclaration.INHERITABLE, value);
+  }
+
+
+  public static ConceptPropertyDeclaration newInstance(SModel sm, boolean init) {
+    return (ConceptPropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ConceptPropertyDeclaration newInstance(SModel sm) {
+    return ConceptPropertyDeclaration.newInstance(sm, false);
   }
 
 }

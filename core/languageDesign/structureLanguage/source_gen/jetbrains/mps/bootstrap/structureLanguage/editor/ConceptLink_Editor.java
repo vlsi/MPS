@@ -4,20 +4,12 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class ConceptLink_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_Error_11057425553831105742555383(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1105742555383");
-  }
-
-  private static void setupLabel_Error_1105742555383_1105742555383(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createError1105742555383(context, node);
@@ -28,6 +20,14 @@ public class ConceptLink_Editor extends DefaultNodeEditor {
     setupBasic_Error_11057425553831105742555383(editorCell, node, context);
     setupLabel_Error_1105742555383_1105742555383(editorCell, node, context);
     return editorCell;
+  }
+
+
+  private static void setupBasic_Error_11057425553831105742555383(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1105742555383");
+  }
+
+  private static void setupLabel_Error_1105742555383_1105742555383(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

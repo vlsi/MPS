@@ -21,15 +21,6 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-  public static PropertyDeclaration newInstance(SModel sm, boolean init) {
-    return (PropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PropertyDeclaration newInstance(SModel sm) {
-    return PropertyDeclaration.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(PropertyDeclaration.NAME);
   }
@@ -68,6 +59,15 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept {
 
   public void setDataType(DataTypeDeclaration node) {
     super.setReferent(PropertyDeclaration.DATA_TYPE, node);
+  }
+
+
+  public static PropertyDeclaration newInstance(SModel sm, boolean init) {
+    return (PropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PropertyDeclaration newInstance(SModel sm) {
+    return PropertyDeclaration.newInstance(sm, false);
   }
 
 }

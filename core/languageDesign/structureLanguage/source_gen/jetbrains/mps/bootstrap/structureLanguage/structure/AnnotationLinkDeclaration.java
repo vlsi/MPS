@@ -25,15 +25,6 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
     super(node);
   }
 
-  public static AnnotationLinkDeclaration newInstance(SModel sm, boolean init) {
-    return (AnnotationLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AnnotationLinkDeclaration newInstance(SModel sm) {
-    return AnnotationLinkDeclaration.newInstance(sm, false);
-  }
-
-
   public String getRole() {
     return this.getProperty(AnnotationLinkDeclaration.ROLE);
   }
@@ -106,6 +97,15 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
 
   public void setTarget(AbstractConceptDeclaration node) {
     super.setReferent(AnnotationLinkDeclaration.TARGET, node);
+  }
+
+
+  public static AnnotationLinkDeclaration newInstance(SModel sm, boolean init) {
+    return (AnnotationLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AnnotationLinkDeclaration newInstance(SModel sm) {
+    return AnnotationLinkDeclaration.newInstance(sm, false);
   }
 
 }

@@ -21,15 +21,6 @@ public class LinkDeclaration extends BaseConcept {
     super(node);
   }
 
-  public static LinkDeclaration newInstance(SModel sm, boolean init) {
-    return (LinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static LinkDeclaration newInstance(SModel sm) {
-    return LinkDeclaration.newInstance(sm, false);
-  }
-
-
   public String getRole() {
     return this.getProperty(LinkDeclaration.ROLE);
   }
@@ -79,6 +70,15 @@ public class LinkDeclaration extends BaseConcept {
 
   public void setTarget(AbstractConceptDeclaration node) {
     super.setReferent(LinkDeclaration.TARGET, node);
+  }
+
+
+  public static LinkDeclaration newInstance(SModel sm, boolean init) {
+    return (LinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static LinkDeclaration newInstance(SModel sm) {
+    return LinkDeclaration.newInstance(sm, false);
   }
 
 }

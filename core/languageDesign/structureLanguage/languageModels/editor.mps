@@ -1651,6 +1651,15 @@
           <property name="color" value="DARK_GREEN" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1218572198002">
+        <property name="text" value="inheritable:" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1218572198003">
+          <property name="style" value="PLAIN" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1218571420429">
+        <link role="relationDeclaration" targetNodeId="1.1218571350029" resolveInfo="inheritable" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1105727100448">
@@ -1675,6 +1684,15 @@
           <property name="color" value="DARK_GREEN" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1218571457307">
+        <property name="text" value="inheritable:" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1218571817279">
+          <property name="style" value="PLAIN" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1218571457324">
+        <link role="relationDeclaration" targetNodeId="1.1218571350029" resolveInfo="inheritable" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1105727129077">
@@ -1698,6 +1716,15 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399677889">
           <property name="color" value="DARK_GREEN" />
         </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1218572209379">
+        <property name="text" value="inheritable:" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1218572209380">
+          <property name="style" value="PLAIN" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1218571451494">
+        <link role="relationDeclaration" targetNodeId="1.1218571350029" resolveInfo="inheritable" />
       </node>
     </node>
   </node>
