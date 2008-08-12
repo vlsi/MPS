@@ -1,69 +1,37 @@
-<project name="get.idea" default="default">
-  <property name="main.url" value="http://buildserver/guestAuth/repository/download/bt24/.lastSuccessful"/>
-  <property name="idea.platform.dir" value="lib/idea-platform"/>
-  <property name="idea.platform.internal.dir" value="lib/idea-platform-internal"/>
-  <property name="idea.new" value="idea.new"/>
-
-  <target name="default" depends="download, replace.libraries, clean">
-
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="get-idea" default="default">
+  <property name="main.url" value="http://buildserver/guestAuth/repository/download/bt24/.lastSuccessful" />
+  <property name="idea.platform.dir" value="lib/idea-platform" />
+  <property name="idea.platform.internal.dir" value="lib/idea-platform-internal" />
+  <property name="tmp" value="idea.new" />
+  <target name="default" depends="prepare,download,replace.libraries,upgrade.plugins,clean" />
+  <target name="prepare">
+    <mkdir dir="${tmp}" />
   </target>
-
-  <target name="download">
-    <mkdir dir="${idea.new}"/>
-        <get src="${main.url}/platform15/platform-api.jar" dest="${idea.platform.dir}/platform-api.jar"/>
-        <get src="${main.url}/platform15/platform.jar" dest="${idea.platform.dir}/platform.jar"/>
-        <get src="${main.url}/platform15/resources.jar" dest="${idea.platform.dir}/resources.jar"/>
-        <get src="${main.url}/platform15/resources_en.jar" dest="${idea.platform.dir}/resources_en.jar"/>
-        <get src="${main.url}/sources.zip" dest="${idea.platform.dir}/sources.zip"/>
-
-        <get src="${main.url}/idea{build.number}-jdk15.zip" dest="${idea.new}/idea-jdk15.zip"/>
+  <target name="download" depends="prepare">
+    <get src="${main.url}/platform15/platform-api.jar" dest="${idea.platform.dir}/platform-api.jar" />
+    <get src="${main.url}/platform15/platform.jar" dest="${idea.platform.dir}/platform.jar" />
+    <get src="${main.url}/platform15/resources.jar" dest="${idea.platform.dir}/resources.jar" />
+    <get src="${main.url}/platform15/resources_en.jar" dest="${idea.platform.dir}/resources_en.jar" />
+    <get src="${main.url}/sources.zip" dest="${idea.platform.dir}/sources.zip" />
+    <get src="${main.url}/idea{build.number}-jdk15.zip" dest="${tmp}/idea-jdk15.zip" />
   </target>
-
   <target name="replace.libraries" depends="download">
-    <unzip src="${idea.new}/idea-jdk15.zip" dest="${idea.new}/idea"/>
+    <unzip src="${tmp}/idea-jdk15.zip" dest="${tmp}/idea" />
     <copy todir="${idea.platform.dir}" overwrite="true">
-      <fileset dir="${idea.new}/idea/lib" includes="alloy.jar,
-                       annotations.jar,
-                       boot.jar,
-                       bootstrap.jar,
-                       commons-codec-1.3.jar,
-                       commons-collections.jar,
-                       extensions.jar,
-                       forms_rt.jar,
-                       icons.jar,
-                       jdom.jar,
-                       jgoodies-forms.jar,
-                       jh.jar,
-                       jna-utils.jar,
-                       jna.jar,
-                       log4j.jar,
-                       microba.jar,
-                       nanoxml-2.2.3.jar,
-                       oromatcher.jar,
-                       picocontainer.jar,
-                       trove4j.jar,
-                       trove4j_src.jar,
-                       util.jar,
-                       xmlrpc-2.0.jar,
-                       xstream.jar,
-                       yjp-controller-api-redist.jar"/>
+      <fileset dir="${tmp}/idea/lib" includes="alloy.jar, annotations.jar, boot.jar, bootstrap.jar, commons-codec-1.3.jar, commons-collections.jar, extensions.jar, forms_rt.jar, icons.jar, jh.jar, jdom.jar, jgoodies-forms.jar, jna-utils.jar, jna.jar, log4j.jar, microba.jar, nanoxml-2.2.3.jar, oromatcher.jar, picocontainer.jar, trove4j.jar, trove4j_src.jar, util.jar, xmlrpc-2.0.jar, xstream.jar, yjp-controller-api-redist.jar" />
     </copy>
     <copy todir="${idea.platform.internal.dir}" overwrite="true">
-      <fileset dir="${idea.new}/idea/lib" includes="cocoa.jar,
-                      exe4jlib.jar,
-                      growl.jar,
-                      jLmgr.jar,
-                      ui.jar,
-                      velocity.jar"/>
-    </copy>
-    <!--<delete dir="plugins"/>-->
-    <!--<mkdir dir="plugins"/>-->
-    <copy todir="plugins" overwrite="true">
-      <fileset dir="${idea.new}/idea/plugins/" includes="svn4idea/**"/>
+      <fileset dir="${tmp}/idea/lib" includes="cocoa.jar, exe4jlib.jar, growl.jar, jLmgr.jar, ui.jar, velocity.jar" />
     </copy>
   </target>
-
-  <target name="clean" depends="replace.libraries">
-    <delete dir="${idea.new}"/>
+  <target name="upgrade.plugins" depends="replace.libraries">
+    <copy todir="plugins" overwrite="true">
+      <fileset dir="${tmp}/idea/plugins/" includes="svn4idea/**" />
+    </copy>
+  </target>
+  <target name="clean" depends="upgrade.plugins">
+    <delete dir="${tmp}" />
   </target>
 </project>
+
