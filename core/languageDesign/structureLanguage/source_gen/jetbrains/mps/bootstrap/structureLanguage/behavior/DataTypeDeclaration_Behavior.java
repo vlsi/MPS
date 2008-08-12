@@ -12,7 +12,7 @@ public class DataTypeDeclaration_Behavior {
   }
 
   public static SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
-    return new QuotationClass_().createNode();
+    return new QuotationClass_0().createNode();
   }
 
   public static SNode call_toBaseLanguageType_1213877229718(SNode thisNode) {
