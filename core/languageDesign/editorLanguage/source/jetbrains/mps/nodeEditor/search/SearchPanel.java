@@ -12,13 +12,8 @@ import jetbrains.mps.ide.ui.CompletionTextField;
 import javax.swing.*;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.DocumentEvent;
-import java.awt.FlowLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.InputEvent;
+import java.awt.*;
+import java.awt.event.*;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -31,33 +26,41 @@ public class SearchPanel extends JPanel {
   private JCheckBox myIsCaseSensitive = new JCheckBox("Case sensitive");
   private JCheckBox myIsWordsOnly = new JCheckBox("Match whole words only");
   private JCheckBox myIsRegex = new JCheckBox("Regex");
-  private SearchHistoryComponent myHistory = new SearchHistoryComponent();
   private ArrayList<EditorCell_Label> myCells = new ArrayList<EditorCell_Label>();
   private JButton myHistoryButton = new JButton(Icons.SEARCH_ICON);
   private JButton myNextButton = new JButton(Icons.NEXT_ICON);
   private JButton myPreviousButton = new JButton(Icons.PREVIOUS_ICON);
 
   public SearchPanel(EditorComponent editor) {
-     myEditor = editor;
+    myEditor = editor;
 
-    setLayout(new FlowLayout(FlowLayout.LEFT));
+    setLayout(new BorderLayout());
     setPreferredSize(new Dimension((int)getPreferredSize().getWidth(), 
-      (int)myText.getPreferredSize().getHeight()+10));
-    add(new JLabel("Text:"));
-    add(myText);
+      (int)myText.getPreferredSize().getHeight() + 5));
+
+    JPanel mainPanel = new JPanel();
+    FlowLayout layout = new FlowLayout();
+    layout.setVgap(0);
+    mainPanel.setLayout(layout);
+    mainPanel.setOpaque(false);
+
+    mainPanel.add(new JLabel("Text:"));
+    mainPanel.add(myText);
     myText.setHideComplitionOnClick(true);
 
-    add(myHistoryButton);
-    myHistoryButton.setPreferredSize(new Dimension(myButtonSize, myButtonSize));
+    mainPanel.add(myHistoryButton);
     myHistoryButton.setEnabled(false);
+    myHistoryButton.setOpaque(false);
+    myHistoryButton.setPreferredSize(new Dimension(myButtonSize, myButtonSize));    
     myHistoryButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         myText.showCompletion();
       }
     });
 
-    add(myPreviousButton);
+    mainPanel.add(myPreviousButton);
     myPreviousButton.setEnabled(false);
+    myPreviousButton.setOpaque(false);
     myPreviousButton.setPreferredSize(new Dimension(myButtonSize, myButtonSize));
     myPreviousButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
@@ -65,8 +68,9 @@ public class SearchPanel extends JPanel {
       }
     });
 
-    add(myNextButton);
+    mainPanel.add(myNextButton);
     myNextButton.setEnabled(false);
+    myNextButton.setOpaque(false);
     myNextButton.setPreferredSize(new Dimension(myButtonSize, myButtonSize));
     myNextButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
@@ -74,7 +78,8 @@ public class SearchPanel extends JPanel {
       }
     });
 
-    add(myIsCaseSensitive);
+    mainPanel.add(myIsCaseSensitive);
+    myIsCaseSensitive.setOpaque(false);
     myIsCaseSensitive.setMnemonic(KeyEvent.VK_C);
     myIsCaseSensitive.setFocusable(false);
     myIsCaseSensitive.addActionListener(new ActionListener() {
@@ -83,7 +88,8 @@ public class SearchPanel extends JPanel {
       }
     });
 
-    add(myIsWordsOnly);
+    mainPanel.add(myIsWordsOnly);
+    myIsWordsOnly.setOpaque(false);
     myIsWordsOnly.setMnemonic(KeyEvent.VK_M);
     myIsWordsOnly.setFocusable(false);
     myIsWordsOnly.addActionListener(new ActionListener() {
@@ -92,12 +98,28 @@ public class SearchPanel extends JPanel {
       }
     });
 
-    add(myIsRegex);
+    mainPanel.add(myIsRegex);
+    myIsRegex.setOpaque(false);
     myIsRegex.setMnemonic(KeyEvent.VK_R);
     myIsRegex.setFocusable(false);
     myIsRegex.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myIsWordsOnly.setEnabled(!myIsWordsOnly.isEnabled());
+      }
+    });
+
+    add(mainPanel, BorderLayout.LINE_START);
+
+    JLabel escapeLabel = new JLabel(Icons.ESCAPE_ICON);
+    JPanel escapePanel = new JPanel();
+    escapePanel.setOpaque(false);
+    escapePanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+    escapePanel.add(escapeLabel);
+    add(escapePanel, BorderLayout.LINE_END);
+
+    escapeLabel.addMouseListener(new MouseAdapter() {
+      public void mouseClicked(MouseEvent e) {
+        deactivate();
       }
     });
 
@@ -133,12 +155,16 @@ public class SearchPanel extends JPanel {
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        // ???????????? ?? ?????????? ????
         deactivate();
       }
     }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     editor.getRootCell();
+  }
+
+  private SearchHistoryComponent getSearchHistory() {
+    return myEditor.getOperationContext().getProject().
+      getComponent(SearchHistoryComponent.class);
   }
 
   private List<EditorCell_Label> allCells() {
@@ -154,10 +180,23 @@ public class SearchPanel extends JPanel {
     return cells;
   }
 
+
+  protected void paintComponent(Graphics g) {
+    super.paintComponent(g);
+
+    //copied from IDEA's class todo
+    Graphics2D g2d = (Graphics2D)g;
+    final Color GRADIENT_C1 = getBackground();
+    final Color GRADIENT_C2 = new Color(Math.max(0, GRADIENT_C1.getRed() - 0x18),
+      Math.max(0, GRADIENT_C1.getGreen() - 0x18),
+      Math.max(0, GRADIENT_C1.getBlue() - 0x18));
+    g2d.setPaint(new GradientPaint(0, 0, GRADIENT_C1, 0, getHeight(), GRADIENT_C2));
+    g2d.fillRect(1, 1, getWidth(), getHeight() - 1);
+  }
+
   private void addToHistory() {
-    if (myHistory.addSearch(myText.getText())) {
-      myText.addValue(myText.getText());
-    }
+    myText.addValue(myText.getText());
+    getSearchHistory().setSearches(myText.getProposals(myText.getText()));
     myHistoryButton.setEnabled(true);
   }
 
@@ -198,6 +237,7 @@ public class SearchPanel extends JPanel {
     if (myText.getText().length() == 0) {
       myText.setBackground(Color.white);
       setPrevNextEnabled(false);
+      myText.requestFocus();
       return;
     }
     selectCell();
@@ -217,14 +257,11 @@ public class SearchPanel extends JPanel {
     myCells.clear();
     Condition<String> condition;
     if (myIsRegex.isSelected()) {
-      condition =
-        SearchConditions.containsRegexp(myText.getText(), myIsCaseSensitive.isSelected());
+      condition = SearchConditions.containsRegexp(myText.getText(), myIsCaseSensitive.isSelected());
     } else if (myIsWordsOnly.isSelected()) {
-      condition =
-        SearchConditions.containsWholeWord(myText.getText(), myIsCaseSensitive.isSelected());
+      condition = SearchConditions.containsWholeWord(myText.getText(), myIsCaseSensitive.isSelected());
     } else {
-      condition =
-        SearchConditions.containsString(myText.getText(), myIsCaseSensitive.isSelected());
+      condition = SearchConditions.containsString(myText.getText(), myIsCaseSensitive.isSelected());
     }
     for (int i = cells.size() - 1; i >= 0; i--) {
       if (condition.met(cells.get(i).getText())){
@@ -237,11 +274,9 @@ public class SearchPanel extends JPanel {
   public void activate() {
     setVisible(true);
     myText.requestFocus();
-    if (myEditor.getOperationContext().getProject() != null) {
-      myHistory.setSearches(myEditor.getOperationContext().
-        getProject().getComponent(SearchHistoryComponent.class).getSearches());
-      for (String value : myHistory.getSearches()) {
-        myText.addValue(value);
+    if (getSearchHistory() != null && getSearchHistory().getSearches().size() != 0) {
+      for (int i = getSearchHistory().getSearches().size() - 1; i >= 0; i--) {
+        myText.addValue(getSearchHistory().getSearches().get(i));
       }
       myHistoryButton.setEnabled(true);
     }   
@@ -250,32 +285,42 @@ public class SearchPanel extends JPanel {
 
   public void deactivate() {
     setVisible(false);
-    if (myHistory.getSearches() != null) {
-      myEditor.getOperationContext().getProject().
-        getComponent(SearchHistoryComponent.class).setSearches(myHistory.getSearches());
-    }
     revalidate();
     myEditor.requestFocus();
   }
-
+                                       
   private class HistoryCompletionTextField extends CompletionTextField {
 
+    private final int myPossibleValuesLimit = 30;
     private List<String> myPossibleValues = new ArrayList<String>();
 
     public HistoryCompletionTextField() {
        super();
     }
 
-    public void addValue(String value) {
-      myPossibleValues.add(0, value);
+    public HistoryCompletionTextField(List<String> possibleValues) {
+      super();
+      myPossibleValues.addAll(possibleValues);
     }
 
-    public HistoryCompletionTextField(List<String> possibleValues) {
-      myPossibleValues.addAll(possibleValues);
+    public void addValue(String value) {
+      boolean added = myPossibleValues.isEmpty() || !myPossibleValues.get(0).equals(value);
+      if (added && !myPossibleValues.contains(value) && value.length() != 0) {
+        myPossibleValues.add(0, value);
+        if (myPossibleValues.size() > myPossibleValuesLimit) {
+          for (int i = myPossibleValues.size(); i >= myPossibleValuesLimit; i--) {
+            myPossibleValues.remove(i);
+          }
+        }
+      }
     }
 
     protected boolean canShowPopupAutomatically() {
       return getText().length() == 0;
+    }
+
+    protected boolean isCanShowCompletionOnRemove() {
+      return false;
     }
 
     public List<String> getProposals(String text) {

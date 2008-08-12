@@ -9,7 +9,6 @@ import javax.swing.event.CaretEvent;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
-import java.util.Arrays;
 
 public abstract class CompletionTextField extends JTextField {
   private PopupHint myHint = new PopupHint();
@@ -38,7 +37,10 @@ public abstract class CompletionTextField extends JTextField {
       }
 
       public void removeUpdate(DocumentEvent e) {
-        updatePopup();
+        if (isCanShowCompletionOnRemove()) {
+          updatePopup();
+        }
+        updateActions();
       }
 
       public void changedUpdate(DocumentEvent e) {
@@ -112,7 +114,7 @@ public abstract class CompletionTextField extends JTextField {
       getParent().removeMouseListener(myMouseListener);
     }
   }
-
+  
   public void addNotify() {
     super.addNotify();
     myContainerWindow = SwingUtilities.getWindowAncestor(this);
@@ -179,9 +181,16 @@ public abstract class CompletionTextField extends JTextField {
     myHint.setProposals(proposals);
   }
 
+  protected boolean isCanShowCompletionOnRemove() {
+    return true;
+  }
+
   private void updateActions() {
     myUpAction.setEnabled(myHint.isVisible());
     myDownAction.setEnabled(myHint.isVisible() || canShowPopupAutomatically());
+
+    System.out.println("up enabled = " + myUpAction.isEnabled());
+    System.out.println("down enabled = " + myDownAction.isEnabled());
   }
 
   private class PopupHint {

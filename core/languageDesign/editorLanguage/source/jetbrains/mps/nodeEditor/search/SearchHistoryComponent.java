@@ -64,7 +64,8 @@ public class SearchHistoryComponent implements ProjectComponent, PersistentState
   }
 
   public void setSearches(List<String> searches) {
-    myState.setSearches(searches);  
+    myState.getSearches().clear();
+    myState.getSearches().addAll(searches);
   }
 
   public static class MyState {
@@ -75,9 +76,7 @@ public class SearchHistoryComponent implements ProjectComponent, PersistentState
     }
 
     public void setSearches(List<String> searches) {
-      mySearches.clear();
-      mySearches.addAll(searches);
-   //   mySearches = searches;
+      mySearches = searches;
     }
   }
 }
