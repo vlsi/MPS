@@ -28,6 +28,7 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
   private static final Logger LOG = Logger.getLogger(ExcludedFileIndexApplicationComponent.class);
   private final MPSModuleRepository myModuleRepository;
   private final Set<VirtualFile> myExcludedFiles = new HashSet<VirtualFile>();
+  private final String[] myExcludedRegexps = new String[]{".*\\.svn.*"};
   private final ModuleRepositoryAdapter myModuleRepositoryListener = new ModuleRepositoryAdapter() {
     @Override
     public void moduleAdded(IModule module) {
@@ -96,6 +97,14 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
       }
     }
 
-    return FileTypeManager.getInstance().isFileIgnored(file.getName());
+    String filePath = file.getPath();
+    for (String regexp : myExcludedRegexps){
+      if (filePath.matches(regexp)){
+        return true;
+      }
+
+    }
+
+    return FileTypeManager.getInstance().isFileIgnored(file.getPath());
   }
 }
