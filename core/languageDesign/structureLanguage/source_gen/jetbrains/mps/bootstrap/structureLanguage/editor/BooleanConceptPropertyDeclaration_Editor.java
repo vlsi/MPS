@@ -34,8 +34,9 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1105727152860(context, node, "boolean"));
     editorCell.addEditorCell(this.createProperty1105727152861(context, node));
-    editorCell.addEditorCell(this.createConstant1218572209379(context, node, "inheritable:"));
-    editorCell.addEditorCell(this.createProperty1218571451494(context, node));
+    editorCell.addEditorCell(this.createConstant1218575395847(context, node, "<inheritable:"));
+    editorCell.addEditorCell(this.createProperty1218575395850(context, node));
+    editorCell.addEditorCell(this.createConstant1218575395851(context, node, ">"));
     return editorCell;
   }
 
@@ -47,10 +48,18 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant1218572209379(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1218575395847(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12185722093791218572209379(editorCell, node, context);
-    setupLabel_Constant_1218572209379_1218572209379(editorCell, node, context);
+    setupBasic_Constant_12185753958471218575395847(editorCell, node, context);
+    setupLabel_Constant_1218575395847_1218575395847(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1218575395851(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12185753958511218575395851(editorCell, node, context);
+    setupLabel_Constant_1218575395851_1218575395851(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -84,25 +93,25 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return cellWithRole;
   }
 
-  public EditorCell createProperty1218571451494_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty1218575395850_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_inheritable1218571451494(editorCell, node, context);
+    setupBasic_property_inheritable1218575395850(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_inheritable_1218571451494((EditorCell_Label)editorCell, node, context);
+      setupLabel_property_inheritable_1218575395850((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty1218571451494(EditorContext context, SNode node) {
+  public EditorCell createProperty1218575395850(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("inheritable");
     provider.setNoTargetText("<no inheritable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1218571451494_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty1218575395850_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -157,15 +166,42 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     }
   }
 
-  private static void setupBasic_property_inheritable1218571451494(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_inheritable");
-  }
-
-  private static void setupBasic_Constant_12185722093791218572209379(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218572209379");
+  private static void setupBasic_Constant_12185753958471218575395847(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218575395847");
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return BooleanConceptPropertyDeclaration_Editor.calculateColor9401_2(cell);
+            }
+
+          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_property_inheritable1218575395850(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "property_inheritable");
+  }
+
+  private static void setupBasic_Constant_12185753958511218575395851(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218575395851");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return BooleanConceptPropertyDeclaration_Editor.calculateColor9401_3(cell);
+            }
+
+          });
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
 
@@ -180,10 +216,13 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
   private static void setupLabel_property_name_1105727152861(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_inheritable_1218571451494(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1218575395847_1218575395847(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1218572209379_1218572209379(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_property_inheritable_1218575395850(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1218575395851_1218575395851(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static Color calculateColor9401_0(EditorCell cell) {
@@ -195,6 +234,18 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
   private static Color calculateColor9401_1(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor9401_2(EditorCell cell) {
+    Color result;
+    result = Color.gray;
+    return result;
+  }
+
+  private static Color calculateColor9401_3(EditorCell cell) {
+    Color result;
+    result = Color.gray;
     return result;
   }
 

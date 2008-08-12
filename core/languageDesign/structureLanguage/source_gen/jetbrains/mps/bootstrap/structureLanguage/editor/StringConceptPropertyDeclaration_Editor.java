@@ -34,8 +34,9 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1105727123122(context, node, "string"));
     editorCell.addEditorCell(this.createProperty1105727123123(context, node));
-    editorCell.addEditorCell(this.createConstant1218571457307(context, node, "inheritable:"));
+    editorCell.addEditorCell(this.createConstant1218571457307(context, node, "<inheritable:"));
     editorCell.addEditorCell(this.createProperty1218571457324(context, node));
+    editorCell.addEditorCell(this.createConstant1218575154581(context, node, ">"));
     return editorCell;
   }
 
@@ -51,6 +52,14 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12185714573071218571457307(editorCell, node, context);
     setupLabel_Constant_1218571457307_1218571457307(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1218575154581(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12185751545811218575154581(editorCell, node, context);
+    setupLabel_Constant_1218575154581_1218575154581(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -162,6 +171,13 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return StringConceptPropertyDeclaration_Editor.calculateColor0098_3(cell);
+            }
+
+          });
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
 
@@ -172,6 +188,26 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_property_inheritable1218571457324(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_inheritable");
+  }
+
+  private static void setupBasic_Constant_12185751545811218575154581(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218575154581");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return StringConceptPropertyDeclaration_Editor.calculateColor0098_2(cell);
+            }
+
+          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_1105727123122_1105727123122(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -186,6 +222,9 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_inheritable_1218571457324(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_Constant_1218575154581_1218575154581(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   private static Color calculateColor0098_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
@@ -195,6 +234,18 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
   private static Color calculateColor0098_1(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor0098_2(EditorCell cell) {
+    Color result;
+    result = Color.gray;
+    return result;
+  }
+
+  private static Color calculateColor0098_3(EditorCell cell) {
+    Color result;
+    result = Color.gray;
     return result;
   }
 

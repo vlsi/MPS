@@ -34,8 +34,9 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1105727034368(context, node, "integer"));
     editorCell.addEditorCell(this.createProperty1105727076103(context, node));
-    editorCell.addEditorCell(this.createConstant1218572198002(context, node, "inheritable:"));
-    editorCell.addEditorCell(this.createProperty1218571420429(context, node));
+    editorCell.addEditorCell(this.createConstant1218575411611(context, node, "<inheritable:"));
+    editorCell.addEditorCell(this.createProperty1218575411614(context, node));
+    editorCell.addEditorCell(this.createConstant1218575411615(context, node, ">"));
     return editorCell;
   }
 
@@ -47,10 +48,18 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant1218572198002(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1218575411611(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12185721980021218572198002(editorCell, node, context);
-    setupLabel_Constant_1218572198002_1218572198002(editorCell, node, context);
+    setupBasic_Constant_12185754116111218575411611(editorCell, node, context);
+    setupLabel_Constant_1218575411611_1218575411611(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1218575411615(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12185754116151218575411615(editorCell, node, context);
+    setupLabel_Constant_1218575411615_1218575411615(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -84,25 +93,25 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return cellWithRole;
   }
 
-  public EditorCell createProperty1218571420429_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty1218575411614_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_inheritable1218571420429(editorCell, node, context);
+    setupBasic_property_inheritable1218575411614(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_inheritable_1218571420429((EditorCell_Label)editorCell, node, context);
+      setupLabel_property_inheritable_1218575411614((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty1218571420429(EditorContext context, SNode node) {
+  public EditorCell createProperty1218575411614(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("inheritable");
     provider.setNoTargetText("<no inheritable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1218571420429_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty1218575411614_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -157,15 +166,42 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     }
   }
 
-  private static void setupBasic_property_inheritable1218571420429(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_inheritable");
-  }
-
-  private static void setupBasic_Constant_12185721980021218572198002(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218572198002");
+  private static void setupBasic_Constant_12185754116111218575411611(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218575411611");
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return IntegerConceptPropertyDeclaration_Editor.calculateColor4865_2(cell);
+            }
+
+          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_property_inheritable1218575411614(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "property_inheritable");
+  }
+
+  private static void setupBasic_Constant_12185754116151218575411615(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218575411615");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return IntegerConceptPropertyDeclaration_Editor.calculateColor4865_3(cell);
+            }
+
+          });
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
 
@@ -180,10 +216,13 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
   private static void setupLabel_property_name_1105727076103(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_inheritable_1218571420429(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1218575411611_1218575411611(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1218572198002_1218572198002(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_property_inheritable_1218575411614(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1218575411615_1218575411615(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static Color calculateColor4865_0(EditorCell cell) {
@@ -195,6 +234,18 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
   private static Color calculateColor4865_1(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor4865_2(EditorCell cell) {
+    Color result;
+    result = Color.gray;
+    return result;
+  }
+
+  private static Color calculateColor4865_3(EditorCell cell) {
+    Color result;
+    result = Color.gray;
     return result;
   }
 
