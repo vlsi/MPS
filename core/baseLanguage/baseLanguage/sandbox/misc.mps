@@ -509,7 +509,7 @@
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218492100775">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218492102261">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1218492100776">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1218562018017">
                             <link role="classConcept" targetNodeId="1214431324743" resolveInfo="C1" />
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218492110014">
