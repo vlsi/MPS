@@ -148,33 +148,31 @@ public enum LanguageAspect {
     return createNew(l, true);
   }
 
-  public SModelDescriptor createNew(Language l, boolean saveDescriptor) {
+  public SModelDescriptor createNew(final Language l, final boolean saveDescriptor) {
     assert get(l) == null;
 
-    SModel sm = l.getLanguageDescriptor().getModel();
+    final SModelDescriptor model = l.createModel(getModuleUID(l), l.getModelRoots().get(0));
 
-    SModelDescriptor model = l.createModel(getModuleUID(l), l.getModelRoots().get(0));
+    model.getSModel().runLoadingAction(new Runnable() {
+      public void run() {
+        for (String lang : getAllLanguagesToImport(l)) {
+          model.getSModel().addLanguage(lang);
+        }
 
-    for (String lang : getAllLanguagesToImport(l)) {
-      model.getSModel().addLanguage(lang);
-    }
+        for (String modelUID : getModelsToImport(l)) {
+          model.getSModel().addImportedModel(SModelUID.fromString(modelUID));
+        }
 
-    for (String modelUID : getModelsToImport(l)) {
-      model.getSModel().addImportedModel(SModelUID.fromString(modelUID));
-    }
+        model.getSModel().addImportedModel(l.getStructureModelDescriptor().getModelUID());
 
-    model.getSModel().addImportedModel(l.getStructureModelDescriptor().getModelUID());
+        model.save();
 
-    model.save();
-
-    if (saveDescriptor) {
-      Model m = Model.newInstance(sm);
-      m.setName(model.getModelUID().toString());
-
-      l.setLanguageDescriptor(l.getLanguageDescriptor(), false);
-
-      l.save();
-    }
+        if (saveDescriptor) {
+          l.setLanguageDescriptor(l.getLanguageDescriptor(), false);
+          l.save();
+        }
+      }
+    });
 
     return model;
   }
