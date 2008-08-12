@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
 
 import java.util.*;
 
@@ -91,6 +92,15 @@ import java.util.*;
     }
     LinkDeclarationsDataSet dataSet = (LinkDeclarationsDataSet) getDataSet(LinkDeclarationsDataSet.ID);
     return dataSet.getLinkDeclarationsExcludingOverridden();
+  }
+
+
+  public ConceptProperty getConceptPropertyByName(String name) {
+    if (!containsDataSet(ConceptPropertiesDataSet.ID)) {
+      addDataSet(new ConceptPropertiesDataSet(this));
+    }
+    ConceptPropertiesDataSet dataSet = (ConceptPropertiesDataSet) getDataSet(ConceptPropertiesDataSet.ID);
+    return dataSet.getConceptPropertyByName(name);
   }
 
   //
@@ -406,5 +416,109 @@ import java.util.*;
       }
     }
   } // private static class LinkDeclarationsDataSet
+
+
+  private static class ConceptPropertiesDataSet extends DataSet {
+    public static final String ID = "CONCEPT_PROPERTIES_DATASET";
+    private Map<String, ConceptProperty> myPropertyByName;
+    private Set<SNode> myDependsOnNodes;
+
+    public ConceptPropertiesDataSet(AbstractCache ownerCache) {
+      super(ID, ownerCache, DefaultNodeChangedProcessing.DROP_DATA_SET);
+    }
+
+    public Set<SNode> getDependsOnNodes() {
+      return myDependsOnNodes;
+    }
+
+    public ConceptProperty getConceptPropertyByName(String name) {
+      return myPropertyByName.get(name);
+    }
+
+    protected void init() {
+      List<ConceptProperty> allConceptProperties = new ArrayList<ConceptProperty>();
+      Set<ConceptPropertyDeclaration> allConceptPropertyDeclarations = new HashSet<ConceptPropertyDeclaration>();
+      myPropertyByName = new HashMap<String, ConceptProperty>();
+
+      List<AbstractConceptDeclaration> concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
+      // iterate up-donw
+      for (AbstractConceptDeclaration concept : concepts) {
+        List<ConceptProperty> conceptProperties = concept.getConceptPropertys();
+        for (ConceptProperty conceptProperty : conceptProperties) {
+          allConceptProperties.add(conceptProperty);
+          ConceptPropertyDeclaration conceptPropertyDeclaration = conceptProperty.getConceptPropertyDeclaration();
+          if (conceptPropertyDeclaration == null) continue;
+          allConceptPropertyDeclarations.add(conceptPropertyDeclaration);
+          String propertyName = conceptPropertyDeclaration.getName();
+          if (propertyName == null || propertyName.length() == 0) continue;
+
+          // property is in 'top' concept or inheritable property
+          if (conceptPropertyDeclaration.getInheritable() ||
+            concept == concepts.get(0)) {
+            if (!myPropertyByName.containsKey(propertyName)) {
+              myPropertyByName.put(propertyName, conceptProperty);
+            }
+          }
+        }
+      }
+
+      // depends on concepts, concept properties and concept property declarations
+      myDependsOnNodes = new HashSet<SNode>();
+      for (AbstractConceptDeclaration concept : concepts) {
+        myDependsOnNodes.add(concept.getNode());
+      }
+      for (ConceptProperty prop : allConceptProperties) {
+        myDependsOnNodes.add(prop.getNode());
+      }
+      for (ConceptPropertyDeclaration propDecl : allConceptPropertyDeclarations) {
+        myDependsOnNodes.add(propDecl.getNode());
+      }
+    }
+
+    //
+    // event handling
+    //
+
+    public void childAdded(SModelChildEvent event) {
+      if (event.getParent().getAdapter() instanceof AbstractConceptDeclaration) {
+        String role = event.getChildRole();
+        // don't process adding of smth. to concept unless it is concept property
+        if (AbstractConceptDeclaration.CONCEPT_PROPERTY.equals(role)) {
+          super.childAdded(event);
+        }
+      }
+    }
+
+    public void childRemoved(SModelChildEvent event) {
+      if (event.getParent().getAdapter() instanceof AbstractConceptDeclaration) {
+        String role = event.getChildRole();
+        // don't process removing of smth. from concept unless it is concept property
+        if (AbstractConceptDeclaration.CONCEPT_PROPERTY.equals(role)) {
+          super.childRemoved(event);
+        }
+      }
+    }
+
+    public void propertyChanged(SModelPropertyEvent event) {
+      // don't process unless it is concept property declaration 'name' or 'inheritable' flag
+      if (event.getNode().getAdapter() instanceof ConceptPropertyDeclaration) {
+        super.propertyChanged(event);
+      }
+    }
+
+    public void referenceAdded(SModelReferenceEvent event) {
+      // don't process unless it is concept property (ref to concept property declaration)
+      if (event.getReference().getSourceNode().getAdapter() instanceof ConceptProperty) {
+        super.referenceRemoved(event);
+      }
+    }
+
+    public void referenceRemoved(SModelReferenceEvent event) {
+      // don't process unless it is concept property (ref to concept property declaration)
+      if (event.getReference().getSourceNode().getAdapter() instanceof ConceptProperty) {
+        super.referenceRemoved(event);
+      }
+    }
+  } // private static class ConceptPropertiesDataSet
 
 }

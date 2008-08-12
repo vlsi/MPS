@@ -87,15 +87,8 @@ public class SModelSearchUtil {
   }
 
   public static ConceptProperty findConceptProperty(AbstractConceptDeclaration concept, String propertyName) {
-    // concept properties are not inherited - don't look-up concept hierarchy
     if (concept == null) return null;
-    for (ConceptProperty conceptProperty : concept.getConceptPropertys()) {
-      ConceptPropertyDeclaration declaration = conceptProperty.getConceptPropertyDeclaration();
-      if (declaration != null && propertyName.equals(declaration.getName())) {
-        return conceptProperty;
-      }
-    }
-    return null;
+    return new ConceptAndSuperConceptsScope(concept).getConceptPropertyByName(propertyName);
   }
 
   public static List<ConceptLinkDeclaration> getConceptLinkDeclarations(AbstractConceptDeclaration concept) {
