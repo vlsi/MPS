@@ -59,7 +59,16 @@ public class ProgramTest {
       .emitEndTry()
       .emitEndTry()
       .buildProgram();
-        
+  }
+
+  @Test
+  public void retInFinallyBlock() {
+    Program program = new SimpleProgramBuilder()
+      .emitTry()
+      .emitFinally()
+      .emitRet()
+      .emitEndTry()
+      .buildProgram();
   }
 
   @Test(expected = IllegalStateException.class)

@@ -6,10 +6,13 @@ import jetbrains.mps.dataFlow.framework.Program.TryFinallyInfo;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.List;
+import java.util.ArrayList;
 
 public class EndTryInstruction extends Instruction {
 
   private TryFinallyInfo myInfo;
+  private List<RetInstruction> myReturns = new ArrayList<RetInstruction>();
 
   String commandPresentation() {
     return "endTry";
@@ -21,6 +24,19 @@ public class EndTryInstruction extends Instruction {
       if (info.getEndTry() == this) {
         myInfo = info;
         break;
+      }
+    }
+
+    int start = myInfo.getFinally().getIndex();
+    int end = myInfo.getEndTry().getIndex();
+
+
+
+    for (Instruction i : getProgram().getInstructions().subList(start + 1, end)) {
+      if (i instanceof RetInstruction &&
+        i.getEnclosingBlock() == myInfo &&
+        i.isBefore(this)) {
+        myReturns.add((RetInstruction) i);
       }
     }
   }
@@ -52,6 +68,11 @@ public class EndTryInstruction extends Instruction {
         if (child.getFinally().isAfter(myInfo.getFinally())) {
           result.add(new ProgramState(child.getEndTry(), true));
         }
+      }
+
+      for (RetInstruction ret : myReturns) {
+        result.add(new ProgramState(ret, true));
+        result.add(new ProgramState(ret, false));
       }
     }
 
