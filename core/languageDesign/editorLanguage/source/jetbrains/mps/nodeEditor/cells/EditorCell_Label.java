@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.Calculable;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.TextPasteUtil;
@@ -20,6 +21,7 @@ import java.awt.event.MouseEvent;
 
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.util.Computable;
 import com.intellij.util.LocalTimeCounter;
 
 public abstract class EditorCell_Label extends EditorCell_Basic {
@@ -368,7 +370,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       return true;
     }
     if (!isEditable() && allowsIntelligentInputKeyStroke(keyEvent)) {
-      String pattern = emulateMutableKeyPress(keyEvent, allowErrors);
+      String pattern = getRenderedTextOn(keyEvent, allowErrors);
       if (!pattern.equals(getRenderedText())) {
         IntelligentInputUtil.processCell(this, getEditorContext(), pattern, side);
         return true;
@@ -388,14 +390,30 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       KeyboardUtil.isDefaultAction(keyEvent);
   }
 
-  private String emulateMutableKeyPress(KeyEvent keyEvent, boolean allowErrors) {
+  private String getRenderedTextOn(KeyEvent keyEvent, boolean allowErrors) {
+    return emulateKeyPress(keyEvent, allowErrors, new Computable<String>() {
+      public String compute() {
+        return getRenderedText();
+      }
+    });
+  }
+
+  public String getTextOn(KeyEvent keyEvent, boolean allowErrors) {
+    return emulateKeyPress(keyEvent, allowErrors, new Computable<String>() {
+      public String compute() {
+        return getText();
+      }
+    });
+  }
+
+  private <T> T emulateKeyPress(KeyEvent keyEvent, boolean allowErrors, Computable<T> c) {
     String oldString = getText();
     String oldNullString = getNullText();
     int caretPosition = myTextLine.getCaretPosition();
     int nullCaretPosition = myNullTextLine.getCaretPosition();
     boolean wasErrorState = isErrorState();
     processMutableKeyPressed_impl(keyEvent, allowErrors);
-    String result = getRenderedText();
+    T result = c.compute();
     myTextLine.setText(oldString);
     myNullTextLine.setText(oldNullString);
     myTextLine.setCaretPosition(caretPosition);
