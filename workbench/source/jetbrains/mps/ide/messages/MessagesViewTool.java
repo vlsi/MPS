@@ -81,16 +81,20 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     myList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     myComponent.setLayout(new BorderLayout());
 
-    JPanel panel = new JPanel(new BorderLayout());
+    final JPanel panel = new JPanel(new BorderLayout());
     panel.add(new JPanel(), BorderLayout.CENTER);
 
-    DefaultActionGroup group = new DefaultActionGroup();
+    final DefaultActionGroup group = new DefaultActionGroup();
     group.add(myErrorsAction);
     group.add(myWarningsAction);
     group.add(myInfoAction);
     group.add(myAutoscrollToSourceAction);
 
-    panel.add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent(), BorderLayout.NORTH);
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        panel.add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent(), BorderLayout.NORTH);
+      }
+    });
 
     myComponent.add(panel, BorderLayout.WEST);
     myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
