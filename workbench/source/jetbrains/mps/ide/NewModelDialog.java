@@ -1,5 +1,6 @@
 package jetbrains.mps.ide;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.modelProperties.ModelPropertiesDialog;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
@@ -12,15 +13,13 @@ import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
-import com.intellij.openapi.util.Computable;
-
 public class NewModelDialog extends BaseDialog {
   private IOperationContext myContext;
   private JPanel myContentPane = new JPanel(new BorderLayout());
   private JTextField myModelName = new JTextField();
   private JComboBox myModelStereotype = new JComboBox();
   private JComboBox myModelRoots = new JComboBox();
-
+  private SModelDescriptor myResult;
 
   public NewModelDialog(IOperationContext context) throws HeadlessException {
     super(context.getMainFrame(), "New Model");
@@ -30,6 +29,10 @@ public class NewModelDialog extends BaseDialog {
 
   public DialogDimensions getDefaultDimensionSettings() {
     return new DialogDimensions(100, 100, 400, 500);
+  }
+
+  public SModelDescriptor getResult() {
+    return myResult;
   }
 
   private void initContentPane() {
@@ -73,7 +76,7 @@ public class NewModelDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void buttonOk() {
-    SModelDescriptor model = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
+    myResult = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
       public SModelDescriptor compute() {
         if (myModelName.getText().length() == 0) {
           setErrorText("Empty model's name isn't allowed");
@@ -96,11 +99,11 @@ public class NewModelDialog extends BaseDialog {
       }
     });
 
-    if (model == null) {
+    if (myResult == null) {
       return;
     }
 
-    new ModelPropertiesDialog(model, myContext).showDialog();
+    new ModelPropertiesDialog(myResult, myContext).showDialog();
 
     dispose();
   }
@@ -124,7 +127,7 @@ public class NewModelDialog extends BaseDialog {
     }
 
     public String toString() {
-      return myText; 
+      return myText;
     }
   }
 }
