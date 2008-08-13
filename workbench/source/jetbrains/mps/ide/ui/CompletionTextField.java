@@ -188,9 +188,6 @@ public abstract class CompletionTextField extends JTextField {
   private void updateActions() {
     myUpAction.setEnabled(myHint.isVisible());
     myDownAction.setEnabled(myHint.isVisible() || canShowPopupAutomatically());
-
-    System.out.println("up enabled = " + myUpAction.isEnabled());
-    System.out.println("down enabled = " + myDownAction.isEnabled());
   }
 
   private class PopupHint {
