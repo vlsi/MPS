@@ -8,9 +8,6 @@ import java.awt.Color;
 import java.util.*;
 
 
-/**
- * @author Kostik
- */
 public class NodeHighlightManager implements EditorMessageOwner {
   private EditorComponent myEditor;
   private Map<EditorMessageOwner, Set<EditorMessage>> myMessages = new HashMap<EditorMessageOwner, Set<EditorMessage>>();
@@ -66,7 +63,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     EditorMessageOwner owner = message.getOwner();
     SNode node = message.getNode();
     for (EditorMessage msg : myMessages()) {
-      if (msg.getNode() == node && msg.getOwner() == owner) return;
+      if (msg.getOwner() == owner && msg.getCell(myEditor) == message.getCell(myEditor)) return;
     }
 
     synchronized (myMessagesLock) {

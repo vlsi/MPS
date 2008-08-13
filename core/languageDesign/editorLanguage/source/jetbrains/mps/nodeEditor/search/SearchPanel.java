@@ -1,18 +1,23 @@
 package jetbrains.mps.nodeEditor.search;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.search.icons.Icons;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.ide.ui.CompletionTextField;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.DocumentEvent;
 import java.awt.*;
+import java.awt.font.LineMetrics;
 import java.awt.event.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -30,6 +35,9 @@ public class SearchPanel extends JPanel {
   private JButton myHistoryButton = new JButton(Icons.SEARCH_ICON);
   private JButton myNextButton = new JButton(Icons.NEXT_ICON);
   private JButton myPreviousButton = new JButton(Icons.PREVIOUS_ICON);
+  private JLabel myFindResult = new JLabel();
+  private NodeHighlightManager myHighlightManager;
+  private EditorMessageOwner myOwner;
 
   public SearchPanel(EditorComponent editor) {
     myEditor = editor;
@@ -51,7 +59,8 @@ public class SearchPanel extends JPanel {
     mainPanel.add(myHistoryButton);
     myHistoryButton.setEnabled(false);
     myHistoryButton.setOpaque(false);
-    myHistoryButton.setPreferredSize(new Dimension(myButtonSize, myButtonSize));    
+    myHistoryButton.setPreferredSize(new Dimension(myButtonSize, myButtonSize));
+    myHistoryButton.setToolTipText("Search History");
     myHistoryButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         myText.showCompletion();
@@ -62,6 +71,7 @@ public class SearchPanel extends JPanel {
     myPreviousButton.setEnabled(false);
     myPreviousButton.setOpaque(false);
     myPreviousButton.setPreferredSize(new Dimension(myButtonSize, myButtonSize));
+    myPreviousButton.setToolTipText("Previous Occurrence");
     myPreviousButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         goUp();
@@ -72,6 +82,7 @@ public class SearchPanel extends JPanel {
     myNextButton.setEnabled(false);
     myNextButton.setOpaque(false);
     myNextButton.setPreferredSize(new Dimension(myButtonSize, myButtonSize));
+    myNextButton.setToolTipText("Next Occurrence");
     myNextButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         goDown();
@@ -111,11 +122,12 @@ public class SearchPanel extends JPanel {
     add(mainPanel, BorderLayout.LINE_START);
 
     JLabel escapeLabel = new JLabel(Icons.ESCAPE_ICON);
-    JPanel escapePanel = new JPanel();
-    escapePanel.setOpaque(false);
-    escapePanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
-    escapePanel.add(escapeLabel);
-    add(escapePanel, BorderLayout.LINE_END);
+    JPanel eastPanel = new JPanel();
+    eastPanel.add(myFindResult);
+    eastPanel.setOpaque(false);
+    eastPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+    eastPanel.add(escapeLabel);
+    add(eastPanel, BorderLayout.LINE_END);
 
     escapeLabel.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
@@ -234,16 +246,24 @@ public class SearchPanel extends JPanel {
   }
 
   private void search() {
+    if (myOwner != null) {
+      myHighlightManager.clearForOwner(myOwner);
+      myCells.clear();
+    }
     if (myText.getText().length() == 0) {
-      myText.setBackground(Color.white);
       setPrevNextEnabled(false);
+      myFindResult.setText("");
+      myText.setBackground(Color.white);
       myText.requestFocus();
+      myEditor.repaint();
       return;
     }
     selectCell();
+    myFindResult.setText(updateSearchReport(myCells.size()));
     if (myCells.isEmpty()) {
       myText.setBackground(myBadSequenceColor);
       setPrevNextEnabled(false);
+      myEditor.repaint();
       return;
     }
     if (myText.getBackground() == myBadSequenceColor) {
@@ -252,9 +272,25 @@ public class SearchPanel extends JPanel {
     setPrevNextEnabled(true);
   }
 
+  private String updateSearchReport(int matches) {
+     myFindResult.setFont(new Font(myFindResult.getFont().getName(),
+        Font.PLAIN, myFindResult.getFont().getSize()));
+    if (matches > 100) {
+      myFindResult.setFont(new Font(myFindResult.getFont().getName(),
+        Font.BOLD, myFindResult.getFont().getSize()));
+      return "More than 100 matches";
+    }
+    if (matches > 1) {
+      return String.valueOf(matches) + " matches";
+    }
+    if (matches == 1) {
+      return String.valueOf(matches) + " match";
+    }
+    return "No matches";
+  }
+
   private void selectCell() {
     List<EditorCell_Label> cells = allCells();
-    myCells.clear();
     Condition<String> condition;
     if (myIsRegex.isSelected()) {
       condition = SearchConditions.containsRegexp(myText.getText(), myIsCaseSensitive.isSelected());
@@ -263,9 +299,19 @@ public class SearchPanel extends JPanel {
     } else {
       condition = SearchConditions.containsString(myText.getText(), myIsCaseSensitive.isSelected());
     }
+    myOwner = new EditorMessageOwner() { };
     for (int i = cells.size() - 1; i >= 0; i--) {
-      if (condition.met(cells.get(i).getText())){
+      if (condition.met(cells.get(i).getRenderedText())) {
         myEditor.changeSelection(cells.get(i));
+
+        myHighlightManager = myEditor.getHighlightManager();
+        final EditorCell cell = cells.get(i);
+
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            myHighlightManager.mark(new SearchPanelEditorMessage(cell));
+          }
+        });
         myCells.add(cells.get(i));
       }
     }
@@ -328,4 +374,35 @@ public class SearchPanel extends JPanel {
     }
   }
 
+  private class SearchPanelEditorMessage extends DefaultEditorMessage {
+    private final CellInfo myInfo;
+
+    public SearchPanelEditorMessage(EditorCell cell) {
+      super(cell.getSNode(), Color.yellow, "", SearchPanel.this.myOwner);
+      myInfo = cell.getCellInfo();
+    }
+
+    public EditorCell getCell(EditorComponent editor) {
+      return myInfo.findCell(editor);
+    }
+
+    public void paint(Graphics g, EditorComponent editorComponent) {
+      EditorCell_Label editorCell = (EditorCell_Label) getCell(editorComponent);
+      if (editorCell != null && editorCell.getRenderedText().contains(myText.getText())) {
+        FontMetrics metrics = g.getFontMetrics();
+        int prevStringWidth = metrics.stringWidth(editorCell.getRenderedText().
+              substring(0, editorCell.getRenderedText().indexOf(myText.getText())));
+        int x = editorCell.getX() + editorCell.getLeftInternalInset()
+          + prevStringWidth;
+        int y = editorCell.getY();
+        int height = editorCell.getHeight();
+        int width = metrics.stringWidth(myText.getText());
+
+        Color color = getColor();
+        color = new Color(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha() / 5);
+        g.setColor(color);
+        g.fillRect(x, y, width - 1, height - 1);
+      }
+    }
+  }
 }

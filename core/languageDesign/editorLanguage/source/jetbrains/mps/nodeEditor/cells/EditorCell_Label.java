@@ -96,6 +96,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return getRenderedTextLine().getText();
   }
 
+  public Font getFont() {
+    return getRenderedTextLine().getFont();
+  }
+
   public void setTextColor(Color color) {
     getStyle().set(StyleAttributes.TEXT_COLOR, color);
   }
