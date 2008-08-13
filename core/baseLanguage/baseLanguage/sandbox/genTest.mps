@@ -65,6 +65,24 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217603884312">
             <property name="name" value="ii" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1217603884313" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1218620834128">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1218620861407">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1218620863021">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1218620863055">
+                    <property name="value" value="2" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1218620861442">
+                    <property name="value" value="232" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1218620834162">
+                  <property name="value" value="21" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1218620833174">
+                <property name="value" value="2" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217603885784">
@@ -83,12 +101,27 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217837928725">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217837957094">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1217837957642">
-                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1217837958878">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1217837958975">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1218618036251">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1218618036252">
                     <property name="value" value="23" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1217837957754">
-                    <property name="value" value="23" />
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1218618205084">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1218618205698">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1218618206202">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1218618206220">
+                          <property name="value" value="23" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1218618205732">
+                          <property name="value" value="23" />
+                        </node>
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1218618205103">
+                        <property name="value" value="23" />
+                      </node>
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1218618142706">
+                      <property name="value" value="232" />
+                    </node>
                   </node>
                 </node>
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217837957095">

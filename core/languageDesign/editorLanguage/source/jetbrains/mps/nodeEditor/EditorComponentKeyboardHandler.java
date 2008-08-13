@@ -102,12 +102,6 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         }
       }
 
-      if (actionType == CellActionType.DELETE && canExecuteDeleteActionBeforeTyping(keyEvent, selectedCell)) {
-        if (selectedCell.executeAction(actionType)) {
-          return true;
-        }
-      }
-
       if (!keyEvent.isConsumed()) {        
         if (editorContext.getNodeEditorComponent().getNodeRangeSelection().isSelectionKeystroke(keyEvent)) {
           if (editorContext.getNodeEditorComponent().getNodeRangeSelection().activate(keyEvent)) {
@@ -250,17 +244,5 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     if (role == null) return false;
     LinkDeclaration link = node.getParent().getLinkDeclaration(role);
     return link.getSourceCardinality() == Cardinality._0__1 || link.getSourceCardinality() == Cardinality._1;
-  }
-
-  private boolean canExecuteDeleteActionBeforeTyping(KeyEvent event, EditorCell cell) {
-    if (!(cell instanceof EditorCell_Label)) return true;
-
-    EditorCell_Label label = (EditorCell_Label) cell;
-
-    if ("".equals(label.getTextOn(event, true))) {
-      return true;
-    }
-
-    return false;
   }
 }
