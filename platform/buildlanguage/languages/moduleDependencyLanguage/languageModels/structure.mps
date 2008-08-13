@@ -11,7 +11,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
@@ -85,6 +85,12 @@
       <property name="role" value="dependency" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1216913230927" resolveInfo="CycleReference" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1218645689530">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="classpath" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1216907456863" resolveInfo="PathHolder" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216907456863">
