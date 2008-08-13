@@ -19,7 +19,7 @@ class EDTExecutor {
   private Queue<Runnable> myToExecuteCommand = new LinkedList<Runnable>();
 
   public EDTExecutor() {
-    myExecutor = new ReadExecutor();
+    myExecutor = new Executor();
     myExecutor.setDaemon(true);
     myExecutor.start();
   }
@@ -38,7 +38,11 @@ class EDTExecutor {
     }
   }
 
-  private class ReadExecutor extends Thread {
+  private class Executor extends Thread {
+    private Executor() {
+      super("Executor");
+    }
+
     public void run() {
       try {
         while (true) {
