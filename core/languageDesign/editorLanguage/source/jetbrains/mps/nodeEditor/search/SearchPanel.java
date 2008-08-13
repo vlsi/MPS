@@ -21,23 +21,28 @@ import java.awt.font.LineMetrics;
 import java.awt.event.*;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
+
+import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.util.IconLoader;
 
 public class SearchPanel extends JPanel {
 
   private final Color myBadSequenceColor = Color.pink;
-  private final int myButtonSize = 25;
   private EditorComponent myEditor;
   private HistoryCompletionTextField myText = new HistoryCompletionTextField();
   private JCheckBox myIsCaseSensitive = new JCheckBox("Case sensitive");
   private JCheckBox myIsWordsOnly = new JCheckBox("Match whole words only");
   private JCheckBox myIsRegex = new JCheckBox("Regex");
   private ArrayList<EditorCell_Label> myCells = new ArrayList<EditorCell_Label>();
-  private JButton myHistoryButton = new JButton(Icons.SEARCH_ICON);
-  private JButton myNextButton = new JButton(Icons.NEXT_ICON);
-  private JButton myPreviousButton = new JButton(Icons.PREVIOUS_ICON);
+//  private JButton myHistoryButton = new JButton(Icons.SEARCH_ICON);
+//  private JButton myNextButton = new JButton(Icons.NEXT_ICON);
+//  private JButton myPreviousButton = new JButton(Icons.PREVIOUS_ICON);
   private JLabel myFindResult = new JLabel();
+  private JComponent myToolbarComponent;
   private NodeHighlightManager myHighlightManager;
   private EditorMessageOwner myOwner;
+
 
   public SearchPanel(EditorComponent editor) {
     myEditor = editor;
@@ -56,38 +61,18 @@ public class SearchPanel extends JPanel {
     mainPanel.add(myText);
     myText.setHideComplitionOnClick(true);
 
-    mainPanel.add(myHistoryButton);
-    myHistoryButton.setEnabled(false);
-    myHistoryButton.setOpaque(false);
-    myHistoryButton.setPreferredSize(new Dimension(myButtonSize, myButtonSize));
-    myHistoryButton.setToolTipText("Search History");
-    myHistoryButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        myText.showCompletion();
-      }
-    });
+    DefaultActionGroup group = new DefaultActionGroup("search bar", false);
+    group.add(new ShowHistoryAction());
+    group.add(new PrevOccurenceAction());
+    group.add(new NextOccurenceAction());
 
-    mainPanel.add(myPreviousButton);
-    myPreviousButton.setEnabled(false);
-    myPreviousButton.setOpaque(false);
-    myPreviousButton.setPreferredSize(new Dimension(myButtonSize, myButtonSize));
-    myPreviousButton.setToolTipText("Previous Occurrence");
-    myPreviousButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        goUp();
-      }
-    });
+    final ActionToolbar tb = ActionManager.getInstance().createActionToolbar("SearchBar", group, true);
+    tb.setLayoutPolicy(ActionToolbar.NOWRAP_LAYOUT_POLICY);
+    myToolbarComponent = tb.getComponent();
+    myToolbarComponent.setBorder(null);
+    myToolbarComponent.setOpaque(false);
 
-    mainPanel.add(myNextButton);
-    myNextButton.setEnabled(false);
-    myNextButton.setOpaque(false);
-    myNextButton.setPreferredSize(new Dimension(myButtonSize, myButtonSize));
-    myNextButton.setToolTipText("Next Occurrence");
-    myNextButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        goDown();
-      }
-    });
+    mainPanel.add(myToolbarComponent);
 
     mainPanel.add(myIsCaseSensitive);
     myIsCaseSensitive.setOpaque(false);
@@ -151,6 +136,7 @@ public class SearchPanel extends JPanel {
 
     myText.setColumns(20);
 
+
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         goDown();
@@ -196,7 +182,7 @@ public class SearchPanel extends JPanel {
   protected void paintComponent(Graphics g) {
     super.paintComponent(g);
 
-    //copied from IDEA's class todo
+    //copied from IDEA's class EditorSearchComponent
     Graphics2D g2d = (Graphics2D)g;
     final Color GRADIENT_C1 = getBackground();
     final Color GRADIENT_C2 = new Color(Math.max(0, GRADIENT_C1.getRed() - 0x18),
@@ -209,7 +195,6 @@ public class SearchPanel extends JPanel {
   private void addToHistory() {
     myText.addValue(myText.getText());
     getSearchHistory().setSearches(myText.getProposals(myText.getText()));
-    myHistoryButton.setEnabled(true);
   }
 
   private void goDown() {
@@ -240,18 +225,12 @@ public class SearchPanel extends JPanel {
     myEditor.changeSelection(myCells.get(index));
   }
 
-  private void setPrevNextEnabled(boolean enabled) {
-      myPreviousButton.setEnabled(enabled);
-      myNextButton.setEnabled(enabled);
-  }
-
   private void search() {
     if (myOwner != null) {
       myHighlightManager.clearForOwner(myOwner);
       myCells.clear();
     }
     if (myText.getText().length() == 0) {
-      setPrevNextEnabled(false);
       myFindResult.setText("");
       myText.setBackground(Color.white);
       myText.requestFocus();
@@ -259,34 +238,32 @@ public class SearchPanel extends JPanel {
       return;
     }
     selectCell();
-    myFindResult.setText(updateSearchReport(myCells.size()));
+    updateSearchReport(myCells.size());
     if (myCells.isEmpty()) {
       myText.setBackground(myBadSequenceColor);
-      setPrevNextEnabled(false);
       myEditor.repaint();
       return;
     }
     if (myText.getBackground() == myBadSequenceColor) {
       myText.setBackground(Color.white);
     }
-    setPrevNextEnabled(true);
   }
 
-  private String updateSearchReport(int matches) {
-     myFindResult.setFont(new Font(myFindResult.getFont().getName(),
-        Font.PLAIN, myFindResult.getFont().getSize()));
+  private void updateSearchReport(int matches) {
+    Font font = myFindResult.getFont().deriveFont(Font.PLAIN);
+    String text ;
     if (matches > 100) {
-      myFindResult.setFont(new Font(myFindResult.getFont().getName(),
-        Font.BOLD, myFindResult.getFont().getSize()));
-      return "More than 100 matches";
+      font = font.deriveFont(Font.BOLD);
+      text = "More than 100 matches";
+    } else if (matches > 1) {
+      text = String.valueOf(matches) + " matches";
+    } else if (matches == 1) {
+      text = String.valueOf(matches) + " match";
+    } else {
+      text =  "No matches";
     }
-    if (matches > 1) {
-      return String.valueOf(matches) + " matches";
-    }
-    if (matches == 1) {
-      return String.valueOf(matches) + " match";
-    }
-    return "No matches";
+    myFindResult.setFont(font);
+    myFindResult.setText(text);
   }
 
   private void selectCell() {
@@ -324,7 +301,6 @@ public class SearchPanel extends JPanel {
       for (int i = getSearchHistory().getSearches().size() - 1; i >= 0; i--) {
         myText.addValue(getSearchHistory().getSearches().get(i));
       }
-      myHistoryButton.setEnabled(true);
     }   
     revalidate();
   }
@@ -334,7 +310,7 @@ public class SearchPanel extends JPanel {
     revalidate();
     myEditor.requestFocus();
   }
-                                       
+
   private class HistoryCompletionTextField extends CompletionTextField {
 
     private final int myPossibleValuesLimit = 30;
@@ -388,10 +364,12 @@ public class SearchPanel extends JPanel {
 
     public void paint(Graphics g, EditorComponent editorComponent) {
       EditorCell_Label editorCell = (EditorCell_Label) getCell(editorComponent);
-      if (editorCell != null && editorCell.getRenderedText().contains(myText.getText())) {
+      if (editorCell != null && editorCell.getRenderedText().toLowerCase().
+        contains(myText.getText().toLowerCase())) {
         FontMetrics metrics = g.getFontMetrics();
         int prevStringWidth = metrics.stringWidth(editorCell.getRenderedText().
-              substring(0, editorCell.getRenderedText().indexOf(myText.getText())));
+              substring(0, editorCell.getRenderedText().toLowerCase().
+              indexOf(myText.getText().toLowerCase())));
         int x = editorCell.getX() + editorCell.getLeftInternalInset()
           + prevStringWidth;
         int y = editorCell.getY();
@@ -405,4 +383,53 @@ public class SearchPanel extends JPanel {
       }
     }
   }
+
+  private class ShowHistoryAction extends AnAction {
+    private ShowHistoryAction() {
+      getTemplatePresentation().setIcon(Icons.SEARCH_ICON);
+      getTemplatePresentation().setDescription("Search history");
+      getTemplatePresentation().setText("Search History");
+    }
+
+    public void actionPerformed(AnActionEvent e) {
+      myText.showCompletion();
+    }
+
+    public void update(final AnActionEvent e) {
+      e.getPresentation().setEnabled(!myText.getProposals(null).isEmpty());
+    }
+  }
+
+  private class NextOccurenceAction extends AnAction {
+    public NextOccurenceAction() {
+      getTemplatePresentation().setIcon(Icons.NEXT_ICON);
+      getTemplatePresentation().setDescription("Next Occurrence");
+      getTemplatePresentation().setText("Next Occurrence");
+    }
+
+    public void actionPerformed(AnActionEvent e) {
+      goDown();
+    }
+
+    public void update(final AnActionEvent e) {
+      e.getPresentation().setEnabled(!myCells.isEmpty());
+    }
+  }
+
+  private class PrevOccurenceAction extends AnAction {
+    public PrevOccurenceAction() {
+      getTemplatePresentation().setIcon(Icons.PREVIOUS_ICON);
+      getTemplatePresentation().setDescription("Previous Occurrence");
+      getTemplatePresentation().setText("Previous Occurrence");
+    }
+
+    public void actionPerformed(AnActionEvent e) {
+      goUp();
+    }
+
+    public void update(final AnActionEvent e) {
+      e.getPresentation().setEnabled(!myCells.isEmpty());
+    }
+  }
+
 }
