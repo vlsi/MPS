@@ -212,12 +212,8 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   </language>
-  <language namespace="jetbrains.mps.bootstrap.helgins">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17"/>
-  </language>
-  <language namespace="jetbrains.mps.core">
-    <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
-  </language>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17"/>
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19"/>
@@ -236,13 +232,9 @@
   <import index="17" modelUID="jetbrains.mps.generator.fileGenerator@java_stub" version="-1"/>
   <import index="18" modelUID="jetbrains.mps.util@java_stub" version="-1"/>
   <import index="19" modelUID="java.io@java_stub" version="-1"/>
-  <import index="20" modelUID="jetbrains.mps.generator@java_stub" version="-1"/>
   <import index="22" modelUID="com.intellij.openapi.actionSystem@java_stub" version="-1"/>
   <import index="23" modelUID="com.intellij.openapi.project@java_stub" version="-1"/>
   <import index="24" modelUID="javax.swing@java_stub" version="-1"/>
-  <import index="25" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14"/>
-  <import index="26" modelUID="jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template.util"
-          version="-1"/>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203071646776">
     <property name="name" value="ActionDeclaration"/>
     <property name="rootable" value="true"/>

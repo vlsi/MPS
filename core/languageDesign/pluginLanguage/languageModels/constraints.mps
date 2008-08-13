@@ -2883,20 +2883,18 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1"/>
   </language>
+  <language namespace="jetbrains.mps.bootstrap.sharedConcepts">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0"/>
+  </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   </language>
   <language namespace="jetbrains.mps.quotation"/>
-  <language namespace="jetbrains.mps.bootstrap.sharedConcepts">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0"/>
-  </language>
   <language namespace="jetbrains.mps.bootstrap.helgins">
     <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17"/>
   </language>
-  <language namespace="jetbrains.mps.core">
-    <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
-  </language>
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.strings.constraints" version="1"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>

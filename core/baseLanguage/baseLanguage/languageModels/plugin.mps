@@ -6,10 +6,6 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14"/>
   </language>
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
-  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1"/>
@@ -21,9 +17,11 @@
   <language namespace="jetbrains.mps.baseLanguage.classifiers">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7"/>
   </language>
-  <language namespace="jetbrains.mps.baseLanguage.unitTest">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1"/>
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   </language>
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2"/>
@@ -36,7 +34,6 @@
   <import index="3" modelUID="jetbrains.mps.ide.actions" version="-1"/>
   <import index="4" modelUID="java.util@java_stub" version="-1"/>
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
-  <import index="8" modelUID="jetbrains.mps.plugins@java_stub" version="-1"/>
   <import index="9" modelUID="java.lang@java_stub" version="-1"/>
   <import index="10" modelUID="jetbrains.mps.project@java_stub" version="-1"/>
   <import index="12" modelUID="jetbrains.mps.logging@java_stub" version="-1"/>
@@ -62,11 +59,9 @@
   <import index="44" modelUID="com.intellij.execution.impl@java_stub" version="-1"/>
   <import index="45" modelUID="com.intellij.openapi.ui@java_stub" version="-1"/>
   <import index="46" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1"/>
-  <import index="47" modelUID="com.intellij.openapi.actionSystem@java_stub" version="-1"/>
   <import index="48" modelUID="jetbrains.mps.core.behavior" version="-1"/>
   <import index="50" modelUID="com.intellij.openapi.util@java_stub" version="-1"/>
   <import index="52" modelUID="jetbrains.mps.baseLanguage.refactoring.changeMethodSignature@java_stub" version="-1"/>
-  <import index="53" modelUID="jetbrains.mps.plugins.pluginparts.tool@java_stub" version="-1"/>
   <import index="54" modelUID="jetbrains.mps.workbench@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205247197267">
     <property name="name" value="BaseLanguageEditorPopup"/>
