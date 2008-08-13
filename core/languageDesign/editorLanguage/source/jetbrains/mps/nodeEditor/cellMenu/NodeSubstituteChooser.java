@@ -148,6 +148,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           return "No variants for \"" + getPatternEditor().getPattern() + "\"";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return getMatchingText(pattern);
+        }
+
         public SNode doSubstitute(String pattern) {
           return null;
         }
