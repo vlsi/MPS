@@ -7,7 +7,6 @@ import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 
@@ -22,8 +21,6 @@ import java.util.List;
 
 public class NewGeneratorDialog extends BaseDialog {
   private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200, 200, 400, 500);
-
-  private static final String TARGET_LANGUAGE = "jetbrains.mps.baseLanguage";
 
   private JPanel myContenetPane = new JPanel();
   private JScrollPane myMainComponentPane = new JScrollPane(myContenetPane);
@@ -101,7 +98,6 @@ public class NewGeneratorDialog extends BaseDialog {
     String path = descriptorFile.getParent().getCanonicalPath();
     String modelsDir = path +
       File.separatorChar + "generator" +
-      File.separatorChar + NameUtil.shortNameFromLongName(TARGET_LANGUAGE) +
       File.separatorChar + "template";
 
     myTemplateModelsDir.setText(modelsDir);
@@ -126,11 +122,10 @@ public class NewGeneratorDialog extends BaseDialog {
 
     dispose();
 
-    final Language targetLanguage = myContext.getScope().getLanguage(TARGET_LANGUAGE);
     final String name = myGeneratorName.getText();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        createNewGenerator(mySourceLanguage, targetLanguage, dir, name);
+        createNewGenerator(mySourceLanguage, dir, name);
       }
     });
   }
@@ -140,7 +135,7 @@ public class NewGeneratorDialog extends BaseDialog {
     dispose();
   }
 
-  protected void createNewGenerator(Language sourceLanguage, Language targetLanguage, File templateModelsDir, String name) {
+  protected void createNewGenerator(Language sourceLanguage, File templateModelsDir, String name) {
     LanguageDescriptor languageDescriptor = sourceLanguage.getLanguageDescriptor();
     SModel model = languageDescriptor.getModel();
     model.setLoading(true);
@@ -151,9 +146,7 @@ public class NewGeneratorDialog extends BaseDialog {
 
     // add "template models" model root
     String templateModelNamePrefix = sourceLanguage.getNamespace() +
-      ".generator." +
-      NameUtil.shortNameFromLongName(targetLanguage.getNamespace()) +
-      ".template";
+      ".generator.template";
     ModelRoot templateModelsRoot = ModelRoot.newInstance(model);
     templateModelsRoot.setPrefix(templateModelNamePrefix);
 
@@ -163,7 +156,7 @@ public class NewGeneratorDialog extends BaseDialog {
     // add 'target language module' to 'module roots'
 
     ModuleReference ref = ModuleReference.newInstance(model);
-    ref.setName(targetLanguage.getModuleUID());
+    ref.setName("jetbrains.mps.baseLanguage");
     generatorDescriptor.addDependency(ref);
 
     // add new generator to language
@@ -188,7 +181,7 @@ public class NewGeneratorDialog extends BaseDialog {
 
       SModel templateModel = templateModelDescriptor.getSModel();
       templateModel.addLanguage(BootstrapLanguagesManager.getInstance().getTLBase());
-      templateModel.addLanguage(targetLanguage);
+      templateModel.addLanguage("jetbrains.mps.baseLanguage");
       templateModel.addLanguage("jetbrains.mps.bootstrap.smodelLanguage");
 
       templateModel.addImportedModel(sourceLanguage.getStructureModelDescriptor().getModelUID());

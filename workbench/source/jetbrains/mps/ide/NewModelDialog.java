@@ -22,11 +22,13 @@ public class NewModelDialog extends BaseDialog {
   private JComboBox myModelStereotype = new JComboBox();
   private JComboBox myModelRoots = new JComboBox();
   private SModelDescriptor myResult;
+  private String myNamespace;
 
-  public NewModelDialog(IModule module, IOperationContext context) throws HeadlessException {
+  public NewModelDialog(IModule module, String namespace, IOperationContext context) throws HeadlessException {
     super(context.getMainFrame(), "New Model");
     myContext = context;
     myModule = module;
+    myNamespace = namespace;
     initContentPane();
   }
 
@@ -55,8 +57,12 @@ public class NewModelDialog extends BaseDialog {
     mainPanel.add(myModelRoots);
 
     DefaultComboBoxModel model = new DefaultComboBoxModel();
-    for (ModelRoot root : myModule.getModelRoots()) {
-      model.addElement(new ModelRootWrapper(root));
+    if (myNamespace == null) {
+      for (ModelRoot root : myModule.getModelRoots()) {
+        model.addElement(new ModelRootWrapper(root));
+      }
+    } else {
+      model.addElement(myNamespace);
     }
 
     myModelRoots.addItemListener(new ItemListener() {
@@ -69,12 +75,20 @@ public class NewModelDialog extends BaseDialog {
 
     myContentPane.add(mainPanel, BorderLayout.NORTH);
     myContentPane.add(new JPanel(), BorderLayout.CENTER);
-
   }
 
   private void completePrefix() {
-    ModelRootWrapper wrapper = (ModelRootWrapper) myModelRoots.getSelectedItem();
-    myModelName.setText(wrapper.myModelRoot.getPrefix());
+    Object selected = myModelRoots.getSelectedItem();
+    String prefix;
+    if (selected instanceof ModelRootWrapper) {
+      ModelRootWrapper wrapper = (ModelRootWrapper) selected;
+      prefix = wrapper.myModelRoot.getPrefix();
+    } else {
+      assert selected instanceof String;
+      prefix = (String) selected;
+    }
+
+    myModelName.setText(prefix);
   }
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)

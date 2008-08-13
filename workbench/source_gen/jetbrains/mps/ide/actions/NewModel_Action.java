@@ -73,7 +73,7 @@ public class NewModel_Action extends GeneratedAction {
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          dialog[0] = new NewModelDialog(NewModel_Action.this.module, localContext);
+          dialog[0] = new NewModelDialog(NewModel_Action.this.module, NewModel_Action.this.getNamespace(), localContext);
         }
 
       });
