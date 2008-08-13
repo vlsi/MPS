@@ -242,6 +242,22 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder", false, false), "side", null, null);
   }
 
+  public static boolean ifMacro_Condition_1218638013323(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "matchingText", true), "body", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_1218638036038(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "matchingText", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_1218638060185(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "matchingText", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_1218638073951(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "matchingText", true) != null;
+  }
+
   public static SNode sourceNodeQuery_1172253185556(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }

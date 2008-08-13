@@ -411,6 +411,10 @@ __switch__:
             return pattern;
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
         });
       }
     }
@@ -440,6 +444,10 @@ __switch__:
                 return (item).toString();
               }
 
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+
             });
           }
         }
@@ -467,6 +475,10 @@ __switch__:
 
           public String getMatchingText(String pattern) {
             return pattern;
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
         });
@@ -500,6 +512,10 @@ __switch__:
 
           public String getMatchingText(String pattern) {
             return pattern;
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
         });
@@ -614,6 +630,10 @@ __switch__:
 
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), "name") + ".";
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
               }
 
               public String getDescriptionText(String pattern) {
@@ -864,6 +884,10 @@ __switch__:
                 return "this" + BaseMethodDeclaration_Behavior.call_getParametersPresentation_1213877350304((item));
               }
 
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+
               public String getDescriptionText(String pattern) {
                 return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), "short_description");
               }
@@ -907,6 +931,10 @@ __switch__:
 
               public String getMatchingText(String pattern) {
                 return "super" + BaseMethodDeclaration_Behavior.call_getParametersPresentation_1213877350304((item));
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
               }
 
               public String getDescriptionText(String pattern) {
@@ -1033,6 +1061,10 @@ __switch__:
                 return (item) + ".this";
               }
 
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+
               public String getDescriptionText(String pattern) {
                 return "qualified 'this'";
               }
@@ -1085,6 +1117,10 @@ __switch__:
             return "sout";
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
           public Icon getIconFor(String pattern) {
             return IconManager.getIconFor((ConceptDeclaration)((AbstractConceptDeclaration)SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))));
           }
@@ -1108,6 +1144,10 @@ __switch__:
 
           public String getMatchingText(String pattern) {
             return "serr";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
           public Icon getIconFor(String pattern) {
@@ -1176,6 +1216,10 @@ __switch__:
 
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), "nestedName") + " {..}";
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
               }
 
             });
@@ -1373,6 +1417,10 @@ __switch__:
           return "instanceof";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
         public String getDescriptionText(String pattern) {
           return "";
         }
@@ -1427,6 +1475,10 @@ __switch__:
           return "[";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
         public String getDescriptionText(String pattern) {
           return "array access";
         }
@@ -1450,6 +1502,10 @@ __switch__:
 
         public String getMatchingText(String pattern) {
           return "=";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
         public String getDescriptionText(String pattern) {
@@ -1478,6 +1534,10 @@ __switch__:
           return "[]";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
         public String getDescriptionText(String pattern) {
           return "to array type";
         }
@@ -1500,6 +1560,10 @@ __switch__:
 
         public String getMatchingText(String pattern) {
           return "<";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
         public String getDescriptionText(String pattern) {
@@ -1526,6 +1590,10 @@ __switch__:
           return "<";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
         public String getDescriptionText(String pattern) {
           return "add type variable";
         }
@@ -1550,6 +1618,10 @@ __switch__:
           return "<";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
         public String getDescriptionText(String pattern) {
           return "add type parameter";
         }
@@ -1572,6 +1644,10 @@ __switch__:
 
         public String getMatchingText(String pattern) {
           return "catch";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
       });
@@ -1602,6 +1678,10 @@ __switch__:
           return "finally";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
       });
     }
     return result;
@@ -1628,6 +1708,10 @@ __switch__:
           return "?";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
         public String getDescriptionText(String pattern) {
           return "ternary operator";
         }
@@ -1651,6 +1735,10 @@ __switch__:
 
         public String getMatchingText(String pattern) {
           return "{";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
       });
@@ -1689,6 +1777,10 @@ __switch__:
 
         public String getMatchingText(String pattern) {
           return ".";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
         public String getDescriptionText(String pattern) {
@@ -1844,6 +1936,10 @@ __switch__:
             return (item);
           }
 
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
+          }
+
           public String getDescriptionText(String text) {
             return "declared label";
           }
@@ -1931,6 +2027,10 @@ __switch__:
             return (item);
           }
 
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
+          }
+
           public String getDescriptionText(String text) {
             return "declared label";
           }
@@ -1954,6 +2054,10 @@ __switch__:
 
         public String getMatchingText(String pattern) {
           return "<";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
         public String getDescriptionText(String pattern) {
@@ -2000,6 +2104,10 @@ __switch__:
           return ".";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
         public String getDescriptionText(String pattern) {
           return "static access";
         }
@@ -2026,6 +2134,10 @@ __switch__:
           return "++";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
         public String getDescriptionText(String pattern) {
           return "postfix increment";
         }
@@ -2045,6 +2157,10 @@ __switch__:
 
         public String getMatchingText(String pattern) {
           return "--";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
         public String getDescriptionText(String pattern) {
@@ -2116,6 +2232,10 @@ __switch__:
             return (item);
           }
 
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
+          }
+
         });
       }
     }
@@ -2142,6 +2262,10 @@ __switch__:
 
         public String getMatchingText(String pattern) {
           return "{";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
         public String getDescriptionText(String pattern) {
@@ -2222,6 +2346,10 @@ __switch__:
 
           public String getMatchingText(String text) {
             return (item) + ".";
+          }
+
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
           }
 
         });
