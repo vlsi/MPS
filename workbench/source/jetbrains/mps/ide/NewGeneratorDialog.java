@@ -17,19 +17,18 @@ import java.awt.Frame;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.io.File;
-import java.util.Arrays;
 import java.util.List;
 
 public class NewGeneratorDialog extends BaseDialog {
   private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200, 200, 400, 500);
 
+  private static final String TARGET_LANGUAGE = "jetbrains.mps.baseLanguage";
+
   private JPanel myContenetPane = new JPanel();
   private JScrollPane myMainComponentPane = new JScrollPane(myContenetPane);
-  private JComboBox myTargetLanguageName;
   private JTextField myTemplateModelsDir;
+  private JTextField myGeneratorName;
   private Language mySourceLanguage;
   private IOperationContext myContext;
 
@@ -61,29 +60,15 @@ public class NewGeneratorDialog extends BaseDialog {
     myContenetPane.setLayout(new BorderLayout());
     myContenetPane.add(internalPanel, BorderLayout.NORTH);
 
-    internalPanel.add(new JLabel("Target language :"));
-    List<Language> visibleLanguages = myContext.getScope().getVisibleLanguages();
-    Object[] items = new Object[visibleLanguages.size()];
-    int count = 0;
-    for (Language language : visibleLanguages) {
-      items[count++] = language.getNamespace();
-    }
-    Arrays.sort(items);
-    myTargetLanguageName = new JComboBox(items);
-    myTargetLanguageName.setSelectedItem("jetbrains.mps.baseLanguage");
+    //TODO: constraints
+    internalPanel.add(new JLabel("Generator name :"));
+    myGeneratorName = new JTextField();
+    internalPanel.add(myGeneratorName);
 
-    internalPanel.add(myTargetLanguageName);
     internalPanel.add(new JLabel("Template models root :"));
-    myTargetLanguageName.addItemListener(new ItemListener() {
-      public void itemStateChanged(ItemEvent e) {
-        updateTemplateModelsDir();
-      }
-    });
-
     myTemplateModelsDir = new JTextField();
-    updateTemplateModelsDir();
 
-    JPanel rootChooser = new JPanel(new BorderLayout());
+    updateTemplateModelsDir();
 
     JButton chooseButton = new JButton(new AbstractAction("...") {
       public void actionPerformed(ActionEvent e) {
@@ -103,19 +88,20 @@ public class NewGeneratorDialog extends BaseDialog {
         }
       }
     });
+
+    JPanel rootChooser = new JPanel(new BorderLayout());
     rootChooser.add(myTemplateModelsDir, BorderLayout.CENTER);
     rootChooser.add(chooseButton, BorderLayout.EAST);
     internalPanel.add(rootChooser);
   }
 
   private void updateTemplateModelsDir() {
-    String targetLanguageName = (String) myTargetLanguageName.getSelectedItem();
     IFile descriptorFile = mySourceLanguage.getDescriptorFile();
     assert descriptorFile != null;
     String path = descriptorFile.getParent().getCanonicalPath();
     String modelsDir = path +
       File.separatorChar + "generator" +
-      File.separatorChar + NameUtil.shortNameFromLongName(targetLanguageName) +
+      File.separatorChar + NameUtil.shortNameFromLongName(TARGET_LANGUAGE) +
       File.separatorChar + "template";
 
     myTemplateModelsDir.setText(modelsDir);
@@ -140,12 +126,11 @@ public class NewGeneratorDialog extends BaseDialog {
 
     dispose();
 
-    String targetLanguageName = (String) myTargetLanguageName.getSelectedItem();
-    final Language targetLanguage = myContext.getScope().getLanguage(targetLanguageName);
-
+    final Language targetLanguage = myContext.getScope().getLanguage(TARGET_LANGUAGE);
+    final String name = myGeneratorName.getText();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        createNewGenerator(mySourceLanguage, targetLanguage, dir);
+        createNewGenerator(mySourceLanguage, targetLanguage, dir, name);
       }
     });
   }
@@ -155,13 +140,14 @@ public class NewGeneratorDialog extends BaseDialog {
     dispose();
   }
 
-  protected void createNewGenerator(Language sourceLanguage, Language targetLanguage, File templateModelsDir) {
+  protected void createNewGenerator(Language sourceLanguage, Language targetLanguage, File templateModelsDir, String name) {
     LanguageDescriptor languageDescriptor = sourceLanguage.getLanguageDescriptor();
     SModel model = languageDescriptor.getModel();
     model.setLoading(true);
 
     GeneratorDescriptor generatorDescriptor = GeneratorDescriptor.newInstance(model);
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(sourceLanguage));
+    generatorDescriptor.setName(name);
 
     // add "template models" model root
     String templateModelNamePrefix = sourceLanguage.getNamespace() +
