@@ -1,36 +1,43 @@
 package jetbrains.mps.watching;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.Application;
-import com.intellij.openapi.vfs.*;
-import com.intellij.openapi.vfs.newvfs.BulkFileListener;
-import com.intellij.openapi.vfs.newvfs.events.*;
-import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.openapi.vfs.newvfs.BulkFileListener;
+import com.intellij.openapi.vfs.newvfs.events.VFileContentChangeEvent;
+import com.intellij.openapi.vfs.newvfs.events.VFileCopyEvent;
+import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
+import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.library.Library;
+import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
-import jetbrains.mps.library.LibraryManager;
-import jetbrains.mps.library.Library;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.LinkedHashSet;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
@@ -69,7 +76,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
         }
 
         // reloading modules
-        reloadModules(progressIndicator, modulesToReload);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            reloadModules(progressIndicator, modulesToReload);
+          }
+        });
 
         // reloadig models
         reloadModels(progressIndicator, modelsToReload);
@@ -215,7 +226,8 @@ public class ModelChangesWatcher implements ApplicationComponent {
       }
 
       // check, whether we have to do something
-      if (addedModules.isEmpty() && modelsToReload.isEmpty() && modulesToReload.isEmpty() && projectsToReload.isEmpty()) return;
+      if (addedModules.isEmpty() && modelsToReload.isEmpty() && modulesToReload.isEmpty() && projectsToReload.isEmpty())
+        return;
 
       // reloading
       doReload(modelsToReload, modulesToReload, addedModules);
