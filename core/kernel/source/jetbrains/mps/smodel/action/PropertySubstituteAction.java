@@ -21,6 +21,10 @@ public class PropertySubstituteAction extends AbstractNodeSubstituteAction {
     return myPropertySupport.fromInternalValue(myPropertyValue);
   }
 
+  public String getVisibleMatchingText(String pattern) {
+    return getMatchingText(pattern);
+  }
+
   public SNode doSubstitute(String pattern) {
     getSourceNode().setProperty(myPropertyName, myPropertyValue);
     return null;
