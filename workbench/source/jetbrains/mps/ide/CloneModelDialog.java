@@ -1,5 +1,6 @@
 package jetbrains.mps.ide;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
@@ -7,11 +8,10 @@ import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 
+import javax.swing.SwingUtilities;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-
-import com.intellij.openapi.project.Project;
 
 public class CloneModelDialog extends BaseNodeDialog {
 
@@ -101,9 +101,12 @@ public class CloneModelDialog extends BaseNodeDialog {
 
   protected String getErrorString() {
     if (myCloneModelProperties.getRoot() == null) return "Please specify root";
-    if (myCloneModelProperties.getLongName() == null || myCloneModelProperties.getLongName().length() == 0) return "Please specify name";
-    if (!myCloneModelProperties.getLongName().startsWith(myCloneModelProperties.getRoot().getPrefix())) return "Incorrect namespace for specified root";
-    if (myCloneModelProperties.getLongName().equals(myCloneModelProperties.getRoot().getPrefix())) return "Model fqName is the same as prefix. Can't import";
+    if (myCloneModelProperties.getLongName() == null || myCloneModelProperties.getLongName().length() == 0)
+      return "Please specify name";
+    if (!myCloneModelProperties.getLongName().startsWith(myCloneModelProperties.getRoot().getPrefix()))
+      return "Incorrect namespace for specified root";
+    if (myCloneModelProperties.getLongName().equals(myCloneModelProperties.getRoot().getPrefix()))
+      return "Model fqName is the same as prefix. Can't import";
     if (myCloneModelProperties.getLanguagesCount() < 1) return "Model must have at least one language";
     return null;
   }
@@ -120,7 +123,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     IOperationContext operationContext = getOperationContext();
     IModule module = operationContext.getModule();
     assert module != null;
-    SModelDescriptor modelDescriptor = module.createModel(new SModelUID(modelName, stereotype), modelRoot);
+    final SModelDescriptor modelDescriptor = module.createModel(new SModelUID(modelName, stereotype), modelRoot);
 
     final SModel model = modelDescriptor.getSModel();
     model.runLoadingAction(new Runnable() {
@@ -144,9 +147,14 @@ public class CloneModelDialog extends BaseNodeDialog {
 
     Project project = getOperationContext().getProject();
     assert project != null;
-    ProjectPane pane = project.getComponent(ProjectPane.class);
+    final ProjectPane pane = project.getComponent(ProjectPane.class);
     assert pane != null;
-    pane.selectModel(modelDescriptor);
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        pane.rebuildTree();
+        pane.selectModel(modelDescriptor);
+      }
+    });
   }
 
   private Set<String> getModelsInProperties() {
