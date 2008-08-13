@@ -3,6 +3,7 @@ package jetbrains.mps.ide;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.modelProperties.ModelPropertiesDialog;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.*;
 
@@ -15,15 +16,17 @@ import java.awt.event.ItemListener;
 
 public class NewModelDialog extends BaseDialog {
   private IOperationContext myContext;
+  private IModule myModule;
   private JPanel myContentPane = new JPanel(new BorderLayout());
   private JTextField myModelName = new JTextField();
   private JComboBox myModelStereotype = new JComboBox();
   private JComboBox myModelRoots = new JComboBox();
   private SModelDescriptor myResult;
 
-  public NewModelDialog(IOperationContext context) throws HeadlessException {
+  public NewModelDialog(IModule module, IOperationContext context) throws HeadlessException {
     super(context.getMainFrame(), "New Model");
     myContext = context;
+    myModule = module;
     initContentPane();
   }
 
@@ -52,7 +55,7 @@ public class NewModelDialog extends BaseDialog {
     mainPanel.add(myModelRoots);
 
     DefaultComboBoxModel model = new DefaultComboBoxModel();
-    for (ModelRoot root : myContext.getModule().getModelRoots()) {
+    for (ModelRoot root : myModule.getModelRoots()) {
       model.addElement(new ModelRootWrapper(root));
     }
 
@@ -95,7 +98,7 @@ public class NewModelDialog extends BaseDialog {
           return null;
         }
 
-        return myContext.getModule().createModel(modelUID, wrapper.myModelRoot);
+        return myModule.createModel(modelUID, wrapper.myModelRoot);
       }
     });
 
@@ -117,7 +120,7 @@ public class NewModelDialog extends BaseDialog {
     return myContentPane;
   }
 
-  private class ModelRootWrapper {
+  private static class ModelRootWrapper {
     private ModelRoot myModelRoot;
     private String myText;
 

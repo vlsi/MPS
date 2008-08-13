@@ -7,9 +7,11 @@ import jetbrains.mps.ide.NewModelDialog;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
@@ -21,6 +23,7 @@ public class NewModel_Action extends GeneratedAction {
 
   public MPSProject project;
   public IOperationContext context;
+  public IModule module;
 
   public NewModel_Action() {
     super("New Model", "", ICON);
@@ -53,6 +56,10 @@ public class NewModel_Action extends GeneratedAction {
       if (this.context == null) {
         return false;
       }
+      this.module = event.getData(MPSDataKeys.CONTEXT_MODULE);
+      if (this.module == null) {
+        return false;
+      }
     } catch (Throwable t) {
       return false;
     }
@@ -66,15 +73,20 @@ public class NewModel_Action extends GeneratedAction {
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          dialog[0] = new NewModelDialog(localContext);
+          dialog[0] = new NewModelDialog(NewModel_Action.this.module, localContext);
         }
 
       });
       dialog[0].showDialog();
-      this.project.getComponentSafe(ProjectPane.class).selectModel(dialog[0].getResult());
+      SModelDescriptor modelDescriptor = dialog[0].getResult();
+      this.project.getComponentSafe(ProjectPane.class).selectModel(modelDescriptor);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "NewModel", t);
     }
+  }
+
+  protected String getNamespace() {
+    return null;
   }
 
 }

@@ -131,7 +131,11 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
     myOperationContext = data.getOperationContext();
     if (myOperationContext == null) return false;
     myModules = data.getModules();
-    if (myModules.isEmpty()) return false;
+    if (myModules.isEmpty()) {
+      IModule contextModule = data.getContextModule();
+      if (contextModule == null) return false;
+      myModules.add(contextModule);
+    }
     myFrame = data.getFrame();
     if (myFrame == null) return false;
     return true;

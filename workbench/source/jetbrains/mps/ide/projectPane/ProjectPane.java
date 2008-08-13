@@ -416,6 +416,18 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       return getContextForSelection().getModule();
     }
 
+    if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
+      TreePath[] selection = getTree().getSelectionPaths();
+      if (selection == null) return null;
+      if (selection.length != 1) return null;
+      MPSTreeNode treeNode = (MPSTreeNode) selection[0].getLastPathComponent();
+      while (treeNode != null && !(treeNode instanceof ProjectModuleTreeNode)) {
+        treeNode = (MPSTreeNode) treeNode.getParent();
+      }
+      if (treeNode == null) return null;
+      return ((ProjectModuleTreeNode) treeNode).getModule();
+    }
+
     if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGE.getName())) {
       List<String> selectedPackages = getSelectedPackages();
       if (selectedPackages.size() != 1) return null;

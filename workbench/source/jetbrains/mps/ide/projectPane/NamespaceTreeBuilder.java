@@ -6,6 +6,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.ide.actions.NewModel_Action;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -14,8 +15,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionEventData;
@@ -147,7 +148,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
         }
       }
 
-      NamespaceNode newChild = new NamespaceNode(first, new MyContext(null,context));
+      NamespaceNode newChild = new NamespaceNode(first, new MyContext(null, context));
 
       add(newChild);
 
@@ -157,9 +158,18 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
     public ActionGroup getActionGroup() {
       DefaultActionGroup group = new DefaultActionGroup();
 
-      if (hasModulesUnder(this)) {
+      if (hasModulesUnder()) {
         group.add(new NewSolutionAction(myName));
         group.add(new NewLanguageAction(myName));
+        group.addSeparator();
+      }
+
+      if (hasModelsUnder()) {
+        group.add(new NewModel_Action() {
+          protected String getNamespace() {
+            return myName;
+          }
+        });
         group.addSeparator();
       }
 
@@ -224,8 +234,12 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
       return models;
     }
 
-    private boolean hasModulesUnder(MPSTreeNode node) {
-      return getModelsUnder(node).size() > 0;
+    private boolean hasModelsUnder() {
+      return getModelsUnder(this).size() > 0;
+    }
+
+    private boolean hasModulesUnder() {
+      return getModulesUnder(this).size() > 0;
     }
 
     private List<IModule> getModulesUnder(MPSTreeNode node) {
@@ -251,7 +265,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
 
     public MyContext(IModule module, IOperationContext operationContext) {
       myModule = module;
-      myOperationContext=operationContext;
+      myOperationContext = operationContext;
     }
 
     public <T> T getComponent(Class<T> clazz) {
