@@ -4,6 +4,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
 import jetbrains.mps.workbench.action.AbstractActionWithEmptyIcon;
@@ -101,21 +102,25 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   }
 
   private void updateContentPanel() {
-    if (myNoTabsComponent != null) {
-      myPanel.remove(myNoTabsComponent);
-      myNoTabsComponent = null;
-    }
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        if (myNoTabsComponent != null) {
+          myPanel.remove(myNoTabsComponent);
+          myNoTabsComponent = null;
+        }
 
-    if (myTracerViews.isEmpty()) {
-      myPanel.remove(myTabbedPane);
-      myNoTabsComponent = createNoTabsComponent();
-      myPanel.add(myNoTabsComponent, BorderLayout.CENTER);
-    } else {
-      myPanel.add(myTabbedPane, BorderLayout.CENTER);
-    }
+        if (myTracerViews.isEmpty()) {
+          myPanel.remove(myTabbedPane);
+          myNoTabsComponent = createNoTabsComponent();
+          myPanel.add(myNoTabsComponent, BorderLayout.CENTER);
+        } else {
+          myPanel.add(myTabbedPane, BorderLayout.CENTER);
+        }
 
-    myPanel.revalidate();
-    myPanel.repaint();
+        myPanel.revalidate();
+        myPanel.repaint();
+      }
+    });
   }
 
   private int currentTabIndex() {
