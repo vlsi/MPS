@@ -1,5 +1,11 @@
 package jetbrains.mps.ide.ui;
 
+import com.intellij.ide.DataManager;
+import com.intellij.ide.IdeBundle;
+import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.openapi.ui.popup.ListPopup;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.IOperationContext;
@@ -20,13 +26,6 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.ui.popup.ListPopup;
-import com.intellij.openapi.ui.popup.JBPopupFactory;
-import com.intellij.ide.DataManager;
-import com.intellij.ide.IdeBundle;
 
 /**
  * @author Kostik
@@ -122,14 +121,15 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
             ActionUtils.updateGroup(group, event);
             popup = JBPopupFactory.getInstance()
               .createActionGroupPopup(IdeBundle.message("title.popup.new.element"),
-                                      group,
-                                      dataContext,
-                                      JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
-                                      false);
+                group,
+                dataContext,
+                JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
+                false);
           }
           return popup;
         }
       });
+      if (popup == null) return;
       popup.showInBestPositionFor(dataContext);
     } else if (keyEvent.isAltDown() && (
       (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
