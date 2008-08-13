@@ -5,145 +5,120 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener;
-import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
-import com.intellij.openapi.vfs.newvfs.events.VFileDeleteEvent;
-import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
-import com.intellij.openapi.vfs.newvfs.events.VFileContentChangeEvent;
+import com.intellij.openapi.vfs.newvfs.events.*;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.AbstractVcs;
-import com.intellij.openapi.vcs.FileStatus;
-import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
+import com.intellij.openapi.project.Project;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
-import com.intellij.util.xmlb.annotations.Collection;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProjects;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.*;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.projectLanguage.DescriptorsPersistence;
+import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
+import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.library.Library;
 
 import java.util.List;
 import java.util.Set;
 import java.util.LinkedHashSet;
-import java.util.Collections;
-import java.io.File;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
-  private final MessageBus myBus;
-  private final SModelRepository mySModelRepository;
-  private final Set<MetadataCreationListener> myMetadataListeners = new LinkedHashSet<MetadataCreationListener>();
 
   public static ModelChangesWatcher instance() {
     return ApplicationManager.getApplication().getComponent(ModelChangesWatcher.class);
   }
 
-  private BulkFileListener myBusListener = new BulkFileListener() {
-    public void before(List<? extends VFileEvent> events) {
-
-    }
-
-    public void after(List<? extends VFileEvent> events) {
-
-      Application application = ApplicationManager.getApplication();
-      if (application.isDisposeInProgress() || application.isDisposed()) {
-        return;
-      }
-
-      final Set<SModelDescriptor> toReload = new LinkedHashSet<SModelDescriptor>();
-
-      for (VFileEvent event : events) {
-        String path = event.getPath();
-        VirtualFile vfile = event.getFileSystem().findFileByPath(path);
-        if (vfile == null) continue;
-        if ((event instanceof VFileDeleteEvent) || (event instanceof VFileCreateEvent)) {
-
-          if (vfile.getFileType().equals(MPSFileTypesManager.MODEL_FILE_TYPE)) {
-            IFile ifile = VFileSystem.toIFile(vfile);
-            if ((ifile == null) || (!ifile.exists())) continue;
-            final SModelDescriptor model = mySModelRepository.findModel(ifile);
-            if ((model != null) && model.needsReloading()) {
-              ProgressManager.getInstance().run(new Modal(null, "Reloading Updated Models", false) {
-                public void run(@NotNull final ProgressIndicator indicator) {
-                  ModelAccess.instance().runReadAction(new Runnable() {
-                    public void run() {
-                      try {
-                        indicator.setIndeterminate(true);
-                        List<SModelDescriptor> allModelDescriptors = mySModelRepository.getAllModelDescriptors();
-
-                        for (SModelDescriptor d : allModelDescriptors) {
-                          IFile modelFile = d.getModelFile();
-                          if ((modelFile != null) && (!ApplicationLevelVcsManager.instance().isInConflict(modelFile))) {
-                            d.reloadFromDisk();
-                          }
-                        }
-                      } catch (Throwable t) {
-                        LOG.error(t);
-                      }
-                    }
-                  });
-                }
-              });
-            }
-          }
-          return;
-
-        } else {
-
-          IFile ifile = VFileSystem.toIFile(vfile);
-          if ((ifile == null) || (!ifile.exists()) || (!vfile.getFileType().equals(MPSFileTypesManager.MODEL_FILE_TYPE)))
-            continue;
-          final SModelDescriptor model = mySModelRepository.findModel(ifile);
-
-          if (model != null) {
-            if (ApplicationLevelVcsManager.instance().isInConflict(ifile)) {
-              continue;
-            }
-            if (model.needsReloading()) {
-              toReload.add(model);
-            }
-          }
-
-        }
-      }
-
-      if (toReload.isEmpty()) return;
-
-      ProgressManager.getInstance().run(new Modal(null, "Reloading Updated Models", false) {
-        public void run(@NotNull final ProgressIndicator indicator) {
-          for (final SModelDescriptor model : toReload) {
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                indicator.setText("Reloading " + model.getModelUID());
-                model.reloadFromDisk();
-              }
-            });
-          }
-        }
-      });
-
-    }
-  };
-
+  private final MessageBus myBus;
+  private final SModelRepository mySModelRepository;
+  private final Set<MetadataCreationListener> myMetadataListeners = new LinkedHashSet<MetadataCreationListener>();
+  private final ProjectManager myProjectManager;
   private MessageBusConnection myConnection;
+  private BulkFileListener myBusListener = new BulkFileCahngesListener();
 
-
-  public ModelChangesWatcher(final MessageBus bus, SModelRepository sModelRepository) {
+  public ModelChangesWatcher(final MessageBus bus, SModelRepository sModelRepository, ProjectManager projectManager) {
     myBus = bus;
     mySModelRepository = sModelRepository;
+    myProjectManager = projectManager;
+  }
+
+  private void doReload(final Set<SModelDescriptor> modelsToReload, final Set<IModule> modulesToReload, final Set<VirtualFile> addedModules) {
+    boolean needToReloadLibraries = false;
+    if (!addedModules.isEmpty()) {
+      needToReloadLibraries = showNeedToReloadLibrariesDialog(addedModules);
+    }
+
+    final boolean needToReloadLibrariesTmp = needToReloadLibraries;
+    ProgressManager.getInstance().run(new Modal(null, "Reloading", false) {
+
+      public void run(@NotNull final ProgressIndicator progressIndicator) {
+        if (needToReloadLibrariesTmp) {
+          progressIndicator.setText("Updating Modules");
+          LibraryManager.getInstance().update();
+          return;
+        }
+
+        // reloading modules
+        reloadModules(progressIndicator, modulesToReload);
+
+        // reloadig models
+        reloadModels(progressIndicator, modelsToReload);
+      }
+    });
+  }
+
+  private void reloadModels(final ProgressIndicator progressIndicator, Set<SModelDescriptor> modelsToReload) {
+    for (final SModelDescriptor model : modelsToReload) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          progressIndicator.setText("Reloading " + model.getModelUID());
+          model.reloadFromDisk();
+        }
+      });
+    }
+  }
+
+  private void reloadModules(ProgressIndicator progressIndicator, Set<IModule> modulesToReload) {
+    for (IModule module : modulesToReload) {
+      progressIndicator.setText("Reloading " + module.getModuleUID());
+      SModel sModel = module.getModuleDescriptor().getModel();
+      ModuleDescriptor descriptor = null;
+      if (module instanceof Language) {
+        descriptor = DescriptorsPersistence.loadLanguageDescriptor(module.getDescriptorFile(), sModel);
+      } else if (module instanceof Solution) {
+        descriptor = DescriptorsPersistence.loadSolutionDescriptor(module.getDescriptorFile(), sModel);
+      } else if (module instanceof DevKit) {
+        descriptor = DescriptorsPersistence.loadDevKitDescriptor(module.getDescriptorFile(), sModel);
+      }
+      assert descriptor != null;
+      module.setModuleDescriptor(descriptor);
+    }
+  }
+
+  private boolean showNeedToReloadLibrariesDialog(Set<VirtualFile> addedModules) {
+    boolean needToReloadLibraries;
+    String title = "New Module Files Detected";
+    String message = "Module Files\n";
+    for (VirtualFile file : addedModules) {
+      message += file.getPath() + "\n";
+    }
+    message += "were created. Do You Want To Load Them?";
+    needToReloadLibraries = Messages.showYesNoDialog(message, title, Messages.getQuestionIcon()) == 0;
+    return needToReloadLibraries;
+  }
+
+  private VirtualFile getVFile(VFileEvent event) {
+    return event.getFileSystem().refreshAndFindFileByPath(event.getPath());
   }
 
   @NonNls
@@ -177,5 +152,73 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
   public static interface MetadataCreationListener {
     void metadataFileCreated(IFile f);
+  }
+
+  private class BulkFileCahngesListener implements BulkFileListener {
+    public void before(List<? extends VFileEvent> events) {
+
+    }
+
+    public void after(List<? extends VFileEvent> events) {
+
+      Application application = ApplicationManager.getApplication();
+      if (application.isDisposeInProgress() || application.isDisposed()) {
+        return;
+      }
+
+      final Set<SModelDescriptor> modelsToReload = new LinkedHashSet<SModelDescriptor>();
+      final Set<IModule> modulesToReload = new LinkedHashSet<IModule>();
+      final Set<VirtualFile> addedModules = new LinkedHashSet<VirtualFile>();
+      final Set<Project> projectsToReload = new LinkedHashSet<Project>();
+      boolean needToReloadLibraries = false;
+
+      // collecting changed models, modules etc.
+      for (VFileEvent event : events) {
+        VirtualFile vfile = getVFile(event);
+        if ((event instanceof VFileCreateEvent) || (event instanceof VFileCopyEvent)) {
+          if (MPSFileTypesManager.isModuleFile(vfile)) {
+
+            Set<Library> librarySet = LibraryManager.getInstance().getLibraries();
+            for (Library lib : librarySet) {
+              if (VfsUtil.isAncestor(VFileSystem.getFile(lib.getPath()), vfile, false)) {
+                needToReloadLibraries = true;
+                addedModules.add(vfile);
+              }
+            }
+          }
+        } else if (event instanceof VFileContentChangeEvent) {
+          if (MPSFileTypesManager.isProjectFile(vfile)) {
+            Project[] projects = myProjectManager.getOpenProjects();
+            for (Project project : projects) {
+              if (project.getProjectFile().equals(vfile)) {
+                projectsToReload.add(project);
+                break;
+              }
+            }
+          } else if (MPSFileTypesManager.isModelFile(vfile)) {
+            IFile ifile = VFileSystem.toIFile(vfile);
+            if ((ifile == null) || (!ifile.exists())) continue;
+            SModelDescriptor model = mySModelRepository.findModel(ifile);
+            if ((model == null) || ApplicationLevelVcsManager.instance().isInConflict(ifile)) {
+              continue;
+            }
+            if (model.needsReloading()) {
+              modelsToReload.add(model);
+            }
+          } else if (MPSFileTypesManager.isModuleFile(vfile)) {
+            IFile ifile = VFileSystem.toIFile(vfile);
+            if ((ifile == null) || (!ifile.exists())) continue;
+            IModule module = MPSModuleRepository.getInstance().getModuleByFile(ifile.toFile());
+            modulesToReload.add(module);
+          }
+        }
+      }
+
+      // check, whether we have to do something
+      if (addedModules.isEmpty() && modelsToReload.isEmpty() && modulesToReload.isEmpty() && projectsToReload.isEmpty()) return;
+
+      // reloading
+      doReload(modelsToReload, modulesToReload, addedModules);
+    }
   }
 }

@@ -97,4 +97,16 @@ public class MPSFileTypesManager implements ApplicationComponent {
     }
   }
 
+  public static boolean isModuleFile(VirtualFile file) {
+    FileType type = file.getFileType();
+    return type.equals(LANGUAGE_FILE_TYPE) || type.equals(SOLUTION_FILE_TYPE) || type.equals(DEVKIT_FILE_TYPE);
+  }
+
+  public static boolean isModelFile(VirtualFile vfile) {
+    return vfile.getFileType().equals(MODEL_FILE_TYPE);
+  }
+
+  public static boolean isProjectFile(VirtualFile vfile){
+    return vfile.getFileType().equals(PROJECT_FILE_TYPE);
+  }
 }
