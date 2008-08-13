@@ -123,7 +123,9 @@ public class NewModelDialog extends BaseDialog {
 
     private ModelRootWrapper(ModelRoot modelRoot) {
       myModelRoot = modelRoot;
-      myText = myModelRoot.getPath() + " (" + myModelRoot.getPrefix() + ")";
+
+      boolean needsPrefix = myModelRoot.getPrefix() != null && !myModelRoot.getPrefix().equals("");
+      myText = myModelRoot.getPath() + (needsPrefix ? " (" + myModelRoot.getPrefix() + ")" : "");
     }
 
     public String toString() {
