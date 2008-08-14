@@ -11,6 +11,7 @@ public enum UseInTest {
   reduceInheritors("reduceInheritors", "reduceInheritors"),
   reduceExpressionToStatement("reduceExpressionToStatement", "reduceExpressionToStatement"),
   dontApplyReductionTwice("dontApplyReductionTwice", "dontApplyReductionTwice"),
+  weaveManyToSingularChild("weaveManyToSingularChild", "weaveManyToSingularChild"),
   none("none", "none");
 
   private String myName;
@@ -28,6 +29,7 @@ UseInTest(String name, String value) {
     list.add(UseInTest.reduceInheritors);
     list.add(UseInTest.reduceExpressionToStatement);
     list.add(UseInTest.dontApplyReductionTwice);
+    list.add(UseInTest.weaveManyToSingularChild);
     list.add(UseInTest.none);
     return list;
   }
@@ -54,6 +56,9 @@ UseInTest(String name, String value) {
     }
     if (value.equals(UseInTest.dontApplyReductionTwice.getValueAsString())) {
       return UseInTest.dontApplyReductionTwice;
+    }
+    if (value.equals(UseInTest.weaveManyToSingularChild.getValueAsString())) {
+      return UseInTest.weaveManyToSingularChild;
     }
     if (value.equals(UseInTest.none.getValueAsString())) {
       return UseInTest.none;

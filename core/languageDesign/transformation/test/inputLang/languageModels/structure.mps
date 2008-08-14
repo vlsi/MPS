@@ -102,6 +102,10 @@
       <property name="internalValue" value="dontApplyReductionTwice" />
       <property name="externalValue" value="dontApplyReductionTwice" />
     </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1218736527492">
+      <property name="externalValue" value="weaveManyToSingularChild" />
+      <property name="internalValue" value="weaveManyToSingularChild" />
+    </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1202242822699">
       <property name="externalValue" value="none" />
       <property name="internalValue" value="none" />

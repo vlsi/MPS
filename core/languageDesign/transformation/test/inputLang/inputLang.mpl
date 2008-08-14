@@ -28,6 +28,9 @@
   <dependencies>
     <dependency reexport="false">jetbrains.mps.transformation.test.inputLang</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>jetbrains.mps.transformation.test.outputLang</usedLanguages>
+  </usedLanguages>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
