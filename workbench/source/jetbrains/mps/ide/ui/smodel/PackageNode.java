@@ -2,10 +2,8 @@ package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
 
@@ -37,7 +35,12 @@ public class PackageNode extends SNodeGroupTreeNode {
     group.add(new PasteNodeAction());
 
     group.addSeparator();
-    group.add(new RenamePackageAction(myModelNode.getOperationContext().getMainFrame(), myName, getNodesUnderPackage()));
+    Set<SNode> nodesUnderPackage = ModelAccess.instance().runReadAction(new Computable<Set<SNode>>() {
+      public Set<SNode> compute() {
+        return getNodesUnderPackage();
+      }
+    });
+    group.add(new RenamePackageAction(myModelNode.getOperationContext().getMainFrame(), myName, nodesUnderPackage));
 
     return group;
   }
