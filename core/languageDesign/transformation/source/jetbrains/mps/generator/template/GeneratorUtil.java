@@ -10,6 +10,7 @@ import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.generator.GenerationFailueException;
@@ -389,7 +390,14 @@ public class GeneratorUtil {
               LOG.warning(" -- was rule: " + rule.getDebugText(), rule);
             }
 
-            contextParentNode.addChild(childRole, outputNodeToWeave);
+            // if singular child then don't add more that 1 child
+            LinkDeclaration childLinkDeclaration = contextParentNode.getLinkDeclaration(childRole);
+            Cardinality cardinality = childLinkDeclaration.getSourceCardinality();
+            if (cardinality == Cardinality._0__1 || cardinality == Cardinality._1) {
+              contextParentNode.setChild(childRole, outputNodeToWeave);
+            } else {
+              contextParentNode.addChild(childRole, outputNodeToWeave);
+            }
           }
         } catch (DismissTopMappingRuleException e) {
           generator.showErrorMessage(inputNode, templateFragment.getNode(), rule.getNode(), "dismission of weaving rule is not supported");
