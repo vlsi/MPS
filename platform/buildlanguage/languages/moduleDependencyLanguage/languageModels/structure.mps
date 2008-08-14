@@ -42,6 +42,12 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1216904128547" resolveInfo="Cycle" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1218717471247">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="commonClasspath" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1216907456863" resolveInfo="PathHolder" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216745525843">
     <property name="name" value="ModuleDescription" />
