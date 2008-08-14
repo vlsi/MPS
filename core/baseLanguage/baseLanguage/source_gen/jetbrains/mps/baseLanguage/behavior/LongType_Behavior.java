@@ -10,7 +10,7 @@ public class LongType_Behavior {
   }
 
   public static SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
-    return new QuotationClass_().createNode();
+    return new QuotationClass_0().createNode();
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
