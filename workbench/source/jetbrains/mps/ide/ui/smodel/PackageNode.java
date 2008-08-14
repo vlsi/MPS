@@ -1,16 +1,14 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
 
-import javax.swing.JOptionPane;
-import java.awt.Frame;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -39,27 +37,7 @@ public class PackageNode extends SNodeGroupTreeNode {
     group.add(new PasteNodeAction());
 
     group.addSeparator();
-    group.add(new BaseAction("Rename", "", IconManager.EMPTY_ICON) {
-      protected void doExecute(AnActionEvent e) {
-        Frame frame = myModelNode.getOperationContext().getMainFrame();
-        final String newName = JOptionPane.showInputDialog(frame, "Enter New Package Name", myName);
-        if (newName != null) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              for (SNode n : getNodesUnderPackage()) {
-                String oldPackage = n.getProperty(SModelTreeNode.PACK);
-                String newPack = newName + oldPackage.substring(myName.length());
-                if (newPack.length() > 0) {
-                  n.setProperty(SModelTreeNode.PACK, newPack);
-                } else {
-                  n.setProperty(SModelTreeNode.PACK, null);
-                }
-              }
-            }
-          });
-        }
-      }
-    });
+    group.add(new RenamePackageAction(myModelNode.getOperationContext().getMainFrame(), myName, getNodesUnderPackage()));
 
     return group;
   }
@@ -106,4 +84,5 @@ public class PackageNode extends SNodeGroupTreeNode {
   public String getPackage() {
     return myName;
   }
+
 }

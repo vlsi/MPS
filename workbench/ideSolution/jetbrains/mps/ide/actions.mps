@@ -96,7 +96,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions"/>
     <property name="id" value="ProjectPaneNodeActions"/>
-    <property name="package" value="ProjectPane.Node"/>
+    <property name="package" value="Menu.ProjectPane.Node"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1207148449406">
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1215882221908">
@@ -202,7 +202,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991218714">
     <property name="name" value="ProjectPaneModelActions"/>
-    <property name="package" value="ProjectPane.Model"/>
+    <property name="package" value="Menu.ProjectPane.Model"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1207148419636">
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
@@ -297,7 +297,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991220529">
     <property name="name" value="ProjectActions"/>
-    <property name="package" value="ProjectPane.Project"/>
+    <property name="package" value="Menu.ProjectPane.Project"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1207148416040">
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204910715381">
@@ -322,7 +322,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991221264">
     <property name="name" value="ProjectNewActions"/>
     <property name="caption" value="New"/>
-    <property name="package" value="ProjectPane.Project"/>
+    <property name="package" value="Menu.ProjectPane.Project"/>
     <property name="isPopup" value="true"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1204998357770">
@@ -349,7 +349,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991224874">
     <property name="name" value="LanguageActions"/>
-    <property name="package" value="ProjectPane.Language"/>
+    <property name="package" value="Menu.ProjectPane.Module.Language"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1207148410459">
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204911159306">
@@ -423,7 +423,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991225922">
     <property name="name" value="LanguageNewActions"/>
     <property name="caption" value="New"/>
-    <property name="package" value="ProjectPane.Language"/>
+    <property name="package" value="Menu.ProjectPane.Module.Language"/>
     <property name="isPopup" value="true"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1204998416711">
@@ -447,7 +447,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991226689">
     <property name="name" value="SolutionActions"/>
-    <property name="package" value="ProjectPane.Solution"/>
+    <property name="package" value="Menu.ProjectPane.Module.Solution"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1207148457205">
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204911787238">
@@ -523,7 +523,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991227487">
     <property name="name" value="SolutionNewActions"/>
     <property name="caption" value="New"/>
-    <property name="package" value="ProjectPane.Solution"/>
+    <property name="package" value="Menu.ProjectPane.Module.Solution"/>
     <property name="isPopup" value="true"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1204998497279">
@@ -540,7 +540,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991228238">
     <property name="name" value="DevkitActions"/>
-    <property name="package" value="ProjectPane.Devkit"/>
+    <property name="package" value="Menu.ProjectPane.Module.Devkit"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1207148337066">
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1216128356501">
@@ -567,7 +567,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991229114">
     <property name="name" value="GeneratorNewActions"/>
     <property name="caption" value="New"/>
-    <property name="package" value="ProjectPane.Generator"/>
+    <property name="package" value="Menu.ProjectPane.Module.Generator"/>
     <property name="isPopup" value="true"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1204998554402">
@@ -584,7 +584,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991229896">
     <property name="name" value="GeneratorActions"/>
-    <property name="package" value="ProjectPane.Generator"/>
+    <property name="package" value="Menu.ProjectPane.Module.Generator"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1207148353999">
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204980550723">
@@ -630,7 +630,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991230694">
     <property name="name" value="TransientModulesActions"/>
-    <property name="package" value="ProjectPane.TransientModules"/>
+    <property name="package" value="Menu.ProjectPane.TransientModules"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1207148463880">
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1215890809780">
@@ -640,7 +640,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991231476">
     <property name="name" value="EditorPopup"/>
-    <property name="package" value="EditorPopup"/>
+    <property name="package" value="Menu.EditorPopup"/>
     <property name="isPopup" value="false"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1207148348237">
@@ -762,7 +762,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991232446">
     <property name="name" value="EditorInternal"/>
     <property name="isInternal" value="true"/>
-    <property name="package" value="EditorPopup"/>
+    <property name="package" value="Menu.EditorPopup"/>
     <property name="caption" value="Internal"/>
     <property name="isPopup" value="true"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
@@ -799,7 +799,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991235731">
     <property name="name" value="Edit"/>
     <property name="caption" value="Edit"/>
-    <property name="package" value="MainMenu"/>
+    <property name="package" value="Menu.MainMenu"/>
     <property name="isPopup" value="false"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1205007875051">
@@ -853,7 +853,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991236497">
     <property name="name" value="Generate"/>
     <property name="caption" value="Generate"/>
-    <property name="package" value="MainMenu"/>
+    <property name="package" value="Menu.MainMenu"/>
     <property name="isPopup" value="false"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1207148351921">
@@ -891,7 +891,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991237264">
     <property name="name" value="Goto"/>
     <property name="caption" value="Go To"/>
-    <property name="package" value="MainMenu"/>
+    <property name="package" value="Menu.MainMenu"/>
     <property name="isPopup" value="false"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1205007901663">
@@ -966,7 +966,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991238062">
     <property name="name" value="Tools"/>
     <property name="caption" value="Tools"/>
-    <property name="package" value="MainMenu"/>
+    <property name="package" value="Menu.MainMenu"/>
     <property name="isPopup" value="false"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1205007918257">
@@ -1021,7 +1021,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991238844">
     <property name="name" value="Help"/>
     <property name="caption" value="Help"/>
-    <property name="package" value="MainMenu"/>
+    <property name="package" value="Menu.MainMenu"/>
     <property name="isPopup" value="false"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1215012711185">
@@ -1063,7 +1063,7 @@
     <property name="id" value="ProjectPaneNodeActionsInternal"/>
     <property name="caption" value="Internal"/>
     <property name="isInternal" value="true"/>
-    <property name="package" value="ProjectPane.Node"/>
+    <property name="package" value="Menu.ProjectPane.Node"/>
     <property name="isPopup" value="true"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1204997146391">
@@ -1080,13 +1080,13 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205163054135">
     <property name="name" value="ProjectPaneModelActionsInternal"/>
     <property name="caption" value="Internal"/>
-    <property name="package" value="ProjectPane.Model"/>
+    <property name="package" value="Menu.ProjectPane.Model"/>
     <property name="isInternal" value="true"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1207148447327"/>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1209134592489">
-    <property name="package" value="ProjectPane.Language"/>
+    <property name="package" value="Menu.ProjectPane.Module.Language"/>
     <property name="name" value="LanguageNewCustomPartActions"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.BuildGroupBlock" id="1209134668045">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209134668046">
@@ -1238,7 +1238,7 @@
           id="1215013225477"/>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1215013255981">
-    <property name="package" value="MainMenu"/>
+    <property name="package" value="Menu.MainMenu"/>
     <property name="name" value="Build"/>
     <property name="caption" value="Build"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
@@ -1268,7 +1268,7 @@
           id="1215606446556"/>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215608712908">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.EditorPopup.Actions"/>
     <property name="caption" value="Go To Concept Declaration"/>
     <property name="name" value="GoToConceptDeclaration"/>
     <property name="iconPath"
@@ -1392,7 +1392,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215867986486">
-    <property name="package" value="ProjectPane.Model"/>
+    <property name="package" value="Menu.ProjectPane.Model.Actions"/>
     <property name="name" value="AddMissingImports"/>
     <property name="caption" value="Fix Missing Imports"/>
     <property name="isAlwaysVisible" value="true"/>
@@ -1449,7 +1449,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215868765946">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.ProjectPane.Module.Actions"/>
     <property name="name" value="AnalyzeClasspath"/>
     <property name="caption" value="Analyze Classpath"/>
     <property name="isAlwaysVisible" value="true"/>
@@ -1539,7 +1539,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215870087530">
-    <property name="package" value="EditorPopup.Actions"/>
+    <property name="package" value="Menu.EditorPopup.Actions"/>
     <property name="name" value="CellProperties"/>
     <property name="caption" value="Cell Properties"/>
     <property name="isAlwaysVisible" value="true"/>
@@ -1587,7 +1587,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215870501535">
-    <property name="package" value="ProjectPane.Generator"/>
+    <property name="package" value="Menu.ProjectPane.Module.Generator"/>
     <property name="name" value="CheckGenerator"/>
     <property name="caption" value="Check Generator"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -1790,7 +1790,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215871905655">
-    <property name="package" value="ProjectPane.Language"/>
+    <property name="package" value="Menu.ProjectPane.Module.Language.Actions"/>
     <property name="name" value="CheckLanguage"/>
     <property name="caption" value="Check Language"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -1993,7 +1993,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215873138429">
-    <property name="package" value="ProjectPane.Solution"/>
+    <property name="package" value="Menu.ProjectPane.Module.Solution"/>
     <property name="name" value="CheckSolution"/>
     <property name="caption" value="Check Solution"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -2196,7 +2196,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215873275289">
-    <property name="package" value="ProjectPane.Model"/>
+    <property name="package" value="Menu.ProjectPane.Model.Actions"/>
     <property name="name" value="CheckModel"/>
     <property name="caption" value="Check Model"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -2399,7 +2399,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215873654619">
-    <property name="package" value="MainMenu.BuildActions"/>
+    <property name="package" value="Menu.MainMenu.BuildActions"/>
     <property name="outsideCommandExecution" value="true"/>
     <property name="name" value="CleanAllModules"/>
     <property name="caption" value="Clean All"/>
@@ -2598,7 +2598,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215873952433">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.ProjectPane.Module.Actions"/>
     <property name="outsideCommandExecution" value="true"/>
     <property name="name" value="CleanModule"/>
     <property name="caption" value="Clean"/>
@@ -2837,7 +2837,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215874097590">
-    <property name="package" value="ProjectPane.Project"/>
+    <property name="package" value="Menu.ProjectPane.Project.Actions"/>
     <property name="outsideCommandExecution" value="true"/>
     <property name="name" value="CleanProject"/>
     <property name="caption" value="Clean"/>
@@ -3099,7 +3099,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215874656794">
-    <property name="package" value="ProjectPane.Model"/>
+    <property name="package" value="Menu.ProjectPane.Model.Actions"/>
     <property name="name" value="CloneModel"/>
     <property name="caption" value="Clone Model"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -3199,7 +3199,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215874930420">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.EditorPopup.Actions"/>
     <property name="name" value="CloneRoot"/>
     <property name="caption" value="Clone Root"/>
     <property name="isAlwaysVisible" value="true"/>
@@ -3368,7 +3368,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215875422458">
-    <property name="package" value="ProjectPane.Devkit"/>
+    <property name="package" value="Menu.ProjectPane.Module.Devkit"/>
     <property name="name" value="DevkitProperties"/>
     <property name="caption" value="DevKit Properties"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -3541,7 +3541,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215875847680">
-    <property name="package" value="ProjectPane.Language"/>
+    <property name="package" value="Menu.ProjectPane.Module.Language.Actions"/>
     <property name="name" value="LanguageProperties"/>
     <property name="caption" value="Language Properties"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -3750,7 +3750,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215878121755">
-    <property name="package" value="MainMenu.ToolsActions"/>
+    <property name="package" value="Menu.MainMenu.ToolsActions"/>
     <property name="name" value="DumpKeyStrokes"/>
     <property name="caption" value="Dump KeyStrokes"/>
     <property name="isAlwaysVisible" value="true"/>
@@ -3768,7 +3768,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215881875402">
-    <property name="package" value="ProjectPane.Node"/>
+    <property name="package" value="Menu.ProjectPane.Node.Actions"/>
     <property name="name" value="EditNode"/>
     <property name="caption" value="Edit"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
@@ -3879,7 +3879,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215884802964">
-    <property name="package" value="ProjectPane.Node"/>
+    <property name="package" value="Menu.ProjectPane.Node.Actions"/>
     <property name="name" value="ExpandNode"/>
     <property name="caption" value="Expand All"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
@@ -4009,7 +4009,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215886985990">
-    <property name="package" value="ProjectPane.Generator"/>
+    <property name="package" value="Menu.ProjectPane.Module.Generator"/>
     <property name="name" value="GeneratorProperties"/>
     <property name="caption" value="Generator Properties"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -4156,7 +4156,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215889139721">
-    <property name="package" value="ProjectPane.Project"/>
+    <property name="package" value="Menu.ProjectPane.Project.Actions"/>
     <property name="name" value="OptimizeProjectImports"/>
     <property name="caption" value="Optimize Imports"/>
     <property name="isAlwaysVisible" value="true"/>
@@ -4452,7 +4452,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215889706327">
-    <property name="package" value="ProjectPane.Model"/>
+    <property name="package" value="Menu.ProjectPane.Model.Actions"/>
     <property name="caption" value="Save"/>
     <property name="name" value="SaveModel"/>
     <property name="isAlwaysVisible" value="true"/>
@@ -4485,7 +4485,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215890512584">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.ProjectPane.TransientModules"/>
     <property name="caption" value="Remove Transient Models"/>
     <property name="name" value="RemoveTransientModels"/>
     <property name="isAlwaysVisible" value="true"/>
@@ -4602,7 +4602,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215902895421">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.ProjectPane.Module.Actions"/>
     <property name="name" value="MakeModule"/>
     <property name="caption" value="Make"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -4893,7 +4893,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215903504454">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.ProjectPane.Module.Actions"/>
     <property name="name" value="NewModel"/>
     <property name="outsideCommandExecution" value="true"/>
     <property name="caption" value="New Model"/>
@@ -5118,7 +5118,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215903857779">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.EditorPopup.Actions"/>
     <property name="name" value="PrintTextPresentation"/>
     <property name="caption" value="Print Text Presentation"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
@@ -5302,7 +5302,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215904143694">
-    <property name="package" value="EditorPopup.Actions"/>
+    <property name="package" value="Menu.EditorPopup.Actions"/>
     <property name="name" value="PrintNodeID"/>
     <property name="caption" value="Print Node ID To System.out"/>
     <property name="isAlwaysVisible" value="true"/>
@@ -5354,7 +5354,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215905183111">
-    <property name="package" value="ProjectPane.Project"/>
+    <property name="package" value="Menu.ProjectPane.Project.Actions"/>
     <property name="name" value="NewDevKit"/>
     <property name="caption" value="New DevKit"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -5436,7 +5436,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215905849267">
-    <property name="package" value="ProjectPane.Language"/>
+    <property name="package" value="Menu.ProjectPane.Module.Language.Actions"/>
     <property name="name" value="NewGenerator"/>
     <property name="caption" value="New Generator"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -5705,7 +5705,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215907579103">
-    <property name="package" value="ProjectPane.Node"/>
+    <property name="package" value="Menu.ProjectPane.Node.Actions"/>
     <property name="name" value="ShowErrorMessage"/>
     <property name="caption" value="Show Error Message"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
@@ -5724,7 +5724,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215908198966">
-    <property name="package" value="EditorPopup.Actions"/>
+    <property name="package" value="Menu.EditorPopup.Actions"/>
     <property name="name" value="TestNodePath"/>
     <property name="caption" value="Test Node Path"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
@@ -5843,7 +5843,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215908832289">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.ProjectPane.Module.Actions"/>
     <property name="name" value="RebuildModule"/>
     <property name="caption" value="Rebuild"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -6170,7 +6170,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215909759956">
-    <property name="package" value="ProjectPane.Project"/>
+    <property name="package" value="Menu.ProjectPane.Project.Actions"/>
     <property name="name" value="MakeProject"/>
     <property name="caption" value="Make Project"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -6431,7 +6431,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216119398364">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.EditorPopup.Actions"/>
     <property name="name" value="ShowClassInHierarchy"/>
     <property name="caption" value="Show Class In Hierarchy"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
@@ -6599,7 +6599,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216120033386">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.EditorPopup.Actions"/>
     <property name="name" value="ShowConceptInHierarchy"/>
     <property name="caption" value="Show Concept In Hierarchy"/>
     <property name="iconPath"
@@ -6731,7 +6731,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216120752903">
-    <property name="package" value="ProjectPane.Model"/>
+    <property name="package" value="Menu.ProjectPane.Model.Actions"/>
     <property name="name" value="RevertMemoryChanges"/>
     <property name="caption" value="Revert Memory Changes"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
@@ -6764,7 +6764,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216122341402">
-    <property name="package" value="ProjectPane.Language"/>
+    <property name="package" value="Menu.ProjectPane.Module.Language.Actions"/>
     <property name="name" value="LanguageHierarchy"/>
     <property name="caption" value="Language Diagram"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
@@ -7048,7 +7048,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216122844143">
-    <property name="package" value="MainMenu.BuildActions"/>
+    <property name="package" value="Menu.MainMenu.BuildActions"/>
     <property name="name" value="MakeAllModules"/>
     <property name="caption" value="Make All"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -7248,7 +7248,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216123548857">
-    <property name="package" value="MainMenu.BuildActions"/>
+    <property name="package" value="Menu.MainMenu.BuildActions"/>
     <property name="name" value="RebuildAllModules"/>
     <property name="caption" value="Rebuild All"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -7501,7 +7501,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216123732571">
-    <property name="package" value="ProjectPane.Project"/>
+    <property name="package" value="Menu.ProjectPane.Project.Actions"/>
     <property name="name" value="RebuildProject"/>
     <property name="caption" value="Rebuild Project"/>
     <property name="outsideCommandExecution" value="true"/>
@@ -7814,7 +7814,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216123841989">
-    <property name="package" value="EditorPopup.Actions"/>
+    <property name="package" value="Menu.EditorPopup.Actions"/>
     <property name="name" value="ShowCellInExplorer"/>
     <property name="caption" value="Show Cell In Explorer"/>
     <property name="iconPath"
@@ -7876,7 +7876,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216124397308">
-    <property name="package" value="ProjectPane.Model"/>
+    <property name="package" value="Menu.ProjectPane.Model.Actions"/>
     <property name="name" value="ShowDifferencesWithModelOnDisk"/>
     <property name="caption" value="Show Differences With Model On Disk"/>
     <property name="isAlwaysVisible" value="true"/>
@@ -7995,7 +7995,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216124527478">
-    <property name="package" value="EditorPopup.Actions"/>
+    <property name="package" value="Menu.EditorPopup.Actions"/>
     <property name="name" value="ShowInProject"/>
     <property name="caption" value="Show Node In Project"/>
     <property name="isAlwaysVisible" value="true"/>
@@ -8103,7 +8103,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216125431295">
-    <property name="package" value="EditorPopup.Actions"/>
+    <property name="package" value="Menu.EditorPopup.Actions"/>
     <property name="name" value="ShowNodeInInspector"/>
     <property name="caption" value="Inspect Node"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
@@ -8205,7 +8205,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216126715578">
-    <property name="package" value="ProjectPane.Solution"/>
+    <property name="package" value="Menu.ProjectPane.Module.Solution"/>
     <property name="name" value="SolutionProperties"/>
     <property name="caption" value="Solution Properties"/>
     <property name="isAlwaysVisible" value="true"/>
@@ -8411,7 +8411,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216127622518">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.ProjectPane.Module.Actions"/>
     <property name="name" value="RemoveModuleFromProject"/>
     <property name="caption" value="Remove From Project"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
@@ -8658,7 +8658,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216128015035">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.ProjectPane.Module.Actions"/>
     <property name="name" value="SetModuleFolder"/>
     <property name="isAlwaysVisible" value="true"/>
     <property name="caption" value="Set Folder"/>
@@ -8965,7 +8965,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216128373549">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.EditorPopup.Actions"/>
     <property name="caption" value="Show Generation Traceback"/>
     <property name="isAlwaysVisible" value="false"/>
     <property name="name" value="ShowGenerationTraceback"/>
@@ -9255,7 +9255,7 @@
     <property name="name" value="ShowNodeInExplorer"/>
     <property name="caption" value="Show Node In Explorer"/>
     <property name="isAlwaysVisible" value="true"/>
-    <property name="package" value="Actions"/>
+    <property name="package" value="Menu.EditorPopup.Actions"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1216652708435">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216652708436">
@@ -9364,6 +9364,7 @@
     <property name="caption" value="Node Explorer"/>
     <property name="name" value="NodeExplorer"/>
     <property name="icon" value="${mps_home}\workbench\source\jetbrains\mps\ide\projectPane\nodes\default.png"/>
+    <property name="package" value="Tools"/>
     <node role="getComponentBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetComponentBlock"
           id="1216652708473">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216652708474">
@@ -9748,6 +9749,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ToolDeclaration" id="1216661517629">
     <property name="name" value="ModelDiff"/>
     <property name="caption" value="Model Diff"/>
+    <property name="package" value="Tools"/>
     <node role="getComponentBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetComponentBlock"
           id="1216661517630">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216661517631">
@@ -9800,6 +9802,7 @@
     <property name="name" value="ModuleRepository"/>
     <property name="caption" value="Module Repository Viewer"/>
     <property name="icon" value="${mps_home}\workbench\source\jetbrains\mps\ide\projectPane\nodes\project.png"/>
+    <property name="package" value="Tools"/>
     <node role="methodDeclaration"
           type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1216913348612">
       <property name="name" value="makeAvailable"/>
@@ -10116,7 +10119,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216662442680">
-    <property name="package" value="MainMenu.ToolsActions"/>
+    <property name="package" value="Menu.MainMenu.ToolsActions"/>
     <property name="name" value="ShowModuleRepository"/>
     <property name="caption" value="Show Module Repository"/>
     <property name="isAlwaysVisible" value="true"/>
@@ -10182,7 +10185,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216663116653">
-    <property name="package" value="MainMenu.ToolsActions"/>
+    <property name="package" value="Menu.MainMenu.ToolsActions"/>
     <property name="name" value="ShowModelRepository"/>
     <property name="caption" value="Show Model Repository"/>
     <property name="isAlwaysVisible" value="true"/>
@@ -10251,6 +10254,7 @@
     <property name="name" value="ModelRepository"/>
     <property name="caption" value="Model Repository Viewer"/>
     <property name="icon" value="${mps_home}\workbench\source\jetbrains\mps\ide\projectPane\nodes\model.png"/>
+    <property name="package" value="Tools"/>
     <node role="fieldDeclaration"
           type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1216663717784">
       <property name="name" value="myComponent"/>
@@ -10568,7 +10572,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1217254654927">
     <property name="name" value="AbstractFileActions"/>
-    <property name="package" value="FileView"/>
+    <property name="package" value="Menu.FileView"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1217431154934">
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1217431278099">
@@ -10592,7 +10596,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1217431545216">
-    <property name="package" value="FileView"/>
+    <property name="package" value="Menu.FileView"/>
     <property name="name" value="FileActions"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1217431748083">
@@ -10602,7 +10606,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1217431613318">
-    <property name="package" value="FileView"/>
+    <property name="package" value="Menu.FileView"/>
     <property name="name" value="FolderActions"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1217431771936">
@@ -10612,7 +10616,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1217431643713">
-    <property name="package" value="FileView"/>
+    <property name="package" value="Menu.FileView"/>
     <property name="name" value="ModuleActions"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1217431777693">
