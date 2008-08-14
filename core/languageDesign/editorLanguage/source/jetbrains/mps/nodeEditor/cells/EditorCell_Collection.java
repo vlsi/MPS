@@ -29,7 +29,7 @@ import java.util.*;
 public class EditorCell_Collection extends EditorCell_Basic implements Iterable<EditorCell> {
   public static final String FOLDED_TEXT = "...";
 
-  private ArrayList<EditorCell> myEditorCells = new ArrayList<EditorCell>();
+  private ArrayList<EditorCell> myEditorCells = new ArrayList<EditorCell>(0);
 
   protected CellLayout myCellLayout;
   private AbstractCellListHandler myCellListHandler;
@@ -37,7 +37,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   private EditorCell_Brace myOpeningBrace;
   private EditorCell_Brace myClosingBrace;
 
-  private MyLastCellSelectionListener myLastCellSelectionListener = new MyLastCellSelectionListener();
+  private MyLastCellSelectionListener myLastCellSelectionListener;
   private boolean myUsesBraces = false;
   private boolean myBracesEnabled = false;
 
@@ -151,12 +151,15 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     myCellListHandler = handler;
     this.setAction(CellActionType.LOCAL_HOME, new SelectFirstChild());
     this.setAction(CellActionType.LOCAL_END, new SelectLastChild());
-    myOpeningBrace = new EditorCell_Brace(editorContext, node, true);
-    myClosingBrace = new EditorCell_Brace(editorContext, node, false);
-  //  addAdditionalKeyboardHandler(new MyKeyboardHandler());
   }
 
   private void setBraces() {
+    myOpeningBrace = new EditorCell_Brace(getEditorContext(), getSNode(), true);
+    myClosingBrace = new EditorCell_Brace(getEditorContext(), getSNode(), false);
+
+    if (myLastCellSelectionListener == null) {
+      myLastCellSelectionListener = new MyLastCellSelectionListener();
+    }
     addCellAt(0, myOpeningBrace, true);
     addCellAt(myEditorCells.size(), myClosingBrace, true);
     getEditor().addCellSelectionListener(myLastCellSelectionListener);
@@ -166,6 +169,10 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     removeCell(myOpeningBrace);
     removeCell(myClosingBrace);
     getEditor().removeCellSelectionListener(myLastCellSelectionListener);
+
+    myOpeningBrace = null;
+    myClosingBrace = null;
+    myLastCellSelectionListener = null;
   }
 
   private void notifyBraceSelected() {

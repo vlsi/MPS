@@ -11,9 +11,9 @@ import org.apache.commons.collections.map.HashedMap;
 public class Style {
   private Style myParent;
   private EditorCell myEditorCell;
-  private List<Style> myChildren = new ArrayList<Style>();
-  private Map<StyleAttribute, Object> myAttributeValues = new HashMap<StyleAttribute, Object>();
-  private Map<StyleAttribute, Object> myCachedAttributeValues = new HashMap<StyleAttribute, Object>();
+  private List<Style> myChildren = new ArrayList<Style>(0);
+  private Map<StyleAttribute, Object> myAttributeValues = new HashMap<StyleAttribute, Object>(1);
+  private Map<StyleAttribute, Object> myCachedAttributeValues = new HashMap<StyleAttribute, Object>(1);
 
   public Style() {
     this(null);

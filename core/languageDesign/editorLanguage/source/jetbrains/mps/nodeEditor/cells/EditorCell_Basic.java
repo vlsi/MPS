@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.ListMap;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
@@ -38,7 +39,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public static final int BRACKET_WIDTH = 7;
   
 
-  private HashMap myUserObjects = new HashMap();
+  private Map myUserObjects;
 
   protected int myX = 0;
   protected int myY = 0;
@@ -54,10 +55,10 @@ public abstract class EditorCell_Basic implements EditorCell {
   private EditorCell_Collection myParent = null;
   private SNodePointer myNodePointer;
   private NodeSubstituteInfo mySubstitueInfo;
-  private Map<CellActionType, EditorCellAction> myActionMap = new HashMap<CellActionType, EditorCellAction>();
+  private Map<CellActionType, EditorCellAction> myActionMap = new ListMap<CellActionType, EditorCellAction>();
+  private List<KeyboardHandler> myAdditionalKeyboardHandlers;
 
   private boolean myNextIsPunctuation = false;
-  private List<KeyboardHandler> myAdditionalKeyboardHandlers = new ArrayList<KeyboardHandler>();
 
   private List<EditorMessage> myMessages = new ArrayList<EditorMessage>();
   private Style myStyle = new Style(this);
@@ -292,6 +293,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public Object getUserObject(Object key) {
+    if (myUserObjects == null) {
+      return null;
+    }
     return myUserObjects.get(key);
   }
 
@@ -301,6 +305,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void putUserObject(Object key, Object value) {
+    if (myUserObjects == null) {
+      myUserObjects = new ListMap();
+    }
     myUserObjects.put(key, value);
   }
 
@@ -314,7 +321,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public final boolean processKeyPressed(KeyEvent e, boolean allowErrors) {
     if (e.isConsumed()) return false;
-    if (allowErrors) {
+    if (allowErrors && myAdditionalKeyboardHandlers != null) {
       for (KeyboardHandler handler : myAdditionalKeyboardHandlers) {
         if (handler.processKeyPressed(getEditorContext(), e)) {
           return true;
@@ -355,10 +362,14 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void addAdditionalKeyboardHandler(KeyboardHandler handler) {
+    if (myAdditionalKeyboardHandlers == null) {
+      myAdditionalKeyboardHandlers = new ArrayList<KeyboardHandler>(1);
+    }
     myAdditionalKeyboardHandlers.add(handler);
   }
 
   public void removeAdditionalKeyboardHandler(KeyboardHandler handler) {
+    if (myAdditionalKeyboardHandlers == null) return;
     myAdditionalKeyboardHandlers.remove(handler);
   }
 
@@ -504,6 +515,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public List<EditorMessage> getMessages() {
+    if (myMessages == null) {
+      return Collections.emptyList();
+    }
     return new ArrayList<EditorMessage>(myMessages);
   }
 
@@ -767,12 +781,18 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void updateMessages() {
-    myMessages.clear();
+    myMessages = null;
     if (getUserObject(EditorManager.BIG_CELL_CONTEXT) != null) {
       EditorComponent editor = getEditor();
       NodeHighlightManager highlightManager = editor.getHighlightManager();
-      if (highlightManager != null)  {
-        myMessages.addAll(highlightManager.getMessagesFor(getSNode()));
+      if (highlightManager == null) return;
+      List<EditorMessage> messagesForNode = highlightManager.getMessagesFor(getSNode());
+      if (!messagesForNode.isEmpty()) {
+        if (myMessages == null) {
+          myMessages = new ArrayList<EditorMessage>(1);
+        }
+
+        myMessages.addAll(messagesForNode);
       }
     }
   }
