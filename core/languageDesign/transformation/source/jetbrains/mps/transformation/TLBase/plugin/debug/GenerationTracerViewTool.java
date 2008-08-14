@@ -1,5 +1,9 @@
 package jetbrains.mps.transformation.TLBase.plugin.debug;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -10,12 +14,15 @@ import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.workbench.tools.CloseAction;
 
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -23,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenerationTracerViewTool extends BaseProjectTool {
-  private NoTabsComponent myNoTabsComponent = new NoTabsComponent();
+  private NoTabsComponent myNoTabsComponent;
 
   private List<GenerationTracerView> myTracerViews = new ArrayList<GenerationTracerView>();
   private boolean myAutoscrollToSource;
@@ -31,6 +38,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
 
   public GenerationTracerViewTool(Project project) {
     super(project, "Generation Tracer", -1, Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
+    myNoTabsComponent = new NoTabsComponent(this);
   }
 
   public void initComponent() {
@@ -127,14 +135,19 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   public static class NoTabsComponent extends JPanel {
     JPanel myLabelsPanel = new JPanel();
 
-    public NoTabsComponent() {
-      setLayout(new GridBagLayout());
+    public NoTabsComponent(GenerationTracerViewTool tool) {
+      setLayout(new BorderLayout());
 
+      ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool));
+      ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
+      add(toolbar.getComponent(), BorderLayout.WEST);
+
+      JPanel mainPanel = new JPanel(new GridBagLayout());
       myLabelsPanel.setLayout(new BoxLayout(myLabelsPanel, BoxLayout.Y_AXIS));
-
       GridBagConstraints c = new GridBagConstraints();
       c.anchor = GridBagConstraints.CENTER;
-      add(myLabelsPanel, c);
+      mainPanel.add(myLabelsPanel, c);
+      add(mainPanel, BorderLayout.CENTER);
     }
 
     public void setDataIsAvailable(boolean state) {
