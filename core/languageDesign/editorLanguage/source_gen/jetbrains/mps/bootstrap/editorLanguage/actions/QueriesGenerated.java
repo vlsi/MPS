@@ -95,6 +95,10 @@ public class QueriesGenerated {
             return "collection (vertical)";
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
         });
       }
     }
@@ -123,6 +127,10 @@ public class QueriesGenerated {
             return "[/";
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
         });
       }
     }
@@ -140,6 +148,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String pattern) {
             return "collection (horizontal)";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
         });
@@ -168,6 +180,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String pattern) {
             return "[>";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
         });
@@ -203,6 +219,10 @@ public class QueriesGenerated {
             return "[_";
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
         });
       }
     }
@@ -220,6 +240,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String pattern) {
             return "child node cell list (vertical)";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
         });
@@ -250,6 +274,10 @@ public class QueriesGenerated {
             return "(/";
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
         });
       }
     }
@@ -267,6 +295,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String pattern) {
             return "child node cell list (horizontal)";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
         });
@@ -297,6 +329,10 @@ public class QueriesGenerated {
             return "(>";
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
         });
       }
     }
@@ -312,6 +348,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String pattern) {
             return "referent node cell";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
         });
@@ -331,6 +371,10 @@ public class QueriesGenerated {
             return "child node cell";
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
         });
       }
     }
@@ -346,6 +390,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String pattern) {
             return "property";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
         });
@@ -365,6 +413,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String pattern) {
             return "concept property";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
         });
@@ -387,6 +439,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String pattern) {
             return "if";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
         });
@@ -420,6 +476,10 @@ public class QueriesGenerated {
             return pattern;
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
         });
       }
     }
@@ -451,6 +511,10 @@ public class QueriesGenerated {
             return pattern;
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
         });
       }
     }
@@ -467,21 +531,26 @@ public class QueriesGenerated {
 
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
-        assert queryResult != null;
-        for(final SNode item : queryResult) {
-          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+        if (queryResult != null) {
+          for(final SNode item : queryResult) {
+            result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
-            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              SNode component = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component", null);
-              SLinkOperations.setTarget(component, "editorComponent", (item), false);
-              return component;
-            }
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode component = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component", null);
+                SLinkOperations.setTarget(component, "editorComponent", (item), false);
+                return component;
+              }
 
-            public String getMatchingText(String pattern) {
-              return "#" + SPropertyOperations.getString((item), "name") + "#";
-            }
+              public String getMatchingText(String pattern) {
+                return "#" + SPropertyOperations.getString((item), "name") + "#";
+              }
 
-          });
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+
+            });
+          }
         }
       }
     }
@@ -502,21 +571,26 @@ public class QueriesGenerated {
 
         };
         Iterable<CellActionId> queryResult = (Iterable)calc.calculate();
-        assert queryResult != null;
-        for(final CellActionId item : queryResult) {
-          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+        if (queryResult != null) {
+          for(final CellActionId item : queryResult) {
+            result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
-            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem", _context.getCurrentTargetNode());
-              SPropertyOperations.set(newNode, "actionId", (item).getValue());
-              return newNode;
-            }
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem", _context.getCurrentTargetNode());
+                SPropertyOperations.set(newNode, "actionId", (item).getValue());
+                return newNode;
+              }
 
-            public String getMatchingText(String pattern) {
-              return (item).getName();
-            }
+              public String getMatchingText(String pattern) {
+                return (item).getName();
+              }
 
-          });
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+
+            });
+          }
         }
       }
     }
