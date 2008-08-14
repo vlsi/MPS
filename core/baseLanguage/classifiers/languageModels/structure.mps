@@ -45,6 +45,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205752633985">
     <property name="name" value="ThisClassifierExpresson"/>
     <link role="extends" targetNodeId="3v.1068431790191" resolveInfo="Expression"/>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1218736638915">
+      <property name="metaClass" value="reference"/>
+      <property name="role" value="classifier"/>
+      <link role="target" targetNodeId="1205751982837" resolveInfo="IClassifier"/>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1205752647346">
       <property name="value" value="this"/>

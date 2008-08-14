@@ -47,7 +47,7 @@ public class typeof_DefaultMethodCallOperation_InferenceRule implements Inferenc
     if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)).count() != SLinkOperations.getCount(nodeToCheck, "actualArgument")) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(nodeToCheck, "Number of parameters doesn't match", "jetbrains.mps.baseLanguage.classifiers.helgins@16_0", "1217434393437", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(nodeToCheck, "Number of parameters doesn't match", "jetbrains.mps.baseLanguage.classifiers.helgins@16_0", "1218737068049", intentionProvider);
       }
     }
   }

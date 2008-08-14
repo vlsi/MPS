@@ -585,6 +585,11 @@
           id="1140138076840">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950"/>
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1218737842543">
+      <property name="value" value=":"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1140725362528">
     <property name="name" value="Link_SetTargetOperation"/>

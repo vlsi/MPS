@@ -55,19 +55,20 @@ public class QueriesGenerated {
           }
 
         };
-        Iterable<SNode> queryResult = (Iterable<SNode>) calc.calculate();
-        assert queryResult != null;
-        for (final SNode item : queryResult) {
-          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+        Iterable<SNode> queryResult = (Iterable) calc.calculate();
+        if (queryResult != null) {
+          for (final SNode item : queryResult) {
+            result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
-            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-              SLinkOperations.setNewChild(result, "operand", "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson");
-              SLinkOperations.setTarget(result, "operation", IMember_Behavior.call_createOperation_1213877353000((item)), true);
-              return result;
-            }
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+                SLinkOperations.setNewChild(result, "operand", "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson");
+                SLinkOperations.setTarget(result, "operation", IMember_Behavior.call_createOperation_1213877353000((item)), true);
+                return result;
+              }
 
-          });
+            });
+          }
         }
       }
     }

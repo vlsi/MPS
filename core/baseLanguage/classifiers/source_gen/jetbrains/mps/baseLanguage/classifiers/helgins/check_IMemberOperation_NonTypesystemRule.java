@@ -26,13 +26,13 @@ public class check_IMemberOperation_NonTypesystemRule implements NonTypesystemRu
 
         public void run() {
           {
-            IMatchingPattern pattern_ = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
-            SNode coercedNode_ = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(operandType), pattern_);
-            if (coercedNode_ != null) {
-              if (!(ListSequence.fromList(BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_, nodeToCheck)).contains(SLinkOperations.getTarget(nodeToCheck, "member", false)))) {
+            IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
+            SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(operandType), pattern_0);
+            if (coercedNode_0 != null) {
+              if (!(ListSequence.fromList(BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_0, nodeToCheck)).contains(SLinkOperations.getTarget(nodeToCheck, "member", false)))) {
                 {
                   BaseIntentionProvider intentionProvider = null;
-                  TypeChecker.getInstance().reportTypeError(nodeToCheck, "Declaration is out of scope", "jetbrains.mps.baseLanguage.classifiers.helgins@16_0", "1217434393591", intentionProvider);
+                  TypeChecker.getInstance().reportTypeError(nodeToCheck, "Declaration is out of scope", "jetbrains.mps.baseLanguage.classifiers.helgins@16_0", "1218737068202", intentionProvider);
                 }
               }
             }

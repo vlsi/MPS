@@ -22,9 +22,13 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   </language>
   <language namespace="jetbrains.mps.baseLanguageInternal"/>
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2"/>
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2"/>
+  <language namespace="jetbrains.mps.internal.collections">
+    <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2"/>
+  </language>
+  <language namespace="jetbrains.mps.closures">
+    <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2"/>
+    <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  </language>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
   <languageAspect modelUID="jetbrains.mps.ide.uiLanguage.constraints" version="3"/>
   <languageAspect modelUID="jetbrains.mps.uiLanguage.constraints" version="26"/>

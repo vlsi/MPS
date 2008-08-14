@@ -15,8 +15,10 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
+import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.ArrayList;
@@ -36,13 +38,30 @@ public class IMemberOperation_member_ReferentConstraint implements IModelConstra
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    Object searchScopeOrListOfNodes = this.createSearchScopeOrListOfNodes(operationContext, _context);
+    if (searchScopeOrListOfNodes == null) {
+      return new EmptySearchScope();
+    }
+    if (searchScopeOrListOfNodes instanceof ISearchScope) {
+      return (ISearchScope) searchScopeOrListOfNodes;
+    }
+    if (searchScopeOrListOfNodes instanceof List) {
+      return new SimpleSearchScope((List) searchScopeOrListOfNodes);
+    }
+    if (searchScopeOrListOfNodes instanceof Iterable) {
+      return new SimpleSearchScope(CollectionUtil.iterableAsList((Iterable) searchScopeOrListOfNodes));
+    }
+    throw new RuntimeException("unexpected type in search-scope provider " + searchScopeOrListOfNodes.getClass());
+  }
+
+  public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode operand = SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true);
     List<SNode> applicableMembers = new ArrayList<SNode>();
     {
-      IMatchingPattern pattern_ = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
-      SNode coercedNode_ = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(operand), pattern_);
-      if (coercedNode_ != null) {
-        for (SNode member : BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_, _context.getEnclosingNode())) {
+      IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
+      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(operand), pattern_0);
+      if (coercedNode_0 != null) {
+        for (SNode member : BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_0, _context.getEnclosingNode())) {
           if (SNodeOperations.isInstanceOf(member, NameUtil.nodeFQName(_context.getLinkTarget()))) {
             ListSequence.fromList(applicableMembers).addElement(member);
           }

@@ -26,7 +26,7 @@ public class typeof_ThisClassifierExpresson_InferenceRule implements InferenceRu
     } else {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(nodeToCheck, "this classifier expression isn't applicable in this place", "jetbrains.mps.baseLanguage.classifiers.helgins@16_0", "1217434393351", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(nodeToCheck, "this classifier expression isn't applicable in this place", "jetbrains.mps.baseLanguage.classifiers.helgins@16_0", "1218737067963", intentionProvider);
       }
     }
   }

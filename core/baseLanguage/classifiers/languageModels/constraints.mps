@@ -1741,6 +1741,35 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213107438049">
     <link role="concept" targetNodeId="1.1205752633985" resolveInfo="ThisClassifierExpresson"/>
+    <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint"
+          id="1218737390835">
+      <link role="applicableLink" targetNodeId="1.1218736638915"/>
+      <node role="searchScopeFactory"
+            type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory"
+            id="1218737393727">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218737393728">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218737395370">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218737415186">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall"
+                    id="1218737435551">
+                <link role="conceptMethodDeclaration" targetNodeId="2v.1218737370612"
+                      resolveInfo="getPossibleClassifiers"/>
+                <node role="actualArgument"
+                      type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope"
+                      id="1218737723384"/>
+              </node>
+              <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression"
+                    id="1218737853465">
+                <link role="concept" targetNodeId="1.1205752633985" resolveInfo="ThisClassifierExpresson"/>
+                <node role="leftExpression"
+                      type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode"
+                      id="1218737806139"/>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="canBeChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild"
           id="1213107438050">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213107438051">

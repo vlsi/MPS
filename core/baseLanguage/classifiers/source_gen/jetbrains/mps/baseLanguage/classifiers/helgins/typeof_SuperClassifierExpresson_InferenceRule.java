@@ -26,7 +26,7 @@ public class typeof_SuperClassifierExpresson_InferenceRule implements InferenceR
     } else {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(expresson, "super classifier expression isn't applicable in this place", "jetbrains.mps.baseLanguage.classifiers.helgins@16_0", "1217434393767", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(expresson, "super classifier expression isn't applicable in this place", "jetbrains.mps.baseLanguage.classifiers.helgins@16_0", "1218737068395", intentionProvider);
       }
     }
   }
