@@ -4,6 +4,7 @@
   <property name="idea.platform.dir" value="lib/idea-platform" />
   <property name="idea.platform.internal.dir" value="lib/idea-platform-internal" />
   <property name="tmp" value="idea.new" />
+  <property name="idea.platform.build.property" value="idea.platform.build.number" />
   <target name="default" depends="prepare,download,replace.libraries,upgrade.plugins,clean" />
   <target name="prepare">
     <mkdir dir="${tmp}" />
@@ -24,6 +25,10 @@
     <copy todir="${idea.platform.internal.dir}" overwrite="true">
       <fileset dir="${tmp}/idea/lib" includes="cocoa.jar, exe4jlib.jar, growl.jar, jLmgr.jar, ui.jar, velocity.jar" />
     </copy>
+    <replaceregexp match="${idea.platform.build.property}=(.*)" file="build.number" replace="${idea.platform.build.property}=" byline="true" />
+    <concat append="true" destfile="build.number">
+      <filelist files="${tmp}/idea/build.txt" />
+    </concat>
   </target>
   <target name="upgrade.plugins" depends="replace.libraries">
     <copy todir="plugins" overwrite="true">
