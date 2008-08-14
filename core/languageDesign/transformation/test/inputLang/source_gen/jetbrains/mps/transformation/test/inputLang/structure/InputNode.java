@@ -5,11 +5,11 @@ package jetbrains.mps.transformation.test.inputLang.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class InputNode extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.transformation.test.inputLang.structure.InputNode";
@@ -22,15 +22,6 @@ public class InputNode extends BaseConcept implements INamedConcept {
   public InputNode(SNode node) {
     super(node);
   }
-
-  public static InputNode newInstance(SModel sm, boolean init) {
-    return (InputNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputNode", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InputNode newInstance(SModel sm) {
-    return InputNode.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(InputNode.NAME);
@@ -82,6 +73,15 @@ public class InputNode extends BaseConcept implements INamedConcept {
 
   public void insertInputChild(InputNode prev, InputNode node) {
     this.insertChild(prev, InputNode.INPUT_CHILD, node);
+  }
+
+
+  public static InputNode newInstance(SModel sm, boolean init) {
+    return (InputNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputNode", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InputNode newInstance(SModel sm) {
+    return InputNode.newInstance(sm, false);
   }
 
 }

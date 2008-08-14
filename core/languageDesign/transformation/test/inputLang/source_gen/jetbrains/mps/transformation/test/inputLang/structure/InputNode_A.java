@@ -15,15 +15,6 @@ public class InputNode_A extends InputNode {
     super(node);
   }
 
-  public static InputNode_A newInstance(SModel sm, boolean init) {
-    return (InputNode_A)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InputNode_A newInstance(SModel sm) {
-    return InputNode_A.newInstance(sm, false);
-  }
-
-
   public Option getOption() {
     String value = super.getProperty(InputNode_A.OPTION);
     return Option.parseValue(value);
@@ -31,6 +22,15 @@ public class InputNode_A extends InputNode {
 
   public void setOption(Option value) {
     super.setProperty(InputNode_A.OPTION, value.getValueAsString());
+  }
+
+
+  public static InputNode_A newInstance(SModel sm, boolean init) {
+    return (InputNode_A)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InputNode_A newInstance(SModel sm) {
+    return InputNode_A.newInstance(sm, false);
   }
 
 }

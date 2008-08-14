@@ -5,11 +5,11 @@ package jetbrains.mps.transformation.test.outputLang.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class OutputRoot extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot";
@@ -18,20 +18,12 @@ public class OutputRoot extends BaseConcept implements INamedConcept {
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String SPECIAL_CHILD = "specialChild";
   public static String OUTPUT_CHILD = "outputChild";
 
   public OutputRoot(SNode node) {
     super(node);
   }
-
-  public static OutputRoot newInstance(SModel sm, boolean init) {
-    return (OutputRoot)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static OutputRoot newInstance(SModel sm) {
-    return OutputRoot.newInstance(sm, false);
-  }
-
 
   public String getText() {
     return this.getProperty(OutputRoot.TEXT);
@@ -73,6 +65,14 @@ public class OutputRoot extends BaseConcept implements INamedConcept {
     this.setProperty(OutputRoot.VIRTUAL_PACKAGE, value);
   }
 
+  public OutputNode getSpecialChild() {
+    return (OutputNode)this.getChild(OutputRoot.SPECIAL_CHILD);
+  }
+
+  public void setSpecialChild(OutputNode node) {
+    super.setChild(OutputRoot.SPECIAL_CHILD, node);
+  }
+
   public int getOutputChildsCount() {
     return this.getChildCount(OutputRoot.OUTPUT_CHILD);
   }
@@ -91,6 +91,15 @@ public class OutputRoot extends BaseConcept implements INamedConcept {
 
   public void insertOutputChild(OutputNode prev, OutputNode node) {
     this.insertChild(prev, OutputRoot.OUTPUT_CHILD, node);
+  }
+
+
+  public static OutputRoot newInstance(SModel sm, boolean init) {
+    return (OutputRoot)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static OutputRoot newInstance(SModel sm) {
+    return OutputRoot.newInstance(sm, false);
   }
 
 }

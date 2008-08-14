@@ -27,6 +27,11 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1195165132070" resolveInfo="OutputNode" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1218735665292">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="specialChild" />
+      <link role="target" targetNodeId="1195165132070" resolveInfo="OutputNode" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1195164732401">
       <property name="name" value="text" />
       <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />

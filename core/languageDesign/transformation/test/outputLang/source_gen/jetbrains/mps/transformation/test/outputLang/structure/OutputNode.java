@@ -4,11 +4,11 @@ package jetbrains.mps.transformation.test.outputLang.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class OutputNode extends BaseConcept {
   public static final String concept = "jetbrains.mps.transformation.test.outputLang.structure.OutputNode";
@@ -18,15 +18,6 @@ public class OutputNode extends BaseConcept {
   public OutputNode(SNode node) {
     super(node);
   }
-
-  public static OutputNode newInstance(SModel sm, boolean init) {
-    return (OutputNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static OutputNode newInstance(SModel sm) {
-    return OutputNode.newInstance(sm, false);
-  }
-
 
   public String getText() {
     return this.getProperty(OutputNode.TEXT);
@@ -54,6 +45,15 @@ public class OutputNode extends BaseConcept {
 
   public void insertOutputChild(OutputNode prev, OutputNode node) {
     this.insertChild(prev, OutputNode.OUTPUT_CHILD, node);
+  }
+
+
+  public static OutputNode newInstance(SModel sm, boolean init) {
+    return (OutputNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static OutputNode newInstance(SModel sm) {
+    return OutputNode.newInstance(sm, false);
   }
 
 }

@@ -5,10 +5,10 @@ package jetbrains.mps.transformation.test.inputLang.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class InputRootWithStatementList extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList";
@@ -22,15 +22,6 @@ public class InputRootWithStatementList extends BaseConcept implements INamedCon
   public InputRootWithStatementList(SNode node) {
     super(node);
   }
-
-  public static InputRootWithStatementList newInstance(SModel sm, boolean init) {
-    return (InputRootWithStatementList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InputRootWithStatementList newInstance(SModel sm) {
-    return InputRootWithStatementList.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(InputRootWithStatementList.NAME);
@@ -79,6 +70,15 @@ public class InputRootWithStatementList extends BaseConcept implements INamedCon
 
   public void setStatementList(StatementList node) {
     super.setChild(InputRootWithStatementList.STATEMENT_LIST, node);
+  }
+
+
+  public static InputRootWithStatementList newInstance(SModel sm, boolean init) {
+    return (InputRootWithStatementList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InputRootWithStatementList newInstance(SModel sm) {
+    return InputRootWithStatementList.newInstance(sm, false);
   }
 
 }
