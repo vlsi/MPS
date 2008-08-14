@@ -3627,9 +3627,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213877515197">
-          <property name="value" value=":(" />
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877515198">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1213877515199" />
         </node>
@@ -3641,21 +3638,31 @@
         <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216909316755">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216909415586">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216909426508">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216909418038">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216909415587">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1216909415588" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1216909415589">
-                  <link role="conceptMethodDeclaration" targetNodeId="1213877515148" resolveInfo="getModule" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218707822277">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218707829487">
+            <link role="baseMethodDeclaration" targetNodeId="1218647692641" resolveInfo="getRelativePath" />
+            <link role="classConcept" targetNodeId="1218647682296" resolveInfo="ModuleUtil" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218707837786">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218707837787">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218707837788">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1218707837789" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1218707837790">
+                    <link role="conceptMethodDeclaration" targetNodeId="1213877515148" resolveInfo="getModule" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218707837791">
+                  <link role="baseMethodDeclaration" targetNodeId="6.~IModule.getClassesGen():jetbrains.mps.vfs.IFile" resolveInfo="getClassesGen" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216909425121">
-                <link role="baseMethodDeclaration" targetNodeId="6.~IModule.getClassesGen():jetbrains.mps.vfs.IFile" resolveInfo="getClassesGen" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218707837792">
+                <link role="baseMethodDeclaration" targetNodeId="7.~IFile.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216909432016">
-              <link role="baseMethodDeclaration" targetNodeId="7.~IFile.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218707849826">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1218707849251" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1218707853372">
+                <link role="conceptMethodDeclaration" targetNodeId="1213877333764" resolveInfo="getHomePath" />
+              </node>
             </node>
           </node>
         </node>
