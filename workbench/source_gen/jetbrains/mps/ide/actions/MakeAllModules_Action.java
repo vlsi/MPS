@@ -29,7 +29,7 @@ public class MakeAllModules_Action extends GeneratedAction {
   public Project project;
 
   public MakeAllModules_Action() {
-    super("Make All Modules", "", ICON);
+    super("Make All", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }

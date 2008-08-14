@@ -27,7 +27,7 @@ public class RebuildAllModules_Action extends GeneratedAction {
   public Project project;
 
   public RebuildAllModules_Action() {
-    super("Rebuild All Modules", "", ICON);
+    super("Rebuild All", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }

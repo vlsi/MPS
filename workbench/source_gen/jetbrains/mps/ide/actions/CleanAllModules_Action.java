@@ -27,7 +27,7 @@ public class CleanAllModules_Action extends GeneratedAction {
   public Project project;
 
   public CleanAllModules_Action() {
-    super("Clean All Modules", "", ICON);
+    super("Clean All", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
