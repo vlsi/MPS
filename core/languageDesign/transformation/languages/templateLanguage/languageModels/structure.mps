@@ -115,7 +115,6 @@
       <link role="target" targetNodeId="3.1169125787135" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1092060348987">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
       <property name="role" value="contentNode" />
       <property name="sourceCardinality" value="1" />
@@ -224,7 +223,6 @@
       <link role="intfc" targetNodeId="2.1169194658468" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1112820671508">
-      <property name="targetCardinality" value="0..n" />
       <property name="role" value="modifiedSwitch" />
       <link role="target" targetNodeId="1112730859144" resolveInfo="TemplateSwitch" />
     </node>
@@ -263,7 +261,6 @@
       <link role="target" targetNodeId="1168024337012" resolveInfo="SourceSubstituteMacro_SourceNodeQuery" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1112731629154">
-      <property name="targetCardinality" value="0..n" />
       <property name="role" value="templateSwitch" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1112730859144" resolveInfo="TemplateSwitch" />
@@ -272,7 +269,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1112911581741">
     <property name="name" value="TemplateSwitchReference" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1112911598335">
-      <property name="targetCardinality" value="0..n" />
       <property name="role" value="templateSwitch" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1112730859144" resolveInfo="TemplateSwitch" />
@@ -281,7 +277,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1114458327664">
     <property name="name" value="ConceptDeclarationReference" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1114458346385">
-      <property name="targetCardinality" value="0..n" />
       <property name="role" value="conceptDeclaration" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="3.1071489090640" />
@@ -523,7 +518,6 @@
       <link role="target" targetNodeId="1167087518662" resolveInfo="CreateRootRule_Condition" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1167087469901">
-      <property name="targetCardinality" value="0..n" />
       <property name="role" value="templateNode" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1169194658468" />
@@ -712,7 +706,6 @@
       <link role="dataType" targetNodeId="8.1177964585679" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1167514355421">
-      <property name="targetCardinality" value="0..n" />
       <property name="role" value="template" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1169194658468" />

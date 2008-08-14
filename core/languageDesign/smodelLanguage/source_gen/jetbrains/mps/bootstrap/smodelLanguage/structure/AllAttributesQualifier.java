@@ -18,15 +18,6 @@ public class AllAttributesQualifier extends BaseConcept implements IAttributeAcc
     super(node);
   }
 
-  public static AllAttributesQualifier newInstance(SModel sm, boolean init) {
-    return (AllAttributesQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.AllAttributesQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AllAttributesQualifier newInstance(SModel sm) {
-    return AllAttributesQualifier.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(AllAttributesQualifier.SHORT_DESCRIPTION);
   }
@@ -49,6 +40,15 @@ public class AllAttributesQualifier extends BaseConcept implements IAttributeAcc
 
   public void setVirtualPackage(String value) {
     this.setProperty(AllAttributesQualifier.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static AllAttributesQualifier newInstance(SModel sm, boolean init) {
+    return (AllAttributesQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.AllAttributesQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AllAttributesQualifier newInstance(SModel sm) {
+    return AllAttributesQualifier.newInstance(sm, false);
   }
 
 }

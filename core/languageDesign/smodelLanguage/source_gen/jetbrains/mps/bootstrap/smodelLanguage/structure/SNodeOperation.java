@@ -5,11 +5,11 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class SNodeOperation extends BaseConcept implements IOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation";
@@ -22,7 +22,6 @@ public class SNodeOperation extends BaseConcept implements IOperation {
   public static String CPR_Applicable_to_linkList = "applicable_to_linkList";
   public static String CPR_Applicable_to_concept = "applicable_to_concept";
   public static String CLNK_ApplicableParameter = "applicableParameter";
-  public static String CLNK_ReturnType = "returnType";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
@@ -31,15 +30,6 @@ public class SNodeOperation extends BaseConcept implements IOperation {
   public SNodeOperation(SNode node) {
     super(node);
   }
-
-  public static SNodeOperation newInstance(SModel sm, boolean init) {
-    return (SNodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SNodeOperation newInstance(SModel sm) {
-    return SNodeOperation.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(SNodeOperation.SHORT_DESCRIPTION);
@@ -83,6 +73,15 @@ public class SNodeOperation extends BaseConcept implements IOperation {
 
   public void insertParameter(AbstractOperationParameter prev, AbstractOperationParameter node) {
     this.insertChild(prev, SNodeOperation.PARAMETER, node);
+  }
+
+
+  public static SNodeOperation newInstance(SModel sm, boolean init) {
+    return (SNodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SNodeOperation newInstance(SModel sm) {
+    return SNodeOperation.newInstance(sm, false);
   }
 
 }

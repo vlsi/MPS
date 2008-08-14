@@ -21,15 +21,6 @@ public class Document extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-  public static Document newInstance(SModel sm, boolean init) {
-    return (Document)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.Document", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Document newInstance(SModel sm) {
-    return Document.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(Document.NAME);
   }
@@ -68,6 +59,15 @@ public class Document extends BaseConcept implements INamedConcept {
 
   public void setRootElement(Element node) {
     super.setChild(Document.ROOT_ELEMENT, node);
+  }
+
+
+  public static Document newInstance(SModel sm, boolean init) {
+    return (Document)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.Document", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Document newInstance(SModel sm) {
+    return Document.newInstance(sm, false);
   }
 
 }

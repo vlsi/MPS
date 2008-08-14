@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguageInternal.structure;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class InternalPartialInstanceMethodCall extends Expression implements IOperation {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall";
@@ -25,15 +25,6 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
   public InternalPartialInstanceMethodCall(SNode node) {
     super(node);
   }
-
-  public static InternalPartialInstanceMethodCall newInstance(SModel sm, boolean init) {
-    return (InternalPartialInstanceMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InternalPartialInstanceMethodCall newInstance(SModel sm) {
-    return InternalPartialInstanceMethodCall.newInstance(sm, false);
-  }
-
 
   public String getMethodName() {
     return this.getProperty(InternalPartialInstanceMethodCall.METHOD_NAME);
@@ -101,6 +92,15 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, InternalPartialInstanceMethodCall.ACTUAL_ARGUMENT, node);
+  }
+
+
+  public static InternalPartialInstanceMethodCall newInstance(SModel sm, boolean init) {
+    return (InternalPartialInstanceMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InternalPartialInstanceMethodCall newInstance(SModel sm) {
+    return InternalPartialInstanceMethodCall.newInstance(sm, false);
   }
 
 }

@@ -16,21 +16,21 @@ public class SemanticDowncastExpression extends Expression {
     super(node);
   }
 
-  public static SemanticDowncastExpression newInstance(SModel sm, boolean init) {
-    return (SemanticDowncastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SemanticDowncastExpression newInstance(SModel sm) {
-    return SemanticDowncastExpression.newInstance(sm, false);
-  }
-
-
   public Expression getLeftExpression() {
     return (Expression)this.getChild(SemanticDowncastExpression.LEFT_EXPRESSION);
   }
 
   public void setLeftExpression(Expression node) {
     super.setChild(SemanticDowncastExpression.LEFT_EXPRESSION, node);
+  }
+
+
+  public static SemanticDowncastExpression newInstance(SModel sm, boolean init) {
+    return (SemanticDowncastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SemanticDowncastExpression newInstance(SModel sm) {
+    return SemanticDowncastExpression.newInstance(sm, false);
   }
 
 }

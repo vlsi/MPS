@@ -16,21 +16,21 @@ public class SideTransformVariableDeclaration extends VariableDeclaration {
     super(node);
   }
 
-  public static SideTransformVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (SideTransformVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SideTransformVariableDeclaration newInstance(SModel sm) {
-    return SideTransformVariableDeclaration.newInstance(sm, false);
-  }
-
-
   public QueryFunction_STVariableInitializer getInitializerBlock() {
     return (QueryFunction_STVariableInitializer)this.getChild(SideTransformVariableDeclaration.INITIALIZER_BLOCK);
   }
 
   public void setInitializerBlock(QueryFunction_STVariableInitializer node) {
     super.setChild(SideTransformVariableDeclaration.INITIALIZER_BLOCK, node);
+  }
+
+
+  public static SideTransformVariableDeclaration newInstance(SModel sm, boolean init) {
+    return (SideTransformVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SideTransformVariableDeclaration newInstance(SModel sm) {
+    return SideTransformVariableDeclaration.newInstance(sm, false);
   }
 
 }

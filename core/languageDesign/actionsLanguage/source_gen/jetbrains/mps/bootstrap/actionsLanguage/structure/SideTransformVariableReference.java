@@ -15,21 +15,21 @@ public class SideTransformVariableReference extends VariableReference {
     super(node);
   }
 
-  public static SideTransformVariableReference newInstance(SModel sm, boolean init) {
-    return (SideTransformVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SideTransformVariableReference newInstance(SModel sm) {
-    return SideTransformVariableReference.newInstance(sm, false);
-  }
-
-
   public SideTransformVariableDeclaration getRightTransformVariableDeclaration() {
     return (SideTransformVariableDeclaration)this.getVariableDeclaration();
   }
 
   public void setRightTransformVariableDeclaration(SideTransformVariableDeclaration node) {
     this.setVariableDeclaration(node);
+  }
+
+
+  public static SideTransformVariableReference newInstance(SModel sm, boolean init) {
+    return (SideTransformVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SideTransformVariableReference newInstance(SModel sm) {
+    return SideTransformVariableReference.newInstance(sm, false);
   }
 
 }

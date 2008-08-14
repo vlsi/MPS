@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration;
 
 public class LinkAttributeAccessQualifier extends BaseConcept implements IAttributeAccessQualifier {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier";
@@ -20,15 +20,6 @@ public class LinkAttributeAccessQualifier extends BaseConcept implements IAttrib
   public LinkAttributeAccessQualifier(SNode node) {
     super(node);
   }
-
-  public static LinkAttributeAccessQualifier newInstance(SModel sm, boolean init) {
-    return (LinkAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static LinkAttributeAccessQualifier newInstance(SModel sm) {
-    return LinkAttributeAccessQualifier.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(LinkAttributeAccessQualifier.SHORT_DESCRIPTION);
@@ -68,6 +59,15 @@ public class LinkAttributeAccessQualifier extends BaseConcept implements IAttrib
 
   public void setLinkQualifier(ILinkAccessQualifier node) {
     super.setChild(LinkAttributeAccessQualifier.LINK_QUALIFIER, node);
+  }
+
+
+  public static LinkAttributeAccessQualifier newInstance(SModel sm, boolean init) {
+    return (LinkAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static LinkAttributeAccessQualifier newInstance(SModel sm) {
+    return LinkAttributeAccessQualifier.newInstance(sm, false);
   }
 
 }

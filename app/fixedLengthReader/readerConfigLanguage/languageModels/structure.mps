@@ -26,7 +26,6 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1116535202619">
       <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
       <property name="role" value="mapping" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1116534914096" />
@@ -40,7 +39,6 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1116535614925">
       <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
       <property name="role" value="field" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1116534962441" />

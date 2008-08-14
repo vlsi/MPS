@@ -20,15 +20,6 @@ public class ElementPart extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-  public static ElementPart newInstance(SModel sm, boolean init) {
-    return (ElementPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.ElementPart", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ElementPart newInstance(SModel sm) {
-    return ElementPart.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(ElementPart.NAME);
   }
@@ -59,6 +50,15 @@ public class ElementPart extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ElementPart.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static ElementPart newInstance(SModel sm, boolean init) {
+    return (ElementPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.ElementPart", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ElementPart newInstance(SModel sm) {
+    return ElementPart.newInstance(sm, false);
   }
 
 }

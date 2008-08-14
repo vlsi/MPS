@@ -5,11 +5,11 @@ package jetbrains.mps.baseLanguageInternal.structure;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Type;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Type;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class InternalPartialFieldReference extends Expression implements IOperation {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference";
@@ -24,15 +24,6 @@ public class InternalPartialFieldReference extends Expression implements IOperat
   public InternalPartialFieldReference(SNode node) {
     super(node);
   }
-
-  public static InternalPartialFieldReference newInstance(SModel sm, boolean init) {
-    return (InternalPartialFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InternalPartialFieldReference newInstance(SModel sm) {
-    return InternalPartialFieldReference.newInstance(sm, false);
-  }
-
 
   public String getFieldName() {
     return this.getProperty(InternalPartialFieldReference.FIELD_NAME);
@@ -88,6 +79,15 @@ public class InternalPartialFieldReference extends Expression implements IOperat
 
   public void setInstance(Expression node) {
     super.setChild(InternalPartialFieldReference.INSTANCE, node);
+  }
+
+
+  public static InternalPartialFieldReference newInstance(SModel sm, boolean init) {
+    return (InternalPartialFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InternalPartialFieldReference newInstance(SModel sm) {
+    return InternalPartialFieldReference.newInstance(sm, false);
   }
 
 }

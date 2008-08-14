@@ -19,15 +19,6 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
     super(node);
   }
 
-  public static SimpleItemSubstitutePart newInstance(SModel sm, boolean init) {
-    return (SimpleItemSubstitutePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleItemSubstitutePart", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SimpleItemSubstitutePart newInstance(SModel sm) {
-    return SimpleItemSubstitutePart.newInstance(sm, false);
-  }
-
-
   public ISubstitute_String getMatchingText() {
     return (ISubstitute_String)this.getChild(SimpleItemSubstitutePart.MATCHING_TEXT);
   }
@@ -66,6 +57,15 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
 
   public void setHandler(QueryFunction_Substitute_Handler node) {
     super.setChild(SimpleItemSubstitutePart.HANDLER, node);
+  }
+
+
+  public static SimpleItemSubstitutePart newInstance(SModel sm, boolean init) {
+    return (SimpleItemSubstitutePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleItemSubstitutePart", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SimpleItemSubstitutePart newInstance(SModel sm) {
+    return SimpleItemSubstitutePart.newInstance(sm, false);
   }
 
 }

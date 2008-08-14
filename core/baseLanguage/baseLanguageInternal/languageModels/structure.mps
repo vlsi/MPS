@@ -109,14 +109,12 @@
       <link role="target" targetNodeId="2.1068431790189" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1174317636233">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="instance" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1174318197094">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="actualArgument" />
       <property name="metaClass" value="aggregation" />

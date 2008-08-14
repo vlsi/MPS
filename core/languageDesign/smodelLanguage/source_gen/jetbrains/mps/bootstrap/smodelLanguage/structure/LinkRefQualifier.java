@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 
 public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifier {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkRefQualifier";
@@ -19,15 +19,6 @@ public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifie
   public LinkRefQualifier(SNode node) {
     super(node);
   }
-
-  public static LinkRefQualifier newInstance(SModel sm, boolean init) {
-    return (LinkRefQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.LinkRefQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static LinkRefQualifier newInstance(SModel sm) {
-    return LinkRefQualifier.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(LinkRefQualifier.SHORT_DESCRIPTION);
@@ -59,6 +50,15 @@ public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifie
 
   public void setLink(LinkDeclaration node) {
     super.setReferent(LinkRefQualifier.LINK, node);
+  }
+
+
+  public static LinkRefQualifier newInstance(SModel sm, boolean init) {
+    return (LinkRefQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.LinkRefQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static LinkRefQualifier newInstance(SModel sm) {
+    return LinkRefQualifier.newInstance(sm, false);
   }
 
 }

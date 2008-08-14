@@ -3983,5 +3983,54 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1218744568504">
+    <property name="migrationFromBuild" value="944" />
+    <property name="name" value="Delete_Link_TargetCardinality" />
+    <property name="package" value="migration" />
+    <property name="title" value="delete link's targetCardinality" />
+    <property name="category" value="structure" />
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1218744651427">
+      <property name="description" value="do it" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1218744651428">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218744651429">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218745235870">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218745240359">
+              <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1218745239013">
+                <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1218745235871" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218745244849">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.setProperty(java.lang.String,java.lang.String):void" resolveInfo="setProperty" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1218745249225">
+                  <property name="value" value="targetCardinality" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1218745258558" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1218744700131">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218744700132">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218745080056">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1218745102159">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1218745104224" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218745084591">
+                <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1218745083355">
+                  <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1218745080057" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218745092844">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getProperty(java.lang.String):java.lang.String" resolveInfo="getProperty" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1218745094892">
+                    <property name="value" value="targetCardinality" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguageInternal.structure;
 
 import jetbrains.mps.baseLanguage.structure.BaseMethodCall;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class InternalStaticMethodCall extends BaseMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall";
@@ -21,15 +21,6 @@ public class InternalStaticMethodCall extends BaseMethodCall {
   public InternalStaticMethodCall(SNode node) {
     super(node);
   }
-
-  public static InternalStaticMethodCall newInstance(SModel sm, boolean init) {
-    return (InternalStaticMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InternalStaticMethodCall newInstance(SModel sm) {
-    return InternalStaticMethodCall.newInstance(sm, false);
-  }
-
 
   public String getFqClassName() {
     return this.getProperty(InternalStaticMethodCall.FQ_CLASS_NAME);
@@ -73,6 +64,15 @@ public class InternalStaticMethodCall extends BaseMethodCall {
 
   public void insertTypeParameter(Type prev, Type node) {
     this.insertChild(prev, InternalStaticMethodCall.TYPE_PARAMETER, node);
+  }
+
+
+  public static InternalStaticMethodCall newInstance(SModel sm, boolean init) {
+    return (InternalStaticMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InternalStaticMethodCall newInstance(SModel sm) {
+    return InternalStaticMethodCall.newInstance(sm, false);
   }
 
 }

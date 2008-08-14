@@ -16,21 +16,21 @@ public class SubstituteNodeBuilderVariableDeclaration extends VariableDeclaratio
     super(node);
   }
 
-  public static SubstituteNodeBuilderVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (SubstituteNodeBuilderVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteNodeBuilderVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SubstituteNodeBuilderVariableDeclaration newInstance(SModel sm) {
-    return SubstituteNodeBuilderVariableDeclaration.newInstance(sm, false);
-  }
-
-
   public QueryFunction_SubstituteVariableInitializer getInitializerBlock() {
     return (QueryFunction_SubstituteVariableInitializer)this.getChild(SubstituteNodeBuilderVariableDeclaration.INITIALIZER_BLOCK);
   }
 
   public void setInitializerBlock(QueryFunction_SubstituteVariableInitializer node) {
     super.setChild(SubstituteNodeBuilderVariableDeclaration.INITIALIZER_BLOCK, node);
+  }
+
+
+  public static SubstituteNodeBuilderVariableDeclaration newInstance(SModel sm, boolean init) {
+    return (SubstituteNodeBuilderVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteNodeBuilderVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SubstituteNodeBuilderVariableDeclaration newInstance(SModel sm) {
+    return SubstituteNodeBuilderVariableDeclaration.newInstance(sm, false);
   }
 
 }

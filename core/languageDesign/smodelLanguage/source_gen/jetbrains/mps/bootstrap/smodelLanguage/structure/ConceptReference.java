@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class ConceptReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference";
@@ -17,21 +17,21 @@ public class ConceptReference extends BaseConcept {
     super(node);
   }
 
-  public static ConceptReference newInstance(SModel sm, boolean init) {
-    return (ConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ConceptReference newInstance(SModel sm) {
-    return ConceptReference.newInstance(sm, false);
-  }
-
-
   public AbstractConceptDeclaration getConcept() {
     return (AbstractConceptDeclaration)this.getReferent(ConceptReference.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
     super.setReferent(ConceptReference.CONCEPT, node);
+  }
+
+
+  public static ConceptReference newInstance(SModel sm, boolean init) {
+    return (ConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ConceptReference newInstance(SModel sm) {
+    return ConceptReference.newInstance(sm, false);
   }
 
 }

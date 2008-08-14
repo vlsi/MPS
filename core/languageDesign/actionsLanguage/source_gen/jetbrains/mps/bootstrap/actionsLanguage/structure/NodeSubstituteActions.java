@@ -5,11 +5,11 @@ package jetbrains.mps.bootstrap.actionsLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class NodeSubstituteActions extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions";
@@ -22,15 +22,6 @@ public class NodeSubstituteActions extends BaseConcept implements INamedConcept 
   public NodeSubstituteActions(SNode node) {
     super(node);
   }
-
-  public static NodeSubstituteActions newInstance(SModel sm, boolean init) {
-    return (NodeSubstituteActions)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static NodeSubstituteActions newInstance(SModel sm) {
-    return NodeSubstituteActions.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(NodeSubstituteActions.NAME);
@@ -82,6 +73,15 @@ public class NodeSubstituteActions extends BaseConcept implements INamedConcept 
 
   public void insertActionsBuilder(NodeSubstituteActionsBuilder prev, NodeSubstituteActionsBuilder node) {
     this.insertChild(prev, NodeSubstituteActions.ACTIONS_BUILDER, node);
+  }
+
+
+  public static NodeSubstituteActions newInstance(SModel sm, boolean init) {
+    return (NodeSubstituteActions)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static NodeSubstituteActions newInstance(SModel sm) {
+    return NodeSubstituteActions.newInstance(sm, false);
   }
 
 }

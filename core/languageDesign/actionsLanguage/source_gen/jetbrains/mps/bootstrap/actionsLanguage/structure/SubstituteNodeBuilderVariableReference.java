@@ -15,21 +15,21 @@ public class SubstituteNodeBuilderVariableReference extends VariableReference {
     super(node);
   }
 
-  public static SubstituteNodeBuilderVariableReference newInstance(SModel sm, boolean init) {
-    return (SubstituteNodeBuilderVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteNodeBuilderVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SubstituteNodeBuilderVariableReference newInstance(SModel sm) {
-    return SubstituteNodeBuilderVariableReference.newInstance(sm, false);
-  }
-
-
   public SubstituteNodeBuilderVariableDeclaration getNodeBuilderVariableDeclaration() {
     return (SubstituteNodeBuilderVariableDeclaration)this.getVariableDeclaration();
   }
 
   public void setNodeBuilderVariableDeclaration(SubstituteNodeBuilderVariableDeclaration node) {
     this.setVariableDeclaration(node);
+  }
+
+
+  public static SubstituteNodeBuilderVariableReference newInstance(SModel sm, boolean init) {
+    return (SubstituteNodeBuilderVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteNodeBuilderVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SubstituteNodeBuilderVariableReference newInstance(SModel sm) {
+    return SubstituteNodeBuilderVariableReference.newInstance(sm, false);
   }
 
 }

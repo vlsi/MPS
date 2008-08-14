@@ -15,21 +15,21 @@ public class Concept_IsSuperConceptOfOperation extends SNodeOperation {
     super(node);
   }
 
-  public static Concept_IsSuperConceptOfOperation newInstance(SModel sm, boolean init) {
-    return (Concept_IsSuperConceptOfOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Concept_IsSuperConceptOfOperation newInstance(SModel sm) {
-    return Concept_IsSuperConceptOfOperation.newInstance(sm, false);
-  }
-
-
   public IRefConceptArg getConceptArgument() {
     return (IRefConceptArg)this.getChild(Concept_IsSuperConceptOfOperation.CONCEPT_ARGUMENT);
   }
 
   public void setConceptArgument(IRefConceptArg node) {
     super.setChild(Concept_IsSuperConceptOfOperation.CONCEPT_ARGUMENT, node);
+  }
+
+
+  public static Concept_IsSuperConceptOfOperation newInstance(SModel sm, boolean init) {
+    return (Concept_IsSuperConceptOfOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Concept_IsSuperConceptOfOperation newInstance(SModel sm) {
+    return Concept_IsSuperConceptOfOperation.newInstance(sm, false);
   }
 
 }

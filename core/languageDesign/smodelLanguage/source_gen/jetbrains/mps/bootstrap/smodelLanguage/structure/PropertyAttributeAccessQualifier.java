@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration;
 
 public class PropertyAttributeAccessQualifier extends BaseConcept implements IAttributeAccessQualifier {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier";
@@ -20,15 +20,6 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
   public PropertyAttributeAccessQualifier(SNode node) {
     super(node);
   }
-
-  public static PropertyAttributeAccessQualifier newInstance(SModel sm, boolean init) {
-    return (PropertyAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PropertyAttributeAccessQualifier newInstance(SModel sm) {
-    return PropertyAttributeAccessQualifier.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(PropertyAttributeAccessQualifier.SHORT_DESCRIPTION);
@@ -68,6 +59,15 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
 
   public void setPropertyQualifier(IPropertyAccessQualifier node) {
     super.setChild(PropertyAttributeAccessQualifier.PROPERTY_QUALIFIER, node);
+  }
+
+
+  public static PropertyAttributeAccessQualifier newInstance(SModel sm, boolean init) {
+    return (PropertyAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PropertyAttributeAccessQualifier newInstance(SModel sm) {
+    return PropertyAttributeAccessQualifier.newInstance(sm, false);
   }
 
 }

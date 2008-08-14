@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguageInternal.structure;
 
 import jetbrains.mps.baseLanguage.structure.BaseMethodCall;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Type;
 
 public class InternalNewExpression extends BaseMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression";
@@ -17,15 +17,6 @@ public class InternalNewExpression extends BaseMethodCall {
   public InternalNewExpression(SNode node) {
     super(node);
   }
-
-  public static InternalNewExpression newInstance(SModel sm, boolean init) {
-    return (InternalNewExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InternalNewExpression newInstance(SModel sm) {
-    return InternalNewExpression.newInstance(sm, false);
-  }
-
 
   public String getFqClassName() {
     return this.getProperty(InternalNewExpression.FQ_CLASS_NAME);
@@ -41,6 +32,15 @@ public class InternalNewExpression extends BaseMethodCall {
 
   public void setType(Type node) {
     super.setChild(InternalNewExpression.TYPE, node);
+  }
+
+
+  public static InternalNewExpression newInstance(SModel sm, boolean init) {
+    return (InternalNewExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InternalNewExpression newInstance(SModel sm) {
+    return InternalNewExpression.newInstance(sm, false);
   }
 
 }

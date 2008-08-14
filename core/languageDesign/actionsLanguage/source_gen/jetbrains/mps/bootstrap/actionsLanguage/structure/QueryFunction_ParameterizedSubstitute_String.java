@@ -18,15 +18,6 @@ public class QueryFunction_ParameterizedSubstitute_String extends ConceptFunctio
     super(node);
   }
 
-  public static QueryFunction_ParameterizedSubstitute_String newInstance(SModel sm, boolean init) {
-    return (QueryFunction_ParameterizedSubstitute_String)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSubstitute_String", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static QueryFunction_ParameterizedSubstitute_String newInstance(SModel sm) {
-    return QueryFunction_ParameterizedSubstitute_String.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(QueryFunction_ParameterizedSubstitute_String.SHORT_DESCRIPTION);
   }
@@ -49,6 +40,15 @@ public class QueryFunction_ParameterizedSubstitute_String extends ConceptFunctio
 
   public void setVirtualPackage(String value) {
     this.setProperty(QueryFunction_ParameterizedSubstitute_String.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static QueryFunction_ParameterizedSubstitute_String newInstance(SModel sm, boolean init) {
+    return (QueryFunction_ParameterizedSubstitute_String)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSubstitute_String", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static QueryFunction_ParameterizedSubstitute_String newInstance(SModel sm) {
+    return QueryFunction_ParameterizedSubstitute_String.newInstance(sm, false);
   }
 
 }

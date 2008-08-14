@@ -5,11 +5,11 @@ package jetbrains.mps.bootstrap.actionsLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class SideTransformHintSubstituteActions extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions";
@@ -22,15 +22,6 @@ public class SideTransformHintSubstituteActions extends BaseConcept implements I
   public SideTransformHintSubstituteActions(SNode node) {
     super(node);
   }
-
-  public static SideTransformHintSubstituteActions newInstance(SModel sm, boolean init) {
-    return (SideTransformHintSubstituteActions)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SideTransformHintSubstituteActions newInstance(SModel sm) {
-    return SideTransformHintSubstituteActions.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(SideTransformHintSubstituteActions.NAME);
@@ -82,6 +73,15 @@ public class SideTransformHintSubstituteActions extends BaseConcept implements I
 
   public void insertActionsBuilder(SideTransformHintSubstituteActionsBuilder prev, SideTransformHintSubstituteActionsBuilder node) {
     this.insertChild(prev, SideTransformHintSubstituteActions.ACTIONS_BUILDER, node);
+  }
+
+
+  public static SideTransformHintSubstituteActions newInstance(SModel sm, boolean init) {
+    return (SideTransformHintSubstituteActions)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SideTransformHintSubstituteActions newInstance(SModel sm) {
+    return SideTransformHintSubstituteActions.newInstance(sm, false);
   }
 
 }

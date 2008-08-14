@@ -15,21 +15,21 @@ public class GenericSubstituteMenuPart extends SubstituteMenuPart {
     super(node);
   }
 
-  public static GenericSubstituteMenuPart newInstance(SModel sm, boolean init) {
-    return (GenericSubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.GenericSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GenericSubstituteMenuPart newInstance(SModel sm) {
-    return GenericSubstituteMenuPart.newInstance(sm, false);
-  }
-
-
   public QueryFunction_GenericSubstituteMenuPart getQuery() {
     return (QueryFunction_GenericSubstituteMenuPart)this.getChild(GenericSubstituteMenuPart.QUERY);
   }
 
   public void setQuery(QueryFunction_GenericSubstituteMenuPart node) {
     super.setChild(GenericSubstituteMenuPart.QUERY, node);
+  }
+
+
+  public static GenericSubstituteMenuPart newInstance(SModel sm, boolean init) {
+    return (GenericSubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.GenericSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GenericSubstituteMenuPart newInstance(SModel sm) {
+    return GenericSubstituteMenuPart.newInstance(sm, false);
   }
 
 }

@@ -277,7 +277,6 @@
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1112058057696">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
       <property name="role" value="actionsBuilder" />
       <property name="sourceCardinality" value="0..n" />
@@ -311,7 +310,6 @@
       <link role="dataType" targetNodeId="1.1082983657063" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1112058088712">
-      <property name="targetCardinality" value="0..n" />
       <property name="role" value="applicableConcept" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1169125787135" />
@@ -387,7 +385,6 @@
       <link role="dataType" targetNodeId="1215604970641" resolveInfo="Side" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1138079221462">
-      <property name="targetCardinality" value="0..n" />
       <property name="role" value="applicableConcept" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1169125787135" resolveInfo="AbstractConceptDeclaration" />
@@ -425,7 +422,6 @@
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1138079416599">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
       <property name="role" value="actionsBuilder" />
       <property name="sourceCardinality" value="0..n" />

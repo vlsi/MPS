@@ -19,15 +19,6 @@ public class Substitute_SimpleString extends BaseConcept implements ISubstitute_
     super(node);
   }
 
-  public static Substitute_SimpleString newInstance(SModel sm, boolean init) {
-    return (Substitute_SimpleString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.Substitute_SimpleString", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Substitute_SimpleString newInstance(SModel sm) {
-    return Substitute_SimpleString.newInstance(sm, false);
-  }
-
-
   public String getText() {
     return this.getProperty(Substitute_SimpleString.TEXT);
   }
@@ -58,6 +49,15 @@ public class Substitute_SimpleString extends BaseConcept implements ISubstitute_
 
   public void setVirtualPackage(String value) {
     this.setProperty(Substitute_SimpleString.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static Substitute_SimpleString newInstance(SModel sm, boolean init) {
+    return (Substitute_SimpleString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.Substitute_SimpleString", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Substitute_SimpleString newInstance(SModel sm) {
+    return Substitute_SimpleString.newInstance(sm, false);
   }
 
 }

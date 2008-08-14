@@ -18,15 +18,6 @@ public class SimpleSideTransformMenuPart extends SideTransformMenuPart {
     super(node);
   }
 
-  public static SimpleSideTransformMenuPart newInstance(SModel sm, boolean init) {
-    return (SimpleSideTransformMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleSideTransformMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SimpleSideTransformMenuPart newInstance(SModel sm) {
-    return SimpleSideTransformMenuPart.newInstance(sm, false);
-  }
-
-
   public ISideTransform_String getMatchingText() {
     return (ISideTransform_String)this.getChild(SimpleSideTransformMenuPart.MATCHING_TEXT);
   }
@@ -57,6 +48,15 @@ public class SimpleSideTransformMenuPart extends SideTransformMenuPart {
 
   public void setHandler(QueryFunction_SideTransform_Handler node) {
     super.setChild(SimpleSideTransformMenuPart.HANDLER, node);
+  }
+
+
+  public static SimpleSideTransformMenuPart newInstance(SModel sm, boolean init) {
+    return (SimpleSideTransformMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleSideTransformMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SimpleSideTransformMenuPart newInstance(SModel sm) {
+    return SimpleSideTransformMenuPart.newInstance(sm, false);
   }
 
 }

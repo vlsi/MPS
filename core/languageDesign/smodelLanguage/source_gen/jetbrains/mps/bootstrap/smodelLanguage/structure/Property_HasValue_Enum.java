@@ -15,21 +15,21 @@ public class Property_HasValue_Enum extends SNodeOperation {
     super(node);
   }
 
-  public static Property_HasValue_Enum newInstance(SModel sm, boolean init) {
-    return (Property_HasValue_Enum)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Property_HasValue_Enum newInstance(SModel sm) {
-    return Property_HasValue_Enum.newInstance(sm, false);
-  }
-
-
   public EnumMemberReference getValue() {
     return (EnumMemberReference)this.getChild(Property_HasValue_Enum.VALUE);
   }
 
   public void setValue(EnumMemberReference node) {
     super.setChild(Property_HasValue_Enum.VALUE, node);
+  }
+
+
+  public static Property_HasValue_Enum newInstance(SModel sm, boolean init) {
+    return (Property_HasValue_Enum)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Property_HasValue_Enum newInstance(SModel sm) {
+    return Property_HasValue_Enum.newInstance(sm, false);
   }
 
 }

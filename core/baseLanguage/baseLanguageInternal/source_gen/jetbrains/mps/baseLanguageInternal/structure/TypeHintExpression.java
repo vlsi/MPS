@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguageInternal.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Type;
 
 public class TypeHintExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression";
@@ -17,15 +17,6 @@ public class TypeHintExpression extends Expression {
   public TypeHintExpression(SNode node) {
     super(node);
   }
-
-  public static TypeHintExpression newInstance(SModel sm, boolean init) {
-    return (TypeHintExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TypeHintExpression newInstance(SModel sm) {
-    return TypeHintExpression.newInstance(sm, false);
-  }
-
 
   public Expression getExpression() {
     return (Expression)this.getChild(TypeHintExpression.EXPRESSION);
@@ -41,6 +32,15 @@ public class TypeHintExpression extends Expression {
 
   public void setTypeHint(Type node) {
     super.setChild(TypeHintExpression.TYPE_HINT, node);
+  }
+
+
+  public static TypeHintExpression newInstance(SModel sm, boolean init) {
+    return (TypeHintExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TypeHintExpression newInstance(SModel sm) {
+    return TypeHintExpression.newInstance(sm, false);
   }
 
 }

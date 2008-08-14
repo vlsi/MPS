@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 
 public class PropertyRefQualifier extends BaseConcept implements IPropertyAccessQualifier {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier";
@@ -19,15 +19,6 @@ public class PropertyRefQualifier extends BaseConcept implements IPropertyAccess
   public PropertyRefQualifier(SNode node) {
     super(node);
   }
-
-  public static PropertyRefQualifier newInstance(SModel sm, boolean init) {
-    return (PropertyRefQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PropertyRefQualifier newInstance(SModel sm) {
-    return PropertyRefQualifier.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(PropertyRefQualifier.SHORT_DESCRIPTION);
@@ -59,6 +50,15 @@ public class PropertyRefQualifier extends BaseConcept implements IPropertyAccess
 
   public void setProperty(PropertyDeclaration node) {
     super.setReferent(PropertyRefQualifier.PROPERTY, node);
+  }
+
+
+  public static PropertyRefQualifier newInstance(SModel sm, boolean init) {
+    return (PropertyRefQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PropertyRefQualifier newInstance(SModel sm) {
+    return PropertyRefQualifier.newInstance(sm, false);
   }
 
 }

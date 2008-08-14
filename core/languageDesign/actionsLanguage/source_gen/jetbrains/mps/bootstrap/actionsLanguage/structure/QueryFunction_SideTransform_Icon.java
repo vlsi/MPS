@@ -18,15 +18,6 @@ public class QueryFunction_SideTransform_Icon extends ConceptFunction implements
     super(node);
   }
 
-  public static QueryFunction_SideTransform_Icon newInstance(SModel sm, boolean init) {
-    return (QueryFunction_SideTransform_Icon)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_Icon", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static QueryFunction_SideTransform_Icon newInstance(SModel sm) {
-    return QueryFunction_SideTransform_Icon.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(QueryFunction_SideTransform_Icon.SHORT_DESCRIPTION);
   }
@@ -49,6 +40,15 @@ public class QueryFunction_SideTransform_Icon extends ConceptFunction implements
 
   public void setVirtualPackage(String value) {
     this.setProperty(QueryFunction_SideTransform_Icon.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static QueryFunction_SideTransform_Icon newInstance(SModel sm, boolean init) {
+    return (QueryFunction_SideTransform_Icon)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_Icon", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static QueryFunction_SideTransform_Icon newInstance(SModel sm) {
+    return QueryFunction_SideTransform_Icon.newInstance(sm, false);
   }
 
 }

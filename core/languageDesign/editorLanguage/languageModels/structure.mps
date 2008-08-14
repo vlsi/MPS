@@ -300,7 +300,6 @@
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1080736578640" resolveInfo="BaseEditorComponent" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1078153129734">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="inspectedCellModel" />
       <property name="metaClass" value="aggregation" />
@@ -336,7 +335,6 @@
       <link role="target" targetNodeId="1139535219966" resolveInfo="CellActionMapDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1081339532145">
-      <property name="targetCardinality" value="0..n" />
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="keyMap" />
       <link role="target" targetNodeId="1081293058843" resolveInfo="CellKeyMapDeclaration" />
@@ -418,14 +416,12 @@
     <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1073389446424">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="childCellModel" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1106270802874">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="cellLayout" />
       <property name="metaClass" value="aggregation" />
@@ -486,7 +482,6 @@
     <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1139848536355" resolveInfo="CellModel_WithRole" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1073389964684">
-      <property name="targetCardinality" value="0..n" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="propertyDeclaration" />
       <link role="target" targetNodeId="1.1071489288299" />
@@ -506,7 +501,6 @@
     <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1139848536355" resolveInfo="CellModel_WithRole" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1073389882824">
-      <property name="targetCardinality" value="0..n" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="linkDeclaration" />
       <link role="target" targetNodeId="1.1071489288298" />
@@ -530,7 +524,6 @@
       <link role="dataType" targetNodeId="3.1082983657063" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1073390211987">
-      <property name="targetCardinality" value="0..n" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="linkDeclaration" />
       <link role="target" targetNodeId="1.1071489288298" />
@@ -638,7 +631,6 @@
     <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1078939183255">
-      <property name="targetCardinality" value="0..n" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="editorComponent" />
       <link role="target" targetNodeId="1078938745671" resolveInfo="EditorComponentDeclaration" />
@@ -711,7 +703,6 @@
     <property name="name" value="BaseEditorComponent" />
     <link role="extends" targetNodeId="1166049232041" resolveInfo="AbstractComponent" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1080736633877">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="cellModel" />
       <property name="metaClass" value="aggregation" />
@@ -731,12 +722,10 @@
       <link role="dataType" targetNodeId="3.1082983657063" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1139445935125">
-      <property name="targetCardinality" value="0..n" />
       <property name="role" value="applicableConcept" />
       <link role="target" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1136930944870">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="item" />
       <property name="metaClass" value="aggregation" />
@@ -855,14 +844,12 @@
     <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1139848536355" resolveInfo="CellModel_WithRole" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1088013239202">
-      <property name="targetCardinality" value="0..n" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="linkDeclaration" />
       <link role="target" targetNodeId="1.1071489288298" />
       <link role="specializedLink" targetNodeId="1140103550593" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1088186146602">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="editorComponent" />
       <property name="metaClass" value="aggregation" />
@@ -901,14 +888,12 @@
       <link role="target" targetNodeId="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1088612958265">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="ifTrueCellModel" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1088612973955">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="ifFalseCellModel" />
       <property name="metaClass" value="aggregation" />
@@ -1049,21 +1034,18 @@
     <property name="name" value="CellKeyMapItem" />
     <property name="package" value="CellKeyMap" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1136916998332">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="1..n" />
       <property name="role" value="keystroke" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1136916976737" resolveInfo="CellKeyMapKeystroke" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1136917325338">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="isApplicableFunction" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1136917249679" resolveInfo="CellKeyMap_IsApplicableFunction" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1136920925604">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="executeFunction" />
       <property name="metaClass" value="aggregation" />
@@ -1191,7 +1173,6 @@
     <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1139848536355" resolveInfo="CellModel_WithRole" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1137553248621">
-      <property name="targetCardinality" value="0..n" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="propertyDeclaration" />
       <link role="target" targetNodeId="1.1105725006687" />
@@ -1232,12 +1213,10 @@
       <link role="intfc" targetNodeId="3.1169194658468" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1139535219968">
-      <property name="targetCardinality" value="0..n" />
       <property name="role" value="applicableConcept" />
       <link role="target" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1139535219969">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="item" />
       <property name="metaClass" value="aggregation" />
@@ -1260,7 +1239,6 @@
       <link role="dataType" targetNodeId="1139535328871" resolveInfo="CellActionId" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1139535280620">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="executeFunction" />
       <property name="metaClass" value="aggregation" />
@@ -1397,14 +1375,12 @@
       <link role="target" targetNodeId="1176897764478" resolveInfo="QueryFunction_NodeFactory" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1140524464359">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="emptyCellModel" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1140524464360">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="cellLayout" />
       <property name="metaClass" value="aggregation" />
@@ -2233,7 +2209,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1166049300910">
-      <property name="targetCardinality" value="0..1" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="conceptDeclaration" />
       <link role="target" targetNodeId="1.1169125787135" />

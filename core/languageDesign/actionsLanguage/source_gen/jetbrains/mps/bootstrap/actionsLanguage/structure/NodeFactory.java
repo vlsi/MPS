@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.actionsLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class NodeFactory extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory";
@@ -18,15 +18,6 @@ public class NodeFactory extends BaseConcept {
   public NodeFactory(SNode node) {
     super(node);
   }
-
-  public static NodeFactory newInstance(SModel sm, boolean init) {
-    return (NodeFactory)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static NodeFactory newInstance(SModel sm) {
-    return NodeFactory.newInstance(sm, false);
-  }
-
 
   public String getDescription() {
     return this.getProperty(NodeFactory.DESCRIPTION);
@@ -50,6 +41,15 @@ public class NodeFactory extends BaseConcept {
 
   public void setSetupFunction(NodeSetupFunction node) {
     super.setChild(NodeFactory.SETUP_FUNCTION, node);
+  }
+
+
+  public static NodeFactory newInstance(SModel sm, boolean init) {
+    return (NodeFactory)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static NodeFactory newInstance(SModel sm) {
+    return NodeFactory.newInstance(sm, false);
   }
 
 }

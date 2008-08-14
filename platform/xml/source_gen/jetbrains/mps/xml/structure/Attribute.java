@@ -21,15 +21,6 @@ public class Attribute extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-  public static Attribute newInstance(SModel sm, boolean init) {
-    return (Attribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Attribute newInstance(SModel sm) {
-    return Attribute.newInstance(sm, false);
-  }
-
-
   public String getValue() {
     return this.getProperty(Attribute.VALUE);
   }
@@ -68,6 +59,15 @@ public class Attribute extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(Attribute.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static Attribute newInstance(SModel sm, boolean init) {
+    return (Attribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Attribute newInstance(SModel sm) {
+    return Attribute.newInstance(sm, false);
   }
 
 }

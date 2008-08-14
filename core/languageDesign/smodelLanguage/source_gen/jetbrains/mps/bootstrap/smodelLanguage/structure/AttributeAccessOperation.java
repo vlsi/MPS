@@ -19,15 +19,6 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
     super(node);
   }
 
-  public static AttributeAccessOperation newInstance(SModel sm, boolean init) {
-    return (AttributeAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AttributeAccessOperation newInstance(SModel sm) {
-    return AttributeAccessOperation.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(AttributeAccessOperation.SHORT_DESCRIPTION);
   }
@@ -58,6 +49,15 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
 
   public void setAttributeQualifier(IAttributeAccessQualifier node) {
     super.setChild(AttributeAccessOperation.ATTRIBUTE_QUALIFIER, node);
+  }
+
+
+  public static AttributeAccessOperation newInstance(SModel sm, boolean init) {
+    return (AttributeAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AttributeAccessOperation newInstance(SModel sm) {
+    return AttributeAccessOperation.newInstance(sm, false);
   }
 
 }

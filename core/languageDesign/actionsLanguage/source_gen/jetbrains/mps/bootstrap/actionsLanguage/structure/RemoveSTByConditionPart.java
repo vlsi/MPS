@@ -15,21 +15,21 @@ public class RemoveSTByConditionPart extends MenuBuilderPart {
     super(node);
   }
 
-  public static RemoveSTByConditionPart newInstance(SModel sm, boolean init) {
-    return (RemoveSTByConditionPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveSTByConditionPart", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static RemoveSTByConditionPart newInstance(SModel sm) {
-    return RemoveSTByConditionPart.newInstance(sm, false);
-  }
-
-
   public QueryFunction_ST_RemoveBy_Condition getCondition() {
     return (QueryFunction_ST_RemoveBy_Condition)this.getChild(RemoveSTByConditionPart.CONDITION);
   }
 
   public void setCondition(QueryFunction_ST_RemoveBy_Condition node) {
     super.setChild(RemoveSTByConditionPart.CONDITION, node);
+  }
+
+
+  public static RemoveSTByConditionPart newInstance(SModel sm, boolean init) {
+    return (RemoveSTByConditionPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveSTByConditionPart", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static RemoveSTByConditionPart newInstance(SModel sm) {
+    return RemoveSTByConditionPart.newInstance(sm, false);
   }
 
 }

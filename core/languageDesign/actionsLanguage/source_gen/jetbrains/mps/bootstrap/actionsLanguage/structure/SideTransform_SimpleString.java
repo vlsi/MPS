@@ -19,15 +19,6 @@ public class SideTransform_SimpleString extends BaseConcept implements ISideTran
     super(node);
   }
 
-  public static SideTransform_SimpleString newInstance(SModel sm, boolean init) {
-    return (SideTransform_SimpleString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransform_SimpleString", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SideTransform_SimpleString newInstance(SModel sm) {
-    return SideTransform_SimpleString.newInstance(sm, false);
-  }
-
-
   public String getText() {
     return this.getProperty(SideTransform_SimpleString.TEXT);
   }
@@ -58,6 +49,15 @@ public class SideTransform_SimpleString extends BaseConcept implements ISideTran
 
   public void setVirtualPackage(String value) {
     this.setProperty(SideTransform_SimpleString.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static SideTransform_SimpleString newInstance(SModel sm, boolean init) {
+    return (SideTransform_SimpleString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransform_SimpleString", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SideTransform_SimpleString newInstance(SModel sm) {
+    return SideTransform_SimpleString.newInstance(sm, false);
   }
 
 }

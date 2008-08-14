@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration;
 
 public class NodeAttributeAccessQualifier extends BaseConcept implements IAttributeAccessQualifier {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.NodeAttributeAccessQualifier";
@@ -19,15 +19,6 @@ public class NodeAttributeAccessQualifier extends BaseConcept implements IAttrib
   public NodeAttributeAccessQualifier(SNode node) {
     super(node);
   }
-
-  public static NodeAttributeAccessQualifier newInstance(SModel sm, boolean init) {
-    return (NodeAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.NodeAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static NodeAttributeAccessQualifier newInstance(SModel sm) {
-    return NodeAttributeAccessQualifier.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(NodeAttributeAccessQualifier.SHORT_DESCRIPTION);
@@ -59,6 +50,15 @@ public class NodeAttributeAccessQualifier extends BaseConcept implements IAttrib
 
   public void setAnnotationLink(AnnotationLinkDeclaration node) {
     super.setReferent(NodeAttributeAccessQualifier.ANNOTATION_LINK, node);
+  }
+
+
+  public static NodeAttributeAccessQualifier newInstance(SModel sm, boolean init) {
+    return (NodeAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.NodeAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static NodeAttributeAccessQualifier newInstance(SModel sm) {
+    return NodeAttributeAccessQualifier.newInstance(sm, false);
   }
 
 }

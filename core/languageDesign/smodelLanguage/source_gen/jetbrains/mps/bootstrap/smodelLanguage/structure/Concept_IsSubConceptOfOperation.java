@@ -15,21 +15,21 @@ public class Concept_IsSubConceptOfOperation extends SNodeOperation {
     super(node);
   }
 
-  public static Concept_IsSubConceptOfOperation newInstance(SModel sm, boolean init) {
-    return (Concept_IsSubConceptOfOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSubConceptOfOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Concept_IsSubConceptOfOperation newInstance(SModel sm) {
-    return Concept_IsSubConceptOfOperation.newInstance(sm, false);
-  }
-
-
   public IRefConceptArg getConceptArgument() {
     return (IRefConceptArg)this.getChild(Concept_IsSubConceptOfOperation.CONCEPT_ARGUMENT);
   }
 
   public void setConceptArgument(IRefConceptArg node) {
     super.setChild(Concept_IsSubConceptOfOperation.CONCEPT_ARGUMENT, node);
+  }
+
+
+  public static Concept_IsSubConceptOfOperation newInstance(SModel sm, boolean init) {
+    return (Concept_IsSubConceptOfOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSubConceptOfOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Concept_IsSubConceptOfOperation newInstance(SModel sm) {
+    return Concept_IsSubConceptOfOperation.newInstance(sm, false);
   }
 
 }

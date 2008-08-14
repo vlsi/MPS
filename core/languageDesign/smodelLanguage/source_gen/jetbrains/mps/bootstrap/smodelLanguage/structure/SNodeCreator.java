@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.baseLanguage.structure.AbstractCreator;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class SNodeCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator";
@@ -17,15 +17,6 @@ public class SNodeCreator extends AbstractCreator {
   public SNodeCreator(SNode node) {
     super(node);
   }
-
-  public static SNodeCreator newInstance(SModel sm, boolean init) {
-    return (SNodeCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SNodeCreator newInstance(SModel sm) {
-    return SNodeCreator.newInstance(sm, false);
-  }
-
 
   public SNodeType getCreatedType() {
     return (SNodeType)this.getChild(SNodeCreator.CREATED_TYPE);
@@ -41,6 +32,15 @@ public class SNodeCreator extends AbstractCreator {
 
   public void setPrototypeNode(Expression node) {
     super.setChild(SNodeCreator.PROTOTYPE_NODE, node);
+  }
+
+
+  public static SNodeCreator newInstance(SModel sm, boolean init) {
+    return (SNodeCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SNodeCreator newInstance(SModel sm) {
+    return SNodeCreator.newInstance(sm, false);
   }
 
 }

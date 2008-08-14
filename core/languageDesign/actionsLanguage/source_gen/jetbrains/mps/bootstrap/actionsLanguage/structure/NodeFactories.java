@@ -5,11 +5,11 @@ package jetbrains.mps.bootstrap.actionsLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class NodeFactories extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactories";
@@ -22,15 +22,6 @@ public class NodeFactories extends BaseConcept implements INamedConcept {
   public NodeFactories(SNode node) {
     super(node);
   }
-
-  public static NodeFactories newInstance(SModel sm, boolean init) {
-    return (NodeFactories)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactories", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static NodeFactories newInstance(SModel sm) {
-    return NodeFactories.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(NodeFactories.NAME);
@@ -82,6 +73,15 @@ public class NodeFactories extends BaseConcept implements INamedConcept {
 
   public void insertNodeFactory(NodeFactory prev, NodeFactory node) {
     this.insertChild(prev, NodeFactories.NODE_FACTORY, node);
+  }
+
+
+  public static NodeFactories newInstance(SModel sm, boolean init) {
+    return (NodeFactories)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactories", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static NodeFactories newInstance(SModel sm) {
+    return NodeFactories.newInstance(sm, false);
   }
 
 }

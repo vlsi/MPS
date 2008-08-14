@@ -4,12 +4,12 @@ package jetbrains.mps.bootstrap.actionsLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class NodeSubstituteActionsBuilder extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder";
@@ -27,15 +27,6 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   public NodeSubstituteActionsBuilder(SNode node) {
     super(node);
   }
-
-  public static NodeSubstituteActionsBuilder newInstance(SModel sm, boolean init) {
-    return (NodeSubstituteActionsBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static NodeSubstituteActionsBuilder newInstance(SModel sm) {
-    return NodeSubstituteActionsBuilder.newInstance(sm, false);
-  }
-
 
   public String getDescription() {
     return this.getProperty(NodeSubstituteActionsBuilder.DESCRIPTION);
@@ -139,6 +130,15 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
 
   public void insertVariable(SubstituteNodeBuilderVariableDeclaration prev, SubstituteNodeBuilderVariableDeclaration node) {
     this.insertChild(prev, NodeSubstituteActionsBuilder.VARIABLE, node);
+  }
+
+
+  public static NodeSubstituteActionsBuilder newInstance(SModel sm, boolean init) {
+    return (NodeSubstituteActionsBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static NodeSubstituteActionsBuilder newInstance(SModel sm) {
+    return NodeSubstituteActionsBuilder.newInstance(sm, false);
   }
 
 }

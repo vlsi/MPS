@@ -529,7 +529,6 @@
       <link role="target" targetNodeId="1177514840044" resolveInfo="MatchStatementItem" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177514345236">
-      <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="ifFalseStatement" />
       <property name="metaClass" value="aggregation" />

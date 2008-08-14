@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class RefConcept_Reference extends BaseConcept implements IRefConceptArg {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference";
@@ -19,15 +19,6 @@ public class RefConcept_Reference extends BaseConcept implements IRefConceptArg 
   public RefConcept_Reference(SNode node) {
     super(node);
   }
-
-  public static RefConcept_Reference newInstance(SModel sm, boolean init) {
-    return (RefConcept_Reference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static RefConcept_Reference newInstance(SModel sm) {
-    return RefConcept_Reference.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(RefConcept_Reference.SHORT_DESCRIPTION);
@@ -59,6 +50,15 @@ public class RefConcept_Reference extends BaseConcept implements IRefConceptArg 
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {
     super.setReferent(RefConcept_Reference.CONCEPT_DECLARATION, node);
+  }
+
+
+  public static RefConcept_Reference newInstance(SModel sm, boolean init) {
+    return (RefConcept_Reference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static RefConcept_Reference newInstance(SModel sm) {
+    return RefConcept_Reference.newInstance(sm, false);
   }
 
 }

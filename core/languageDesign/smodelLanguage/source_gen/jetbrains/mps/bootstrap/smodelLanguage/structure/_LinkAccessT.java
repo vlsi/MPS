@@ -5,10 +5,10 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.baseLanguage.structure.IInternalType;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class _LinkAccessT extends Type implements IInternalType {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT";
@@ -22,15 +22,6 @@ public class _LinkAccessT extends Type implements IInternalType {
   public _LinkAccessT(SNode node) {
     super(node);
   }
-
-  public static _LinkAccessT newInstance(SModel sm, boolean init) {
-    return (_LinkAccessT)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static _LinkAccessT newInstance(SModel sm) {
-    return _LinkAccessT.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(_LinkAccessT.SHORT_DESCRIPTION);
@@ -78,6 +69,15 @@ public class _LinkAccessT extends Type implements IInternalType {
 
   public void setTargetConcept(AbstractConceptDeclaration node) {
     super.setReferent(_LinkAccessT.TARGET_CONCEPT, node);
+  }
+
+
+  public static _LinkAccessT newInstance(SModel sm, boolean init) {
+    return (_LinkAccessT)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static _LinkAccessT newInstance(SModel sm) {
+    return _LinkAccessT.newInstance(sm, false);
   }
 
 }

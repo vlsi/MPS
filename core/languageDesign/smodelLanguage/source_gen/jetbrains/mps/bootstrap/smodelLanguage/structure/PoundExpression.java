@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class PoundExpression extends BaseConcept implements IPropertyAccessQualifier, ILinkAccessQualifier, IRefConceptArg {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression";
@@ -19,15 +19,6 @@ public class PoundExpression extends BaseConcept implements IPropertyAccessQuali
   public PoundExpression(SNode node) {
     super(node);
   }
-
-  public static PoundExpression newInstance(SModel sm, boolean init) {
-    return (PoundExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PoundExpression newInstance(SModel sm) {
-    return PoundExpression.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(PoundExpression.SHORT_DESCRIPTION);
@@ -59,6 +50,15 @@ public class PoundExpression extends BaseConcept implements IPropertyAccessQuali
 
   public void setExpression(Expression node) {
     super.setChild(PoundExpression.EXPRESSION, node);
+  }
+
+
+  public static PoundExpression newInstance(SModel sm, boolean init) {
+    return (PoundExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PoundExpression newInstance(SModel sm) {
+    return PoundExpression.newInstance(sm, false);
   }
 
 }

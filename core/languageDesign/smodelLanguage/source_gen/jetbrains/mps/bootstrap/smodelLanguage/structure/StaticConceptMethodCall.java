@@ -4,11 +4,11 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.baseLanguage.structure.BaseMethodCall;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.constraintsLanguage.structure.StaticConceptMethodDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.constraintsLanguage.structure.StaticConceptMethodDeclaration;
 
 public class StaticConceptMethodCall extends BaseMethodCall {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.StaticConceptMethodCall";
@@ -17,15 +17,6 @@ public class StaticConceptMethodCall extends BaseMethodCall {
   public StaticConceptMethodCall(SNode node) {
     super(node);
   }
-
-  public static StaticConceptMethodCall newInstance(SModel sm, boolean init) {
-    return (StaticConceptMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.StaticConceptMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static StaticConceptMethodCall newInstance(SModel sm) {
-    return StaticConceptMethodCall.newInstance(sm, false);
-  }
-
 
   public AbstractConceptDeclaration getConcept() {
     return (AbstractConceptDeclaration)this.getReferent(StaticConceptMethodCall.CONCEPT);
@@ -41,6 +32,15 @@ public class StaticConceptMethodCall extends BaseMethodCall {
 
   public void setMethodDeclaration(StaticConceptMethodDeclaration node) {
     this.setBaseMethodDeclaration(node);
+  }
+
+
+  public static StaticConceptMethodCall newInstance(SModel sm, boolean init) {
+    return (StaticConceptMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.StaticConceptMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static StaticConceptMethodCall newInstance(SModel sm) {
+    return StaticConceptMethodCall.newInstance(sm, false);
   }
 
 }

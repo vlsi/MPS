@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguageInternal.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Type;
 
 public class InternalClassExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression";
@@ -17,21 +17,21 @@ public class InternalClassExpression extends Expression {
     super(node);
   }
 
-  public static InternalClassExpression newInstance(SModel sm, boolean init) {
-    return (InternalClassExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InternalClassExpression newInstance(SModel sm) {
-    return InternalClassExpression.newInstance(sm, false);
-  }
-
-
   public Type getType() {
     return (Type)this.getChild(InternalClassExpression.TYPE);
   }
 
   public void setType(Type node) {
     super.setChild(InternalClassExpression.TYPE, node);
+  }
+
+
+  public static InternalClassExpression newInstance(SModel sm, boolean init) {
+    return (InternalClassExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InternalClassExpression newInstance(SModel sm) {
+    return InternalClassExpression.newInstance(sm, false);
   }
 
 }

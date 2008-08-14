@@ -4,12 +4,12 @@ package jetbrains.mps.bootstrap.actionsLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder";
@@ -29,15 +29,6 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   public SideTransformHintSubstituteActionsBuilder(SNode node) {
     super(node);
   }
-
-  public static SideTransformHintSubstituteActionsBuilder newInstance(SModel sm, boolean init) {
-    return (SideTransformHintSubstituteActionsBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SideTransformHintSubstituteActionsBuilder newInstance(SModel sm) {
-    return SideTransformHintSubstituteActionsBuilder.newInstance(sm, false);
-  }
-
 
   public String getDescription() {
     return this.getProperty(SideTransformHintSubstituteActionsBuilder.DESCRIPTION);
@@ -159,6 +150,15 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
 
   public void insertVariable(SideTransformVariableDeclaration prev, SideTransformVariableDeclaration node) {
     this.insertChild(prev, SideTransformHintSubstituteActionsBuilder.VARIABLE, node);
+  }
+
+
+  public static SideTransformHintSubstituteActionsBuilder newInstance(SModel sm, boolean init) {
+    return (SideTransformHintSubstituteActionsBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SideTransformHintSubstituteActionsBuilder newInstance(SModel sm) {
+    return SideTransformHintSubstituteActionsBuilder.newInstance(sm, false);
   }
 
 }
