@@ -243,6 +243,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     String role = node.getRole_();
     if (role == null) return false;
     LinkDeclaration link = node.getParent().getLinkDeclaration(role);
+    if (link == null) return false;
     return link.getSourceCardinality() == Cardinality._0__1 || link.getSourceCardinality() == Cardinality._1;
   }
 }
