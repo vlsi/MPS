@@ -55,7 +55,7 @@ public class ShowModuleRepository_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ModuleRepository_Tool tool = this.project.getPluginManager().getTool(ModuleRepository_Tool.class);
+      ModuleRepository_Tool tool = ShowModuleRepository_Action.this.project.getPluginManager().getTool(ModuleRepository_Tool.class);
       assert tool != null;
       tool.openTool(true);
     } catch (Throwable t) {

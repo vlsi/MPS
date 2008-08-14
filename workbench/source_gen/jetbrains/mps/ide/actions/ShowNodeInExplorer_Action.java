@@ -67,8 +67,8 @@ public class ShowNodeInExplorer_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      NodeExplorer_Tool tool = this.project.getPluginManager().getTool(NodeExplorer_Tool.class);
-      tool.getNodeExplorer().showNode(this.node, this.project);
+      NodeExplorer_Tool tool = ShowNodeInExplorer_Action.this.project.getPluginManager().getTool(NodeExplorer_Tool.class);
+      tool.getNodeExplorer().showNode(ShowNodeInExplorer_Action.this.node, ShowNodeInExplorer_Action.this.project);
       tool.openToolLater(true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowNodeInExplorer", t);

@@ -64,9 +64,9 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      SModel memory = this.modelDescriptor.getSModel();
-      SModel disk = ModelPersistence.readModel(this.modelDescriptor.getModelFile());
-      new ModelDifferenceDialog(this.frame, disk, memory, "Model Difference").showDialog();
+      SModel memory = ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.getSModel();
+      SModel disk = ModelPersistence.readModel(ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.getModelFile());
+      new ModelDifferenceDialog(ShowDifferencesWithModelOnDisk_Action.this.frame, disk, memory, "Model Difference").showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowDifferencesWithModelOnDisk", t);
     }

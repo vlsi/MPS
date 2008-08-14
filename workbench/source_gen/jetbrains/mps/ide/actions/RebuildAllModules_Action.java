@@ -64,7 +64,7 @@ public class RebuildAllModules_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ProgressManager.getInstance().run(new Task.Modal(this.project, "Rebuilding", true) {
+      ProgressManager.getInstance().run(new Task.Modal(RebuildAllModules_Action.this.project, "Rebuilding", true) {
 
         public void run(@NotNull() final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {

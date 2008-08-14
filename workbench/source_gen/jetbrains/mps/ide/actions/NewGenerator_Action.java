@@ -77,8 +77,8 @@ public class NewGenerator_Action extends GeneratedAction {
     try {
       ActionEventData data = new ActionEventData(event);
       final Language language = (Language) data.getModule();
-      final Frame localFrame = this.frame;
-      final IOperationContext localContext = this.context;
+      final Frame localFrame = NewGenerator_Action.this.frame;
+      final IOperationContext localContext = NewGenerator_Action.this.context;
       final NewGeneratorDialog[] dialog = new NewGeneratorDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {
 

@@ -55,7 +55,7 @@ public class SaveModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      this.model.save();
+      SaveModel_Action.this.model.save();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "SaveModel", t);
     }

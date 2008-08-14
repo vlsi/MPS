@@ -76,7 +76,7 @@ public class RebuildModule_Action extends GeneratedAction {
       ActionEventData data = new ActionEventData(event);
       final IModule module = data.getModule();
       final ModuleMaker maker = new ModuleMaker();
-      ProgressManager.getInstance().run(new Task.Modal(this.project, "Rebuilding", true) {
+      ProgressManager.getInstance().run(new Task.Modal(RebuildModule_Action.this.project, "Rebuilding", true) {
 
         public void run(@NotNull() final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {

@@ -64,7 +64,7 @@ public class CleanAllModules_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ProgressManager.getInstance().run(new Task.Modal(this.project, "Cleaning", true) {
+      ProgressManager.getInstance().run(new Task.Modal(CleanAllModules_Action.this.project, "Cleaning", true) {
 
         public void run(@NotNull() final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {

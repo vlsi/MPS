@@ -62,7 +62,7 @@ public class AddMissingImports_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      new MissingDependenciesFixer(this.context, this.modelDescriptor).fix();
+      new MissingDependenciesFixer(AddMissingImports_Action.this.context, AddMissingImports_Action.this.modelDescriptor).fix();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "AddMissingImports", t);
     }

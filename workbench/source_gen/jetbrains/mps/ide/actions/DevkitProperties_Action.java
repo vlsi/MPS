@@ -63,7 +63,7 @@ public class DevkitProperties_Action extends GeneratedAction {
     try {
       ActionEventData data = new ActionEventData(event);
       final DevKit devkit = data.getDevKit();
-      final IOperationContext localContext = this.context;
+      final IOperationContext localContext = DevkitProperties_Action.this.context;
       final DevKitPropertiesDialog[] dialog = new DevKitPropertiesDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {
 

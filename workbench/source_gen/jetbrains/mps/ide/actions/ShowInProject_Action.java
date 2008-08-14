@@ -64,8 +64,8 @@ public class ShowInProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ProjectPane pane = this.context.getComponent(ProjectPane.class);
-      pane.selectNode(this.node, this.context);
+      ProjectPane pane = ShowInProject_Action.this.context.getComponent(ProjectPane.class);
+      pane.selectNode(ShowInProject_Action.this.node, ShowInProject_Action.this.context);
       pane.getTree().requestFocus();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowInProject", t);

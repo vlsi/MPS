@@ -70,7 +70,7 @@ public class LanguageProperties_Action extends GeneratedAction {
     try {
       ActionEventData data = new ActionEventData(event);
       final Language language = (Language) data.getModule();
-      final IOperationContext localContext = this.context;
+      final IOperationContext localContext = LanguageProperties_Action.this.context;
       final LanguagePropertiesDialog[] dialog = new LanguagePropertiesDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {
 

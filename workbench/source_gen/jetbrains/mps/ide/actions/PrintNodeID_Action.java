@@ -55,7 +55,7 @@ public class PrintNodeID_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      System.out.println("ID = " + this.node.getId());
+      System.out.println("ID = " + PrintNodeID_Action.this.node.getId());
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "PrintNodeID", t);
     }

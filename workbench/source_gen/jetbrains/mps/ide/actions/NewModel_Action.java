@@ -72,10 +72,10 @@ public class NewModel_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final NewModelDialog[] dialog = new NewModelDialog[1];
-      final IOperationContext localContext = this.context;
+      final IOperationContext localContext = NewModel_Action.this.context;
       final IModule localModule = (localContext.getModule() != null ?
         localContext.getModule() :
-        this.module
+        NewModel_Action.this.module
       );
       ModelAccess.instance().runReadAction(new Runnable() {
 
@@ -86,7 +86,7 @@ public class NewModel_Action extends GeneratedAction {
       });
       dialog[0].showDialog();
       SModelDescriptor modelDescriptor = dialog[0].getResult();
-      this.project.getComponentSafe(ProjectPane.class).selectModel(modelDescriptor);
+      NewModel_Action.this.project.getComponentSafe(ProjectPane.class).selectModel(modelDescriptor);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "NewModel", t);
     }

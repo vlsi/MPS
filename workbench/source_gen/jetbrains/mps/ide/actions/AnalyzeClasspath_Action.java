@@ -62,9 +62,9 @@ public class AnalyzeClasspath_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ClassPathViewerTool tool = this.context.getComponent(ClassPathViewerTool.class);
+      ClassPathViewerTool tool = AnalyzeClasspath_Action.this.context.getComponent(ClassPathViewerTool.class);
       tool.openToolLater(true);
-      tool.analyzeModule(this.module);
+      tool.analyzeModule(AnalyzeClasspath_Action.this.module);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "AnalyzeClasspath", t);
     }

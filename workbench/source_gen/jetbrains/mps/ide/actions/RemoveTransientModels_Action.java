@@ -59,8 +59,8 @@ public class RemoveTransientModels_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      this.project.getComponent(MessagesViewTool.class).clear();
-      IModule module = this.project.getComponentSafe(TransientModelsModule.class);
+      RemoveTransientModels_Action.this.project.getComponent(MessagesViewTool.class).clear();
+      IModule module = RemoveTransientModels_Action.this.project.getComponentSafe(TransientModelsModule.class);
       SModelRepository.getInstance().unRegisterModelDescriptors(module);
       SModelRepository.getInstance().removeUnusedDescriptors();
       System.gc();

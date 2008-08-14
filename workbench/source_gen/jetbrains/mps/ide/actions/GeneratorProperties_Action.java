@@ -69,7 +69,7 @@ public class GeneratorProperties_Action extends GeneratedAction {
     try {
       ActionEventData data = new ActionEventData(event);
       final Generator generator = (Generator) data.getModule();
-      GeneratorPropertiesDialog dialog = new GeneratorPropertiesDialog(this.project, generator);
+      GeneratorPropertiesDialog dialog = new GeneratorPropertiesDialog(GeneratorProperties_Action.this.project, generator);
       dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GeneratorProperties", t);

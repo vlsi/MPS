@@ -35,11 +35,11 @@ public class RemoveModuleFromProject_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    IModule module = this.context.getModule();
+    IModule module = RemoveModuleFromProject_Action.this.context.getModule();
     if (module == null) {
       return false;
     }
-    return this.project.isProjectModule(module);
+    return RemoveModuleFromProject_Action.this.project.isProjectModule(module);
   }
 
   public void doUpdate(@NotNull()AnActionEvent event) {
@@ -76,13 +76,13 @@ public class RemoveModuleFromProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      IModule module = this.context.getModule();
+      IModule module = RemoveModuleFromProject_Action.this.context.getModule();
       if (module instanceof Language) {
-        this.project.removeProjectLanguage((Language) module);
+        RemoveModuleFromProject_Action.this.project.removeProjectLanguage((Language) module);
       } else if (module instanceof Solution) {
-        this.project.removeProjectSolution((Solution) module);
+        RemoveModuleFromProject_Action.this.project.removeProjectSolution((Solution) module);
       } else if (module instanceof DevKit) {
-        this.project.removeProjectDevKit((DevKit) module);
+        RemoveModuleFromProject_Action.this.project.removeProjectDevKit((DevKit) module);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RemoveModuleFromProject", t);

@@ -76,10 +76,10 @@ public class CleanProject_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final Set<IModule> modulesToBuild = new LinkedHashSet<IModule>();
-      modulesToBuild.addAll(this.project.getProjectSolutions());
-      modulesToBuild.addAll(this.project.getProjectLanguages());
-      modulesToBuild.addAll(this.project.getProjectDevKits());
-      ProgressManager.getInstance().run(new Task.Modal(this.ideaProject, "Cleaning", true) {
+      modulesToBuild.addAll(CleanProject_Action.this.project.getProjectSolutions());
+      modulesToBuild.addAll(CleanProject_Action.this.project.getProjectLanguages());
+      modulesToBuild.addAll(CleanProject_Action.this.project.getProjectDevKits());
+      ProgressManager.getInstance().run(new Task.Modal(CleanProject_Action.this.ideaProject, "Cleaning", true) {
 
         public void run(@NotNull() final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {

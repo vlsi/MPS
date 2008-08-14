@@ -55,7 +55,7 @@ public class ShowModelRepository_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ModelRepository_Tool tool = this.project.getPluginManager().getTool(ModelRepository_Tool.class);
+      ModelRepository_Tool tool = ShowModelRepository_Action.this.project.getPluginManager().getTool(ModelRepository_Tool.class);
       assert tool != null;
       tool.openTool(true);
     } catch (Throwable t) {

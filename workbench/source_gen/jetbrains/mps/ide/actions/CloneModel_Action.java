@@ -70,7 +70,7 @@ public class CloneModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      CloneModelDialog dialog = new CloneModelDialog(this.model, this.context);
+      CloneModelDialog dialog = new CloneModelDialog(CloneModel_Action.this.model, CloneModel_Action.this.context);
       dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CloneModel", t);

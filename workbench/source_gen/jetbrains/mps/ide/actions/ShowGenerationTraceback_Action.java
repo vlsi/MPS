@@ -42,12 +42,12 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
   public void doUpdate(@NotNull()AnActionEvent event) {
     try {
       {
-        if (ListSequence.fromList(this.nodes).count() != 1) {
-          this.disable(event.getPresentation());
+        if (ListSequence.fromList(ShowGenerationTraceback_Action.this.nodes).count() != 1) {
+          ShowGenerationTraceback_Action.this.disable(event.getPresentation());
         }
-        GenerationTracer tracer = this.context.getComponent(GenerationTracer.class);
+        GenerationTracer tracer = ShowGenerationTraceback_Action.this.context.getComponent(GenerationTracer.class);
         event.getPresentation().setVisible(tracer.hasTracingData());
-        event.getPresentation().setEnabled(tracer.hasTracebackData(SNodeOperations.getModel(this.node).getUID()));
+        event.getPresentation().setEnabled(tracer.hasTracebackData(SNodeOperations.getModel(ShowGenerationTraceback_Action.this.node).getUID()));
       }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "ShowGenerationTraceback", t);
@@ -105,9 +105,9 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      GenerationTracer tracer = this.context.getComponent(GenerationTracer.class);
-      if (!(tracer.showTracebackData(this.node))) {
-        JOptionPane.showMessageDialog(this.frame, "No tracing data available");
+      GenerationTracer tracer = ShowGenerationTraceback_Action.this.context.getComponent(GenerationTracer.class);
+      if (!(tracer.showTracebackData(ShowGenerationTraceback_Action.this.node))) {
+        JOptionPane.showMessageDialog(ShowGenerationTraceback_Action.this.frame, "No tracing data available");
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowGenerationTraceback", t);

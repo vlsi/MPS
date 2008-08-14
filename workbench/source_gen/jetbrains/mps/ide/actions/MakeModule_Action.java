@@ -75,7 +75,7 @@ public class MakeModule_Action extends GeneratedAction {
     try {
       ActionEventData data = new ActionEventData(event);
       final IModule m = data.getModule();
-      ProgressManager.getInstance().run(new Task.Modal(this.project, "Making...", true) {
+      ProgressManager.getInstance().run(new Task.Modal(MakeModule_Action.this.project, "Making...", true) {
 
         public void run(@NotNull() final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {

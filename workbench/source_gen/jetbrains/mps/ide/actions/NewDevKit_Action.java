@@ -62,8 +62,8 @@ public class NewDevKit_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      NewDevKitDialog dialog = new NewDevKitDialog(this.frame);
-      dialog.setProject(this.project);
+      NewDevKitDialog dialog = new NewDevKitDialog(NewDevKit_Action.this.frame);
+      dialog.setProject(NewDevKit_Action.this.project);
       dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "NewDevKit", t);

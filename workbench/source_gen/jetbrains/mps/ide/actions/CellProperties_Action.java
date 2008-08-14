@@ -62,7 +62,7 @@ public class CellProperties_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      new CellPropertiesWindow(this.cell, this.frame);
+      new CellPropertiesWindow(CellProperties_Action.this.cell, CellProperties_Action.this.frame);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CellProperties", t);
     }

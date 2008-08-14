@@ -78,8 +78,8 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.getConceptDeclaration(this.node)), this.context.getScope());
-      this.context.getComponent(MPSEditorOpener.class).openNode(conceptDeclaration.getNode());
+      AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.getConceptDeclaration(GoToConceptDeclaration_Action.this.node)), GoToConceptDeclaration_Action.this.context.getScope());
+      GoToConceptDeclaration_Action.this.context.getComponent(MPSEditorOpener.class).openNode(conceptDeclaration.getNode());
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToConceptDeclaration", t);
     }

@@ -434,6 +434,31 @@
         <link role="concept" targetNodeId="1.1205751982837" resolveInfo="IClassifier"/>
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877512821">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1218739994704">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218739994705">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218740027719">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218740029684">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression"
+                      id="1218740029337"/>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
+                      id="1218740030816">
+                  <link role="link" targetNodeId="1.1218736638915"/>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1218740025053">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1218740026012"/>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218740022715">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression"
+                    id="1218740021680"/>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
+                    id="1218740023674">
+                <link role="link" targetNodeId="1.1218736638915"/>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877512822">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.StaticConceptMethodCall"
                 id="1213877512823">

@@ -35,7 +35,7 @@ public class SolutionProperties_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    IModule module = this.context.getModule();
+    IModule module = SolutionProperties_Action.this.context.getModule();
     return module instanceof Solution;
   }
 
@@ -69,8 +69,8 @@ public class SolutionProperties_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      final IOperationContext localContext = this.context;
-      final Solution solution = (Solution) this.context.getModule();
+      final IOperationContext localContext = SolutionProperties_Action.this.context;
+      final Solution solution = (Solution) SolutionProperties_Action.this.context.getModule();
       final SolutionPropertiesDialog[] dialog = new SolutionPropertiesDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {
 

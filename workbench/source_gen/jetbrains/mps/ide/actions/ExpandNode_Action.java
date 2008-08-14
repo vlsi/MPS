@@ -59,7 +59,7 @@ public class ExpandNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ProjectPane pane = this.context.getComponent(ProjectPane.class);
+      ProjectPane pane = ExpandNode_Action.this.context.getComponent(ProjectPane.class);
       MPSTree tree = pane.getTree();
       TreePath path = tree.getSelectionPath();
       if (path == null) {

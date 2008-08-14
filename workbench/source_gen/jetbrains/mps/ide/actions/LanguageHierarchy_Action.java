@@ -81,7 +81,7 @@ public class LanguageHierarchy_Action extends GeneratedAction {
       ActionEventData data = new ActionEventData(event);
       Language language = (Language) data.getModule();
       MPSLanguageVirtualFile file = MPSLanguagesVirtualFileSystem.getInstance().getFileFor(language);
-      FileEditorManager editorManager = FileEditorManager.getInstance(this.project);
+      FileEditorManager editorManager = FileEditorManager.getInstance(LanguageHierarchy_Action.this.project);
       FileEditor[] res = editorManager.openFile(file, true);
       MPSLanguageEditor languageEditor = (MPSLanguageEditor) res[0];
       languageEditor.getComponent().requestFocus();

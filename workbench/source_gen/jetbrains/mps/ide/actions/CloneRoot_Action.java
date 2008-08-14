@@ -77,12 +77,12 @@ public class CloneRoot_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      for (SNode node : this.nodes) {
+      for (SNode node : CloneRoot_Action.this.nodes) {
         SNode root = SNodeOperations.getContainingRoot(node);
         SNode copy = SNodeOperations.copyNode(root);
         SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);
-        this.project.getComponentSafe(MPSEditorOpener.class).openNode(copy);
-        this.project.getComponentSafe(ProjectPane.class).selectNode(copy);
+        CloneRoot_Action.this.project.getComponentSafe(MPSEditorOpener.class).openNode(copy);
+        CloneRoot_Action.this.project.getComponentSafe(ProjectPane.class).selectNode(copy);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CloneRoot", t);

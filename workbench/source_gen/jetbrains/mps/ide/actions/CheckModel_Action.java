@@ -74,9 +74,9 @@ public class CheckModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      final IOperationContext context = this.operationContext;
-      final SModelDescriptor model = this.model;
-      ProgressManager.getInstance().run(new Task.Modal(this.project, "Checking", false) {
+      final IOperationContext context = CheckModel_Action.this.operationContext;
+      final SModelDescriptor model = CheckModel_Action.this.model;
+      ProgressManager.getInstance().run(new Task.Modal(CheckModel_Action.this.project, "Checking", false) {
 
         public void run(@NotNull()ProgressIndicator indicator) {
           indicator.setIndeterminate(true);

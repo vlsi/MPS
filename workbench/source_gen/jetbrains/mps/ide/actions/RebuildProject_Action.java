@@ -71,10 +71,10 @@ public class RebuildProject_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final Set<IModule> modules = new LinkedHashSet<IModule>();
-      modules.addAll(this.project.getProjectSolutions());
-      modules.addAll(this.project.getProjectLanguages());
-      modules.addAll(this.project.getProjectDevKits());
-      ProgressManager.getInstance().run(new Task.Modal(this.ideaProject, "Making", true) {
+      modules.addAll(RebuildProject_Action.this.project.getProjectSolutions());
+      modules.addAll(RebuildProject_Action.this.project.getProjectLanguages());
+      modules.addAll(RebuildProject_Action.this.project.getProjectDevKits());
+      ProgressManager.getInstance().run(new Task.Modal(RebuildProject_Action.this.ideaProject, "Making", true) {
 
         public void run(@NotNull() final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {

@@ -36,8 +36,8 @@ public class SetModuleFolder_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    IModule module = this.context.getModule();
-    return this.project.isProjectModule(module);
+    IModule module = SetModuleFolder_Action.this.context.getModule();
+    return SetModuleFolder_Action.this.project.isProjectModule(module);
   }
 
   public void doUpdate(@NotNull()AnActionEvent event) {
@@ -78,16 +78,16 @@ public class SetModuleFolder_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ProjectPane pane = this.context.getComponent(ProjectPane.class);
-      IModule module = this.context.getModule();
-      String oldFolder = this.project.getFolderFor(module);
-      String newFolder = JOptionPane.showInputDialog(this.frame, "Enter new folder", oldFolder);
+      ProjectPane pane = SetModuleFolder_Action.this.context.getComponent(ProjectPane.class);
+      IModule module = SetModuleFolder_Action.this.context.getModule();
+      String oldFolder = SetModuleFolder_Action.this.project.getFolderFor(module);
+      String newFolder = JOptionPane.showInputDialog(SetModuleFolder_Action.this.frame, "Enter new folder", oldFolder);
       if (newFolder != null) {
         if (newFolder.equals("")) {
           newFolder = null;
         }
         for (IModule m : pane.getSelectedModules()) {
-          this.project.setFolderFor(m, newFolder);
+          SetModuleFolder_Action.this.project.setFolderFor(m, newFolder);
         }
         pane.rebuild();
       }

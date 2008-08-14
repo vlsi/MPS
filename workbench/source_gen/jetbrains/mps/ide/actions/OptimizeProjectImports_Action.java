@@ -81,7 +81,7 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
         }
 
       });
-      new MessageDialog(this.frame, report[0]).showDialog();
+      new MessageDialog(OptimizeProjectImports_Action.this.frame, report[0]).showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "OptimizeProjectImports", t);
     }

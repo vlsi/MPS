@@ -32,7 +32,7 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return this.editor instanceof InspectorEditorComponent;
+    return ShowNodeInInspector_Action.this.editor instanceof InspectorEditorComponent;
   }
 
   public void doUpdate(@NotNull()AnActionEvent event) {
@@ -69,8 +69,8 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      InspectorEditorComponent inspector = (InspectorEditorComponent) this.editor;
-      inspector.inspectNode(this.node, inspector.getOperationContext());
+      InspectorEditorComponent inspector = (InspectorEditorComponent) ShowNodeInInspector_Action.this.editor;
+      inspector.inspectNode(ShowNodeInInspector_Action.this.node, inspector.getOperationContext());
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowNodeInInspector", t);
     }

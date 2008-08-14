@@ -66,8 +66,8 @@ public class TestNodePath_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      SNode root = SNodeOperations.getContainingRoot(this.node);
-      if (this.node != root.findChildByPath(root.getNodePath(this.node))) {
+      SNode root = SNodeOperations.getContainingRoot(TestNodePath_Action.this.node);
+      if (TestNodePath_Action.this.node != root.findChildByPath(root.getNodePath(TestNodePath_Action.this.node))) {
         Logger.getLogger("TestNode_Action").error("find child by path works improperly");
       }
     } catch (Throwable t) {

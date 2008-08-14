@@ -38,7 +38,7 @@ public class CleanModule_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    IModule m = this.context.getModule();
+    IModule m = CleanModule_Action.this.context.getModule();
     return m != null && m.isCompileInMPS();
   }
 
@@ -76,8 +76,8 @@ public class CleanModule_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      final IModule m = this.context.getModule();
-      ProgressManager.getInstance().run(new Task.Modal(this.project, "Cleaning", true) {
+      final IModule m = CleanModule_Action.this.context.getModule();
+      ProgressManager.getInstance().run(new Task.Modal(CleanModule_Action.this.project, "Cleaning", true) {
 
         public void run(@NotNull() final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {

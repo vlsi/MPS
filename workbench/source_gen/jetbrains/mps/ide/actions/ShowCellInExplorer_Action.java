@@ -64,7 +64,7 @@ public class ShowCellInExplorer_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      this.context.getComponent(CellExplorerView.class).showCell(this.cell);
+      ShowCellInExplorer_Action.this.context.getComponent(CellExplorerView.class).showCell(ShowCellInExplorer_Action.this.cell);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowCellInExplorer", t);
     }
