@@ -4,12 +4,9 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
-import com.intellij.ui.content.ContentManagerAdapter;
-import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -40,19 +37,6 @@ public class MigrationScriptsTool extends BaseProjectTool {
   public MigrationScriptsTool(Project project) {
     super(project, "Migration", -1, null, ToolWindowAnchor.BOTTOM, true);
 
-    StartupManager.getInstance(project).registerPostStartupActivity(new Runnable() {
-      public void run() {
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            getContentManager().addContentManagerListener(new ContentManagerAdapter() {
-              public void contentRemoved(ContentManagerEvent event) {
-                myViews.remove(event.getIndex());
-              }
-            });
-          }
-        });
-      }
-    });
   }
 
   /*package*/  void closeTab(int index) {
@@ -64,7 +48,9 @@ public class MigrationScriptsTool extends BaseProjectTool {
   }
 
   /*package*/ void closeTab(MigrationScriptsView migrationScriptsView) {
-    closeTab(myViews.indexOf(migrationScriptsView));
+    int index = myViews.indexOf(migrationScriptsView);
+    closeTab(index);
+    myViews.remove(index);
   }
 
 

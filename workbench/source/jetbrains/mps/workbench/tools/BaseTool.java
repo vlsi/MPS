@@ -186,10 +186,11 @@ public abstract class BaseTool {
     //if we create a new project, tool windows are created for it automatically
     ToolWindow toolWindow = myWindowManager.getToolWindow(myId);
     if (toolWindow == null) toolWindow = myWindowManager.registerToolWindow(myId, myCanCloseContent, myAnchor);
+    toolWindow.setIcon(myIcon);
 
     if (myComponent == null) myComponent = getComponent();
     if (myComponent != null) {
-      addContent(myComponent, null, myIcon, false);
+      addContent(myComponent, null, null, false);
     }
 
     toolWindow.setToHideOnEmptyContent(true);

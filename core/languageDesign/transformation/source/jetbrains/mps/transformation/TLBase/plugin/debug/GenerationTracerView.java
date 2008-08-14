@@ -1,14 +1,13 @@
 package jetbrains.mps.transformation.TLBase.plugin.debug;
 
 import jetbrains.mps.ide.MPSToolBar;
-import jetbrains.mps.transformation.TLBase.plugin.debug.icons.Icons;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.transformation.TLBase.plugin.debug.icons.Icons;
 
 import javax.swing.*;
 import javax.swing.JToggleButton.ToggleButtonModel;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 
 public abstract class GenerationTracerView {
@@ -40,11 +39,12 @@ public abstract class GenerationTracerView {
     return Icons.getIcon(myRootTracerNode);
   }
 
-  public Component getComponent() {
+  public JComponent getComponent() {
     return myPanel;
   }
 
   public abstract void close();
+
   public abstract void switchAutoscrollToSourceMode();
 
   public void setAutoscrollToSource(boolean b) {

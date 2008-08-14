@@ -24,6 +24,7 @@ import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
 import jetbrains.mps.nodeEditor.cellActions.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
@@ -33,10 +34,6 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
-import jetbrains.mps.nodeEditor.NodeEditorActions.SelectUp;
-import jetbrains.mps.nodeEditor.NodeEditorActions.SelectDown;
-import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
-import jetbrains.mps.nodeEditor.NodeEditorActions.Complete;
 import jetbrains.mps.nodeEditor.search.SearchPanel;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -238,7 +235,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     // --- init action map --
     myActionMap = new HashMap<CellActionType, EditorCellAction>();
     // -- navigation
-    myActionMap.put(CellActionType.LEFT, new NodeEditorActions.MoveLeft());           
+    myActionMap.put(CellActionType.LEFT, new NodeEditorActions.MoveLeft());
     myActionMap.put(CellActionType.RIGHT, new NodeEditorActions.MoveRight());
     myActionMap.put(CellActionType.UP, new NodeEditorActions.MoveUp());
     myActionMap.put(CellActionType.DOWN, new NodeEditorActions.MoveDown());
@@ -582,7 +579,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         while (node != null) {
           final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(node);
           if (herror != null) {
-            return herror.reportError();                
+            return herror.reportError();
           }
           node = node.getParent();
         }
@@ -1047,7 +1044,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if ((keyEvent.getKeyCode() == KeyEvent.VK_DELETE || keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE)
       && keyEvent.getModifiers() == 0) {
 
-      EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell()  ;
+      EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
       if (selectedCell != null && selectedCell.isBigCell()) {
         return CellActionType.DELETE;
       }
@@ -2029,8 +2026,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       EditorCell selectedCell = getSelectedCell();
       if (selectedCell != null) {
         return selectedCell.getSNode();
-      }
-      else return getRootCell().getSNode();
+      } else return getRootCell().getSNode();
     } else if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) {
       return getSelectedCell();
     } else if (dataId.equals(MPSDataKeys.SNODES.getName())) {
@@ -2038,7 +2034,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     } else if (dataId.equals(MPSDataKeys.MODEL_DESCRIPTOR.getName())) {
       return ModelAccess.instance().runReadAction(new Computable() {
         public Object compute() {
-          return getRootCell().getSNode().getModel().getModelDescriptor();
+          SModel model = getRootCell().getSNode().getModel();
+          if (model == null) return null; //removed model
+          return model.getModelDescriptor();
         }
       });
     } else if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
@@ -2290,7 +2288,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       public void run() {
         doCommitAll(getRootCell());
       }
-    });        
+    });
   }
 
   private void doCommitAll(EditorCell current) {

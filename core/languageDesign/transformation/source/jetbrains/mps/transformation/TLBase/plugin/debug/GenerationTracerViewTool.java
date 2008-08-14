@@ -3,31 +3,29 @@ package jetbrains.mps.transformation.TLBase.plugin.debug;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.ui.content.Content;
+import com.intellij.ui.content.ContentManager;
+import com.intellij.ui.content.ContentManagerAdapter;
+import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
-import jetbrains.mps.workbench.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 
-import javax.swing.*;
-import java.awt.BorderLayout;
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GenerationTracerViewTool extends BaseProjectTool {
-  private JPanel myPanel;
-  private JComponent myNoTabsComponent;
-  private JTabbedPane myTabbedPane;
+  private NoTabsComponent myNoTabsComponent = new NoTabsComponent();
 
   private List<GenerationTracerView> myTracerViews = new ArrayList<GenerationTracerView>();
-  private boolean myTracingDataIsAvailable;
   private boolean myAutoscrollToSource;
 
 
@@ -38,97 +36,47 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   public void initComponent() {
     super.initComponent();
 
-    myPanel = new JPanel(new BorderLayout());
-    myTabbedPane = new JTabbedPane(JTabbedPane.BOTTOM);
-    myTabbedPane.addMouseListener(new TabPaneMouseListener());
-    updateContentPanel();
-
     StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
       public void run() {
         setTracingDataIsAvailable(getMPSProject().getComponentSafe(GenerationTracer.class).hasTracingData());
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            showNoTabsComponent();
+            getContentManager().addContentManagerListener(new ContentManagerAdapter() {
+              public void contentRemoved(ContentManagerEvent event) {
+                if (getContentManager().getContentCount() == 0) {
+                  showNoTabsComponent();
+                }
+              }
+            });
+          }
+        });
       }
     });
   }
 
-  private JComponent createNoTabsComponent() {
-    JPanel panel = new JPanel();
-    panel.setLayout(new GridBagLayout());
-
-    JPanel labelsPanel = new JPanel();
-    labelsPanel.setLayout(new BoxLayout(labelsPanel, BoxLayout.Y_AXIS));
-    String[] strings;
-    if (myTracingDataIsAvailable) {
-      strings = new String[]{"Tracing data is available.", "To view trace/traceback data use generated node's popup menu."};
-    } else {
-      strings = new String[]{"No data available.", "To use the 'generation tracer' generate model with the 'save transient models' option."};
-    }
-
-    for (String string : strings) {
-      JLabel label = new JLabel(string);
-      label.setAlignmentX(Component.CENTER_ALIGNMENT);
-      labelsPanel.add(label);
-    }
-
-    GridBagConstraints c = new GridBagConstraints();
-    c.anchor = GridBagConstraints.CENTER;
-    panel.add(labelsPanel, c);
-    return panel;
-  }
-
-  public JComponent getComponent() {
-    return myPanel;
+  private void showNoTabsComponent() {
+    ContentManager manager = getContentManager();
+    manager.removeAllContents(true);
+    addContent(myNoTabsComponent, "", null, false);
   }
 
   private void closeTab(int index) {
-    myTabbedPane.remove(index);
+    ContentManager manager = getContentManager();
+    //noinspection ConstantConditions
+    manager.removeContent(manager.getContent(index), true);
     myTracerViews.remove(index);
-    updateContentPanel();
-  }
-
-  private void closeAllBut(int tabIndex) {
-    int i = myTracerViews.size() - 1;
-    for (; i > tabIndex; i--) {
-      closeTab(tabIndex + 1);
-    }
-    for (i = 0; i < tabIndex; i++) {
-      closeTab(tabIndex - 1 - i);
-    }
   }
 
   public void closeAll() {
     myTracerViews.clear();
-    myTabbedPane.removeAll();
-    updateContentPanel();
-  }
-
-  private void updateContentPanel() {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        if (myNoTabsComponent != null) {
-          myPanel.remove(myNoTabsComponent);
-          myNoTabsComponent = null;
-        }
-
-        if (myTracerViews.isEmpty()) {
-          myPanel.remove(myTabbedPane);
-          myNoTabsComponent = createNoTabsComponent();
-          myPanel.add(myNoTabsComponent, BorderLayout.CENTER);
-        } else {
-          myPanel.add(myTabbedPane, BorderLayout.CENTER);
-        }
-
-        myPanel.revalidate();
-        myPanel.repaint();
-      }
-    });
-  }
-
-  private int currentTabIndex() {
-    return myTabbedPane.getSelectedIndex();
+    getContentManager().removeAllContents(true);
   }
 
   public void selectIndex(int index) {
-    myTabbedPane.setSelectedIndex(index);
+    ContentManager manager = getContentManager();
+    //noinspection ConstantConditions
+    manager.setSelectedContent(manager.getContent(index));
   }
 
   public int getTabIndex(Kind kind, SNode node) {
@@ -145,8 +93,6 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   }
 
   public void showTraceView(TracerNode tracerNode) {
-    myTracingDataIsAvailable = true;
-
     GenerationTracerView tracerView = new GenerationTracerView(tracerNode, getMPSProject()) {
       public void close() {
         GenerationTracerViewTool.this.closeTab(myTracerViews.indexOf(this));
@@ -163,70 +109,49 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     tracerView.setAutoscrollToSource(myAutoscrollToSource);
     myTracerViews.add(tracerView);
 
-    myTabbedPane.addTab("", tracerView.getComponent());
-    myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
+    Content content = addContent(tracerView.getComponent(), tracerView.getCaption(), tracerView.getIcon(), true);
+    getContentManager().setSelectedContent(content);
 
-    myTabbedPane.setTitleAt(currentTabIndex(), tracerView.getCaption());
-    myTabbedPane.setIconAt(currentTabIndex(), tracerView.getIcon());
+    Content noTabsContent = getContentManager().getContent(myNoTabsComponent);
+    if (noTabsContent != null) {
+      getContentManager().removeContent(noTabsContent, true);
+    }
 
-    updateContentPanel();
     openToolLater(true);
   }
 
   public void setTracingDataIsAvailable(boolean b) {
-    myTracingDataIsAvailable = b;
-    updateContentPanel();
+    myNoTabsComponent.setDataIsAvailable(b);
   }
 
-  // -------------------
-  // -------------------
-  // -------------------
+  public static class NoTabsComponent extends JPanel {
+    JPanel myLabelsPanel = new JPanel();
 
-  private class TabPaneMouseListener extends MouseAdapter {
-    public void mousePressed(MouseEvent e) {
-      if (e.isPopupTrigger()) {
-        handlePopup(e);
-      }
+    public NoTabsComponent() {
+      setLayout(new GridBagLayout());
+
+      myLabelsPanel.setLayout(new BoxLayout(myLabelsPanel, BoxLayout.Y_AXIS));
+
+      GridBagConstraints c = new GridBagConstraints();
+      c.anchor = GridBagConstraints.CENTER;
+      add(myLabelsPanel, c);
     }
 
-    public void mouseReleased(MouseEvent e) {
-      if (e.isPopupTrigger()) {
-        handlePopup(e);
-      }
-    }
+    public void setDataIsAvailable(boolean state) {
+      myLabelsPanel.removeAll();
 
-    private void handlePopup(MouseEvent e) {
-      final int index = myTabbedPane.indexAtLocation(e.getX(), e.getY());
-      if (index != -1) {
-        new TabPanePopupMenu(index).show(myTabbedPane, e.getX(), e.getY());
+      String[] strings;
+      if (state) {
+        strings = new String[]{"Tracing data is available.", "To view trace/traceback data use generated node's popup menu."};
+      } else {
+        strings = new String[]{"No data available.", "To use the 'generation tracer' generate model with the 'save transient models' option."};
+      }
+
+      for (String string : strings) {
+        JLabel label = new JLabel(string);
+        label.setAlignmentX(Component.CENTER_ALIGNMENT);
+        myLabelsPanel.add(label);
       }
     }
   }
-
-  // -------------------
-  // -------------------
-  // -------------------
-
-  private class TabPanePopupMenu extends JPopupMenu {
-    TabPanePopupMenu(final int tabIndex) {
-      add(new AbstractActionWithEmptyIcon("Close") {
-        public void actionPerformed(ActionEvent e) {
-          closeTab(tabIndex);
-        }
-      });
-
-      add(new AbstractActionWithEmptyIcon("Close all but this") {
-        public void actionPerformed(ActionEvent e) {
-          closeAllBut(tabIndex);
-        }
-      });
-
-      add(new AbstractActionWithEmptyIcon("Close all") {
-        public void actionPerformed(ActionEvent e) {
-          closeAll();
-        }
-      });
-    }
-  }
-
 }

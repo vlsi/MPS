@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.messages;
 
-import com.intellij.ide.SelectInManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
@@ -72,7 +71,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private JList myList = new JList(myModel);
   private MessageViewLoggingHandler myLoggingHandler;
 
-  public MessagesViewTool(Project project, SelectInManager selectInManager) {
+  public MessagesViewTool(Project project) {
     super(project, "MPS Messages", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
@@ -102,7 +101,6 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
 
 //    ToolTipManager.sharedInstance().registerComponent(myList);
-
 
     myList.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
