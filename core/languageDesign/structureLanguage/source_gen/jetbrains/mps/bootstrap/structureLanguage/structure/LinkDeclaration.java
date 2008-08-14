@@ -13,7 +13,6 @@ public class LinkDeclaration extends BaseConcept {
   public static String ROLE = "role";
   public static String META_CLASS = "metaClass";
   public static String SOURCE_CARDINALITY = "sourceCardinality";
-  public static String TARGET_CARDINALITY = "targetCardinality";
   public static String SPECIALIZED_LINK = "specializedLink";
   public static String TARGET = "target";
 
@@ -45,15 +44,6 @@ public class LinkDeclaration extends BaseConcept {
 
   public void setSourceCardinality(Cardinality value) {
     super.setProperty(LinkDeclaration.SOURCE_CARDINALITY, value.getValueAsString());
-  }
-
-  public Cardinality getTargetCardinality() {
-    String value = super.getProperty(LinkDeclaration.TARGET_CARDINALITY);
-    return Cardinality.parseValue(value);
-  }
-
-  public void setTargetCardinality(Cardinality value) {
-    super.setProperty(LinkDeclaration.TARGET_CARDINALITY, value.getValueAsString());
   }
 
   public LinkDeclaration getSpecializedLink() {

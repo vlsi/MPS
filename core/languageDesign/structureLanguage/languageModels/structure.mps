@@ -64,11 +64,6 @@
       <property name="propertyType" value="string" />
       <link role="dataType" targetNodeId="1084197782722" resolveInfo="Cardinality" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1071599937832">
-      <property name="name" value="targetCardinality" />
-      <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="1084197782722" resolveInfo="Cardinality" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1071599698500">
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="specializedLink" />
