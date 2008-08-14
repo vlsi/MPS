@@ -1,14 +1,12 @@
 package jetbrains.mps.project;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Frame;
 import java.util.Set;
-
-import com.intellij.openapi.util.Computable;
 
 /**
 
@@ -43,9 +41,10 @@ public class ModuleContext extends StandaloneMPSContext {
 
   public MPSProject getMPSProject() {
     return myProject;
-  }                                                                        
+  }
 
   public IScope getScope() {
+    if (getModule() == null) return null;
     return getModule().getScope();
   }
 
@@ -74,7 +73,7 @@ public class ModuleContext extends StandaloneMPSContext {
   public static ModuleContext create(@NotNull final SModelDescriptor model, MPSProject project, boolean askIfMany) {
 
     if (askIfMany && (ModelAccess.instance().canRead() || ModelAccess.instance().canWrite())) {
-      LOG.errorWithTrace("Invocation of operations which might show dialog with lock held");    
+      LOG.errorWithTrace("Invocation of operations which might show dialog with lock held");
     }
 
     Set<IModule> owningModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
