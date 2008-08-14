@@ -5,9 +5,6 @@ package jetbrains.mps.uiLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.tabbedEditor.BaseTabbedEditor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.NodeEditorComponent;
-import jetbrains.mps.ide.tabbedEditor.tabs.SimpleLazyTab;
 import jetbrains.mps.plugins.pluginparts.tabbedEditor.BaseSingleTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -23,11 +20,6 @@ public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {
 
   public ComponentEditor_TabbedEditor(IOperationContext operationContext, SNode node) {
     super(operationContext, node);
-    EditorComponent editor = new NodeEditorComponent(operationContext);
-    editor.editNode(node, operationContext);
-    /*
-      this.addTab(new SimpleLazyTab("main", editor));
-    */
     this.addTab(new ComponentEditor_TabbedEditor.Component_Tab(this, node, node.getAdapter().getClass()));
     this.addTab(new ComponentEditor_TabbedEditor.Controller_Tab(this, node, node.getAdapter().getClass()));
   }
