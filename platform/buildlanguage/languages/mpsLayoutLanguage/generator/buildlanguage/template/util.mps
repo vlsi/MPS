@@ -22,6 +22,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.propertylanguage.constraints" version="0" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.build.moduleDependencyLanguage.structure" version="-1" />
