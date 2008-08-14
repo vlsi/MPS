@@ -78,10 +78,11 @@ public class QueriesGenerated {
 
       };
       Iterable queryResult = (Iterable)calc.calculate();
-      assert queryResult != null;
-      for(Object item : queryResult) {
-        List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-        result.addAll(defaultActions);
+      if (queryResult != null) {
+        for(Object item : queryResult) {
+          List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+          result.addAll(defaultActions);
+        }
       }
     }
     return result;
