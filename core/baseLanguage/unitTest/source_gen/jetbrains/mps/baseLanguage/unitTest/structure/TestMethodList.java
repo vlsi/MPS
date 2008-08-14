@@ -4,11 +4,11 @@ package jetbrains.mps.baseLanguage.unitTest.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class TestMethodList extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList";
@@ -17,15 +17,6 @@ public class TestMethodList extends BaseConcept {
   public TestMethodList(SNode node) {
     super(node);
   }
-
-  public static TestMethodList newInstance(SModel sm, boolean init) {
-    return (TestMethodList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TestMethodList newInstance(SModel sm) {
-    return TestMethodList.newInstance(sm, false);
-  }
-
 
   public int getTestMethodsCount() {
     return this.getChildCount(TestMethodList.TEST_METHOD);
@@ -45,6 +36,15 @@ public class TestMethodList extends BaseConcept {
 
   public void insertTestMethod(TestMethod prev, TestMethod node) {
     this.insertChild(prev, TestMethodList.TEST_METHOD, node);
+  }
+
+
+  public static TestMethodList newInstance(SModel sm, boolean init) {
+    return (TestMethodList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TestMethodList newInstance(SModel sm) {
+    return TestMethodList.newInstance(sm, false);
   }
 
 }

@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.unitTest.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class AssertThrows extends Statement implements MessageHolder {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows";
@@ -21,15 +21,6 @@ public class AssertThrows extends Statement implements MessageHolder {
   public AssertThrows(SNode node) {
     super(node);
   }
-
-  public static AssertThrows newInstance(SModel sm, boolean init) {
-    return (AssertThrows)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AssertThrows newInstance(SModel sm) {
-    return AssertThrows.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(AssertThrows.SHORT_DESCRIPTION);
@@ -77,6 +68,15 @@ public class AssertThrows extends Statement implements MessageHolder {
 
   public void setMessage(Message node) {
     super.setChild(AssertThrows.MESSAGE, node);
+  }
+
+
+  public static AssertThrows newInstance(SModel sm, boolean init) {
+    return (AssertThrows)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AssertThrows newInstance(SModel sm) {
+    return AssertThrows.newInstance(sm, false);
   }
 
 }

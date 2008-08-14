@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.unitTest.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class Message extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.Message";
@@ -17,21 +17,21 @@ public class Message extends BaseConcept {
     super(node);
   }
 
-  public static Message newInstance(SModel sm, boolean init) {
-    return (Message)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.Message", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Message newInstance(SModel sm) {
-    return Message.newInstance(sm, false);
-  }
-
-
   public Expression getMessage() {
     return (Expression)this.getChild(Message.MESSAGE);
   }
 
   public void setMessage(Expression node) {
     super.setChild(Message.MESSAGE, node);
+  }
+
+
+  public static Message newInstance(SModel sm, boolean init) {
+    return (Message)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.Message", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Message newInstance(SModel sm) {
+    return Message.newInstance(sm, false);
   }
 
 }

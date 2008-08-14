@@ -16,17 +16,6 @@ public class TestRunner extends BaseTestRunner {
   public TestRunner() {
   }
 
-  public static void main(String[] argv) {
-    TestRunner runner = new TestRunner();
-    try {
-      runner.start(argv);
-    } catch (Throwable t) {
-      t.printStackTrace(System.err);
-      System.exit(1);
-    }
-  }
-
-
   public void start(String[] argv) throws Throwable {
     List<Test> tests = ListSequence.<Test>fromArray();
     for(int i = 0 ; i < argv.length ; i = i + 1) {
@@ -66,6 +55,17 @@ public class TestRunner extends BaseTestRunner {
   }
 
   public void runFailed(String message) {
+  }
+
+
+  public static void main(String[] argv) {
+    TestRunner runner = new TestRunner();
+    try {
+      runner.start(argv);
+    } catch (Throwable t) {
+      t.printStackTrace(System.err);
+      System.exit(1);
+    }
   }
 
 }

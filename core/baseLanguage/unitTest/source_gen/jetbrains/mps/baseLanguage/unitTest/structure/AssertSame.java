@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.unitTest.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class AssertSame extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertSame";
@@ -17,15 +17,6 @@ public class AssertSame extends Statement {
   public AssertSame(SNode node) {
     super(node);
   }
-
-  public static AssertSame newInstance(SModel sm, boolean init) {
-    return (AssertSame)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertSame", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AssertSame newInstance(SModel sm) {
-    return AssertSame.newInstance(sm, false);
-  }
-
 
   public Expression getExpected() {
     return (Expression)this.getChild(AssertSame.EXPECTED);
@@ -41,6 +32,15 @@ public class AssertSame extends Statement {
 
   public void setActual(Expression node) {
     super.setChild(AssertSame.ACTUAL, node);
+  }
+
+
+  public static AssertSame newInstance(SModel sm, boolean init) {
+    return (AssertSame)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertSame", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AssertSame newInstance(SModel sm) {
+    return AssertSame.newInstance(sm, false);
   }
 
 }

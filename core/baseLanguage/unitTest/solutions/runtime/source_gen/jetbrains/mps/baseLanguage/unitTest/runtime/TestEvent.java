@@ -37,47 +37,6 @@ public class TestEvent {
   private TestEvent() {
   }
 
-  public static String isTestEvent(String messageString) {
-    String token = null;
-    for(String expectedToken : ALL_TOKENS) {
-      if (messageString.startsWith(expectedToken)) {
-        token = expectedToken;
-        break;
-      }
-    }
-    return token;
-  }
-
-  public static TestEvent parse(String messageString) {
-    TestEvent testEvent = null;
-    String expectedToken = isTestEvent(messageString);
-    if (expectedToken != null) {
-      testEvent = parse(expectedToken, messageString);
-    }
-    return testEvent;
-  }
-
-  private static TestEvent parse(String expectedToken, String messageString) {
-    TestEvent testEvent = null;
-    if (messageString.startsWith(expectedToken)) {
-      String params = messageString.substring(expectedToken.length());
-      {
-        Pattern _pattern_0 = _PrecompiledPatterns.REGEXP;
-        Matcher _matcher_0 = _pattern_0.matcher(params);
-        if (_matcher_0.matches()) {
-          testEvent = new TestEvent();
-          testEvent.token = expectedToken;
-          testEvent.testCaseName = _matcher_0.group(1);
-          testEvent.testMethodName = _matcher_0.group(2);
-          testEvent.memoryUsage = Long.parseLong(_matcher_0.group(3));
-          testEvent.time = Long.parseLong(_matcher_0.group(4));
-        }
-      }
-    }
-    return testEvent;
-  }
-
-
   public String toString() {
     StringBuilder builder = new StringBuilder();
     builder.append(this.token);
@@ -108,6 +67,47 @@ public class TestEvent {
 
   public long getTime() {
     return this.time;
+  }
+
+
+  public static String isTestEvent(String messageString) {
+    String token = null;
+    for(String expectedToken : ALL_TOKENS) {
+      if (messageString.startsWith(expectedToken)) {
+        token = expectedToken;
+        break;
+      }
+    }
+    return token;
+  }
+
+  public static TestEvent parse(String messageString) {
+    TestEvent testEvent = null;
+    String expectedToken = isTestEvent(messageString);
+    if (expectedToken != null) {
+      testEvent = parse(expectedToken, messageString);
+    }
+    return testEvent;
+  }
+
+  private static TestEvent parse(String expectedToken, String messageString) {
+    TestEvent testEvent = null;
+    if (messageString.startsWith(expectedToken)) {
+      String params = messageString.substring(expectedToken.length());
+      {
+        Pattern _pattern_0 = _PrecompiledPatterns.REGEXP0;
+        Matcher _matcher_0 = _pattern_0.matcher(params);
+        if (_matcher_0.matches()) {
+          testEvent = new TestEvent();
+          testEvent.token = expectedToken;
+          testEvent.testCaseName = _matcher_0.group(1);
+          testEvent.testMethodName = _matcher_0.group(2);
+          testEvent.memoryUsage = Long.parseLong(_matcher_0.group(3));
+          testEvent.time = Long.parseLong(_matcher_0.group(4));
+        }
+      }
+    }
+    return testEvent;
   }
 
   static {

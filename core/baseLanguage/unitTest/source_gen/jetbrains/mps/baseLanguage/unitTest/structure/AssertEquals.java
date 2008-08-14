@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.unitTest.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class AssertEquals extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals";
@@ -17,15 +17,6 @@ public class AssertEquals extends Statement {
   public AssertEquals(SNode node) {
     super(node);
   }
-
-  public static AssertEquals newInstance(SModel sm, boolean init) {
-    return (AssertEquals)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AssertEquals newInstance(SModel sm) {
-    return AssertEquals.newInstance(sm, false);
-  }
-
 
   public Expression getExpected() {
     return (Expression)this.getChild(AssertEquals.EXPECTED);
@@ -41,6 +32,15 @@ public class AssertEquals extends Statement {
 
   public void setActual(Expression node) {
     super.setChild(AssertEquals.ACTUAL, node);
+  }
+
+
+  public static AssertEquals newInstance(SModel sm, boolean init) {
+    return (AssertEquals)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AssertEquals newInstance(SModel sm) {
+    return AssertEquals.newInstance(sm, false);
   }
 
 }

@@ -19,15 +19,6 @@ public class Fail extends Statement implements MessageHolder {
     super(node);
   }
 
-  public static Fail newInstance(SModel sm, boolean init) {
-    return (Fail)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.Fail", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Fail newInstance(SModel sm) {
-    return Fail.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(Fail.SHORT_DESCRIPTION);
   }
@@ -58,6 +49,15 @@ public class Fail extends Statement implements MessageHolder {
 
   public void setMessage(Message node) {
     super.setChild(Fail.MESSAGE, node);
+  }
+
+
+  public static Fail newInstance(SModel sm, boolean init) {
+    return (Fail)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.Fail", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Fail newInstance(SModel sm) {
+    return Fail.newInstance(sm, false);
   }
 
 }

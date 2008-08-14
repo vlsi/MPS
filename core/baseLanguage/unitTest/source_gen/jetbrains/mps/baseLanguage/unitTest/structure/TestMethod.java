@@ -19,15 +19,6 @@ public class TestMethod extends BaseMethodDeclaration implements ITestMethod {
     super(node);
   }
 
-  public static TestMethod newInstance(SModel sm, boolean init) {
-    return (TestMethod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TestMethod newInstance(SModel sm) {
-    return TestMethod.newInstance(sm, false);
-  }
-
-
   public String getMethodName() {
     return this.getProperty(TestMethod.METHOD_NAME);
   }
@@ -58,6 +49,15 @@ public class TestMethod extends BaseMethodDeclaration implements ITestMethod {
 
   public void setVirtualPackage(String value) {
     this.setProperty(TestMethod.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static TestMethod newInstance(SModel sm, boolean init) {
+    return (TestMethod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TestMethod newInstance(SModel sm) {
+    return TestMethod.newInstance(sm, false);
   }
 
 }
