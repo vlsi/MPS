@@ -5,6 +5,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
@@ -121,7 +122,8 @@ public class MigrationScriptsTool extends BaseProjectTool {
           tabName = "" + (myViews.size() - 1);
         }
         Content content = addContent(view.getComponent(), tabName, false);
-//        content.setIcon(???);
+        content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
+        content.setIcon(query.getIcon());
         getContentManager().setSelectedContent(content);
       }
     });

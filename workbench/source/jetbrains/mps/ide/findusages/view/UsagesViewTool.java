@@ -14,6 +14,7 @@ import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
@@ -275,6 +276,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
               usageViewData.myUsagesView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable), searchResults);
 
               Content content = addContent(usageViewData.myUsagesView.getComponent(), usageViewData.myUsagesView.getCaption(), true);
+              content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
               content.setIcon(usageViewData.myUsagesView.getIcon());
               getContentManager().setSelectedContent(content);
             }
@@ -315,6 +317,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
                 Content content = addContent(usageViewData.myUsagesView.getComponent(), caption, true);
+                content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
                 content.setIcon(icon);
               }
             });

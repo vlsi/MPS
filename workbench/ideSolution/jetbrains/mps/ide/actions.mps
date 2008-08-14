@@ -9700,7 +9700,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1216661202689">
-              <link role="baseMethodDeclaration" targetNodeId="58.~MainMenuShortcuts.register():void"
+              <link role="baseMethodDeclaration" targetNodeId="80.~MainMenuShortcuts.register():void"
                     resolveInfo="register"/>
             </node>
           </node>
@@ -9723,7 +9723,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1216661207556">
-              <link role="baseMethodDeclaration" targetNodeId="58.~MainMenuShortcuts.unregister():void"
+              <link role="baseMethodDeclaration" targetNodeId="80.~MainMenuShortcuts.unregister():void"
                     resolveInfo="unregister"/>
             </node>
           </node>
@@ -9735,11 +9735,11 @@
       <property name="name" value="myShortcuts"/>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216660361451"/>
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216660319143">
-        <link role="classifier" targetNodeId="58.~MainMenuShortcuts" resolveInfo="MainMenuShortcuts"/>
+        <link role="classifier" targetNodeId="80.~MainMenuShortcuts" resolveInfo="MainMenuShortcuts"/>
       </node>
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216660327193">
         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216660327194">
-          <link role="baseMethodDeclaration" targetNodeId="58.~MainMenuShortcuts.&lt;init&gt;()"
+          <link role="baseMethodDeclaration" targetNodeId="80.~MainMenuShortcuts.&lt;init&gt;()"
                 resolveInfo="MainMenuShortcuts"/>
         </node>
       </node>
