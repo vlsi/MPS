@@ -49,7 +49,6 @@
   <import index="52" modelUID="jetbrains.mps.generator@java_stub" version="-1"/>
   <import index="53" modelUID="jetbrains.mps.workbench.actions.generate@java_stub" version="-1"/>
   <import index="54" modelUID="jetbrains.mps.workbench.actions.goTo.actions@java_stub" version="-1"/>
-  <import index="56" modelUID="jetbrains.mps.workbench.actions.build@java_stub" version="-1"/>
   <import index="57" modelUID="jetbrains.mps.workbench.actions@java_stub" version="-1"/>
   <import index="58" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1"/>
   <import index="60" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1"/>
