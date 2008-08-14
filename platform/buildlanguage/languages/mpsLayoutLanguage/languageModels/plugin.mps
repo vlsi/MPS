@@ -68,11 +68,6 @@
     <property name="caption" value="Generate Build Files" />
     <property name="outsideCommandExecution" value="true" />
     <property name="description" value="Generate Build Files And Place Them Into Base Directory Of MPSLayout" />
-    <node role="methodDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1218732063517">
-      <property name="name" value="doSomething" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1218732065525" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218732063520" />
-    </node>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1218726094605">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218726094606">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1218735054441">
@@ -565,8 +560,8 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218726094701">
               <link role="baseMethodDeclaration" targetNodeId="3.~GeneratorManager.generateModelsWithProgressWindow(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.IGenerationType,boolean):boolean" resolveInfo="generateModelsWithProgressWindow" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218726094702">
-                <link role="classConcept" targetNodeId="9.~Arrays" resolveInfo="Arrays" />
-                <link role="baseMethodDeclaration" targetNodeId="9.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
+                <link role="classConcept" targetNodeId="9.~Collections" resolveInfo="Collections" />
+                <link role="baseMethodDeclaration" targetNodeId="9.~Collections.singletonList(java.lang.Object):java.util.List" resolveInfo="singletonList" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218726094703">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1218726094704" />
                   <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDataParameterReferenceOperation" id="1218726094705">
@@ -652,6 +647,9 @@
                           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218736913865">
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1218737639439">
                               <property name="value" value="TODO duplication" />
+                            </node>
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1218737903286">
+                              <property name="value" value=" If I extracted a new method to prevent duplication, I could not use it incide anonimous class" />
                             </node>
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1218736913866">
                               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218736913867">
