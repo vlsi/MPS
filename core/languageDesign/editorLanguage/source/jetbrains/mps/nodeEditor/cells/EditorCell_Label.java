@@ -18,6 +18,7 @@ import jetbrains.mps.datatransfer.TextPasteUtil;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.lang.ref.WeakReference;
 
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.command.CommandProcessor;
@@ -621,20 +622,23 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   private static class MySNodeUndoableAction extends SNodeUndoableAction {
     private final CellInfo myCellInfo;
-    private final EditorComponent myEditor;
+    private final WeakReference<EditorComponent> myEditor;
     private final String myOldText;
     private final String myText;
 
     public MySNodeUndoableAction(SNode node, CellInfo cellInfo, EditorComponent editor, String oldText, String text) {
       super(node);
       myCellInfo = cellInfo;
-      myEditor = editor;
+      myEditor = new WeakReference<EditorComponent>(editor);
       myOldText = oldText;
       myText = text;
     }
 
     protected void doUndo() {
-      EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(myEditor);
+      EditorComponent editor = myEditor.get();
+      if (editor == null) return;
+
+      EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(editor);
       if (cell != null) {
         cell.changeText(myOldText);
         cell.getEditorContext().getNodeEditorComponent().relayout();
@@ -642,7 +646,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
 
     protected void doRedo() {
-      EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(myEditor);
+      EditorComponent editor = myEditor.get();
+      if (editor == null) return;
+
+      EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(editor);
       if (cell != null) {
         cell.changeText(myText);
         cell.getEditorContext().getNodeEditorComponent().relayout();
