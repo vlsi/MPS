@@ -15,9 +15,6 @@ import java.util.*;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/**
- * @author Kostik
- */
 public class MessagesGutter extends JPanel {
   private EditorComponent myEditorComponent;
   private JLabel myErrosLabel = new JLabel(Icons.OK);

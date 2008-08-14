@@ -791,7 +791,6 @@ public abstract class EditorCell_Basic implements EditorCell {
         if (myMessages == null) {
           myMessages = new ArrayList<EditorMessage>(1);
         }
-
         myMessages.addAll(messagesForNode);
       }
     }

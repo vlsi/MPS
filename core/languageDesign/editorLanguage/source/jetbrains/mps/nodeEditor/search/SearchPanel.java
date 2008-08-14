@@ -35,9 +35,6 @@ public class SearchPanel extends JPanel {
   private JCheckBox myIsWordsOnly = new JCheckBox("Match whole words only");
   private JCheckBox myIsRegex = new JCheckBox("Regex");
   private ArrayList<EditorCell_Label> myCells = new ArrayList<EditorCell_Label>();
-//  private JButton myHistoryButton = new JButton(Icons.SEARCH_ICON);
-//  private JButton myNextButton = new JButton(Icons.NEXT_ICON);
-//  private JButton myPreviousButton = new JButton(Icons.PREVIOUS_ICON);
   private JLabel myFindResult = new JLabel();
   private JComponent myToolbarComponent;
   private NodeHighlightManager myHighlightManager;
@@ -225,9 +222,15 @@ public class SearchPanel extends JPanel {
     myEditor.changeSelection(myCells.get(index));
   }
 
-  private void search() {
-    if (myOwner != null) {
+  private void clearHighlight() {
+    if (myOwner != null && myHighlightManager != null && myCells.size() <= 100) {
       myHighlightManager.clearForOwner(myOwner);
+    }
+  }
+
+  private void search() {
+    clearHighlight();
+    if (!myCells.isEmpty()) {
       myCells.clear();
     }
     if (myText.getText().length() == 0) {
@@ -279,17 +282,20 @@ public class SearchPanel extends JPanel {
     myOwner = new EditorMessageOwner() { };
     for (int i = cells.size() - 1; i >= 0; i--) {
       if (condition.met(cells.get(i).getRenderedText())) {
-        myEditor.changeSelection(cells.get(i));
-
-        myHighlightManager = myEditor.getHighlightManager();
-        final EditorCell cell = cells.get(i);
-
-        ModelAccess.instance().runReadAction(new Runnable() {
+        myCells.add(cells.get(i));
+      }
+    }
+    if (!myCells.isEmpty()) {
+      myEditor.changeSelection(myCells.get(myCells.size() - 1));
+      if (myCells.size() <= 100) {
+         myHighlightManager = myEditor.getHighlightManager();
+         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            myHighlightManager.mark(new SearchPanelEditorMessage(cell));
+            for (EditorCell_Label myCell : myCells) {
+              myHighlightManager.mark(new SearchPanelEditorMessage(myCell));
+            }
           }
         });
-        myCells.add(cells.get(i));
       }
     }
   }
@@ -307,6 +313,12 @@ public class SearchPanel extends JPanel {
 
   public void deactivate() {
     setVisible(false);
+    clearHighlight();
+    if (!myCells.isEmpty()) {
+      myCells.clear();
+    }
+    myFindResult.setText("");
+    myText.setBackground(Color.white);
     revalidate();
     myEditor.requestFocus();
   }
@@ -377,7 +389,7 @@ public class SearchPanel extends JPanel {
         int width = metrics.stringWidth(myText.getText());
 
         Color color = getColor();
-        color = new Color(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha() / 5);
+        color = new Color(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha() / 4);
         g.setColor(color);
         g.fillRect(x, y, width - 1, height - 1);
       }
