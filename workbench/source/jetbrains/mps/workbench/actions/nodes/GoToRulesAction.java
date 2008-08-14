@@ -63,6 +63,7 @@ public class GoToRulesAction extends BaseAction {
   }
 
   protected boolean collectActionData(AnActionEvent e) {
+    if (!super.collectActionData(e)) return false;
     ActionEventData data = new ActionEventData(e);
     myNode = data.getNode();
     if (myNode == null) return false;

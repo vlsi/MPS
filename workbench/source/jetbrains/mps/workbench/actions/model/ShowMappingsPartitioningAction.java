@@ -87,6 +87,7 @@ public class ShowMappingsPartitioningAction extends BaseAction {
   }
 
   protected boolean collectActionData(AnActionEvent e) {
+    if (!super.collectActionData(e)) return false;
     ActionEventData data = new ActionEventData(e);
     myScope = data.getScope();
     if (myScope == null) return false;

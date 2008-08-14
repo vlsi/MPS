@@ -48,6 +48,9 @@ public class NewModel_Action extends GeneratedAction {
   @Override()
   protected boolean collectActionData(AnActionEvent event) {
     try {
+      if (!(super.collectActionData(event))) {
+        return false;
+      }
       this.project = event.getData(MPSDataKeys.MPS_PROJECT);
       if (this.project == null) {
         return false;

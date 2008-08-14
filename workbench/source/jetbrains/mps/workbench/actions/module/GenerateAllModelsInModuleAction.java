@@ -126,6 +126,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
   }
 
   protected boolean collectActionData(AnActionEvent e) {
+    if (!super.collectActionData(e)) return false;
     ActionEventData data = new ActionEventData(e);
     myProject = data.getMPSProject();
     myOperationContext = data.getOperationContext();

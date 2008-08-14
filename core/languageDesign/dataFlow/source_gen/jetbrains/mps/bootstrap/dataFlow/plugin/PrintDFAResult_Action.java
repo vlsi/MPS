@@ -42,6 +42,9 @@ public class PrintDFAResult_Action extends GeneratedAction {
   @Override()
   protected boolean collectActionData(AnActionEvent event) {
     try {
+      if (!(super.collectActionData(event))) {
+        return false;
+      }
       {
         SNode node = event.getData(MPSDataKeys.SNODE);
         if (node != null) {

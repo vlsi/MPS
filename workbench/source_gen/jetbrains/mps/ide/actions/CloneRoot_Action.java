@@ -48,6 +48,9 @@ public class CloneRoot_Action extends GeneratedAction {
   @Override()
   protected boolean collectActionData(AnActionEvent event) {
     try {
+      if (!(super.collectActionData(event))) {
+        return false;
+      }
       {
         List<SNode> nodes = event.getData(MPSDataKeys.SNODES);
         boolean error = false;

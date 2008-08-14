@@ -50,6 +50,9 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
   @Override()
   protected boolean collectActionData(AnActionEvent event) {
     try {
+      if (!(super.collectActionData(event))) {
+        return false;
+      }
       this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
       if (this.context == null) {
         return false;

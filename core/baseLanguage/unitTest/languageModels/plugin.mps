@@ -3069,7 +3069,7 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1211488233737">
               <link role="baseMethodDeclaration"
-                    targetNodeId="31.~MPSEditorOpener.openNode(jetbrains.mps.smodel.SNode):jetbrains.mps.ide.IEditor"
+                    targetNodeId="31.~MPSEditorOpener.openNode(jetbrains.mps.smodel.SNode):void"
                     resolveInfo="openNode"/>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211488234801">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1211488234691"/>
@@ -4224,7 +4224,7 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1211488831417">
               <link role="baseMethodDeclaration"
-                    targetNodeId="31.~MPSEditorOpener.openNode(jetbrains.mps.smodel.SNode):jetbrains.mps.ide.IEditor"
+                    targetNodeId="31.~MPSEditorOpener.openNode(jetbrains.mps.smodel.SNode):void"
                     resolveInfo="openNode"/>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211488834247">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1211488833902"/>
