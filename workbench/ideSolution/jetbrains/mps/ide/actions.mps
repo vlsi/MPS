@@ -9746,58 +9746,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ToolDeclaration" id="1216661517629">
-    <property name="name" value="ModelDiff"/>
-    <property name="caption" value="Model Diff"/>
-    <property name="package" value="Tools"/>
-    <node role="getComponentBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetComponentBlock"
-          id="1216661517630">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216661517631">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216661658244">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216661663340">
-            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"
-                  id="1216661663341"/>
-            <node role="operation"
-                  type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"
-                  id="1216661663342">
-              <link role="member" targetNodeId="1216661624614" resolveInfo="myView"/>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="fieldDeclaration"
-          type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1216661624614">
-      <property name="name" value="myView"/>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216661624615"/>
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216661632047">
-        <link role="classifier" targetNodeId="98.~ModelDifferenceComponent" resolveInfo="ModelDifferenceComponent"/>
-      </node>
-    </node>
-    <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginInitBlock"
-          id="1216662710875">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216662710876">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217410468619">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1217410468620">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217410468621">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217410468622">
-                <link role="baseMethodDeclaration" targetNodeId="98.~ModelDifferenceComponent.&lt;init&gt;()"
-                      resolveInfo="ModelDifferenceComponent"/>
-              </node>
-            </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"
-                  id="1217410468623">
-              <property name="name" value="myView"/>
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217410468624">
-                <link role="classifier" targetNodeId="98.~ModelDifferenceComponent"
-                      resolveInfo="ModelDifferenceComponent"/>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ToolDeclaration" id="1216661721916">
     <property name="name" value="ModuleRepository"/>
     <property name="caption" value="Module Repository Viewer"/>
