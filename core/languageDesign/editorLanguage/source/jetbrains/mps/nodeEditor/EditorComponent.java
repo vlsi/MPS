@@ -453,10 +453,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public SNode getSelectedNode() {
-    if (getSelectedCell() == null) {
+    EditorCell selectedCell = getSelectedCell();
+    if (selectedCell == null) {
       return null;
     }
-    return getSelectedCell().getSNode();
+    return selectedCell.getSNode();
   }
 
   public List<SNode> getSelectedNodes() {
@@ -1046,8 +1047,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if ((keyEvent.getKeyCode() == KeyEvent.VK_DELETE || keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE)
       && keyEvent.getModifiers() == 0) {
 
-      EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
-      if (selectedCell.isBigCell()) {
+      EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell()  ;
+      if (selectedCell != null && selectedCell.isBigCell()) {
         return CellActionType.DELETE;
       }
 
@@ -2025,7 +2026,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     } else if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) {
       return createEditorContextForActions();
     } else if (dataId.equals(MPSDataKeys.SNODE.getName())) {
-      if (getSelectedCell() != null) return getSelectedCell().getSNode();
+      EditorCell selectedCell = getSelectedCell();
+      if (selectedCell != null) {
+        return selectedCell.getSNode();
+      }
       else return getRootCell().getSNode();
     } else if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) {
       return getSelectedCell();
