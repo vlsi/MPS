@@ -73,10 +73,14 @@ public class NewModel_Action extends GeneratedAction {
     try {
       final NewModelDialog[] dialog = new NewModelDialog[1];
       final IOperationContext localContext = this.context;
+      final IModule localModule = (localContext.getModule() != null ?
+        localContext.getModule() :
+        this.module
+      );
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          dialog[0] = new NewModelDialog(NewModel_Action.this.module, NewModel_Action.this.getNamespace(), localContext);
+          dialog[0] = new NewModelDialog(localModule, NewModel_Action.this.getNamespace(), localContext);
         }
 
       });
