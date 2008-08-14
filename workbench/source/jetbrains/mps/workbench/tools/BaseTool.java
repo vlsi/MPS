@@ -189,10 +189,9 @@ public abstract class BaseTool {
 
     if (myComponent == null) myComponent = getComponent();
     if (myComponent != null) {
-      addContent(myComponent, null, false);
+      addContent(myComponent, null, myIcon, false);
     }
 
-    toolWindow.setIcon(myIcon);
     toolWindow.setToHideOnEmptyContent(true);
     toolWindow.installWatcher(toolWindow.getContentManager());
     if (!isInitiallyAvailable()) {
@@ -249,8 +248,12 @@ public abstract class BaseTool {
     return null;
   }
 
-  protected Content addContent(JComponent component, String name, boolean isLockable) {
+  protected Content addContent(JComponent component, String name, Icon icon, boolean isLockable) {
     Content content = new ContentFactoryImpl().createContent(component, name, isLockable);
+    if (icon != null) {
+      content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
+      content.setIcon(icon);
+    }
     ContentManager contentManager = getContentManager();
     contentManager.addContent(content);
     return content;

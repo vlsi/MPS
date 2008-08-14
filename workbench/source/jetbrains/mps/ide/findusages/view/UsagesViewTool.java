@@ -14,12 +14,9 @@ import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
-import com.intellij.ui.content.ContentManagerAdapter;
-import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
@@ -49,10 +46,7 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.Icon;
-import javax.swing.JOptionPane;
-import javax.swing.KeyStroke;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,20 +85,6 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     super(project, "Usages", 3, jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, ToolWindowAnchor.BOTTOM, true);
 
     setDefaultOptions();
-
-    StartupManager.getInstance(project).registerPostStartupActivity(new Runnable() {
-      public void run() {
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            getContentManager().addContentManagerListener(new ContentManagerAdapter() {
-              public void contentRemoved(ContentManagerEvent event) {
-                myUsageViewsData.remove(event.getIndex());
-              }
-            });
-          }
-        });
-      }
-    });
   }
 
   private void setDefaultOptions() {
@@ -275,9 +255,10 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
 
               usageViewData.myUsagesView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable), searchResults);
 
-              Content content = addContent(usageViewData.myUsagesView.getComponent(), usageViewData.myUsagesView.getCaption(), true);
-              content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
-              content.setIcon(usageViewData.myUsagesView.getIcon());
+              Icon icon = usageViewData.myUsagesView.getIcon();
+              String caption = usageViewData.myUsagesView.getCaption();
+              JComponent component = usageViewData.myUsagesView.getComponent();
+              Content content = addContent(component, caption, icon, true);
               getContentManager().setSelectedContent(content);
             }
           });
@@ -316,9 +297,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
           public void run() {
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                Content content = addContent(usageViewData.myUsagesView.getComponent(), caption, true);
-                content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
-                content.setIcon(icon);
+                addContent(usageViewData.myUsagesView.getComponent(), caption, icon, true);
               }
             });
           }
@@ -409,7 +388,9 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     public void createUsageView() {
       myUsagesView = new UsagesView(getMPSProject(), myDefaultViewOptions) {
         public void close() {
-          UsagesViewTool.this.closeTab(myUsageViewsData.indexOf(UsageViewData.this));
+          int index = myUsageViewsData.indexOf(UsageViewData.this);
+          UsagesViewTool.this.closeTab(index);
+          myUsageViewsData.remove(index);
         }
       };
     }
