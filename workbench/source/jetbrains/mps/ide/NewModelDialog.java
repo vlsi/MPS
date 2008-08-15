@@ -127,17 +127,16 @@ public class NewModelDialog extends BaseDialog {
     private String myNamespace;
     private String myText;
 
-    private ModelRootWrapper(ModelRoot modelRoot, String namespaceSuffix) {
+    private ModelRootWrapper(ModelRoot modelRoot, String namespace) {
       myModelRoot = modelRoot;
 
       String prefix = myModelRoot.getPrefix();
       if (prefix == null) prefix = "";
-      if (namespaceSuffix == null) namespaceSuffix = "";
+      if (namespace == null) namespace = "";
 
-      boolean dotNeeded = !prefix.equals("") && !namespaceSuffix.equals("");
-      myNamespace = prefix + (dotNeeded ? "." : "") + namespaceSuffix;
+      myNamespace = namespace.equals("") ? prefix : namespace;
 
-      boolean needsNamespace = !namespaceSuffix.equals("");
+      boolean needsNamespace = !myNamespace.equals("");
       myText = myModelRoot.getPath() + (needsNamespace ? " (" + myNamespace + ")" : "");
     }
 
