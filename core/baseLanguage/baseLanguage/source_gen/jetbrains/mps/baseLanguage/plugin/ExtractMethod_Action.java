@@ -39,7 +39,7 @@ public class ExtractMethod_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return this.isExpression(this.nodes) || ExtractMethodRefactoringAnalyzer.isStatements(this.nodes);
+    return ExtractMethod_Action.this.isExpression(ExtractMethod_Action.this.nodes) || ExtractMethodRefactoringAnalyzer.isStatements(ExtractMethod_Action.this.nodes);
   }
 
   public void doUpdate(@NotNull()AnActionEvent event) {
@@ -83,7 +83,7 @@ public class ExtractMethod_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final Wrappers._T<ExtractMethodKind> kind = new Wrappers._T<ExtractMethodKind>();
-      final List<SNode> n = this.nodes;
+      final List<SNode> n = ExtractMethod_Action.this.nodes;
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {

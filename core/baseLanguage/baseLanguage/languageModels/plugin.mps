@@ -29,7 +29,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2"/>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2"/>
-  <maxImportIndex value="54"/>
+  <maxImportIndex value="55"/>
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   <import index="3" modelUID="jetbrains.mps.ide.actions" version="-1"/>
   <import index="4" modelUID="java.util@java_stub" version="-1"/>
@@ -63,6 +63,7 @@
   <import index="50" modelUID="com.intellij.openapi.util@java_stub" version="-1"/>
   <import index="52" modelUID="jetbrains.mps.baseLanguage.refactoring.changeMethodSignature@java_stub" version="-1"/>
   <import index="54" modelUID="jetbrains.mps.workbench@java_stub" version="-1"/>
+  <import index="55" modelUID="jetbrains.mps.ide.dialogs@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205247197267">
     <property name="name" value="BaseLanguageEditorPopup"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
@@ -3360,7 +3361,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1207309798075">
-              <link role="baseMethodDeclaration" targetNodeId="30.~BaseDialog.showDialog():void"
+              <link role="baseMethodDeclaration" targetNodeId="55.~BaseDialog.showDialog():void"
                     resolveInfo="showDialog"/>
             </node>
           </node>
@@ -6075,7 +6076,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1215172130237">
-              <link role="baseMethodDeclaration" targetNodeId="30.~BaseDialog.showDialog():void"
+              <link role="baseMethodDeclaration" targetNodeId="55.~BaseDialog.showDialog():void"
                     resolveInfo="showDialog"/>
             </node>
           </node>

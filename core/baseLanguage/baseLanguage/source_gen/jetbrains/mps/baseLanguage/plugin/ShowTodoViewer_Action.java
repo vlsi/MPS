@@ -57,7 +57,7 @@ public class ShowTodoViewer_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      this.project.getPluginManager().getTool(TodoViewer_Tool.class).openToolLater(true);
+      ShowTodoViewer_Action.this.project.getPluginManager().getTool(TodoViewer_Tool.class).openToolLater(true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowTodoViewer", t);
     }

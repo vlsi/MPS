@@ -31,7 +31,7 @@ public class UncommentStatements_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return (SNodeOperations.getAncestor(this.node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) != null);
+    return (SNodeOperations.getAncestor(UncommentStatements_Action.this.node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) != null);
   }
 
   public void doUpdate(@NotNull()AnActionEvent event) {
@@ -77,7 +77,7 @@ public class UncommentStatements_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      SNode commentedStatementsBlock = SNodeOperations.getAncestor(this.node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false);
+      SNode commentedStatementsBlock = SNodeOperations.getAncestor(UncommentStatements_Action.this.node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false);
       for (SNode statement : SLinkOperations.getTargets(commentedStatementsBlock, "statement", true)) {
         SNodeOperations.insertPrevSiblingChild(commentedStatementsBlock, statement);
       }
