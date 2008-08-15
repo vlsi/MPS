@@ -214,6 +214,10 @@ public class Generator extends AbstractModule {
       }
     }
 
+    for (Language language : sm.getSModel().getLanguages(getScope())) {
+      result.add(language.getStructureModelDescriptor());
+    }
+
     return result;
   }
 
