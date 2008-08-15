@@ -70,6 +70,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private JPanel myComponent = new JPanel();
   private JList myList = new JList(myModel);
   private MessageViewLoggingHandler myLoggingHandler;
+  private ActionToolbar myToolbar;
 
   public MessagesViewTool(Project project) {
     super(project, "MPS Messages", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
@@ -89,9 +90,10 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     group.add(myInfoAction);
     group.add(myAutoscrollToSourceAction);
 
+    myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        panel.add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent(), BorderLayout.NORTH);
+        panel.add(myToolbar.getComponent(), BorderLayout.NORTH);
       }
     });
 
@@ -350,6 +352,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         myModel.clear();
         myMessages.clear();
         myList.setFixedCellWidth(myList.getWidth());
+        updateActions();
       }
     });
   }
@@ -378,8 +381,13 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         if (width > myList.getFixedCellWidth()) {
           myList.setFixedCellWidth(width);
         }
+        updateActions();
       }
     });
+  }
+
+  private void updateActions() {
+    myToolbar.updateActionsImmediately();
   }
 
   private int getMessageWidth(Message message) {
