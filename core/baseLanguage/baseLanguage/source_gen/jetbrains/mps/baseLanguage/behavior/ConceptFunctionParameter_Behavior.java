@@ -42,19 +42,19 @@ public class ConceptFunctionParameter_Behavior {
   }
 
   public static boolean call_getFromParameterObject_1213877522908(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908);
   }
 
   public static boolean call_isParameterObjectUsed_1213877522926(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_isParameterObjectUsed_1213877522926", PARAMETERS_1213877522926);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isParameterObjectUsed_1213877522926", PARAMETERS_1213877522926);
   }
 
   public static boolean callSuper_getFromParameterObject_1213877522908(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908);
   }
 
   public static boolean callSuper_isParameterObjectUsed_1213877522926(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_isParameterObjectUsed_1213877522926", PARAMETERS_1213877522926);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isParameterObjectUsed_1213877522926", PARAMETERS_1213877522926);
   }
 
 }

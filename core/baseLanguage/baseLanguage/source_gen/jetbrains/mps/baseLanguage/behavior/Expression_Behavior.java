@@ -36,7 +36,7 @@ public class Expression_Behavior {
   }
 
   public static boolean call_isLValue_1213877519786(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_isLValue_1213877519786", PARAMETERS_1213877519786);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isLValue_1213877519786", PARAMETERS_1213877519786);
   }
 
   public static Object callSuper_eval_1213877519769(SNode thisNode, String callerConceptFqName, IModule module) {
@@ -48,7 +48,7 @@ public class Expression_Behavior {
   }
 
   public static boolean callSuper_isLValue_1213877519786(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_isLValue_1213877519786", PARAMETERS_1213877519786);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isLValue_1213877519786", PARAMETERS_1213877519786);
   }
 
 }

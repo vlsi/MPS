@@ -16,21 +16,21 @@ public class StaticConceptMethodDeclaration extends BaseMethodDeclaration {
     super(node);
   }
 
-  public static StaticConceptMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (StaticConceptMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.StaticConceptMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static StaticConceptMethodDeclaration newInstance(SModel sm) {
-    return StaticConceptMethodDeclaration.newInstance(sm, false);
-  }
-
-
   public boolean getIsPrivate() {
     return this.getBooleanProperty(StaticConceptMethodDeclaration.IS_PRIVATE);
   }
 
   public void setIsPrivate(boolean value) {
     this.setBooleanProperty(StaticConceptMethodDeclaration.IS_PRIVATE, value);
+  }
+
+
+  public static StaticConceptMethodDeclaration newInstance(SModel sm, boolean init) {
+    return (StaticConceptMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.StaticConceptMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static StaticConceptMethodDeclaration newInstance(SModel sm) {
+    return StaticConceptMethodDeclaration.newInstance(sm, false);
   }
 
 }

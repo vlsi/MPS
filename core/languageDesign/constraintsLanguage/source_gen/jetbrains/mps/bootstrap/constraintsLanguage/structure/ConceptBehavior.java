@@ -6,13 +6,13 @@ import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.baseLanguage.structure.IMemberContainer;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemberContainer {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior";
@@ -34,15 +34,6 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   public ConceptBehavior(SNode node) {
     super(node);
   }
-
-  public static ConceptBehavior newInstance(SModel sm, boolean init) {
-    return (ConceptBehavior)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ConceptBehavior newInstance(SModel sm) {
-    return ConceptBehavior.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(ConceptBehavior.NAME);
@@ -202,6 +193,15 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
 
   public void insertStaticMethod(StaticConceptMethodDeclaration prev, StaticConceptMethodDeclaration node) {
     this.insertChild(prev, ConceptBehavior.STATIC_METHOD, node);
+  }
+
+
+  public static ConceptBehavior newInstance(SModel sm, boolean init) {
+    return (ConceptBehavior)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ConceptBehavior newInstance(SModel sm) {
+    return ConceptBehavior.newInstance(sm, false);
   }
 
 }

@@ -5,13 +5,13 @@ package jetbrains.mps.bootstrap.constraintsLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class ConceptConstraints extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints";
@@ -30,15 +30,6 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
   public ConceptConstraints(SNode node) {
     super(node);
   }
-
-  public static ConceptConstraints newInstance(SModel sm, boolean init) {
-    return (ConceptConstraints)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ConceptConstraints newInstance(SModel sm) {
-    return ConceptConstraints.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(ConceptConstraints.NAME);
@@ -150,6 +141,15 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
 
   public void insertReferent(NodeReferentConstraint prev, NodeReferentConstraint node) {
     this.insertChild(prev, ConceptConstraints.REFERENT, node);
+  }
+
+
+  public static ConceptConstraints newInstance(SModel sm, boolean init) {
+    return (ConceptConstraints)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ConceptConstraints newInstance(SModel sm) {
+    return ConceptConstraints.newInstance(sm, false);
   }
 
 }

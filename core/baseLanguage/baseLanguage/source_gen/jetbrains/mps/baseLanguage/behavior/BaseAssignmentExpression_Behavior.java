@@ -16,11 +16,11 @@ public class BaseAssignmentExpression_Behavior {
   }
 
   public static boolean call_isReadAsignment_1215696236033(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_isReadAsignment_1215696236033", PARAMETERS_1215696236033);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isReadAsignment_1215696236033", PARAMETERS_1215696236033);
   }
 
   public static boolean callSuper_isReadAsignment_1215696236033(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_isReadAsignment_1215696236033", PARAMETERS_1215696236033);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isReadAsignment_1215696236033", PARAMETERS_1215696236033);
   }
 
 }

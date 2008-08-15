@@ -18,15 +18,6 @@ public class NodeDefaultSearchScope extends BaseConcept {
     super(node);
   }
 
-  public static NodeDefaultSearchScope newInstance(SModel sm, boolean init) {
-    return (NodeDefaultSearchScope)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeDefaultSearchScope", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static NodeDefaultSearchScope newInstance(SModel sm) {
-    return NodeDefaultSearchScope.newInstance(sm, false);
-  }
-
-
   public String getDescription() {
     return this.getProperty(NodeDefaultSearchScope.DESCRIPTION);
   }
@@ -49,6 +40,15 @@ public class NodeDefaultSearchScope extends BaseConcept {
 
   public void setSearchScopeFactory(ConstraintFunction_ReferentSearchScope_Factory node) {
     super.setChild(NodeDefaultSearchScope.SEARCH_SCOPE_FACTORY, node);
+  }
+
+
+  public static NodeDefaultSearchScope newInstance(SModel sm, boolean init) {
+    return (NodeDefaultSearchScope)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeDefaultSearchScope", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static NodeDefaultSearchScope newInstance(SModel sm) {
+    return NodeDefaultSearchScope.newInstance(sm, false);
   }
 
 }

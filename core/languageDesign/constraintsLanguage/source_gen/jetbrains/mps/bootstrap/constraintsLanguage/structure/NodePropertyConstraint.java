@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.constraintsLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 
 public class NodePropertyConstraint extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint";
@@ -19,15 +19,6 @@ public class NodePropertyConstraint extends BaseConcept {
   public NodePropertyConstraint(SNode node) {
     super(node);
   }
-
-  public static NodePropertyConstraint newInstance(SModel sm, boolean init) {
-    return (NodePropertyConstraint)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static NodePropertyConstraint newInstance(SModel sm) {
-    return NodePropertyConstraint.newInstance(sm, false);
-  }
-
 
   public PropertyDeclaration getApplicableProperty() {
     return (PropertyDeclaration)this.getReferent(NodePropertyConstraint.APPLICABLE_PROPERTY);
@@ -59,6 +50,15 @@ public class NodePropertyConstraint extends BaseConcept {
 
   public void setPropertyValidator(ConstraintFunction_PropertyValidator node) {
     super.setChild(NodePropertyConstraint.PROPERTY_VALIDATOR, node);
+  }
+
+
+  public static NodePropertyConstraint newInstance(SModel sm, boolean init) {
+    return (NodePropertyConstraint)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static NodePropertyConstraint newInstance(SModel sm) {
+    return NodePropertyConstraint.newInstance(sm, false);
   }
 
 }

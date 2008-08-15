@@ -181,7 +181,7 @@ public final class BehaviorManager implements ApplicationComponent {
 
   private <T> T _invokeInternal(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
     if (node == null) {
-      if (returnType.isPrimitive()) {
+      if (ourDefaultValue.containsKey(returnType)) {
         return (T) ourDefaultValue.get(returnType);
       } else {
         return null;

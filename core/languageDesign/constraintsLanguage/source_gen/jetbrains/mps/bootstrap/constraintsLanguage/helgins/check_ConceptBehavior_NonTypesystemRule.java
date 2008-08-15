@@ -39,7 +39,7 @@ public class check_ConceptBehavior_NonTypesystemRule implements NonTypesystemRul
       if (notImplementedMethods) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(nodeToCheck, "Concept " + SPropertyOperations.getString(SLinkOperations.getTarget(nodeToCheck, "concept", false), "name") + " doesn't implement " + methodDeclarations, "jetbrains.mps.bootstrap.constraintsLanguage.helgins@6_0", "1217542257273", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(nodeToCheck, "Concept " + SPropertyOperations.getString(SLinkOperations.getTarget(nodeToCheck, "concept", false), "name") + " doesn't implement " + methodDeclarations, "jetbrains.mps.bootstrap.constraintsLanguage.helgins@11_0", "1218803576860", intentionProvider);
         }
       }
     }
@@ -47,7 +47,7 @@ public class check_ConceptBehavior_NonTypesystemRule implements NonTypesystemRul
       if (SConceptPropertyOperations.getBoolean(cmd, "abstract")) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(cmd, "Abstract method in non abstract concept", "jetbrains.mps.bootstrap.constraintsLanguage.helgins@6_0", "1217542257293", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(cmd, "Abstract method in non abstract concept", "jetbrains.mps.bootstrap.constraintsLanguage.helgins@11_0", "1218803576880", intentionProvider);
         }
       }
     }

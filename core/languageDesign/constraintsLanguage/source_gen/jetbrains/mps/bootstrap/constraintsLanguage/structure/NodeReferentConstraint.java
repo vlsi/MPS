@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.constraintsLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 
 public class NodeReferentConstraint extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint";
@@ -20,15 +20,6 @@ public class NodeReferentConstraint extends BaseConcept {
   public NodeReferentConstraint(SNode node) {
     super(node);
   }
-
-  public static NodeReferentConstraint newInstance(SModel sm, boolean init) {
-    return (NodeReferentConstraint)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static NodeReferentConstraint newInstance(SModel sm) {
-    return NodeReferentConstraint.newInstance(sm, false);
-  }
-
 
   public String getSearchScopeDescription() {
     return this.getProperty(NodeReferentConstraint.SEARCH_SCOPE_DESCRIPTION);
@@ -68,6 +59,15 @@ public class NodeReferentConstraint extends BaseConcept {
 
   public void setReferentSetHandler(ConstraintFunction_ReferentSetHandler node) {
     super.setChild(NodeReferentConstraint.REFERENT_SET_HANDLER, node);
+  }
+
+
+  public static NodeReferentConstraint newInstance(SModel sm, boolean init) {
+    return (NodeReferentConstraint)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static NodeReferentConstraint newInstance(SModel sm) {
+    return NodeReferentConstraint.newInstance(sm, false);
   }
 
 }

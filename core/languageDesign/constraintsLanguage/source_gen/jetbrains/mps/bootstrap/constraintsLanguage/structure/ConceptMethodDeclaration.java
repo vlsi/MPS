@@ -19,15 +19,6 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration {
     super(node);
   }
 
-  public static ConceptMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (ConceptMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ConceptMethodDeclaration newInstance(SModel sm) {
-    return ConceptMethodDeclaration.newInstance(sm, false);
-  }
-
-
   public boolean getIsVirtual() {
     return this.getBooleanProperty(ConceptMethodDeclaration.IS_VIRTUAL);
   }
@@ -58,6 +49,15 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration {
 
   public void setOverriddenMethod(ConceptMethodDeclaration node) {
     super.setReferent(ConceptMethodDeclaration.OVERRIDDEN_METHOD, node);
+  }
+
+
+  public static ConceptMethodDeclaration newInstance(SModel sm, boolean init) {
+    return (ConceptMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ConceptMethodDeclaration newInstance(SModel sm) {
+    return ConceptMethodDeclaration.newInstance(sm, false);
   }
 
 }

@@ -4,32 +4,55 @@ package jetbrains.mps.bootstrap.constraintsLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class SuperNodeExpression_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_CollectionCell14964_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14964_0");
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
+    return this.createCollection1193400305817(context, node);
   }
 
-  private static void setupBasic_ConstantCell14964_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14964_0");
+  public EditorCell createCollection1193400305817(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_Collection_11934003058171193400305817(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant1193400305818(context, node, "super"));
+    return editorCell;
+  }
+
+  public EditorCell createConstant1193400305818(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_11934003058181193400305818(editorCell, node, context);
+    setupLabel_Constant_1193400305818_1193400305818(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+
+  private static void setupBasic_Collection_11934003058171193400305817(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1193400305817");
+  }
+
+  private static void setupBasic_Constant_11934003058181193400305818(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1193400305818");
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return SuperNodeExpression_Editor.calculateColor9(cell);
+              return SuperNodeExpression_Editor.calculateColor3177_0(cell);
             }
 
           });
@@ -40,36 +63,13 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_ConstantCell14964_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1193400305818_1193400305818(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor9(EditorCell cell) {
+  private static Color calculateColor3177_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
-  }
-
-
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_CollectionCell14964_0(context, node);
-  }
-
-  public EditorCell create_CollectionCell14964_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_CollectionCell14964_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell14964_0(context, node, "super"));
-    return editorCell;
-  }
-
-  public EditorCell create_ConstantCell14964_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell14964_0(editorCell, node, context);
-    setupLabel_ConstantCell14964_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
   }
 
 }

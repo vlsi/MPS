@@ -42,7 +42,7 @@ public class ConceptFunction_Behavior {
   }
 
   public static boolean call_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_usesParameterObjectFor_1213877374432", PARAMETERS_1213877374432, parameter);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_usesParameterObjectFor_1213877374432", PARAMETERS_1213877374432, parameter);
   }
 
   public static SNode call_getExpectedReturnType_1213877374441(SNode thisNode) {
@@ -58,7 +58,7 @@ public class ConceptFunction_Behavior {
   }
 
   public static boolean callSuper_usesParameterObjectFor_1213877374432(SNode thisNode, String callerConceptFqName, SNode parameter) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_usesParameterObjectFor_1213877374432", PARAMETERS_1213877374432, parameter);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_usesParameterObjectFor_1213877374432", PARAMETERS_1213877374432, parameter);
   }
 
   public static SNode callSuper_getExpectedReturnType_1213877374441(SNode thisNode, String callerConceptFqName) {

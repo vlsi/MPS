@@ -75,7 +75,7 @@ public class Type_Behavior {
   }
 
   public static boolean call_selectOnVariableCreation_1213877337352(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_selectOnVariableCreation_1213877337352", PARAMETERS_1213877337352);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_selectOnVariableCreation_1213877337352", PARAMETERS_1213877337352);
   }
 
   public static SNode call_getClassExpression_1213877337357(SNode thisNode) {
@@ -103,7 +103,7 @@ public class Type_Behavior {
   }
 
   public static boolean callSuper_selectOnVariableCreation_1213877337352(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_selectOnVariableCreation_1213877337352", PARAMETERS_1213877337352);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_selectOnVariableCreation_1213877337352", PARAMETERS_1213877337352);
   }
 
   public static SNode callSuper_getClassExpression_1213877337357(SNode thisNode, String callerConceptFqName) {

@@ -28,7 +28,7 @@ public class IOperation_Behavior {
   }
 
   public static boolean call_isLValue_1213877410080(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_isLValue_1213877410080", PARAMETERS_1213877410080);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isLValue_1213877410080", PARAMETERS_1213877410080);
   }
 
   public static String call_getVariableExpectedName_1213877410087(SNode thisNode) {
@@ -36,7 +36,7 @@ public class IOperation_Behavior {
   }
 
   public static boolean callSuper_isLValue_1213877410080(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_isLValue_1213877410080", PARAMETERS_1213877410080);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isLValue_1213877410080", PARAMETERS_1213877410080);
   }
 
   public static String callSuper_getVariableExpectedName_1213877410087(SNode thisNode, String callerConceptFqName) {
