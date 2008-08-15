@@ -23,23 +23,6 @@ public class Rename extends AbstractLoggableRefactoring {
     this.myTransientParameters.add("newName");
   }
 
-  public static String getKeyStroke_static() {
-    return "shift F6";
-  }
-
-  public static Class getClass_static() {
-    return Rename.class;
-  }
-
-  public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.core.structure.BaseConcept")) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-
   public String getUserFriendlyName() {
     return "Rename";
   }
@@ -141,6 +124,23 @@ public class Rename extends AbstractLoggableRefactoring {
       dialog.showDialog();
       result = dialog.getResult();
       return result;
+    }
+  }
+
+
+  public static String getKeyStroke_static() {
+    return "shift F6";
+  }
+
+  public static Class getClass_static() {
+    return Rename.class;
+  }
+
+  public static boolean isApplicableWRTConcept_static(SNode node) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.core.structure.BaseConcept")) {
+      return true;
+    } else {
+      return false;
     }
   }
 

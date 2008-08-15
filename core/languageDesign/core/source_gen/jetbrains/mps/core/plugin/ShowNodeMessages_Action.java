@@ -34,7 +34,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return !(this.editorComponent.getHighlightManager().getMessagesFor(this.node).isEmpty());
+    return !(ShowNodeMessages_Action.this.editorComponent.getHighlightManager().getMessagesFor(ShowNodeMessages_Action.this.node).isEmpty());
   }
 
   public void doUpdate(@NotNull()AnActionEvent event) {
@@ -71,7 +71,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      List<EditorMessage> messages = this.editorComponent.getHighlightManager().getMessagesFor(this.node);
+      List<EditorMessage> messages = ShowNodeMessages_Action.this.editorComponent.getHighlightManager().getMessagesFor(ShowNodeMessages_Action.this.node);
       StringBuilder sb = new StringBuilder();
       for (EditorMessage message : messages) {
         sb.append(message.getMessage());
@@ -79,7 +79,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
         sb.append(message.getOwner().toString());
         sb.append("\n");
       }
-      JOptionPane.showMessageDialog(this.editorComponent, sb, "node messages", JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(ShowNodeMessages_Action.this.editorComponent, sb, "node messages", JOptionPane.INFORMATION_MESSAGE);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowNodeMessages", t);
     }

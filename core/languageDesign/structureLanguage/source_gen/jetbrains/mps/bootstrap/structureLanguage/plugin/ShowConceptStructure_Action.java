@@ -78,8 +78,8 @@ public class ShowConceptStructure_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      StructureView_Tool tool = this.project.getPluginManager().getTool(StructureView_Tool.class);
-      tool.getStructureView().inspect((AbstractConceptDeclaration) ((INodeAdapter) SNodeOperations.getAdapter(this.node)), new ProjectOperationContext(this.project));
+      StructureView_Tool tool = ShowConceptStructure_Action.this.project.getPluginManager().getTool(StructureView_Tool.class);
+      tool.getStructureView().inspect((AbstractConceptDeclaration) ((INodeAdapter) SNodeOperations.getAdapter(ShowConceptStructure_Action.this.node)), new ProjectOperationContext(ShowConceptStructure_Action.this.project));
       tool.openToolLater(true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowConceptStructure", t);

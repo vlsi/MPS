@@ -26,23 +26,6 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   public SafeDelete() {
   }
 
-  public static String getKeyStroke_static() {
-    return "alt DELETE";
-  }
-
-  public static Class getClass_static() {
-    return SafeDelete.class;
-  }
-
-  public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.core.structure.BaseConcept")) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-
   public String getUserFriendlyName() {
     return "Safe Delete Node";
   }
@@ -125,6 +108,23 @@ public class SafeDelete extends AbstractLoggableRefactoring {
 
   public boolean askForInfo(final RefactoringContext refactoringContext) {
     return this.isApplicable(refactoringContext);
+  }
+
+
+  public static String getKeyStroke_static() {
+    return "alt DELETE";
+  }
+
+  public static Class getClass_static() {
+    return SafeDelete.class;
+  }
+
+  public static boolean isApplicableWRTConcept_static(SNode node) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.core.structure.BaseConcept")) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }

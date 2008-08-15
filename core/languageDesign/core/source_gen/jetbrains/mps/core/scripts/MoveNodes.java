@@ -39,23 +39,6 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     this.myTransientParameters.add("nodeToOpen");
   }
 
-  public static String getKeyStroke_static() {
-    return " F6";
-  }
-
-  public static Class getClass_static() {
-    return MoveNodes.class;
-  }
-
-  public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.core.structure.BaseConcept")) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-
   public String getUserFriendlyName() {
     return "Move Nodes";
   }
@@ -232,6 +215,23 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       dialog.showDialog();
       result = dialog.getResult();
       return result;
+    }
+  }
+
+
+  public static String getKeyStroke_static() {
+    return " F6";
+  }
+
+  public static Class getClass_static() {
+    return MoveNodes.class;
+  }
+
+  public static boolean isApplicableWRTConcept_static(SNode node) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.core.structure.BaseConcept")) {
+      return true;
+    } else {
+      return false;
     }
   }
 

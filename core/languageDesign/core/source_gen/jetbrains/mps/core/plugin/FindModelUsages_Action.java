@@ -72,8 +72,8 @@ public class FindModelUsages_Action extends GeneratedAction {
     try {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
-      final SModel model = this.model.getSModel();
-      final IScope scope = this.scope;
+      final SModel model = FindModelUsages_Action.this.model.getSModel();
+      final IScope scope = FindModelUsages_Action.this.scope;
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
@@ -82,7 +82,7 @@ public class FindModelUsages_Action extends GeneratedAction {
         }
 
       });
-      this.context.getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false);
+      FindModelUsages_Action.this.context.getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindModelUsages", t);
     }

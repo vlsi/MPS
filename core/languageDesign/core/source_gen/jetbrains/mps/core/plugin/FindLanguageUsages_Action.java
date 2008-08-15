@@ -40,7 +40,7 @@ public class FindLanguageUsages_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return this.module instanceof Language;
+    return FindLanguageUsages_Action.this.module instanceof Language;
   }
 
   public void doUpdate(@NotNull()AnActionEvent event) {
@@ -83,8 +83,8 @@ public class FindLanguageUsages_Action extends GeneratedAction {
     try {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
-      final IModule module = this.module;
-      final IScope scope = this.scope;
+      final IModule module = FindLanguageUsages_Action.this.module;
+      final IScope scope = FindLanguageUsages_Action.this.scope;
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
@@ -93,7 +93,7 @@ public class FindLanguageUsages_Action extends GeneratedAction {
         }
 
       });
-      this.context.getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false);
+      FindLanguageUsages_Action.this.context.getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindLanguageUsages", t);
     }
