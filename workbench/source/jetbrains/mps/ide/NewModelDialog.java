@@ -45,7 +45,6 @@ public class NewModelDialog extends BaseDialog {
     mainPanel.add(new JLabel("Model Name:"));
     mainPanel.add(myModelName);
 
-
     mainPanel.add(new JLabel("Stereotype:"));
 
     myModelStereotype.setEditable(true);
@@ -57,12 +56,8 @@ public class NewModelDialog extends BaseDialog {
     mainPanel.add(myModelRoots);
 
     DefaultComboBoxModel model = new DefaultComboBoxModel();
-    if (myNamespace == null) {
-      for (ModelRoot root : myModule.getModelRoots()) {
-        model.addElement(new ModelRootWrapper(root));
-      }
-    } else {
-      model.addElement(myNamespace);
+    for (ModelRoot root : myModule.getModelRoots()) {
+      model.addElement(new ModelRootWrapper(root, myNamespace));
     }
 
     myModelRoots.addItemListener(new ItemListener() {
@@ -79,16 +74,9 @@ public class NewModelDialog extends BaseDialog {
 
   private void completePrefix() {
     Object selected = myModelRoots.getSelectedItem();
-    String prefix;
-    if (selected instanceof ModelRootWrapper) {
-      ModelRootWrapper wrapper = (ModelRootWrapper) selected;
-      prefix = wrapper.myModelRoot.getPrefix();
-    } else {
-      assert selected instanceof String;
-      prefix = (String) selected;
-    }
+    ModelRootWrapper wrapper = (ModelRootWrapper) selected;
 
-    myModelName.setText(prefix);
+    myModelName.setText(wrapper.getNamespace());
   }
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
@@ -107,12 +95,12 @@ public class NewModelDialog extends BaseDialog {
         }
 
         ModelRootWrapper wrapper = (ModelRootWrapper) myModelRoots.getSelectedItem();
-        if (!myModelName.getText().startsWith(wrapper.myModelRoot.getPrefix())) {
-          setErrorText("Model name should have a prefix " + wrapper.myModelRoot.getPrefix());
+        if (!myModelName.getText().startsWith(wrapper.getNamespace())) {
+          setErrorText("Model name should have a prefix " + wrapper.getNamespace());
           return null;
         }
 
-        return myModule.createModel(modelUID, wrapper.myModelRoot);
+        return myModule.createModel(modelUID, wrapper.getModelRoot());
       }
     });
 
@@ -136,17 +124,33 @@ public class NewModelDialog extends BaseDialog {
 
   private static class ModelRootWrapper {
     private ModelRoot myModelRoot;
+    private String myNamespace;
     private String myText;
 
-    private ModelRootWrapper(ModelRoot modelRoot) {
+    private ModelRootWrapper(ModelRoot modelRoot, String namespaceSuffix) {
       myModelRoot = modelRoot;
 
-      boolean needsPrefix = myModelRoot.getPrefix() != null && !myModelRoot.getPrefix().equals("");
-      myText = myModelRoot.getPath() + (needsPrefix ? " (" + myModelRoot.getPrefix() + ")" : "");
+      String prefix = myModelRoot.getPrefix();
+      if (prefix == null) prefix = "";
+      if (namespaceSuffix == null) namespaceSuffix = "";
+
+      boolean dotNeeded = !prefix.equals("") && !namespaceSuffix.equals("");
+      myNamespace = prefix + (dotNeeded ? "." : "") + namespaceSuffix;
+
+      boolean needsNamespace = !namespaceSuffix.equals("");
+      myText = myModelRoot.getPath() + (needsNamespace ? " (" + myNamespace + ")" : "");
     }
 
     public String toString() {
       return myText;
+    }
+
+    public String getNamespace() {
+      return myNamespace;
+    }
+
+    public ModelRoot getModelRoot() {
+      return myModelRoot;
     }
   }
 }
