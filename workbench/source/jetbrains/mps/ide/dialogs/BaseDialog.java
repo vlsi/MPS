@@ -1,7 +1,8 @@
-package jetbrains.mps.ide;
+package jetbrains.mps.ide.dialogs;
 
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
@@ -53,7 +54,7 @@ public abstract class BaseDialog extends JDialog {
 
   protected BaseDialog(Frame owner) throws HeadlessException {
     this(owner, null);
-  }    
+  }
 
   private void doInit(Component mainFrame) {
     //do not remove this code

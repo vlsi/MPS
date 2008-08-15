@@ -32,7 +32,7 @@
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
   <languageAspect modelUID="jetbrains.mps.ide.uiLanguage.constraints" version="3"/>
   <languageAspect modelUID="jetbrains.mps.uiLanguage.constraints" version="26"/>
-  <maxImportIndex value="108"/>
+  <maxImportIndex value="109"/>
   <import index="1" modelUID="jetbrains.mps.workbench.actions.nodes@java_stub" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.ide.modelchecker@java_stub" version="-1"/>
   <import index="3" modelUID="jetbrains.mps.workbench.actions.model@java_stub" version="-1"/>
@@ -96,6 +96,7 @@
   <import index="105" modelUID="jetbrains.mps.ide.moduleRepositoryViewer@java_stub" version="-1"/>
   <import index="106" modelUID="jetbrains.mps.ide.modelRepositoryViewer@java_stub" version="-1"/>
   <import index="107" modelUID="jetbrains.mps.workbench@java_stub" version="-1"/>
+  <import index="109" modelUID="jetbrains.mps.ide.dialogs@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions"/>
     <property name="id" value="ProjectPaneNodeActions"/>
@@ -3116,13 +3117,13 @@
                 id="1215874783309">
             <property name="name" value="dialog"/>
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215874783310">
-              <link role="classifier" targetNodeId="80.~CloneModelDialog" resolveInfo="CloneModelDialog"/>
+              <link role="classifier" targetNodeId="109.~CloneModelDialog" resolveInfo="CloneModelDialog"/>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression"
                   id="1215874789780">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215874789781">
                 <link role="baseMethodDeclaration"
-                      targetNodeId="80.~CloneModelDialog.&lt;init&gt;(jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.smodel.IOperationContext)"
+                      targetNodeId="109.~CloneModelDialog.&lt;init&gt;(jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.smodel.IOperationContext)"
                       resolveInfo="CloneModelDialog"/>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression"
                       id="1215874793829">
@@ -3155,7 +3156,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1215874806614">
-              <link role="baseMethodDeclaration" targetNodeId="80.~BaseDialog.showDialog():void"
+              <link role="baseMethodDeclaration" targetNodeId="109.~BaseNodeDialog.showDialog():void"
                     resolveInfo="showDialog"/>
             </node>
           </node>
@@ -3452,7 +3453,8 @@
             <property name="name" value="dialog"/>
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1215875641482">
               <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215875605851">
-                <link role="classifier" targetNodeId="80.~DevKitPropertiesDialog" resolveInfo="DevKitPropertiesDialog"/>
+                <link role="classifier" targetNodeId="109.~DevKitPropertiesDialog"
+                      resolveInfo="DevKitPropertiesDialog"/>
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression"
@@ -3467,7 +3469,7 @@
                 </node>
                 <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType"
                       id="1215875645925">
-                  <link role="classifier" targetNodeId="80.~DevKitPropertiesDialog"
+                  <link role="classifier" targetNodeId="109.~DevKitPropertiesDialog"
                         resolveInfo="DevKitPropertiesDialog"/>
                 </node>
               </node>
@@ -3487,7 +3489,7 @@
                         id="1215875662386">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215875662387">
                       <link role="baseMethodDeclaration"
-                            targetNodeId="80.~DevKitPropertiesDialog.&lt;init&gt;(jetbrains.mps.project.DevKit,jetbrains.mps.smodel.IOperationContext)"
+                            targetNodeId="109.~DevKitPropertiesDialog.&lt;init&gt;(jetbrains.mps.project.DevKit,jetbrains.mps.smodel.IOperationContext)"
                             resolveInfo="DevKitPropertiesDialog"/>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
                             id="1215875791593">
@@ -3526,7 +3528,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1215875810372">
-              <link role="baseMethodDeclaration" targetNodeId="80.~BaseNodeDialog.showDialog():void"
+              <link role="baseMethodDeclaration" targetNodeId="109.~BaseNodeDialog.showDialog():void"
                     resolveInfo="showDialog"/>
             </node>
           </node>
@@ -4077,14 +4079,14 @@
                 id="1215886986014">
             <property name="name" value="dialog"/>
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215886986016">
-              <link role="classifier" targetNodeId="80.~GeneratorPropertiesDialog"
+              <link role="classifier" targetNodeId="109.~GeneratorPropertiesDialog"
                     resolveInfo="GeneratorPropertiesDialog"/>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression"
                   id="1215887207300">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215887207301">
                 <link role="baseMethodDeclaration"
-                      targetNodeId="80.~GeneratorPropertiesDialog.&lt;init&gt;(jetbrains.mps.project.MPSProject,jetbrains.mps.smodel.Generator)"
+                      targetNodeId="109.~GeneratorPropertiesDialog.&lt;init&gt;(jetbrains.mps.project.MPSProject,jetbrains.mps.smodel.Generator)"
                       resolveInfo="GeneratorPropertiesDialog"/>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression"
                       id="1215887260035">
@@ -4108,7 +4110,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215886986035">
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1215886986039">
-              <link role="baseMethodDeclaration" targetNodeId="80.~BaseNodeDialog.showDialog():void"
+              <link role="baseMethodDeclaration" targetNodeId="109.~BaseNodeDialog.showDialog():void"
                     resolveInfo="showDialog"/>
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215887277548">
@@ -4254,7 +4256,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215889354419">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215889420333">
                 <link role="baseMethodDeclaration"
-                      targetNodeId="80.~MessageDialog.&lt;init&gt;(java.awt.Frame,java.lang.String)"
+                      targetNodeId="109.~MessageDialog.&lt;init&gt;(java.awt.Frame,java.lang.String)"
                       resolveInfo="MessageDialog"/>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression"
                       id="1215889435885">
@@ -4280,7 +4282,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1215889447008">
-              <link role="baseMethodDeclaration" targetNodeId="80.~BaseDialog.showDialog():void"
+              <link role="baseMethodDeclaration" targetNodeId="109.~BaseDialog.showDialog():void"
                     resolveInfo="showDialog"/>
             </node>
           </node>
@@ -4911,7 +4913,7 @@
             <property name="isFinal" value="true"/>
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1215903557151">
               <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215903551084">
-                <link role="classifier" targetNodeId="80.~NewModelDialog" resolveInfo="NewModelDialog"/>
+                <link role="classifier" targetNodeId="109.~NewModelDialog" resolveInfo="NewModelDialog"/>
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression"
@@ -4919,7 +4921,7 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreator" id="1215903561460">
                 <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType"
                       id="1215903561462">
-                  <link role="classifier" targetNodeId="80.~NewModelDialog" resolveInfo="NewModelDialog"/>
+                  <link role="classifier" targetNodeId="109.~NewModelDialog" resolveInfo="NewModelDialog"/>
                 </node>
                 <node role="dimensionExpression" type="jetbrains.mps.baseLanguage.structure.DimensionExpression"
                       id="1215906212347">
@@ -5017,7 +5019,7 @@
                         id="1215903590092">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215903590093">
                       <link role="baseMethodDeclaration"
-                            targetNodeId="80.~NewModelDialog.&lt;init&gt;(jetbrains.mps.project.IModule,java.lang.String,jetbrains.mps.smodel.IOperationContext)"
+                            targetNodeId="109.~NewModelDialog.&lt;init&gt;(jetbrains.mps.project.IModule,java.lang.String,jetbrains.mps.smodel.IOperationContext)"
                             resolveInfo="NewModelDialog"/>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
                             id="1218739413120">
@@ -5067,7 +5069,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1215903646647">
-              <link role="baseMethodDeclaration" targetNodeId="80.~BaseDialog.showDialog():void"
+              <link role="baseMethodDeclaration" targetNodeId="109.~BaseDialog.showDialog():void"
                     resolveInfo="showDialog"/>
             </node>
           </node>
@@ -5093,7 +5095,7 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                     id="1218635031151">
                 <link role="baseMethodDeclaration"
-                      targetNodeId="80.~NewModelDialog.getResult():jetbrains.mps.smodel.SModelDescriptor"
+                      targetNodeId="109.~NewModelDialog.getResult():jetbrains.mps.smodel.SModelDescriptor"
                       resolveInfo="getResult"/>
               </node>
             </node>
@@ -5587,7 +5589,7 @@
             <property name="name" value="dialog"/>
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1215906153390">
               <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215906140751">
-                <link role="classifier" targetNodeId="80.~NewGeneratorDialog" resolveInfo="NewGeneratorDialog"/>
+                <link role="classifier" targetNodeId="109.~NewGeneratorDialog" resolveInfo="NewGeneratorDialog"/>
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression"
@@ -5595,7 +5597,7 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreator" id="1215906157814">
                 <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType"
                       id="1215906157816">
-                  <link role="classifier" targetNodeId="80.~NewGeneratorDialog" resolveInfo="NewGeneratorDialog"/>
+                  <link role="classifier" targetNodeId="109.~NewGeneratorDialog" resolveInfo="NewGeneratorDialog"/>
                 </node>
                 <node role="dimensionExpression" type="jetbrains.mps.baseLanguage.structure.DimensionExpression"
                       id="1215906175787">
@@ -5621,7 +5623,7 @@
                         id="1215906272884">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215906272885">
                       <link role="baseMethodDeclaration"
-                            targetNodeId="80.~NewGeneratorDialog.&lt;init&gt;(java.awt.Frame,jetbrains.mps.smodel.Language,jetbrains.mps.smodel.IOperationContext)"
+                            targetNodeId="109.~NewGeneratorDialog.&lt;init&gt;(java.awt.Frame,jetbrains.mps.smodel.Language,jetbrains.mps.smodel.IOperationContext)"
                             resolveInfo="NewGeneratorDialog"/>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
                             id="1215907303274">
@@ -5664,7 +5666,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1215906248831">
-              <link role="baseMethodDeclaration" targetNodeId="80.~BaseDialog.showDialog():void"
+              <link role="baseMethodDeclaration" targetNodeId="109.~BaseDialog.showDialog():void"
                     resolveInfo="showDialog"/>
             </node>
           </node>
@@ -8323,7 +8325,7 @@
             <property name="name" value="dialog"/>
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1216126973651">
               <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216126971150">
-                <link role="classifier" targetNodeId="80.~SolutionPropertiesDialog"
+                <link role="classifier" targetNodeId="109.~SolutionPropertiesDialog"
                       resolveInfo="SolutionPropertiesDialog"/>
               </node>
             </node>
@@ -8339,7 +8341,7 @@
                 </node>
                 <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType"
                       id="1216126978641">
-                  <link role="classifier" targetNodeId="80.~SolutionPropertiesDialog"
+                  <link role="classifier" targetNodeId="109.~SolutionPropertiesDialog"
                         resolveInfo="SolutionPropertiesDialog"/>
                 </node>
               </node>
@@ -8359,7 +8361,7 @@
                         id="1216126998981">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216126998982">
                       <link role="baseMethodDeclaration"
-                            targetNodeId="80.~SolutionPropertiesDialog.&lt;init&gt;(jetbrains.mps.project.Solution,jetbrains.mps.smodel.IOperationContext)"
+                            targetNodeId="109.~SolutionPropertiesDialog.&lt;init&gt;(jetbrains.mps.project.Solution,jetbrains.mps.smodel.IOperationContext)"
                             resolveInfo="SolutionPropertiesDialog"/>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
                             id="1216127006735">
@@ -8398,7 +8400,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1216127035082">
-              <link role="baseMethodDeclaration" targetNodeId="80.~BaseNodeDialog.showDialog():void"
+              <link role="baseMethodDeclaration" targetNodeId="109.~BaseNodeDialog.showDialog():void"
                     resolveInfo="showDialog"/>
             </node>
           </node>

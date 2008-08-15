@@ -1,29 +1,28 @@
-package jetbrains.mps.ide;
+package jetbrains.mps.ide.dialogs;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.JSplitPaneWithoutBorders;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.cleanup.CleanupManager;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.JSplitPane;
 import java.awt.HeadlessException;
-
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.application.ApplicationManager;
-import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseNodeDialog extends BaseDialog {
   private static Logger LOG = Logger.getLogger(BaseNodeDialog.class);

@@ -1,10 +1,11 @@
-package jetbrains.mps.ide;
+package jetbrains.mps.ide.dialogs;
 
-import jetbrains.mps.ide.BaseDialog;
-import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import java.awt.*;
 
 public class MessageDialog extends BaseDialog {

@@ -1,7 +1,7 @@
-package jetbrains.mps.ide;
+package jetbrains.mps.ide.dialogs;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.modelProperties.ModelPropertiesDialog;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;

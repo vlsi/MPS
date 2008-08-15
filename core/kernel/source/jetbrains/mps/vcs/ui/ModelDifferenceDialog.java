@@ -1,7 +1,7 @@
 package jetbrains.mps.vcs.ui;
 
-import jetbrains.mps.ide.BaseDialog;
-import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.SModel;
 
 import javax.swing.JComponent;

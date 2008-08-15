@@ -1,7 +1,7 @@
 package jetbrains.mps.dialogs;
 
-import jetbrains.mps.ide.BaseDialog;
-import jetbrains.mps.ide.DialogDimensionsSettings;
+import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -22,7 +22,7 @@ import java.awt.Frame;
 import java.util.*;
 
 public final class ChooseNodeDialog extends BaseDialog {
-  
+
   private final JPanel myPanel = new JPanel(new BorderLayout());
   private MyTree myTree = new MyTree();
   private Set<SModelDescriptor> myModels = new HashSet<SModelDescriptor>();
@@ -79,7 +79,7 @@ public final class ChooseNodeDialog extends BaseDialog {
 
     dispose();
 
-    MPSTreeNode node = (MPSTreeNode)  myTree.getSelectionPath().getLastPathComponent();
+    MPSTreeNode node = (MPSTreeNode) myTree.getSelectionPath().getLastPathComponent();
     if (node instanceof SNodeTreeNode) {
       SNode sNode = ((SNodeTreeNode) node).getSNode();
       if (mySourceNodes != null && !mySourceNodes.isEmpty()) {

@@ -1,8 +1,8 @@
 package jetbrains.mps.refactoring.framework;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.BaseDialog;
-import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;

@@ -1,19 +1,19 @@
-package jetbrains.mps.ide;
+package jetbrains.mps.ide.dialogs;
 
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
-import javax.swing.event.TableModelListener;
 import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
-import java.util.List;
+import java.awt.BorderLayout;
+import java.awt.Frame;
+import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
-import java.awt.*;
-
-import com.intellij.openapi.wm.impl.CommandProcessor;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,7 +23,7 @@ import com.intellij.openapi.wm.impl.CommandProcessor;
  */
 public class AddRequiredModelImportsDialog extends BaseDialog {
 
-  private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200,200,600,300);
+  private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200, 200, 600, 300);
 
   private SModel myModel;
 
@@ -44,7 +44,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
   public AddRequiredModelImportsDialog(Frame frame, SModel model,
                                        Set<SModelUID> necessaryImports,
                                        Set<String> necessaryLanguages,
-                                       Set<String> necessaryDevKits  ) {
+                                       Set<String> necessaryDevKits) {
     super(frame, "Imports and Languages");
     myImports = new ArrayList<SModelUID>(necessaryImports);
     myLanguages = new ArrayList<String>(necessaryLanguages);
@@ -59,7 +59,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     JLabel header = new JLabel("Do you want to add imported models or languages to the model " + myModel + " ?", JLabel.LEFT);
     myMainComponent.add(header, BorderLayout.NORTH);
 
-    JPanel panel = new JPanel(new GridLayout(3,1,5,5));
+    JPanel panel = new JPanel(new GridLayout(3, 1, 5, 5));
 
     if (!myImports.isEmpty()) {
       MyImportsTableModel importsTableModel = new MyImportsTableModel(myImports, myImportsToAdd);
@@ -159,7 +159,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     return myMainComponent;
   }
 
-   private class MyImportsTableModel implements TableModel {
+  private class MyImportsTableModel implements TableModel {
 
     private List myItemsToAdd;
     private List myItems;

@@ -1,21 +1,21 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.ide.BaseDialog;
-import jetbrains.mps.ide.DialogDimensionsSettings;
+import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 
 import javax.swing.JComponent;
-import javax.swing.JScrollPane;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.tree.TreePath;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Collection;
 import java.awt.Frame;
 import java.awt.HeadlessException;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ChooseModuleDialog extends BaseDialog {
   private MPSTree myTree = new MPSTree() {
@@ -79,7 +79,7 @@ public class ChooseModuleDialog extends BaseDialog {
       super(module, null);
       myModule = module;
 
-      setNodeIdentifier(myModule.toString());      
+      setNodeIdentifier(myModule.toString());
       setIcon(IconManager.getIconFor(module));
     }
 

@@ -1,5 +1,6 @@
-package jetbrains.mps.ide;
+package jetbrains.mps.ide.dialogs;
 
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;

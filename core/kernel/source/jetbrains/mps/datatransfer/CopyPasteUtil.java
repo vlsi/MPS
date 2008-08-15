@@ -1,10 +1,10 @@
 package jetbrains.mps.datatransfer;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.structure.IMethodCall;
-import jetbrains.mps.ide.AddRequiredModelImportsDialog;
+import jetbrains.mps.ide.dialogs.AddRequiredModelImportsDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.Parser;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
@@ -17,8 +17,6 @@ import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.util.*;
-
-import com.intellij.openapi.util.Computable;
 
 public class CopyPasteUtil {
   private static final Logger LOG = Logger.getLogger(CopyPasteUtil.class);

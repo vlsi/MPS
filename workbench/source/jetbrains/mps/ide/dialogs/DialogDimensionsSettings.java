@@ -1,10 +1,10 @@
-package jetbrains.mps.ide;
+package jetbrains.mps.ide.dialogs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import jetbrains.mps.ide.DialogDimensionsSettings.MyState;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.MyState;
 
 import java.awt.Dimension;
 import java.util.HashMap;

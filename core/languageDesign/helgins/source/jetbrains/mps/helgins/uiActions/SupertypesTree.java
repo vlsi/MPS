@@ -1,21 +1,21 @@
 package jetbrains.mps.helgins.uiActions;
 
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.ide.dialogs.BaseNodeDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
-import jetbrains.mps.ide.BaseNodeDialog;
-import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
 
-import javax.swing.JButton;
 import javax.swing.AbstractAction;
+import javax.swing.JButton;
+import java.awt.HeadlessException;
+import java.awt.event.ActionEvent;
 import java.util.HashSet;
 import java.util.Set;
-import java.awt.event.ActionEvent;
-import java.awt.HeadlessException;
 
 public class SupertypesTree extends AbstractHierarchyTree<INodeAdapter> {
   private boolean myShowOnlyStrong = false;
@@ -41,13 +41,13 @@ public class SupertypesTree extends AbstractHierarchyTree<INodeAdapter> {
       return new HashSet<INodeAdapter>();
     }
     Set<SNode> supertypes = TypeChecker.getInstance().getSubtypingManager().
-            collectImmediateSupertypes(node.getNode(), !myShowOnlyStrong);
+      collectImmediateSupertypes(node.getNode(), !myShowOnlyStrong);
     return BaseAdapter.toAdapters(supertypes);
   }
 
   public void setShowOnlyStrong(boolean showOnlyStrong) {
     myShowOnlyStrong = showOnlyStrong;
-    rebuildLater();                                                                    
+    rebuildLater();
   }
 
   public boolean doubleClick(final HierarchyTreeNode<INodeAdapter> hierarchyTreeNode) {
