@@ -3632,7 +3632,7 @@
             <property name="name" value="dialog"/>
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1215875847704">
               <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215875847705">
-                <link role="classifier" targetNodeId="80.~LanguagePropertiesDialog"
+                <link role="classifier" targetNodeId="109.~LanguagePropertiesDialog"
                       resolveInfo="LanguagePropertiesDialog"/>
               </node>
             </node>
@@ -3648,7 +3648,7 @@
                 </node>
                 <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType"
                       id="1215875847710">
-                  <link role="classifier" targetNodeId="80.~LanguagePropertiesDialog"
+                  <link role="classifier" targetNodeId="109.~LanguagePropertiesDialog"
                         resolveInfo="LanguagePropertiesDialog"/>
                 </node>
               </node>
@@ -3668,7 +3668,7 @@
                         id="1215875847716">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215875847717">
                       <link role="baseMethodDeclaration"
-                            targetNodeId="80.~LanguagePropertiesDialog.&lt;init&gt;(jetbrains.mps.smodel.Language,jetbrains.mps.smodel.IOperationContext)"
+                            targetNodeId="109.~LanguagePropertiesDialog.&lt;init&gt;(jetbrains.mps.smodel.Language,jetbrains.mps.smodel.IOperationContext)"
                             resolveInfo="LanguagePropertiesDialog"/>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
                             id="1215875847718">
@@ -3707,7 +3707,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1215875847728">
-              <link role="baseMethodDeclaration" targetNodeId="80.~BaseNodeDialog.showDialog():void"
+              <link role="baseMethodDeclaration" targetNodeId="109.~BaseNodeDialog.showDialog():void"
                     resolveInfo="showDialog"/>
             </node>
           </node>
@@ -5467,7 +5467,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1215905667263">
-              <link role="baseMethodDeclaration" targetNodeId="80.~BaseDialog.showDialog():void"
+              <link role="baseMethodDeclaration" targetNodeId="109.~BaseDialog.showDialog():void"
                     resolveInfo="showDialog"/>
             </node>
           </node>
@@ -8026,7 +8026,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1216124587805">
-              <link role="baseMethodDeclaration" targetNodeId="80.~BaseDialog.showDialog():void"
+              <link role="baseMethodDeclaration" targetNodeId="109.~BaseDialog.showDialog():void"
                     resolveInfo="showDialog"/>
             </node>
           </node>
