@@ -7549,6 +7549,7 @@
       <property name="name" value="project"/>
       <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT"/>
     </node>
+    <node role="parameter" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameter" id="1218806751929"/>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216123732571">
     <property name="package" value="Menu.ProjectPane.Project.Actions"/>
@@ -10247,6 +10248,7 @@
       <property name="name" value="project"/>
       <link role="key" targetNodeId="107.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT"/>
     </node>
+    <node role="parameter" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameter" id="1218806661617"/>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ToolDeclaration" id="1216663323016">
     <property name="name" value="ModelRepository"/>

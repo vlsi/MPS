@@ -879,7 +879,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1204391079391">
-    <property name="package" value="Actions.Groups"/>
+    <property name="package" value="Actions.Groups.GroupMembers"/>
     <property name="name" value="ActionGroupMember"/>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204397573187">
