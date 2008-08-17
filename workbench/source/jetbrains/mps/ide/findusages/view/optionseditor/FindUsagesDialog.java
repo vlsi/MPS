@@ -28,7 +28,7 @@ public class FindUsagesDialog extends BaseDialog {
   private boolean myIsCancelled = true;
 
   public FindUsagesDialog(final FindUsagesOptions defaultOptions, final SNode node, final ActionEventData data) {
-    super(data.getOperationContext().getMainFrame(), "Find usages");
+    super(data.getOperationContext().getMainFrame(), "Find Usages");
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

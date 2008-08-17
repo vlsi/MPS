@@ -7,7 +7,6 @@ import jetbrains.mps.ide.dialogs.NewGeneratorDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -22,7 +21,6 @@ public class NewGenerator_Action extends GeneratedAction {
   public static final Icon ICON = null;
 
   public Frame frame;
-  public IOperationContext context;
 
   public NewGenerator_Action() {
     super("New Generator", "", ICON);
@@ -63,10 +61,6 @@ public class NewGenerator_Action extends GeneratedAction {
       if (this.frame == null) {
         return false;
       }
-      this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-      if (this.context == null) {
-        return false;
-      }
     } catch (Throwable t) {
       return false;
     }
@@ -78,12 +72,11 @@ public class NewGenerator_Action extends GeneratedAction {
       ActionEventData data = new ActionEventData(event);
       final Language language = (Language) data.getModule();
       final Frame localFrame = NewGenerator_Action.this.frame;
-      final IOperationContext localContext = NewGenerator_Action.this.context;
       final NewGeneratorDialog[] dialog = new NewGeneratorDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          dialog[0] = new NewGeneratorDialog(localFrame, language, localContext);
+          dialog[0] = new NewGeneratorDialog(localFrame, language);
         }
 
       });

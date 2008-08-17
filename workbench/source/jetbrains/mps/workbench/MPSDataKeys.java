@@ -1,7 +1,9 @@
 package jetbrains.mps.workbench;
 
+import com.intellij.openapi.actionSystem.DataConstants;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -21,6 +23,8 @@ import java.lang.annotation.Target;
 import java.util.List;
 
 public class MPSDataKeys extends PlatformDataKeys {
+  @Description(description = "current IDEA project")
+  public static final DataKey<Project> PROJECT = DataKey.create(DataConstants.PROJECT);
   @Description(description = "current MPS project")
   public static final DataKey<MPSProject> MPS_PROJECT = DataKey.create("MPS_MPSProject");
   @Description(description = "current node")

@@ -12,9 +12,9 @@ import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.Frame;
-import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.io.File;
@@ -23,17 +23,15 @@ import java.util.List;
 public class NewGeneratorDialog extends BaseDialog {
   private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200, 200, 400, 500);
 
-  private JPanel myContenetPane = new JPanel();
-  private JScrollPane myMainComponentPane = new JScrollPane(myContenetPane);
+  private JPanel myContenetPane;
   private JTextField myTemplateModelsDir;
   private JTextField myGeneratorName;
   private Language mySourceLanguage;
-  private IOperationContext myContext;
 
-  public NewGeneratorDialog(Frame mainFrame, Language sourceLanguage, IOperationContext context) throws HeadlessException {
+  public NewGeneratorDialog(Frame mainFrame, Language sourceLanguage) throws HeadlessException {
     super(mainFrame, "New Generator");
     mySourceLanguage = sourceLanguage;
-    myContext = context;
+    myContenetPane = new JPanel(new BorderLayout());
     initContentPane();
   }
 
@@ -49,25 +47,23 @@ public class NewGeneratorDialog extends BaseDialog {
   }
 
   protected JComponent getMainComponent() {
-    return myMainComponentPane;
+    return myContenetPane;
   }
 
   private void initContentPane() {
-    JPanel internalPanel = new JPanel(new GridLayout(0, 1));
-    internalPanel.setBorder(BorderFactory.createEmptyBorder(0, 4, 10, 4));
-    myContenetPane.setLayout(new BorderLayout());
-    myContenetPane.add(internalPanel, BorderLayout.NORTH);
+    JPanel innerPanel = new JPanel(new BorderLayout());
+    innerPanel.setLayout(new BoxLayout(innerPanel, BoxLayout.Y_AXIS));
+    innerPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 
-    //TODO: constraints
-    internalPanel.add(new JLabel("Generator name :"));
     myGeneratorName = new JTextField();
-    internalPanel.add(myGeneratorName);
+    JPanel namePanel = new JPanel(new BorderLayout());
+    namePanel.add(new JLabel("Generator name"), BorderLayout.WEST);
+    namePanel.add(myGeneratorName, BorderLayout.CENTER);
+    namePanel.setBorder(new EmptyBorder(0, 0, 5, 0));
 
-    internalPanel.add(new JLabel("Template models root :"));
     myTemplateModelsDir = new JTextField();
-
+    JPanel templatesPanel = new JPanel(new BorderLayout());
     updateTemplateModelsDir();
-
     JButton chooseButton = new JButton(new AbstractAction("...") {
       public void actionPerformed(ActionEvent e) {
         String oldPath = myTemplateModelsDir.getText();
@@ -86,11 +82,14 @@ public class NewGeneratorDialog extends BaseDialog {
         }
       }
     });
+    templatesPanel.add(new JLabel("Templates root"), BorderLayout.WEST);
+    templatesPanel.add(myTemplateModelsDir, BorderLayout.CENTER);
+    templatesPanel.add(chooseButton, BorderLayout.EAST);
 
-    JPanel rootChooser = new JPanel(new BorderLayout());
-    rootChooser.add(myTemplateModelsDir, BorderLayout.CENTER);
-    rootChooser.add(chooseButton, BorderLayout.EAST);
-    internalPanel.add(rootChooser);
+    innerPanel.add(namePanel);
+    innerPanel.add(templatesPanel);
+
+    myContenetPane.add(innerPanel, BorderLayout.NORTH);
   }
 
   private void updateTemplateModelsDir() {
@@ -102,6 +101,15 @@ public class NewGeneratorDialog extends BaseDialog {
       File.separatorChar + "template";
 
     myTemplateModelsDir.setText(modelsDir);
+  }
+
+  private boolean isValidName(String name) {
+    for (char c : name.toCharArray()) {
+      if (!Character.isLetterOrDigit(c) && c != '_') {
+        return false;
+      }
+    }
+    return true;
   }
 
   @Button(position = 0, name = "OK", defaultButton = true)
@@ -121,9 +129,14 @@ public class NewGeneratorDialog extends BaseDialog {
       dir.mkdirs();
     }
 
+    final String name = myGeneratorName.getText();
+    if (!isValidName(name)) {
+      setErrorText("Only letters, digits and '_' can be used in generator name.");
+      return;
+    }
+
     dispose();
 
-    final String name = myGeneratorName.getText();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         createNewGenerator(mySourceLanguage, dir, name);

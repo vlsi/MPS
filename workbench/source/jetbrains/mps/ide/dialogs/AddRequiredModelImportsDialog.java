@@ -45,7 +45,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
                                        Set<SModelUID> necessaryImports,
                                        Set<String> necessaryLanguages,
                                        Set<String> necessaryDevKits) {
-    super(frame, "Imports and Languages");
+    super(frame, "Imports And Languages");
     myImports = new ArrayList<SModelUID>(necessaryImports);
     myLanguages = new ArrayList<String>(necessaryLanguages);
     myDevKits = new ArrayList<String>(necessaryDevKits);

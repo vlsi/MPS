@@ -5563,26 +5563,6 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
-              id="1215907335042">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"
-                id="1215907335043">
-            <property name="name" value="localContext"/>
-            <property name="isFinal" value="true"/>
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215907335044">
-              <link role="classifier" targetNodeId="40.~IOperationContext" resolveInfo="IOperationContext"/>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215907335045">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"
-                    id="1215907335046"/>
-              <node role="operation"
-                    type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDataParameterReferenceOperation"
-                    id="1217420648450">
-                <link role="member" targetNodeId="1217420648449" resolveInfo="context"/>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
               id="1215906140749">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"
                 id="1215906140750">
@@ -5623,7 +5603,7 @@
                         id="1215906272884">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215906272885">
                       <link role="baseMethodDeclaration"
-                            targetNodeId="109.~NewGeneratorDialog.&lt;init&gt;(java.awt.Frame,jetbrains.mps.smodel.Language,jetbrains.mps.smodel.IOperationContext)"
+                            targetNodeId="109.~NewGeneratorDialog.&lt;init&gt;(java.awt.Frame,jetbrains.mps.smodel.Language)"
                             resolveInfo="NewGeneratorDialog"/>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
                             id="1215907303274">
@@ -5632,10 +5612,6 @@
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
                             id="1215906319100">
                         <link role="variableDeclaration" targetNodeId="1215906364726" resolveInfo="language"/>
-                      </node>
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                            id="1215907317944">
-                        <link role="variableDeclaration" targetNodeId="1215907335043" resolveInfo="localContext"/>
                       </node>
                     </node>
                   </node>
@@ -5747,11 +5723,6 @@
           id="1217420647398">
       <property name="name" value="frame"/>
       <link role="key" targetNodeId="107.~MPSDataKeys.FRAME" resolveInfo="FRAME"/>
-    </node>
-    <node role="parameter" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDataParameterDeclaration"
-          id="1217420648449">
-      <property name="name" value="context"/>
-      <link role="key" targetNodeId="107.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1215907579103">

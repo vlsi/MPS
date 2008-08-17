@@ -20,7 +20,6 @@ import java.awt.event.ActionEvent;
 
 public class MyBaseNodeDialog extends BaseNodeDialog {
   private final SNode myType;
-  private final SNode myNode;
   private final IErrorReporter myError;
   private boolean myWasRegistered = true;
   private JSplitPane myMainComponent;
@@ -34,7 +33,6 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     myMainComponent.setDividerSize(6);
     myMainComponent.setResizeWeight(0.8);
 
-    myNode = node;
     myType = type;
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -87,7 +85,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
 
   public void showDialog() {
     if (myError != null) {
-      setErrorText("TYPE ERROR! Message: " + myError.reportError());
+      setErrorText("Type error! Message: " + myError.reportError());
     }
     super.showDialog();
   }

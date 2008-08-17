@@ -5,6 +5,7 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.BorderLayout;
@@ -18,13 +19,15 @@ public class NewFileDialog extends BaseDialog {
   private String myResult = null;
 
   public NewFileDialog(Frame mainFrame) throws HeadlessException {
-    super(mainFrame, "Select name");
+    super(mainFrame, "New Folder");
 
     myPanel = new JPanel(new BorderLayout());
 
     myTextArea = new JTextField("New Folder", 20);
+    JLabel label = new JLabel("Name:");
 
     myPanel.add(myTextArea, BorderLayout.CENTER);
+    myPanel.add(label, BorderLayout.WEST);
 
     setPreferredSize(getDefaultDimensionSettings().getDimensions());
     setSize(getDefaultDimensionSettings().getDimensions());

@@ -42,7 +42,7 @@ public class NewModelDialog extends BaseDialog {
 
   private void initContentPane() {
     JPanel mainPanel = new JPanel(new GridLayout(0, 1));
-    mainPanel.add(new JLabel("Model Name:"));
+    mainPanel.add(new JLabel("Model name:"));
     mainPanel.add(myModelName);
 
     mainPanel.add(new JLabel("Stereotype:"));
@@ -52,7 +52,7 @@ public class NewModelDialog extends BaseDialog {
 
     mainPanel.add(myModelStereotype);
 
-    mainPanel.add(new JLabel("Model Root:"));
+    mainPanel.add(new JLabel("Model root:"));
     mainPanel.add(myModelRoots);
 
     DefaultComboBoxModel model = new DefaultComboBoxModel();
