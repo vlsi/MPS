@@ -77,8 +77,8 @@
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression"
                     id="1213877240117"/>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
-                    id="1213877240118">
-                <link role="link" targetNodeId="1.1197044488847"/>
+                    id="1218978510275">
+                <link role="link" targetNodeId="1.1218978181697"/>
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall"
