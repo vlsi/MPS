@@ -2807,7 +2807,6 @@
       <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1182954963748">
         <property name="text" value="this"/>
-        <link role="keyMap" targetNodeId="1182943571185" resolveInfo="ThisExpression_KeyMap"/>
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord"/>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem"
               id="1214310995436">
@@ -14182,76 +14181,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1182160175805">
         <link role="relationDeclaration" targetNodeId="17.1182160096073"/>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapDeclaration" id="1182943571185">
-    <property name="name" value="ThisExpression_KeyMap"/>
-    <link role="applicableConcept" targetNodeId="17.1070475354124"/>
-    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapItem" id="1182943595398">
-      <property name="description" value="convert 'this' to 'ClassConcept.this'"/>
-      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke"
-            id="1182943595399">
-        <property name="keycode" value="VK_Z"/>
-        <property name="modifiers" value="alt"/>
-      </node>
-      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_ExecuteFunction"
-            id="1182943595400">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182943595401">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182954900724">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977966134">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977964787">
-                <node role="operand"
-                      type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode"
-                      id="1182954900725"/>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
-                      id="1182955043358">
-                  <link role="link" targetNodeId="17.1182955020723"/>
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation"
-                    id="1182954905344">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977967117">
-                  <node role="operand"
-                        type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode"
-                        id="1182954906721"/>
-                  <node role="operation"
-                        type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation"
-                        id="1182954909379">
-                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"
-                          id="1182954913650">
-                      <node role="conceptArgument"
-                            type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference"
-                            id="1207781905862">
-                        <link role="conceptDeclaration" targetNodeId="17.1068390468198" resolveInfo="ClassConcept"/>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="isApplicableFunction"
-            type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_IsApplicableFunction" id="1182943725088">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182943725090">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182943732492">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977955298">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977968056">
-                <node role="operand"
-                      type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode"
-                      id="1182943732493"/>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
-                      id="1182955039811">
-                  <link role="link" targetNodeId="17.1182955020723"/>
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNullOperation"
-                    id="1182943738001"/>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </node>

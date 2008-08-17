@@ -1,9 +1,7 @@
 package jetbrains.mps.workbench;
 
-import com.intellij.openapi.actionSystem.DataConstants;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -16,11 +14,15 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 
 import java.awt.Frame;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 import java.util.List;
 
 public class MPSDataKeys extends PlatformDataKeys {
+  @Description("MPS project")
   public static final DataKey<MPSProject> MPS_PROJECT = DataKey.create("MPS_MPSProject");
-  public static final DataKey<Project> PROJECT = DataKey.create(DataConstants.PROJECT);
   public static final DataKey<SModelDescriptor> MODEL_DESCRIPTOR = DataKey.create("MPS_SModelDescriptor");
   public static final DataKey<SNode> SNODE = DataKey.create("MPS_SNode");
   public static final DataKey<List<SNode>> SNODES = DataKey.create("MPS_SNode_List");
@@ -37,4 +39,10 @@ public class MPSDataKeys extends PlatformDataKeys {
   public static final DataKey<EditorComponent> EDITOR_COMPONENT = DataKey.create("MPS_EditorComponent");
   public static final DataKey<String> VIRTUAL_PACKAGE = DataKey.create("MPS_VirtualPackage");
   public static final DataKey<List<String>> VIRTUAL_PACKAGES = DataKey.create("MPS_VirtualPackage_List");
+
+  @Retention(RetentionPolicy.RUNTIME)
+  @Target(ElementType.FIELD)
+  public @interface Description {
+    String value() default "";
+  }
 }

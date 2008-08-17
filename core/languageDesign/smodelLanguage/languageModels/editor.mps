@@ -1032,6 +1032,10 @@
           id="1143226143282">
       <property name="text" value="model"/>
       <link role="styleClass" targetNodeId="5.1186415544875" resolveInfo="KeyWord"/>
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem"
+            id="1218969113288">
+        <property name="value" value="0.0"/>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1143234307768">
