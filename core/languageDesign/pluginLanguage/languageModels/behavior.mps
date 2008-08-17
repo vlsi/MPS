@@ -319,7 +319,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877266887">
-    <property name="package" value="Preference"/>
+    <property name="package" value="Preference.Members"/>
     <link role="concept" targetNodeId="1.1210179190070" resolveInfo="PersistentPropertyDeclaration"/>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration"
           id="1213877266888">

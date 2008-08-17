@@ -1441,7 +1441,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1209909878702">
-    <property name="package" value="Tool.Operations"/>
+    <property name="package" value="Tool"/>
     <property name="name" value="GetToolOperation"/>
     <link role="extends" targetNodeId="1209909558075" resolveInfo="ProjectOperation"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
@@ -1652,7 +1652,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210179190070">
-    <property name="package" value="Preference"/>
+    <property name="package" value="Preference.Members"/>
     <property name="name" value="PersistentPropertyDeclaration"/>
     <link role="extends" targetNodeId="2.1068431474542" resolveInfo="VariableDeclaration"/>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
@@ -1666,7 +1666,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210180874794">
-    <property name="package" value="Preference"/>
+    <property name="package" value="Preference.Members"/>
     <property name="name" value="PersistentPropertyReference"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1210180958412">
@@ -1722,7 +1722,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210676672555">
-    <property name="package" value="Preference"/>
+    <property name="package" value="Preference.Members"/>
     <property name="name" value="OnBeforeWriteBlock"/>
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
@@ -1747,7 +1747,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210676879526">
-    <property name="package" value="Preference"/>
+    <property name="package" value="Preference.Members"/>
     <property name="name" value="OnAfterReadBlock"/>
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
