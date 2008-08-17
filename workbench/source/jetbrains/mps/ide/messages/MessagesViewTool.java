@@ -21,6 +21,7 @@ import jetbrains.mps.workbench.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
@@ -160,6 +161,9 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     myList.setCellRenderer(new DefaultListCellRenderer() {
       public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
         super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+
+        setBackground(isSelected ? Color.LIGHT_GRAY : Color.WHITE);
+        setBorder(new EmptyBorder(0, 0, 0, 0));
 
         Message msg = (Message) value;
         if (msg.getHintObject() != null) {
