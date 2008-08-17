@@ -215,13 +215,17 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         final SearchResults[] searchResults = new SearchResults[1];
+        final boolean[] isCancelled = new boolean[1];
         ProgressManager.getInstance().run(new Modal(getProject(), "Searching", true) {
           public void run(@NotNull final ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             searchResults[0] = FindUtils.getSearchResults(indicator, query, provider);
+            isCancelled[0] = indicator.isCanceled();
           }
         });
-        showResults(searchResults[0], showOne, newTab, provider, query, isRerunnable);
+        if (!isCancelled[0]) {
+          showResults(searchResults[0], showOne, newTab, provider, query, isRerunnable);
+        }
       }
     });
   }
