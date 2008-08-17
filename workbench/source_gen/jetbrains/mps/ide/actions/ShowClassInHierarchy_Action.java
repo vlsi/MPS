@@ -60,11 +60,6 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
         if (node != null) {
         }
         this.node = node;
-        /*
-          if (!(<!IsSubtypeExpression TextGen not found!>)) {
-            return false;
-          }
-        */
       }
       if (this.node == null) {
         return false;

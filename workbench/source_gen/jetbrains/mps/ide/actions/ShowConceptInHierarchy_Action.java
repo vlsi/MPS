@@ -62,11 +62,6 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
           }
         }
         this.node = node;
-        /*
-          if (!(<!IsSubtypeExpression TextGen not found!>)) {
-            return false;
-          }
-        */
       }
       if (this.node == null) {
         return false;
