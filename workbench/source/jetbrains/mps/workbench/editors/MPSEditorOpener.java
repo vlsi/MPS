@@ -1,31 +1,32 @@
 package jetbrains.mps.workbench.editors;
 
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.*;
-import jetbrains.mps.workbench.editors.MPSEditorOpenHandlerOwner;
-import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints;
 import jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration;
+import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.ide.ConceptDeclarationEditor;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.NodeEditor;
+import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import java.util.*;
@@ -163,6 +164,7 @@ public class MPSEditorOpener implements ProjectComponent {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         ModuleContext context = ModuleContext.create(node, myProject.getComponent(MPSProjectHolder.class).getMPSProject());
+        if (context == null) return;
         openNode(node, context, focus);
       }
     });

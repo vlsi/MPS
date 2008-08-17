@@ -4,6 +4,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.awt.Frame;
 import java.util.Set;
@@ -52,6 +53,7 @@ public class ModuleContext extends StandaloneMPSContext {
     return "module context: " + myModuleUID;
   }
 
+  @Nullable
   public static ModuleContext create(final SNode node, MPSProject project) {
     SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
       public SModel compute() {
@@ -61,6 +63,7 @@ public class ModuleContext extends StandaloneMPSContext {
     return create(model, project, true);
   }
 
+  @Nullable
   public static ModuleContext create(final SModel model, MPSProject project, boolean askIfMany) {
     SModelDescriptor modelDescriptor = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
       public SModelDescriptor compute() {
@@ -70,6 +73,7 @@ public class ModuleContext extends StandaloneMPSContext {
     return create(modelDescriptor, project, askIfMany);
   }
 
+  @Nullable
   public static ModuleContext create(@NotNull final SModelDescriptor model, MPSProject project, boolean askIfMany) {
 
     if (askIfMany && (ModelAccess.instance().canRead() || ModelAccess.instance().canWrite())) {
@@ -97,6 +101,8 @@ public class ModuleContext extends StandaloneMPSContext {
       md.showDialog();
       module = md.getResult();
     }
+
+    if (module == null) return null;
 
     return new ModuleContext(module, project);
   }

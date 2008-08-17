@@ -14,9 +14,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GeneratorManager.MyState;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
-import jetbrains.mps.ide.messages.DefaultMessageHandler;
-import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
@@ -138,6 +136,11 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
       for (SModelDescriptor model : inputModels) {
         assert model != null;
         ModuleContext moduleContext = ModuleContext.create(model, operationContext.getMPSProject(), false);
+        if (moduleContext == null) {
+          MessagesViewTool messagesTool = operationContext.getProject().getComponent(MessagesViewTool.class);
+          messagesTool.add(new Message(MessageKind.WARNING, "Model " + model.getLongName() + " won't be generated"));
+          continue;
+        }
         modelsWithContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
       }
 
