@@ -250,6 +250,15 @@ public class TypeChecker implements ApplicationComponent {
     checkRoot(node, false);
   }
 
+  public void interrupt() {
+    NodeTypesComponent currentTypesComponent = getCurrentTypesComponent();
+    while (currentTypesComponent != null) {
+      currentTypesComponent.interrupt();
+      clearCurrentTypesComponent();
+      currentTypesComponent = getCurrentTypesComponent();
+    }
+  }
+
   public void checkRoot(final SNode node, final boolean refreshTypes) {
     assert node.isRoot();
     checkWithinRoot(node, new Runnable() {

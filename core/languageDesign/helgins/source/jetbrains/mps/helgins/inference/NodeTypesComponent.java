@@ -73,6 +73,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private SNode myCurrentCheckedNode;
   private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
   private boolean myIsGeneration = false;
+  private boolean myIsInterrupted = false;
 
   public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker) {
     myRootNode = rootNode;
@@ -218,48 +219,53 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
       computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, useNonTypesystemRules);
       solveInequationsAndExpandTypes();
+      performActionsAfterChecking();
 
-      // setting expanded errors
-      for (SNode node : new HashSet<SNode>(myNodesToErrorsMap.keySet())) {
-        IErrorReporter iErrorReporter = myNodesToErrorsMap.get(node);
-        String errorString = iErrorReporter.reportError();
-        SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(), iErrorReporter.isWarning());
-        reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
-        myNodesToErrorsMap.put(node, reporter);
-      }
 
-      //write access listeners
-      removeOurListener();
-      for (SNode nodeToDependOn : myNodesToDependentNodes.keySet()) {
-        final SModel sModel = nodeToDependOn.getModel();
-        final SModelDescriptor sm = sModel.getModelDescriptor();
-        if (sm != null) {
-          addOurListener(sm);
-        } else {
-          if (SModelStereotype.isUserModel(sModel)) {
-            LOG.error("model descriptor is null: " + sModel);
-          }
-        }
-      }
-      final Set<SNodePointer> notSkippedNodes = new HashSet<SNodePointer>(myNotSkippedNodes);
-      if (HelginsPreferencesComponent.getInstance().isUsesDebugHighlighting()) {
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            EditorComponent component = (EditorComponent) getEditorComponent();
-            if (component == null) return;
-            component.getHighlightManager().clearForOwner(component.getHighlightMessagesOwner()); //todo change an owner
-            for (SNodePointer notSkippedNode : notSkippedNodes) {
-              markNode(component, notSkippedNode);
-              if (component instanceof NodeEditorComponent) {
-                markNode(((NodeEditorComponent) component).getInspector(), notSkippedNode);
-              }
-            }
-          }
-        });
-      }
     } finally {
       myNotSkippedNodes.clear();
       clearEquationManager();
+    }
+  }
+
+  private void performActionsAfterChecking() {
+    // setting expanded errors
+    for (SNode node : new HashSet<SNode>(myNodesToErrorsMap.keySet())) {
+      IErrorReporter iErrorReporter = myNodesToErrorsMap.get(node);
+      String errorString = iErrorReporter.reportError();
+      SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(), iErrorReporter.isWarning());
+      reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
+      myNodesToErrorsMap.put(node, reporter);
+    }
+
+    //write access listeners
+    removeOurListener();
+    for (SNode nodeToDependOn : myNodesToDependentNodes.keySet()) {
+      final SModel sModel = nodeToDependOn.getModel();
+      final SModelDescriptor sm = sModel.getModelDescriptor();
+      if (sm != null) {
+        addOurListener(sm);
+      } else {
+        if (SModelStereotype.isUserModel(sModel)) {
+          LOG.error("model descriptor is null: " + sModel);
+        }
+      }
+    }
+    final Set<SNodePointer> notSkippedNodes = new HashSet<SNodePointer>(myNotSkippedNodes);
+    if (HelginsPreferencesComponent.getInstance().isUsesDebugHighlighting()) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          EditorComponent component = (EditorComponent) getEditorComponent();
+          if (component == null) return;
+          component.getHighlightManager().clearForOwner(component.getHighlightMessagesOwner()); //todo change an owner
+          for (SNodePointer notSkippedNode : notSkippedNodes) {
+            markNode(component, notSkippedNode);
+            if (component instanceof NodeEditorComponent) {
+              markNode(((NodeEditorComponent) component).getInspector(), notSkippedNode);
+            }
+          }
+        }
+      });
     }
   }
 
@@ -430,10 +436,12 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       SNode oldCheckedNode = myCurrentCheckedNode;
       myCurrentCheckedNode = node;
       for (InferenceRule_Runtime rule : newRules) {
+        checkInterrupted();
         applyRuleToNode(node, rule);
       }
       if (useNonTypesystemRules) {
         for (NonTypesystemRule_Runtime rule : nonTypesystemRules) {
+          checkInterrupted();
           applyRuleToNode(node, rule);
         }
       }
@@ -578,6 +586,29 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       return SNode.EMPTY_ARRAY;
     } else {
       return variables.toArray(new SNode[variables.size()]);
+    }
+  }
+
+  /*package*/ void interrupt() {
+    myIsInterrupted = true;
+  }
+
+  private void checkInterrupted() {
+    try {
+      if (myIsInterrupted) {
+        try {
+          solveInequationsAndExpandTypes();
+          performActionsAfterChecking();
+        } finally {
+          myNotSkippedNodes.clear();
+          clearEquationManager();
+          if (myRootNode.isRoot()) {
+            myTypeChecker.markAsChecked(myRootNode);
+          }
+        }
+      }
+    } finally {
+      myIsInterrupted = false;
     }
   }
 
