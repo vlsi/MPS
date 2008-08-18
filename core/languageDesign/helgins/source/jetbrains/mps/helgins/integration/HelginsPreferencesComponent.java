@@ -5,12 +5,11 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent.MyState;
 import jetbrains.mps.util.CollectionUtil;
 
-import javax.swing.Icon;
-import javax.swing.JCheckBox;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
 import java.util.List;
 
 import com.intellij.openapi.application.ApplicationManager;
@@ -49,8 +48,8 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
     return myState.isGenerationOptimizationEnabled();
   }
 
-  public void setGenerationOptimizationEnabled(boolean generationOptimizationEnabled) {
-    myState.setGenerationOptimizationEnabled(generationOptimizationEnabled);
+  public int getHelginsTimeoutSeconds() {
+    return myState.getHelginsTimeout();
   }
 
 
@@ -92,16 +91,30 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
     //  private JCheckBox myIncrementalCheckBox = new JCheckBox("Use incremental algorithm");
     private JCheckBox myHighlightingCheckBox = new JCheckBox("Use debug highlighting");
     private JCheckBox myGeneratorOptimizationCheckBox = new JCheckBox("Use optimization for generation");
+    private JTextField myHelginsTimeoutField = new JTextField();
     private JPanel myComponent = new JPanel(new BorderLayout());
 
     public MyPreferencesPage() {
-      JPanel panel = new JPanel(new GridLayout(2, 1));
+      JPanel panel = new JPanel(new GridLayout(3, 1));
       //   myIncrementalCheckBox.setSelected(myUsesIncrementalAlgorithm);
       myHighlightingCheckBox.setSelected(myState.isUsesDebugHighlighting());
       myGeneratorOptimizationCheckBox.setSelected(myState.isGenerationOptimizationEnabled());
+      myHelginsTimeoutField.setText(myState.getHelginsTimeout() + "");
       //   panel.add(myIncrementalCheckBox);
       panel.add(myHighlightingCheckBox);
       panel.add(myGeneratorOptimizationCheckBox);
+      JPanel timeoutPanel = new JPanel(new GridBagLayout());
+      GridBagConstraints constraints = new GridBagConstraints();
+      constraints.gridy = 0;
+      constraints.gridx = 0;
+      constraints.weightx = 0;
+      timeoutPanel.add(new JLabel("typechecker timeout"), constraints);
+      constraints.gridx = 1;
+      timeoutPanel.add(myHelginsTimeoutField, constraints);
+      constraints.gridx = 2;
+      constraints.weightx = 1;
+      timeoutPanel.add(new JPanel(), constraints);
+      panel.add(timeoutPanel);
       myComponent.add(panel, BorderLayout.NORTH);
     }
 
@@ -130,6 +143,14 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
       if (changedOptimization) {
         myState.setGenerationOptimizationEnabled(selectedOptimization);
       }
+      try {
+        int timeout = Integer.parseInt(myHelginsTimeoutField.getText());
+        if (timeout != myState.getHelginsTimeout()) {
+          myState.setHelginsTimeout(timeout);
+        }
+      } catch (NumberFormatException ex) {
+
+      }
       /* if (changedIncremental) {
         myUsesIncrementalAlgorithm = selectedIncremental;
         NodeTypesComponentsRepository.getInstance().clear();
@@ -153,6 +174,8 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
   public static class MyState {
     private boolean myUsesDebugHighlighting = false;
     private boolean myGenerationOptimizationEnabled = true;
+    private int myHelginsTimeout = -1;
+
 
     public boolean isUsesDebugHighlighting() {
       return myUsesDebugHighlighting;
@@ -168,6 +191,14 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
 
     public void setGenerationOptimizationEnabled(boolean generationOptimizationEnabled) {
       myGenerationOptimizationEnabled = generationOptimizationEnabled;
+    }
+
+    public int getHelginsTimeout() {
+      return myHelginsTimeout;
+    }
+
+    public void setHelginsTimeout(int timeout) {
+      myHelginsTimeout = timeout;
     }
   }
 }
