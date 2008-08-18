@@ -8,6 +8,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.NodeTypesComponent;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.IErrorReporter;
+import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.intentions.IntentionProvider;
@@ -30,20 +31,21 @@ import java.util.TimerTask;
 public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
   private static Logger LOG = Logger.getLogger(HelginsTypesEditorChecker.class);
 
-  private long myDelayMillis = -1;
 
   public Set<EditorMessage> createMessages(final SNode node, IOperationContext operationContext) {
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
     if (!TypeChecker.getInstance().isCheckedRoot(node.getContainingRoot())) {
       try {
-        if (myDelayMillis > -1) {
+        int timeoutSeconds = HelginsPreferencesComponent.getInstance().getHelginsTimeoutSeconds();
+        long timeoutMillis = timeoutSeconds <= -1 ? -1 : timeoutSeconds * 1000;
+        if (timeoutMillis > -1) {
           Timer timer = new Timer("helgins interruptor");
           TimerTask timerTask = new TimerTask() {
             public void run() {
               TypeChecker.getInstance().interrupt();
             }
           };
-          timer.schedule(timerTask, myDelayMillis);
+          timer.schedule(timerTask, timeoutMillis);
         }
         TypeChecker.getInstance().checkRoot(node.getContainingRoot());
       } catch (Throwable t) {
