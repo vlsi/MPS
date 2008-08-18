@@ -31,8 +31,8 @@ public class SModel implements Iterable<SNode> {
   //access to other fields is synchronized with ModelAccess
   private final Object myListenersLock = new Object();
   private Set<SModelListener> myWeakListeners = new WeakSet<SModelListener>(0);
-  private List<SModelListener> myListeners = new ArrayList<SModelListener>(0);
-  private List<SModelCommandListener> myCommandListeners = new ArrayList<SModelCommandListener>(0);
+  private Set<SModelListener> myListeners = new LinkedHashSet<SModelListener>(0);
+  private Set<SModelCommandListener> myCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
 
   private Set<Language> myVersionedLanguages = new HashSet<Language>();
 

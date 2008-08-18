@@ -20,7 +20,7 @@ public class ModelGenerationStatusManager {
   }
 
   private Map<SModelDescriptor, Long> myLastGenerationTime = new HashMap<SModelDescriptor, Long>();
-  private List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
+  private List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();    
 
   public boolean generationRequired(SModelDescriptor sm) {
     if (sm.isPackaged()) {
