@@ -293,10 +293,6 @@
       <property name="name" value="description" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1112058288857">
-      <property name="name" value="actionsFactoryAspectId" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1112060455033">
       <property name="name" value="actionsFilterAspectId" />
       <link role="dataType" targetNodeId="1.1082983041843" />
