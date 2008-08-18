@@ -15,6 +15,7 @@ import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.bootstrap.helgins.runtime.quickfix.QuickFix_Runtime;
 
+import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -42,8 +43,12 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
           Timer timer = new Timer("helgins interruptor");
           TimerTask timerTask = new TimerTask() {
             public void run() {
-              TypeChecker.getInstance().interrupt();
-            }
+              System.err.println("interrupting h-ns");
+            /*  int i = JOptionPane.showConfirmDialog(null, "do you want to interrupt helgins?");
+              if (i == JOptionPane.YES_OPTION) {*/
+                TypeChecker.getInstance().interrupt();
+              }
+       //     }
           };
           timer.schedule(timerTask, timeoutMillis);
         }
