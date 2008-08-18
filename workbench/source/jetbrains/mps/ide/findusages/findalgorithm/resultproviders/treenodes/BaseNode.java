@@ -67,7 +67,7 @@ public abstract class BaseNode implements IResultProvider {
   //----SEARCH STUFF----
 
   public SearchResults getResults(SearchQuery query, @Nullable ProgressIndicator indicator) {
-    assert !ThreadUtils.isEventDispatchThread();
+//    assert !ThreadUtils.isEventDispatchThread();
 
     if (indicator == null) indicator = new EmptyProgressIndicator();
 
