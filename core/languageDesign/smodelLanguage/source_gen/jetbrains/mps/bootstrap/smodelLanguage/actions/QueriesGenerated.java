@@ -183,25 +183,30 @@ public class QueriesGenerated {
 
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
-        assert queryResult != null;
-        for(final SNode item : queryResult) {
-          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+        if (queryResult != null) {
+          for(final SNode item : queryResult) {
+            result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
-            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              SNode result = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.StaticConceptMethodCall", null);
-              SLinkOperations.setTarget(result, "concept", (item), false);
-              return result;
-            }
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode result = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.StaticConceptMethodCall", null);
+                SLinkOperations.setTarget(result, "concept", (item), false);
+                return result;
+              }
 
-            public String getMatchingText(String pattern) {
-              return SPropertyOperations.getString((item), "name") + ".";
-            }
+              public String getMatchingText(String pattern) {
+                return SPropertyOperations.getString((item), "name") + ".";
+              }
 
-            public String getDescriptionText(String pattern) {
-              return "static access";
-            }
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
 
-          });
+              public String getDescriptionText(String pattern) {
+                return "static access";
+              }
+
+            });
+          }
         }
       }
     }
@@ -220,10 +225,11 @@ public class QueriesGenerated {
 
       };
       Iterable queryResult = (Iterable)calc.calculate();
-      assert queryResult != null;
-      for(Object item : queryResult) {
-        List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-        result.addAll(defaultActions);
+      if (queryResult != null) {
+        for(Object item : queryResult) {
+          List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+          result.addAll(defaultActions);
+        }
       }
     }
     return result;
@@ -242,6 +248,10 @@ public class QueriesGenerated {
 
         public String getMatchingText(String pattern) {
           return "< .. >";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
         public String getDescriptionText(String pattern) {
@@ -269,6 +279,10 @@ public class QueriesGenerated {
           return ":";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
         public String getDescriptionText(String pattern) {
           return "node type cast";
         }
@@ -292,6 +306,10 @@ public class QueriesGenerated {
 
         public String getMatchingText(String pattern) {
           return "/";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
         public String getDescriptionText(String pattern) {
