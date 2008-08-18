@@ -38,11 +38,11 @@ public class ConstantFinder extends BaseFinder {
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
-    throw new UnsupportedOperationException("do not call read on ConstantFinder!!!");
+    throw new CantLoadSomethingException("do not call read on ConstantFinder!!!");
   }
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
-    throw new UnsupportedOperationException("do not call write on ConstantFinder!!!");
+    throw new CantSaveSomethingException("do not call write on ConstantFinder!!!");
   }
 
   public String getDescription() {

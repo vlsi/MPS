@@ -19,12 +19,13 @@
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
-  <maxImportIndex value="5" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.quickQueryLanguage.structure" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.quickQueryLanguage.runtime@java_stub" version="-1" />
+  <import index="6" modelUID="java.io@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1218800262437">
     <property name="name" value="Query" />
