@@ -268,6 +268,10 @@
               id="1218736946375">
           <property name="text" value="this"/>
           <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord"/>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem"
+                id="1219066188215">
+            <property name="value" value="0.0"/>
+          </node>
         </node>
       </node>
       <node role="alternationCondition"
