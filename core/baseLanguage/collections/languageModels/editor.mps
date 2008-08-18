@@ -637,6 +637,10 @@
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399678948">
             <property name="color" value="darkGray" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1219061774097">
+            <property name="value" value="0.0" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LastPositionAllowedStyleClassItem" id="1219061785958" />
         </node>
         <node role="cellLayout" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellLayout_Horizontal" id="1211880293245" />
       </node>

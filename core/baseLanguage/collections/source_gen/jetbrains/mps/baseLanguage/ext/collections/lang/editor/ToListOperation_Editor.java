@@ -4,14 +4,27 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class ToListOperation_Editor extends DefaultNodeEditor {
+
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
+    return this.createConstant1151703486466(context, node, "toList");
+  }
+
+  public EditorCell createConstant1151703486466(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_11517034864661151703486466(editorCell, node, context);
+    setupLabel_Constant_1151703486466_1151703486466(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
 
   private static void setupBasic_Constant_11517034864661151703486466(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1151703486466");
@@ -28,19 +41,6 @@ public class ToListOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1151703486466_1151703486466(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1151703486466(context, node, "toList");
-  }
-
-  public EditorCell createConstant1151703486466(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11517034864661151703486466(editorCell, node, context);
-    setupLabel_Constant_1151703486466_1151703486466(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
   }
 
 }

@@ -1699,6 +1699,9 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171999196301">
       <property name="text" value="isNull" />
       <property name="attractsFocus" value="1" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1219061587767">
+        <property name="value" value="0.0" />
+      </node>
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214398031917">
         <property name="flag" value="true" />
       </node>
@@ -2724,6 +2727,9 @@
           <property name="text" value="&gt;" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1214314934308">
             <property name="style" value="BOLD" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1219061919591">
+            <property name="value" value="0.0" />
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399678122">
             <property name="color" value="lightGray" />
