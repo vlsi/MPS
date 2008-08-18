@@ -8,6 +8,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -36,7 +37,11 @@ public class typeof_InternalThisExpression_InferenceRule implements InferenceRul
         }
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(ite, "jetbrains.mps.baseLanguageInternal.helgins", "1202838281158", true), ct, ite, null, "jetbrains.mps.baseLanguageInternal.helgins", "1202838278072");
+    {
+      SNode _nodeToCheck_1029348928467 = ite;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(ite, "jetbrains.mps.baseLanguageInternal.helgins", "1202838281158", true), ct, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguageInternal.helgins", "1202838278072", intentionProvider);
+    }
   }
 
   public String getApplicableConceptFQName() {

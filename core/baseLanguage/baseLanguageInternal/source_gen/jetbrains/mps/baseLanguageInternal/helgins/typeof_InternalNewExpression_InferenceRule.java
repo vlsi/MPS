@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguageInternal.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -19,9 +20,13 @@ public class typeof_InternalNewExpression_InferenceRule implements InferenceRule
       type = SLinkOperations.getTarget(internalNewExpression, "type", true);
     } else
     {
-      type = new QuotationClass_().createNode();
+      type = new QuotationClass_0().createNode();
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(internalNewExpression, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371898", true), type, internalNewExpression, null, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371896");
+    {
+      SNode _nodeToCheck_1029348928467 = internalNewExpression;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(internalNewExpression, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371898", true), type, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371896", intentionProvider);
+    }
   }
 
   public String getApplicableConceptFQName() {

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguageInternal.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -14,7 +15,11 @@ public class typeof_InternalPartialFieldReference_InferenceRule implements Infer
   }
 
   public void applyRule(final SNode fieldRef) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(fieldRef, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371952", true), SLinkOperations.getTarget(fieldRef, "fieldType", true), fieldRef, null, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371950");
+    {
+      SNode _nodeToCheck_1029348928467 = fieldRef;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(fieldRef, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371952", true), SLinkOperations.getTarget(fieldRef, "fieldType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371950", intentionProvider);
+    }
   }
 
   public String getApplicableConceptFQName() {

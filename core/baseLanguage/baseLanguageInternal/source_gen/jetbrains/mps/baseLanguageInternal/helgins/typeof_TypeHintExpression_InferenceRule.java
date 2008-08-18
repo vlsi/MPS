@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguageInternal.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -14,7 +15,11 @@ public class typeof_TypeHintExpression_InferenceRule implements InferenceRule_Ru
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.baseLanguageInternal.helgins", "1199964809909", true), SLinkOperations.getTarget(nodeToCheck, "typeHint", true), nodeToCheck, null, "jetbrains.mps.baseLanguageInternal.helgins", "1199964813834");
+    {
+      SNode _nodeToCheck_1029348928467 = nodeToCheck;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.baseLanguageInternal.helgins", "1199964809909", true), SLinkOperations.getTarget(nodeToCheck, "typeHint", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguageInternal.helgins", "1199964813834", intentionProvider);
+    }
   }
 
   public String getApplicableConceptFQName() {

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguageInternal.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -14,7 +15,11 @@ public class typeof_InternalPartialInstanceMethodCall_InferenceRule implements I
   }
 
   public void applyRule(final SNode mc) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(mc, "jetbrains.mps.baseLanguageInternal.helgins", "1204072569922", true), SLinkOperations.getTarget(mc, "returnType", true), mc, null, "jetbrains.mps.baseLanguageInternal.helgins", "1204072569920");
+    {
+      SNode _nodeToCheck_1029348928467 = mc;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(mc, "jetbrains.mps.baseLanguageInternal.helgins", "1204072569922", true), SLinkOperations.getTarget(mc, "returnType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguageInternal.helgins", "1204072569920", intentionProvider);
+    }
   }
 
   public String getApplicableConceptFQName() {
