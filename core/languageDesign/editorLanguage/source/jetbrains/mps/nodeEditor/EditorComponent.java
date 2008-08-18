@@ -497,6 +497,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (!event.getPresentation().isEnabled()) return;
 
       for (final AnAction child : group.getChildren(null)) {
+        event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, data);
         if (child instanceof BaseAction) {
           BaseAction childAction = (BaseAction) child;
           try {
