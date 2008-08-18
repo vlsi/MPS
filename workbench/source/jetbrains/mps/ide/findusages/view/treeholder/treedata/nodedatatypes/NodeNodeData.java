@@ -105,12 +105,16 @@ public class NodeNodeData extends BaseNodeData {
   }
 
   public static String snodeRepresentation(final SNode node) {
-    return
-      ModelAccess.instance().runReadAction(new Computable<String>() {
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          String result = (node.getName() != null) ? node.getName() : node.toString();
-          result = textStringToHtml(result);
-          return result;
+          try {
+            String result = (node.getName() != null) ? node.getName() : node.toString();
+            result = textStringToHtml(result);
+            return result;
+          } catch (Throwable t) {
+            LOG.error(t);
+            return "Exception was thrown during node representation calculation " + t.getMessage();
+          }
         }
       });
   }
