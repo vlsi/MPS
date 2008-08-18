@@ -20,6 +20,9 @@ public class ModelGenerationStatusManager {
   }
 
   private Map<SModelDescriptor, Long> myLastGenerationTime = new HashMap<SModelDescriptor, Long>();
+  private Map<SModelDescriptor, Boolean> myEmptyStatus = new HashMap<SModelDescriptor, Boolean>();
+  private Map<SModelDescriptor, Long> myEmptyStatusRetrievalTime = new HashMap<SModelDescriptor, Long>();
+
   private List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();    
 
   public boolean generationRequired(SModelDescriptor sm) {
@@ -39,11 +42,22 @@ public class ModelGenerationStatusManager {
       return false;
     }
 
-    if (sm.isEmpty()) {
+    if (isEmpty(sm)) {
       return false;
     }
 
     return sm.lastChangeTime() >= getLastGenerationTime(sm);
+  }
+
+  private boolean isEmpty(SModelDescriptor sm) {
+    if (myEmptyStatus.containsKey(sm) && myEmptyStatusRetrievalTime.get(sm) >= sm.lastChangeTime()) {
+      return myEmptyStatus.get(sm);
+    }
+
+    boolean result = sm.isEmpty();
+    myEmptyStatus.put(sm, result);
+    myEmptyStatusRetrievalTime.put(sm, System.currentTimeMillis());
+    return result;
   }
 
   private long getLastGenerationTime(SModelDescriptor sm) {
