@@ -118,12 +118,14 @@ public class IntelligentInputUtil {
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
       INodeSubstituteAction item = matchingActions.get(0);
       newNode = item.substitute(editorContext, smallPattern);
-      assert newNode != null;
+
+      if (newNode == null) return;
+      
       cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
       EditorCell errorCell = cellForNewNode.findChild(CellFinders.FIRST_ERROR, true);
 
       if (errorCell != null && errorCell instanceof EditorCell_Label) {
-        editorContext.flushEvents();
+        editorContext.flushEvents();                                                               
         EditorCell cellForNewNode1 = editorContext.getNodeEditorComponent().findNodeCell(newNode);
         EditorCell_Label errorCell1 = (EditorCell_Label) cellForNewNode1.findChild(CellFinders.FIRST_ERROR, true);
         ((EditorCell_Label) errorCell1).changeText(tail);
