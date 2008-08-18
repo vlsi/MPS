@@ -17,6 +17,8 @@ import jetbrains.mps.bootstrap.helgins.runtime.quickfix.QuickFix_Runtime;
 import java.awt.Color;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,10 +30,21 @@ import java.util.Set;
 public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
   private static Logger LOG = Logger.getLogger(HelginsTypesEditorChecker.class);
 
+  private long myDelayMillis = -1;
+
   public Set<EditorMessage> createMessages(final SNode node, IOperationContext operationContext) {
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
     if (!TypeChecker.getInstance().isCheckedRoot(node.getContainingRoot())) {
       try {
+        if (myDelayMillis > -1) {
+          Timer timer = new Timer("helgins interruptor");
+          TimerTask timerTask = new TimerTask() {
+            public void run() {
+              TypeChecker.getInstance().interrupt();
+            }
+          };
+          timer.schedule(timerTask, myDelayMillis);
+        }
         TypeChecker.getInstance().checkRoot(node.getContainingRoot());
       } catch (Throwable t) {
         LOG.error(t);
