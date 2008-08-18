@@ -297,6 +297,10 @@
             id="1218736911692">
         <property name="text" value="this"/>
         <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord"/>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem"
+              id="1219068813805">
+          <property name="flag" value="true"/>
+        </node>
       </node>
     </node>
   </node>

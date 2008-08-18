@@ -400,6 +400,10 @@
                   id="1218984772591">
               <property name="flag" value="false"/>
             </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem"
+                  id="1219069303785">
+              <property name="value" value="0.0"/>
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
                 id="1218984772592">
@@ -420,6 +424,10 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
                 id="1218984772596">
             <link role="relationDeclaration" targetNodeId="1.1207149998849" resolveInfo="isAlwaysVisible"/>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem"
+                  id="1219069845101">
+              <property name="value" value="0.0"/>
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
                 id="1218984772597">
@@ -438,17 +446,12 @@
               id="1218984772600">
           <property name="vertical" value="false"/>
           <property name="gridLayout" value="true"/>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-                id="1218984772601">
-            <property name="text" value="  "/>
-            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem"
-                  id="1218984772602">
-              <property name="flag" value="false"/>
-            </node>
-          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent"
+                id="1219069281517"/>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList"
                 id="1218984772603">
             <property name="vertical" value="true"/>
+            <property name="gridLayout" value="true"/>
             <link role="relationDeclaration" targetNodeId="1.1217413222820"/>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem"
@@ -1620,16 +1623,20 @@
         <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem"
               id="1215440960801">
-          <property name="value" value="1.0"/>
+          <property name="value" value="0.0"/>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1205679222181">
-        <property name="text" value=";"/>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem"
               id="1214310996229">
           <property name="flag" value="false"/>
         </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1219069195031">
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem"
+              id="1219069577058"/>
       </node>
     </node>
   </node>
@@ -1882,9 +1889,14 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1207318325523">
         <property name="text" value="&lt;"/>
+        <link role="styleClass" targetNodeId="17.1215091279307" resolveInfo="LeftBrace"/>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem"
               id="1214310997463">
           <property name="flag" value="false"/>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem"
+              id="1219070443948">
+          <property name="value" value="0.0"/>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
@@ -1965,22 +1977,35 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem"
-              id="1214407442072">
-          <property name="color" value="yellow"/>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem"
+              id="1219070784574">
+          <property name="color" value="blue"/>
         </node>
-        <node role="styleItem"
-              type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorSelectedStyleClassItem"
-              id="1214407442187">
-          <property name="color" value="cyan"/>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem"
+              id="1219070475450">
+          <property name="value" value="0.0"/>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1207318325541">
-        <property name="text" value=" &gt; + &lt;"/>
+        <property name="text" value="&gt;"/>
+        <link role="styleClass" targetNodeId="17.1215091331565" resolveInfo="RightBrace"/>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem"
               id="1214310993669">
           <property name="flag" value="false"/>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1219070156570">
+        <property name="text" value="+"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1219070165604">
+        <property name="text" value="&lt;"/>
+        <link role="styleClass" targetNodeId="17.1215091279307" resolveInfo="LeftBrace"/>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem"
+              id="1219070515158">
+          <property name="value" value="0.0"/>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
@@ -2080,19 +2105,19 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem"
-              id="1214407442044">
-          <property name="color" value="yellow"/>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem"
+              id="1219070803732">
+          <property name="color" value="blue"/>
         </node>
-        <node role="styleItem"
-              type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorSelectedStyleClassItem"
-              id="1214407442180">
-          <property name="color" value="cyan"/>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem"
+              id="1219070482467">
+          <property name="value" value="0.0"/>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1207318325566">
-        <property name="text" value=" &gt;"/>
+        <property name="text" value="&gt;"/>
+        <link role="styleClass" targetNodeId="17.1215091331565" resolveInfo="RightBrace"/>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem"
               id="1214310995669">
           <property name="flag" value="false"/>

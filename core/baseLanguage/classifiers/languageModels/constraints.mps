@@ -1752,11 +1752,8 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218737415186">
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall"
                     id="1218737435551">
-                <link role="conceptMethodDeclaration" targetNodeId="2v.1218737370612"
+                <link role="conceptMethodDeclaration" targetNodeId="2v.1219068414643"
                       resolveInfo="getPossibleClassifiers"/>
-                <node role="actualArgument"
-                      type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope"
-                      id="1218737723384"/>
               </node>
               <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression"
                     id="1218737853465">

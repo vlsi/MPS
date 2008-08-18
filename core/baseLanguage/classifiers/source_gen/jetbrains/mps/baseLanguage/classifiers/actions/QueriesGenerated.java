@@ -5,16 +5,14 @@ package jetbrains.mps.baseLanguage.classifiers.actions;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_Behavior;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
+import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpresson_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
-import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
+import jetbrains.mps.smodel.action.*;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.NameUtil;
 
@@ -25,6 +23,10 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1205921340852(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false) != null;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ThisClassifierExpresson_1219068300393(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "classifier", false) == null);
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1205921334476(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -85,6 +87,47 @@ public class QueriesGenerated {
             });
           }
         }
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ThisClassifierExpresson_1219068300355(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson", operationContext.getScope());
+      Calculable calculable = new Calculable() {
+
+        public Object calculate() {
+          return ThisClassifierExpresson_Behavior.call_getPossibleClassifiers_1219068414643(_context.getSourceNode());
+        }
+
+      };
+      Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
+      assert parameterObjects != null;
+      for (final SNode item : parameterObjects) {
+        result.add(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+
+          public SNode doSubstitute(String pattern) {
+            SNode expr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson", null);
+            SLinkOperations.setTarget(expr, "classifier", (item), false);
+            SNodeOperations.replaceWithAnother(_context.getSourceNode(), expr);
+            return expr;
+          }
+
+          public SNode getOutputConcept() {
+            return concept.getNode();
+          }
+
+          public String getMatchingText(String text) {
+            return (item) + ".";
+          }
+
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
+          }
+
+        });
       }
     }
     return result;
