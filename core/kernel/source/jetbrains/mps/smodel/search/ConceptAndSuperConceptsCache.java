@@ -443,7 +443,7 @@ import java.util.*;
       List<AbstractConceptDeclaration> concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
       // iterate up-donw
       for (AbstractConceptDeclaration concept : concepts) {
-        List<ConceptProperty> conceptProperties = concept.getConceptPropertys();
+        List<ConceptProperty> conceptProperties = concept.getConceptProperties();
         for (ConceptProperty conceptProperty : conceptProperties) {
           allConceptProperties.add(conceptProperty);
           ConceptPropertyDeclaration conceptPropertyDeclaration = conceptProperty.getConceptPropertyDeclaration();

@@ -590,6 +590,26 @@ public class QueriesGenerated {
     return "set" + NameUtil.capitalize(SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1219165134105(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "get" + NameUtil.pluralize(NameUtil.capitalize(SPropertyOperations.getString(_context.getNode(), "role"))) + "Count";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1219165288774(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.pluralize(SPropertyOperations.getString(_context.getNode(), "role"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1219165377659(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "get" + NameUtil.capitalize(NameUtil.pluralize(SPropertyOperations.getString(_context.getNode(), "role")));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1219165473644(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "add" + NameUtil.capitalize(SPropertyOperations.getString(_context.getNode(), "role"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1219165555001(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "insert" + NameUtil.capitalize(SPropertyOperations.getString(_context.getNode(), "role"));
+  }
+
   public static Object referenceMacro_GetReferent_1197509802062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(_context.getNode());
     SNode outputEnumConstant = _context.getOutputNodeByInputNodeAndMappingLabel(defaultMember, "outputEnumConstant");

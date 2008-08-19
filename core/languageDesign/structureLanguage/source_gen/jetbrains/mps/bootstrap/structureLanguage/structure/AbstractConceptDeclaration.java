@@ -100,15 +100,15 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
     this.insertChild(prev, AbstractConceptDeclaration.PROPERTY_DECLARATION, node);
   }
 
-  public int getConceptPropertysCount() {
+  public int getConceptPropertiesCount() {
     return this.getChildCount(AbstractConceptDeclaration.CONCEPT_PROPERTY);
   }
 
-  public Iterator<ConceptProperty> conceptPropertys() {
+  public Iterator<ConceptProperty> conceptProperties() {
     return this.children(AbstractConceptDeclaration.CONCEPT_PROPERTY);
   }
 
-  public List<ConceptProperty> getConceptPropertys() {
+  public List<ConceptProperty> getConceptProperties() {
     return this.getChildren(AbstractConceptDeclaration.CONCEPT_PROPERTY);
   }
 
