@@ -36,7 +36,6 @@
     <property name="name" value="menuParts" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1177495821852">
       <property name="description" value="menu parts available for node-substitute" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1177495774157" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveByConditionPart" id="1177495897822">
         <node role="condition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RemoveBy_Condition" id="1177495897823">
@@ -78,7 +77,6 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1177496206972">
       <property name="description" value="menu parts available for right-transform" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1177495774157" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveByConditionPart" id="1177496231840">
         <node role="condition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RemoveBy_Condition" id="1177496231841">
@@ -123,7 +121,6 @@
     <property name="name" value="menuBuilderParts" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1180112146087">
       <property name="description" value="builder parts available for node-substitute (apart from defaults)" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1177323240852" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1180112146090">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180112146091">
@@ -157,7 +154,6 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1180112212391">
       <property name="description" value="builder parts available for right-transform (apart from defaults)" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1177323240852" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1180112503623">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180112503624">
@@ -193,7 +189,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1196932695369">
     <property name="name" value="Substitute_String" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1196932700432">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1196434661488" resolveInfo="ISubstitute_String" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1196932722385">
         <link role="concept" targetNodeId="1.1196434649611" resolveInfo="Substitute_SimpleString" />
@@ -249,7 +244,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1196932862101">
     <property name="name" value="RT_String" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1196932866446">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1196433731217" resolveInfo="IRightTransform_String" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1196932886682">
         <link role="concept" targetNodeId="1.1196433923911" resolveInfo="RightTransform_SimpleString" />

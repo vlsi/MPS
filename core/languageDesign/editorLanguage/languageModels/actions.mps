@@ -47,7 +47,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1119639069735">
     <property name="name" value="EDTL_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1199894656684">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1164824854750" resolveInfo="CellMenuPart_Abstract" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1199894693230">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199894693231">
@@ -84,7 +83,6 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1199894924671">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1164824854750" resolveInfo="CellMenuPart_Abstract" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1199894948366">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199894948367">
@@ -138,7 +136,6 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1199895015795">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1164824854750" resolveInfo="CellMenuPart_Abstract" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1199895015796">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199895015797">
@@ -486,7 +483,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1177585757706">
     <property name="name" value="custom_actions" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1177585776510">
-      <property name="useNewActions" value="true" />
       <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="1.1073389214265" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1177585776511">
@@ -1851,7 +1847,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1185874421312">
     <property name="name" value="EDTL_Actions_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1185874474095">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1139535280617" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1185874488290">
         <link role="concept" targetNodeId="1.1139535280617" />

@@ -105,7 +105,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1194616749686(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new QuotationClass_().createNode(), false, false);
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new QuotationClass_0().createNode(), false, false);
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1198013650814(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -268,19 +268,24 @@ public class QueriesGenerated {
 
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
-        assert queryResult != null;
-        for(final SNode item : queryResult) {
-          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+        if (queryResult != null) {
+          for(final SNode item : queryResult) {
+            result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
-            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              return (item);
-            }
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                return (item);
+              }
 
-            public String getMatchingText(String pattern) {
-              return SPropertyOperations.getString((item), "name");
-            }
+              public String getMatchingText(String pattern) {
+                return SPropertyOperations.getString((item), "name");
+              }
 
-          });
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+
+            });
+          }
         }
       }
     }
@@ -310,6 +315,10 @@ public class QueriesGenerated {
             return "BEFORE";
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
         });
       }
     }
@@ -327,6 +336,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String pattern) {
             return "AFTER";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
         });
@@ -361,10 +374,11 @@ public class QueriesGenerated {
 
       };
       Iterable queryResult = (Iterable)calc.calculate();
-      assert queryResult != null;
-      for(Object item : queryResult) {
-        List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-        result.addAll(defaultActions);
+      if (queryResult != null) {
+        for(Object item : queryResult) {
+          List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+          result.addAll(defaultActions);
+        }
       }
     }
     {
@@ -403,42 +417,47 @@ public class QueriesGenerated {
 
         };
         Iterable<FragmentTypeEnum> queryResult = (Iterable)calc.calculate();
-        assert queryResult != null;
-        for(final FragmentTypeEnum item : queryResult) {
-          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+        if (queryResult != null) {
+          for(final FragmentTypeEnum item : queryResult) {
+            result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
-            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              FragmentTypeEnum type = (item);
-              SNode fragment = null;
-              if (type == FragmentTypeEnum.replace_single || type == FragmentTypeEnum.replace_selection || type == FragmentTypeEnum.replace_all) {
-                fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFReplaceFunFragment", null);
-                SPropertyOperations.set(fragment, "fragmentType", type.getValue());
-                if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-                  SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFReplacerParamFun");
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                FragmentTypeEnum type = (item);
+                SNode fragment = null;
+                if (type == FragmentTypeEnum.replace_single || type == FragmentTypeEnum.replace_selection || type == FragmentTypeEnum.replace_all) {
+                  fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFReplaceFunFragment", null);
+                  SPropertyOperations.set(fragment, "fragmentType", type.getValue());
+                  if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+                    SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFReplacerParamFun");
+                  }
+                } else
+                if (type == FragmentTypeEnum.remove_single || type == FragmentTypeEnum.remove_selection || type == FragmentTypeEnum.remove_all) {
+                  fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFRemoveFunFragment", null);
+                  SPropertyOperations.set(fragment, "fragmentType", type.getValue());
+                  if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+                    SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFRemoverParamFun");
+                  }
+                } else
+                if (type == FragmentTypeEnum.insert_at_start || type == FragmentTypeEnum.insert_at_end || type == FragmentTypeEnum.insert_before || type == FragmentTypeEnum.insert_after) {
+                  fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFInsertFunFragment", null);
+                  SPropertyOperations.set(fragment, "fragmentType", type.getValue());
+                  if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+                    SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFInserterParamFun");
+                  }
                 }
-              } else
-              if (type == FragmentTypeEnum.remove_single || type == FragmentTypeEnum.remove_selection || type == FragmentTypeEnum.remove_all) {
-                fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFRemoveFunFragment", null);
-                SPropertyOperations.set(fragment, "fragmentType", type.getValue());
-                if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-                  SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFRemoverParamFun");
-                }
-              } else
-              if (type == FragmentTypeEnum.insert_at_start || type == FragmentTypeEnum.insert_at_end || type == FragmentTypeEnum.insert_before || type == FragmentTypeEnum.insert_after) {
-                fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFInsertFunFragment", null);
-                SPropertyOperations.set(fragment, "fragmentType", type.getValue());
-                if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-                  SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFInserterParamFun");
-                }
+                return fragment;
               }
-              return fragment;
-            }
 
-            public String getMatchingText(String pattern) {
-              return (item).getName();
-            }
+              public String getMatchingText(String pattern) {
+                return (item).getName();
+              }
 
-          });
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+
+            });
+          }
         }
       }
     }
@@ -463,6 +482,10 @@ public class QueriesGenerated {
             return "by index";
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
         });
       }
     }
@@ -480,6 +503,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String pattern) {
             return "byelement";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
         });
@@ -510,6 +537,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String pattern) {
             return "NOTHING";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
         });
@@ -547,6 +578,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String text) {
             return ":" + SPropertyOperations.getString((item), "name");
+          }
+
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
           }
 
           public String getDescriptionText(String text) {
@@ -600,6 +635,10 @@ public class QueriesGenerated {
             return "." + SPropertyOperations.getString((item), "name");
           }
 
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
+          }
+
           public String getDescriptionText(String text) {
             return "match property value";
           }
@@ -626,6 +665,10 @@ public class QueriesGenerated {
           return ".isWithinRange ()";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
         public String getDescriptionText(String pattern) {
           return "IRange expression";
         }
@@ -646,6 +689,10 @@ public class QueriesGenerated {
           return ".isAtInsertionPoint ()";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
         public String getDescriptionText(String pattern) {
           return "IRange expression";
         }
@@ -664,6 +711,10 @@ public class QueriesGenerated {
 
         public String getMatchingText(String pattern) {
           return ".next ()";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
         public String getDescriptionText(String pattern) {
@@ -725,6 +776,10 @@ public class QueriesGenerated {
               "<-> " + SPropertyOperations.getString(fe, "name") :
               "<-  " + SPropertyOperations.getString(fe, "name")
             );
+          }
+
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
           }
 
           public String getDescriptionText(String text) {
@@ -830,6 +885,10 @@ public class QueriesGenerated {
             return TraversalAxisUtil.getOperationSign(axis) + suffix;
           }
 
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
+          }
+
           public String getDescriptionText(String text) {
             TraversalAxis axis = (TraversalAxis)(item).first();
             SNode feat = (SNode)(item).second();
@@ -868,6 +927,10 @@ public class QueriesGenerated {
 
         public String getMatchingText(String pattern) {
           return "[";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
         public String getDescriptionText(String pattern) {
@@ -913,6 +976,10 @@ public class QueriesGenerated {
             return "[ " + SPropertyOperations.getString((item), "name");
           }
 
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
+          }
+
           public String getDescriptionText(String text) {
             return "match node type";
           }
@@ -954,6 +1021,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String text) {
             return "[[ " + SPropertyOperations.getString(SNodeOperations.getParent((item), null, false, false), "name") + "." + SPropertyOperations.getString((item), "name");
+          }
+
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
           }
 
           public String getDescriptionText(String text) {
@@ -1101,6 +1172,10 @@ public class QueriesGenerated {
               }
             }
             return TraversalAxisUtil.getOperationSign(axis) + suffix;
+          }
+
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
           }
 
           public String getDescriptionText(String text) {

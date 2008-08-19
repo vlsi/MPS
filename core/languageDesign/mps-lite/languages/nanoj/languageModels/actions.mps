@@ -48,7 +48,6 @@
     <property name="name" value="RT_NumberExpression_Number" />
     <property name="package" value="Actions" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1197638405388">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1197638404609" resolveInfo="Expression" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197638405389">
         <link role="concept" targetNodeId="1.1197638404609" resolveInfo="Expression" />
@@ -128,7 +127,6 @@
     <property name="name" value="LocalVariableDeclaration_Wrapper" />
     <property name="package" value="Actions" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1197638405422">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1197638404589" resolveInfo="Statement" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197638405423">
         <link role="concept" targetNodeId="1.1197638404589" resolveInfo="Statement" />
@@ -180,7 +178,6 @@
     <property name="name" value="Expression_Wrapper" />
     <property name="package" value="Actions" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1197638405443">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1197638404589" resolveInfo="Statement" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197638405444">
         <link role="concept" targetNodeId="1.1197638404589" resolveInfo="Statement" />
@@ -232,7 +229,6 @@
     <property name="name" value="Type_Wrapper" />
     <property name="package" value="Actions" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1197638405464">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1197638404633" resolveInfo="LocalVariableDeclaration" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197638405465">
         <link role="concept" targetNodeId="1.1197638404633" resolveInfo="LocalVariableDeclaration" />
@@ -284,7 +280,6 @@
     <property name="name" value="Type_Wrapper" />
     <property name="package" value="Actions" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1197638405485">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1197638404634" resolveInfo="ParameterDeclaration" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197638405486">
         <link role="concept" targetNodeId="1.1197638404634" resolveInfo="ParameterDeclaration" />
@@ -336,7 +331,6 @@
     <property name="name" value="Type_Wrapper" />
     <property name="package" value="Actions" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1197638405506">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1197638404635" resolveInfo="FieldDeclaration" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197638405507">
         <link role="concept" targetNodeId="1.1197638404635" resolveInfo="FieldDeclaration" />
@@ -388,7 +382,6 @@
     <property name="package" value="Actions" />
     <property name="name" value="RT_Dot" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1197638405527">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1197638404609" resolveInfo="Expression" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197638405528">
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleSideTransformMenuPart" id="1197638405529">
@@ -448,7 +441,6 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1197638405553">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1197638404675" resolveInfo="ExpressionDotOperation" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart" id="1197638405554">
         <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_NodeQuery" id="1197638405555">
@@ -468,7 +460,6 @@
     <property name="package" value="Actions" />
     <property name="name" value="Substitute_ClassAccess" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1197638405562">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1197638404675" resolveInfo="ExpressionDotOperation" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1197638405563">
         <link role="concept" targetNodeId="1.1197638404641" resolveInfo="ClassAccess" />
@@ -504,7 +495,6 @@
     <property name="package" value="Actions" />
     <property name="name" value="RT_BinaryOperation" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1197638405577">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1197638404609" resolveInfo="Expression" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197638405578">
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSideTransformMenuPart" id="1197638405579">

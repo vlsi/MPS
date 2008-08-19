@@ -71,21 +71,26 @@ public class QueriesGenerated {
 
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
-        assert queryResult != null;
-        for(final SNode item : queryResult) {
-          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+        if (queryResult != null) {
+          for(final SNode item : queryResult) {
+            result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
-            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              SNode pr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
-              SLinkOperations.setTarget(pr, "variableDeclaration", (item), false);
-              return pr;
-            }
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode pr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
+                SLinkOperations.setTarget(pr, "variableDeclaration", (item), false);
+                return pr;
+              }
 
-            public String getMatchingText(String pattern) {
-              return SPropertyOperations.getString((item), "name");
-            }
+              public String getMatchingText(String pattern) {
+                return SPropertyOperations.getString((item), "name");
+              }
 
-          });
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+
+            });
+          }
         }
       }
     }
@@ -136,6 +141,10 @@ public class QueriesGenerated {
 
         public String getMatchingText(String pattern) {
           return ".invoke";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
       });

@@ -37,7 +37,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1113331449032">
     <property name="name" value="Formula_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1113331454611">
-      <property name="useNewActions" value="true" />
       <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="1.1111784312737" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1177586485260">
@@ -271,7 +270,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1140215639502">
     <property name="name" value="Formula_rtransform" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1140215644909">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1111784312737" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart" id="1182825002998">
         <link role="concept" targetNodeId="1.1111784562907" />

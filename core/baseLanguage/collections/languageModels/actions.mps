@@ -40,7 +40,6 @@
     <property name="name" value="BLC_rtansform" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1151703707960">
       <property name="description" value="transform to sequence-operation-expression. only applicable to expression of 'sequence' type" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1068431790191" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1199875324911">
         <link role="concept" targetNodeId="1.1151701773464" resolveInfo="SequenceOperationExpression" />
@@ -156,7 +155,6 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1197932848431">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1068431790191" resolveInfo="Expression" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstitutePreconditionFunction" id="1197932868400">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197932868401">
@@ -233,7 +231,6 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1207757118239">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1152141311721" resolveInfo="SequenceCreatorWithSupplier" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstitutePreconditionFunction" id="1207757132200">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207757132201">
@@ -286,7 +283,6 @@
     <property name="name" value="BLC_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1152144005896">
       <property name="description" value="some blocks allows using of stop/skip/yield statements" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1068580123157" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart" id="1177410566270">
         <link role="conceptToRemove" targetNodeId="2.1068581242878" />
@@ -574,7 +570,6 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1178286508713">
       <property name="description" value="Sort direction constants" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1178286539824">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178286539825">
@@ -718,7 +713,6 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1160663024951">
       <property name="description" value="some of operations are only applicable to 'list' (like add/addAll etc.)" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
       <node role="variable" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteNodeBuilderVariableDeclaration" id="1206444869425">
         <property name="name" value="applicableTypesInfo" />

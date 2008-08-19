@@ -72,6 +72,10 @@ public class QueriesGenerated {
           return ".replace with";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
       });
     }
     {
@@ -89,6 +93,10 @@ public class QueriesGenerated {
           return ".split";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
       });
     }
     {
@@ -103,6 +111,10 @@ public class QueriesGenerated {
 
         public String getMatchingText(String pattern) {
           return "matches";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
       });
@@ -249,6 +261,10 @@ public class QueriesGenerated {
             return SPropertyOperations.getString((item), "name");
           }
 
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
+          }
+
           public String getDescriptionText(String text) {
             return SPropertyOperations.getString((item), "description");
           }
@@ -291,6 +307,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String text) {
             return SPropertyOperations.getString((item), "name");
+          }
+
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
           }
 
           public String getDescriptionText(String text) {
@@ -336,6 +356,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String text) {
             return SPropertyOperations.getString((item), "name");
+          }
+
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
           }
 
           public String getDescriptionText(String text) {

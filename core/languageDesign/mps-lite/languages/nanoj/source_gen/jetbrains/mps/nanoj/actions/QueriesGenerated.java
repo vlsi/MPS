@@ -30,8 +30,8 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.util.Calculable;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.nodeEditor.CellSide;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class QueriesGenerated {
 
@@ -59,7 +59,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return _PrecompiledPatterns.REGEXP.matcher(pattern).matches();
+            return _PrecompiledPatterns.REGEXP0.matcher(pattern).matches();
           }
 
         });
@@ -265,6 +265,10 @@ public class QueriesGenerated {
           return ". dot";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
       });
     }
     return result;
@@ -330,6 +334,10 @@ public class QueriesGenerated {
 
           public String getMatchingText(String text) {
             return SConceptPropertyOperations.getString((item), "sign");
+          }
+
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
           }
 
           public String getDescriptionText(String text) {

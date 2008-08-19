@@ -39,6 +39,10 @@ public class QueriesGenerated {
           return ". currency";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
         public String getDescriptionText(String pattern) {
           return "get currency";
         }
@@ -63,6 +67,10 @@ public class QueriesGenerated {
           return ". isZero";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
         public String getDescriptionText(String pattern) {
           return "compare to zero";
         }
@@ -85,6 +93,10 @@ public class QueriesGenerated {
 
         public String getMatchingText(String pattern) {
           return ". amount";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
         public String getDescriptionText(String pattern) {

@@ -110,10 +110,11 @@ public class QueriesGenerated {
 
       };
       Iterable queryResult = (Iterable)calc.calculate();
-      assert queryResult != null;
-      for(Object item : queryResult) {
-        List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-        result.addAll(defaultActions);
+      if (queryResult != null) {
+        for(Object item : queryResult) {
+          List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+          result.addAll(defaultActions);
+        }
       }
     }
     return result;
@@ -171,6 +172,10 @@ public class QueriesGenerated {
             return "asc";
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
         });
       }
     }
@@ -194,6 +199,10 @@ public class QueriesGenerated {
             return "desc";
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
         });
       }
     }
@@ -215,6 +224,10 @@ public class QueriesGenerated {
 
         public String getMatchingText(String pattern) {
           return ".";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
         public String getDescriptionText(String pattern) {
@@ -242,6 +255,10 @@ public class QueriesGenerated {
           return "[";
         }
 
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
       });
     }
     return result;
@@ -260,6 +277,10 @@ public class QueriesGenerated {
 
         public String getMatchingText(String pattern) {
           return "<";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
 
         public String getDescriptionText(String pattern) {

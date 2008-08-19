@@ -30,7 +30,6 @@
     <property name="name" value="quantity" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1112119679872">
       <property name="applicableLinkMetaclass" value="aggregation" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1111784312737" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197675900933">
         <link role="concept" targetNodeId="1.1111792102248" resolveInfo="Quantity" />

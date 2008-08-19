@@ -230,7 +230,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1216861714160">
     <property name="name" value="dotOperation" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1216861714161">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="3.1197027803184" resolveInfo="IOperation" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1216861714162">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216861714163">

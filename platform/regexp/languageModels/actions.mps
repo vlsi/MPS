@@ -42,7 +42,6 @@
     <property name="name" value="stringOperations" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1175165206848">
       <property name="description" value="transforms String typed expression into replace or split expression " />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="3.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstitutePreconditionFunction" id="1175165238942">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175165238943">
@@ -339,7 +338,6 @@
     <property name="name" value="binary" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177531247694">
       <property name="description" value="transfrom to binary regexp" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1174482743037" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart" id="1182825078340">
         <link role="concept" targetNodeId="1.1174485167097" />
@@ -378,7 +376,6 @@
     <property name="name" value="unary" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177531282394">
       <property name="description" value="transform to unary regexp" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1174482743037" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart" id="1182825078337">
         <link role="concept" targetNodeId="1.1174485235885" />
@@ -417,7 +414,6 @@
     <property name="name" value="other" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177531335474">
       <property name="description" value="transfrom to other regexps (create a sequence and add as the right)" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1174482743037" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1177531335475">
         <link role="concept" targetNodeId="1.1174482743037" />
@@ -621,7 +617,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177531581952">
     <property name="name" value="predefinedSymbol" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177531588848">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1174482743037" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1177531594353">
         <link role="concept" targetNodeId="1.1174555732504" />
@@ -795,7 +790,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177531821869">
     <property name="name" value="regexpReference" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177531829621">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1174482743037" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1177531837505">
         <link role="concept" targetNodeId="1.1174662605354" />
@@ -956,7 +950,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1177533152784">
     <property name="name" value="matchReference" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1177533163867">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1174482743037" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1177533168069">
         <link role="concept" targetNodeId="1.1174909099093" />

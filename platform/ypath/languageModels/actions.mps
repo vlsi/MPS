@@ -51,7 +51,6 @@
     <property name="name" value="YPath_rhint" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1168893677147">
       <property name="description" value="Initiate treepath search for existing TreePathAspect" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="4.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstitutePreconditionFunction" id="1168893690367">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168893690368">
@@ -236,7 +235,6 @@
     <property name="name" value="YPath_subs" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1169037620751">
       <property name="description" value="Allow only &quot;from&quot; as the first treepath operation" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1168468681335" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1169038348122">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1169038348123">
@@ -328,7 +326,6 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1169038110957">
       <property name="description" value="Allow only &quot;iterate&quot; as the first tree traversal operation" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1168468681335" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1169038722084">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1169038722085">
@@ -406,7 +403,6 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1169038203232">
       <property name="description" value="Disallow &quot;from&quot; as a tree traversal operations" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1168468681335" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1169039090800">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1169039090801">
@@ -462,7 +458,6 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1180011230210">
       <property name="description" value="Allow &quot;visit children&quot; in visit statement" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="4.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1180011271328">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180011271329">
@@ -490,7 +485,6 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1180026401346">
       <property name="description" value="Allow &quot;switch node type&quot; in visit statement" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="4.1068580123157" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1180026445925">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180026445926">
@@ -518,7 +512,6 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1180018851746">
       <property name="description" value="Wrap types" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1180013705438" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1180018881888">
         <link role="concept" targetNodeId="1.1180013705438" />
@@ -570,7 +563,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1175164415469">
     <property name="name" value="rhint_MatchKind_to_MatchProperty" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1175164446140">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1175165417012" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstitutePreconditionFunction" id="1175170178382">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175170178383">
@@ -1937,7 +1929,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1184067764679">
     <property name="name" value="subs_Feature" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1184067774388">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1184066209434" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1184067785707">
         <link role="concept" targetNodeId="1.1183978481785" />
@@ -1962,7 +1953,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1184768383960">
     <property name="name" value="subs_ParameterName" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1184768393149">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1184768155075" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1184768411230">
         <link role="concept" targetNodeId="1.1184768155075" />
@@ -2069,7 +2059,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1194436424112">
     <property name="name" value="subs_Anchor" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1194436439282">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1194433312052" resolveInfo="IAnchor" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1194436447678">
         <link role="concept" targetNodeId="1.1194435322566" resolveInfo="IndexAnchor" />
@@ -2186,7 +2175,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1194616730805">
     <property name="name" value="rhint_Range" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1194616742213">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstitutePreconditionFunction" id="1194616749686">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194616749687">
@@ -2390,7 +2378,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1196420395753">
     <property name="name" value="subs_GenericFeatureFun" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1196420410543">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1196418137410" resolveInfo="IGenericFeatureFun" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart" id="1196425358997">
         <link role="conceptToRemove" targetNodeId="1.1196419083973" resolveInfo="GFReplaceFunFragment" />
@@ -3218,7 +3205,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1196424359850">
     <property name="name" value="subs_GenericFeatureFunHolder" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1196424373003">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1196414630662" resolveInfo="GenericFeatureFunHolder" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart" id="1196425044810">
         <link role="conceptToRemove" targetNodeId="1.1196414630662" resolveInfo="GenericFeatureFunHolder" />
@@ -3335,7 +3321,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1196791144430">
     <property name="name" value="subs_EmptySequenceExpression" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1196791152384">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1196791164260">
         <link role="concept" targetNodeId="1.1195686097730" resolveInfo="EmptySequenceExpression" />
@@ -3533,7 +3518,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1197904780322">
     <property name="name" value="rhint_FeatureDecl" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1197904809758">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1184066209434" resolveInfo="IFeature" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197904817000">
         <link role="concept" targetNodeId="1.1184066209434" resolveInfo="IFeature" />
@@ -3902,7 +3886,6 @@
     <property name="name" value="rhint_TreePathOperationExpression" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1198013650231">
       <property name="description" value="Substitute an expression with an TreePathOperationExpression" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveSTByConditionPart" id="1198013650232">
         <node role="condition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ST_RemoveBy_Condition" id="1198013650233">
@@ -5279,7 +5262,6 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1198013650823">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstitutePreconditionFunction" id="1198013650824">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198013650825">
@@ -5312,7 +5294,6 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1198013650840">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1168468681335" resolveInfo="TreePathOperation" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart" id="1198013650841">
         <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_NodeQuery" id="1198013650842">
@@ -5328,7 +5309,6 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1198013650848">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1184768155075" resolveInfo="ParameterWrapper" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart" id="1198013650849">
         <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_NodeQuery" id="1198013650850">
@@ -5348,7 +5328,6 @@
     <property name="name" value="rhint_Expression_to_TreePathAdapterExpression" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1198013853576">
       <property name="description" value="Initiate treepath search for existing TreePathAspect" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstitutePreconditionFunction" id="1198013853577">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198013853578">

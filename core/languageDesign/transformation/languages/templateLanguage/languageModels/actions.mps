@@ -38,7 +38,6 @@
     <property name="name" value="TL_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1169570930693">
       <property name="description" value="choice of consequences for weaving rule" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1168559098955" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart" id="1177412896773">
         <link role="conceptToRemove" targetNodeId="1.1168559512253" />
@@ -68,7 +67,6 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1195244607537">
-      <property name="useNewActions" value="true" />
       <property name="description" value="choice of consequences for reduction rule" />
       <link role="applicableConcept" targetNodeId="1.1168559098955" resolveInfo="RuleConsequence" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1195244660444">

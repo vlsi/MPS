@@ -33,7 +33,6 @@
     <property name="name" value="logging_nodeSubstitue" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1167245930434">
       <property name="description" value="Creates completion menu for different severities" />
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1068580123157" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1178200219623">
         <link role="concept" targetNodeId="1.1167227138527" />

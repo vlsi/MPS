@@ -321,7 +321,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1175609457861">
     <property name="name" value="_Helgins_RT" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1175609466956">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1068431790191" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1199876186454">
         <link role="concept" targetNodeId="1.1174660718586" resolveInfo="AbstractEquationStatement" />
@@ -522,7 +521,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1185801375279">
     <property name="name" value="_Helgins_Substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1185801400389">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1185788561607" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1185801447016">
         <link role="concept" targetNodeId="1.1185788614172" />
@@ -570,7 +568,6 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1201875763403">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="8.1138411891628" resolveInfo="SNodeOperation" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1201878705329">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201878705330">

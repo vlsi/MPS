@@ -33,6 +33,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.propertylanguage.constraints" version="0" />
   <maxImportIndex value="9" />
   <import index="1" modelUID="jetbrains.mps.mpsLayoutLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.strings.structure" version="-1" />
@@ -47,7 +48,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1203602290423">
     <property name="name" value="ChooseSource" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1203602304221">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1203601915645" resolveInfo="Source" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1203602566490">
         <link role="concept" targetNodeId="1.1203601915645" resolveInfo="Source" />
@@ -515,7 +515,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1203607556930">
     <property name="name" value="ChooseLanguage" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1203607567791">
-      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1203599702327" resolveInfo="Module" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1203607611171">
         <link role="concept" targetNodeId="1.1203599702327" resolveInfo="Module" />
