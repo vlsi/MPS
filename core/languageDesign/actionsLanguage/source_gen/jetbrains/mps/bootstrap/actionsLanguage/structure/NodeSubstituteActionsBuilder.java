@@ -14,7 +14,6 @@ import jetbrains.mps.project.GlobalScope;
 public class NodeSubstituteActionsBuilder extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder";
   public static String DESCRIPTION = "description";
-  public static String ACTIONS_FILTER_ASPECT_ID = "actionsFilterAspectId";
   public static String USE_NEW_ACTIONS = "useNewActions";
   public static String APPLICABLE_CONCEPT = "applicableConcept";
   public static String PRECONDITION = "precondition";
@@ -32,14 +31,6 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
 
   public void setDescription(String value) {
     this.setProperty(NodeSubstituteActionsBuilder.DESCRIPTION, value);
-  }
-
-  public String getActionsFilterAspectId() {
-    return this.getProperty(NodeSubstituteActionsBuilder.ACTIONS_FILTER_ASPECT_ID);
-  }
-
-  public void setActionsFilterAspectId(String value) {
-    this.setProperty(NodeSubstituteActionsBuilder.ACTIONS_FILTER_ASPECT_ID, value);
   }
 
   public boolean getUseNewActions() {

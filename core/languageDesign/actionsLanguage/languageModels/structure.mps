@@ -293,10 +293,6 @@
       <property name="name" value="description" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1112060455033">
-      <property name="name" value="actionsFilterAspectId" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1177324100501">
       <property name="name" value="useNewActions" />
       <link role="dataType" targetNodeId="1.1082983657063" />
@@ -330,7 +326,7 @@
       <link role="target" targetNodeId="1178781654714" resolveInfo="QueryFunction_Substitute_CommonInitializer" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177689228988">
-      <property name="value" value="'actionsFactoryAspectId' &amp; 'actionsFilterAspectId'" />
+      <property name="value" value="'actionsFilterAspectId'" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1170898673630" />
     </node>
   </node>
