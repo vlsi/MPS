@@ -18,7 +18,7 @@ public class typeof_ArrayCreator_InferenceRule implements InferenceRule_Runtime 
   public void applyRule(final SNode arrayCreator) {
     SNode type = SLinkOperations.getTarget(arrayCreator, "componentType", true);
     for(int i = 0 ; i < ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).count() ; i = i + 1) {
-      type = new QuotationClass_87().createNode(type);
+      type = new QuotationClass_86().createNode(type);
     }
     {
       SNode _nodeToCheck_1029348928467 = arrayCreator;

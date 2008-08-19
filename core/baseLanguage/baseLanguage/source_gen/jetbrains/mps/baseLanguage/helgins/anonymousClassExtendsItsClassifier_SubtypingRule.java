@@ -29,7 +29,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
           }
         }
         if (matches_0) {
-          ListSequence.fromList(result).addElement(new QuotationClass_101().createNode(SLinkOperations.getTargets(matchedNode_0, "typeParameter", true), SLinkOperations.getTarget(matchedNode_0, "classifier", false)));
+          ListSequence.fromList(result).addElement(new QuotationClass_100().createNode(SLinkOperations.getTargets(matchedNode_0, "typeParameter", true), SLinkOperations.getTarget(matchedNode_0, "classifier", false)));
           break;
         }
       }

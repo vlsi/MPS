@@ -158,15 +158,15 @@ public class ClassConcept extends Classifier {
     this.insertChild(prev, ClassConcept.STATIC_INNER_CLASSIFIERS, node);
   }
 
-  public int getPropertysCount() {
+  public int getPropertiesCount() {
     return this.getChildCount(ClassConcept.PROPERTY);
   }
 
-  public Iterator<Property> propertys() {
+  public Iterator<Property> properties() {
     return this.children(ClassConcept.PROPERTY);
   }
 
-  public List<Property> getPropertys() {
+  public List<Property> getProperties() {
     return this.getChildren(ClassConcept.PROPERTY);
   }
 

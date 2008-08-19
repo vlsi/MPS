@@ -1969,28 +1969,6 @@
       <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1170346941296">
-    <property name="name" value="AnonymousClassExpression" />
-    <property name="package" value="classifier.deprecated" />
-    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1182161702962">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1182161715449">
-      <property name="value" value="use generic new expression instead" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1180129508254" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1170346979436">
-      <property name="value" value="anonymous class" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1170346951344">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="cls" />
-      <link role="target" targetNodeId="1170345865475" resolveInfo="AnonymousClass" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1171903607971">
     <property name="name" value="WildCardType" />
     <property name="package" value="type" />
