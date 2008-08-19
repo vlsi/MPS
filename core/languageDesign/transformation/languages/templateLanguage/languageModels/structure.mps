@@ -343,14 +343,6 @@
       <property name="value" value="conditional macro" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1167945907175">
-      <property name="value" value="conditionAspectId (java query method)" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1118773281249">
-      <property name="name" value="conditionAspectId" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1118786554307">
     <property name="name" value="LoopMacro" />

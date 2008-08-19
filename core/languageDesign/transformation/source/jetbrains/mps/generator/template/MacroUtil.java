@@ -102,51 +102,33 @@ public class MacroUtil {
   }
 
   public static boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, ITemplateGenerator generator) throws GenerationFailueException {
-    // new
     IfMacro_Condition function = ifMacro.getConditionFunction();
+    if (function == null) {
+      throw new GenerationFailueException("couldn't evaluate if-macro condition", inputNode, BaseAdapter.fromAdapter(ifMacro), null);
+    }
+
     long startTime = System.currentTimeMillis();
     Boolean res = false;
-    if (function != null) {
-      String methodName = TemplateFunctionMethodName.ifMacro_Condition(function.getNode());
-      try {
-        res = (Boolean) QueryMethodGenerated.invoke(
-          methodName,
-          generator.getGeneratorSessionContext(),
-          new IfMacroContext(inputNode, BaseAdapter.fromAdapter(ifMacro), generator),
-          ifMacro.getModel(),
-          true);
-        return res;
-      } catch (ClassNotFoundException e) {
-        generator.showWarningMessage(BaseAdapter.fromAdapter(ifMacro), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
-      } catch (NoSuchMethodException e) {
-        generator.showWarningMessage(BaseAdapter.fromAdapter(ifMacro), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
-      } catch (Throwable t) {
-        throw new GenerationFailueException("error executing condition ", BaseAdapter.fromAdapter(ifMacro), t);
-      } finally {
-        Statistics.getStatistic(Statistics.TPL).add(ifMacro.getModel(), methodName, startTime, res);
-      }
-
-      return false;
+    String methodName = TemplateFunctionMethodName.ifMacro_Condition(function.getNode());
+    try {
+      res = (Boolean) QueryMethodGenerated.invoke(
+        methodName,
+        generator.getGeneratorSessionContext(),
+        new IfMacroContext(inputNode, BaseAdapter.fromAdapter(ifMacro), generator),
+        ifMacro.getModel(),
+        true);
+      return res;
+    } catch (ClassNotFoundException e) {
+      generator.showWarningMessage(BaseAdapter.fromAdapter(ifMacro), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+    } catch (NoSuchMethodException e) {
+      generator.showWarningMessage(BaseAdapter.fromAdapter(ifMacro), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+    } catch (Throwable t) {
+      throw new GenerationFailueException("error executing condition ", BaseAdapter.fromAdapter(ifMacro), t);
+    } finally {
+      Statistics.getStatistic(Statistics.TPL).add(ifMacro.getModel(), methodName, startTime, res);
     }
 
-    // old
-    String conditionAspectId = ifMacro.getConditionAspectId();
-    if (conditionAspectId != null) {
-      String methodName = "semanticNodeCondition_" + conditionAspectId;
-      Object[] args = new Object[]{inputNode};
-      try {
-        res = (Boolean) QueryMethod.invokeWithOptionalArg(methodName, args, ifMacro.getModel(), generator.getGeneratorSessionContext());
-        return res;
-      } catch (Exception e) {
-        generator.showErrorMessage(inputNode, null, BaseAdapter.fromAdapter(ifMacro), "couldn't evaluate if-macro condition: " + NameUtil.shortNameFromLongName(e.getClass().getName()) + " : " + e.getMessage());
-        LOG.error(e);
-        return false;
-      } finally {
-        Statistics.getStatistic(Statistics.TPL).add(ifMacro.getModel(), methodName, startTime, res);
-      }
-    }
-
-    throw new GenerationFailueException("couldn't evaluate if-macro condition", inputNode, BaseAdapter.fromAdapter(ifMacro), null);
+    return false;
   }
 
   public static List<SNode> getNewInputNodes(NodeMacro nodeMacro, SNode currentInputNode, ITemplateGenerator generator) throws GenerationFailueException {
