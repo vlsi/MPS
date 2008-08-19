@@ -70,6 +70,9 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/log" />
   </target>
   <target name="do.the.job" depends="folders.create">
+    <fail unless="build.number" message="Property build.number unspecified." />
+    <fail unless="build.vcs.number" message="Property build.vcs.number unspecified." />
+    <fail unless="teamcity.buildConfName" message="Property teamcity.buildConfName unspecified." />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/Contents">
       <fileset dir="build/Contents" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>

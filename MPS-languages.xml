@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="MPS-languages" default="pack.jetbrains.mps.devkit.general-purpose">
-  <property file="./MPS.properties" />
   <target name="pack.jetbrains.mps.devkit.general-purpose">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/devkits/jetbrains.mps.devkit.general-purpose.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/devkits/jetbrains.mps.devkit.general-purpose.tmp/module" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/devkits/jetbrains.mps.devkit.general-purpose.tmp/module">
@@ -16,6 +16,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/devkits/jetbrains.mps.devkit.general-purpose.tmp" />
   </target>
   <target name="pack.jetbrains.mps.devkit.generator-design">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/devkits/jetbrains.mps.devkit.generator-design.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/devkits/jetbrains.mps.devkit.generator-design.tmp/module" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/devkits/jetbrains.mps.devkit.generator-design.tmp/module">
@@ -30,6 +31,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/devkits/jetbrains.mps.devkit.generator-design.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguageInternal">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguageInternal.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguageInternal.tmp/module" />
     <mkdir dir="core/baseLanguage/baseLanguageInternal/classes" />
@@ -48,6 +50,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguageInternal.tmp" />
   </target>
   <target name="pack.jetbrains.mps.closures">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.closures.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.closures.tmp/module" />
     <mkdir dir="core/baseLanguage/closures/runtime/classes" />
@@ -71,6 +74,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.closures.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.ext.collections.lang">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.collections.lang.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.collections.lang.tmp/module" />
     <mkdir dir="core/baseLanguage/collections/classes" />
@@ -94,6 +98,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.collections.lang.tmp" />
   </target>
   <target name="pack.collections_samples">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/collections_samples.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/collections_samples.tmp/module" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/collections_samples.tmp/module">
@@ -108,6 +113,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/collections_samples.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.ext.csharp">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.tmp/module" />
     <mkdir dir="core/baseLanguage/csharp/classes" />
@@ -131,6 +137,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.ext.dates.lang">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.lang.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.lang.tmp/module" />
     <mkdir dir="core/baseLanguage/dates/classes_gen" />
@@ -149,6 +156,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.lang.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.ext.dates.internal">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.internal.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.internal.tmp/module" />
     <mkdir dir="core/baseLanguage/dates/internal/classes_gen" />
@@ -167,6 +175,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.internal.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.dates.runtime">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.runtime.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.runtime.tmp/module" />
     <mkdir dir="core/baseLanguage/dates/runtime/classes_gen" />
@@ -189,6 +198,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.runtime.tmp" />
   </target>
   <target name="pack.jetbrains.mps.internal.collections">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.internal.collections.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.internal.collections.tmp/module" />
     <mkdir dir="core/baseLanguage/internalCollections/languages/collections/runtime/classes" />
@@ -212,6 +222,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.internal.collections.tmp" />
   </target>
   <target name="pack.jetbrains.accounting.money">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.accounting.money.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.accounting.money.tmp/module" />
     <mkdir dir="core/baseLanguage/money/classes" />
@@ -232,6 +243,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.accounting.money.tmp" />
   </target>
   <target name="pack.JDK">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/JDK.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/JDK.tmp/module" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/JDK.tmp/module">
@@ -246,6 +258,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/JDK.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.blTypes">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.tmp/module" />
     <mkdir dir="core/baseLanguage/baseLanguage/classes" />
@@ -264,6 +277,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.tmp/module" />
     <mkdir dir="core/baseLanguage/baseLanguage/classes" />
@@ -282,6 +296,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.strings">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.tmp/module" />
     <mkdir dir="core/baseLanguage/strings/classes_gen" />
@@ -302,6 +317,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.tmp" />
   </target>
   <target name="pack.MPS.Classpath">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/MPS.Classpath.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/MPS.Classpath.tmp/module" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/MPS.Classpath.tmp/module">
@@ -316,6 +332,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/MPS.Classpath.tmp" />
   </target>
   <target name="pack.refactoring">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/refactoring.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/refactoring.tmp/module" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/refactoring.tmp/module">
@@ -330,6 +347,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/refactoring.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.classifiers">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.classifiers.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.classifiers.tmp/module" />
     <mkdir dir="core/baseLanguage/classifiers/classes" />
@@ -348,6 +366,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.classifiers.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.unitTest">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.tmp/module" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.tmp/module">
@@ -362,6 +381,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.unitTest.runtime">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.tmp/module" />
     <mkdir dir="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
@@ -382,6 +402,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.actionsLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.actionsLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.actionsLanguage.tmp/module" />
     <mkdir dir="core/languageDesign/actionsLanguage/classes" />
@@ -400,6 +421,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.actionsLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.annotations">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.annotations.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.annotations.tmp/module" />
     <mkdir dir="core/languageDesign/annotations/classes" />
@@ -418,6 +440,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.annotations.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.constraintsLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.tmp/module" />
     <mkdir dir="core/languageDesign/constraintsLanguage/classes" />
@@ -436,6 +459,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.editorLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.tmp/module" />
     <mkdir dir="core/languageDesign/editorLanguage/classes" />
@@ -457,6 +481,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.findUsagesLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.tmp/module" />
     <mkdir dir="core/languageDesign/findUsagesLanguage/classes" />
@@ -475,6 +500,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.helgins">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.tmp/module" />
     <mkdir dir="core/languageDesign/helgins/classes" />
@@ -496,6 +522,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.intentionsLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.intentionsLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.intentionsLanguage.tmp/module" />
     <mkdir dir="core/languageDesign/intentionsLanguage/classes" />
@@ -517,6 +544,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.intentionsLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.dataFlow">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.dataFlow.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.dataFlow.tmp/module" />
     <mkdir dir="core/languageDesign/dataFlow/classes" />
@@ -541,6 +569,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.dataFlow.tmp" />
   </target>
   <target name="pack.jetbrains.mpslite">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mpslite.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mpslite.tmp/module" />
     <mkdir dir="core/languageDesign/mps-lite/classes" />
@@ -559,6 +588,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mpslite.tmp" />
   </target>
   <target name="pack.jetbrains.mps.nanoj">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.nanoj.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.nanoj.tmp/module" />
     <mkdir dir="core/languageDesign/mps-lite/classes" />
@@ -577,6 +607,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.nanoj.tmp" />
   </target>
   <target name="pack.jetbrains.mps.patterns">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.patterns.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.patterns.tmp/module" />
     <mkdir dir="core/languageDesign/patternLanguage/classes" />
@@ -598,6 +629,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.patterns.tmp" />
   </target>
   <target name="pack.jetbrains.mps.quotation">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.quotation.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.quotation.tmp/module" />
     <mkdir dir="core/languageDesign/quotation/classes" />
@@ -616,6 +648,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.quotation.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.pluginLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.pluginLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.pluginLanguage.tmp/module" />
     <mkdir dir="core/languageDesign/pluginLanguage/classes" />
@@ -637,6 +670,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.pluginLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.sharedConcepts">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.sharedConcepts.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.sharedConcepts.tmp/module" />
     <mkdir dir="core/languageDesign/sharedConcepts/classes" />
@@ -655,6 +689,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.sharedConcepts.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.smodelLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.tmp/module" />
     <mkdir dir="core/languageDesign/smodelLanguage/classes" />
@@ -676,6 +711,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.ide.scriptLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.tmp/module" />
     <mkdir dir="core/languageDesign/scriptLanguage/classes" />
@@ -697,6 +733,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.ide.scriptLanguageInternal">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguageInternal.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguageInternal.tmp/module" />
     <mkdir dir="core/languageDesign/scriptLanguageInternal/classes" />
@@ -715,6 +752,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguageInternal.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.structureLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.structureLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.structureLanguage.tmp/module" />
     <mkdir dir="core/languageDesign/structureLanguage/classes" />
@@ -733,6 +771,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.structureLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.core">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.core.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.core.tmp/module" />
     <mkdir dir="core/languageDesign/core/classes" />
@@ -751,6 +790,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.core.tmp" />
   </target>
   <target name="pack.jetbrains.mps.logging.refactoring">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.logging.refactoring.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.logging.refactoring.tmp/module" />
     <mkdir dir="core/languageDesign/refactoring/classes" />
@@ -772,6 +812,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.logging.refactoring.tmp" />
   </target>
   <target name="pack.jetbrains.mps.transformation.TLBase">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.TLBase.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.TLBase.tmp/module" />
     <mkdir dir="core/languageDesign/transformation/classes" />
@@ -790,6 +831,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.TLBase.tmp" />
   </target>
   <target name="pack.jetbrains.mps.transformationTest">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformationTest.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformationTest.tmp/module" />
     <mkdir dir="core/languageDesign/transformationTest/classes" />
@@ -811,6 +853,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformationTest.tmp" />
   </target>
   <target name="pack.jetbrains.mps.transformationTest.runtime">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformationTest.runtime.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformationTest.runtime.tmp/module" />
     <mkdir dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
@@ -831,6 +874,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformationTest.runtime.tmp" />
   </target>
   <target name="pack.jetbrains.mps.transformation.generationContext">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.generationContext.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.generationContext.tmp/module" />
     <mkdir dir="core/languageDesign/transformation/classes" />
@@ -849,6 +893,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.generationContext.tmp" />
   </target>
   <target name="pack.jetbrains.mps.projectLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/jetbrains.mps.projectLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/jetbrains.mps.projectLanguage.tmp/module" />
     <mkdir dir="core/projectLanguage/classes" />
@@ -867,6 +912,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/jetbrains.mps.projectLanguage.tmp" />
   </target>
   <target name="pack.transform">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/transform.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/transform.tmp/module" />
     <mkdir dir="platform/panacea/classes" />
@@ -885,6 +931,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/transform.tmp" />
   </target>
   <target name="pack.ypath.main">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.main.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.main.tmp/module" />
     <mkdir dir="platform/ypath/solutions/classes" />
@@ -903,6 +950,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.main.tmp" />
   </target>
   <target name="pack.ypath.test">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.test.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.test.tmp/module" />
     <mkdir dir="platform/ypath/solutions/classes" />
@@ -921,6 +969,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.test.tmp" />
   </target>
   <target name="pack.jetbrains.mps.ypath">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.ypath.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.ypath.tmp/module" />
     <mkdir dir="platform/ypath/classes" />
@@ -944,6 +993,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.ypath.tmp" />
   </target>
   <target name="pack.jetbrains.mps.buildlanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.buildlanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.buildlanguage.tmp/module" />
     <mkdir dir="platform/buildlanguage/classes" />
@@ -965,6 +1015,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.buildlanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.mpsLayoutLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.mpsLayoutLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.mpsLayoutLanguage.tmp/module" />
     <mkdir dir="platform/buildlanguage/classes" />
@@ -983,6 +1034,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.mpsLayoutLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.build.moduleDependencyLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.build.moduleDependencyLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.build.moduleDependencyLanguage.tmp/module" />
     <mkdir dir="platform/buildlanguage/languages/moduleDependencyLanguage/classes_gen" />
@@ -1004,6 +1056,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.build.moduleDependencyLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.propertylanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.propertylanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.propertylanguage.tmp/module" />
     <mkdir dir="platform/buildlanguage/classes" />
@@ -1022,6 +1075,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.propertylanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bookLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.bookLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.bookLanguage.tmp/module" />
     <mkdir dir="platform/textLanguage/classes" />
@@ -1040,6 +1094,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.bookLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.regexp">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.tmp/module" />
     <mkdir dir="platform/regexp/classes" />
@@ -1063,6 +1118,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.tmp" />
   </target>
   <target name="pack.jetbrains.mps.regexp.examples">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.examples.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.examples.tmp/module" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.examples.tmp/module">
@@ -1077,6 +1133,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.examples.tmp" />
   </target>
   <target name="pack.jetbrains.mps.textLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.tmp/module" />
     <mkdir dir="platform/textLanguage/classes" />
@@ -1095,6 +1152,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.textLanguage.formula">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.formula.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.formula.tmp/module" />
     <mkdir dir="platform/textLanguage/classes" />
@@ -1113,6 +1171,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.formula.tmp" />
   </target>
   <target name="pack.jetbrains.mps.textLanguage.table">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.table.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.table.tmp/module" />
     <mkdir dir="platform/textLanguage/classes" />
@@ -1131,6 +1190,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.table.tmp" />
   </target>
   <target name="pack.jetbrains.mps.uiLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.uiLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.uiLanguage.tmp/module" />
     <mkdir dir="platform/uiLanguage/classes" />
@@ -1154,6 +1214,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.uiLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.xml">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.xml.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.xml.tmp/module" />
     <mkdir dir="platform/xml/classes" />
@@ -1172,6 +1233,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.xml.tmp" />
   </target>
   <target name="pack.jetbrains.springframework.configuration">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.springframework.configuration.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.springframework.configuration.tmp/module" />
     <mkdir dir="platform/springframework/languages/configuration/classes_gen" />
@@ -1190,6 +1252,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.springframework.configuration.tmp" />
   </target>
   <target name="pack.jetbrains.springframework.configurationInternal">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.springframework.configurationInternal.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.springframework.configurationInternal.tmp/module" />
     <mkdir dir="platform/springframework/languages/configurationInternal/classes_gen" />
@@ -1208,6 +1271,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.springframework.configurationInternal.tmp" />
   </target>
   <target name="pack.jetbrains.mps.springframework.configuration.runtime">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.springframework.configuration.runtime.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.springframework.configuration.runtime.tmp/module" />
     <mkdir dir="platform/springframework/runtime/classes_gen" />
@@ -1228,6 +1292,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.springframework.configuration.runtime.tmp" />
   </target>
   <target name="pack.webr.logging">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.logging.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.logging.tmp/module" />
     <mkdir dir="platform/webr/languages/logging/classes_gen" />
@@ -1246,6 +1311,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.logging.tmp" />
   </target>
   <target name="pack.webr.xml">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xml.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xml.tmp/module" />
     <mkdir dir="platform/webr/languages/xml/classes_gen" />
@@ -1264,6 +1330,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xml.tmp" />
   </target>
   <target name="pack.webr.gtext">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.gtext.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.gtext.tmp/module" />
     <mkdir dir="platform/webr/languages/gtext/classes_gen" />
@@ -1284,6 +1351,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.gtext.tmp" />
   </target>
   <target name="pack.webr.xmlInternal">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlInternal.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlInternal.tmp/module" />
     <mkdir dir="platform/webr/languages/xmlInternal/classes_gen" />
@@ -1302,6 +1370,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlInternal.tmp" />
   </target>
   <target name="pack.webr.xmlSchema">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlSchema.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlSchema.tmp/module" />
     <mkdir dir="platform/webr/languages/xmlSchema/classes_gen" />
@@ -1320,6 +1389,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlSchema.tmp" />
   </target>
   <target name="pack.jetbrains.mps.gtext.runtime">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.gtext.runtime.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.gtext.runtime.tmp/module" />
     <mkdir dir="platform/webr/languages/gtext/runtime/classes_gen" />
@@ -1342,6 +1412,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.gtext.runtime.tmp" />
   </target>
   <target name="pack.jetbrains.mps.ide.uiLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.uiLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.uiLanguage.tmp/module" />
     <mkdir dir="workbench/ideUiLanguage/classes" />
@@ -1360,6 +1431,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.uiLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.monitorLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.monitorLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.monitorLanguage.tmp/module" />
     <mkdir dir="workbench/monitorLanguage/languages/monitorLanguage/classes_gen" />
@@ -1380,6 +1452,7 @@
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.monitorLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.ide">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.tmp/module" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.tmp/module">
