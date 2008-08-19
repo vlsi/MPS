@@ -1477,6 +1477,19 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219142075783">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219142077661">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219142076094">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1219142075784" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1219142076301">
+                    <link role="member" targetNodeId="1215438799718" resolveInfo="myChecker" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219142080011">
+                  <link role="baseMethodDeclaration" targetNodeId="28.~HelginsTypesEditorChecker.dispose():void" resolveInfo="dispose" />
+                </node>
+              </node>
+            </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1211475120417">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1211475120418" />

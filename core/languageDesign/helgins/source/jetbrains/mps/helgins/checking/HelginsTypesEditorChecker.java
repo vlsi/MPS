@@ -32,6 +32,7 @@ import java.util.TimerTask;
 public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
   private static Logger LOG = Logger.getLogger(HelginsTypesEditorChecker.class);
 
+  private Timer myTimer = new Timer("helgins interruptor");
 
   public Set<EditorMessage> createMessages(final SNode node, IOperationContext operationContext) {
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
@@ -40,7 +41,6 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
         int timeoutSeconds = HelginsPreferencesComponent.getInstance().getHelginsTimeoutSeconds();
         long timeoutMillis = timeoutSeconds <= -1 ? -1 : timeoutSeconds * 1000;
         if (timeoutMillis > -1) {
-          Timer timer = new Timer("helgins interruptor");
           TimerTask timerTask = new TimerTask() {
             public void run() {
               System.err.println("interrupting h-ns");
@@ -50,7 +50,7 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
               }
        //     }
           };
-          timer.schedule(timerTask, timeoutMillis);
+          myTimer.schedule(timerTask, timeoutMillis);
         }
         TypeChecker.getInstance().checkRoot(node.getContainingRoot());
       } catch (Throwable t) {
@@ -110,5 +110,9 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
   public EditorMessageOwner getOwner(SNode node) {
     if (node == null) return null;
     return getNodeTypesComponent(node);
+  }
+
+  public void dispose() {
+    myTimer.cancel();
   }
 }
