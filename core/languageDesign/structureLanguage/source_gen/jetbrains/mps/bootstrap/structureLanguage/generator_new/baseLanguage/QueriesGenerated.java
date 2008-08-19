@@ -566,6 +566,30 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1219110458895(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "get" + NameUtil.capitalize(SPropertyOperations.getString(_context.getNode(), "name"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1219110526858(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "get" + NameUtil.capitalize(SPropertyOperations.getString(_context.getNode(), "name"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1219110545179(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "get" + NameUtil.capitalize(SPropertyOperations.getString(_context.getNode(), "name"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1219110655219(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "set" + NameUtil.capitalize(SPropertyOperations.getString(_context.getNode(), "name"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1219110685494(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "set" + NameUtil.capitalize(SPropertyOperations.getString(_context.getNode(), "name"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1219110711472(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "set" + NameUtil.capitalize(SPropertyOperations.getString(_context.getNode(), "name"));
+  }
+
   public static Object referenceMacro_GetReferent_1197509802062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(_context.getNode());
     SNode outputEnumConstant = _context.getOutputNodeByInputNodeAndMappingLabel(defaultMember, "outputEnumConstant");
