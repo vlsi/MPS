@@ -1513,40 +1513,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1177572007175">
-    <property name="package" value="menuParts.Substitute" />
-    <link role="conceptDeclaration" targetNodeId="1.1177571984778" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177572009660">
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1177584244651">
-        <link role="relationDeclaration" targetNodeId="3.1137473891462" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214398032205">
-          <property name="flag" value="false" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399678794">
-          <property name="color" value="DARK_BLUE" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1177572012966">
-        <link role="relationDeclaration" targetNodeId="1.1177571997481" />
-        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1177572012967">
-          <link role="conceptDeclaration" targetNodeId="2.1071489090640" />
-          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1177572014620">
-            <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="3.1169194664001" />
-            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399678443">
-              <property name="color" value="DARK_MAGENTA" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182824477675">
-        <property name="text" value="(deprecated! run action lang's 'Migrate from #415 script')" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399678599">
-          <property name="color" value="red" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1177614730362">
     <property name="package" value="NodeBuilderParts" />
     <link role="conceptDeclaration" targetNodeId="1.1177614709184" />

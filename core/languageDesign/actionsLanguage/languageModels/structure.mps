@@ -1461,27 +1461,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177571984778">
-    <property name="package" value="menuParts.Substitute" />
-    <property name="name" value="ConceptSubstituteMenuPart" />
-    <link role="extends" targetNodeId="1177323652379" resolveInfo="SubstituteMenuPart" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177572377924">
-      <property name="value" value="concept" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1180138250516">
-      <property name="value" value="replaced with ConceptSubstitutePart (action on top level)" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1180138314310">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177571997481">
-      <property name="role" value="concept" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1071489090640" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177614709184">
     <property name="package" value="menuBuilderParts" />
     <property name="name" value="RemoveDefaultsPart" />
