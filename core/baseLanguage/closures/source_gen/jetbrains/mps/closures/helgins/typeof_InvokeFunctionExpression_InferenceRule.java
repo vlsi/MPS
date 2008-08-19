@@ -17,8 +17,8 @@ public class typeof_InvokeFunctionExpression_InferenceRule implements InferenceR
 
   public void applyRule(final SNode invoke) {
     {
-      final SNode _representatorVar = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(invoke, "function", true), "jetbrains.mps.closures.helgins", "1199567116884", true);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar, new Runnable() {
+      final SNode _representatorVar0 = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(invoke, "function", true), "jetbrains.mps.closures.helgins", "1199567116884", true);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar0, new Runnable() {
 
         public void run() {
           SNode ft = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(invoke, "function", true), "jetbrains.mps.closures.helgins", "1199567532549", true);

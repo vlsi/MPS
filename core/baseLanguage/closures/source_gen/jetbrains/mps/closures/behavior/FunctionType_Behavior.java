@@ -32,7 +32,7 @@ public class FunctionType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new QuotationClass_().createNode();
+    return new QuotationClass_0().createNode();
   }
 
   public static String call_getRuntimeSignature_1213877404927(SNode thisNode) {
@@ -129,10 +129,10 @@ public class FunctionType_Behavior {
 
   public static SNode call_getNormalizedSequenceParameterReturnType_1213877405260(SNode thisNode) {
     {
-      IMatchingPattern pattern_ = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_ = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(thisNode, "resultType", true), pattern_);
-      if (coercedNode_ != null) {
-        return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_, "elementType", true));
+      IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(thisNode, "resultType", true), pattern_0);
+      if (coercedNode_0 != null) {
+        return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_0, "elementType", true));
       }
     }
     return null;

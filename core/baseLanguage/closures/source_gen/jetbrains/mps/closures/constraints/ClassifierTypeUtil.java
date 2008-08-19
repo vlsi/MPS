@@ -39,7 +39,7 @@ public class ClassifierTypeUtil {
     String rtSig = "_FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
     for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_1().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
       if (rtSig.equals(SPropertyOperations.getString(ice, "name"))) {
-        SNode ct = new QuotationClass_().createNode(ice);
+        SNode ct = new QuotationClass_0().createNode(ice);
         if ((SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ft, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
           SLinkOperations.addChild(ct, "parameter", copyTypeRecursively(getTypeCoercedToClassifierType(SLinkOperations.getTarget(ft, "resultType", true)), true));
         }
@@ -132,10 +132,10 @@ public class ClassifierTypeUtil {
       visitedClassifiers.add(SLinkOperations.getTarget(ct, "classifier", false));
       for(SNode sup : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(ct)) {
         {
-          IMatchingPattern pattern_ = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-          SNode coercedNode_ = TypeChecker.getInstance().getRuntimeSupport().coerce(sup, pattern_);
-          if (coercedNode_ != null) {
-            concretes.addLast(coercedNode_);
+          IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+          SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(sup, pattern_0);
+          if (coercedNode_0 != null) {
+            concretes.addLast(coercedNode_0);
           }
         }
       }

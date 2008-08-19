@@ -138,7 +138,7 @@ with_allThrows:
       {
         SNode _nodeToCheck_1029348928467 = closure;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1200829007706", true), new QuotationClass_().createNode(paramTypes, TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531), realThrows), _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins", "1200829005839", intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1200829007706", true), new QuotationClass_0().createNode(paramTypes, TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531), realThrows), _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins", "1200829005839", intentionProvider);
       }
     } else
     if (yieldsValue) {
