@@ -1342,8 +1342,8 @@
               <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204744252764">
-              <link role="baseMethodDeclaration" targetNodeId="16.~NameGenerationUtil.pluralize(java.lang.String):java.lang.String" resolveInfo="pluralize" />
-              <link role="classConcept" targetNodeId="16.~NameGenerationUtil" resolveInfo="NameGenerationUtil" />
+              <link role="classConcept" targetNodeId="16.~NameUtil" resolveInfo="NameUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="16.~NameUtil.pluralize(java.lang.String):java.lang.String" resolveInfo="pluralize" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204744252765">
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204744257930">
                   <link role="property" targetNodeId="1.1204740973143" resolveInfo="role" />
@@ -1358,8 +1358,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204744252768">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1204744252769">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204744252770">
-              <link role="classConcept" targetNodeId="16.~NameGenerationUtil" resolveInfo="NameGenerationUtil" />
-              <link role="baseMethodDeclaration" targetNodeId="16.~NameGenerationUtil.capitalizeFirst(java.lang.String):java.lang.String" resolveInfo="capitalizeFirst" />
+              <link role="classConcept" targetNodeId="16.~NameUtil" resolveInfo="NameUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="16.~NameUtil.capitalize(java.lang.String):java.lang.String" resolveInfo="capitalize" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204744252771">
                 <link role="variableDeclaration" targetNodeId="1204744252762" resolveInfo="role" />
               </node>

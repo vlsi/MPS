@@ -16,7 +16,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.NameGenerationUtil;
 
 public class QueriesUtil {
 
@@ -167,8 +166,8 @@ public class QueriesUtil {
   }
 
   public static String AL_class_listGetterName(SNode node) {
-    String role = NameGenerationUtil.pluralize(SPropertyOperations.getString(node, "role"));
-    return "get" + NameGenerationUtil.capitalizeFirst(role);
+    String role = NameUtil.pluralize(SPropertyOperations.getString(node, "role"));
+    return "get" + NameUtil.capitalize(role);
   }
 
   public static String AL_class_setterName(SNode node) {
