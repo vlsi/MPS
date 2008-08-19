@@ -62,6 +62,17 @@ public abstract class Macros {
     };
   }
 
+  public static String getMacroString(IModule module){
+    if (module instanceof Language) {
+      return LANGUAGE_DESCRIPTOR;
+    } else if (module instanceof Solution) {
+      return SOLUTION_DESCRIPTOR;
+    } else if (module instanceof DevKit) {
+      return DEVKIT_DESCRIPTOR;
+    }
+    return MPS_HOME;
+  }
+
   public final String expandPath(String path, File anchorFile) {
     return expandPath(path, FileSystem.getFile(anchorFile));
   }
