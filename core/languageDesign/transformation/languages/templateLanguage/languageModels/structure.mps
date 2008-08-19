@@ -603,14 +603,6 @@
       <property name="value" value="weave" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1184616122994">
-      <property name="value" value="'contextProviderAspectId' is deprecated" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1180129508254" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1167240478741">
-      <property name="name" value="contextProviderAspectId" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1169570368028">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="ruleConsequence" />
