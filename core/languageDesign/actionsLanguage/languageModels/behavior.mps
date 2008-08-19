@@ -33,12 +33,6 @@
   <import index="1" modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="22" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.actionsLanguage.behavior" version="-1" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877224817">
-    <link role="concept" targetNodeId="1.1178541723620" resolveInfo="SubstituteNodeBuilderVariableReference" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877224818">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877224819" />
-    </node>
-  </node>
   <visible index="2" modelUID="jetbrains.mps.baseLanguage.behavior" />
   <visible index="3" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" />
   <visible index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
@@ -302,18 +296,6 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877273983" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877280663">
-    <link role="concept" targetNodeId="1.1158700725281" resolveInfo="NodeFactory" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877280664">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877280665" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877283819">
-    <link role="concept" targetNodeId="1.1203348041101" resolveInfo="RightTransformVariableReference" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877283820">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877283821" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877328704">
     <property name="package" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177498071304" resolveInfo="QueryFunction_RightTransform_String" />
@@ -418,28 +400,6 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877328748">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877328749" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877359781">
-    <link role="concept" targetNodeId="1.1112058030570" resolveInfo="NodeSubstituteActionsBuilder" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877359782">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877359783">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877359784">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877359785">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877359786">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877359787" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1213877359788">
-                <link role="property" targetNodeId="1.1177324100501" resolveInfo="useNewActions" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1213877359789">
-              <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1213877359790">
-                <property name="value" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877372965">
