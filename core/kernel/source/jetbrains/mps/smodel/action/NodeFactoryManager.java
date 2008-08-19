@@ -90,7 +90,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
       if (actionsModelDescriptor != null) {
         List<NodeFactories> nodeFactoriesList = actionsModelDescriptor.getSModel().getRootsAdapters(NodeFactories.class);
         for (NodeFactories nodeFactoriesContainer : nodeFactoriesList) {
-          for (NodeFactory nodeFactory : nodeFactoriesContainer.getNodeFactorys()) {
+          for (NodeFactory nodeFactory : nodeFactoriesContainer.getNodeFactories()) {
              if (nodeFactory.getApplicableConcept() == conceptF) {
                nodeFactories.add(nodeFactory);
              }

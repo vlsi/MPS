@@ -55,15 +55,15 @@ public class NodeFactories extends BaseConcept implements INamedConcept {
     this.setProperty(NodeFactories.VIRTUAL_PACKAGE, value);
   }
 
-  public int getNodeFactorysCount() {
+  public int getNodeFactoriesCount() {
     return this.getChildCount(NodeFactories.NODE_FACTORY);
   }
 
-  public Iterator<NodeFactory> nodeFactorys() {
+  public Iterator<NodeFactory> nodeFactories() {
     return this.children(NodeFactories.NODE_FACTORY);
   }
 
-  public List<NodeFactory> getNodeFactorys() {
+  public List<NodeFactory> getNodeFactories() {
     return this.getChildren(NodeFactories.NODE_FACTORY);
   }
 
