@@ -135,6 +135,10 @@ public class QueriesGenerated {
             return pattern;
           }
 
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
         });
       }
     }

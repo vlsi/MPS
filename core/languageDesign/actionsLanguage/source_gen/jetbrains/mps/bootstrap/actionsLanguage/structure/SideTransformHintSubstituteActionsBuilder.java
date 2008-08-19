@@ -14,7 +14,6 @@ import jetbrains.mps.project.GlobalScope;
 public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder";
   public static String DESCRIPTION = "description";
-  public static String USE_NEW_ACTIONS = "useNewActions";
   public static String TRANSFORM_TAG = "transformTag";
   public static String SIDE = "side";
   public static String APPLICABLE_CONCEPT = "applicableConcept";
@@ -33,14 +32,6 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
 
   public void setDescription(String value) {
     this.setProperty(SideTransformHintSubstituteActionsBuilder.DESCRIPTION, value);
-  }
-
-  public boolean getUseNewActions() {
-    return this.getBooleanProperty(SideTransformHintSubstituteActionsBuilder.USE_NEW_ACTIONS);
-  }
-
-  public void setUseNewActions(boolean value) {
-    this.setBooleanProperty(SideTransformHintSubstituteActionsBuilder.USE_NEW_ACTIONS, value);
   }
 
   public SideTransformTag getTransformTag() {

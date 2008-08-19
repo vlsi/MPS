@@ -122,7 +122,7 @@ public class ChildSubstituteActionsHelper {
       resultActions.addAll(invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context));
     }
 
-    if (!containsLegacyQueries(primaryBuilders) && !containsRemoveDefaults(primaryBuilders)) {
+    if (!containsRemoveDefaults(primaryBuilders)) {
       List<NodeSubstituteActionsBuilder> buildersFromSubconcepts = new ArrayList<NodeSubstituteActionsBuilder>();
       List<Language> languages = parentNode.getModel().getLanguages(scope);
       for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(languages)) {
@@ -198,15 +198,6 @@ public class ChildSubstituteActionsHelper {
     }
 
     return resultActions;
-  }
-
-  private static boolean containsLegacyQueries(List<NodeSubstituteActionsBuilder> list) {
-    for (NodeSubstituteActionsBuilder builder : list) {
-      if (!builder.getUseNewActions()) {
-        return true;
-      }
-    }
-    return false;
   }
 
   private static boolean containsRemoveDefaults(List<NodeSubstituteActionsBuilder> list) {

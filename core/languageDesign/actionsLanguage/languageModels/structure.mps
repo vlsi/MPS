@@ -293,10 +293,6 @@
       <property name="name" value="description" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1177324100501">
-      <property name="name" value="useNewActions" />
-      <link role="dataType" targetNodeId="1.1082983657063" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1112058088712">
       <property name="role" value="applicableConcept" />
       <property name="sourceCardinality" value="1" />
@@ -335,10 +331,6 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1140829165817">
       <property name="name" value="transformTag" />
       <link role="dataType" targetNodeId="1140829206022" resolveInfo="RTransformTag" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1177442244383">
-      <property name="name" value="useNewActions" />
-      <link role="dataType" targetNodeId="1.1082983657063" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1215605257730">
       <property name="name" value="side" />
