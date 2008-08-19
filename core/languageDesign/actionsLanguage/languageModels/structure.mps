@@ -1510,28 +1510,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1178536947382">
-    <property name="package" value="menuParts.RightTransform" />
-    <property name="name" value="IncludeSideTransformForNodeMenuPart" />
-    <link role="extends" targetNodeId="1177496137779" resolveInfo="RightTransformMenuPart" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1178537311353">
-      <property name="value" value="include right transform for" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1180116189049">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1180129619801">
-      <property name="value" value="replaced with IncludeRightTransformForNodePart (builder part)" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1178537004460">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="nodeBlock" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1178537049112" resolveInfo="QueryFunction_RightTransform_NodeQuery" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1178537049112">
     <property name="package" value="queryFunctions" />
     <property name="name" value="QueryFunction_SideTransform_NodeQuery" />
