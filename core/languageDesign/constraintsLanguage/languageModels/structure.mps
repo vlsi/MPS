@@ -92,28 +92,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1147467351491">
-    <property name="rootable" value="false" />
-    <property name="iconPath" value="${language_descriptor}\icons\propertyConstraints.png" />
-    <property name="name" value="NodePropertyConstraintSet" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1147467368445">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="nodePropertyConstraint" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1147467115080" resolveInfo="NodePropertyConstraint" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1159284367973">
-      <property name="value" value="property constraints" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1184108355347">
-      <property name="value" value="property constraints are now defined in ConceptBehavior" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
-    </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1173470546161">
-      <link role="intfc" targetNodeId="1.1169194658468" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1147467790433">
     <property name="package" value="Functions" />
     <property name="name" value="ConstraintFunction_PropertyGetter" />
@@ -162,34 +140,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1148685236406">
       <property name="value" value="provider function" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1148687112784">
-    <property name="rootable" value="false" />
-    <property name="iconPath" value="${language_descriptor}\icons\referenceConstraints.png" />
-    <property name="name" value="NodeReferentConstraintSet" />
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1173470555990">
-      <link role="intfc" targetNodeId="1.1169194658468" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1148687980226">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="nodeReferentConstraint" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1148687176410" resolveInfo="NodeReferentConstraint" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1159285960726">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="defaultSearchScope" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1159285995602" resolveInfo="NodeDefaultSearchScope" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1159284712709">
-      <property name="value" value="referent constraints" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1184108592888">
-      <property name="value" value="referent constraints are now defined in ConceptBehavior" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1148687176410">

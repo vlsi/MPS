@@ -103,15 +103,15 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
     super.setChild(ConceptConstraints.CAN_BE_PARENT, node);
   }
 
-  public int getPropertysCount() {
+  public int getPropertiesCount() {
     return this.getChildCount(ConceptConstraints.PROPERTY);
   }
 
-  public Iterator<NodePropertyConstraint> propertys() {
+  public Iterator<NodePropertyConstraint> properties() {
     return this.children(ConceptConstraints.PROPERTY);
   }
 
-  public List<NodePropertyConstraint> getPropertys() {
+  public List<NodePropertyConstraint> getProperties() {
     return this.getChildren(ConceptConstraints.PROPERTY);
   }
 
