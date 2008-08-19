@@ -442,28 +442,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877362247">
-    <link role="concept" targetNodeId="1.1138079221458" resolveInfo="RTransformHintSubstituteActionsBuilder" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877362248">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877362249">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877362250">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877362251">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877362252">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877362253" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1213877362254">
-                <link role="property" targetNodeId="1.1177442244383" resolveInfo="useNewActions" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1213877362255">
-              <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1213877362256">
-                <property name="value" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877372965">
     <property name="package" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177402571666" resolveInfo="QueryFunction_SubstituteWrapper" />
