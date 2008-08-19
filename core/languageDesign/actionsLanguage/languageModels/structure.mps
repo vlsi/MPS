@@ -1412,20 +1412,6 @@
       <link role="target" targetNodeId="1177327274449" resolveInfo="ConceptFunctionParameter_pattern" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177526142802">
-    <property name="package" value="menuParts.RightTransform" />
-    <property name="name" value="ConceptReference" />
-    <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1182819678832">
-      <property name="value" value="this concept is used in ConceptRightTransformMenuPart which is deprecated" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177526149604">
-      <property name="role" value="concept" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1071489090640" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177526535706">
     <property name="package" value="conceptFunctionParameters" />
     <property name="name" value="ConceptFunctionParameter_result" />
