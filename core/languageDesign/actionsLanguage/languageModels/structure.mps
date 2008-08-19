@@ -1412,39 +1412,6 @@
       <link role="target" targetNodeId="1177327274449" resolveInfo="ConceptFunctionParameter_pattern" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177526070940">
-    <property name="package" value="menuParts.RightTransform" />
-    <property name="name" value="ConceptSideTransformMenuPart" />
-    <link role="extends" targetNodeId="1177496137779" resolveInfo="RightTransformMenuPart" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177526417535">
-      <property name="value" value="concept" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1182819631950">
-      <property name="value" value="replaced with ConceptRightTransformPart (action on top level)" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1182819631951">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177526111818">
-      <property name="role" value="baseConcept" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1071489090640" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177526175681">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="exclude" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1177526142802" resolveInfo="ConceptReference" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177526956065">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="handler" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1177526592562" resolveInfo="QueryFunction_RightTransform_ConceptHandler" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177526142802">
     <property name="package" value="menuParts.RightTransform" />
     <property name="name" value="ConceptReference" />

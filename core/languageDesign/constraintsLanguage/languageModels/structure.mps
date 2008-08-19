@@ -87,10 +87,6 @@
       <property name="value" value="property {&lt;{applicableProperty}&gt;}" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1188501940580">
-      <property name="value" value="link 'applicableConcept' is not used with Behaviors" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1147467790433">
     <property name="package" value="Functions" />
@@ -173,10 +169,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1158954542247">
       <property name="value" value="link {&lt;{applicableLink}&gt;}" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1188502091893">
-      <property name="value" value="link 'applicableConcept' is not used with Behaviors" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215736522092">
       <property name="value" value="'searchScopeDescription' property is not used any more" />
@@ -321,10 +313,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1159286042853">
       <property name="value" value="default search scope" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1188501891391">
-      <property name="value" value="link 'referentConcept' is not used with Behaviors" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1163200368514">
