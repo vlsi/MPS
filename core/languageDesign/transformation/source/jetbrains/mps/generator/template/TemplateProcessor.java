@@ -351,17 +351,6 @@ public class TemplateProcessor {
           if (nodeAndMappingName.o2 != null) {
             mappingName = nodeAndMappingName.o2;
           }
-        } else {
-          // for back compatibility
-          generationTracer.pushRule(templateSwitch.getNode());
-          TemplateDeclaration templateForSwitchCase = myGenerator.getTemplateForSwitchCase_deprecated(newInputNode, templateSwitch);
-          if (templateForSwitchCase != null) {
-            TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(templateForSwitchCase, newInputNode, nodeMacro.getNode(), myGenerator);
-            if (fragment != null) {
-              mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
-              templateNodeForCase = fragment.getParent().getNode();
-            }
-          }
         }
 
         List<SNode> _outputNodes;
@@ -472,7 +461,7 @@ public class TemplateProcessor {
 
     outputNode.putProperties(inputNode);
 
-    SModel inputModel = myGenerator.getSourceModel();
+    SModel inputModel = myGenerator.getInputModel();
     for (SReference inputReference : inputNode.getReferences()) {
       SNode inputTargetNode = inputReference.getTargetNode();
       if (inputTargetNode == null) {

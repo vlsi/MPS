@@ -619,10 +619,6 @@
       <property name="value" value="weave" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1169595968114">
-      <property name="value" value="the 'template' reference is deprecated" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1184616122994">
       <property name="value" value="'contextProviderAspectId' is deprecated" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1180129508254" />
@@ -630,11 +626,6 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1167240478741">
       <property name="name" value="contextProviderAspectId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1167171569014">
-      <property name="role" value="template" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1169570368028">
       <property name="metaClass" value="aggregation" />
@@ -656,15 +647,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201894388893">
       <property name="value" value="reduce" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1169672780802">
-      <property name="value" value="link 'template' is replaced with 'ruleConsequence'" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1167327847732">
-      <property name="role" value="template" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1169672767469">
       <property name="metaClass" value="aggregation" />

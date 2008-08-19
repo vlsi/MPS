@@ -479,41 +479,34 @@ public class GeneratorUtil {
         generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(applicableNode);
         generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
         try {
-          // old
-          TemplateDeclaration template = rule.getTemplate();
-          if (template != null) {
-            weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule, generator);
+          RuleConsequence ruleConsequence = rule.getRuleConsequence();
+          if (ruleConsequence == null) {
+            generator.showErrorMessage(applicableNode, null, rule.getNode(), "no rule consequence");
           } else {
-            // new
-            RuleConsequence ruleConsequence = rule.getRuleConsequence();
-            if (ruleConsequence == null) {
-              generator.showErrorMessage(applicableNode, null, rule.getNode(), "no rule consequence");
-            } else {
-              generator.getGeneratorSessionContext().getGenerationTracer().pushRuleConsequence(ruleConsequence.getNode());
-              if (ruleConsequence instanceof TemplateDeclarationReference) {
-                template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
-                weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule, generator);
+            generator.getGeneratorSessionContext().getGenerationTracer().pushRuleConsequence(ruleConsequence.getNode());
+            if (ruleConsequence instanceof TemplateDeclarationReference) {
+              TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
+              weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule, generator);
 
-              } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
-                WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
-                SourceSubstituteMacro_SourceNodesQuery query = weaveEach.getSourceNodesQuery();
-                if (query == null) {
-                  generator.showErrorMessage(applicableNode, rule.getNode(), "couldn't create list of source nodes");
-                  break;
-                }
-                template = weaveEach.getTemplate();
-                List<SNode> queryNodes = evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, generator);
-                if (queryNodes.isEmpty()) {
-                  someOutputGenerated = false;
-                }
-                for (SNode queryNode : queryNodes) {
-                  weaveTemplateDeclaration(queryNode, template, outputContextNode, rule, generator);
-                }
-              } else {
-                generator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "unsapported rule consequence");
+            } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
+              WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
+              SourceSubstituteMacro_SourceNodesQuery query = weaveEach.getSourceNodesQuery();
+              if (query == null) {
+                generator.showErrorMessage(applicableNode, rule.getNode(), "couldn't create list of source nodes");
+                break;
               }
+              TemplateDeclaration template = weaveEach.getTemplate();
+              List<SNode> queryNodes = evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, generator);
+              if (queryNodes.isEmpty()) {
+                someOutputGenerated = false;
+              }
+              for (SNode queryNode : queryNodes) {
+                weaveTemplateDeclaration(queryNode, template, outputContextNode, rule, generator);
+              }
+            } else {
+              generator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "unsapported rule consequence");
             }
-          } // RuleConsequence
+          }
         } finally {
           if (someOutputGenerated) {
             generator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(applicableNode);
@@ -602,37 +595,25 @@ public class GeneratorUtil {
   }
 
   private static List<SNode> applyReductionRule_internal(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator)
-    throws
-    DismissTopMappingRuleException,
+    throws DismissTopMappingRuleException,
     AbandonRuleInputException,
-    GenerationFailueException, GenerationCanceledException {
+    GenerationFailueException,
+    GenerationCanceledException {
 
-    SNode reductionTemplateNode = null;
     String ruleMappingName = getMappingName(rule, null);
-    String mappingName = null;
     RuleConsequence ruleConsequence = rule.getRuleConsequence();
-    if (ruleConsequence != null) {
-      Pair<SNode, String> nodeAndMappingName = getTemplateNodeFromRuleConsequence(ruleConsequence, inputNode, rule.getNode(), generator);
-      if (nodeAndMappingName == null) {
-        generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "error processing reduction rule consequence");
-        return null;
-      }
-      reductionTemplateNode = nodeAndMappingName.o1;
-      mappingName = nodeAndMappingName.o2 != null ? nodeAndMappingName.o2 : ruleMappingName;
-    } else {
-      // old
-      TemplateDeclaration template = rule.getTemplate();
-      if (template == null) {
-        generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no template");
-        return null;
-      }
-
-      TemplateFragment fragment = getFragmentFromTemplate(template, inputNode, rule.getNode(), generator);
-      if (fragment != null) {
-        reductionTemplateNode = fragment.getParent().getNode();
-        mappingName = getMappingName(fragment, ruleMappingName);
-      }
+    if (ruleConsequence == null) {
+      generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no rule consequence");
+      return null;
     }
+
+    Pair<SNode, String> nodeAndMappingName = getTemplateNodeFromRuleConsequence(ruleConsequence, inputNode, rule.getNode(), generator);
+    if (nodeAndMappingName == null) {
+      generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "error processing reduction rule consequence");
+      return null;
+    }
+    SNode reductionTemplateNode = nodeAndMappingName.o1;
+    String mappingName = nodeAndMappingName.o2 != null ? nodeAndMappingName.o2 : ruleMappingName;
 
     if (reductionTemplateNode == null) {
       generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule");

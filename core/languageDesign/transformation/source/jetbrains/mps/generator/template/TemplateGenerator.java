@@ -1,18 +1,20 @@
 package jetbrains.mps.generator.template;
 
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.template.GeneratorUtil;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.structure.*;
+import jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule;
+import jetbrains.mps.transformation.TLBase.structure.RuleConsequence;
+import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
 import jetbrains.mps.util.Pair;
 
-import java.util.*;
-
-import com.intellij.openapi.progress.ProgressIndicator;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by: Sergey Dmitriev
@@ -154,7 +156,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private void invalidateReferenceInCopiedNode(SReference reference) {
 
     if (reference.isExternal()) return;
-    if(reference instanceof DynamicReference) return; // dynamic reference doesn't need validation (?)
+    if (reference instanceof DynamicReference) return; // dynamic reference doesn't need validation (?)
 
     SNode outputNode = reference.getSourceNode();
     SNode inputNode = findInputNodeById(outputNode.getSNodeId());
@@ -209,6 +211,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myInputModel;
   }
 
+  /**
+   * @deprecated
+   */
   public SModel getSourceModel() {
     return myInputModel;
   }
@@ -217,6 +222,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myOutputModel;
   }
 
+  /**
+   * @deprecated
+   */
   public SModel getTargetModel() {
     return myOutputModel;
   }
@@ -337,23 +345,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   public RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch) throws GenerationFailueException {
-    INodeAdapter adapter = getConsequenceForSwitchCase_internal(inputNode, templateSwitch);
-    if (adapter instanceof RuleConsequence) {
-      return (RuleConsequence) adapter;
-    }
-    return null;
-  }
-
-  public TemplateDeclaration getTemplateForSwitchCase_deprecated(SNode inputNode, TemplateSwitch templateSwitch) throws GenerationFailueException {
-    INodeAdapter adapter = getConsequenceForSwitchCase_internal(inputNode, templateSwitch);
-    if (adapter instanceof TemplateDeclaration) {
-      return (TemplateDeclaration) adapter;
-    }
-    return null;
-  }
-
-  private INodeAdapter getConsequenceForSwitchCase_internal(SNode sourceNode, TemplateSwitch templateSwitch) throws GenerationFailueException {
-    ConceptDeclaration nodeConcept = (ConceptDeclaration) sourceNode.getConceptDeclarationAdapter();
+    ConceptDeclaration nodeConcept = (ConceptDeclaration) inputNode.getConceptDeclarationAdapter();
 
     if (myTemplateSwitchGraph == null) {
       myTemplateSwitchGraph = new TemplateSwitchGraph(getGeneratorSessionContext().getTemplateModels());
@@ -370,18 +362,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     for (TemplateSwitch aSwitch : switches) {
       List<Reduction_MappingRule> rules = aSwitch.getReductionMappingRules();
       for (Reduction_MappingRule rule : rules) {
-        if (GeneratorUtil.checkPremiseForBaseMappingRule(sourceNode, nodeConcept, rule, this)) {
-          // new (return consequences)
+        if (GeneratorUtil.checkPremiseForBaseMappingRule(inputNode, nodeConcept, rule, this)) {
           RuleConsequence ruleConsequence = rule.getRuleConsequence();
-          if (ruleConsequence != null) {
-            return ruleConsequence;
+          if (ruleConsequence == null) {
+            showErrorMessage(inputNode, null, rule.getNode(), "couldn't apply reduction: no rule consequence");
           }
-          // old
-          TemplateDeclaration ruleTemplate = rule.getTemplate();
-          if (ruleTemplate == null) {
-            showErrorMessage(sourceNode, null, rule.getNode(), "couldn't apply reduction: no template declaration");
-          }
-          return ruleTemplate;
+          return ruleConsequence;
         }
       }
 
