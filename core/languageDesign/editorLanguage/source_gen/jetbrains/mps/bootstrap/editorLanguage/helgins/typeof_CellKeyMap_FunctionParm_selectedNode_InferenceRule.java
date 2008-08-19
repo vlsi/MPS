@@ -16,7 +16,7 @@ public class typeof_CellKeyMap_FunctionParm_selectedNode_InferenceRule implement
 
   public void applyRule(final SNode node) {
     SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapDeclaration", false, false), "applicableConcept", false);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(applicableConcept), node, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1179767203738");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_0().createNode(applicableConcept), node, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1179767203738");
   }
 
   public String getApplicableConceptFQName() {

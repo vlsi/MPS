@@ -23,7 +23,7 @@ public class CellMenuPart_ReplaceChild_Group_Create_Behavior {
     LinkDeclaration editedLink_ = CellMenuUtil.getEditedAggregationLink(((CellMenuPart_Abstract)SNodeOperations.getAdapter(hostMenuPart)));
     SNode editedLink = BaseAdapter.fromAdapter(editedLink_);
     SNode conceptOfChild = SLinkOperations.getTarget(editedLink, "target", false);
-    return new QuotationClass_().createNode(conceptOfChild);
+    return new QuotationClass_0().createNode(conceptOfChild);
   }
 
 }

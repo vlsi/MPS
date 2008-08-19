@@ -17,7 +17,7 @@ public class typeof_CellKeyMap_FunctionParm_selectedNodes_InferenceRule implemen
     {
       SNode _nodeToCheck_1029348928467 = selectedNodes;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1189583398422", true), new QuotationClass_7().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1189583402141", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(selectedNodes, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1189583398422", true), new QuotationClass_7().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1189583402141", intentionProvider);
     }
   }
 
