@@ -22,41 +22,28 @@ import java.util.List;
 public class MacroUtil {
   private static final Logger LOG = Logger.getLogger(MacroUtil.class);
 
-  public static void expandPropertyMacro(ITemplateGenerator generator, PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode) {
+  public static void expandPropertyMacro(ITemplateGenerator generator, PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode) throws GenerationFailueException {
     String attributeRole = propertyMacro.getRole_();
     String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(attributeRole);
-    String propertyValue;
 
-    // try new query
     PropertyMacro_GetPropertyValue function = propertyMacro.getPropertyValueFunction();
-    if (function != null) {
-      String templateValue = templateNode.getProperty(propertyName);
-
-      String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function.getNode());
-      try {
-        Object macroValue = QueryMethodGenerated.invoke(
-          methodName,
-          generator.getGeneratorSessionContext(),
-          new PropertyMacroContext(inputNode, templateValue, propertyMacro.getNode(), generator),
-          propertyMacro.getModel());
-        propertyValue = macroValue == null ? null : String.valueOf(macroValue);
-      } catch (Exception e) {
-        generator.showErrorMessage(inputNode, templateNode, BaseAdapter.fromAdapter(propertyMacro), "couldn't evaluate property macro");
-        LOG.error(e);
-        return;
-      }
-
-    } else {
-      // try old query
-      Object[] args = new Object[]{
-        inputNode,
-        templateNode,
-        null/*BaseAdapter.fromAdapter(propertyMacro.getProperty())*/,
-        generator};
-      propertyValue = (String) QueryMethod.invoke("propertyMacro_" + propertyMacro.getAspectMethodName(), args, propertyMacro.getModel());
+    if (function == null) {
+      throw new GenerationFailueException("couldn't evaluate property macro", inputNode, templateNode, BaseAdapter.fromAdapter(propertyMacro));
     }
 
-    outputNode.setProperty(propertyName, propertyValue);
+    String templateValue = templateNode.getProperty(propertyName);
+    String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function.getNode());
+    try {
+      Object macroValue = QueryMethodGenerated.invoke(
+        methodName,
+        generator.getGeneratorSessionContext(),
+        new PropertyMacroContext(inputNode, templateValue, propertyMacro.getNode(), generator),
+        propertyMacro.getModel());
+      String propertyValue = macroValue == null ? null : String.valueOf(macroValue);
+      outputNode.setProperty(propertyName, propertyValue);
+    } catch (Throwable t) {
+      throw new GenerationFailueException("couldn't evaluate property macro", inputNode, templateNode, BaseAdapter.fromAdapter(propertyMacro), t);
+    }
   }
 
 

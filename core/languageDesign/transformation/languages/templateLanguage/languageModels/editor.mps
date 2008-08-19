@@ -61,70 +61,6 @@
           <property name="color" value="lightGray" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1087907544522">
-        <property name="vertical" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1087907544523">
-          <property name="text" value="java query (deprecated)" />
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399678898">
-            <property name="color" value="red" />
-          </node>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Custom" id="1088501636842">
-          <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_CellProvider" id="1176804140005">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176804140006">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176804149783">
-                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryMethodIdEditorProviderExpression" id="1176804150566">
-                  <property name="notSetString" value="&lt;no property macro&gt;" />
-                  <property name="prefix" value="propertyMacro_" />
-                  <link role="queryIdProperty" targetNodeId="1.1087833392642" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1176804177971">
-                    <property name="name" value="sourceNode" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176804179513">
-                      <link role="classifier" targetNodeId="10.~SNode" resolveInfo="SNode" />
-                    </node>
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1176804181061">
-                    <property name="name" value="teplateNode" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176804182828">
-                      <link role="classifier" targetNodeId="10.~SNode" resolveInfo="SNode" />
-                    </node>
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1176804184970">
-                    <property name="name" value="property" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176804190425">
-                      <link role="classifier" targetNodeId="61.~PropertyDeclaration" resolveInfo="PropertyDeclaration" />
-                    </node>
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1176804193082">
-                    <property name="name" value="generator" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176804197334">
-                      <link role="classifier" targetNodeId="64.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
-                    </node>
-                  </node>
-                  <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176804175939">
-                    <link role="classifier" targetNodeId="65.~String" resolveInfo="String" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1167765644943">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1167765644944">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1167765668035">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1167765683353">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1167765687184" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227942979">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1167765674209" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1167765679930">
-                    <link role="property" targetNodeId="1.1087833392642" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167756652555">
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997986">
           <property name="flag" value="false" />
@@ -151,30 +87,6 @@
         <property name="text" value="$" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <link role="styleClass" targetNodeId="1215513928924" resolveInfo="macroStart" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168019544316">
-        <property name="text" value="!" />
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1168019544317">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168019544318">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1168019544319">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1168019544320">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1168019544321" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227907012">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1168019544323" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1168019562184">
-                    <link role="property" targetNodeId="1.1087833392642" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996807">
-          <property name="flag" value="false" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399678479">
-          <property name="color" value="red" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedPropertyCell" id="1149859009402">
         <link role="styleClass" targetNodeId="1215514347972" resolveInfo="nodeUnderMacro" />

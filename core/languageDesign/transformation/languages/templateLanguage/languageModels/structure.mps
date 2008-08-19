@@ -36,10 +36,6 @@
     <property name="name" value="PropertyMacro" />
     <property name="package" value="macro" />
     <link role="extends" targetNodeId="2.1133920641626" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1087833392642">
-      <property name="name" value="aspectMethodName" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1167756362303">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="propertyValueFunction" />
@@ -48,10 +44,6 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1172595017738">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1167756010676">
-      <property name="value" value="aspectMethodName - query method is deprecated" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1087833466690">
