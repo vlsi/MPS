@@ -73,17 +73,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1185229020384">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1167952324507">
-      <property name="value" value="sourceQueryAspectMethodName is deprecated" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215478730975">
       <property name="value" value="'mappingId' property is replaced with 'mappingLabel' reference" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1090493180053">
-      <property name="name" value="sourceQueryAspectMethodName" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1152722085357">
       <property name="name" value="mappingId" />

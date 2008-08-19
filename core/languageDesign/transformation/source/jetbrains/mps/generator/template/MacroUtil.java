@@ -1,17 +1,13 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailueException;
-import jetbrains.mps.generator.template.GeneratorUtil;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.*;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 
@@ -163,14 +159,6 @@ public class MacroUtil {
         throw new GenerationFailueException("IncludeMacro is not supported by getNewInputNodes", currentInputNode, nodeMacro.getNode(), null);
       }
 
-      // old
-      String sourceQueryAspectMethodName = nodeMacro.getSourceQueryAspectMethodName();
-      if (sourceQueryAspectMethodName != null) {
-        String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
-        Object[] args = new Object[]{currentInputNode, generator};
-        return (List<SNode>) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
-      }
-
       // <default> : propagate  current input node
       List<SNode> list = new ArrayList<SNode>(1);
       list.add(currentInputNode);
@@ -211,7 +199,6 @@ public class MacroUtil {
   }
 
   private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) throws GenerationFailueException {
-    // new
     if (query != null) {
       List<SNode> list = GeneratorUtil.evaluateSourceNodesQuery(currentInputNode, null, macro.getNode(), query, generator);
       if (list != null) {
@@ -220,56 +207,16 @@ public class MacroUtil {
       return new LinkedList<SNode>();
     }
 
-    // old
-    String sourceQueryAspectMethodName = macro.getSourceQueryAspectMethodName();
-    if (sourceQueryAspectMethodName != null) {
-      String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
-      Object[] args = new Object[]{currentInputNode, generator};
-      long startTime = System.currentTimeMillis();
-      try {
-        List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, macro.getModel());
-        if (sourceNodes != null) {
-          return sourceNodes;
-        }
-        return new LinkedList<SNode>();
-      } finally {
-        Statistics.getStatistic(Statistics.TPL).add(macro.getModel(), methodName, startTime);
-      }
-    }
-
     throw new GenerationFailueException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
   }
 
   private static SNode getNewInputNodeForSwitchMacro(SNode currentInputNode, SwitchMacro macro, ITemplateGenerator generator) {
     // in SWITCH the input query is optional
-    String sourceQueryAspectMethodName = macro.getSourceQueryAspectMethodName();
     SourceSubstituteMacro_SourceNodeQuery query = macro.getSourceNodeQuery();
-    if (query == null && sourceQueryAspectMethodName == null) {
+    if (query == null) {
       // continue with current input node
       return currentInputNode;
     }
-
-    // new
-    if (query != null) {
-      return GeneratorUtil.evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, generator);
-    }
-
-    // old (returns list in switch)
-    String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
-    Object[] args = new Object[]{currentInputNode, generator};
-    long startTime = System.currentTimeMillis();
-    try {
-      List<SNode> result = (List<SNode>) QueryMethod.invoke(methodName, args, macro.getModel());
-      if (result == null || result.isEmpty()) {
-        return null;
-      }
-      return result.get(0);
-    } catch (Exception e) {
-      generator.showErrorMessage(currentInputNode, null, BaseAdapter.fromAdapter(macro), "couldn't evaluate macro query: " + NameUtil.shortNameFromLongName(e.getClass().getName()) + " : " + e.getMessage());
-      LOG.error(e);
-    } finally {
-      Statistics.getStatistic(Statistics.TPL).add(macro.getModel(), methodName, startTime);
-    }
-    return null;
+    return GeneratorUtil.evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, generator);
   }
 }
