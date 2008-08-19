@@ -39,6 +39,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877245177">
       <property name="name" value="getPresentation" />
+      <property name="isPrivate" value="false" />
       <link role="overriddenMethod" targetNodeId="2v.1213877396640" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877245178">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877245179">
@@ -68,9 +69,11 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877245189">
         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724263" />
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877245190">
       <property name="name" value="getVariableSuffixes" />
+      <property name="isPrivate" value="false" />
       <link role="overriddenMethod" targetNodeId="3v.1213877337304" resolveInfo="getVariableSuffixes" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877245191">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877245192">
@@ -151,9 +154,11 @@
           <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155723911" />
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877245225">
       <property name="name" value="getAbstractCreator" />
+      <property name="isPrivate" value="false" />
       <link role="overriddenMethod" targetNodeId="3v.1213877337340" resolveInfo="getAbstractCreator" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877245226">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877245227">
@@ -169,12 +174,14 @@
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877245231">
         <link role="concept" targetNodeId="4v.1145552809883" resolveInfo="AbstractCreator" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724896" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877281394">
     <link role="concept" targetNodeId="1.1151701773464" resolveInfo="SequenceOperationExpression" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877281395">
       <property name="name" value="getOperand" />
+      <property name="isPrivate" value="false" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877281396">
         <link role="concept" targetNodeId="4v.1068431790191" resolveInfo="Expression" />
       </node>
@@ -205,6 +212,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724215" />
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877281411">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877281412" />
@@ -220,6 +228,7 @@
     <link role="concept" targetNodeId="1.1151701983961" resolveInfo="SequenceOperation" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877497463">
       <property name="name" value="getLeft" />
+      <property name="isPrivate" value="false" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877497464">
         <link role="concept" targetNodeId="4v.1068431790191" resolveInfo="Expression" />
       </node>
@@ -284,6 +293,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155723902" />
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877497494">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877497495" />
@@ -296,6 +306,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877511289">
       <property name="name" value="getPresentation" />
+      <property name="isPrivate" value="false" />
       <link role="overriddenMethod" targetNodeId="2v.1213877396640" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877511290">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877511291">
@@ -325,9 +336,11 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877511301">
         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724420" />
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877511302">
       <property name="name" value="getVariableSuffixes" />
+      <property name="isPrivate" value="false" />
       <link role="overriddenMethod" targetNodeId="3v.1213877337304" resolveInfo="getVariableSuffixes" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877511303">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877511304">
@@ -408,9 +421,11 @@
           <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724355" />
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877511337">
       <property name="name" value="getAbstractCreator" />
+      <property name="isPrivate" value="false" />
       <link role="overriddenMethod" targetNodeId="3v.1213877337340" resolveInfo="getAbstractCreator" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877511338">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877511339">
@@ -460,6 +475,7 @@
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877511358">
         <link role="concept" targetNodeId="4v.1145552809883" resolveInfo="AbstractCreator" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724866" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877520358">
@@ -467,6 +483,7 @@
     <link role="concept" targetNodeId="1.1197683403723" resolveInfo="MapType" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877520359">
       <property name="name" value="getPresentation" />
+      <property name="isPrivate" value="false" />
       <link role="overriddenMethod" targetNodeId="2v.1213877396640" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877520360">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877520361">
@@ -514,9 +531,11 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877520379">
         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724032" />
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877520380">
       <property name="name" value="getAbstractCreator" />
+      <property name="isPrivate" value="false" />
       <link role="overriddenMethod" targetNodeId="3v.1213877337340" resolveInfo="getAbstractCreator" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877520381">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877520382">
@@ -589,6 +608,7 @@
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877520412">
         <link role="concept" targetNodeId="4v.1145552809883" resolveInfo="AbstractCreator" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724447" />
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877520413">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877520414" />

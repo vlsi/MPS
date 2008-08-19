@@ -15,9 +15,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -102,11 +102,21 @@ public class AbstractConceptDeclaration_Behavior {
           if (SLinkOperations.getTarget(method, "overriddenMethod", false) != null) {
             continue;
           }
-          if (!(SPropertyOperations.getBoolean(method, "isPrivate"))) {
+          if (SLinkOperations.getTarget(method, "visibility", true) == null) {
+            if (SNodeOperations.getModel(contextBehaviour) == SNodeOperations.getModel(method)) {
+              ListSequence.fromList(methods).addElement(method);
+            }
+          }
+          if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+            if (SNodeOperations.getAncestor(method, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior", true, false) == contextBehaviour) {
+              ListSequence.fromList(methods).addElement(method);
+            }
+          }
+          if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
             ListSequence.fromList(methods).addElement(method);
-          } else
-          {
-            if (SNodeOperations.getContainingRoot(method) == contextBehaviour) {
+          }
+          if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
+            if (SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(contextBehaviour, "concept", false), NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getAncestor(method, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior", true, false), "concept", false)))) {
               ListSequence.fromList(methods).addElement(method);
             }
           }

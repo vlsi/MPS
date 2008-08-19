@@ -9,9 +9,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -26,6 +23,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -62,13 +61,13 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection1177675860858(context, node));
-    if (renderingCondition6299_10(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6299_8(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1177675976418(context, node));
     }
-    if (renderingCondition6299_9(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6299_7(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1177675972057(context, node, "}"));
     }
-    if (renderingCondition6299_13(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6299_11(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1177760237389(context, node, ""));
     }
     return editorCell;
@@ -81,10 +80,10 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection1177755609151(context, node));
-    if (renderingCondition6299_11(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6299_9(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1177675969336(context, node, "{"));
     }
-    if (renderingCondition6299_12(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6299_10(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1177758998174(context, node, ";"));
     }
     return editorCell;
@@ -107,16 +106,16 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (renderingCondition6299_5(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6299_3(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1177676229923(context, node));
     }
-    if (renderingCondition6299_4(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6299_2(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1177698443041(context, node));
     }
-    if (renderingCondition6299_7(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6299_5(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1177758853512(context, node));
     }
-    if (renderingCondition6299_6(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6299_4(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1177755557038(context, node));
     }
     return editorCell;
@@ -162,7 +161,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection1177755613135(context, node));
-    if (renderingCondition6299_3(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6299_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1177755630514(context, node));
     }
     return editorCell;
@@ -174,16 +173,11 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createRefNode1219154620131(context, node));
     if (renderingCondition6299_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant1177755613625(context, node, "private"));
-    }
-    if (renderingCondition6299_1(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant1177755613632(context, node, "public"));
-    }
-    if (renderingCondition6299_2(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1177755613640(context, node, "virtual"));
     }
-    if (renderingCondition6299_8(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition6299_6(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1177758894329(context, node, "abstract"));
     }
     editorCell.addEditorCell(this.createRefNode1177755613647(context, node));
@@ -256,24 +250,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     setupBasic_Constant_11777555593991177755559399(editorCell, node, context);
     setupLabel_Constant_1177755559399_1177755559399(editorCell, node, context);
     editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant1177755613625(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11777556136251177755613625(editorCell, node, context);
-    setupLabel_Constant_1177755613625_1177755613625(editorCell, node, context);
-    editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ConceptMethodDeclaration_Editor.ConceptMethodDeclaration_component_cellMenu0()}));
-    return editorCell;
-  }
-
-  public EditorCell createConstant1177755613632(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11777556136321177755613632(editorCell, node, context);
-    setupLabel_Constant_1177755613632_1177755613632(editorCell, node, context);
-    editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ConceptMethodDeclaration_Editor.ConceptMethodDeclaration_component_cellMenu1()}));
     return editorCell;
   }
 
@@ -553,7 +529,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       setupLabel_property_name_1177755613648((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ConceptMethodDeclaration_Editor.ConceptMethodDeclaration_component_cellMenu2()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ConceptMethodDeclaration_Editor.ConceptMethodDeclaration_component_cellMenu0()}));
     return editorCell;
   }
 
@@ -622,6 +598,35 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty1177758859600_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell createRefNode1219154620131_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_refNode_visibility1219154620131(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_refNode_visibility_1219154620131((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createRefNode1219154620131(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("visibility");
+    provider.setNoTargetText("/*package*/");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createRefNode1219154620131_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -749,16 +754,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-  }
-
-  private static void setupBasic_Constant_11777556136251177755613625(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177755613625");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_11777556136321177755613632(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177755613632");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_Constant_11777556136401177755613640(EditorCell editorCell, SNode node, EditorContext context) {
@@ -890,6 +885,9 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1215097133743");
   }
 
+  private static void setupBasic_refNode_visibility1219154620131(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_Constant_1177675969336_1177675969336(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -915,12 +913,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refCell_overriddenMethod_1177755570354(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1177755613625_1177755613625(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1177755613632_1177755613632(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1177755613640_1177755613640(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -968,40 +960,43 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1206015371307_1206015371307(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_refNode_visibility_1219154620131(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   public static boolean renderingCondition6299_0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isPrivate");
+    return SPropertyOperations.getBoolean(node, "isVirtual");
   }
 
   public static boolean renderingCondition6299_1(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isPrivate"));
-  }
-
-  public static boolean renderingCondition6299_2(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isVirtual");
-  }
-
-  public static boolean renderingCondition6299_3(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "overriddenMethod", false) != null;
   }
 
-  public static boolean renderingCondition6299_4(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6299_2(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "isVirtual")) && (SLinkOperations.getTarget(node, "overriddenMethod", false) == null);
   }
 
-  public static boolean renderingCondition6299_5(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6299_3(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "isPrivate")) && SLinkOperations.getTarget(node, "overriddenMethod", false) == null;
   }
 
-  public static boolean renderingCondition6299_6(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6299_4(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "isVirtual")) && !(SPropertyOperations.getBoolean(node, "isPrivate"));
   }
 
-  public static boolean renderingCondition6299_7(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6299_5(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isVirtual");
   }
 
-  public static boolean renderingCondition6299_8(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6299_6(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isAbstract");
+  }
+
+  public static boolean renderingCondition6299_7(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
+  }
+
+  public static boolean renderingCondition6299_8(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
   }
 
   public static boolean renderingCondition6299_9(SNode node, EditorContext editorContext, IScope scope) {
@@ -1009,18 +1004,10 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition6299_10(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
-
-  public static boolean renderingCondition6299_11(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
-
-  public static boolean renderingCondition6299_12(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isAbstract");
   }
 
-  public static boolean renderingCondition6299_13(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition6299_11(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isAbstract");
   }
 
@@ -1209,35 +1196,9 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class ConceptMethodDeclaration_component_cellMenu0 implements SubstituteInfoPart {
 
-    private ConceptMethodDeclaration_Visibility myComponent;
-
-    public ConceptMethodDeclaration_component_cellMenu0() {
-      this.myComponent = new ConceptMethodDeclaration_Visibility();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
-  public static class ConceptMethodDeclaration_component_cellMenu1 implements SubstituteInfoPart {
-
-    private ConceptMethodDeclaration_Visibility myComponent;
-
-    public ConceptMethodDeclaration_component_cellMenu1() {
-      this.myComponent = new ConceptMethodDeclaration_Visibility();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
-  public static class ConceptMethodDeclaration_component_cellMenu2 implements SubstituteInfoPart {
-
     private ConceptMethodDeclaration_Menu myComponent;
 
-    public ConceptMethodDeclaration_component_cellMenu2() {
+    public ConceptMethodDeclaration_component_cellMenu0() {
       this.myComponent = new ConceptMethodDeclaration_Menu();
     }
 

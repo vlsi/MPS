@@ -48,6 +48,7 @@
     <link role="concept" targetNodeId="1.1197246912613" resolveInfo="StateMachineTest" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197251245696">
       <property name="name" value="getStateMachineName" />
+      <property name="isPrivate" value="false" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197251283309">
         <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
       </node>
@@ -66,6 +67,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724110" />
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1197248069434">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197248069435" />

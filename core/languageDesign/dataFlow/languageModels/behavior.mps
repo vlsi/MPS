@@ -41,6 +41,7 @@
     <link role="concept" targetNodeId="1.1206442659665" resolveInfo="BuilderBlock" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877408161">
       <property name="name" value="usesParameterObjectFor" />
+      <property name="isPrivate" value="false" />
       <link role="overriddenMethod" targetNodeId="2v.1213877374432" resolveInfo="usesParameterObjectFor" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877408162">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877408163">
@@ -56,6 +57,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1213877408167" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724768" />
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877408168">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877408169" />

@@ -36,7 +36,6 @@ public class MigrationScriptsTool extends BaseProjectTool {
 
   public MigrationScriptsTool(Project project) {
     super(project, "Migration", -1, null, ToolWindowAnchor.BOTTOM, true);
-
   }
 
   /*package*/  void closeTab(int index) {

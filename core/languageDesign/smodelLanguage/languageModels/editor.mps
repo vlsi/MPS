@@ -1422,6 +1422,9 @@
     <link role="conceptDeclaration" targetNodeId="1.1171310072040" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171310416458">
       <property name="text" value="containing root" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1219154964919">
+        <property name="value" value="0.0" />
+      </node>
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1214398031973">
         <property name="flag" value="true" />
       </node>

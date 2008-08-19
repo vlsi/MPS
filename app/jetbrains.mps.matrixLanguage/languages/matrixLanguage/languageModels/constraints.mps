@@ -35,6 +35,7 @@
     <link role="concept" targetNodeId="1.1209978821264" resolveInfo="MatrixType" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1210172211787">
       <property name="name" value="getPresentation" />
+      <property name="isPrivate" value="false" />
       <link role="overriddenMethod" targetNodeId="6.1213877396640" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210172211789">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210172221167">
@@ -64,6 +65,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210172213878">
         <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724470" />
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1210172209681">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210172209682" />
