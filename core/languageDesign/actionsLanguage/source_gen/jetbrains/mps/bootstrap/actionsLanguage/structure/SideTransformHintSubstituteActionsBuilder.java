@@ -14,9 +14,6 @@ import jetbrains.mps.project.GlobalScope;
 public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder";
   public static String DESCRIPTION = "description";
-  public static String ACTIONS_FACTORY_ASPECT_ID = "actionsFactoryAspectId";
-  public static String ACTIONS_FILTER_ASPECT_ID = "actionsFilterAspectId";
-  public static String PRECONDITION_ASPECT_ID = "preconditionAspectId";
   public static String USE_NEW_ACTIONS = "useNewActions";
   public static String TRANSFORM_TAG = "transformTag";
   public static String SIDE = "side";
@@ -36,30 +33,6 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
 
   public void setDescription(String value) {
     this.setProperty(SideTransformHintSubstituteActionsBuilder.DESCRIPTION, value);
-  }
-
-  public String getActionsFactoryAspectId() {
-    return this.getProperty(SideTransformHintSubstituteActionsBuilder.ACTIONS_FACTORY_ASPECT_ID);
-  }
-
-  public void setActionsFactoryAspectId(String value) {
-    this.setProperty(SideTransformHintSubstituteActionsBuilder.ACTIONS_FACTORY_ASPECT_ID, value);
-  }
-
-  public String getActionsFilterAspectId() {
-    return this.getProperty(SideTransformHintSubstituteActionsBuilder.ACTIONS_FILTER_ASPECT_ID);
-  }
-
-  public void setActionsFilterAspectId(String value) {
-    this.setProperty(SideTransformHintSubstituteActionsBuilder.ACTIONS_FILTER_ASPECT_ID, value);
-  }
-
-  public String getPreconditionAspectId() {
-    return this.getProperty(SideTransformHintSubstituteActionsBuilder.PRECONDITION_ASPECT_ID);
-  }
-
-  public void setPreconditionAspectId(String value) {
-    this.setProperty(SideTransformHintSubstituteActionsBuilder.PRECONDITION_ASPECT_ID, value);
   }
 
   public boolean getUseNewActions() {

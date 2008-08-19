@@ -325,21 +325,9 @@
       <property name="role" value="commonInitializer" />
       <link role="target" targetNodeId="1178781654714" resolveInfo="QueryFunction_Substitute_CommonInitializer" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177689228988">
-      <property name="value" value="'actionsFilterAspectId'" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1170898673630" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1138079221458">
     <property name="name" value="SideTransformHintSubstituteActionsBuilder" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1154622781911">
-      <property name="value" value="'preconditionAspectId' property is replaced with 'precondition block'" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1154621836409" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177689775984">
-      <property name="value" value="'actionsFactoryAspectId' &amp; 'actionsFilterAspectId'" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1170898673630" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1158952484319">
       <property name="name" value="description" />
       <link role="dataType" targetNodeId="1.1082983041843" />
@@ -347,18 +335,6 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1140829165817">
       <property name="name" value="transformTag" />
       <link role="dataType" targetNodeId="1140829206022" resolveInfo="RTransformTag" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1138079221460">
-      <property name="name" value="actionsFactoryAspectId" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1138079221461">
-      <property name="name" value="actionsFilterAspectId" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1138161064310">
-      <property name="name" value="preconditionAspectId" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1177442244383">
       <property name="name" value="useNewActions" />
