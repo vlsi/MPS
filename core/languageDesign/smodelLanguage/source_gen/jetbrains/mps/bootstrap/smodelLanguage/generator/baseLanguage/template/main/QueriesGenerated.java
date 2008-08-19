@@ -6,10 +6,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.util.QueriesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.util.QueriesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.behavior.Node_ConceptMethodCall_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -43,10 +43,6 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1168911272662(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListCreator");
-  }
-
-  public static boolean baseMappingRule_Condition_1168967899174(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return QueriesUtil.nodeOp_noParm_conceptList(_context.getNode());
   }
 
   public static boolean baseMappingRule_Condition_1168977521292(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

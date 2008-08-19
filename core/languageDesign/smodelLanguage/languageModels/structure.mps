@@ -293,11 +293,6 @@
     <property name="name" value="Node_IsInstanceOfOperation" />
     <property name="package" value="operation.node" />
     <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1139621517231">
-      <property name="sourceCardinality" value="0..1" />
-      <property name="role" value="concept" />
-      <link role="target" targetNodeId="3.1169125787135" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177027386292">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
@@ -316,10 +311,6 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1145915035426">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" resolveInfo="applicable_to_link" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177038003316">
-      <property name="value" value="the reference link 'concept' is deprecated" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1170898673630" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1179357619822">
       <link role="conceptLinkDeclaration" targetNodeId="2.1217022095863" resolveInfo="returnType" />
