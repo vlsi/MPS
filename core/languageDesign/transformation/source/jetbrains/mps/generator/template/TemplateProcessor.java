@@ -277,13 +277,10 @@ public class TemplateProcessor {
     } else if (nodeMacro instanceof MapSrcNodeMacro || nodeMacro instanceof MapSrcListMacro) {
       // $MAP-SRC$ or $MAP-SRCL$
       MapSrcMacro_MapperFunction macro_mapperFunction;
-      String mapperId; // old
       if (nodeMacro instanceof MapSrcNodeMacro) {
         macro_mapperFunction = ((MapSrcNodeMacro) nodeMacro).getMapperFunction();
-        mapperId = ((MapSrcNodeMacro) nodeMacro).getSourceNodeMapperId();
       } else {
         macro_mapperFunction = ((MapSrcListMacro) nodeMacro).getMapperFunction();
-        mapperId = ((MapSrcListMacro) nodeMacro).getSourceNodeMapperId();
       }
 
       List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, myGenerator);
@@ -294,7 +291,7 @@ public class TemplateProcessor {
           generationTracer.pushInputNode(newInputNode);
         }
         try {
-          if (mapperId != null || macro_mapperFunction != null) {
+          if (macro_mapperFunction != null) {
             SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
             generationTracer.pushOutputNodeToReplaceLater(childToReplaceLater);
             outputNodes.add(childToReplaceLater);

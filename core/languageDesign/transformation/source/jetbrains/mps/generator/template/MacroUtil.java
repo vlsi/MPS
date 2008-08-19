@@ -1,14 +1,12 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailueException;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.*;
-import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.ArrayList;
@@ -20,7 +18,6 @@ import java.util.List;
  * Date: Jan 24, 2007
  */
 public class MacroUtil {
-  private static final Logger LOG = Logger.getLogger(MacroUtil.class);
 
   public static void expandPropertyMacro(ITemplateGenerator generator, PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode) throws GenerationFailueException {
     String attributeRole = propertyMacro.getRole_();
@@ -47,41 +44,25 @@ public class MacroUtil {
   }
 
 
-  public static SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, ITemplateGenerator generator) {
+  public static SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, ITemplateGenerator generator) throws GenerationFailueException {
     INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
-    // new
     MapSrcMacro_MapperFunction mapperFunction;
     if (adapter instanceof MapSrcNodeMacro) {
       mapperFunction = ((MapSrcNodeMacro) adapter).getMapperFunction();
     } else {
       mapperFunction = ((MapSrcListMacro) adapter).getMapperFunction();
     }
-    if (mapperFunction != null) {
-      String methodName = TemplateFunctionMethodName.mapSrcMacro_MapperFunction(mapperFunction.getNode());
-      try {
-        return (SNode) QueryMethodGenerated.invoke(
-          methodName,
-          generator.getGeneratorSessionContext(),
-          new MapSrcMacroContext(inputNode, mapSrcNodeOrListMacro, parentOutputNode, generator),
-          mapSrcNodeOrListMacro.getModel());
-      } catch (Exception e) {
-        generator.showErrorMessage(inputNode, null, mapSrcNodeOrListMacro, "couldn't evaluate macro query");
-        LOG.error(e);
-        return null;
-      }
-    }
 
-    // old
-    String sourceNodeMapperId;
-    if (adapter instanceof MapSrcNodeMacro) {
-      sourceNodeMapperId = ((MapSrcNodeMacro) adapter).getSourceNodeMapperId();
-    } else {
-      sourceNodeMapperId = ((MapSrcListMacro) adapter).getSourceNodeMapperId();
+    String methodName = TemplateFunctionMethodName.mapSrcMacro_MapperFunction(mapperFunction.getNode());
+    try {
+      return (SNode) QueryMethodGenerated.invoke(
+        methodName,
+        generator.getGeneratorSessionContext(),
+        new MapSrcMacroContext(inputNode, mapSrcNodeOrListMacro, parentOutputNode, generator),
+        mapSrcNodeOrListMacro.getModel());
+    } catch (Throwable t) {
+      throw new GenerationFailueException("couldn't evaluate macro", inputNode, null, mapSrcNodeOrListMacro, t);
     }
-    String methodName = "templateSourceNodeMapper_" + sourceNodeMapperId;
-    Object[] args = new Object[]{inputNode, generator};
-    SNode targetNode = (SNode) QueryMethod.invoke(methodName, args, mapSrcNodeOrListMacro.getModel());
-    return targetNode;
   }
 
   public static boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, ITemplateGenerator generator) throws GenerationFailueException {

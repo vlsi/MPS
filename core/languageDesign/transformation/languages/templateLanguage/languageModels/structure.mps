@@ -370,14 +370,6 @@
       <property name="value" value="map source node macro" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1170898824252">
-      <property name="value" value="property 'sourceNodeMapperId' replaced with 'mapperFunction'" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1170898673630" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1131073509203">
-      <property name="name" value="sourceNodeMapperId" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1133037731736">
     <property name="name" value="MapSrcListMacro" />
@@ -401,14 +393,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1133037820496">
       <property name="value" value="map nodes form source list macro" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1170898667455">
-      <property name="value" value="property 'sourceNodeMapperId' replaced with 'mapperFunction'" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1170898673630" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1133037795224">
-      <property name="name" value="sourceNodeMapperId" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration" id="1149694466802">
@@ -815,16 +799,8 @@
     <property name="name" value="SourceSubstituteMacro" />
     <property name="package" value="macro" />
     <link role="extends" targetNodeId="1087833466690" resolveInfo="NodeMacro" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1168648432408">
-      <property name="role" value="outputSourceNodeConcept" />
-      <link role="target" targetNodeId="3.1071489090640" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1167951666158">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203115785373">
-      <property name="value" value="link 'outputSourceNodeConcept' is deprecated" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1170898673630" resolveInfo="deprecated_415" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1167951910403">
