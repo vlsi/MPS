@@ -530,6 +530,18 @@ public class QueriesGenerated {
     return NameUtil.toConstantName(SPropertyOperations.getString(_context.getNode(), "role"));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1219109570605(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "role");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1219109623209(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "role");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1219109651702(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "role");
+  }
+
   public static Object referenceMacro_GetReferent_1197509802062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(_context.getNode());
     SNode outputEnumConstant = _context.getOutputNodeByInputNodeAndMappingLabel(defaultMember, "outputEnumConstant");
