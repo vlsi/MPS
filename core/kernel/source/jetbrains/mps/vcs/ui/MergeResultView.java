@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.*;
 import jetbrains.mps.workbench.action.BaseAction;
 
@@ -118,7 +119,8 @@ public class MergeResultView extends JPanel {
     myResultModel = ModelPersistence.copyModel(myBaseModel);
     myResultModel.setLoading(true);
 
-    SNode tmp = new SNode(myResultModel, "jetbrains.mps.vcs.ui.TmpConcept");
+    String languageNamespace = "jetbrains.mps.vcs.ui";
+    SNode tmp = new SNode(myResultModel, NameUtil.conceptFQNameFromNamespaceAndShortName(languageNamespace, "TmpConcept"));
     myResultModel.addRoot(tmp);
 
     applyNewNodes();
@@ -143,7 +145,7 @@ public class MergeResultView extends JPanel {
     applyMoves();
 
     myResultModel.removeRoot(tmp);
-    myResultModel.deleteLanguage("jetbrains.mps.vcs.ui");
+    myResultModel.deleteLanguage(languageNamespace);
     myResultModel.setLoading(false);
   }
 

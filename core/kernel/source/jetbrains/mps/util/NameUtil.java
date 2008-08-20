@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.NonNls;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import java.io.File;
  */
 public class NameUtil {
   private static final Pattern VALID_IDENTIFIER_PATTERN = Pattern.compile("[a-zA-Z[_]][a-zA-Z0-9[_]]*");
+  public static final String STRUCTURE = "structure";
 
   public static String capitalize(String s) {
     if (s == null || s.length() == 0 || s.charAt(0) == Character.toUpperCase(s.charAt(0))) {
@@ -127,8 +129,8 @@ public class NameUtil {
   public static String removeStructureFromFqName(@NotNull String fqName) {
     String namespace = namespaceFromLongName(fqName);
     String shortName = shortNameFromLongName(fqName);
-    if (namespace.endsWith(".structure")) {
-      namespace = namespace.substring(0, namespace.length() - ".structure".length());
+    if (namespace.endsWith("." + STRUCTURE)) {
+      namespace = namespace.substring(0, namespace.length() - ("."+ STRUCTURE).length());
     }
     final StringBuilder builder = StringBuilderSpinAllocator.alloc();
     try {
@@ -147,7 +149,7 @@ public class NameUtil {
   }
 
   public static String namespaceFromConceptFQName(String fqName) {
-    int offset = fqName.lastIndexOf(".structure.");
+    int offset = fqName.lastIndexOf("."+ STRUCTURE + ".");
     if (offset > 0) {
       return fqName.substring(0, offset);
     }
@@ -155,7 +157,7 @@ public class NameUtil {
   }
 
   public static String conceptFQNameFromNamespaceAndShortName(String namespace, String shortName) {
-    return namespace + ".structure." + shortName;
+    return namespace + "."+ STRUCTURE + "." + shortName;
   }
 
   public static String longNameFromNamespaceAndShortName(String namespace, String name) {
