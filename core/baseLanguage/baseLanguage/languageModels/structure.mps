@@ -416,38 +416,6 @@
       <link role="target" targetNodeId="1206060495898" resolveInfo="ElsIfClause" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123163">
-    <property name="name" value="InstanceMethodCall" />
-    <property name="package" value="dotExpression_old" />
-    <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107216670785">
-      <property name="value" value=".&lt;method&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107216711834">
-      <property name="value" value="instance method invocation" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204324165593">
-      <property name="value" value="this concept has been replaced with DotExpression + InstanceMethodCallOperation" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1193783916915" resolveInfo="deprecated_next_after_470" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1213734040911">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1068580123164">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="instance" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1070568044740">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="instanceMethodDeclaration" />
-      <link role="specializedLink" targetNodeId="1068499141037" />
-      <link role="target" targetNodeId="1068580123165" resolveInfo="InstanceMethodDeclaration" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123165">
     <property name="name" value="InstanceMethodDeclaration" />
     <property name="package" value="method.instance" />

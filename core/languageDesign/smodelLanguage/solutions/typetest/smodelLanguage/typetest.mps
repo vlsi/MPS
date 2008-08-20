@@ -2138,21 +2138,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1170381839058">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227820642">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227925559">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1170381839059">
-                <link role="variableDeclaration" targetNodeId="1170381673161" resolveInfo="node" />
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1170381925796">
-                <link role="link" targetNodeId="6.1070568044740" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1170381953192">
-              <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1170382205947">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206475933814">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227890535">
