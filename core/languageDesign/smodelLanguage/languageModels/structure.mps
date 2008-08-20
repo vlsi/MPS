@@ -66,27 +66,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1138055978872">
-    <property name="name" value="SNodeOperationExpression" />
-    <property name="package" value="operation" />
-    <link role="extends" targetNodeId="2.1068431790191" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1138056667223">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="leftExpression" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="2.1068431790191" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1138411864174">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="nodeOperation" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203640402687">
-      <property name="value" value="not the 'DotExpression'" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1193783916915" resolveInfo="deprecated_next_after_470" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1138056022639">
     <property name="name" value="SPropertyAccess" />
     <property name="package" value="operation.featureAccess" />
