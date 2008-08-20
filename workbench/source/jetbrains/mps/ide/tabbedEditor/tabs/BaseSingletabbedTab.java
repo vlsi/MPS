@@ -35,15 +35,18 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     myClass = adapterClass;
     myListener = new SModelAdapter() {
       public void rootRemoved(SModelRootEvent event) {
-        if (event.getRoot() == getLoadableNode() || getLoadableNode() == null) {
-          myTabbedEditor.getTabbedPane().removeTab(BaseSingletabbedTab.this);
-          myComponent = null;
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-              myTabbedEditor.getTabbedPane().initTab(BaseSingletabbedTab.this);
-            }
-          });
-        }
+        if (getLoadableNode() == null) return;
+        if (getLoadableNode() == event.getRoot()) return;
+        if (myBaseNode.getNode() == null) return;
+        if (myBaseNode.getNode() == event.getRoot()) return;
+
+        myTabbedEditor.getTabbedPane().removeTab(BaseSingletabbedTab.this);
+        myComponent = null;
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            myTabbedEditor.getTabbedPane().initTab(BaseSingletabbedTab.this);
+          }
+        });
       }
 
       public void referenceAdded(SModelReferenceEvent event) {
