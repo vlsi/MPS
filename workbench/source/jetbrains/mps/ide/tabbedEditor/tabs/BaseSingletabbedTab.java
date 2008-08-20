@@ -1,22 +1,22 @@
 package jetbrains.mps.ide.tabbedEditor.tabs;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
+import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
+import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 
 public abstract class BaseSingletabbedTab implements ILazyTab {
   private static Logger LOG = Logger.getLogger(BaseSingletabbedTab.class);
@@ -36,7 +36,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     myListener = new SModelAdapter() {
       public void rootRemoved(SModelRootEvent event) {
         if (event.getRoot() == getLoadableNode() || getLoadableNode() == null) {
-          myTabbedEditor.getTabbedPane().getInitializedTabs().remove(BaseSingletabbedTab.this);
+          myTabbedEditor.getTabbedPane().removeTab(BaseSingletabbedTab.this);
           myComponent = null;
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
@@ -51,7 +51,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
         INodeAdapter sourceNode = BaseAdapter.fromNode(reference.getSourceNode());
         if (myClass.isInstance(sourceNode.getContainingRoot()) &&
           reference.getTargetNode() == getBaseNode()) {
-          myTabbedEditor.getTabbedPane().getInitializedTabs().remove(BaseSingletabbedTab.this);
+          myTabbedEditor.getTabbedPane().removeTab(BaseSingletabbedTab.this);
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
               myTabbedEditor.getTabbedPane().initTab(BaseSingletabbedTab.this);

@@ -1,27 +1,27 @@
 package jetbrains.mps.ide.tabbedEditor.tabs;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.NodeEditorComponent;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
-import jetbrains.mps.core.structure.INamedConcept;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.Pair;
 
 import javax.swing.*;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.List;
-import java.util.ArrayList;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public abstract class BaseMultitabbedTab implements ILazyTab {
 
@@ -42,7 +42,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myListener = new SModelAdapter() {
       public void rootRemoved(SModelRootEvent event) {
         if (getLoadableNodes().contains(event.getRoot()) || getLoadableNodes().isEmpty()) {
-          myTabbedEditor.getTabbedPane().getInitializedTabs().remove(BaseMultitabbedTab.this);
+          myTabbedEditor.getTabbedPane().removeTab(BaseMultitabbedTab.this);
           myInnerTabbedPane = null;
           myComponent = null;
           myLoadableNodes.clear();
@@ -61,7 +61,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
         INodeAdapter sourceNode = BaseAdapter.fromNode(reference.getSourceNode());
         if (myClass.isInstance(sourceNode.getContainingRoot()) &&
           reference.getTargetNode() == getBaseNode()) {
-          myTabbedEditor.getTabbedPane().getInitializedTabs().remove(BaseMultitabbedTab.this);
+          myTabbedEditor.getTabbedPane().removeTab(BaseMultitabbedTab.this);
           myInnerTabbedPane = null;
           myComponent = null;
           myLoadableNodes.clear();

@@ -3,20 +3,20 @@ package jetbrains.mps.ide.tabbedEditor;
 import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
-import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
-import javax.swing.event.ChangeListener;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Set;
-import java.util.HashSet;
+import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class LazyTabbedPane extends JPanel {
   private JTabbedPane myTabbedPane = new JTabbedPane(JTabbedPane.BOTTOM);
@@ -40,8 +40,8 @@ public class LazyTabbedPane extends JPanel {
     });
   }
 
-  public Set<ILazyTab> getInitializedTabs() {
-    return myInitializedTabs;
+  public void removeTab(ILazyTab tab) {
+    myInitializedTabs.remove(tab);
   }
 
   public List<ILazyTab> getTabs() {
