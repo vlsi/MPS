@@ -639,15 +639,15 @@ public class GeneratorUtil {
 
   /*package*/
   static boolean checkChild(SNode parent, String role, SNode child) {
-    return checktLinkTarget(parent, role, child, true, false);
+    return checkLinkTarget(parent, role, child, true, false);
   }
 
   /*package*/
   static boolean checkReferent(SNode reference, String role, SNode referent) {
-    return checktLinkTarget(reference, role, referent, false, true);
+    return checkLinkTarget(reference, role, referent, false, true);
   }
 
-  private static boolean checktLinkTarget(SNode sourceNode, String role, SNode targetNode, boolean child, boolean riseError) {
+  private static boolean checkLinkTarget(SNode sourceNode, String role, SNode targetNode, boolean child, boolean riseError) {
     String relationKind = child ? "child" : "referent";
     AbstractConceptDeclaration concept = sourceNode.getConceptDeclarationAdapter();
     LinkDeclaration link = SModelSearchUtil.findMostSpecificLinkDeclaration(concept, role);
