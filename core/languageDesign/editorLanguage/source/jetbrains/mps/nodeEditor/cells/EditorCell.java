@@ -20,6 +20,8 @@ import java.util.Set;
 import java.util.List;
 
 public interface EditorCell extends Cloneable {
+  static final EditorCell[] EMPTY_ARRAY = new EditorCell[0];
+
   static final Object METAINFO_LINK_DECLARATION = "metainfo-link-declaration";
   static final Object METAINFO_SOURCE_NODE = "metainfo-source-node";
   static final Object CELL_ID = "cell-id";
