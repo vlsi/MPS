@@ -17,6 +17,8 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
+import com.intellij.ui.content.ContentManagerAdapter;
+import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
@@ -78,6 +80,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
   private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
   private FindUsagesOptions myDefaultFindOptions = new FindUsagesOptions();
   private jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions myDefaultViewOptions = new jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions();
+  private ContentManagerAdapter myContentListener;
 
   //----CONSTRUCT STUFF----
 
@@ -150,6 +153,13 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
       }
     });
     KeymapManager.getInstance().getActiveKeymap().addShortcut(NEXT_COMMAND, getNextShortcut());
+
+    myContentListener = new ContentManagerAdapter(){
+      public void contentRemoved(ContentManagerEvent event) {
+        myUsageViewsData.remove(event.getIndex());
+      }
+    };
+    getContentManager().addContentManagerListener(myContentListener);
   }
 
   private KeyboardShortcut getNextShortcut() {
@@ -161,6 +171,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
   }
 
   public void doUnregister() {
+    getContentManager().removeContentManagerListener(myContentListener);
     KeymapManager.getInstance().getActiveKeymap().removeShortcut(PREV_COMMAND, getPrevShortcut());
     KeymapManager.getInstance().getActiveKeymap().removeShortcut(NEXT_COMMAND, getNextShortcut());
     ActionManager.getInstance().unregisterAction(PREV_COMMAND);
@@ -394,7 +405,6 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
         public void close() {
           int index = myUsageViewsData.indexOf(UsageViewData.this);
           UsagesViewTool.this.closeTab(index);
-          myUsageViewsData.remove(index);
         }
       };
     }
