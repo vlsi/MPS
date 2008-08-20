@@ -8,7 +8,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.components.FindersEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ViewOptionsEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
@@ -32,7 +32,7 @@ public class FindUsagesDialog extends BaseDialog {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myScopeEditor = new ScopeEditor(defaultOptions.getOption(QueryOptions.class));
+        myScopeEditor = new ScopeEditor(defaultOptions.getOption(ScopeOptions.class));
         myFindersEditor = new MyFindersEditor(defaultOptions, node, data);
         myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class));
       }
