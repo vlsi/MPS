@@ -22,10 +22,6 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 
 public class QueriesGenerated {
 
-  public static boolean baseMappingRule_Condition_1200916318347(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "nodeOperation", true), "jetbrains.mps.transformation.TLBase.structure.Node_FindOutputNode");
-  }
-
   public static boolean baseMappingRule_Condition_1203536793839(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.transformation.TLBase.structure.Node_FindOutputNode");
   }
@@ -137,10 +133,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1200915812769(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
-  }
-
-  public static SNode sourceNodeQuery_1200916341241(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "nodeOperation", true);
   }
 
   public static SNode sourceNodeQuery_1200924590431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
