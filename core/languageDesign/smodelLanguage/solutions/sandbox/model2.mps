@@ -259,11 +259,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204842951592">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204842952766">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1204842951593" />
-          </node>
-        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1204763884209">
         <property name="name" value="node" />
@@ -375,18 +370,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205273179671">
               <link role="variableDeclaration" targetNodeId="1204848597508" resolveInfo="node" />
             </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1205274565352">
-              <link role="link" targetNodeId="7.1070568044740" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205275742968">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205275747831">
-            <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1205275743923">
-              <link role="concept" targetNodeId="7.1068580123136" resolveInfo="StatementList" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205275742969">
-                <link role="variableDeclaration" targetNodeId="1204848597508" resolveInfo="node" />
-              </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219272921217">
+              <link role="link" targetNodeId="7.1202948736718" />
             </node>
           </node>
         </node>
@@ -394,7 +379,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1204848597508">
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1204848597509">
-          <link role="concept" targetNodeId="7.1068580123163" resolveInfo="InstanceMethodCall" />
+          <link role="concept" targetNodeId="7.1202948039474" resolveInfo="InstanceMethodCallOperation" />
         </node>
       </node>
     </node>

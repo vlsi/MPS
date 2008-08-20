@@ -1623,11 +1623,6 @@ public class QueriesGenerated {
                   SLinkOperations.setNewChild(ifr, "instance", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression");
                   SPropertyOperations.set(ifr, "fieldName", SPropertyOperations.getString(SLinkOperations.getTarget(parent, "variableDeclaration", false), "name"));
                 } else
-                if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.InstanceMethodCall")) {
-                  SNode imc = SNodeOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall");
-                  SLinkOperations.setNewChild(imc, "instance", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression");
-                  SPropertyOperations.set(imc, "methodName", SPropertyOperations.getString(SLinkOperations.getTarget(parent, "baseMethodDeclaration", false), "name"));
-                } else
                 if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
                   SNode op = SLinkOperations.getTarget(parent, "operation", true);
                   if (SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) {
