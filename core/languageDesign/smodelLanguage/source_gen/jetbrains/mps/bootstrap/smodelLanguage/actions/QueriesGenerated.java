@@ -131,9 +131,6 @@ public class QueriesGenerated {
         public Object calculate() {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
-          if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
-            leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true);
-          }
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
           SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
           result.myLinkAccessT = linkAccessT;
@@ -339,9 +336,6 @@ public class QueriesGenerated {
         public Object calculate() {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
-          if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
-            leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true);
-          }
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
           SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
           result.myLinkAccessT = linkAccessT;
@@ -378,13 +372,7 @@ public class QueriesGenerated {
         public boolean met(Object object) {
           SNode parameterOp = (SNode)concept;
           SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
-          if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
-            leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true);
-          }
           SNode leftOperation = SLinkOperations.getTarget(leftExpression, "operation", true);
-          if (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
-            leftOperation = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
-          }
           // ---
           if (leftOperation != null) {
             if (SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {

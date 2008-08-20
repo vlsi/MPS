@@ -60,34 +60,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1138063757082">
-    <property name="package" value="operation" />
-    <link role="conceptDeclaration" targetNodeId="1.1138055978872" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1138063769790">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1138063769791">
-        <link role="relationDeclaration" targetNodeId="1.1138056667223" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203639997364">
-        <property name="text" value="!" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399678260">
-          <property name="color" value="red" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1138063769792">
-        <property name="text" value="." />
-        <link role="styleClass" targetNodeId="5.1215096040201" resolveInfo="Dot" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995273">
-          <property name="flag" value="true" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1138412455559">
-        <property name="attractsFocus" value="2" />
-        <link role="relationDeclaration" targetNodeId="1.1138411864174" />
-        <link role="actionMap" targetNodeId="1140123519849" resolveInfo="SNodeOperationExpression_Operation_Actions" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1138063852256">
     <link role="conceptDeclaration" targetNodeId="1.1138056143562" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1138412329756">
@@ -462,31 +434,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487826349">
         <property name="text" value=")" />
         <link role="styleClass" targetNodeId="5.1215088010675" resolveInfo="RightParen" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1140123519849">
-    <property name="name" value="SNodeOperationExpression_Operation_Actions" />
-    <link role="applicableConcept" targetNodeId="1.1138055978872" />
-    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem" id="1140123561975">
-      <property name="description" value="replace operation expression with left expression" />
-      <property name="actionId" value="delete_action_id" />
-      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_ExecuteFunction" id="1140123561977">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1140123562104">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1140143244848">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227942505">
-              <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1140143244849" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1140143253429">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227838361">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1140143256963" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1140143262730">
-                    <link role="link" targetNodeId="1.1138056667223" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </node>

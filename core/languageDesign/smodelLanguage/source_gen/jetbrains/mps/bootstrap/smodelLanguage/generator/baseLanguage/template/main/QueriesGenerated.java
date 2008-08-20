@@ -799,10 +799,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
 
-  public static SNode sourceNodeQuery_1177115395348(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "nodeOperation", true);
-  }
-
   public static SNode sourceNodeQuery_1179168430727(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
   }

@@ -10,20 +10,19 @@ import java.util.HashSet;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 
 public class DependenciesCollector {
 
-  public  DependenciesCollector() {
+  public DependenciesCollector() {
   }
 
   public void collectDependencies(SNode inferenceRule, Map<SNode, Pair<SNode, SNode>> dependencies, Set<SNode> leaves) {
     Set<SNode> roots = new HashSet<SNode>();
     for(SNode applicableNodeReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference", false)) {
-      if(SLinkOperations.getTarget(applicableNodeReference, "applicableNode", false) == SLinkOperations.getTarget(inferenceRule, "applicableNode", true)) {
+      if (SLinkOperations.getTarget(applicableNodeReference, "applicableNode", false) == SLinkOperations.getTarget(inferenceRule, "applicableNode", true)) {
         roots.add(applicableNodeReference);
       }
     }
@@ -32,82 +31,93 @@ public class DependenciesCollector {
     for(SNode root : roots) {
       dependencies.put(root, null);
     }
-    while(dependencies.size() > prevSize || leaves.size() > leavesSize) {
+    while (dependencies.size() > prevSize || leaves.size() > leavesSize) {
       prevSize = dependencies.size();
       leavesSize = leaves.size();
       for(SNode node : new HashSet<SNode>(dependencies.keySet())) {
         SNode parent = SNodeOperations.getParent(node, null, false, false);
         do {
-          SNode matchedNode_1194538774943 = parent;
+          SNode matchedNode_0 = parent;
           {
-            boolean matches_1194538774945 = false;
-            matches_1194538774945 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
-            if(matches_1194538774945) {
-              if(!(roots.contains(node))) {
+            boolean matches_0 = false;
+            {
+              SNode matchingNode_0 = parent;
+              if (matchingNode_0 != null) {
+                matches_0 = SModelUtil_new.isAssignableConcept(matchingNode_0.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
+              }
+            }
+            if (matches_0) {
+              if (!(roots.contains(node))) {
                 leaves.add(node);
               }
               break;
             }
           }
           {
-            boolean matches_1194538897614 = false;
-            matches_1194538897614 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
-            if(matches_1194538897614) {
-              if(SLinkOperations.getTarget(matchedNode_1194538774943, "rValue", true) == node) {
-                dependencies.put(SLinkOperations.getTarget(matchedNode_1194538774943, "lValue", true), new Pair<SNode, SNode>(node, new QuotationClass_().createNode()));
+            boolean matches_1 = false;
+            {
+              SNode matchingNode_1 = parent;
+              if (matchingNode_1 != null) {
+                matches_1 = SModelUtil_new.isAssignableConcept(matchingNode_1.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+              }
+            }
+            if (matches_1) {
+              if (SLinkOperations.getTarget(matchedNode_0, "rValue", true) == node) {
+                dependencies.put(SLinkOperations.getTarget(matchedNode_0, "lValue", true), new Pair<SNode, SNode>(node, new QuotationClass_0().createNode()));
               }
               break;
             }
           }
           {
-            boolean matches_1194964521497 = false;
-            matches_1194964521497 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
-            if(matches_1194964521497) {
-              if(SLinkOperations.getTarget(matchedNode_1194538774943, "initializer", true) == node) {
-                dependencies.put(matchedNode_1194538774943, new Pair<SNode, SNode>(node, new QuotationClass_1().createNode()));
+            boolean matches_2 = false;
+            {
+              SNode matchingNode_2 = parent;
+              if (matchingNode_2 != null) {
+                matches_2 = SModelUtil_new.isAssignableConcept(matchingNode_2.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
               }
-              break;
             }
-          }
-          {
-            boolean matches_1194539042393 = false;
-            matches_1194539042393 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression");
-            if(matches_1194539042393) {
-              if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_1194538774943, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
-                SNode sLinkAccess = SLinkOperations.getTarget(matchedNode_1194538774943, "nodeOperation", true);
-                if(SLinkOperations.getTarget(matchedNode_1194538774943, "leftExpression", true) == node && SPropertyOperations.hasValue(SLinkOperations.getTarget(sLinkAccess, "link", false), "metaClass", "aggregation", null)) {
-                  SNode operationExpression = SNodeOperations.getParent(sLinkAccess, null, false, false);
-                  dependencies.put(operationExpression, new Pair<SNode, SNode>(node, new QuotationClass_2().createNode()));
-                }
+            if (matches_2) {
+              if (SLinkOperations.getTarget(matchedNode_0, "initializer", true) == node) {
+                dependencies.put(matchedNode_0, new Pair<SNode, SNode>(node, new QuotationClass_1().createNode()));
               }
               break;
             }
           }
           do {
-            SNode matchedNode_1194966957317 = node;
+            SNode matchedNode_1 = node;
             {
-              boolean matches_1194966957319 = false;
-              matches_1194966957319 = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
-              if(matches_1194966957319) {
+              boolean matches_3 = false;
+              {
+                SNode matchingNode_3 = node;
+                if (matchingNode_3 != null) {
+                  matches_3 = SModelUtil_new.isAssignableConcept(matchingNode_3.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+                }
+              }
+              if (matches_3) {
                 for(SNode variableReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false)) {
-                  if(SLinkOperations.getTarget(variableReference, "variableDeclaration", false) == node) {
-                    dependencies.put(variableReference, new Pair<SNode, SNode>(node, new QuotationClass_3().createNode()));
+                  if (SLinkOperations.getTarget(variableReference, "variableDeclaration", false) == node) {
+                    dependencies.put(variableReference, new Pair<SNode, SNode>(node, new QuotationClass_2().createNode()));
                   }
                 }
                 break;
               }
             }
             {
-              boolean matches_1194967010187 = false;
-              matches_1194967010187 = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableReference");
-              if(matches_1194967010187) {
+              boolean matches_4 = false;
+              {
+                SNode matchingNode_4 = node;
+                if (matchingNode_4 != null) {
+                  matches_4 = SModelUtil_new.isAssignableConcept(matchingNode_4.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableReference");
+                }
+              }
+              if (matches_4) {
                 {
-                  SNode variableDeclaration = SLinkOperations.getTarget(matchedNode_1194966957317, "variableDeclaration", false);
+                  SNode variableDeclaration = SLinkOperations.getTarget(matchedNode_1, "variableDeclaration", false);
                   for(SNode reference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false)) {
-                    if(SLinkOperations.getTarget(matchedNode_1194966957317, "variableDeclaration", false) == variableDeclaration) {
-                      SNode nodeStatement = SNodeOperations.getAncestor(matchedNode_1194966957317, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+                    if (SLinkOperations.getTarget(matchedNode_1, "variableDeclaration", false) == variableDeclaration) {
+                      SNode nodeStatement = SNodeOperations.getAncestor(matchedNode_1, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
                       SNode usageStatement = SNodeOperations.getAncestor(reference, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
-                      while(SNodeOperations.getParent(nodeStatement, null, false, false) != SNodeOperations.getParent(usageStatement, null, false, false)) {
+                      while (SNodeOperations.getParent(nodeStatement, null, false, false) != SNodeOperations.getParent(usageStatement, null, false, false)) {
                         usageStatement = SNodeOperations.getAncestor(usageStatement, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
                       }
                       List list = CollectionUtil.filter(SNodeOperations.getParent(nodeStatement, null, false, false).getChildren(), new Condition() {
@@ -117,8 +127,8 @@ public class DependenciesCollector {
                         }
 
                       });
-                      if(list.indexOf(nodeStatement) <= list.indexOf(usageStatement)) {
-                        dependencies.put(reference, new Pair<SNode, SNode>(node, new QuotationClass_4().createNode()));
+                      if (list.indexOf(nodeStatement) <= list.indexOf(usageStatement)) {
+                        dependencies.put(reference, new Pair<SNode, SNode>(node, new QuotationClass_3().createNode()));
                       }
                     }
                   }

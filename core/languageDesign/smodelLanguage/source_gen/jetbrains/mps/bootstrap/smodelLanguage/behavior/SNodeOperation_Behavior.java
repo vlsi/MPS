@@ -20,28 +20,16 @@ public class SNodeOperation_Behavior {
 
   public static SNode call_getLeftExpression_1213877508894(SNode thisNode) {
     SNode parent = SNodeOperations.getParent(thisNode, null, false, false);
-    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
-      return SLinkOperations.getTarget(parent, "leftExpression", true);
-    }
-    // new: DotExpression everywhere
     return SLinkOperations.getTarget(parent, "operand", true);
   }
 
   public static SNode call_getLeftExpressionLeftExpression_1213877508920(SNode thisNode) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode);
-    if (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
-      return SLinkOperations.getTarget(leftExpression, "leftExpression", true);
-    }
-    // new: DotExpression everywhere
     return SLinkOperations.getTarget(leftExpression, "operand", true);
   }
 
   public static SNode call_getLeftExpressionOperation_1213877508946(SNode thisNode) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode);
-    if (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
-      return SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
-    }
-    // new: DotExpression everywhere
     return SLinkOperations.getTarget(leftExpression, "operation", true);
   }
 
