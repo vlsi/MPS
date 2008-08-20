@@ -14,12 +14,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class Node_ReplaceWithNewOperation_Editor extends DefaultNodeEditor {
@@ -104,6 +104,15 @@ public class Node_ReplaceWithNewOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_concept1139868035540(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_concept");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_12064874122101206487412210(EditorCell editorCell, SNode node, EditorContext context) {
@@ -191,6 +200,7 @@ public class Node_ReplaceWithNewOperation_Editor extends DefaultNodeEditor {
               }
 
             });
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }
 
         };

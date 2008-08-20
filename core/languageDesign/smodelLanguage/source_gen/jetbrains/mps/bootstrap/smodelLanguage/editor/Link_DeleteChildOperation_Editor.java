@@ -32,6 +32,7 @@ public class Link_DeleteChildOperation_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };

@@ -15,6 +15,8 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class Concept_NewInstance_Editor extends DefaultNodeEditor {
 
@@ -106,6 +108,15 @@ public class Concept_NewInstance_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNode_prototypeNode1206486226040(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_12064862260411206486226041(EditorCell editorCell, SNode node, EditorContext context) {

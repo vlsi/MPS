@@ -144,6 +144,15 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_concept1143235366833(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_concept");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_11777007228481177700722848(EditorCell editorCell, SNode node, EditorContext context) {
@@ -152,7 +161,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
+          this.set(StyleAttributes.PADDING_RIGHT, 1.0);
         }
 
       };
@@ -161,6 +170,15 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNode_prototypeNode1177700754756(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_11777008428811177700842881(EditorCell editorCell, SNode node, EditorContext context) {
@@ -254,6 +272,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
               }
 
             });
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }
 
         };

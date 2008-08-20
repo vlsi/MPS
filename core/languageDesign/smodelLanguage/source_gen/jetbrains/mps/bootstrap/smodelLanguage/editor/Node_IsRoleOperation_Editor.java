@@ -161,6 +161,15 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_linkInParent1144198126876(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_linkInParent");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_12064873631261206487363126(EditorCell editorCell, SNode node, EditorContext context) {
@@ -328,6 +337,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
               }
 
             });
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }
 
         };

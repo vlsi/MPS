@@ -93,6 +93,8 @@ public class PoundExpression_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
         }
 
       };

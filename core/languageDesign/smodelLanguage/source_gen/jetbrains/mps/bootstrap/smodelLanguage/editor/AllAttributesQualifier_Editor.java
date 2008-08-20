@@ -56,6 +56,7 @@ public class AllAttributesQualifier_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };

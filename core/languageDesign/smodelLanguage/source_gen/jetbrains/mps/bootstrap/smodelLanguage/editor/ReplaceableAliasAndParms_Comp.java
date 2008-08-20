@@ -181,6 +181,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
             }
 
           });
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
@@ -199,6 +200,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {

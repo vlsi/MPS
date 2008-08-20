@@ -145,6 +145,15 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_elementConcept1145383273157(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_elementConcept");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_1145383245680_1145383245680(EditorCell_Label editorCell, SNode node, EditorContext context) {
