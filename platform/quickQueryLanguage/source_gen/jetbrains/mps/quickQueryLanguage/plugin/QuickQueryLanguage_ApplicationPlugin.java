@@ -12,6 +12,7 @@ public class QuickQueryLanguage_ApplicationPlugin extends BaseApplicationPlugin 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
     groups.add(new QueryGroup_ActionGroup());
+    groups.add(new SearchDialogGroup_ActionGroup());
     return groups;
   }
 
