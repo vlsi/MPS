@@ -1731,9 +1731,14 @@
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" id="1215273232796">
             <property name="value" value="1.0" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1219219030185">
+            <property name="value" value="0.0" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206017741077">
           <property name="text" value="(" />
+          <link role="styleClass" targetNodeId="11.1215087929380" resolveInfo="LeftParen" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleClassItem" id="1219219340852" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1206017741078">
           <property name="vertical" value="false" />
@@ -1743,9 +1748,11 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206017741080">
           <property name="text" value=")" />
+          <link role="styleClass" targetNodeId="11.1215088010675" resolveInfo="RightParen" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206017741081">
           <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="11.1215091279307" resolveInfo="LeftBrace" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993808">
           <property name="flag" value="false" />
@@ -1763,6 +1770,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206017626453">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="11.1215091331565" resolveInfo="RightBrace" />
       </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206017680438">
