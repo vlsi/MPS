@@ -12,8 +12,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class QueryOptions extends BaseOptions<SearchQuery> {
-  private static final Logger LOG = Logger.getLogger(QueryOptions.class);
+public class ScopeOptions extends BaseOptions<SearchQuery> {
+  private static final Logger LOG = Logger.getLogger(ScopeOptions.class);
 
   public static final String SCOPE_TYPE = "scope_type";
 
@@ -31,22 +31,22 @@ public class QueryOptions extends BaseOptions<SearchQuery> {
   private String myModule;
   public static final String DEFAULT_VALUE = "<default>";
 
-  public QueryOptions() {
+  public ScopeOptions() {
     myScopeType = GLOBAL_SCOPE;
   }
 
-  public QueryOptions(Element element, MPSProject project) {
+  public ScopeOptions(Element element, MPSProject project) {
     read(element, project);
   }
 
-  public QueryOptions(String scopeType, String model, String module) {
+  public ScopeOptions(String scopeType, String model, String module) {
     myScopeType = scopeType;
     myModel = model;
     myModule = module;
   }
 
-  public QueryOptions clone() {
-    return new QueryOptions(myScopeType, myModel, myModule);
+  public ScopeOptions clone() {
+    return new ScopeOptions(myScopeType, myModel, myModule);
   }
 
   public void setScopeType(@NotNull String scopeType) {

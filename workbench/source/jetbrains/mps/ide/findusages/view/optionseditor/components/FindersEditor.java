@@ -18,8 +18,8 @@ import java.awt.event.KeyEvent;
 import java.util.*;
 
 public abstract class FindersEditor extends BaseEditor<FindersOptions> {
-  public FindersEditor(FindersOptions defaultOptions, final SNode node, ActionEventData data) {
-    super(defaultOptions, node, data);
+  public FindersEditor(FindersOptions defaultOptions, final SNode node) {
+    super(defaultOptions);
 
     myPanel = new JPanel();
     myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));

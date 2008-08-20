@@ -5,10 +5,10 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.FindersEditor;
-import jetbrains.mps.ide.findusages.view.optionseditor.components.QueryEditor;
+import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ViewOptionsEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
@@ -22,7 +22,7 @@ import java.awt.BorderLayout;
 
 public class FindUsagesDialog extends BaseDialog {
   private JPanel myPanel;
-  private QueryEditor myQueryEditor;
+  private ScopeEditor myScopeEditor;
   private FindersEditor myFindersEditor;
   private ViewOptionsEditor myViewOptionsEditor;
   private boolean myIsCancelled = true;
@@ -32,9 +32,9 @@ public class FindUsagesDialog extends BaseDialog {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myQueryEditor = new QueryEditor(defaultOptions.getOption(QueryOptions.class), node, data);
+        myScopeEditor = new ScopeEditor(defaultOptions.getOption(ScopeOptions.class));
         myFindersEditor = new MyFindersEditor(defaultOptions, node, data);
-        myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class), node, data);
+        myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class));
       }
     });
 
@@ -44,11 +44,11 @@ public class FindUsagesDialog extends BaseDialog {
 
     myPanel = new JPanel(new BorderLayout());
     myPanel.add(centerPanel, BorderLayout.CENTER);
-    myPanel.add(myQueryEditor.getComponent(), BorderLayout.SOUTH);
+    myPanel.add(myScopeEditor.getComponent(), BorderLayout.SOUTH);
   }
 
   public FindUsagesOptions getResult() {
-    FindUsagesOptions options = new FindUsagesOptions(myFindersEditor.getOptions(), myQueryEditor.getOptions(), myViewOptionsEditor.getOptions());
+    FindUsagesOptions options = new FindUsagesOptions(myFindersEditor.getOptions(), myScopeEditor.getOptions(), myViewOptionsEditor.getOptions());
     return options;
   }
 
@@ -84,7 +84,7 @@ public class FindUsagesDialog extends BaseDialog {
     private final ActionEventData myContext;
 
     public MyFindersEditor(FindUsagesOptions defaultOptions, SNode node, ActionEventData data) {
-      super(defaultOptions.getOption(FindersOptions.class), node, data);
+      super(defaultOptions.getOption(FindersOptions.class),node);
       myContext = data;
     }
 

@@ -15,8 +15,8 @@ public class ViewOptionsEditor extends BaseEditor<ViewOptions> {
   private JCheckBox myShowOneResult;
   private JCheckBox myNewTab;
 
-  public ViewOptionsEditor(ViewOptions defaultOptions, SNode node, ActionEventData data) {
-    super(defaultOptions, node, data);
+  public ViewOptionsEditor(ViewOptions defaultOptions) {
+    super(defaultOptions);
 
     myPanel = new JPanel();
     myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));

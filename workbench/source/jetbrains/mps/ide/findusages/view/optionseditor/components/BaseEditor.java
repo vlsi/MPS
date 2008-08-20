@@ -11,7 +11,7 @@ public abstract class BaseEditor<Options extends BaseOptions> {
   protected Options myOptions;
   protected JPanel myPanel;
 
-  public BaseEditor(Options defaultOptions, SNode node, ActionEventData data) {
+  public BaseEditor(Options defaultOptions) {
     myOptions = (Options) defaultOptions.clone();
   }
 
