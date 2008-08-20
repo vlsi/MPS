@@ -2633,6 +2633,10 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208783059893">
           <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="5.1215091279307" resolveInfo="LeftBrace" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" id="1219237575325">
+            <property name="value" value="0.0" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995027">
           <property name="flag" value="false" />
@@ -2650,6 +2654,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208783062380">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="5.1215091331565" resolveInfo="RightBrace" />
       </node>
     </node>
   </node>
