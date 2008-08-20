@@ -37,9 +37,9 @@ public class SNODE_GEN_Design {
     }
 
     public SNode getterExpression(SNode expression, SNode param, ITemplateGenerator generator) {
-      SNode opExpr = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression", null);
+      SNode opExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
       SNode op = null;
-      SLinkOperations.setTarget(opExpr, "leftExpression", expression, true);
+      SLinkOperations.setTarget(opExpr, "operand", expression, true);
       Cardinality card = Cardinality.parseValue(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"));
       if (card == Cardinality._0__1 || card == Cardinality._1) {
         op = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess", null);
@@ -49,7 +49,7 @@ public class SNODE_GEN_Design {
         op = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess", null);
         SLinkOperations.setTarget(op, "link", param, false);
       }
-      SLinkOperations.setTarget(opExpr, "nodeOperation", op, true);
+      SLinkOperations.setTarget(opExpr, "operation", op, true);
       return opExpr;
     }
 
@@ -82,9 +82,9 @@ public class SNODE_GEN_Design {
     }
 
     public SNode getterExpression(SNode expression, SNode param, ITemplateGenerator generator) {
-      SNode opExpr = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression", null);
+      SNode opExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
       SNode op = null;
-      SLinkOperations.setTarget(opExpr, "leftExpression", expression, true);
+      SLinkOperations.setTarget(opExpr, "operand", expression, true);
       Cardinality card = Cardinality.parseValue(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"));
       if (card == Cardinality._0__1 || card == Cardinality._1) {
         op = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess", null);
@@ -94,7 +94,7 @@ public class SNODE_GEN_Design {
         op = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess", null);
         SLinkOperations.setTarget(op, "link", param, false);
       }
-      SLinkOperations.setTarget(opExpr, "nodeOperation", op, true);
+      SLinkOperations.setTarget(opExpr, "operation", op, true);
       return opExpr;
     }
 

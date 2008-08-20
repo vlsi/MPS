@@ -62,16 +62,16 @@ public class TryFeatures extends TreePath<Node> {
       this._closureContext = (Object)closureContext;
     }
 
+    public boolean accept(Node node) {
+      return true;
+    }
+
+
     public static IFilter<Node> getInstance() {
       if (instance == null) {
         instance = new TryFeatures.foo_NodeKindTrigger();
       }
       return instance;
-    }
-
-
-    public boolean accept(Node node) {
-      return true;
     }
 
 }

@@ -15,17 +15,17 @@ public class SNODE extends TreePath<SNode> {
   public SNODE() {
   }
 
+  public SNode parent(SNode node) {
+    return SNODE.Parent.parent(node);
+  }
+
+
   public static IFeatureDescriptor<SNode> child(String param) {
     return new SNODE.Desc_Feature_child(param);
   }
 
   public static IFeatureDescriptor<SNode> link(String param) {
     return new SNODE.Desc_Feature_link(param);
-  }
-
-
-  public SNode parent(SNode node) {
-    return SNODE.Parent.parent(node);
   }
 
   private static class Parent {

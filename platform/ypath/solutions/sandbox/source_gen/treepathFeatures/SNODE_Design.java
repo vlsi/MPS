@@ -39,7 +39,7 @@ public class SNODE_Design {
 
       }).first();
       SNode trg = SLinkOperations.getTarget(ld, "target", false);
-      return new QuotationClass_().createNode(trg);
+      return new QuotationClass_0().createNode(trg);
     }
 
     public String parameterToString(String param) {
