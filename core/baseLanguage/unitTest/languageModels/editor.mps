@@ -202,6 +202,7 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="jetbrains.mps.baseLanguage.editor" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1171985776104">
     <link role="conceptDeclaration" targetNodeId="1.1171985735491" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1171985778966">
@@ -216,6 +217,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171985788519">
         <property name="text" value="==" />
+        <link role="styleClass" targetNodeId="2v.1215010940130" resolveInfo="Operator" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399678544">
           <property name="color" value="blue" />
         </node>
