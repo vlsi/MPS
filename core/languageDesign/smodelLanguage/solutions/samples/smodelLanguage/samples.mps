@@ -249,7 +249,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1145583482393">
         <property name="name" value="methodCall" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1145583482394">
-          <link role="concept" targetNodeId="1.1068580123163" />
+          <link role="concept" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679169" />
@@ -567,8 +567,8 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1145580908126">
                 <link role="variableDeclaration" targetNodeId="1145580908149" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1145580908127">
-                <link role="link" targetNodeId="1.1070568044740" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219272820734">
+                <link role="link" targetNodeId="1.1202948736718" />
               </node>
             </node>
           </node>
@@ -599,8 +599,8 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1145580908139">
                   <link role="variableDeclaration" targetNodeId="1145580908149" />
                 </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1145580908140">
-                  <link role="link" targetNodeId="1.1070568044740" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219272824329">
+                  <link role="link" targetNodeId="1.1202948736718" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1145580908141">
@@ -615,8 +615,8 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1145580908145">
                 <link role="variableDeclaration" targetNodeId="1145580908149" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1145580908146">
-                <link role="link" targetNodeId="1.1070568044740" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219272827111">
+                <link role="link" targetNodeId="1.1202948736718" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1145580908147">
@@ -632,8 +632,8 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205968817420">
                 <link role="variableDeclaration" targetNodeId="1145580908149" resolveInfo="methodCall" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1205968823408">
-                <link role="link" targetNodeId="1.1070568044740" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219272829879">
+                <link role="link" targetNodeId="1.1202948736718" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation" id="1205968832208" />
@@ -643,7 +643,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1145580908149">
         <property name="name" value="methodCall" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1145580908150">
-          <link role="concept" targetNodeId="1.1068580123163" />
+          <link role="concept" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1145580908151">
@@ -667,8 +667,8 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206559479793">
                 <link role="variableDeclaration" targetNodeId="1206559463532" resolveInfo="methodCall" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206559492336">
-                <link role="link" targetNodeId="1.1070568044740" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219272878537">
+                <link role="link" targetNodeId="1.1202948736718" />
               </node>
             </node>
           </node>
@@ -677,7 +677,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206559463532">
         <property name="name" value="methodCall" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206559463533">
-          <link role="concept" targetNodeId="1.1068580123163" resolveInfo="InstanceMethodCall" />
+          <link role="concept" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206559463534">
@@ -790,8 +790,8 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1171242773354">
                     <link role="variableDeclaration" targetNodeId="1171242727248" resolveInfo="expression" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1171242782327">
-                    <link role="link" targetNodeId="1.1070568044740" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219272864489">
+                    <link role="link" targetNodeId="1.1202948736718" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1171242786409" />
@@ -801,9 +801,9 @@
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1171242727248">
-        <property name="name" value="expression" />
+        <property name="name" value="methodCall" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1171242727249">
-          <link role="concept" targetNodeId="1.1068580123163" />
+          <link role="concept" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679280" />

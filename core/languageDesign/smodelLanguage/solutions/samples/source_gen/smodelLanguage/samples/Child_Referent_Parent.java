@@ -63,8 +63,8 @@ public class Child_Referent_Parent {
     }
   }
 
-  public void accessToParentNode_2(SNode expression) {
-    SNode declaringClass = SNodeOperations.getParent(SLinkOperations.getTarget(expression, "baseMethodDeclaration", false), null, false, false);
+  public void accessToParentNode_2(SNode methodCall) {
+    SNode declaringClass = SNodeOperations.getParent(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), null, false, false);
   }
 
   public void accessToParentNode_3(SNode node) {
