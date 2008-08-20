@@ -25,6 +25,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.propertylanguage.constraints" version="0" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.mpsLayoutLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.util@java_stub" version="-1" />
@@ -62,6 +63,12 @@
       <property name="role" value="cycle" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1216905728562" resolveInfo="ModuleCycle" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1219229028250">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="macro" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1219228952036" resolveInfo="Macro" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203013693138">
       <link role="intfc" targetNodeId="1203013653398" resolveInfo="ILayoutComponent" />
@@ -315,10 +322,17 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204737220833">
     <property name="name" value="PathHolder" />
+    <property name="package" value="generate" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1208952075958">
       <property name="name" value="fullPath" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1219229006340">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="macro" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1219228952036" resolveInfo="Macro" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204737268634">
       <property name="role" value="module" />
@@ -509,6 +523,18 @@
       <property name="metaClass" value="reference" />
       <property name="role" value="module" />
       <link role="target" targetNodeId="1203599702327" resolveInfo="Module" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1219228952036">
+    <property name="name" value="Macro" />
+    <property name="package" value="generate" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1219230127826">
+      <property name="name" value="path" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1219228960536">
+      <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>
