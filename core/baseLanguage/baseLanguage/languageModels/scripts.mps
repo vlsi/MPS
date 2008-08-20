@@ -61,25 +61,29 @@
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1204244594738">
       <property name="description" value="field references" />
       <link role="affectedInstanceConcept" targetNodeId="1.1068580123158" resolveInfo="FieldReference" />
-      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1204244594739">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204244594740">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204320505349">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215796681272">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215796663190">
-                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1215796658439" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1215796679974" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1204244594741">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204244594742">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1219191909479">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219191909480">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1219191937561">
+                <property name="value" value="can't convert subconcepts of field reference" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation" id="1215796685978">
-                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1215796691244">
-                  <link role="conceptDeclaration" targetNodeId="1.1068580123158" resolveInfo="FieldReference" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1219191934981" />
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1219191932286">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219191932287">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219191932288">
+                  <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1219191932289" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1219191932290" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation" id="1219191932291">
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1219191932292">
+                    <link role="conceptDeclaration" targetNodeId="1.1068580123158" resolveInfo="FieldReference" />
+                  </node>
                 </node>
               </node>
             </node>
           </node>
-        </node>
-      </node>
-      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1204244594741">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204244594742">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1204244697662">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204244697663">
               <property name="name" value="nodeAttributes" />
@@ -420,17 +424,29 @@
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1204325408417">
       <property name="description" value="method calls" />
       <link role="affectedInstanceConcept" targetNodeId="1.1068580123163" resolveInfo="InstanceMethodCall" />
-      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1204325408418">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204325408419">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204325408420">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204325408421">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1204325408422">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204325408423">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1219192513686">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219192513687">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1219192513688">
+                <property name="value" value="can't convert subconcepts of instance method call" />
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1219192513689" />
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1219192513690">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219192513691">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219192513692">
+                  <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1219192513693" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1219192513694" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation" id="1219192513695">
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1219192525884">
+                    <link role="conceptDeclaration" targetNodeId="1.1068580123163" resolveInfo="InstanceMethodCall" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1204325544452">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204325544453">
               <property name="name" value="nodeAttributes" />
