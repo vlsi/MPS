@@ -203,7 +203,12 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
   }
 
   public Pattern getItemPattern() {
-    StringBuilder b = getExactItemPatternBuilder(myTextField.getText());
+    final String text = myTextField.getText();
+    return getItemPattern(text);
+  }
+
+  protected Pattern getItemPattern(String text) {
+    StringBuilder b = getExactItemPatternBuilder(text);
     b.append(".*");
     Pattern p = Pattern.compile(b.toString());
     return p;
