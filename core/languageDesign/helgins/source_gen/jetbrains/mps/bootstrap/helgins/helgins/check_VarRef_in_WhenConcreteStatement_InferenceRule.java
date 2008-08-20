@@ -30,6 +30,9 @@ public class check_VarRef_in_WhenConcreteStatement_InferenceRule implements Infe
         }
       }
       SNode variableDeclaration = SLinkOperations.getTarget(variableReference, "variableDeclaration", false);
+      if (SNodeOperations.isInstanceOf(variableDeclaration, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(variableDeclaration, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
+        return;
+      }
       if (variableDeclaration != null && !(ListSequence.fromList(SNodeOperations.getAncestors(variableDeclaration, "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", false)).contains(ancestor))) {
         if (!(SPropertyOperations.getBoolean(variableDeclaration, "isFinal"))) {
           TypeChecker.getInstance().reportTypeError(variableReference, "variable is used inside WHEN CONCRETE block. should be declared final", "jetbrains.mps.bootstrap.helgins.helgins", "1185875417873");

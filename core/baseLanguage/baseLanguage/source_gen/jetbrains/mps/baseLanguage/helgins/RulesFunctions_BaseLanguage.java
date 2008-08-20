@@ -17,7 +17,6 @@ import jetbrains.mps.closures.runtime.YieldingIterator;
 import java.util.List;
 import java.util.Map;
 import jetbrains.mps.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.util.Pair;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -209,7 +208,7 @@ __switch__:
             SNode tvd = SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false);
             int index = ListSequence.fromList(SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true)).indexOf(tvd);
             SNode actualParam = (index < actualParams.size() && index >= 0 ?
-              actualParams.get(index) :
+              (SNode)actualParams.get(index) :
               new QuotationClass_26().createNode()
             );
             if (returnType == tvr) {
@@ -293,7 +292,6 @@ __switch__:
       }
     }
     if (returnType != null) {
-      Pair<SNode, Map<SNode, List<SNode>>> pair;
       SNode matchedType = inference_matchTypeWithTypeVariables(returnType, mmap);
       if (TRACE_METHOD_TYPES) {
         System.out.println("-1- TYPEOF(" + BaseConcept_Behavior.call_getPresentation_1213877396640(mc) + ") :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(matchedType));
