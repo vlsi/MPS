@@ -901,6 +901,15 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_12066306272461206630627246(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206630627246");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_Constant_1206630627246_1206630627246(EditorCell_Label editorCell, SNode node, EditorContext context) {

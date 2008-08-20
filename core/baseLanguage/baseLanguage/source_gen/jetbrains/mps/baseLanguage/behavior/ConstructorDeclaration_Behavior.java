@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.core.behavior.BaseConcept_Behavior;
 
 public class ConstructorDeclaration_Behavior {
@@ -21,6 +22,12 @@ public class ConstructorDeclaration_Behavior {
       if (!(first)) {
         result.append(",");
       }
+      ModelAccess.instance().runReadAction(new Runnable() {
+
+        public void run() {
+        }
+
+      });
       first = false;
       if (SLinkOperations.getTarget(parm, "type", true) != null) {
         result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(parm, "type", true)));
