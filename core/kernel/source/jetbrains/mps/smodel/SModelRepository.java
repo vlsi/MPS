@@ -34,10 +34,11 @@ public class SModelRepository implements ApplicationComponent {
   private List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
   private WeakSet<SModelRepositoryListener> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryListener>();
   private List<SModelListener> myAllModelsListeners = new ArrayList<SModelListener>();
+  private WeakSet<SModelListener> myWeakAllModelsListeners = new WeakSet<SModelListener>();
 
   private SModelListener myAllModelsListener = new SModelEventBroadcaster(){
     protected Collection<SModelListener> getListeners() {
-      return myAllModelsListeners;
+      return modelListeners();
     }
   };
 
@@ -88,12 +89,24 @@ public class SModelRepository implements ApplicationComponent {
     myWeakSModelRepositoryListeners.remove(l);
   }
 
+  public void addWeakAllModelsListener(SModelListener listener){
+    myWeakAllModelsListeners.add(listener);
+  }
+
   public void addAllModelsListener(SModelListener listener){
     myAllModelsListeners.add(listener);
   }
 
   public void removeAllModelsListener(SModelListener listener){
     myAllModelsListeners.remove(listener);
+    myWeakAllModelsListeners.remove(listener);
+  }
+
+  private List<SModelListener> modelListeners(){
+    List<SModelListener> result = new ArrayList<SModelListener>();
+    result.addAll(myAllModelsListeners);
+    result.addAll(myWeakAllModelsListeners);
+    return result;
   }
 
   private List<SModelRepositoryListener> listeners() {
