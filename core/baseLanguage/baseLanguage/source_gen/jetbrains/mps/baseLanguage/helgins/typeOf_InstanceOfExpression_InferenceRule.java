@@ -23,7 +23,7 @@ public class typeOf_InstanceOfExpression_InferenceRule implements InferenceRule_
     {
       SNode _nodeToCheck_1029348928467 = instanceOfExpression;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(instanceOfExpression, "jetbrains.mps.baseLanguage.helgins", "1179744201892", true), new QuotationClass_39().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1179744208448", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(instanceOfExpression, "jetbrains.mps.baseLanguage.helgins", "1179744201892", true), new QuotationClass_38().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1179744208448", intentionProvider);
     }
   }
 

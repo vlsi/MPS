@@ -19,7 +19,7 @@ public class typeOf_ForeachStatement_InferenceRule implements InferenceRule_Runt
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(foreachStatement, "iterable", true);
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true), "jetbrains.mps.baseLanguage.helgins", "1207147193776", true), new QuotationClass_78().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1207147198311", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true), "jetbrains.mps.baseLanguage.helgins", "1207147193776", true), new QuotationClass_77().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1207147198311", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = foreachStatement;

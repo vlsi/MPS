@@ -18,13 +18,13 @@ public class typeOf_AssertStatement_InferenceRule implements InferenceRule_Runti
     {
       SNode _nodeToCheck_1029348928467 = assertStatement;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(assertStatement, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1176899056092", true), new QuotationClass_29().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176899078020", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(assertStatement, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1176899056092", true), new QuotationClass_28().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176899078020", false, 0, intentionProvider);
     }
     if ((SLinkOperations.getTarget(assertStatement, "message", true) != null)) {
       {
         SNode _nodeToCheck_1029348928467 = assertStatement;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(assertStatement, "message", true), "jetbrains.mps.baseLanguage.helgins", "1176899107820", true), new QuotationClass_30().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176899115123", false, 0, intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(assertStatement, "message", true), "jetbrains.mps.baseLanguage.helgins", "1176899107820", true), new QuotationClass_29().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176899115123", false, 0, intentionProvider);
       }
     }
   }

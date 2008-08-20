@@ -18,7 +18,7 @@ public class typeOf_DoWhileStatement_InferenceRule implements InferenceRule_Runt
     {
       SNode _nodeToCheck_1029348928467 = doWhileStatement;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(doWhileStatement, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1177667395190", true), new QuotationClass_65().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1177667395187", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(doWhileStatement, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1177667395190", true), new QuotationClass_64().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1177667395187", false, 0, intentionProvider);
     }
   }
 
