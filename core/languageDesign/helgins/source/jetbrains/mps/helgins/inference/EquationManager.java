@@ -782,7 +782,7 @@ public class EquationManager {
       hasConcreteTypes = false;
       for (IWrapper type : types) {
         if (type == null) continue;
-        if (!type.isConcrete()) {
+        if (!type.isConcrete()) {       //todo: consider joins
           typeLessThanVar(type, true, priority, minPriority);
           typeLessThanVar(type, false, priority, minPriority);
           varLessThanType(type, true, priority, minPriority);
