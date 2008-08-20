@@ -117,34 +117,4 @@ public class QueriesUtil {
     return (List<SNode>)searchScope.getNodes();
   }
 
-  public static SNode replaceNodeMenu_FieldReference_createReplacementNode(SNode node, SNode parameterObject) {
-    if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.InstanceMethodCall", null);
-      SLinkOperations.setTarget(newNode, "baseMethodDeclaration", parameterObject, false);
-      SLinkOperations.setTarget(newNode, "instance", SLinkOperations.getTarget(node, "instance", true), true);
-      return newNode;
-    }
-    return node;
-  }
-
-  public static List<SNode> replaceNodeMenu_InstanceMethodCall_getParameterObjects(SNode referenceNode) {
-    SNode instance = SLinkOperations.getTarget(referenceNode, "instance", true);
-    SNode instanceType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-    if (instanceType == null) {
-      return new ArrayList<SNode>();
-    }
-    ISearchScope searchScope = new ClassifierVisibleMembersScope(((ClassifierType)SNodeOperations.getAdapter(instanceType)), referenceNode, IClassifiersSearchScope.INSTANCE_FIELD);
-    return (List<SNode>)searchScope.getNodes();
-  }
-
-  public static SNode replaceNodeMenu_InstanceMethodCall_createReplacementNode(SNode node, SNode parameterObject) {
-    if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.FieldReference", null);
-      SLinkOperations.setTarget(newNode, "variableDeclaration", parameterObject, false);
-      SLinkOperations.setTarget(newNode, "instance", SLinkOperations.getTarget(node, "instance", true), true);
-      return newNode;
-    }
-    return node;
-  }
-
 }
