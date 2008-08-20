@@ -35,17 +35,17 @@ public class RulesUtil {
         public void run() {
           boolean isGood = false;
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_37().createNode(), false, false)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_35().createNode(), false, false)) {
               isGood = true;
             }
           }
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_concept")) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_38().createNode(), false, false)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_36().createNode(), false, false)) {
               isGood = true;
             }
           }
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_node")) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_39().createNode(), false, false)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_37().createNode(), false, false)) {
               isGood = true;
             }
           }
@@ -57,7 +57,7 @@ public class RulesUtil {
               if (isGood) {
                 // some of ops applicable to 'link' require left-expr to be a concept
                 if (SConceptPropertyOperations.getBoolean(op, "applicable_to_concept") && !(SConceptPropertyOperations.getBoolean(op, "applicable_to_node"))) {
-                  isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_91().createNode());
+                  isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_89().createNode());
                 }
               }
             }
@@ -159,7 +159,7 @@ public class RulesUtil {
     }
     {
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().reportTypeError(nodeToReportError, "" + errorTextPrefix + "\nexpected: " + SPropertyOperations.getString(toConcept, "name") + "\nwas: " + SPropertyOperations.getString(fromConcept, "name"), "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1179506569646", intentionProvider);
+      TypeChecker.getInstance().reportTypeError(nodeToReportError, "" + errorTextPrefix + "\nexpected: " + SPropertyOperations.getString(toConcept, "name") + "\nwas: " + SPropertyOperations.getString(fromConcept, "name"), "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1179506569646", intentionProvider);
     }
     return false;
   }
@@ -171,7 +171,7 @@ public class RulesUtil {
       if (!(ListSequence.fromList(applicableParmConcepts).contains(SNodeOperations.getConceptDeclaration(parm)))) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(parm, "not applicable here", "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1219063250662", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(parm, "not applicable here", "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1219261928000", intentionProvider);
         }
         noProblem = false;
       }
@@ -233,7 +233,7 @@ public class RulesUtil {
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, new QuotationClass_75().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099071408", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, new QuotationClass_73().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099071408", intentionProvider);
     }
   }
 

@@ -364,7 +364,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1146528679895" resolveInfo="lvalue" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204242095135">
-      <property name="value" value="this concept has been replaced with DotExpression + FieldReferenceOperation" />
+      <property name="value" value="this concept has been replaced with DotExpression + FieldReferenceOperation (can not remove this concept because it is extended by 'GlobalFactoryParameterReference' in transform lang)" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1193783916915" resolveInfo="deprecated_next_after_470" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1213734004698">

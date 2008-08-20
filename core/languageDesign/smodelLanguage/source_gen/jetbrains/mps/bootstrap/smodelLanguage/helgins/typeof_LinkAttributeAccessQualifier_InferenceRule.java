@@ -42,7 +42,7 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule implements Infere
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(linkQualifier, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792163", false), new QuotationClass_65().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792161", false, 0, intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(linkQualifier, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792163", false), new QuotationClass_63().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792161", false, 0, intentionProvider);
       }
     }
   }

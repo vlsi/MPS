@@ -12,7 +12,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import java.util.List;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
@@ -20,6 +19,7 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.bootstrap.smodelLanguage.behavior.StaticConceptMethodCall_Behavior;
@@ -83,12 +83,6 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_Concept_IsSuperConceptOfOperation_1203553726915(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsAssignableFromOperation")) {
-      SNode conceptExpression = SLinkOperations.getTarget(_context.getSampleNode(), "sconceptExpression", true);
-      SNode refConceptExpression = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Expression", null);
-      SLinkOperations.setTarget(refConceptExpression, "expression", conceptExpression, true);
-      SLinkOperations.setTarget(_context.getNewNode(), "conceptArgument", refConceptExpression, true);
-    }
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSubConceptOfOperation")) {
       SLinkOperations.setTarget(_context.getNewNode(), "conceptArgument", SLinkOperations.getTarget(_context.getSampleNode(), "conceptArgument", true), true);
     }
