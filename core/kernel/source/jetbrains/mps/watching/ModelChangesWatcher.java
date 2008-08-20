@@ -220,7 +220,9 @@ public class ModelChangesWatcher implements ApplicationComponent {
             IFile ifile = VFileSystem.toIFile(vfile);
             if ((ifile == null) || (!ifile.exists())) continue;
             IModule module = MPSModuleRepository.getInstance().getModuleByFile(ifile.toFile());
-            modulesToReload.add(module);
+            if (module != null) {
+              modulesToReload.add(module);
+            }
           }
         }
       }
