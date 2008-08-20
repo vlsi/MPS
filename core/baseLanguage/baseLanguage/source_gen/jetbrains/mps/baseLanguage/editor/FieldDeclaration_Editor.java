@@ -301,6 +301,15 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNode_initializer1188210576819(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.AUTO_DELETABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_11882105768281188210576828(EditorCell editorCell, SNode node, EditorContext context) {

@@ -1551,6 +1551,9 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1188210576819">
             <link role="relationDeclaration" targetNodeId="17.1068431790190" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleClassItem" id="1219226817663">
+              <property name="flag" value="false" />
+            </node>
           </node>
           <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1188210576820">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188210576821">
@@ -4447,6 +4450,9 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1188210606994">
             <link role="relationDeclaration" targetNodeId="17.1068431790190" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleClassItem" id="1219226841149">
+              <property name="flag" value="true" />
+            </node>
           </node>
           <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1188210606995">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188210606996">
