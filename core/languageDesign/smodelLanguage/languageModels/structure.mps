@@ -988,31 +988,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1143235288634" resolveInfo="applicable_to_model" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1168901043992">
-    <property name="name" value="SLinkListAccessAsList" />
-    <property name="package" value="operation.featureAccess" />
-    <link role="extends" targetNodeId="1138056282393" resolveInfo="SLinkListAccess" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1168901043993">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1168901043994">
-      <property name="value" value="&lt;link list access as list&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1178560258364">
-      <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" resolveInfo="applicable_to_node" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1178560258365">
-      <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" resolveInfo="applicable_to_link" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1178560258366">
-      <link role="conceptPropertyDeclaration" targetNodeId="1172326539502" resolveInfo="applicable_to_concept" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206061335288">
-      <property name="value" value="now only SLinkListAccess" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1193783916915" resolveInfo="deprecated_next_after_470" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1170384605257">
     <property name="name" value="Node_GetAdapterOperation" />
     <property name="package" value="operation.node" />

@@ -732,58 +732,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1206061640214">
-    <property name="name" value="Replace_SLinkListAsList_withSLinkList" />
-    <property name="isErrorIntention" value="true" />
-    <link role="forConcept" targetNodeId="1.1168901043992" resolveInfo="SLinkListAccessAsList" />
-    <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1206061640215">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206061640216">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206061717372">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206061717373">
-            <property name="value" value="replace with simple link access" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1206061640217">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206061640218">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206062311897">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206062311898">
-            <property name="name" value="linkListAccess" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206062311899">
-              <link role="concept" targetNodeId="1.1138056282393" resolveInfo="SLinkListAccess" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206062311900">
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation" id="1206062311901">
-                <link role="concept" targetNodeId="1.1138056282393" resolveInfo="SLinkListAccess" />
-              </node>
-              <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1206062311902" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206062316400">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206062323358">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206062318214">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206062316401">
-                <link role="variableDeclaration" targetNodeId="1206062311898" resolveInfo="linkListAccess" />
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206062320451">
-                <link role="link" targetNodeId="1.1138056546658" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1206062327110">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206062331347">
-                <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1206062330471" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206062333115">
-                  <link role="link" targetNodeId="1.1138056546658" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1206731675487">
     <property name="package" value="operation.parameter" />
     <property name="name" value="Replace_RefConcept_withPoundExpression" />

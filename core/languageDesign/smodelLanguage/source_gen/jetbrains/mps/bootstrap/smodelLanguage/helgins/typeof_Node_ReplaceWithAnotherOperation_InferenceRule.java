@@ -19,7 +19,7 @@ public class typeof_Node_ReplaceWithAnotherOperation_InferenceRule implements In
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "parameter", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206488003353", true), new QuotationClass_79().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206488011466", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "parameter", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206488003353", true), new QuotationClass_78().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206488011466", false, 0, intentionProvider);
     }
   }
 

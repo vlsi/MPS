@@ -38,7 +38,7 @@ public class typeOf_Concept_FindInstances_InferenceRule implements InferenceRule
               {
                 SNode _nodeToCheck_1029348928467 = null;
                 BaseIntentionProvider intentionProvider = null;
-                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683094342", true), new QuotationClass_89().createNode(SLinkOperations.getTarget(coercedNode_2, "conceptDeclaraton", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683094340", intentionProvider);
+                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683094342", true), new QuotationClass_88().createNode(SLinkOperations.getTarget(coercedNode_2, "conceptDeclaraton", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683094340", intentionProvider);
               }
             }
           }

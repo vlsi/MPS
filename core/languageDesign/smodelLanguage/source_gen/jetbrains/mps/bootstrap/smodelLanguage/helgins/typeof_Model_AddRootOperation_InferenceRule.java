@@ -18,7 +18,7 @@ public class typeof_Model_AddRootOperation_InferenceRule implements InferenceRul
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "nodeArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206484129815", true), new QuotationClass_78().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206484150884", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "nodeArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206484129815", true), new QuotationClass_77().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206484150884", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = op;
