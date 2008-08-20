@@ -2018,7 +2018,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Nullable
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
-      return getOperationContext().getProject();
+      IOperationContext context = getOperationContext();
+      if (context==null) return null;
+      return context.getProject();
     } else if (dataId.equals(MPSDataKeys.MPS_PROJECT.getName())) {
       return getOperationContext().getMPSProject();
     } else if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) {
