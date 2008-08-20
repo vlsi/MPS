@@ -400,7 +400,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
 
     if (dataId.equals(MPSDataKeys.FRAME.getName())) {
-      MPSProject project = getContextForSelection().getMPSProject();
+      IOperationContext contxet = getContextForSelection();
+      if (contxet==null) return SplashScreen.getInstance();
+      MPSProject project = contxet.getMPSProject();
       if (project != null && project.getComponent(Frame.class) != null) {
         return project.getComponentSafe(Frame.class);
       }
