@@ -26,7 +26,7 @@ public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Ru
           {
             SNode _nodeToCheck_1029348928467 = null;
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749966", true), new QuotationClass_69().createNode(inputNodeConcept), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749964", intentionProvider);
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749966", true), new QuotationClass_68().createNode(inputNodeConcept), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749964", intentionProvider);
           }
         }
 
