@@ -50,16 +50,19 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
   private int myIndentSize = 2;
 
   private MyState myState = new MyState();
+  private Font myDefaultEditorFont;
   private MyPreferencesPage myPreferencesPage;
 
   private CaretBlinker myCaretBlinker;
 
   public EditorSettings(CaretBlinker caretBlinker) {
     myCaretBlinker = caretBlinker;
+
+    updateCachedFont();
   }
 
   public Font getDefaultEditorFont() {
-    return new Font(myState.myFontFamily, 0, myState.myFontSize);
+    return myDefaultEditorFont;
   }
 
   public void setDefaultEditorFont(Font newFont) {
@@ -277,6 +280,11 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
 
   public void loadState(MyState state) {
     myState = state;
+    updateCachedFont();
+  }
+
+  private void updateCachedFont() {
+    myDefaultEditorFont = new Font(myState.myFontFamily, 0, myState.myFontSize);
   }
 
   private class MyPreferencesPage {
@@ -474,6 +482,8 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
             myState.mySelectionForeground = mySelectionForegroundColorComponent.getColor();
 
             fireEditorSettingsChanged();
+
+            updateCachedFont();
           }
         });
     }
