@@ -32,7 +32,7 @@ import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -94,8 +94,8 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     ViewOptions viewOptions = new ViewOptions(true, false);
     myDefaultFindOptions.setOption(viewOptions);
 
-    QueryOptions queryOptions = new QueryOptions(QueryOptions.PROJECT_SCOPE, QueryOptions.DEFAULT_VALUE, QueryOptions.DEFAULT_VALUE);
-    myDefaultFindOptions.setOption(queryOptions);
+    ScopeOptions scopeOptions = new ScopeOptions(ScopeOptions.PROJECT_SCOPE, ScopeOptions.DEFAULT_VALUE, ScopeOptions.DEFAULT_VALUE);
+    myDefaultFindOptions.setOption(scopeOptions);
   }
 
   //----TOOL STUFF----
@@ -196,7 +196,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               provider[0] = myDefaultFindOptions.getOption(FindersOptions.class).getResult(operationNode[0], data);
-              query[0] = myDefaultFindOptions.getOption(QueryOptions.class).getResult(operationNode[0], data);
+              query[0] = myDefaultFindOptions.getOption(ScopeOptions.class).getResult(operationNode[0], data);
               viewOptions[0] = myDefaultFindOptions.getOption(ViewOptions.class);
             }
           });
@@ -313,7 +313,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     try {
       myDefaultFindOptions.read(defaultFindOptionsXML, project);
     } catch (CantLoadSomethingException e) {
-      myDefaultFindOptions = new FindUsagesOptions(new FindersOptions(), new QueryOptions(), new ViewOptions());
+      myDefaultFindOptions = new FindUsagesOptions(new FindersOptions(), new ScopeOptions(), new ViewOptions());
     }
 
     Element defaultViewOptionsXML = element.getChild(DEFAULT_VIEW_OPTIONS);
