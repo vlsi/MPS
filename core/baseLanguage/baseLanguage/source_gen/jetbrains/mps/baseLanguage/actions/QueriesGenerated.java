@@ -50,6 +50,10 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
@@ -993,7 +997,31 @@ __switch__:
 
           public Object calculate() {
             SNode classConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-            return ((List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(classConcept, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD));
+            List<SNode> fieldDeclarations = (List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(classConcept, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD);
+            final Set<String> localNames = new HashSet<String>();
+            ListSequence.fromList(new LocalVariablesScope(_context.getParentNode()).getNodes()).visitAll(new IVisitor <SNode>() {
+
+              public void visit(SNode it) {
+                localNames.add(SPropertyOperations.getString(it, "name"));
+              }
+
+            });
+            for(SNode method : SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true)) {
+              ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).visitAll(new IVisitor <SNode>() {
+
+                public void visit(SNode it) {
+                  localNames.add(SPropertyOperations.getString(it, "name"));
+                }
+
+              });
+            }
+            return ListSequence.fromList(fieldDeclarations).where(new IWhereFilter <SNode>() {
+
+              public boolean accept(SNode it) {
+                return !(localNames.contains(SPropertyOperations.getString(it, "name")));
+              }
+
+            }).toListSequence();
           }
 
         };
