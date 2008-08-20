@@ -119,8 +119,12 @@ public class MergeResultView extends JPanel {
     myResultModel = ModelPersistence.copyModel(myBaseModel);
     myResultModel.setLoading(true);
 
-    String languageNamespace = "jetbrains.mps.vcs.ui";
-    SNode tmp = new SNode(myResultModel, NameUtil.conceptFQNameFromNamespaceAndShortName(languageNamespace, "TmpConcept"));
+    String languageNamespace = "jetbrains.mps.core";
+    SNode tmp = new SNode(myResultModel, NameUtil.conceptFQNameFromNamespaceAndShortName(languageNamespace, "BaseConcept"));
+    boolean notRemoveLanguage = false;
+    if (myResultModel.getExplicitlyImportedLanguages().contains(languageNamespace)){
+      notRemoveLanguage = true;
+    }
     myResultModel.addRoot(tmp);
 
     applyNewNodes();
@@ -145,7 +149,7 @@ public class MergeResultView extends JPanel {
     applyMoves();
 
     myResultModel.removeRoot(tmp);
-    myResultModel.deleteLanguage(languageNamespace);
+    if (!notRemoveLanguage) myResultModel.deleteLanguage(languageNamespace);
     myResultModel.setLoading(false);
   }
 
