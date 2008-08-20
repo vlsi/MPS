@@ -64,6 +64,8 @@ public class FindUsagesOptions implements Cloneable {
         throwLoadException(e, className);
       } catch (NoSuchMethodException e) {
         throwLoadException(e, className);
+      } catch (Throwable t){
+        throwLoadException(t, className);
       }
     }
   }

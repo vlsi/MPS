@@ -22,7 +22,9 @@ import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
@@ -95,7 +97,6 @@ public class MPSEditorOpener implements ProjectComponent {
   }
 
   public void disposeComponent() {
-
   }
 
   public SNode getBaseNode(IOperationContext context, SNode node) {
@@ -184,13 +185,28 @@ public class MPSEditorOpener implements ProjectComponent {
     });
   }
 
-  private IEditor doOpenNode(SNode node, IOperationContext context, final boolean focus) {
+  public void closeEditorsForNode(SNode node, IOperationContext context) {
+    SNode baseNode = getBaseRootNode(node, context);
+
+    FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
+    MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
+
+    editorManager.closeFile(file);
+  }
+
+  private SNode getBaseRootNode(SNode node, IOperationContext context) {
     SNode containingRoot = node.getContainingRoot();
 
     SNode baseNode = getBaseNode(context, containingRoot);
     if (baseNode == null) {
       baseNode = containingRoot;
     }
+    return baseNode;
+  }
+
+  private IEditor doOpenNode(SNode node, IOperationContext context, final boolean focus) {
+    SNode containingRoot = node.getContainingRoot();
+    SNode baseNode = getBaseRootNode(node, context);
 
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
@@ -199,8 +215,8 @@ public class MPSEditorOpener implements ProjectComponent {
 
     MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) result[0];
 
-
     IEditor nodeEditor = fileNodeEditor.getNodeEditor();
+
     if (nodeEditor instanceof TabbedEditor) {
       ((TabbedEditor) nodeEditor).selectLinkedEditor(containingRoot);
       if (focus) nodeEditor.getCurrentEditorComponent().requestFocus();

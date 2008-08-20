@@ -16,10 +16,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.command.CommandListener;
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.CommandAdapter;
-import com.intellij.openapi.command.CommandEvent;
 
 public class GlobalSModelEventsManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(GlobalSModelEventsManager.class);
@@ -53,7 +49,7 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
           }
         });
 
-        for (SModelDescriptor sm : mySModelRepository.getAllModelDescriptors()) {
+        for (SModelDescriptor sm : mySModelRepository.getModelDescriptors()) {
           addListeners(sm);
         }
       }

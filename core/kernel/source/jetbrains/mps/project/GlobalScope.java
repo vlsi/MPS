@@ -1,8 +1,6 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.*;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Set;
@@ -81,6 +79,6 @@ public class GlobalScope implements IScope {
   }
 
   public List<SModelDescriptor> getModelDescriptors() {
-    return SModelRepository.getInstance().getAllModelDescriptors();
+    return SModelRepository.getInstance().getModelDescriptors();
   }
 }

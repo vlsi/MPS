@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.ui.DefaultCompletionTextField;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -14,7 +14,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
-public class ScopeEditor extends BaseEditor<ScopeOptions> {
+public class ScopeEditor extends BaseEditor<QueryOptions> {
   private static final String GLOBAL_SCOPE = "Global scope";
   private static final String PROJECT_SCOPE = "Project scope";
   private static final String MODULE_SCOPE = "Module scope";
@@ -31,7 +31,7 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
   private List<String> myModuleNameList;
   private List<String> myModelNameList;
 
-  public ScopeEditor(ScopeOptions defaultOptions) {
+  public ScopeEditor(QueryOptions defaultOptions) {
     super(defaultOptions);
 
     myPanel = new JPanel();
@@ -79,19 +79,19 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
       }
     });
     myModuleNameList = moduleNameList;
-    myModuleNameList.add(0, ScopeOptions.DEFAULT_VALUE);
+    myModuleNameList.add(0, QueryOptions.DEFAULT_VALUE);
     myModuleField = new DefaultCompletionTextField(moduleNameList);
-    myModuleField.setText(ScopeOptions.DEFAULT_VALUE);
+    myModuleField.setText(QueryOptions.DEFAULT_VALUE);
 
-    List<SModelDescriptor> modelList = SModelRepository.getInstance().getAllModelDescriptors();
+    List<SModelDescriptor> modelList = SModelRepository.getInstance().getModelDescriptors();
     myModelNameList = CollectionUtil.map(modelList, new Mapper<SModelDescriptor, String>() {
       public String map(SModelDescriptor sModelDescriptor) {
         return sModelDescriptor.getLongName();
       }
     });
-    myModelNameList.add(0, ScopeOptions.DEFAULT_VALUE);
+    myModelNameList.add(0, QueryOptions.DEFAULT_VALUE);
     myModelField = new DefaultCompletionTextField(myModelNameList);
-    myModelField.setText(ScopeOptions.DEFAULT_VALUE);
+    myModelField.setText(QueryOptions.DEFAULT_VALUE);
 
     JPanel row;
 
@@ -125,45 +125,45 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     myModelField.setEnabled(modelState);
   }
 
-  private void setDefaults(ScopeOptions defaultOptions) {
+  private void setDefaults(QueryOptions defaultOptions) {
     myModuleField.setText(defaultOptions.getModule());
     myModelField.setText(defaultOptions.getModel());
 
     String scopeType = defaultOptions.getScopeType();
-    if (scopeType.equals(ScopeOptions.GLOBAL_SCOPE)) {
+    if (scopeType.equals(QueryOptions.GLOBAL_SCOPE)) {
       setCurrentRadioButton(myGlobalScopeButton);
-    } else if (scopeType.equals(ScopeOptions.PROJECT_SCOPE)) {
+    } else if (scopeType.equals(QueryOptions.PROJECT_SCOPE)) {
       setCurrentRadioButton(myProjectScopeButton);
-    } else if (scopeType.equals(ScopeOptions.MODULE_SCOPE)) {
+    } else if (scopeType.equals(QueryOptions.MODULE_SCOPE)) {
       setCurrentRadioButton(myModuleScopeButton);
-    } else if (scopeType.equals(ScopeOptions.MODEL_SCOPE)) {
+    } else if (scopeType.equals(QueryOptions.MODEL_SCOPE)) {
       setCurrentRadioButton(myModelScopeButton);
     }
   }
 
-  public ScopeOptions getOptions() {
+  public QueryOptions getOptions() {
     if (myModuleNameList.contains(myModuleField.getText())) {
       myOptions.setModule(myModuleField.getText());
     } else {
-      myOptions.setModule(ScopeOptions.DEFAULT_VALUE);
+      myOptions.setModule(QueryOptions.DEFAULT_VALUE);
     }
 
     if (myModelNameList.contains(myModelField.getText())) {
       myOptions.setModel(myModelField.getText());
     } else {
-      myOptions.setModel(ScopeOptions.DEFAULT_VALUE);
+      myOptions.setModel(QueryOptions.DEFAULT_VALUE);
     }
 
     ButtonModel selectedModel = myButtonGroup.getSelection();
     String scopeType;
     if (selectedModel == myGlobalScopeButton.getModel()) {
-      scopeType = ScopeOptions.GLOBAL_SCOPE;
+      scopeType = QueryOptions.GLOBAL_SCOPE;
     } else if (selectedModel == myProjectScopeButton.getModel()) {
-      scopeType = ScopeOptions.PROJECT_SCOPE;
+      scopeType = QueryOptions.PROJECT_SCOPE;
     } else if (selectedModel == myModuleScopeButton.getModel()) {
-      scopeType = ScopeOptions.MODULE_SCOPE;
+      scopeType = QueryOptions.MODULE_SCOPE;
     } else if (selectedModel == myModelScopeButton.getModel()) {
-      scopeType = ScopeOptions.MODEL_SCOPE;
+      scopeType = QueryOptions.MODEL_SCOPE;
     } else {
       throw new IllegalArgumentException();
     }

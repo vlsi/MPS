@@ -177,7 +177,7 @@ public class RefactoringProcessor {
 
   public void writeInLogAndUpdateModels(SModelUID initialModelUID, SModel model, RefactoringContext refactoringContext) {
     writeIntoLog(model, refactoringContext);
-    for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
+    for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (!SModelStereotype.isUserModel(anotherDescriptor)) {
         continue;
       }

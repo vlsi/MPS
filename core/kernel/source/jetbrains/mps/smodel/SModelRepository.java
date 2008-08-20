@@ -25,15 +25,21 @@ public class SModelRepository implements ApplicationComponent {
   private Map<SModelDescriptor, Long> myChangedModels = new LinkedHashMap<SModelDescriptor, Long>();
   private Map<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new LinkedHashMap<SModelUID, SModelDescriptor>();
   private Set<SModelDescriptor> myModelsWithNoOwners = new LinkedHashSet<SModelDescriptor>();
-  private List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
-  private WeakSet<SModelRepositoryListener> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryListener>();
-  private final Map<String, SModelDescriptor> myCanonicalPathsToModelDescriptorMap = new LinkedHashMap<String, SModelDescriptor>();
 
+  private final Map<String, SModelDescriptor> myCanonicalPathsToModelDescriptorMap = new LinkedHashMap<String, SModelDescriptor>();
   private ManyToManyMap<SModelDescriptor, ModelOwner> myModelsToOwners = new ManyToManyMap<SModelDescriptor, ModelOwner>();
 
-  private boolean myInChangedModelsReloading = false;
-
   private SModelListener myModelsListener = new ModelChangeListener();
+
+  private List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
+  private WeakSet<SModelRepositoryListener> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryListener>();
+  private List<SModelListener> myAllModelsListeners = new ArrayList<SModelListener>();
+
+  private SModelListener myAllModelsListener = new SModelEventBroadcaster(){
+    protected Collection<SModelListener> getListeners() {
+      return myAllModelsListeners;
+    }
+  };
 
   public SModelRepository() {
   }
@@ -82,6 +88,14 @@ public class SModelRepository implements ApplicationComponent {
     myWeakSModelRepositoryListeners.remove(l);
   }
 
+  public void addAllModelsListener(SModelListener listener){
+    myAllModelsListeners.add(listener);
+  }
+
+  public void removeAllModelsListener(SModelListener listener){
+    myAllModelsListeners.remove(listener);
+  }
+
   private List<SModelRepositoryListener> listeners() {
     List<SModelRepositoryListener> result = new ArrayList<SModelRepositoryListener>();
     result.addAll(mySModelRepositoryListeners);
@@ -89,13 +103,13 @@ public class SModelRepository implements ApplicationComponent {
     return result;
   }
 
-  public List<SModelDescriptor> getAllModelDescriptors() {
+  public List<SModelDescriptor> getModelDescriptors() {
     return new ArrayList<SModelDescriptor>(myModelDescriptors);
   }
 
   public List<SModelDescriptor> getModelDescriptorsByModelName(String modelName) {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    for (SModelDescriptor d : getAllModelDescriptors()) {
+    for (SModelDescriptor d : getModelDescriptors()) {
       if (modelName.equals(d.getLongName())) {
         result.add(d);
       }
@@ -194,10 +208,12 @@ public class SModelRepository implements ApplicationComponent {
 
   private void addListeners(SModelDescriptor modelDescriptor) {
     modelDescriptor.addModelListener(myModelsListener);
+    modelDescriptor.addModelListener(myAllModelsListener);
   }
 
   private void removeListeners(SModelDescriptor modelDescriptor) {
     modelDescriptor.removeModelListener(myModelsListener);
+    modelDescriptor.removeModelListener(myAllModelsListener);
   }
 
   public void removeUnusedDescriptors() {
@@ -413,7 +429,7 @@ public class SModelRepository implements ApplicationComponent {
 //        myInChangedModelsReloading = true;
 //        try {
 //          final Set<SModelDescriptor> toReload = new HashSet<SModelDescriptor>();
-//          for (SModelDescriptor sm : getAllModelDescriptors()) {
+//          for (SModelDescriptor sm : getModelDescriptors()) {
 //            if (sm.needsReloading()) {
 //              toReload.add(sm);
 //            }
