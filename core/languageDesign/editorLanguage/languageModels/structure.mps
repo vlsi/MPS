@@ -3341,5 +3341,21 @@
     <property name="name" value="CellLayout_Indent" />
     <link role="extends" targetNodeId="1106270491082" resolveInfo="CellLayout" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1219226236603">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="DrawBracketsStyleClassItem" />
+    <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1219226236604">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1219226236605">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.AUTO_DELETABLE" resolveInfo="AUTO_DELETABLE" />
+      </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1219226236606">
+      <property name="value" value="auto-deletable" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

@@ -2201,7 +2201,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (role.equals(child.getRole_())) {
             EditorCell cell = findNodeCell(child);
             if (cell != null) {
-              EditorCell lastLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
+              EditorCell lastLeaf = cell.getFirstLeaf(CellConditions.SELECTABLE);
               if (lastLeaf != null) {
                 changeSelection(lastLeaf);
                 lastLeaf.end();

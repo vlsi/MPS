@@ -1763,6 +1763,9 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1188212207016">
             <link role="relationDeclaration" targetNodeId="17.1068431790190" />
             <link role="actionMap" targetNodeId="1144367099981" resolveInfo="LocalVariableDeclaration_Initializer_Actions" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleClassItem" id="1219226438142">
+              <property name="flag" value="false" />
+            </node>
           </node>
           <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1188212207017">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188212207018">

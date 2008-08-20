@@ -340,6 +340,12 @@ public final class SNode {
     return myRoleInParent;
   }
 
+  public LinkDeclaration getRoleLink() {
+    if (getRole_() == null) return null;
+    if (getParent() == null) return null;
+    return getParent().getLinkDeclaration(getRole_());
+  }
+
   //
   //----- attributes
   //

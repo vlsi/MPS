@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.UndoUtil;
 import jetbrains.mps.smodel.SNodeUndoableAction;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -14,6 +15,7 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.TextPasteUtil;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -526,7 +528,14 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   private void deleteIfPossible() {
     if ("".equals(getText()) && isBigCell()) {
-      getSNode().delete();
+      if (getStyle().get(StyleAttributes.AUTO_DELETABLE)) {
+        getSNode().delete();
+      } else {
+        LinkDeclaration link = getSNode().getRoleLink();
+        String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(link.getTarget()), getOperationContext().getScope());
+        SNode newNode = new SNode(getSNode().getModel(), concreteConceptFqName);
+        getSNode().getParent().replaceChild(getSNode(), newNode);        
+      }
     }
   }
 

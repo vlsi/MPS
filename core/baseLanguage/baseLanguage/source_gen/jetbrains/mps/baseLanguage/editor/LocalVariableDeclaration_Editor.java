@@ -356,6 +356,15 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNode_initializer1188212207016(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.AUTO_DELETABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, context);
   }
 
