@@ -357,8 +357,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877480558">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877480559">
             <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877480560" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1213877480561">
-              <link role="link" targetNodeId="1.1205838264380" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219229889813">
+              <link role="link" targetNodeId="2v.1178549979242" />
             </node>
           </node>
         </node>
