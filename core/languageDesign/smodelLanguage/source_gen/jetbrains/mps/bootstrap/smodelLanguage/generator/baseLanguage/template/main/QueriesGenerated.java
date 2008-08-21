@@ -175,16 +175,9 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true)), "singularCradinality");
   }
 
-  public static boolean baseMappingRule_Condition_1207342110781(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode opParm = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)).first();
-    // Is deprecated role 'concept' still in use?
-    return SLinkOperations.getTarget(opParm, "concept", false) != null;
-  }
-
   public static boolean baseMappingRule_Condition_1207344880832(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode opParm = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)).first();
-    // Is new parameter used?
-    return opParm != null && SLinkOperations.getTarget(opParm, "concept", false) == null;
+    return opParm != null;
   }
 
   public static Object propertyMacro_GetPropertyValue_1168981884180(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -515,11 +508,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1206992455419(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1207342110793(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode parm = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)).first();
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(parm, "concept", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1215467512339(final IOperationContext operationContext, final PropertyMacroContext _context) {
