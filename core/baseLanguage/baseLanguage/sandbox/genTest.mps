@@ -697,6 +697,14 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1219320088255" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219321425274">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219321425275">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219321425276">
+              <link role="baseMethodDeclaration" targetNodeId="1219320123540" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1219321425277" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1219320123540">
