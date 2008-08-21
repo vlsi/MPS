@@ -16,6 +16,7 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
@@ -400,14 +401,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
 
     if (dataId.equals(MPSDataKeys.FRAME.getName())) {
-      IOperationContext contxet = getContextForSelection();
-      if (contxet==null) return SplashScreen.getInstance();
-      MPSProject project = contxet.getMPSProject();
-      if (project != null && project.getComponent(Frame.class) != null) {
-        return project.getComponentSafe(Frame.class);
-      }
-
-      return SplashScreen.getInstance();
+      DataContext dataContext = DataManager.getInstance().getDataContext(getComponent());
+      Project project = MPSDataKeys.PROJECT.getData(dataContext);
+      return WindowManager.getInstance().getFrame(project);
     }
 
     if (dataId.equals(MPSDataKeys.SCOPE.getName())) {

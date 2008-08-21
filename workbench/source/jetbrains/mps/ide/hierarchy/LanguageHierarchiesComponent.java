@@ -1,9 +1,9 @@
 package jetbrains.mps.ide.hierarchy;
 
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.WindowManager;
+import com.intellij.ide.DataManager;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.SplashScreen;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -314,12 +314,9 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       if (myOperationContext == null) return null;
       return myOperationContext.getProject();
     } else if (dataId.equals(MPSDataKeys.FRAME.getName())) {
-      MPSProject project = myOperationContext.getMPSProject();
-      if (project != null && project.getComponent(Frame.class) != null) {
-        return project.getComponentSafe(Frame.class);
-      }
-
-      return SplashScreen.getInstance();
+      DataContext dataContext = DataManager.getInstance().getDataContext(this);
+      Project project = MPSDataKeys.PROJECT.getData(dataContext);
+      return WindowManager.getInstance().getFrame(project);
     }
 
     return null;

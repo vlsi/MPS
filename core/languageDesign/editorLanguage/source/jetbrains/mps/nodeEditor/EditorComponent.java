@@ -8,6 +8,7 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.core.structure.INamedConcept;
@@ -2057,12 +2058,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     } else if (dataId.equals(MPSDataKeys.MODULES.getName()) && getEditedNode() != null) {
       return Arrays.asList(getEditedNode().getModel().getModelDescriptor().getModule());
     } else if (dataId.equals(MPSDataKeys.FRAME.getName())) {
-      MPSProject project = getOperationContext().getMPSProject();
-      if (project != null && project.getComponent(Frame.class) != null) {
-        return project.getComponentSafe(Frame.class);
-      }
-
-      return SplashScreen.getInstance();
+      DataContext dataContext = DataManager.getInstance().getDataContext(this);
+      Project project = MPSDataKeys.PROJECT.getData(dataContext);
+      return WindowManager.getInstance().getFrame(project);
     } else if (dataId.equals(MPSDataKeys.SCOPE.getName())) {
       return getOperationContext().getScope();
     } else if (dataId.equals(MPSDataKeys.MODULE.getName())) {
