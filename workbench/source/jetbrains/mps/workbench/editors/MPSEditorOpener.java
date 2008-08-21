@@ -6,6 +6,8 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.wm.IdeFocusManager;
+import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints;
@@ -22,9 +24,7 @@ import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
@@ -185,38 +185,25 @@ public class MPSEditorOpener implements ProjectComponent {
     });
   }
 
-  public void closeEditorsForNode(SNode node, IOperationContext context) {
-    SNode baseNode = getBaseRootNode(node, context);
-
-    FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
-    MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
-
-    editorManager.closeFile(file);
-  }
-
-  private SNode getBaseRootNode(SNode node, IOperationContext context) {
+  private IEditor doOpenNode(SNode node, IOperationContext context, final boolean focus) {
     SNode containingRoot = node.getContainingRoot();
 
     SNode baseNode = getBaseNode(context, containingRoot);
     if (baseNode == null) {
       baseNode = containingRoot;
     }
-    return baseNode;
-  }
-
-  private IEditor doOpenNode(SNode node, IOperationContext context, final boolean focus) {
-    SNode containingRoot = node.getContainingRoot();
-    SNode baseNode = getBaseRootNode(node, context);
 
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
 
-    FileEditor[] result = editorManager.openFile(file, false);
+    FileEditor[] result = editorManager.openFile(file, focus);
 
     MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) result[0];
 
     IEditor nodeEditor = fileNodeEditor.getNodeEditor();
-    if (focus) nodeEditor.requestFocus();
+    if (focus) {
+      nodeEditor.requestFocus();
+    }
 
     if (nodeEditor instanceof TabbedEditor) {
       ((TabbedEditor) nodeEditor).selectLinkedEditor(containingRoot);
