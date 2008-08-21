@@ -76,7 +76,7 @@ public class typeof_Property_SetOperation_InferenceRule implements InferenceRule
       {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(op, "unknown property datatype: " + dataType, "jetbrains.mps.bootstrap.smodelLanguage.helgins@6_0", "1219348319670", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(op, "unknown property datatype: " + dataType, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1219354601044", intentionProvider);
         }
       }
     }
