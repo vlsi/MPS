@@ -8,8 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.baseLanguage.structure.ArrayType;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
@@ -31,6 +30,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
@@ -117,8 +117,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1177503884613(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    TypeChecker typeChecker = operationContext.getComponent(TypeChecker.class);
-    return BaseAdapter.fromNode(typeChecker.getTypeOf(_context.getSourceNode())) instanceof ArrayType;
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ArrayType"), true) != null);
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1177505054800(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -1150,7 +1149,7 @@ __switch__:
           }
 
           public Icon getIconFor(String pattern) {
-            return IconManager.getIconFor((ConceptDeclaration)((AbstractConceptDeclaration)SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))));
+            return IconManager.getIconFor(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
           }
 
         });
@@ -1179,7 +1178,7 @@ __switch__:
           }
 
           public Icon getIconFor(String pattern) {
-            return IconManager.getIconFor((ConceptDeclaration)((AbstractConceptDeclaration)SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))));
+            return IconManager.getIconFor(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
           }
 
         });

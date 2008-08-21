@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
@@ -69,7 +70,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1186402462303(context, node, "  "));
+    editorCell.addEditorCell(this.createIndentCell9826_0(context, node));
     editorCell.addEditorCell(this.createRefNodeList1186402497606(context, node));
     return editorCell;
   }
@@ -101,14 +102,6 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1186402462303(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11864024623031186402462303(editorCell, node, context);
-    setupLabel_Constant_1186402462303_1186402462303(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createConstant1198252387401(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11982523874011198252387401(editorCell, node, context);
@@ -136,6 +129,11 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1186402497606.getElementRole());
     return editorCell;
+  }
+
+  public EditorCell createIndentCell9826_0(EditorContext context, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(context, node);
+    return result;
   }
 
   public EditorCell createProperty1186402447779_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -221,27 +219,16 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11864024499061186402449906(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1186402449906");
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_Constant_11864024550651186402455065(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1186402455065");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_Collection_11864024601761186402460176(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1186402460176");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Constant_11864024623031186402462303(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1186402462303");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -283,6 +270,10 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.STYLE.apply(editorCell);
   }
 
+  private static void setupBasic_Indent_12193286690391219328669039(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1219328669039");
+  }
+
   private static void setupLabel_property_name_1186402447779(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -290,9 +281,6 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1186402455065_1186402455065(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1186402462303_1186402462303(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_refNodeList_item_1186402497606(EditorCell_Label editorCell, SNode node, EditorContext context) {

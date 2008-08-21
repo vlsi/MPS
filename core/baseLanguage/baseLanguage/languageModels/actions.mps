@@ -3626,41 +3626,19 @@
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstitutePreconditionFunction" id="1177503884613">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177503884614">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1177503884615">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1177503884611">
-              <property name="name" value="typeChecker" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1177503884616">
-                <link role="classifier" targetNodeId="18.~TypeChecker" resolveInfo="TypeChecker" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332468277">
-                <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1177503884618" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332468278">
-                  <link role="baseMethodDeclaration" targetNodeId="19.~IOperationContext.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1177503884619">
-                    <link role="classifier" targetNodeId="18.~TypeChecker" resolveInfo="TypeChecker" />
-                  </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1219330993054">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219331029773">
+              <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1219330998294">
+                <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1219331005146">
+                  <property name="name" value="a" />
+                  <link role="concept" targetNodeId="1.1070534760951" resolveInfo="ArrayType" />
+                </node>
+                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219331002189">
+                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1219331001625" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1219331002879" />
                 </node>
               </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177503884620">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1177503884621">
-              <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1177503884622">
-                <link role="classifier" targetNodeId="17.~ArrayType" resolveInfo="ArrayType" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1177503884623">
-                <link role="baseMethodDeclaration" targetNodeId="19.~BaseAdapter.fromNode(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.INodeAdapter" resolveInfo="fromNode" />
-                <link role="classConcept" targetNodeId="19.~BaseAdapter" resolveInfo="BaseAdapter" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332441689">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1177503884625">
-                    <link role="variableDeclaration" targetNodeId="1177503884611" resolveInfo="typeChecker" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332441690">
-                    <link role="baseMethodDeclaration" targetNodeId="18.~TypeChecker.getTypeOf(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getTypeOf" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1177503884626" />
-                  </node>
-                </node>
-              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1219331031791" />
             </node>
           </node>
         </node>
@@ -5709,17 +5687,9 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210681328767">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1210681337325">
                   <link role="classConcept" targetNodeId="43.~IconManager" resolveInfo="IconManager" />
-                  <link role="baseMethodDeclaration" targetNodeId="43.~IconManager.getIconFor(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration):javax.swing.Icon" resolveInfo="getIconFor" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1210681417754">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210681417756">
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1210681417758" />
-                      <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1210681417757">
-                        <link role="conceptDeclaration" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />
-                      </node>
-                    </node>
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210681417755">
-                      <link role="classifier" targetNodeId="44.~ConceptDeclaration" resolveInfo="ConceptDeclaration" />
-                    </node>
+                  <link role="baseMethodDeclaration" targetNodeId="43.~IconManager.getIconFor(jetbrains.mps.smodel.SNode):javax.swing.Icon" resolveInfo="getIconFor" />
+                  <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1219331211447">
+                    <link role="conceptDeclaration" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />
                   </node>
                 </node>
               </node>
@@ -5755,17 +5725,9 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210681424473">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1210681424474">
                   <link role="classConcept" targetNodeId="43.~IconManager" resolveInfo="IconManager" />
-                  <link role="baseMethodDeclaration" targetNodeId="43.~IconManager.getIconFor(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration):javax.swing.Icon" resolveInfo="getIconFor" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1210681424475">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210681424477">
-                      <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1210681424478">
-                        <link role="conceptDeclaration" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1210681424479" />
-                    </node>
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210681424476">
-                      <link role="classifier" targetNodeId="44.~ConceptDeclaration" resolveInfo="ConceptDeclaration" />
-                    </node>
+                  <link role="baseMethodDeclaration" targetNodeId="43.~IconManager.getIconFor(jetbrains.mps.smodel.SNode):javax.swing.Icon" resolveInfo="getIconFor" />
+                  <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1219331199896">
+                    <link role="conceptDeclaration" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />
                   </node>
                 </node>
               </node>
