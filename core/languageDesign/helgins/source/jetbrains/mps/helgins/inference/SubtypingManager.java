@@ -126,6 +126,12 @@ public class SubtypingManager {
 
 
   private boolean searchInSupertypes(NodeWrapper subRepresentator, IMatcher superRepresentator, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
+
+    //stats
+    if (subRepresentator != null && superRepresentator instanceof NodeWrapper) {
+      myTypeChecker.getStatistics().addCheckedInequation(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode());
+    }
+
     StructuralNodeSet<?> frontier = new StructuralNodeSet();
     StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();

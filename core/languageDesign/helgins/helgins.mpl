@@ -48,6 +48,7 @@
     <dependency reexport="false">MPS.Classpath</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.sharedConcepts</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage</dependency>
+    <dependency reexport="false">jetbrains.mps.bootstrap.helgins#1174411220599</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>

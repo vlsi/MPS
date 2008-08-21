@@ -14,6 +14,7 @@ import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
+import jetbrains.mps.helgins.statistics.Statistics;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -48,6 +49,7 @@ public class TypeChecker implements ApplicationComponent {
 
   private SubtypingManager mySubtypingManager;
   private RuntimeSupport myRuntimeSupport;
+  private Statistics myStatistics;
   private RulesManager myRulesManager;
   private NodeTypesComponent myCurrentTypesComponent = null;
   private Stack<NodeTypesComponent> myCurentTypesComponentStack = new Stack<NodeTypesComponent>();
@@ -73,6 +75,7 @@ public class TypeChecker implements ApplicationComponent {
     mySubtypingManager = new SubtypingManager(this);
     myRuntimeSupport = new RuntimeSupport(this);
     myRulesManager = new RulesManager(this);
+    myStatistics = new Statistics();
   }
 
   public void initComponent() {
@@ -151,6 +154,10 @@ public class TypeChecker implements ApplicationComponent {
 
   public RuntimeSupport getRuntimeSupport() {
     return myRuntimeSupport;
+  }
+
+  public Statistics getStatistics() {
+    return myStatistics;
   }
 
   public RulesManager getRulesManager() {
