@@ -439,7 +439,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     public String getSelectedText(String pattern) {
       if (getSelectionIndex() != -1) {
-        return mySubstituteActions.get(getSelectionIndex()).getMatchingText(pattern);
+        String result = mySubstituteActions.get(getSelectionIndex()).getMatchingText(pattern);
+        return result != null ? result : "";
       }
       return "";
     }
