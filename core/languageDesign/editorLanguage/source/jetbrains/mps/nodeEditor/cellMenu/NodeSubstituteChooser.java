@@ -433,7 +433,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     public String getSelectedText(String pattern) {
       if (getSelectionIndex() != -1) {
-        return mySubstituteActions.get(getSelectionIndex()).getVisibleMatchingText(pattern);
+        return mySubstituteActions.get(getSelectionIndex()).getMatchingText(pattern);
       }
       return "";
     }
