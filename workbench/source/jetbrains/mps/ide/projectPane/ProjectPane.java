@@ -165,7 +165,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         if (myProjectView.isAutoscrollFromSource(ID)) {
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
-              selectNode(editor.getNodeEditor().getEditedNode());
+              selectNode(editor.getNodeEditor().getCurrentEditorComponent().getEditedNode());
             }
           });
         }
