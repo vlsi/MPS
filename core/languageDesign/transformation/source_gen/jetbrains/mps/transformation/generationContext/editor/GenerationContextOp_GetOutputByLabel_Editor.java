@@ -82,7 +82,7 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
 
   private static void setupBasic_refCell_label1216860254150(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_label");
-    jetbrains.mps.transformation.TLBase.editor.Styles_StyleSheet.MAPPING_LABLE_REFERENCE.apply(editorCell);
+    jetbrains.mps.transformation.TLBase.editor.Styles_StyleSheet.MAPPING_LABEL_REFERENCE.apply(editorCell);
   }
 
   private static void setupLabel_Constant_1216860146348_1216860146348(EditorCell_Label editorCell, SNode node, EditorContext context) {

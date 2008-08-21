@@ -1302,26 +1302,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200923014784">
-    <property name="name" value="ConditionalRootLabelDeclaration" />
-    <property name="package" value="label" />
-    <link role="extends" targetNodeId="1200911316486" resolveInfo="MappingLabelDeclaration" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206016968147">
-      <property name="value" value="label: target" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1200923034590">
-      <property name="value" value="conditional root label declaration" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" resolveInfo="short_description" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1207698199879">
-      <property name="value" value="concept is not in use any longer (now only MappingLabelDeclaration)" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1206652974901" resolveInfo="deprecated_next_after_504" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1207698259116">
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200923907774">
     <property name="name" value="ConditionalRootExpression" />
     <link role="extends" targetNodeId="6.1068431790191" resolveInfo="Expression" />
