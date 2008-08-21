@@ -289,7 +289,17 @@ public class GenerationController {
       if (compilationResult == null || compilationResult.getErrors() > 0) {
         compiledSuccessfully = false;
       }
-      info("" + compilationResult);
+
+      if (compilationResult != null) {      
+        if (compilationResult.getErrors() > 0) {
+          error("" + compilationResult);
+        } else if (compilationResult.getWarnings() > 0) {
+          warning("" + compilationResult);
+        } else {
+          info("" + compilationResult);
+        }
+      }
+
       setText2("", totalJob, startJobTime);
       checkMonitorCanceled();
     }
@@ -350,6 +360,11 @@ public class GenerationController {
   private void warning(String text) {
     // myProgress.addText(text);
     myMesssages.handle(new Message(MessageKind.WARNING, text));
+  }
+
+  private void error(String text) {
+    // myProgress.addText(text);
+    myMesssages.handle(new Message(MessageKind.ERROR, text));
   }
 
   private void setText2(String text, long estimatedTime, long startJobTime) {
