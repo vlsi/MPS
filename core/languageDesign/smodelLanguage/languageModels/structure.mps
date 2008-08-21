@@ -1340,28 +1340,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1143235288634" resolveInfo="applicable_to_model" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1176461918946">
-    <property name="name" value="OperationParm_ConceptExpression" />
-    <property name="package" value="operation.parameter" />
-    <link role="extends" targetNodeId="1144100743722" resolveInfo="AbstractOperationParameter" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1176461970854">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="conceptExpression" />
-      <link role="target" targetNodeId="2.1068431790191" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1176461990246">
-      <property name="value" value="concept expr" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1206998350455">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1207356007560">
-      <property name="value" value="this concept is deprecated because now #&lt;expr&gt; is supported in OperationParm_Concept" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1206652974901" resolveInfo="deprecated_next_after_504" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177026924588">
     <property name="name" value="RefConcept_Reference" />
     <property name="package" value="operation.parameter" />

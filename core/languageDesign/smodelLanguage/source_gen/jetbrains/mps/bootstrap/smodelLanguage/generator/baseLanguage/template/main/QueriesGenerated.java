@@ -175,10 +175,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true)), "singularCradinality");
   }
 
-  public static boolean baseMappingRule_Condition_1207338310789(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptExpression", false)).isNotEmpty();
-  }
-
   public static boolean baseMappingRule_Condition_1207342110781(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode opParm = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)).first();
     // Is deprecated role 'concept' still in use?
@@ -1103,10 +1099,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1206660454913(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1207342919715(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptExpression", false)).first(), "conceptExpression", true);
   }
 
   public static SNode sourceNodeQuery_1207344929972(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

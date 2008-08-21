@@ -20,7 +20,7 @@ public class typeof_SNodeCreator_InferenceRule implements InferenceRule_Runtime 
       if (SLinkOperations.getTarget(createdType, "concept", false) == null) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(createdType, "concrete node type is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins@6_0", "1219345314240", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(createdType, "concrete node type is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins@6_0", "1219346003311", intentionProvider);
         }
         return;
       }
@@ -28,7 +28,7 @@ public class typeof_SNodeCreator_InferenceRule implements InferenceRule_Runtime 
         {
           SNode _nodeToCheck_1029348928467 = creator;
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(creator, "prototypeNode", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061742845", true), new QuotationClass_53().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181945011354", false, 0, intentionProvider);
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(creator, "prototypeNode", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061742845", true), new QuotationClass_52().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181945011354", false, 0, intentionProvider);
         }
       }
       {

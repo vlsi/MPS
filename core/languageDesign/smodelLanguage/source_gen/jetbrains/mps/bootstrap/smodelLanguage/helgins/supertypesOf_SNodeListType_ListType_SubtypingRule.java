@@ -15,7 +15,7 @@ public class supertypesOf_SNodeListType_ListType_SubtypingRule extends Subtyping
 
   public SNode getSubOrSuperType(SNode type) {
     SNode elementConcept = SLinkOperations.getTarget(type, "elementConcept", false);
-    return new QuotationClass_48().createNode(elementConcept);
+    return new QuotationClass_47().createNode(elementConcept);
   }
 
   public String getApplicableConceptFQName() {

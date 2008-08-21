@@ -22,7 +22,7 @@ public class typeof_Concept_IsSubConceptOfOperation_InferenceRule implements Inf
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(conceptArg, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206661693386", false), new QuotationClass_79().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206661693384", false, 0, intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(conceptArg, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206661693386", false), new QuotationClass_78().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206661693384", false, 0, intentionProvider);
       }
     }
   }

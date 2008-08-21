@@ -24,9 +24,9 @@ public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRul
     if (concept != null && SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept, false);
       for(SNode superConcept : superConcepts) {
-        ListSequence.fromList(list).addElement(new QuotationClass_28().createNode(superConcept));
+        ListSequence.fromList(list).addElement(new QuotationClass_27().createNode(superConcept));
       }
-      ListSequence.fromList(list).addElement(new QuotationClass_29().createNode());
+      ListSequence.fromList(list).addElement(new QuotationClass_28().createNode());
     }
     return list;
   }
