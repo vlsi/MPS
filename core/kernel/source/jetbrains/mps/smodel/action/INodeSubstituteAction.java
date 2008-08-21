@@ -17,6 +17,8 @@ public interface INodeSubstituteAction {
   String getDescriptionText(String pattern);
   Icon getIconFor(String pattern);
 
+  int getSortPriority();
+
   boolean canSubstituteStrictly(String pattern);
   boolean canSubstitute(String pattern);
 

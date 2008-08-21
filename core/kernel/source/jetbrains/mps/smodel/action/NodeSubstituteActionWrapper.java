@@ -53,4 +53,8 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
   public SNode substitute(@Nullable EditorContext context, String pattern) {
     return mySubstituteAction.substitute(context, pattern);
   }
+
+  public int getSortPriority() {
+    return mySubstituteAction.getSortPriority();
+  }
 }

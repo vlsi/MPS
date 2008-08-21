@@ -126,9 +126,15 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     try {
       Collections.sort(matchingActions, new Comparator<INodeSubstituteAction>() {
-        public int compare(INodeSubstituteAction iNodeSubstituteItem, INodeSubstituteAction iNodeSubstituteItem1) {
-          String s1 = iNodeSubstituteItem.getVisibleMatchingText(pattern);
-          String s2 = iNodeSubstituteItem1.getVisibleMatchingText(pattern);
+        public int compare(INodeSubstituteAction i1, INodeSubstituteAction i2) {
+          int p1 = i1.getSortPriority();
+          int p2 = i2.getSortPriority();
+          if (p1 != p2) {
+            return p1 - p2;
+          }
+
+          String s1 = i1.getVisibleMatchingText(pattern);
+          String s2 = i2.getVisibleMatchingText(pattern);
           boolean null_s1 = (s1 == null || s1.length() == 0);
           boolean null_s2 = (s2 == null || s2.length() == 0);
           if (null_s1 && null_s2) return 0;

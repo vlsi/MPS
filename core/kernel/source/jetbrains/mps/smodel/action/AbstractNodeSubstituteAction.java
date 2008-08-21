@@ -161,6 +161,10 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     return newNode;
   }
 
+  public int getSortPriority() {
+    return 0;
+  }
+
   public String toString() {
     return getMatchingText("");
   }

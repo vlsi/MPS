@@ -624,7 +624,7 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218117993825">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1218118739005">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1218118739006">
-                <property name="name" value="aaa" />
+                <property name="name" value="m" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1218118739007" />
               </node>
             </node>
@@ -663,21 +663,6 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215776939833" />
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1217425763239">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217425763240" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217425763241" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217425763242">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217425778841">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217425778842">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1217425778843">
-              <link role="fieldDeclaration" targetNodeId="1217425769227" resolveInfo="abcdef" />
-            </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1217425778844" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1217426133173" />
-      </node>
-    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1217425769227">
       <property name="name" value="abcdef" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1217425769228" />
@@ -704,7 +689,20 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1217426131313" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219320088252">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219320088253">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219320088254">
+              <link role="baseMethodDeclaration" targetNodeId="1217426125473" resolveInfo="aaaa" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1219320088255" />
+          </node>
+        </node>
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1219320123540">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1219320123541" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219320123542" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219320123543" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.Interface" id="1217333605644">
