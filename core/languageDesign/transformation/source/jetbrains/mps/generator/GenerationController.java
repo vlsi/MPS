@@ -118,14 +118,16 @@ public class GenerationController {
         if (compiledSuccessfully && needToReload) {
           reloadClasses(totalJob, startJobTime);
         }
-        if (generationOK) {
-          info("generation completed successfully in " + (System.currentTimeMillis() - startTime) + " ms");
-        } else {
-          info("generation completed with errors in " + (System.currentTimeMillis() - startTime) + " ms");
-        }
-      } else if (!generationOK) {
-        info("generation finished with errors in " + (System.currentTimeMillis() - startTime) + " ms");
+
+        generationOK = generationOK && compiledSuccessfully;
       }
+
+      if (generationOK) {
+        info("generation completed successfully in " + (System.currentTimeMillis() - startTime) + " ms");
+      } else {
+        error("generation completed with errors in " + (System.currentTimeMillis() - startTime) + " ms");
+      }
+
       if (isIDEAPresent() && !myGenerationType.requiresCompilationInIDEAfterGeneration()) {
         getProjectHandler().refreshFS();
       }
