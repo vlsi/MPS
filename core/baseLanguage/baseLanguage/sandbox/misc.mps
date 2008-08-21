@@ -388,11 +388,11 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219244414311" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219244414312">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1219244414313">
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219244414314">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1219244414315">
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219309203074">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1219309200635">
               <link role="variableDeclaration" targetNodeId="1219244414306" resolveInfo="mmap" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219244414316">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219309220470">
               <link role="baseMethodDeclaration" targetNodeId="3.~Map.entrySet():java.util.Set" resolveInfo="entrySet" />
             </node>
           </node>

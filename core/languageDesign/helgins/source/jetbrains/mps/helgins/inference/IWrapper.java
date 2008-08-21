@@ -28,4 +28,6 @@ public interface IWrapper extends IMatcher {
   public boolean isShallowConcrete();
 
   public IWrapper getShallowConcreteRepresentator();
+
+  public boolean isMetaType();
 }

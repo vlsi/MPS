@@ -136,6 +136,10 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     return null;
   }
 
+  public boolean isMetaType() {
+    return false;
+  }
+
   public int hashCode() {
     if (myHashCode != Integer.MAX_VALUE) {
       return myHashCode;

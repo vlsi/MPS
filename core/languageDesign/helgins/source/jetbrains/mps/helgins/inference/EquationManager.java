@@ -782,7 +782,7 @@ public class EquationManager {
       hasConcreteTypes = false;
       for (IWrapper type : types) {
         if (type == null) continue;
-        if (!type.isConcrete()) {       //todo: consider joins
+        if (!type.isConcrete() && !type.isMetaType()) {       //todo: consider joins
           typeLessThanVar(type, true, priority, minPriority);
           typeLessThanVar(type, false, priority, minPriority);
           varLessThanType(type, true, priority, minPriority);
@@ -914,7 +914,7 @@ public class EquationManager {
         continue;
       }
       int inequationPriority = subtypes.get(subtypeNode).getInequationPriority();
-      if (subtypeNode.isConcrete()) {
+      if (subtypeNode.isConcrete() || subtypeNode.isMetaType() /*O RLY?*/) {//todo are metatypes good here?
         minPriority[0] = Math.min(minPriority[0], inequationPriority);
         if (inequationPriority <= priority) {
           concreteSubtypes.add(subtypeNode);
@@ -984,7 +984,7 @@ public class EquationManager {
         continue;
       }
       int inequationPriority = supertypes.get(supertypeNode).getInequationPriority();
-      if (supertypeNode.isConcrete()) {
+      if (supertypeNode.isConcrete() || supertypeNode.isMetaType() /*O RLY?*/) {  //todo are metatypes good here?
         minPriority[0] = Math.min(minPriority[0], inequationPriority);
         if (inequationPriority <= priority) {
           concreteSupertypes.add(supertypeNode);
