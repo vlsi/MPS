@@ -34,9 +34,17 @@ public class SNodeOperations {
     return node.getContainingRoot();
   }
 
+  /**
+   * @deprecated
+   */
   public static SNode getParent(SNode node, String parentConceptFqName, boolean inclusion, boolean root) {
     // todo: it will be just node.getParent()
     return getAncestor(node, parentConceptFqName, inclusion, root);
+  }
+
+  public static SNode getParent(SNode node) {
+    if (node == null) return null;
+    return node.getParent();
   }
 
   public static SNode getAncestor(SNode node, String ancestorConceptFqName, boolean inclusion, boolean root) {
@@ -448,5 +456,9 @@ public class SNodeOperations {
   public static boolean isAttribute(SNode node) {
     if (node == null) return false;
     return node.isAttribute();
+  }
+
+  public static SNode getNode(String modelUID, String nodeID) {
+    return new SNodePointer(modelUID, nodeID).getNode();
   }
 }
