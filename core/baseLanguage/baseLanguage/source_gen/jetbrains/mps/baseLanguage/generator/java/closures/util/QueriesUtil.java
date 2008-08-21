@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.generator.java.closures.util;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -20,8 +18,7 @@ public class QueriesUtil {
     SNode enclosingClass = SNodeOperations.getAncestor(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (enclosingClass == null) {
       // closure is not in class
-      ClassConcept adapter = (ClassConcept)SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, generator.getScope());
-      enclosingClass = adapter.getNode();
+      enclosingClass = getJavaLangObject();
     }
     SModel outputModel = generator.getOutputModel();
     SNode outputClassType = SModelOperations.createNewNode(outputModel, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
@@ -37,8 +34,7 @@ public class QueriesUtil {
     SNode enclosingClass = SNodeOperations.getAncestor(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (enclosingClass == null) {
       // closure is not in class
-      ClassConcept adapter = (ClassConcept)SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, scope);
-      enclosingClass = adapter.getNode();
+      enclosingClass = getJavaLangObject();
     }
     return SLinkOperations.getTargets(enclosingClass, "typeVariableDeclaration", true);
   }
@@ -68,6 +64,10 @@ public class QueriesUtil {
     }
     // --- none of above
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
+  }
+
+  private static SNode getJavaLangObject() {
+    return SLinkOperations.getTarget(new QuotationClass_1().createNode(), "classifier", false);
   }
 
 }
