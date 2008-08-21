@@ -193,6 +193,7 @@ public abstract class BaseTool {
       addContent(myComponent, null, null, false);
     }
 
+
     toolWindow.setToHideOnEmptyContent(true);
     toolWindow.installWatcher(toolWindow.getContentManager());
     if (!isInitiallyAvailable()) {
@@ -225,6 +226,8 @@ public abstract class BaseTool {
   public final void unregister() {
     if (!isRegistered()) return;
 
+    doUnregister();
+
     if (myNumber != -1) {
       KeymapManager.getInstance().getActiveKeymap().removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
     }
@@ -237,8 +240,6 @@ public abstract class BaseTool {
 
     myWindowManager.unregisterToolWindow(myId);
     myIsRegistered = false;
-
-    doUnregister();
   }
 
   protected void doUnregister() {
