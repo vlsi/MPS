@@ -39,7 +39,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     if (renderingCondition9117_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1197591774607(context, node));
     }
-    editorCell.addEditorCell(this.createConstant1162585934258(context, node, "  value"));
+    editorCell.addEditorCell(this.createConstant1162585934258(context, node, "value"));
     editorCell.addEditorCell(this.createProperty1083925414256(context, node));
     editorCell.addEditorCell(this.createConstant1162585954651(context, node, "  presentation"));
     editorCell.addEditorCell(this.createProperty1083925414254(context, node));
@@ -57,6 +57,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1197591784562(context, node, "identifier"));
     editorCell.addEditorCell(this.createProperty1197591806188(context, node));
+    editorCell.addEditorCell(this.createConstant1219352105535(context, node, "  "));
     return editorCell;
   }
 
@@ -88,6 +89,14 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11975917845621197591784562(editorCell, node, context);
     setupLabel_Constant_1197591784562_1197591784562(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1219352105535(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12193521055351219352105535(editorCell, node, context);
+    setupLabel_Constant_1219352105535_1219352105535(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -347,6 +356,10 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static void setupBasic_Constant_12193521055351219352105535(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219352105535");
+  }
+
   private static void setupLabel_property_externalValue_1083925414254(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -366,6 +379,9 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_javaIdentifier_1197591806188(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1219352105535_1219352105535(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition9117_0(SNode node, EditorContext editorContext, IScope scope) {

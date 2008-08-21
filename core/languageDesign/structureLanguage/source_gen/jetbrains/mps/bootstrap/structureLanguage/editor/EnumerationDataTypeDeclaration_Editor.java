@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
@@ -18,9 +19,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -57,7 +58,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1083172476030(context, node, "enumeration datatype:"));
+    editorCell.addEditorCell(this.createConstant1083172476030(context, node, "enumeration datatype"));
     editorCell.addEditorCell(this.createProperty1083172476031(context, node));
     return editorCell;
   }
@@ -68,7 +69,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1162581300246(context, node, "    "));
+    editorCell.addEditorCell(this.createIndentCell4339_0(context, node));
     editorCell.addEditorCell(this.createCollection1162581349089(context, node));
     return editorCell;
   }
@@ -79,6 +80,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant1219352279660(context, node, ""));
     editorCell.addEditorCell(this.createCollection1162581349090(context, node));
     editorCell.addEditorCell(this.createConstant1162582323023(context, node, ""));
     editorCell.addEditorCell(this.createConstant1162582337073(context, node, ""));
@@ -171,14 +173,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_10831724760301083172476030(editorCell, node, context);
     setupLabel_Constant_1083172476030_1083172476030(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant1162581300246(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11625813002461162581300246(editorCell, node, context);
-    setupLabel_Constant_1162581300246_1162581300246(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -287,6 +281,14 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstant1219352279660(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12193522796601219352279660(editorCell, node, context);
+    setupLabel_Constant_1219352279660_1219352279660(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createRefNodeList1162581824142(EditorContext context, SNode node) {
     if (this.myListHandler_1162581824142 == null) {
       this.myListHandler_1162581824142 = new EnumerationDataTypeDeclaration_Editor.memberListHandler_4339_0(node, "member", context);
@@ -298,6 +300,11 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1162581824142.getElementRole());
     return editorCell;
+  }
+
+  public EditorCell createIndentCell4339_0(EditorContext context, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(context, node);
+    return result;
   }
 
   public EditorCell createProperty1083172476031_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -507,45 +514,10 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_property_name1083172476031(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return EnumerationDataTypeDeclaration_Editor.calculateColor4339_4(cell);
-            }
-
-          });
-          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return EnumerationDataTypeDeclaration_Editor.calculateColor4339_5(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Collection_11625812842141162581284214(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1162581284214");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Constant_11625813002461162581300246(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1162581300246");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -888,13 +860,27 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static void setupBasic_Indent_12193521231611219352123161(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1219352123161");
+  }
+
+  private static void setupBasic_Constant_12193522796601219352279660(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219352279660");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_Constant_1083172476030_1083172476030(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_property_name_1083172476031(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1162581300246_1162581300246(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1162581349092_1162581349092(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -954,6 +940,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_noValueText_1212087554899(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_Constant_1219352279660_1219352279660(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   public static boolean renderingCondition4339_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_presentation");
   }
@@ -987,18 +976,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static Color calculateColor4339_3(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
-    return result;
-  }
-
-  private static Color calculateColor4339_4(EditorCell cell) {
-    Color result;
-    result = Color.yellow;
-    return result;
-  }
-
-  private static Color calculateColor4339_5(EditorCell cell) {
-    Color result;
-    result = Color.cyan;
     return result;
   }
 
