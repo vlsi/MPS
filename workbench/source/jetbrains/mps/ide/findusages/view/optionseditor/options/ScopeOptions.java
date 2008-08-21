@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+import com.intellij.openapi.project.Project;
+
 public class ScopeOptions extends BaseOptions<SearchQuery> {
   private static final Logger LOG = Logger.getLogger(ScopeOptions.class);
 
@@ -74,10 +76,8 @@ public class ScopeOptions extends BaseOptions<SearchQuery> {
     myModule = module;
   }
 
-  @NotNull
-  public SearchQuery getResult(SNode node, ActionEventData data) {
+  public IScope getScope(IOperationContext operationContext, SModelDescriptor descriptor) {
     IScope scope;
-    IOperationContext operationContext = data.getOperationContext();
 
     if (myScopeType.equals(GLOBAL_SCOPE)) {
       scope = GlobalScope.getInstance();
@@ -97,11 +97,11 @@ public class ScopeOptions extends BaseOptions<SearchQuery> {
       }
     } else if (myScopeType.equals(MODEL_SCOPE)) {
       if (myModel.equals(DEFAULT_VALUE)) {
-        scope = new ModelScope(operationContext.getModule().getScope(), data.getModelDescriptor());
+        scope = new ModelScope(operationContext.getModule().getScope(), descriptor);
       } else {
         List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptorsByModelName(myModel);
         if (models.isEmpty()) {
-          myModel = data.getModelDescriptor().getModelUID().toString();
+          myModel = descriptor.getModelUID().toString();
           models = SModelRepository.getInstance().getModelDescriptorsByModelName(myModel);
           LOG.error("Model is not found for " + myModel + ". Using current model.");
         }
@@ -112,7 +112,12 @@ public class ScopeOptions extends BaseOptions<SearchQuery> {
       throw new IllegalArgumentException();
     }
 
-    return new SearchQuery(node, scope);
+    return scope;
+  }
+
+  @NotNull
+  public SearchQuery getResult(SNode node, ActionEventData data) {
+    return new SearchQuery(node, getScope(data.getOperationContext(), data.getModelDescriptor()));
   }
 
   public void write(Element element, MPSProject project) {

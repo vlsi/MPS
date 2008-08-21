@@ -27,8 +27,8 @@
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.quickQueryLanguage.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.baseLanguage.editor" />
-  <visible index="3" modelUID="jetbrains.mps.core.structure" />
-  <visible index="4" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <visible index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <visible index="4" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1218793625941">
     <link role="conceptDeclaration" targetNodeId="1.1218793502081" resolveInfo="ModelQuery" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1218793628630">
@@ -39,11 +39,8 @@
           <property name="flag" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1218795504996">
-          <property name="text" value="query" />
+          <property name="text" value="search query" />
           <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1218795513483">
-          <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1218795500275">
           <property name="flag" value="false" />
@@ -61,10 +58,13 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1218795568071">
           <link role="relationDeclaration" targetNodeId="1.1218793583446" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1218795568072">
-            <link role="conceptDeclaration" targetNodeId="4v.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+            <link role="conceptDeclaration" targetNodeId="3v.1169125787135" resolveInfo="AbstractConceptDeclaration" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1218795571418">
               <property name="readOnly" value="true" />
-              <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
+              <link role="relationDeclaration" targetNodeId="4v.1169194664001" resolveInfo="name" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1219310700640">
+                <property name="color" value="DARK_MAGENTA" />
+              </node>
             </node>
           </node>
         </node>

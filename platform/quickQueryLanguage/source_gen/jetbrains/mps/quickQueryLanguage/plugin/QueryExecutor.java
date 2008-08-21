@@ -5,8 +5,6 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -18,13 +16,16 @@ import jetbrains.mps.generator.GeneratorManager;
 import java.util.Arrays;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import java.util.List;
@@ -41,20 +42,18 @@ public class QueryExecutor {
   private IScope myScope;
   private SNode myModelQuery;
   private Project myProject;
-  private SearchResults myResults;
-  private SearchQuery mySearchQuery;
 
   public QueryExecutor(IOperationContext context, SNode modelQuery, IScope scope) {
     this.myModelQuery = modelQuery;
     this.myScope = scope;
     this.myProject = context.getProject();
     final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
-    final ModelOwner modelOwner = new ModelOwner() {
+    final ModelOwner owner = new ModelOwner() {
     };
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
       public void run() {
-        model.value = ProjectModels.createDescriptorFor(modelOwner);
+        model.value = ProjectModels.createDescriptorFor(owner);
         model.value.getSModel().addRoot(SNodeOperations.copyNode(QueryExecutor.this.myModelQuery));
       }
 
@@ -63,12 +62,11 @@ public class QueryExecutor {
     GeneratorManager manager = context.getComponent(GeneratorManager.class);
     final MyGenerationType type = new MyGenerationType();
     manager.generateModelsWithProgressWindow(Arrays.asList(model.value), context, type, false);
-    SModelRepository.getInstance().unRegisterModelDescriptors(modelOwner);
+    SModelRepository.getInstance().unRegisterModelDescriptors(owner);
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        String languageFqName = QueryExecutor.this.myLanguageFqName;
-        IModule lang = QueryExecutor.this.myScope.getLanguage(languageFqName);
+        IModule lang = GlobalScope.getInstance().getLanguage(QueryExecutor.this.myLanguageFqName);
         ClassLoader parentClassLoader = ClassLoaderManager.getInstance().getClassLoaderFor(lang);
         QueryExecutor.this.myLoader = type.getClassLoader(parentClassLoader);
       }
@@ -95,22 +93,12 @@ public class QueryExecutor {
             }
           }
           QueryExecutor.this.myProject.getComponent(UsagesViewTool.class).showResults(searchQuery, new SearchResults(instances.getSearchedNodes(), instancesList));
-          QueryExecutor.this.myResults = new SearchResults(instances.getSearchedNodes(), instancesList);
-          QueryExecutor.this.mySearchQuery = searchQuery;
         } catch (Throwable t) {
           t.printStackTrace();
         }
       }
 
     });
-  }
-
-  public SearchResults getSearchResults() {
-    return this.myResults;
-  }
-
-  public SearchQuery getQuery() {
-    return this.mySearchQuery;
   }
 
 }

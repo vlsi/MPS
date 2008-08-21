@@ -31,9 +31,6 @@
     <property name="name" value="ModelQuery" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1218793576961">
-      <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1218793583446">
       <property name="metaClass" value="reference" />
       <property name="role" value="conceptDeclaration" />
