@@ -204,6 +204,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_12060610550321206061055032(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206061055032");
     BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    ElseifClause_DeletePrevious.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Constant_12060610598151206061059815(EditorCell editorCell, SNode node, EditorContext context) {

@@ -637,6 +637,24 @@
               <property name="value" value="12" />
             </node>
           </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1219306694360">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1219306730097">
+              <property name="value" value="1" />
+            </node>
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219306694362" />
+          </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1219306697069">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1219306730929">
+              <property name="value" value="2" />
+            </node>
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219306697071" />
+          </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1219306699122">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1219306731730">
+              <property name="value" value="3" />
+            </node>
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219306699124" />
+          </node>
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1215776939831">
