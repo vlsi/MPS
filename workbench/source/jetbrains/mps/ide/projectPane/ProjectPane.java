@@ -18,6 +18,8 @@ import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.wm.ToolWindowId;
+import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GenerationListener;
@@ -158,7 +160,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   private FileEditorManagerAdapter myEditorListener = new FileEditorManagerAdapter() {
     public void selectionChanged(FileEditorManagerEvent event) {
       FileEditor fileEditor = event.getNewEditor();
-      if (fileEditor instanceof MPSFileNodeEditor){
+      if (fileEditor instanceof MPSFileNodeEditor) {
         final MPSFileNodeEditor editor = (MPSFileNodeEditor) fileEditor;
         if (myProjectView.isAutoscrollFromSource(ID)) {
           ModelAccess.instance().runReadInEDT(new Runnable() {
@@ -276,13 +278,18 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       }
 
       public void selectIn(final SelectInContext context, boolean requestFocus) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
+        manager.getToolWindow(ToolWindowId.PROJECT_VIEW).activate(new Runnable() {
           public void run() {
-            selectNode(myNode);
             myProjectView.changeView(getId());
-            getComponent().requestFocus();
+            manager.getFocusManager().requestFocus(myTree, true);
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                selectNode(myNode);
+              }
+            });
           }
-        });
+        }, false);
       }
 
       public String getToolWindowId() {
@@ -311,8 +318,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     getTree().rebuildLater();
   }
 
-  public void select(Object element, VirtualFile file, boolean requestFocus) {
-
+  public void select(Object element, final VirtualFile file, final boolean requestFocus) {
   }
 
   public JComponent createComponent() {
