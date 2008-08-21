@@ -13,6 +13,8 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.FileEditorManagerAdapter;
+import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -23,7 +25,6 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.SplashScreen;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
@@ -69,7 +70,6 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.Component;
-import java.awt.Frame;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -153,6 +153,21 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
           rebuild();
         }
       });
+    }
+  };
+  private FileEditorManagerAdapter myEditorListener = new FileEditorManagerAdapter() {
+    public void selectionChanged(FileEditorManagerEvent event) {
+      FileEditor fileEditor = event.getNewEditor();
+      if (fileEditor instanceof MPSFileNodeEditor){
+        final MPSFileNodeEditor editor = (MPSFileNodeEditor) fileEditor;
+        if (myProjectView.isAutoscrollFromSource(ID)) {
+          ModelAccess.instance().runReadInEDT(new Runnable() {
+            public void run() {
+              selectNode(editor.getNodeEditor().getEditedNode());
+            }
+          });
+        }
+      }
     }
   };
 
@@ -596,12 +611,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return null;
   }
 
-  public void scrollFromSource(SNode node) {
-    if (myProjectView.isAutoscrollFromSource(ID)) {
-      selectNode(node);
-    }
-  }
-
   public void openModule(IModule m) {
     selectModule(m);
   }
@@ -855,6 +864,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       CommandProcessor.getInstance().removeCommandListener(myCommandListener);
       MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
       getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
+      getProject().getComponent(FileEditorManager.class).removeFileEditorManagerListener(myEditorListener);
     }
   }
 
@@ -863,6 +873,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     CommandProcessor.getInstance().addCommandListener(myCommandListener);
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
     getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
+    getProject().getComponent(FileEditorManager.class).addFileEditorManagerListener(myEditorListener);
   }
 
   protected SModelTreeNode findSModelTreeNode(MPSTreeNode parent, SModelDescriptor modelDescriptor) {
