@@ -94,7 +94,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   }
 
   public boolean isValid() {
-    return true;
+    return myNode.isRegistered();
   }
 
   public long getTimeStamp() {
