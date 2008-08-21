@@ -127,8 +127,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     try {
       Collections.sort(matchingActions, new Comparator<INodeSubstituteAction>() {
         public int compare(INodeSubstituteAction i1, INodeSubstituteAction i2) {
-          int p1 = i1.getSortPriority();
-          int p2 = i2.getSortPriority();
+          int p1 = i1.getSortPriority(pattern);
+          int p2 = i2.getSortPriority(pattern);
           if (p1 != p2) {
             return p1 - p2;
           }

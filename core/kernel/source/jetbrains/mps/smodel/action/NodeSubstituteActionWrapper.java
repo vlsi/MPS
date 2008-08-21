@@ -54,7 +54,7 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
     return mySubstituteAction.substitute(context, pattern);
   }
 
-  public int getSortPriority() {
-    return mySubstituteAction.getSortPriority();
+  public int getSortPriority(String pattern) {
+    return mySubstituteAction.getSortPriority(pattern);
   }
 }
