@@ -56,7 +56,7 @@ public class typeof_Property_HasValue_Simple_InferenceRule implements InferenceR
       {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(op, "unknown property datatype: " + dataType, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1219268483664", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(op, "unknown property datatype: " + dataType, "jetbrains.mps.bootstrap.smodelLanguage.helgins@6_0", "1219345309878", intentionProvider);
         }
       }
     }

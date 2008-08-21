@@ -54,14 +54,14 @@ public class typeof_Property_SetOperation_InferenceRule implements InferenceRule
             {
               SNode _nodeToCheck_1029348928467 = op;
               BaseIntentionProvider intentionProvider = null;
-              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430014542", true), new QuotationClass_95().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430014537", false, 0, intentionProvider);
+              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430014542", true), new QuotationClass_94().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430014537", false, 0, intentionProvider);
             }
           } else
           if (DataTypeUtil.isEnumOfBoolean(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
             {
               SNode _nodeToCheck_1029348928467 = op;
               BaseIntentionProvider intentionProvider = null;
-              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430042918", true), new QuotationClass_96().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430042913", false, 0, intentionProvider);
+              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430042918", true), new QuotationClass_95().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430042913", false, 0, intentionProvider);
             }
           } else
           {
@@ -76,7 +76,7 @@ public class typeof_Property_SetOperation_InferenceRule implements InferenceRule
       {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(op, "unknown property datatype: " + dataType, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1219268483500", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(op, "unknown property datatype: " + dataType, "jetbrains.mps.bootstrap.smodelLanguage.helgins@6_0", "1219345309715", intentionProvider);
         }
       }
     }

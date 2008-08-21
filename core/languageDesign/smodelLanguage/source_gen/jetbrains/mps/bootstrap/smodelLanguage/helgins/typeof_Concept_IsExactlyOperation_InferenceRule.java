@@ -22,7 +22,7 @@ public class typeof_Concept_IsExactlyOperation_InferenceRule implements Inferenc
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(conceptArg, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206735630133", false), new QuotationClass_82().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206735630131", false, 0, intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(conceptArg, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206735630133", false), new QuotationClass_81().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206735630131", false, 0, intentionProvider);
       }
     }
   }

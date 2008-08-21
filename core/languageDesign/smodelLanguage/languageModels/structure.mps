@@ -1362,35 +1362,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1206652974901" resolveInfo="deprecated_next_after_504" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177025403857">
-    <property name="name" value="RefConcept_Expression" />
-    <property name="package" value="operation.parameter" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177028393740">
-      <property name="value" value="# &lt;expr&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177028429970">
-      <property name="value" value="expression of type 'sconcept'" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206731565095">
-      <property name="value" value="replaced with PoundExpression" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1206652974901" resolveInfo="deprecated_next_after_504" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1206735500347">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177025447014">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="expression" />
-      <link role="target" targetNodeId="2.1068431790191" />
-    </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1206659731447">
-      <link role="intfc" targetNodeId="1206659704055" resolveInfo="IRefConceptArg" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177026924588">
     <property name="name" value="RefConcept_Reference" />
     <property name="package" value="operation.parameter" />

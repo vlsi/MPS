@@ -22,7 +22,7 @@ public class typeof_Node_IsInstanceOfOperation_InferenceRule implements Inferenc
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(conceptArg, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206659963964", false), new QuotationClass_79().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206659963962", false, 0, intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(conceptArg, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206659963964", false), new QuotationClass_78().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206659963962", false, 0, intentionProvider);
       }
     }
   }

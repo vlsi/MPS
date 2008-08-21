@@ -652,57 +652,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1206731675487">
-    <property name="package" value="operation.parameter" />
-    <property name="name" value="Replace_RefConcept_withPoundExpression" />
-    <property name="isErrorIntention" value="true" />
-    <link role="forConcept" targetNodeId="1.1177025403857" resolveInfo="RefConcept_Expression" />
-    <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1206731675488">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206731675489">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206731743304">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206731743305">
-            <property name="value" value="replace with '# expr' (PoundExpression)" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1206731675490">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206731675491">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206731797374">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206731797375">
-            <property name="name" value="poundExpression" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206731797376">
-              <link role="concept" targetNodeId="1.1204834851141" resolveInfo="PoundExpression" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206731797377">
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation" id="1206731797378">
-                <link role="concept" targetNodeId="1.1204834851141" resolveInfo="PoundExpression" />
-              </node>
-              <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1206731797379" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206731802678">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1206731807667">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206731811671">
-              <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1206731810576" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206731812626">
-                <link role="link" targetNodeId="1.1177025447014" />
-              </node>
-            </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206731804320">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206731802679">
-                <link role="variableDeclaration" targetNodeId="1206731797375" resolveInfo="poundExpression" />
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206731805494">
-                <link role="link" targetNodeId="1.1204834868751" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1206998294783">
     <property name="package" value="operation" />
     <property name="name" value="AddOperationParameter" />

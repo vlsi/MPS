@@ -18,11 +18,11 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
     SNode concept = SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false);
     if (concept != null) {
       if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration")) {
-        return new QuotationClass_31().createNode();
+        return new QuotationClass_30().createNode();
       }
-      return new QuotationClass_32().createNode();
+      return new QuotationClass_31().createNode();
     }
-    return new QuotationClass_33().createNode();
+    return new QuotationClass_32().createNode();
   }
 
   public String getApplicableConceptFQName() {
