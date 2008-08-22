@@ -1047,40 +1047,20 @@
     <property name="isAlwaysVisible" value="true" />
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1215608712909">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215608712910">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215609350368">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215609350369">
-            <property name="name" value="conceptDeclaration" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215609350370">
-              <link role="classifier" targetNodeId="60.~AbstractConceptDeclaration" resolveInfo="AbstractConceptDeclaration" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1219408681770">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1219408681771">
+            <property name="name" value="concept" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1219408681772">
+              <link role="concept" targetNodeId="93.1169125787135" resolveInfo="AbstractConceptDeclaration" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215609350371">
-              <link role="baseMethodDeclaration" targetNodeId="40.~SModelUtil_new.findConceptDeclaration(java.lang.String,jetbrains.mps.smodel.IScope):jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration" resolveInfo="findConceptDeclaration" />
-              <link role="classConcept" targetNodeId="40.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215609350372">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215609350373">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215609350374">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1215609350375" />
-                    <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1215609350376">
-                      <link role="member" targetNodeId="1215608921457" resolveInfo="node" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1215609350377" />
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1215609350378">
-                  <link role="conceptMethodDeclaration" targetNodeId="61.1213877404258" resolveInfo="getFqName" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219408695448">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219408694946">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1219408694947" />
+                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1219408694948">
+                  <link role="member" targetNodeId="1215608921457" resolveInfo="node" />
                 </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215609350379">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215609350380">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1215609350381" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDataParameterReferenceOperation" id="1217420649366">
-                    <link role="member" targetNodeId="1217420649365" resolveInfo="context" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215609350383">
-                  <link role="baseMethodDeclaration" targetNodeId="40.~IOperationContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
-                </node>
-              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1219408696951" />
             </node>
           </node>
         </node>
@@ -1102,13 +1082,8 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215609418862">
               <link role="baseMethodDeclaration" targetNodeId="62.~MPSEditorOpener.openNode(jetbrains.mps.smodel.SNode):void" resolveInfo="openNode" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215609428364">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215609427426">
-                  <link role="variableDeclaration" targetNodeId="1215609350369" resolveInfo="conceptDeclaration" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215609433461">
-                  <link role="baseMethodDeclaration" targetNodeId="40.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
-                </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219408702904">
+                <link role="variableDeclaration" targetNodeId="1219408681771" resolveInfo="concept" />
               </node>
             </node>
           </node>
