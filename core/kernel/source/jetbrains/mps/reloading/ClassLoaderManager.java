@@ -92,33 +92,31 @@ public class ClassLoaderManager implements ApplicationComponent {
   }
 
   public void reloadAll(@NotNull ProgressIndicator indicator) {
-    synchronized (myLock) {
-      indicator.pushState();
-      try {
-        indicator.setIndeterminate(true);
-        indicator.setText("Reloading classes...");
-        LOG.assertCanWrite();
+    indicator.pushState();
+    try {
+      indicator.setIndeterminate(true);
+      indicator.setText("Reloading classes...");
+      LOG.assertCanWrite();
 
-        indicator.setText2("Disposing old classes...");
-        callBeforeReloadHandlers();
+      indicator.setText2("Disposing old classes...");
+      callBeforeReloadHandlers();
 
-        indicator.setText2("Updating classpath...");
-        updateClassPath();
+      indicator.setText2("Updating classpath...");
+      updateClassPath();
 
-        indicator.setText2("Refreshing models...");
-        SModelRepository.getInstance().refreshModels();
+      indicator.setText2("Refreshing models...");
+      SModelRepository.getInstance().refreshModels();
 
-        indicator.setText2("Reloading classes...");
-        callReloadHandlers();
+      indicator.setText2("Reloading classes...");
+      callReloadHandlers();
 
-        indicator.setText2("Rebuilding ui...");
-        callAfterReloadHandlers();
+      indicator.setText2("Rebuilding ui...");
+      callAfterReloadHandlers();
 
-        indicator.setText2("Collecting garbage...");
-        System.gc();
-      } finally {
-        indicator.popState();
-      }
+      indicator.setText2("Collecting garbage...");
+      System.gc();
+    } finally {
+      indicator.popState();
     }
   }
 

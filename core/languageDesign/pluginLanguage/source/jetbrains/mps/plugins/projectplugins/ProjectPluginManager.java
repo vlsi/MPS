@@ -59,7 +59,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   public void projectOpened() {
     myReloadListener = new ReloadListener() {
       public void onBeforeReload() {
-        disposePlugins(true);
+        disposePlugins();
       }
 
       public void onReload() {
@@ -73,7 +73,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   public void projectClosed() {
-    disposePlugins(false);
+    disposePlugins();
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
   }
 
@@ -104,7 +104,6 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   //----------------RELOAD STUFF---------------------  
 
   public void reloadPlugins() {
-    disposePlugins(true);
     loadPlugins();
   }
 
@@ -126,7 +125,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       }
     }
 
-    SwingUtilities.invokeLater(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         if (myProject.isDisposed()) return;
         for (BaseProjectPlugin plugin : plugins) {
@@ -143,7 +142,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     myLoaded = true;
   }
 
-  private void disposePlugins(boolean later) {
+  private void disposePlugins() {
     if (!myLoaded) return;
 
     final List<BaseProjectPlugin> plugins = new ArrayList<BaseProjectPlugin>();
@@ -164,7 +163,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       myPlugins.clear();
     }
 
-    Runnable runnable = new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         assert !myProject.isDisposed();
         for (BaseProjectPlugin plugin : plugins) {
@@ -175,12 +174,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
           }
         }
       }
-    };
-    if (later) {
-      SwingUtilities.invokeLater(runnable);
-    } else {
-      runnable.run();
-    }
+    });
 
     myLoaded = false;
   }
