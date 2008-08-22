@@ -28,6 +28,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vfs.IFile;
@@ -35,9 +36,7 @@ import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
@@ -52,6 +51,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private final ProjectManager myProjectManager;
   private MessageBusConnection myConnection;
   private BulkFileListener myBusListener = new BulkFileCahngesListener();
+  private final Set<VirtualFile> myDirtyFiles = new HashSet<VirtualFile>();
 
   public ModelChangesWatcher(final MessageBus bus, SModelRepository sModelRepository, ProjectManager projectManager) {
     myBus = bus;
@@ -76,11 +76,13 @@ public class ModelChangesWatcher implements ApplicationComponent {
         }
 
         // reloading modules
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            reloadModules(progressIndicator, modulesToReload);
-          }
-        });
+        if (!modulesToReload.isEmpty()) {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              reloadModules(progressIndicator, modulesToReload);
+            }
+          });
+        }
 
         // reloadig models
         reloadModels(progressIndicator, modelsToReload);
@@ -93,6 +95,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           progressIndicator.setText("Reloading " + model.getModelUID());
+          myDirtyFiles.add(VFileSystem.getFile(model.getModelFile()));
           model.reloadFromDisk();
         }
       });
@@ -113,6 +116,10 @@ public class ModelChangesWatcher implements ApplicationComponent {
       }
       assert descriptor != null;
       module.setModuleDescriptor(descriptor);
+      List<ModelRoot> modelRootList = module.getModelRoots();
+      for (ModelRoot root : modelRootList) {
+        root.getModel().getModelDescriptor().reloadFromDisk();
+      }
     }
   }
 
@@ -159,6 +166,14 @@ public class ModelChangesWatcher implements ApplicationComponent {
     for (MetadataCreationListener l : myMetadataListeners) {
       l.metadataFileCreated(f);
     }
+  }
+
+  public Set<VirtualFile> getDirtyFiles() {
+    return Collections.unmodifiableSet(myDirtyFiles);
+  }
+
+  public void removeDirtyFile(VirtualFile file){
+    myDirtyFiles.remove(file);    
   }
 
   public static interface MetadataCreationListener {
