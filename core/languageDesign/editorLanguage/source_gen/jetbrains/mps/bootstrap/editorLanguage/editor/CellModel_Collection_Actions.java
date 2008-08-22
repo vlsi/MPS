@@ -34,8 +34,8 @@ public class CellModel_Collection_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
-        SNode p = SNodeOperations.getParent(node, null, false, false);
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
+        SNode p = SNodeOperations.getParent(node);
         List<SNode> children = SLinkOperations.getTargets(node, "childCellModel", true);
         for(SNode child : children) {
           SNodeOperations.insertPrevSiblingChild(node, child);

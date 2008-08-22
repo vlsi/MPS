@@ -25,7 +25,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.bootstrap.editorLanguage.behavior.BaseEditorComponent_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
-import jetbrains.mps.bootstrap.editorLanguage.structure.CellActionId;
+import javax.swing.Icon;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 
@@ -566,27 +566,35 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            return CellActionId.getConstants();
+            return SLinkOperations.getTargets(SNodeOperations.getNode("jetbrains.mps.bootstrap.editorLanguage.structure", "1139535328871"), "member", true);
           }
 
         };
-        Iterable<CellActionId> queryResult = (Iterable)calc.calculate();
+        Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
-          for(final CellActionId item : queryResult) {
+          for(final SNode item : queryResult) {
             result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem", _context.getCurrentTargetNode());
-                SPropertyOperations.set(newNode, "actionId", (item).getValue());
+                SPropertyOperations.set(newNode, "actionId", SPropertyOperations.getString((item), "internalValue"));
                 return newNode;
               }
 
               public String getMatchingText(String pattern) {
-                return (item).getName();
+                return SPropertyOperations.getString((item), "externalValue");
               }
 
               public String getVisibleMatchingText(String pattern) {
                 return this.getMatchingText(pattern);
+              }
+
+              public String getDescriptionText(String pattern) {
+                return "";
+              }
+
+              public Icon getIconFor(String pattern) {
+                return null;
               }
 
             });

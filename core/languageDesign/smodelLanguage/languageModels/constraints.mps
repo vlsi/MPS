@@ -4747,5 +4747,32 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1219363770439">
+    <link role="concept" targetNodeId="1.1219352745532" resolveInfo="NodeRefExpression" />
+    <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1219363774705">
+      <link role="applicableLink" targetNodeId="1.1219352800908" />
+      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1219363783269">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219363783270">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1219363972369">
+            <property name="value" value="roots only" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219363792809">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1219363802295">
+              <link role="baseMethodDeclaration" targetNodeId="4.~SModelSearchUtil.createModelAndImportedModelsScope(jetbrains.mps.smodel.SModel,boolean,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.search.ISearchScope" resolveInfo="createModelAndImportedModelsScope" />
+              <link role="classConcept" targetNodeId="4.~SModelSearchUtil" resolveInfo="SModelSearchUtil" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219363866457">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1219363815609" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" id="1219363871620" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1219363842626">
+                <property name="value" value="true" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1219363848175" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -57,7 +57,7 @@ public class _SplitConctantCellIntoWordsKeyMap extends EditorCellKeyMap {
     }
 
     private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      return (SNodeOperations.getParent(node, null, false, false) != null);
+      return (SNodeOperations.getParent(node) != null);
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {

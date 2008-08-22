@@ -12,7 +12,7 @@ public class CellMenuPart_ReplaceChild_Group_Query_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode hostMenuPart = SNodeOperations.getParent(thisNode, null, false, false);
+    SNode hostMenuPart = SNodeOperations.getParent(thisNode);
     SNode parameterObjectType = SLinkOperations.getTarget(hostMenuPart, "parameterObjectType", true);
     if (parameterObjectType == null) {
       return new QuotationClass_1().createNode();
