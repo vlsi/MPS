@@ -54,7 +54,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1218793688891">
       <link role="conceptLinkDeclaration" targetNodeId="4v.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1218793689846" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1219401286366" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1218793728835">

@@ -32,14 +32,5 @@
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.quickQueryLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.helgins" version="-1" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1218798053730">
-    <link role="concept" targetNodeId="1.1218793664585" resolveInfo="QueryCondition" />
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1218798559723">
-    <link role="concept" targetNodeId="1.1218793728835" resolveInfo="Query_node_Parameter" />
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1219239202943">
-    <link role="concept" targetNodeId="1.1218793502081" resolveInfo="ModelQuery" />
-  </node>
 </model>
 

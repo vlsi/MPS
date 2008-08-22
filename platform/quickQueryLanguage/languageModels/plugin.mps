@@ -921,17 +921,6 @@
   <visible index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1219223245047">
     <property name="name" value="FindInstancesByConditionDialog" />
-    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1219231640063">
-      <property name="name" value="myLanguage" />
-      <property name="isFinal" value="true" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1219231640064" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219231646482">
-        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-      </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1219231658497">
-        <property name="value" value="jetbrains.mps.quickQueryLanguage" />
-      </node>
-    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1219227669753">
       <property name="name" value="myEditorComponent" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1219227669754" />
@@ -1381,6 +1370,25 @@
             <property name="value" value="Find instances by condition" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219225302355">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219225302356">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219225302357">
+              <link role="baseMethodDeclaration" targetNodeId="30.~Component.setSize(java.awt.Dimension):void" resolveInfo="setSize" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1219225302358">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1219225302359">
+                  <link role="baseMethodDeclaration" targetNodeId="30.~Dimension.&lt;init&gt;(int,int)" resolveInfo="Dimension" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1219225302360">
+                    <property name="value" value="500" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1219225302361">
+                    <property name="value" value="500" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1219225302362" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExecuteLightweightCommandStatement" id="1219311689494">
           <node role="commandClosureLiteral" type="jetbrains.mps.bootstrap.smodelLanguage.structure.CommandClosureLiteral" id="1219311689495">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219311689496">
@@ -1623,25 +1631,6 @@
               <link role="baseMethodDeclaration" targetNodeId="1219231438481" resolveInfo="init" />
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1219231457613" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219225302355">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219225302356">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219225302357">
-              <link role="baseMethodDeclaration" targetNodeId="30.~Window.setSize(java.awt.Dimension):void" resolveInfo="setSize" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1219225302358">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1219225302359">
-                  <link role="baseMethodDeclaration" targetNodeId="30.~Dimension.&lt;init&gt;(int,int)" resolveInfo="Dimension" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1219225302360">
-                    <property name="value" value="500" />
-                  </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1219225302361">
-                    <property name="value" value="500" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1219225302362" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219225167285">

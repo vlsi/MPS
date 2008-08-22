@@ -26,11 +26,5 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.quickQueryLanguage.structure" version="-1" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1219239414006">
-    <link role="concept" targetNodeId="1.1218793502081" resolveInfo="ModelQuery" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1219239414007">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219239414008" />
-    </node>
-  </node>
 </model>
 
