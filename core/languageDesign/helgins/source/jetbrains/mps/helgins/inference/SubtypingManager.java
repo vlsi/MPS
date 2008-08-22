@@ -49,11 +49,11 @@ public class SubtypingManager {
     if (subtype == null || supertype == null) return false;
 
     Set<InequationReplacementRule_Runtime> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(subtype, supertype);
-      for (InequationReplacementRule_Runtime inequationReplacementRule : inequationReplacementRules) {
-        if (inequationReplacementRule.checkInequation(subtype, supertype, new EquationInfo(null, null))) {
-          return true;
-        }
+    for (InequationReplacementRule_Runtime inequationReplacementRule : inequationReplacementRules) {
+      if (inequationReplacementRule.checkInequation(subtype, supertype, new EquationInfo(null, null))) {
+        return true;
       }
+    }
 
     return isSubtype(NodeWrapper.createWrapperFromNode(subtype, null),
       NodeWrapper.createWrapperFromNode(supertype, null), null, null, isWeak);
@@ -127,17 +127,13 @@ public class SubtypingManager {
 
   private boolean searchInSupertypes(NodeWrapper subRepresentator, IMatcher superRepresentator, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
 
-    //stats
-    if (subRepresentator != null && superRepresentator instanceof NodeWrapper) {
-      myTypeChecker.getStatistics().addCheckedInequation(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode());
-    }
-
     StructuralNodeSet<?> frontier = new StructuralNodeSet();
     StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
     if (subRepresentator == null) {
       return false;
     }
+    long millisStart = System.currentTimeMillis();
     frontier.add(subRepresentator.getNode());
     while (!frontier.isEmpty()) {
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
@@ -157,6 +153,11 @@ public class SubtypingManager {
       for (SNode ancestor : ancestorsSorted) {
         if (superRepresentator.matchesWith(NodeWrapper.createWrapperFromNode(ancestor, equationManager),
           equationManager, errorInfo)) {
+          long millisEnd = System.currentTimeMillis();
+          //stats
+          if (superRepresentator instanceof NodeWrapper) {
+            myTypeChecker.getStatistics().addCheckedInequation(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), millisEnd - millisStart);
+          }
           return true;
         }
       }
@@ -165,7 +166,10 @@ public class SubtypingManager {
       frontier = newFrontier;
       newFrontier = new StructuralNodeSet();
     }
-
+    long millisEnd = System.currentTimeMillis();
+    if (superRepresentator instanceof NodeWrapper) {
+      myTypeChecker.getStatistics().addCheckedInequation(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), millisEnd - millisStart);
+    }
     return false;
   }
 
@@ -315,25 +319,25 @@ public class SubtypingManager {
     // System.err.println("lcs inner, types are: " + PresentationManager.toString(a) + " , " + PresentationManager.toString(b));
     StructuralWrapperSet result = new StructuralWrapperSet();
     if ((a.isConcrete() && b.isConcrete() && MatchingUtil.matchNodes(a.getNode(), b.getNode())) ||
-            a.equals(b)) { // todo what if not concrete?
+      a.equals(b)) { // todo what if not concrete?
       result.add(a);
       return result;
     }
 
     StructuralWrapperSet<?> superTypesA = subTypesToSuperTypes.get(a) != null ?
-            new StructuralWrapperSet(subTypesToSuperTypes.get(a)) :
-            new StructuralWrapperSet();
+      new StructuralWrapperSet(subTypesToSuperTypes.get(a)) :
+      new StructuralWrapperSet();
     superTypesA.add(a);
 
     StructuralWrapperSet<?> superTypesB = subTypesToSuperTypes.get(b) != null ?
-            new StructuralWrapperSet(subTypesToSuperTypes.get(b)) :
-            new StructuralWrapperSet();
+      new StructuralWrapperSet(subTypesToSuperTypes.get(b)) :
+      new StructuralWrapperSet();
     superTypesB.add(b);
     for (IWrapper superTypeA : new HashSet<IWrapper>(superTypesA)) {
       boolean matches = false;
       for (IWrapper superTypeB : superTypesB) {
         if ((superTypeA.isConcrete() && superTypeB.isConcrete() &&     // todo what if not concrete?
-                MatchingUtil.matchNodes(superTypeA.getNode(), superTypeB.getNode())) || superTypeA.equals(superTypeB)) {
+          MatchingUtil.matchNodes(superTypeA.getNode(), superTypeB.getNode())) || superTypeA.equals(superTypeB)) {
           matches = true;
           break;
         }
@@ -362,8 +366,8 @@ public class SubtypingManager {
       if (superTypes != null) {
         for (IWrapper superType : superTypes) {
           if ((superType.isConcrete() && commonSupertype.isConcrete() && !MatchingUtil.matchNodes(superType.getNode(),
-                  commonSupertype.getNode())) //todo what if not concrete?
-                  && !superType.equals(commonSupertype)) {
+            commonSupertype.getNode())) //todo what if not concrete?
+            && !superType.equals(commonSupertype)) {
             commonSupertypes.removeStructurally(superType);
           }
         }
