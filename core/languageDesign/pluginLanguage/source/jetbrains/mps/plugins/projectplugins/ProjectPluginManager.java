@@ -9,6 +9,7 @@ import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
@@ -125,7 +126,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       }
     }
 
-    SwingUtilities.invokeLater(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         for (BaseProjectPlugin plugin : plugins) {
           try {
@@ -175,7 +176,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       }
     };
     if (later) {
-      SwingUtilities.invokeLater(runnable);
+      ThreadUtils.runInUIThreadNoWait(runnable);
     } else {
       runnable.run();
     }
