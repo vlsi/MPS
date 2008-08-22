@@ -199,14 +199,14 @@
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877281405">
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877281406" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1213877281407">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219441208857">
                 <link role="link" targetNodeId="4v.1197027771414" />
               </node>
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877281408">
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877281409" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1213877281410">
-                <link role="link" targetNodeId="1.1151701835028" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219441204122">
+                <link role="link" targetNodeId="4v.1197027771414" />
               </node>
             </node>
           </node>

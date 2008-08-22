@@ -120,7 +120,7 @@
           </node>
         </node>
         <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1203973835915">
-          <link role="relationDeclaration" targetNodeId="1.1151701835028" />
+          <link role="relationDeclaration" targetNodeId="3.1197027771414" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205249438197">
