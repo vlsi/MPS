@@ -4,10 +4,6 @@ package jetbrains.mps.bootstrap.editorLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.editorLanguage.CellMenuUtil;
-import jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Abstract;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class CellMenuPart_ReplaceChild_Item_Create_Behavior {
@@ -20,8 +16,7 @@ public class CellMenuPart_ReplaceChild_Item_Create_Behavior {
       return null;
     }
     SNode hostMenuPart = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Abstract", false, false);
-    LinkDeclaration editedLink_ = CellMenuUtil.getEditedAggregationLink(((CellMenuPart_Abstract)SNodeOperations.getAdapter(hostMenuPart)));
-    SNode editedLink = BaseAdapter.fromAdapter(editedLink_);
+    SNode editedLink = CellMenuPart_Abstract_Behavior.call_getEditedLink_1219409839992(hostMenuPart);
     SNode conceptOfChild = SLinkOperations.getTarget(editedLink, "target", false);
     return new QuotationClass_3().createNode(conceptOfChild);
   }
