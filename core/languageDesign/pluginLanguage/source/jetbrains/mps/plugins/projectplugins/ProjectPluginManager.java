@@ -126,8 +126,9 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       }
     }
 
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
+        if (myProject.isDisposed()) return;
         for (BaseProjectPlugin plugin : plugins) {
           try {
             plugin.init(mpsProject);
@@ -176,7 +177,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       }
     };
     if (later) {
-      ThreadUtils.runInUIThreadNoWait(runnable);
+      SwingUtilities.invokeLater(runnable);
     } else {
       runnable.run();
     }
