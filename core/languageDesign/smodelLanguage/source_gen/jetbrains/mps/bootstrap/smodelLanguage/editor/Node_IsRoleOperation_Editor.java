@@ -209,7 +209,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor8094_1(EditorCell cell) {
     Color result;
-    result = Color.darkGray;
+    result = MPSColors.darkGray;
     return result;
   }
 

@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Styles_StyleSheet {
   public static final Style REF_LINK_ROLE = new Style() {
@@ -27,7 +28,7 @@ public class Styles_StyleSheet {
 
   private static Color calculateColor7582_0(EditorCell cell) {
     Color result;
-    result = Color.darkGray;
+    result = MPSColors.darkGray;
     return result;
   }
 

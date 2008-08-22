@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
@@ -107,7 +108,7 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor9344_0(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 

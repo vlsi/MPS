@@ -1945,6 +1945,9 @@
           <property name="readOnly" value="true" />
           <property name="noTargetText" value="&lt;no annotation link&gt;" />
           <link role="relationDeclaration" targetNodeId="3.1204740973143" resolveInfo="role" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1219415230964">
+            <property name="value" value="0.0" />
+          </node>
         </node>
       </node>
     </node>

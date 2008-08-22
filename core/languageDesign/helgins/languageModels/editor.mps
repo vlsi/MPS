@@ -1602,23 +1602,17 @@
       </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_ExecuteFunction" id="1182951956124">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182951956125">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182951964284">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1182952038392">
-              <link role="baseMethodDeclaration" targetNodeId="12.~HelginsJudgement_AnnotationLink.setHelginsJudgement(jetbrains.mps.core.structure.BaseConcept,jetbrains.mps.bootstrap.helgins.structure.HelginsJudgement):void" resolveInfo="setHelginsJudgement" />
-              <link role="classConcept" targetNodeId="12.~HelginsJudgement_AnnotationLink" resolveInfo="HelginsJudgement_AnnotationLink" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1182952058936">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721670">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227914505">
-                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1182952058941" />
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1182952058940" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219415197234">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1219415207413">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1219415208010" />
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219415197673">
+                <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1219415197235" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1219415199005">
+                  <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.NodeAttributeAccessQualifier" id="1219415206209">
+                    <link role="annotationLink" targetNodeId="1.1182950852687" resolveInfo="helginsJudgement" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1182952058938" />
-                </node>
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1182952072240">
-                  <link role="classifier" targetNodeId="22.~BaseConcept" resolveInfo="BaseConcept" />
                 </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1182952044035" />
             </node>
           </node>
         </node>

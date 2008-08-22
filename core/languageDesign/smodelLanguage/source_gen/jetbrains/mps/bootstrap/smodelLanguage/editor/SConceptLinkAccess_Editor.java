@@ -120,7 +120,7 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor0777_1(EditorCell cell) {
     Color result;
-    result = Color.darkGray;
+    result = MPSColors.darkGray;
     return result;
   }
 
