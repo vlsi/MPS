@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class BaseConcept_Editor extends DefaultNodeEditor {
 
@@ -53,7 +54,7 @@ public class BaseConcept_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor0843_0(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 
