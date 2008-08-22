@@ -16,6 +16,7 @@ import jetbrains.mps.generator.GenerationListener;
 import java.io.File;
 import java.util.*;
 import java.rmi.RemoteException;
+import java.lang.reflect.InvocationTargetException;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.*;
@@ -69,7 +70,7 @@ public class MPSVCSManager implements ProjectComponent {
   private void renameInternal(final VirtualFile from, final VirtualFile to) {
     invokeLater(new Runnable() {
       public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+        lazyRunInReadAction(new Runnable() {
           public void run() {
             scheduleMissingFileInternal(from);
             scheduleUnversionedFileForAdditionInternal(to);
@@ -77,6 +78,14 @@ public class MPSVCSManager implements ProjectComponent {
         });
       }
     });
+  }
+
+  private void lazyRunInReadAction(Runnable toDo) {
+    if (ApplicationManager.getApplication().isReadAccessAllowed()) {
+      toDo.run();
+    } else {
+      ApplicationManager.getApplication().runReadAction(toDo);
+    }
   }
 
   private void scheduleMissingFileInternal(VirtualFile file) {
@@ -97,7 +106,22 @@ public class MPSVCSManager implements ProjectComponent {
         return;
       }
 
-      SwingUtilities.invokeLater(task);
+      invokeNow(task);
+    }
+  }
+
+  private void invokeNow(Runnable task) {
+    if (SwingUtilities.isEventDispatchThread()) {
+      task.run();
+    } else {
+
+      try {
+        SwingUtilities.invokeAndWait(task);
+      } catch (InterruptedException e) {
+      } catch (InvocationTargetException e) {
+        LOG.error(e);
+      }
+
     }
   }
 
@@ -122,7 +146,7 @@ public class MPSVCSManager implements ProjectComponent {
     final ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(myProject);
     invokeLater(new Runnable() {
       public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+        lazyRunInReadAction(new Runnable() {
           public void run() {
             LocalFileSystem lfs = LocalFileSystem.getInstance();
             for (VirtualFile vfile : inVCS) {
@@ -131,8 +155,8 @@ public class MPSVCSManager implements ProjectComponent {
               }
             }
           }
-        });
-      }
+        }
+      );}
     }
 
     );
@@ -171,7 +195,7 @@ public class MPSVCSManager implements ProjectComponent {
    * @param inVCS
    */
   private void addInternal(final List<VirtualFile> inVCS) {
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+    lazyRunInReadAction(new Runnable() {
       public void run() {
         for (VirtualFile vf : inVCS) {
           if (vf == null) {
@@ -297,12 +321,13 @@ public class MPSVCSManager implements ProjectComponent {
         myGenerationRunning = false;
 
         for (Runnable task : myTasks) {
-          SwingUtilities.invokeLater(task);
+          invokeNow(task);
         }
 
         myTasks.clear();
       }
     }
+
   }
 
   private class SModelRepositoryListenerImpl extends SModelRepositoryAdapter {
