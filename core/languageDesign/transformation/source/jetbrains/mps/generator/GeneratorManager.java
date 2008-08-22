@@ -56,8 +56,9 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
 
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
-  private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
-  private List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
+  private final List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
+  private final List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
+  private final List<CompilationListener> myCompilationListeners = new ArrayList<CompilationListener>();
   private MyState myState = new MyState();
 
   private GeneratorManagerPreferencesPage myPreferences;
@@ -301,6 +302,26 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
     }
   }
 
+  void fireBeforeModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    for (CompilationListener l : myCompilationListeners) {
+      try {
+        l.beforeModelsCompiled(models, success);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  void fireAfterModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    for (CompilationListener l : myCompilationListeners) {
+      try {
+        l.afterModelsCompiled(models, success);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
   private void fireBeforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
     for (GenerationListener l : myGenerationListeners) {
       try {
@@ -327,6 +348,14 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
 
   public void removeGenerationListener(GenerationListener l) {
     myGenerationListeners.remove(l);
+  }
+
+  public void addCompilationListener(CompilationListener l) {
+    myCompilationListeners.add(l);
+  }
+
+  public void removeCompilationListener(CompilationListener l) {
+    myCompilationListeners.remove(l);
   }
 
   public MyState getState() {

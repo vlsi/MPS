@@ -87,11 +87,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1216862267915(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1216862267943(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1216862267955(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -99,31 +99,31 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1216945829070(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217005065141(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217026990251(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217282271516(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217369738546(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217882311138(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217885063604(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217885063616(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -136,7 +136,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1217892355021(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217892378550(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -144,7 +144,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1217892400236(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217892400248(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -152,11 +152,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1217892428790(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode(), null, false, false), null, false, false), "rValue", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), "rValue", true);
   }
 
   public static SNode sourceNodeQuery_1217894198738(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217894198750(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -164,11 +164,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1217894198758(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode(), null, false, false), null, false, false), "rValue", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), "rValue", true);
   }
 
   public static SNode sourceNodeQuery_1217894198777(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217894198789(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -176,7 +176,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1217894200280(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217894200292(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -184,11 +184,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1217894200300(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode(), null, false, false), null, false, false), "rValue", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), "rValue", true);
   }
 
   public static SNode sourceNodeQuery_1217894200319(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217894200331(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -196,7 +196,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1217963666605(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217963701356(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -208,7 +208,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1217970163373(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217970163396(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -220,7 +220,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1217970189747(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1217970189770(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -232,7 +232,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1218050010029(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1218050010041(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

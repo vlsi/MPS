@@ -101,6 +101,7 @@ public class GenerationController {
         generationOK = generationOK && result;
       }
       if (generationOK) {
+        fireBeforeModelsCompiled(generationOK);
         boolean compiledSuccessfully = true;
         boolean needToReload = false;
         for (Pair<IModule, List<SModelDescriptor>> moduleListPair : myModuleSequence) {
@@ -119,6 +120,8 @@ public class GenerationController {
         }
 
         generationOK = generationOK && compiledSuccessfully;
+
+        fireAfterModelsCompiled(generationOK);
       }
 
       if (generationOK) {
@@ -150,6 +153,14 @@ public class GenerationController {
 
   private void fireModelsGenerated(boolean success) {
     myManager.fireModelsGenerated(Collections.unmodifiableList(myInputModels), success);
+  }
+
+  private void fireBeforeModelsCompiled(boolean success) {
+    myManager.fireBeforeModelsCompiled(Collections.unmodifiableList(myInputModels), success);
+  }
+
+  private void fireAfterModelsCompiled(boolean success) {
+    myManager.fireAfterModelsCompiled(Collections.unmodifiableList(myInputModels), success);
   }
 
   private long estimateGenerationTime() {

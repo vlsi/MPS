@@ -2,7 +2,6 @@ package jetbrains.mps.vcs;
 
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.watching.ModelChangesWatcher;
@@ -12,10 +11,10 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationListener;
+import jetbrains.mps.generator.CompilationListener;
 
 import java.io.File;
 import java.util.*;
-import java.rmi.RemoteException;
 import java.lang.reflect.InvocationTargetException;
 
 import com.intellij.openapi.project.Project;
@@ -51,6 +50,7 @@ public class MPSVCSManager implements ProjectComponent {
   private final List<Runnable> myTasks = new LinkedList<Runnable>();
 
   private final GenerationListener myGenerationListener = new GenerationWhatcher();
+  private final CompilationListener myCompilationListener = new CompilationWatcher();
   private final SModelRepositoryListener myModelRepositoryListener = new SModelRepositoryListenerImpl();
   private final SModelAdapter myModelInitializationListener = new ModelSavedListener();
   private final MetadataCreationListener myMetadataListener = new MetadataCreationListenerImpl();
@@ -70,7 +70,7 @@ public class MPSVCSManager implements ProjectComponent {
   private void renameInternal(final VirtualFile from, final VirtualFile to) {
     invokeLater(new Runnable() {
       public void run() {
-        lazyRunInReadAction(new Runnable() {
+        ApplicationManager.getApplication().runReadAction(new Runnable() {
           public void run() {
             scheduleMissingFileInternal(from);
             scheduleUnversionedFileForAdditionInternal(to);
@@ -78,14 +78,6 @@ public class MPSVCSManager implements ProjectComponent {
         });
       }
     });
-  }
-
-  private void lazyRunInReadAction(Runnable toDo) {
-    if (ApplicationManager.getApplication().isReadAccessAllowed()) {
-      toDo.run();
-    } else {
-      ApplicationManager.getApplication().runReadAction(toDo);
-    }
   }
 
   private void scheduleMissingFileInternal(VirtualFile file) {
@@ -146,7 +138,7 @@ public class MPSVCSManager implements ProjectComponent {
     final ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(myProject);
     invokeLater(new Runnable() {
       public void run() {
-        lazyRunInReadAction(new Runnable() {
+        ApplicationManager.getApplication().runReadAction(new Runnable() {
           public void run() {
             LocalFileSystem lfs = LocalFileSystem.getInstance();
             for (VirtualFile vfile : inVCS) {
@@ -155,8 +147,8 @@ public class MPSVCSManager implements ProjectComponent {
               }
             }
           }
-        }
-      );}
+        });
+      }
     }
 
     );
@@ -195,7 +187,7 @@ public class MPSVCSManager implements ProjectComponent {
    * @param inVCS
    */
   private void addInternal(final List<VirtualFile> inVCS) {
-    lazyRunInReadAction(new Runnable() {
+    ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
         for (VirtualFile vf : inVCS) {
           if (vf == null) {
@@ -274,6 +266,7 @@ public class MPSVCSManager implements ProjectComponent {
 
   public void initComponent() {
     myProject.getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
+    myProject.getComponent(GeneratorManager.class).addCompilationListener(myCompilationListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
     ModelChangesWatcher.instance().addMetadataListener(myMetadataListener);
     myChangeListManager.addChangeListListener(myChangeListUpdateListener);
@@ -281,9 +274,22 @@ public class MPSVCSManager implements ProjectComponent {
 
   public void disposeComponent() {
     myProject.getComponent(GeneratorManager.class).removeGenerationListener(myGenerationListener);
+    myProject.getComponent(GeneratorManager.class).removeCompilationListener(myCompilationListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
     ModelChangesWatcher.instance().addMetadataListener(myMetadataListener);
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
+  }
+
+  private void runTasks() {
+    synchronized (myMonitor) {
+      myGenerationRunning = false;
+
+      for (Runnable task : myTasks) {
+        invokeNow(task);
+      }
+
+      myTasks.clear();
+    }
   }
 
   private class ModelSavedListener extends SModelAdapter {
@@ -313,21 +319,22 @@ public class MPSVCSManager implements ProjectComponent {
     }
 
     public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
-
+      runTasks();
     }
 
     public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
-      synchronized (myMonitor) {
-        myGenerationRunning = false;
+    }
+  }
 
-        for (Runnable task : myTasks) {
-          invokeNow(task);
-        }
+  private class CompilationWatcher implements CompilationListener {
 
-        myTasks.clear();
-      }
+    public void beforeModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+      runTasks();
     }
 
+    public void afterModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+
+    }
   }
 
   private class SModelRepositoryListenerImpl extends SModelRepositoryAdapter {
