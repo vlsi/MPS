@@ -9762,8 +9762,8 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214396913637">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214396913638">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1214396913639">
-                <link role="classConcept" targetNodeId="13.~_EditorUtil" resolveInfo="_EditorUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="13.~_EditorUtil.grayIfNotSelectable(jetbrains.mps.smodel.SNode):java.awt.Color" resolveInfo="grayIfNotSelectable" />
+                <link role="classConcept" targetNodeId="1176888877514" resolveInfo="_EditorUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="1176888881562" resolveInfo="grayIfNotSelectable" />
                 <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214396913640" />
               </node>
             </node>
@@ -9995,6 +9995,7 @@
       </node>
     </node>
   </node>
+  <visible index="3" modelUID="jetbrains.mps.bootstrap.editorLanguage.behavior" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1176888877514">
     <property name="name" value="_EditorUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1176888881562">
@@ -10010,20 +10011,13 @@
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176888881564">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1176888947599">
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1176889007858">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1188229952091">
-              <link role="enumConstantDeclaration" targetNodeId="22.~_YesNoDefault_Enum.no" resolveInfo="no" />
-              <link role="enumClass" targetNodeId="22.~_YesNoDefault_Enum" resolveInfo="_YesNoDefault_Enum" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207872475580">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721534">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1176888991077">
-                  <link role="variableDeclaration" targetNodeId="1176888932798" resolveInfo="cellModel" />
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176888993581" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1219420645055">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219420645056">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1219420645057">
+                <link role="variableDeclaration" targetNodeId="1176888932798" resolveInfo="cellModel" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207872475581">
-                <link role="baseMethodDeclaration" targetNodeId="22.~EditorCellModel.getSelectable():jetbrains.mps.bootstrap.editorLanguage.structure._YesNoDefault_Enum" resolveInfo="getSelectable" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1219420645058">
+                <link role="conceptMethodDeclaration" targetNodeId="3v.1219420196673" resolveInfo="isSelectable" />
               </node>
             </node>
           </node>

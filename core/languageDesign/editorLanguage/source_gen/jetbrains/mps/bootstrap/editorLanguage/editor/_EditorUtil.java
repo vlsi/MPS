@@ -4,14 +4,12 @@ package jetbrains.mps.bootstrap.editorLanguage.editor;
 
 import java.awt.Color;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.editorLanguage.structure._YesNoDefault_Enum;
+import jetbrains.mps.bootstrap.editorLanguage.behavior.EditorCellModel_Behavior;
 
 public class _EditorUtil {
 
   public static Color grayIfNotSelectable(SNode cellModel) {
-    if (((EditorCellModel)SNodeOperations.getAdapter(cellModel)).getSelectable() == _YesNoDefault_Enum.no) {
+    if (!(EditorCellModel_Behavior.call_isSelectable_1219420196673(cellModel))) {
       return new Color(230, 230, 230);
     }
     return null;

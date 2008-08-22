@@ -5,6 +5,9 @@ package jetbrains.mps.bootstrap.editorLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EditorCellModel_Behavior {
@@ -31,6 +34,18 @@ public class EditorCellModel_Behavior {
 
   public static String call_getFactoryMethodName_1216812165609(SNode thisNode) {
     return "create" + EditorCellModel_Behavior.call_getCellModelKind_1216811674575(thisNode) + thisNode.getId();
+  }
+
+  public static SNode virtual_getParent_1219419981626(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "styleClass", false);
+  }
+
+  public static boolean call_isSelectable_1219420196673(SNode thisNode) {
+    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem"))).first();
+    if ((firstItem == null)) {
+      return true;
+    }
+    return SPropertyOperations.getBoolean(firstItem, "flag");
   }
 
   public static String call_getCellId_1216737839993(SNode thisNode) {
