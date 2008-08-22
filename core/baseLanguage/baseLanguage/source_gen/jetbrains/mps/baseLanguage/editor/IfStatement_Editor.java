@@ -664,6 +664,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
+    IfStatement_LastBrace.setCellActions(editorCell, node, context);
   }
 
   private static void setupLabel_Constant_1177555034650_1177555034650(EditorCell_Label editorCell, SNode node, EditorContext context) {

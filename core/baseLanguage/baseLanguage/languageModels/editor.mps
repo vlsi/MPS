@@ -2405,6 +2405,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215436040090">
           <property name="text" value="}" />
           <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
+          <link role="actionMap" targetNodeId="1219402070982" resolveInfo="IfStatement_LastBrace" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1215618958947">
             <property name="flag" value="true" />
           </node>
@@ -16592,6 +16593,55 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219306959738">
                     <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1219306959706" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_DeleteOperation" id="1219306960710" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1219402070982">
+    <property name="package" value="if" />
+    <property name="name" value="IfStatement_LastBrace" />
+    <link role="applicableConcept" targetNodeId="17.1068580123159" resolveInfo="IfStatement" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem" id="1219402093156">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_ExecuteFunction" id="1219402093157">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219402093158">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1219402101612">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219402101614">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219402136806">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219402142126">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219402140499">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219402136839">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1219402136807" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219402140061">
+                        <link role="link" targetNodeId="17.1206060520071" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetLastOperation" id="1219402141643" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_DeleteOperation" id="1219402142614" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219402134005">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219402131938">
+                <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1219402131578" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219402133426">
+                  <link role="link" targetNodeId="17.1206060520071" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1219402135477" />
+            </node>
+            <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1219402155865">
+              <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219402155866">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219402157477">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219402157510">
+                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1219402157478" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_DeleteOperation" id="1219402158404" />
                   </node>
                 </node>
               </node>
