@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
 
@@ -406,7 +407,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor5840_0(EditorCell cell) {
     Color result;
-    result = Color.green;
+    result = MPSColors.green;
     return result;
   }
 

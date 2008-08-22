@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_Error_Editor extends DefaultNodeEditor {
 
@@ -2089,25 +2090,25 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6148_1(EditorCell cell) {
     Color result;
-    result = Color.pink;
+    result = MPSColors.pink;
     return result;
   }
 
   private static Color calculateColor6148_2(EditorCell cell) {
     Color result;
-    result = Color.pink;
+    result = MPSColors.pink;
     return result;
   }
 
   private static Color calculateColor6148_3(EditorCell cell) {
     Color result;
-    result = Color.magenta;
+    result = MPSColors.magenta;
     return result;
   }
 
   private static Color calculateColor6148_4(EditorCell cell) {
     Color result;
-    result = Color.magenta;
+    result = MPSColors.magenta;
     return result;
   }
 

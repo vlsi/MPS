@@ -242,7 +242,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
 
   private static Color calculateColor1515_1(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 

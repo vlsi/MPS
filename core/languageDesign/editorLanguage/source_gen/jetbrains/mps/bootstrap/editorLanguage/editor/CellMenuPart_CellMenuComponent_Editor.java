@@ -245,7 +245,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor8123_1(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 

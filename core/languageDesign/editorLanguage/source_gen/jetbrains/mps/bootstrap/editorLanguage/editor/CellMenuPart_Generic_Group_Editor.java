@@ -795,7 +795,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor3584_1(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 

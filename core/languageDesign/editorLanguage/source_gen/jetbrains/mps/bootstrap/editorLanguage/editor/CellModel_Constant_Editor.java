@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
@@ -2282,31 +2283,31 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6752_1(EditorCell cell) {
     Color result;
-    result = Color.yellow;
+    result = MPSColors.yellow;
     return result;
   }
 
   private static Color calculateColor6752_2(EditorCell cell) {
     Color result;
-    result = Color.yellow;
+    result = MPSColors.yellow;
     return result;
   }
 
   private static Color calculateColor6752_3(EditorCell cell) {
     Color result;
-    result = Color.yellow;
+    result = MPSColors.yellow;
     return result;
   }
 
   private static Color calculateColor6752_4(EditorCell cell) {
     Color result;
-    result = Color.cyan;
+    result = MPSColors.cyan;
     return result;
   }
 
   private static Color calculateColor6752_5(EditorCell cell) {
     Color result;
-    result = Color.cyan;
+    result = MPSColors.cyan;
     return result;
   }
 

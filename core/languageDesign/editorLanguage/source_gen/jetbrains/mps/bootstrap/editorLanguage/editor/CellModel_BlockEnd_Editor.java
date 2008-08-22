@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
@@ -350,13 +351,13 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor3910_0(EditorCell cell) {
     Color result;
-    result = Color.blue;
+    result = MPSColors.blue;
     return result;
   }
 
   private static Color calculateColor3910_1(EditorCell cell) {
     Color result;
-    result = Color.blue;
+    result = MPSColors.blue;
     return result;
   }
 

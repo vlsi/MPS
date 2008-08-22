@@ -20,6 +20,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
@@ -690,6 +691,7 @@ public class _CellModel_Common extends AbstractCellProvider {
 
   private static void setupBasic_Constant_12144783797451214478379745(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1214478379745");
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_Collection_12144783797471214478379747(EditorCell editorCell, SNode node, EditorContext context) {
@@ -715,6 +717,7 @@ public class _CellModel_Common extends AbstractCellProvider {
 
   private static void setupBasic_Constant_12144783797511214478379751(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1214478379751");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_Constant_12144783797521214478379752(EditorCell editorCell, SNode node, EditorContext context) {

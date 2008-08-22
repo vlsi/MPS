@@ -24,6 +24,7 @@ import jetbrains.mps.bootstrap.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
@@ -705,25 +706,25 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor8529_0(EditorCell cell) {
     Color result;
-    result = Color.yellow;
+    result = MPSColors.yellow;
     return result;
   }
 
   private static Color calculateColor8529_1(EditorCell cell) {
     Color result;
-    result = Color.cyan;
+    result = MPSColors.cyan;
     return result;
   }
 
   private static Color calculateColor8529_2(EditorCell cell) {
     Color result;
-    result = Color.yellow;
+    result = MPSColors.yellow;
     return result;
   }
 
   private static Color calculateColor8529_3(EditorCell cell) {
     Color result;
-    result = Color.cyan;
+    result = MPSColors.cyan;
     return result;
   }
 

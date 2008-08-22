@@ -251,7 +251,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
 
   private static Color calculateColor7061_2(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 

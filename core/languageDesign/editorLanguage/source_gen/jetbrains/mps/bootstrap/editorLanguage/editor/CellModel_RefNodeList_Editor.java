@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
 
@@ -1829,13 +1830,13 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6321_0(EditorCell cell) {
     Color result;
-    result = Color.yellow;
+    result = MPSColors.yellow;
     return result;
   }
 
   private static Color calculateColor6321_1(EditorCell cell) {
     Color result;
-    result = Color.cyan;
+    result = MPSColors.cyan;
     return result;
   }
 

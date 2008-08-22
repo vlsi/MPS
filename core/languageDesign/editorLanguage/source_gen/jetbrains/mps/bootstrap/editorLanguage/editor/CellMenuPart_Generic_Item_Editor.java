@@ -402,7 +402,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor8838_2(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 

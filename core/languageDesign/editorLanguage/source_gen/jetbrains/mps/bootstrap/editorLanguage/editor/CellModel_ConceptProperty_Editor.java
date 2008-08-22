@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
 
@@ -2372,25 +2373,25 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6697_1(EditorCell cell) {
     Color result;
-    result = Color.yellow;
+    result = MPSColors.yellow;
     return result;
   }
 
   private static Color calculateColor6697_2(EditorCell cell) {
     Color result;
-    result = Color.cyan;
+    result = MPSColors.cyan;
     return result;
   }
 
   private static Color calculateColor6697_3(EditorCell cell) {
     Color result;
-    result = Color.yellow;
+    result = MPSColors.yellow;
     return result;
   }
 
   private static Color calculateColor6697_4(EditorCell cell) {
     Color result;
-    result = Color.cyan;
+    result = MPSColors.cyan;
     return result;
   }
 

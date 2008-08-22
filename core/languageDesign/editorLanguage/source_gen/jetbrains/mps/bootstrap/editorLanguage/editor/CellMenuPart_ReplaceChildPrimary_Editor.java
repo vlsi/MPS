@@ -179,7 +179,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor7811_0(EditorCell cell) {
     Color result;
-    result = Color.darkGray;
+    result = MPSColors.darkGray;
     return result;
   }
 
@@ -191,7 +191,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor7811_2(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 

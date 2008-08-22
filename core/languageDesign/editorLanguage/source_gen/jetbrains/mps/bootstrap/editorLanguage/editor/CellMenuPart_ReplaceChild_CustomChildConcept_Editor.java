@@ -242,7 +242,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
 
   private static Color calculateColor9987_1(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 

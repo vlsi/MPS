@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -84,7 +85,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor1820_0(EditorCell cell) {
     Color result;
-    result = Color.darkGray;
+    result = MPSColors.darkGray;
     return result;
   }
 

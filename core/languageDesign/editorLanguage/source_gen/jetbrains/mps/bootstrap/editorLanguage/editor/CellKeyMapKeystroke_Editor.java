@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -242,25 +243,25 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor3628_0(EditorCell cell) {
     Color result;
-    result = Color.yellow;
+    result = MPSColors.yellow;
     return result;
   }
 
   private static Color calculateColor3628_1(EditorCell cell) {
     Color result;
-    result = Color.yellow;
+    result = MPSColors.yellow;
     return result;
   }
 
   private static Color calculateColor3628_2(EditorCell cell) {
     Color result;
-    result = Color.cyan;
+    result = MPSColors.cyan;
     return result;
   }
 
   private static Color calculateColor3628_3(EditorCell cell) {
     Color result;
-    result = Color.cyan;
+    result = MPSColors.cyan;
     return result;
   }
 

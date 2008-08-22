@@ -524,7 +524,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor0355_3(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 
