@@ -52,7 +52,7 @@ public class ReplaceConditionalWithIf_Intention extends BaseIntention implements
       stmtNode = (SNode)SNodeOperations.getNextSibling(stmtNode);
     }
     // Get used nodes
-    SNode nodeParent = SNodeOperations.getParent(node, null, false, false);
+    SNode nodeParent = SNodeOperations.getParent(node);
     int nodeIndex = ListSequence.fromList(SNodeOperations.getChildren(nodeParent)).indexOf(node);
     SNode nodeCopy = SNodeOperations.copyNode(node);
     // make + node

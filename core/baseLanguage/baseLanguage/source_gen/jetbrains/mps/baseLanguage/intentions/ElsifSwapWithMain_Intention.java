@@ -28,7 +28,7 @@ public class ElsifSwapWithMain_Intention extends BaseIntention implements Intent
   }
 
   public void execute(SNode node, EditorContext editorContext) {
-    SNode ifStatement = SNodeOperations.getParent(node, null, false, false);
+    SNode ifStatement = SNodeOperations.getParent(node);
     SNode condition = SLinkOperations.getTarget(ifStatement, "condition", true);
     SNode statementList = SLinkOperations.getTarget(ifStatement, "ifTrue", true);
     SLinkOperations.setTarget(ifStatement, "condition", SLinkOperations.getTarget(node, "condition", true), true);
