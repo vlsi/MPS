@@ -5232,17 +5232,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1219355713022" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219355713023" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219355713024">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1219355796271">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1219355796272">
-            <property name="name" value="cellActionID" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1219355796273">
-              <link role="concept" targetNodeId="9.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.NodeRefExpression" id="1219355796274">
-              <link role="referentNode" targetNodeId="11.1139535328871" resolveInfo="CellActionId" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1219355842612">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1219355842613">
             <property name="name" value="members" />
@@ -5250,8 +5239,8 @@
               <link role="elementConcept" targetNodeId="9.1083171877298" resolveInfo="EnumerationMemberDeclaration" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219355842615">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219355842616">
-                <link role="variableDeclaration" targetNodeId="1219355796272" resolveInfo="cellActionID" />
+              <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.NodeRefExpression" id="1219365500095">
+                <link role="referentNode" targetNodeId="11.1139535328871" resolveInfo="CellActionId" />
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219355842617">
                 <link role="link" targetNodeId="9.1083172003582" />
