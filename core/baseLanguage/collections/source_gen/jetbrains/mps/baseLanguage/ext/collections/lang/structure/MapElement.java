@@ -17,15 +17,6 @@ public class MapElement extends Expression {
     super(node);
   }
 
-  public static MapElement newInstance(SModel sm, boolean init) {
-    return (MapElement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MapElement newInstance(SModel sm) {
-    return MapElement.newInstance(sm, false);
-  }
-
-
   public Expression getMap() {
     return (Expression)this.getChild(MapElement.MAP);
   }
@@ -40,6 +31,15 @@ public class MapElement extends Expression {
 
   public void setKey(Expression node) {
     super.setChild(MapElement.KEY, node);
+  }
+
+
+  public static MapElement newInstance(SModel sm, boolean init) {
+    return (MapElement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MapElement newInstance(SModel sm) {
+    return MapElement.newInstance(sm, false);
   }
 
 }

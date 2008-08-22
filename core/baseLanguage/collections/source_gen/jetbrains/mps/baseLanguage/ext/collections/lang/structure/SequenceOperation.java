@@ -19,15 +19,6 @@ public class SequenceOperation extends BaseConcept implements IOperation {
     super(node);
   }
 
-  public static SequenceOperation newInstance(SModel sm, boolean init) {
-    return (SequenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SequenceOperation newInstance(SModel sm) {
-    return SequenceOperation.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(SequenceOperation.SHORT_DESCRIPTION);
   }
@@ -50,6 +41,15 @@ public class SequenceOperation extends BaseConcept implements IOperation {
 
   public void setVirtualPackage(String value) {
     this.setProperty(SequenceOperation.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static SequenceOperation newInstance(SModel sm, boolean init) {
+    return (SequenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SequenceOperation newInstance(SModel sm) {
+    return SequenceOperation.newInstance(sm, false);
   }
 
 }

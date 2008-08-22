@@ -19,15 +19,6 @@ public class MapOperation extends BaseConcept implements IOperation {
     super(node);
   }
 
-  public static MapOperation newInstance(SModel sm, boolean init) {
-    return (MapOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MapOperation newInstance(SModel sm) {
-    return MapOperation.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(MapOperation.SHORT_DESCRIPTION);
   }
@@ -50,6 +41,15 @@ public class MapOperation extends BaseConcept implements IOperation {
 
   public void setVirtualPackage(String value) {
     this.setProperty(MapOperation.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static MapOperation newInstance(SModel sm, boolean init) {
+    return (MapOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MapOperation newInstance(SModel sm) {
+    return MapOperation.newInstance(sm, false);
   }
 
 }

@@ -21,7 +21,7 @@ public class typeof_MapRemoveOperation_InferenceRule implements InferenceRule_Ru
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(nodeToCheck), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1207233776696", true), new QuotationClass_64().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(VALUE_typevar_1207233776693), TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1207233776692)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1207233776694", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(nodeToCheck), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1207233776696", true), new QuotationClass_61().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(VALUE_typevar_1207233776693), TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1207233776692)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1207233776694", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;

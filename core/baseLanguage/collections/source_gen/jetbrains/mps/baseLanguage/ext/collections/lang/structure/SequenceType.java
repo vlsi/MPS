@@ -16,21 +16,21 @@ public class SequenceType extends Type {
     super(node);
   }
 
-  public static SequenceType newInstance(SModel sm, boolean init) {
-    return (SequenceType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SequenceType newInstance(SModel sm) {
-    return SequenceType.newInstance(sm, false);
-  }
-
-
   public Type getElementType() {
     return (Type)this.getChild(SequenceType.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
     super.setChild(SequenceType.ELEMENT_TYPE, node);
+  }
+
+
+  public static SequenceType newInstance(SModel sm, boolean init) {
+    return (SequenceType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SequenceType newInstance(SModel sm) {
+    return SequenceType.newInstance(sm, false);
   }
 
 }

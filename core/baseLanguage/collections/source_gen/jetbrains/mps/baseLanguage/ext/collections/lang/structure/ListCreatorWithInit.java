@@ -4,13 +4,13 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.structure;
 
 import jetbrains.mps.baseLanguage.structure.AbstractCreator;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class ListCreatorWithInit extends AbstractCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit";
@@ -20,15 +20,6 @@ public class ListCreatorWithInit extends AbstractCreator {
   public ListCreatorWithInit(SNode node) {
     super(node);
   }
-
-  public static ListCreatorWithInit newInstance(SModel sm, boolean init) {
-    return (ListCreatorWithInit)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ListCreatorWithInit newInstance(SModel sm) {
-    return ListCreatorWithInit.newInstance(sm, false);
-  }
-
 
   public Type getElementType() {
     return (Type)this.getChild(ListCreatorWithInit.ELEMENT_TYPE);
@@ -56,6 +47,15 @@ public class ListCreatorWithInit extends AbstractCreator {
 
   public void insertInitValue(Expression prev, Expression node) {
     this.insertChild(prev, ListCreatorWithInit.INIT_VALUE, node);
+  }
+
+
+  public static ListCreatorWithInit newInstance(SModel sm, boolean init) {
+    return (ListCreatorWithInit)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ListCreatorWithInit newInstance(SModel sm) {
+    return ListCreatorWithInit.newInstance(sm, false);
   }
 
 }

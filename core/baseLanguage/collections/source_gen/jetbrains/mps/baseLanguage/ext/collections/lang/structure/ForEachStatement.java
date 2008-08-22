@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.structure;
 
 import jetbrains.mps.baseLanguage.structure.AbstractLoopStatement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class ForEachStatement extends AbstractLoopStatement {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement";
@@ -17,15 +17,6 @@ public class ForEachStatement extends AbstractLoopStatement {
   public ForEachStatement(SNode node) {
     super(node);
   }
-
-  public static ForEachStatement newInstance(SModel sm, boolean init) {
-    return (ForEachStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ForEachStatement newInstance(SModel sm) {
-    return ForEachStatement.newInstance(sm, false);
-  }
-
 
   public ForEachVariable getVariable() {
     return (ForEachVariable)this.getChild(ForEachStatement.VARIABLE);
@@ -41,6 +32,15 @@ public class ForEachStatement extends AbstractLoopStatement {
 
   public void setInputSequence(Expression node) {
     super.setChild(ForEachStatement.INPUT_SEQUENCE, node);
+  }
+
+
+  public static ForEachStatement newInstance(SModel sm, boolean init) {
+    return (ForEachStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ForEachStatement newInstance(SModel sm) {
+    return ForEachStatement.newInstance(sm, false);
   }
 
 }

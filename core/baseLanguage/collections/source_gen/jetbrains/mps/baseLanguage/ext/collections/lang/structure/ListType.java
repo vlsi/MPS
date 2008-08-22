@@ -16,21 +16,21 @@ public class ListType extends Type {
     super(node);
   }
 
-  public static ListType newInstance(SModel sm, boolean init) {
-    return (ListType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ListType newInstance(SModel sm) {
-    return ListType.newInstance(sm, false);
-  }
-
-
   public Type getElementType() {
     return (Type)this.getChild(ListType.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
     super.setChild(ListType.ELEMENT_TYPE, node);
+  }
+
+
+  public static ListType newInstance(SModel sm, boolean init) {
+    return (ListType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ListType newInstance(SModel sm) {
+    return ListType.newInstance(sm, false);
   }
 
 }

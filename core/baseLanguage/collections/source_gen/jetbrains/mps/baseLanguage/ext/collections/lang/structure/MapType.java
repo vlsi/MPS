@@ -17,15 +17,6 @@ public class MapType extends Type {
     super(node);
   }
 
-  public static MapType newInstance(SModel sm, boolean init) {
-    return (MapType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapType", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MapType newInstance(SModel sm) {
-    return MapType.newInstance(sm, false);
-  }
-
-
   public Type getKeyType() {
     return (Type)this.getChild(MapType.KEY_TYPE);
   }
@@ -40,6 +31,15 @@ public class MapType extends Type {
 
   public void setValueType(Type node) {
     super.setChild(MapType.VALUE_TYPE, node);
+  }
+
+
+  public static MapType newInstance(SModel sm, boolean init) {
+    return (MapType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MapType newInstance(SModel sm) {
+    return MapType.newInstance(sm, false);
   }
 
 }

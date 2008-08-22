@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.structure;
 
 import jetbrains.mps.baseLanguage.structure.AbstractCreator;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Type;
 
 public class HashMapCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator";
@@ -18,15 +18,6 @@ public class HashMapCreator extends AbstractCreator {
   public HashMapCreator(SNode node) {
     super(node);
   }
-
-  public static HashMapCreator newInstance(SModel sm, boolean init) {
-    return (HashMapCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static HashMapCreator newInstance(SModel sm) {
-    return HashMapCreator.newInstance(sm, false);
-  }
-
 
   public Type getKeyType() {
     return (Type)this.getChild(HashMapCreator.KEY_TYPE);
@@ -50,6 +41,15 @@ public class HashMapCreator extends AbstractCreator {
 
   public void setInitializer(MapInitializer node) {
     super.setChild(HashMapCreator.INITIALIZER, node);
+  }
+
+
+  public static HashMapCreator newInstance(SModel sm, boolean init) {
+    return (HashMapCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static HashMapCreator newInstance(SModel sm) {
+    return HashMapCreator.newInstance(sm, false);
   }
 
 }

@@ -19,14 +19,14 @@ public class RulesFunctions_Collections {
 
   public static SNode getInput(SNode op) {
     SNode input = null;
-    SNode parent = SNodeOperations.getParent(op, null, false, false);
+    SNode parent = SNodeOperations.getParent(op);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       input = SLinkOperations.getTarget(parent, "operand", true);
     } else
     {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@20_0", "1184783963366", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@14_0", "1184783963366", intentionProvider);
       }
     }
     return input;
@@ -34,7 +34,7 @@ public class RulesFunctions_Collections {
 
   public static SNode getOutput(SNode op) {
     SNode output = null;
-    SNode parent = SNodeOperations.getParent(op, null, false, false);
+    SNode parent = SNodeOperations.getParent(op);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       output = SLinkOperations.getTarget(parent, "operation", true);
       return output;
@@ -55,7 +55,7 @@ public class RulesFunctions_Collections {
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184843134901", true), new QuotationClass_().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184784638219)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184843140648", false, 0, intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184843134901", true), new QuotationClass_0().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184784638219)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184843140648", false, 0, intentionProvider);
       }
       {
         SNode _nodeToCheck_1029348928467 = op;

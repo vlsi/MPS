@@ -16,21 +16,21 @@ public class ForEachVariableReference extends Expression {
     super(node);
   }
 
-  public static ForEachVariableReference newInstance(SModel sm, boolean init) {
-    return (ForEachVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ForEachVariableReference newInstance(SModel sm) {
-    return ForEachVariableReference.newInstance(sm, false);
-  }
-
-
   public ForEachVariable getVariable() {
     return (ForEachVariable)this.getReferent(ForEachVariableReference.VARIABLE);
   }
 
   public void setVariable(ForEachVariable node) {
     super.setReferent(ForEachVariableReference.VARIABLE, node);
+  }
+
+
+  public static ForEachVariableReference newInstance(SModel sm, boolean init) {
+    return (ForEachVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ForEachVariableReference newInstance(SModel sm) {
+    return ForEachVariableReference.newInstance(sm, false);
   }
 
 }
