@@ -120,10 +120,10 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1186402497606(EditorContext context, SNode node) {
     if (this.myListHandler_1186402497606 == null) {
-      this.myListHandler_1186402497606 = new StyleSheetClass_Editor.itemListHandler_9826_0(node, "item", context);
+      this.myListHandler_1186402497606 = new StyleSheetClass_Editor.styleItemListHandler_9826_0(node, "styleItem", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1186402497606.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_refNodeList_item1186402497606(editorCell, node, context);
+    setupBasic_refNodeList_styleItem1186402497606(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -240,8 +240,8 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_refNodeList_item1186402497606(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_item");
+  private static void setupBasic_refNodeList_styleItem1186402497606(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_styleItem");
   }
 
   private static void setupBasic_Collection_11982523866491198252386649(EditorCell editorCell, SNode node, EditorContext context) {
@@ -283,7 +283,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1186402455065_1186402455065(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNodeList_item_1186402497606(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNodeList_styleItem_1186402497606(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1198252387401_1198252387401(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -299,9 +299,9 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "extendedClass", true) != null;
   }
 
-  public static class itemListHandler_9826_0 extends RefNodeListHandler {
+  public static class styleItemListHandler_9826_0 extends RefNodeListHandler {
 
-    public itemListHandler_9826_0(SNode ownerNode, String childRole, EditorContext context) {
+    public styleItemListHandler_9826_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

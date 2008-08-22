@@ -12,7 +12,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.editorLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
@@ -2149,13 +2149,13 @@
     <property name="name" value="Styles" />
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1205441017139">
       <property name="name" value="ref_link_role" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1205441036593">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1205441036593">
         <property name="style" value="ITALIC" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1205441075892">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1205441075892">
         <property name="color" value="darkGray" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1215160336889">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1215160336889">
         <property name="value" value="0.0" />
       </node>
     </node>

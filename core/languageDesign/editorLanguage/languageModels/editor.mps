@@ -4,7 +4,7 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
@@ -26,7 +26,7 @@
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <maxImportIndex value="28" />
-  <import index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+  <import index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.editorLanguage.editor@java_stub" version="-1" />
@@ -10933,7 +10933,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1219328669039" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1186402497606">
           <property name="vertical" value="true" />
-          <link role="relationDeclaration" targetNodeId="2.1186402487855" />
+          <link role="relationDeclaration" targetNodeId="2.1219418656006" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995111">
           <property name="flag" value="false" />
@@ -11066,53 +11066,53 @@
     <property name="name" value="Styles" />
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1214310532702">
       <property name="name" value="style" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214310536160">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214310536160">
         <property name="color" value="DARK_GREEN" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1194569489648">
       <property name="name" value="reference" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1194569500305">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1194569500305">
         <property name="color" value="DARK_BLUE" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1194569509088">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1194569509088">
         <property name="style" value="ITALIC" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1194569818117">
       <property name="name" value="item" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1194569818118">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1194569818118">
         <property name="style" value="ITALIC" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1194569818119">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1194569818119">
         <property name="color" value="DARK_GREEN" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1214478266312">
       <property name="name" value="header" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1214478269657">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1214478269657">
         <property name="style" value="BOLD" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214479322404" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem" id="1214478891245">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214479322404" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem" id="1214478891245">
         <property name="underlined" value="2" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214478278161">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214478278161">
         <property name="color" value="DARK_GREEN" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1214480913160">
       <property name="name" value="property" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214480915802">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214480915802">
         <property name="flag" value="false" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleClassItem" id="1214480975659">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleClassItem" id="1214480975659">
         <property name="flag" value="true" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1214480920272">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1214480920272">
         <property name="style" value="PLAIN" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214480929837">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214480929837">
         <property name="color" value="DARK_MAGENTA" />
       </node>
     </node>
@@ -12047,7 +12047,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1214305839047" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1214305846330">
           <property name="vertical" value="true" />
-          <link role="relationDeclaration" targetNodeId="2.1214305243050" />
+          <link role="relationDeclaration" targetNodeId="2.1219418656006" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994230">
           <property name="flag" value="false" />
@@ -12168,7 +12168,7 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1214478379748" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1214478379749">
             <property name="vertical" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1214305243050" />
+            <link role="relationDeclaration" targetNodeId="2.1219418656006" />
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214478379750">
             <property name="flag" value="false" />

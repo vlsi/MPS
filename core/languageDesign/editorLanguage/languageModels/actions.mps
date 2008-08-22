@@ -27,9 +27,9 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   <maxImportIndex value="11" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="5" modelUID="java.lang@java_stub" version="-1" />
@@ -295,8 +295,8 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214480660750">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214480660751">
                     <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_NewNode" id="1214480664306" />
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1214480660753">
-                      <link role="link" targetNodeId="1.1214305243050" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219418788004">
+                      <link role="link" targetNodeId="1.1219418656006" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1214480660754">
@@ -388,8 +388,8 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214480647223">
                           <link role="variableDeclaration" targetNodeId="1187370374056" resolveInfo="innerNode" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1214480649837">
-                          <link role="link" targetNodeId="1.1214305243050" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219418791053">
+                          <link role="link" targetNodeId="1.1219418656006" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1214480652153">
@@ -607,8 +607,8 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214480710223">
                           <link role="variableDeclaration" targetNodeId="1177680848719" resolveInfo="result" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1214480706902">
-                          <link role="link" targetNodeId="1.1214305243050" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219418809397">
+                          <link role="link" targetNodeId="1.1219418656006" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1214480706903">
@@ -787,8 +787,8 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214480676239">
                           <link role="variableDeclaration" targetNodeId="1177680871672" resolveInfo="result" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1214480671890">
-                          <link role="link" targetNodeId="1.1214305243050" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219418797391">
+                          <link role="link" targetNodeId="1.1219418656006" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1214480671891">
@@ -927,8 +927,8 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214480691123">
                       <link role="variableDeclaration" targetNodeId="1177763049098" resolveInfo="indent" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1214480681648">
-                      <link role="link" targetNodeId="1.1214305243050" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219418813899">
+                      <link role="link" targetNodeId="1.1219418656006" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1214480681649">
@@ -995,8 +995,8 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214480700571">
                           <link role="variableDeclaration" targetNodeId="1177762909343" resolveInfo="result" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1214480698017">
-                          <link role="link" targetNodeId="1.1214305243050" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219418818073">
+                          <link role="link" targetNodeId="1.1219418656006" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1214480698018">
@@ -1175,8 +1175,8 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214480727655">
                           <link role="variableDeclaration" targetNodeId="1177680921683" resolveInfo="result" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1214480725051">
-                          <link role="link" targetNodeId="1.1214305243050" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219418804927">
+                          <link role="link" targetNodeId="1.1219418656006" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1214480725052">
@@ -1349,8 +1349,8 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214480719110">
                           <link role="variableDeclaration" targetNodeId="1177680944121" resolveInfo="result" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1214480716164">
-                          <link role="link" targetNodeId="1.1214305243050" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219418800018">
+                          <link role="link" targetNodeId="1.1219418656006" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1214480716165">

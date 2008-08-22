@@ -19,7 +19,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.editorLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts">
     <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
@@ -30,7 +30,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   <maxImportIndex value="3" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   <import index="2" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1216916605972">

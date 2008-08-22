@@ -4,7 +4,7 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
@@ -4600,67 +4600,67 @@
     <property name="name" value="Styles" />
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1194566785068">
       <property name="name" value="reference" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1194566983414">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1194566983414">
         <property name="color" value="DARK_BLUE" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1194567002745">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1194567002745">
         <property name="style" value="ITALIC" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1195595824868">
       <property name="name" value="constant" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1195595847744">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1195595847744">
         <property name="color" value="DARK_MAGENTA" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1195595857606">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1195595857606">
         <property name="style" value="BOLD" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1198104170947">
       <property name="name" value="literal" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1198104178995">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1198104178995">
         <property name="color" value="DARK_BLUE" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1198104178996">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1198104178996">
         <property name="style" value="BOLD" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1215513928924">
       <property name="name" value="macroStart" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" id="1215513933221">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" id="1215513933221">
         <property name="value" value="0.0" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1215513935567">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1215513935567">
         <property name="value" value="0.0" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1215513943475">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1215513943475">
         <property name="style" value="BOLD_ITALIC" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1215513961587">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1215513961587">
         <property name="color" value="DARK_BLUE" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1215513963619">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleClassItem" id="1215513963619">
         <property name="flag" value="true" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1215514347972">
       <property name="name" value="nodeUnderMacro" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" id="1215514352379">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" id="1215514352379">
         <property name="value" value="0.0" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1215514355568">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1215514355568">
         <property name="value" value="0.0" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleClassItem" id="1215514369126">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleClassItem" id="1215514369126">
         <property name="flag" value="true" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.BracketColorStyleClassItem" id="1215516491316">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BracketColorStyleClassItem" id="1215516491316">
         <property name="color" value="LIGHT_BLUE" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1216755869996">
       <property name="name" value="mappingLabelReference" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" id="1216755908559">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" id="1216755908559">
         <property name="color" value="orange" />
       </node>
     </node>

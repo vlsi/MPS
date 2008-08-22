@@ -4,7 +4,7 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
@@ -9794,10 +9794,10 @@
     <property name="name" value="stylesheet_Feature" />
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1197914376453">
       <property name="name" value="OPPOSITE" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1197914388079">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1197914388079">
         <property name="color" value="lightGray" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1197914392935">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1197914392935">
         <property name="style" value="BOLD" />
       </node>
     </node>

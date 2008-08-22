@@ -252,6 +252,16 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="26">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="item" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" featureKind="CHILD" />
+          <value featureName="styleItem" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structureStyleSheetClass" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
@@ -277,12 +287,12 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   <maxImportIndex value="41" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="27" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+  <import index="27" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   <import index="28" modelUID="java.awt.event@java_stub" version="-1" />
   <import index="29" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <import index="33" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -354,12 +364,6 @@
       <property name="role" value="focusPolicyApplicable" />
       <link role="target" targetNodeId="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1214305243050">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="styleItem" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1073389214266">
       <property name="name" value="selectable" />
       <property name="propertyType" value="string" />
@@ -405,6 +409,9 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1130859485024">
       <property name="name" value="attractsFocus" />
       <link role="dataType" targetNodeId="1130926557197" resolveInfo="FocusPolicy" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1219418770234">
+      <link role="intfc" targetNodeId="1219418625346" resolveInfo="IStyleContainer" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1073389446423">
@@ -2685,12 +2692,6 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="StyleSheetClass" />
     <link role="extends" targetNodeId="3.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1186402487855">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="item" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1198252369256">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="extendedClass" />
@@ -2701,6 +2702,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1215087816795">
       <link role="intfc" targetNodeId="4.1212170275853" resolveInfo="IValidIdentifier" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1219418689782">
+      <link role="intfc" targetNodeId="1219418625346" resolveInfo="StyleContainer" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186402475462">
@@ -3355,6 +3359,16 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1219226236606">
       <property name="value" value="draw-brackets" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1219418625346">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="IStyleContainer" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1219418656006">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="styleItem" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     </node>
   </node>
 </model>

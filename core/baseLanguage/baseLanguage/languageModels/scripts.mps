@@ -37,7 +37,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -49,7 +49,7 @@
   <import index="23" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   <import index="24" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="25" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
-  <import index="27" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+  <import index="27" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   <import index="28" modelUID="jetbrains.mps.quotation.structure" version="-1" />
   <import index="29" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1204244561565">

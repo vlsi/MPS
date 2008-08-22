@@ -20,4 +20,8 @@ public class StyleSheetClass_Behavior {
     return SNodeOperations.getParent(thisNode);
   }
 
+  public static SNode call_getItem_1219419377713(SNode thisNode, SNode item) {
+    return null;
+  }
+
 }

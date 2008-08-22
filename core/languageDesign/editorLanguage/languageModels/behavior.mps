@@ -28,9 +28,9 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   <maxImportIndex value="9" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="25" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.bootstrap.editorLanguage.behavior" version="-1" />
@@ -144,6 +144,20 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155723975" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1219419377713">
+      <property name="name" value="getItem" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219419377715" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219419381606" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1219419383514">
+        <link role="concept" targetNodeId="1.1186402475462" resolveInfo="StyleClassItem" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1219419392687">
+        <property name="name" value="item" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1219419392688">
+          <link role="conceptDeclaraton" targetNodeId="1.1186402475462" resolveInfo="StyleClassItem" />
+        </node>
+      </node>
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877260652">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877260653" />
