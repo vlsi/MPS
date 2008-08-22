@@ -98,15 +98,15 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
     this.insertChild(prev, Project.TARGET, node);
   }
 
-  public int getLibrarysCount() {
+  public int getLibrariesCount() {
     return this.getChildCount(Project.LIBRARY);
   }
 
-  public Iterator<TaskLibraryReference> librarys() {
+  public Iterator<TaskLibraryReference> libraries() {
     return this.children(Project.LIBRARY);
   }
 
-  public List<TaskLibraryReference> getLibrarys() {
+  public List<TaskLibraryReference> getLibraries() {
     return this.getChildren(Project.LIBRARY);
   }
 
@@ -178,15 +178,15 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
     this.insertChild(prev, Project.IMPORT_PROPERTIES, node);
   }
 
-  public int getPropertysCount() {
+  public int getPropertiesCount() {
     return this.getChildCount(Project.PROPERTY);
   }
 
-  public Iterator<PropertyDeclaration> propertys() {
+  public Iterator<PropertyDeclaration> properties() {
     return this.children(Project.PROPERTY);
   }
 
-  public List<PropertyDeclaration> getPropertys() {
+  public List<PropertyDeclaration> getProperties() {
     return this.getChildren(Project.PROPERTY);
   }
 

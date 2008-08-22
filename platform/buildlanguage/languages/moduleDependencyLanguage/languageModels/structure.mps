@@ -30,7 +30,7 @@
   <import index="1" modelUID="jetbrains.mps.build.moduleDependencyLanguage.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216745453338">
-    <property name="name" value="Description" />
+    <property name="name" value="ProjectDescription" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1216745482257">
@@ -47,6 +47,12 @@
       <property name="role" value="commonClasspath" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1216907456863" resolveInfo="PathHolder" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1219418803994">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="macro" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1219418780635" resolveInfo="Macros" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216745525843">
@@ -102,6 +108,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1216907456863">
     <property name="name" value="PathHolder" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1219418823334">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="macro" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1219418780635" resolveInfo="Macros" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1216907465733">
       <property name="name" value="path" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
@@ -115,6 +127,13 @@
       <property name="role" value="cycle" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1216904128547" resolveInfo="Cycle" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1219418780635">
+    <property name="name" value="Macros" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1219418793944">
+      <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>
