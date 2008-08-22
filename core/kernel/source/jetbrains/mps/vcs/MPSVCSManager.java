@@ -106,14 +106,7 @@ public class MPSVCSManager implements ProjectComponent {
     if (SwingUtilities.isEventDispatchThread()) {
       task.run();
     } else {
-
-      try {
-        SwingUtilities.invokeAndWait(task);
-      } catch (InterruptedException e) {
-      } catch (InvocationTargetException e) {
-        LOG.error(e);
-      }
-
+      SwingUtilities.invokeLater(task);
     }
   }
 
