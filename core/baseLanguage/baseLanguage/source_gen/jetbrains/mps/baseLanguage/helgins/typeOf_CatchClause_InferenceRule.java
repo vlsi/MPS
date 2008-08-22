@@ -18,7 +18,7 @@ public class typeOf_CatchClause_InferenceRule implements InferenceRule_Runtime {
     {
       SNode _nodeToCheck_1029348928467 = catchClause;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(catchClause, "throwable", true), "jetbrains.mps.baseLanguage.helgins", "1176896800008", true), new QuotationClass_19().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176896807264", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(catchClause, "throwable", true), "jetbrains.mps.baseLanguage.helgins", "1176896800008", true), new QuotationClass_17().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176896807264", false, 0, intentionProvider);
     }
   }
 

@@ -8881,53 +8881,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1173176876902">
-    <property name="package" value="dotExpression_old" />
-    <link role="conceptDeclaration" targetNodeId="17.1173176849460" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1173176909123">
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1173176912363">
-        <link role="relationDeclaration" targetNodeId="17.1173176867072" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208944586635">
-        <property name="text" value="!" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399677892">
-          <property name="color" value="red" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1173176916850">
-        <property name="text" value=".length" />
-        <property name="attractsFocus" value="1" />
-        <link role="actionMap" targetNodeId="1173187270078" resolveInfo="ArrayLengthExpression_Actions" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1214314934111">
-          <property name="style" value="PLAIN" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1173187270078">
-    <property name="name" value="ArrayLengthExpression_Actions" />
-    <link role="applicableConcept" targetNodeId="17.1173176849460" />
-    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem" id="1173187353088">
-      <property name="actionId" value="delete_action_id" />
-      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_ExecuteFunction" id="1173187353089">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1173187353090">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1173187359027">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956077">
-              <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1173187359028" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1173187361311">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977967119">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1173187362594" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1173187367331">
-                    <link role="link" targetNodeId="17.1173176867072" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1173187381459">
     <property name="name" value="ArrayAccessExpression_Actions" />
     <link role="applicableConcept" targetNodeId="17.1173175405605" />

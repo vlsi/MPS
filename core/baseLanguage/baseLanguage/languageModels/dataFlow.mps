@@ -1468,22 +1468,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1207060130328">
-    <property name="package" value="dotExpression_old" />
-    <link role="conceptDeclaration" targetNodeId="1.1173176849460" resolveInfo="ArrayLengthExpression" />
-    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1207060130329">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207060130330">
-        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1207060141020">
-          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207060142320">
-            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207060142069" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207060144462">
-              <link role="link" targetNodeId="1.1173176867072" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1207060493473">
     <property name="package" value="method.static" />
     <link role="conceptDeclaration" targetNodeId="1.1081236700937" resolveInfo="StaticMethodCall" />

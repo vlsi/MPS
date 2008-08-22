@@ -2039,25 +2039,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1146528679895" resolveInfo="lvalue" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1173176849460">
-    <property name="name" value="ArrayLengthExpression" />
-    <property name="package" value="dotExpression_old" />
-    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1173176867072">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="array" />
-      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1173176859618">
-      <property name="value" value=".length" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1208944675142">
-      <property name="value" value="Use ArrayLengthOperation" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1208203973962" resolveInfo="deprecated_next_after_531" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177326519037">
     <property name="name" value="CommentedStatementsBlock" />
     <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />

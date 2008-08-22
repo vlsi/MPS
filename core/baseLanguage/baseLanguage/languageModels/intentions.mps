@@ -6691,57 +6691,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1208944604924">
-    <property name="package" value="dotExpression_old" />
-    <property name="name" value="ConvertToArrayLengthOperation" />
-    <property name="isErrorIntention" value="true" />
-    <link role="forConcept" targetNodeId="1.1173176849460" resolveInfo="ArrayLengthExpression" />
-    <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1208944604925">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208944604926">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208944643275">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1208944643276">
-            <property name="value" value="Convert to ArrayLengthOperation" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1208944604928">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208944604929">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1208944741787">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208944741788">
-            <property name="name" value="array" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1208944747350">
-              <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1208944741789" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1208944823554" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208944727475">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208944728271">
-            <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1208944727476" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1208944729422">
-              <node role="parameter" type="jetbrains.mps.quotation.structure.Quotation" id="1208944732378">
-                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208944761072">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208944764274">
-                    <link role="variableDeclaration" targetNodeId="1208944741788" resolveInfo="array" />
-                    <node role="_attr_$attribute" type="jetbrains.mps.quotation.structure.Antiquotation" id="1208944772075">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208944776533">
-                        <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1208944775934" />
-                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1208944785538">
-                          <link role="link" targetNodeId="1.1173176867072" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="1208944766459" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1212786090299">
     <property name="name" value="ConvertNewExpressionToGenericNewExpression" />
     <property name="isErrorIntention" value="true" />

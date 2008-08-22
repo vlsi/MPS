@@ -30,17 +30,17 @@ public class RulesFunctions_BaseLanguage {
     {
       SNode _nodeToCheck_1029348928467 = binOp;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176897133366", true), SLinkOperations.getTarget(new QuotationClass_20().createNode(), "descriptor", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176897142200", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176897133366", true), SLinkOperations.getTarget(new QuotationClass_18().createNode(), "descriptor", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176897142200", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = binOp;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176897185028", true), SLinkOperations.getTarget(new QuotationClass_21().createNode(), "descriptor", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176897185023", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176897185028", true), SLinkOperations.getTarget(new QuotationClass_19().createNode(), "descriptor", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176897185023", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = binOp;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(binOp, "jetbrains.mps.baseLanguage.helgins", "1203512292516", true), new QuotationClass_22().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1203512292514", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(binOp, "jetbrains.mps.baseLanguage.helgins", "1203512292516", true), new QuotationClass_20().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1203512292514", intentionProvider);
     }
   }
 
@@ -61,12 +61,12 @@ public class RulesFunctions_BaseLanguage {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(binOp, "rightExpression", true);
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), SLinkOperations.getTarget(new QuotationClass_23().createNode(), "descriptor", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176908856117", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), SLinkOperations.getTarget(new QuotationClass_21().createNode(), "descriptor", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176908856117", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(binOp, "leftExpression", true);
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), SLinkOperations.getTarget(new QuotationClass_24().createNode(), "descriptor", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176908902743", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), SLinkOperations.getTarget(new QuotationClass_22().createNode(), "descriptor", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176908902743", false, 0, intentionProvider);
     }
     {
       final SNode _representatorVar3 = TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627);
@@ -209,7 +209,7 @@ __switch__:
             int index = ListSequence.fromList(SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true)).indexOf(tvd);
             SNode actualParam = (index < actualParams.size() && index >= 0 ?
               (SNode)actualParams.get(index) :
-              new QuotationClass_25().createNode()
+              new QuotationClass_23().createNode()
             );
             if (returnType == tvr) {
               returnType = SNodeOperations.copyNode(actualParam);
@@ -403,11 +403,11 @@ __switch__:
     }
     if ((prevStatementList != null)) {
       do {
-        SNode matchedNode_1 = SNodeOperations.getParent(prevStatementList, null, false, false);
+        SNode matchedNode_1 = SNodeOperations.getParent(prevStatementList);
         {
           boolean matches_1 = false;
           {
-            SNode matchingNode_1 = SNodeOperations.getParent(prevStatementList, null, false, false);
+            SNode matchingNode_1 = SNodeOperations.getParent(prevStatementList);
             if (matchingNode_1 != null) {
               matches_1 = SModelUtil_new.isAssignableConcept(matchingNode_1.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
             }
@@ -423,7 +423,7 @@ __switch__:
 
   /* package */static void check(Set<SNode> throwables, SNode mainNode) {
     for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_88().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_87().createNode())) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_86().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_85().createNode())) {
         throwables.remove(livingThrowable);
       }
     }
@@ -432,7 +432,7 @@ __switch__:
     }
     List<SNode> statementLists = SNodeOperations.getAncestors(mainNode, "jetbrains.mps.baseLanguage.structure.StatementList", false);
     for(SNode statementList : statementLists) {
-      SNode parent = SNodeOperations.getParent(statementList, null, false, false);
+      SNode parent = SNodeOperations.getParent(statementList);
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.TryStatement") && SLinkOperations.getTarget(parent, "body", true) == statementList) {
         SNode tryStatement = parent;
         for(SNode catchClause : SLinkOperations.getTargets(tryStatement, "catchClause", true)) {
