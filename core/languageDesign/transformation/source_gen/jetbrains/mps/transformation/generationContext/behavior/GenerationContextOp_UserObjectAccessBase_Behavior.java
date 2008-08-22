@@ -12,9 +12,9 @@ public class GenerationContextOp_UserObjectAccessBase_Behavior {
   }
 
   public static boolean call_isLValueInAssignment_1217892546644(SNode thisNode) {
-    SNode mayBeAssignment = SNodeOperations.getParent(SNodeOperations.getParent(thisNode, null, false, false), null, false, false);
+    SNode mayBeAssignment = SNodeOperations.getParent(SNodeOperations.getParent(thisNode));
     if (SNodeOperations.isInstanceOf(mayBeAssignment, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
-      if (SNodeOperations.getParent(thisNode, null, false, false) == SLinkOperations.getTarget(mayBeAssignment, "lValue", true)) {
+      if (SNodeOperations.getParent(thisNode) == SLinkOperations.getTarget(mayBeAssignment, "lValue", true)) {
         return true;
       }
     }

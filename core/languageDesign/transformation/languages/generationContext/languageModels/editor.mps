@@ -87,6 +87,9 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1217004816051">
       <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
       <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1219410323781">
+        <property name="value" value="0.0" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1217882105986">
