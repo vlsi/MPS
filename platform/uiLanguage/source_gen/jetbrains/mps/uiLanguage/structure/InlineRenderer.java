@@ -19,15 +19,6 @@ public class InlineRenderer extends BaseConcept implements IComponentPart {
     super(node);
   }
 
-  public static InlineRenderer newInstance(SModel sm, boolean init) {
-    return (InlineRenderer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.InlineRenderer", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InlineRenderer newInstance(SModel sm) {
-    return InlineRenderer.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(InlineRenderer.SHORT_DESCRIPTION);
   }
@@ -58,6 +49,15 @@ public class InlineRenderer extends BaseConcept implements IComponentPart {
 
   public void setRenderer(ComponentInstance node) {
     super.setChild(InlineRenderer.RENDERER, node);
+  }
+
+
+  public static InlineRenderer newInstance(SModel sm, boolean init) {
+    return (InlineRenderer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.InlineRenderer", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InlineRenderer newInstance(SModel sm) {
+    return InlineRenderer.newInstance(sm, false);
   }
 
 }

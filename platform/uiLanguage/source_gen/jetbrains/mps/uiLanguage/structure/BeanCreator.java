@@ -4,13 +4,13 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.baseLanguage.structure.AbstractCreator;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class BeanCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.BeanCreator";
@@ -20,15 +20,6 @@ public class BeanCreator extends AbstractCreator {
   public BeanCreator(SNode node) {
     super(node);
   }
-
-  public static BeanCreator newInstance(SModel sm, boolean init) {
-    return (BeanCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanCreator", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BeanCreator newInstance(SModel sm) {
-    return BeanCreator.newInstance(sm, false);
-  }
-
 
   public ConstructorDeclaration getConstructor() {
     return (ConstructorDeclaration)this.getReferent(BeanCreator.CONSTRUCTOR);
@@ -56,6 +47,15 @@ public class BeanCreator extends AbstractCreator {
 
   public void insertParameter(Expression prev, Expression node) {
     this.insertChild(prev, BeanCreator.PARAMETER, node);
+  }
+
+
+  public static BeanCreator newInstance(SModel sm, boolean init) {
+    return (BeanCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BeanCreator newInstance(SModel sm) {
+    return BeanCreator.newInstance(sm, false);
   }
 
 }

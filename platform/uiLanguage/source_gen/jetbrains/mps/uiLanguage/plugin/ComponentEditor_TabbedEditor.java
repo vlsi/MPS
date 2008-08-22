@@ -9,11 +9,10 @@ import jetbrains.mps.plugins.pluginparts.tabbedEditor.BaseSingleTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.uiLanguage.behavior.ComponentDeclaration_Behavior;
-import jetbrains.mps.uiLanguage.structure.ComponentController;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.uiLanguage.structure.ComponentDeclaration;
-import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
 public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {
@@ -74,12 +73,12 @@ public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {
 
     public SNode createNode(SNode node) {
       {
-        ComponentController controller = ComponentController.newInstance(SNodeOperations.getModel(node), true);
-        controller.setComponent((ComponentDeclaration)((INodeAdapter)SNodeOperations.getAdapter(node)));
-        SModelOperations.addRootNode(SNodeOperations.getModel(node), controller.getNode());
-        String virtualPackage = ((SNode)node).getProperty(SModelTreeNode.PACK);
+        SNode controller = SConceptOperations.createNewNode("jetbrains.mps.uiLanguage.structure.ComponentController", null);
+        SLinkOperations.setTarget(controller, "component", node, false);
+        SModelOperations.addRootNode(SNodeOperations.getModel(node), controller);
+        String virtualPackage = node.getProperty(SModelTreeNode.PACK);
         controller.setProperty(SModelTreeNode.PACK, virtualPackage);
-        return controller.getNode();
+        return controller;
       }
     }
 

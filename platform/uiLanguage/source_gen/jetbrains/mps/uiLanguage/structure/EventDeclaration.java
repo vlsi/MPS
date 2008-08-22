@@ -5,11 +5,11 @@ package jetbrains.mps.uiLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
+import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
-import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class EventDeclaration extends BaseConcept implements IMember {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.EventDeclaration";
@@ -23,15 +23,6 @@ public class EventDeclaration extends BaseConcept implements IMember {
   public EventDeclaration(SNode node) {
     super(node);
   }
-
-  public static EventDeclaration newInstance(SModel sm, boolean init) {
-    return (EventDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.EventDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static EventDeclaration newInstance(SModel sm) {
-    return EventDeclaration.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(EventDeclaration.NAME);
@@ -79,6 +70,15 @@ public class EventDeclaration extends BaseConcept implements IMember {
 
   public void setInitializer(StatementList node) {
     super.setChild(EventDeclaration.INITIALIZER, node);
+  }
+
+
+  public static EventDeclaration newInstance(SModel sm, boolean init) {
+    return (EventDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.EventDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static EventDeclaration newInstance(SModel sm) {
+    return EventDeclaration.newInstance(sm, false);
   }
 
 }

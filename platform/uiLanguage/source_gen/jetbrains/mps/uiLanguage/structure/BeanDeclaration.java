@@ -6,13 +6,13 @@ import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class BeanDeclaration extends BaseConcept implements IClassifier, INamedConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.BeanDeclaration";
@@ -27,15 +27,6 @@ public class BeanDeclaration extends BaseConcept implements IClassifier, INamedC
   public BeanDeclaration(SNode node) {
     super(node);
   }
-
-  public static BeanDeclaration newInstance(SModel sm, boolean init) {
-    return (BeanDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BeanDeclaration newInstance(SModel sm) {
-    return BeanDeclaration.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(BeanDeclaration.NAME);
@@ -127,6 +118,15 @@ public class BeanDeclaration extends BaseConcept implements IClassifier, INamedC
 
   public void insertConstructor(ConstructorDeclaration prev, ConstructorDeclaration node) {
     this.insertChild(prev, BeanDeclaration.CONSTRUCTOR, node);
+  }
+
+
+  public static BeanDeclaration newInstance(SModel sm, boolean init) {
+    return (BeanDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BeanDeclaration newInstance(SModel sm) {
+    return BeanDeclaration.newInstance(sm, false);
   }
 
 }

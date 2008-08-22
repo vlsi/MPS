@@ -5,11 +5,11 @@ package jetbrains.mps.uiLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class ComponentInstance extends BaseConcept implements IComponentPart, IComponentInstance, INamedConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentInstance";
@@ -23,15 +23,6 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
   public ComponentInstance(SNode node) {
     super(node);
   }
-
-  public static ComponentInstance newInstance(SModel sm, boolean init) {
-    return (ComponentInstance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ComponentInstance newInstance(SModel sm) {
-    return ComponentInstance.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(ComponentInstance.SHORT_DESCRIPTION);
@@ -91,6 +82,15 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, ComponentInstance.CONTENT, node);
+  }
+
+
+  public static ComponentInstance newInstance(SModel sm, boolean init) {
+    return (ComponentInstance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ComponentInstance newInstance(SModel sm) {
+    return ComponentInstance.newInstance(sm, false);
   }
 
 }

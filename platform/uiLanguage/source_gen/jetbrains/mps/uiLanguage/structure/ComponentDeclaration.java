@@ -5,10 +5,10 @@ package jetbrains.mps.uiLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
 
 public class ComponentDeclaration extends BaseConcept implements IClassifier {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentDeclaration";
@@ -27,15 +27,6 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
   public ComponentDeclaration(SNode node) {
     super(node);
   }
-
-  public static ComponentDeclaration newInstance(SModel sm, boolean init) {
-    return (ComponentDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ComponentDeclaration newInstance(SModel sm) {
-    return ComponentDeclaration.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(ComponentDeclaration.NAME);
@@ -123,6 +114,15 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
 
   public void setRendererInfo(StubCellRendererInfo node) {
     super.setChild(ComponentDeclaration.RENDERER_INFO, node);
+  }
+
+
+  public static ComponentDeclaration newInstance(SModel sm, boolean init) {
+    return (ComponentDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ComponentDeclaration newInstance(SModel sm) {
+    return ComponentDeclaration.newInstance(sm, false);
   }
 
 }

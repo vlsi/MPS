@@ -4,11 +4,11 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class Form extends BaseConcept implements IComponentPart, IComponentInstance {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.Form";
@@ -21,15 +21,6 @@ public class Form extends BaseConcept implements IComponentPart, IComponentInsta
   public Form(SNode node) {
     super(node);
   }
-
-  public static Form newInstance(SModel sm, boolean init) {
-    return (Form)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.Form", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Form newInstance(SModel sm) {
-    return Form.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(Form.SHORT_DESCRIPTION);
@@ -93,6 +84,15 @@ public class Form extends BaseConcept implements IComponentPart, IComponentInsta
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, Form.CONTENT, node);
+  }
+
+
+  public static Form newInstance(SModel sm, boolean init) {
+    return (Form)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.Form", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Form newInstance(SModel sm) {
+    return Form.newInstance(sm, false);
   }
 
 }

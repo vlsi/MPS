@@ -4,10 +4,10 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class RaiseInternalStatement extends Statement {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.RaiseInternalStatement";
@@ -17,21 +17,21 @@ public class RaiseInternalStatement extends Statement {
     super(node);
   }
 
-  public static RaiseInternalStatement newInstance(SModel sm, boolean init) {
-    return (RaiseInternalStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.RaiseInternalStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static RaiseInternalStatement newInstance(SModel sm) {
-    return RaiseInternalStatement.newInstance(sm, false);
-  }
-
-
   public Expression getArgument() {
     return (Expression)this.getChild(RaiseInternalStatement.ARGUMENT);
   }
 
   public void setArgument(Expression node) {
     super.setChild(RaiseInternalStatement.ARGUMENT, node);
+  }
+
+
+  public static RaiseInternalStatement newInstance(SModel sm, boolean init) {
+    return (RaiseInternalStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.RaiseInternalStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static RaiseInternalStatement newInstance(SModel sm) {
+    return RaiseInternalStatement.newInstance(sm, false);
   }
 
 }

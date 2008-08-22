@@ -16,21 +16,21 @@ public class ComponentType extends BaseClassifierType {
     super(node);
   }
 
-  public static ComponentType newInstance(SModel sm, boolean init) {
-    return (ComponentType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentType", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ComponentType newInstance(SModel sm) {
-    return ComponentType.newInstance(sm, false);
-  }
-
-
   public ComponentDeclaration getComponent() {
     return (ComponentDeclaration)this.getReferent(ComponentType.COMPONENT);
   }
 
   public void setComponent(ComponentDeclaration node) {
     super.setReferent(ComponentType.COMPONENT, node);
+  }
+
+
+  public static ComponentType newInstance(SModel sm, boolean init) {
+    return (ComponentType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ComponentType newInstance(SModel sm) {
+    return ComponentType.newInstance(sm, false);
   }
 
 }

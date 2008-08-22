@@ -4,11 +4,11 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class Scroller extends BaseConcept implements IComponentInstance {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.Scroller";
@@ -20,15 +20,6 @@ public class Scroller extends BaseConcept implements IComponentInstance {
   public Scroller(SNode node) {
     super(node);
   }
-
-  public static Scroller newInstance(SModel sm, boolean init) {
-    return (Scroller)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.Scroller", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Scroller newInstance(SModel sm) {
-    return Scroller.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(Scroller.SHORT_DESCRIPTION);
@@ -72,6 +63,15 @@ public class Scroller extends BaseConcept implements IComponentInstance {
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, Scroller.CONTENT, node);
+  }
+
+
+  public static Scroller newInstance(SModel sm, boolean init) {
+    return (Scroller)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.Scroller", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Scroller newInstance(SModel sm) {
+    return Scroller.newInstance(sm, false);
   }
 
 }

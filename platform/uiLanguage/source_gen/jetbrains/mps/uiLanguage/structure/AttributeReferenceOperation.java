@@ -5,10 +5,10 @@ package jetbrains.mps.uiLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
 
 public class AttributeReferenceOperation extends BaseConcept implements IMemberOperation {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation";
@@ -20,15 +20,6 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
   public AttributeReferenceOperation(SNode node) {
     super(node);
   }
-
-  public static AttributeReferenceOperation newInstance(SModel sm, boolean init) {
-    return (AttributeReferenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AttributeReferenceOperation newInstance(SModel sm) {
-    return AttributeReferenceOperation.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(AttributeReferenceOperation.SHORT_DESCRIPTION);
@@ -68,6 +59,15 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
 
   public void setAttributeDeclaration(AttributeDeclaration node) {
     this.setMember(node);
+  }
+
+
+  public static AttributeReferenceOperation newInstance(SModel sm, boolean init) {
+    return (AttributeReferenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AttributeReferenceOperation newInstance(SModel sm) {
+    return AttributeReferenceOperation.newInstance(sm, false);
   }
 
 }

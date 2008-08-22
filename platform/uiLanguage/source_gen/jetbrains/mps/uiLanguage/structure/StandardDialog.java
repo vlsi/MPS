@@ -4,11 +4,11 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class StandardDialog extends BaseConcept implements IComponentInstance {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.StandardDialog";
@@ -22,15 +22,6 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
   public StandardDialog(SNode node) {
     super(node);
   }
-
-  public static StandardDialog newInstance(SModel sm, boolean init) {
-    return (StandardDialog)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.StandardDialog", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static StandardDialog newInstance(SModel sm) {
-    return StandardDialog.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(StandardDialog.SHORT_DESCRIPTION);
@@ -102,6 +93,15 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, StandardDialog.CONTENT, node);
+  }
+
+
+  public static StandardDialog newInstance(SModel sm, boolean init) {
+    return (StandardDialog)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.StandardDialog", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static StandardDialog newInstance(SModel sm) {
+    return StandardDialog.newInstance(sm, false);
   }
 
 }

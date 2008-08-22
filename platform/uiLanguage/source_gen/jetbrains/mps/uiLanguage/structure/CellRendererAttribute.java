@@ -4,10 +4,10 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class CellRendererAttribute extends BaseConcept implements IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.CellRendererAttribute";
@@ -19,15 +19,6 @@ public class CellRendererAttribute extends BaseConcept implements IComponentPart
   public CellRendererAttribute(SNode node) {
     super(node);
   }
-
-  public static CellRendererAttribute newInstance(SModel sm, boolean init) {
-    return (CellRendererAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.CellRendererAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static CellRendererAttribute newInstance(SModel sm) {
-    return CellRendererAttribute.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(CellRendererAttribute.SHORT_DESCRIPTION);
@@ -59,6 +50,15 @@ public class CellRendererAttribute extends BaseConcept implements IComponentPart
 
   public void setRenderer(Expression node) {
     super.setChild(CellRendererAttribute.RENDERER, node);
+  }
+
+
+  public static CellRendererAttribute newInstance(SModel sm, boolean init) {
+    return (CellRendererAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.CellRendererAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static CellRendererAttribute newInstance(SModel sm) {
+    return CellRendererAttribute.newInstance(sm, false);
   }
 
 }

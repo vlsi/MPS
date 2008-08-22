@@ -16,21 +16,21 @@ public class BeanType extends BaseClassifierType {
     super(node);
   }
 
-  public static BeanType newInstance(SModel sm, boolean init) {
-    return (BeanType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanType", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BeanType newInstance(SModel sm) {
-    return BeanType.newInstance(sm, false);
-  }
-
-
   public BeanDeclaration getBean() {
     return (BeanDeclaration)this.getReferent(BeanType.BEAN);
   }
 
   public void setBean(BeanDeclaration node) {
     super.setReferent(BeanType.BEAN, node);
+  }
+
+
+  public static BeanType newInstance(SModel sm, boolean init) {
+    return (BeanType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BeanType newInstance(SModel sm) {
+    return BeanType.newInstance(sm, false);
   }
 
 }

@@ -4,10 +4,10 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class StandardDialogButton extends BaseConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.StandardDialogButton";
@@ -18,15 +18,6 @@ public class StandardDialogButton extends BaseConcept {
   public StandardDialogButton(SNode node) {
     super(node);
   }
-
-  public static StandardDialogButton newInstance(SModel sm, boolean init) {
-    return (StandardDialogButton)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.StandardDialogButton", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static StandardDialogButton newInstance(SModel sm) {
-    return StandardDialogButton.newInstance(sm, false);
-  }
-
 
   public String getText() {
     return this.getProperty(StandardDialogButton.TEXT);
@@ -50,6 +41,15 @@ public class StandardDialogButton extends BaseConcept {
 
   public void setHandler(Expression node) {
     super.setChild(StandardDialogButton.HANDLER, node);
+  }
+
+
+  public static StandardDialogButton newInstance(SModel sm, boolean init) {
+    return (StandardDialogButton)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.StandardDialogButton", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static StandardDialogButton newInstance(SModel sm) {
+    return StandardDialogButton.newInstance(sm, false);
   }
 
 }

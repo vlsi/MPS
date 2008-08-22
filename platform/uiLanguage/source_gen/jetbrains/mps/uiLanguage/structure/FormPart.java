@@ -17,15 +17,6 @@ public class FormPart extends BaseConcept {
     super(node);
   }
 
-  public static FormPart newInstance(SModel sm, boolean init) {
-    return (FormPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.FormPart", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static FormPart newInstance(SModel sm) {
-    return FormPart.newInstance(sm, false);
-  }
-
-
   public String getLabel() {
     return this.getProperty(FormPart.LABEL);
   }
@@ -40,6 +31,15 @@ public class FormPart extends BaseConcept {
 
   public void setContent(IComponentPart node) {
     super.setChild(FormPart.CONTENT, node);
+  }
+
+
+  public static FormPart newInstance(SModel sm, boolean init) {
+    return (FormPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.FormPart", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static FormPart newInstance(SModel sm) {
+    return FormPart.newInstance(sm, false);
   }
 
 }

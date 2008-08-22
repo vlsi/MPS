@@ -4,10 +4,10 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class ActionHandler extends BaseConcept implements IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ActionHandler";
@@ -19,15 +19,6 @@ public class ActionHandler extends BaseConcept implements IComponentPart {
   public ActionHandler(SNode node) {
     super(node);
   }
-
-  public static ActionHandler newInstance(SModel sm, boolean init) {
-    return (ActionHandler)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ActionHandler", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ActionHandler newInstance(SModel sm) {
-    return ActionHandler.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(ActionHandler.SHORT_DESCRIPTION);
@@ -59,6 +50,15 @@ public class ActionHandler extends BaseConcept implements IComponentPart {
 
   public void setHandler(Expression node) {
     super.setChild(ActionHandler.HANDLER, node);
+  }
+
+
+  public static ActionHandler newInstance(SModel sm, boolean init) {
+    return (ActionHandler)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ActionHandler", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ActionHandler newInstance(SModel sm) {
+    return ActionHandler.newInstance(sm, false);
   }
 
 }

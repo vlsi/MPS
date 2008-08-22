@@ -5,10 +5,10 @@ package jetbrains.mps.uiLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class RaiseOperation extends BaseConcept implements IOperation {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.RaiseOperation";
@@ -20,15 +20,6 @@ public class RaiseOperation extends BaseConcept implements IOperation {
   public RaiseOperation(SNode node) {
     super(node);
   }
-
-  public static RaiseOperation newInstance(SModel sm, boolean init) {
-    return (RaiseOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.RaiseOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static RaiseOperation newInstance(SModel sm) {
-    return RaiseOperation.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(RaiseOperation.SHORT_DESCRIPTION);
@@ -60,6 +51,15 @@ public class RaiseOperation extends BaseConcept implements IOperation {
 
   public void setArgument(Expression node) {
     super.setChild(RaiseOperation.ARGUMENT, node);
+  }
+
+
+  public static RaiseOperation newInstance(SModel sm, boolean init) {
+    return (RaiseOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.RaiseOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static RaiseOperation newInstance(SModel sm) {
+    return RaiseOperation.newInstance(sm, false);
   }
 
 }

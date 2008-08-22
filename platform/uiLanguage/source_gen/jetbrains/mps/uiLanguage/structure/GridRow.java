@@ -4,11 +4,11 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class GridRow extends BaseConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.GridRow";
@@ -17,15 +17,6 @@ public class GridRow extends BaseConcept {
   public GridRow(SNode node) {
     super(node);
   }
-
-  public static GridRow newInstance(SModel sm, boolean init) {
-    return (GridRow)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.GridRow", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GridRow newInstance(SModel sm) {
-    return GridRow.newInstance(sm, false);
-  }
-
 
   public int getComponentsCount() {
     return this.getChildCount(GridRow.COMPONENT);
@@ -45,6 +36,15 @@ public class GridRow extends BaseConcept {
 
   public void insertComponent(IComponentInstance prev, IComponentInstance node) {
     this.insertChild(prev, GridRow.COMPONENT, node);
+  }
+
+
+  public static GridRow newInstance(SModel sm, boolean init) {
+    return (GridRow)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.GridRow", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GridRow newInstance(SModel sm) {
+    return GridRow.newInstance(sm, false);
   }
 
 }

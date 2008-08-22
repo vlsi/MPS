@@ -4,10 +4,10 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Statement;
 
 public class InlineEventHandler extends BaseConcept implements IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.InlineEventHandler";
@@ -20,15 +20,6 @@ public class InlineEventHandler extends BaseConcept implements IComponentPart {
   public InlineEventHandler(SNode node) {
     super(node);
   }
-
-  public static InlineEventHandler newInstance(SModel sm, boolean init) {
-    return (InlineEventHandler)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.InlineEventHandler", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InlineEventHandler newInstance(SModel sm) {
-    return InlineEventHandler.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(InlineEventHandler.SHORT_DESCRIPTION);
@@ -68,6 +59,15 @@ public class InlineEventHandler extends BaseConcept implements IComponentPart {
 
   public void setHandler(Statement node) {
     super.setChild(InlineEventHandler.HANDLER, node);
+  }
+
+
+  public static InlineEventHandler newInstance(SModel sm, boolean init) {
+    return (InlineEventHandler)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.InlineEventHandler", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InlineEventHandler newInstance(SModel sm) {
+    return InlineEventHandler.newInstance(sm, false);
   }
 
 }

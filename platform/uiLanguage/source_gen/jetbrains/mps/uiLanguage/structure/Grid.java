@@ -4,11 +4,11 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class Grid extends BaseConcept implements IComponentInstance {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.Grid";
@@ -21,15 +21,6 @@ public class Grid extends BaseConcept implements IComponentInstance {
   public Grid(SNode node) {
     super(node);
   }
-
-  public static Grid newInstance(SModel sm, boolean init) {
-    return (Grid)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.Grid", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Grid newInstance(SModel sm) {
-    return Grid.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(Grid.SHORT_DESCRIPTION);
@@ -93,6 +84,15 @@ public class Grid extends BaseConcept implements IComponentInstance {
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, Grid.CONTENT, node);
+  }
+
+
+  public static Grid newInstance(SModel sm, boolean init) {
+    return (Grid)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.Grid", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Grid newInstance(SModel sm) {
+    return Grid.newInstance(sm, false);
   }
 
 }

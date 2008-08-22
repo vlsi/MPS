@@ -16,21 +16,21 @@ public class ComponentReference extends Expression {
     super(node);
   }
 
-  public static ComponentReference newInstance(SModel sm, boolean init) {
-    return (ComponentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ComponentReference newInstance(SModel sm) {
-    return ComponentReference.newInstance(sm, false);
-  }
-
-
   public ComponentInstance getComponent() {
     return (ComponentInstance)this.getReferent(ComponentReference.COMPONENT);
   }
 
   public void setComponent(ComponentInstance node) {
     super.setReferent(ComponentReference.COMPONENT, node);
+  }
+
+
+  public static ComponentReference newInstance(SModel sm, boolean init) {
+    return (ComponentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ComponentReference newInstance(SModel sm) {
+    return ComponentReference.newInstance(sm, false);
   }
 
 }

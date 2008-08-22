@@ -5,10 +5,10 @@ package jetbrains.mps.uiLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
 
 public class EventAccessOperation extends BaseConcept implements IMemberOperation {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.EventAccessOperation";
@@ -20,15 +20,6 @@ public class EventAccessOperation extends BaseConcept implements IMemberOperatio
   public EventAccessOperation(SNode node) {
     super(node);
   }
-
-  public static EventAccessOperation newInstance(SModel sm, boolean init) {
-    return (EventAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.EventAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static EventAccessOperation newInstance(SModel sm) {
-    return EventAccessOperation.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(EventAccessOperation.SHORT_DESCRIPTION);
@@ -68,6 +59,15 @@ public class EventAccessOperation extends BaseConcept implements IMemberOperatio
 
   public void setEvent(EventDeclaration node) {
     this.setMember(node);
+  }
+
+
+  public static EventAccessOperation newInstance(SModel sm, boolean init) {
+    return (EventAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.EventAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static EventAccessOperation newInstance(SModel sm) {
+    return EventAccessOperation.newInstance(sm, false);
   }
 
 }

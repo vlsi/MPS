@@ -4,10 +4,10 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class AttributeValue extends BaseConcept implements IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.AttributeValue";
@@ -20,15 +20,6 @@ public class AttributeValue extends BaseConcept implements IComponentPart {
   public AttributeValue(SNode node) {
     super(node);
   }
-
-  public static AttributeValue newInstance(SModel sm, boolean init) {
-    return (AttributeValue)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeValue", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AttributeValue newInstance(SModel sm) {
-    return AttributeValue.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(AttributeValue.SHORT_DESCRIPTION);
@@ -68,6 +59,15 @@ public class AttributeValue extends BaseConcept implements IComponentPart {
 
   public void setValue(Expression node) {
     super.setChild(AttributeValue.VALUE, node);
+  }
+
+
+  public static AttributeValue newInstance(SModel sm, boolean init) {
+    return (AttributeValue)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeValue", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AttributeValue newInstance(SModel sm) {
+    return AttributeValue.newInstance(sm, false);
   }
 
 }

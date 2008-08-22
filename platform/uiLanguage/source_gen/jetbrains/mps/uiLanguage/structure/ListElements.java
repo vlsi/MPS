@@ -4,10 +4,10 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class ListElements extends BaseConcept implements IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ListElements";
@@ -19,15 +19,6 @@ public class ListElements extends BaseConcept implements IComponentPart {
   public ListElements(SNode node) {
     super(node);
   }
-
-  public static ListElements newInstance(SModel sm, boolean init) {
-    return (ListElements)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ListElements", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ListElements newInstance(SModel sm) {
-    return ListElements.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(ListElements.SHORT_DESCRIPTION);
@@ -59,6 +50,15 @@ public class ListElements extends BaseConcept implements IComponentPart {
 
   public void setValue(Expression node) {
     super.setChild(ListElements.VALUE, node);
+  }
+
+
+  public static ListElements newInstance(SModel sm, boolean init) {
+    return (ListElements)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ListElements", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ListElements newInstance(SModel sm) {
+    return ListElements.newInstance(sm, false);
   }
 
 }

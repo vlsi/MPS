@@ -16,21 +16,21 @@ public class ComponentCreator extends AbstractCreator {
     super(node);
   }
 
-  public static ComponentCreator newInstance(SModel sm, boolean init) {
-    return (ComponentCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentCreator", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ComponentCreator newInstance(SModel sm) {
-    return ComponentCreator.newInstance(sm, false);
-  }
-
-
   public ComponentDeclaration getComponentDeclaration() {
     return (ComponentDeclaration)this.getReferent(ComponentCreator.COMPONENT_DECLARATION);
   }
 
   public void setComponentDeclaration(ComponentDeclaration node) {
     super.setReferent(ComponentCreator.COMPONENT_DECLARATION, node);
+  }
+
+
+  public static ComponentCreator newInstance(SModel sm, boolean init) {
+    return (ComponentCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ComponentCreator newInstance(SModel sm) {
+    return ComponentCreator.newInstance(sm, false);
   }
 
 }

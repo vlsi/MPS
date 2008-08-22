@@ -5,11 +5,11 @@ package jetbrains.mps.uiLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Type;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Type;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class AttributeDeclaration extends BaseConcept implements IMember {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.AttributeDeclaration";
@@ -24,15 +24,6 @@ public class AttributeDeclaration extends BaseConcept implements IMember {
   public AttributeDeclaration(SNode node) {
     super(node);
   }
-
-  public static AttributeDeclaration newInstance(SModel sm, boolean init) {
-    return (AttributeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AttributeDeclaration newInstance(SModel sm) {
-    return AttributeDeclaration.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(AttributeDeclaration.NAME);
@@ -88,6 +79,15 @@ public class AttributeDeclaration extends BaseConcept implements IMember {
 
   public void setOnChange(Expression node) {
     super.setChild(AttributeDeclaration.ON_CHANGE, node);
+  }
+
+
+  public static AttributeDeclaration newInstance(SModel sm, boolean init) {
+    return (AttributeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AttributeDeclaration newInstance(SModel sm) {
+    return AttributeDeclaration.newInstance(sm, false);
   }
 
 }

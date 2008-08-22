@@ -16,21 +16,21 @@ public class BindExpression extends Expression {
     super(node);
   }
 
-  public static BindExpression newInstance(SModel sm, boolean init) {
-    return (BindExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BindExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BindExpression newInstance(SModel sm) {
-    return BindExpression.newInstance(sm, false);
-  }
-
-
   public Expression getExpression() {
     return (Expression)this.getChild(BindExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
     super.setChild(BindExpression.EXPRESSION, node);
+  }
+
+
+  public static BindExpression newInstance(SModel sm, boolean init) {
+    return (BindExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BindExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BindExpression newInstance(SModel sm) {
+    return BindExpression.newInstance(sm, false);
   }
 
 }
