@@ -135,40 +135,6 @@ public class JavaModelUtil_new {
     return null;
   }
 
-//  public static InstanceMethodDeclaration findMethod(Classifier classifier, Condition<InstanceMethodDeclaration> condition) {
-//    Iterator<InstanceMethodDeclaration> methods = classifier.methods();
-//    while (methods.hasNext()) {
-//      InstanceMethodDeclaration method = methods.next();
-//      if (condition.met(method)) return method;
-//    }
-//    if (classifier instanceof ClassConcept) {
-//      ClassConcept extendedClass = BaseLanguageUtil.getSuperclass((ClassConcept) classifier);
-//      if (extendedClass != null) {
-//        InstanceMethodDeclaration method = findMethod(extendedClass, condition);
-//        if (method != null) {
-//          return method;
-//        }
-//      }
-//    }
-//
-//    Iterator<ClassifierType> interfaces;
-//    if (classifier instanceof Interface) {
-//      interfaces = ((Interface) classifier).extendedInterfaces();
-//    } else if (classifier instanceof ClassConcept) {
-//      interfaces = ((ClassConcept) classifier).implementedInterfaces();
-//    } else {
-//      throw new RuntimeException("This can't happen");
-//    }
-//    while (interfaces.hasNext()) {
-//      ClassifierType classifierType = interfaces.next();
-//      InstanceMethodDeclaration method = findMethod(classifierType.getClassifier(), condition);
-//      if (method != null) {
-//        return method;
-//      }
-//    }
-//    return null;
-//  }
-
   public static StaticFieldDeclaration findStaticField(Classifier classifier, String constantName) {
     if (classifier == null) return null;
 

@@ -251,7 +251,7 @@ public class BaseLanguageStyle_StyleSheet {
 
   private static Color calculateColor0216_2(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 
@@ -263,7 +263,7 @@ public class BaseLanguageStyle_StyleSheet {
 
   private static Color calculateColor0216_4(EditorCell cell) {
     Color result;
-    result = Color.darkGray;
+    result = MPSColors.darkGray;
     return result;
   }
 
@@ -275,7 +275,7 @@ public class BaseLanguageStyle_StyleSheet {
 
   private static Color calculateColor0216_6(EditorCell cell) {
     Color result;
-    result = Color.blue;
+    result = MPSColors.blue;
     return result;
   }
 

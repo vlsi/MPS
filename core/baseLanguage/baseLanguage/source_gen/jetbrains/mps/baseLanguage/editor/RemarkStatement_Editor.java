@@ -20,6 +20,7 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.behavior.RemarkStatement_Behavior;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class RemarkStatement_Editor extends DefaultNodeEditor {
 
@@ -203,19 +204,19 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6285_0(EditorCell cell) {
     Color result;
-    result = Color.gray;
+    result = MPSColors.gray;
     return result;
   }
 
   private static Color calculateColor6285_1(EditorCell cell) {
     Color result;
-    result = Color.gray;
+    result = MPSColors.gray;
     return result;
   }
 
   private static Color calculateColor6285_2(EditorCell cell) {
     Color result;
-    result = Color.blue;
+    result = MPSColors.blue;
     return result;
   }
 

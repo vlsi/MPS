@@ -1,6 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
 import java.awt.*;
+import java.text.AttributedCharacterIterator.Attribute;
+import java.util.Map;
 
 /**
  * @author Kostik
