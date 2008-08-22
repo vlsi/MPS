@@ -27,7 +27,6 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.TimePresentationUtil;
 
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -128,7 +127,7 @@ public class GenerationController {
         error("generation completed with errors in " + (System.currentTimeMillis() - startTime) + " ms");
       }
 
-      if (isIDEAPresent() && !myGenerationType.requiresCompilationInIDEAfterGeneration()) {
+      if (isIDEAPresent() && !myGenerationType.requiresCompilationAfterGeneration()) {
         getProjectHandler().refreshFS();
       }
       fireModelsGenerated(generationOK);
@@ -154,7 +153,7 @@ public class GenerationController {
   }
 
   private long estimateGenerationTime() {
-    boolean compile = (myGenerationType.requiresCompilationInIDEAfterGeneration() || myGenerationType.requiresCompilationInIDEABeforeGeneration());
+    boolean compile = (myGenerationType.requiresCompilationAfterGeneration() || myGenerationType.requiresCompilationBeforeGeneration());
     long totalJob = 0;
     for (Pair<IModule, List<SModelDescriptor>> pair : myModuleSequence) {
       IModule module = pair.o1;
@@ -264,41 +263,44 @@ public class GenerationController {
 
   private boolean compileModule(IModule module, long totalJob, long startJobTime) throws RemoteException, GenerationCanceledException {
     boolean compiledSuccessfully = true;
-    if (module != null && (!isIDEAPresent() && !module.isCompileInMPS()) || !myGenerationType.requiresCompilationInIDEAfterGeneration()) {
-      compiledSuccessfully = false;
-    } else if (module != null) {
-      checkMonitorCanceled();
-      CompilationResult compilationResult;
-      TaskProgressHelper taskProgressHelper = new TaskProgressHelper(this);
-      if (!module.isCompileInMPS()) {
-        taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS, myProgress, totalJob, startJobTime);
-        getProjectHandler().refreshFS();
-        taskProgressHelper.finishTask();
-        String info = "compiling in IntelliJ IDEA...";
-        setText2(info, totalJob, startJobTime);
-        info(info);
-        taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA, myProgress, totalJob, startJobTime);
-        compilationResult = getProjectHandler().buildModule(module.getGeneratorOutputPath());
-        taskProgressHelper.finishTask();
-      } else {
-        taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS, myProgress, totalJob, startJobTime);
-        String info = "compiling in JetBrains MPS...";
-        setText2(info, totalJob, startJobTime);
-        info(info);
-        compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new EmptyProgressIndicator());
-        taskProgressHelper.finishTask();
-      }
-      if (compilationResult == null || compilationResult.getErrors() > 0) {
-        compiledSuccessfully = false;
-      }
 
-      if (compilationResult != null) {      
-        if (compilationResult.getErrors() > 0) {
-          error("" + compilationResult);
-        } else if (compilationResult.getWarnings() > 0) {
-          warning("" + compilationResult);
+    if (module != null && myGenerationType.requiresCompilationAfterGeneration()) {
+      if (!isIDEAPresent() && !module.isCompileInMPS()) {
+        compiledSuccessfully = false;
+      } else {
+        checkMonitorCanceled();
+        CompilationResult compilationResult;
+        TaskProgressHelper taskProgressHelper = new TaskProgressHelper(this);
+        if (!module.isCompileInMPS()) {
+          taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS, myProgress, totalJob, startJobTime);
+          getProjectHandler().refreshFS();
+          taskProgressHelper.finishTask();
+          String info = "compiling in IntelliJ IDEA...";
+          setText2(info, totalJob, startJobTime);
+          info(info);
+          taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA, myProgress, totalJob, startJobTime);
+          compilationResult = getProjectHandler().buildModule(module.getGeneratorOutputPath());
+          taskProgressHelper.finishTask();
         } else {
-          info("" + compilationResult);
+          taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS, myProgress, totalJob, startJobTime);
+          String info = "compiling in JetBrains MPS...";
+          setText2(info, totalJob, startJobTime);
+          info(info);
+          compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new EmptyProgressIndicator());
+          taskProgressHelper.finishTask();
+        }
+        if (compilationResult == null || compilationResult.getErrors() > 0) {
+          compiledSuccessfully = false;
+        }
+
+        if (compilationResult != null) {
+          if (compilationResult.getErrors() > 0) {
+            error("" + compilationResult);
+          } else if (compilationResult.getWarnings() > 0) {
+            warning("" + compilationResult);
+          } else {
+            info("" + compilationResult);
+          }
         }
       }
 

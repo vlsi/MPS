@@ -288,7 +288,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
   }
 
   public boolean willCompile(boolean ideaPresent, IGenerationType generationType) {
-    return ideaPresent && generationType.requiresCompilationInIDEABeforeGeneration();
+    return ideaPresent && generationType.requiresCompilationBeforeGeneration();
   }
 
   void fireModelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {

@@ -107,11 +107,11 @@ public class ProjectTester {
       Logger.addLoggingHandler(loggingHandler);
 
       final GenerateFilesAndClassesGenerationType generationType = new GenerateFilesAndClassesGenerationType(false) {
-        public boolean requiresCompilationInIDEABeforeGeneration() {
+        public boolean requiresCompilationBeforeGeneration() {
           return false;
         }
 
-        public boolean requiresCompilationInIDEAfterGeneration() {
+        public boolean requiresCompilationAfterGeneration() {
           return false;
         }
 
