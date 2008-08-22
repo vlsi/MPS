@@ -104,6 +104,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   //----------------RELOAD STUFF---------------------  
 
   public void reloadPlugins() {
+    disposePlugins();
     loadPlugins();
   }
 
