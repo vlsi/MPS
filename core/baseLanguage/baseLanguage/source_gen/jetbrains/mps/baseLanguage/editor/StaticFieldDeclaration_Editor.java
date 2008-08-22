@@ -388,7 +388,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.AUTO_DELETABLE, true);
+          this.set(StyleAttributes.AUTO_DELETABLE, false);
         }
 
       };

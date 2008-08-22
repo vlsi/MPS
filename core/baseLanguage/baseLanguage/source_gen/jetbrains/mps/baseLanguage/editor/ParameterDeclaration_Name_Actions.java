@@ -33,8 +33,8 @@ public class ParameterDeclaration_Name_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-        SLinkOperations.addNewChild(SNodeOperations.getParent(node, null, false, false), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+        SLinkOperations.addNewChild(SNodeOperations.getParent(node), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
       }
     }
 

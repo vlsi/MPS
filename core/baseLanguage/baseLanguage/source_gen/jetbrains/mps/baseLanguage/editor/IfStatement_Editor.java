@@ -715,7 +715,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition1754_0(SNode node, EditorContext editorContext, IScope scope) {
-    SNode parent = SNodeOperations.getParent(node, null, false, false);
+    SNode parent = SNodeOperations.getParent(node);
     return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.IfStatement") && SLinkOperations.getTarget(parent, "ifFalseStatement", true) == node;
   }
 

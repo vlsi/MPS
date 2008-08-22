@@ -2823,17 +2823,17 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186414949600">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="DrawBracketsStyleClassItem" />
+    <property name="name" value="AutoDeletableStyleClassItem" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1215702053365">
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215702053366">
         <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.DRAW_BRACKETS" resolveInfo="DRAW_BRACKETS" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.AUTO_DELETABLE" resolveInfo="AUTO_DELETABLE" />
       </node>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186414964929">
-      <property name="value" value="draw-brackets" />
+      <property name="value" value="auto-deletable" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
@@ -3349,11 +3349,11 @@
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1219226236605">
         <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.AUTO_DELETABLE" resolveInfo="AUTO_DELETABLE" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.DRAW_BRACKETS" resolveInfo="DRAW_BRACKETS" />
       </node>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1219226236606">
-      <property name="value" value="auto-deletable" />
+      <property name="value" value="draw-brackets" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>

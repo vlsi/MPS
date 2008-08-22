@@ -37,7 +37,7 @@ public class ElseifClause_DeletePrevious {
         SNodeOperations.deleteNode(SNodeOperations.getPrevSibling(node));
       } else
       {
-        SNode ifStatement = SNodeOperations.getParent(node, null, false, false);
+        SNode ifStatement = SNodeOperations.getParent(node);
         SNode condition = SLinkOperations.getTarget(ifStatement, "condition", true);
         SNodeOperations.replaceWithAnother(condition, SNodeOperations.copyNode(SLinkOperations.getTarget(node, "condition", true)));
         SNode body = SLinkOperations.getTarget(ifStatement, "ifTrue", true);

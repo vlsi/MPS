@@ -1521,9 +1521,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1188210576819">
             <link role="relationDeclaration" targetNodeId="17.1068431790190" />
-            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleClassItem" id="1219226817663">
-              <property name="flag" value="false" />
-            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.AutoDeletableStyleClassItem" id="1219400266899" />
           </node>
           <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1188210576820">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188210576821">
@@ -1736,7 +1734,7 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1188212207016">
             <link role="relationDeclaration" targetNodeId="17.1068431790190" />
             <link role="actionMap" targetNodeId="1144367099981" resolveInfo="LocalVariableDeclaration_Initializer_Actions" />
-            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleClassItem" id="1219226438142">
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.AutoDeletableStyleClassItem" id="1219400223044">
               <property name="flag" value="false" />
             </node>
           </node>
@@ -4308,8 +4306,8 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1188210606994">
             <link role="relationDeclaration" targetNodeId="17.1068431790190" />
-            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleClassItem" id="1219226841149">
-              <property name="flag" value="true" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.AutoDeletableStyleClassItem" id="1219400241491">
+              <property name="flag" value="false" />
             </node>
           </node>
           <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1188210606995">

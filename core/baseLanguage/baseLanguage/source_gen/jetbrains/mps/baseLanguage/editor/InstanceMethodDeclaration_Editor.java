@@ -766,7 +766,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition5704_9(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface"));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface"));
   }
 
   public static class parameterListHandler_5704_0 extends RefNodeListHandler {
