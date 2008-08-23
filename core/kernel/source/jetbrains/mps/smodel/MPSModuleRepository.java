@@ -12,6 +12,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.generator.TransientModelsModule;
 
 import java.io.File;
 import java.util.*;
@@ -291,6 +292,10 @@ public class MPSModuleRepository implements ApplicationComponent {
     if (myUIDToModulesMap.containsKey(moduleUID)) {
       IModule m = myUIDToModulesMap.get(moduleUID);
       LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
+    }
+
+    if (module instanceof TransientModelsModule) {
+      System.out.println("added transient : " + moduleUID);
     }
 
     myUIDToModulesMap.put(moduleUID, module);
