@@ -63,6 +63,10 @@ public class ClassLoaderManager implements ApplicationComponent {
     synchronized (myLock) {
       IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
 
+      if (module == null) {
+        LOG.error("Can't find module " + moduleUID);
+      }
+
       RBundle bundle = new RBundle(moduleUID, module.getBytecodeLocator());
       myRuntimeEnvironment.add(bundle);
     }
