@@ -34,6 +34,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
 
   private List<GenerationTracerView> myTracerViews = new ArrayList<GenerationTracerView>();
   private boolean myAutoscrollToSource;
+  private ContentManagerAdapter myContentListener;
 
 
   public GenerationTracerViewTool(Project project) {
@@ -63,6 +64,20 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     });
   }
 
+  protected void doRegister() {
+    super.doRegister();
+    myContentListener = new ContentManagerAdapter() {
+      public void contentRemoved(ContentManagerEvent event) {
+        //noTabs component could be removed
+        if (myTracerViews.isEmpty()) return;
+
+        myTracerViews.remove(event.getIndex());
+      }
+    };
+
+    getContentManager().addContentManagerListener(myContentListener);
+  }
+
   private void showNoTabsComponent() {
     ContentManager manager = getContentManager();
     manager.removeAllContents(true);
@@ -70,14 +85,11 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   }
 
   private void closeTab(int index) {
-    ContentManager manager = getContentManager();
     //noinspection ConstantConditions
-    manager.removeContent(manager.getContent(index), true);
-    myTracerViews.remove(index);
+    getContentManager().removeContent(getContentManager().getContent(index), true);
   }
 
   public void closeAll() {
-    myTracerViews.clear();
     getContentManager().removeAllContents(true);
   }
 
