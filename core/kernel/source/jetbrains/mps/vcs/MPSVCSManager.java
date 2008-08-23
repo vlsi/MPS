@@ -150,6 +150,9 @@ public class MPSVCSManager implements ProjectComponent {
   public boolean addFilesToVCS(final List<File> files) {
     invokeLater(new Runnable() {
       public void run() {
+
+        if (myProject.isDisposed()) return;
+
         List<VirtualFile> virtualFileList = new LinkedList<VirtualFile>();
         for (File f : files) {
           VirtualFile virtualFile = VFileSystem.refreshAndGetFile(f);
