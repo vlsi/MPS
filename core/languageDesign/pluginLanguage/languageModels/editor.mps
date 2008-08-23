@@ -617,10 +617,11 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1218985001300">
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1218985001301">
-            <property name="text" value="empty caption:" />
+            <property name="text" value="empty text:" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1218985001302">
             <property name="allowEmptyText" value="true" />
+            <property name="noTargetText" value="&lt;no text&gt;" />
             <link role="relationDeclaration" targetNodeId="1.1203851807860" resolveInfo="emptyCaption" />
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1218985001303">
@@ -680,10 +681,11 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1218984978348">
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1218984978349">
-            <property name="text" value="empty caption:" />
+            <property name="text" value="empty text:" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1218984978350">
             <property name="allowEmptyText" value="true" />
+            <property name="noTargetText" value="&lt;no text&gt;" />
             <link role="relationDeclaration" targetNodeId="1.1203851807860" resolveInfo="emptyCaption" />
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1218984978351">
