@@ -41,6 +41,9 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myClass = adapterClass;
     myListener = new SModelAdapter() {
       public void rootRemoved(SModelRootEvent event) {
+        if (myBaseNode.getNode() == null) return;
+        if (myBaseNode.getNode() == event.getRoot()) return;
+
         if (getLoadableNodes().contains(event.getRoot()) || getLoadableNodes().isEmpty()) {
           myTabbedEditor.getTabbedPane().removeTab(BaseMultitabbedTab.this);
           myInnerTabbedPane = null;
