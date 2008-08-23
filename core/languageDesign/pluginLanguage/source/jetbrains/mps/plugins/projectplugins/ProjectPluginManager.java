@@ -24,6 +24,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -109,75 +110,54 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   private void loadPlugins() {
-    if (myLoaded) return;
-
-    final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-    final List<BaseProjectPlugin> plugins = createPlugins(mpsProject);
-
-    synchronized (myPluginsLock) {
-      myPlugins = new ArrayList<BaseProjectPlugin>(plugins);
-    }
-
-    for (BaseProjectPlugin plugin : plugins) {
-      try {
-        plugin.initNonEDT(mpsProject);
-      } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
-      }
-    }
-
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         if (myProject.isDisposed()) return;
-        for (BaseProjectPlugin plugin : plugins) {
-          try {
-            plugin.init(mpsProject);
-          } catch (Throwable t1) {
-            LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+        if (myLoaded) return;
+
+        final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+        synchronized (myPluginsLock) {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              myPlugins = createPlugins(mpsProject);
+            }
+          });
+          for (BaseProjectPlugin plugin : myPlugins) {
+            try {
+              plugin.init(mpsProject);
+            } catch (Throwable t1) {
+              LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+            }
           }
+          spreadState(myPlugins);
         }
-        spreadState(plugins);
+
+        myLoaded = true;
       }
     });
-
-    myLoaded = true;
   }
 
   private void disposePlugins() {
-    if (!myLoaded) return;
-
-    final List<BaseProjectPlugin> plugins = new ArrayList<BaseProjectPlugin>();
-    synchronized (myPluginsLock) {
-
-      collectState(myPlugins);
-
-      for (BaseProjectPlugin plugin : myPlugins) {
-        try {
-          plugin.disposeNonEDT();
-        } catch (Throwable t) {
-          LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
-        }
-      }
-
-      plugins.addAll(myPlugins);
-
-      myPlugins.clear();
-    }
-
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         assert !myProject.isDisposed();
-        for (BaseProjectPlugin plugin : plugins) {
-          try {
-            plugin.dispose();
-          } catch (Throwable t) {
-            LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
+        if (!myLoaded) return;
+        synchronized (myPluginsLock) {
+          collectState(myPlugins);
+
+          for (BaseProjectPlugin plugin : myPlugins) {
+            try {
+              plugin.dispose();
+            } catch (Throwable t) {
+              LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
+            }
           }
+          myPlugins.clear();
         }
+        myLoaded = false;
       }
     });
 
-    myLoaded = false;
   }
 
   private List<PluginDescriptor> collectPlugins(MPSProject project) {

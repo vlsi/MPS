@@ -35,7 +35,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   private List<BaseCustomProjectPlugin> myCustomPartsToDispose = new ArrayList<BaseCustomProjectPlugin>();
   private List<BaseProjectPrefsComponent> myPrefsComponents = new ArrayList<BaseProjectPrefsComponent>();
   private List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
-  private IFileGenerator myFileGenerator = null;
 
   //------------------stuff to generate-----------------------
 
@@ -88,6 +87,12 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
     myCustomPartsToDispose = initCustomParts(project);
 
+    GeneratorManager manager = getProject().getComponent(GeneratorManager.class);
+    myGenerationListeners = initGenerationListeners(getProject());
+    for (GenerationListener listener : myGenerationListeners) {
+      manager.addGenerationListener(listener);
+    }
+
     initEditors(project);
 
     myTools = (List) (initTools(myProject));
@@ -118,22 +123,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     }
   }
 
-  public final void initNonEDT(final MPSProject project) {
-    myProject = project.getComponent(Project.class);
-
-    GeneratorManager manager = getProject().getComponent(GeneratorManager.class);
-    assert manager != null;
-
-    myFileGenerator = initFileGenerator();
-    if (myFileGenerator != null) {
-      manager.addFileGenerator(myFileGenerator);
-    }
-    myGenerationListeners = initGenerationListeners(getProject());
-    for (GenerationListener listener : myGenerationListeners) {
-      manager.addGenerationListener(listener);
-    }
-  }
-
   public final void dispose() {
     for (BaseProjectPrefsComponent component : myPrefsComponents) {
       component.dispose();
@@ -157,22 +146,15 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       opener.unregisterOpenHandlers(BaseProjectPlugin.this);
     }
 
+    GeneratorManager manager = getProject().getComponent(GeneratorManager.class);
+    for (GenerationListener listener : myGenerationListeners) {
+      manager.removeGenerationListener(listener);
+    }
+
     for (BaseCustomProjectPlugin customPart : myCustomPartsToDispose) {
       customPart.dispose();
     }
   }
-
-  public final void disposeNonEDT() {
-    GeneratorManager manager = getProject().getComponent(GeneratorManager.class);
-    assert manager != null;
-    for (GenerationListener listener : myGenerationListeners) {
-      manager.removeGenerationListener(listener);
-    }
-    if (myFileGenerator != null) {
-      manager.removeFileGenerator(myFileGenerator);
-    }
-  }
-
   //------------------tools stuff-----------------------
 
   public BaseProjectPrefsComponent getPrefsComponent(Class cls) {
