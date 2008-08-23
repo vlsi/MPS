@@ -282,7 +282,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         manager.getToolWindow(ToolWindowId.PROJECT_VIEW).activate(new Runnable() {
           public void run() {
             myProjectView.changeView(getId());
-            manager.getFocusManager().requestFocus(myTree, true);
+            manager.getFocusManager().requestFocus(myTree, false);
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 selectNode(myNode);

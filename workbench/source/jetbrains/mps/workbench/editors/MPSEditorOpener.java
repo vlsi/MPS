@@ -32,6 +32,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import java.util.*;
+import java.awt.KeyboardFocusManager;
 
 public class MPSEditorOpener implements ProjectComponent {
   private static Logger LOG = Logger.getLogger(MPSEditorOpener.class);
@@ -196,13 +197,14 @@ public class MPSEditorOpener implements ProjectComponent {
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
 
-    FileEditor[] result = editorManager.openFile(file, focus);
+    FileEditor[] result = editorManager.openFile(file, false);
 
     MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) result[0];
 
     IEditor nodeEditor = fileNodeEditor.getNodeEditor();
     if (focus) {
-      nodeEditor.requestFocus();
+      final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
+      manager.activateEditorComponent();
     }
 
     if (nodeEditor instanceof TabbedEditor) {

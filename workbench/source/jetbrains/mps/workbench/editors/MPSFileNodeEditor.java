@@ -92,7 +92,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
 
   @Nullable
   public JComponent getPreferredFocusedComponent() {
-    return myComponent;
+    return myNodeEditor.getCurrentEditorComponent();
   }
 
   @NonNls @NotNull
