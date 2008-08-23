@@ -64,7 +64,7 @@ public class ClassLoaderManager implements ApplicationComponent {
       IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
 
       if (module == null) {
-        LOG.error("Can't find module " + moduleUID);
+        throw new RuntimeException("Can't find module : " + moduleUID);
       }
 
       RBundle bundle = new RBundle(moduleUID, module.getBytecodeLocator());
