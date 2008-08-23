@@ -32,7 +32,6 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import java.util.*;
-import java.awt.KeyboardFocusManager;
 
 public class MPSEditorOpener implements ProjectComponent {
   private static Logger LOG = Logger.getLogger(MPSEditorOpener.class);
@@ -202,14 +201,10 @@ public class MPSEditorOpener implements ProjectComponent {
     MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) result[0];
 
     IEditor nodeEditor = fileNodeEditor.getNodeEditor();
-    if (focus) {
-      final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
-      manager.activateEditorComponent();
-    }
 
     if (nodeEditor instanceof TabbedEditor) {
       ((TabbedEditor) nodeEditor).selectLinkedEditor(containingRoot);
-      if (focus) nodeEditor.getCurrentEditorComponent().requestFocus();
+      if (focus) IdeFocusManager.getInstance(myProject).requestFocus(nodeEditor.getCurrentEditorComponent(), false);
     }
 
     if (!node.isRoot()) {
@@ -257,6 +252,11 @@ public class MPSEditorOpener implements ProjectComponent {
           }
         }
       }
+    }
+
+    if (focus) {
+      final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
+      manager.activateEditorComponent();
     }
 
     return nodeEditor;
