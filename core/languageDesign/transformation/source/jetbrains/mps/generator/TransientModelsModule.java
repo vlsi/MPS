@@ -11,14 +11,18 @@ import org.jetbrains.annotations.NonNls;
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.components.ProjectComponent;
 
 public class TransientModelsModule extends AbstractModule implements ProjectComponent {
+  private static final AtomicInteger ourModuleCounter = new AtomicInteger();
+
   private Project myProject;
   private IModule myInvocationContext;
   private Set<String> myModelsToKeep = new HashSet<String>();
+  private int myNumber = ourModuleCounter.getAndIncrement();
 
   public TransientModelsModule(Project project, MPSProjectHolder holder) {
     myProject = project;
@@ -124,6 +128,11 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     result.setTransient(true);
     SModelRepository.getInstance().registerModelDescriptor(result, this);
     return result;
+  }
+
+  public String getModuleUID() {
+    //we can't use toStrng since the same project can be opened twice (this happens during tests)
+    return "TransientModule " + myNumber;
   }
 
   @NotNull

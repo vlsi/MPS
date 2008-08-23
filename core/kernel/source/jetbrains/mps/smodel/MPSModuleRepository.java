@@ -294,10 +294,6 @@ public class MPSModuleRepository implements ApplicationComponent {
       LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
     }
 
-    if (module instanceof TransientModelsModule) {
-      System.out.println("added transient : " + moduleUID);
-    }
-
     myUIDToModulesMap.put(moduleUID, module);
     myModuleToOwners.addLink(module, owner);
     myModules.add(module);
