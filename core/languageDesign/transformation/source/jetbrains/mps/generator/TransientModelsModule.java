@@ -53,12 +53,6 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     myInvocationContext = invocationContext;
   }
 
-  @NotNull
-  public String toString() {
-    return "Transient models [" + myProject.getPresentableUrl() + "]";
-  }
-
-
   public Class getClass(String fqName) {
     if (myInvocationContext == null) {
       throw new IllegalStateException();
@@ -130,5 +124,10 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     result.setTransient(true);
     SModelRepository.getInstance().registerModelDescriptor(result, this);
     return result;
+  }
+
+  @NotNull
+  public String toString() {
+    return "Transient models [" + myProject.getPresentableUrl() + "]";
   }
 }

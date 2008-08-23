@@ -266,16 +266,6 @@ public class MPSModuleRepository implements ApplicationComponent {
     return (TM) module;
   }
 
-  private void putModuleWithUID(String moduleUID, IModule module) {
-
-    if (myUIDToModulesMap.containsKey(moduleUID)) {
-      IModule m = myUIDToModulesMap.get(moduleUID);
-      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
-    }
-
-    myUIDToModulesMap.put(moduleUID, module);
-  }
-
   public boolean existsModule(IModule module, MPSModuleOwner owner) {
     return myModuleToOwners.contains(module, owner);
   }
@@ -296,8 +286,14 @@ public class MPSModuleRepository implements ApplicationComponent {
       myFileToModuleMap.put(canonicalDescriptorPath, module);
     }
 
-    putModuleWithUID(module.getModuleUID(), module);
+    String moduleUID = module.getModuleUID();
 
+    if (myUIDToModulesMap.containsKey(moduleUID)) {
+      IModule m = myUIDToModulesMap.get(moduleUID);
+      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
+    }
+
+    myUIDToModulesMap.put(moduleUID, module);
     myModuleToOwners.addLink(module, owner);
     myModules.add(module);
 
@@ -374,16 +370,13 @@ public class MPSModuleRepository implements ApplicationComponent {
 
     myModuleToOwners.clearFirst(module);
     myModules.remove(module);
+    myUIDToModulesMap.remove(module.getModuleUID());
 
-    removeModuleFromUIDMap(module);
     if (descriptorFile != null) {
       myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
     }
-    fireModuleRemoved(module);
-  }
 
-  private void removeModuleFromUIDMap(IModule module) {
-    myUIDToModulesMap.remove(module.getModuleUID());
+    fireModuleRemoved(module);
   }
 
   public void readModuleDescriptors(Iterator<? extends Root> roots, MPSModuleOwner owner) {
