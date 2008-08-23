@@ -7,6 +7,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
+import com.intellij.ui.content.ContentManagerAdapter;
+import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -33,12 +35,23 @@ public class MigrationScriptsTool extends BaseProjectTool {
 
   private List<SNodePointer> myScripts;
   private List<MigrationScriptsView> myViews = new ArrayList<MigrationScriptsView>();
+  private ContentManagerAdapter myContentListener;
 
   public MigrationScriptsTool(Project project) {
     super(project, "Migration", -1, null, ToolWindowAnchor.BOTTOM, true);
   }
 
-  /*package*/  void closeTab(int index) {
+  protected void doRegister() {
+    super.doRegister();
+    myContentListener = new ContentManagerAdapter(){
+      public void contentRemoved(ContentManagerEvent event) {
+        myViews.remove(event.getIndex());
+      }
+    };
+    getContentManager().addContentManagerListener(myContentListener);
+  }
+
+  void closeTab(int index) {
     LOG.checkEDT();
     ContentManager contentManager = getContentManager();
     Content content = contentManager.getContent(index);
@@ -46,10 +59,9 @@ public class MigrationScriptsTool extends BaseProjectTool {
     contentManager.removeContent(content, true);
   }
 
-  /*package*/ void closeTab(MigrationScriptsView migrationScriptsView) {
+  void closeTab(MigrationScriptsView migrationScriptsView) {
     int index = myViews.indexOf(migrationScriptsView);
     closeTab(index);
-    myViews.remove(index);
   }
 
 
@@ -94,7 +106,7 @@ public class MigrationScriptsTool extends BaseProjectTool {
     });
   }
 
-  /*package*/ void addTab(final MigrationScriptFinder finder, final IResultProvider provider, final SearchQuery query) {
+  void addTab(final MigrationScriptFinder finder, final IResultProvider provider, final SearchQuery query) {
     LOG.checkEDT();
 
     ModelAccess.instance().runReadAction(new Runnable() {
