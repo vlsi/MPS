@@ -73,14 +73,25 @@ public class QueryExecutor {
 
     });
   }
-  public QueryExecutor(GenerateResult genResult, EditorGenerationType type) {
-    this.myProject = genResult.getOperationContext().getProject();
-    this.myLoader = genResult.getClassLoader();
-    SModelDescriptor model = genResult.getModelDescriptor();
-    this.myClassName = model.getLongName() + this.myClassType;
-    GeneratorManager manager = genResult.getOperationContext().getComponent(GeneratorManager.class);
-    manager.generateModelsWithProgressWindow(Arrays.asList(model), genResult.getOperationContext(), type, false);
-    this.myModelQuery = model.getSModel().getRoots().get(0);
+  public QueryExecutor(GenerateResult generateResult, EditorGenerationType type) {
+    this.myProject = generateResult.getOperationContext().getProject();
+    this.myLoader = generateResult.getClassLoader();
+    this.myModelQuery = generateResult.getSNode();
+    final ModelOwner owner = new ModelOwner() {
+    };
+    final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+      public void run() {
+        model.value = ProjectModels.createDescriptorFor(owner);
+        model.value.getSModel().addRoot(SNodeOperations.copyNode(QueryExecutor.this.myModelQuery));
+      }
+
+    });
+    this.myClassName = model.value.getLongName() + this.myClassType;
+    GeneratorManager manager = generateResult.getOperationContext().getComponent(GeneratorManager.class);
+    manager.generateModelsWithProgressWindow(Arrays.asList(model.value), generateResult.getOperationContext(), type, false);
+    SModelRepository.getInstance().unRegisterModelDescriptors(owner);
   }
 
   public void run(@NotNull() final ProgressIndicator indicator, final IScope scope) {

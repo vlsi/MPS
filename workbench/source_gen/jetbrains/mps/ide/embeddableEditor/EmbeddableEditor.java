@@ -17,6 +17,8 @@ import javax.swing.JScrollPane;
 import jetbrains.mps.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.GeneratorManager;
+import java.util.Arrays;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -50,7 +52,7 @@ public class EmbeddableEditor extends JPanel {
     this.init();
   }
 
-  public GenerateResult generate(final String langName, final EditorGenerationType type) {
+  public GenerateResult generate(final String langName, SNode node, final EditorGenerationType type) {
     if (this.myNode == null) {
       return null;
     }
@@ -64,6 +66,8 @@ public class EmbeddableEditor extends JPanel {
       }
 
     });
+    GeneratorManager manager = this.myContext.getComponent(GeneratorManager.class);
+    manager.generateModelsWithProgressWindow(Arrays.asList(model.value), this.myContext, type, false);
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
@@ -73,7 +77,7 @@ public class EmbeddableEditor extends JPanel {
       }
 
     });
-    return new GenerateResult(loader.value, model.value, this.myContext);
+    return new GenerateResult(loader.value, node, this.myContext);
   }
 
   public void addLanguage(final Language language) {
