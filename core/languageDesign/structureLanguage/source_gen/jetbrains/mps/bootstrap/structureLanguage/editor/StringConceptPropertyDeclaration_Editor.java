@@ -239,13 +239,13 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor0098_2(EditorCell cell) {
     Color result;
-    result = Color.gray;
+    result = MPSColors.gray;
     return result;
   }
 
   private static Color calculateColor0098_3(EditorCell cell) {
     Color result;
-    result = Color.gray;
+    result = MPSColors.gray;
     return result;
   }
 

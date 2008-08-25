@@ -239,13 +239,13 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
 
   private static Color calculateColor4865_2(EditorCell cell) {
     Color result;
-    result = Color.gray;
+    result = MPSColors.gray;
     return result;
   }
 
   private static Color calculateColor4865_3(EditorCell cell) {
     Color result;
-    result = Color.gray;
+    result = MPSColors.gray;
     return result;
   }
 

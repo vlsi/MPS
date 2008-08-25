@@ -25,6 +25,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1133922301475">
       <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" resolveInfo="abstract" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1219695414809">
+      <property name="value" value="NamedConcept is not used any more. replaced with INamedConcept" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1218562853918" resolveInfo="deprecated_next_after_944" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration" id="1082983041843">
     <property name="name" value="string" />

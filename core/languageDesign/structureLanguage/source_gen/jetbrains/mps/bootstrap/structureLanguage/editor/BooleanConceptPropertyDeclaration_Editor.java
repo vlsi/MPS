@@ -239,13 +239,13 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
 
   private static Color calculateColor9401_2(EditorCell cell) {
     Color result;
-    result = Color.gray;
+    result = MPSColors.gray;
     return result;
   }
 
   private static Color calculateColor9401_3(EditorCell cell) {
     Color result;
-    result = Color.gray;
+    result = MPSColors.gray;
     return result;
   }
 

@@ -385,11 +385,11 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition9117_0(SNode node, EditorContext editorContext, IScope scope) {
-    return node == EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.getParent(node, null, false, false));
+    return node == EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.getParent(node));
   }
 
   public static boolean renderingCondition9117_1(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(SNodeOperations.getParent(node, null, false, false), "memberIdentifierPolicy", "custom", "derive_from_presentation");
+    return SPropertyOperations.hasValue(SNodeOperations.getParent(node), "memberIdentifierPolicy", "custom", "derive_from_presentation");
   }
 
   private static Color calculateColor9117_0(EditorCell cell) {
@@ -400,19 +400,19 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor9117_1(EditorCell cell) {
     Color result;
-    result = Color.blue;
+    result = MPSColors.blue;
     return result;
   }
 
   private static Color calculateColor9117_2(EditorCell cell) {
     Color result;
-    result = Color.darkGray;
+    result = MPSColors.darkGray;
     return result;
   }
 
   private static Color calculateColor9117_3(EditorCell cell) {
     Color result;
-    result = Color.darkGray;
+    result = MPSColors.darkGray;
     return result;
   }
 
@@ -424,19 +424,19 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor9117_5(EditorCell cell) {
     Color result;
-    result = Color.darkGray;
+    result = MPSColors.darkGray;
     return result;
   }
 
   private static Color calculateColor9117_6(EditorCell cell) {
     Color result;
-    result = Color.cyan;
+    result = MPSColors.cyan;
     return result;
   }
 
   private static Color calculateColor9117_7(EditorCell cell) {
     Color result;
-    result = Color.cyan;
+    result = MPSColors.cyan;
     return result;
   }
 

@@ -969,7 +969,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor4339_2(EditorCell cell) {
     Color result;
-    result = Color.red;
+    result = MPSColors.red;
     return result;
   }
 

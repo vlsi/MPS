@@ -3983,5 +3983,83 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1219695000670">
+    <property name="migrationFromBuild" value="944" />
+    <property name="name" value="Replace_extendsNames_withImplementsINamed" />
+    <property name="title" value="replace usages of NamedConcept" />
+    <property name="package" value="migration" />
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1219695068577">
+      <property name="description" value="replace 'extends' with 'implements'" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1071489090640" resolveInfo="ConceptDeclaration" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1219695068578">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219695068579">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219695213210">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1219695217341">
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219695214493">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1219695213211" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219695215293">
+                  <link role="link" targetNodeId="1.1071489389519" />
+                </node>
+              </node>
+              <node role="rValue" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1219695219375">
+                <link role="conceptDeclaration" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1219695234455">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219695234456">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219695261993">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219695269952">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219695262057">
+                    <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1219695261994" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219695265670">
+                      <link role="link" targetNodeId="1.1169129564478" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1219695271455">
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1219695274410">
+                      <link role="conceptDeclaration" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1219695257111">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219695257112">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219695257113">
+                  <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1219695257114" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219695257115">
+                    <link role="link" targetNodeId="1.1169129564478" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ContainsOperation" id="1219695257116">
+                  <node role="argument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1219695257117">
+                    <link role="conceptDeclaration" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1219695150725">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219695150726">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219695174137">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1219695193237">
+              <node role="rightExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1219695196412">
+                <link role="conceptDeclaration" targetNodeId="3.1078489098625" resolveInfo="NamedConcept" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219695175983">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1219695174138" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219695191017">
+                  <link role="link" targetNodeId="1.1071489389519" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
