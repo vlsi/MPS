@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 
 import javax.swing.SwingUtilities;
+import javax.swing.JOptionPane;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -124,6 +125,10 @@ public class CloneModelDialog extends BaseNodeDialog {
 
     SModelRoot modelRoot = module.findModelRoot(reference.getPath());
     final SModelDescriptor modelDescriptor = module.createModel(new SModelUID(modelName, stereotype), modelRoot);
+    if (modelDescriptor == null) {            
+      setErrorText("You can't create a model in the model root that you specified");
+      return;
+    }
 
     final SModel model = modelDescriptor.getSModel();
     model.runLoadingAction(new Runnable() {
