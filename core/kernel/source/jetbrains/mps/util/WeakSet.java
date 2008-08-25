@@ -31,6 +31,9 @@ public class WeakSet<T> extends AbstractSet<T> {
     return myWeakHashMap.put(t, VALUE) == null;
   }
 
+  public boolean remove(Object o) {
+    return myWeakHashMap.remove(o) != null;
+  }
 
   public Iterator iterator() {
     return myWeakHashMap.keySet().iterator();
