@@ -13,10 +13,7 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public abstract class ClassPathModelRootManager extends AbstractModelRootManager {
   private static Logger LOG = Logger.getLogger(ClassPathModelRootManager.class);
@@ -24,6 +21,9 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   private static Map<SModelUID, Long> ourTimestamps = new HashMap<SModelUID, Long>();
   private ModelOwner myOwner;
   private IConverter myConverter;
+
+  private Set<SModelDescriptor> myDescriptorsWithListener = new HashSet<SModelDescriptor>();
+  private MyInitializationListener myInitializationListener = new MyInitializationListener();
 
 
   @NotNull
@@ -112,12 +112,8 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
           descriptors.add(descriptor);
 
           if (!descriptor.isInitialized()) {
-            descriptor.addModelListener(new SModelAdapter() {
-              public void modelInitialized(SModelDescriptor sm) {
-                updateAfterLoad(sm);
-                descriptor.removeModelListener(this);
-              }
-            });
+            descriptor.addModelListener(myInitializationListener);
+            myDescriptorsWithListener.add(descriptor);
           } else {
             updateAfterLoad(descriptor);
           }
@@ -133,6 +129,20 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
       }
 
       addPackageModelDescriptors(descriptors, root, subpackage);
+    }
+  }
+
+  public void dispose() {
+    for (SModelDescriptor sm : myDescriptorsWithListener) {
+      sm.removeModelListener(myInitializationListener);
+    }
+  }
+
+  private class MyInitializationListener extends SModelAdapter {
+    public void modelInitialized(SModelDescriptor sm) {
+      updateAfterLoad(sm);
+      sm.removeModelListener(this);
+      myDescriptorsWithListener.remove(sm);
     }
   }
 }

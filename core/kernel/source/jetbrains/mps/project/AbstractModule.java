@@ -42,6 +42,7 @@ public abstract class AbstractModule implements IModule {
   private ModuleScope myScope = new ModuleScope();
 
   private IClassPathItem myClassPath;
+  private MyClassPathModelRootManager myManager = new MyClassPathModelRootManager();
 
   protected void reload() {
     MPSModuleRepository.getInstance().unRegisterModules(this);
@@ -547,11 +548,8 @@ public abstract class AbstractModule implements IModule {
   private void loadNewStubs() {
     loadJavaStubModelRoots();
 
-    ClassPathModelRootManager manager = new ClassPathModelRootManager() {
-      protected IClassPathItem getClassPathItem() {
-        return myClassPath;
-      }
-    };
+    myManager.dispose();
+    myManager = new MyClassPathModelRootManager();
 
     SModel sm = new SModel();
     sm.setLoading(true);
@@ -559,7 +557,7 @@ public abstract class AbstractModule implements IModule {
     ModelRoot mr = ModelRoot.newInstance(sm);
     mr.setPrefix("");
 
-    manager.read(mr, this);
+    myManager.read(mr, this);
   }
 
   private void loadJavaStubModelRoots() {
@@ -749,6 +747,12 @@ public abstract class AbstractModule implements IModule {
 
     public String toString() {
       return "Scope of module " + AbstractModule.this;
+    }
+  }
+
+  private class MyClassPathModelRootManager extends ClassPathModelRootManager {
+    protected IClassPathItem getClassPathItem() {
+      return myClassPath;
     }
   }
 }

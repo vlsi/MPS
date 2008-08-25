@@ -10,9 +10,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Set;
 import java.util.Map;
 
-/**
- * @author Kostik
- */
 public interface IModelRootManager {
   public static final IModelRootManager NULL_MANAGER = new NullModelRootManager();
 
