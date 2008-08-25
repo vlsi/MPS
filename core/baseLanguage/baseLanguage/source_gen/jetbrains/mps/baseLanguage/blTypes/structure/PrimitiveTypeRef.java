@@ -16,21 +16,21 @@ public class PrimitiveTypeRef extends BaseConcept {
     super(node);
   }
 
-  public static PrimitiveTypeRef newInstance(SModel sm, boolean init) {
-    return (PrimitiveTypeRef)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PrimitiveTypeRef newInstance(SModel sm) {
-    return PrimitiveTypeRef.newInstance(sm, false);
-  }
-
-
   public PrimitiveTypeDescriptor getDescriptor() {
     return (PrimitiveTypeDescriptor)this.getReferent(PrimitiveTypeRef.DESCRIPTOR);
   }
 
   public void setDescriptor(PrimitiveTypeDescriptor node) {
     super.setReferent(PrimitiveTypeRef.DESCRIPTOR, node);
+  }
+
+
+  public static PrimitiveTypeRef newInstance(SModel sm, boolean init) {
+    return (PrimitiveTypeRef)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PrimitiveTypeRef newInstance(SModel sm) {
+    return PrimitiveTypeRef.newInstance(sm, false);
   }
 
 }

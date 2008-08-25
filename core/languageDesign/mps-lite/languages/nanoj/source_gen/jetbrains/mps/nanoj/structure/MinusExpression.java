@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class MinusExpression extends BinaryExpression {
   public static final String concept = "jetbrains.mps.nanoj.structure.MinusExpression";
 
-  public  MinusExpression(SNode node) {
+  public MinusExpression(SNode node) {
     super(node);
   }
 

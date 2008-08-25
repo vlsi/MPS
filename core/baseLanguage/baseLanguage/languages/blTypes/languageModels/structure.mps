@@ -22,12 +22,15 @@
     <property name="iconPath" value="${language_descriptor}\icons\primitive.png" />
     <property name="rootable" value="true" />
     <property name="name" value="PrimitiveTypeDescriptor" />
-    <link role="extends" targetNodeId="1.1078489098625" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1159268590032">
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="extends" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1159268661480" resolveInfo="PrimitiveTypeRef" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1219697389595">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1159268661480">
@@ -61,7 +64,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1161696749760">
     <property name="name" value="BLArrayType" />
-    <link role="extends" targetNodeId="1.1078489098625" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1161696749761">
       <property name="value" value="array" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -74,6 +77,9 @@
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="componentType" />
       <link role="target" targetNodeId="1.1078489098625" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1219697389603">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1162556266355">

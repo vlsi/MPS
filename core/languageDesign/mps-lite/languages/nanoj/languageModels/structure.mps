@@ -48,7 +48,7 @@
     <property name="name" value="ClassConcept" />
     <property name="package" value="Structure" />
     <property name="rootable" value="true" />
-    <link role="extends" targetNodeId="1.1078489098625" resolveInfo="NamedConcept" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197638404545">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="extends" />
@@ -77,6 +77,9 @@
       <property name="name" value="name" />
       <link role="dataType" targetNodeId="1197638404527" resolveInfo="_Identifier_String" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1219697389578">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197638404550">
     <property name="name" value="ClassReference" />
@@ -93,7 +96,7 @@
     <property name="name" value="BaseMethod" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="1.1078489098625" resolveInfo="NamedConcept" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197638404553">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="type" />
@@ -118,6 +121,9 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197638404557">
       <property name="name" value="name" />
       <link role="dataType" targetNodeId="1197638404527" resolveInfo="_Identifier_String" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1219697389576">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197638404558">
@@ -482,7 +488,7 @@
     <property name="name" value="VariableDeclaration" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="1.1078489098625" resolveInfo="NamedConcept" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197638404629">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="type" />
@@ -501,6 +507,9 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197638404632">
       <property name="name" value="name" />
       <link role="dataType" targetNodeId="1197638404527" resolveInfo="_Identifier_String" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1219697389607">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197638404633">

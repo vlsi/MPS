@@ -18,15 +18,15 @@ public class InferenceRule extends AbstractCheckingRule {
     super(node);
   }
 
-  public int getDependencysCount() {
+  public int getDependenciesCount() {
     return this.getChildCount(InferenceRule.DEPENDENCY);
   }
 
-  public Iterator<Dependency> dependencys() {
+  public Iterator<Dependency> dependencies() {
     return this.children(InferenceRule.DEPENDENCY);
   }
 
-  public List<Dependency> getDependencys() {
+  public List<Dependency> getDependencies() {
     return this.getChildren(InferenceRule.DEPENDENCY);
   }
 

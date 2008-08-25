@@ -4,11 +4,11 @@ package jetbrains.mps.baseLanguage.blTypes.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class FunctionType extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.blTypes.structure.FunctionType";
@@ -18,15 +18,6 @@ public class FunctionType extends BaseConcept {
   public FunctionType(SNode node) {
     super(node);
   }
-
-  public static FunctionType newInstance(SModel sm, boolean init) {
-    return (FunctionType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.FunctionType", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static FunctionType newInstance(SModel sm) {
-    return FunctionType.newInstance(sm, false);
-  }
-
 
   public BaseConcept getResult() {
     return (BaseConcept)this.getChild(FunctionType.RESULT);
@@ -54,6 +45,15 @@ public class FunctionType extends BaseConcept {
 
   public void insertParam(BaseConcept prev, BaseConcept node) {
     this.insertChild(prev, FunctionType.PARAM, node);
+  }
+
+
+  public static FunctionType newInstance(SModel sm, boolean init) {
+    return (FunctionType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.FunctionType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static FunctionType newInstance(SModel sm) {
+    return FunctionType.newInstance(sm, false);
   }
 
 }

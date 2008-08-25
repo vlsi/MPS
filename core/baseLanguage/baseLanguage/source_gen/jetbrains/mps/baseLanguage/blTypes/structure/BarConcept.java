@@ -20,15 +20,6 @@ public class BarConcept extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-  public static BarConcept newInstance(SModel sm, boolean init) {
-    return (BarConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.BarConcept", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BarConcept newInstance(SModel sm) {
-    return BarConcept.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(BarConcept.NAME);
   }
@@ -59,6 +50,15 @@ public class BarConcept extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(BarConcept.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static BarConcept newInstance(SModel sm, boolean init) {
+    return (BarConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.BarConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BarConcept newInstance(SModel sm) {
+    return BarConcept.newInstance(sm, false);
   }
 
 }
