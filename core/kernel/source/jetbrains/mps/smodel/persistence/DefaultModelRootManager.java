@@ -3,6 +3,7 @@ package jetbrains.mps.smodel.persistence;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -157,13 +158,13 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   }
 
   @NotNull
-  public SModelDescriptor createNewModel(@NotNull ModelRoot root, @NotNull SModelUID uid, @NotNull ModelOwner owner) {
+  public SModelDescriptor createNewModel(@NotNull SModelRoot root, @NotNull SModelUID uid, @NotNull ModelOwner owner) {
     if (root.getPrefix().length() > 0 && !uid.getLongName().startsWith(root.getPrefix())) {
       throw new IllegalArgumentException();
     }
 
-    IFile modelFile = createFileForModelUID(root, uid);
-    SModelDescriptor result = DefaultModelRootManager.createModel(this, root, modelFile.getCanonicalPath(), uid, owner);
+    IFile modelFile = createFileForModelUID(root.getModelRoot(), uid);
+    SModelDescriptor result = DefaultModelRootManager.createModel(this, modelFile.getCanonicalPath(), uid, owner);
     
     return result;
   }
@@ -208,7 +209,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     }
   }
 
-  public static SModelDescriptor createModel(IModelRootManager manager, ModelRoot root, String fileName, SModelUID modelUID, ModelOwner owner) {
+  private static SModelDescriptor createModel(IModelRootManager manager, String fileName, SModelUID modelUID, ModelOwner owner) {
     LOG.debug("create model uid=\"" + modelUID + "\" file=\"" + fileName + "\" owner: " + owner);
 
     SModelRepository modelRepository = SModelRepository.getInstance();

@@ -398,6 +398,15 @@ public abstract class AbstractModule implements IModule {
     return list;
   }
 
+  private SModelRoot findSModelRoot(ModelRoot modelRoot) {
+    for (SModelRoot root : mySModelRoots) {
+      if (root.getModelRoot() == modelRoot) {
+        return root;
+      }
+    }
+    return null;
+  }
+
   public SModelDescriptor createModel(SModelUID uid, ModelRoot root) {
     IModelRootManager manager = null;
     for (SModelRoot sModelRoot : mySModelRoots) {
@@ -413,7 +422,7 @@ public abstract class AbstractModule implements IModule {
       LOG.error("Trying to create model root manager in root which doesn't support new models");
     }
 
-    final SModelDescriptor result = manager.createNewModel(root, uid, this);
+    final SModelDescriptor result = manager.createNewModel(findSModelRoot(root), uid, this);
     result.getSModel().runLoadingAction(new Runnable() {
       public void run() {
         result.save();
