@@ -36,6 +36,7 @@ import java.util.Set;
 
   void clear() {
     myMap.clear();
+    myUIDToKeys.clear();
   }
 
   /*package*/ void put(SNode node) {
