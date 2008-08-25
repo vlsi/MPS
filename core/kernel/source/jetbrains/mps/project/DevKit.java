@@ -87,6 +87,8 @@ public class DevKit extends AbstractModule {
 
 
   public void dispose() {
+    super.dispose();
+
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     MPSModuleRepository.getInstance().unRegisterModules(this);
     MPSModuleRepository.getInstance().unRegisterModules(myGenerationOnlyModelsModelOwner);

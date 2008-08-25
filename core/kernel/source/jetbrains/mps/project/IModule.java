@@ -19,6 +19,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   List<SModelDescriptor> getOwnModelDescriptors();
   List<ModelRoot> getModelRoots();
+  List<SModelRoot> getSModelRoots();
 
   List<Dependency> getDependOn();
   List<IModule> getDependOnModules();

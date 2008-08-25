@@ -85,6 +85,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   }
 
   public void dispose() {
+    super.dispose();
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
   }
 

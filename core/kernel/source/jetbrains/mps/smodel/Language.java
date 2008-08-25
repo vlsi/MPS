@@ -362,6 +362,8 @@ public class Language extends AbstractModule {
   }
 
   public void dispose() {
+    super.dispose();
+
     //Call this method before you remove it and its models from repositories
     //To unregister it correctly from different services we need it and its models    
     SModelRepository.getInstance().unRegisterModelDescriptors(this);

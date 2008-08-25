@@ -4,6 +4,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.modelProperties.ModelPropertiesDialog;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.*;
 
@@ -56,8 +57,8 @@ public class NewModelDialog extends BaseDialog {
     mainPanel.add(myModelRoots);
 
     DefaultComboBoxModel model = new DefaultComboBoxModel();
-    for (ModelRoot root : myModule.getModelRoots()) {
-      model.addElement(new ModelRootWrapper(root, myNamespace));
+    for (SModelRoot root : myModule.getSModelRoots()) {
+      model.addElement(new ModelRootWrapper(root.getModelRoot(), myNamespace));
     }
 
     myModelRoots.addItemListener(new ItemListener() {

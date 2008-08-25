@@ -43,6 +43,7 @@ public abstract class AbstractModule implements IModule {
 
   private IClassPathItem myClassPath;
   private MyClassPathModelRootManager myManager = new MyClassPathModelRootManager();
+  private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
 
   protected void reload() {
     MPSModuleRepository.getInstance().unRegisterModules(this);
@@ -52,7 +53,6 @@ public abstract class AbstractModule implements IModule {
     updateDescriptorClasspath();
     updateClassPath();
   }
-
 
   public void onModuleLoad() {
     boolean save = false;
@@ -251,6 +251,10 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<ModelRoot>();
   }
 
+  public List<SModelRoot> getSModelRoots() {
+    return Collections.unmodifiableList(mySModelRoots);
+  }
+
   public List<Dependency> getDependOn() {
     List<Dependency> result = new ArrayList<Dependency>();
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -395,7 +399,15 @@ public abstract class AbstractModule implements IModule {
   }
 
   public SModelDescriptor createModel(SModelUID uid, ModelRoot root) {
-    IModelRootManager manager = ModelRootsUtil.getManagerFor(root);
+    IModelRootManager manager = null;
+    for (SModelRoot sModelRoot : mySModelRoots) {
+      if (root == sModelRoot.getModelRoot()) {
+        manager = sModelRoot.getManager();
+        break;
+      }
+    }
+
+    assert manager != null;
 
     if (!manager.isNewModelsSupported()) {
       LOG.error("Trying to create model root manager in root which doesn't support new models");
@@ -434,9 +446,17 @@ public abstract class AbstractModule implements IModule {
   protected void readModels() {
     if (!myModelsRead) {
       myModelsRead = true;
+
+      for (SModelRoot root : mySModelRoots) {
+        root.dispose();
+      }
+      mySModelRoots.clear();
+
       for (ModelRoot modelRoot : getModelRoots()) {
         try {
-          IModelRootManager manager = ModelRootsUtil.getManagerFor(modelRoot);
+          SModelRoot root = new SModelRoot(modelRoot);
+          mySModelRoots.add(root);
+          IModelRootManager manager = root.getManager();
           manager.read(modelRoot, this);
         } catch (Exception e) {
           LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
@@ -445,6 +465,13 @@ public abstract class AbstractModule implements IModule {
 
       myInitialized = true;
     }
+  }
+
+  public void dispose() {
+    for (SModelRoot root : mySModelRoots) {
+      root.dispose();
+    }
+    mySModelRoots.clear();
   }
 
   public List<String> getClassPath() {
@@ -561,10 +588,10 @@ public abstract class AbstractModule implements IModule {
   }
 
   private void loadJavaStubModelRoots() {
-    for (ModelRoot mr : getModelRoots()) {
-      IModelRootManager m = ModelRootsUtil.getManagerFor(mr);
+    for (SModelRoot mr : getSModelRoots()) {
+      IModelRootManager m = mr.getManager();
       if (m instanceof ClassPathModelRootManager) {
-        m.read(mr, this);
+        m.read(mr.getModelRoot(), this);
       }
     }
   }

@@ -57,6 +57,7 @@ public class Generator extends AbstractModule {
   }
 
   public void dispose() {
+    super.dispose();
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     MPSModuleRepository.getInstance().unRegisterModules(this);
     MPSModuleRepository.getInstance().removeModule(this);
