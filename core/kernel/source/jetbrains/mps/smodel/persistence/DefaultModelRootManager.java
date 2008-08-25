@@ -4,7 +4,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
@@ -30,7 +29,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
   @NotNull
-  public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull IModule owner) {
+  public Set<SModelDescriptor> read(@NotNull SModelRoot root, @NotNull IModule owner) {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     readModelDescriptors(result, FileSystem.getFile(root.getPath()), root, owner);
     return result;
@@ -131,7 +130,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     ModelPersistence.saveModel(modelDescriptor.getSModel(), modelDescriptor.getModelFile());
   }
 
-  private void readModelDescriptors(Set<SModelDescriptor> modelDescriptors, IFile dir, ModelRoot modelRoot, ModelOwner owner) {
+  private void readModelDescriptors(Set<SModelDescriptor> modelDescriptors, IFile dir, SModelRoot modelRoot, ModelOwner owner) {
     if (dir.getName().endsWith(".svn")) return;
     if (!dir.isDirectory()) return;
 
@@ -142,7 +141,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       boolean isMPSStub = fileName.endsWith(MPSExtentions.DOT_STUB);
       if (!(isMPSModel || isMPSStub)) continue;
       SModelUID modelUID = PathManager.getModelUID(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
-      SModelDescriptor modelDescriptor = getInstance(this, modelRoot, isMPSStub, file.getAbsolutePath(), modelUID, owner);
+      SModelDescriptor modelDescriptor = getInstance(this, isMPSStub, file.getAbsolutePath(), modelUID, owner);
       LOG.debug("I've read model descriptor " + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       modelDescriptors.add(modelDescriptor);
     }
@@ -187,7 +186,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     return modelFile;
   }
 
-  private static SModelDescriptor getInstance(IModelRootManager manager, ModelRoot root, boolean createStub, String fileName, SModelUID modelUID, ModelOwner owner) {
+  private static SModelDescriptor getInstance(IModelRootManager manager, boolean createStub, String fileName, SModelUID modelUID, ModelOwner owner) {
     LOG.debug("Getting model " + modelUID + " from " + fileName + " with owner " + owner);
 
     SModelRepository modelRepository = SModelRepository.getInstance();

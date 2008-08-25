@@ -14,7 +14,7 @@ import java.util.Map;
 public interface IModelRootManager {
   public static final IModelRootManager NULL_MANAGER = new NullModelRootManager();
 
-  @NotNull Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull IModule owner);
+  @NotNull Set<SModelDescriptor> read(@NotNull SModelRoot root, @NotNull IModule owner);
 
   @NotNull
   SModel loadModel(@NotNull SModelDescriptor modelDescriptor);

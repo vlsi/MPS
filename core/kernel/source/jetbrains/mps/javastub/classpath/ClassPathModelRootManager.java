@@ -9,6 +9,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -27,17 +28,17 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
 
 
   @NotNull
-  public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull IModule owner) {
+  public Set<SModelDescriptor> read(@NotNull SModelRoot root, @NotNull IModule owner) {
     try {
       myOwner = owner;
-      myConverter = ConverterFactory.createClassPathConverter(this, root, new ClassPathItemProvider() {
+      myConverter = ConverterFactory.createClassPathConverter(this, new ClassPathItemProvider() {
         public IClassPathItem get() {
           return getClassPathItem();
         }
       }, owner);
 
       Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-      addPackageModelDescriptors(result, root, root.getPrefix());
+      addPackageModelDescriptors(result, root.getPrefix());
       return result;
     } finally {
       myOwner = null;
@@ -93,7 +94,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
 
   protected abstract IClassPathItem getClassPathItem();
 
-  private void addPackageModelDescriptors(Set<SModelDescriptor> descriptors, ModelRoot root, String pack) {
+  private void addPackageModelDescriptors(Set<SModelDescriptor> descriptors, String pack) {
     Set<String> subpackages = getClassPathItem().getSubpackages(pack);
     if (pack.equals("")) {
       //we ignore everything in the default package because usage of it is a bad style and many libraries
@@ -128,7 +129,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
         }
       }
 
-      addPackageModelDescriptors(descriptors, root, subpackage);
+      addPackageModelDescriptors(descriptors, subpackage);
     }
   }
 
