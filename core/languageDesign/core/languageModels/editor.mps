@@ -42,9 +42,11 @@
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1117830771316">
     <link role="conceptDeclaration" targetNodeId="1.1078489098625" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1152908253258">
-      <property name="noTargetText" value="&lt;no name&gt;" />
-      <link role="relationDeclaration" targetNodeId="1.1169194664001" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1219698911072">
+      <property name="text" value="the 'NamedConcept' is deprecated in favor of INamedConcept" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1219698997585">
+        <property name="color" value="red" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1133921100033">
