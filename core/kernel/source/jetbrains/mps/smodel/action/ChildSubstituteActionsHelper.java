@@ -103,7 +103,6 @@ public class ChildSubstituteActionsHelper {
         while (((ConceptDeclaration) childConcept).getExtends() != null) {
           ConceptDeclaration extendedConcept = ((ConceptDeclaration) childConcept).getExtends();
           if (extendedConcept == SModelUtil_new.getBaseConcept()) break;
-          if (extendedConcept == SModelUtil_new.getNamedConcept()) break; // NamedConcept must die
           childConcept = extendedConcept;
         }
       }

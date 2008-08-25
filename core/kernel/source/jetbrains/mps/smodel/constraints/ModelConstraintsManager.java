@@ -1,29 +1,31 @@
 package jetbrains.mps.smodel.constraints;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
-import jetbrains.mps.core.structure.NamedConcept;
+import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.lang.reflect.Method;
-import java.lang.reflect.InvocationTargetException;
-
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.application.ApplicationManager;
 
 public class ModelConstraintsManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsManager.class);
@@ -214,7 +216,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     String namespace = node.getNode().getLanguageNamespace();
 
     // 'bootstrap' properties
-    if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(NamedConcept.NAME)
+    if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(INamedConcept.NAME)
       && !node.getConceptFQName().equals("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration")) {
       return null;
     }

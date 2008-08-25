@@ -1,17 +1,12 @@
 package jetbrains.mps.smodel.presentation;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.search.IReferenceInfoResolver;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.core.structure.NamedConcept;
-import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.core.structure.IResolveInfo;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.Icon;
 
