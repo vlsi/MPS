@@ -81,6 +81,10 @@ public class ChildSubstituteActionsHelper {
               return getMatchingText(pattern, true, true);
             }
 
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
+
             public String getDescriptionText(String pattern) {
               return "concept instance";
             }
