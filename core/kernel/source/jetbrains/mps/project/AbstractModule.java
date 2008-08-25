@@ -404,15 +404,6 @@ public abstract class AbstractModule implements IModule {
     return list;
   }
 
-  private SModelRoot findSModelRoot(ModelRoot modelRoot) {
-    for (SModelRoot root : mySModelRoots) {
-      if (root.getModelRoot() == modelRoot) {
-        return root;
-      }
-    }
-    return null;
-  }
-
   public SModelDescriptor createModel(SModelUID uid, SModelRoot root) {
     IModelRootManager manager = root.getManager();
 

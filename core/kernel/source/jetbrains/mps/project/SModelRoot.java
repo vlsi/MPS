@@ -32,10 +32,6 @@ public class SModelRoot {
     return myManager;
   }
 
-  public ModelRoot getModelRoot() {
-    return myModelRoot;
-  }
-
   public String getPath() {
     return myModelRoot.getPath();
   }
