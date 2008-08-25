@@ -19,10 +19,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   List<SModelDescriptor> getOwnModelDescriptors();
 
-  /**
-   * @deprecated use getSModelRoots() instead
-   */
-  List<ModelRoot> getModelRoots();
 
   List<SModelRoot> getSModelRoots();
   SModelRoot findModelRoot(String path);

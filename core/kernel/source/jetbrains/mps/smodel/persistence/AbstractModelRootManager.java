@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel.persistence;
 
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.persistence.IModelRootManager;

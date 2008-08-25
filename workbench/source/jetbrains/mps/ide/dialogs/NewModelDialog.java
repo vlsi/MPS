@@ -5,7 +5,6 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.modelProperties.ModelPropertiesDialog;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.*;
 
 import javax.swing.*;

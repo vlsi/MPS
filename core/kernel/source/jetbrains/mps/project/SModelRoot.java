@@ -2,10 +2,8 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.annotations.NotNull;
 
 public class SModelRoot {
   private static final Logger LOG = Logger.getLogger(SModelRoot.class);

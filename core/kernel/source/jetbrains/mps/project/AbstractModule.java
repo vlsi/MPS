@@ -10,7 +10,6 @@ import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -243,7 +242,7 @@ public abstract class AbstractModule implements IModule {
     return getDescriptorFile().getParent().child("classes_gen");
   }
 
-  public final List<ModelRoot> getModelRoots() {
+  private List<ModelRoot> getModelRoots() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
       return descriptor.getModelRoots();
