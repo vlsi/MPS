@@ -196,7 +196,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1174698110415(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode enumerationType = SNodeOperations.getParent(_context.getNode(), null, false, false);
+    SNode enumerationType = SNodeOperations.getParent(_context.getNode());
     if (SPropertyOperations.hasValue(enumerationType, "memberIdentifierPolicy", "derive_from_internal_value", "derive_from_presentation")) {
       return NameUtil.toValidIdentifier(SPropertyOperations.getString(_context.getNode(), "internalValue"));
     }
@@ -1490,7 +1490,7 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1178978044712(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode enumDataType = SNodeOperations.getParent(_context.getNode(), null, false, false);
+    SNode enumDataType = SNodeOperations.getParent(_context.getNode());
     String internalValue = SPropertyOperations.getString(_context.getNode(), "internalValue");
     SNode memberDataType = SLinkOperations.getTarget(enumDataType, "memberDataType", false);
     SNode targetInternalValueExpression = null;
