@@ -38,6 +38,14 @@ public class SModelRoot {
     return myModelRoot;
   }
 
+  public String getPath() {
+    return myModelRoot.getPath();
+  }
+
+  public String getPrefix() {
+    return myModelRoot.getPrefix();
+  }
+
   public void dispose() {
     
   }
