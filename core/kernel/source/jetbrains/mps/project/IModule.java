@@ -1,6 +1,5 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;

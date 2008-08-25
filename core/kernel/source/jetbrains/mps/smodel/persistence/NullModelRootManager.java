@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel.persistence;
 
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;

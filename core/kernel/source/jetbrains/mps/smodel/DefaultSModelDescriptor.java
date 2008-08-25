@@ -9,7 +9,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleStub;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.EventUtil;

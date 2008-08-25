@@ -4,7 +4,6 @@ import jetbrains.mps.javastub.ConverterFactory;
 import jetbrains.mps.javastub.IConverter;
 import jetbrains.mps.javastub.ClassPathItemProvider;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
