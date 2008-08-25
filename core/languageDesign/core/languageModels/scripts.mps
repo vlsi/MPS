@@ -1046,7 +1046,7 @@
                 <link role="variableDeclaration" targetNodeId="1209124038621" resolveInfo="model" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209124185540">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.rename(java.lang.String,jetbrains.mps.project.MPSProject,jetbrains.mps.projectLanguage.structure.ModelRoot):boolean" resolveInfo="rename" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.rename(java.lang.String,jetbrains.mps.project.MPSProject,jetbrains.mps.project.SModelRoot):boolean" resolveInfo="rename" />
                 <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1209124526096">
                   <link role="argument" targetNodeId="1199457954885" resolveInfo="newName" />
                 </node>
@@ -1546,7 +1546,7 @@
                   <link role="variableDeclaration" targetNodeId="1214841550661" resolveInfo="modelDescriptor" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214841630600">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.rename(java.lang.String,jetbrains.mps.project.MPSProject,jetbrains.mps.projectLanguage.structure.ModelRoot):boolean" resolveInfo="rename" />
+                  <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.rename(java.lang.String,jetbrains.mps.project.MPSProject,jetbrains.mps.project.SModelRoot):boolean" resolveInfo="rename" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215419826105">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215419836907">
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215419847696">
