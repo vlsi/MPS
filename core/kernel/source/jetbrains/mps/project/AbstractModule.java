@@ -414,32 +414,20 @@ public abstract class AbstractModule implements IModule {
     return null;
   }
 
-  public SModelDescriptor createModel(SModelUID uid, ModelRoot root) {
-    IModelRootManager manager = null;
-    for (SModelRoot sModelRoot : mySModelRoots) {
-      if (root == sModelRoot.getModelRoot()) {
-        manager = sModelRoot.getManager();
-        break;
-      }
-    }
-
-    assert manager != null;
+  public SModelDescriptor createModel(SModelUID uid, SModelRoot root) {
+    IModelRootManager manager = root.getManager();
 
     if (!manager.isNewModelsSupported()) {
       LOG.error("Trying to create model root manager in root which doesn't support new models");
     }
 
-    final SModelDescriptor result = manager.createNewModel(findSModelRoot(root), uid, this);
+    final SModelDescriptor result = manager.createNewModel(root, uid, this);
     result.getSModel().runLoadingAction(new Runnable() {
       public void run() {
         result.save();
       }
     });
     return result;
-  }
-
-  public SModelDescriptor createModel(SModelUID uid, SModelRoot root) {
-    return createModel(uid, root.getModelRoot());
   }
 
   public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {

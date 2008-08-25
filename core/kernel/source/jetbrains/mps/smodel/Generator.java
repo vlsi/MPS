@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Dependency;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.PathManager;
@@ -47,7 +48,7 @@ public class Generator extends AbstractModule {
     return getSourceLanguage().getLanguageRuntimeClassPathItems();
   }
 
-  public SModelDescriptor createModel(SModelUID uid, ModelRoot root) {
+  public SModelDescriptor createModel(SModelUID uid, SModelRoot root) {
     SModelDescriptor result = super.createModel(uid, root);
 
     LanguageDescriptor oldDescriptor = getSourceLanguage().getLanguageDescriptor();

@@ -47,11 +47,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   void addUsedLangauge(String languageNamespace);
   void addUsedDevkit(String devkit);
 
-  /**
-   * @deprecated use createModel(SModelUID,SModelRoot) instead
-   */
-  SModelDescriptor createModel(SModelUID uid, ModelRoot root);
-
   SModelDescriptor createModel(SModelUID uid, SModelRoot root);
 
   Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
