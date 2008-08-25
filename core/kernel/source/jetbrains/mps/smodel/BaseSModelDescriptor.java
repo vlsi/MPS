@@ -69,13 +69,15 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return myModelUID.getStereotype();
   }
 
-  public Set<ModelRoot> collectModelRoots() {
-    Set<ModelRoot> result = new HashSet<ModelRoot>();
+  public Set<SModelRoot> collectSModelRoots() {
+    Set<SModelRoot> result = new HashSet<SModelRoot>();
     IFile sourceFile = this.getModelFile();
     Set<IModule> modelOwners = getModules();
     for (IModule module : modelOwners) {
-      for (ModelRoot modelRoot : module.getModelRoots()) {
-        if (this.getModelUID().toString().equals(PathManager.getModelUIDString(sourceFile, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix()))) {
+      for (SModelRoot modelRoot : module.getSModelRoots()) {
+        if (this.getModelUID().toString().equals(
+          PathManager.getModelUIDString(sourceFile, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix()))) {
+
           result.add(modelRoot);
         }
       }

@@ -8,6 +8,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleStub;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
@@ -672,7 +673,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     myTransient = b;
   }
 
-  public boolean rename(String newLongName, MPSProject project, ModelRoot newRoot) {
+  public boolean rename(String newLongName, MPSProject project, SModelRoot newRoot) {
     if (newRoot == null) {
       return myModelRootManager.renameModelDescriptor(this, newLongName, project);
     } else {

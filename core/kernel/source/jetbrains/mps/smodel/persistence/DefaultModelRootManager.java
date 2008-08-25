@@ -163,13 +163,13 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       throw new IllegalArgumentException();
     }
 
-    IFile modelFile = createFileForModelUID(root.getModelRoot(), uid);
+    IFile modelFile = createFileForModelUID(root, uid);
     SModelDescriptor result = DefaultModelRootManager.createModel(this, modelFile.getCanonicalPath(), uid, owner);
     
     return result;
   }
 
-  private IFile createFileForModelUID(ModelRoot root, SModelUID uid) {
+  private IFile createFileForModelUID(SModelRoot root, SModelUID uid) {
     String pathPrefix = root.getPrefix();
     String path = root.getPath();
 
@@ -226,7 +226,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, MPSProject project) {
     assert modelDescriptor instanceof DefaultSModelDescriptor;
     // 1. rename file
-    Set<ModelRoot> modelRoots = modelDescriptor.collectModelRoots();
+    Set<SModelRoot> modelRoots = modelDescriptor.collectSModelRoots();
     if (modelRoots.size() == 0) {
       LOG.error("can't rename model " + modelDescriptor + " : no model root exists");
       return false;
@@ -236,11 +236,11 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       return false;
     }
 
-    ModelRoot root = modelRoots.iterator().next();
+    SModelRoot root = modelRoots.iterator().next();
     return renameModelDescriptor(modelDescriptor, newLongName, root, project);
   }
 
-  public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, ModelRoot root, MPSProject project) {
+  public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, SModelRoot root, MPSProject project) {
     assert modelDescriptor instanceof DefaultSModelDescriptor;
     SModelUID newModelUID = new SModelUID(newLongName, modelDescriptor.getStereotype());
     SModelUID oldModelUID = modelDescriptor.getModelUID();

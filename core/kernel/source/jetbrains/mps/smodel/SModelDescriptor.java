@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -116,9 +117,9 @@ public interface SModelDescriptor {
 
   void setVersion(int newVersion);
 
-  boolean rename(String newLongName, MPSProject project, ModelRoot newRoot);
+  boolean rename(String newLongName, MPSProject project, SModelRoot newRoot);
 
-  Set<ModelRoot> collectModelRoots();
+  Set<SModelRoot> collectSModelRoots();
 
   Object getUserObject(String key);
 
