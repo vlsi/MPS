@@ -255,6 +255,13 @@ public abstract class AbstractModule implements IModule {
     return Collections.unmodifiableList(mySModelRoots);
   }
 
+  public SModelRoot findModelRoot(String path) {
+    for (SModelRoot root : mySModelRoots) {
+      if (path.equals(root.getPath())) return root;
+    }
+    return null;
+  }
+
   public List<Dependency> getDependOn() {
     List<Dependency> result = new ArrayList<Dependency>();
     ModuleDescriptor descriptor = getModuleDescriptor();

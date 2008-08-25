@@ -4,6 +4,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
@@ -116,13 +117,12 @@ public class CloneModelDialog extends BaseNodeDialog {
     String modelName = myCloneModelProperties.getLongName();
     RootReference reference = myCloneModelProperties.getRoot();
 
-    ModelRoot modelRoot = ModelRoot.newInstance(myProjectModel);
-    modelRoot.setPrefix(reference.getPrefix());
-    modelRoot.setPath(reference.getPath());
 
     IOperationContext operationContext = getOperationContext();
     IModule module = operationContext.getModule();
     assert module != null;
+
+    SModelRoot modelRoot = module.findModelRoot(reference.getPath());
     final SModelDescriptor modelDescriptor = module.createModel(new SModelUID(modelName, stereotype), modelRoot);
 
     final SModel model = modelDescriptor.getSModel();

@@ -58,7 +58,7 @@ public class NewModelDialog extends BaseDialog {
 
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (SModelRoot root : myModule.getSModelRoots()) {
-      model.addElement(new ModelRootWrapper(root.getModelRoot(), myNamespace));
+      model.addElement(new ModelRootWrapper(root, myNamespace));
     }
 
     myModelRoots.addItemListener(new ItemListener() {
@@ -124,11 +124,11 @@ public class NewModelDialog extends BaseDialog {
   }
 
   private static class ModelRootWrapper {
-    private ModelRoot myModelRoot;
+    private SModelRoot myModelRoot;
     private String myNamespace;
     private String myText;
 
-    private ModelRootWrapper(ModelRoot modelRoot, String namespace) {
+    private ModelRootWrapper(SModelRoot modelRoot, String namespace) {
       myModelRoot = modelRoot;
 
       String prefix = myModelRoot.getPrefix();
@@ -149,7 +149,7 @@ public class NewModelDialog extends BaseDialog {
       return myNamespace;
     }
 
-    public ModelRoot getModelRoot() {
+    public SModelRoot getModelRoot() {
       return myModelRoot;
     }
   }

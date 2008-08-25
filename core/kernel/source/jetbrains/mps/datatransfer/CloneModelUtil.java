@@ -14,14 +14,6 @@ import jetbrains.mps.smodel.*;
  */
 public class CloneModelUtil {
 
-  public static SModel cloneModel(SModel model, IOperationContext operationContext, SModelUID modelUID, ModelRoot modelRoot) {
-    IModule module = operationContext.getModule();
-    assert module != null;
-    SModelDescriptor modelCopyDescriptor = module.createModel(modelUID, modelRoot);
-    SModel modelCopy = modelCopyDescriptor.getSModel();
-    return cloneModel(model, modelCopy, operationContext.getScope());
-  }
-
   public static SModel cloneModel(final SModel model, final SModel modelCopy, IScope scope) {
     modelCopy.runLoadingAction(new Runnable() {
       public void run() {
