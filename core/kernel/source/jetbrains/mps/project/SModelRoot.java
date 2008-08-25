@@ -47,6 +47,6 @@ public class SModelRoot {
   }
 
   public void dispose() {
-    
+    myManager.dispose();
   }
 }

@@ -81,4 +81,7 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   public void saveMetadata(@NotNull SModelDescriptor modelDescriptor) {
     throw new UnsupportedOperationException();
   }
+
+  public void dispose() {
+  }
 }

@@ -55,4 +55,6 @@ public interface IModelRootManager {
   boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, MPSProject project);
 
   boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, ModelRoot root, MPSProject project);
+
+  void dispose();
 }
