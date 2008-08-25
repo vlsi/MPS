@@ -9,6 +9,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -18,7 +19,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -43,7 +43,7 @@ public class QueriesGenerated {
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       return false;
     }
-    if ("String".equals(SPropertyOperations.getString(SLinkOperations.getTarget(type, "classifier", false), "name")) && SNodeOperations.getModel(SLinkOperations.getTarget(type, "classifier", false)).getLongName().equals("java.lang")) {
+    if ("String".equals(SPropertyOperations.getString(SLinkOperations.getTarget(type, "classifier", false), "name")) && SModelOperations.getModelName(SNodeOperations.getModel(SLinkOperations.getTarget(type, "classifier", false))).equals("java.lang")) {
       return true;
     }
     return false;
