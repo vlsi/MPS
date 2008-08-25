@@ -95,12 +95,13 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1161696750123">
     <link role="conceptDeclaration" targetNodeId="1.1161696749760" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1161696750124">
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1161696750125">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1219697884425">
         <link role="relationDeclaration" targetNodeId="1.1161696749763" />
-        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1161696750126">
-          <link role="conceptDeclaration" targetNodeId="2.1078489098625" />
-          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1161696750127">
-            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1219697884426">
+          <link role="conceptDeclaration" targetNodeId="2.1169194658468" resolveInfo="INamedConcept" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1219697890195">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
           </node>
         </node>
       </node>

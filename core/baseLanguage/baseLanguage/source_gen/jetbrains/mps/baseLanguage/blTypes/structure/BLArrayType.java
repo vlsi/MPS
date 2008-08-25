@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.blTypes.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -54,11 +53,11 @@ public class BLArrayType extends BaseConcept implements INamedConcept {
     this.setProperty(BLArrayType.VIRTUAL_PACKAGE, value);
   }
 
-  public NamedConcept getComponentType() {
-    return (NamedConcept)this.getReferent(BLArrayType.COMPONENT_TYPE);
+  public INamedConcept getComponentType() {
+    return (INamedConcept)this.getReferent(BLArrayType.COMPONENT_TYPE);
   }
 
-  public void setComponentType(NamedConcept node) {
+  public void setComponentType(INamedConcept node) {
     super.setReferent(BLArrayType.COMPONENT_TYPE, node);
   }
 

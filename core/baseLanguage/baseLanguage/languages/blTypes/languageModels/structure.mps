@@ -76,7 +76,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1161696749763">
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="componentType" />
-      <link role="target" targetNodeId="1.1078489098625" />
+      <link role="target" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1219697389603">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
