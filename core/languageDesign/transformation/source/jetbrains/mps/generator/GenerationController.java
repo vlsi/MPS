@@ -106,7 +106,7 @@ public class GenerationController {
         boolean needToReload = false;
         for (Pair<IModule, List<SModelDescriptor>> moduleListPair : myModuleSequence) {
           IModule module = moduleListPair.o1;
-          if (module != null && module.reloadClassesAfterGeneration()) {
+          if (module != null && module.reloadClassesAfterGeneration() && myGenerationType.requiresReloading()) {
             needToReload = true;
           }
           boolean compilationResult = compileModule(module, totalJob, startJobTime);

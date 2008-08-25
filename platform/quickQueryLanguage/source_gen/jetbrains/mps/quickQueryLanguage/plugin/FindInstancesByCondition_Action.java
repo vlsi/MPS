@@ -62,6 +62,8 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       FindInstancesContext newContext = new FindInstancesContext(FindInstancesByCondition_Action.this.context);
+      TestDialog testDialog = new TestDialog(newContext, (Language)FindInstancesByCondition_Action.this.langModule);
+      testDialog.showDialog();
       FindInstancesByConditionDialog dialog;
       if (FindInstancesByCondition_Action.this.langModule instanceof Language) {
         dialog = new FindInstancesByConditionDialog(newContext, (Language)FindInstancesByCondition_Action.this.langModule);
