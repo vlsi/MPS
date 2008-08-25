@@ -4,11 +4,11 @@ package jetbrains.mpslite.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class Line extends BaseConcept {
   public static final String concept = "jetbrains.mpslite.structure.Line";
@@ -17,15 +17,6 @@ public class Line extends BaseConcept {
   public Line(SNode node) {
     super(node);
   }
-
-  public static Line newInstance(SModel sm, boolean init) {
-    return (Line)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.Line", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Line newInstance(SModel sm) {
-    return Line.newInstance(sm, false);
-  }
-
 
   public int getLinePartsCount() {
     return this.getChildCount(Line.LINE_PART);
@@ -45,6 +36,15 @@ public class Line extends BaseConcept {
 
   public void insertLinePart(LinePart prev, LinePart node) {
     this.insertChild(prev, Line.LINE_PART, node);
+  }
+
+
+  public static Line newInstance(SModel sm, boolean init) {
+    return (Line)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.Line", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Line newInstance(SModel sm) {
+    return Line.newInstance(sm, false);
   }
 
 }

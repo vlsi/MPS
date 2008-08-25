@@ -15,21 +15,21 @@ public class ConstantLinePart extends LinePart {
     super(node);
   }
 
-  public static ConstantLinePart newInstance(SModel sm, boolean init) {
-    return (ConstantLinePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ConstantLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ConstantLinePart newInstance(SModel sm) {
-    return ConstantLinePart.newInstance(sm, false);
-  }
-
-
   public String getText() {
     return this.getProperty(ConstantLinePart.TEXT);
   }
 
   public void setText(String value) {
     this.setProperty(ConstantLinePart.TEXT, value);
+  }
+
+
+  public static ConstantLinePart newInstance(SModel sm, boolean init) {
+    return (ConstantLinePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ConstantLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ConstantLinePart newInstance(SModel sm) {
+    return ConstantLinePart.newInstance(sm, false);
   }
 
 }

@@ -26,7 +26,7 @@ public class LinePart_Behavior {
   }
 
   public static boolean call_generateActionMap_1213877403247(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_generateActionMap_1213877403247", PARAMETERS_1213877403247);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_generateActionMap_1213877403247", PARAMETERS_1213877403247);
   }
 
   public static String call_toString_1213877403257(SNode thisNode) {
@@ -34,7 +34,7 @@ public class LinePart_Behavior {
   }
 
   public static boolean callSuper_generateActionMap_1213877403247(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_generateActionMap_1213877403247", PARAMETERS_1213877403247);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_generateActionMap_1213877403247", PARAMETERS_1213877403247);
   }
 
   public static String callSuper_toString_1213877403257(SNode thisNode, String callerConceptFqName) {

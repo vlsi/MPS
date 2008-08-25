@@ -58,12 +58,12 @@ public class _Line_Actions extends EditorCellKeyMap {
         return;
       }
       SNode part = SNodeOperations.getAncestor(selectedNode, "jetbrains.mpslite.structure.LinePart", true, false);
-      SNode currentLine = SNodeOperations.getParent(part, null, false, false);
+      SNode currentLine = SNodeOperations.getParent(part);
       SModel model = SNodeOperations.getModel(node);
       SNode newLine = SModelOperations.createNewNode(model, "jetbrains.mpslite.structure.Line", null);
       SNodeOperations.insertNextSiblingChild(currentLine, newLine);
       for(SNode p : SNodeOperations.getNextSiblings(part, false)) {
-        SNodeOperations.getParent(p, null, false, false).removeChild(p);
+        SNodeOperations.getParent(p).removeChild(p);
         SLinkOperations.addChild(newLine, "linePart", p);
       }
     }

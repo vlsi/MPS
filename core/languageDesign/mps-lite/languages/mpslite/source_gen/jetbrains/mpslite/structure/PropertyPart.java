@@ -15,21 +15,21 @@ public class PropertyPart extends LinePart {
     super(node);
   }
 
-  public static PropertyPart newInstance(SModel sm, boolean init) {
-    return (PropertyPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.PropertyPart", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PropertyPart newInstance(SModel sm) {
-    return PropertyPart.newInstance(sm, false);
-  }
-
-
   public Getter_ConceptFunction getGetterFunction() {
     return (Getter_ConceptFunction)this.getChild(PropertyPart.GETTER_FUNCTION);
   }
 
   public void setGetterFunction(Getter_ConceptFunction node) {
     super.setChild(PropertyPart.GETTER_FUNCTION, node);
+  }
+
+
+  public static PropertyPart newInstance(SModel sm, boolean init) {
+    return (PropertyPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.PropertyPart", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PropertyPart newInstance(SModel sm) {
+    return PropertyPart.newInstance(sm, false);
   }
 
 }

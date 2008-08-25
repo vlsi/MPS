@@ -15,21 +15,21 @@ public class ChildPart extends LinePart {
     super(node);
   }
 
-  public static ChildPart newInstance(SModel sm, boolean init) {
-    return (ChildPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ChildPart", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ChildPart newInstance(SModel sm) {
-    return ChildPart.newInstance(sm, false);
-  }
-
-
   public String getSeparator() {
     return this.getProperty(ChildPart.SEPARATOR);
   }
 
   public void setSeparator(String value) {
     this.setProperty(ChildPart.SEPARATOR, value);
+  }
+
+
+  public static ChildPart newInstance(SModel sm, boolean init) {
+    return (ChildPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ChildPart", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ChildPart newInstance(SModel sm) {
+    return ChildPart.newInstance(sm, false);
   }
 
 }
