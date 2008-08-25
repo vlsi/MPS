@@ -422,6 +422,10 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  public SModelDescriptor createModel(SModelUID uid, SModelRoot root) {
+    return createModel(uid, root.getModelRoot());
+  }
+
   public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
     return new LinkedHashSet<SModelDescriptor>();
   }

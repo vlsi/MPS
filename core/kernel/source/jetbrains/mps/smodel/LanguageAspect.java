@@ -151,7 +151,7 @@ public enum LanguageAspect {
   public SModelDescriptor createNew(final Language l, final boolean saveDescriptor) {
     assert get(l) == null;
 
-    final SModelDescriptor model = l.createModel(getModuleUID(l), l.getModelRoots().get(0));
+    final SModelDescriptor model = l.createModel(getModuleUID(l), l.getSModelRoots().get(0));
 
     model.getSModel().runLoadingAction(new Runnable() {
       public void run() {
