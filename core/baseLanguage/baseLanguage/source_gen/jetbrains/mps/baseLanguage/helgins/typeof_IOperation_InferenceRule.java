@@ -16,7 +16,6 @@ public class typeof_IOperation_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode op) {
-    System.out.println("!!!!AAA");
     SNode returnType = ListSequence.fromList(SLinkOperations.getConceptLinkTargets(op, "returnType")).first();
     if (returnType != null) {
       {
