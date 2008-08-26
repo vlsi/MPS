@@ -49,7 +49,7 @@ public class SNodePointer {
 
     UnregisteredNodes unregisteredNodes = UnregisteredNodes.instance();
     if (unregisteredNodes != null) {
-      return unregisteredNodes.get(myModelUID, myNodeId.toString());
+      return unregisteredNodes.get(myModelUID, myNodeId);
     }
     return null;
   }

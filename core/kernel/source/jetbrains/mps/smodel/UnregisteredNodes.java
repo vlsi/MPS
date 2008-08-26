@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.cleanup.CleanupListener;
+import jetbrains.mps.util.PairMap;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -12,8 +13,9 @@ import java.util.Set;
 class UnregisteredNodes {
   private static final Logger LOG = Logger.getLogger(UnregisteredNodes.class);
   private static UnregisteredNodes myInstance;
-  private Map<String, SNode> myMap = new HashMap<String, SNode>();
-  private Map<SModelUID, Set<String>> myUIDToKeys = new HashMap<SModelUID, Set<String>>();
+
+  private PairMap<SModelUID, SNodeId, SNode> myMap = new PairMap<SModelUID, SNodeId, SNode>();
+
 
   public static UnregisteredNodes instance() {
     if (myInstance == null) {
@@ -32,62 +34,46 @@ class UnregisteredNodes {
 
   void clear() {
     myMap.clear();
-    myUIDToKeys.clear();
   }
 
-  /*package*/ void put(SNode node) {
+  void put(SNode node) {
     if (!node.hasId()) return;
-    add(node.getModel().getUID(), node.getId(), node);
+    add(node.getModel().getUID(), node.getSNodeId(), node);
   }
 
-  /*package*/ void remove(SNode node) {
+  void remove(SNode node) {
     if (!node.hasId()) return;
-    remove(node.getModel().getUID(), node.getId());
+    remove(node.getModel().getUID(), node.getSNodeId());
   }
 
-  /*package*/ SNode get(SModelUID modelUID, String nodeId) {
-    String key = modelUID.toString() + "#" + nodeId;
-    return myMap.get(key);
+  SNode get(SModelUID modelUID, SNodeId nodeId) {
+    return myMap.get(modelUID, nodeId);
   }
 
-  /*package*/ void nodeIdChanged(SNode node, SNodeId oldNodeId) {
+  void nodeIdChanged(SNode node, SNodeId oldNodeId) {
     if (oldNodeId != null) {
-      remove(node.getModel().getUID(), oldNodeId.toString());
+      remove(node.getModel().getUID(), oldNodeId);
     }
     if (node.hasId()) {
-      add(node.getModel().getUID(), node.getId(), node);
+      add(node.getModel().getUID(), node.getSNodeId(), node);
     }
   }
 
-  /*package*/ void nodeModelChanged(SNode node, SModel oldModel) {
+  void nodeModelChanged(SNode node, SModel oldModel) {
     if (!node.hasId()) return;
-    remove(oldModel.getUID(), node.getId());
-    add(node.getModel().getUID(), node.getId(), node);
+    remove(oldModel.getUID(), node.getSNodeId());
+    add(node.getModel().getUID(), node.getSNodeId(), node);
   }
 
-  private void add(SModelUID uid, String id, SNode node) {
-    String key = uid + "#" + id;
-    if (myMap.containsKey(key)) {
-      LOG.error("attempt to put another node with same key: " + key);
+  private void add(SModelUID uid, SNodeId id, SNode node) {
+    if (myMap.contains(uid, id)) {
+      LOG.error("attempt to put another node with same key: " + uid + "#" + id);
     }
-    myMap.put(key, node);
-
-    if (!myUIDToKeys.containsKey(uid)) {
-      myUIDToKeys.put(uid, new HashSet<String>());
-    }
-
-    myUIDToKeys.get(uid).add(key);
+    myMap.put(uid, id, node);
   }
 
-  private void remove(SModelUID uid, String id) {
-    String key = uid + "#" + id;
-    if (myMap.containsKey(key)) {
-      myMap.remove(key);
-      myUIDToKeys.get(uid).remove(key);
-      if (myUIDToKeys.isEmpty()) {
-        myUIDToKeys.remove(uid);
-      }
-    }
+  private void remove(SModelUID uid, SNodeId id) {
+    myMap.remove(uid, id);
   }
 
   /**
@@ -95,12 +81,7 @@ class UnregisteredNodes {
    * Do not remove it
    */
   void clear(SModelUID uid) {
-    if (!myUIDToKeys.containsKey(uid)) return;
-
-    for (String key : myUIDToKeys.get(uid)) {
-      myMap.remove(key);
-    }
-    myUIDToKeys.remove(uid);
+    myMap.clear(uid);
   }
 
 

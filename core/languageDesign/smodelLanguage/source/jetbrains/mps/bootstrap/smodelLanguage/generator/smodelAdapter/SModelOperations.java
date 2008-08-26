@@ -73,17 +73,15 @@ public class SModelOperations {
     return model.allNodesIncludingImported(scope, new IsInstanceCondition(concept));
   }
 
-  public static List<SNode> getNodes(SModel model, String conceptFqName) {
+  public static List<SNode> getNodes(SModel model, final String conceptFqName) {
     if (model == null) return new ArrayList<SNode>();
     if (conceptFqName == null) {
       return (List<SNode>) model.allNodes();
     }
-    final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-    if (concept == null) return new ArrayList<SNode>();
 
     return model.allNodes(new Condition<SNode>() {
       public boolean met(SNode node) {
-        return node.isInstanceOfConcept(concept);
+        return node.isInstanceOfConcept(conceptFqName);
       }
     });
   }
