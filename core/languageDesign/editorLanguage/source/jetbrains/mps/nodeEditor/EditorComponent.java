@@ -2130,6 +2130,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     SModelEvent lastAdd = null;
     SModelEvent lastRemove = null;
 
+    if (myNodeRangeSelection.isActive()) {
+      myNodeRangeSelection.deactivate();
+    }
+
     SNode lastSelectedNode = getSelectedNode();
 
     List<SNode> childAddedEventNodes = new ArrayList<SNode>();
