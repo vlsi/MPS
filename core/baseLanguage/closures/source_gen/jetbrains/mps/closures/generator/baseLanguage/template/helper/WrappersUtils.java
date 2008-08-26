@@ -30,7 +30,7 @@ with_decls:
       SNode sl = SNodeOperations.getAncestor(lvd, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
       for(SNode desc : SNodeOperations.getDescendants(sl, null, false)) {
         if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") && SLinkOperations.getTarget(desc, "variableDeclaration", false) == lvd) {
-          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc, null, false, false), "jetbrains.mps.baseLanguage.structure.AssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.getParent(desc, null, false, false), "lValue", true) == desc) {
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.AssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.getParent(desc), "lValue", true) == desc) {
             continue with_decls;
           }
         }

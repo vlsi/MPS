@@ -239,17 +239,17 @@ public class PrepStatementUtil {
   }
 
   private int calcNextLabel(SNode cstmt) {
-    if (SNodeOperations.isInstanceOf(cstmt, "jetbrains.mps.baseLanguage.structure.IfStatement") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(cstmt, null, false, false), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
-      SNode topIfStmt = SNodeOperations.getParent(cstmt, null, false, false);
-      while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(topIfStmt, null, false, false), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
-        topIfStmt = SNodeOperations.getParent(topIfStmt, null, false, false);
+    if (SNodeOperations.isInstanceOf(cstmt, "jetbrains.mps.baseLanguage.structure.IfStatement") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(cstmt), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
+      SNode topIfStmt = SNodeOperations.getParent(cstmt);
+      while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(topIfStmt), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
+        topIfStmt = SNodeOperations.getParent(topIfStmt);
       }
       Integer[] parentLabels = (Integer[])PrepStatementUtil.getPrepData(topIfStmt, this.generator);
       if (parentLabels != null) {
         return parentLabels[parentLabels.length - 1];
       }
-    } else if ((SNodeOperations.getNextSibling(cstmt) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(cstmt, null, false, false), "jetbrains.mps.baseLanguage.structure.StatementList")) {
-      Integer[] parentLabels = (Integer[])PrepStatementUtil.getPrepData(SNodeOperations.getParent(cstmt, null, false, false), this.generator);
+    } else if ((SNodeOperations.getNextSibling(cstmt) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(cstmt), "jetbrains.mps.baseLanguage.structure.StatementList")) {
+      Integer[] parentLabels = (Integer[])PrepStatementUtil.getPrepData(SNodeOperations.getParent(cstmt), this.generator);
       if (parentLabels != null) {
         return parentLabels[parentLabels.length - 1];
       }

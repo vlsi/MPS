@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import jetbrains.mps.closures.runtime.Wrappers;
 
 public class ClassifierAdapters_Test extends TestCase {
 
@@ -224,6 +225,25 @@ __switch__:
 
     });
     Assert.assertEquals(Arrays.asList(new Integer[]{1,2,3,4,5}), list);
+  }
+
+  @Test()
+  public void test_closureLiteralAsParameterToConstructor() throws Exception {
+    final Wrappers._int foo = new Wrappers._int(-1);
+    Thread trd = new Thread(new Runnable() {
+
+      public void run() {
+        foo.value = 42;
+        //  return nothing
+      }
+
+    });
+    trd.start();
+    try {
+      trd.join();
+    } finally {
+      Assert.assertEquals(42, foo.value);
+    }
   }
 
   @Test()

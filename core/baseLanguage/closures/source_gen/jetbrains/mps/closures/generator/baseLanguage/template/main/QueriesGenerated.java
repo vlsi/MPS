@@ -663,7 +663,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1201359373031(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode(), null, false, false), "jetbrains.mps.baseLanguage.structure.ForeachStatement");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ForeachStatement");
   }
 
   public static boolean ifMacro_Condition_1201378781869(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1539,7 +1539,7 @@ public class QueriesGenerated {
       return;
     }
     for(SNode te : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ThisExpression")) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(te, null, false, false), "jetbrains.mps.baseLanguage.structure.FieldReference") && (SLinkOperations.getTarget(te, "classConcept", false) == null)) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(te), "jetbrains.mps.baseLanguage.structure.FieldReference") && (SLinkOperations.getTarget(te, "classConcept", false) == null)) {
         SNode cl = SNodeOperations.getAncestor(te, "jetbrains.mps.closures.structure.ClosureLiteral", false, false);
         SNode thisCC = SNodeOperations.getAncestor(te, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
         if ((cl != null)) {
@@ -1617,7 +1617,7 @@ public class QueriesGenerated {
           for(SNode cc : SNodeOperations.getAncestors(cl, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)) {
             if (cc == thisCC) {
               if (SNodeOperations.isInstanceOf(thisCC, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-                SNode parent = SNodeOperations.getParent(te, null, false, false);
+                SNode parent = SNodeOperations.getParent(te);
                 if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.FieldReference")) {
                   SNode ifr = SNodeOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference");
                   SLinkOperations.setNewChild(ifr, "instance", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression");
@@ -1660,6 +1660,25 @@ public class QueriesGenerated {
             FunctionTypeUtil.prepAdaptations(rt, SLinkOperations.getTarget(rs, "expression", true), _context.getGenerator());
           }
         }
+      }
+    }
+  }
+
+  public static void mappingScript_CodeBlock_1219747408129(final IOperationContext operationContext, final MappingScriptContext _context) {
+    List<SNode> ccs = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassCreator");
+    for(SNode cc : ccs) {
+      List<SNode> args = SLinkOperations.getTargets(cc, "actualArgument", true);
+      List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(cc, "baseMethodDeclaration", false), "parameter", true);
+      if ((SLinkOperations.getTarget(cc, "baseMethodDeclaration", false) != null) && args.size() != pdecls.size()) {
+        _context.showInformationMessage(cc, "Actual arguments count != parameter declarations count");
+      }
+      int idx = 0;
+      for(SNode pdecl : pdecls) {
+        if (idx < args.size()) {
+          SNode arg = args.get(idx);
+          FunctionTypeUtil.prepAdaptations(SLinkOperations.getTarget(pdecl, "type", true), arg, _context.getGenerator());
+        }
+        idx = idx + 1;
       }
     }
   }
