@@ -141,7 +141,7 @@ public class MPSVCSManager implements ProjectComponent {
     invokeLater(new Runnable() {
       public void run() {
 
-        if (myProject.isDisposed()) return;
+//        if (myProject.isDisposed()) return;
 
         List<VirtualFile> virtualFileList = new LinkedList<VirtualFile>();
         for (File f : files) {
@@ -231,10 +231,12 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public void projectClosed() {
+
   }
 
   @NonNls
   @NotNull
+
   public String getComponentName() {
     return "VCS Manager";
   }
@@ -256,14 +258,18 @@ public class MPSVCSManager implements ProjectComponent {
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
     ModelChangesWatcher.instance().addMetadataListener(myMetadataListener);
     myChangeListManager.addChangeListListener(myChangeListUpdateListener);
+    System.err.println("init");
   }
 
   public void disposeComponent() {
     myProject.getComponent(GeneratorManager.class).removeGenerationListener(myGenerationListener);
     myProject.getComponent(GeneratorManager.class).removeCompilationListener(myCompilationListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
-    ModelChangesWatcher.instance().addMetadataListener(myMetadataListener);
+    ModelChangesWatcher.instance().removeMetadataListener(myMetadataListener);
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
+    
+    runTasks();
+    System.err.println("dispose");
   }
 
   private void runTasks() {
