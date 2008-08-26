@@ -19,13 +19,13 @@ public class DOMF extends TreePath<Node> {
     this.registerFeature(new DOMF.Desc_Feature_elements());
   }
 
-  public static IFeatureDescriptor<Node> child(String param) {
-    return new DOMF.Desc_Feature_child(param);
+  public Node parent(Node node) {
+    return DOMF.Parent.parent(node);
   }
 
 
-  public Node parent(Node node) {
-    return DOMF.Parent.parent(node);
+  public static IFeatureDescriptor<Node> child(String param) {
+    return new DOMF.Desc_Feature_child(param);
   }
 
   private static class Parent {

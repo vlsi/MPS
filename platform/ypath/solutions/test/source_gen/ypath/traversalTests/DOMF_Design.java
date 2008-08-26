@@ -63,7 +63,7 @@ __switch__:
     }
 
     public SNode getTargetType(String param, SNode nodeType) {
-      return new QuotationClass_().createNode();
+      return new QuotationClass_0().createNode();
     }
 
     public String parameterToString(String param) {
