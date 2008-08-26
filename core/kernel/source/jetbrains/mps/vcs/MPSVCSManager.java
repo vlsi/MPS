@@ -258,7 +258,6 @@ public class MPSVCSManager implements ProjectComponent {
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
     ModelChangesWatcher.instance().addMetadataListener(myMetadataListener);
     myChangeListManager.addChangeListListener(myChangeListUpdateListener);
-    System.err.println("init");
   }
 
   public void disposeComponent() {
@@ -269,7 +268,6 @@ public class MPSVCSManager implements ProjectComponent {
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
     
     runTasks();
-    System.err.println("dispose");
   }
 
   private void runTasks() {
