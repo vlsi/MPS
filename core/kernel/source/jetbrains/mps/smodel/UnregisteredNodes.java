@@ -67,7 +67,7 @@ class UnregisteredNodes {
 
   private void add(SModelUID uid, String id, SNode node) {
     String key = uid + "#" + id;
-    if (!myMap.containsKey(key)) {
+    if (myMap.containsKey(key)) {
       LOG.error("attempt to put another node with same key: " + key);
     }
     myMap.put(key, node);
