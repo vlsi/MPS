@@ -67,19 +67,6 @@ public class MPSVCSManager implements ProjectComponent {
     myChangeListManager = clmanager;
   }
 
-  private void renameInternal(@NotNull final VirtualFile from, @NotNull final VirtualFile to) {
-    invokeLater(new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runReadAction(new Runnable() {
-          public void run() {
-            scheduleMissingFileInternal(from);
-            scheduleUnversionedFileForAdditionInternal(to);
-          }
-        });
-      }
-    });
-  }
-
   private void scheduleMissingFileInternal(@NotNull VirtualFile file) {
     AbstractVcs fromVCS = myManager.getVcsFor(file);
     if (fromVCS != null) {
