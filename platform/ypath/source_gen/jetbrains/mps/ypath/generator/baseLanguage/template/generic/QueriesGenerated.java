@@ -1069,16 +1069,16 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1200052439810(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode expression = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "expression", true);
+    SNode expression = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true);
     return SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(expression), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1200053390568(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "expression", true));
+    return OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true));
   }
 
   public static SNode sourceNodeQuery_1200053478309(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "expression", true)));
+    return TypeChecker.getInstance().getTypeOf(OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true)));
   }
 
   public static SNode sourceNodeQuery_1200059673243(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1086,15 +1086,15 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1200059774145(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), null, false, false), "treePathType", true), "nodeType", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false)), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1200060433412(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "expression", true)));
+    return TypeChecker.getInstance().getTypeOf(OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true)));
   }
 
   public static SNode sourceNodeQuery_1200060433432(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "expression", true));
+    return OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true));
   }
 
   public static SNode sourceNodeQuery_1200090439933(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1120,35 +1120,35 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1210075313743(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), null, false, false), "treePathType", true), "nodeType", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false)), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1210075313818(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), null, false, false), "treePathType", true), "nodeType", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false)), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1210075313841(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), null, false, false), "treePathType", true), "nodeType", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false)), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1210075990241(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), null, false, false), "treePathType", true), "nodeType", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false)), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1210075990307(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), null, false, false), "treePathType", true), "nodeType", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false)), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1210075990329(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), null, false, false), "treePathType", true), "nodeType", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false)), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1210079713279(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "expression", true)));
+    return TypeChecker.getInstance().getTypeOf(OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true)));
   }
 
   public static SNode sourceNodeQuery_1210079713293(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "expression", true));
+    return OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true));
   }
 
   public static Iterable sourceNodesQuery_1196716118756(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1654,7 +1654,7 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1200052339756(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode expression = OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "expression", true));
+    SNode expression = OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true));
     return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SNodeOperations.copyNode(expression), SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
