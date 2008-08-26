@@ -83,10 +83,12 @@ import java.util.Set;
 
   private void remove(SModelUID uid, String id) {
     String key = uid + "#" + id;
-    myMap.remove(key);
-    myUIDToKeys.get(uid).remove(key);
-    if (myUIDToKeys.isEmpty()) {
-      myUIDToKeys.remove(uid);
+    if (myMap.containsKey(key)) {
+      myMap.remove(key);
+      myUIDToKeys.get(uid).remove(key);
+      if (myUIDToKeys.isEmpty()) {
+        myUIDToKeys.remove(uid);
+      }
     }
   }
 
