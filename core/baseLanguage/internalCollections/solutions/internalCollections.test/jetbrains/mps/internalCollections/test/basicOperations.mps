@@ -376,6 +376,7 @@
                       </node>
                     </node>
                   </node>
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1219750066758" />
                 </node>
               </node>
             </node>
