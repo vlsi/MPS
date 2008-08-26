@@ -107,6 +107,10 @@ public class ProjectTester {
       Logger.addLoggingHandler(loggingHandler);
 
       final GenerateFilesAndClassesGenerationType generationType = new GenerateFilesAndClassesGenerationType(false) {
+        public boolean requiresReloading() {
+          return false;
+        }
+
         public boolean requiresCompilationBeforeGeneration() {
           return false;
         }
