@@ -19,6 +19,7 @@
     <dependency reexport="false">jetbrains.mps.ide</dependency>
     <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage</dependency>
+    <dependency reexport="false">jetbrains.mps.transformation.generationContext</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>

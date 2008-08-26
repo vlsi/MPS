@@ -18,6 +18,7 @@ public class FindInstancesByConditionGroup_ActionGroup extends GeneratedActionGr
     this.setPopup(false);
     try {
       this.add(new FindInstancesByCondition_Action());
+      this.add(new ReplacementQueryAction_Action());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

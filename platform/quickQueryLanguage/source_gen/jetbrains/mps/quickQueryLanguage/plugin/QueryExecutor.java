@@ -4,20 +4,17 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.quickQueryLanguage.runtime.Query;
+import java.util.List;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.embeddableEditor.GenerateResult;
-import jetbrains.mps.ide.embeddableEditor.EditorGenerateType;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.ModelOwner;
-import jetbrains.mps.smodel.ProjectModels;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.GeneratorManager;
-import java.util.Arrays;
-import jetbrains.mps.smodel.SModelRepository;
+import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -25,9 +22,6 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.quickQueryLanguage.runtime.Query;
-import java.util.List;
-import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.Iterator;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
@@ -38,21 +32,21 @@ public class QueryExecutor {
   private ClassLoader myLoader;
   private SNode myModelQuery;
   private IOperationContext myContext;
+  private Query myQuery;
+  private List<SearchResult<SNode>> myResult;
 
-  public QueryExecutor(GenerateResult generateResult) {
+  public QueryExecutor(final GenerateResult generateResult) {
     this.setFields(generateResult);
-    this.generateModels();
-  }
-  public QueryExecutor(GenerateResult generateResult, final EditorGenerateType type) {
-    this.setFields(generateResult);
-    this.myClassName = generateResult.getModelDescriptor().getLongName() + this.myClassType;
-    ModelAccess.instance().runReadAction(new Runnable() {
+    if (generateResult.getModelDescriptor() != null) {
+      this.myClassName = generateResult.getModelDescriptor().getLongName() + this.myClassType;
+      ModelAccess.instance().runReadAction(new Runnable() {
 
-      public void run() {
-        QueryExecutor.this.myLoader = type.getClassLoader(QueryExecutor.this.getClass().getClassLoader());
-      }
+        public void run() {
+          QueryExecutor.this.myLoader = generateResult.getLoader(QueryExecutor.this);
+        }
 
-    });
+      });
+    }
   }
 
   private void setFields(GenerateResult result) {
@@ -60,23 +54,16 @@ public class QueryExecutor {
     this.myContext = result.getOperationContext();
   }
 
-  private void generateModels() {
-    EditorGenerateType type = new EditorGenerateType();
-    final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
-    final ModelOwner owner = new ModelOwner() {
-    };
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+  public List<SNode> getSearchResult() {
+    List<SNode> results = new ArrayList<SNode>();
+    for(SearchResult<SNode> nodeResult : this.myResult) {
+      results.add(nodeResult.getObject());
+    }
+    return results;
+  }
 
-      public void run() {
-        model.value = ProjectModels.createDescriptorFor(owner);
-        model.value.getSModel().addRoot(SNodeOperations.copyNode(QueryExecutor.this.myModelQuery));
-      }
-
-    });
-    this.myClassName = model.value.getLongName() + this.myClassType;
-    GeneratorManager manager = this.myContext.getComponent(GeneratorManager.class);
-    manager.generateModelsWithProgressWindow(Arrays.asList(model.value), this.myContext, type, false);
-    SModelRepository.getInstance().unRegisterModelDescriptors(owner);
+  public Query getQuery() {
+    return this.myQuery;
   }
 
   public void run(@NotNull() final ProgressIndicator indicator, final IScope scope) {
@@ -84,20 +71,26 @@ public class QueryExecutor {
 
       public void run() {
         try {
+          List<SearchResult<SNode>> instancesList;
+          QueryExecutor.this.myQuery = (Query)Class.forName(QueryExecutor.this.myClassName, true, QueryExecutor.this.myLoader).newInstance();
+          /*
+            String conceptFqName = QueryExecutor.this.myQuery.getConcept();
+            SNode c = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+          */
           SearchQuery searchQuery = new SearchQuery(new NodeHolder(SLinkOperations.getTarget(QueryExecutor.this.myModelQuery, "conceptDeclaration", false)), scope);
           BaseFinder[] finders = new BaseFinder[1];
           finders[0] = new ConceptInstances_Finder();
           SearchResults instances = FindUtils.getSearchResults(indicator, searchQuery, finders);
-          Query queryInstance = (Query)Class.forName(QueryExecutor.this.myClassName, true, QueryExecutor.this.myLoader).newInstance();
-          List<SearchResult<SNode>> instancesList = instances.getSearchResults();
+          instancesList = instances.getSearchResults();
           Iterator<SearchResult<SNode>> it = instancesList.iterator();
           while (it.hasNext()) {
             SearchResult<SNode> current = it.next();
-            if (!(queryInstance.isSatisfies(current.getObject()))) {
+            if (!(QueryExecutor.this.myQuery.isSatisfies(current.getObject()))) {
               it.remove();
             }
           }
           QueryExecutor.this.myContext.getProject().getComponent(UsagesViewTool.class).showResults(searchQuery, new SearchResults(instances.getSearchedNodes(), instancesList));
+          QueryExecutor.this.myResult = instancesList;
         } catch (Throwable t) {
           t.printStackTrace();
         }

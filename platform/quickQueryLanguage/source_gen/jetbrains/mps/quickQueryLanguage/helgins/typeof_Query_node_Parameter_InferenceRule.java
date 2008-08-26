@@ -16,7 +16,7 @@ public class typeof_Query_node_Parameter_InferenceRule implements InferenceRule_
   }
 
   public void applyRule(final SNode parameter) {
-    SNode functionParameter = SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.quickQueryLanguage.structure.ModelQuery", false, false), "conceptDeclaration", false);
+    SNode functionParameter = SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery", false, false), "conceptDeclaration", false);
     {
       SNode _nodeToCheck_1029348928467 = parameter;
       BaseIntentionProvider intentionProvider = null;

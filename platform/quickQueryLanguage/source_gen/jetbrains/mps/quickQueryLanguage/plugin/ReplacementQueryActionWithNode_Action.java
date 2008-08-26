@@ -6,24 +6,24 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.Language;
 
-public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(FindInstancesByConditionAndNode_Action.class);
+public class ReplacementQueryActionWithNode_Action extends GeneratedAction {
+  public static final Logger LOG = Logger.getLogger(ReplacementQueryActionWithNode_Action.class);
   public static final Icon ICON = null;
 
   public IOperationContext context;
+  public IModule langModule;
   public SNode snode;
-  public IModule contextModule;
 
-  public FindInstancesByConditionAndNode_Action() {
-    super("Find Instances by condition", "", ICON);
+  public ReplacementQueryActionWithNode_Action() {
+    super("Replace Instances", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -34,7 +34,7 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(FindInstancesByConditionAndNode_Action.this.snode, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
+    return SNodeOperations.isInstanceOf(ReplacementQueryActionWithNode_Action.this.snode, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -44,7 +44,7 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FindInstancesByConditionAndNode", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "ReplacementQueryActionWithNode", t);
       this.disable(event.getPresentation());
     }
   }
@@ -59,12 +59,12 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
       if (this.context == null) {
         return false;
       }
-      this.snode = event.getData(MPSDataKeys.SNODE);
-      if (this.snode == null) {
+      this.langModule = event.getData(MPSDataKeys.MODULE);
+      if (this.langModule == null) {
         return false;
       }
-      this.contextModule = event.getData(MPSDataKeys.CONTEXT_MODULE);
-      if (this.contextModule == null) {
+      this.snode = event.getData(MPSDataKeys.SNODE);
+      if (this.snode == null) {
         return false;
       }
     } catch (Throwable t) {
@@ -75,11 +75,11 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      FindInstancesDialog testDialog = new FindInstancesDialog(FindInstancesByConditionAndNode_Action.this.context, (Language)FindInstancesByConditionAndNode_Action.this.contextModule);
-      testDialog.setConceptDeclaration(FindInstancesByConditionAndNode_Action.this.snode);
-      testDialog.showDialog();
+      ReplaceDialog dialog = new ReplaceDialog(ReplacementQueryActionWithNode_Action.this.context, (Language)ReplacementQueryActionWithNode_Action.this.langModule);
+      dialog.setConceptDeclaration(ReplacementQueryActionWithNode_Action.this.snode);
+      dialog.showDialog();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FindInstancesByConditionAndNode", t);
+      LOG.error("User's action execute method failed. Action:" + "ReplacementQueryActionWithNode", t);
     }
   }
 

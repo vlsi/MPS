@@ -12,16 +12,16 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.Language;
 
-public class FindInstancesByCondition_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(FindInstancesByCondition_Action.class);
+public class ReplacementQueryAction_Action extends GeneratedAction {
+  public static final Logger LOG = Logger.getLogger(ReplacementQueryAction_Action.class);
   public static final Icon ICON = null;
 
   public IOperationContext context;
   public IModule langModule;
 
-  public FindInstancesByCondition_Action() {
-    super("Find Instances by condition", "", ICON);
-    this.setIsAlwaysVisible(true);
+  public ReplacementQueryAction_Action() {
+    super("Replace Instances", "", ICON);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
@@ -34,7 +34,7 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FindInstancesByCondition", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "ReplacementQueryAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -61,11 +61,10 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      FindInstancesContext newContext = new FindInstancesContext(FindInstancesByCondition_Action.this.context);
-      FindInstancesDialog testDialog = new FindInstancesDialog(newContext, (Language)FindInstancesByCondition_Action.this.langModule);
-      testDialog.showDialog();
+      ReplaceDialog dialog = new ReplaceDialog(ReplacementQueryAction_Action.this.context, (Language)ReplacementQueryAction_Action.this.langModule);
+      dialog.showDialog();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FindInstancesByCondition", t);
+      LOG.error("User's action execute method failed. Action:" + "ReplacementQueryAction", t);
     }
   }
 

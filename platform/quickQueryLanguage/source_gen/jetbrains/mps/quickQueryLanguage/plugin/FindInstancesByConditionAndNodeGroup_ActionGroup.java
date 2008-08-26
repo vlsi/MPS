@@ -18,6 +18,7 @@ public class FindInstancesByConditionAndNodeGroup_ActionGroup extends GeneratedA
     this.setPopup(false);
     try {
       this.add(new FindInstancesByConditionAndNode_Action());
+      this.add(new ReplacementQueryActionWithNode_Action());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

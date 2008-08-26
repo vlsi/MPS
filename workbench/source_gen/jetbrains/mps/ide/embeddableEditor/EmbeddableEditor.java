@@ -38,7 +38,7 @@ public class EmbeddableEditor extends JPanel {
     this.myInspector = InspectorEditorComponentFactory.getInspectorEditorComponent();
     this.myEditorComponent = new UIEditorComponent(this.myContext, this.myInspector);
     this.mySplitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(this.myEditorComponent), new JScrollPane(this.myInspector));
-    this.mySplitter.setDividerLocation(150);
+    this.mySplitter.setDividerLocation(200);
     this.add(this.mySplitter);
   }
 
@@ -51,13 +51,14 @@ public class EmbeddableEditor extends JPanel {
     return this.mySplitter;
   }
 
-  public GenerateResult generate(EditorGenerateType type) {
+  public GenerateResult generate() {
     if (this.myNode == null) {
       return null;
     }
+    EditorGenerateType type = new EditorGenerateType();
     GeneratorManager manager = this.myContext.getComponent(GeneratorManager.class);
     manager.generateModelsWithProgressWindow(Arrays.asList(this.myModel), this.myContext, type, false);
-    return new GenerateResult(this.myNode, this.myContext, this.myModel);
+    return new GenerateResult(this.myNode, this.myContext, this.myModel, type);
   }
 
   public void addLanguage(final Language language) {
