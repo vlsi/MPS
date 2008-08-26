@@ -14,6 +14,7 @@ import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.CompilationListener;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import java.lang.reflect.InvocationTargetException;
 
@@ -74,6 +75,12 @@ public class MPSVCSManager implements ProjectComponent {
       if (ci != null && StatusUtil.isUnderVCS(myProject, file)) {
         FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
         ci.scheduleMissingFileForDeletion(Collections.singletonList(path));
+      }
+    } else {
+      try {
+        file.delete(this);
+      } catch (IOException e) {
+        LOG.error(e);
       }
     }
   }
