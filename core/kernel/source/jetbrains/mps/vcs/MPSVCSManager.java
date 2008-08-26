@@ -90,11 +90,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private void invokeNow(Runnable task) {
-    if (SwingUtilities.isEventDispatchThread()) {
-      task.run();
-    } else {
-      SwingUtilities.invokeLater(task);
-    }
+    task.run();
   }
 
   public boolean deleteFilesAndRemoveFromVCS(List<File> files) {
