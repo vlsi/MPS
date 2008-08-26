@@ -115,11 +115,12 @@ public class ModelChangesWatcher implements ApplicationComponent {
       }
       assert descriptor != null;
       module.setModuleDescriptor(descriptor);
-//  this is incorrect code!
-//      List<ModelRoot> modelRootList = module.getModelRoots();
-//      for (ModelRoot root : modelRootList) {
-//        root.getModel().getModelDescriptor().reloadFromDisk();
-//      }
+
+      // reloading models in module
+      List<SModelDescriptor> sModelDescriptorList = module.getOwnModelDescriptors();
+      for (SModelDescriptor modelDescriptor : sModelDescriptorList){
+        modelDescriptor.reloadFromDisk();  
+      }
     }
   }
 
