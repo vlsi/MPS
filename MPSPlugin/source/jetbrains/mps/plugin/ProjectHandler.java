@@ -94,7 +94,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
             VirtualFile sourceFolderFile = lfs.refreshAndFindFileByIoFile(new File(path));
             if (sourceFolderFile == null) return;
             Module module = ModuleUtil.findModuleForFile(sourceFolderFile, myProject);
-            assert module != null;
+            if (module == null) return;
             ModifiableRootModel model = ModuleRootManager.getInstance(module).getModifiableModel();
             ContentEntry entry = model.getContentEntries()[0];
             entry.addSourceFolder(sourceFolderFile, false);
