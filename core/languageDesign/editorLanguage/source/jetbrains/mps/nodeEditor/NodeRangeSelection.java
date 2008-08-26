@@ -209,7 +209,7 @@ public class NodeRangeSelection implements KeyboardHandler {
 
         deactivate();
       }
-      // eat it anyway (WTF?)
+      // eat it anyway
       return false;
     }
 
