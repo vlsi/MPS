@@ -10,7 +10,11 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-class UnregisteredNodes {
+/**
+ * Igor Alshannikov
+ * Jul 26, 2007
+ */
+/*package*/ class UnregisteredNodes {
   private static final Logger LOG = Logger.getLogger(UnregisteredNodes.class);
   private static UnregisteredNodes myInstance;
 
