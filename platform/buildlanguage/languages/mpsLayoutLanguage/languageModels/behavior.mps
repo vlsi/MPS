@@ -4577,6 +4577,21 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219231436091" />
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1219770843283">
+      <property name="name" value="getPathWithoutMacro" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1219770851322" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219770843285">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1219770877101">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219770883534">
+            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1219770882439" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1219770884113">
+              <link role="property" targetNodeId="1.1208952075958" resolveInfo="fullPath" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219770848850" />
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1219231429107">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219231429108" />
     </node>
