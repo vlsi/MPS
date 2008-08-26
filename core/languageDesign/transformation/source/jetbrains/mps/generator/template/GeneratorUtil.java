@@ -650,6 +650,10 @@ public class GeneratorUtil {
   private static boolean checkLinkTarget(SNode sourceNode, String role, SNode targetNode, boolean child, boolean riseError) {
     String relationKind = child ? "child" : "referent";
     AbstractConceptDeclaration concept = sourceNode.getConceptDeclarationAdapter();
+    if (concept == null) {
+      // error logging is in the 'getConceptDeclarationAdapter()'
+      return false;
+    }
     LinkDeclaration link = SModelSearchUtil.findMostSpecificLinkDeclaration(concept, role);
     if (link == null) {
       reportProblem("concept '" + concept.getName() + "' can't have " + relationKind + " with role '" + role + "'", sourceNode, riseError);
