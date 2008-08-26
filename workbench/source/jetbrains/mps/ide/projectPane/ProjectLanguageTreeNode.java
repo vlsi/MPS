@@ -98,7 +98,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       for (SModelDescriptor model : sortedModels) {
         Set<IModule> modules = model.getModules();
         if (modules.contains(myLanguage)) {
-          accessories.add(new SModelTreeNode(model, null, model.getOperationContext()));
+          accessories.add(new SModelTreeNode(model, null, new ModuleContext(myLanguage, myProject)));
         } else {
           IModule module = model.getModule();
           accessories.add(new SModelTreeNode(model, null, new ModuleContext(module, myProject)));

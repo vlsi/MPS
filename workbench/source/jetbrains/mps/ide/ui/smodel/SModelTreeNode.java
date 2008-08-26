@@ -28,6 +28,8 @@ import javax.swing.tree.DefaultTreeModel;
 import java.awt.Color;
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 public class SModelTreeNode extends MPSTreeNodeEx {
   public static final String PACK = "package";
 
@@ -55,13 +57,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   public SModelTreeNode(SModelDescriptor modelDescriptor,
                         String label,
-                        IOperationContext operationContext) {
+                        @NotNull IOperationContext operationContext) {
     this(modelDescriptor, label, operationContext, true);
   }
 
   public SModelTreeNode(SModelDescriptor modelDescriptor,
                         String label,
-                        IOperationContext operationContext,
+                        @NotNull IOperationContext operationContext,
                         Condition<SNode> condition) {
     this(modelDescriptor, label, operationContext, true, condition);
   }

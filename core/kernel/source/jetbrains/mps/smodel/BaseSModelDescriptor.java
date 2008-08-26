@@ -97,30 +97,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     myUserObjects.remove(key);
   }
 
-  @Nullable
-  public IOperationContext getOperationContext() {
-    return findOperationContext();
-  }
-
-  private IOperationContext findOperationContext() {
-    IOperationContext operationContext = null;
-    outer :
-    for (IModule module : getModules()) {
-      if (module instanceof Generator) {
-        module = ((Generator)module).getSourceLanguage();
-      }
-      Set<MPSModuleOwner> mpsModuleOwners = MPSModuleRepository.getInstance().getOwners(module);
-      if (mpsModuleOwners == null) continue;
-      for (MPSModuleOwner owner : mpsModuleOwners) {
-        if (owner instanceof MPSProject) {
-          operationContext = new ModuleContext(module, (MPSProject) owner);
-          break outer;
-        }
-      }
-    }
-    return operationContext;
-  }
-
   public Set<IModule> getModules() {
     return SModelRepository.getInstance().getOwners(this, IModule.class);
   }

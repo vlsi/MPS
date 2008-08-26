@@ -126,8 +126,6 @@ public interface SModelDescriptor {
 
   void removeUserObject(String key);
 
-  IOperationContext getOperationContext();
-
   IModule getModule();
 
   Set<IModule> getModules();
