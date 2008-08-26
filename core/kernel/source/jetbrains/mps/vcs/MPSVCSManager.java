@@ -344,5 +344,15 @@ public class MPSVCSManager implements ProjectComponent {
         }
       }
     }
+
+    @Override
+    public void modelAdded(SModelDescriptor modelDescriptor) {
+      if (modelDescriptor instanceof StubModelDescriptor) { // TODO how to know that a stub model was created?
+        IFile ifile = modelDescriptor.getModelFile();
+        if (ifile != null) {
+          addVFilesToVCS(Collections.singletonList(VFileSystem.refreshAndGetFile(ifile.toFile())));
+        }
+      }
+    }
   }
 }

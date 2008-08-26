@@ -267,8 +267,8 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     //create stub for an old UID
     String stubFileName = oldFileName.substring(0, oldFileName.lastIndexOf(MPSExtentions.DOT_MODEL)) + MPSExtentions.DOT_STUB;
     SModelDescriptor stubDescriptor = new StubModelDescriptor(this, FileSystem.getFile(stubFileName), oldModelUID, newModelUID);
-    SModelRepository.getInstance().registerModelDescriptor(stubDescriptor, owner);
     stubDescriptor.save();
+    SModelRepository.getInstance().registerModelDescriptor(stubDescriptor, owner);
 //    IFile stubDescriptorModelFile = stubDescriptor.getModelFile();
 
     MPSModuleRepository.getInstance().invalidateCaches();
