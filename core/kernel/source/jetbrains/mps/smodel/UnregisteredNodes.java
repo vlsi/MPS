@@ -9,11 +9,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Igor Alshannikov
- * Jul 26, 2007
- */
-/*package*/ class UnregisteredNodes {
+class UnregisteredNodes {
   private static final Logger LOG = Logger.getLogger(UnregisteredNodes.class);
   private static UnregisteredNodes myInstance;
   private Map<String, SNode> myMap = new HashMap<String, SNode>();
@@ -71,7 +67,9 @@ import java.util.Set;
 
   private void add(SModelUID uid, String id, SNode node) {
     String key = uid + "#" + id;
-    LOG.assertLog(!myMap.containsKey(key), "attempt to put another node with same key: " + key);
+    if (!myMap.containsKey(key)) {
+      LOG.error("attempt to put another node with same key: " + key);
+    }
     myMap.put(key, node);
 
     if (!myUIDToKeys.containsKey(uid)) {

@@ -15,9 +15,7 @@ import java.util.Set;
 public interface IModule extends ModelOwner, MPSModuleOwner {
   String getModuleUID();
 
-
   List<SModelDescriptor> getOwnModelDescriptors();
-
 
   List<SModelRoot> getSModelRoots();
   SModelRoot findModelRoot(String path);
