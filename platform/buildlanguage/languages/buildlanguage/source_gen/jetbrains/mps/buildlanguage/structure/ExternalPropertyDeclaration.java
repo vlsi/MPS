@@ -9,10 +9,20 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ExternalPropertyDeclaration extends PropertyDeclaration {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration";
+  public static String CHECK_ON_START = "checkOnStart";
 
   public ExternalPropertyDeclaration(SNode node) {
     super(node);
   }
+
+  public boolean getCheckOnStart() {
+    return this.getBooleanProperty(ExternalPropertyDeclaration.CHECK_ON_START);
+  }
+
+  public void setCheckOnStart(boolean value) {
+    this.setBooleanProperty(ExternalPropertyDeclaration.CHECK_ON_START, value);
+  }
+
 
   public static ExternalPropertyDeclaration newInstance(SModel sm, boolean init) {
     return (ExternalPropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
