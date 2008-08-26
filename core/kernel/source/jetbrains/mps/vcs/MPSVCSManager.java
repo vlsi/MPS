@@ -339,14 +339,11 @@ public class MPSVCSManager implements ProjectComponent {
       modelDescriptor.addModelListener(myModelInitializationListener);
     }
 
-    @Override
-    public void modelFileChanged(IFile ifrom, IFile ito) {
+    public void modelFileChanged(SModelDescriptor modelDescriptor, IFile ifrom) {
       if (ifrom != null) {
-        VirtualFile to = VFileSystem.refreshAndGetFile(ito.toFile());
         VirtualFile from = VFileSystem.getFile(ifrom);
-        if ((from != null) && (to != null)) {
-          renameInternal(from, to);
-        }
+        deleteVFilesAndRemoveFromVCS(Collections.singletonList(from));
+        modelDescriptor.addModelListener(myModelInitializationListener);
       }
     }
 

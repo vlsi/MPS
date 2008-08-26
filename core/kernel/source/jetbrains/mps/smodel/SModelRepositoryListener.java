@@ -14,7 +14,7 @@ public interface SModelRepositoryListener {
   void modelOwnerAdded(SModelDescriptor modelDescriptor, ModelOwner owner);
   void modelOwnerRemoved(SModelDescriptor modelDescriptor, ModelOwner owner);
 
-  void modelFileChanged(IFile from, IFile to);
+  void modelFileChanged(SModelDescriptor modelDescriptor, IFile from);
   void beforeModelFileChanged(SModelDescriptor modelDescriptor);
 }
 

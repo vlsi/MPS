@@ -490,9 +490,9 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
-  private void fireModelFileChanged(IFile from, IFile to) {
+  private void fireModelFileChanged(SModelDescriptor modelDescriptor, IFile from) {
     for (SModelRepositoryListener l : listeners()) {
-      l.modelFileChanged(from, to);
+      l.modelFileChanged(modelDescriptor, from);
     }
   }
 
@@ -540,7 +540,7 @@ public class SModelRepository implements ApplicationComponent {
     removeModelFromFileCache(defaultSModelDescriptor);
     defaultSModelDescriptor.setModelFile(dest);
     addModelToFileCache(defaultSModelDescriptor);
-    fireModelFileChanged(source, dest);
+    fireModelFileChanged(defaultSModelDescriptor, source);
   }
 
   private class ModelChangeListener extends SModelAdapter {
