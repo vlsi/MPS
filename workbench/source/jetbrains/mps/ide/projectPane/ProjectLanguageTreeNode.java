@@ -11,6 +11,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 import java.util.List;
+import java.util.Set;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 
@@ -95,7 +96,13 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
       List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getAccessoryModels());
       for (SModelDescriptor model : sortedModels) {
-        accessories.add(new SModelTreeNode(model, null, operationContext));
+        Set<IModule> modules = model.getModules();
+        if (modules.contains(myLanguage)) {
+          accessories.add(new SModelTreeNode(model, null, model.getOperationContext()));
+        } else {
+          IModule module = model.getModule();
+          accessories.add(new SModelTreeNode(model, null, new ModuleContext(module, myProject)));
+        }
       }
       this.add(accessories);
     }
