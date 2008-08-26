@@ -67,7 +67,7 @@ public class MPSVCSManager implements ProjectComponent {
     myChangeListManager = clmanager;
   }
 
-  private void renameInternal(final VirtualFile from, final VirtualFile to) {
+  private void renameInternal(@NotNull final VirtualFile from, @NotNull final VirtualFile to) {
     invokeLater(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().runReadAction(new Runnable() {
@@ -80,7 +80,7 @@ public class MPSVCSManager implements ProjectComponent {
     });
   }
 
-  private void scheduleMissingFileInternal(VirtualFile file) {
+  private void scheduleMissingFileInternal(@NotNull VirtualFile file) {
     AbstractVcs fromVCS = myManager.getVcsFor(file);
     if (fromVCS != null) {
       CheckinEnvironment ci = fromVCS.getCheckinEnvironment();
@@ -219,7 +219,7 @@ public class MPSVCSManager implements ProjectComponent {
     return path;
   }
 
-  private void scheduleUnversionedFileForAdditionInternal(VirtualFile vf) {
+  private void scheduleUnversionedFileForAdditionInternal(@NotNull VirtualFile vf) {
     AbstractVcs vcs = myManager.getVcsFor(vf);
     if (vcs != null) {
       CheckinEnvironment ci = vcs.getCheckinEnvironment();
@@ -342,9 +342,9 @@ public class MPSVCSManager implements ProjectComponent {
     @Override
     public void modelFileChanged(IFile ifrom, IFile ito) {
       if (ifrom != null) {
-        VirtualFile to = VFileSystem.getFile(ito);
+        VirtualFile to = VFileSystem.refreshAndGetFile(ito.toFile());
         VirtualFile from = VFileSystem.getFile(ifrom);
-        if (from != null) {
+        if ((from != null) && (to != null)) {
           renameInternal(from, to);
         }
       }
