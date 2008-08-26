@@ -29,7 +29,8 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   private SModelCommandListener myCommandListener = new MyCommandListener();
-  private SModelListener myListener = new MyModelListener();
+  private SModelListener myModelListener = new MyModelListener();
+  private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryListener();
   private WeakHashMap<SNode, MPSNodeVirtualFile> myVirtualFiles = new WeakHashMap<SNode, MPSNodeVirtualFile>();
 
   public MPSNodeVirtualFile getFileFor(@NotNull final SNode node) {
@@ -52,11 +53,15 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   public void initComponent() {
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myCommandListener);
-    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myListener);
+    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myModelListener);
+
+    SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
   }
 
   public void disposeComponent() {
-    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myListener);
+    SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
+
+    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myModelListener);
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myCommandListener);
   }
 
@@ -167,6 +172,19 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
           });
         }
       });
+    }
+  }
+
+  private class MyModelRepositoryListener extends SModelRepositoryAdapter {
+    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+      for (SNode root : modelDescriptor.getSModel().getRoots()) {
+        VirtualFile vf = myVirtualFiles.get(root);
+        if (vf != null) {
+          fireBeforeFileDeletion(this ,vf);
+          fireFileDeleted(this, vf, vf.getName(), null);
+          myVirtualFiles.remove(root);
+        }
+      }
     }
   }
 

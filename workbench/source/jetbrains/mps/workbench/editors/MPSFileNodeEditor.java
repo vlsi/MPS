@@ -173,7 +173,6 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
       myNodeEditor.dispose();
     }
 
-
     MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     SModelDescriptor sm = myFile.getNode().getModel().getModelDescriptor();
     myNodeEditor = myProject.getComponent(MPSEditorOpener.class)
