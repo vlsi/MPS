@@ -6,21 +6,16 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener;
-import com.intellij.openapi.vfs.newvfs.events.VFileContentChangeEvent;
-import com.intellij.openapi.vfs.newvfs.events.VFileCopyEvent;
-import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
-import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
+import com.intellij.openapi.vfs.newvfs.events.*;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import jetbrains.mps.library.Library;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
@@ -29,13 +24,14 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.watching.ReloadSession;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
+import java.io.File;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
@@ -56,84 +52,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
     myBus = bus;
     mySModelRepository = sModelRepository;
     myProjectManager = projectManager;
-  }
-
-  private void doReload(final Set<SModelDescriptor> modelsToReload, final Set<IModule> modulesToReload, final Set<VirtualFile> addedModules) {
-    boolean needToReloadLibraries = false;
-    if (!addedModules.isEmpty()) {
-      needToReloadLibraries = showNeedToReloadLibrariesDialog(addedModules);
-    }
-
-    final boolean needToReloadLibrariesTmp = needToReloadLibraries;
-    ProgressManager.getInstance().run(new Modal(null, "Reloading", false) {
-
-      public void run(@NotNull final ProgressIndicator progressIndicator) {
-        if (needToReloadLibrariesTmp) {
-          progressIndicator.setText("Updating Modules");
-          LibraryManager.getInstance().update();
-          return;
-        }
-
-        // reloading modules
-        if (!modulesToReload.isEmpty()) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              reloadModules(progressIndicator, modulesToReload);
-            }
-          });
-        }
-
-        // reloadig models
-        reloadModels(progressIndicator, modelsToReload);
-      }
-    });
-  }
-
-  private void reloadModels(final ProgressIndicator progressIndicator, Set<SModelDescriptor> modelsToReload) {
-    for (final SModelDescriptor model : modelsToReload) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          progressIndicator.setText("Reloading " + model.getModelUID());
-          myDirtyFiles.add(VFileSystem.getFile(model.getModelFile()));
-          model.reloadFromDisk();
-        }
-      });
-    }
-  }
-
-  private void reloadModules(ProgressIndicator progressIndicator, Set<IModule> modulesToReload) {
-    for (IModule module : modulesToReload) {
-      progressIndicator.setText("Reloading " + module.getModuleUID());
-      SModel sModel = module.getModuleDescriptor().getModel();
-      ModuleDescriptor descriptor = null;
-      if (module instanceof Language) {
-        descriptor = DescriptorsPersistence.loadLanguageDescriptor(module.getDescriptorFile(), sModel);
-      } else if (module instanceof Solution) {
-        descriptor = DescriptorsPersistence.loadSolutionDescriptor(module.getDescriptorFile(), sModel);
-      } else if (module instanceof DevKit) {
-        descriptor = DescriptorsPersistence.loadDevKitDescriptor(module.getDescriptorFile(), sModel);
-      }
-      assert descriptor != null;
-      module.setModuleDescriptor(descriptor);
-
-      // reloading models in module
-      List<SModelDescriptor> sModelDescriptorList = module.getOwnModelDescriptors();
-      for (SModelDescriptor modelDescriptor : sModelDescriptorList){
-        modelDescriptor.reloadFromDisk();  
-      }
-    }
-  }
-
-  private boolean showNeedToReloadLibrariesDialog(Set<VirtualFile> addedModules) {
-    boolean needToReloadLibraries;
-    String title = "New Module Files Detected";
-    String message = "Module Files\n";
-    for (VirtualFile file : addedModules) {
-      message += file.getPath() + "\n";
-    }
-    message += "were created. Do You Want To Load Them?";
-    needToReloadLibraries = Messages.showYesNoDialog(message, title, Messages.getQuestionIcon()) == 0;
-    return needToReloadLibraries;
   }
 
   private VirtualFile getVFile(VFileEvent event) {
@@ -173,8 +91,12 @@ public class ModelChangesWatcher implements ApplicationComponent {
     return Collections.unmodifiableSet(myDirtyFiles);
   }
 
-  public void removeDirtyFile(VirtualFile file){
-    myDirtyFiles.remove(file);    
+  public void removeDirtyFile(VirtualFile file) {
+    myDirtyFiles.remove(file);
+  }
+
+  /*package private*/ void addDirtyFile(VirtualFile file) {
+    myDirtyFiles.add(file);
   }
 
   public static interface MetadataCreationListener {
@@ -183,7 +105,27 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
   private class BulkFileCahngesListener implements BulkFileListener {
     public void before(List<? extends VFileEvent> events) {
+      List<SModelDescriptor> modelsToDelete = new LinkedList<SModelDescriptor>();
+      for (VFileEvent event : events) {
+        if (event instanceof VFileDeleteEvent) {
+          VirtualFile vfile = getVFile(event);
+          if (MPSFileTypesManager.isModelFile(vfile)) {
+            IFile ifile = VFileSystem.toIFile(vfile);
+            if ((ifile == null) || (!ifile.exists())) continue;
+            SModelDescriptor model = mySModelRepository.findModel(ifile);
+            modelsToDelete.add(model);
+          }
+        }
+      }
 
+      for (SModelDescriptor modelDescriptor : modelsToDelete) {
+        if (Language.isAccessoryModel(modelDescriptor)) {
+          Language l = Language.getLanguageFor(modelDescriptor);
+          l.removeAccessoryModel(modelDescriptor);
+
+        }
+        modelDescriptor.delete();
+      }
     }
 
     public void after(List<? extends VFileEvent> events) {
@@ -193,62 +135,153 @@ public class ModelChangesWatcher implements ApplicationComponent {
         return;
       }
 
-      final Set<SModelDescriptor> modelsToReload = new LinkedHashSet<SModelDescriptor>();
-      final Set<IModule> modulesToReload = new LinkedHashSet<IModule>();
-      final Set<VirtualFile> addedModules = new LinkedHashSet<VirtualFile>();
-      final Set<Project> projectsToReload = new LinkedHashSet<Project>();
-      boolean needToReloadLibraries = false;
+//      System.out.println("got events " + events);
+
+      ReloadSession reloadSession = new ReloadSession();
 
       // collecting changed models, modules etc.
       for (VFileEvent event : events) {
         VirtualFile vfile = getVFile(event);
-        if ((event instanceof VFileCreateEvent) || (event instanceof VFileCopyEvent)) {
-          if (MPSFileTypesManager.isModuleFile(vfile)) {
+        if (vfile == null) continue;
 
-            Set<Library> librarySet = LibraryManager.getInstance().getLibraries();
-            for (Library lib : librarySet) {
-              if (VfsUtil.isAncestor(VFileSystem.getFile(lib.getPath()), vfile, false)) {
-                needToReloadLibraries = true;
-                addedModules.add(vfile);
-              }
-            }
-          }
-        } else if (event instanceof VFileContentChangeEvent) {
-          if (MPSFileTypesManager.isProjectFile(vfile)) {
-            Project[] projects = myProjectManager.getOpenProjects();
-            for (Project project : projects) {
-              if (project.getProjectFile().equals(vfile)) {
-                projectsToReload.add(project);
-                break;
-              }
-            }
-          } else if (MPSFileTypesManager.isModelFile(vfile)) {
-            IFile ifile = VFileSystem.toIFile(vfile);
-            if ((ifile == null) || (!ifile.exists())) continue;
-            SModelDescriptor model = mySModelRepository.findModel(ifile);
-            if ((model == null) || ApplicationLevelVcsManager.instance().isInConflict(ifile)) {
-              continue;
-            }
-            if (model.needsReloading()) {
-              modelsToReload.add(model);
-            }
-          } else if (MPSFileTypesManager.isModuleFile(vfile)) {
-            IFile ifile = VFileSystem.toIFile(vfile);
-            if ((ifile == null) || (!ifile.exists())) continue;
-            IModule module = MPSModuleRepository.getInstance().getModuleByFile(ifile.toFile());
-            if (module != null) {
-              modulesToReload.add(module);
-            }
-          }
+        if (MPSFileTypesManager.isModelFile(vfile)) {
+          ModelFileProcessor.getInstance().process(event, vfile, reloadSession);
+        } else if (MPSFileTypesManager.isModuleFile(vfile)) {
+          ModuleFileProcessor.getInstance().process(event, vfile, reloadSession);
+        } else if (MPSFileTypesManager.isProjectFile(vfile)) {
+          ProjectFileProcessor.getInstance().process(event, vfile, reloadSession);
         }
       }
 
-      // check, whether we have to do something
-      if (addedModules.isEmpty() && modelsToReload.isEmpty() && modulesToReload.isEmpty() && projectsToReload.isEmpty())
-        return;
-
       // reloading
-      doReload(modelsToReload, modulesToReload, addedModules);
+      reloadSession.doReload();
+    }
+
+
+  }
+
+  public static class ModelFileProcessor extends EventProcessor {
+    private static final ModelFileProcessor INSTANCE = new ModelFileProcessor();
+
+    public static ModelFileProcessor getInstance() {
+      return INSTANCE;
+    }
+
+    @Override
+    protected void processContentChanged(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+      SModelDescriptor model = SModelRepository.getInstance().findModel(VFileSystem.toIFile(vfile));
+      if ((model != null) && (model.needsReloading())) {
+        reloadSession.addChangedModel(model);
+      }
+    }
+
+    @Override
+    protected void processCopy(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+      processCreate(event, vfile, reloadSession);
+    }
+
+    @Override
+    protected void processMove(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+      processCreate(event, vfile, reloadSession);
+    }
+
+    @Override
+    protected void processCreate(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+      SModelDescriptor model = SModelRepository.getInstance().findModel(VFileSystem.toIFile(vfile));
+      if (model == null) {
+        reloadSession.addNewModelFile(vfile);
+      }
+    }
+  }
+
+  public static class ModuleFileProcessor extends EventProcessor {
+    private static final ModuleFileProcessor INSTANCE = new ModuleFileProcessor();
+
+    public static ModuleFileProcessor getInstance() {
+      return INSTANCE;
+    }
+
+    @Override
+    protected void processContentChanged(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+      IModule module = MPSModuleRepository.getInstance().getModuleByFile(new File(event.getPath()));
+      if (module != null) { //TODO check timestamp
+        reloadSession.addChangedModule(module);
+      }
+    }
+
+    @Override
+    protected void processCopy(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+      processCreate(event, vfile, reloadSession);
+    }
+
+    @Override
+    protected void processMove(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+      processCreate(event, vfile, reloadSession);
+    }
+
+    @Override
+    protected void processCreate(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+      IModule module = MPSModuleRepository.getInstance().getModuleByFile(new File(event.getPath()));
+      if (module == null) {
+        reloadSession.addNewModuleFile(vfile);
+      }
+    }
+  }
+
+  public static class ProjectFileProcessor extends EventProcessor {
+    private static final ProjectFileProcessor INSTANCE = new ProjectFileProcessor();
+
+    public static ProjectFileProcessor getInstance() {
+      return INSTANCE;
+    }
+
+    @Override
+    protected void processContentChanged(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+      Project[] projects = ProjectManager.getInstance().getOpenProjects();
+      for (Project project : projects) {
+        VirtualFile projectFile = project.getProjectFile();
+        if ((projectFile != null) && projectFile.equals(vfile)) {
+          reloadSession.addChangedProject(project);
+          break;
+        }
+      }
+    }
+  }
+
+  private static abstract class EventProcessor {
+    public final void process(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+//      System.out.println("processing event " + event);
+      if (event instanceof VFileContentChangeEvent) {
+        processContentChanged(event, vfile, reloadSession);
+      } else if (event instanceof VFileCopyEvent) {
+        processCopy(event, vfile, reloadSession);
+      } else if (event instanceof VFileCreateEvent) {
+        processCreate(event, vfile, reloadSession);
+      } else if (event instanceof VFileDeleteEvent) {
+        processDelete(event, vfile, reloadSession);
+      } else if (event instanceof VFileMoveEvent) {
+        processMove(event, vfile, reloadSession);
+      } else if (event instanceof VFilePropertyChangeEvent) {
+        processPropertyChanged(event, vfile, reloadSession);
+      }
+    }
+
+    protected void processContentChanged(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+    }
+
+    protected void processCopy(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+    }
+
+    protected void processCreate(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+    }
+
+    protected void processDelete(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+    }
+
+    protected void processMove(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
+    }
+
+    protected void processPropertyChanged(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
     }
   }
 }

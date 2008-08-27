@@ -10,6 +10,9 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.vcs.diff.*;
+import jetbrains.mps.project.StandaloneMPSContext;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -21,13 +24,29 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.jetbrains.annotations.NotNull;
+
 public class ModelDifferenceComponent extends JPanel {
   private MPSTree myModelTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
       if (myNewModel == null) {
         return new TextTreeNode("No Model To Display");
       } else {
-        return new MySModelTreeNode(myNewModel, "", null);
+        // todo where to get context?
+        return new MySModelTreeNode(myNewModel, "", new StandaloneMPSContext() {
+          @Deprecated
+          public MPSProject getMPSProject() {
+            return null;
+          }
+
+          public IModule getModule() {
+            return null;
+          }
+
+          public IScope getScope() {
+            return null;
+          }
+        });
       }
     }
   };
@@ -190,7 +209,7 @@ public class ModelDifferenceComponent extends JPanel {
   private class MySModelTreeNode extends SModelTreeNode {
     private SModel myModel;
 
-    public MySModelTreeNode(SModel model, String label, IOperationContext operationContext) {
+    public MySModelTreeNode(SModel model, String label, @NotNull IOperationContext operationContext) {
       super(null, label, operationContext);
       myModel = model;
       updatePresentation();

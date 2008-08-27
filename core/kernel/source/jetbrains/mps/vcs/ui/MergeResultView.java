@@ -16,6 +16,9 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.*;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.project.StandaloneMPSContext;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -24,10 +27,26 @@ import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 public class MergeResultView extends JPanel {
   private MPSTree myResultTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
-      return new MySModelTreeNode(myResultModel, "", null);
+      // TODO ?
+      return new MySModelTreeNode(myResultModel, "", new StandaloneMPSContext() {
+          @Deprecated
+          public MPSProject getMPSProject() {
+            return null;
+          }
+
+          public IModule getModule() {
+            return null;
+          }
+
+          public IScope getScope() {
+            return null;
+          }
+        });
     }
   };
 
@@ -431,7 +450,7 @@ public class MergeResultView extends JPanel {
   private class MySModelTreeNode extends SModelTreeNode {
     private SModel myModel;
 
-    public MySModelTreeNode(SModel model, String label, IOperationContext operationContext) {
+    public MySModelTreeNode(SModel model, String label, @NotNull IOperationContext operationContext) {
       super(null, label, operationContext);
       myModel = model;
       updatePresentation();

@@ -250,7 +250,7 @@ public class MPSModuleRepository implements ApplicationComponent {
       } else {
         module = DevKit.newInstance(file, owner);
       }
-     /* if (module instanceof AbstractModule) {
+      /* if (module instanceof AbstractModule) {
         ((AbstractModule)module).convertRenamedDependencies();
       }*/
     } else {
@@ -428,7 +428,7 @@ public class MPSModuleRepository implements ApplicationComponent {
         if (module != null) {
           result.add(module);
         }
-      } else if (hasStubExtension(file.getName()))  {
+      } else if (hasStubExtension(file.getName())) {
         tryToReadStub(file, owner);
       } else if (file.getName().endsWith(AbstractModule.PACKAGE_SUFFIX)) {
         IFile dirInJar = FileSystem.getFile(file.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
@@ -570,6 +570,22 @@ public class MPSModuleRepository implements ApplicationComponent {
       }
     }
     return result;
+  }
+
+  public IModule getModuleForModelFile(File file) {
+    String path = FileUtil.getCanonicalPath(file);
+    List<IModule> result = new ArrayList<IModule>();
+    for (IModule module : getAllModules()) {
+      List<SModelRoot> smodelRoots = module.getSModelRoots();
+      for (SModelRoot root : smodelRoots) {
+        String rootPath = root.getPath();
+        System.out.println("root path " + rootPath);
+        if (path.startsWith(rootPath)) {
+          return module;
+        }
+      }
+    }
+    return null;
   }
 
   public boolean tryToReadStub(IFile descriptorFile, MPSModuleOwner owner) {
