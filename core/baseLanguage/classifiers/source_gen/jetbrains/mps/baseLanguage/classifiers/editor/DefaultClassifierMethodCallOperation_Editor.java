@@ -277,6 +277,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
       {
         Style inlineStyle = new Style(editorCell) {
           {
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
             this.set(StyleAttributes.EDITABLE, true);
           }
 
