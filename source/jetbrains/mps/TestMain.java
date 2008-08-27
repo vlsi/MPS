@@ -120,7 +120,7 @@ public class TestMain {
   public static boolean testRefactoringTestEnvironment(File projectDirectory) {
     IdeMain.setTestMode(true);
     TestMain.configureMPS();
-    File projectFile = new File(projectDirectory, "testRefactoring.mpr");
+    File projectFile = new File(projectDirectory, "testRefactoring.ipr");
     final MPSProject project = loadProject(projectFile);
     final boolean[] b = new boolean[]{true};
     ModelAccess.instance().runReadAction(new Runnable() {
