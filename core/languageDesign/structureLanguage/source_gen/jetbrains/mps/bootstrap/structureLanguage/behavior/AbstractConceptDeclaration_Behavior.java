@@ -209,6 +209,11 @@ public class AbstractConceptDeclaration_Behavior {
     return (List<SNode>)BaseAdapter.toNodes(properties);
   }
 
+  public static SNode call_findPropertyDeclaration_1219835742593(SNode thisNode, String name) {
+    PropertyDeclaration p = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), name);
+    return BaseAdapter.fromAdapter(p);
+  }
+
   public static List<SNode> call_getConceptPropertyDeclarations_1213877394562(SNode thisNode) {
     List<ConceptPropertyDeclaration> list = SModelSearchUtil.getConceptPropertyDeclarations(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)));
     return (List<SNode>)BaseAdapter.toNodes(list);
