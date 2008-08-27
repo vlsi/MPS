@@ -105,26 +105,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
   private class BulkFileCahngesListener implements BulkFileListener {
     public void before(List<? extends VFileEvent> events) {
-      List<SModelDescriptor> modelsToDelete = new LinkedList<SModelDescriptor>();
       for (VFileEvent event : events) {
-        if (event instanceof VFileDeleteEvent) {
-          VirtualFile vfile = getVFile(event);
-          if (MPSFileTypesManager.isModelFile(vfile)) {
-            IFile ifile = VFileSystem.toIFile(vfile);
-            if ((ifile == null) || (!ifile.exists())) continue;
-            SModelDescriptor model = mySModelRepository.findModel(ifile);
-            modelsToDelete.add(model);
-          }
-        }
-      }
+        VirtualFile vfile = event.getFileSystem().findFileByPath(event.getPath());
+        if (vfile == null) continue;
 
-      for (SModelDescriptor modelDescriptor : modelsToDelete) {
-        if (Language.isAccessoryModel(modelDescriptor)) {
-          Language l = Language.getLanguageFor(modelDescriptor);
-          l.removeAccessoryModel(modelDescriptor);
-
-        }
-        modelDescriptor.delete();
+        BeforeEventProcessor.getInstance().process(event, vfile, null);
       }
     }
 
