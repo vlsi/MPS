@@ -62,7 +62,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     GenerationTracerTreeNode rootNode = (GenerationTracerTreeNode) getRoot();
     TracerNode rootTracerNode = rootNode.getTracerNode();
     if (rootTracerNode != null && rootTracerNode.getKind() == Kind.OUTPUT) {
-      group.add(new BaseAction("Show Prev Step Traceback") {
+      group.add(new BaseAction("Show Trace") {
         protected void doExecute(AnActionEvent e) {
           tracer.showTraceInputData(tracerNode.getNodePointer().getNode());
         }
