@@ -20,17 +20,17 @@ public class ApplicationsTest extends BaseMPSTest {
   }
 
   public void testProjectHalo() {
-    String res = testProject(new File("app/ProjectHalo/ProjectHalo.mpr"));
+    String res = testProject(new File("app/ProjectHalo/ProjectHalo.ipr"));
     assertTrue(res, res == null);
   }
 
   public void testMPSLite() {
-    String res = testProject(new File("core/languageDesign/mps-lite/mps-lite.mpr"));
+    String res = testProject(new File("core/languageDesign/mps-lite/mps-lite.ipr"));
     assertTrue(res, res == null);
   }
 
   public void testTextLanguage() {
-    String res = testProject(new File("platform/textLanguage/jetbrains.mps.textLanguage.mpr"));
+    String res = testProject(new File("platform/textLanguage/jetbrains.mps.textLanguage.ipr"));
     assertTrue(res, res == null);
   }
 
