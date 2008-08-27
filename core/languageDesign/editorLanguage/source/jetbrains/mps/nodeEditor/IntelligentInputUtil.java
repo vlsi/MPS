@@ -233,6 +233,8 @@ public class IntelligentInputUtil {
       info.getMatchingActions(head, false).isEmpty()) {
       
       newNode = info.getMatchingActions(smallPattern, true).get(0).substitute(editorContext, smallPattern);
+      if (newNode == null) return;
+
       cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
     } else if (canCompleteTheWholeStringImmediately(info, head + smallPattern) ||
       canCompleteTheWholeStringImmediately(info, head + smallPattern.trim())) {
