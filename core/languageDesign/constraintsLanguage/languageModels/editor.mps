@@ -1695,6 +1695,27 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219836212190">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219836213946">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219836212239">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Abstract_editedNode" id="1219836212191" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219836213617">
+                    <link role="link" targetNodeId="3.1178549979242" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1219836214606">
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219836217253">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219836216171">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_AbstractGroup_parameterObject" id="1219836215701" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219836216815">
+                        <link role="link" targetNodeId="3.1178549979242" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" id="1219836217913" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="parameterObjectType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197896845024">

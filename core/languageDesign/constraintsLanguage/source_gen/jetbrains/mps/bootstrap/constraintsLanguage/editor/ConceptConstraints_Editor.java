@@ -881,7 +881,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor4286_1(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 
@@ -893,7 +893,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor4286_3(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 

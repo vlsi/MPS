@@ -865,7 +865,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor4542_2(EditorCell cell) {
     Color result;
-    result = Color.red;
+    result = MPSColors.red;
     return result;
   }
 
@@ -883,7 +883,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor4542_5(EditorCell cell) {
     Color result;
-    result = Color.red;
+    result = MPSColors.red;
     return result;
   }
 

@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends DefaultNodeEditor {
 
@@ -539,19 +540,19 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
 
   private static Color calculateColor2342_0(EditorCell cell) {
     Color result;
-    result = Color.blue;
+    result = MPSColors.blue;
     return result;
   }
 
   private static Color calculateColor2342_1(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 
   private static Color calculateColor2342_2(EditorCell cell) {
     Color result;
-    result = Color.pink;
+    result = MPSColors.pink;
     return result;
   }
 
