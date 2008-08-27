@@ -5,8 +5,6 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.JarFileSystem;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.zip.ZipFile;
 
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
@@ -94,19 +92,35 @@ public class VFileSystem {
       return lfs.findFileByIoFile(file.toFile());
     } else if (file instanceof JarFileEntryFile) {
       JarFileEntryFile jfef = (JarFileEntryFile) file;
-      String path = jfef.getAbsolutePath();
-
-      int index = path.indexOf("!");
-      assert index != -1;
-      String entryPath = path.substring(index + 1);
-
-      if (entryPath.startsWith("/")) {
-        entryPath = entryPath.substring(1);
-      }
-
-      return getJarEntryFile(jfef.getJarFile(), entryPath);
+      return getFileFromJarEntry(jfef);
     } else {
       throw new RuntimeException("Unknown file type. " + file);
     }
+  }
+
+  public static VirtualFile refreshAndGetFile(IFile file) {
+    if (file instanceof FileSystemFile) {
+      LocalFileSystem lfs = LocalFileSystem.getInstance();
+      return lfs.refreshAndFindFileByIoFile(file.toFile());
+    } else if (file instanceof JarFileEntryFile) {
+      JarFileEntryFile jfef = (JarFileEntryFile) file;
+      return getFileFromJarEntry(jfef);
+    } else {
+      throw new RuntimeException("Unknown file type. " + file);
+    }
+  }
+
+  private static VirtualFile getFileFromJarEntry(JarFileEntryFile jfef) {
+    String path = jfef.getAbsolutePath();
+
+    int index = path.indexOf("!");
+    assert index != -1;
+    String entryPath = path.substring(index + 1);
+
+    if (entryPath.startsWith("/")) {
+      entryPath = entryPath.substring(1);
+    }
+
+    return getJarEntryFile(jfef.getJarFile(), entryPath);
   }
 }

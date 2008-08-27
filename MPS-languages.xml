@@ -1435,7 +1435,6 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.monitorLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.monitorLanguage.tmp/module" />
     <mkdir dir="workbench/monitorLanguage/languages/monitorLanguage/classes_gen" />
-    <mkdir dir="workbench/monitorLanguage/classes" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.monitorLanguage.tmp/module">
       <fileset file="workbench/monitorLanguage/languages/monitorLanguage/monitorLanguage.mpl" />
     </copy>
@@ -1444,7 +1443,6 @@
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.monitorLanguage.tmp">
       <fileset dir="workbench/monitorLanguage/languages/monitorLanguage/classes_gen" />
-      <fileset dir="workbench/monitorLanguage/classes" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.monitorLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.monitorLanguage.tmp" />
