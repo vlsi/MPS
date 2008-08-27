@@ -4632,7 +4632,7 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1194566535734">
-            <property name="noTargetText" value="&lt;choose template switch&gt;" />
+            <property name="noTargetText" value="&lt;choose template&gt;" />
             <link role="relationDeclaration" targetNodeId="1.1194566366375" />
             <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1194566535735">
               <link role="conceptDeclaration" targetNodeId="1.1092059087312" resolveInfo="TemplateDeclaration" />
