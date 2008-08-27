@@ -89,27 +89,31 @@ public class ReloadSession {
   }
 
   private void preprocess() {
-    for (VirtualFile virtualFile : myNewModelVFiles) {
-      File file = VFileSystem.toFile(virtualFile);
-      if (!file.exists()) continue;
-      IModule module = MPSModuleRepository.getInstance().getModuleForModelFile(file);
-      if (module != null) {
-        myChangedModules.add(module);
-      }
-    }
-
-    Set<SModelDescriptor> skip = new HashSet<SModelDescriptor>();
-    for (SModelDescriptor modelDescriptor : myChangedModels) {
-      Set<IModule> modules = modelDescriptor.getModules();
-      for (IModule module : modules) {
-        if (myChangedModules.contains(module)) {
-          skip.add(modelDescriptor);
-          break;
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (VirtualFile virtualFile : myNewModelVFiles) {
+          File file = VFileSystem.toFile(virtualFile);
+          if (!file.exists()) continue;
+          IModule module = MPSModuleRepository.getInstance().getModuleForModelFile(file);
+          if (module != null) {
+            myChangedModules.add(module);
+          }
         }
-      }
-    }
 
-    myChangedModels.removeAll(skip);
+        Set<SModelDescriptor> skip = new HashSet<SModelDescriptor>();
+        for (SModelDescriptor modelDescriptor : myChangedModels) {
+          Set<IModule> modules = modelDescriptor.getModules();
+          for (IModule module : modules) {
+            if (myChangedModules.contains(module)) {
+              skip.add(modelDescriptor);
+              break;
+            }
+          }
+        }
+
+        myChangedModels.removeAll(skip);
+      }
+    });
   }
 
   private boolean hasSomethingToDo() {

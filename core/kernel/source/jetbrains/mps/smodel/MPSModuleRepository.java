@@ -579,7 +579,6 @@ public class MPSModuleRepository implements ApplicationComponent {
       List<SModelRoot> smodelRoots = module.getSModelRoots();
       for (SModelRoot root : smodelRoots) {
         String rootPath = root.getPath();
-        System.out.println("root path " + rootPath);
         if (path.startsWith(rootPath)) {
           return module;
         }

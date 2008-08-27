@@ -5,6 +5,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
@@ -20,7 +21,7 @@ public class BeforeEventProcessor extends EventProcessor {
 
   @Override
   protected void processDelete(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
-    SModelDescriptor model = SModelRepository.getInstance().findModel(VFileSystem.toIFile(vfile));
+    final SModelDescriptor model = SModelRepository.getInstance().findModel(VFileSystem.toIFile(vfile));
     if (model == null) {
       // if model is null, then it was removed by user
       Project project = ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
@@ -29,6 +30,11 @@ public class BeforeEventProcessor extends EventProcessor {
       }
     } else {
       // TODO if model is not null, than file was deleted externally, we need to "unregister model"
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          SModelRepository.getInstance().removeModelDescriptor(model);
+        }
+      });
     }
   }
 }
