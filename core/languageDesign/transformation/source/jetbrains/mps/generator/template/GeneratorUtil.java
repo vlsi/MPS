@@ -143,15 +143,16 @@ public class GeneratorUtil {
         true);
       return res;
     } catch (ClassNotFoundException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to TRUE");
     } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to TRUE");
     } catch (Throwable t) {
       throw new GenerationFailueException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
     } finally {
       Statistics.getStatistic(Statistics.TPL).add(ruleNode.getModel(), methodName, startTime, res);
     }
-    return false;
+    // in this case 'true' is better default
+    return true;
   }
 
   public static void executeMappingScript(MappingScript mappingScript, SModel model, ITemplateGenerator generator) throws GenerationFailueException {
