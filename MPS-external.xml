@@ -323,7 +323,7 @@
       <fileset dir="app/jetbrains.mps.matrixLanguage" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <antcall target="pack.jetbrains.mps.devkit.general-purpose" />
-    <antcall target="pack.jetbrains.mps.devkit.generator-design" />
+    <antcall target="pack.jetbrains.mps.devkit.language-design" />
     <antcall target="pack.jetbrains.mps.baseLanguageInternal" />
     <antcall target="pack.jetbrains.mps.closures" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.collections.lang" />

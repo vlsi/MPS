@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dev-kit name="jetbrains.mps.devkit.language-design">
+  <exported-language name="jetbrains.mps.bootstrap.smodelLanguage" />
+  <exported-language name="jetbrains.mps.bootstrap.helgins" />
+  <exported-language name="jetbrains.mps.quotation" />
+  <extendedDevKits>
+    <extendedDevKit>jetbrains.mps.devkit.general-purpose</extendedDevKit>
+  </extendedDevKits>
+  <classPath />
+</dev-kit>
+
