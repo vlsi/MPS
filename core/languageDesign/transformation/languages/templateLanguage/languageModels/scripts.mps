@@ -4780,5 +4780,77 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1219961599717">
+    <property name="migrationFromBuild" value="944" />
+    <property name="name" value="ReplaceAbandonRootsWithDropRoots" />
+    <property name="category" value="generator" />
+    <property name="title" value="Update abandon roots rules" />
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1219961703624">
+      <property name="description" value="replace with DropRootRule" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1114458327664" resolveInfo="ConceptDeclarationReference" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1219961703625">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219961703626">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1219962012385">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1219962012386">
+              <property name="name" value="mappingConfig" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1219962012387">
+                <link role="concept" targetNodeId="1.1095416546421" resolveInfo="MappingConfiguration" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1219962012388">
+                <link role="concept" targetNodeId="1.1095416546421" resolveInfo="MappingConfiguration" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219962012389">
+                  <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1219962012390" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1219962012391" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1219962053684">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1219962053685">
+              <property name="name" value="dropRootRule" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1219962053686">
+                <link role="concept" targetNodeId="1.1219952072943" resolveInfo="DropRootRule" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219962053687">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219962053688">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219962053689">
+                    <link role="variableDeclaration" targetNodeId="1219962012386" resolveInfo="mappingConfig" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219962053690">
+                    <link role="link" targetNodeId="1.1219952894531" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation" id="1219962053691" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219962058115">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1219962064949">
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219962060804">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219962058116">
+                  <link role="variableDeclaration" targetNodeId="1219962053685" resolveInfo="dropRootRule" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219962063011">
+                  <link role="link" targetNodeId="1.1219952338328" />
+                </node>
+              </node>
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219962077781">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1219962077733" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219962093034">
+                  <link role="link" targetNodeId="1.1114458346385" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219962105896">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219962107132">
+              <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1219962105897" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_DeleteOperation" id="1219962108104" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
