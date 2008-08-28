@@ -20,7 +20,6 @@
     <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage</dependency>
     <dependency reexport="false">jetbrains.mps.transformation.generationContext</dependency>
-    <dependency reexport="false">jetbrains.mps.quickQueryLanguage.sandbox</dependency>
     <dependency reexport="false">jetbrains.mps.quickQueryLanguage</dependency>
   </dependencies>
   <usedLanguages>
