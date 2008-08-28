@@ -818,7 +818,12 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502524914">
           <property name="vertical" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1200911461000" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1219960929780">
+            <property name="text" value="deprecated! run migration scripts!" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1219960952984">
+              <property name="color" value="red" />
+            </node>
+          </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1195502524916">
             <property name="vertical" value="true" />
             <property name="gridLayout" value="true" />
@@ -829,6 +834,21 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995015">
             <property name="flag" value="false" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1219961175159">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219961175160">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219961215440">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219961225837">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219961215551">
+                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1219961215441" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1219961221976">
+                      <link role="link" targetNodeId="1.1169742456963" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1219961343970" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1219952930751">
