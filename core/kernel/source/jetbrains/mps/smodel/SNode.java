@@ -308,6 +308,7 @@ public final class SNode {
   }
 
   public void putUserObjects(SNode fromNode) {
+    // DON'T REMOVE PLS. UNDER CONSTRUCTION!
 //    if (fromNode == null || fromNode.myUserObjects == null) return;
 //    if (myUserObjects == null) {
 //      myUserObjects = new ListMap<Object, Object>();
