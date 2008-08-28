@@ -185,7 +185,7 @@ public class TestMain {
     try {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          File projectFile = new File(destination, "testRefactoring.mpr");
+          File projectFile = new File(destination, "testRefactoring.ipr");
           projectArray[0] = loadProject(projectFile);
         }
       });

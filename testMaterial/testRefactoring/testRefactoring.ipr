@@ -69,5 +69,17 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
+  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <projectSolutions>
+    <solutionPath path="${project}\solutions\testRefactoring.sandbox\testRefactoring.sandbox.msd" />
+  </projectSolutions>
+  <projectLanguages>
+    <languagePath path="${project}\languages\testRefactoring\testRefactoring.mpl" />
+    <languagePath path="${project}\languages\testRefactoringTargetLang\testRefactoringTargetLang.mpl" />
+  </projectLanguages>
+  <projectDevkits />
+  <libraries />
+  <genConfs />
+  </component>
 </project>
 
