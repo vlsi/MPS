@@ -11,10 +11,7 @@ import jetbrains.mps.transformation.TLBase.structure.RuleConsequence;
 import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
 import jetbrains.mps.util.Pair;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by: Sergey Dmitriev
@@ -124,12 +121,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     for (SNode rootNode : myRootsNotToCopy) {
       rootsToCopy.remove(rootNode);
     }
-    for (SNode rootNode : myInputModel.getRoots()) {
-      List<ConceptDeclaration> abandonedRootConcepts = ruleManager.getAbandonedRootConcepts();
-      for (ConceptDeclaration abandonedRootConcept : abandonedRootConcepts) {
-        if (rootNode.isInstanceOfConcept(abandonedRootConcept)) {
-          rootsToCopy.remove(rootNode);
-        }
+
+    Iterator<SNode> iterator = rootsToCopy.iterator();
+    while (iterator.hasNext()) {
+      SNode rootNode = iterator.next();
+      if (ruleManager.isRootToDrop(rootNode)) {
+        iterator.remove();
       }
     }
 

@@ -23,8 +23,10 @@ public class RuleManager {
   private List<CreateRootRule> myCreateRootRules;
   private List<Root_MappingRule> myRoot_MappingRules;
   private List<Weaving_MappingRule> myWeaving_MappingRules;
-  private List<ConceptDeclaration> myAbandonedRootConcepts;
   private List<Reduction_MappingRule> myReduction_MappingRules;
+
+  private List<ConceptDeclaration> myAbandonedRootConcepts;
+  private List<DropRootRule> myDropRootRules;
 
   private FastRuleFinder myRuleFinder;
   private TemplateGenerator myGenerator;
@@ -42,35 +44,23 @@ public class RuleManager {
     myCreateRootRules = new ArrayList<CreateRootRule>();
     myRoot_MappingRules = new ArrayList<Root_MappingRule>();
     myWeaving_MappingRules = new ArrayList<Weaving_MappingRule>();
-    myAbandonedRootConcepts = new ArrayList<ConceptDeclaration>();
     myReduction_MappingRules = new ArrayList<Reduction_MappingRule>();
+    myAbandonedRootConcepts = new ArrayList<ConceptDeclaration>();
+    myDropRootRules = new ArrayList<DropRootRule>();
     initRules();
     myRuleFinder = new FastRuleFinder(myReduction_MappingRules, myGenerator);
   }
 
   private void initRules() {
     List<MappingConfiguration> mappingConfigs = new ArrayList<MappingConfiguration>();
-
     mappingConfigs.addAll(getGenerator().getGeneratorSessionContext().getMappingConfigurations());
-
     for (MappingConfiguration mappingConfig : mappingConfigs) {
-      // conditional root rules
-      Iterator<CreateRootRule> createRootRules = mappingConfig.createRootRules();
-      while (createRootRules.hasNext()) {
-        myCreateRootRules.add(createRootRules.next());
-      }
+      myCreateRootRules.addAll(mappingConfig.getCreateRootRules());
+      myRoot_MappingRules.addAll(mappingConfig.getRootMappingRules());
+      myWeaving_MappingRules.addAll(mappingConfig.getWeavingMappingRules());
+      myReduction_MappingRules.addAll(mappingConfig.getReductionMappingRules());
 
-      // mapping rules
-      Iterator<Root_MappingRule> root_MappingRules = mappingConfig.rootMappingRules();
-      while (root_MappingRules.hasNext()) {
-        myRoot_MappingRules.add(root_MappingRules.next());
-      }
-      // weaving rules
-      Iterator<Weaving_MappingRule> weaving_MappingRules = mappingConfig.weavingMappingRules();
-      while (weaving_MappingRules.hasNext()) {
-        myWeaving_MappingRules.add(weaving_MappingRules.next());
-      }
-
+      // abandon roots (old)
       List<ConceptDeclarationReference> abandonRootRules = mappingConfig.getAbandonRootRules();
       for (ConceptDeclarationReference abandonRoot : abandonRootRules) {
         ConceptDeclaration concept = abandonRoot.getConceptDeclaration();
@@ -78,12 +68,8 @@ public class RuleManager {
           myAbandonedRootConcepts.add(concept);
         }
       }
-
-      // reduction rules
-      Iterator<Reduction_MappingRule> reduction_MappingRules = mappingConfig.reductionMappingRules();
-      while (reduction_MappingRules.hasNext()) {
-        myReduction_MappingRules.add(reduction_MappingRules.next());
-      }
+      // new
+      myDropRootRules.addAll(mappingConfig.getDropRootRules());
     }
   }
 
@@ -109,8 +95,19 @@ public class RuleManager {
     }
   }
 
-  public List<ConceptDeclaration> getAbandonedRootConcepts() {
-    return myAbandonedRootConcepts;
+  public boolean isRootToDrop(SNode rootNode) {
+    // new
+    for (DropRootRule dropRootRule : myDropRootRules) {
+
+    }
+
+    // old
+    for (ConceptDeclaration abandonedRootConcept : myAbandonedRootConcepts) {
+      if (rootNode.isInstanceOfConcept(abandonedRootConcept)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public void applyReductionRules(SNode inputNode, SNode clonedOutputNode) throws GenerationFailueException, GenerationCanceledException {
@@ -194,5 +191,4 @@ public class RuleManager {
   private void stopReductionBlockingForInput(SNode inputNode) {
     myRuleFinder.stopReductionBlockingForInput(inputNode);
   }
-
 }
