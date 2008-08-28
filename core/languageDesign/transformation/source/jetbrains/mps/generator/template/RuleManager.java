@@ -95,10 +95,12 @@ public class RuleManager {
     }
   }
 
-  public boolean isRootToDrop(SNode rootNode) {
+  public boolean isRootToDrop(SNode rootNode) throws GenerationFailueException {
     // new
     for (DropRootRule dropRootRule : myDropRootRules) {
-
+       if(GeneratorUtil.isApplicableDropRootRule(rootNode, dropRootRule, myGenerator)) {
+         return true;
+       }
     }
 
     // old

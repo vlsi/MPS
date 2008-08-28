@@ -116,7 +116,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     checkMonitorCanceled();
   }
 
-  private List<SNode> copyRootsFromInputModel(RuleManager ruleManager) {
+  private List<SNode> copyRootsFromInputModel(RuleManager ruleManager) throws GenerationFailueException {
     List<SNode> rootsToCopy = new ArrayList<SNode>(myInputModel.getRoots());
     for (SNode rootNode : myRootsNotToCopy) {
       rootsToCopy.remove(rootNode);

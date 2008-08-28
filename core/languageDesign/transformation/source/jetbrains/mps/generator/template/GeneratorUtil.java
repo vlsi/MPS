@@ -8,21 +8,21 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
-import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.*;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -110,6 +110,35 @@ public class GeneratorUtil {
         methodName,
         generator.getGeneratorSessionContext(),
         new BaseMappingRuleContext(inputNode, ruleNode, generator),
+        ruleNode.getModel(),
+        true);
+      return res;
+    } catch (ClassNotFoundException e) {
+      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+    } catch (NoSuchMethodException e) {
+      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+    } catch (Throwable t) {
+      throw new GenerationFailueException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
+    } finally {
+      Statistics.getStatistic(Statistics.TPL).add(ruleNode.getModel(), methodName, startTime, res);
+    }
+    return false;
+  }
+
+  public static boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode, ITemplateGenerator generator) throws GenerationFailueException {
+    if (condition == null) {
+      // condition is not required
+      return true;
+    }
+
+    String methodName = TemplateFunctionMethodName.dropRootRule_Condition(condition.getNode());
+    long startTime = System.currentTimeMillis();
+    boolean res = false;
+    try {
+      res = (Boolean) QueryMethodGenerated.invoke(
+        methodName,
+        generator.getGeneratorSessionContext(),
+        new DropRootRuleContext(inputRootNode, ruleNode, generator),
         ruleNode.getModel(),
         true);
       return res;
@@ -281,6 +310,26 @@ public class GeneratorUtil {
       }
     }
   }
+
+  public static boolean isApplicableDropRootRule(SNode inputRootNode, DropRootRule rule, TemplateGenerator generator) throws GenerationFailueException {
+    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
+    if (applicableConcept == null) {
+      generator.showErrorMessage(null, null, rule.getNode(), "rule has no applicable concept defined");
+      return false;
+    }
+
+    if (inputRootNode.isInstanceOfConcept(applicableConcept)) {
+      if (checkCondition(rule.getConditionFunction(), inputRootNode, rule.getNode(), generator)) {
+        generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputRootNode);
+        generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
+        generator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputRootNode);
+        return true;
+      }
+    }
+
+    return false;
+  }
+
 
   private static void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, TemplateGenerator generator)
     throws
@@ -538,7 +587,7 @@ public class GeneratorUtil {
         } else {
           generator.showInformationMessage(inputNode, text);
         }
-      } 
+      }
       throw new DismissTopMappingRuleException();
 
     } else if (ruleConsequence instanceof AbandonInput_RuleConsequence) {
@@ -676,4 +725,5 @@ public class GeneratorUtil {
       LOG.warning(message, node);
     }
   }
+
 }

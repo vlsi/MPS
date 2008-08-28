@@ -16,6 +16,10 @@ public class TemplateFunctionMethodName {
     return "ifMacro_Condition_" + function.getId();
   }
 
+  public static String dropRootRule_Condition(SNode function) {
+    return "dropRootRule_Condition_" + function.getId();
+  }
+
   public static String baseMappingRule_Condition(SNode function) {
     return "baseMappingRule_Condition_" + function.getId();
   }
