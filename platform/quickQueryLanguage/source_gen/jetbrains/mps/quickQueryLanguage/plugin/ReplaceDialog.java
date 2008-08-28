@@ -18,13 +18,12 @@ import java.awt.Dimension;
 import javax.swing.JComponent;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.embeddableEditor.GenerateResult;
+import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.quickQueryLanguage.runtime.Query;
-import java.util.List;
 
 public class ReplaceDialog extends BaseDialog {
 
@@ -71,27 +70,31 @@ public class ReplaceDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "Replace", defaultButton = true)
   public void buttonReplace() {
-    GenerateResult result = this.myEditor.generate();
-    final QueryExecutor executor = new QueryExecutor(result);
-    final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
-    ProgressManager.getInstance().run(new Task.Modal(ReplaceDialog.this.myContext.getProject(), "Executing query", false) {
+    try {
+      final GenerateResult result = this.myEditor.generate();
+      String fqName = result.getModelDescriptor().getLongName() + ".Query";
+      ClassLoader loader = result.getLoader(QueryExecutor.class.getClassLoader());
+      Query query = (Query)Class.forName(fqName, true, loader).newInstance();
+      final QueryExecutor executor = new QueryExecutor(this.myContext, query);
+      final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
+      ProgressManager.getInstance().run(new Task.Modal(ReplaceDialog.this.myContext.getProject(), "Executing query", false) {
 
-      public void run(@NotNull() ProgressIndicator indicator) {
-        executor.run(indicator, scope);
-      }
+        public void run(@NotNull() ProgressIndicator indicator) {
+          ModelAccess.instance().runReadAction(new Runnable() {
 
-    });
-    final Query query = executor.getQuery();
-    final List<SNode> replaceNodes = executor.getSearchResult();
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              executor.setSNode(result.getSNode());
+            }
 
-      public void run() {
-        for(SNode node : replaceNodes) {
-          query.doReplace(node);
+          });
+          executor.execute(indicator, scope);
         }
-      }
 
-    });
+      });
+      executor.showResults();
+    } catch (Throwable t) {
+      t.printStackTrace();
+    }
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", defaultButton = false)
