@@ -13,7 +13,8 @@
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="12" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
+  <maxImportIndex value="17" />
   <import index="1" modelUID="javax.swing@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.nodeEditor.inspector@java_stub" version="-1" />
@@ -26,6 +27,9 @@
   <import index="10" modelUID="jetbrains.mps.workbench.actions.project@java_stub" version="-1" />
   <import index="11" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
   <import index="12" modelUID="java.util@java_stub" version="-1" />
+  <import index="15" modelUID="jetbrains.mps.quickQueryLanguage.runtime@java_stub" version="-1" />
+  <import index="16" modelUID="jetbrains.mps.quickQueryLanguage.plugin" version="-1" />
+  <import index="17" modelUID="jetbrains.mps.quickQueryLanguage.plugin@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1219405202223">
     <property name="name" value="EmbeddableEditor" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1219408131655">
@@ -652,27 +656,17 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219741069275">
               <link role="baseMethodDeclaration" targetNodeId="9.~GenerateClassesGenerationType.getClassLoader(java.lang.ClassLoader):java.lang.ClassLoader" resolveInfo="getClassLoader" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219741158401">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219741156210">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1219741080764">
-                    <link role="variableDeclaration" targetNodeId="1219741072589" resolveInfo="parent" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219741157431">
-                    <link role="baseMethodDeclaration" targetNodeId="6.~Object.getClass():java.lang.Class" resolveInfo="getClass" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219741160670">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~Class.getClassLoader():java.lang.ClassLoader" resolveInfo="getClassLoader" />
-                </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1219935006359">
+                <link role="variableDeclaration" targetNodeId="1219741072589" resolveInfo="parentLoader" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1219741072589">
-        <property name="name" value="object" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219741072590">
-          <link role="classifier" targetNodeId="6.~Object" resolveInfo="Object" />
+        <property name="name" value="parentLoader" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219934981627">
+          <link role="classifier" targetNodeId="6.~ClassLoader" resolveInfo="ClassLoader" />
         </node>
       </node>
     </node>
