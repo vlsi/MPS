@@ -4,12 +4,12 @@ package jetbrains.mps.closures.structure;
 
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class FunctionType extends Type {
   public static final String concept = "jetbrains.mps.closures.structure.FunctionType";
@@ -20,15 +20,6 @@ public class FunctionType extends Type {
   public FunctionType(SNode node) {
     super(node);
   }
-
-  public static FunctionType newInstance(SModel sm, boolean init) {
-    return (FunctionType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.closures.structure.FunctionType", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static FunctionType newInstance(SModel sm) {
-    return FunctionType.newInstance(sm, false);
-  }
-
 
   public Type getResultType() {
     return (Type)this.getChild(FunctionType.RESULT_TYPE);
@@ -76,6 +67,15 @@ public class FunctionType extends Type {
 
   public void insertThrowsType(ClassifierType prev, ClassifierType node) {
     this.insertChild(prev, FunctionType.THROWS_TYPE, node);
+  }
+
+
+  public static FunctionType newInstance(SModel sm, boolean init) {
+    return (FunctionType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.closures.structure.FunctionType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static FunctionType newInstance(SModel sm) {
+    return FunctionType.newInstance(sm, false);
   }
 
 }

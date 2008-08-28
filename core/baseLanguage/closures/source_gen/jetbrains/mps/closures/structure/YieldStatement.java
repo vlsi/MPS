@@ -4,10 +4,10 @@ package jetbrains.mps.closures.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class YieldStatement extends Statement {
   public static final String concept = "jetbrains.mps.closures.structure.YieldStatement";
@@ -17,21 +17,21 @@ public class YieldStatement extends Statement {
     super(node);
   }
 
-  public static YieldStatement newInstance(SModel sm, boolean init) {
-    return (YieldStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.closures.structure.YieldStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static YieldStatement newInstance(SModel sm) {
-    return YieldStatement.newInstance(sm, false);
-  }
-
-
   public Expression getExpression() {
     return (Expression)this.getChild(YieldStatement.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
     super.setChild(YieldStatement.EXPRESSION, node);
+  }
+
+
+  public static YieldStatement newInstance(SModel sm, boolean init) {
+    return (YieldStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.closures.structure.YieldStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static YieldStatement newInstance(SModel sm) {
+    return YieldStatement.newInstance(sm, false);
   }
 
 }

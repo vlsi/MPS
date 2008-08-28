@@ -17,15 +17,6 @@ public class PairOfInts extends BaseConcept {
     super(node);
   }
 
-  public static PairOfInts newInstance(SModel sm, boolean init) {
-    return (PairOfInts)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.closures.structure.PairOfInts", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PairOfInts newInstance(SModel sm) {
-    return PairOfInts.newInstance(sm, false);
-  }
-
-
   public int getFirst() {
     return this.getIntegerProperty(PairOfInts.FIRST);
   }
@@ -40,6 +31,15 @@ public class PairOfInts extends BaseConcept {
 
   public void setSecond(int value) {
     this.setIntegerProperty(PairOfInts.SECOND, value);
+  }
+
+
+  public static PairOfInts newInstance(SModel sm, boolean init) {
+    return (PairOfInts)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.closures.structure.PairOfInts", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PairOfInts newInstance(SModel sm) {
+    return PairOfInts.newInstance(sm, false);
   }
 
 }

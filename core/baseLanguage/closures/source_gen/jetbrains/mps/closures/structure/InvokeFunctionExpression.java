@@ -4,11 +4,11 @@ package jetbrains.mps.closures.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class InvokeFunctionExpression extends Expression {
   public static final String concept = "jetbrains.mps.closures.structure.InvokeFunctionExpression";
@@ -18,15 +18,6 @@ public class InvokeFunctionExpression extends Expression {
   public InvokeFunctionExpression(SNode node) {
     super(node);
   }
-
-  public static InvokeFunctionExpression newInstance(SModel sm, boolean init) {
-    return (InvokeFunctionExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.closures.structure.InvokeFunctionExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InvokeFunctionExpression newInstance(SModel sm) {
-    return InvokeFunctionExpression.newInstance(sm, false);
-  }
-
 
   public Expression getFunction() {
     return (Expression)this.getChild(InvokeFunctionExpression.FUNCTION);
@@ -54,6 +45,15 @@ public class InvokeFunctionExpression extends Expression {
 
   public void insertParameter(Expression prev, Expression node) {
     this.insertChild(prev, InvokeFunctionExpression.PARAMETER, node);
+  }
+
+
+  public static InvokeFunctionExpression newInstance(SModel sm, boolean init) {
+    return (InvokeFunctionExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.closures.structure.InvokeFunctionExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InvokeFunctionExpression newInstance(SModel sm) {
+    return InvokeFunctionExpression.newInstance(sm, false);
   }
 
 }

@@ -160,7 +160,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.AUTO_DELETABLE, true);
+          this.set(StyleAttributes.DRAW_BRACKETS, true);
         }
 
       };

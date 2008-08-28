@@ -16,21 +16,21 @@ public class StringPropertyHolder extends BaseConcept {
     super(node);
   }
 
-  public static StringPropertyHolder newInstance(SModel sm, boolean init) {
-    return (StringPropertyHolder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.closures.structure.StringPropertyHolder", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static StringPropertyHolder newInstance(SModel sm) {
-    return StringPropertyHolder.newInstance(sm, false);
-  }
-
-
   public String getValue() {
     return this.getProperty(StringPropertyHolder.VALUE);
   }
 
   public void setValue(String value) {
     this.setProperty(StringPropertyHolder.VALUE, value);
+  }
+
+
+  public static StringPropertyHolder newInstance(SModel sm, boolean init) {
+    return (StringPropertyHolder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.closures.structure.StringPropertyHolder", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static StringPropertyHolder newInstance(SModel sm) {
+    return StringPropertyHolder.newInstance(sm, false);
   }
 
 }

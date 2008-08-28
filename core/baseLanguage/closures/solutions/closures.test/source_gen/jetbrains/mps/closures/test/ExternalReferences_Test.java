@@ -124,6 +124,26 @@ __switch__:
   }
 
   @Test()
+  public void test_methodParameter2() throws Exception {
+    Worker wrk = new Worker() {
+
+      public String doWork(Integer d) {
+        final Wrappers._T<Integer> _d = new Wrappers._T<Integer>(d);
+        new _FunctionTypes._return_P0_E0 <Integer>() {
+
+          public Integer invoke() {
+            return _d.value = _d.value * 2;
+          }
+
+        }.invoke();
+        return "Done: " + _d.value;
+      }
+
+    };
+    Assert.assertEquals("Done: 2468", wrk.doWork(1234));
+  }
+
+  @Test()
   public void test_field() throws Exception {
     Worker wrk = new Worker() {
 

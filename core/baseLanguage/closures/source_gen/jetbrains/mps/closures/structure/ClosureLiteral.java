@@ -5,13 +5,13 @@ package jetbrains.mps.closures.structure;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.IStatementListContainer;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class ClosureLiteral extends Expression implements IStatementListContainer {
   public static final String concept = "jetbrains.mps.closures.structure.ClosureLiteral";
@@ -24,15 +24,6 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
   public ClosureLiteral(SNode node) {
     super(node);
   }
-
-  public static ClosureLiteral newInstance(SModel sm, boolean init) {
-    return (ClosureLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.closures.structure.ClosureLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ClosureLiteral newInstance(SModel sm) {
-    return ClosureLiteral.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(ClosureLiteral.SHORT_DESCRIPTION);
@@ -84,6 +75,15 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
 
   public void insertParameter(ParameterDeclaration prev, ParameterDeclaration node) {
     this.insertChild(prev, ClosureLiteral.PARAMETER, node);
+  }
+
+
+  public static ClosureLiteral newInstance(SModel sm, boolean init) {
+    return (ClosureLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.closures.structure.ClosureLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ClosureLiteral newInstance(SModel sm) {
+    return ClosureLiteral.newInstance(sm, false);
   }
 
 }

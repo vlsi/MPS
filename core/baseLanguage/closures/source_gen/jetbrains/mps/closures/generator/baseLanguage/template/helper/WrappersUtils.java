@@ -12,24 +12,24 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 
 public class WrappersUtils {
 
-  public static List<SNode> collectLocalVariableDeclarationsToWrap(SNode closure) {
-    List<SNode> lvdecls = new ArrayList<SNode>();
+  public static List<SNode> collectVariableDeclarationsToWrap(SNode closure) {
+    List<SNode> vdecls = new ArrayList<SNode>();
     for(SNode desc : SNodeOperations.getDescendants(closure, null, false)) {
-      if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") && closure == SNodeOperations.getAncestor(desc, "jetbrains.mps.closures.structure.ClosureLiteral", false, false)) {
-        SNode lvd = SLinkOperations.getTarget(desc, "variableDeclaration", false);
-        if (closure != SNodeOperations.getAncestor(lvd, "jetbrains.mps.closures.structure.ClosureLiteral", false, false)) {
-          if (!(lvdecls.contains(SLinkOperations.getTarget(desc, "variableDeclaration", false)))) {
-            lvdecls.add(SLinkOperations.getTarget(desc, "variableDeclaration", false));
+      if ((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.ParameterReference")) && closure == SNodeOperations.getAncestor(desc, "jetbrains.mps.closures.structure.ClosureLiteral", false, false)) {
+        SNode vd = SLinkOperations.getTarget(desc, "variableDeclaration", false);
+        if (closure != SNodeOperations.getAncestor(vd, "jetbrains.mps.closures.structure.ClosureLiteral", false, false)) {
+          if (!(vdecls.contains(SLinkOperations.getTarget(desc, "variableDeclaration", false)))) {
+            vdecls.add(SLinkOperations.getTarget(desc, "variableDeclaration", false));
           }
         }
       }
     }
 with_decls:
-    for(Iterator<SNode> it = lvdecls.iterator() ; it.hasNext() ; ) {
-      SNode lvd = it.next();
-      SNode sl = SNodeOperations.getAncestor(lvd, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+    for(Iterator<SNode> it = vdecls.iterator() ; it.hasNext() ; ) {
+      SNode vd = it.next();
+      SNode sl = SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
       for(SNode desc : SNodeOperations.getDescendants(sl, null, false)) {
-        if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") && SLinkOperations.getTarget(desc, "variableDeclaration", false) == lvd) {
+        if ((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.ParameterReference")) && SLinkOperations.getTarget(desc, "variableDeclaration", false) == vd) {
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.AssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.getParent(desc), "lValue", true) == desc) {
             continue with_decls;
           }
@@ -38,7 +38,7 @@ with_decls:
       // didn't find any assignment with the var reference in the lvalue
       it.remove();
     }
-    return lvdecls;
+    return vdecls;
   }
 
   public static void putPrepData(SNode sn, Object data, ITemplateGenerator generator) {
