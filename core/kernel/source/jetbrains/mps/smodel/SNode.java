@@ -308,11 +308,11 @@ public final class SNode {
   }
 
   public void putUserObjects(SNode fromNode) {
-    if (fromNode == null || fromNode.myUserObjects == null) return;
-    if (myUserObjects == null) {
-      myUserObjects = new ListMap<Object, Object>();
-    }
-    myUserObjects.putAll(fromNode.myUserObjects);
+//    if (fromNode == null || fromNode.myUserObjects == null) return;
+//    if (myUserObjects == null) {
+//      myUserObjects = new ListMap<Object, Object>();
+//    }
+//    myUserObjects.putAll(fromNode.myUserObjects);
   }
 
   public void removeUserObject(Object key) {
