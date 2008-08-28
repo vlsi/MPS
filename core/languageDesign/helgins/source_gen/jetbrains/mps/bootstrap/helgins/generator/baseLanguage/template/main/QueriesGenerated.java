@@ -73,7 +73,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1176817835230(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false), null, false, false);
+    SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false));
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule")) {
       return SLinkOperations.getTarget(parent, "applicableNode", true) == SLinkOperations.getTarget(_context.getNode(), "applicableNode", false);
     }
@@ -81,19 +81,19 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1176817952409(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false)), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
   }
 
   public static boolean baseMappingRule_Condition_1177333576000(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false)), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule");
   }
 
   public static boolean baseMappingRule_Condition_1177333630561(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false)), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
   }
 
   public static boolean baseMappingRule_Condition_1177675447418(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false)), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem");
   }
 
   public static boolean baseMappingRule_Condition_1178874713657(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -113,7 +113,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1188902811518(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false), null, false, false);
+    SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false));
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
       return SLinkOperations.getTarget(parent, "anotherNode", true) == SLinkOperations.getTarget(_context.getNode(), "applicableNode", false);
     }
@@ -124,31 +124,31 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1196962185136(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false)), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule");
   }
 
   public static boolean baseMappingRule_Condition_1196962200014(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false)), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule");
   }
 
   public static boolean baseMappingRule_Condition_1196962216594(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false)), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem");
   }
 
   public static boolean baseMappingRule_Condition_1196962232050(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false)), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
   }
 
   public static boolean baseMappingRule_Condition_1196962234769(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false)), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem");
   }
 
   public static boolean baseMappingRule_Condition_1196962272510(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false)), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
   }
 
   public static boolean baseMappingRule_Condition_1196962275526(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false)), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem");
   }
 
   public static boolean baseMappingRule_Condition_1201616718535(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -381,7 +381,7 @@ public class QueriesGenerated {
       conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "sourceConcept", false);
     } else
     {
-      SNode rule = SNodeOperations.getParent(_context.getNode(), null, false, false);
+      SNode rule = SNodeOperations.getParent(_context.getNode());
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference")) {
         SNode conceptReference = SLinkOperations.getTarget(rule, "applicableNode", true);
         conceptDeclaration = SLinkOperations.getTarget(conceptReference, "concept", false);
@@ -784,7 +784,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1176817939040(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false), null, false, false);
+    SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false));
     return _context.getOutputNodeByInputNodeAndMappingLabel(parent, "coercedNode");
   }
 
@@ -805,7 +805,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1177674871968(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode parent = SNodeOperations.getParent(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false), null, false, false), null, false, false);
+    SNode parent = SNodeOperations.getParent(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false)));
     return _context.getOutputNodeByInputNodeAndMappingLabel(parent, "matchedNode");
   }
 
@@ -1176,7 +1176,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1214931157675(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode grandparent = SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode(), null, false, false), null, false, false);
+    SNode grandparent = SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode()));
     do {
       SNode matchedNode_1 = grandparent;
       {
@@ -1244,7 +1244,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1214931879685(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode grandparent = SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode(), null, false, false), null, false, false);
+    SNode grandparent = SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode()));
     do {
       SNode matchedNode_4 = grandparent;
       {
@@ -1554,7 +1554,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1215078905470(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "expression", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true);
   }
 
   public static SNode sourceNodeQuery_1215520871184(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
