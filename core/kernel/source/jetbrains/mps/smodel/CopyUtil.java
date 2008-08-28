@@ -61,6 +61,7 @@ public final class CopyUtil {
     SNode result = new SNode(node.getModel(), node.getConceptFqName(), false);
     mapping.put(node, result);
     result.putProperties(node);
+    result.putUserObjects(node);
     for (SNode child : node.getChildren(copyAttributes)) {
       String role = child.getRole_();
       assert role != null;

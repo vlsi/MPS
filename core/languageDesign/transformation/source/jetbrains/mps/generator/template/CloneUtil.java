@@ -28,6 +28,7 @@ public class CloneUtil {
 
     outputNode.setId(inputNode.getSNodeId());
     outputNode.putProperties(inputNode);
+    outputNode.putUserObjects(inputNode);
     for (SReference reference : inputNode.getReferences()) {
       SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : outputModel.getUID();
       if (targetModelUID == null) {

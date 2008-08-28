@@ -137,6 +137,7 @@ public class TemplateProcessor {
     myGenerator.addTemplateNodeByOutputNode(outputNode, templateNode);
     myGenerator.addOutputNodeByTemplateNode(templateNode, outputNode);
     outputNode.putProperties(templateNode);
+    outputNode.putUserObjects(templateNode);
 
     SModel templateModel = templateNode.getModel();
     for (SReference reference : templateNode.getReferences()) {
@@ -457,6 +458,7 @@ public class TemplateProcessor {
     myGenerator.addCopiedOutputNodeForInputNode(inputNode, outputNode);
 
     outputNode.putProperties(inputNode);
+    outputNode.putUserObjects(inputNode);
 
     SModel inputModel = myGenerator.getInputModel();
     for (SReference inputReference : inputNode.getReferences()) {

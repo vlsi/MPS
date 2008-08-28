@@ -301,12 +301,18 @@ public final class SNode {
   }
 
   public void putUserObject(Object key, Object value) {
-    ModelAccess.assertLegalRead(this);
-
     if (myUserObjects == null) {
       myUserObjects = new ListMap<Object, Object>();
     }
     myUserObjects.put(key, value);
+  }
+
+  public void putUserObjects(SNode fromNode) {
+    if (fromNode == null || fromNode.myUserObjects == null) return;
+    if (myUserObjects == null) {
+      myUserObjects = new ListMap<Object, Object>();
+    }
+    myUserObjects.putAll(fromNode.myUserObjects);
   }
 
   public void removeUserObject(Object key) {
@@ -544,6 +550,8 @@ public final class SNode {
   }
 
   public void putProperties(SNode fromNode) {
+    ModelChange.assertLegalNodeChange(this);
+
     if (fromNode == null || fromNode.myProperties == null) return;
     if (myProperties == null) {
       myProperties = new ListMap<String, String>();

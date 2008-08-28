@@ -538,9 +538,7 @@ public class GeneratorUtil {
         } else {
           generator.showInformationMessage(inputNode, text);
         }
-      } else {
-//        generator.showInformationMessage(inputNode, "Top rule dismissed with no message");
-      }
+      } 
       throw new DismissTopMappingRuleException();
 
     } else if (ruleConsequence instanceof AbandonInput_RuleConsequence) {

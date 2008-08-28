@@ -164,6 +164,8 @@ public class RuleManager {
           myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNodes.get(0));
           // output node should be accessible via 'findCopiedNode'
           myGenerator.addCopiedOutputNodeForInputNode(inputNode, outputNodes.get(0));
+          // preserve user objects
+          outputNodes.get(0).putUserObjects(inputNode);
         }
         return outputNodes;
       }
