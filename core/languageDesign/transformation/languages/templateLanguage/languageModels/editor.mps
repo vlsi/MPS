@@ -27,7 +27,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="70" />
+  <maxImportIndex value="72" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -43,6 +43,8 @@
   <import index="68" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
   <import index="69" modelUID="jetbrains.mps.bootstrap.structureLanguage.behavior" version="-1" />
   <import index="70" modelUID="jetbrains.mps.nodeEditor.cells@java_stub" version="-1" />
+  <import index="71" modelUID="jetbrains.mps.core.editor" version="-1" />
+  <import index="72" modelUID="jetbrains.mps.bootstrap.sharedConcepts.editor" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1087903454703">
     <property name="name" value="PropertyMacro_Editor" />
     <property name="package" value="macro" />
@@ -826,6 +828,21 @@
             </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995015">
+            <property name="flag" value="false" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1219952930751">
+          <property name="vertical" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1219952930752" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1219952930753">
+            <property name="vertical" value="true" />
+            <property name="gridLayout" value="true" />
+            <link role="relationDeclaration" targetNodeId="1.1219952894531" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1219952930754">
+              <property name="flag" value="false" />
+            </node>
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1219952930755">
             <property name="flag" value="false" />
           </node>
         </node>
@@ -6307,6 +6324,54 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207155548978" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207155541679" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1219952444641">
+    <property name="package" value="rule" />
+    <link role="conceptDeclaration" targetNodeId="1.1219952072943" resolveInfo="DropRootRule" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1219952449502">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1219952622803">
+        <property name="attractsFocus" value="2" />
+        <property name="noTargetText" value="&lt;choose concept&gt;" />
+        <link role="styleClass" targetNodeId="72.1203541385314" resolveInfo="ReferenceOnConcept" />
+        <link role="relationDeclaration" targetNodeId="1.1219952338328" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1219952622804">
+          <link role="conceptDeclaration" targetNodeId="6.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1219952622805">
+            <property name="attractsFocus" value="0" />
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1219952848465">
+        <property name="text" value="condition" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1219952862843">
+        <property name="noTargetText" value="&lt;none&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1219952317655" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1219953394687">
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1219953403750">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219953403751">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219953407346">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1219953412571">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1219953413449" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219953407489">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1219953407347" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1219953411304">
+                    <link role="link" targetNodeId="1.1219952317655" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1219953426153">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

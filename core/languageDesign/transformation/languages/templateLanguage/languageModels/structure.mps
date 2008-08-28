@@ -154,6 +154,12 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1114458327664" resolveInfo="ConceptDeclarationReference" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1219952894531">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="dropRootRule" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1219952072943" resolveInfo="DropRootRule" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195502100749">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="preMappingScript" />
@@ -1338,6 +1344,50 @@
     <link role="extends" targetNodeId="6.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1216768445577">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1219952072943">
+    <property name="package" value="rule" />
+    <property name="name" value="DropRootRule" />
+    <link role="extends" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1219952338328">
+      <property name="role" value="applicableConcept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1219952317655">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="conditionFunction" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1219952151850" resolveInfo="DropRootRule_Condition" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1219952151850">
+    <property name="name" value="DropRootRule_Condition" />
+    <property name="package" value="rule" />
+    <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1219952151851">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1219952151852" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1219952151853">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1219952151854">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="2v.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1219952151855">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="8.1161622753914" resolveInfo="ConceptFunctionParameter_operationContext" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1219952151856">
+      <property name="value" value="condition" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1219952151857">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1199874763892" resolveInfo="usesParameterObject" />
     </node>
   </node>
 </model>
