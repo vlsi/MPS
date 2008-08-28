@@ -80,8 +80,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private void doMapping(boolean isPrimary) throws GenerationFailueException, GenerationCanceledException {
     checkMonitorCanceled();
-    int oldErrorCount = getErrorCount();
-
     myRuleManager = new RuleManager(this);
 
     // create all roots
@@ -119,7 +117,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     revalidateAllReferences();
 
     checkMonitorCanceled();
-    reportWasErrors(getErrorCount() - oldErrorCount);
   }
 
   private List<SNode> copyRootsFromInputModel(RuleManager ruleManager) {
@@ -184,7 +181,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private void revalidateAllReferences() throws GenerationCanceledException {
     // replace all postponed references
-    List<SNode> roots = getTargetModel().getRoots();
+    List<SNode> roots = getOutputModel().getRoots();
     for (SNode root : roots) {
       checkMonitorCanceled();
       revalidateAllReferences(root);
@@ -396,16 +393,4 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   public void setChanged(boolean b) {
     myChanged = b;
   }
-
-  private void addProgressMessage(String message) {
-    // getProgressMonitor().addText(message);
-    // todo implement somehow
-  }
-
-  private void reportWasErrors(int errorCount) {
-    if (errorCount > 0) {
-      addProgressMessage(errorCount + " errors");
-    }
-  }
-
 }
