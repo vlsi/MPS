@@ -43,20 +43,20 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1177331479810(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode outputConcept = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "concept", false);
+    SNode outputConcept = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false);
     if (outputConcept == null) {
-      _context.showWarningMessage(SNodeOperations.getParent(_context.getNode(), null, false, false), "output concept is not specified");
+      _context.showWarningMessage(SNodeOperations.getParent(_context.getNode()), "output concept is not specified");
       return "?output concept is not specified?";
     }
     return NameUtil.nodeFQName(outputConcept);
   }
 
   public static Object propertyMacro_GetPropertyValue_1177340188447(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "concept", false));
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1177399369144(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode concept = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "concept", false);
+    SNode concept = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false);
     if ((concept == null)) {
       _context.showErrorMessage(_context.getNode(), "output concept is not specified");
       return "?output concept is not specified?";
@@ -65,7 +65,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1177404507235(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "concept", false));
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1177404645418(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -77,11 +77,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1177499289033(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "concept", false));
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1177509909274(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "concept", false));
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1178541129260(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -162,7 +162,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1181738756958(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "commonInitializer", true) != null;
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "commonInitializer", true) != null;
   }
 
   public static boolean ifMacro_Condition_1201900835343(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -322,7 +322,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1181738763214(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "commonInitializer", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "commonInitializer", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1181738947298(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -447,11 +447,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1181738947315(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode(), null, false, false), "variable", true);
+    return SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "variable", true);
   }
 
   public static Iterable sourceNodesQuery_1181738985246(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode(), null, false, false), "variable", true);
+    return SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "variable", true);
   }
 
   public static Iterable sourceNodesQuery_1203348857747(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
