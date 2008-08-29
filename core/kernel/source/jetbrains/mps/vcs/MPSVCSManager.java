@@ -33,7 +33,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.SwingUtilities;
 
 public class MPSVCSManager implements ProjectComponent {
-  public static final Logger LOG = Logger.getLogger(MPSVCSManager.class);
+  private static final Logger LOG = Logger.getLogger(MPSVCSManager.class);
 
   public static MPSVCSManager getInstance(Project project) {
     return project.getComponent(MPSVCSManager.class);
@@ -62,7 +62,7 @@ public class MPSVCSManager implements ProjectComponent {
     }
   };
 
-  public MPSVCSManager(Project project, ProjectLevelVcsManager manager, MPSProjectHolder holder, MPSModuleRepository repository, VcsDirectoryMappingStorage storage, ChangeListManager clmanager) {
+  public MPSVCSManager(Project project, ProjectLevelVcsManager manager, ChangeListManager clmanager) {
     myProject = project;
     myManager = manager;
     myChangeListManager = clmanager;
@@ -118,12 +118,10 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private void deleteInternal(final List<VirtualFile> inVCS) {
-    final ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(myProject);
     invokeLater(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().runReadAction(new Runnable() {
           public void run() {
-            LocalFileSystem lfs = LocalFileSystem.getInstance();
             for (VirtualFile vfile : inVCS) {
               if (vfile != null) {
                 scheduleMissingFileInternal(vfile);
