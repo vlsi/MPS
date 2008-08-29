@@ -122,9 +122,11 @@ public class StatementList_Behavior {
   public static void call_checkUnusedVariables_1216892728097(SNode thisNode) {
     Set<SNode> unusedVariables = DataFlow.getUnusedVariables(thisNode);
     for(SNode var : unusedVariables) {
-      {
-        BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportWarning(var, "Unused variable", "jetbrains.mps.baseLanguage.behavior", "1216893128692", intentionProvider);
+      if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause"))) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          TypeChecker.getInstance().reportWarning(var, "Unused variable", "jetbrains.mps.baseLanguage.behavior", "1220012814436", intentionProvider);
+        }
       }
     }
   }
