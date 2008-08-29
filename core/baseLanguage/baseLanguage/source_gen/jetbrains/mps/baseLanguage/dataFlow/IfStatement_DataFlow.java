@@ -17,27 +17,14 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "condition", true));
-    if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) == null)) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
-        SNode bconst = SLinkOperations.getTarget(_context.getNode(), "condition", true);
-        if (!(SPropertyOperations.getBoolean(bconst, "value"))) {
-          _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
-        }
-      } else
-      {
-        _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()));
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
+      SNode bconst = SLinkOperations.getTarget(_context.getNode(), "condition", true);
+      if (!(SPropertyOperations.getBoolean(bconst, "value"))) {
+        _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"));
       }
     } else
     {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
-        SNode bconst = SLinkOperations.getTarget(_context.getNode(), "condition", true);
-        if (!(SPropertyOperations.getBoolean(bconst, "value"))) {
-          _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"));
-        }
-      } else
-      {
-        _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"));
-      }
+      _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"));
     }
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "ifTrue", true));
     if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null)) {
