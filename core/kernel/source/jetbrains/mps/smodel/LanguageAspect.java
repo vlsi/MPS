@@ -11,10 +11,6 @@ import java.util.ArrayList;
 
 public enum LanguageAspect {
   STRUCTURE("structure") {
-    protected List<String> getModelsToImport(Language l) {
-      return CollectionUtil.asList();
-    }
-
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapModule.STRUCTURE.getUID());
     }
@@ -155,7 +151,9 @@ public enum LanguageAspect {
 
     model.getSModel().runLoadingAction(new Runnable() {
       public void run() {
-        for (String lang : getAllLanguagesToImport(l)) {
+        model.getSModel().addDevKit(BootstrapModule.LANGUAGE_DESIGN_DEVKIT.getUID());
+
+        for (String lang : getLanguagesToImport(l)) {
           model.getSModel().addLanguage(lang);
         }
 
@@ -180,14 +178,14 @@ public enum LanguageAspect {
   public List<String> getAllLanguagesToImport(Language l) {
     List<String> result = new ArrayList<String>(getLanguagesToImport(l));
     result.addAll(getLanguagesToImport(l));
-    result.add(BootstrapModule.COLLECTIONS.getUID());
-    result.add(BootstrapModule.SMODEL.getUID());
-    result.add(BootstrapModule.BASE_LANGUAGE.getUID());
+//    result.add(BootstrapModule.COLLECTIONS.getUID());
+//    result.add(BootstrapModule.SMODEL.getUID());
+//    result.add(BootstrapModule.BASE_LANGUAGE.getUID());
     return result;
   }
 
   protected List<String> getLanguagesToImport(Language l) {
-    return CollectionUtil.asList();
+    return new ArrayList<String>();
   }
 
   protected List<String> getModelsToImport(Language l) {
