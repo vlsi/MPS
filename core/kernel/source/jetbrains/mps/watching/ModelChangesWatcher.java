@@ -46,7 +46,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private final ProjectManager myProjectManager;
   private MessageBusConnection myConnection;
   private BulkFileListener myBusListener = new BulkFileCahngesListener();
-  private final Set<VirtualFile> myDirtyFiles = new HashSet<VirtualFile>();
 
   public ModelChangesWatcher(final MessageBus bus, SModelRepository sModelRepository, ProjectManager projectManager) {
     myBus = bus;
@@ -81,18 +80,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
     for (MetadataCreationListener l : myMetadataListeners) {
       l.metadataFileCreated(f);
     }
-  }
-
-  public Set<VirtualFile> getDirtyFiles() {
-    return Collections.unmodifiableSet(myDirtyFiles);
-  }
-
-  public void removeDirtyFile(VirtualFile file) {
-    myDirtyFiles.remove(file);
-  }
-
-  /*package private*/ void addDirtyFile(VirtualFile file) {
-    myDirtyFiles.add(file);
   }
 
   public static interface MetadataCreationListener {

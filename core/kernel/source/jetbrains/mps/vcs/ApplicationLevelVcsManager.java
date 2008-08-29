@@ -70,9 +70,9 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     return null;
   }
 
-  public void checkModelFileNotInConflict(final SModelDescriptor modelDescriptor) {
+  public void checkModelFileNotInConflict(final SModelDescriptor modelDescriptor, boolean synchronously) {
     IFile ifile = modelDescriptor.getModelFile();
-    if (isInConflict(ifile)) {
+    if (isInConflict(ifile, synchronously)) {
       AbstractVcs vcs = getVcsForFile(VFileSystem.getFile(ifile));
       if ((vcs != null) && CustomMergeSupport.getInstance().tryToMergeConflictedModel(modelDescriptor, vcs.getName())) {
       } else {
@@ -82,8 +82,8 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     }
   }
 
-  public boolean isInConflict(IFile ifile) {
-    return StatusUtil.isInConflict(ifile, myProjectManager.getOpenProjects());
+  public boolean isInConflict(IFile ifile, boolean synchronously) {
+    return StatusUtil.isInConflict(ifile, synchronously, myProjectManager.getOpenProjects());
   }
 
 }

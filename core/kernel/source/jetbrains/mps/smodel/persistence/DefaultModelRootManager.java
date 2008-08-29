@@ -46,7 +46,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       }
     }
 
-    ApplicationLevelVcsManager.instance().checkModelFileNotInConflict(modelDescriptor);
+    ApplicationLevelVcsManager.instance().checkModelFileNotInConflict(modelDescriptor, modelDescriptor.needsReloading());
 
     SModel model = ModelPersistence.readModel(modelDescriptor.getModelFile());
     LOG.assertLog(model.getUID().equals(modelDescriptor.getModelUID()),

@@ -59,7 +59,6 @@ public class ReloadSession {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           progressIndicator.setText("Reloading " + model.getModelUID());
-          ModelChangesWatcher.instance().addDirtyFile(VFileSystem.getFile(model.getModelFile()));
           model.reloadFromDisk();
         }
       });
