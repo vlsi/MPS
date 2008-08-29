@@ -110,6 +110,12 @@ public class StatementList_Behavior {
           TypeChecker.getInstance().reportWarning(write, "Unused assignment", "jetbrains.mps.baseLanguage.behavior", "1213877327573", intentionProvider);
         }
       }
+      if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          TypeChecker.getInstance().reportWarning(write, "Unused parameter", "jetbrains.mps.baseLanguage.behavior", "1220009024387", intentionProvider);
+        }
+      }
     }
   }
 
@@ -127,7 +133,7 @@ public class StatementList_Behavior {
     List<SNode> referencedInClosures = new ArrayList<SNode>();
     for(SNode varRef : SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.VariableReference", false)) {
       SNode closure = SNodeOperations.getAncestor(varRef, "jetbrains.mps.baseLanguage.structure.Closure", false, false);
-      if ((closure != null) && closure != SNodeOperations.getParent(thisNode, null, false, false)) {
+      if ((closure != null) && closure != SNodeOperations.getParent(thisNode)) {
         ListSequence.fromList(referencedInClosures).addElement(SLinkOperations.getTarget(varRef, "variableDeclaration", false));
       }
     }

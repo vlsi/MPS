@@ -487,7 +487,7 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement" id="1207304745749">
               <node role="variable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable" id="1207304745750">
-                <property name="name" value="parm" />
+                <property name="name" value="param" />
               </node>
               <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207304752395">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207304751972">
@@ -498,8 +498,9 @@
                 </node>
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207304745752">
-                <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitWriteStatement" id="1207304915250">
-                  <node role="variable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1207304916737">
+                <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1220010467192">
+                  <node role="codeFor" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1220010468897">
+                    <property name="name" value="param" />
                     <link role="variable" targetNodeId="1207304745750" resolveInfo="parm" />
                   </node>
                 </node>
@@ -2038,6 +2039,17 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1220010442774">
+    <property name="package" value="method" />
+    <link role="conceptDeclaration" targetNodeId="1.1068498886292" resolveInfo="ParameterDeclaration" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1220010442775">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220010442776">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitWriteStatement" id="1220010446887">
+          <node role="variable" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1220010457548" />
         </node>
       </node>
     </node>

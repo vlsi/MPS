@@ -64,7 +64,7 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static Method call_getMethod_1213877350393(SNode thisNode, IModule module) {
-    return ReflectionUtil.getMethod(module, SNodeOperations.getParent(thisNode, null, false, false), SPropertyOperations.getString(thisNode, "name"), BaseMethodDeclaration_Behavior.call_getParameterTypes_1213877350411(thisNode, module));
+    return ReflectionUtil.getMethod(module, SNodeOperations.getParent(thisNode), SPropertyOperations.getString(thisNode, "name"), BaseMethodDeclaration_Behavior.call_getParameterTypes_1213877350411(thisNode, module));
   }
 
   public static Class[] call_getParameterTypes_1213877350411(SNode thisNode, final IModule module) {

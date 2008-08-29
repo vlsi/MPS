@@ -20,11 +20,11 @@ public class ReturnStatement_Behavior {
     while (true) {
       if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.TryStatement")) {
         SNode tryStatement = current;
-        if ((SLinkOperations.getTarget(tryStatement, "finallyBody", true) != null) && SLinkOperations.getTarget(tryStatement, "finallyBody", true) != SNodeOperations.getParent(thisNode, null, false, false)) {
+        if ((SLinkOperations.getTarget(tryStatement, "finallyBody", true) != null) && SLinkOperations.getTarget(tryStatement, "finallyBody", true) != SNodeOperations.getParent(thisNode)) {
           ListSequence.fromList(result).addElement(SLinkOperations.getTarget(tryStatement, "finallyBody", true));
         }
       }
-      current = SNodeOperations.getParent(current, null, false, false);
+      current = SNodeOperations.getParent(current);
       if (!(SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.Statement")) && !(SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.StatementList"))) {
         break;
       }
@@ -34,7 +34,7 @@ public class ReturnStatement_Behavior {
 
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     SNode type = null;
-    if (SNodeOperations.getParent(expression, null, false, false) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.ReturnStatement", "expression")) {
+    if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.ReturnStatement", "expression")) {
       SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration","jetbrains.mps.baseLanguage.structure.ConceptFunction"}, false, false);
       if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         type = SNodeOperations.copyNode(SLinkOperations.getTarget(ancestor, "returnType", true));

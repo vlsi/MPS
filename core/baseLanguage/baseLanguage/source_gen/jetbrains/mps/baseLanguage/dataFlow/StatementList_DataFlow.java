@@ -26,8 +26,8 @@ public class StatementList_DataFlow extends DataFlowBuilder {
     }
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       SNode bmd = SNodeOperations.getParent(_context.getNode());
-      for(SNode parm : SLinkOperations.getTargets(bmd, "parameter", true)) {
-        _context.getBuilder().emitWrite(parm);
+      for(SNode param : SLinkOperations.getTargets(bmd, "parameter", true)) {
+        _context.getBuilder().build((SNode)param);
       }
     }
     _context.getBuilder().emitNop();

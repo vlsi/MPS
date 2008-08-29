@@ -16,7 +16,7 @@ public class IOperation_Behavior {
   }
 
   public static SNode call_getOperand_1213877410070(SNode thisNode) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(thisNode, null, false, false), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(thisNode), "operand", true);
   }
 
   public static boolean virtual_isLValue_1213877410080(SNode thisNode) {

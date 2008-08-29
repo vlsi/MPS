@@ -14,7 +14,7 @@ public class AssignmentExpression_Behavior {
 
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     SNode type = null;
-    if (SNodeOperations.getParent(expression, null, false, false) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", "rValue")) {
+    if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", "rValue")) {
       type = SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "lValue", true)));
     }
     return type;

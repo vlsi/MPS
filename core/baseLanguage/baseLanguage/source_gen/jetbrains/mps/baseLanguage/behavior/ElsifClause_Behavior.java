@@ -13,7 +13,7 @@ public class ElsifClause_Behavior {
   }
 
   public static SNode call_getIfStatement_1213877360521(SNode thisNode) {
-    return SNodeOperations.getParent(thisNode, null, false, false);
+    return SNodeOperations.getParent(thisNode);
   }
 
   public static void call_convertToElseClause_1217846674032(SNode thisNode) {

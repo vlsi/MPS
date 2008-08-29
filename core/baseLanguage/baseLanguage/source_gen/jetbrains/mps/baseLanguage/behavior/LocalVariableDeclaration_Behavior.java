@@ -52,7 +52,7 @@ public class LocalVariableDeclaration_Behavior {
   }
 
   public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
-    SNode parent = SNodeOperations.getParent(thisNode, null, false, false);
+    SNode parent = SNodeOperations.getParent(thisNode);
     return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.ForStatement");
   }
 

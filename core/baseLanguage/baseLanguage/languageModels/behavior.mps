@@ -2566,6 +2566,28 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1220008964263">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220008964264">
+                <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.WarningStatement" id="1220009024387">
+                  <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220009025960">
+                    <property name="value" value="Unused parameter" />
+                  </node>
+                  <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220009042780">
+                    <link role="variableDeclaration" targetNodeId="1213877327582" resolveInfo="write" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220008968626">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220008967102">
+                  <link role="variableDeclaration" targetNodeId="1213877327582" resolveInfo="write" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1220008971448">
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1220008986316">
+                    <link role="conceptDeclaration" targetNodeId="1.1068498886292" resolveInfo="ParameterDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877327581">
             <link role="variableDeclaration" targetNodeId="1213877327501" resolveInfo="unusedAssignments" />

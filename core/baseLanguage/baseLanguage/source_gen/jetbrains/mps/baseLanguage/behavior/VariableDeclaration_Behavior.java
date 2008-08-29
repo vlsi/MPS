@@ -30,7 +30,7 @@ public class VariableDeclaration_Behavior {
 
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     SNode type = null;
-    if (SNodeOperations.getParent(expression, null, false, false) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "initializer")) {
+    if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "initializer")) {
       type = SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "type", true));
     }
     return type;

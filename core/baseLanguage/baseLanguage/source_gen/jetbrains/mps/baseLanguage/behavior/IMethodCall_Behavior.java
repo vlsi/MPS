@@ -26,7 +26,7 @@ public class IMethodCall_Behavior {
 
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     // is 'experssion' an actual argument in this method call?
-    if (SNodeOperations.getParent(expression, null, false, false) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall", "actualArgument")) {
+    if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall", "actualArgument")) {
       SNode method = SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false);
       int i = SNodeOperations.getIndexInParent(expression);
       if (i < SLinkOperations.getCount(method, "parameter")) {
