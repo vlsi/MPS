@@ -9,6 +9,7 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
+import jetbrains.mps.util.FileUtil;
 
 import java.util.List;
 import java.util.Set;
@@ -29,6 +30,7 @@ public class ReloadSession {
   private final Set<IModule> myChangedModules = new LinkedHashSet<IModule>();
   private final Set<VirtualFile> myNewModuleVFiles = new LinkedHashSet<VirtualFile>();
   private final Set<Project> myChangedProjects = new LinkedHashSet<Project>();
+  private Set<String> myDeletedModels = new HashSet<String>();
 
   public void doReload() {
     if (hasSomethingToDo()) {
@@ -93,7 +95,14 @@ public class ReloadSession {
         for (VirtualFile virtualFile : myNewModelVFiles) {
           File file = VFileSystem.toFile(virtualFile);
           if (!file.exists()) continue;
-          IModule module = MPSModuleRepository.getInstance().getModuleForModelFile(file);
+          IModule module = MPSModuleRepository.getInstance().getModuleForModelFile(FileUtil.getCanonicalPath(file));
+          if (module != null) {
+            myChangedModules.add(module);
+          }
+        }
+
+        for (String path : myDeletedModels) {
+          IModule module = MPSModuleRepository.getInstance().getModuleForModelFile(path);
           if (module != null) {
             myChangedModules.add(module);
           }
@@ -117,7 +126,7 @@ public class ReloadSession {
 
   private boolean hasSomethingToDo() {
     return !(myChangedModels.isEmpty() && myChangedModules.isEmpty() && myChangedProjects.isEmpty()
-      && myNewModelVFiles.isEmpty() && myNewModuleVFiles.isEmpty());
+      && myNewModelVFiles.isEmpty() && myNewModuleVFiles.isEmpty() && myDeletedModels.isEmpty());
   }
 
   public void addChangedModel(SModelDescriptor model) {
@@ -143,5 +152,9 @@ public class ReloadSession {
   public void addChangedProject(Project project) {
     myChangedProjects.add(project);
 //    System.out.println("changed project " + project);
+  }
+
+  public void addDeletedModelFilePath(String path) {
+    myDeletedModels.add(path);
   }
 }

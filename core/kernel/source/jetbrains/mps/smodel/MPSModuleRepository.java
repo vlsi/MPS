@@ -572,8 +572,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     return result;
   }
 
-  public IModule getModuleForModelFile(File file) {
-    String path = FileUtil.getCanonicalPath(file);
+  public IModule getModuleForModelFile(String path) {
     List<IModule> result = new ArrayList<IModule>();
     for (IModule module : getAllModules()) {
       List<SModelRoot> smodelRoots = module.getSModelRoots();

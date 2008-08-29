@@ -49,11 +49,7 @@ public class ModelFileProcessor extends EventProcessor {
     IFile ifile = FileSystem.getFile(event.getPath());
     final SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
     if (model != null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          model.delete();
-        }
-      });
+      reloadSession.addDeletedModelFilePath(event.getPath());
     }
   }
 }
