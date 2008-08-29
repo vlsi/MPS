@@ -1,12 +1,14 @@
 package jetbrains.mps.watching;
 
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
+import com.intellij.openapi.vfs.newvfs.events.VFileMoveEvent;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+
+import java.io.File;
 
 public class ModelFileProcessor extends EventProcessor {
   private static final ModelFileProcessor INSTANCE = new ModelFileProcessor();
@@ -31,6 +33,10 @@ public class ModelFileProcessor extends EventProcessor {
   @Override
   protected void processMove(VFileEvent event, ReloadSession reloadSession) {
     processCreate(event, reloadSession);
+    
+    VFileMoveEvent moveEvent = (VFileMoveEvent) event;
+    String oldPath = moveEvent.getOldParent().getPath() + File.separator + moveEvent.getFile().getName();
+    fileDeleted(oldPath, reloadSession);
   }
 
   @Override
@@ -46,10 +52,14 @@ public class ModelFileProcessor extends EventProcessor {
 
   @Override
   protected void processDelete(VFileEvent event, ReloadSession reloadSession) {
-    IFile ifile = FileSystem.getFile(event.getPath());
+    fileDeleted(event.getPath(), reloadSession);
+  }
+
+  private void fileDeleted(String path, ReloadSession reloadSession) {
+    IFile ifile = FileSystem.getFile(path);
     final SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
     if (model != null) {
-      reloadSession.addDeletedModelFilePath(event.getPath());
+      reloadSession.addDeletedModelFilePath(path);
     }
   }
 }

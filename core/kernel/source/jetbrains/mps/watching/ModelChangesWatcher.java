@@ -41,16 +41,12 @@ public class ModelChangesWatcher implements ApplicationComponent {
   }
 
   private final MessageBus myBus;
-  private final SModelRepository mySModelRepository;
   private final Set<MetadataCreationListener> myMetadataListeners = new LinkedHashSet<MetadataCreationListener>();
-  private final ProjectManager myProjectManager;
   private MessageBusConnection myConnection;
   private BulkFileListener myBusListener = new BulkFileCahngesListener();
 
   public ModelChangesWatcher(final MessageBus bus, SModelRepository sModelRepository, ProjectManager projectManager) {
     myBus = bus;
-    mySModelRepository = sModelRepository;
-    myProjectManager = projectManager;
   }
 
   @NonNls
