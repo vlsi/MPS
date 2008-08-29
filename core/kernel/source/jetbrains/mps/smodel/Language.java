@@ -89,7 +89,7 @@ public class Language extends AbstractModule {
 
   public List<String> getLanguageRuntimeClassPathItems() {
     List<String> result = new ArrayList<String>();
-    for (ClassPathEntry entry : myLanguageDescriptor.getLanguageRuntimeClassPathEntrys()) {
+    for (ClassPathEntry entry : myLanguageDescriptor.getLanguageRuntimeClassPathEntries()) {
       result.add(entry.getPath());
     }
     return result;
@@ -251,7 +251,7 @@ public class Language extends AbstractModule {
 
     if (!isPackaged()) return;
     Set<String> visited = new HashSet<String>();
-    for (ClassPathEntry e : myLanguageDescriptor.getLanguageRuntimeClassPathEntrys()) {
+    for (ClassPathEntry e : myLanguageDescriptor.getLanguageRuntimeClassPathEntries()) {
       IFile file = FileSystem.getFile(e.getPath());
       if (!file.exists() || file.isDirectory() || (visited.contains(e.getPath()))) {
         e.delete();

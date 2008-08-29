@@ -157,7 +157,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     }
 
 
-    for (Library l : myProjectDescriptor.getLibrarys()) {
+    for (Library l : myProjectDescriptor.getLibraries()) {
       String name = l.getName();
       jetbrains.mps.library.Library lib = LibraryManager.getInstance().get(name);
       if (lib != null) {

@@ -1,12 +1,11 @@
 package jetbrains.mps.ide.dialogs;
 
 import jetbrains.mps.ide.BootstrapLanguagesManager;
+import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
-import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
-import jetbrains.mps.projectLanguage.structure.ModuleReference;
+import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
@@ -167,11 +166,15 @@ public class NewGeneratorDialog extends BaseDialog {
     templateModelsRoot.setPath(templateModelsDir.getAbsolutePath());
     generatorDescriptor.addModelRoot(templateModelsRoot);
 
-    // add 'target language module' to 'module roots'
+    // add generator dependencies
+//    ModuleReference ref = ModuleReference.newInstance(model);
+//    ref.setName("jetbrains.mps.baseLanguage");
+//    generatorDescriptor.addDependency(ref);
 
-    ModuleReference ref = ModuleReference.newInstance(model);
-    ref.setName("jetbrains.mps.baseLanguage");
-    generatorDescriptor.addDependency(ref);
+    // generator uses 'language-design' devkit
+    DevKitReference devkitRef = DevKitReference.newInstance(model);
+    devkitRef.setName(BootstrapModule.LANGUAGE_DESIGN_DEVKIT.getUID());
+    generatorDescriptor.addUsedDevKit(devkitRef);
 
     // add new generator to language
     languageDescriptor.addGenerator(generatorDescriptor);

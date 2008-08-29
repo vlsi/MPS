@@ -60,7 +60,7 @@ public abstract class AbstractModule implements IModule {
       updateDescriptorClasspath();
     } else {
       Set<String> visited = new HashSet<String>();
-      for (ClassPathEntry e : getModuleDescriptor().getClassPathEntrys()) {
+      for (ClassPathEntry e : getModuleDescriptor().getClassPathEntries()) {
         if (visited.contains(e.getPath())) {
           e.delete();
           save = true;
@@ -81,7 +81,7 @@ public abstract class AbstractModule implements IModule {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
       Set<String> visited = new HashSet<String>();
-      for (ClassPathEntry entry : descriptor.getClassPathEntrys()) {
+      for (ClassPathEntry entry : descriptor.getClassPathEntries()) {
         IFile cp = FileSystem.getFile(entry.getPath());
         if ((!cp.exists()) || cp.isDirectory() || visited.contains(cp.getAbsolutePath())) {
           entry.delete();
@@ -265,7 +265,7 @@ public abstract class AbstractModule implements IModule {
     List<Dependency> result = new ArrayList<Dependency>();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
-      for (ModuleReference ref : descriptor.getDependencys()) {
+      for (ModuleReference ref : descriptor.getDependencies()) {
         result.add(new Dependency(ref.getName(), ref.getReexport()));
       }
     }
@@ -481,7 +481,7 @@ public abstract class AbstractModule implements IModule {
     }
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
-      for (ClassPathEntry entry : descriptor.getClassPathEntrys()) {
+      for (ClassPathEntry entry : descriptor.getClassPathEntries()) {
         result.add(entry.getPath());
       }
     }
@@ -654,7 +654,7 @@ public abstract class AbstractModule implements IModule {
         ModuleDescriptor md = getModuleDescriptor();
         if (md == null) return;
 
-        for (ModuleReference r : md.getDependencys()) {
+        for (ModuleReference r : md.getDependencies()) {
           if (moduleUID.equals(r.getName())) {
             return;
           }
@@ -676,7 +676,7 @@ public abstract class AbstractModule implements IModule {
         ModuleDescriptor md = getModuleDescriptor();
         if (md == null) return null;
 
-        for (ModuleReference r : md.getDependencys()) {
+        for (ModuleReference r : md.getDependencies()) {
           if (oldModuleUID.equals(r.getName())) {
             md.removeChild(r);
           }

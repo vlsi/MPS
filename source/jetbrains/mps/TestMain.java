@@ -229,8 +229,8 @@ public class TestMain {
             cpEntry1.setPath(classPath);
             cpEntry2.setPath(classPath);
 
-            testRefactoringDescriptor.replaceChild(testRefactoringDescriptor.getClassPathEntrys().get(0), cpEntry1);
-            testRefactoringTargetDescriptor.replaceChild(testRefactoringTargetDescriptor.getClassPathEntrys().get(0), cpEntry2);
+            testRefactoringDescriptor.replaceChild(testRefactoringDescriptor.getClassPathEntries().get(0), cpEntry1);
+            testRefactoringTargetDescriptor.replaceChild(testRefactoringTargetDescriptor.getClassPathEntries().get(0), cpEntry2);
 
             testRefactoringLanguage[0].setLanguageDescriptor(testRefactoringDescriptor);
             testRefactoringTargetLanguage[0].setLanguageDescriptor(testRefactoringTargetDescriptor);
