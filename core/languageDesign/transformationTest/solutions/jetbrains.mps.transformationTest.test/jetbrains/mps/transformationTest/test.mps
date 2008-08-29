@@ -156,6 +156,24 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="1220011296847">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220011296848">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220011312453">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220011312454">
+                <property name="value" value="3" />
+              </node>
+            </node>
+          </node>
+          <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1220011296850">
+            <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220011296851">
+              <property name="name" value="e" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220011301948">
+                <link role="classifier" targetNodeId="3.~Exception" resolveInfo="Exception" />
+              </node>
+            </node>
+            <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220011296853" />
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1220008888250">
         <property name="name" value="a" />
