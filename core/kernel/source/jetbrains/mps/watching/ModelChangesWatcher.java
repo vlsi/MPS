@@ -103,11 +103,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
       // collecting changed models, modules etc.
       for (VFileEvent event : events) {
         String path = event.getPath();
-        if (MPSFileTypesManager.isModelFile(path)) {
+        if (MPSFileTypesManager.instance().isModelFile(path)) {
           ModelFileProcessor.getInstance().process(event, reloadSession);
-        } else if (MPSFileTypesManager.isModuleFile(path)) {
+        } else if (MPSFileTypesManager.instance().isModuleFile(path)) {
           ModuleFileProcessor.getInstance().process(event, reloadSession);
-        } else if (MPSFileTypesManager.isProjectFile(path)) {
+        } else if (MPSFileTypesManager.instance().isProjectFile(path)) {
           ProjectFileProcessor.getInstance().process(event, reloadSession);
         }
       }

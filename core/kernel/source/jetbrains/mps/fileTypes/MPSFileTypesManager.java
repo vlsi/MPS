@@ -3,10 +3,9 @@ package jetbrains.mps.fileTypes;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.fileTypes.FileType;
-import com.intellij.openapi.fileTypes.PlainTextFileType;
 import com.intellij.openapi.diff.DiffManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -16,7 +15,6 @@ import jetbrains.mps.ide.projectPane.fileSystem.FileIcons;
 import jetbrains.mps.vcs.ui.ModelDiffTool;
 import jetbrains.mps.vcs.ui.ModelMergeTool;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.util.FileUtil;
 
 import javax.swing.Icon;
 
@@ -68,9 +66,24 @@ public class MPSFileTypesManager implements ApplicationComponent {
     }
   };
   private final FileType[] myFileTypes = {MODEL_FILE_TYPE, SOLUTION_FILE_TYPE, LANGUAGE_FILE_TYPE, DEVKIT_FILE_TYPE, PROJECT_FILE_TYPE, CLASS_FILE_TYPE, JAVA_FILE_TYPE, XML_FILE_TYPE};
+  private static final String[] XML_EXTENSIONS = {MPSExtentions.IDEAPROJECT,
+    MPSExtentions.IDEAWORKSPACE,
+    MPSExtentions.WORKSPACE,
+    MPSExtentions.IDEAMODULE};
 
-  private ModelDiffTool myModelDiffTool = new ModelDiffTool();
-  private ModelMergeTool myModelMergeTool = new ModelMergeTool();
+  private final ModelDiffTool myModelDiffTool = new ModelDiffTool();
+  private final ModelMergeTool myModelMergeTool = new ModelMergeTool();
+  private final FileTypeManager myFileTypeManager;
+  private final DiffManager myDiffManager;
+
+  public static MPSFileTypesManager instance(){
+    return ApplicationManager.getApplication().getComponent(MPSFileTypesManager.class);
+  }
+
+  public MPSFileTypesManager(FileTypeManager fileTypeManager, DiffManager diffManager) {
+    myFileTypeManager = fileTypeManager;
+    myDiffManager = diffManager;
+  }
 
   @NonNls
   @NotNull
@@ -79,57 +92,60 @@ public class MPSFileTypesManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    DiffManager.getInstance().registerDiffTool(myModelDiffTool);
-    DiffManager.getInstance().registerDiffTool(myModelMergeTool);
+    myDiffManager.registerDiffTool(myModelDiffTool);
+    myDiffManager.registerDiffTool(myModelMergeTool);
     for (FileType f : myFileTypes) {
-      FileTypeManager.getInstance().associateExtension(f, f.getDefaultExtension());
+      myFileTypeManager.associateExtension(f, f.getDefaultExtension());
     }
-    FileTypeManager.getInstance().associateExtension(XML_FILE_TYPE, "ipr");
-    FileTypeManager.getInstance().associateExtension(XML_FILE_TYPE, "iws");
-    FileTypeManager.getInstance().associateExtension(XML_FILE_TYPE, "iml");
-    FileTypeManager.getInstance().associateExtension(XML_FILE_TYPE, "ipr");
-    FileTypeManager.getInstance().associateExtension(XML_FILE_TYPE, "mws");
+    myFileTypeManager.associateExtension(MODEL_FILE_TYPE, MPSExtentions.STUB);
+    for (String xmlExt : XML_EXTENSIONS){
+      myFileTypeManager.associateExtension(XML_FILE_TYPE, xmlExt);
+    }
   }
 
   public void disposeComponent() {
-    DiffManager.getInstance().unregisterDiffTool(myModelDiffTool);
-    DiffManager.getInstance().unregisterDiffTool(myModelMergeTool);
+    myDiffManager.unregisterDiffTool(myModelDiffTool);
+    myDiffManager.unregisterDiffTool(myModelMergeTool);
     for (FileType f : myFileTypes) {
-      FileTypeManager.getInstance().removeAssociatedExtension(f, f.getDefaultExtension());
+      myFileTypeManager.removeAssociatedExtension(f, f.getDefaultExtension());
+    }
+    myFileTypeManager.removeAssociatedExtension(MODEL_FILE_TYPE, MPSExtentions.STUB);
+    for (String xmlExt : XML_EXTENSIONS){
+      myFileTypeManager.removeAssociatedExtension(XML_FILE_TYPE, xmlExt);
     }
   }
 
-  public static boolean isModuleFile(VirtualFile file) {
+  public boolean isModuleFile(VirtualFile file) {
     if (file == null) return false;
     FileType type = file.getFileType();
     return type.equals(LANGUAGE_FILE_TYPE) || type.equals(SOLUTION_FILE_TYPE) || type.equals(DEVKIT_FILE_TYPE);
   }
 
-  public static boolean isModelFile(VirtualFile vfile) {
+  public boolean isModelFile(VirtualFile vfile) {
     if (vfile == null) return false;
     return vfile.getFileType().equals(MODEL_FILE_TYPE);
   }
 
-  public static boolean isProjectFile(VirtualFile vfile){
+  public boolean isProjectFile(VirtualFile vfile){
     if (vfile == null) return false;
     return vfile.getFileType().equals(PROJECT_FILE_TYPE);
   }
 
-  public static boolean isModuleFile(String path) {
+  public boolean isModuleFile(String path) {
     if (path == null) return false;
-    FileType type = FileTypeManager.getInstance().getFileTypeByFileName(path);
+    FileType type = myFileTypeManager.getFileTypeByFileName(path);
     return type.equals(LANGUAGE_FILE_TYPE) || type.equals(SOLUTION_FILE_TYPE) || type.equals(DEVKIT_FILE_TYPE);
   }
 
-  public static boolean isModelFile(String path) {
+  public boolean isModelFile(String path) {
     if (path == null) return false;
-    FileType type = FileTypeManager.getInstance().getFileTypeByFileName(path);
+    FileType type = myFileTypeManager.getFileTypeByFileName(path);
     return type.equals(MODEL_FILE_TYPE);
   }
 
-  public static boolean isProjectFile(String path) {
+  public boolean isProjectFile(String path) {
     if (path == null) return false;
-    FileType type = FileTypeManager.getInstance().getFileTypeByFileName(path);
+    FileType type = myFileTypeManager.getFileTypeByFileName(path);
     return type.equals(PROJECT_FILE_TYPE);
   }
 }

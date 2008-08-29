@@ -1,10 +1,11 @@
 package jetbrains.mps.vfs;
 
-import java.util.regex.Pattern;
-
 public class MPSExtentions {
   public static final String IDEAPROJECT = "ipr";
   public static final String PROJECT = "mpr";
+  public static final String IDEAWORKSPACE = "iws";
+  public static final String WORKSPACE = "mws";
+  public static final String IDEAMODULE = "iml";
   public static final String LANGUAGE = "mpl";
   public static final String SOLUTION = "msd";
   public static final String DEVKIT = "devkit";
@@ -24,4 +25,7 @@ public class MPSExtentions {
   public static final String DOT_JAVAFILE = "." + JAVAFILE;
   public static final String DOT_CLASSFILE = "." + CLASSFILE;
   public static final String DOT_STUB = "." + STUB;
+  public static final String DOT_IDEAWORKSPACE = "." + IDEAWORKSPACE;
+  public static final String DOT_WORKSPACE = "." + WORKSPACE;
+  public static final String DOT_IDEMODULE = "." + IDEAMODULE;
 }
