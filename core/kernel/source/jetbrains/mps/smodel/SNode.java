@@ -301,6 +301,10 @@ public final class SNode {
   }
 
   public void putUserObject(Object key, Object value) {
+    if (value == null) {
+      removeUserObject(key);
+      return;
+    }
     if (myUserObjects == null) {
       myUserObjects = new ListMap<Object, Object>();
     }
