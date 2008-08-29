@@ -30,7 +30,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
         intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins@3_0.ChooseAppropriateMethodDeclaration_QuickFix", true);
         intentionProvider.putArgument("classifier", methodClassifier);
         intentionProvider.putArgument("methodCall", imco);
-        TypeChecker.getInstance().reportTypeError(imco, "wrong number of parameters", "jetbrains.mps.baseLanguage.helgins@3_0", "1219748605310", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(imco, "wrong number of parameters", "jetbrains.mps.baseLanguage.helgins@3_0", "1220019780630", intentionProvider);
       }
     }
     // ---

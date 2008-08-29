@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ConceptFunction_NonTypesystemRule implements NonTypesystemRule_Runtime {
@@ -16,10 +16,12 @@ public class check_ConceptFunction_NonTypesystemRule implements NonTypesystemRul
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    if (ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(nodeToCheck) != null && !(SNodeOperations.isInstanceOf(ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(nodeToCheck), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-      StatementList_Behavior.call_checkReturns_1213877327397(SLinkOperations.getTarget(nodeToCheck, "body", true));
+    if (SLinkOperations.getTarget(nodeToCheck, "body", true) != null) {
+      if (ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(nodeToCheck) != null && !(SNodeOperations.isInstanceOf(ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(nodeToCheck), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+        StatementList_Behavior.call_checkReturns_1213877327397(SLinkOperations.getTarget(nodeToCheck, "body", true));
+      }
+      StatementList_Behavior.call_checkDataFlow_1213877327382(SLinkOperations.getTarget(nodeToCheck, "body", true));
     }
-    StatementList_Behavior.call_checkDataFlow_1213877327382(SLinkOperations.getTarget(nodeToCheck, "body", true));
   }
 
   public String getApplicableConceptFQName() {
