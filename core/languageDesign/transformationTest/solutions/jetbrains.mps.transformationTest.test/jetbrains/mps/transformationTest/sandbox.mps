@@ -117,5 +117,62 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1220026982728">
+    <property name="testCaseName" value="testCase" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1220026987957">
+      <property name="name" value="method1" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1220026987958" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220026987959" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220026987960">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220027009211">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1220027009823">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220027009888">
+              <property name="value" value="2" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220027009212">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220026982729" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1220026982730">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1220026982731" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220026982732" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220026982733" />
+    </node>
+    <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1220026982734">
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1220026985032">
+        <property name="methodName" value="test" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1220026985033" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220026985034">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220027603514">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220027603515">
+              <link role="baseMethodDeclaration" targetNodeId="1220027603506" resolveInfo="aaaa" />
+              <link role="classConcept" targetNodeId="1220026982728" resolveInfo="testCase_Test" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1220027603506">
+      <property name="name" value="aaaa" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220027603507">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220027603510">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1220027603511">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220027603512">
+              <property name="value" value="2" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220027603513">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1220027603508" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1220027603509" />
+    </node>
+  </node>
 </model>
 
