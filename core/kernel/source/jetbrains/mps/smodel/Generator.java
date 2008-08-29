@@ -10,6 +10,7 @@ import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
+import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.runtime.BytecodeLocator;
 
 import java.io.File;
@@ -50,6 +51,11 @@ public class Generator extends AbstractModule {
 
   public SModelDescriptor createModel(SModelUID uid, SModelRoot root) {
     SModelDescriptor result = super.createModel(uid, root);
+    if (SModelStereotype.isGeneratorModel(result)) {
+      result.getSModel().addLanguage(BootstrapLanguagesManager.getInstance().getTLBase());
+    }
+    result.getSModel().addLanguage(BootstrapLanguagesManager.getInstance().getGenerationContext());
+    result.getSModel().addDevKit((jetbrains.mps.project.DevKit) BootstrapModule.LANGUAGE_DESIGN_DEVKIT.get());
 
     LanguageDescriptor oldDescriptor = getSourceLanguage().getLanguageDescriptor();
     getSourceLanguage().setLanguageDescriptor(oldDescriptor);

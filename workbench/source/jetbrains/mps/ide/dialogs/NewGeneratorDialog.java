@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.*;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -198,8 +199,8 @@ public class NewGeneratorDialog extends BaseDialog {
 
       SModel templateModel = templateModelDescriptor.getSModel();
       templateModel.addLanguage(BootstrapLanguagesManager.getInstance().getTLBase());
-      templateModel.addLanguage("jetbrains.mps.baseLanguage");
-      templateModel.addLanguage("jetbrains.mps.bootstrap.smodelLanguage");
+      templateModel.addLanguage(BootstrapLanguagesManager.getInstance().getGenerationContext());
+      templateModel.addDevKit((jetbrains.mps.project.DevKit) BootstrapModule.LANGUAGE_DESIGN_DEVKIT.get());
 
       templateModel.addImportedModel(sourceLanguage.getStructureModelDescriptor().getModelUID());
       templateModel.addImportedModel(SModelUID.fromString("java.lang@java_stub"));
