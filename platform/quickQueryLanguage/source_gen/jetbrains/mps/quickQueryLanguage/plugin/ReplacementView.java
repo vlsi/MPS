@@ -4,26 +4,32 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import javax.swing.JPanel;
+import java.awt.BorderLayout;
 import javax.swing.JButton;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.quickQueryLanguage.runtime.IQuery;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JComponent;
+import java.util.ArrayList;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class ReplacementView {
 
   private UsagesView myUsagesView;
-  private ReplacementViewTool myTool;
-  private JPanel myMainPanel;
-  private JButton myButton;
-  private BaseFinder myFinder;
+  private RunReplacement_Tool myTool;
+  private JPanel myMainPanel = new JPanel(new BorderLayout());
+  private JButton myButton = new JButton("Do replace");
 
-  public ReplacementView(QueryFinder finder, ReplacementViewTool tool, MPSProject project, IResultProvider provider, SearchQuery searchQuery, ProgressIndicator indicator) {
+  public ReplacementView(RunReplacement_Tool tool, MPSProject project, IResultProvider provider, SearchQuery searchQuery, final SearchResults results, final IQuery query) {
     this.myTool = tool;
-    this.myFinder = finder;
     this.myUsagesView = new UsagesView(project, new ViewOptions()) {
 
       public void close() {
@@ -31,11 +37,38 @@ public class ReplacementView {
       }
 
     };
-    this.myUsagesView.setRunOptions(provider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true), finder.find(searchQuery, indicator));
+    this.myButton.addActionListener(new ActionListener() {
+
+      public void actionPerformed(ActionEvent p0) {
+        final List<SNode> replaceNodes = ReplacementView.this.getExecuteResult(results);
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+          public void run() {
+            for(SNode node : replaceNodes) {
+              query.doReplace(node);
+            }
+          }
+
+        });
+      }
+
+    });
+    this.myUsagesView.setRunOptions(provider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true), results);
+    this.myMainPanel.add(this.myButton, BorderLayout.SOUTH);
+    this.myMainPanel.add(this.myUsagesView.getComponent(), BorderLayout.CENTER);
   }
 
   public JComponent getComponent() {
     return this.myMainPanel;
+  }
+
+  public List<SNode> getExecuteResult(SearchResults searchResults) {
+    List<SNode> results = new ArrayList<SNode>();
+    List<SearchResult<SNode>> resultsList = searchResults.getSearchResults();
+    for(SearchResult<SNode> nodeResult : resultsList) {
+      results.add(nodeResult.getObject());
+    }
+    return results;
   }
 
 }

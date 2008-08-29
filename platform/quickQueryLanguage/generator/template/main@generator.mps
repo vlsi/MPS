@@ -160,7 +160,7 @@
       </node>
     </node>
     <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218802969852">
-      <link role="classifier" targetNodeId="5.~Query" resolveInfo="Query" />
+      <link role="classifier" targetNodeId="5.~IQuery" resolveInfo="IQuery" />
     </node>
   </node>
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1218801404183">

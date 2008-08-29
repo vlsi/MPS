@@ -20,7 +20,7 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
 
   public IOperationContext context;
   public SNode snode;
-  public IModule contextModule;
+  public IModule langModule;
 
   public FindInstancesByConditionAndNode_Action() {
     super("Find Instances by condition", "", ICON);
@@ -63,8 +63,8 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
       if (this.snode == null) {
         return false;
       }
-      this.contextModule = event.getData(MPSDataKeys.CONTEXT_MODULE);
-      if (this.contextModule == null) {
+      this.langModule = event.getData(MPSDataKeys.CONTEXT_MODULE);
+      if (this.langModule == null) {
         return false;
       }
     } catch (Throwable t) {
@@ -75,7 +75,7 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      FindInstancesDialog testDialog = new FindInstancesDialog(FindInstancesByConditionAndNode_Action.this.context, (Language)FindInstancesByConditionAndNode_Action.this.contextModule);
+      FindInstancesDialog testDialog = new FindInstancesDialog(new FindInstancesContext(FindInstancesByConditionAndNode_Action.this.context), (Language)FindInstancesByConditionAndNode_Action.this.langModule);
       testDialog.setConceptDeclaration(FindInstancesByConditionAndNode_Action.this.snode);
       testDialog.showDialog();
     } catch (Throwable t) {

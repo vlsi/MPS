@@ -18,7 +18,7 @@ import java.awt.Dimension;
 import javax.swing.JComponent;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.embeddableEditor.GenerateResult;
-import jetbrains.mps.quickQueryLanguage.runtime.Query;
+import jetbrains.mps.quickQueryLanguage.runtime.IQuery;
 import jetbrains.mps.smodel.IScope;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -74,8 +74,8 @@ public class ReplaceDialog extends BaseDialog {
       final GenerateResult result = this.myEditor.generate();
       String fqName = result.getModelDescriptor().getLongName() + ".Query";
       ClassLoader loader = result.getLoader(QueryExecutor.class.getClassLoader());
-      Query query = (Query)Class.forName(fqName, true, loader).newInstance();
-      final QueryExecutor executor = new QueryExecutor(this.myContext, query);
+      IQuery query = (IQuery)Class.forName(fqName, true, loader).newInstance();
+      final ReplacementExecutor executor = new ReplacementExecutor(this.myContext, query);
       final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
       ProgressManager.getInstance().run(new Task.Modal(ReplaceDialog.this.myContext.getProject(), "Executing query", false) {
 

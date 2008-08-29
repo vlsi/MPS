@@ -19,7 +19,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.embeddableEditor.GenerateResult;
-import jetbrains.mps.quickQueryLanguage.runtime.Query;
+import jetbrains.mps.quickQueryLanguage.runtime.IQuery;
 import jetbrains.mps.smodel.IScope;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -88,7 +88,7 @@ public class FindInstancesDialog extends BaseDialog {
       final GenerateResult result = this.myEditor.generate();
       String fqName = result.getModelDescriptor().getLongName() + ".Query";
       ClassLoader loader = result.getLoader(QueryExecutor.class.getClassLoader());
-      Query query = (Query)Class.forName(fqName, true, loader).newInstance();
+      IQuery query = (IQuery)Class.forName(fqName, true, loader).newInstance();
       final QueryExecutor executor = new QueryExecutor(this.myContext, query);
       final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
       ProgressManager.getInstance().run(new Task.Modal(FindInstancesDialog.this.myContext.getProject(), "Executing query", false) {
