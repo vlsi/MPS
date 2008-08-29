@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 
@@ -20,21 +21,17 @@ public class BeforeEventProcessor extends EventProcessor {
   }
 
   @Override
-  protected void processDelete(VFileEvent event, VirtualFile vfile, ReloadSession reloadSession) {
-    final SModelDescriptor model = SModelRepository.getInstance().findModel(VFileSystem.toIFile(vfile));
+  protected void processDelete(VFileEvent event, ReloadSession reloadSession) {
+    final SModelDescriptor model = SModelRepository.getInstance().findModel(FileSystem.getFile(event.getPath()));
     if (model == null) {
       // if model is null, then it was removed by user
+      VirtualFile vfile = getVFile(event);
       Project project = ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
       if (project != null) {
         MPSVCSManager.getInstance(project).deleteVFilesAndRemoveFromVCS(Collections.singletonList(vfile));
       }
     } else {
-      // TODO if model is not null, than file was deleted externally, we need to "unregister model"
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          SModelRepository.getInstance().removeModelDescriptor(model);
-        }
-      });
+      // if model is not null, than file was deleted externally
     }
   }
 }

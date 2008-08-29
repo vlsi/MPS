@@ -6,6 +6,7 @@ import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.PlainTextFileType;
 import com.intellij.openapi.diff.DiffManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VfsUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -15,6 +16,7 @@ import jetbrains.mps.ide.projectPane.fileSystem.FileIcons;
 import jetbrains.mps.vcs.ui.ModelDiffTool;
 import jetbrains.mps.vcs.ui.ModelMergeTool;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.util.FileUtil;
 
 import javax.swing.Icon;
 
@@ -111,5 +113,23 @@ public class MPSFileTypesManager implements ApplicationComponent {
   public static boolean isProjectFile(VirtualFile vfile){
     if (vfile == null) return false;
     return vfile.getFileType().equals(PROJECT_FILE_TYPE);
+  }
+
+  public static boolean isModuleFile(String path) {
+    if (path == null) return false;
+    FileType type = FileTypeManager.getInstance().getFileTypeByFileName(path);
+    return type.equals(LANGUAGE_FILE_TYPE) || type.equals(SOLUTION_FILE_TYPE) || type.equals(DEVKIT_FILE_TYPE);
+  }
+
+  public static boolean isModelFile(String path) {
+    if (path == null) return false;
+    FileType type = FileTypeManager.getInstance().getFileTypeByFileName(path);
+    return type.equals(MODEL_FILE_TYPE);
+  }
+
+  public static boolean isProjectFile(String path) {
+    if (path == null) return false;
+    FileType type = FileTypeManager.getInstance().getFileTypeByFileName(path);
+    return type.equals(PROJECT_FILE_TYPE);
   }
 }

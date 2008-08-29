@@ -54,10 +54,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
     myProjectManager = projectManager;
   }
 
-  private VirtualFile getVFile(VFileEvent event) {
-    return event.getFileSystem().refreshAndFindFileByPath(event.getPath());
-  }
-
   @NonNls
   @NotNull
   public String getComponentName() {
@@ -106,10 +102,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private class BulkFileCahngesListener implements BulkFileListener {
     public void before(List<? extends VFileEvent> events) {
       for (VFileEvent event : events) {
-        VirtualFile vfile = event.getFileSystem().findFileByPath(event.getPath());
-        if (vfile == null) continue;
-
-        BeforeEventProcessor.getInstance().process(event, vfile, null);
+        BeforeEventProcessor.getInstance().process(event, null);
       }
     }
 
@@ -126,15 +119,13 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
       // collecting changed models, modules etc.
       for (VFileEvent event : events) {
-        VirtualFile vfile = getVFile(event);
-        if (vfile == null) continue;
-
-        if (MPSFileTypesManager.isModelFile(vfile)) {
-          ModelFileProcessor.getInstance().process(event, vfile, reloadSession);
-        } else if (MPSFileTypesManager.isModuleFile(vfile)) {
-          ModuleFileProcessor.getInstance().process(event, vfile, reloadSession);
-        } else if (MPSFileTypesManager.isProjectFile(vfile)) {
-          ProjectFileProcessor.getInstance().process(event, vfile, reloadSession);
+        String path = event.getPath();
+        if (MPSFileTypesManager.isModelFile(path)) {
+          ModelFileProcessor.getInstance().process(event, reloadSession);
+        } else if (MPSFileTypesManager.isModuleFile(path)) {
+          ModuleFileProcessor.getInstance().process(event, reloadSession);
+        } else if (MPSFileTypesManager.isProjectFile(path)) {
+          ProjectFileProcessor.getInstance().process(event, reloadSession);
         }
       }
 
