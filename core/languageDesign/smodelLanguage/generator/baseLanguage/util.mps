@@ -383,5 +383,14 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550081005" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1220267869854">
+    <property name="name" value="SModelLanguageUtil" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220267869855" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1220267869856">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1220267869857" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1220267875533" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220267869859" />
+    </node>
+  </node>
 </model>
 
