@@ -29,22 +29,4 @@ public class SModelLanguageUtil {
     }
     return null;
   }
-
-  public static DataTypeDeclaration getDatatypeFromLeft_SPropertyAccess(SNodeOperation operation) {
-    PropertyDeclaration property = getPropertyDeclarationFromLeft_SPropertyAccess(operation);
-    if (property != null) {
-      return property.getDataType();
-    }
-    return null;
-  }
-
-  private static PropertyDeclaration getPropertyDeclarationFromLeft_SPropertyAccess(SNodeOperation operation) {
-    Expression leftExpression = ((DotExpression) operation.getParent()).getOperand();
-    IOperation leftOp = ((DotExpression) leftExpression).getOperation();
-
-    if (leftOp instanceof SPropertyAccess) {
-      return ((SPropertyAccess) leftOp).getProperty();
-    }
-    return null;
-  }
 }

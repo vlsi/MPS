@@ -19,7 +19,7 @@ public class SNodeOperation_Behavior {
   }
 
   public static SNode call_getLeftExpression_1213877508894(SNode thisNode) {
-    SNode parent = SNodeOperations.getParent(thisNode, null, false, false);
+    SNode parent = SNodeOperations.getParent(thisNode);
     return SLinkOperations.getTarget(parent, "operand", true);
   }
 

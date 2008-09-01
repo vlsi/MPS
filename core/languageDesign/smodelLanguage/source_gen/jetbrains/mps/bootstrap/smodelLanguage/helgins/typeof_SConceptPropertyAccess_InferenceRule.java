@@ -28,7 +28,7 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(concreteConcept, new Runnable() {
 
         public void run() {
-          SNode declaringConcept = SNodeOperations.getParent(conceptPropertyDecl, null, false, false);
+          SNode declaringConcept = SNodeOperations.getParent(conceptPropertyDecl);
           RulesUtil.checkAssignableConcept((SNode)TypeChecker.getInstance().getEquationManager().getRepresentator(concreteConcept), declaringConcept, op, "operation is applied to wrong concept");
         }
 
@@ -59,7 +59,7 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
     {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(op, "unknown type of concept property: " + conceptPropertyDecl, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1219354602332", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(op, "unknown type of concept property: " + conceptPropertyDecl, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220269574427", intentionProvider);
       }
     }
   }

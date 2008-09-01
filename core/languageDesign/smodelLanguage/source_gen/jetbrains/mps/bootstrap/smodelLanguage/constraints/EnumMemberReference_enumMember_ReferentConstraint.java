@@ -13,11 +13,9 @@ import java.util.List;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
-import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation;
-import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.behavior.SModelLanguageUtil;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class EnumMemberReference_enumMember_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -52,10 +50,9 @@ public class EnumMemberReference_enumMember_ReferentConstraint implements IModel
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation") || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum")) {
-      DataTypeDeclaration datatype = SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(((SNodeOperation)SNodeOperations.getAdapter(_context.getEnclosingNode())));
-      if (DataTypeUtil.isEnum(datatype)) {
-        SNode datatypeNode = datatype.getNode();
-        return new SimpleSearchScope(SLinkOperations.getTargets(datatypeNode, "member", true));
+      SNode datatype = SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(_context.getEnclosingNode());
+      if (DataTypeDeclaration_Behavior.call_isEnum_1220268692373(datatype)) {
+        return new SimpleSearchScope(SLinkOperations.getTargets(datatype, "member", true));
       }
     }
     return null;

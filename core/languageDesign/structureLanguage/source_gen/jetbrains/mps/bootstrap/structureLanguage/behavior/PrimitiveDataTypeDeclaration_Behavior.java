@@ -21,4 +21,16 @@ public class PrimitiveDataTypeDeclaration_Behavior {
     return new QuotationClass_4().createNode();
   }
 
+  public static boolean call_isString_1220268752134(SNode thisNode) {
+    return Primitives.STRING_TYPE.equals(SPropertyOperations.getString(thisNode, "name"));
+  }
+
+  public static boolean call_isInteger_1220268780075(SNode thisNode) {
+    return Primitives.INTEGER_TYPE.equals(SPropertyOperations.getString(thisNode, "name"));
+  }
+
+  public static boolean call_isBoolean_1220268791641(SNode thisNode) {
+    return Primitives.BOOLEAN_TYPE.equals(SPropertyOperations.getString(thisNode, "name"));
+  }
+
 }

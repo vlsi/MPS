@@ -25,7 +25,7 @@ public class typeof_Node_GetConceptOperation_InferenceRule implements InferenceR
       BaseIntentionProvider intentionProvider = null;
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625778386", true), new QuotationClass_91().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625806639", false, 0, intentionProvider);
     }
-    SNode operand = SLinkOperations.getTarget(SNodeOperations.getParent(op, null, false, false), "operand", true);
+    SNode operand = SLinkOperations.getTarget(SNodeOperations.getParent(op), "operand", true);
     {
       final SNode operandType = TypeChecker.getInstance().getRuntimeSupport().typeOf(operand, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625639214", false);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(operandType, new Runnable() {

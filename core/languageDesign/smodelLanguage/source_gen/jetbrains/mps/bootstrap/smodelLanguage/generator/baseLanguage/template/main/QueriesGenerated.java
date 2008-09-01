@@ -27,9 +27,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration;
-import jetbrains.mps.smodel.DataTypeUtil;
-import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
@@ -558,8 +556,7 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1195247677817(final IOperationContext operationContext, final IfMacroContext _context) {
     // not NULL internal default value ?
     SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "property", false), "dataType", false);
-    EnumerationMemberDeclaration defaultMember_ = DataTypeUtil.getDefaultMember(((EnumerationDataTypeDeclaration)SNodeOperations.getAdapter(dataType)));
-    SNode defaultMember = (SNode)defaultMember_.getNode();
+    SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(dataType);
     return SPropertyOperations.getString(defaultMember, "internalValue") != null;
   }
 

@@ -28,7 +28,7 @@ public class typeof_SConceptLinkAccess_InferenceRule implements InferenceRule_Ru
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(concreteConcept, new Runnable() {
 
         public void run() {
-          SNode declaringConcept = SNodeOperations.getParent(conceptLinkDecl, null, false, false);
+          SNode declaringConcept = SNodeOperations.getParent(conceptLinkDecl);
           RulesUtil.checkAssignableConcept((SNode)TypeChecker.getInstance().getEquationManager().getRepresentator(concreteConcept), declaringConcept, op, "operation is applied to wrong concept");
         }
 

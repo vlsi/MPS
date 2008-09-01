@@ -7,10 +7,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.smodel.DataTypeUtil;
-import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Property_SetOperation_InferenceRule implements InferenceRule_Runtime {
@@ -27,37 +26,37 @@ public class typeof_Property_SetOperation_InferenceRule implements InferenceRule
     }
     SNode value = SLinkOperations.getTarget(op, "value", true);
     if ((value != null)) {
-      if (DataTypeUtil.isSimpleString(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+      if (DataTypeDeclaration_Behavior.call_isSimpleString_1220268704138(dataType)) {
         {
           SNode _nodeToCheck_1029348928467 = op;
           BaseIntentionProvider intentionProvider = null;
           TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295984", true), new QuotationClass_3().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295979", false, 0, intentionProvider);
         }
       } else
-      if (DataTypeUtil.isSimpleInteger(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+      if (DataTypeDeclaration_Behavior.call_isSimpleInteger_1220268868375(dataType)) {
         {
           SNode _nodeToCheck_1029348928467 = op;
           BaseIntentionProvider intentionProvider = null;
           TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295997", true), new QuotationClass_4().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295992", false, 0, intentionProvider);
         }
       } else
-      if (DataTypeUtil.isSimpleBoolean(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+      if (DataTypeDeclaration_Behavior.call_isSimpleBoolean_1220268891062(dataType)) {
         {
           SNode _nodeToCheck_1029348928467 = op;
           BaseIntentionProvider intentionProvider = null;
           TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059296010", true), new QuotationClass_5().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059296005", false, 0, intentionProvider);
         }
       } else
-      if (DataTypeUtil.isEnum(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+      if (DataTypeDeclaration_Behavior.call_isEnum_1220268692373(dataType)) {
         if (!(SNodeOperations.isInstanceOf(value, "jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference"))) {
-          if (DataTypeUtil.isEnumOfInteger(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+          if (DataTypeDeclaration_Behavior.call_isEnumOfInteger_1220268950942(dataType)) {
             {
               SNode _nodeToCheck_1029348928467 = op;
               BaseIntentionProvider intentionProvider = null;
               TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430014542", true), new QuotationClass_93().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430014537", false, 0, intentionProvider);
             }
           } else
-          if (DataTypeUtil.isEnumOfBoolean(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+          if (DataTypeDeclaration_Behavior.call_isEnumOfBoolean_1220268971570(dataType)) {
             {
               SNode _nodeToCheck_1029348928467 = op;
               BaseIntentionProvider intentionProvider = null;
@@ -76,7 +75,7 @@ public class typeof_Property_SetOperation_InferenceRule implements InferenceRule
       {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(op, "unknown property datatype: " + dataType, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1219354601044", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(op, "unknown property datatype: " + dataType, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220269573126", intentionProvider);
         }
       }
     }
