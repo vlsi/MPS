@@ -6,10 +6,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.quickQueryLanguage.plugin.QueryConstants;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesGenerated {
 
@@ -17,8 +19,8 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
   }
 
-  public static SNode sourceNodeQuery_1218801162582(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "condition", true), "body", true);
+  public static Object propertyMacro_GetPropertyValue_1220257961588(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return QueryConstants.GENERATED_QUERY_NAME;
   }
 
   public static SNode sourceNodeQuery_1219760682963(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -26,6 +28,19 @@ public class QueriesGenerated {
       return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "replace", true), "body", true);
     }
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+  }
+
+  public static SNode sourceNodeQuery_1220269203624(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    if ((SLinkOperations.getTarget(_context.getNode(), "condition", true) != null)) {
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "condition", true), "body", true);
+    }
+    SNode statementList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+    SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+    SNode defaultCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
+    SPropertyOperations.set(defaultCondition, "value", "" + false);
+    SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
+    SLinkOperations.addChild(statementList, "statement", expressionStatement);
+    return statementList;
   }
 
 }

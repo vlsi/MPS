@@ -7,13 +7,14 @@ import java.util.List;
 import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.plugins.MacrosUtil;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.JComponent;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.Content;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.quickQueryLanguage.runtime.IQuery;
+import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -24,7 +25,7 @@ public class RunReplacement_Tool extends GeneratedTool {
   private List<ReplacementView> myViews = new ArrayList<ReplacementView>();
 
   public RunReplacement_Tool(Project project) {
-    super(project, "Replacement", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, false);
+    super(project, "Replacement", -1, IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\icons\\replace.png", "jetbrains.mps.quickQueryLanguage"), true), ToolWindowAnchor.BOTTOM, false);
   }
 
   public JComponent getComponent() {
@@ -47,7 +48,7 @@ public class RunReplacement_Tool extends GeneratedTool {
     manager.removeContent(content, true);
   }
 
-  public void addTab(final SearchQuery searchQuery, final SearchResults searchResults, final IQuery query) {
+  public void addTab(final SearchQuery searchQuery, final SearchResults searchResults, final Query query) {
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
@@ -55,12 +56,13 @@ public class RunReplacement_Tool extends GeneratedTool {
         ReplacementView view;
         view = new ReplacementView(RunReplacement_Tool.this, RunReplacement_Tool.this.getMPSProject(), provider, searchQuery, searchResults, query);
         RunReplacement_Tool.this.myViews.add(view);
-        String name = "";
+        String name = "Query ";
         if (RunReplacement_Tool.this.myViews.size() > 1) {
-          name = "" + (RunReplacement_Tool.this.myViews.size() + 1);
+          name += String.valueOf(RunReplacement_Tool.this.myViews.size());
         }
         Content content = RunReplacement_Tool.this.addContent(view.getComponent(), name, searchQuery.getIcon(), false);
         RunReplacement_Tool.this.setAvailable(true);
+        RunReplacement_Tool.this.openTool(true);
         RunReplacement_Tool.this.getContentManager().setSelectedContent(content);
       }
 

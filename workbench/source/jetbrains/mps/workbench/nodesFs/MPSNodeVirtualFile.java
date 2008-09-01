@@ -22,7 +22,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   private String myName;
   private long myModificationStamp = LocalTimeCounter.currentTime();
 
-  public MPSNodeVirtualFile(@NotNull SNode node) {
+  MPSNodeVirtualFile(@NotNull SNode node) {
     myNode = node;
     updateFields();
   }

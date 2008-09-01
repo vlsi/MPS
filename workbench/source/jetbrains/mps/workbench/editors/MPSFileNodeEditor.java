@@ -30,10 +30,7 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentReferenceEditor, DocumentsEditor {
   private IEditor myNodeEditor;
@@ -49,12 +46,21 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
   private JPanel myComponent = new JPanel(new BorderLayout());
   private Project myProject;
   private MPSNodeVirtualFile myFile;
+  private IOperationContext myContext;
 
+  public MPSFileNodeEditor(IOperationContext context, final MPSNodeVirtualFile file) {
+    this(context.getProject(), file, context);
+  }
 
   public MPSFileNodeEditor(final Project project, final MPSNodeVirtualFile file) {
+    this(project, file, null);
+  }
+
+  private MPSFileNodeEditor(final Project project, final MPSNodeVirtualFile file, IOperationContext context) {
     myProject = project;
     myFile = file;
-
+    myContext = context;
+    
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         recreateEditor();
@@ -173,10 +179,8 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
       myNodeEditor.dispose();
     }
 
-    MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-    SModelDescriptor sm = myFile.getNode().getModel().getModelDescriptor();
     myNodeEditor = myProject.getComponent(MPSEditorOpener.class)
-      .createEditorFor(new ModuleContext(sm.getModule(), mpsProject), myFile.getNode());
+      .createEditorFor(createOperationContext(), myFile.getNode());
 
     if (state != null) {
       setState(state);
@@ -184,6 +188,16 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
 
     myComponent.add(myNodeEditor.getComponent(), BorderLayout.CENTER);
     myComponent.validate();
+  }
+
+  protected IOperationContext createOperationContext() {
+    if (myContext != null) {
+      return myContext;
+    }
+
+    MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    SModelDescriptor sm = myFile.getNode().getModel().getModelDescriptor();
+    return new ModuleContext(sm.getModule(), mpsProject);
   }
 
 }

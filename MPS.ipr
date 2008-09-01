@@ -979,6 +979,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/patternLanguage/patternLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/patternLanguage/patternLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/pluginLanguage/pluginLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/pluginLanguage/pluginLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/projectLanguage/projectLanguage.iml" filepath="$PROJECT_DIR$/core/projectLanguage/projectLanguage.iml" group="core/languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/platform/quickQueryLanguage/quickQueryLanguage.iml" filepath="$PROJECT_DIR$/platform/quickQueryLanguage/quickQueryLanguage.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/quotation/quotation.iml" filepath="$PROJECT_DIR$/core/languageDesign/quotation/quotation.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/refactoring/refactoringLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/refactoring/refactoringLanguage.iml" group="core/languageDesign/refactoring" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/regexp.iml" filepath="$PROJECT_DIR$/platform/regexp/regexp.iml" group="platform/regexp" />

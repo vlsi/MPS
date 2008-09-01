@@ -10,13 +10,15 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.quickQueryLanguage.runtime.IQuery;
+import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import javax.swing.JOptionPane;
 import javax.swing.JComponent;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -28,7 +30,7 @@ public class ReplacementView {
   private JPanel myMainPanel = new JPanel(new BorderLayout());
   private JButton myButton = new JButton("Do replace");
 
-  public ReplacementView(RunReplacement_Tool tool, MPSProject project, IResultProvider provider, SearchQuery searchQuery, final SearchResults results, final IQuery query) {
+  public ReplacementView(RunReplacement_Tool tool, MPSProject project, IResultProvider provider, SearchQuery searchQuery, final SearchResults results, final Query query) {
     this.myTool = tool;
     this.myUsagesView = new UsagesView(project, new ViewOptions()) {
 
@@ -37,15 +39,21 @@ public class ReplacementView {
       }
 
     };
+    JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     this.myButton.addActionListener(new ActionListener() {
 
-      public void actionPerformed(ActionEvent p0) {
+      public void actionPerformed(ActionEvent event) {
         final List<SNode> replaceNodes = ReplacementView.this.getExecuteResult(results);
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
           public void run() {
-            for(SNode node : replaceNodes) {
-              query.doReplace(node);
+            try {
+              for(SNode node : replaceNodes) {
+                query.doReplace(node);
+                JOptionPane.showMessageDialog(null, "Replacement completed successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
+              }
+            } catch (Throwable t) {
+              JOptionPane.showMessageDialog(null, "Replacement completed with error", "Error", JOptionPane.ERROR_MESSAGE);
             }
           }
 
@@ -54,7 +62,8 @@ public class ReplacementView {
 
     });
     this.myUsagesView.setRunOptions(provider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true), results);
-    this.myMainPanel.add(this.myButton, BorderLayout.SOUTH);
+    buttonPanel.add(this.myButton);
+    this.myMainPanel.add(buttonPanel, BorderLayout.SOUTH);
     this.myMainPanel.add(this.myUsagesView.getComponent(), BorderLayout.CENTER);
   }
 

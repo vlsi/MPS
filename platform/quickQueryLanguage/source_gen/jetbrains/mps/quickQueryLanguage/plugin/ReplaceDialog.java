@@ -12,13 +12,15 @@ import java.awt.BorderLayout;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.smodel.ModelOwner;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
+import jetbrains.mps.closures.runtime.Wrappers;
+import java.util.List;
 import java.awt.Dimension;
 import javax.swing.JComponent;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.embeddableEditor.GenerateResult;
-import jetbrains.mps.quickQueryLanguage.runtime.IQuery;
+import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -33,23 +35,34 @@ public class ReplaceDialog extends BaseDialog {
   private SNode myNode;
   private JPanel myPanel = new JPanel(new BorderLayout());
 
-  public ReplaceDialog(IOperationContext context, Language language) {
+  public ReplaceDialog(final IOperationContext context, final Language language) {
     super(context.getMainFrame(), "Replace");
     this.myContext = context;
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
         ReplaceDialog.this.myNode = SConceptOperations.createNewNode("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", null);
+        ReplaceDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {
+        }, ReplaceDialog.this.myNode);
         ReplaceDialog.this.myScope = new ScopeEditor(new ScopeOptions());
         ReplaceDialog.this.myPanel.add(ReplaceDialog.this.myScope.getComponent(), BorderLayout.SOUTH);
       }
 
     });
-    this.myEditor = new EmbeddableEditor(context, new ModelOwner() {
-    });
-    this.myEditor.setNode(this.myNode);
+    this.myEditor.init();
     this.myEditor.addLanguage(language);
-    this.myPanel.add(this.myEditor.getComponent(), BorderLayout.CENTER);
+    final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+
+      public void run() {
+        languageList.value = language.getAllExtendedLanguages();
+      }
+
+    });
+    for(Language extendedLanguage : languageList.value) {
+      this.myEditor.addLanguage(extendedLanguage);
+    }
+    this.myPanel.add(this.myEditor.getComponenet(), BorderLayout.CENTER);
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
   }
@@ -72,9 +85,9 @@ public class ReplaceDialog extends BaseDialog {
   public void buttonReplace() {
     try {
       final GenerateResult result = this.myEditor.generate();
-      String fqName = result.getModelDescriptor().getLongName() + ".Query";
-      ClassLoader loader = result.getLoader(QueryExecutor.class.getClassLoader());
-      IQuery query = (IQuery)Class.forName(fqName, true, loader).newInstance();
+      String fqName = result.getModelDescriptor().getLongName() + "." + QueryConstants.GENERATED_QUERY_NAME;
+      ClassLoader loader = result.getLoader(ReplacementExecutor.class.getClassLoader());
+      Query query = (Query)Class.forName(fqName, true, loader).newInstance();
       final ReplacementExecutor executor = new ReplacementExecutor(this.myContext, query);
       final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
       ProgressManager.getInstance().run(new Task.Modal(ReplaceDialog.this.myContext.getProject(), "Executing query", false) {
