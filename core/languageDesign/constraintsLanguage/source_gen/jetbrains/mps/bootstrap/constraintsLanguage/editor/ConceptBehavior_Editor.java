@@ -110,7 +110,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createCollection1213105639912(context, node));
     }
     editorCell.addEditorCell(this.createRefNodeList1177676391005(context, node));
-    editorCell.addEditorCell(this.createConstant1206017787695(context, node, ""));
     editorCell.addEditorCell(this.createRefNodeList1206017790775(context, node));
     return editorCell;
   }
@@ -341,14 +340,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12030915476221203091547622(editorCell, node, context);
     setupLabel_Constant_1203091547622_1203091547622(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant1206017787695(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12060177876951206017787695(editorCell, node, context);
-    setupLabel_Constant_1206017787695_1206017787695(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -888,19 +879,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   private static void setupBasic_refNode_canBeAParent1203091550233(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Constant_12060177876951206017787695(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206017787695");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_refNodeList_staticMethod1206017790775(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_staticMethod");
   }
@@ -1050,9 +1028,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_canBeAParent_1203091550233(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1206017787695_1206017787695(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_refNodeList_staticMethod_1206017790775(EditorCell_Label editorCell, SNode node, EditorContext context) {

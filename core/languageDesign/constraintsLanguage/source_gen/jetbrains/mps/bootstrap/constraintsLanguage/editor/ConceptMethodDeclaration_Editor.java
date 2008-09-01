@@ -67,9 +67,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     if (renderingCondition6299_7(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1177675972057(context, node, "}"));
     }
-    if (renderingCondition6299_11(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant1177760237389(context, node, ""));
-    }
+    editorCell.addEditorCell(this.createConstant1177760237389(context, node, ""));
     return editorCell;
   }
 
@@ -1004,10 +1002,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition6299_10(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isAbstract");
-  }
-
-  public static boolean renderingCondition6299_11(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isAbstract");
   }
 

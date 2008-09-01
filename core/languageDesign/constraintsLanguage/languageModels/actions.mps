@@ -195,6 +195,26 @@
         </node>
       </node>
     </node>
+    <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory" id="1220271011060">
+      <link role="applicableConcept" targetNodeId="1.1206017324045" resolveInfo="StaticConceptMethodDeclaration" />
+      <node role="setupFunction" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction" id="1220271011061">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220271011062">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220271016095">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220271019237">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220271016503">
+                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_NewNode" id="1220271016096" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1220271018923">
+                  <link role="link" targetNodeId="2.1178549979242" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1220271020599">
+                <link role="concept" targetNodeId="2.1146644602865" resolveInfo="PublicVisibility" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1201274337701">
     <property name="name" value="ConceptMethodsWithoutThis" />

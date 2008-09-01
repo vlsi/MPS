@@ -54,6 +54,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection1206017741053(context, node));
     editorCell.addEditorCell(this.createCollection1206017626443(context, node));
     editorCell.addEditorCell(this.createConstant1206017626453(context, node, "}"));
+    editorCell.addEditorCell(this.createConstant1220270558952(context, node, ""));
     return editorCell;
   }
 
@@ -150,6 +151,14 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12060183982801206018398280(editorCell, node, context);
     setupLabel_Constant_1206018398280_1206018398280(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1220270558952(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12202705589521220270558952(editorCell, node, context);
+    setupLabel_Constant_1220270558952_1220270558952(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -439,6 +448,19 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1219156549671");
   }
 
+  private static void setupBasic_Constant_12202705589521220270558952(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1220270558952");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_refNode_body_1206017626445(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -473,6 +495,9 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_visibility_1219156532197(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1220270558952_1220270558952(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class parameterListHandler_5645_0 extends RefNodeListHandler {
