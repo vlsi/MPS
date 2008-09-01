@@ -12,6 +12,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -111,9 +112,12 @@ public class StatementList_Behavior {
         }
       }
       if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
-        {
-          BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportWarning(write, "Unused parameter", "jetbrains.mps.baseLanguage.behavior", "1220009024387", intentionProvider);
+        SNode method = ((SNode)SNodeOperations.getParent(write));
+        if (SPropertyOperations.getBoolean(method, "isFinal") || SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.Visible") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(((SNode)method), "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+          {
+            BaseIntentionProvider intentionProvider = null;
+            TypeChecker.getInstance().reportWarning(write, "Unused parameter", "jetbrains.mps.baseLanguage.behavior", "1220266223599", intentionProvider);
+          }
         }
       }
     }
