@@ -4,6 +4,7 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.watching.ModelChangesWatcher.MetadataCreationListener;
 import jetbrains.mps.project.IModule;
@@ -68,7 +69,7 @@ public class MPSVCSManager implements ProjectComponent {
     myChangeListManager = clmanager;
   }
 
-  private void scheduleMissingFileInternal(@NotNull VirtualFile file) {
+  private void scheduleMissingFileInternal(@NotNull final VirtualFile file) {
     AbstractVcs fromVCS = myManager.getVcsFor(file);
     if (fromVCS != null) {
       CheckinEnvironment ci = fromVCS.getCheckinEnvironment();
@@ -77,11 +78,19 @@ public class MPSVCSManager implements ProjectComponent {
         ci.scheduleMissingFileForDeletion(Collections.singletonList(path));
       }
     } else {
-      try {
-        file.delete(this);
-      } catch (IOException e) {
-        LOG.error(e);
-      }
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          ApplicationManager.getApplication().runWriteAction(new Runnable() {
+            public void run() {
+              try {
+                file.delete(this);
+              } catch (IOException e) {
+                LOG.error(e);
+              }
+            }
+          });
+        }
+      });
     }
   }
 
@@ -261,7 +270,7 @@ public class MPSVCSManager implements ProjectComponent {
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
     ModelChangesWatcher.instance().removeMetadataListener(myMetadataListener);
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
-    
+
     runTasks();
   }
 
