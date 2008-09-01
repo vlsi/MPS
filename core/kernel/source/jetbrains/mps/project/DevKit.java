@@ -81,7 +81,7 @@ public class DevKit extends AbstractModule {
     myDescriptor = descriptor;
 
     reload();
-    
+
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
 
@@ -92,6 +92,12 @@ public class DevKit extends AbstractModule {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     MPSModuleRepository.getInstance().unRegisterModules(this);
     MPSModuleRepository.getInstance().unRegisterModules(myGenerationOnlyModelsModelOwner);
+  }
+
+  public void reloadFromDisk() {
+    SModel sModel = getModuleDescriptor().getModel();
+    ModuleDescriptor descriptor = DescriptorsPersistence.loadDevKitDescriptor(getDescriptorFile(), sModel);
+    setModuleDescriptor(descriptor);
   }
 
   public List<Language> getExportedLanguages() {
@@ -112,7 +118,7 @@ public class DevKit extends AbstractModule {
     for (DevKit dk : getAllExtendedDevkits()) {
       for (Language l : dk.getExportedLanguages()) {
         if (!result.contains(l)) {
-          result.add(l);        
+          result.add(l);
         }
       }
     }
@@ -148,7 +154,7 @@ public class DevKit extends AbstractModule {
   }
 
   public List<Solution> getExportedSolutions() {
-    List<Solution> result = new ArrayList<Solution>();    
+    List<Solution> result = new ArrayList<Solution>();
     for (SolutionReference ref : myDescriptor.getExportedSolutions()) {
       String uid = ref.getName();
       Solution solution = MPSModuleRepository.getInstance().getSolution(uid);
@@ -164,7 +170,7 @@ public class DevKit extends AbstractModule {
     for (DevKit dk : getAllExtendedDevkits()) {
       for (Solution s : dk.getExportedSolutions()) {
         if (!result.contains(s)) {
-          result.add(s);        
+          result.add(s);
         }
       }
     }
@@ -179,7 +185,7 @@ public class DevKit extends AbstractModule {
     });
   }
 
-  
+
   public void save() {
     DescriptorsPersistence.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
   }

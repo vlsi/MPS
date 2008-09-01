@@ -78,4 +78,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   boolean isValid();
   List<String> validate();
+
+  void reloadFromDisk();
 }

@@ -220,6 +220,12 @@ public class Language extends AbstractModule {
     return errors;
   }
 
+  public void reloadFromDisk() {
+    SModel sModel = getModuleDescriptor().getModel();
+    ModuleDescriptor descriptor = DescriptorsPersistence.loadLanguageDescriptor(getDescriptorFile(), sModel);
+    setModuleDescriptor(descriptor);
+  }
+
   private void collectExtendedLanguages(Set<Language> result) {
     if (result.contains(this)) {
       return;

@@ -73,17 +73,7 @@ public class ReloadSession {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           progressIndicator.setText("Reloading " + module.getModuleUID());
-          SModel sModel = module.getModuleDescriptor().getModel();
-          ModuleDescriptor descriptor = null;
-          if (module instanceof Language) {
-            descriptor = DescriptorsPersistence.loadLanguageDescriptor(module.getDescriptorFile(), sModel);
-          } else if (module instanceof Solution) {
-            descriptor = DescriptorsPersistence.loadSolutionDescriptor(module.getDescriptorFile(), sModel);
-          } else if (module instanceof DevKit) {
-            descriptor = DescriptorsPersistence.loadDevKitDescriptor(module.getDescriptorFile(), sModel);
-          }
-          assert descriptor != null;
-          module.setModuleDescriptor(descriptor);
+          module.reloadFromDisk();
         }
       });
     }

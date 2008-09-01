@@ -746,6 +746,9 @@ public abstract class AbstractModule implements IModule {
     myScope.invalidateCaches();
   }
 
+  public void reloadFromDisk() {
+  }
+
   public class ModuleScope extends BaseScope {
     public ModelOwner getModelOwner() {
       return AbstractModule.this;
