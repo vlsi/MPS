@@ -28,6 +28,7 @@ import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.Application;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -147,16 +148,21 @@ public class MPSVCSManager implements ProjectComponent {
   public boolean addFilesToVCS(final List<File> files) {
     invokeLater(new Runnable() {
       public void run() {
-        List<VirtualFile> virtualFileList = new LinkedList<VirtualFile>();
-        for (File f : files) {
-          VirtualFile virtualFile = VFileSystem.refreshAndGetFile(f);
-          if (virtualFile != null) {
-            virtualFileList.add(virtualFile);
-          } else {
-            LOG.error("Cannot find virtual file for File " + f);
+        // doing addition in invokeLater cause of refreshAndGetFile method
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
+            List<VirtualFile> virtualFileList = new LinkedList<VirtualFile>();
+            for (File f : files) {
+              VirtualFile virtualFile = VFileSystem.refreshAndGetFile(f);
+              if (virtualFile != null) {
+                virtualFileList.add(virtualFile);
+              } else {
+                LOG.error("Cannot find virtual file for File " + f);
+              }
+            }
+            addInternal(virtualFileList);
           }
-        }
-        addInternal(virtualFileList);
+        });
       }
     });
     return true;
