@@ -1407,6 +1407,25 @@
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.gtext.runtime.tmp" />
   </target>
+  <target name="pack.jetbrains.mps.quickQueryLanguage">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.quickQueryLanguage.tmp" />
+    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.quickQueryLanguage.tmp/module" />
+    <mkdir dir="platform/quickQueryLanguage/classes" />
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.quickQueryLanguage.tmp/module">
+      <fileset file="platform/quickQueryLanguage/quickQueryLanguage.mpl" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.quickQueryLanguage.tmp/module">
+      <fileset dir="platform/quickQueryLanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.quickQueryLanguage.tmp">
+      <fileset dir="platform/quickQueryLanguage/classes" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.quickQueryLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.quickQueryLanguage.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.quickQueryLanguage.tmp" />
+  </target>
   <target name="pack.jetbrains.mps.ide.uiLanguage">
     <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.uiLanguage.tmp" />
