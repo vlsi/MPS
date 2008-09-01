@@ -10,10 +10,9 @@ import jetbrains.mps.smodel.action.ActionQueryMethodName;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveSTByConditionPart;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -42,46 +41,8 @@ public class QueriesGenerated {
     return ActionQueryMethodName.nodeFactory_SubstituteActionBuilder(((NodeSubstituteActionsBuilder)SNodeOperations.getAdapter(_context.getNode())));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1177331479810(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode outputConcept = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false);
-    if (outputConcept == null) {
-      _context.showWarningMessage(SNodeOperations.getParent(_context.getNode()), "output concept is not specified");
-      return "?output concept is not specified?";
-    }
-    return NameUtil.nodeFQName(outputConcept);
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1177340188447(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1177399369144(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode concept = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false);
-    if ((concept == null)) {
-      _context.showErrorMessage(_context.getNode(), "output concept is not specified");
-      return "?output concept is not specified?";
-    }
-    return NameUtil.nodeFQName(concept);
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1177404507235(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1177404645418(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "wrappedConcept", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1177441873740(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ActionQueryMethodName.nodeFactory_SideTransformActionBuilder(((SideTransformHintSubstituteActionsBuilder)SNodeOperations.getAdapter(_context.getNode())));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1177499289033(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1177509909274(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1178541129260(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -117,10 +78,6 @@ public class QueriesGenerated {
     return ActionQueryMethodName.sideTransformHintSubstituteActionsBuilder_RemoveByCondition(((RemoveSTByConditionPart)SNodeOperations.getAdapter(_context.getNode())));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1203025883846(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "concept", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1203348876735(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -139,6 +96,38 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1203068874715(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "concept", false);
+  }
+
+  public static Object referenceMacro_GetReferent_1220273696371(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "concept", false);
+  }
+
+  public static Object referenceMacro_GetReferent_1220273762488(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false);
+  }
+
+  public static Object referenceMacro_GetReferent_1220273980246(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false);
+  }
+
+  public static Object referenceMacro_GetReferent_1220274179468(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode concept = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false);
+    if ((concept == null)) {
+      _context.showErrorMessage(_context.getNode(), "output concept is not specified");
+    }
+    return concept;
+  }
+
+  public static Object referenceMacro_GetReferent_1220274221901(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "wrappedConcept", false);
+  }
+
+  public static Object referenceMacro_GetReferent_1220274244791(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode outputConcept = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "concept", false);
+    if (outputConcept == null) {
+      _context.showWarningMessage(SNodeOperations.getParent(_context.getNode()), "output concept is not specified");
+    }
+    return outputConcept;
   }
 
   public static boolean ifMacro_Condition_1177499899976(final IOperationContext operationContext, final IfMacroContext _context) {

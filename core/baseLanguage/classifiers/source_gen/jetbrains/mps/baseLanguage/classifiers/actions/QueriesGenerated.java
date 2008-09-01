@@ -15,11 +15,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
@@ -69,9 +66,9 @@ public class QueriesGenerated {
       multipleClassifiers = (Boolean)calc.calculate();
     }
     {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", operationContext.getScope());
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
       SNode childConcept = (SNode)_context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
@@ -105,7 +102,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ThisClassifierExpresson_1219068300355(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson", operationContext.getScope());
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -126,7 +123,7 @@ public class QueriesGenerated {
           }
 
           public SNode getOutputConcept() {
-            return concept.getNode();
+            return concept;
           }
 
           public String getMatchingText(String text) {

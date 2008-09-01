@@ -16,7 +16,7 @@ public class QueryFunction_SubstituteVariableInitializer_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode varDecl = SNodeOperations.getParent(thisNode, null, false, false);
+    SNode varDecl = SNodeOperations.getParent(thisNode);
     return SLinkOperations.getTarget(varDecl, "type", true);
   }
 

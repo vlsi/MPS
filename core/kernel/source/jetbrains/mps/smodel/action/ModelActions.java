@@ -18,6 +18,12 @@ public class ModelActions {
   // child substitute
   //-------------------
 
+  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter, IOperationContext context) {
+    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, (AbstractConceptDeclaration) childConcept.getAdapter(), childSetter, context);
+  }
+
+
+  @Deprecated
   public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
     return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);
   }

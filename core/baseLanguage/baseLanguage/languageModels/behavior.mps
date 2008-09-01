@@ -2118,21 +2118,16 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1215433086380" />
                     </node>
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1215433086381">
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215433086382">
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215433086383">
-                          <link role="baseMethodDeclaration" targetNodeId="16.~StatementList.getStatementsCount():int" resolveInfo="getStatementsCount" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220272657257">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220272653035">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215433086385">
+                          <link role="variableDeclaration" targetNodeId="1215433086359" resolveInfo="sl" />
                         </node>
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215433086384">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215433086385">
-                            <link role="variableDeclaration" targetNodeId="1215433086359" resolveInfo="sl" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1215433086386" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1220272656671">
+                          <link role="link" targetNodeId="1.1068581517665" />
                         </node>
                       </node>
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215433086387">
-                        <property name="value" value="0" />
-                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1220272659455" />
                     </node>
                   </node>
                   <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1215433086388">

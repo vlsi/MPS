@@ -6,12 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.dataFlow.DataFlow;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.structure.StatementList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -34,7 +33,7 @@ public class StatementList_Behavior {
       if (n != null) {
         SNode nodeToSelect;
         SNode sl = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-        if ((sl != null) && ((StatementList)SNodeOperations.getAdapter(sl)).getStatementsCount() > 0) {
+        if ((sl != null) && ListSequence.fromList(SLinkOperations.getTargets(sl, "statement", true)).isNotEmpty()) {
           SNodeOperations.getAncestor(nodeToSelect = n, "jetbrains.mps.baseLanguage.structure.Statement", true, false);
         } else
         {

@@ -133,6 +133,7 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1196942335235">
       <link role="applicableConcept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1196942363876">
+        <link role="concept" targetNodeId="1.1196943067963" resolveInfo="MPSLiteOperationExpression" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleSideTransformMenuPart" id="1196942365252">
           <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_Handler" id="1196942365253">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196942365254">

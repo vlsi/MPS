@@ -384,6 +384,7 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1197638405527">
       <link role="applicableConcept" targetNodeId="1.1197638404609" resolveInfo="Expression" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197638405528">
+        <link role="concept" targetNodeId="1.1197638404672" resolveInfo="DotExpression" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleSideTransformMenuPart" id="1197638405529">
           <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_Handler" id="1197638405530">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197638405531">
@@ -497,6 +498,7 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1197638405577">
       <link role="applicableConcept" targetNodeId="1.1197638404609" resolveInfo="Expression" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197638405578">
+        <link role="concept" targetNodeId="1.1197638404677" resolveInfo="BinaryExpression" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSideTransformMenuPart" id="1197638405579">
           <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSideTransform_Handler" id="1197638405580">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197638405581">

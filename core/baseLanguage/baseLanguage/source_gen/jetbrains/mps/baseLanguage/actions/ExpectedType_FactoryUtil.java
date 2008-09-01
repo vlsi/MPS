@@ -10,13 +10,13 @@ import jetbrains.mps.patterns.util.MatchingUtil;
 public class ExpectedType_FactoryUtil {
 
   public static boolean canComputeCastType(SNode castExpression) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(castExpression, null, false, false), "jetbrains.mps.baseLanguage.structure.TypeDerivable");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(castExpression), "jetbrains.mps.baseLanguage.structure.TypeDerivable");
   }
 
   public static SNode createExpectedType(SNode contextNode) {
     SNode castType = null;
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode, null, false, false), "jetbrains.mps.baseLanguage.structure.TypeDerivable")) {
-      castType = TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.getParent(contextNode, null, false, false), contextNode);
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.TypeDerivable")) {
+      castType = TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.getParent(contextNode), contextNode);
     }
     return castType;
   }

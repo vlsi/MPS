@@ -25,6 +25,12 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     mySetter = setter;
   }
 
+
+  public DefaultChildNodeSubstituteAction(SNode outputConcept, Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
+    this((AbstractConceptDeclaration) outputConcept.getAdapter(), parameterObject, parentNode, currentChild, setter, scope);
+  }
+
+  @Deprecated
   public DefaultChildNodeSubstituteAction(AbstractConceptDeclaration outputConcept, Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
     // parameter object is always output concept?
     super(BaseAdapter.fromAdapter(outputConcept), parameterObject, parentNode);

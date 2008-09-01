@@ -244,6 +244,16 @@ public class ChildSubstituteActionsHelper {
     return actions;
   }
 
+  public static List<INodeSubstituteAction> createDefaultActions(@NotNull SNode applicableConcept,
+                                                                 SNode parentNode,
+                                                                 SNode currentChild,
+                                                                 IChildNodeSetter setter,
+                                                                 IOperationContext operationContext) {
+    return createDefaultActions((ConceptDeclaration) applicableConcept.getAdapter(), parentNode, currentChild, setter, operationContext);
+  }
+
+
+  @Deprecated
   public static List<INodeSubstituteAction> createDefaultActions(@NotNull ConceptDeclaration applicableConcept,
                                                                  SNode parentNode,
                                                                  SNode currentChild,

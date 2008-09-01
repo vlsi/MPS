@@ -15,19 +15,15 @@ import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.ypath.constraints.FeatureTargetTypeUtil;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
@@ -101,7 +97,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_TreeNodeKindOccurrence_1175170178382(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode(), null, false, false), "jetbrains.mps.ypath.structure.MatchKindOperation");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.ypath.structure.MatchKindOperation");
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1194616749686(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -113,7 +109,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1198013650824(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode(), null, false, false), "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1198013853577(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -166,7 +162,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1180011230210(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.VisitChildrenExpression", operationContext.getScope()));
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.VisitChildrenExpression");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
@@ -176,8 +172,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_VisitParameterDeclaration_1180018851746(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.VisitParameterDeclaration", operationContext.getScope());
-      AbstractConceptDeclaration wrappedConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", operationContext.getScope());
+      SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
@@ -210,7 +205,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1180026401346(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.SwitchNodeKindStatement", operationContext.getScope()));
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.SwitchNodeKindStatement");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
@@ -220,32 +215,32 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IFeature_1184067774388(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.ListFeature", operationContext.getScope()));
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.ListFeature");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
     {
-      ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.SequenceFeature", operationContext.getScope()));
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.SequenceFeature");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
     {
-      ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.ParamListFeature", operationContext.getScope()));
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.ParamListFeature");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
     {
-      ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.ParamSequenceFeature", operationContext.getScope()));
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.ParamSequenceFeature");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
     {
-      ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeature", operationContext.getScope()));
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeature");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
     {
-      ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericParamFeature", operationContext.getScope()));
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericParamFeature");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
@@ -255,14 +250,14 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ParameterWrapper_1184768393149(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.ParameterWrapper", operationContext.getScope());
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.ParameterWrapper");
       SNode childConcept = (SNode)_context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
             SNode op = _context.getParentNode();
-            SNode tpoe = SNodeOperations.getParent(_context.getParentNode(), null, false, false);
+            SNode tpoe = SNodeOperations.getParent(_context.getParentNode());
             return FeatureTargetTypeUtil.getParameterObjects(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "nodeType", true));
           }
 
@@ -295,14 +290,14 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IAnchor_1194436439282(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.IndexAnchor", operationContext.getScope()));
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.IndexAnchor");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
     {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.ElementAnchor", operationContext.getScope());
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.ElementAnchor");
       SNode childConcept = (SNode)_context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -323,9 +318,9 @@ public class QueriesGenerated {
       }
     }
     {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.ElementAnchor", operationContext.getScope());
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.ElementAnchor");
       SNode childConcept = (SNode)_context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -351,7 +346,6 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IGenericFeatureFun_1196420410543(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
       Calculable calc = new Calculable() {
 
         public Object calculate() {
@@ -376,15 +370,15 @@ public class QueriesGenerated {
       Iterable queryResult = (Iterable)calc.calculate();
       if (queryResult != null) {
         for(Object item : queryResult) {
-          List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+          List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((SNode)item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
           result.addAll(defaultActions);
         }
       }
     }
     {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.IGenericFeatureFunFragment", operationContext.getScope());
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.IGenericFeatureFunFragment");
       SNode childConcept = (SNode)_context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
@@ -467,9 +461,9 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_GenericFeatureFunHolder_1196424373003(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeatureFunHolder", operationContext.getScope());
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeatureFunHolder");
       SNode childConcept = (SNode)_context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -490,9 +484,9 @@ public class QueriesGenerated {
       }
     }
     {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeatureFunHolder", operationContext.getScope());
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeatureFunHolder");
       SNode childConcept = (SNode)_context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -518,9 +512,9 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1196791152384(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.EmptySequenceExpression", operationContext.getScope());
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.EmptySequenceExpression");
       SNode childConcept = (SNode)_context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -552,7 +546,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1168893677147(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAdapterExpression", operationContext.getScope());
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAdapterExpression");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -573,7 +567,7 @@ public class QueriesGenerated {
           }
 
           public SNode getOutputConcept() {
-            return concept.getNode();
+            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -597,7 +591,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_TreeNodeKindOccurrence_1175164446140(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.MatchPropertyOperation", operationContext.getScope());
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.MatchPropertyOperation");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -619,7 +613,7 @@ public class QueriesGenerated {
 
           public SNode doSubstitute(String pattern) {
             SNode tnko = _context.getSourceNode();
-            SNode mko = SNodeOperations.getParent(tnko, null, false, false);
+            SNode mko = SNodeOperations.getParent(tnko);
             SNode mpo = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.ypath.structure.MatchPropertyOperation", null);
             SNodeOperations.replaceWithAnother(mko, mpo);
             SLinkOperations.setTarget(SLinkOperations.getTarget(mpo, "nodeKindOccurrence", true), "nodeKind", SLinkOperations.getTarget(tnko, "nodeKind", false), false);
@@ -628,7 +622,7 @@ public class QueriesGenerated {
           }
 
           public SNode getOutputConcept() {
-            return concept.getNode();
+            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -652,8 +646,8 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1194616742213(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
-      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode res = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.IsWithinRangeExpression");
@@ -676,8 +670,8 @@ public class QueriesGenerated {
       });
     }
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
-      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode res = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.IsAtInsertionPointExpression");
@@ -700,8 +694,8 @@ public class QueriesGenerated {
       });
     }
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", operationContext.getScope());
-      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode res = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.NextElementStatement");
@@ -729,14 +723,14 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_IFeature_1197904809758(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.IFeature", operationContext.getScope());
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.IFeature");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
           List<Pair> res = ListSequence.<Pair>fromArray();
           final SNode srcNode = _context.getSourceNode();
           final boolean isGeneric = SNodeOperations.isInstanceOf(srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
-          for(SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(srcNode, null, false, false), "features", true)).where(new IWhereFilter <SNode>() {
+          for(SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(srcNode), "features", true)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
               return it != srcNode && ((isGeneric ?
@@ -766,7 +760,7 @@ public class QueriesGenerated {
           }
 
           public SNode getOutputConcept() {
-            return concept.getNode();
+            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -800,7 +794,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1198013650231(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression", operationContext.getScope());
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -860,7 +854,7 @@ public class QueriesGenerated {
           }
 
           public SNode getOutputConcept() {
-            return concept.getNode();
+            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -915,8 +909,8 @@ public class QueriesGenerated {
       }
     }
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression", operationContext.getScope());
-      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode tpoExp = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
@@ -940,7 +934,7 @@ public class QueriesGenerated {
       });
     }
     {
-      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression", operationContext.getScope());
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -969,7 +963,7 @@ public class QueriesGenerated {
           }
 
           public SNode getOutputConcept() {
-            return concept.getNode();
+            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -988,7 +982,7 @@ public class QueriesGenerated {
       }
     }
     {
-      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression", operationContext.getScope());
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -1016,11 +1010,11 @@ public class QueriesGenerated {
           }
 
           public SNode getOutputConcept() {
-            return concept.getNode();
+            return concept;
           }
 
           public String getMatchingText(String text) {
-            return "[[ " + SPropertyOperations.getString(SNodeOperations.getParent((item), null, false, false), "name") + "." + SPropertyOperations.getString((item), "name");
+            return "[[ " + SPropertyOperations.getString(SNodeOperations.getParent((item)), "name") + "." + SPropertyOperations.getString((item), "name");
           }
 
           public String getVisibleMatchingText(String text) {
@@ -1043,7 +1037,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return SNodeOperations.getParent(_context.getSourceNode(), null, false, false);
+          return SNodeOperations.getParent(_context.getSourceNode());
         }
 
       };
@@ -1059,7 +1053,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return SNodeOperations.getParent(_context.getSourceNode(), null, false, false);
+          return SNodeOperations.getParent(_context.getSourceNode());
         }
 
       };
@@ -1075,7 +1069,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return SNodeOperations.getParent(_context.getSourceNode(), null, false, false);
+          return SNodeOperations.getParent(_context.getSourceNode());
         }
 
       };
@@ -1088,7 +1082,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1198013853576(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression", operationContext.getScope());
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -1148,7 +1142,7 @@ public class QueriesGenerated {
           }
 
           public SNode getOutputConcept() {
-            return concept.getNode();
+            return concept;
           }
 
           public String getMatchingText(String text) {
