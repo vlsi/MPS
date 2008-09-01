@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class GivetypeStatement_Editor extends DefaultNodeEditor {
 
@@ -229,7 +230,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor0808_0(EditorCell cell) {
     Color result;
-    result = Color.red;
+    result = MPSColors.red;
     return result;
   }
 

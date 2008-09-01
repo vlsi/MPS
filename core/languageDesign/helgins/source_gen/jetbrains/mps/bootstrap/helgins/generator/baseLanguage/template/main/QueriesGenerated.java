@@ -15,8 +15,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
 import jetbrains.mps.bootstrap.helgins.behavior.FindSourceBlock_Behavior;
@@ -24,6 +22,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.bootstrap.smodelLanguage.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.bootstrap.helgins.structure.InferenceRule;
 import jetbrains.mps.bootstrap.helgins.structure.SubtypingRule;
 import java.util.ArrayList;
@@ -687,8 +686,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
     SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(rule, "mainMethodForRule");
-    InstanceMethodDeclaration method_ = (InstanceMethodDeclaration)BaseAdapter.fromNode(method);
-    return method_.getParameters().get(0).getNode();
+    return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1174916691301(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -841,8 +839,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1188902489150(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
     SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(rule, "mainMethodForRule");
-    InstanceMethodDeclaration method_ = (InstanceMethodDeclaration)BaseAdapter.fromNode(method);
-    return method_.getParameters().get(1).getNode();
+    return ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).toListSequence()).getElement(1);
   }
 
   public static Object referenceMacro_GetReferent_1195214710279(final IOperationContext operationContext, final ReferenceMacroContext _context) {
