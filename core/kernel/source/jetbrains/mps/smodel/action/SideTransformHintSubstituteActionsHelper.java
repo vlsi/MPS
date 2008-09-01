@@ -1,6 +1,8 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.actionsLanguage.structure.*;
+import jetbrains.mps.bootstrap.actionsLanguage.behavior.SideTransformHintSubstituteActionsBuilder_Behavior;
+import jetbrains.mps.bootstrap.actionsLanguage.behavior.RemoveSTByConditionPart_Behavior;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
@@ -131,7 +133,7 @@ public class SideTransformHintSubstituteActionsHelper {
   }
 
   private void invokeRemoveByCondition(RemoveSTByConditionPart removeByCondition, Iterator<INodeSubstituteAction> actions) {
-    String methodName = ActionQueryMethodName.sideTransformHintSubstituteActionsBuilder_RemoveByCondition(removeByCondition);
+    String methodName = RemoveSTByConditionPart_Behavior.call_getQueryMethodName_1220279474449(removeByCondition.getNode());
     try {
       QueryMethodGenerated.invoke(methodName, myContext, new RemoveSideTransformActionByConditionContext(actions, mySourceNode), removeByCondition.getModel());
     } catch (Throwable t) {
@@ -144,7 +146,7 @@ public class SideTransformHintSubstituteActionsHelper {
     SideTransformHintSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
     // precondition is optional
     if (precondition != null) {
-      String methodName = ActionQueryMethodName.sideTransformHintSubstituteActionsBuilder_Precondition(actionsBuilder);
+      String methodName = SideTransformHintSubstituteActionsBuilder_Behavior.call_getPreconditionQueryMethodName_1220279571415(actionsBuilder.getNode());
       SModel model = actionsBuilder.getModel();
       try {
         return (Boolean) QueryMethodGenerated.invoke(methodName, myContext, new SideTransformPreconditionContext(mySourceNode), model);
@@ -158,7 +160,7 @@ public class SideTransformHintSubstituteActionsHelper {
   }
 
   private List<INodeSubstituteAction> invokeActionFactory(SideTransformHintSubstituteActionsBuilder substituteActionsBuilder) {
-    String methodName = ActionQueryMethodName.nodeFactory_SideTransformActionBuilder(substituteActionsBuilder);
+    String methodName = SideTransformHintSubstituteActionsBuilder_Behavior.call_getBuilderQueryMethodName_1220279234749(substituteActionsBuilder.getNode());
     SModel model = substituteActionsBuilder.getModel();
     try {
       return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, myContext, new SideTransformActionsBuilderContext(mySourceNode, mySourceNode.getModel(), null), model);

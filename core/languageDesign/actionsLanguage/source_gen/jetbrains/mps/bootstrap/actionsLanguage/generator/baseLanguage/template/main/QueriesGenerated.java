@@ -6,12 +6,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.action.ActionQueryMethodName;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder;
+import jetbrains.mps.bootstrap.actionsLanguage.behavior.NodeFactory_Behavior;
+import jetbrains.mps.bootstrap.actionsLanguage.behavior.NodeSubstituteActionsBuilder_Behavior;
+import jetbrains.mps.bootstrap.actionsLanguage.behavior.SideTransformHintSubstituteActionsBuilder_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveSTByConditionPart;
+import jetbrains.mps.bootstrap.actionsLanguage.behavior.RemoveSTByConditionPart_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -24,25 +23,25 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1172253035856(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode nodeFactory = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory", false, false);
-    return ActionQueryMethodName.nodeFactory_NodeSetupFunction(((NodeFactory)SNodeOperations.getAdapter(nodeFactory)));
+    return NodeFactory_Behavior.call_getQueryMethodName_1220279061997(nodeFactory);
   }
 
   public static Object propertyMacro_GetPropertyValue_1172253230032(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode builder = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", false, false);
-    return ActionQueryMethodName.nodeSubstituteActionsBuilder_Precondition(((NodeSubstituteActionsBuilder)SNodeOperations.getAdapter(builder)));
+    return NodeSubstituteActionsBuilder_Behavior.call_getPreconditionQueryMethodName_1220278671791(builder);
   }
 
   public static Object propertyMacro_GetPropertyValue_1172253315888(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode builder = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder", false, false);
-    return ActionQueryMethodName.sideTransformHintSubstituteActionsBuilder_Precondition(((SideTransformHintSubstituteActionsBuilder)SNodeOperations.getAdapter(builder)));
+    return SideTransformHintSubstituteActionsBuilder_Behavior.call_getPreconditionQueryMethodName_1220279571415(builder);
   }
 
   public static Object propertyMacro_GetPropertyValue_1177328723627(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ActionQueryMethodName.nodeFactory_SubstituteActionBuilder(((NodeSubstituteActionsBuilder)SNodeOperations.getAdapter(_context.getNode())));
+    return NodeSubstituteActionsBuilder_Behavior.call_getBuilderQueryMethodName_1220278926652(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1177441873740(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ActionQueryMethodName.nodeFactory_SideTransformActionBuilder(((SideTransformHintSubstituteActionsBuilder)SNodeOperations.getAdapter(_context.getNode())));
+    return SideTransformHintSubstituteActionsBuilder_Behavior.call_getBuilderQueryMethodName_1220279234749(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1178541129260(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -75,7 +74,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1197457082670(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ActionQueryMethodName.sideTransformHintSubstituteActionsBuilder_RemoveByCondition(((RemoveSTByConditionPart)SNodeOperations.getAdapter(_context.getNode())));
+    return RemoveSTByConditionPart_Behavior.call_getQueryMethodName_1220279474449(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1203348876735(final IOperationContext operationContext, final PropertyMacroContext _context) {

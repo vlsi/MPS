@@ -1,15 +1,14 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.actionsLanguage.structure.*;
+import jetbrains.mps.bootstrap.actionsLanguage.behavior.NodeSubstituteActionsBuilder_Behavior;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
@@ -371,7 +370,7 @@ public class ChildSubstituteActionsHelper {
     NodeSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
     // precondition is optional
     if (precondition != null) {
-      String methodName = ActionQueryMethodName.nodeSubstituteActionsBuilder_Precondition(actionsBuilder);
+      String methodName = NodeSubstituteActionsBuilder_Behavior.call_getPreconditionQueryMethodName_1220278671791(actionsBuilder.getNode());
 
 
       SModel model = actionsBuilder.getModel();
@@ -434,7 +433,7 @@ public class ChildSubstituteActionsHelper {
   }
 
   private static List<INodeSubstituteAction> invokeActionFactory(NodeSubstituteActionsBuilder builder, SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
-    String methodName = ActionQueryMethodName.nodeFactory_SubstituteActionBuilder(builder);
+    String methodName = NodeSubstituteActionsBuilder_Behavior.call_getBuilderQueryMethodName_1220278926652(builder.getNode());
     try {
       return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactoryContext(parentNode, currentChild, childConcept.getNode(), childSetter), builder.getModel());
     } catch (Throwable t) {

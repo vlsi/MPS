@@ -3,6 +3,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactories;
+import jetbrains.mps.bootstrap.actionsLanguage.behavior.NodeFactory_Behavior;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
@@ -113,7 +114,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     NodeSetupFunction setupFunction = factory.getSetupFunction();
     if (setupFunction == null) return;
 
-    String methodName = ActionQueryMethodName.nodeFactory_NodeSetupFunction(factory);
+    String methodName = NodeFactory_Behavior.call_getQueryMethodName_1220279061997(factory.getNode());
 //    Object[] args = new Object[]{newNode, sampleNode, enclosingNode, model};
     try {
       //todo pass IOperationContext here somehow
