@@ -14,7 +14,6 @@
       <dependencies>
         <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
         <dependency reexport="false">MPS.Classpath</dependency>
-        <dependency reexport="false">jetbrains.mps.quickQueryLanguage.sandbox</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>
