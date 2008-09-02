@@ -1485,23 +1485,6 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1177763579359">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227959488">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227865763">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1177763579360">
-                      <link role="variableDeclaration" targetNodeId="1177681080340" resolveInfo="result" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1177763582378">
-                      <link role="property" targetNodeId="1.1079353555534" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1177763585287">
-                    <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1177763587837">
-                      <link role="enumMember" targetNodeId="1.1083928804392" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177681080345">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1177681080346">
                   <link role="variableDeclaration" targetNodeId="1177681080340" resolveInfo="result" />

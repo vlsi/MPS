@@ -403,7 +403,6 @@ public class QueriesGenerated {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "editable", "false");
             return result;
           }
 

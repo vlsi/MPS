@@ -364,48 +364,6 @@
       <property name="role" value="focusPolicyApplicable" />
       <link role="target" targetNodeId="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1073389214266">
-      <property name="name" value="selectable" />
-      <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="1083928804390" resolveInfo="_YesNoDefault_Enum" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1101478251453">
-      <property name="name" value="drawBrackets" />
-      <link role="dataType" targetNodeId="1083928804390" resolveInfo="_YesNoDefault_Enum" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1078832671094">
-      <property name="name" value="drawBorder" />
-      <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="1083928804390" resolveInfo="_YesNoDefault_Enum" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1130426512758">
-      <property name="name" value="fontStyle" />
-      <link role="dataType" targetNodeId="1101211480448" resolveInfo="_FontStyle_Enum" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1130426512759">
-      <property name="name" value="fontSize" />
-      <link role="dataType" targetNodeId="3.1082983657062" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1130836394969">
-      <property name="name" value="underlined" />
-      <link role="dataType" targetNodeId="1130847686886" resolveInfo="UnderlineStyle" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1129573164669">
-      <property name="name" value="layoutConstraint" />
-      <link role="dataType" targetNodeId="1138197387103" resolveInfo="_Layout_Constraints_Enum" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1140813989553">
-      <property name="name" value="rightTransformAnchorTag" />
-      <link role="dataType" targetNodeId="1140813780565" resolveInfo="RightTransformAnchorTag" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1102623213256">
-      <property name="name" value="bracketsColor" />
-      <link role="dataType" targetNodeId="1083952545109" resolveInfo="_Colors_Enum" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1139312911783">
-      <property name="name" value="cellBackground" />
-      <link role="dataType" targetNodeId="1083952545109" resolveInfo="_Colors_Enum" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1130859485024">
       <property name="name" value="attractsFocus" />
       <link role="dataType" targetNodeId="1130926557197" resolveInfo="FocusPolicy" />
@@ -673,29 +631,6 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1119646130993">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1079353555534">
-      <property name="name" value="editable" />
-      <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="1083928804390" resolveInfo="_YesNoDefault_Enum" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1101205477408">
-      <property name="name" value="textFgColor" />
-      <link role="dataType" targetNodeId="1083952545109" resolveInfo="_Colors_Enum" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1185888375088">
-      <property name="name" value="textFgColorEmpty" />
-      <link role="dataType" targetNodeId="1083952545109" resolveInfo="_Colors_Enum" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1079354087578">
-      <property name="name" value="textBgColor" />
-      <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="1083952545109" resolveInfo="_Colors_Enum" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1079354108907">
-      <property name="name" value="textBgColorSelected" />
-      <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="1083952545109" resolveInfo="_Colors_Enum" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197893615481">
       <property name="name" value="defaultCaretPosition" />
