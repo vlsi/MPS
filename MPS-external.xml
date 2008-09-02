@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="MPS-external" default="main">
+  <property file="./MPS.properties" />
   <import file="MPS-languages.xml" />
   <import file="MPS-multistep.xml" />
   <import file="build-helpers.xml" />
-  <property file="./MPS.properties" />
+  <fail unless="build.number" message="Property build.number unspecified." />
+  <fail unless="build.vcs.number" message="Property build.vcs.number unspecified." />
+  <fail unless="teamcity.buildConfName" message="Property teamcity.buildConfName unspecified." />
   <target name="main" depends="compile,clean.before,folders.create,do.the.job,clean.after" />
   <target name="compile" />
   <target name="clean.before" depends="compile">
@@ -70,9 +73,6 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/log" />
   </target>
   <target name="do.the.job" depends="folders.create">
-    <fail unless="build.number" message="Property build.number unspecified." />
-    <fail unless="build.vcs.number" message="Property build.vcs.number unspecified." />
-    <fail unless="teamcity.buildConfName" message="Property teamcity.buildConfName unspecified." />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/Contents">
       <fileset dir="build/Contents" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
