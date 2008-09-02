@@ -729,6 +729,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.SELECTABLE, true);
             this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }
 
         };

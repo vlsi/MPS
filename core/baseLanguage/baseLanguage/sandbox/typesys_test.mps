@@ -66,6 +66,12 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201449247988" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1220348524937">
+      <property name="name" value="" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1220348524938" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220348524939" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220348524940" />
+    </node>
   </node>
 </model>
 
