@@ -34,7 +34,6 @@
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="5" modelUID="java.lang@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.util@java_stub" version="-1" />
-  <import index="10" modelUID="jetbrains.mps.bootstrap.editorLanguage@java_stub" version="-1" />
   <import index="11" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.behavior" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1119639069735">

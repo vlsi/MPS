@@ -35,7 +35,6 @@
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.bootstrap.editorLanguage.behavior" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
-  <import index="6" modelUID="jetbrains.mps.bootstrap.editorLanguage@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.editorLanguage.cellProviders@java_stub" version="-1" />
   <import index="9" modelUID="jetbrains.mps.nodeEditor.cellProviders@java_stub" version="-1" />

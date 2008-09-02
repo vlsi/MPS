@@ -2128,7 +2128,6 @@
   <import index="5" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints@java_stub" version="-1" />
   <import index="13" modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <import index="14" modelUID="jetbrains.mps.bootstrap.editorLanguage@java_stub" version="-1" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="17" modelUID="java.lang@java_stub" version="-1" />
