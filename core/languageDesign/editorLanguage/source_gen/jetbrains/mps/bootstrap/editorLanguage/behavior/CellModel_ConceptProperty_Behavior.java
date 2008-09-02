@@ -20,4 +20,12 @@ public class CellModel_ConceptProperty_Behavior {
     return ConceptPropertyDeclaration_Behavior.call_getCellId_1216822989252(SLinkOperations.getTarget(thisNode, "relationDeclaration", false));
   }
 
+  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
+    return "{{";
+  }
+
+  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
+    return "}}";
+  }
+
 }

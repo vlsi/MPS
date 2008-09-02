@@ -20,8 +20,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.editorLanguage.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.MPSColors;
 
@@ -2190,11 +2189,11 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition6752_0(SNode node, EditorContext editorContext, IScope scope) {
-    return EditorCellTags.getOpeningText(((CellModel_Constant)SNodeOperations.getAdapter(node))).length() > 0;
+    return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
   }
 
   public static boolean renderingCondition6752_1(SNode node, EditorContext editorContext, IScope scope) {
-    return EditorCellTags.getOpeningText(((CellModel_Constant)SNodeOperations.getAdapter(node))).length() > 0;
+    return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
   }
 
   public static boolean renderingCondition6752_2(SNode node, EditorContext editorContext, IScope scope) {

@@ -19,4 +19,12 @@ public class CellModel_RefCell_Behavior {
     return "refCell_" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "role");
   }
 
+  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
+    return "(";
+  }
+
+  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
+    return ")";
+  }
+
 }

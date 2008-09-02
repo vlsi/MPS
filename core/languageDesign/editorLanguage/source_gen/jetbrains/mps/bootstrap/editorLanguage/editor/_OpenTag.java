@@ -10,8 +10,7 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
-import jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.editorLanguage.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
@@ -46,7 +45,7 @@ public class _OpenTag extends AbstractCellProvider {
     return new ModelAccessor() {
 
       public String getText() {
-        return EditorCellTags.getOpeningText(((EditorCellModel)SNodeOperations.getAdapter(node)));
+        return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node);
       }
 
       public void setText(String text) {

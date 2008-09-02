@@ -4,23 +4,28 @@ package jetbrains.mps.bootstrap.editorLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
-public class CellModel_RefNodeList_Behavior {
+public class CellModel_Collection_Behavior {
 
   public static void init(SNode thisNode) {
   }
 
-  public static String virtual_getCellId_1216737839993(SNode thisNode) {
-    return "refNodeList_" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "role");
-  }
-
   public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    return "(>";
+    if (SPropertyOperations.getBoolean(thisNode, "vertical")) {
+      return "[/";
+    } else
+    {
+      return "[>";
+    }
   }
 
   public static String virtual_getClosingText_1220339738643(SNode thisNode) {
-    return "<)";
+    if (SPropertyOperations.getBoolean(thisNode, "vertical")) {
+      return "/]";
+    } else
+    {
+      return "<]";
+    }
   }
 
 }

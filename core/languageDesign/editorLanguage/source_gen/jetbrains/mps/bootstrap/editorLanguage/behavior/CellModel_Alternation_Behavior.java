@@ -4,21 +4,17 @@ package jetbrains.mps.bootstrap.editorLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 
-public class CellModel_NonEmptyProperty_Behavior {
+public class CellModel_Alternation_Behavior {
 
   public static void init(SNode thisNode) {
   }
 
-  public static String virtual_getCellProviderClassName_1216378357889(SNode thisNode) {
-    return "jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider";
-  }
-
   public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    return "{+";
+    return "(if";
   }
 
   public static String virtual_getClosingText_1220339738643(SNode thisNode) {
-    return "+}";
+    return "if)";
   }
 
 }

@@ -20,4 +20,12 @@ public class CellModel_Property_Behavior {
     return PropertyDeclaration_Behavior.call_getCellId_1216822951265(SLinkOperations.getTarget(thisNode, "relationDeclaration", false));
   }
 
+  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
+    return "{";
+  }
+
+  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
+    return "}";
+  }
+
 }

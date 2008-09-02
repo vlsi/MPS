@@ -15,4 +15,12 @@ public class CellModel_Component_Behavior {
     return "component_" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "editorComponent", false), "name");
   }
 
+  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
+    return "#";
+  }
+
+  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
+    return "#";
+  }
+
 }

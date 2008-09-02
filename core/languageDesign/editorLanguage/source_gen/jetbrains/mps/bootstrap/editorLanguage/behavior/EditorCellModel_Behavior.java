@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EditorCellModel_Behavior {
   public static Class[] PARAMETERS_1216737839993 = {SNode.class};
+  public static Class[] PARAMETERS_1220339714057 = {SNode.class};
+  public static Class[] PARAMETERS_1220339738643 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -48,12 +50,68 @@ public class EditorCellModel_Behavior {
     return SPropertyOperations.getBoolean(firstItem, "flag");
   }
 
+  public static String call_getOpeningTag_1220340471382(SNode thisNode) {
+    return EditorCellModel_Behavior.call_getOpeningPrefix_1220340126255(thisNode) + EditorCellModel_Behavior.call_getOpeningText_1220339714057(thisNode);
+  }
+
+  public static String call_getClosingTag_1220340488560(SNode thisNode) {
+    return EditorCellModel_Behavior.call_getClosingText_1220339738643(thisNode);
+  }
+
+  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
+    return "";
+  }
+
+  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
+    return "";
+  }
+
+  public static String call_getOpeningPrefix_1220340126255(SNode thisNode) {
+    String result = "";
+    if ((SLinkOperations.getTarget(thisNode, "renderingCondition", true) != null)) {
+      result += "?";
+    }
+    boolean hasActionStuff = false;
+    if ((SLinkOperations.getTarget(thisNode, "menuDescriptor", true) != null) || (SLinkOperations.getTarget(thisNode, "keyMap", false) != null) || (SLinkOperations.getTarget(thisNode, "actionMap", false) != null)) {
+      hasActionStuff = true;
+    }
+    if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList") && (SLinkOperations.getTarget(thisNode, "elementMenuDescriptor", true) != null)) {
+      hasActionStuff = true;
+    }
+    if (hasActionStuff) {
+      result += "^";
+    }
+    if (SPropertyOperations.hasValue(thisNode, "attractsFocus", "1", "0")) {
+      result += "F";
+    }
+    if (SPropertyOperations.hasValue(thisNode, "attractsFocus", "2", "0")) {
+      result += "FE";
+    }
+    return result;
+  }
+
   public static String call_getCellId_1216737839993(SNode thisNode) {
     return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getCellId_1216737839993", PARAMETERS_1216737839993);
   }
 
+  public static String call_getOpeningText_1220339714057(SNode thisNode) {
+    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getOpeningText_1220339714057", PARAMETERS_1220339714057);
+  }
+
+  public static String call_getClosingText_1220339738643(SNode thisNode) {
+    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getClosingText_1220339738643", PARAMETERS_1220339738643);
+  }
+
   public static String callSuper_getCellId_1216737839993(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getCellId_1216737839993", PARAMETERS_1216737839993);
+  }
+
+  public static String callSuper_getOpeningText_1220339714057(SNode thisNode, String callerConceptFqName) {
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getOpeningText_1220339714057", PARAMETERS_1220339714057);
+  }
+
+  public static String callSuper_getClosingText_1220339738643(SNode thisNode, String callerConceptFqName) {
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getClosingText_1220339738643", PARAMETERS_1220339738643);
   }
 
 }

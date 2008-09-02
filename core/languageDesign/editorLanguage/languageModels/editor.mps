@@ -1961,6 +1961,7 @@
       </node>
     </node>
   </node>
+  <visible index="3" modelUID="jetbrains.mps.bootstrap.editorLanguage.behavior" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1080742754453">
     <property name="name" value="CellModel_Constant_Editor" />
     <property name="package" value="CellModel" />
@@ -1972,20 +1973,18 @@
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1176717081541">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176717081542">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176717082035">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1176717082036">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1176717082037">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1220340514832">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220340514976">
                   <property name="value" value="0" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207872475553">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176717082039">
-                    <link role="classConcept" targetNodeId="13.~EditorCellTags" resolveInfo="EditorCellTags" />
-                    <link role="baseMethodDeclaration" targetNodeId="13.~EditorCellTags.getOpeningText(jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel):java.lang.String" resolveInfo="getOpeningText" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721614">
-                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176717082042" />
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176717082041" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220340512690">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220340510123">
+                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1220340509747" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1220340512330">
+                      <link role="conceptMethodDeclaration" targetNodeId="3v.1220340471382" resolveInfo="getOpeningTag" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207872475554">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220340513691">
                     <link role="baseMethodDeclaration" targetNodeId="14.~String.length():int" resolveInfo="length" />
                   </node>
                 </node>
@@ -2026,20 +2025,18 @@
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1176717095123">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176717095124">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176717095680">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1176717095681">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1176717095682">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1220340534768">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220340534896">
                   <property name="value" value="0" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207872475512">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176717095684">
-                    <link role="classConcept" targetNodeId="13.~EditorCellTags" resolveInfo="EditorCellTags" />
-                    <link role="baseMethodDeclaration" targetNodeId="13.~EditorCellTags.getOpeningText(jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel):java.lang.String" resolveInfo="getOpeningText" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721374">
-                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176717095687" />
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176717095686" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220340529827">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220340526682">
+                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1220340526353" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1220340529123">
+                      <link role="conceptMethodDeclaration" targetNodeId="3v.1220340471382" resolveInfo="getOpeningTag" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207872475528">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220340533861">
                     <link role="baseMethodDeclaration" targetNodeId="14.~String.length():int" resolveInfo="length" />
                   </node>
                 </node>
@@ -9678,12 +9675,10 @@
         <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1176718832707">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176718832708">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176718836838">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176718844748">
-                <link role="baseMethodDeclaration" targetNodeId="13.~EditorCellTags.getOpeningText(jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel):java.lang.String" resolveInfo="getOpeningText" />
-                <link role="classConcept" targetNodeId="13.~EditorCellTags" resolveInfo="EditorCellTags" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721559">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176718846155" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176718849783" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220340552805">
+                <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1220340552491" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1220340556480">
+                  <link role="conceptMethodDeclaration" targetNodeId="3v.1220340471382" resolveInfo="getOpeningTag" />
                 </node>
               </node>
             </node>
@@ -9731,13 +9726,11 @@
       <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1176718766209">
         <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1176718766210">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176718766211">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176718810894">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176718817382">
-                <link role="baseMethodDeclaration" targetNodeId="13.~EditorCellTags.getClosingText(jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel):java.lang.String" resolveInfo="getClosingText" />
-                <link role="classConcept" targetNodeId="13.~EditorCellTags" resolveInfo="EditorCellTags" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721397">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176718818946" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176718822267" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1220340578159">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220340582243">
+                <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1220340582211" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1220340585418">
+                  <link role="conceptMethodDeclaration" targetNodeId="3v.1220340488560" resolveInfo="getClosingTag" />
                 </node>
               </node>
             </node>
@@ -9995,7 +9988,6 @@
       </node>
     </node>
   </node>
-  <visible index="3" modelUID="jetbrains.mps.bootstrap.editorLanguage.behavior" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1176888877514">
     <property name="name" value="_EditorUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1176888881562">
