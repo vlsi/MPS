@@ -1937,6 +1937,13 @@
         </node>
       </node>
     </node>
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1220341442318">
+      <property name="description" value="find adapters" />
+      <link role="affectedInstanceConcept" targetNodeId="23.1170384605257" resolveInfo="Node_GetAdapterOperation" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1220341442319">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220341442320" />
+      </node>
+    </node>
   </node>
 </model>
 

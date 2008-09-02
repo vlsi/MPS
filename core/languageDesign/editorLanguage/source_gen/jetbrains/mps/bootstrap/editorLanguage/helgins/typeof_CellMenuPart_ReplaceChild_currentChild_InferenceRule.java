@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.editorLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.editorLanguage.CellMenuUtil;
+import jetbrains.mps.bootstrap.editorLanguage.behavior.CellMenuUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -26,7 +26,7 @@ public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule impleme
     }
     {
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().reportTypeError(node, "couldn't define concept of child node", "jetbrains.mps.bootstrap.editorLanguage.helgins@3_0", "1219419144294", intentionProvider);
+      TypeChecker.getInstance().reportTypeError(node, "couldn't define concept of child node", "jetbrains.mps.bootstrap.editorLanguage.helgins@3_0", "1220343130280", intentionProvider);
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_4().createNode(), node, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1179766709137");
   }

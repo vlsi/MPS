@@ -36,6 +36,7 @@
   <import index="7" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.bootstrap.editorLanguage@java_stub" version="-1" />
   <import index="11" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  <visible index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.behavior" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1119639069735">
     <property name="name" value="EDTL_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1199894656684">
@@ -46,10 +47,10 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199894698984">
               <property name="name" value="editedFeature" />
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1199894698985" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1199894728585">
-                <link role="classConcept" targetNodeId="10.~CellMenuUtil" resolveInfo="CellMenuUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="10.~CellMenuUtil.getEditedFeature(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getEditedFeature" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1199894729584" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220342574676">
+                <link role="baseMethodDeclaration" targetNodeId="2v.1220342512429" resolveInfo="getEditedFeature" />
+                <link role="classConcept" targetNodeId="2v.1220342505672" resolveInfo="CellMenuUtil" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1220342575364" />
               </node>
             </node>
           </node>
@@ -82,10 +83,10 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199894948634">
               <property name="name" value="editedFeature" />
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1199894948635" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1199894948636">
-                <link role="classConcept" targetNodeId="10.~CellMenuUtil" resolveInfo="CellMenuUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="10.~CellMenuUtil.getEditedFeature(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getEditedFeature" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1199894948637" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220342594073">
+                <link role="baseMethodDeclaration" targetNodeId="2v.1220342512429" resolveInfo="getEditedFeature" />
+                <link role="classConcept" targetNodeId="2v.1220342505672" resolveInfo="CellMenuUtil" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1220342595230" />
               </node>
             </node>
           </node>
@@ -135,10 +136,10 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199895015799">
               <property name="name" value="editedFeature" />
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1199895015800" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1199895015801">
-                <link role="classConcept" targetNodeId="10.~CellMenuUtil" resolveInfo="CellMenuUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="10.~CellMenuUtil.getEditedFeature(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getEditedFeature" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1199895015802" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220342584616">
+                <link role="baseMethodDeclaration" targetNodeId="2v.1220342512429" resolveInfo="getEditedFeature" />
+                <link role="classConcept" targetNodeId="2v.1220342505672" resolveInfo="CellMenuUtil" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1220342585820" />
               </node>
             </node>
           </node>
@@ -471,7 +472,6 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.behavior" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1177585757706">
     <property name="name" value="custom_actions" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1177585776510">

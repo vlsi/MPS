@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.editorLanguage.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.editorLanguage.CellMenuUtil;
+import jetbrains.mps.bootstrap.editorLanguage.behavior.CellMenuUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
