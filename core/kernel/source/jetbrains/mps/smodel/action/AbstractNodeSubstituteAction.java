@@ -94,14 +94,6 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   }
 
   public Icon getIconFor(String pattern, boolean referent_presentation) {
-//    if (getOutputConcept() != null && getOutputConcept().getAdapter() instanceof ConceptDeclaration) {
-//      return IconManager.getIconFor((ConceptDeclaration) getOutputConcept().getAdapter());
-//    }
-//    if (getParameterObject() instanceof SNode) {
-//      return IconManager.getIconFor((SNode) getParameterObject());
-//    }
-//
-//    return null;
     if (myParameterObject instanceof SNode) {
       return NodePresentationUtil.getIcon((SNode) myParameterObject, referent_presentation);
     }
@@ -155,7 +147,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
           cell.end();
         }
       } else {
-        context.selectWRTFocusPolicy(newNode, false);
+        context.selectWRTFocusPolicy(newNode, true);
       }
     }
     return newNode;
