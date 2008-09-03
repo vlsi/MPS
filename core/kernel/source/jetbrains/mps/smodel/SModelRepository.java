@@ -76,28 +76,28 @@ public class SModelRepository implements ApplicationComponent {
     return myCanonicalPathsToModelDescriptorMap.get(canonicalPath);
   }
 
-  public void addModelRepositoryListener(SModelRepositoryListener l) {
+  public void addModelRepositoryListener(@NotNull SModelRepositoryListener l) {
     mySModelRepositoryListeners.add(l);
   }
 
-  public void addWeakModelRepositoryListener(SModelRepositoryListener l) {
+  public void addWeakModelRepositoryListener(@NotNull SModelRepositoryListener l) {
     myWeakSModelRepositoryListeners.add(l);
   }
 
-  public void removeModelRepositoryListener(SModelRepositoryListener l) {
+  public void removeModelRepositoryListener(@NotNull SModelRepositoryListener l) {
     mySModelRepositoryListeners.remove(l);
     myWeakSModelRepositoryListeners.remove(l);
   }
 
-  public void addWeakAllModelsListener(SModelListener listener){
+  public void addWeakAllModelsListener(@NotNull SModelListener listener){
     myWeakAllModelsListeners.add(listener);
   }
 
-  public void addAllModelsListener(SModelListener listener){
+  public void addAllModelsListener(@NotNull SModelListener listener){
     myAllModelsListeners.add(listener);
   }
 
-  public void removeAllModelsListener(SModelListener listener){
+  public void removeAllModelsListener(@NotNull SModelListener listener){
     myAllModelsListeners.remove(listener);
     myWeakAllModelsListeners.remove(listener);
   }
