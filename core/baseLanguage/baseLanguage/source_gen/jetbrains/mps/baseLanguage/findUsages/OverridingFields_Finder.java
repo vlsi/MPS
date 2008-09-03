@@ -31,7 +31,7 @@ public class OverridingFields_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    if (SNodeOperations.getParent(node, null, false, false) == null || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+    if (SNodeOperations.getParent(node) == null || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
       return false;
     }
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
@@ -41,7 +41,7 @@ public class OverridingFields_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    for(SNode classNode : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope, indicator)) {
+    for(SNode classNode : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node), scope, indicator)) {
       Iterable<SNode> fieldsOfSameKind;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
         fieldsOfSameKind = SLinkOperations.getTargets(classNode, "field", true);
@@ -55,10 +55,6 @@ public class OverridingFields_Finder extends GeneratedFinder {
         }
       }
     }
-  }
-
-  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
-    ListOperations.addElement(_results, node);
   }
 
   public String getNodeCategory(SNode node) {

@@ -29,16 +29,12 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     for(SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", node, scope, indicator)) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) {
-          ListOperations.addElement(_results, SNodeOperations.getParent(nodeUsage, null, false, false));
+          ListOperations.addElement(_results, SNodeOperations.getParent(nodeUsage));
         }
       }
     }
-  }
-
-  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
-    ListOperations.addElement(_results, node);
   }
 
   public String getNodeCategory(SNode node) {

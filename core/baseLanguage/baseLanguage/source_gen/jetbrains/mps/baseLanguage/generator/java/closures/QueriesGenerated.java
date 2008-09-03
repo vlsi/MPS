@@ -21,7 +21,7 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1170198286262(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode parent = SNodeOperations.getParent(_context.getNode(), null, false, false);
+    SNode parent = SNodeOperations.getParent(_context.getNode());
     if (ClosuresUtil.isClosureContextOwner(parent)) {
       return ClosuresUtil.hasVariablesUsedInClosure(parent, _context.getGenerator());
     }
@@ -125,7 +125,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1170294125679(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.getParent(_context.getNode(), null, false, false);
+    return SNodeOperations.getParent(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1170347410888(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

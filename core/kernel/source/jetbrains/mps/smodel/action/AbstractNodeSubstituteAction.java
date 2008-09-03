@@ -134,7 +134,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
 
   public final SNode substitute(@Nullable EditorContext context, String pattern) {
     SNode newNode = doSubstitute(pattern);
-    if (context != null) {
+    if (context != null) {                                                         
       EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
 
       selectedCell.getContainingBigCell().synchronizeViewWithModel();

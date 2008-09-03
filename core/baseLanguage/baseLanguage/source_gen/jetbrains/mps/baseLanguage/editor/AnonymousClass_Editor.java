@@ -454,7 +454,15 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_classifier1170346086721(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_classifier");
-    AnonymousClass_AfterName.setCellActions(editorCell, node, context);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_11703460962891170346096289(EditorCell editorCell, SNode node, EditorContext context) {

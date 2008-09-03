@@ -37,9 +37,9 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
     while (ListSequence.fromList(derived).count() != passed) {
       SNode passingNode = ListSequence.fromList(derived).getElement(passed);
       for(SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", passingNode, scope, indicator)) {
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface")) {
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage), "jetbrains.mps.baseLanguage.structure.Interface")) {
           if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
-            ListSequence.fromList(derived).addElement(SNodeOperations.getParent(nodeUsage, null, false, false));
+            ListSequence.fromList(derived).addElement(SNodeOperations.getParent(nodeUsage));
           }
         }
       }
@@ -48,10 +48,6 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
       }
       passed = passed + 1;
     }
-  }
-
-  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
-    ListOperations.addElement(_results, node);
   }
 
   public String getNodeCategory(SNode node) {

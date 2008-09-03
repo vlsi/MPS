@@ -24,7 +24,7 @@ public class ConstructorDeclaration_nestedName_PropertyConstraint implements IMo
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    return SPropertyOperations.getString(SNodeOperations.getParent(node, null, false, false), "nestedName");
+    return SPropertyOperations.getString(SNodeOperations.getParent(node), "nestedName");
   }
 
 }

@@ -45,10 +45,6 @@ public class DerivedClasses_Finder extends GeneratedFinder {
     }
   }
 
-  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
-    ListOperations.addElement(_results, node);
-  }
-
   public String getNodeCategory(SNode node) {
     return "Derived Classes";
   }

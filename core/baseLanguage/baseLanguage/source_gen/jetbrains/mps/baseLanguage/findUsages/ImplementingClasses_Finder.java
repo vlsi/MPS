@@ -40,10 +40,10 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
     }
     // 
     for(SNode interfaceNode : derivedInterfacesUsages) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(interfaceNode, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(interfaceNode), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         if (SNodeOperations.hasRole(interfaceNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) {
-          ListOperations.addElement(_results, SNodeOperations.getParent(interfaceNode, null, false, false));
-          for(SNode classNode : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(interfaceNode, null, false, false), scope, indicator)) {
+          ListOperations.addElement(_results, SNodeOperations.getParent(interfaceNode));
+          for(SNode classNode : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(interfaceNode), scope, indicator)) {
             ListOperations.addElement(_results, classNode);
           }
         }

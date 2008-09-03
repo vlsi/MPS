@@ -21,8 +21,8 @@ public class RemoveUnusedAssignment_QuickFix extends QuickFix_Runtime {
       SNode assignmentExpression = node;
       SNode lValue = SLinkOperations.getTarget(assignmentExpression, "lValue", true);
       SNodeOperations.replaceWithAnother(assignmentExpression, lValue);
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(lValue, null, false, false), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-        SNodeOperations.deleteNode(SNodeOperations.getParent(lValue, null, false, false));
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(lValue), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+        SNodeOperations.deleteNode(SNodeOperations.getParent(lValue));
       }
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {

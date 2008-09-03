@@ -34,12 +34,12 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface") && SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.Interface", "method");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface") && SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.Interface", "method");
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
-    for(SNode implementor : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope, indicator)) {
+    for(SNode implementor : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, indicator)) {
       ListSequence.fromList(implementorsAndAncestorsList).addElement(implementor);
       ListSequence.fromList(implementorsAndAncestorsList).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", implementor, scope, indicator)));
     }
@@ -56,10 +56,6 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
         }
       }
     }
-  }
-
-  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
-    ListOperations.addElement(_results, node);
   }
 
   public String getNodeCategory(SNode node) {
