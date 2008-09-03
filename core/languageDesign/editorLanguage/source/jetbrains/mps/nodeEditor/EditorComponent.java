@@ -1695,21 +1695,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     Project project = getOperationContext().getProject();
     UndoManager undoManager = UndoManager.getInstance(project);
 
-    // hardcoded undo/redo action
-    if (keyEvent.getKeyCode() == KeyEvent.VK_Z && keyEvent.isControlDown()) {
-      if (keyEvent.isShiftDown()) {
-        if (undoManager.isRedoAvailable(null)) {
-          undoManager.redo(null);
-        }
-      } else {
-        if (undoManager.isUndoAvailable(null)) {
-          undoManager.undo(null);
-        }
-      }
-      keyEvent.consume();
-      return;
-    }
-
     // hardcoded "update" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5 && keyEvent.getModifiers() == 0) {
       ModelAccess.instance().runReadAction(new Runnable() {
