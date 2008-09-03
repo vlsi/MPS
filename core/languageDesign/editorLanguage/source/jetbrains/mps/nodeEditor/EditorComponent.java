@@ -1692,9 +1692,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public void processKeyPressed(final KeyEvent keyEvent) {
     if (keyEvent.isConsumed()) return;
 
-    Project project = getOperationContext().getProject();
-    UndoManager undoManager = UndoManager.getInstance(project);
-
     // hardcoded "update" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5 && keyEvent.getModifiers() == 0) {
       ModelAccess.instance().runReadAction(new Runnable() {
