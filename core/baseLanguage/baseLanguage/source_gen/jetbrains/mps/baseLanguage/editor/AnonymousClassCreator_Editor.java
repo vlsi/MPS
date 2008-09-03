@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
 
@@ -64,6 +65,9 @@ public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNode_cls1182160175805(EditorCell editorCell, SNode node, EditorContext context) {
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
+    }
   }
 
   private static void setupLabel_refNode_cls_1182160175805(EditorCell_Label editorCell, SNode node, EditorContext context) {

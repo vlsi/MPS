@@ -984,7 +984,11 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1130270332204">
         <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
       </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1130270248257" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1130270248257">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220440442274">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220440442275" />
+        </node>
+      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546096986" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550081261" />
