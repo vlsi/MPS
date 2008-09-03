@@ -9,7 +9,6 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
   }
 
   public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
-    modelRepositoryChanged();
   }
 
   public void modelDeleted(SModelDescriptor modelDescriptor) {
@@ -19,7 +18,10 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
   public void modelRemoved(SModelDescriptor modelDescriptor) {
     modelRepositoryChanged();
   }
-  
+
+  public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
+  }
+
   public void modelAdded(SModelDescriptor modelDescriptor) {
     modelRepositoryChanged();
   }

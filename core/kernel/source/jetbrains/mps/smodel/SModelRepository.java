@@ -205,6 +205,8 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public void removeModelDescriptor(SModelDescriptor modelDescriptor) {
+    fireBeforeModelRemoved(modelDescriptor);
+
     myModelsToOwners.clearFirst(modelDescriptor);
 
     myModelDescriptors.remove(modelDescriptor);
@@ -470,6 +472,12 @@ public class SModelRepository implements ApplicationComponent {
 //    };
 //
 //    CommandProcessor.instance().executeLightweightCommandInEDT(command);
+  }
+
+  private void fireBeforeModelRemoved(SModelDescriptor modelDescriptor) {
+    for (SModelRepositoryListener l : listeners()) {
+      l.beforeModelRemoved(modelDescriptor);
+    }
   }
 
   private void fireModelRemoved(SModelDescriptor modelDescriptor) {

@@ -8,6 +8,7 @@ public interface SModelRepositoryListener {
   void beforeModelDeleted(SModelDescriptor modelDescriptor);
   void modelDeleted(SModelDescriptor modelDescriptor);
 
+  void beforeModelRemoved(SModelDescriptor modelDescriptor);
   void modelRemoved(SModelDescriptor modelDescriptor);
   void modelAdded(SModelDescriptor modelDescriptor);
   void modelRenamed(SModelDescriptor modelDescriptor);
