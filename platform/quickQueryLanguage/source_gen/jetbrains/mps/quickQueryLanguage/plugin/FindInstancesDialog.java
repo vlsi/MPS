@@ -16,9 +16,11 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOp
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.ModelOwner;
+import jetbrains.mps.closures.runtime.Wrappers;
+import java.util.List;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import javax.swing.JComponent;
-import jetbrains.mps.ide.embeddableEditor.GenerateResult;
+import jetbrains.mps.ide.embeddableEditor.GenerationResult;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
 import com.intellij.openapi.progress.ProgressManager;
@@ -34,12 +36,12 @@ public class FindInstancesDialog extends BaseDialog {
   private ScopeEditor myScope;
   private SNode myNode;
 
-  public FindInstancesDialog(final IOperationContext context, Language language) {
+  public FindInstancesDialog(final IOperationContext context, final Language language) {
     super(context.getMainFrame(), "Find instances by condition");
     this.myContext = context;
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
 
       public void run() {
         FindInstancesDialog.this.myNode = SConceptOperations.createNewNode("jetbrains.mps.quickQueryLanguage.structure.ModelQuery", null);
@@ -50,14 +52,23 @@ public class FindInstancesDialog extends BaseDialog {
         SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
         SLinkOperations.addChild(statementList, "statement", expressionStatement);
         SLinkOperations.setTarget(SLinkOperations.getTarget(FindInstancesDialog.this.myNode, "condition", true), "body", statementList, true);
-        /*statement: [statement] Statement <no name>[1220280700883] in jetbrains.mps.quickQueryLanguage.plugin@2_1*/
         FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {
         }, FindInstancesDialog.this.myNode);
       }
 
     });
+    final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+
+      public void run() {
+        languageList.value = language.getAllExtendedLanguages();
+      }
+
+    });
+    for(Language extendedLanguage : languageList.value) {
+      this.myEditor.addLanguage(extendedLanguage);
+    }
     this.myPanel.add(this.myEditor.getComponenet(), BorderLayout.CENTER);
-    this.myEditor.init();
     this.myEditor.addLanguage(language);
     ModelAccess.instance().runReadAction(new Runnable() {
 
@@ -86,7 +97,7 @@ public class FindInstancesDialog extends BaseDialog {
   @BaseDialog.Button(position = 0, name = "Find", defaultButton = true)
   public void buttonFind() {
     try {
-      final GenerateResult result = this.myEditor.generate();
+      final GenerationResult result = this.myEditor.generate();
       String fqName = result.getModelDescriptor().getLongName() + "." + QueryConstants.GENERATED_QUERY_NAME;
       ClassLoader loader = result.getLoader(QueryExecutor.class.getClassLoader());
       Query query = (Query)Class.forName(fqName, true, loader).newInstance();

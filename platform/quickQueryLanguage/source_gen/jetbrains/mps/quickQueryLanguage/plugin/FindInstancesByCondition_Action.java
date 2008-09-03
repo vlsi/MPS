@@ -61,9 +61,9 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      FindInstancesContext newContext = new FindInstancesContext(new FindInstancesContext(FindInstancesByCondition_Action.this.context));
-      FindInstancesDialog testDialog = new FindInstancesDialog(newContext, (Language)FindInstancesByCondition_Action.this.langModule);
-      testDialog.showDialog();
+      IOperationContext newContext = new FindInstancesContext(new FindInstancesContext(FindInstancesByCondition_Action.this.context));
+      FindInstancesDialog dialog = new FindInstancesDialog(newContext, (Language)FindInstancesByCondition_Action.this.langModule);
+      dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindInstancesByCondition", t);
     }

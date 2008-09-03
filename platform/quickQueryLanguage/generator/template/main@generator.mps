@@ -27,8 +27,6 @@
   <import index="5" modelUID="jetbrains.mps.quickQueryLanguage.runtime@java_stub" version="-1" />
   <import index="6" modelUID="java.io@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="8" modelUID="jetbrains.mps.quickQueryLanguage.sandbox" version="-1" />
-  <import index="9" modelUID="jetbrains.mps.quickQueryLanguage.sandbox@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.quickQueryLanguage.generator.template.main@generator" version="-1" />
   <import index="11" modelUID="jetbrains.mps.quickQueryLanguage.plugin" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1218800262437">

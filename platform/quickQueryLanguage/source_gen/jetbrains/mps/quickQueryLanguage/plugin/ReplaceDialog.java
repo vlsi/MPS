@@ -19,7 +19,7 @@ import java.util.List;
 import java.awt.Dimension;
 import javax.swing.JComponent;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ide.embeddableEditor.GenerateResult;
+import jetbrains.mps.ide.embeddableEditor.GenerationResult;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
 import com.intellij.openapi.progress.ProgressManager;
@@ -38,7 +38,7 @@ public class ReplaceDialog extends BaseDialog {
   public ReplaceDialog(final IOperationContext context, final Language language) {
     super(context.getMainFrame(), "Replace");
     this.myContext = context;
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
 
       public void run() {
         ReplaceDialog.this.myNode = SConceptOperations.createNewNode("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", null);
@@ -49,7 +49,6 @@ public class ReplaceDialog extends BaseDialog {
       }
 
     });
-    this.myEditor.init();
     this.myEditor.addLanguage(language);
     final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -84,7 +83,7 @@ public class ReplaceDialog extends BaseDialog {
   @BaseDialog.Button(position = 0, name = "Replace", defaultButton = true)
   public void buttonReplace() {
     try {
-      final GenerateResult result = this.myEditor.generate();
+      final GenerationResult result = this.myEditor.generate();
       String fqName = result.getModelDescriptor().getLongName() + "." + QueryConstants.GENERATED_QUERY_NAME;
       ClassLoader loader = result.getLoader(ReplacementExecutor.class.getClassLoader());
       Query query = (Query)Class.forName(fqName, true, loader).newInstance();
@@ -105,6 +104,8 @@ public class ReplaceDialog extends BaseDialog {
 
       });
       executor.showResults();
+      this.myEditor.disposeEditor();
+      this.dispose();
     } catch (Throwable t) {
       t.printStackTrace();
     }

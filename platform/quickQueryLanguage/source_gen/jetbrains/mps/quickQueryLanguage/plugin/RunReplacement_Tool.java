@@ -53,8 +53,7 @@ public class RunReplacement_Tool extends GeneratedTool {
 
       public void run() {
         IResultProvider provider = FindUtils.makeProvider(new ConstantFinder(searchResults.getSearchResults()));
-        ReplacementView view;
-        view = new ReplacementView(RunReplacement_Tool.this, RunReplacement_Tool.this.getMPSProject(), provider, searchQuery, searchResults, query);
+        ReplacementView view = new ReplacementView(RunReplacement_Tool.this, RunReplacement_Tool.this.getMPSProject(), provider, searchQuery, searchResults, query);
         RunReplacement_Tool.this.myViews.add(view);
         String name = "Query ";
         if (RunReplacement_Tool.this.myViews.size() > 1) {

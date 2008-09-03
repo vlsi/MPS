@@ -50,10 +50,10 @@ public class ReplacementView {
             try {
               for(SNode node : replaceNodes) {
                 query.doReplace(node);
-                JOptionPane.showMessageDialog(null, "Replacement completed successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
               }
+              JOptionPane.showMessageDialog(null, "Replacement completed successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
             } catch (Throwable t) {
-              JOptionPane.showMessageDialog(null, "Replacement completed with error", "Error", JOptionPane.ERROR_MESSAGE);
+              JOptionPane.showMessageDialog(null, "Replacement failed", "Warning", JOptionPane.ERROR_MESSAGE);
             }
           }
 
