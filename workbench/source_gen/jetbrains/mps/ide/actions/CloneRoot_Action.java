@@ -55,7 +55,7 @@ public class CloneRoot_Action extends GeneratedAction {
       boolean error = false;
       if (nodes != null) {
       }
-      if (error) {
+      if (error || nodes == null) {
         this.nodes = null;
       } else {
         this.nodes = new ArrayList<SNode>(nodes);

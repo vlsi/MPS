@@ -65,7 +65,7 @@ public class CommentStatements_Action extends GeneratedAction {
           }
         }
       }
-      if (error) {
+      if (error || nodes == null) {
         this.nodes = null;
       } else {
         this.nodes = new ArrayList<SNode>(nodes);
