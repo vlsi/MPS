@@ -34,6 +34,8 @@
                     serviceImplementation="com.intellij.find.impl.FindManagerImpl"/>
     <projectService serviceInterface="com.intellij.usages.UsageViewManager"
                     serviceImplementation="com.intellij.usages.impl.UsageViewManagerImpl"/>
+    <projectService serviceInterface="com.intellij.find.replaceInProject.ReplaceInProjectManager"
+                    serviceImplementation="com.intellij.find.replaceInProject.ReplaceInProjectManager"/>
 
     <applicationService serviceInterface="com.intellij.openapi.wm.impl.FrameTitleBuilder"
                         serviceImplementation="com.intellij.openapi.wm.impl.PlatformFrameTitleBuilder"/>
