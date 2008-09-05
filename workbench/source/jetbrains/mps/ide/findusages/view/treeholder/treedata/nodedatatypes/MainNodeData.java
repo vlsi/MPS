@@ -9,7 +9,7 @@ import javax.swing.Icon;
 
 public class MainNodeData extends BaseNodeData {
   public MainNodeData(PathItemRole role) {
-    super(role, "", "", true, false);
+    super(role, "", "", true, false, false);
   }
 
   public MainNodeData(Element element, MPSProject project) throws CantLoadSomethingException {

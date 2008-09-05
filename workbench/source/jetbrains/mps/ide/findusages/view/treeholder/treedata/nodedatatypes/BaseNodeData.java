@@ -27,6 +27,7 @@ public abstract class BaseNodeData implements IExternalizeable {
   private PathItemRole myRole;
   private String myCaption;
   private String myAdditionalInfo;
+  private boolean myResultsSection;
   private boolean myIsExcluded;
   private boolean myIsExpanded;
   private int mySubresultsCount;
@@ -40,16 +41,21 @@ public abstract class BaseNodeData implements IExternalizeable {
     read(element, project);
   }
 
-  public BaseNodeData(PathItemRole role, String caption, String additionalInfo, boolean isExpanded, boolean isResultNode) {
+  public BaseNodeData(PathItemRole role, String caption, String additionalInfo, boolean isExpanded, boolean isResultNode, boolean resultsSection) {
     myRole = role;
     myCaption = caption;
     myAdditionalInfo = additionalInfo;
+    myResultsSection = resultsSection;
     myIsExcluded = false;
     myIsExpanded = isExpanded;
     myIsResultNode = isResultNode;
   }
 
   //----MAIN DATA STUFF----
+
+  public boolean isResultsSection() {
+    return myResultsSection;
+  }
 
   public boolean isExcluded() {
     return myIsExcluded;

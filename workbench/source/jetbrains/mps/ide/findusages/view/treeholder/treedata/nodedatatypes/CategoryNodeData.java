@@ -14,8 +14,8 @@ public class CategoryNodeData extends BaseNodeData {
   private static final String CATEGORY = "category";
   private String myCategory = "";
 
-  public CategoryNodeData(PathItemRole role, String category) {
-    super(role, "<b>" + category + "</b>", "", true, false);
+  public CategoryNodeData(PathItemRole role, String category, boolean resultsSection) {
+    super(role, "<b>" + category + "</b>", "", true, false, resultsSection);
     myCategory = category;
   }
 
@@ -32,11 +32,6 @@ public class CategoryNodeData extends BaseNodeData {
     return myCategory;
   }
 
-  public String getText(TextOptions options) {
-    String counter = options.myCounters ? " (" + sizeRepresentation(getSubresultsCount()) + ")" : "";
-    return super.getText(options) + counter;
-  }
-
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     super.write(element, project);
     element.setAttribute(CATEGORY, myCategory);
@@ -47,7 +42,12 @@ public class CategoryNodeData extends BaseNodeData {
     myCategory = element.getAttributeValue(CATEGORY);
   }
 
+  public String getText(TextOptions options) {
+    String counter = options.myCounters && isResultsSection() ? " " + sizeRepresentation(getSubresultsCount()) : "";
+    return super.getText(options) + counter;
+  }
+
   private static String sizeRepresentation(int size) {
-    return "<b>" + Integer.toString(size) + " usage" + (size == 1 ? "" : "s") + "</b>";
+    return "<b>(" + Integer.toString(size) + " usage" + (size == 1 ? "" : "s") + ")</b>";
   }
 }

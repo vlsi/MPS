@@ -3,6 +3,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
+import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -21,8 +22,8 @@ public class ModelNodeData extends BaseNodeData {
   private SModelRepositoryListener myModelRepositoryListener = null;
   private boolean myIsRemoved = false;
 
-  public ModelNodeData(PathItemRole role, SModel model, boolean isResult) {
-    super(role, model.getModelDescriptor().getLongName(), "", false, isResult);
+  public ModelNodeData(PathItemRole role, SModel model, boolean isResult, boolean resultsSection) {
+    super(role, model.getModelDescriptor().getLongName(), "", false, isResult, resultsSection);
     myModelUID = model.getModelDescriptor().getModelUID();
 
     startListening();
@@ -79,5 +80,15 @@ public class ModelNodeData extends BaseNodeData {
     if (!isInvalid()) {
       startListening();
     }
+  }
+
+  public String getText(TextOptions options) {
+    boolean showCounter = options.myCounters && isResultsSection() && (!isResultNode());
+    String counter = showCounter ? " " + sizeRepresentation(getSubresultsCount()) : "";
+    return super.getText(options) + counter;
+  }
+
+  private static String sizeRepresentation(int size) {
+    return "<font color='gray'>(" + Integer.toString(size) + ")</font>";
   }
 }

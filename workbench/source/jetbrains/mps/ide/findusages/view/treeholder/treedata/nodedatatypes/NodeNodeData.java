@@ -5,6 +5,7 @@ import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
+import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
@@ -30,13 +31,14 @@ public class NodeNodeData extends BaseNodeData {
   private SModelListener myModelListener = null;
   private boolean myIsRemoved = false;
 
-  public NodeNodeData(PathItemRole role, SNode node, boolean isResultNode, INodeRepresentator nodeRepresentator) {
+  public NodeNodeData(PathItemRole role, SNode node, boolean isResultNode, INodeRepresentator nodeRepresentator, boolean resultsSection) {
     super(
       role,
       (isResultNode && nodeRepresentator != null) ? nodeRepresentator.getPresentation(node) : snodeRepresentation(node),
       nodeAdditionalInfo(node),
       false,
-      isResultNode
+      isResultNode,
+      resultsSection
     );
     myNodePointer = new SNodePointer(node);
 
@@ -106,17 +108,17 @@ public class NodeNodeData extends BaseNodeData {
 
   public static String snodeRepresentation(final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
-        public String compute() {
-          try {
-            String result = (node.getName() != null) ? node.getName() : node.toString();
-            result = textStringToHtml(result);
-            return result;
-          } catch (Throwable t) {
-            LOG.error(t);
-            return "Exception was thrown during node representation calculation " + t.getMessage();
-          }
+      public String compute() {
+        try {
+          String result = (node.getName() != null) ? node.getName() : node.toString();
+          result = textStringToHtml(result);
+          return result;
+        } catch (Throwable t) {
+          LOG.error(t);
+          return "Exception was thrown during node representation calculation " + t.getMessage();
         }
-      });
+      }
+    });
   }
 
   private static String textStringToHtml(String text) {
@@ -146,5 +148,15 @@ public class NodeNodeData extends BaseNodeData {
           "</i>";
       }
     });
+  }
+
+  public String getText(TextOptions options) {
+    boolean showCounter = options.myCounters && isResultsSection() && (!isResultNode());
+    String counter = showCounter ? " " + sizeRepresentation(getSubresultsCount()) : "";
+    return super.getText(options) + counter;
+  }
+
+  private static String sizeRepresentation(int size) {
+    return "<font color='gray'>(" + Integer.toString(size) + ")</font>";
   }
 }

@@ -13,7 +13,7 @@ public class ResultsNodeData extends BaseNodeData {
   private static final String CATEGORY_NAME = "results";
 
   public ResultsNodeData(PathItemRole role) {
-    super(role, CATEGORY_NAME, "", true, false);
+    super(role, CATEGORY_NAME, "", true, false, false);
   }
 
   public ResultsNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
