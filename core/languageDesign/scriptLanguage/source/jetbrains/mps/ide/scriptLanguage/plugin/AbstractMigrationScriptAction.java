@@ -6,7 +6,6 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import java.util.ArrayList;
@@ -30,13 +29,13 @@ public abstract class AbstractMigrationScriptAction extends BaseAction {
     context.getComponent(MigrationScriptsTool.class).startMigration(scripts, scope, context);
   }
 
-  protected IScope createMigrationScope(ActionEventData eventData) {
+  protected IScope createMigrationScope(List<SModelDescriptor> models, List<IModule> modules) {
     MigrationScope migrationScope = new MigrationScope();
     if (myApplyToSelection) {
-      for (SModelDescriptor model : eventData.getModels()) {
+      for (SModelDescriptor model : models) {
         migrationScope.addModel(model);
       }
-      for (IModule module : eventData.getModules()) {
+      for (IModule module : modules) {
         migrationScope.addModule(module);
         if (module instanceof Language) {
           Language language = (Language) module;
