@@ -45,32 +45,23 @@ public class ShowConceptStructure_Action extends GeneratedAction {
 
   @Override()
   protected boolean collectActionData(AnActionEvent event) {
-    try {
-      if (!(super.collectActionData(event))) {
-        return false;
-      }
-      {
-        SNode node = event.getData(MPSDataKeys.SNODE);
-        if (node != null) {
-          if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration"))) {
-            node = null;
-          }
+    if (!(super.collectActionData(event))) {
+      return false;
+    }
+    {
+      SNode node = event.getData(MPSDataKeys.SNODE);
+      if (node != null) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration"))) {
+          node = null;
         }
-        this.node = node;
-        /*
-          if (!(<!IsSubtypeExpression TextGen not found!>)) {
-            return false;
-          }
-        */
       }
-      if (this.node == null) {
-        return false;
-      }
-      this.project = event.getData(MPSDataKeys.MPS_PROJECT);
-      if (this.project == null) {
-        return false;
-      }
-    } catch (Throwable t) {
+      this.node = node;
+    }
+    if (this.node == null) {
+      return false;
+    }
+    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    if (this.project == null) {
       return false;
     }
     return true;

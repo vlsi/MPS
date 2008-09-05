@@ -46,23 +46,19 @@ public class FindModelUsages_Action extends GeneratedAction {
 
   @Override()
   protected boolean collectActionData(AnActionEvent event) {
-    try {
-      if (!(super.collectActionData(event))) {
-        return false;
-      }
-      this.scope = event.getData(MPSDataKeys.SCOPE);
-      if (this.scope == null) {
-        return false;
-      }
-      this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-      if (this.context == null) {
-        return false;
-      }
-      this.model = event.getData(MPSDataKeys.MODEL_DESCRIPTOR);
-      if (this.model == null) {
-        return false;
-      }
-    } catch (Throwable t) {
+    if (!(super.collectActionData(event))) {
+      return false;
+    }
+    this.scope = event.getData(MPSDataKeys.SCOPE);
+    if (this.scope == null) {
+      return false;
+    }
+    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
+    if (this.context == null) {
+      return false;
+    }
+    this.model = event.getData(MPSDataKeys.MODEL_DESCRIPTOR);
+    if (this.model == null) {
       return false;
     }
     return true;

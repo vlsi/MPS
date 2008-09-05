@@ -51,19 +51,15 @@ public class ShowNodeMessages_Action extends GeneratedAction {
 
   @Override()
   protected boolean collectActionData(AnActionEvent event) {
-    try {
-      if (!(super.collectActionData(event))) {
-        return false;
-      }
-      this.node = event.getData(MPSDataKeys.SNODE);
-      if (this.node == null) {
-        return false;
-      }
-      this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-      if (this.editorComponent == null) {
-        return false;
-      }
-    } catch (Throwable t) {
+    if (!(super.collectActionData(event))) {
+      return false;
+    }
+    this.node = event.getData(MPSDataKeys.SNODE);
+    if (this.node == null) {
+      return false;
+    }
+    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.editorComponent == null) {
       return false;
     }
     return true;

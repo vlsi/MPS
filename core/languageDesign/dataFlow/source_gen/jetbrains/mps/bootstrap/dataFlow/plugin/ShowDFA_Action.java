@@ -44,29 +44,20 @@ public class ShowDFA_Action extends GeneratedAction {
 
   @Override()
   protected boolean collectActionData(AnActionEvent event) {
-    try {
-      if (!(super.collectActionData(event))) {
-        return false;
+    if (!(super.collectActionData(event))) {
+      return false;
+    }
+    {
+      SNode node = event.getData(MPSDataKeys.SNODE);
+      if (node != null) {
       }
-      {
-        SNode node = event.getData(MPSDataKeys.SNODE);
-        if (node != null) {
-        }
-        this.node = node;
-        /*
-          if (!(<!IsSubtypeExpression TextGen not found!>)) {
-            return false;
-          }
-        */
-      }
-      if (this.node == null) {
-        return false;
-      }
-      this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-      if (this.context == null) {
-        return false;
-      }
-    } catch (Throwable t) {
+      this.node = node;
+    }
+    if (this.node == null) {
+      return false;
+    }
+    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
+    if (this.context == null) {
       return false;
     }
     return true;
@@ -74,8 +65,8 @@ public class ShowDFA_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      Program program = DataFlowManager.getInstance().buildProgramFor(this.node);
-      new ShowCFGDialog(program, this.context);
+      Program program = DataFlowManager.getInstance().buildProgramFor(ShowDFA_Action.this.node);
+      new ShowCFGDialog(program, ShowDFA_Action.this.context);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowDFA", t);
     }

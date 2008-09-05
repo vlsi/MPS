@@ -1,5 +1,6 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
+import jetbrains.mps.ide.BootstrapScope;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -12,8 +13,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-import com.intellij.openapi.project.Project;
-
 public class ScopeOptions extends BaseOptions<SearchQuery> {
   private static final Logger LOG = Logger.getLogger(ScopeOptions.class);
 
@@ -23,6 +22,7 @@ public class ScopeOptions extends BaseOptions<SearchQuery> {
   public static final String PROJECT_SCOPE = "project_scope";
   public static final String MODULE_SCOPE = "module_scope";
   public static final String MODEL_SCOPE = "model_scope";
+  public static final String BOOTSTRAP_SCOPE = "bootstrap_scope";
 
   private static final String MODEL = "model";
   private static final String MODULE = "module";
@@ -108,9 +108,9 @@ public class ScopeOptions extends BaseOptions<SearchQuery> {
         SModelDescriptor modelDescriptor = models.get(0);
         scope = new ModelScope(modelDescriptor.getModule().getScope(), modelDescriptor);
       }
-    } else {
-      throw new IllegalArgumentException();
-    }
+    } else if (myScopeType.equals(BOOTSTRAP_SCOPE)) {
+      return BootstrapScope.getInstance();
+    } else throw new IllegalArgumentException();
 
     return scope;
   }

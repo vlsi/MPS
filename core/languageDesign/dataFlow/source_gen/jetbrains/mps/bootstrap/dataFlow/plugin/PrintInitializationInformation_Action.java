@@ -44,25 +44,16 @@ public class PrintInitializationInformation_Action extends GeneratedAction {
 
   @Override()
   protected boolean collectActionData(AnActionEvent event) {
-    try {
-      if (!(super.collectActionData(event))) {
-        return false;
+    if (!(super.collectActionData(event))) {
+      return false;
+    }
+    {
+      SNode node = event.getData(MPSDataKeys.SNODE);
+      if (node != null) {
       }
-      {
-        SNode node = event.getData(MPSDataKeys.SNODE);
-        if (node != null) {
-        }
-        this.node = node;
-        /*
-          if (!(<!IsSubtypeExpression TextGen not found!>)) {
-            return false;
-          }
-        */
-      }
-      if (this.node == null) {
-        return false;
-      }
-    } catch (Throwable t) {
+      this.node = node;
+    }
+    if (this.node == null) {
       return false;
     }
     return true;
@@ -70,7 +61,7 @@ public class PrintInitializationInformation_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      Program program = DataFlowManager.getInstance().buildProgramFor(this.node);
+      Program program = DataFlowManager.getInstance().buildProgramFor(PrintInitializationInformation_Action.this.node);
       AnalysisResult<Set<Object>> result = program.analyze(new InitializedVariablesAnalyzer());
       System.out.println(result.toString());
     } catch (Throwable t) {

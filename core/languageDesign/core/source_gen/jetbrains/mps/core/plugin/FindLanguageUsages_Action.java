@@ -57,23 +57,19 @@ public class FindLanguageUsages_Action extends GeneratedAction {
 
   @Override()
   protected boolean collectActionData(AnActionEvent event) {
-    try {
-      if (!(super.collectActionData(event))) {
-        return false;
-      }
-      this.module = event.getData(MPSDataKeys.MODULE);
-      if (this.module == null) {
-        return false;
-      }
-      this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-      if (this.context == null) {
-        return false;
-      }
-      this.scope = event.getData(MPSDataKeys.SCOPE);
-      if (this.scope == null) {
-        return false;
-      }
-    } catch (Throwable t) {
+    if (!(super.collectActionData(event))) {
+      return false;
+    }
+    this.module = event.getData(MPSDataKeys.MODULE);
+    if (this.module == null) {
+      return false;
+    }
+    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
+    if (this.context == null) {
+      return false;
+    }
+    this.scope = event.getData(MPSDataKeys.SCOPE);
+    if (this.scope == null) {
       return false;
     }
     return true;
