@@ -20,15 +20,6 @@ public class PatternVariableDeclaration extends Pattern implements INamedConcept
     super(node);
   }
 
-  public static PatternVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (PatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.PatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PatternVariableDeclaration newInstance(SModel sm) {
-    return PatternVariableDeclaration.newInstance(sm, false);
-  }
-
-
   public String getVarName() {
     return this.getProperty(PatternVariableDeclaration.VAR_NAME);
   }
@@ -67,6 +58,15 @@ public class PatternVariableDeclaration extends Pattern implements INamedConcept
 
   public void setVirtualPackage(String value) {
     this.setProperty(PatternVariableDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static PatternVariableDeclaration newInstance(SModel sm, boolean init) {
+    return (PatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.PatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PatternVariableDeclaration newInstance(SModel sm) {
+    return PatternVariableDeclaration.newInstance(sm, false);
   }
 
 }

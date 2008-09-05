@@ -6,13 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.patterns.util.MatchingUtil;
-import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.intentions.IntentionProvider;
 
 import java.util.Map;
-import java.util.Set;
-import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -72,6 +69,13 @@ public class RuntimeSupport {
     type = TypeChecker.asType(var);
     myTypeChecker.getMainContext().put(node, type);
     return getRepresentatorIfNecessary(type, currentTypesComponent);
+  }
+
+  public void addDependencyForCurrent(SNode node) {
+    NodeTypesComponent currentTypesComponent = myTypeChecker.getCurrentTypesComponent();
+    if (currentTypesComponent != null) {
+      currentTypesComponent.addDependencyForCurrent(node);
+    }
   }
 
   private SNode getRepresentatorIfNecessary(SNode type, NodeTypesComponent nodeTypesComponent) {

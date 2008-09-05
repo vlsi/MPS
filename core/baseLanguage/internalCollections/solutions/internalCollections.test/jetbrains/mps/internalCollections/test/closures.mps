@@ -297,7 +297,7 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204735619646">
                 <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
-                <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
+                <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204735619647">
                   <property name="value" value="1" />
                 </node>
@@ -470,8 +470,8 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203689005473">
-                <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                 <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1203689005474">
                   <property name="value" value="1" />
                 </node>
@@ -599,7 +599,7 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203689087225">
                 <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
-                <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
+                <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1203689087226">
                   <property name="value" value="1" />
                 </node>
@@ -743,7 +743,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204739162716">
                   <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204739162717">
                     <property name="value" value="1" />
                   </node>
@@ -835,8 +835,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628852010">
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205778051897">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                   <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205778051898">
                     <property name="value" value="1" />
                   </node>
@@ -948,8 +948,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205839136961">
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205839142666">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                   <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205839147283">
                     <property name="value" value="2" />
                   </node>
@@ -1023,8 +1023,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208606686076">
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1208606694449">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                   <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1208606695691">
                     <property name="value" value="5" />
                   </node>
@@ -1199,8 +1199,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207561005719">
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204129181180">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                   <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204129182297">
                     <property name="value" value="12" />
                   </node>
@@ -1317,8 +1317,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207561009986">
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204797599757">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                   <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204797599758">
                     <property name="value" value="12" />
                   </node>
@@ -1884,8 +1884,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204793778544">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204793794443">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204793800326">
-            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
             <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204793805340">
               <property name="value" value="1" />
             </node>
@@ -1916,8 +1916,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205754306144">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1205754306145">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205754306146">
-            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
             <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205754306147">
               <property name="value" value="1" />
             </node>
@@ -1985,8 +1985,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205949300716">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1205949316702">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205949316703">
-            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
             <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205949316704">
               <property name="value" value="1" />
             </node>
@@ -2018,7 +2018,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206730488670">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206730488671">
             <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
-            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
+            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206730488672">
               <property name="value" value="1" />
             </node>
@@ -2059,8 +2059,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204793880608">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204793900310">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204793903969">
-            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
             <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204793905876">
               <property name="value" value="1" />
             </node>
@@ -2090,8 +2090,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204981312412">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204981333544">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204981334696">
-            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
             <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204981334697">
               <property name="value" value="2" />
             </node>
@@ -2207,8 +2207,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628914106">
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204285527746">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                   <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204285527747">
                     <property name="value" value="2" />
                   </node>
@@ -2270,8 +2270,8 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204567368470">
-                <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                 <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204567428881">
                   <link role="variableDeclaration" targetNodeId="1204567390245" resolveInfo="a" />
                 </node>
@@ -2383,8 +2383,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628921190">
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204567535785">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                   <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204567537031">
                     <property name="value" value="a" />
                   </node>
@@ -2522,8 +2522,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628900678">
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204566280547">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                   <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204566280548">
                     <property name="value" value="2" />
                   </node>
@@ -3151,8 +3151,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628911540">
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205848119733">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                   <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205848126634">
                     <property name="value" value="4" />
                   </node>
@@ -3195,7 +3195,7 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205686951326">
                 <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object...):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205686952130">
                   <property name="value" value="ZZZ" />
                 </node>
@@ -3257,7 +3257,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205687058087">
                   <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object...):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205687058091">
                     <property name="value" value="XXXX" />
                   </node>
@@ -3295,7 +3295,7 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205693992441">
                 <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object...):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205693992442">
                   <property name="value" value="ZZZ" />
                 </node>
@@ -3428,7 +3428,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205693992466">
                   <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object...):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205693992467">
                     <property name="value" value="XXXX" />
                   </node>
@@ -3455,7 +3455,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205752091588">
                   <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object...):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205752092652">
                     <property name="value" value="Y" />
                   </node>
@@ -3493,7 +3493,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205751804627">
                   <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object...):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205751820941">
                     <property name="value" value="WW" />
                   </node>
@@ -3529,8 +3529,8 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205737368391">
-                <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                 <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205737375631">
                   <property name="value" value="Z" />
                 </node>
@@ -3641,8 +3641,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205737451619">
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205737460658">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                   <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205737468812">
                     <property name="value" value="WWWW" />
                   </node>
@@ -3668,8 +3668,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209728895029">
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1209728895030">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                   <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1209728895031">
                     <property name="value" value="WWWW" />
                   </node>
@@ -3744,8 +3744,8 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205841044927">
-                <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                 <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205841044929">
                   <property name="value" value="Z" />
                 </node>
@@ -3803,8 +3803,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205841155810">
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205841155811">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                   <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205841155812">
                     <property name="value" value="WWWW" />
                   </node>

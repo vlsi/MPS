@@ -12,6 +12,9 @@ import jetbrains.mps.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import java.util.Iterator;
+import jetbrains.mps.patterns.util.MatchingUtil;
 
 public class ClassifierType_Behavior {
 
@@ -69,6 +72,57 @@ public class ClassifierType_Behavior {
       }
     }
     return null;
+  }
+
+  public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
+    if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
+      do {
+        SNode matchedNode_0 = thisNode;
+        {
+          boolean matches_0 = false;
+          Pattern_1 matchingPattern = new Pattern_1();
+          matches_0 = matchingPattern.match(matchedNode_0);
+          if (matches_0) {
+            return true;
+          }
+        }
+        return false;
+      } while(false);
+    }
+    {
+      Pattern_2 pattern_0 = new Pattern_2(SLinkOperations.getTarget(thisNode, "classifier", false));
+      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(t, pattern_0);
+      if (coercedNode_0 != null) {
+        {
+          SNode typeParam;
+          SNode myParam;
+          Iterator<SNode> typeParam_iterator = pattern_0.PatternVar0.iterator();
+          Iterator<SNode> myParam_iterator = SLinkOperations.getTargets(thisNode, "parameter", true).iterator();
+          while (true) {
+            if (!(typeParam_iterator.hasNext())) {
+              break;
+            }
+            if (!(myParam_iterator.hasNext())) {
+              break;
+            }
+            typeParam = typeParam_iterator.next();
+            myParam = myParam_iterator.next();
+            if (SNodeOperations.isInstanceOf(myParam, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(myParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+              if (!(Type_Behavior.call_isSupersetOf_1220438914705(myParam, typeParam))) {
+                return false;
+              }
+            } else
+            {
+              if (!(MatchingUtil.matchNodes(myParam, typeParam))) {
+                return false;
+              }
+            }
+          }
+        }
+        return true;
+      }
+    }
+    return Type_Behavior.callSuper_isSupersetOf_1220438914705(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType", t);
   }
 
 }

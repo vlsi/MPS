@@ -12,6 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.genUtil.HelginsGenUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -167,13 +168,13 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1215528656471(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !("checkInequation".equals(SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "name")));
+    return !(HelginsGenUtil.isInCheckEquation(_context.getNode()));
   }
 
   public static boolean baseMappingRule_Condition_1215528815701(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     String alias = SPropertyOperations.getString(_context.getNode(), "symbol");
     if (":>=:".equals(alias) || ":<=:".equals(alias) || ":<<=:".equals(alias)) {
-      return "checkInequation".equals(SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "name"));
+      return HelginsGenUtil.isInCheckEquation(_context.getNode());
     }
     return false;
   }
@@ -181,7 +182,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1215531456103(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     String alias = SPropertyOperations.getString(_context.getNode(), "symbol");
     if (":==:".equals(alias)) {
-      return "checkInequation".equals(SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "name"));
+      return HelginsGenUtil.isInCheckEquation(_context.getNode());
     }
     return false;
   }
@@ -190,15 +191,15 @@ public class QueriesGenerated {
     if ((SLinkOperations.getTarget(_context.getNode(), "expression", true) != null)) {
       return false;
     }
-    return "checkInequation".equals(SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "name"));
+    return HelginsGenUtil.isInCheckEquation(_context.getNode());
   }
 
   public static boolean baseMappingRule_Condition_1215533018118(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return "checkInequation".equals(SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "name"));
+    return HelginsGenUtil.isInCheckEquation(_context.getNode());
   }
 
   public static boolean baseMappingRule_Condition_1215533521835(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !("checkInequation".equals(SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "name")));
+    return !(HelginsGenUtil.isInCheckEquation(_context.getNode()));
   }
 
   public static boolean baseMappingRule_Condition_1215598753994(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -227,6 +228,14 @@ public class QueriesGenerated {
       }
       return false;
     } while(false);
+  }
+
+  public static boolean baseMappingRule_Condition_1220519300886(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return HelginsGenUtil.isInCheckEquation(_context.getNode());
+  }
+
+  public static boolean baseMappingRule_Condition_1220519791975(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return !(HelginsGenUtil.isInCheckEquation(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1174643589864(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -681,6 +690,16 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1216644811639(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name") + "_QuickFix";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1220519561019(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode variableDeclaration = SLinkOperations.getTarget(_context.getNode(), "argumentRepresentator", true);
+    if ((variableDeclaration == null)) {
+      return _context.createUniqueName("_representatorVar", null);
+    } else
+    {
+      return SPropertyOperations.getString(variableDeclaration, "name");
+    }
   }
 
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1320,6 +1339,14 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1220448106009(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "elseClause", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1220519561044(final IOperationContext operationContext, final IfMacroContext _context) {
+    return true;
+  }
+
   public static SNode sourceNodeQuery_1174654997817(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -1612,6 +1639,22 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1216643035001(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "argumentType", true);
+  }
+
+  public static SNode sourceNodeQuery_1220358467477(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "dependency", true);
+  }
+
+  public static SNode sourceNodeQuery_1220448110482(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "elseClause", true);
+  }
+
+  public static SNode sourceNodeQuery_1220519561012(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "argument", true);
+  }
+
+  public static SNode sourceNodeQuery_1220519729870(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
   public static Iterable sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

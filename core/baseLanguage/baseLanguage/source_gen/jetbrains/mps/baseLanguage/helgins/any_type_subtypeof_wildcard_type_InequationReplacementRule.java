@@ -12,11 +12,11 @@ public class any_type_subtypeof_wildcard_type_InequationReplacementRule extends 
   public any_type_subtypeof_wildcard_type_InequationReplacementRule() {
   }
 
-  public void processInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     // do I have to say more? 
   }
 
-  public boolean checkInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     boolean result_14532009 = true;
     // do I have to say more? 
     return result_14532009;

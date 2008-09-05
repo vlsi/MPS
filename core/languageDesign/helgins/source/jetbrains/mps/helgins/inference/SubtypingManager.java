@@ -2,14 +2,19 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.helgins.runtime.*;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
+import jetbrains.mps.bootstrap.helgins.structure.MeetType;
 import jetbrains.mps.helgins.inference.util.*;
 import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.patterns.IMatchingPattern;
+import jetbrains.mps.patterns.ConceptMatchingPattern;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.core.structure.BaseConcept;
 
 import java.util.*;
 
@@ -90,7 +95,7 @@ public class SubtypingManager {
   /**
    * may produce side effects, such as creating new type equations
    */
-  public boolean isStrictSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
+  private boolean isStrictSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
     IWrapper subRepresentator = subtype;
     IWrapper superRepresentator = supertype;
     if (equationManager != null) {
@@ -127,15 +132,22 @@ public class SubtypingManager {
 
   private boolean searchInSupertypes(NodeWrapper subRepresentator, IMatcher superRepresentator, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
 
-    StructuralNodeSet<?> frontier = new StructuralNodeSet();
-    StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
-    StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
     if (subRepresentator == null) {
       return false;
     }
-    long millisStart = System.currentTimeMillis();
+
+    //asking a cache
+    Boolean answer = getCacheAnswer(subRepresentator, superRepresentator);
+    if (answer != null) {
+      return answer;
+    }
+
+    StructuralNodeSet<?> frontier = new StructuralNodeSet();
+    StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
+    StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
     frontier.add(subRepresentator.getNode());
     while (!frontier.isEmpty()) {
+      //collecting a set of frontier's ancestors
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
         ancestors.addAllStructurally(collectImmediateSupertypes(node, isWeak));
@@ -144,33 +156,71 @@ public class SubtypingManager {
       for (SNode passedNode : yetPassed) {
         ancestors.removeStructurally(passedNode);
       }
-      ArrayList<SNode> ancestorsSorted = new ArrayList<SNode>(ancestors);
+      ArrayList<SNode> ancestorsSorted;
+      ancestorsSorted = new ArrayList<SNode>(ancestors);
       Collections.sort(ancestorsSorted, new Comparator<SNode>() {
         public int compare(SNode o1, SNode o2) {
           return o2.depth() - o1.depth();
         }
       });
+      //searching the frontier's ancestors
+      Pair<SubtypingManager, Map<SNode, Set<SNode>>> matchParameter = new Pair<SubtypingManager, Map<SNode, Set<SNode>>>(this, new HashMap<SNode, Set<SNode>>());
+      boolean wasMatch = false;
       for (SNode ancestor : ancestorsSorted) {
+        //performing a match with a "hack" parameter containing a "secret" map inside
         if (superRepresentator.matchesWith(NodeWrapper.createWrapperFromNode(ancestor, equationManager),
-          equationManager, errorInfo)) {
-          long millisEnd = System.currentTimeMillis();
-          //stats
-          if (superRepresentator instanceof NodeWrapper) {
-            myTypeChecker.getStatistics().addCheckedInequation(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), millisEnd - millisStart);
+          equationManager, errorInfo, matchParameter)) {
+          if (matchParameter.o2.keySet().isEmpty()) { //no vars in superRepresentator!
+            addToCache(subRepresentator, superRepresentator, true);
+            return true;
+          } else {
+            wasMatch = true;
           }
-          return true;
         }
       }
+      if (wasMatch) {  //there were vars, some may be supposed to be equated with several different types;
+        // then we should equate them with a most specific type. if there's is no unique one then we choose a random one
+        Map<SNode, Set<SNode>> mapWithVars = matchParameter.o2;
+        Set<Pair<SNode, SNode>> childEqs = new HashSet<Pair<SNode, SNode>>();
+        for (SNode var : mapWithVars.keySet()) {
+          childEqs.add(new Pair<SNode, SNode>(var, mostSpecificTypes(mapWithVars.get(var)).iterator().next()));
+        }
+        if (equationManager != null) {
+          equationManager.addChildEquations(childEqs, errorInfo);
+        }
+        return true;
+      }
+
       newFrontier.addAllStructurally(ancestors);
       yetPassed.addAllStructurally(ancestors);
       frontier = newFrontier;
       newFrontier = new StructuralNodeSet();
     }
-    long millisEnd = System.currentTimeMillis();
-    if (superRepresentator instanceof NodeWrapper) {
-      myTypeChecker.getStatistics().addCheckedInequation(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), millisEnd - millisStart);
-    }
+    addToCache(subRepresentator, superRepresentator, false);
     return false;
+  }
+
+  private Boolean getCacheAnswer(NodeWrapper subRepresentator, IMatcher superRepresentator) {
+    if (myTypeChecker.isGenerationMode()) {
+      SubtypingCache cache = myTypeChecker.getSubtypingCache();
+      if (cache != null) {
+        if (superRepresentator instanceof NodeWrapper) {
+          return cache.getAnswer(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode());
+        }
+      }
+    }
+    return null;
+  }
+
+  private void addToCache(NodeWrapper subRepresentator, IMatcher superRepresentator, boolean answer) {
+    if (myTypeChecker.isGenerationMode()) {
+      SubtypingCache cache = myTypeChecker.getSubtypingCache();
+      if (cache != null) {
+        if (superRepresentator instanceof NodeWrapper) {
+          cache.addCacheEntry(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), answer);
+        }
+      }
+    }
   }
 
   public StructuralNodeSet<?> collectImmediateSupertypes(SNode term) {
@@ -383,7 +433,6 @@ public class SubtypingManager {
   public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern, boolean isWeak, EquationManager equationManager) {
     if (subtype == null) return null;
     if (pattern.match(subtype)) return subtype;
-    CoersionMatcher coersionMatcher = new CoersionMatcher(pattern);
     if ("jetbrains.mps.bootstrap.helgins.structure.MeetType".equals(subtype.getConceptFqName())) {
       List<SNode> children = subtype.getChildren("argument");
       for (SNode child : children) {
@@ -392,9 +441,36 @@ public class SubtypingManager {
       }
       return null;
     }
+
+    //asking the cache
+    if (myTypeChecker.isGenerationMode()) {
+      SubtypingCache cache = myTypeChecker.getSubtypingCache();
+      if (cache != null) {
+        Pair<Boolean,SNode> nodePair = cache.getCoerced(subtype, pattern);
+        if (nodePair.o1) {
+          return nodePair.o2;
+        }
+      }
+    }
+
+    CoersionMatcher coersionMatcher = new CoersionMatcher(pattern);
     boolean success = searchInSupertypes(NodeWrapper.fromNode(subtype, equationManager), coersionMatcher, null, null, isWeak);
-    if (!success) return null;
-    return coersionMatcher.getResult();
+    SNode result;
+    if (!success) {
+      result = null;
+    } else {
+      result = coersionMatcher.getResult();
+    }
+
+    //writing to the cache
+    if (myTypeChecker.isGenerationMode()) {
+      SubtypingCache cache = myTypeChecker.getSubtypingCache();
+      if (cache != null) {
+        cache.addCacheEntry(subtype, pattern, result);
+      }
+    }
+
+    return result;
   }
 
   public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern, EquationManager equationManager) {
@@ -431,6 +507,47 @@ public class SubtypingManager {
     return getTypeChecker().getRuntimeTypesModel();
   }
 
+  public SNode mostSpecificType(Set<SNode> nodes) {
+    Set<SNode> residualNodes = mostSpecificTypes(nodes);
+    if (residualNodes.size() == 1) {
+      return residualNodes.iterator().next();
+    }
+    if (residualNodes.size() > 1) {
+      MeetType meetType = MeetType.newInstance(getRuntimeTypesModel());
+      for (SNode node : residualNodes) {
+        meetType.addArgument((BaseConcept) node.getAdapter());
+      }
+      return meetType.getNode();
+    }
+    return null;
+  }
+
+  private synchronized Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
+    Set<SNode> residualNodes = new HashSet<SNode>(nodes);
+    while(residualNodes.size() > 1) {
+      List<SNode> nodesToIterate = new ArrayList<SNode>(residualNodes);
+      boolean wasChange = false;
+      int size = nodesToIterate.size();
+      for (int i = 0; i < size; i++) {
+        for (int j = i+1; j < size; j++) {
+          SNode node1 = nodesToIterate.get(i);
+          SNode node2 = nodesToIterate.get(j);
+          if (isSubtype(node1, node2)) {
+            residualNodes.remove(node2);
+            wasChange = true;
+          } else if (isSubtype(node2, node1)) {
+            residualNodes.remove(node1);
+            wasChange = true;
+          }
+        }
+      }
+      if (!wasChange) {
+        break;
+      }
+    }
+    return residualNodes;
+  }
+
 
   private static class CoersionMatcher implements IMatcher {
     private final IMatchingPattern myPattern;
@@ -438,6 +555,10 @@ public class SubtypingManager {
 
     public CoersionMatcher(IMatchingPattern pattern) {
       myPattern = pattern;
+    }
+
+    public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, Object matchParameter) {
+      return matchesWith(wrapper, equationManager, errorInfo);
     }
 
     public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo)  {
@@ -455,6 +576,10 @@ public class SubtypingManager {
 
     public SNode getResult() {
       return myResult;
+    }
+
+    public IMatchingPattern getMatchingPattern() {
+      return myPattern;
     }
   }
 }

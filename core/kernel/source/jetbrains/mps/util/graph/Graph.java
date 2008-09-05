@@ -30,12 +30,17 @@ public class Graph implements IGraph {
   }
 
   public boolean connect(IVertex vertex1, IVertex vertex2) {
+    return connect(vertex1, vertex2, null, null);
+  }
+
+  public boolean connect(IVertex vertex1, IVertex vertex2, Object key, Object userObject) {
     if (!myVertices.contains(vertex1)) return false;
     if (!myVertices.contains(vertex2)) return false;
     boolean connected = isConnected(vertex1, vertex2);
     IEdge connectingEdge;
     if (connected) return false;
     connectingEdge = new Edge(vertex1, vertex2);
+    connectingEdge.putUserObject(key, userObject);
     myEdges.add(connectingEdge);
     myVerticesToConnectingEdges.put(new Pair<IVertex, IVertex>(vertex1, vertex2), connectingEdge);
     myVerticesToConnectingEdges.put(new Pair<IVertex, IVertex>(vertex2, vertex1), connectingEdge);
@@ -81,17 +86,19 @@ public class Graph implements IGraph {
     double maxy = 0;
     boolean first = true;
     for (IVertex vertex : myVertices) {
+      int halfWidth = vertex.getWidth()/2;
+      int halfHeight = vertex.getHeight()/2;
       if (first) {
-        minx = vertex.getX();
-        maxx = vertex.getX();
-        miny = vertex.getY();
-        maxy = vertex.getY();
+        minx = vertex.getX() - halfWidth;
+        maxx = vertex.getX() + halfWidth;
+        miny = vertex.getY() - halfHeight;
+        maxy = vertex.getY() + halfHeight;
         first = false;
       } else {
-        minx = Math.min(minx, vertex.getX());
-        maxx = Math.max(maxx, vertex.getX());
-        miny = Math.min(miny, vertex.getY());
-        maxy = Math.max(maxy, vertex.getY());
+        minx = Math.min(minx, vertex.getX() - halfWidth);
+        maxx = Math.max(maxx, vertex.getX() + halfWidth);
+        miny = Math.min(miny, vertex.getY() - halfHeight);
+        maxy = Math.max(maxy, vertex.getY() + halfWidth);
       }
     }
     int x = (int) Math.round(minx);

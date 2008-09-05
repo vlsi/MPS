@@ -36,7 +36,7 @@ public class typeOf_Concept_FindInstances_InferenceRule implements InferenceRule
             SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), pattern_2);
             if (coercedNode_2 != null) {
               {
-                SNode _nodeToCheck_1029348928467 = null;
+                SNode _nodeToCheck_1029348928467 = node;
                 BaseIntentionProvider intentionProvider = null;
                 TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683094342", true), new QuotationClass_86().createNode(SLinkOperations.getTarget(coercedNode_2, "conceptDeclaraton", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683094340", intentionProvider);
               }
@@ -44,7 +44,7 @@ public class typeOf_Concept_FindInstances_InferenceRule implements InferenceRule
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683063629");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220522418696");
     }
   }
 

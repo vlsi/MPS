@@ -13,4 +13,8 @@ public class WildCardType_Behavior {
     return "?";
   }
 
+  public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
+    return true;
+  }
+
 }

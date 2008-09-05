@@ -32,6 +32,7 @@
   <import index="12" modelUID="java.lang@java_stub" version="-1" />
   <import index="15" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
   <import index="17" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
+  <visible index="2" modelUID="jetbrains.mps.bootstrap.helgins.structure" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170956206132">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1178821527695">
@@ -57,17 +58,35 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1178821685575">
             <property name="name" value="returnType" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1178821685576" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227935600">
-              <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1196862054906">
-                <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1196862080766">
-                  <property name="name" value="classifierType" />
-                  <link role="concept" targetNodeId="1.1107535904670" resolveInfo="ClassifierType" />
-                </node>
-                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196875999320">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1220369249414">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220369299383">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220369254840">
                   <link role="variableDeclaration" targetNodeId="1196875999318" resolveInfo="type" />
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" id="1220369301199" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" id="1196862071727" />
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220369227862">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220369225393">
+                  <link role="variableDeclaration" targetNodeId="1196875999318" resolveInfo="type" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1220369229569">
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1220369244945">
+                    <link role="conceptDeclaration" targetNodeId="2v.1174666260556" resolveInfo="TypeVarReference" />
+                  </node>
+                </node>
+              </node>
+              <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220369282519">
+                <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1220369282520">
+                  <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1220369282521">
+                    <property name="name" value="classifierType" />
+                    <link role="concept" targetNodeId="1.1107535904670" resolveInfo="ClassifierType" />
+                  </node>
+                  <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220369282522">
+                    <link role="variableDeclaration" targetNodeId="1196875999318" resolveInfo="type" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" id="1220369282523" />
+              </node>
             </node>
           </node>
         </node>

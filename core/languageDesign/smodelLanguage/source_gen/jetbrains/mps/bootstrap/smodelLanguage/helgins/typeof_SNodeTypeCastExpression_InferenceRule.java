@@ -28,21 +28,21 @@ public class typeof_SNodeTypeCastExpression_InferenceRule implements InferenceRu
         public void run() {
           if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186061665928), new QuotationClass_1().createNode(), false, false)) {
             {
-              SNode _nodeToCheck_1029348928467 = null;
+              SNode _nodeToCheck_1029348928467 = expr;
               BaseIntentionProvider intentionProvider = null;
               TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712082190", true), new QuotationClass_0().createNode(SLinkOperations.getTarget(expr, "concept", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712082188", intentionProvider);
             }
           } else
           {
             {
-              SNode _nodeToCheck_1029348928467 = null;
+              SNode _nodeToCheck_1029348928467 = expr;
               BaseIntentionProvider intentionProvider = null;
               TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712085350", true), new QuotationClass_2().createNode(SLinkOperations.getTarget(expr, "concept", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712085348", intentionProvider);
             }
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061660362");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220522413919");
     }
   }
 

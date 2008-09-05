@@ -45,7 +45,7 @@ public class typeof_SLinkListAccess_InferenceRule implements InferenceRule_Runti
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062870557");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220522414769");
     }
   }
 

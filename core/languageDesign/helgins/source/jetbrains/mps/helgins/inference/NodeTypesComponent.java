@@ -421,6 +421,12 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     addDepedentNodes(node, hashSet);
   }
 
+  public void addDependencyForCurrent(SNode node) {
+    HashSet<SNode> hashSet = new HashSet<SNode>();
+    hashSet.add(node);
+    addDepedentNodes(myCurrentCheckedNode, hashSet);
+  }
+
   public Map<SNode, SNode> getMainContext() {
     return myNodesToTypesMap;
   }

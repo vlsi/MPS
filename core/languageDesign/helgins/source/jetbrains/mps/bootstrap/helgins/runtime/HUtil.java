@@ -5,7 +5,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.patterns.IMatchingPattern;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.patterns.ConceptMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.helgins.inference.TypeChecker;
 
@@ -33,12 +33,7 @@ public class HUtil {
   }
 
   public static IMatchingPattern createMatchingPatternByConceptFQName(final String conceptFQName) {
-    return new IMatchingPattern() {
-      public boolean match(SNode nodeToMatch) {
-        if (nodeToMatch == null) return false;
-        return nodeToMatch.isInstanceOfConcept(conceptFQName);
-      }
-    };
+    return new ConceptMatchingPattern(conceptFQName);
   }
 
 }

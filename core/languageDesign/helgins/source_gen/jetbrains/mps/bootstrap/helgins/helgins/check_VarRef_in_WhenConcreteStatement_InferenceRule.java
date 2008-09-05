@@ -26,7 +26,7 @@ public class check_VarRef_in_WhenConcreteStatement_InferenceRule implements Infe
           return;
         } else
         {
-          parent = SNodeOperations.getParent(parent, null, false, false);
+          parent = SNodeOperations.getParent(parent);
         }
       }
       SNode variableDeclaration = SLinkOperations.getTarget(variableReference, "variableDeclaration", false);

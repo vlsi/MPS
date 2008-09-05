@@ -4,27 +4,49 @@ package jetbrains.mps.patterns.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
-
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
 public class WildcardPattern_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_CollectionCell5808_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5808_0");
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
+    return this.createCollection1136720096762(context, node);
   }
 
-  private static void setupBasic_ConstantCell5808_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5808_0");
+  public EditorCell createCollection1136720096762(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_Collection_11367200967621136720096762(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant1136720096763(context, node, "_"));
+    return editorCell;
+  }
+
+  public EditorCell createConstant1136720096763(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_11367200967631136720096763(editorCell, node, context);
+    setupLabel_Constant_1136720096763_1136720096763(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+
+  private static void setupBasic_Collection_11367200967621136720096762(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1136720096762");
+  }
+
+  private static void setupBasic_Constant_11367200967631136720096763(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1136720096763");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -32,7 +54,7 @@ public class WildcardPattern_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return WildcardPattern_Editor.calculateColor5(cell);
+              return WildcardPattern_Editor.calculateColor1606_0(cell);
             }
 
           });
@@ -43,36 +65,13 @@ public class WildcardPattern_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_ConstantCell5808_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1136720096763_1136720096763(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor5(EditorCell cell) {
+  private static Color calculateColor1606_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;
-  }
-
-
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_CollectionCell5808_0(context, node);
-  }
-
-  public EditorCell create_CollectionCell5808_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_CollectionCell5808_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell5808_0(context, node, "_"));
-    return editorCell;
-  }
-
-  public EditorCell create_ConstantCell5808_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell5808_0(editorCell, node, context);
-    setupLabel_ConstantCell5808_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
   }
 
 }

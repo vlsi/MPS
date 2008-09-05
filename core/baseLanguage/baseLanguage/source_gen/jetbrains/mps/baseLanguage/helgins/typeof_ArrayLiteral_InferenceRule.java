@@ -26,7 +26,7 @@ public class typeof_ArrayLiteral_InferenceRule implements InferenceRule_Runtime 
     {
       SNode _nodeToCheck_1029348928467 = arrayLiteral;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arrayLiteral, "jetbrains.mps.baseLanguage.helgins", "1188221454647", true), new QuotationClass_64().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1188221467376", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arrayLiteral, "jetbrains.mps.baseLanguage.helgins", "1188221454647", true), new QuotationClass_63().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1188221467376", intentionProvider);
     }
   }
 

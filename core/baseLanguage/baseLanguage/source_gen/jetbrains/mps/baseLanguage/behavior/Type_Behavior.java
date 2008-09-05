@@ -22,6 +22,7 @@ public class Type_Behavior {
   public static Class[] PARAMETERS_1213877337345 = {SNode.class};
   public static Class[] PARAMETERS_1213877337352 = {SNode.class};
   public static Class[] PARAMETERS_1213877337357 = {SNode.class};
+  public static Class[] PARAMETERS_1220438914705 = {SNode.class ,SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -54,6 +55,17 @@ public class Type_Behavior {
     return false;
   }
 
+  public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
+    {
+      Pattern_0 pattern_1 = new Pattern_0(thisNode);
+      SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(t, pattern_1);
+      if (coercedNode_1 != null) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public static List<String> call_getVariableSuffixes_1213877337304(SNode thisNode) {
     return (List<String>)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getVariableSuffixes_1213877337304", PARAMETERS_1213877337304);
   }
@@ -82,6 +94,10 @@ public class Type_Behavior {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getClassExpression_1213877337357", PARAMETERS_1213877337357);
   }
 
+  public static boolean call_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isSupersetOf_1220438914705", PARAMETERS_1220438914705, t);
+  }
+
   public static List<String> callSuper_getVariableSuffixes_1213877337304(SNode thisNode, String callerConceptFqName) {
     return (List<String>)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getVariableSuffixes_1213877337304", PARAMETERS_1213877337304);
   }
@@ -108,6 +124,10 @@ public class Type_Behavior {
 
   public static SNode callSuper_getClassExpression_1213877337357(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getClassExpression_1213877337357", PARAMETERS_1213877337357);
+  }
+
+  public static boolean callSuper_isSupersetOf_1220438914705(SNode thisNode, String callerConceptFqName, SNode t) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isSupersetOf_1220438914705", PARAMETERS_1220438914705, t);
   }
 
 }

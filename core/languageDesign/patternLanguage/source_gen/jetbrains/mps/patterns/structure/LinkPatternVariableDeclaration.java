@@ -21,15 +21,6 @@ public class LinkPatternVariableDeclaration extends LinkAttributeConcept impleme
     super(node);
   }
 
-  public static LinkPatternVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (LinkPatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static LinkPatternVariableDeclaration newInstance(SModel sm) {
-    return LinkPatternVariableDeclaration.newInstance(sm, false);
-  }
-
-
   public String getVarName() {
     return this.getProperty(LinkPatternVariableDeclaration.VAR_NAME);
   }
@@ -68,6 +59,15 @@ public class LinkPatternVariableDeclaration extends LinkAttributeConcept impleme
 
   public void setVirtualPackage(String value) {
     this.setProperty(LinkPatternVariableDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static LinkPatternVariableDeclaration newInstance(SModel sm, boolean init) {
+    return (LinkPatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static LinkPatternVariableDeclaration newInstance(SModel sm) {
+    return LinkPatternVariableDeclaration.newInstance(sm, false);
   }
 
 }

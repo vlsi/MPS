@@ -15,6 +15,7 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
 import jetbrains.mps.helgins.statistics.Statistics;
+import jetbrains.mps.helgins.inference.util.SubtypingCache;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -49,11 +50,11 @@ public class TypeChecker implements ApplicationComponent {
 
   private SubtypingManager mySubtypingManager;
   private RuntimeSupport myRuntimeSupport;
-  private Statistics myStatistics;
   private RulesManager myRulesManager;
   private NodeTypesComponent myCurrentTypesComponent = null;
   private Stack<NodeTypesComponent> myCurentTypesComponentStack = new Stack<NodeTypesComponent>();
   private Stack<TypeCheckingMode> myTypesCheckingModesStack = new Stack<TypeCheckingMode>();
+  private SubtypingCache mySubtypingCache = null;
 
   @ForDebug
   private Set<SNode> myResolveModeNodesBeingChecked = new HashSet<SNode>();
@@ -75,7 +76,6 @@ public class TypeChecker implements ApplicationComponent {
     mySubtypingManager = new SubtypingManager(this);
     myRuntimeSupport = new RuntimeSupport(this);
     myRulesManager = new RulesManager(this);
-    myStatistics = new Statistics();
   }
 
   public void initComponent() {
@@ -151,13 +151,12 @@ public class TypeChecker implements ApplicationComponent {
     return mySubtypingManager;
   }
 
-
   public RuntimeSupport getRuntimeSupport() {
     return myRuntimeSupport;
   }
 
-  public Statistics getStatistics() {
-    return myStatistics;
+  public SubtypingCache getSubtypingCache() {
+    return mySubtypingCache;
   }
 
   public RulesManager getRulesManager() {
@@ -197,6 +196,9 @@ public class TypeChecker implements ApplicationComponent {
       myTypesCheckingModesStack.push(myTypeCheckingMode);
     }
     myTypeCheckingMode = typeCheckingMode;
+    if (myTypeCheckingMode == TypeCheckingMode.GENERATION) {
+      mySubtypingCache = new SubtypingCache();
+    }
     if (typeCheckingMode != null) {
       setIncrementalMode(false);
     }
@@ -207,7 +209,10 @@ public class TypeChecker implements ApplicationComponent {
     if (!myTypesCheckingModesStack.isEmpty()) {
       myTypeCheckingMode = myTypesCheckingModesStack.pop();
     }
-    setIncrementalMode(true);
+    if (myTypeCheckingMode == null) {
+      mySubtypingCache = null;
+      setIncrementalMode(true);
+    }
   }
 
   public void reportTypeError(SNode nodeWithError, String errorString) {
@@ -235,6 +240,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
+    if (myCurrentTypesComponent == null) return;
     myCurrentTypesComponent.reportTypeError(nodeWithError, errorReporter);
     myCurrentTypesComponent.addDependcyOnCurrent(nodeWithError);
   }
@@ -463,6 +469,10 @@ public class TypeChecker implements ApplicationComponent {
 
   public boolean isIncrementalMode() {
     return myIsIncrementalMode;
+  }
+
+  public boolean isGenerationMode() {
+    return myTypeCheckingMode == TypeCheckingMode.GENERATION;
   }
 
   private static class MyReadAccessListener implements INodeReadAccessListener {

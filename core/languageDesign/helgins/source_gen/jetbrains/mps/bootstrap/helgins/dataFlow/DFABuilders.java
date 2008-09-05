@@ -31,6 +31,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem", new MatchStatementItem_DataFlow());
     manager.register("jetbrains.mps.bootstrap.helgins.structure.GivetypeStatement", new GivetypeStatement_DataFlow());
     manager.register("jetbrains.mps.bootstrap.helgins.structure.CoerceExpression", new CoerceExpression_DataFlow());
+    manager.register("jetbrains.mps.bootstrap.helgins.structure.AddDependencyStatement", new AddDependencyStatement_DataFlow());
   }
 
 }

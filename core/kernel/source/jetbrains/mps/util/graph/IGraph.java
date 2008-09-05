@@ -17,6 +17,7 @@ public interface IGraph {
   Set<IVertex> getVertices();
   void addVertex(IVertex vertex);
   boolean connect(IVertex vertex1, IVertex vertex2);
+  boolean connect(IVertex vertex1, IVertex vertex2, Object key, Object userObject);
   boolean isConnected(IVertex vertex1, IVertex vertex2);
   Pair<Integer,Integer> getBaricenter();
   int getVerticesCount();

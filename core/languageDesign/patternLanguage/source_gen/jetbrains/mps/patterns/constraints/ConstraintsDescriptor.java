@@ -15,6 +15,9 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new PatternVariableDeclaration_name_PropertyConstraint());
     this.myConstraints.add(new LinkPatternVariableDeclaration_name_PropertyConstraint());
     this.myConstraints.add(new PropertyPatternVariableDeclaration_name_PropertyConstraint());
+    this.myConstraints.add(new PatternVariableReference_variableDeclaration_ReferentConstraint());
+    this.myConstraints.add(new PropertyPatternVariableReference_variableDeclaration_ReferentConstraint());
+    this.myConstraints.add(new LinkPatternVariableReference_variableDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

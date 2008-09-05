@@ -19,7 +19,7 @@ public class Main extends JFrame {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setSize(600,600);
     getContentPane().add(new MyJComponent(graph));
-    PhysicalGraphLayouter.relayoutPhysicallyCompletely(graph, CENTER, CENTER);
+    new PhysicalGraphLayouter().relayoutPhysicallyCompletely(graph, CENTER, CENTER);
     setVisible(true);
   }
 

@@ -16,21 +16,21 @@ public class PatternExpression extends BaseConcept {
     super(node);
   }
 
-  public static PatternExpression newInstance(SModel sm, boolean init) {
-    return (PatternExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.PatternExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PatternExpression newInstance(SModel sm) {
-    return PatternExpression.newInstance(sm, false);
-  }
-
-
   public BaseConcept getPatternNode() {
     return (BaseConcept)this.getChild(PatternExpression.PATTERN_NODE);
   }
 
   public void setPatternNode(BaseConcept node) {
     super.setChild(PatternExpression.PATTERN_NODE, node);
+  }
+
+
+  public static PatternExpression newInstance(SModel sm, boolean init) {
+    return (PatternExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.PatternExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PatternExpression newInstance(SModel sm) {
+    return PatternExpression.newInstance(sm, false);
   }
 
 }

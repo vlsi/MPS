@@ -4,6 +4,7 @@ package jetbrains.mps.patterns.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -14,7 +15,11 @@ public class typeof_AsPattern_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.patterns.helgins", "1202491120336", true), new QuotationClass_5().createNode(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(nodeToCheck, null, false, false))), nodeToCheck, null, "jetbrains.mps.patterns.helgins", "1202491123370");
+    {
+      SNode _nodeToCheck_1029348928467 = nodeToCheck;
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.patterns.helgins", "1202491120336", true), new QuotationClass_5().createNode(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(nodeToCheck))), _nodeToCheck_1029348928467, null, "jetbrains.mps.patterns.helgins", "1202491123370", intentionProvider);
+    }
   }
 
   public String getApplicableConceptFQName() {

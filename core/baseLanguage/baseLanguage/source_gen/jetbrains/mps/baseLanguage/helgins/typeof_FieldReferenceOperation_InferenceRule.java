@@ -35,7 +35,7 @@ public class typeof_FieldReferenceOperation_InferenceRule implements InferenceRu
     {
       SNode _nodeToCheck_1029348928467 = fieldReference;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), new QuotationClass_74().createNode(fieldClassifier), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206554174350", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), new QuotationClass_73().createNode(fieldClassifier), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206554174350", false, 0, intentionProvider);
     }
     {
       final SNode IT = TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334);
@@ -46,7 +46,7 @@ public class typeof_FieldReferenceOperation_InferenceRule implements InferenceRu
           Pair<SNode, Map<SNode, List<SNode>>> pair;
           SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(SLinkOperations.getTarget(fieldDeclaration, "type", true), mmap);
           {
-            SNode _nodeToCheck_1029348928467 = null;
+            SNode _nodeToCheck_1029348928467 = fieldReference;
             BaseIntentionProvider intentionProvider = null;
             TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(fieldReference, "jetbrains.mps.baseLanguage.helgins", "1206554174385", true), matchedType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206554174383", intentionProvider);
           }
@@ -54,7 +54,7 @@ public class typeof_FieldReferenceOperation_InferenceRule implements InferenceRu
           RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);
         }
 
-      }, "jetbrains.mps.baseLanguage.helgins", "1206554174358");
+      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1220544773973");
     }
   }
 

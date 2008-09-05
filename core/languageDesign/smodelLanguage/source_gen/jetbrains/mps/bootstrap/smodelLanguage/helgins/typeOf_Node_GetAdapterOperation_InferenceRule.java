@@ -25,13 +25,13 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
         public void run() {
           SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C);
           {
-            SNode _nodeToCheck_1029348928467 = null;
+            SNode _nodeToCheck_1029348928467 = node;
             BaseIntentionProvider intentionProvider = null;
             TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710468988", true), AbstractConceptDeclaration_Behavior.call_getAdapterType_1213877394418(inputNodeConcept), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710468986", intentionProvider);
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057669142");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220522417563");
     }
     {
       SNode _nodeToCheck_1029348928467 = node;

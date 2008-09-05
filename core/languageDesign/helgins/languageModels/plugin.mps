@@ -1604,103 +1604,13 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ToolDeclaration" id="1219323938807">
-    <property name="name" value="HelginsStatisticsView" />
-    <property name="caption" value="helgins statistics" />
-    <node role="fieldDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1219328819219">
-      <property name="name" value="myComponent" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1219328819220" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219328822573">
-        <link role="classifier" targetNodeId="20.~JComponent" resolveInfo="JComponent" />
-      </node>
-    </node>
-    <node role="getComponentBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetComponentBlock" id="1219323938808">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219323938809">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1219329004218">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219329005717">
-            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1219329005718" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1219329005719">
-              <link role="member" targetNodeId="1219328819219" resolveInfo="myComponent" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ProjectPluginInitBlock" id="1219328807166">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219328807168">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219328836682">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1219328840520">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1219328977181">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1219328981332">
-                <link role="baseMethodDeclaration" targetNodeId="35.~StatisticsComponent.&lt;init&gt;(jetbrains.mps.helgins.statistics.Statistics)" resolveInfo="StatisticsComponent" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219328996191">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1219330331936">
-                    <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
-                    <link role="classConcept" targetNodeId="21.~TypeChecker" resolveInfo="TypeChecker" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219328998058">
-                    <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getStatistics():jetbrains.mps.helgins.statistics.Statistics" resolveInfo="getStatistics" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219328836683">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1219328836684" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1219328836685">
-                <link role="member" targetNodeId="1219328819219" resolveInfo="myTypeChecker" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1219329851052">
-    <property name="package" value="Actions" />
-    <property name="name" value="ShowHelginsStatisticsView" />
-    <property name="isAlwaysVisible" value="true" />
-    <property name="caption" value="Show Helgins Statistics View" />
-    <node role="parameter" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDataParameterDeclaration" id="1219329899526">
-      <property name="name" value="project" />
-      <link role="key" targetNodeId="34.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
-    </node>
-    <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1219329851053">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219329851054">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219329932402">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219329932403">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219329932404">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219329932405">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1219329932406" />
-                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDataParameterReferenceOperation" id="1219329932407">
-                  <link role="member" targetNodeId="1219329899526" resolveInfo="project" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetToolOperation" id="1219329932408">
-                <link role="tool" targetNodeId="1219323938807" resolveInfo="HelginsStatisticsView" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219329932409">
-              <link role="baseMethodDeclaration" targetNodeId="29.~BaseTool.openToolLater(boolean):void" resolveInfo="openToolLater" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1219329932410">
-                <property name="value" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1219330079925">
     <property name="name" value="HelginsToolsAddition" />
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1219330185822">
       <link role="modifiedGroup" targetNodeId="4.1204991238062" resolveInfo="Tools" />
       <link role="point" targetNodeId="4.1217598172089" resolveInfo="customTools" />
     </node>
-    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1219330134776">
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1219330180710">
-        <link role="action" targetNodeId="1219329851052" resolveInfo="ShowHelginsStatisticsView" />
-      </node>
-    </node>
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1219330134776" />
   </node>
 </model>
 

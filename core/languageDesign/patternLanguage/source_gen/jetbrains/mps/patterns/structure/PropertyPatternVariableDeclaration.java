@@ -21,15 +21,6 @@ public class PropertyPatternVariableDeclaration extends PropertyAttributeConcept
     super(node);
   }
 
-  public static PropertyPatternVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (PropertyPatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PropertyPatternVariableDeclaration newInstance(SModel sm) {
-    return PropertyPatternVariableDeclaration.newInstance(sm, false);
-  }
-
-
   public String getVarName() {
     return this.getProperty(PropertyPatternVariableDeclaration.VAR_NAME);
   }
@@ -68,6 +59,15 @@ public class PropertyPatternVariableDeclaration extends PropertyAttributeConcept
 
   public void setVirtualPackage(String value) {
     this.setProperty(PropertyPatternVariableDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static PropertyPatternVariableDeclaration newInstance(SModel sm, boolean init) {
+    return (PropertyPatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PropertyPatternVariableDeclaration newInstance(SModel sm) {
+    return PropertyPatternVariableDeclaration.newInstance(sm, false);
   }
 
 }

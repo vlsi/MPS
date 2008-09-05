@@ -22,4 +22,7 @@ public interface IVertex {
   Object getUserObject(Object key);
   void putUserObject(Object key, Object value);
   void removeUserObject(Object key);
+
+  int getWidth();
+  int getHeight();
 }

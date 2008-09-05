@@ -169,8 +169,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740201791">
                 <link role="baseMethodDeclaration" targetNodeId="5.~FindUsagesManager.findUsages(java.util.Set,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.progress.IAdaptiveProgressMonitor,boolean):java.util.Set" resolveInfo="findUsages" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1210514353351">
-                  <link role="baseMethodDeclaration" targetNodeId="15.~CollectionUtil.asSet(java.lang.Object[]):java.util.Set" resolveInfo="asSet" />
                   <link role="classConcept" targetNodeId="15.~CollectionUtil" resolveInfo="CollectionUtil" />
+                  <link role="baseMethodDeclaration" targetNodeId="15.~CollectionUtil.asSet(java.lang.Object...):java.util.Set" resolveInfo="asSet" />
                   <node role="actualArgument" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ConceptFunctionParameter_node" id="1210514355686" />
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1206463389285" />

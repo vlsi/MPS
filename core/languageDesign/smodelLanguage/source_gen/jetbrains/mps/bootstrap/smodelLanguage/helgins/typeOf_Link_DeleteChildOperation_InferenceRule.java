@@ -23,13 +23,13 @@ public class typeOf_Link_DeleteChildOperation_InferenceRule implements Inference
 
         public void run() {
           {
-            SNode _nodeToCheck_1029348928467 = null;
+            SNode _nodeToCheck_1029348928467 = op;
             BaseIntentionProvider intentionProvider = null;
             TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205528931094", true), new QuotationClass_64().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205528931092", intentionProvider);
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205528931049");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220522416861");
     }
   }
 

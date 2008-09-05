@@ -17,7 +17,7 @@ public class typeof_ArrayLengthOperation_InferenceRule implements InferenceRule_
     {
       SNode _nodeToCheck_1029348928467 = lengthOperation;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(lengthOperation, "jetbrains.mps.baseLanguage.helgins", "1208891064552", true), new QuotationClass_82().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1208891068843", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(lengthOperation, "jetbrains.mps.baseLanguage.helgins", "1208891064552", true), new QuotationClass_81().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1208891068843", intentionProvider);
     }
   }
 

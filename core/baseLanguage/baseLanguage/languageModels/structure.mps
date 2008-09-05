@@ -2718,5 +2718,15 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1219920932475">
+    <property name="name" value="VariableArityType" />
+    <link role="extends" targetNodeId="1068431790189" resolveInfo="Type" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1219921048460">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="componentType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
+    </node>
+  </node>
 </model>
 

@@ -49,23 +49,34 @@ public class RuleSet<T extends Rule_Runtime> {
     while (!frontier.isEmpty()) {
       for (AbstractConceptDeclaration abstractConcept : frontier) {
         Set<T> rules = myRules.get(abstractConcept);
+        boolean overrides = false;
         if (rules != null) {
           result.addAll(rules);
-        } else {
-          if (abstractConcept instanceof ConceptDeclaration) {
-            ConceptDeclaration conceptDeclaration = (ConceptDeclaration) abstractConcept;
-            newFrontier.add(conceptDeclaration.getExtends());
-            for (InterfaceConceptReference interfaceConceptReference : conceptDeclaration.getImplementses()) {
-              newFrontier.add(interfaceConceptReference.getIntfc());
-            }
-          }
-          if (abstractConcept instanceof InterfaceConceptDeclaration) {
-            InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) abstractConcept;
-            for (InterfaceConceptReference interfaceConceptReference : interfaceConcept.getExtendses()) {
-              newFrontier.add(interfaceConceptReference.getIntfc());
+          for (T rule : rules) {
+            if (rule instanceof ICheckingRule_Runtime && ((ICheckingRule_Runtime)rule).overrides()) {
+              overrides = true;
             }
           }
         }
+        //else {
+        if (overrides) {
+          continue;
+        }
+        if (abstractConcept instanceof ConceptDeclaration) {
+          ConceptDeclaration conceptDeclaration = (ConceptDeclaration) abstractConcept;
+          newFrontier.add(conceptDeclaration.getExtends());
+          for (InterfaceConceptReference interfaceConceptReference : conceptDeclaration.getImplementses()) {
+            newFrontier.add(interfaceConceptReference.getIntfc());
+          }
+        }
+        if (abstractConcept instanceof InterfaceConceptDeclaration) {
+          InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) abstractConcept;
+          for (InterfaceConceptReference interfaceConceptReference : interfaceConcept.getExtendses()) {
+            newFrontier.add(interfaceConceptReference.getIntfc());
+          }
+        }
+        //}
+
       }
       frontier = newFrontier;
       newFrontier = new HashSet<AbstractConceptDeclaration>();

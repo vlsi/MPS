@@ -16598,5 +16598,17 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1219921092039">
+    <link role="conceptDeclaration" targetNodeId="17.1219920932475" resolveInfo="VariableArityType" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1219921129027">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1219921129028">
+        <link role="relationDeclaration" targetNodeId="17.1219921048460" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1219921135420">
+        <property name="text" value="..." />
+      </node>
+    </node>
+  </node>
 </model>
 

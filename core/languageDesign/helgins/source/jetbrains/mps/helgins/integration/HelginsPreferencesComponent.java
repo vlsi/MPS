@@ -52,6 +52,18 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
     return myState.getHelginsTimeout();
   }
 
+  public boolean isCoersionSimpleCached() {
+    return myState.isCoersionSimpleCached();
+  }
+
+  public boolean isCoersionPatternCached() {
+    return myState.isCoersionPatternCached();
+  }
+
+  public boolean isSubtypingCached() {
+    return myState.isSubtypingCached();
+  }
+
 
   @Nls
   public String getDisplayName() {
@@ -92,17 +104,26 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
     private JCheckBox myHighlightingCheckBox = new JCheckBox("Use debug highlighting");
     private JCheckBox myGeneratorOptimizationCheckBox = new JCheckBox("Use optimization for generation");
     private JTextField myHelginsTimeoutField = new JTextField();
+
+    private JCheckBox myCacheSubtypingCheckBox = new JCheckBox("cache for subtyping enabled (advanced)");
+    private JCheckBox myCacheCoerceSimpleCheckBox = new JCheckBox("cache for coersion enabled (advanced)");
+    private JCheckBox myCacheCoercePatternsCheckBox = new JCheckBox("cache for coersion w/patterns enabled (advanced)");
+
     private JPanel myComponent = new JPanel(new BorderLayout());
 
     public MyPreferencesPage() {
-      JPanel panel = new JPanel(new GridLayout(3, 1));
+      JPanel panel = new JPanel(new GridLayout(0, 1));
       //   myIncrementalCheckBox.setSelected(myUsesIncrementalAlgorithm);
       myHighlightingCheckBox.setSelected(myState.isUsesDebugHighlighting());
       myGeneratorOptimizationCheckBox.setSelected(myState.isGenerationOptimizationEnabled());
       myHelginsTimeoutField.setText(myState.getHelginsTimeout() + "");
+      myCacheSubtypingCheckBox.setSelected(myState.isSubtypingCached());
+      myCacheCoerceSimpleCheckBox.setSelected(myState.isCoersionSimpleCached());
+      myCacheCoercePatternsCheckBox.setSelected(myState.isCoersionPatternCached());
       //   panel.add(myIncrementalCheckBox);
       panel.add(myHighlightingCheckBox);
       panel.add(myGeneratorOptimizationCheckBox);
+
       JPanel timeoutPanel = new JPanel(new GridBagLayout());
       GridBagConstraints constraints = new GridBagConstraints();
       constraints.gridy = 0;
@@ -110,11 +131,18 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
       constraints.weightx = 0;
       timeoutPanel.add(new JLabel("typechecker timeout"), constraints);
       constraints.gridx = 1;
+      constraints.weightx = 0.3;
+      constraints.fill = GridBagConstraints.HORIZONTAL;
       timeoutPanel.add(myHelginsTimeoutField, constraints);
       constraints.gridx = 2;
-      constraints.weightx = 1;
+      constraints.weightx = 0.7;
       timeoutPanel.add(new JPanel(), constraints);
       panel.add(timeoutPanel);
+
+      panel.add(myCacheSubtypingCheckBox);
+      panel.add(myCacheCoerceSimpleCheckBox);
+      panel.add(myCacheCoercePatternsCheckBox);
+
       myComponent.add(panel, BorderLayout.NORTH);
     }
 
@@ -156,6 +184,9 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
         NodeTypesComponentsRepository.getInstance().clear();
         TypeChecker.getInstance().clearForReload();
       }*/
+      myState.setSubtypingCached(myCacheSubtypingCheckBox.isSelected());
+      myState.setCoersionSimpleCached(myCacheCoerceSimpleCheckBox.isSelected());
+      myState.setCoersionPatternCached(myCacheCoercePatternsCheckBox.isSelected());
     }
 
     public JComponent getComponent() {
@@ -175,6 +206,10 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
     private boolean myUsesDebugHighlighting = false;
     private boolean myGenerationOptimizationEnabled = true;
     private int myHelginsTimeout = -1;
+
+    private boolean myCoersionSimpleCached = true;
+    private boolean myCoersionPatternCached = true;
+    private boolean mySubtypingCached = true;
 
 
     public boolean isUsesDebugHighlighting() {
@@ -199,6 +234,30 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
 
     public void setHelginsTimeout(int timeout) {
       myHelginsTimeout = timeout;
+    }
+
+    public boolean isCoersionSimpleCached() {
+      return myCoersionSimpleCached;
+    }
+
+    public void setCoersionSimpleCached(boolean coersionSimpleCached) {
+      myCoersionSimpleCached = coersionSimpleCached;
+    }
+
+    public boolean isCoersionPatternCached() {
+      return myCoersionPatternCached;
+    }
+
+    public void setCoersionPatternCached(boolean coersionPatternCached) {
+      myCoersionPatternCached = coersionPatternCached;
+    }
+
+    public boolean isSubtypingCached() {
+      return mySubtypingCached;
+    }
+
+    public void setSubtypingCached(boolean subtypingCached) {
+      mySubtypingCached = subtypingCached;
     }
   }
 }

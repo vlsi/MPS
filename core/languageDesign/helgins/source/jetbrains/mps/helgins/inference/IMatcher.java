@@ -12,4 +12,5 @@ import org.jetbrains.annotations.Nullable;
  */
 public interface IMatcher {
   public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo);
+  public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, Object matchParameter);
 }

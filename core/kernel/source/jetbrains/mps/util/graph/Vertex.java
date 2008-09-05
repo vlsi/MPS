@@ -34,6 +34,14 @@ public class Vertex implements IVertex {
     return myY;
   }
 
+  public int getWidth() {
+    return 0;
+  }
+
+  public int getHeight() {
+    return 0;
+  }
+
   public String getName() {
     return myName;
   }

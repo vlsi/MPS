@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class UpperBoundType_Behavior {
 
@@ -18,6 +19,13 @@ public class UpperBoundType_Behavior {
     {
       return "? extends " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "bound", true));
     }
+  }
+
+  public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
+    if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+      return Type_Behavior.call_isSupersetOf_1220438914705(SLinkOperations.getTarget(thisNode, "bound", true), SLinkOperations.getTarget(t, "bound", true));
+    }
+    return Type_Behavior.call_isSupersetOf_1220438914705(SLinkOperations.getTarget(thisNode, "bound", true), t);
   }
 
 }

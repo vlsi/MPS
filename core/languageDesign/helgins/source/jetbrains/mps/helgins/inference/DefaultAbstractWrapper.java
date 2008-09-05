@@ -5,6 +5,8 @@ import jetbrains.mps.util.WeakSet;
 import java.util.Set;
 import java.util.HashSet;
 
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -56,5 +58,9 @@ public abstract class DefaultAbstractWrapper implements IWrapper {
 
   public IWrapper getShallowConcreteRepresentator() {
     return null;
+  }
+
+  public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo) {
+    return matchesWith(wrapper, equationManager, errorInfo, null);
   }
 }

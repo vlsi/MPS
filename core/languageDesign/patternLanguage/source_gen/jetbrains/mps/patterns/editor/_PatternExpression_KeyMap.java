@@ -7,7 +7,6 @@ import jetbrains.mps.nodeEditor.EditorCellKeyMapAction;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.patterns.util.PatternAddingUtil;
@@ -16,6 +15,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.patterns.structure.AsPattern_AnnotationLink;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.patterns.structure.AsPattern;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.patterns.structure.ListPattern;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -261,7 +261,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     }
 
     private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      return PatternAddingUtil.isPatternApplicable(editorContext) && SNodeOperations.getParent(node, null, false, false) != null;
+      return PatternAddingUtil.isPatternApplicable(editorContext) && SNodeOperations.getParent(node) != null;
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
@@ -375,7 +375,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
         return;
       }
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.quotation.structure.ListAntiquotation")) {
-        SNode attributedNode = SNodeOperations.getParent(contextNode, null, false, false);
+        SNode attributedNode = SNodeOperations.getParent(contextNode);
         assert attributedNode != null;
         attributedNode.setAttribute(null);
         return;
@@ -443,7 +443,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       }
       String role = SPropertyOperations.getString(link, "role");
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.quotation.structure.ReferenceAntiquotation")) {
-        SNode attributedNode = SNodeOperations.getParent(contextNode, null, false, false);
+        SNode attributedNode = SNodeOperations.getParent(contextNode);
         assert attributedNode != null;
         ReferenceAntiquotation_AnnotationLink.setReferenceAntiquotation(((BaseConcept)SNodeOperations.getAdapter(attributedNode)), role, null);
         attributedNode.setAttribute(null);

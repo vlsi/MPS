@@ -16,7 +16,7 @@ public class typeof_PatternExpression_InferenceRule implements InferenceRule_Run
 
   public void applyRule(final SNode patternExpression) {
     SNode patternExpression1 = patternExpression;
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpression1, "patternNode", true))), patternExpression1, "jetbrains.mps.patterns.helgins", "1196515055997");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_0().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpression1, "patternNode", true))), patternExpression1, "jetbrains.mps.patterns.helgins", "1196515055997");
   }
 
   public String getApplicableConceptFQName() {

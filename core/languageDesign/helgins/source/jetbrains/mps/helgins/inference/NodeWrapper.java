@@ -11,9 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -77,9 +75,54 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     return this;
   }
 
-  public boolean matchesWith(IWrapper wrapper, final @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo) {
+  public boolean matchesWith(IWrapper wrapper, final @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, Object matchParameter) {
     if (wrapper == null) return false;
     if (wrapper instanceof NodeWrapper) {
+
+      if (matchParameter instanceof Pair && ((Pair)matchParameter).o1 instanceof SubtypingManager) { //special case: there's a "secret" map inside!
+        Pair<SubtypingManager, Map<SNode, Set<SNode>>> pair = (Pair<SubtypingManager, Map<SNode, Set<SNode>>>) matchParameter;
+        Map<SNode, Set<SNode>> mapWithVars = pair.o2;
+        final Map<SNode, Set<SNode>> candidate = new HashMap<SNode, Set<SNode>>();
+
+        IMatchModifier matchModifier = new IMatchModifier() {
+          public boolean accept(SNode node1, SNode node2) {
+            return BaseAdapter.isInstance(node1, RuntimeTypeVariable.class);
+          }
+
+          public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
+            return false;  //todo
+          }
+
+          public void performAction(SNode node1, SNode node2) {
+            Set<SNode> nodeSet = candidate.get(node1);
+            if (nodeSet == null) {
+              nodeSet = new HashSet<SNode>();
+              candidate.put(node1, nodeSet);
+            }
+            nodeSet.add(node2);
+          }
+
+          public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2) {
+            //todo
+          }
+        };
+
+        boolean b = MatchingUtil.matchNodes(getNode(), wrapper.getNode(), matchModifier, false);
+        if (b) {
+          for (SNode var : candidate.keySet()) {
+            Set<SNode> candidateSet = candidate.get(var);
+            if (candidateSet == null) continue;
+            Set<SNode> nodeSet = mapWithVars.get(var);
+            if (nodeSet == null) {
+              nodeSet = new HashSet<SNode>();
+              mapWithVars.put(var, nodeSet);
+            }
+            nodeSet.addAll(candidateSet);
+          }
+        }
+        return b;
+      }
+
       final Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();
       boolean b = MatchingUtil.matchNodes(getNode(), wrapper.getNode(), new IMatchModifier() {
         public boolean accept(SNode node1, SNode node2) {

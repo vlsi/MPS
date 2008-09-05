@@ -23,13 +23,13 @@ public class typeof_LinkList_RemoveAllChildrenOperation_InferenceRule implements
 
         public void run() {
           {
-            SNode _nodeToCheck_1029348928467 = null;
+            SNode _nodeToCheck_1029348928467 = op;
             BaseIntentionProvider intentionProvider = null;
             TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1215104325502", true), new QuotationClass_95().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1215104325500", intentionProvider);
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1215104325498");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220522420564");
     }
   }
 

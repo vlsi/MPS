@@ -38,13 +38,13 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule implements Infer
             }
           }
           {
-            SNode _nodeToCheck_1029348928467 = null;
+            SNode _nodeToCheck_1029348928467 = op;
             BaseIntentionProvider intentionProvider = null;
             TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205771608897", true), new QuotationClass_65().createNode(resultConcept), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205771608895", intentionProvider);
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205771551269");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220522416614");
     }
   }
 

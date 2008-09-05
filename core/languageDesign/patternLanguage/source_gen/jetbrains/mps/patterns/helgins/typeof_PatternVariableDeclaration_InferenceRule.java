@@ -5,6 +5,7 @@ package jetbrains.mps.patterns.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -16,15 +17,23 @@ public class typeof_PatternVariableDeclaration_InferenceRule implements Inferenc
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    SNode attributedNode = SNodeOperations.getParent(nodeToCheck, null, false, false);
-    SNode parent = SNodeOperations.getParent(attributedNode, null, false, false);
+    SNode attributedNode = SNodeOperations.getParent(nodeToCheck);
+    SNode parent = SNodeOperations.getParent(attributedNode);
     if (parent == null) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.patterns.helgins", "1202488469553", true), new QuotationClass_3().createNode(), nodeToCheck, null, "jetbrains.mps.patterns.helgins", "1202488480088");
+      {
+        SNode _nodeToCheck_1029348928467 = nodeToCheck;
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.patterns.helgins", "1202488469553", true), new QuotationClass_3().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.patterns.helgins", "1202488480088", intentionProvider);
+      }
     } else
     {
       String role = attributedNode.getRole_();
       SNode linkDeclaration = AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(parent), role);
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.patterns.helgins", "1202488496552", true), new QuotationClass_4().createNode(SLinkOperations.getTarget(linkDeclaration, "target", false)), nodeToCheck, null, "jetbrains.mps.patterns.helgins", "1202488496543");
+      {
+        SNode _nodeToCheck_1029348928467 = nodeToCheck;
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.patterns.helgins", "1202488496552", true), new QuotationClass_4().createNode(SLinkOperations.getTarget(linkDeclaration, "target", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.patterns.helgins", "1202488496543", intentionProvider);
+      }
     }
   }
 

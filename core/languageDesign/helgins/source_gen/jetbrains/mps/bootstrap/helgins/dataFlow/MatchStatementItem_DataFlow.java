@@ -21,7 +21,7 @@ public class MatchStatementItem_DataFlow extends DataFlowBuilder {
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
 
       public void run() {
-        _context.getBuilder().emitJump(_context.getBuilder().after(SNodeOperations.getParent(_context.getNode(), null, false, false)));
+        _context.getBuilder().emitJump(_context.getBuilder().after(SNodeOperations.getParent(_context.getNode())));
       }
 
     });

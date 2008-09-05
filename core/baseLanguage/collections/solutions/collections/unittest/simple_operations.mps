@@ -1214,8 +1214,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203978517442">
-              <link role="baseMethodDeclaration" targetNodeId="2.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
               <link role="classConcept" targetNodeId="2.~Arrays" resolveInfo="Arrays" />
+              <link role="baseMethodDeclaration" targetNodeId="2.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1203978518925">
                 <property name="value" value="1" />
               </node>

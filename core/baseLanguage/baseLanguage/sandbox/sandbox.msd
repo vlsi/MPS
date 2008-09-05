@@ -19,6 +19,8 @@
     <dependency reexport="false">JDK</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.helgins#1174411220599</dependency>
     <dependency reexport="false">internalCollections.test</dependency>
+    <dependency reexport="false">MPS.Classpath</dependency>
+    <dependency reexport="false">jetbrains.mps.internal.collections#1201792019188</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
@@ -29,6 +31,7 @@
     <usedLanguages>jetbrains.mps.baseLanguage.blTypes</usedLanguages>
     <usedLanguages>webr.logging</usedLanguages>
     <usedLanguages>jetbrains.mps.nanoj</usedLanguages>
+    <usedLanguages>myLanguage</usedLanguages>
   </usedLanguages>
   <usedDevKits>
     <usedDevKit>jetbrains.mps.devkit.general-purpose</usedDevKit>

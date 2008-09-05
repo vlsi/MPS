@@ -10,14 +10,14 @@ import jetbrains.mps.util.CollectionUtil;
 
 public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  /* package */Pattern_10 myMatchingPattern;
+  /* package */Pattern_9 myMatchingPattern;
 
   public ObjectArraySupertypes_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode objectArrayType) {
     // see JLS 3.0
-    return CollectionUtil.asList(new QuotationClass_76().createNode(), new QuotationClass_77().createNode(), new QuotationClass_78().createNode());
+    return CollectionUtil.asList(new QuotationClass_75().createNode(), new QuotationClass_76().createNode(), new QuotationClass_77().createNode());
   }
 
   public String getApplicableConceptFQName() {
@@ -25,7 +25,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new Pattern_10();
+    this.myMatchingPattern = new Pattern_9();
     return this.myMatchingPattern.match(argument);
   }
 

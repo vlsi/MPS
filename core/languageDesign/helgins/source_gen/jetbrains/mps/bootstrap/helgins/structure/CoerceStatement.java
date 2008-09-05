@@ -15,6 +15,7 @@ public class CoerceStatement extends Statement {
   public static String PATTERN = "pattern";
   public static String NODE_TO_COERCE = "nodeToCoerce";
   public static String BODY = "body";
+  public static String ELSE_CLAUSE = "elseClause";
 
   public CoerceStatement(SNode node) {
     super(node);
@@ -42,6 +43,14 @@ public class CoerceStatement extends Statement {
 
   public void setBody(StatementList node) {
     super.setChild(CoerceStatement.BODY, node);
+  }
+
+  public StatementList getElseClause() {
+    return (StatementList)this.getChild(CoerceStatement.ELSE_CLAUSE);
+  }
+
+  public void setElseClause(StatementList node) {
+    super.setChild(CoerceStatement.ELSE_CLAUSE, node);
   }
 
 

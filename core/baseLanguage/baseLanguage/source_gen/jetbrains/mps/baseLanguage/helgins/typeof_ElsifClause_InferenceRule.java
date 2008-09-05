@@ -18,7 +18,7 @@ public class typeof_ElsifClause_InferenceRule implements InferenceRule_Runtime {
     {
       SNode _nodeToCheck_1029348928467 = elsifClause;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(elsifClause, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1206069320266", true), new QuotationClass_73().createNode(), _nodeToCheck_1029348928467, "condition should be boolean", "jetbrains.mps.baseLanguage.helgins", "1206069320261", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(elsifClause, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1206069320266", true), new QuotationClass_72().createNode(), _nodeToCheck_1029348928467, "condition should be boolean", "jetbrains.mps.baseLanguage.helgins", "1206069320261", false, 0, intentionProvider);
     }
   }
 

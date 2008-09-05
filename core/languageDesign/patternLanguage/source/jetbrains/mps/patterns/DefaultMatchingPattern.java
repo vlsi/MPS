@@ -13,4 +13,5 @@ public class DefaultMatchingPattern implements IMatchingPattern {
   public boolean match(SNode nodeToMatch) {
     return true;
   }
+
 }

@@ -37,7 +37,7 @@ public class typeof_Node_GetConceptOperation_InferenceRule implements InferenceR
             if (coercedNode_3 != null) {
               if (SLinkOperations.getTarget(coercedNode_3, "concept", false) != null) {
                 {
-                  SNode _nodeToCheck_1029348928467 = null;
+                  SNode _nodeToCheck_1029348928467 = op;
                   BaseIntentionProvider intentionProvider = null;
                   TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625860175", true), new QuotationClass_92().createNode(SLinkOperations.getTarget(coercedNode_3, "concept", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625868819", intentionProvider);
                 }
@@ -46,7 +46,7 @@ public class typeof_Node_GetConceptOperation_InferenceRule implements InferenceR
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625578392");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220522420458");
     }
   }
 

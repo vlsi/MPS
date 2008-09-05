@@ -18,7 +18,7 @@ public class typeOf_IfStatement_InferenceRule implements InferenceRule_Runtime {
     {
       SNode _nodeToCheck_1029348928467 = ifStatement;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ifStatement, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1176898833121", true), new QuotationClass_24().createNode(), _nodeToCheck_1029348928467, "condition should be boolean", "jetbrains.mps.baseLanguage.helgins", "1176898861472", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ifStatement, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1176898833121", true), new QuotationClass_23().createNode(), _nodeToCheck_1029348928467, "condition should be boolean", "jetbrains.mps.baseLanguage.helgins", "1176898861472", false, 0, intentionProvider);
     }
   }
 

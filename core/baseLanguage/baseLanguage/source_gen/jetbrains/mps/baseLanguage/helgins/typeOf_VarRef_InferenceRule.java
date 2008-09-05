@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.helgins.inference.TypeChecker;
 
 public class typeOf_VarRef_InferenceRule implements InferenceRule_Runtime {
 
@@ -15,11 +15,31 @@ public class typeOf_VarRef_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode varRef) {
-    {
-      SNode _nodeToCheck_1029348928467 = varRef;
-      BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.helgins", "1195058475381", false), TypeChecker.getInstance().getRuntimeSupport().typeOf(varRef, "jetbrains.mps.baseLanguage.helgins", "1195058484236", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1195058482169", intentionProvider);
-    }
+    do {
+      SNode matchedNode_0 = SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "type", true);
+      {
+        boolean matches_0 = false;
+        {
+          SNode matchingNode_0 = SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "type", true);
+          if (matchingNode_0 != null) {
+            matches_0 = SModelUtil_new.isAssignableConcept(matchingNode_0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+          }
+        }
+        if (matches_0) {
+          {
+            SNode _nodeToCheck_1029348928467 = varRef;
+            BaseIntentionProvider intentionProvider = null;
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(varRef, "jetbrains.mps.baseLanguage.helgins", "1219923238086", true), new QuotationClass_99().createNode(SLinkOperations.getTarget(matchedNode_0, "componentType", true)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1219923263526", intentionProvider);
+          }
+          break;
+        }
+      }
+      {
+        SNode _nodeToCheck_1029348928467 = varRef;
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.helgins", "1219923304969", false), TypeChecker.getInstance().getRuntimeSupport().typeOf(varRef, "jetbrains.mps.baseLanguage.helgins", "1219923304966", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1219923304964", intentionProvider);
+      }
+    } while(false);
   }
 
   public String getApplicableConceptFQName() {

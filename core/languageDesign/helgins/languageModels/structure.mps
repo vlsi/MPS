@@ -492,6 +492,11 @@
       <property name="role" value="body" />
       <link role="target" targetNodeId="2.1068580123136" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1220447035659">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="elseClause" />
+      <link role="target" targetNodeId="2.1068580123136" resolveInfo="StatementList" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1176818293740">
       <property name="value" value="coerce" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -1287,6 +1292,20 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1216390987557">
       <property name="value" value="description" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1220357310820">
+    <property name="name" value="AddDependencyStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1220357350423">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="dependency" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1220359433988">
+      <property name="value" value="addDependency" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
