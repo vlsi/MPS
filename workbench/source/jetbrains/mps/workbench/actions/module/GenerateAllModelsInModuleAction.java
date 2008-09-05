@@ -117,6 +117,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
     for (IModule module : myModules) {
       if ((!(module instanceof Solution)) && (!(module instanceof Language))) {
         disable(e.getPresentation());
+        return;
       }
     }
     enable(e.getPresentation());
