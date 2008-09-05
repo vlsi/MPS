@@ -1,6 +1,8 @@
 package jetbrains.mps.nodeEditor.search;
 
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.search.icons.Icons;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -8,23 +10,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.ide.ui.CompletionTextField;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.DocumentEvent;
 import java.awt.*;
-import java.awt.font.LineMetrics;
 import java.awt.event.*;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.util.IconLoader;
 
 public class SearchPanel extends JPanel {
 
@@ -45,8 +44,8 @@ public class SearchPanel extends JPanel {
     myEditor = editor;
 
     setLayout(new BorderLayout());
-    setPreferredSize(new Dimension((int)getPreferredSize().getWidth(), 
-      (int)myText.getPreferredSize().getHeight() + 5));
+    setPreferredSize(new Dimension((int) getPreferredSize().getWidth(),
+      (int) myText.getPreferredSize().getHeight() + 5));
 
     JPanel mainPanel = new JPanel();
     FlowLayout layout = new FlowLayout();
@@ -194,7 +193,7 @@ public class SearchPanel extends JPanel {
     getSearchHistory().setSearches(myText.getProposals(myText.getText()));
   }
 
-  private void goDown() {
+  private void goUp() {
     if (myCells.size() == 0) return;
     addToHistory();
     //noinspection SuspiciousMethodCalls
@@ -208,7 +207,7 @@ public class SearchPanel extends JPanel {
     myEditor.changeSelection(myCells.get(index));
   }
 
-  private void goUp() {
+  private void goDown() {
     if (myCells.size() == 0) return;
     addToHistory();
     //noinspection SuspiciousMethodCalls
@@ -270,34 +269,98 @@ public class SearchPanel extends JPanel {
   }
 
   private void selectCell() {
-    List<EditorCell_Label> cells = allCells();
-    Condition<String> condition;
-    if (myIsRegex.isSelected()) {
-      condition = SearchConditions.containsRegexp(myText.getText(), myIsCaseSensitive.isSelected());
-    } else if (myIsWordsOnly.isSelected()) {
-      condition = SearchConditions.containsWholeWord(myText.getText(), myIsCaseSensitive.isSelected());
-    } else {
-      condition = SearchConditions.containsString(myText.getText(), myIsCaseSensitive.isSelected());
+    final List<EditorCell_Label> cells = allCells();
+    List<Integer> startCellPosition = new ArrayList<Integer>();
+    List<Integer> endCellPosition = new ArrayList<Integer>();
+    StringBuilder sourceBuilder = new StringBuilder();
+    for (EditorCell_Label cell : cells) {
+      if (cell.getStyle().get(StyleAttributes.PADDING_LEFT) >= 1.0) {
+        sourceBuilder.append(" ");
+      }
+      startCellPosition.add(sourceBuilder.length());
+      sourceBuilder.append(cell.getRenderedText());
+      endCellPosition.add(sourceBuilder.length());
+      if (cell.getStyle().get(StyleAttributes.PADDING_RIGHT) >= 1.0) {
+        sourceBuilder.append(" ");
+      }
+    }
+    List<Integer> resultIndex = new ArrayList<Integer>();
+    List<Integer> startHighlightPosition = new ArrayList<Integer>();
+    List<Integer> endHighlightPosition = new ArrayList<Integer>();
+    Matcher matcher = getPattern().matcher(sourceBuilder.toString());
+    while (matcher.find()) {
+      int index = 0;
+      while (!((startCellPosition.get(index) <= matcher.start())
+        && (endCellPosition.get(index) > matcher.start()))) {
+        index++;
+      }
+      myCells.add(cells.get(index));
+      CellLayout cellLayout = cells.get(index).getParent().getCellLayout();
+      int highlightLength = 0;
+      while (startCellPosition.get(index) < matcher.end()) {
+        resultIndex.add(index);
+        startHighlightPosition.add(Math.max(0, matcher.start() - startCellPosition.get(index)));
+        endHighlightPosition.add(Math.min(matcher.end(), endCellPosition.get(index)) - startCellPosition.get(index));
+        highlightLength++;
+        index++;
+      }
+      index--;
+      if (cellLayout instanceof CellLayout_Horizontal
+        && !cellLayout.equals(cells.get(index).getParent().getCellLayout()))  {
+        for (int i = 0; i < highlightLength; i++) {
+          resultIndex.remove(resultIndex.size() - 1);
+          startHighlightPosition.remove(startHighlightPosition.size() - 1);
+          endHighlightPosition.remove(endHighlightPosition.size() - 1);
+        }
+        myCells.remove(myCells.size() - 1);
+      }
     }
     myOwner = new EditorMessageOwner() { };
-    for (int i = cells.size() - 1; i >= 0; i--) {
-      if (condition.met(cells.get(i).getRenderedText())) {
-        myCells.add(cells.get(i));
-      }
-    }
     if (!myCells.isEmpty()) {
-      myEditor.changeSelection(myCells.get(myCells.size() - 1));
+      highlight(resultIndex, startHighlightPosition, endHighlightPosition);
+    }
+  }
+
+  private Pattern getPattern() {
+    if (myIsRegex.isSelected()) {
+      return SearchConditions.containsRegexp(myText.getText(), myIsCaseSensitive.isSelected());
+    } else if (myIsWordsOnly.isSelected()) {
+      return SearchConditions.containsWholeWord(myText.getText(), myIsCaseSensitive.isSelected());
+    } else {
+      return SearchConditions.containsString(myText.getText(), myIsCaseSensitive.isSelected());
+    }
+  }
+
+  private void highlight(final List<Integer> resultIndex, final List<Integer> startPosition,
+                         final List<Integer> endPosition) {
+      boolean selected = false;
+      final List<EditorCell_Label> cells = allCells();
+      for (int i = cells.indexOf(myEditor.getSelectedCell());
+           i < cells.size(); i++) {
+        if (resultIndex.contains(i)) {
+          myEditor.changeSelection(cells.get(i));
+          selected = true;
+          break;
+        }
+      }
+      if (!selected) {
+        myEditor.changeSelection(myCells.get(0));
+      }
       if (myCells.size() <= 100) {
          myHighlightManager = myEditor.getHighlightManager();
-         ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            for (EditorCell_Label myCell : myCells) {
-              myHighlightManager.mark(new SearchPanelEditorMessage(myCell));
-            }
-          }
-        });
+         for (int i = 0; i < cells.size(); i++) {
+           if (resultIndex.contains(i)) {
+             final int index = i;
+             ModelAccess.instance().runReadAction(new Runnable() {
+               public void run() {
+                 myHighlightManager.mark(new SearchPanelEditorMessage(cells.get(index),
+                   startPosition.get(resultIndex.indexOf(index)),
+                   endPosition.get(resultIndex.indexOf(index))));
+               }
+            });
+           }
+         }
       }
-    }
   }
 
   public void activate() {
@@ -365,10 +428,18 @@ public class SearchPanel extends JPanel {
 
   private class SearchPanelEditorMessage extends DefaultEditorMessage {
     private final CellInfo myInfo;
+    private int myStartPosition;
+    private int myEndPosition;
 
-    public SearchPanelEditorMessage(EditorCell cell) {
+    public SearchPanelEditorMessage(EditorCell cell, int start, int end) {
       super(cell.getSNode(), Color.yellow, "", SearchPanel.this.myOwner);
       myInfo = cell.getCellInfo();
+      myStartPosition = start;
+      myEndPosition = end;
+    }
+
+    public SearchPanelEditorMessage(EditorCell cell) {
+      this(cell, 0, ((EditorCell_Label) cell).getRenderedText().length());
     }
 
     public EditorCell getCell(EditorComponent editor) {
@@ -377,17 +448,17 @@ public class SearchPanel extends JPanel {
 
     public void paint(Graphics g, EditorComponent editorComponent) {
       EditorCell_Label editorCell = (EditorCell_Label) getCell(editorComponent);
-      if (editorCell != null && editorCell.getRenderedText().toLowerCase().
-        contains(myText.getText().toLowerCase())) {
+      if (editorCell != null) {
         FontMetrics metrics = g.getFontMetrics();
+        String text = editorCell.getRenderedText().substring(myStartPosition, myEndPosition);
         int prevStringWidth = metrics.stringWidth(editorCell.getRenderedText().
               substring(0, editorCell.getRenderedText().toLowerCase().
-              indexOf(myText.getText().toLowerCase())));
+              indexOf(text.toLowerCase())));
         int x = editorCell.getX() + editorCell.getLeftInternalInset()
           + prevStringWidth;
         int y = editorCell.getY();
         int height = editorCell.getHeight();
-        int width = metrics.stringWidth(myText.getText());
+        int width = metrics.stringWidth(text);
 
         Color color = getColor();
         color = new Color(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha() / 4);
@@ -444,5 +515,4 @@ public class SearchPanel extends JPanel {
       e.getPresentation().setEnabled(!myCells.isEmpty());
     }
   }
-
 }
