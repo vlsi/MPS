@@ -11,6 +11,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 public class DeleteDialog extends DialogWrapper {
+  private String myCaption;
   private String myMessage;
   private JCheckBox mySafeCheckbox;
   private JCheckBox myDeleteFilesCheckbox;
@@ -22,11 +23,12 @@ public class DeleteDialog extends DialogWrapper {
     void run(DeleteDialog dialog);
   }
 
-  public DeleteDialog(Project project, String message) {
+  public DeleteDialog(Project project, String caption, String message) {
     super(project, true);
+    myCaption = caption;
     myMessage = message;
 
-    setTitle("Delete");
+    setTitle(myCaption);
     init();
   }
 
