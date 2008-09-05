@@ -1,26 +1,24 @@
 package jetbrains.mps.workbench.nodesFs;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.LocalTimeCounter;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.*;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.SwingUtilities;
 import java.io.IOException;
 import java.util.List;
 import java.util.WeakHashMap;
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.project.GlobalScope;
-
-import javax.swing.SwingUtilities;
+import java.util.regex.Pattern;
 
 public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
 
@@ -46,7 +44,8 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     });
   }
 
-  @NonNls @NotNull
+  @NonNls
+  @NotNull
   public String getComponentName() {
     return "MPS File System";
   }
@@ -134,7 +133,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   private void updateModificationStamp(SNode rootNode) {
     MPSNodeVirtualFile vf = myVirtualFiles.get(rootNode.getContainingRoot());
     if (vf != null) {
-      vf.setModificationStamp(LocalTimeCounter.currentTime());  
+      vf.setModificationStamp(LocalTimeCounter.currentTime());
     }
   }
 
@@ -150,7 +149,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
                     if (event.isRemoved()) {
                       VirtualFile vf = myVirtualFiles.get(event.getRoot());
                       if (vf != null) {
-                        fireBeforeFileDeletion(this ,vf);
+                        fireBeforeFileDeletion(this, vf);
                         fireFileDeleted(this, vf, vf.getName(), null);
                         myVirtualFiles.remove(event.getRoot());
                       }
@@ -179,12 +178,16 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
       if (!modelDescriptor.isInitialized()) return;
 
-      for (SNode root : modelDescriptor.getSModel().getRoots()) {
-        VirtualFile vf = myVirtualFiles.get(root);
+      for (final SNode root : modelDescriptor.getSModel().getRoots()) {
+        final VirtualFile vf = myVirtualFiles.get(root);
         if (vf != null) {
-          fireBeforeFileDeletion(this ,vf);
-          fireFileDeleted(this, vf, vf.getName(), null);
-          myVirtualFiles.remove(root);
+          ModelAccess.instance().runCommandInEDT(new Runnable() {
+            public void run() {
+              fireBeforeFileDeletion(this, vf);
+              fireFileDeleted(this, vf, vf.getName(), null);
+              myVirtualFiles.remove(root);
+            }
+          });
         }
       }
     }
