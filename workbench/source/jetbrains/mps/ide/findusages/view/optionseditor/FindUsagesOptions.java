@@ -7,8 +7,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
-import java.util.*;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class FindUsagesOptions implements Cloneable {
   private static Logger LOG = Logger.getLogger(FindUsagesOptions.class);
@@ -36,7 +39,7 @@ public class FindUsagesOptions implements Cloneable {
     return new FindUsagesOptions((BaseOptions[]) optionsCopy.toArray());
   }
 
-  public void setOption(BaseOptions options) {               
+  public void setOption(BaseOptions options) {
     myOptions.put(options.getClass(), options);
   }
 
@@ -64,14 +67,13 @@ public class FindUsagesOptions implements Cloneable {
         throwLoadException(e, className);
       } catch (NoSuchMethodException e) {
         throwLoadException(e, className);
-      } catch (Throwable t){
+      } catch (Throwable t) {
         throwLoadException(t, className);
       }
     }
   }
 
   private void throwLoadException(Throwable t, String className) throws CantLoadSomethingException {
-    LOG.warning("can't instantiate options " + className, t);
     throw new CantLoadSomethingException("can't instantiate options " + className, t);
   }
 
