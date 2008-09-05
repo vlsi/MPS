@@ -151,6 +151,20 @@ public class CloneModelDialog extends BaseNodeDialog {
           assert language != null;
           model.addLanguage(language);
         }
+
+        for (DevKit d : myCloneModelProperties.getDevKits()) {
+          String name = d.getName();
+          assert name != null;
+          jetbrains.mps.project.DevKit devkit = getOperationContext().getScope().getDevKit(name);
+          assert devkit != null;
+          model.addDevKit(devkit);
+        }
+
+        for (jetbrains.mps.projectLanguage.structure.Language l : myCloneModelProperties.getEngagedOnGenerationLanguages()) {
+          String name = l.getName();
+          assert name != null;
+          model.addEngagedOnGenerationLanguage(name);
+        }
       }
     });
 
