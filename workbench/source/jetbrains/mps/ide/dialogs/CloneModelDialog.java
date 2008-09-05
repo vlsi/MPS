@@ -5,12 +5,13 @@ import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.projectLanguage.structure.CloneModelProperties;
+import jetbrains.mps.projectLanguage.structure.DevKit;
+import jetbrains.mps.projectLanguage.structure.Model;
+import jetbrains.mps.projectLanguage.structure.RootReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.Language;
 
 import javax.swing.SwingUtilities;
-import javax.swing.JOptionPane;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -41,7 +42,6 @@ public class CloneModelDialog extends BaseNodeDialog {
     mySModel = modelDescriptor.getSModel();
 
     initNode();
-
   }
 
   private String createNameForCopy(String longName, String stereotype) {
@@ -113,21 +113,27 @@ public class CloneModelDialog extends BaseNodeDialog {
     return null;
   }
 
-  protected void saveChanges() {
+  protected boolean saveChanges() {
     String stereotype = myCloneModelProperties.getStereotype();
     String modelName = myCloneModelProperties.getLongName();
     RootReference reference = myCloneModelProperties.getRoot();
-
 
     IOperationContext operationContext = getOperationContext();
     IModule module = operationContext.getModule();
     assert module != null;
 
+    for (SModelDescriptor model : module.getOwnModelDescriptors()) {
+      if (model.getLongName().equals(modelName)) {
+        setErrorText("Model with the same name already exists. Please choose another name");
+        return false;
+      }
+    }
+
     SModelRoot modelRoot = module.findModelRoot(reference.getPath());
     final SModelDescriptor modelDescriptor = module.createModel(new SModelUID(modelName, stereotype), modelRoot);
-    if (modelDescriptor == null) {            
+    if (modelDescriptor == null) {
       setErrorText("You can't create a model in the model root that you specified");
-      return;
+      return false;
     }
 
     final SModel model = modelDescriptor.getSModel();
@@ -160,6 +166,7 @@ public class CloneModelDialog extends BaseNodeDialog {
         pane.selectModel(modelDescriptor);
       }
     });
+    return true;
   }
 
   private Set<String> getModelsInProperties() {

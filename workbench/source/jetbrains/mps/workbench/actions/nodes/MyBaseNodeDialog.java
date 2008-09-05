@@ -71,8 +71,8 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     return new JButton[]{button};
   }
 
-  protected void saveChanges() {
-
+  protected boolean saveChanges() {
+    return true;
   }
 
   protected SNode getNode() {

@@ -72,8 +72,8 @@ public class SupertypesTree extends AbstractHierarchyTree<INodeAdapter> {
       myHierarchyTreeNode = hierarchyTreeNode;
     }
 
-    protected void saveChanges() {
-
+    protected boolean saveChanges() {
+      return true;
     }
 
     protected SNode getNode() {
