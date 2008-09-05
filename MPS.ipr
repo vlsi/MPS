@@ -1568,12 +1568,12 @@
     </library>
     <library name="JUNGLib">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/platform/diagrammingLanguage/lib/colt-1.2.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/platform/diagrammingLanguage/lib/jung-graph-impl-2.0-beta1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/platform/diagrammingLanguage/lib/jung-api-2.0-beta1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/platform/diagrammingLanguage/lib/collections-generic-4.01.jar!/" />
-        <root url="jar://$PROJECT_DIR$/platform/diagrammingLanguage/lib/jung-visualization-2.0-beta1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/platform/diagrammingLanguage/lib/jung-algorithms-2.0-beta1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/platform/diagrammingLanguage/languages/diagramming/lib/jung-graph-impl-2.0-beta1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/platform/diagrammingLanguage/languages/diagramming/lib/jung-visualization-2.0-beta1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/platform/diagrammingLanguage/languages/diagramming/lib/collections-generic-4.01.jar!/" />
+        <root url="jar://$PROJECT_DIR$/platform/diagrammingLanguage/languages/diagramming/lib/colt-1.2.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/platform/diagrammingLanguage/languages/diagramming/lib/jung-api-2.0-beta1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/platform/diagrammingLanguage/languages/diagramming/lib/jung-algorithms-2.0-beta1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
