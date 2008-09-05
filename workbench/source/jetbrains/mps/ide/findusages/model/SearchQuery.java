@@ -1,5 +1,6 @@
 package jetbrains.mps.ide.findusages.model;
 
+import jetbrains.mps.ide.BootstrapScope;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
@@ -29,6 +30,7 @@ public class SearchQuery implements IExternalizeable {
   private static final String SCOPE_TYPE_PROJECT = "project_scope";
   private static final String SCOPE_TYPE_MODULE = "module_scope";
   private static final String SCOPE_TYPE_MODEL = "model_scope";
+  private static final String SCOPE_TYPE_BOOTSTRAP = "bootstrap_scope";
 
   private static final String MODULE_ID = "module_id";
   private static final String MODEL_ID = "model_id";
@@ -99,6 +101,8 @@ public class SearchQuery implements IExternalizeable {
         throw new CantSaveSomethingException("Module is not found for module. Maybe the model was deleted");
       }
       scopeXML.setAttribute(MODEL_ID, sModelDescriptor.getModelUID().toString());
+    } else if (myScope instanceof BootstrapScope) {
+      scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_BOOTSTRAP);
     } else {
       throw new RuntimeException("unsupported scope " + myScope.getClass());
     }
@@ -137,6 +141,9 @@ public class SearchQuery implements IExternalizeable {
         throw new CantLoadSomethingException("model scope not found for model " + modelUID);
       }
       myScope = new ModelScope(project.getScope(), sModelDescriptor);
+    }
+    if (scopeType.equals(SCOPE_TYPE_BOOTSTRAP)) {
+      myScope = BootstrapScope.getInstance();
     }
 
     Element holderXML = element.getChild(HOLDER);

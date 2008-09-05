@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
+import jetbrains.mps.workbench.action.InternalFlag;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -19,11 +20,13 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
   private static final String PROJECT_SCOPE = "Project scope";
   private static final String MODULE_SCOPE = "Module scope";
   private static final String MODEL_SCOPE = "Model scope ";
+  private static final String BOOTSTRAP_SCOPE = "Bootstrap scope ";
 
   private JRadioButton myGlobalScopeButton;
   private JRadioButton myProjectScopeButton;
   private JRadioButton myModuleScopeButton;
   private JRadioButton myModelScopeButton;
+  private JRadioButton myBootstrapScopeButton = null;
   private ButtonGroup myButtonGroup;
 
   private DefaultCompletionTextField myModuleField;
@@ -62,15 +65,25 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     myModelScopeButton = new JRadioButton(new AbstractAction(MODEL_SCOPE) {
       public void actionPerformed(ActionEvent e) {
         setCompletionFieldsState(false, true);
-
       }
     });
+
+    if (InternalFlag.isInternalModel()) {
+      myBootstrapScopeButton = new JRadioButton(new AbstractAction(BOOTSTRAP_SCOPE) {
+        public void actionPerformed(ActionEvent e) {
+          setCompletionFieldsState(false, false);
+        }
+      });
+    }
 
     myButtonGroup = new ButtonGroup();
     myButtonGroup.add(myGlobalScopeButton);
     myButtonGroup.add(myProjectScopeButton);
     myButtonGroup.add(myModuleScopeButton);
     myButtonGroup.add(myModelScopeButton);
+    if (myBootstrapScopeButton != null) {
+      myButtonGroup.add(myBootstrapScopeButton);
+    }
 
     List<IModule> moduleList = MPSModuleRepository.getInstance().getAllModules();
     List<String> moduleNameList = CollectionUtil.map(moduleList, new Mapper<IModule, String>() {
@@ -117,6 +130,11 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     row.add(myGlobalScopeButton, BorderLayout.WEST);
     myPanel.add(row);
 
+    row = new JPanel();
+    row.setLayout(new BorderLayout());
+    row.add(myBootstrapScopeButton, BorderLayout.WEST);
+    myPanel.add(row);
+
     setDefaults(defaultOptions);
   }
 
@@ -138,6 +156,8 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
       setCurrentRadioButton(myModuleScopeButton);
     } else if (scopeType.equals(ScopeOptions.MODEL_SCOPE)) {
       setCurrentRadioButton(myModelScopeButton);
+    } else if (scopeType.equals(ScopeOptions.BOOTSTRAP_SCOPE)) {
+      setCurrentRadioButton(myBootstrapScopeButton);
     }
   }
 
@@ -164,6 +184,8 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
       scopeType = ScopeOptions.MODULE_SCOPE;
     } else if (selectedModel == myModelScopeButton.getModel()) {
       scopeType = ScopeOptions.MODEL_SCOPE;
+    } else if (selectedModel == myBootstrapScopeButton.getModel()) {
+      scopeType = ScopeOptions.BOOTSTRAP_SCOPE;
     } else {
       throw new IllegalArgumentException();
     }
