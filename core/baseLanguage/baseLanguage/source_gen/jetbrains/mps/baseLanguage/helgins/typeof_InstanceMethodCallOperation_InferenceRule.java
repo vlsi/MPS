@@ -6,8 +6,8 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import java.util.Map;
 import java.util.List;
@@ -24,15 +24,6 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
       return;
     }
     final SNode methodClassifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    if (!(SLinkOperations.getCount(imco, "actualArgument") == SLinkOperations.getCount(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "parameter"))) {
-      {
-        BaseIntentionProvider intentionProvider = null;
-        intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins@3_0.ChooseAppropriateMethodDeclaration_QuickFix", true);
-        intentionProvider.putArgument("classifier", methodClassifier);
-        intentionProvider.putArgument("methodCall", imco);
-        TypeChecker.getInstance().reportTypeError(imco, "wrong number of parameters", "jetbrains.mps.baseLanguage.helgins@3_0", "1220357527453", intentionProvider);
-      }
-    }
     // ---
     final SNode instanceType_typevar_1204064731338 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
@@ -43,7 +34,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
     {
       SNode _nodeToCheck_1029348928467 = imco;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_70().createNode(methodClassifier), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1204065906120", true, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_69().createNode(methodClassifier), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1204065906120", true, 0, intentionProvider);
     }
     // --- following piece of cake is identical for any method call ---
     {
@@ -57,7 +48,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
           RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);
         }
 
-      }, "jetbrains.mps.baseLanguage.helgins", "1204065986803");
+      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1220621235128");
     }
   }
 

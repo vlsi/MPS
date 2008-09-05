@@ -15,16 +15,16 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Ine
   public any_type_supertypeof_nulltype_InequationReplacementRule() {
   }
 
-  public void processInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), "null type is not a subtype of primitive type", "jetbrains.mps.baseLanguage.helgins@3_0", "1220357529934", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), "null type is not a subtype of primitive type", "jetbrains.mps.baseLanguage.helgins@3_0", "1220621238132", intentionProvider);
       }
     }
   }
 
-  public boolean checkInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     boolean result_14532009 = true;
     if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       result_14532009 = false;

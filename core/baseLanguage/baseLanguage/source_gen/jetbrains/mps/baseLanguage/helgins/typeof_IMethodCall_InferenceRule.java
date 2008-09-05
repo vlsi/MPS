@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
@@ -19,9 +18,6 @@ public class typeof_IMethodCall_InferenceRule implements InferenceRule_Runtime {
   public void applyRule(final SNode methodCall) {
     if (SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) == null) {
       return;
-    }
-    if (!(SLinkOperations.getCount(methodCall, "actualArgument") == SLinkOperations.getCount(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "parameter"))) {
-      TypeChecker.getInstance().reportTypeError(methodCall, "wrong number of parameters", "jetbrains.mps.baseLanguage.helgins", "1212689093041");
     }
     // ---
     Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();
