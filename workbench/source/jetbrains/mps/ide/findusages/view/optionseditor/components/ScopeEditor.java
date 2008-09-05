@@ -157,7 +157,11 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     } else if (scopeType.equals(ScopeOptions.MODEL_SCOPE)) {
       setCurrentRadioButton(myModelScopeButton);
     } else if (scopeType.equals(ScopeOptions.BOOTSTRAP_SCOPE)) {
-      setCurrentRadioButton(myBootstrapScopeButton);
+      if (myBootstrapScopeButton != null) {
+        setCurrentRadioButton(myBootstrapScopeButton);
+      } else {
+        setCurrentRadioButton(myGlobalScopeButton);
+      }
     }
   }
 
