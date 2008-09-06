@@ -531,6 +531,7 @@
               id="1218984772622">
           <property name="noTargetText" value="&lt;no name&gt;"/>
           <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
+          <link role="styleClass" targetNodeId="17.1215189282959" resolveInfo="ClassName"/>
         </node>
       </node>
     </node>
