@@ -33,7 +33,7 @@ import java.util.Set;
 public class DeleteModelHelper {
   private static final Logger LOG = Logger.getLogger(DeleteModelHelper.class);
 
-  public static void deleteModel(Project project, IModule currentModule, SModelDescriptor modelDescriptor, boolean safeDelete, boolean deleteFiles) {
+  public static void deleteModel(Project project, SModelDescriptor modelDescriptor, boolean safeDelete, boolean deleteFiles) {
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
 
     if (aspect == LanguageAspect.STRUCTURE) {
@@ -44,11 +44,12 @@ public class DeleteModelHelper {
     if (safeDelete) {
       safeDelete(project, modelDescriptor, deleteFiles);
     } else {
-      delete(currentModule, modelDescriptor, deleteFiles);
+      delete(modelDescriptor, deleteFiles);
     }
   }
 
-  public static void delete(IModule currentModule, SModelDescriptor modelDescriptor, boolean deleteFiles) {
+  public static void delete(SModelDescriptor modelDescriptor, boolean deleteFiles) {
+    IModule currentModule = modelDescriptor.getModule();
     deleteModelFromModule(currentModule, modelDescriptor);
 
     if (deleteFiles) {
@@ -81,7 +82,6 @@ public class DeleteModelHelper {
   }
 
   private static void deleteModelFromModule(IModule module, SModelDescriptor modelDescriptor) {
-
     if (module instanceof Language) {
       deleteModelFromLanguage((Language) module, modelDescriptor);
     } else if (module instanceof Solution) {
