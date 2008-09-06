@@ -18,8 +18,6 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -187,17 +185,20 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     if (scriptsModel == null) return;
 
     List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
-    List<SNodePointer> scriptPointers = CollectionUtil.map(migrationScripts, new Mapper<MigrationScript, SNodePointer>() {
-      public SNodePointer map(MigrationScript migrationScript) {
-        return new SNodePointer(migrationScript.getNode());
-      }
-    });
-    List<BaseMigrationScript> scripts = MigrationScriptUtil.getScriptInstances(scriptPointers, null/*TODO*/);
-    for (BaseMigrationScript script : scripts) {
+
+    Map<BaseMigrationScript, MigrationScript> scripts = new com.intellij.util.containers.HashMap<BaseMigrationScript, MigrationScript>();
+    for (MigrationScript migrationScript : migrationScripts) {
+      BaseMigrationScript script = MigrationScriptUtil.getBaseScriptForNode(null/*TODO???*/, migrationScript.getNode());
+      if (script == null) continue;
+      scripts.put(script, migrationScript);
+    }
+
+    for (BaseMigrationScript script : scripts.keySet()) {
+      MigrationScript migrationScript = scripts.get(script);
       for (AbstractMigrationRefactoring refactoring : script.getRefactorings()) {
-        Intention intention = new MigrationRefactoringAdapter(refactoring);
+        Intention intention = new MigrationRefactoringAdapter(refactoring, migrationScript);
         addIntention(intention);
-        myNodesByIntentions.put(intention, null/*TODO*/);
+        myNodesByIntentions.put(intention, migrationScript.getNode());
       }
     }
   }

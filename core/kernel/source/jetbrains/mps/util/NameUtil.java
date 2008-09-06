@@ -6,14 +6,12 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.NonNls;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Arrays;
-import java.util.regex.Pattern;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+import java.util.regex.Pattern;
 
 
 /**
@@ -31,11 +29,35 @@ public class NameUtil {
     return "" + Character.toUpperCase(s.charAt(0)) + s.substring(1);
   }
 
+  public static String multiWordCapitalize(String s) {
+    if (s == null || s.length() == 0) {
+      return s;
+    }
+    StringBuilder result = new StringBuilder(s.length());
+    StringTokenizer st = new StringTokenizer(s);
+    while (st.hasMoreTokens()) {
+      result.append(capitalize(st.nextToken())).append(" ");
+    }
+    return result.substring(0, result.length() - 2);
+  }
+
   public static String decapitalize(String s) {
     if (s == null || s.length() == 0 || s.charAt(0) == Character.toLowerCase(s.charAt(0))) {
       return s;
     }
     return "" + Character.toLowerCase(s.charAt(0)) + s.substring(1);
+  }
+
+  public static String multiWordDecapitalize(String s) {
+    if (s == null || s.length() == 0) {
+      return s;
+    }
+    StringBuilder result = new StringBuilder(s.length());
+    StringTokenizer st = new StringTokenizer(s);
+    while (st.hasMoreTokens()) {
+      result.append(decapitalize(st.nextToken())).append(" ");
+    }
+    return result.substring(0, result.length() - 2);
   }
 
   public static String pluralize(String singular) {
@@ -130,7 +152,7 @@ public class NameUtil {
     String namespace = namespaceFromLongName(fqName);
     String shortName = shortNameFromLongName(fqName);
     if (namespace.endsWith("." + STRUCTURE)) {
-      namespace = namespace.substring(0, namespace.length() - ("."+ STRUCTURE).length());
+      namespace = namespace.substring(0, namespace.length() - ("." + STRUCTURE).length());
     }
     final StringBuilder builder = StringBuilderSpinAllocator.alloc();
     try {
@@ -149,7 +171,7 @@ public class NameUtil {
   }
 
   public static String namespaceFromConceptFQName(String fqName) {
-    int offset = fqName.lastIndexOf("."+ STRUCTURE + ".");
+    int offset = fqName.lastIndexOf("." + STRUCTURE + ".");
     if (offset > 0) {
       return fqName.substring(0, offset);
     }
@@ -157,7 +179,7 @@ public class NameUtil {
   }
 
   public static String conceptFQNameFromNamespaceAndShortName(String namespace, String shortName) {
-    return namespace + "."+ STRUCTURE + "." + shortName;
+    return namespace + "." + STRUCTURE + "." + shortName;
   }
 
   public static String longNameFromNamespaceAndShortName(String namespace, String name) {

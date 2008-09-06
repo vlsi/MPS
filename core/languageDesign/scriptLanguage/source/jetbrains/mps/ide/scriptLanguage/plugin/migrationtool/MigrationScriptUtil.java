@@ -25,38 +25,43 @@ public class MigrationScriptUtil {
     List<BaseMigrationScript> scriptInstances = new ArrayList<BaseMigrationScript>();
     for (SNodePointer scriptNodePointer : scriptNodePointers) {
       SNode scriptNode = scriptNodePointer.getNode();
-      if (scriptNode == null) continue;
-      String fqClassName = ScriptNameUtil.getMigrationScriptFqClassName(scriptNode);
-      Class<BaseMigrationScript> aClass;
-      String languageNamespace = NameUtil.namespaceFromLongName(fqClassName);
-      languageNamespace = languageNamespace.substring(0, languageNamespace.length() - ".scripts".length());
-      Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
-
-      if (l == null) {
-        LOG.error("can't find a language " + languageNamespace);
-        continue;
-      }
-
-      aClass = l.getClass(fqClassName);
-      if (aClass == null) {
-        LOG.error("class " + fqClassName + " not found");
-        continue;
-      }
-
-      try {
-        Constructor<BaseMigrationScript> constructor = aClass.getConstructor(IOperationContext.class);
-        scriptInstances.add(constructor.newInstance(context));
-      } catch (InstantiationException e) {
-        throw new RuntimeException(e);
-      } catch (IllegalAccessException e) {
-        throw new RuntimeException(e);
-      } catch (NoSuchMethodException e) {
-        throw new RuntimeException(e);
-      } catch (InvocationTargetException e) {
-        throw new RuntimeException(e);
-      }
+      BaseMigrationScript script = getBaseScriptForNode(context, scriptNode);
+      if (script != null) scriptInstances.add(script);
     }
     return scriptInstances;
+  }
+
+  public static BaseMigrationScript getBaseScriptForNode(IOperationContext context, SNode scriptNode) {
+    if (scriptNode == null) return null;
+    String fqClassName = ScriptNameUtil.getMigrationScriptFqClassName(scriptNode);
+    Class<BaseMigrationScript> aClass;
+    String languageNamespace = NameUtil.namespaceFromLongName(fqClassName);
+    languageNamespace = languageNamespace.substring(0, languageNamespace.length() - ".scripts".length());
+    Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+
+    if (l == null) {
+      LOG.error("can't find a language " + languageNamespace);
+      return null;
+    }
+
+    aClass = l.getClass(fqClassName);
+    if (aClass == null) {
+      LOG.error("class " + fqClassName + " not found");
+      return null;
+    }
+
+    try {
+      Constructor<BaseMigrationScript> constructor = aClass.getConstructor(IOperationContext.class);
+      return constructor.newInstance(context);
+    } catch (InstantiationException e) {
+      throw new RuntimeException(e);
+    } catch (IllegalAccessException e) {
+      throw new RuntimeException(e);
+    } catch (NoSuchMethodException e) {
+      throw new RuntimeException(e);
+    } catch (InvocationTargetException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   public static AbstractConceptDeclaration getApplicableConcept(AbstractMigrationRefactoring migrationRefactoring) {

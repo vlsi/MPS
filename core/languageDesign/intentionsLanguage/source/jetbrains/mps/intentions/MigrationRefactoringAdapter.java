@@ -1,14 +1,18 @@
 package jetbrains.mps.intentions;
 
 import jetbrains.mps.ide.scriptLanguage.runtime.AbstractMigrationRefactoring;
+import jetbrains.mps.ide.scriptLanguage.structure.MigrationScript;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
 
 public class MigrationRefactoringAdapter implements Intention {
   private AbstractMigrationRefactoring myRefactoring;
+  private MigrationScript myMigrationScript;
 
-  public MigrationRefactoringAdapter(AbstractMigrationRefactoring refactoring) {
+  public MigrationRefactoringAdapter(AbstractMigrationRefactoring refactoring, MigrationScript migrationScript) {
     myRefactoring = refactoring;
+    myMigrationScript = migrationScript;
   }
 
   public String getConcept() {
@@ -16,7 +20,7 @@ public class MigrationRefactoringAdapter implements Intention {
   }
 
   public String getDescription(SNode node, EditorContext editorContext) {
-    return myRefactoring.getName();
+    return "Migration: " + NameUtil.multiWordCapitalize(myRefactoring.getName());
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
@@ -32,6 +36,6 @@ public class MigrationRefactoringAdapter implements Intention {
   }
 
   public String getSourceModelUID() {
-    return "";
+    return myMigrationScript.getModel().getUID().toString();
   }
 }
