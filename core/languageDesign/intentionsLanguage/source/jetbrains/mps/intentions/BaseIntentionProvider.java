@@ -1,23 +1,23 @@
 package jetbrains.mps.intentions;
 
+import jetbrains.mps.bootstrap.helgins.runtime.quickfix.QuickFix_Runtime;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.bootstrap.helgins.runtime.quickfix.QuickFix_Runtime;
-import jetbrains.mps.nodeEditor.EditorContext;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
-* User: Cyril.Konopko
-* Date: 15.05.2008
-* Time: 12:14:28
-* To change this template use File | Settings | File Templates.
-*/
+ * User: Cyril.Konopko
+ * Date: 15.05.2008
+ * Time: 12:14:28
+ * To change this template use File | Settings | File Templates.
+ */
 public class BaseIntentionProvider implements IntentionProvider {
   private static Logger LOG = Logger.getLogger(IntentionProvider.class);
 
@@ -76,7 +76,7 @@ public class BaseIntentionProvider implements IntentionProvider {
       public void putArgument(String key, Object argument) {
       }
 
-      public String getSourceModelUID() {
+      public String getLocationString() {
         return null;  //todo?
       }
     };

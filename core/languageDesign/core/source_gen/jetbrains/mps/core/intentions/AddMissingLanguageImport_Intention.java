@@ -4,10 +4,11 @@ package jetbrains.mps.core.intentions;
 
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.SNode;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class AddMissingLanguageImport_Intention extends BaseIntention implements Intention {
 
@@ -46,7 +47,7 @@ public class AddMissingLanguageImport_Intention extends BaseIntention implements
     this.getField(key)[0] = argument;
   }
 
-  public String getSourceModelUID() {
+  public String getLocationString() {
     return "jetbrains.mps.core.intentions";
   }
 

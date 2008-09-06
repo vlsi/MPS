@@ -4,15 +4,12 @@ package jetbrains.mps.core.intentions;
 
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class AddMissingDependency_Intention extends BaseIntention implements Intention {
 
@@ -28,7 +25,7 @@ public class AddMissingDependency_Intention extends BaseIntention implements Int
 
   public String getDescription(SNode node, EditorContext editorContext) {
     IScope scope = editorContext.getScope();
-    for(SReference ref : node.getReferences()) {
+    for (SReference ref : node.getReferences()) {
       SModelUID uid = ref.getTargetModelUID();
       if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
         SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
@@ -40,7 +37,7 @@ public class AddMissingDependency_Intention extends BaseIntention implements Int
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
     IScope scope = editorContext.getScope();
-    for(SReference ref : node.getReferences()) {
+    for (SReference ref : node.getReferences()) {
       SModelUID uid = ref.getTargetModelUID();
       if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
         return true;
@@ -51,7 +48,7 @@ public class AddMissingDependency_Intention extends BaseIntention implements Int
 
   public void execute(SNode node, EditorContext editorContext) {
     IScope scope = editorContext.getScope();
-    for(SReference ref : node.getReferences()) {
+    for (SReference ref : node.getReferences()) {
       SModelUID uid = ref.getTargetModelUID();
       if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
         SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
@@ -73,7 +70,7 @@ public class AddMissingDependency_Intention extends BaseIntention implements Int
     this.getField(key)[0] = argument;
   }
 
-  public String getSourceModelUID() {
+  public String getLocationString() {
     return "jetbrains.mps.core.intentions";
   }
 

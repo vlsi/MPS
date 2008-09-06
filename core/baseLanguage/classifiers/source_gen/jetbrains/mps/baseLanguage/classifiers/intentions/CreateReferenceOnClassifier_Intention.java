@@ -50,7 +50,7 @@ public class CreateReferenceOnClassifier_Intention extends BaseIntention impleme
     this.getField(key)[0] = argument;
   }
 
-  public String getSourceModelUID() {
+  public String getLocationString() {
     return "jetbrains.mps.baseLanguage.classifiers.intentions";
   }
 

@@ -38,7 +38,7 @@ public class NameUtil {
     while (st.hasMoreTokens()) {
       result.append(capitalize(st.nextToken())).append(" ");
     }
-    return result.substring(0, result.length() - 2);
+    return result.substring(0, result.length() - 1);
   }
 
   public static String decapitalize(String s) {
@@ -57,7 +57,7 @@ public class NameUtil {
     while (st.hasMoreTokens()) {
       result.append(decapitalize(st.nextToken())).append(" ");
     }
-    return result.substring(0, result.length() - 2);
+    return result.substring(0, result.length() - 1);
   }
 
   public static String pluralize(String singular) {

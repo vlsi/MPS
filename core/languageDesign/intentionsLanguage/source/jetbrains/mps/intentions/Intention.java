@@ -14,5 +14,5 @@ public interface Intention {
 
   boolean isErrorIntention();
 
-  String getSourceModelUID();
+  String getLocationString();
 }
