@@ -1,35 +1,40 @@
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.bootstrap.intentionsLanguage.behavior.IntentionDeclaration_Behavior;
-import jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.*;
-
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.bootstrap.intentionsLanguage.behavior.IntentionDeclaration_Behavior;
+import jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration;
+import jetbrains.mps.ide.scriptLanguage.plugin.migrationtool.MigrationScriptUtil;
+import jetbrains.mps.ide.scriptLanguage.runtime.AbstractMigrationRefactoring;
+import jetbrains.mps.ide.scriptLanguage.runtime.BaseMigrationScript;
+import jetbrains.mps.ide.scriptLanguage.structure.MigrationScript;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.*;
 
 
 @State(
   name = "MPSIntentionsManager",
   storages = {
-    @Storage(
-      id ="other",
-      file = "$APP_CONFIG$/intentions.xml"
-    )}
+  @Storage(
+    id = "other",
+    file = "$APP_CONFIG$/intentions.xml"
+  )}
 )
 public class IntentionsManager implements ApplicationComponent, PersistentStateComponent<IntentionsManager.MyState> {
   private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
@@ -171,35 +176,63 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     myNodesByIntentions.clear();
     myIntentionsLanguages.clear();
     invalidateCaches();
-    for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
-      SModelDescriptor intentionsModelDescriptor = l.getIntentionsModelDescriptor();
-      if (intentionsModelDescriptor != null) {
-        SModel smodel = intentionsModelDescriptor.getSModel();
-        for (IntentionDeclaration intentionDeclaration : smodel.getRootsAdapters(IntentionDeclaration.class)) {
-          String className = smodel.getUID().getLongName() + "." + IntentionDeclaration_Behavior.call_getGeneratedName_1213877237628(intentionDeclaration.getNode());
-          String conceptName = IntentionDeclaration_Behavior.call_getConceptName_1213877237638(intentionDeclaration.getNode());
-          try {
-            Class<?> cls = l.getClass(className);
+    for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
+      addIntentionsFromLanguage(language);
+      addMigrationsFromLanguage(language);
+    }
+  }
 
-            if (cls != null) {
-              Object intention = cls.newInstance();
-              Set<Intention> intentions = myIntentions.get(conceptName);
-              if (intentions == null) {
-                intentions = new HashSet<Intention>();
-              }
-              intentions.add((Intention) intention);
-              myIntentions.put(conceptName, intentions);
-              myNodesByIntentions.put((Intention) intention, intentionDeclaration.getNode());
-              myIntentionsLanguages.put(cls, l);
-            } else {
-              LOG.warning("Intention is registered but isn't compiled " + NameUtil.nodeFQName(intentionDeclaration), intentionDeclaration);
-            }
-          } catch (Throwable throwable) {
-            LOG.error(throwable, intentionDeclaration);
+  private void addMigrationsFromLanguage(Language language) {
+    SModelDescriptor scriptsModel = language.getScriptsModelDescriptor();
+    if (scriptsModel == null) return;
+
+    List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
+    List<SNodePointer> scriptPointers = CollectionUtil.map(migrationScripts, new Mapper<MigrationScript, SNodePointer>() {
+      public SNodePointer map(MigrationScript migrationScript) {
+        return new SNodePointer(migrationScript.getNode());
+      }
+    });
+    List<BaseMigrationScript> scripts = MigrationScriptUtil.getScriptInstances(scriptPointers, null/*TODO*/);
+    for (BaseMigrationScript script : scripts) {
+      for (AbstractMigrationRefactoring refactoring : script.getRefactorings()) {
+        Intention intention = new MigrationRefactoringAdapter(refactoring);
+        addIntention(intention);
+        myNodesByIntentions.put(intention, null/*TODO*/);
+      }
+    }
+  }
+
+  private void addIntentionsFromLanguage(Language l) {
+    SModelDescriptor intentionsModelDescriptor = l.getIntentionsModelDescriptor();
+    if (intentionsModelDescriptor != null) {
+      SModel smodel = intentionsModelDescriptor.getSModel();
+      for (IntentionDeclaration intentionDeclaration : smodel.getRootsAdapters(IntentionDeclaration.class)) {
+        String className = smodel.getUID().getLongName() + "." + IntentionDeclaration_Behavior.call_getGeneratedName_1213877237628(intentionDeclaration.getNode());
+        try {
+          Class<?> cls = l.getClass(className);
+
+          if (cls != null) {
+            Intention intention = (Intention) cls.newInstance();
+            addIntention(intention);
+            myNodesByIntentions.put((Intention) intention, intentionDeclaration.getNode());
+            myIntentionsLanguages.put(cls, l);
+          } else {
+            LOG.warning("Intention is registered but isn't compiled " + NameUtil.nodeFQName(intentionDeclaration), intentionDeclaration);
           }
+        } catch (Throwable throwable) {
+          LOG.error(throwable, intentionDeclaration);
         }
       }
     }
+  }
+
+  private void addIntention(Intention intention) {
+    Set<Intention> intentions = myIntentions.get(intention.getConcept());
+    if (intentions == null) {
+      intentions = new HashSet<Intention>();
+    }
+    intentions.add((Intention) intention);
+    myIntentions.put(intention.getConcept(), intentions);
   }
 
   @Nullable

@@ -1,31 +1,31 @@
 package jetbrains.mps.ide.scriptLanguage.plugin.migrationtool;
 
-import jetbrains.mps.ide.scriptLanguage.runtime.BaseMigrationScript;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.ide.scriptLanguage.runtime.AbstractMigrationRefactoring;
+import jetbrains.mps.ide.scriptLanguage.runtime.BaseMigrationScript;
 import jetbrains.mps.ide.scriptLanguage.util.ScriptNameUtil;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.project.GlobalScope;
 
-import java.util.List;
-import java.util.ArrayList;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Igor Alshannikov
  * Jun 18, 2008
  */
-/*package*/ class MigrationScriptUtil {
+public class MigrationScriptUtil {
   private static final Logger LOG = Logger.getLogger(MigrationScriptUtil.class);
 
-  /*package*/ static List<BaseMigrationScript> getScriptInstances(List<SNodePointer> scriptNodePointers, IOperationContext context) {
+  public static List<BaseMigrationScript> getScriptInstances(List<SNodePointer> scriptNodePointers, IOperationContext context) {
     List<BaseMigrationScript> scriptInstances = new ArrayList<BaseMigrationScript>();
     for (SNodePointer scriptNodePointer : scriptNodePointers) {
       SNode scriptNode = scriptNodePointer.getNode();
-      if(scriptNode == null) continue;
+      if (scriptNode == null) continue;
       String fqClassName = ScriptNameUtil.getMigrationScriptFqClassName(scriptNode);
       Class<BaseMigrationScript> aClass;
       String languageNamespace = NameUtil.namespaceFromLongName(fqClassName);
@@ -59,13 +59,13 @@ import java.lang.reflect.InvocationTargetException;
     return scriptInstances;
   }
 
-  /*package*/ static AbstractConceptDeclaration getApplicableConcept(AbstractMigrationRefactoring migrationRefactoring) {
+  public static AbstractConceptDeclaration getApplicableConcept(AbstractMigrationRefactoring migrationRefactoring) {
     return SModelUtil_new.findConceptDeclaration(
       migrationRefactoring.getFqNameOfConceptToSearchInstances(),
       GlobalScope.getInstance());
   }
 
-  /*package*/ static boolean isApplicableRefactoring(SNode node, AbstractMigrationRefactoring migrationRefactoring) {
+  public static boolean isApplicableRefactoring(SNode node, AbstractMigrationRefactoring migrationRefactoring) {
     try {
       return migrationRefactoring.isApplicableInstanceNode(node);
     } catch (Throwable t) {
@@ -74,7 +74,7 @@ import java.lang.reflect.InvocationTargetException;
     return false;
   }
 
-  /*package*/ static void performRefactoring(SNode node, AbstractMigrationRefactoring migrationRefactoring) {
+  public static void performRefactoring(SNode node, AbstractMigrationRefactoring migrationRefactoring) {
     try {
       migrationRefactoring.doUpdateInstanceNode(node);
     } catch (Throwable t) {
