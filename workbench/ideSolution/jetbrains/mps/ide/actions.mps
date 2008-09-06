@@ -408,6 +408,11 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1216127754422">
         <link role="action" targetNodeId="1216127622518" resolveInfo="RemoveModuleFromProject"/>
       </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
+            id="1220709443840">
+        <link role="constructorDeclaration" targetNodeId="10.~DeleteModuleAction.&lt;init&gt;()"
+              resolveInfo="DeleteModuleAction"/>
+      </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911378302"/>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1215903424308">
         <link role="action" targetNodeId="1215902895421" resolveInfo="MakeModule"/>
@@ -465,6 +470,11 @@
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1216127742779">
         <link role="action" targetNodeId="1216127622518" resolveInfo="RemoveModuleFromProject"/>
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
+            id="1220709427931">
+        <link role="constructorDeclaration" targetNodeId="10.~DeleteModuleAction.&lt;init&gt;()"
+              resolveInfo="DeleteModuleAction"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912175121"/>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
@@ -558,6 +568,11 @@
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1216127748827">
         <link role="action" targetNodeId="1216127622518" resolveInfo="RemoveModuleFromProject"/>
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
+            id="1220709455764">
+        <link role="constructorDeclaration" targetNodeId="10.~DeleteModuleAction.&lt;init&gt;()"
+              resolveInfo="DeleteModuleAction"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1215869067048">
         <link role="action" targetNodeId="1215868765946" resolveInfo="AnalyzeClasspath"/>
@@ -7482,7 +7497,6 @@
       <property name="name" value="project"/>
       <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT"/>
     </node>
-    <node role="parameter" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameter" id="1218806751929"/>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1216123732571">
     <property name="package" value="Menu.ProjectPane.Project.Actions"/>
@@ -10181,7 +10195,6 @@
       <property name="name" value="project"/>
       <link role="key" targetNodeId="107.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT"/>
     </node>
-    <node role="parameter" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameter" id="1218806661617"/>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ToolDeclaration" id="1216663323016">
     <property name="name" value="ModelRepository"/>

@@ -2,7 +2,6 @@ package jetbrains.mps.workbench.dialogs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
-import com.intellij.refactoring.RefactoringSettings;
 import com.intellij.ui.StateRestoringCheckBox;
 
 import javax.swing.*;
@@ -17,11 +16,7 @@ public class DeleteDialog extends DialogWrapper {
   private JCheckBox myDeleteFilesCheckbox;
 
   private boolean mySafe = true;
-  private boolean myDeleteFiles = false;
-
-  public interface Callback {
-    void run(DeleteDialog dialog);
-  }
+  private boolean myDeleteFiles = true;
 
   public DeleteDialog(Project project, String caption, String message) {
     super(project, true);
@@ -30,6 +25,13 @@ public class DeleteDialog extends DialogWrapper {
 
     setTitle(myCaption);
     init();
+  }
+
+  public void setOptions(boolean safe, boolean safeEnabled, boolean deleteFiles, boolean deleteFilesEnabled) {
+    mySafeCheckbox.setSelected(safe);
+    mySafeCheckbox.setEnabled(safeEnabled);
+    myDeleteFilesCheckbox.setSelected(deleteFiles);
+    myDeleteFilesCheckbox.setEnabled(deleteFilesEnabled);
   }
 
   public boolean isSafe() {
@@ -73,10 +75,6 @@ public class DeleteDialog extends DialogWrapper {
     gbc.insets = new Insets(0, 8, 4, 8);
     myDeleteFilesCheckbox = new StateRestoringCheckBox("Delete files");
     panel.add(myDeleteFilesCheckbox, gbc);
-
-    final RefactoringSettings refactoringSettings = RefactoringSettings.getInstance();
-    mySafeCheckbox.setSelected(mySafe);
-    myDeleteFilesCheckbox.setSelected(myDeleteFiles);
 
     return panel;
   }
