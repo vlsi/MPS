@@ -19,8 +19,8 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(FindInstancesByConditionAndNode_Action.class);
   public static final Icon ICON = null;
 
+  private SNode node;
   public IOperationContext context;
-  public SNode snode;
   public IModule langModule;
 
   public FindInstancesByConditionAndNode_Action() {
@@ -34,16 +34,9 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(FindInstancesByConditionAndNode_Action.this.snode, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
-  }
-
   public void doUpdate(@NotNull()AnActionEvent event) {
     try {
-      {
-        boolean enabled = this.isApplicable(event);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "FindInstancesByConditionAndNode", t);
       this.disable(event.getPresentation());
@@ -55,15 +48,23 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
+    {
+      SNode node = event.getData(MPSDataKeys.SNODE);
+      if (node != null) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration"))) {
+          node = null;
+        }
+      }
+      this.node = node;
+    }
+    if (this.node == null) {
+      return false;
+    }
     this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (this.context == null) {
       return false;
     }
-    this.snode = event.getData(MPSDataKeys.SNODE);
-    if (this.snode == null) {
-      return false;
-    }
-    this.langModule = event.getData(MPSDataKeys.CONTEXT_MODULE);
+    this.langModule = event.getData(MPSDataKeys.MODULE);
     if (this.langModule == null) {
       return false;
     }
@@ -73,7 +74,7 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       FindInstancesDialog testDialog = new FindInstancesDialog(new FindInstancesContext(FindInstancesByConditionAndNode_Action.this.context), (Language) FindInstancesByConditionAndNode_Action.this.langModule);
-      testDialog.setConceptDeclaration(FindInstancesByConditionAndNode_Action.this.snode);
+      testDialog.setConceptDeclaration(FindInstancesByConditionAndNode_Action.this.node);
       testDialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindInstancesByConditionAndNode", t);

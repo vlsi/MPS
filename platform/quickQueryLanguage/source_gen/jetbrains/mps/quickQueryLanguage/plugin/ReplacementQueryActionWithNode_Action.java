@@ -19,9 +19,9 @@ public class ReplacementQueryActionWithNode_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(ReplacementQueryActionWithNode_Action.class);
   public static final Icon ICON = null;
 
+  private SNode node;
   public IOperationContext context;
   public IModule langModule;
-  public SNode snode;
 
   public ReplacementQueryActionWithNode_Action() {
     super("Replace Instances", "", ICON);
@@ -34,16 +34,9 @@ public class ReplacementQueryActionWithNode_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(ReplacementQueryActionWithNode_Action.this.snode, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
-  }
-
   public void doUpdate(@NotNull()AnActionEvent event) {
     try {
-      {
-        boolean enabled = this.isApplicable(event);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "ReplacementQueryActionWithNode", t);
       this.disable(event.getPresentation());
@@ -55,6 +48,18 @@ public class ReplacementQueryActionWithNode_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
+    {
+      SNode node = event.getData(MPSDataKeys.SNODE);
+      if (node != null) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration"))) {
+          node = null;
+        }
+      }
+      this.node = node;
+    }
+    if (this.node == null) {
+      return false;
+    }
     this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (this.context == null) {
       return false;
@@ -63,17 +68,13 @@ public class ReplacementQueryActionWithNode_Action extends GeneratedAction {
     if (this.langModule == null) {
       return false;
     }
-    this.snode = event.getData(MPSDataKeys.SNODE);
-    if (this.snode == null) {
-      return false;
-    }
     return true;
   }
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       ReplaceDialog dialog = new ReplaceDialog(new FindInstancesContext(ReplacementQueryActionWithNode_Action.this.context), (Language) ReplacementQueryActionWithNode_Action.this.langModule);
-      dialog.setConceptDeclaration(ReplacementQueryActionWithNode_Action.this.snode);
+      dialog.setConceptDeclaration(ReplacementQueryActionWithNode_Action.this.node);
       dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ReplacementQueryActionWithNode", t);
