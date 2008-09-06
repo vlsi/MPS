@@ -17,9 +17,6 @@ public abstract class BaseIntention implements Intention {
 
   public abstract boolean isErrorIntention();
 
-  public void putArgument(String key, Object argument) {
-  }
-
   public String getSourceModelUID() {
     return "";
   }
