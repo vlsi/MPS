@@ -147,12 +147,8 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   public static class NoTabsComponent extends JPanel {
     JPanel myLabelsPanel = new JPanel();
 
-    public NoTabsComponent(GenerationTracerViewTool tool) {
+    public NoTabsComponent(final GenerationTracerViewTool tool) {
       setLayout(new BorderLayout());
-
-      ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool));
-      ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
-      add(toolbar.getComponent(), BorderLayout.WEST);
 
       JPanel mainPanel = new JPanel(new GridBagLayout());
       myLabelsPanel.setLayout(new BoxLayout(myLabelsPanel, BoxLayout.Y_AXIS));
@@ -160,6 +156,15 @@ public class GenerationTracerViewTool extends BaseProjectTool {
       c.anchor = GridBagConstraints.CENTER;
       mainPanel.add(myLabelsPanel, c);
       add(mainPanel, BorderLayout.CENTER);
+
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool));
+
+          ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
+          add(toolbar.getComponent(), BorderLayout.WEST);
+        }
+      });
     }
 
     public void setDataIsAvailable(boolean state) {

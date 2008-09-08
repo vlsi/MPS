@@ -19,6 +19,7 @@ import jetbrains.mps.workbench.tools.BaseProjectTool;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,12 +33,17 @@ public class ClassPathViewerTool extends BaseProjectTool {
   public ClassPathViewerTool(Project project) {
     super(project, "Classpath Explorer", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, true);
 
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(createCloseAction());
-    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
-
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
-    myComponent.add(toolbar, BorderLayout.WEST);
+
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        DefaultActionGroup group = new DefaultActionGroup();
+        group.add(createCloseAction());
+
+        JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
+        myComponent.add(toolbar, BorderLayout.WEST);
+      }
+    });
   }
 
   public void initComponent() {

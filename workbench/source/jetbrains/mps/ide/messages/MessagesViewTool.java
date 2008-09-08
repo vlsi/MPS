@@ -91,9 +91,9 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     group.add(myInfoAction);
     group.add(myAutoscrollToSourceAction);
 
-    myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
+        myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
         panel.add(myToolbar.getComponent(), BorderLayout.NORTH);
       }
     });

@@ -31,12 +31,16 @@ public class NewRefactoringView extends BaseProjectTool {
     super.initComponent();
     myLabel = new JLabel("no refactoring");
 
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(createCloseAction());
-    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
-
     myComponent.add(myLabel, BorderLayout.CENTER);
-    myComponent.add(toolbar, BorderLayout.WEST);
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        DefaultActionGroup group = new DefaultActionGroup();
+        group.add(createCloseAction());
+
+        JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
+        myComponent.add(toolbar, BorderLayout.WEST);
+      }
+    });
   }
 
   public void showRefactoringView(@NotNull RefactoringViewAction refactoringViewAction,

@@ -37,13 +37,18 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     myHierarchyTree = createHierarchyTree(false);
     myHierarchyTree.setRootVisible(true);
 
-    JPanel panel = new JPanel(new BorderLayout());
-    JComponent buttonsPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, createButtonsGroup(), true).getComponent();
-    panel.add(buttonsPanel, BorderLayout.WEST);
+    final JPanel panel = new JPanel(new BorderLayout());
     myComponent.add(panel, BorderLayout.NORTH);
     myScrollPane = new JScrollPane(myHierarchyTree);
     myComponent.add(myScrollPane, BorderLayout.CENTER);
     showConceptInHierarchy(null, null);
+
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        JComponent buttonsPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, createButtonsGroup(), true).getComponent();
+        panel.add(buttonsPanel, BorderLayout.WEST);
+      }
+    });
   }
 
   protected abstract AbstractHierarchyTree<T> createHierarchyTree(boolean isParentHierarchy);

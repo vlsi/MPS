@@ -90,14 +90,19 @@ public class OutputViewTool extends BaseProjectTool {
     panel.setLayout(new BorderLayout());
     panel.add(new JScrollPane(myTextArea), BorderLayout.CENTER);
 
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(createCloseAction());
-    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
-
     myComponent.registerKeyboardAction(myFindAction, KeyStroke.getKeyStroke("control F"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     myComponent.registerKeyboardAction(myFindNextAction, KeyStroke.getKeyStroke("F3"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     myComponent.add(panel, BorderLayout.CENTER);
-    myComponent.add(toolbar, BorderLayout.WEST);
+
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        DefaultActionGroup group = new DefaultActionGroup();
+        group.add(createCloseAction());
+
+        JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
+        myComponent.add(toolbar, BorderLayout.WEST);
+      }
+    });
   }
 
   public static OutputViewTool getOutputViewTool(MPSProject project) {
