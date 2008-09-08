@@ -228,8 +228,8 @@ __switch__:
     return (SLinkOperations.getTarget(_context.getSourceNode(), "classConcept", false) == null);
   }
 
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AnonymousClass_1220435643218(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeParameter", true)).isEmpty();
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_1219922208354(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.VariableArityType"));
   }
 
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -2402,27 +2402,24 @@ __switch__:
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_AnonymousClass_1220435632914(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Type_1219922154317(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass");
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableArityType");
       result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SNode typeParam = SLinkOperations.addNewChild(_context.getSourceNode(), "typeParameter", "jetbrains.mps.baseLanguage.structure.Type");
-          return typeParam;
+          SNode variableArityType = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+          SLinkOperations.setTarget(variableArityType, "componentType", _context.getSourceNode(), true);
+          return variableArityType;
         }
 
         public String getMatchingText(String pattern) {
-          return "<";
+          return "...";
         }
 
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
-        }
-
-        public String getDescriptionText(String pattern) {
-          return "add generic parameter";
         }
 
       });

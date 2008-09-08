@@ -31,7 +31,6 @@
     <usedLanguages>jetbrains.mps.baseLanguage.blTypes</usedLanguages>
     <usedLanguages>webr.logging</usedLanguages>
     <usedLanguages>jetbrains.mps.nanoj</usedLanguages>
-    <usedLanguages>myLanguage</usedLanguages>
   </usedLanguages>
   <usedDevKits>
     <usedDevKit>jetbrains.mps.devkit.general-purpose</usedDevKit>

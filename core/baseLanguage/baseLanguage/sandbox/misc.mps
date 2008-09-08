@@ -23,7 +23,6 @@
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   </language>
-  <language namespace="myLanguage" />
   <language namespace="jetbrains.mps.patterns">
     <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   </language>
@@ -55,7 +54,6 @@
   <import index="139" modelUID="jetbrains.mps.helgins.inference@java_stub" version="-1" />
   <import index="140" modelUID="jetbrains.mps.core.behavior" version="-1" />
   <import index="141" modelUID="jetbrains.mps.internal.collections.runtime@java_stub" version="-1" />
-  <import index="142" modelUID="jetbrains.mps.baseLanguage.actions@3_0" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.smodel@java_stub" />
   <refactoringLog type="jetbrains.mps.logging.refactoring.structure.RuntimeLogStack" id="1191250524181">
     <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1191250524182">
@@ -675,13 +673,6 @@
       <property name="name" value="T1" />
     </node>
   </node>
-  <node type="myLanguage.structure.Program" id="1219935893631">
-    <node role="expression" type="myLanguage.structure.PlusExpr" id="1220188720783">
-      <node role="left" type="myLanguage.structure.IntConst" id="1220188570330">
-        <property name="value" value="42" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1220262009812">
     <property name="name" value="C2" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1220262031576">
@@ -725,6 +716,29 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1220869690305" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1220869705603">
+      <property name="name" value="fooBar" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1220869705604" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220869705605" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220869705606" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1220869712289">
+        <property name="name" value="i" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1220869712290" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1220869713824">
+        <property name="name" value="j" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1220869714718" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1220869716894">
+        <property name="name" value="s" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.VariableArityType" id="1220870215688">
+          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220869719838">
+            <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
           </node>
         </node>
       </node>
