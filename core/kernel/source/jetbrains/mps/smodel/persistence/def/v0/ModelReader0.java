@@ -102,7 +102,7 @@ public class ModelReader0 extends BaseModelReader implements IModelReader {
       if (importedModelUIDString == null) {
         // read in old manner...
         String importedModelFQName = NameUtil.longNameFromNamespaceAndShortName(element.getAttributeValue(ModelPersistence.NAMESPACE),
-                element.getAttributeValue(ModelPersistence.NAME));
+          element.getAttributeValue(ModelPersistence.NAME));
         String importedModelStereotype = element.getAttributeValue(ModelPersistence.STEREOTYPE, "");
         importedModelUIDString = new SModelUID(importedModelFQName, importedModelStereotype).toString();
       }
@@ -148,92 +148,12 @@ public class ModelReader0 extends BaseModelReader implements IModelReader {
     return model;
   }
 
-  private void readLanguageAspects(SModel model, List<Element> aspectElements) {
-    for (Element aspectElement : aspectElements) {
-      String aspectModelUID = aspectElement.getAttributeValue(ModelPersistence.MODEL_UID);
-      String versionString = aspectElement.getAttributeValue(ModelPersistence.VERSION);
-      int version = -1;
-      if (versionString != null) {
-        try {
-          version = Integer.parseInt(versionString);
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
-      }
-      if (aspectModelUID != null) {
-        model.addAdditionalModelVersion(SModelUID.fromString(aspectModelUID), version);
-      }
-    }
-  }
-
-  public SNode readNode(Element nodeElement, SModel model) {
-    return readNode(nodeElement, model, true, null);
-  }
-
-  @Nullable
-  private SNode readNode(
-          Element nodeElement,
-          SModel model,
-          boolean useUIDs,
-          VisibleModelElements visibleModelElements) {
-    List<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
-    SNode result = readNode(nodeElement, model, referenceDescriptors, useUIDs);
-    for (IReferencePersister referencePersister : referenceDescriptors) {
-      referencePersister.createReferenceInModel(model, visibleModelElements);
-    }
-    return result;
-  }
-
-  @Nullable
-  private SNode readNode(
-          Element nodeElement,
-          SModel model,
-          List<IReferencePersister> referenceDescriptors,
-          boolean useUIDs
-  ) {
+  protected String processConceptFQName(String rawFQName) {
     // todo: save 'conceptFqName' (i.e. <namespace>.structure.<name>)
-    String oldStructureClassName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
-    String conceptName = NameUtil.shortNameFromLongName(oldStructureClassName);
-    String languageNamespace = NameUtil.namespaceFromLongName(oldStructureClassName);
+    String conceptName = NameUtil.shortNameFromLongName(rawFQName);
+    String languageNamespace = NameUtil.namespaceFromLongName(rawFQName);
     String conceptFqName = languageNamespace + ".structure." + conceptName;
-    SNode node = new SNode(model, conceptFqName);
-
-    String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
-    if (idValue != null) {
-      node.setId(SNodeId.fromString(idValue));
-    }
-
-    List properties = nodeElement.getChildren(ModelPersistence.PROPERTY);
-    for (Object property : properties) {
-      Element propertyElement = (Element) property;
-      String propertyName = propertyElement.getAttributeValue(ModelPersistence.NAME);
-      String propertyValue = propertyElement.getAttributeValue(ModelPersistence.VALUE);
-      if (propertyValue != null) {
-        node.setProperty(propertyName, propertyValue);
-      }
-    }
-
-    List links = nodeElement.getChildren(ModelPersistence.LINK);
-    for (Object link : links) {
-      Element linkElement = (Element) link;
-      IReferencePersister referencePersister = createReferencePersister();
-      referencePersister.fillFields(linkElement, node, useUIDs);
-      referenceDescriptors.add(referencePersister);
-    }
-
-    List childNodes = nodeElement.getChildren(ModelPersistence.NODE);
-    for (Object childNode1 : childNodes) {
-      Element childNodeElement = (Element) childNode1;
-      String role = childNodeElement.getAttributeValue(ModelPersistence.ROLE);
-      SNode childNode = readNode(childNodeElement, model, referenceDescriptors, useUIDs);
-      if (role == null || childNode == null) {
-        LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
-      } else {
-        node.addChild(role, childNode);
-      }
-    }
-
-    return node;
+    return conceptFqName;
   }
 
   protected IReferencePersister createReferencePersister() {
