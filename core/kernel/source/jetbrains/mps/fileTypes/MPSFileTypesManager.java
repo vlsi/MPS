@@ -61,7 +61,7 @@ public class MPSFileTypesManager implements ApplicationComponent {
 
     @Nullable
     @NonNls
-    public String getCharset(@NotNull VirtualFile file) {
+    public String getCharset(@NotNull VirtualFile file, final byte[] content) {
       return "utf8";//todo ?
     }
   };
