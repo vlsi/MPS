@@ -440,13 +440,18 @@ public class GeneratorUtil {
               LOG.warning(" -- was rule: " + rule.getDebugText(), rule);
             }
 
-            // if singular child then don't add more that 1 child
             LinkDeclaration childLinkDeclaration = contextParentNode.getLinkDeclaration(childRole);
-            Cardinality cardinality = childLinkDeclaration.getSourceCardinality();
-            if (cardinality == Cardinality._0__1 || cardinality == Cardinality._1) {
-              contextParentNode.setChild(childRole, outputNodeToWeave);
-            } else {
+            if (childLinkDeclaration == null) {
+              // there should have been warning about that
               contextParentNode.addChild(childRole, outputNodeToWeave);
+            } else {
+              // if singular child then don't add more that 1 child
+              Cardinality cardinality = childLinkDeclaration.getSourceCardinality();
+              if (cardinality == Cardinality._0__1 || cardinality == Cardinality._1) {
+                contextParentNode.setChild(childRole, outputNodeToWeave);
+              } else {
+                contextParentNode.addChild(childRole, outputNodeToWeave);
+              }
             }
           }
         } catch (DismissTopMappingRuleException e) {
