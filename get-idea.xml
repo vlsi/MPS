@@ -5,7 +5,8 @@
   <property name="idea.platform.internal.dir" value="lib/idea-platform-internal" />
   <property name="tmp" value="idea.new" />
   <property name="idea.platform.build.property" value="idea.platform.build.number" />
-  <target name="default" depends="prepare,download,replace.libraries,upgrade.plugins,clean" />
+  <property name="platfrom.src.zip" value="idea-platform-src.zip" />
+  <target name="default" depends="prepare,download,replace.libraries,unpack.sources,upgrade.plugins,clean" />
   <target name="prepare">
     <mkdir dir="${tmp}" />
   </target>
@@ -30,12 +31,36 @@
       <filelist files="${tmp}/idea/build.txt" />
     </concat>
   </target>
+  <target name="unpack.sources" depends="download">
+    <copy file="${idea.platform.dir}/${platfrom.src.zip}" tofile="${idea.platform.dir}/${platfrom.src.zip}.old" />
+    <unzip src="${idea.platform.dir}/sources.zip" dest="${tmp}/idea-src" />
+    <zip destfile="${idea.platform.dir}/${platfrom.src.zip}" update="false">
+      <fileset dir="${tmp}/idea-src/Annotations/src/" />
+      <fileset dir="${tmp}/idea-src/boot/src/" />
+      <fileset dir="${tmp}/idea-src/bootstrap/src/" />
+      <fileset dir="${tmp}/idea-src/extensions/source/" />
+      <fileset dir="${tmp}/idea-src/lang-api/src/" />
+      <fileset dir="${tmp}/idea-src/lang-impl/src/" />
+      <fileset dir="${tmp}/idea-src/platform-api/src/" />
+      <fileset dir="${tmp}/idea-src/platform-impl/src/" />
+      <fileset dir="${tmp}/idea-src/platform-resources/src/" />
+      <fileset dir="${tmp}/idea-src/platform-resources_eng/src/" />
+      <fileset dir="${tmp}/idea-src/plugins-management/src/" />
+      <fileset dir="${tmp}/idea-src/psi-extapi/src/" />
+      <fileset dir="${tmp}/idea-src/testRunner/src/" />
+      <fileset dir="${tmp}/idea-src/UsageView/src/" />
+      <fileset dir="${tmp}/idea-src/util/src/" />
+      <fileset dir="${tmp}/idea-src/vcs-api/src/" />
+      <fileset dir="${tmp}/idea-src/vcs-impl/src/" />
+    </zip>
+    <delete file="${idea.platform.dir}/${platfrom.src.zip}.old" />
+  </target>
   <target name="upgrade.plugins" depends="replace.libraries">
     <copy todir="plugins" overwrite="true">
       <fileset dir="${tmp}/idea/plugins/" includes="svn4idea/**" />
     </copy>
   </target>
-  <target name="clean" depends="upgrade.plugins">
+  <target name="clean" depends="upgrade.plugins,download,replace.libraries,unpack.sources,prepare">
     <delete dir="${tmp}" />
   </target>
 </project>
