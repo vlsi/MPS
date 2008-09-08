@@ -55,12 +55,6 @@
     <component>
       <implementation-class>jetbrains.mps.vcs.ExcludedFileIndexApplicationComponent</implementation-class>
     </component>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.merge.CustomMergeSupport</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.merge.SvnMerge</implementation-class>
-    </component>
   </application-components>
 
   <xi:include href="/componentSets/Platform.xml" xpointer="xpointer(/components/*)"/>

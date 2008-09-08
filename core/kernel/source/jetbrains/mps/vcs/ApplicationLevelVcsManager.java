@@ -13,8 +13,9 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.persistence.ConflictModelException;
-import jetbrains.mps.vcs.merge.CustomMergeSupport;
 import jetbrains.mps.logging.Logger;
+
+import java.util.Collections;
 
 public class ApplicationLevelVcsManager implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ApplicationLevelVcsManager.class);
@@ -73,12 +74,10 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
   public void checkModelFileNotInConflict(final SModelDescriptor modelDescriptor, boolean synchronously) {
     IFile ifile = modelDescriptor.getModelFile();
     if (isInConflict(ifile, synchronously)) {
-      AbstractVcs vcs = getVcsForFile(VFileSystem.getFile(ifile));
-      if ((vcs != null) && CustomMergeSupport.getInstance().tryToMergeConflictedModel(modelDescriptor, vcs.getName())) {
-      } else {
-        ConflictModelException conflictModelException = new ConflictModelException(modelDescriptor);
-        throw conflictModelException;
-      }
+      VirtualFile vfile = VFileSystem.getFile(ifile);
+      if (vfile == null) return;
+      Project project = getProjectForFile(vfile);
+      AbstractVcsHelper.getInstance(project).showMergeDialog(Collections.singletonList(vfile));
     }
   }
 
