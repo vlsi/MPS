@@ -186,6 +186,8 @@ public class MPSEditorOpener implements ProjectComponent {
   }
 
   private IEditor doOpenNode(SNode node, IOperationContext context, final boolean focus) {
+    assert node.isRegistered() : "You can't edit unregistered node";
+
     SNode containingRoot = node.getContainingRoot();
 
     SNode baseNode = getBaseNode(context, containingRoot);
