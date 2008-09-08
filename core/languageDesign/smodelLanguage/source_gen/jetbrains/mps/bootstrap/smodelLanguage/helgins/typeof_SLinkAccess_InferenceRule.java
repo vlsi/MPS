@@ -45,7 +45,7 @@ public class typeof_SLinkAccess_InferenceRule implements InferenceRule_Runtime {
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220522414628");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220882335597");
     }
   }
 

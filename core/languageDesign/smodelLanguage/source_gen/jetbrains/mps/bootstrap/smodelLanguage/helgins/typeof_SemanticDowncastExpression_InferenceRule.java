@@ -75,7 +75,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule implements Inferenc
             }
           }
 
-        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220522415691");
+        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220882336676");
       }
     }
   }

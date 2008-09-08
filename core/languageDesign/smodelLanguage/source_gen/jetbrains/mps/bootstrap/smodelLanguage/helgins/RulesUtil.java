@@ -95,7 +95,7 @@ public class RulesUtil {
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186065634833");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1186065634833");
     }
   }
 
@@ -121,7 +121,7 @@ public class RulesUtil {
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267224541");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1205267224541");
     }
   }
 
@@ -148,7 +148,7 @@ public class RulesUtil {
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267101146");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1205267101146");
     }
   }
 
@@ -170,7 +170,7 @@ public class RulesUtil {
       if (!(ListSequence.fromList(applicableParmConcepts).contains(SNodeOperations.getConceptDeclaration(parm)))) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(parm, "not applicable here", "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220269586673", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(parm, "not applicable here", "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220882348555", intentionProvider);
         }
         noProblem = false;
       }
@@ -189,7 +189,7 @@ public class RulesUtil {
   }
 
   @InferenceMethod()
-  private static void equate_inputNodeConcept_internal(SNode op, final SNode TypeToEquate, final boolean conceptOfConceptIfInputConcept) {
+  private static void equate_inputNodeConcept_internal(final SNode op, final SNode TypeToEquate, final boolean conceptOfConceptIfInputConcept) {
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     {
       final SNode LeftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1208202100499", false);
@@ -215,13 +215,13 @@ public class RulesUtil {
             conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
           }
           {
-            SNode _nodeToCheck_1029348928467 = null;
+            SNode _nodeToCheck_1029348928467 = op;
             BaseIntentionProvider intentionProvider = null;
             TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, conceptDeclaration, _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1208202100494", intentionProvider);
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1208202100447");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1208202100447");
     }
   }
 
@@ -237,7 +237,7 @@ public class RulesUtil {
   }
 
   @InferenceMethod()
-  public static void equate_conceptFromOpParm(SNode op, final SNode TypeToEquate) {
+  public static void equate_conceptFromOpParm(final SNode op, final SNode TypeToEquate) {
     SNode opParm = SNodeOperation_Behavior.call_getParameter_1213877508972(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"));
     if (opParm == null) {
       {
@@ -262,21 +262,21 @@ public class RulesUtil {
             SNode conceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(poundExpressionType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), true);
             if (SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false) != null) {
               {
-                SNode _nodeToCheck_1029348928467 = null;
+                SNode _nodeToCheck_1029348928467 = op;
                 BaseIntentionProvider intentionProvider = null;
                 TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1219348182106", intentionProvider);
               }
             } else
             {
               {
-                SNode _nodeToCheck_1029348928467 = null;
+                SNode _nodeToCheck_1029348928467 = op;
                 BaseIntentionProvider intentionProvider = null;
                 TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1219348182120", intentionProvider);
               }
             }
           }
 
-        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1219348182096");
+        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1219348182096");
       }
     }
   }

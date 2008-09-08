@@ -46,7 +46,7 @@ public class typeof_Node_GetConceptOperation_InferenceRule implements InferenceR
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220522420458");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220882341600");
     }
   }
 
