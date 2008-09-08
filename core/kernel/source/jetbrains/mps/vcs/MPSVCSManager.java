@@ -8,7 +8,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.watching.ModelChangesWatcher.MetadataCreationListener;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationListener;
@@ -45,12 +45,17 @@ public class MPSVCSManager implements ProjectComponent {
   private final ProjectLevelVcsManager myManager;
   private final ChangeListManager myChangeListManager;
 
-  private boolean myGenerationRunning;
   private boolean myIsInitialized = false;
   private volatile boolean myChangeListManagerInitialized = false;
 
-  private final Object myMonitor = new Object();
-  private final List<Runnable> myTasks = new LinkedList<Runnable>();
+  private final TaskQueue<Runnable> myTasksQueue = new TaskQueue<Runnable>(){
+
+    public void processTask(List<Runnable> tasks) {
+      for (Runnable task : tasks) {
+        task.run();
+      }
+    }
+  };
 
   private final GenerationListener myGenerationListener = new GenerationWhatcher();
   private final CompilationListener myCompilationListener = new CompilationWatcher();
@@ -95,21 +100,6 @@ public class MPSVCSManager implements ProjectComponent {
     }
   }
 
-  private void invokeLater(Runnable task) {
-    synchronized (myMonitor) {
-      if (myGenerationRunning) {
-        myTasks.add(task);
-        return;
-      }
-
-      invokeNow(task);
-    }
-  }
-
-  private void invokeNow(Runnable task) {
-    task.run();
-  }
-
   public boolean deleteFilesAndRemoveFromVCS(List<File> files) {
     List<VirtualFile> list = new LinkedList<VirtualFile>();
     for (File f : files) {
@@ -128,7 +118,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private void deleteInternal(final List<VirtualFile> inVCS) {
-    invokeLater(new Runnable() {
+    myTasksQueue.invokeLater(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().runReadAction(new Runnable() {
           public void run() {
@@ -146,7 +136,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean addFilesToVCS(final List<File> files) {
-    invokeLater(new Runnable() {
+    myTasksQueue.invokeLater(new Runnable() {
       public void run() {
         // doing addition in invokeLater cause of refreshAndGetFile method
         ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -169,7 +159,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean addVFilesToVCS(final List<VirtualFile> files) {
-    invokeLater(new Runnable() {
+    myTasksQueue.invokeLater(new Runnable() {
       public void run() {
         addInternal(files);
       }
@@ -277,19 +267,7 @@ public class MPSVCSManager implements ProjectComponent {
     ModelChangesWatcher.instance().removeMetadataListener(myMetadataListener);
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
 
-    runTasks();
-  }
-
-  private void runTasks() {
-    synchronized (myMonitor) {
-      myGenerationRunning = false;
-
-      for (Runnable task : myTasks) {
-        invokeNow(task);
-      }
-
-      myTasks.clear();
-    }
+    myTasksQueue.allowAccessAndProcessAllTasks();
   }
 
   private class ModelSavedListener extends SModelAdapter {
@@ -313,13 +291,11 @@ public class MPSVCSManager implements ProjectComponent {
 
   private class GenerationWhatcher implements GenerationListener {
     public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
-      synchronized (myMonitor) {
-        myGenerationRunning = true;
-      }
+      myTasksQueue.prohibitAccess();
     }
 
     public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
-      runTasks();
+      myTasksQueue.allowAccessAndProcessAllTasks();
     }
 
     public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
@@ -329,7 +305,7 @@ public class MPSVCSManager implements ProjectComponent {
   private class CompilationWatcher implements CompilationListener {
 
     public void beforeModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
-      runTasks();
+      myTasksQueue.allowAccessAndProcessAllTasks();
     }
 
     public void afterModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
