@@ -103,7 +103,7 @@ public class ModelReader1 implements IModelReader {
       model.addImportElement(importedModelUID, importIndex, usedModelVersion);
     }
 
-    ArrayList<ReferencePersister1> referenceDescriptors = new ArrayList<ReferencePersister1>();
+    ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
 
     // log
     Element logElement = rootElement.getChild(ModelPersistence.REFACTORING_LOG);
@@ -125,7 +125,7 @@ public class ModelReader1 implements IModelReader {
     }
 
     VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
-    for (ReferencePersister1 referencePersister : referenceDescriptors) {
+    for (IReferencePersister referencePersister : referenceDescriptors) {
       referencePersister.createReferenceInModel(model, visibleModelElements);
     }
 
@@ -161,9 +161,9 @@ public class ModelReader1 implements IModelReader {
           SModel model,
           boolean useUIDs,
           VisibleModelElements visibleModelElements) {
-    List<ReferencePersister1> referenceDescriptors = new ArrayList<ReferencePersister1>();
+    List<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
     SNode result = readNode(nodeElement, model, referenceDescriptors, useUIDs);
-    for (ReferencePersister1 referencePersister : referenceDescriptors) {
+    for (IReferencePersister referencePersister : referenceDescriptors) {
       referencePersister.createReferenceInModel(model, visibleModelElements);
     }
     return result;
@@ -173,7 +173,7 @@ public class ModelReader1 implements IModelReader {
   private SNode readNode(
           Element nodeElement,
           SModel model,
-          List<ReferencePersister1> referenceDescriptors,
+          List<IReferencePersister> referenceDescriptors,
           boolean useUIDs) {
 
     String conceptFqName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
@@ -197,7 +197,9 @@ public class ModelReader1 implements IModelReader {
     List links = nodeElement.getChildren(ModelPersistence.LINK);
     for (Object link : links) {
       Element linkElement = (Element) link;
-      referenceDescriptors.add(ReferencePersister1.readReferencePersister(linkElement, node, useUIDs));
+      IReferencePersister referencePersister = new ReferencePersister1();
+      referencePersister.fillFields(linkElement, node, useUIDs);
+      referenceDescriptors.add(referencePersister);
     }
 
     List childNodes = nodeElement.getChildren(ModelPersistence.NODE);

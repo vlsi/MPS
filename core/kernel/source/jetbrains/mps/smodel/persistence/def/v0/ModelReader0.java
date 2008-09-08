@@ -5,10 +5,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.persistence.def.DocUtil;
-import jetbrains.mps.smodel.persistence.def.IModelReader;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
+import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -122,7 +119,7 @@ public class ModelReader0 implements IModelReader {
       model.addImportElement(importedModelUID, importIndex, usedModelVersion);
     }
 
-    ArrayList<ReferencePersister0> referenceDescriptors = new ArrayList<ReferencePersister0>();
+    ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
 
     // log
     Element logElement = rootElement.getChild(ModelPersistence.REFACTORING_LOG);
@@ -143,7 +140,7 @@ public class ModelReader0 implements IModelReader {
       }
     }
 
-    for (ReferencePersister0 referencePersister : referenceDescriptors) {
+    for (IReferencePersister referencePersister : referenceDescriptors) {
       referencePersister.createReferenceInModel(model, visibleModelElements);
     }
 
@@ -179,9 +176,9 @@ public class ModelReader0 implements IModelReader {
           SModel model,
           boolean useUIDs,
           VisibleModelElements visibleModelElements) {
-    List<ReferencePersister0> referenceDescriptors = new ArrayList<ReferencePersister0>();
+    List<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
     SNode result = readNode(nodeElement, model, referenceDescriptors, useUIDs);
-    for (ReferencePersister0 referencePersister : referenceDescriptors) {
+    for (IReferencePersister referencePersister : referenceDescriptors) {
       referencePersister.createReferenceInModel(model, visibleModelElements);
     }
     return result;
@@ -191,7 +188,7 @@ public class ModelReader0 implements IModelReader {
   private SNode readNode(
           Element nodeElement,
           SModel model,
-          List<ReferencePersister0> referenceDescriptors,
+          List<IReferencePersister> referenceDescriptors,
           boolean useUIDs
   ) {
     // todo: save 'conceptFqName' (i.e. <namespace>.structure.<name>)
@@ -206,11 +203,6 @@ public class ModelReader0 implements IModelReader {
       node.setId(SNodeId.fromString(idValue));
     }
 
-//    String cachedExtResolveInfo = nodeElement.getAttributeValue(ModelPersistence.EXT_RESOLVE_INFO);
-//    if (!ExternalResolver.isEmptyExtResolveInfo(cachedExtResolveInfo)) {
-//      model.loadCachedNodeExtResolveInfo(node, cachedExtResolveInfo);
-//    }
-
     List properties = nodeElement.getChildren(ModelPersistence.PROPERTY);
     for (Object property : properties) {
       Element propertyElement = (Element) property;
@@ -224,7 +216,9 @@ public class ModelReader0 implements IModelReader {
     List links = nodeElement.getChildren(ModelPersistence.LINK);
     for (Object link : links) {
       Element linkElement = (Element) link;
-      referenceDescriptors.add(ReferencePersister0.readReferencePersister(linkElement, node, useUIDs));
+      IReferencePersister referencePersister = new ReferencePersister0();
+      referencePersister.fillFields(linkElement, node, useUIDs);
+      referenceDescriptors.add(referencePersister);
     }
 
     List childNodes = nodeElement.getChildren(ModelPersistence.NODE);

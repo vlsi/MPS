@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
+import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import jetbrains.mps.smodel.persistence.def.v0.externalResolve.ExternalResolver;
 import org.jdom.Element;
 
@@ -14,9 +15,9 @@ import org.jdom.Element;
  * Time: 20:54:31
  * To change this template use File | Settings | File Templates.
  */
-/*package*/ class ReferencePersister0 {
+/*package*/ class ReferencePersister0 implements IReferencePersister {
 
-  private static Logger LOG = Logger.getLogger(ReferenceDescriptor.class);
+  private static Logger LOG = Logger.getLogger(ReferencePersister0.class);
 
   protected SNode mySourceNode;
   protected String myRole;
@@ -27,12 +28,12 @@ import org.jdom.Element;
   protected boolean myUseUIDs;
   private boolean myNotImported;
 
-
-  protected ReferencePersister0(ReferenceDescriptor rd, boolean useUIDs) {
-    this(rd.sourceNode, rd.role, rd.attTargetNodeId, rd.attExtResolveInfo, rd.resolveInfo, useUIDs);
-  }
-
-  protected ReferencePersister0(SNode sourceNode, String role, String attTargetNodeId, String attExtResolveInfo, String resolveInfo, boolean useUIDs) {
+  public void fillFields(Element linkElement, SNode sourceNode, boolean useUIDs) {
+    String role = linkElement.getAttributeValue(ModelPersistence.ROLE);
+    String resolveInfo = linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO);
+    String attExtResolveInfo = linkElement.getAttributeValue(ModelPersistence.EXT_RESOLVE_INFO);
+    String attTargetNodeId = linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
+    
     this.myUseUIDs = useUIDs;
     this.mySourceNode = sourceNode;
     this.myRole = role;
@@ -101,7 +102,7 @@ import org.jdom.Element;
   }
 
   // -- create reference
-  SReference createReferenceInModelDoNotAddToSourceNode(SModel model, VisibleModelElements visibleModelElements) {
+  private SReference createReferenceInModelDoNotAddToSourceNode(SModel model, VisibleModelElements visibleModelElements) {
     SModelUID importedModelUID = model.getUID();
     if (myUseUIDs) {
       if (!myImportedModelInfo.equals("-1")) {
@@ -154,71 +155,6 @@ import org.jdom.Element;
     if (reference != null) this.getSourceNode().addReference(reference);
   }
 
-  //-----
-  //impl
-  //-----
-
-  // -- create descriptor
-
-  public static ReferencePersister0 readReferencePersister(Element linkElement, SNode sourceNode, boolean useUIDs) {
-    ReferenceDescriptor rd = readReferenceDescriptor(linkElement, sourceNode);
-    return new ReferencePersister0(rd, useUIDs);
-  }
-
-  private static ReferenceDescriptor readReferenceDescriptor(Element linkElement, SNode sourceNode) {
-    ReferenceDescriptor rd = new ReferenceDescriptor();
-    rd.sourceNode = sourceNode;
-    rd.role = linkElement.getAttributeValue(ModelPersistence.ROLE);
-    rd.resolveInfo = linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO);
-    rd.targetClassResolveInfo = linkElement.getAttributeValue(ModelPersistence.TARGET_CLASS_RESOLVE_INFO);
-    rd.attExtResolveInfo = linkElement.getAttributeValue(ModelPersistence.EXT_RESOLVE_INFO);
-    rd.attTargetNodeId = linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
-    return rd;
-  }
-  // --
-
-  //-- save reference
-
-//  public static void saveReference(Element parentElement, SReference reference, boolean useUIDs, VisibleModelElements visibleModelElements) {
-//    assert useUIDs || visibleModelElements != null;
-//    SNode node = reference.getSourceNode();
-//    Element linkElement = new Element(ModelPersistence.LINK);
-//    parentElement.addContent(linkElement);
-//    linkElement.setAttribute(ModelPersistence.ROLE, reference.getRole());
-//
-//    if (reference.isExternal()) {//external reference
-//      SModelUID targetModelUID = reference.getTargetModelUID();
-//      String targetModelInfo = "";
-//      if (!useUIDs) {
-//        SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
-//        if (importElement != null) {
-//          int importIndex = importElement.getReferenceID();
-//          targetModelInfo = importIndex + ".";
-//        } else {
-//          int visibleIndex = visibleModelElements.getVisibleModelIndex(targetModelUID);
-//          targetModelInfo = visibleIndex + "v.";
-//        }
-//      } else {
-//        targetModelInfo = targetModelUID.toString() + "#";
-//      }
-//      String extResolveInfo = reference.getExtResolveInfo();
-//      if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
-//        // no external info - save target node id
-//        linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetModelInfo + reference.getTargetNodeId());
-//        String resolveInfo = reference.getResolveInfo();
-//        if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
-//      } else {
-//        linkElement.setAttribute(ModelPersistence.EXT_RESOLVE_INFO, targetModelInfo + extResolveInfo);
-//      }
-//
-//    } else {//internal reference
-//      String targetNodeId = reference.getTargetNodeId();
-//      if (targetNodeId != null) linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
-//      String resolveInfo = reference.getResolveInfo();
-//      if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
-//    }
-//  }
-
   public int getImportIndex() {
     try {
       return Integer.parseInt(myImportedModelInfo);
@@ -238,20 +174,4 @@ import org.jdom.Element;
     public String myTargetInfo;
     public String myImportedModelInfo;
   }
-
-  @SuppressWarnings({"InstanceVariableNamingConvention"})
-  protected static class ReferenceDescriptor {
-    public ReferenceDescriptor() {
-
-    }
-
-    public SNode sourceNode;
-    public String role;
-    public String resolveInfo;
-    public String targetClassResolveInfo;
-    public String attExtResolveInfo;
-    public String attTargetNodeId;
-  }
-
-
 }

@@ -4,11 +4,12 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
+import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import org.jdom.Element;
 
-/*package*/ class ReferencePersister1 {
+/*package*/ class ReferencePersister1 implements IReferencePersister {
 
-  private static Logger LOG = Logger.getLogger(ReferenceDescriptor.class);
+  private static Logger LOG = Logger.getLogger(ReferencePersister1.class);
 
   protected SNode mySourceNode;
   protected String myRole;
@@ -18,13 +19,12 @@ import org.jdom.Element;
   protected boolean myUseUIDs;
   private boolean myNotImported;
 
+  public void fillFields(Element linkElement, SNode sourceNode, boolean useUIDs) {
+    String role = linkElement.getAttributeValue(ModelPersistence.ROLE);
+    String resolveInfo = linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO);
+    String attTargetNodeId = linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
 
-  protected ReferencePersister1(ReferenceDescriptor rd, boolean useUIDs) {
-    this(rd.sourceNode, rd.role, rd.targetNodeId, rd.resolveInfo, useUIDs);
-  }
-
-  protected ReferencePersister1(SNode sourceNode, String role, String attTargetNodeId, String resolveInfo, boolean useUIDs) {
-    this.myUseUIDs = useUIDs;
+      this.myUseUIDs = useUIDs;
     this.mySourceNode = sourceNode;
     this.myRole = role;
     if (attTargetNodeId != null) {
@@ -36,8 +36,7 @@ import org.jdom.Element;
     this.myResolveInfo = resolveInfo;
   }
 
-
-  protected ReferenceTargetDescriptor parseAttTargetNodeId(String attTargetNodeId, boolean useUIDs) {
+  private ReferenceTargetDescriptor parseAttTargetNodeId(String attTargetNodeId, boolean useUIDs) {
     ReferenceTargetDescriptor referenceTargetDescriptor = new ReferenceTargetDescriptor();
     int i;
     if (useUIDs) {
@@ -60,10 +59,10 @@ import org.jdom.Element;
     return referenceTargetDescriptor;
   }
 
-
   public SNode getSourceNode() {
     return mySourceNode;
   }
+
 
   public String getRole() {
     return myRole;
@@ -77,8 +76,12 @@ import org.jdom.Element;
     return myResolveInfo;
   }
 
+  public String getExtResolveInfo() {
+    return null;
+  }
+
   // -- create reference
-  SReference createReferenceInModelDoNotAddToSourceNode(SModel model, VisibleModelElements visibleModelElements) {
+  private SReference createReferenceInModelDoNotAddToSourceNode(SModel model, VisibleModelElements visibleModelElements) {
     SModelUID importedModelUID = model.getUID();
     if (myUseUIDs) {
       if (!myImportedModelInfo.equals("-1")) {
@@ -120,27 +123,6 @@ import org.jdom.Element;
     SReference reference = createReferenceInModelDoNotAddToSourceNode(model, visibleModelElements);
     if (reference != null) this.getSourceNode().addReference(reference);
   }
-
-  //-----
-  //impl
-  //-----
-
-  // -- create descriptor
-
-  public static ReferencePersister1 readReferencePersister(Element linkElement, SNode sourceNode, boolean useUIDs) {
-    ReferenceDescriptor rd = readReferenceDescriptor(linkElement, sourceNode);
-    return new ReferencePersister1(rd, useUIDs);
-  }
-
-  private static ReferenceDescriptor readReferenceDescriptor(Element linkElement, SNode sourceNode) {
-    ReferenceDescriptor rd = new ReferenceDescriptor();
-    rd.sourceNode = sourceNode;
-    rd.role = linkElement.getAttributeValue(ModelPersistence.ROLE);
-    rd.resolveInfo = linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO);
-    rd.targetNodeId = linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
-    return rd;
-  }
-  // --
 
   //-- save reference
 
