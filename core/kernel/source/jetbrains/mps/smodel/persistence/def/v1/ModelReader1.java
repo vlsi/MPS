@@ -16,7 +16,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModelReader1 implements IModelReader {
+public class ModelReader1 extends BaseModelReader implements IModelReader {
   private static final Logger LOG = Logger.getLogger(ModelReader1.class);
 
   public SModel readModel(Document document, String modelShortName, String stereotype) {
@@ -197,7 +197,7 @@ public class ModelReader1 implements IModelReader {
     List links = nodeElement.getChildren(ModelPersistence.LINK);
     for (Object link : links) {
       Element linkElement = (Element) link;
-      IReferencePersister referencePersister = new ReferencePersister1();
+      IReferencePersister referencePersister = createReferencePersister();
       referencePersister.fillFields(linkElement, node, useUIDs);
       referenceDescriptors.add(referencePersister);
     }
@@ -215,5 +215,9 @@ public class ModelReader1 implements IModelReader {
     }
 
     return node;
+  }
+
+  protected IReferencePersister createReferencePersister() {
+    return new ReferencePersister1();
   }
 }

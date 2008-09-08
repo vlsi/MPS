@@ -18,7 +18,7 @@ import java.util.List;
  * Igor Alshannikov
  * Oct 9, 2007
  */
-public class ModelReader0 implements IModelReader {
+public class ModelReader0 extends BaseModelReader implements IModelReader {
   private static final Logger LOG = Logger.getLogger(ModelReader0.class);
 
 
@@ -216,7 +216,7 @@ public class ModelReader0 implements IModelReader {
     List links = nodeElement.getChildren(ModelPersistence.LINK);
     for (Object link : links) {
       Element linkElement = (Element) link;
-      IReferencePersister referencePersister = new ReferencePersister0();
+      IReferencePersister referencePersister = createReferencePersister();
       referencePersister.fillFields(linkElement, node, useUIDs);
       referenceDescriptors.add(referencePersister);
     }
@@ -234,5 +234,9 @@ public class ModelReader0 implements IModelReader {
     }
 
     return node;
+  }
+
+  protected IReferencePersister createReferencePersister() {
+    return new ReferencePersister0();
   }
 }
