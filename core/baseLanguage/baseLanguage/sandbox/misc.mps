@@ -264,6 +264,30 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220893666802">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1220893666803">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1220893666804" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220893666805">
+              <link role="variableDeclaration" targetNodeId="1216199204298" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220893666993">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1220893666994">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1220893666995" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220893666996">
+              <link role="variableDeclaration" targetNodeId="1216199204298" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220893667154">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1220893667155">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1220893667156" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220893667157">
+              <link role="variableDeclaration" targetNodeId="1216199204298" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216200840069">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216200840070">
             <property name="name" value="s" />
