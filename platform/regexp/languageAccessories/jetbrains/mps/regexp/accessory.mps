@@ -242,6 +242,16 @@
         </node>
       </node>
     </node>
+    <node role="regexp" type="jetbrains.mps.regexp.structure.RegexpDeclaration" id="1220361776194">
+      <property name="name" value="tst" />
+      <property name="description" value="tst" />
+      <node role="regexp" type="jetbrains.mps.regexp.structure.PositiveSymbolClassRegexp" id="1220361783022">
+        <node role="part" type="jetbrains.mps.regexp.structure.CharacterSymbolClassPart" id="1220361787412">
+          <property name="character" value="a" />
+        </node>
+        <node role="part" type="jetbrains.mps.regexp.structure.SymbolClassPart" id="1220361795973" />
+      </node>
+    </node>
   </node>
 </model>
 

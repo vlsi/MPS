@@ -15,21 +15,21 @@ public class AtLeastNTimesRegexp extends UnaryRegexp {
     super(node);
   }
 
-  public static AtLeastNTimesRegexp newInstance(SModel sm, boolean init) {
-    return (AtLeastNTimesRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.AtLeastNTimesRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AtLeastNTimesRegexp newInstance(SModel sm) {
-    return AtLeastNTimesRegexp.newInstance(sm, false);
-  }
-
-
   public int getN() {
     return this.getIntegerProperty(AtLeastNTimesRegexp.N);
   }
 
   public void setN(int value) {
     this.setIntegerProperty(AtLeastNTimesRegexp.N, value);
+  }
+
+
+  public static AtLeastNTimesRegexp newInstance(SModel sm, boolean init) {
+    return (AtLeastNTimesRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.AtLeastNTimesRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AtLeastNTimesRegexp newInstance(SModel sm) {
+    return AtLeastNTimesRegexp.newInstance(sm, false);
   }
 
 }

@@ -15,21 +15,21 @@ public class UnicodeCharacterRegexp extends Regexp {
     super(node);
   }
 
-  public static UnicodeCharacterRegexp newInstance(SModel sm, boolean init) {
-    return (UnicodeCharacterRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.UnicodeCharacterRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static UnicodeCharacterRegexp newInstance(SModel sm) {
-    return UnicodeCharacterRegexp.newInstance(sm, false);
-  }
-
-
   public String getCode() {
     return this.getProperty(UnicodeCharacterRegexp.CODE);
   }
 
   public void setCode(String value) {
     this.setProperty(UnicodeCharacterRegexp.CODE, value);
+  }
+
+
+  public static UnicodeCharacterRegexp newInstance(SModel sm, boolean init) {
+    return (UnicodeCharacterRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.UnicodeCharacterRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static UnicodeCharacterRegexp newInstance(SModel sm) {
+    return UnicodeCharacterRegexp.newInstance(sm, false);
   }
 
 }

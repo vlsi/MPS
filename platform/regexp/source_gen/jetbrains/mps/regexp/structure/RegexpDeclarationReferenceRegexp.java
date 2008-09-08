@@ -15,21 +15,21 @@ public class RegexpDeclarationReferenceRegexp extends Regexp {
     super(node);
   }
 
-  public static RegexpDeclarationReferenceRegexp newInstance(SModel sm, boolean init) {
-    return (RegexpDeclarationReferenceRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.RegexpDeclarationReferenceRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static RegexpDeclarationReferenceRegexp newInstance(SModel sm) {
-    return RegexpDeclarationReferenceRegexp.newInstance(sm, false);
-  }
-
-
   public RegexpDeclaration getRegexp() {
     return (RegexpDeclaration)this.getReferent(RegexpDeclarationReferenceRegexp.REGEXP);
   }
 
   public void setRegexp(RegexpDeclaration node) {
     super.setReferent(RegexpDeclarationReferenceRegexp.REGEXP, node);
+  }
+
+
+  public static RegexpDeclarationReferenceRegexp newInstance(SModel sm, boolean init) {
+    return (RegexpDeclarationReferenceRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.RegexpDeclarationReferenceRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static RegexpDeclarationReferenceRegexp newInstance(SModel sm) {
+    return RegexpDeclarationReferenceRegexp.newInstance(sm, false);
   }
 
 }

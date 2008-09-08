@@ -21,15 +21,6 @@ public class ReplaceWithRegexpExpression extends Expression implements RegexpUsi
     super(node);
   }
 
-  public static ReplaceWithRegexpExpression newInstance(SModel sm, boolean init) {
-    return (ReplaceWithRegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.ReplaceWithRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ReplaceWithRegexpExpression newInstance(SModel sm) {
-    return ReplaceWithRegexpExpression.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(ReplaceWithRegexpExpression.SHORT_DESCRIPTION);
   }
@@ -76,6 +67,15 @@ public class ReplaceWithRegexpExpression extends Expression implements RegexpUsi
 
   public void setRegexp(RegexpExpression node) {
     super.setChild(ReplaceWithRegexpExpression.REGEXP, node);
+  }
+
+
+  public static ReplaceWithRegexpExpression newInstance(SModel sm, boolean init) {
+    return (ReplaceWithRegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.ReplaceWithRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ReplaceWithRegexpExpression newInstance(SModel sm) {
+    return ReplaceWithRegexpExpression.newInstance(sm, false);
   }
 
 }

@@ -20,15 +20,6 @@ public class SplitExpression extends Expression implements RegexpUsingConstructi
     super(node);
   }
 
-  public static SplitExpression newInstance(SModel sm, boolean init) {
-    return (SplitExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.SplitExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SplitExpression newInstance(SModel sm) {
-    return SplitExpression.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(SplitExpression.SHORT_DESCRIPTION);
   }
@@ -67,6 +58,15 @@ public class SplitExpression extends Expression implements RegexpUsingConstructi
 
   public void setRegexp(RegexpExpression node) {
     super.setChild(SplitExpression.REGEXP, node);
+  }
+
+
+  public static SplitExpression newInstance(SModel sm, boolean init) {
+    return (SplitExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.SplitExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SplitExpression newInstance(SModel sm) {
+    return SplitExpression.newInstance(sm, false);
   }
 
 }

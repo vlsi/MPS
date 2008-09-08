@@ -16,21 +16,21 @@ public class MatchVariableReference extends Expression {
     super(node);
   }
 
-  public static MatchVariableReference newInstance(SModel sm, boolean init) {
-    return (MatchVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.MatchVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MatchVariableReference newInstance(SModel sm) {
-    return MatchVariableReference.newInstance(sm, false);
-  }
-
-
   public MatchParensRegexp getMatch() {
     return (MatchParensRegexp)this.getReferent(MatchVariableReference.MATCH);
   }
 
   public void setMatch(MatchParensRegexp node) {
     super.setReferent(MatchVariableReference.MATCH, node);
+  }
+
+
+  public static MatchVariableReference newInstance(SModel sm, boolean init) {
+    return (MatchVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.MatchVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MatchVariableReference newInstance(SModel sm) {
+    return MatchVariableReference.newInstance(sm, false);
   }
 
 }

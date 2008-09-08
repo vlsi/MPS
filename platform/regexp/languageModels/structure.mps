@@ -232,6 +232,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1174554202498">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1220356709519">
+      <link role="intfc" targetNodeId="1220356640633" resolveInfo="SymbolClassRegexpAndPart" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174554211468">
     <property name="name" value="PositiveSymbolClassRegexp" />
@@ -313,6 +316,9 @@
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1174557870224">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1220356717885">
+      <link role="intfc" targetNodeId="1220356640633" resolveInfo="SymbolClassRegexpAndPart" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174557878319">
@@ -729,6 +735,29 @@
     <property name="package" value="Regexps" />
     <property name="name" value="FourDigits" />
     <property name="constraint" value="\\d\\d\\d\\d" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1220021842985">
+    <property name="package" value="SymbolClassParts" />
+    <property name="name" value="IntersectionSymbolClassPart" />
+    <link role="extends" targetNodeId="1174557861378" resolveInfo="SymbolClassPart" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1220356033934">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="left" />
+      <link role="target" targetNodeId="1220356640633" resolveInfo="SymbolClassRegexpAndPart" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1220356007276">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="right" />
+      <link role="target" targetNodeId="1220356640633" resolveInfo="SymbolClassRegexpAndPart" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1220355672855">
+      <property name="value" value="&amp;&amp;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1220356640633">
+    <property name="package" value="Regexps" />
+    <property name="name" value="SymbolClassRegexpAndPart" />
   </node>
 </model>
 

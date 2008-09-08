@@ -5,11 +5,11 @@ package jetbrains.mps.regexp.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class PredefinedSymbolClasses extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.regexp.structure.PredefinedSymbolClasses";
@@ -22,15 +22,6 @@ public class PredefinedSymbolClasses extends BaseConcept implements INamedConcep
   public PredefinedSymbolClasses(SNode node) {
     super(node);
   }
-
-  public static PredefinedSymbolClasses newInstance(SModel sm, boolean init) {
-    return (PredefinedSymbolClasses)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.PredefinedSymbolClasses", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PredefinedSymbolClasses newInstance(SModel sm) {
-    return PredefinedSymbolClasses.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(PredefinedSymbolClasses.NAME);
@@ -82,6 +73,15 @@ public class PredefinedSymbolClasses extends BaseConcept implements INamedConcep
 
   public void insertSymbolClass(PredefinedSymbolClassDeclaration prev, PredefinedSymbolClassDeclaration node) {
     this.insertChild(prev, PredefinedSymbolClasses.SYMBOL_CLASS, node);
+  }
+
+
+  public static PredefinedSymbolClasses newInstance(SModel sm, boolean init) {
+    return (PredefinedSymbolClasses)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.PredefinedSymbolClasses", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PredefinedSymbolClasses newInstance(SModel sm) {
+    return PredefinedSymbolClasses.newInstance(sm, false);
   }
 
 }

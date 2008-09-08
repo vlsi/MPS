@@ -8,11 +8,13 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
+import jetbrains.mps.smodel.search.EmptySearchScope;
 import java.util.List;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class MatchVariableReferenceRegexp_match_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -28,10 +30,27 @@ public class MatchVariableReferenceRegexp_match_ReferentConstraint implements IM
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    Object searchScopeOrListOfNodes = this.createSearchScopeOrListOfNodes(operationContext, _context);
+    if (searchScopeOrListOfNodes == null) {
+      return new EmptySearchScope();
+    }
+    if (searchScopeOrListOfNodes instanceof ISearchScope) {
+      return (ISearchScope)searchScopeOrListOfNodes;
+    }
+    if (searchScopeOrListOfNodes instanceof List) {
+      return new SimpleSearchScope((List)searchScopeOrListOfNodes);
+    }
+    if (searchScopeOrListOfNodes instanceof Iterable) {
+      return new SimpleSearchScope(CollectionUtil.iterableAsList((Iterable)searchScopeOrListOfNodes));
+    }
+    throw new RuntimeException("unexpected type in search-scope provider " + searchScopeOrListOfNodes.getClass());
+  }
+
+  public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> matches = ListSequence.<SNode>fromArray();
     SNode top = _context.getEnclosingNode();
-    while (SNodeOperations.getParent(top, null, false, false) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(top, null, false, false), "jetbrains.mps.regexp.structure.Regexp")) {
-      top = SNodeOperations.getParent(top, null, false, false);
+    while (SNodeOperations.getParent(top) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(top), "jetbrains.mps.regexp.structure.Regexp")) {
+      top = SNodeOperations.getParent(top);
     }
     ListSequence.fromList(matches).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(top, "jetbrains.mps.regexp.structure.MatchParensRegexp", true)));
     if (SNodeOperations.isInstanceOf(top, "jetbrains.mps.regexp.structure.MatchParensRegexp")) {

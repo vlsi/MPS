@@ -251,6 +251,26 @@
         </node>
       </node>
     </node>
+    <node role="regexp" type="jetbrains.mps.regexp.structure.RegexpDeclaration" id="1220353872410">
+      <property name="name" value="tst" />
+      <property name="description" value="tst" />
+      <node role="regexp" type="jetbrains.mps.regexp.structure.PositiveSymbolClassRegexp" id="1220354315016">
+        <node role="part" type="jetbrains.mps.regexp.structure.IntersectionSymbolClassPart" id="1220363152593">
+          <node role="right" type="jetbrains.mps.regexp.structure.NegativeSymbolClassRegexp" id="1220363156281">
+            <node role="part" type="jetbrains.mps.regexp.structure.CharacterSymbolClassPart" id="1220363164798">
+              <property name="character" value="|" />
+            </node>
+          </node>
+          <node role="left" type="jetbrains.mps.regexp.structure.IntersectionSymbolClassPart" id="1220363191517">
+            <node role="left" type="jetbrains.mps.regexp.structure.PositiveSymbolClassRegexp" id="1220363200612">
+              <node role="part" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassSymbolClassPart" id="1220363217504">
+                <link role="declaration" targetNodeId="3.1174554956923" resolveInfo="\p{Graph}" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1178535069057">
     <property name="name" value="BaseLanguageIntegration" />

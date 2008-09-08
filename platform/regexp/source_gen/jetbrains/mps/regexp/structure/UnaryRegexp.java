@@ -15,21 +15,21 @@ public class UnaryRegexp extends Regexp {
     super(node);
   }
 
-  public static UnaryRegexp newInstance(SModel sm, boolean init) {
-    return (UnaryRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.UnaryRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static UnaryRegexp newInstance(SModel sm) {
-    return UnaryRegexp.newInstance(sm, false);
-  }
-
-
   public Regexp getRegexp() {
     return (Regexp)this.getChild(UnaryRegexp.REGEXP);
   }
 
   public void setRegexp(Regexp node) {
     super.setChild(UnaryRegexp.REGEXP, node);
+  }
+
+
+  public static UnaryRegexp newInstance(SModel sm, boolean init) {
+    return (UnaryRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.UnaryRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static UnaryRegexp newInstance(SModel sm) {
+    return UnaryRegexp.newInstance(sm, false);
   }
 
 }

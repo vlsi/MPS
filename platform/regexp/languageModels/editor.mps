@@ -1207,5 +1207,73 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1220022981815">
+    <property name="package" value="SymbolClassParts" />
+    <link role="conceptDeclaration" targetNodeId="1.1220021842985" resolveInfo="IntersectionSymbolClassPart" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1220022999427">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1220356824529">
+        <link role="relationDeclaration" targetNodeId="1.1220356033934" />
+        <link role="actionMap" targetNodeId="1220362181460" resolveInfo="IntersectionSymbolClassPart_Left_Actions" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1220356843355">
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1220356849720">
+        <link role="relationDeclaration" targetNodeId="1.1220356007276" />
+        <link role="actionMap" targetNodeId="1220362394300" resolveInfo="IntersectionSymbolClassPart_Right_Actions" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1220362181460">
+    <property name="package" value="SymbolClassParts" />
+    <property name="name" value="IntersectionSymbolClassPart_Left_Actions" />
+    <link role="applicableConcept" targetNodeId="1.1220021842985" resolveInfo="IntersectionSymbolClassPart" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem" id="1220362243578">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_ExecuteFunction" id="1220362243579">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220362243580">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220362268875">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220362268876">
+              <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1220362268877" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1220362268878">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220362268879">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1220362268880" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1220362277178">
+                    <link role="link" targetNodeId="1.1220356007276" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1220362394300">
+    <property name="package" value="SymbolClassParts" />
+    <property name="name" value="IntersectionSymbolClassPart_Right_Actions" />
+    <link role="applicableConcept" targetNodeId="1.1220021842985" resolveInfo="IntersectionSymbolClassPart" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem" id="1220362425438">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_ExecuteFunction" id="1220362425439">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220362425440">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220362443236">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220362443237">
+              <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1220362443238" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1220362443239">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220362443240">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1220362443241" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1220362448024">
+                    <link role="link" targetNodeId="1.1220356033934" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

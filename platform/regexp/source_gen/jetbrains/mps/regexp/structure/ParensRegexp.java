@@ -15,21 +15,21 @@ public class ParensRegexp extends Regexp {
     super(node);
   }
 
-  public static ParensRegexp newInstance(SModel sm, boolean init) {
-    return (ParensRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.ParensRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ParensRegexp newInstance(SModel sm) {
-    return ParensRegexp.newInstance(sm, false);
-  }
-
-
   public Regexp getExpr() {
     return (Regexp)this.getChild(ParensRegexp.EXPR);
   }
 
   public void setExpr(Regexp node) {
     super.setChild(ParensRegexp.EXPR, node);
+  }
+
+
+  public static ParensRegexp newInstance(SModel sm, boolean init) {
+    return (ParensRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.ParensRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ParensRegexp newInstance(SModel sm) {
+    return ParensRegexp.newInstance(sm, false);
   }
 
 }

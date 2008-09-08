@@ -15,11 +15,8 @@ import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import java.util.ArrayList;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
@@ -28,10 +25,12 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration;
 import jetbrains.mps.regexp.structure.RegexpDeclaration;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class QueriesGenerated {
 
@@ -58,8 +57,8 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1175165206848(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
-      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode replace = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.regexp.structure.ReplaceWithRegexpExpression", null);
@@ -79,8 +78,8 @@ public class QueriesGenerated {
       });
     }
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
-      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode split = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.regexp.structure.SplitExpression", null);
@@ -100,8 +99,8 @@ public class QueriesGenerated {
       });
     }
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
-      result.add(new AbstractSideTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode matchRegexpExpression = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.regexp.structure.MatchRegexpExpression");
@@ -181,7 +180,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Regexp_1177531335474(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.regexp.structure.Regexp", operationContext.getScope());
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.regexp.structure.Regexp");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -217,7 +216,7 @@ public class QueriesGenerated {
           }
 
           public SNode getOutputConcept() {
-            return concept.getNode();
+            return concept;
           }
 
         });
@@ -229,7 +228,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Regexp_1177531588848(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp", operationContext.getScope());
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -254,7 +253,7 @@ public class QueriesGenerated {
           }
 
           public SNode getOutputConcept() {
-            return concept.getNode();
+            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -278,7 +277,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Regexp_1177531829621(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.regexp.structure.RegexpDeclarationReferenceRegexp", operationContext.getScope());
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.regexp.structure.RegexpDeclarationReferenceRegexp");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -302,7 +301,7 @@ public class QueriesGenerated {
           }
 
           public SNode getOutputConcept() {
-            return concept.getNode();
+            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -326,7 +325,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Regexp_1177533163867(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.regexp.structure.MatchVariableReferenceRegexp", operationContext.getScope());
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.regexp.structure.MatchVariableReferenceRegexp");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -351,7 +350,7 @@ public class QueriesGenerated {
           }
 
           public SNode getOutputConcept() {
-            return concept.getNode();
+            return concept;
           }
 
           public String getMatchingText(String text) {

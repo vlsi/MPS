@@ -16,15 +16,6 @@ public class IntervalSymbolClassPart extends SymbolClassPart {
     super(node);
   }
 
-  public static IntervalSymbolClassPart newInstance(SModel sm, boolean init) {
-    return (IntervalSymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.IntervalSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static IntervalSymbolClassPart newInstance(SModel sm) {
-    return IntervalSymbolClassPart.newInstance(sm, false);
-  }
-
-
   public String getStart() {
     return this.getProperty(IntervalSymbolClassPart.START);
   }
@@ -39,6 +30,15 @@ public class IntervalSymbolClassPart extends SymbolClassPart {
 
   public void setEnd(String value) {
     this.setProperty(IntervalSymbolClassPart.END, value);
+  }
+
+
+  public static IntervalSymbolClassPart newInstance(SModel sm, boolean init) {
+    return (IntervalSymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.IntervalSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static IntervalSymbolClassPart newInstance(SModel sm) {
+    return IntervalSymbolClassPart.newInstance(sm, false);
   }
 
 }

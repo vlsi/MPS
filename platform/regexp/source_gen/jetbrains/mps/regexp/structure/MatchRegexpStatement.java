@@ -4,11 +4,11 @@ package jetbrains.mps.regexp.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.StatementList;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.StatementList;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class MatchRegexpStatement extends Statement implements RegexpUsingConstruction {
   public static final String concept = "jetbrains.mps.regexp.structure.MatchRegexpStatement";
@@ -22,15 +22,6 @@ public class MatchRegexpStatement extends Statement implements RegexpUsingConstr
   public MatchRegexpStatement(SNode node) {
     super(node);
   }
-
-  public static MatchRegexpStatement newInstance(SModel sm, boolean init) {
-    return (MatchRegexpStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.MatchRegexpStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MatchRegexpStatement newInstance(SModel sm) {
-    return MatchRegexpStatement.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(MatchRegexpStatement.SHORT_DESCRIPTION);
@@ -78,6 +69,15 @@ public class MatchRegexpStatement extends Statement implements RegexpUsingConstr
 
   public void setRegexp(RegexpExpression node) {
     super.setChild(MatchRegexpStatement.REGEXP, node);
+  }
+
+
+  public static MatchRegexpStatement newInstance(SModel sm, boolean init) {
+    return (MatchRegexpStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.MatchRegexpStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MatchRegexpStatement newInstance(SModel sm) {
+    return MatchRegexpStatement.newInstance(sm, false);
   }
 
 }

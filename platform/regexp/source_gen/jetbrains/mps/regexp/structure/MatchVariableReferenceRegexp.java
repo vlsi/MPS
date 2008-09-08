@@ -15,21 +15,21 @@ public class MatchVariableReferenceRegexp extends Regexp {
     super(node);
   }
 
-  public static MatchVariableReferenceRegexp newInstance(SModel sm, boolean init) {
-    return (MatchVariableReferenceRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.MatchVariableReferenceRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MatchVariableReferenceRegexp newInstance(SModel sm) {
-    return MatchVariableReferenceRegexp.newInstance(sm, false);
-  }
-
-
   public MatchParensRegexp getMatch() {
     return (MatchParensRegexp)this.getReferent(MatchVariableReferenceRegexp.MATCH);
   }
 
   public void setMatch(MatchParensRegexp node) {
     super.setReferent(MatchVariableReferenceRegexp.MATCH, node);
+  }
+
+
+  public static MatchVariableReferenceRegexp newInstance(SModel sm, boolean init) {
+    return (MatchVariableReferenceRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.MatchVariableReferenceRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MatchVariableReferenceRegexp newInstance(SModel sm) {
+    return MatchVariableReferenceRegexp.newInstance(sm, false);
   }
 
 }

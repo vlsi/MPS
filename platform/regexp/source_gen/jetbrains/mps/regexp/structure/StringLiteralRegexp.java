@@ -15,21 +15,21 @@ public class StringLiteralRegexp extends Regexp {
     super(node);
   }
 
-  public static StringLiteralRegexp newInstance(SModel sm, boolean init) {
-    return (StringLiteralRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.StringLiteralRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static StringLiteralRegexp newInstance(SModel sm) {
-    return StringLiteralRegexp.newInstance(sm, false);
-  }
-
-
   public String getText() {
     return this.getProperty(StringLiteralRegexp.TEXT);
   }
 
   public void setText(String value) {
     this.setProperty(StringLiteralRegexp.TEXT, value);
+  }
+
+
+  public static StringLiteralRegexp newInstance(SModel sm, boolean init) {
+    return (StringLiteralRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.StringLiteralRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static StringLiteralRegexp newInstance(SModel sm) {
+    return StringLiteralRegexp.newInstance(sm, false);
   }
 
 }

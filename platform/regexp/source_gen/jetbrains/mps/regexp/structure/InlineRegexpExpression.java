@@ -18,15 +18,6 @@ public class InlineRegexpExpression extends RegexpExpression {
     super(node);
   }
 
-  public static InlineRegexpExpression newInstance(SModel sm, boolean init) {
-    return (InlineRegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.InlineRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static InlineRegexpExpression newInstance(SModel sm) {
-    return InlineRegexpExpression.newInstance(sm, false);
-  }
-
-
   public boolean getDotAll() {
     return this.getBooleanProperty(InlineRegexpExpression.DOT_ALL);
   }
@@ -57,6 +48,15 @@ public class InlineRegexpExpression extends RegexpExpression {
 
   public void setRegexp(Regexp node) {
     super.setChild(InlineRegexpExpression.REGEXP, node);
+  }
+
+
+  public static InlineRegexpExpression newInstance(SModel sm, boolean init) {
+    return (InlineRegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.InlineRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static InlineRegexpExpression newInstance(SModel sm) {
+    return InlineRegexpExpression.newInstance(sm, false);
   }
 
 }

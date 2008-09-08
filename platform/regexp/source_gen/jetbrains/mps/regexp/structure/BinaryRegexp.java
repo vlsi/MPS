@@ -16,15 +16,6 @@ public class BinaryRegexp extends Regexp {
     super(node);
   }
 
-  public static BinaryRegexp newInstance(SModel sm, boolean init) {
-    return (BinaryRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.BinaryRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BinaryRegexp newInstance(SModel sm) {
-    return BinaryRegexp.newInstance(sm, false);
-  }
-
-
   public Regexp getLeft() {
     return (Regexp)this.getChild(BinaryRegexp.LEFT);
   }
@@ -39,6 +30,15 @@ public class BinaryRegexp extends Regexp {
 
   public void setRight(Regexp node) {
     super.setChild(BinaryRegexp.RIGHT, node);
+  }
+
+
+  public static BinaryRegexp newInstance(SModel sm, boolean init) {
+    return (BinaryRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.BinaryRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BinaryRegexp newInstance(SModel sm) {
+    return BinaryRegexp.newInstance(sm, false);
   }
 
 }

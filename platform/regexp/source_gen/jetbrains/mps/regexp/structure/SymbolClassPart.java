@@ -8,12 +8,40 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SymbolClassPart extends BaseConcept {
+public class SymbolClassPart extends BaseConcept implements SymbolClassRegexpAndPart {
   public static final String concept = "jetbrains.mps.regexp.structure.SymbolClassPart";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public SymbolClassPart(SNode node) {
     super(node);
   }
+
+  public String getShortDescription() {
+    return this.getProperty(SymbolClassPart.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(SymbolClassPart.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(SymbolClassPart.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(SymbolClassPart.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(SymbolClassPart.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(SymbolClassPart.VIRTUAL_PACKAGE, value);
+  }
+
 
   public static SymbolClassPart newInstance(SModel sm, boolean init) {
     return (SymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.SymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();

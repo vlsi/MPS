@@ -4,11 +4,11 @@ package jetbrains.mps.regexp.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
+import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
-import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class ForEachMatchStatement extends Statement implements RegexpUsingConstruction {
   public static final String concept = "jetbrains.mps.regexp.structure.ForEachMatchStatement";
@@ -22,15 +22,6 @@ public class ForEachMatchStatement extends Statement implements RegexpUsingConst
   public ForEachMatchStatement(SNode node) {
     super(node);
   }
-
-  public static ForEachMatchStatement newInstance(SModel sm, boolean init) {
-    return (ForEachMatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.ForEachMatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ForEachMatchStatement newInstance(SModel sm) {
-    return ForEachMatchStatement.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(ForEachMatchStatement.SHORT_DESCRIPTION);
@@ -78,6 +69,15 @@ public class ForEachMatchStatement extends Statement implements RegexpUsingConst
 
   public void setRegexp(RegexpExpression node) {
     super.setChild(ForEachMatchStatement.REGEXP, node);
+  }
+
+
+  public static ForEachMatchStatement newInstance(SModel sm, boolean init) {
+    return (ForEachMatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.ForEachMatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ForEachMatchStatement newInstance(SModel sm) {
+    return ForEachMatchStatement.newInstance(sm, false);
   }
 
 }

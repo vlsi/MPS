@@ -13,7 +13,7 @@ public class MatchVariableReference_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(final SNode mvr) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(), mvr, "jetbrains.mps.regexp.helgins", "1178179183609");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_0().createNode(), mvr, "jetbrains.mps.regexp.helgins", "1178179183609");
   }
 
   public String getApplicableConceptFQName() {

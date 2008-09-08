@@ -15,21 +15,21 @@ public class LookRegexp extends Regexp {
     super(node);
   }
 
-  public static LookRegexp newInstance(SModel sm, boolean init) {
-    return (LookRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.LookRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static LookRegexp newInstance(SModel sm) {
-    return LookRegexp.newInstance(sm, false);
-  }
-
-
   public Regexp getRegexp() {
     return (Regexp)this.getChild(LookRegexp.REGEXP);
   }
 
   public void setRegexp(Regexp node) {
     super.setChild(LookRegexp.REGEXP, node);
+  }
+
+
+  public static LookRegexp newInstance(SModel sm, boolean init) {
+    return (LookRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.LookRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static LookRegexp newInstance(SModel sm) {
+    return LookRegexp.newInstance(sm, false);
   }
 
 }

@@ -16,15 +16,6 @@ public class FromNToMTimesRegexp extends UnaryRegexp {
     super(node);
   }
 
-  public static FromNToMTimesRegexp newInstance(SModel sm, boolean init) {
-    return (FromNToMTimesRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.FromNToMTimesRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static FromNToMTimesRegexp newInstance(SModel sm) {
-    return FromNToMTimesRegexp.newInstance(sm, false);
-  }
-
-
   public int getN() {
     return this.getIntegerProperty(FromNToMTimesRegexp.N);
   }
@@ -39,6 +30,15 @@ public class FromNToMTimesRegexp extends UnaryRegexp {
 
   public void setM(int value) {
     this.setIntegerProperty(FromNToMTimesRegexp.M, value);
+  }
+
+
+  public static FromNToMTimesRegexp newInstance(SModel sm, boolean init) {
+    return (FromNToMTimesRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.FromNToMTimesRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static FromNToMTimesRegexp newInstance(SModel sm) {
+    return FromNToMTimesRegexp.newInstance(sm, false);
   }
 
 }

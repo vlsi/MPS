@@ -22,15 +22,6 @@ public class RegexpDeclaration extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-  public static RegexpDeclaration newInstance(SModel sm, boolean init) {
-    return (RegexpDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.RegexpDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static RegexpDeclaration newInstance(SModel sm) {
-    return RegexpDeclaration.newInstance(sm, false);
-  }
-
-
   public String getDescription() {
     return this.getProperty(RegexpDeclaration.DESCRIPTION);
   }
@@ -77,6 +68,15 @@ public class RegexpDeclaration extends BaseConcept implements INamedConcept {
 
   public void setRegexp(Regexp node) {
     super.setChild(RegexpDeclaration.REGEXP, node);
+  }
+
+
+  public static RegexpDeclaration newInstance(SModel sm, boolean init) {
+    return (RegexpDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.RegexpDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static RegexpDeclaration newInstance(SModel sm) {
+    return RegexpDeclaration.newInstance(sm, false);
   }
 
 }

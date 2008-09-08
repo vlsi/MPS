@@ -15,21 +15,21 @@ public class CharacterSymbolClassPart extends SymbolClassPart {
     super(node);
   }
 
-  public static CharacterSymbolClassPart newInstance(SModel sm, boolean init) {
-    return (CharacterSymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.CharacterSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static CharacterSymbolClassPart newInstance(SModel sm) {
-    return CharacterSymbolClassPart.newInstance(sm, false);
-  }
-
-
   public String getCharacter() {
     return this.getProperty(CharacterSymbolClassPart.CHARACTER);
   }
 
   public void setCharacter(String value) {
     this.setProperty(CharacterSymbolClassPart.CHARACTER, value);
+  }
+
+
+  public static CharacterSymbolClassPart newInstance(SModel sm, boolean init) {
+    return (CharacterSymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.CharacterSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static CharacterSymbolClassPart newInstance(SModel sm) {
+    return CharacterSymbolClassPart.newInstance(sm, false);
   }
 
 }

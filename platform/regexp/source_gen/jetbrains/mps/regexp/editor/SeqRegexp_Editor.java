@@ -4,70 +4,51 @@ package jetbrains.mps.regexp.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SeqRegexp_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_CollectionCell2730_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell2730_0");
-  }
-
-  private static void setupBasic_leftRefNodeCell2730_0(EditorCell editorCell, SNode node, EditorContext context) {
-    BinaryRegexp_Left_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_rightRefNodeCell2730_0(EditorCell editorCell, SNode node, EditorContext context) {
-    BinaryRegexp_Right_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupLabel_leftRefNodeCell2730_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_rightRefNodeCell2730_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_CollectionCell2730_0(context, node);
+    return this.createCollection1174900567679(context, node);
   }
 
-  public EditorCell create_CollectionCell2730_0(EditorContext context, SNode node) {
+  public EditorCell createCollection1174900567679(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_CollectionCell2730_0(editorCell, node, context);
+    setupBasic_Collection_11749005676791174900567679(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_leftRefNodeCell2730_0(context, node));
-    editorCell.addEditorCell(this.create_rightRefNodeCell2730_0(context, node));
+    editorCell.addEditorCell(this.createRefNode1174900570494(context, node));
+    editorCell.addEditorCell(this.createRefNode1174900573371(context, node));
     return editorCell;
   }
 
-  public EditorCell create_leftRefNodeCell2730_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode1174900570494_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_leftRefNodeCell2730_0(editorCell, node, context);
+    setupBasic_refNode_left1174900570494(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_leftRefNodeCell2730_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_left_1174900570494((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell create_leftRefNodeCell2730_0(EditorContext context, SNode node) {
+  public EditorCell createRefNode1174900570494(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("left");
     provider.setNoTargetText("<no left>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_leftRefNodeCell2730_0_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode1174900570494_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -78,25 +59,25 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell create_rightRefNodeCell2730_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode1174900573371_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_rightRefNodeCell2730_0(editorCell, node, context);
+    setupBasic_refNode_right1174900573371(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_rightRefNodeCell2730_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_right_1174900573371((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell create_rightRefNodeCell2730_0(EditorContext context, SNode node) {
+  public EditorCell createRefNode1174900573371(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("right");
     provider.setNoTargetText("<no right>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_rightRefNodeCell2730_0_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode1174900573371_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -105,6 +86,25 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
+  }
+
+
+  private static void setupBasic_Collection_11749005676791174900567679(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174900567679");
+  }
+
+  private static void setupBasic_refNode_left1174900570494(EditorCell editorCell, SNode node, EditorContext context) {
+    BinaryRegexp_Left_Actions.setCellActions(editorCell, node, context);
+  }
+
+  private static void setupBasic_refNode_right1174900573371(EditorCell editorCell, SNode node, EditorContext context) {
+    BinaryRegexp_Right_Actions.setCellActions(editorCell, node, context);
+  }
+
+  private static void setupLabel_refNode_left_1174900570494(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_right_1174900573371(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

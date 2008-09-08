@@ -20,15 +20,6 @@ public class MatchRegexpExpression extends Expression implements RegexpUsingCons
     super(node);
   }
 
-  public static MatchRegexpExpression newInstance(SModel sm, boolean init) {
-    return (MatchRegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.MatchRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MatchRegexpExpression newInstance(SModel sm) {
-    return MatchRegexpExpression.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(MatchRegexpExpression.SHORT_DESCRIPTION);
   }
@@ -67,6 +58,15 @@ public class MatchRegexpExpression extends Expression implements RegexpUsingCons
 
   public void setRegexp(RegexpExpression node) {
     super.setChild(MatchRegexpExpression.REGEXP, node);
+  }
+
+
+  public static MatchRegexpExpression newInstance(SModel sm, boolean init) {
+    return (MatchRegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.MatchRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MatchRegexpExpression newInstance(SModel sm) {
+    return MatchRegexpExpression.newInstance(sm, false);
   }
 
 }

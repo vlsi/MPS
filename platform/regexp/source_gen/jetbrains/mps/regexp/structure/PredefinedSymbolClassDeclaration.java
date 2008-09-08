@@ -21,15 +21,6 @@ public class PredefinedSymbolClassDeclaration extends BaseConcept implements INa
     super(node);
   }
 
-  public static PredefinedSymbolClassDeclaration newInstance(SModel sm, boolean init) {
-    return (PredefinedSymbolClassDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static PredefinedSymbolClassDeclaration newInstance(SModel sm) {
-    return PredefinedSymbolClassDeclaration.newInstance(sm, false);
-  }
-
-
   public String getDescription() {
     return this.getProperty(PredefinedSymbolClassDeclaration.DESCRIPTION);
   }
@@ -68,6 +59,15 @@ public class PredefinedSymbolClassDeclaration extends BaseConcept implements INa
 
   public void setVirtualPackage(String value) {
     this.setProperty(PredefinedSymbolClassDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static PredefinedSymbolClassDeclaration newInstance(SModel sm, boolean init) {
+    return (PredefinedSymbolClassDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static PredefinedSymbolClassDeclaration newInstance(SModel sm) {
+    return PredefinedSymbolClassDeclaration.newInstance(sm, false);
   }
 
 }

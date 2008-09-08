@@ -20,15 +20,6 @@ public class MatchParensRegexp extends Regexp implements INamedConcept {
     super(node);
   }
 
-  public static MatchParensRegexp newInstance(SModel sm, boolean init) {
-    return (MatchParensRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.MatchParensRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MatchParensRegexp newInstance(SModel sm) {
-    return MatchParensRegexp.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(MatchParensRegexp.NAME);
   }
@@ -67,6 +58,15 @@ public class MatchParensRegexp extends Regexp implements INamedConcept {
 
   public void setRegexp(Regexp node) {
     super.setChild(MatchParensRegexp.REGEXP, node);
+  }
+
+
+  public static MatchParensRegexp newInstance(SModel sm, boolean init) {
+    return (MatchParensRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.MatchParensRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MatchParensRegexp newInstance(SModel sm) {
+    return MatchParensRegexp.newInstance(sm, false);
   }
 
 }
