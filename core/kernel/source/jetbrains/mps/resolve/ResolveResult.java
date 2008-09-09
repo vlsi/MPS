@@ -26,7 +26,7 @@ public class ResolveResult {
 
   public void setTarget() {
     if (mySmartRefConcept == null) {
-      mySourceNode.setReferent(myRole, myTargetNode);
+      mySourceNode.setReferent(myRole, myTargetNode, false);
     } else {
       SNode parent = mySourceNode.getParent();
       if (parent != null) {
