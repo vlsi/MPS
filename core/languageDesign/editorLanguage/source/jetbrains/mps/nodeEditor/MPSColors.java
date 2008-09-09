@@ -4,9 +4,6 @@ import jetbrains.mps.bootstrap.helgins.editor.Colors;
 
 import java.awt.*;
 
-/**
- * @author Kostik
- */
 public class MPSColors extends Color {
   private MPSColors() {
     super(0);

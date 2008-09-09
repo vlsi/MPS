@@ -8,6 +8,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EditorCellModel_Behavior {
@@ -48,6 +50,45 @@ public class EditorCellModel_Behavior {
       return true;
     }
     return SPropertyOperations.getBoolean(firstItem, "flag");
+  }
+
+  public static Color call_getForegroundColor_1220960215403(SNode thisNode) {
+    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem"))).first();
+    if ((firstItem == null)) {
+      return null;
+    }
+    Class<MPSColors> classColors = MPSColors.class;
+    try {
+      return (Color)classColors.getField(SPropertyOperations.getString_def(firstItem, "color", null)).get(null);
+    } catch (Throwable t) {
+      return null;
+    }
+  }
+
+  public static Color call_getBackgroundColor_1220969182195(SNode thisNode) {
+    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem"))).first();
+    if ((firstItem == null)) {
+      return null;
+    }
+    Class<MPSColors> classColors = MPSColors.class;
+    try {
+      return (Color)classColors.getField(SPropertyOperations.getString_def(firstItem, "color", null)).get(null);
+    } catch (Throwable t) {
+      return null;
+    }
+  }
+
+  public static Color call_getTextBackgroundColor_1220972190901(SNode thisNode) {
+    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem"))).first();
+    if ((firstItem == null)) {
+      return null;
+    }
+    Class<MPSColors> classColors = MPSColors.class;
+    try {
+      return (Color)classColors.getField(SPropertyOperations.getString_def(firstItem, "color", null)).get(null);
+    } catch (Throwable t) {
+      return null;
+    }
   }
 
   public static String call_getOpeningTag_1220340471382(SNode thisNode) {

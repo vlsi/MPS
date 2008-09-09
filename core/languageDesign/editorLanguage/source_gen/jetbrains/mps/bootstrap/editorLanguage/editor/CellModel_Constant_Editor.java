@@ -271,10 +271,24 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_Constant_Editor.calculateColor6752_5(cell);
+            }
+
+          });
+          this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_Constant_Editor.calculateColor6752_6(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_Constant_Editor.calculateColor6752_1(cell);
+              return CellModel_Constant_Editor.calculateColor6752_7(cell);
             }
 
           });
@@ -346,14 +360,14 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_Constant_Editor.calculateColor6752_3(cell);
+              return CellModel_Constant_Editor.calculateColor6752_2(cell);
             }
 
           });
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_Constant_Editor.calculateColor6752_5(cell);
+              return CellModel_Constant_Editor.calculateColor6752_4(cell);
             }
 
           });
@@ -392,14 +406,14 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_Constant_Editor.calculateColor6752_2(cell);
+              return CellModel_Constant_Editor.calculateColor6752_1(cell);
             }
 
           });
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_Constant_Editor.calculateColor6752_4(cell);
+              return CellModel_Constant_Editor.calculateColor6752_3(cell);
             }
 
           });
@@ -459,6 +473,18 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
+  public static Color _QueryFunction_Color_1220968480805(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
+  }
+
+  public static Color _QueryFunction_Color_1220971712628(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
+  }
+
+  public static Color _QueryFunction_Color_1220972053532(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
+  }
+
   private static Color calculateColor6752_0(EditorCell cell) {
     Color result;
     result = CellModel_Constant_Editor._QueryFunction_Color_1214396926660((cell == null ?
@@ -485,7 +511,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6752_3(EditorCell cell) {
     Color result;
-    result = MPSColors.yellow;
+    result = MPSColors.cyan;
     return result;
   }
 
@@ -497,7 +523,37 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6752_5(EditorCell cell) {
     Color result;
-    result = MPSColors.cyan;
+    result = CellModel_Constant_Editor._QueryFunction_Color_1220968480805((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
+    return result;
+  }
+
+  private static Color calculateColor6752_6(EditorCell cell) {
+    Color result;
+    result = CellModel_Constant_Editor._QueryFunction_Color_1220971712628((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
+    return result;
+  }
+
+  private static Color calculateColor6752_7(EditorCell cell) {
+    Color result;
+    result = CellModel_Constant_Editor._QueryFunction_Color_1220972053532((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

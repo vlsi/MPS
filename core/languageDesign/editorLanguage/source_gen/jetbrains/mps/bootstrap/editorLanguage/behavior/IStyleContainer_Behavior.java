@@ -28,7 +28,7 @@ public class IStyleContainer_Behavior {
         ListSequence.fromList(result).addElement(item);
       }
     }
-    if ((IStyleContainer_Behavior.call_getParent_1219419981626(thisNode) != null)) {
+    if ((IStyleContainer_Behavior.call_getParent_1219419981626(thisNode) != null) && !(ListSequence.fromList(result).contains(IStyleContainer_Behavior.call_getParent_1219419981626(thisNode)))) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(IStyleContainer_Behavior.call_getParent_1219419981626(thisNode), itemConcept)));
     }
     return result;
