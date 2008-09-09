@@ -126,7 +126,7 @@ import org.jdom.Element;
 
   //-- save reference
 
-  public static void saveReference(Element parentElement, SReference reference, boolean useUIDs, VisibleModelElements visibleModelElements) {
+  public void saveReference(Element parentElement, SReference reference, boolean useUIDs, VisibleModelElements visibleModelElements) {
     assert useUIDs || visibleModelElements != null;
     SNode node = reference.getSourceNode();
     Element linkElement = new Element(ModelPersistence.LINK);

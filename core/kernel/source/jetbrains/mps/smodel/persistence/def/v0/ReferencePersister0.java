@@ -162,6 +162,11 @@ import org.jdom.Element;
       return -1;
     }
   }
+
+  public void saveReference(Element parentElement, SReference reference, boolean useUIDs, VisibleModelElements visibleModelElements) {
+    //does nothing: we do not save references in an old format
+  }
+
   // --
 
 

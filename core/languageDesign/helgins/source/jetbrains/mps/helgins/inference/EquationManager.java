@@ -162,11 +162,6 @@ public class EquationManager {
     IWrapper subtypeRepresentator = getRepresentatorWrapper(subType);
     IWrapper supertypeRepresentator = getRepresentatorWrapper(supertype);
 
-     if ( (subtypeRepresentator != null && subtypeRepresentator.getNode() != null && "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor".equals(subtypeRepresentator.getNode().getConceptFqName()))
-    || (supertypeRepresentator != null && supertypeRepresentator.getNode() != null && "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor".equals(supertypeRepresentator.getNode().getConceptFqName()))) {
-      System.err.println("oy vey");
-    }
-
     // no equation needed
     if (NodeWrapper.fromWrapper(subtypeRepresentator) == NodeWrapper.fromWrapper(supertypeRepresentator)) return;
 
@@ -411,11 +406,6 @@ public class EquationManager {
   public void addEquation(IWrapper lhs, IWrapper rhs, EquationInfo errorInfo) {
     IWrapper lhsRepresentator = getRepresentatorWrapper(lhs);
     IWrapper rhsRepresentator = getRepresentatorWrapper(rhs);
-
-    if ( (lhsRepresentator != null && lhsRepresentator.getNode() != null && "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor".equals(lhsRepresentator.getNode().getConceptFqName()))
-    || (rhsRepresentator != null && rhsRepresentator.getNode() != null && "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor".equals(rhsRepresentator.getNode().getConceptFqName()))) {
-      System.err.println("oy vey");
-    }
 
     // no equation needed
     if (EqualUtil.equals(rhsRepresentator, lhsRepresentator)) return;

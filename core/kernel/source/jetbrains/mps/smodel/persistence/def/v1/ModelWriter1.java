@@ -14,7 +14,7 @@ import java.util.*;
  * Igor Alshannikov
  * Oct 9, 2007
  */
-public class ModelWriter1 implements IModelWriter {
+public class ModelWriter1 extends BaseModelWriter implements IModelWriter {
   public Document saveModel(SModel sourceModel, boolean validate) {
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.NAME, sourceModel.getLongName());
@@ -157,8 +157,9 @@ public class ModelWriter1 implements IModelWriter {
 
     // references ...
     List<SReference> references = node.getReferences();
+    IReferencePersister persister = getReferencePersister();
     for (SReference reference : references) {
-      ReferencePersister1.saveReference(element, reference, useUIDs, visibleModelElements);
+      persister.saveReference(element, reference, useUIDs, visibleModelElements);
     }
 
     // children ...
@@ -168,5 +169,9 @@ public class ModelWriter1 implements IModelWriter {
     }
 
     parentElement.addContent(element);
+  }
+
+  protected IReferencePersister getReferencePersister() {
+    return new ReferencePersister1();
   }
 }

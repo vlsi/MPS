@@ -3,6 +3,7 @@ package jetbrains.mps.smodel.persistence.def;
 import org.jdom.Element;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SReference;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,4 +22,5 @@ public interface IReferencePersister {
   public String getExtResolveInfo();
 
   public void createReferenceInModel(SModel model, VisibleModelElements visibleModelElements);
+  public void saveReference(Element parentElement, SReference reference, boolean useUIDs, VisibleModelElements visibleModelElements);
 }
