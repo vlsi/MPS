@@ -79,11 +79,10 @@ public class ExtractMethod_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final Wrappers._T<ExtractMethodKind> kind = new Wrappers._T<ExtractMethodKind>();
-      final List<SNode> n = ExtractMethod_Action.this.nodes;
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          if (ExtractMethodRefactoringAnalyzer.isStatements(n)) {
+          if (ExtractMethodRefactoringAnalyzer.isStatements(ExtractMethod_Action.this.nodes)) {
             kind.value = ExtractMethodKind.FROM_STATEMENTS;
           } else {
             kind.value = ExtractMethodKind.FROM_EXPRESSION;
