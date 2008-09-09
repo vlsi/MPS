@@ -47,6 +47,11 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       }
     }
 
+    if (ApplicationLevelVcsManager.instance().isInConflict(modelDescriptor, modelDescriptor.needsReloading())){
+      SuspiciousModelIndex.instance().addModel(modelDescriptor);
+      throw new ConflictModelException(modelDescriptor);
+    }
+
     SModel model;
     try {
       model = ModelPersistence.readModel(modelDescriptor.getModelFile());

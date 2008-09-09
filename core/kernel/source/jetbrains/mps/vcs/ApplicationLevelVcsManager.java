@@ -96,4 +96,8 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
       AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project));
     }
   }
+
+  public boolean isInConflict(final SModelDescriptor modelDescriptor, boolean synchronously) {
+    return isInConflict(modelDescriptor.getModelFile(), synchronously);
+  }
 }
