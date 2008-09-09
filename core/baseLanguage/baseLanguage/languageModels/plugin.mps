@@ -35,7 +35,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="55" />
+  <maxImportIndex value="61" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.ide.actions" version="-1" />
   <import index="4" modelUID="java.util@java_stub" version="-1" />
@@ -70,6 +70,12 @@
   <import index="52" modelUID="jetbrains.mps.baseLanguage.refactoring.changeMethodSignature@java_stub" version="-1" />
   <import index="54" modelUID="jetbrains.mps.workbench@java_stub" version="-1" />
   <import index="55" modelUID="jetbrains.mps.ide.dialogs@java_stub" version="-1" />
+  <import index="56" modelUID="javax.swing.text@java_stub" version="-1" />
+  <import index="57" modelUID="javax.swing.border@java_stub" version="-1" />
+  <import index="58" modelUID="jetbrains.mps.helgins.inference@java_stub" version="-1" />
+  <import index="59" modelUID="jetbrains.mps.patterns.util@java_stub" version="-1" />
+  <import index="60" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  <import index="61" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205247197267">
     <property name="name" value="BaseLanguageEditorPopup" />
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1205247338363">
@@ -5000,8 +5006,6 @@
       <link role="point" targetNodeId="3.1217598172089" resolveInfo="customTools" />
     </node>
   </node>
-  <visible index="4" modelUID="javax.swing.text@java_stub" />
-  <visible index="5" modelUID="javax.swing.border@java_stub" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1220353713044">
     <property name="package" value="refactoring.extractMethod" />
     <property name="name" value="_ExtractMethodDialog" />
@@ -5086,7 +5090,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220549789902">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220549802684">
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220549807920">
-                    <link role="baseMethodDeclaration" targetNodeId="4v.~JTextComponent.setText(java.lang.String):void" resolveInfo="setText" />
+                    <link role="baseMethodDeclaration" targetNodeId="56.~JTextComponent.setText(java.lang.String):void" resolveInfo="setText" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220550113407">
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220550113408">
                         <link role="baseMethodDeclaration" targetNodeId="1220549835443" resolveInfo="getMessagesText" />
@@ -5111,7 +5115,7 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1220550399750" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220550409277">
-                    <link role="baseMethodDeclaration" targetNodeId="4v.~JTextComponent.setText(java.lang.String):void" resolveInfo="setText" />
+                    <link role="baseMethodDeclaration" targetNodeId="56.~JTextComponent.setText(java.lang.String):void" resolveInfo="setText" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220550413500">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1220550412467" />
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220550466870">
@@ -5166,7 +5170,7 @@
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1220549958905" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220549963128">
-                      <link role="baseMethodDeclaration" targetNodeId="4v.~JTextComponent.getText():java.lang.String" resolveInfo="getText" />
+                      <link role="baseMethodDeclaration" targetNodeId="56.~JTextComponent.getText():java.lang.String" resolveInfo="getText" />
                     </node>
                   </node>
                   <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220549951761">
@@ -5285,7 +5289,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1220549864197" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220549869288">
-                  <link role="baseMethodDeclaration" targetNodeId="4v.~JTextComponent.getText():java.lang.String" resolveInfo="getText" />
+                  <link role="baseMethodDeclaration" targetNodeId="56.~JTextComponent.getText():java.lang.String" resolveInfo="getText" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220549878842">
@@ -5595,7 +5599,7 @@
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1220551276090" />
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220551278610">
-                          <link role="baseMethodDeclaration" targetNodeId="4v.~JTextComponent.getText():java.lang.String" resolveInfo="getText" />
+                          <link role="baseMethodDeclaration" targetNodeId="56.~JTextComponent.getText():java.lang.String" resolveInfo="getText" />
                         </node>
                       </node>
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220551282051">
@@ -6568,7 +6572,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220552375682">
-              <link role="baseMethodDeclaration" targetNodeId="4v.~JTextComponent.setEditable(boolean):void" resolveInfo="setEditable" />
+              <link role="baseMethodDeclaration" targetNodeId="56.~JTextComponent.setEditable(boolean):void" resolveInfo="setEditable" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1220552376793">
                 <property name="value" value="false" />
               </node>
@@ -6617,7 +6621,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220552566834">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220552567386">
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220552571547">
-              <link role="baseMethodDeclaration" targetNodeId="4v.~JTextComponent.setEditable(boolean):void" resolveInfo="setEditable" />
+              <link role="baseMethodDeclaration" targetNodeId="56.~JTextComponent.setEditable(boolean):void" resolveInfo="setEditable" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1220552572674">
                 <property name="value" value="false" />
               </node>
@@ -6870,7 +6874,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220552501954">
-        <link role="classifier" targetNodeId="5v.~Border" resolveInfo="Border" />
+        <link role="classifier" targetNodeId="57.~Border" resolveInfo="Border" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220552400184" />
     </node>
@@ -7004,7 +7008,6 @@
       <link role="classifier" targetNodeId="55.~BaseDialog" resolveInfo="BaseDialog" />
     </node>
   </node>
-  <visible index="6" modelUID="jetbrains.mps.helgins.inference@java_stub" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1220377841645">
     <property name="package" value="refactoring.extractMethod" />
     <property name="name" value="_ExtractMethodFromExpressionRefactoring" />
@@ -7073,11 +7076,11 @@
             <property name="name" value="typeOf" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220526835866">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220526835867">
-                <link role="baseMethodDeclaration" targetNodeId="6v.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
-                <link role="classConcept" targetNodeId="6v.~TypeChecker" resolveInfo="TypeChecker" />
+                <link role="baseMethodDeclaration" targetNodeId="58.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+                <link role="classConcept" targetNodeId="58.~TypeChecker" resolveInfo="TypeChecker" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220526835868">
-                <link role="baseMethodDeclaration" targetNodeId="6v.~TypeChecker.getTypeOf(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getTypeOf" />
+                <link role="baseMethodDeclaration" targetNodeId="58.~TypeChecker.getTypeOf(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getTypeOf" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220526835869">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1220526835871" />
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1220526835870">
@@ -7404,7 +7407,6 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220377841646" />
   </node>
-  <visible index="7" modelUID="jetbrains.mps.patterns.util@java_stub" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1220353307820">
     <property name="name" value="_ExtractMethodRefactoringAnalyzer" />
     <property name="package" value="refactoring.extractMethod" />
@@ -8425,8 +8427,8 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1220358809664">
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1220358814558">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220359000264">
-                  <link role="baseMethodDeclaration" targetNodeId="7v.~MatchingUtil.matchNodes(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):boolean" resolveInfo="matchNodes" />
-                  <link role="classConcept" targetNodeId="7v.~MatchingUtil" resolveInfo="MatchingUtil" />
+                  <link role="baseMethodDeclaration" targetNodeId="59.~MatchingUtil.matchNodes(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):boolean" resolveInfo="matchNodes" />
+                  <link role="classConcept" targetNodeId="59.~MatchingUtil" resolveInfo="MatchingUtil" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220359014395">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220359012956">
                       <link role="variableDeclaration" targetNodeId="1220358712582" resolveInfo="exits" />
@@ -9503,7 +9505,6 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220361337592" />
   </node>
-  <visible index="8" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1220377860698">
     <property name="package" value="refactoring.extractMethod" />
     <property name="name" value="_ExtractMethodRefactoring" />
@@ -9639,7 +9640,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1220528299502" />
             </node>
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1220528279887">
-              <link role="concept" targetNodeId="8v.1071489090640" resolveInfo="ConceptDeclaration" />
+              <link role="concept" targetNodeId="60.1071489090640" resolveInfo="ConceptDeclaration" />
             </node>
           </node>
         </node>
@@ -9871,7 +9872,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1220527357268">
-        <link role="concept" targetNodeId="8v.1071489090640" resolveInfo="ConceptDeclaration" />
+        <link role="concept" targetNodeId="60.1071489090640" resolveInfo="ConceptDeclaration" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220527346071" />
     </node>
@@ -11106,7 +11107,6 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220359974790" />
   </node>
-  <visible index="9" modelUID="jetbrains.mps.util@java_stub" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1220025720938">
     <property name="name" value="SubstitutionTest" />
     <property name="caption" value="Substitution Test (Internal)" />
@@ -11187,10 +11187,10 @@
             <property name="name" value="mostSpecificType" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220256094396">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220256094400">
-                <link role="baseMethodDeclaration" targetNodeId="6v.~SubtypingManager.mostSpecificType(java.util.Set):jetbrains.mps.smodel.SNode" resolveInfo="mostSpecificType" />
+                <link role="baseMethodDeclaration" targetNodeId="58.~SubtypingManager.mostSpecificType(java.util.Set):jetbrains.mps.smodel.SNode" resolveInfo="mostSpecificType" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220256214563">
-                  <link role="classConcept" targetNodeId="9v.~CollectionUtil" resolveInfo="CollectionUtil" />
-                  <link role="baseMethodDeclaration" targetNodeId="9v.~CollectionUtil.asSet(java.lang.Object...):java.util.Set" resolveInfo="asSet" />
+                  <link role="classConcept" targetNodeId="61.~CollectionUtil" resolveInfo="CollectionUtil" />
+                  <link role="baseMethodDeclaration" targetNodeId="61.~CollectionUtil.asSet(java.lang.Object...):java.util.Set" resolveInfo="asSet" />
                   <node role="actualArgument" type="jetbrains.mps.quotation.structure.Quotation" id="1220256126031">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220256145411">
                       <link role="classifier" targetNodeId="9.~String" resolveInfo="String" />
@@ -11211,11 +11211,11 @@
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220256094397">
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220256094399">
-                  <link role="baseMethodDeclaration" targetNodeId="6v.~TypeChecker.getSubtypingManager():jetbrains.mps.helgins.inference.SubtypingManager" resolveInfo="getSubtypingManager" />
+                  <link role="baseMethodDeclaration" targetNodeId="58.~TypeChecker.getSubtypingManager():jetbrains.mps.helgins.inference.SubtypingManager" resolveInfo="getSubtypingManager" />
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220256094398">
-                  <link role="baseMethodDeclaration" targetNodeId="6v.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
-                  <link role="classConcept" targetNodeId="6v.~TypeChecker" resolveInfo="TypeChecker" />
+                  <link role="baseMethodDeclaration" targetNodeId="58.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+                  <link role="classConcept" targetNodeId="58.~TypeChecker" resolveInfo="TypeChecker" />
                 </node>
               </node>
             </node>
