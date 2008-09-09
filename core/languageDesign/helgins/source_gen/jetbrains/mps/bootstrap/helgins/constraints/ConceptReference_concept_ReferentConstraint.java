@@ -27,8 +27,8 @@ public class ConceptReference_concept_ReferentConstraint implements IModelConstr
   public void processReferentSetEvent(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
     if ((newReferentNode != null) && newReferentNode != oldReferentNode) {
       SPropertyOperations.set(referenceNode, "name", NameUtil.decapitalize(SPropertyOperations.getString(newReferentNode, "name")));
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(referenceNode, null, false, false), "jetbrains.mps.bootstrap.helgins.structure.InferenceRule")) {
-        SPropertyOperations.set(SNodeOperations.getParent(referenceNode, null, false, false), "name", "typeof_" + SPropertyOperations.getString(newReferentNode, "name"));
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(referenceNode), "jetbrains.mps.bootstrap.helgins.structure.InferenceRule")) {
+        SPropertyOperations.set(SNodeOperations.getParent(referenceNode), "name", "typeof_" + SPropertyOperations.getString(newReferentNode, "name"));
       }
     }
   }

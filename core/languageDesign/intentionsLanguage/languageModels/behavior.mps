@@ -87,11 +87,5 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877237648" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877334673">
-    <link role="concept" targetNodeId="1.1210781835992" resolveInfo="IntentionArgumentReference" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877334674">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877334675" />
-    </node>
-  </node>
 </model>
 

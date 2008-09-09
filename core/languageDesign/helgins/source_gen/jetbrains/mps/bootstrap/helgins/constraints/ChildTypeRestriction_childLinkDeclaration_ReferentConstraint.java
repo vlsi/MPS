@@ -50,7 +50,7 @@ public class ChildTypeRestriction_childLinkDeclaration_ReferentConstraint implem
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode inferenceRule = SNodeOperations.getParent(_context.getReferenceNode(), null, false, false);
+    SNode inferenceRule = SNodeOperations.getParent(_context.getReferenceNode());
     SNode abstractConceptDeclaration = ApplicableNodeCondition_Behavior.call_getApplicableConcept_1213877307633(SLinkOperations.getTarget(inferenceRule, "applicableNode", true));
     ConceptAndSuperConceptsScope conceptScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(abstractConceptDeclaration)));
     return conceptScope;

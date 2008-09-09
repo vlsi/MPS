@@ -57,12 +57,6 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1192795911897" resolveInfo="ExecuteBlock" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210781340676">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="intentionArgument" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1210781279743" resolveInfo="IntentionArgument" />
-    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1192795004608">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
@@ -151,28 +145,6 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1192796902961">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210781279743">
-    <property name="name" value="IntentionArgument" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210781293511">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="argumentType" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="3.1068431790189" resolveInfo="Type" />
-    </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1210781290088">
-      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210781835992">
-    <property name="name" value="IntentionArgumentReference" />
-    <link role="extends" targetNodeId="3.1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210781862962">
-      <property name="role" value="intentionArgument" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1210781279743" resolveInfo="IntentionArgument" />
     </node>
   </node>
 </model>

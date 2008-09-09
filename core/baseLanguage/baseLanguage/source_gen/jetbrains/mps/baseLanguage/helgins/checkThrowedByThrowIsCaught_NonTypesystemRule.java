@@ -33,7 +33,7 @@ public class checkThrowedByThrowIsCaught_NonTypesystemRule implements NonTypesys
           }
         }
 
-      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1220621236188");
+      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1220964293933");
     }
   }
 

@@ -1011,11 +1011,6 @@
       <property name="role" value="actualArgument" />
       <link role="target" targetNodeId="1210784384552" resolveInfo="HelginsIntentionArgument" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210784371269">
-      <property name="sourceCardinality" value="0..1" />
-      <property name="role" value="intentionDeclaration" />
-      <link role="target" targetNodeId="6.1192794744107" resolveInfo="IntentionDeclaration" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216388525179">
       <property name="metaClass" value="reference" />
       <property name="role" value="quickFix" />
@@ -1031,11 +1026,6 @@
       <property name="role" value="value" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210784426618">
-      <property name="sourceCardinality" value="0..1" />
-      <property name="role" value="intentionArgument" />
-      <link role="target" targetNodeId="6.1210781279743" resolveInfo="IntentionArgument" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1216386999476">
       <property name="metaClass" value="reference" />

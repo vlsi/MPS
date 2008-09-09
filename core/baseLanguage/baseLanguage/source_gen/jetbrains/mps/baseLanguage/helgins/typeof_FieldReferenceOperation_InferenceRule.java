@@ -54,7 +54,7 @@ public class typeof_FieldReferenceOperation_InferenceRule implements InferenceRu
           RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);
         }
 
-      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1220621234410");
+      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1220964292202");
     }
   }
 

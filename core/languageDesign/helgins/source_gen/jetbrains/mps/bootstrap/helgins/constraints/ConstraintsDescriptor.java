@@ -22,7 +22,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new ChildTypeRestriction_childLinkDeclaration_ReferentConstraint());
     this.myConstraints.add(new ConceptReference_concept_ReferentConstraint());
     this.myConstraints.add(new ApplicableNodeReference_applicableNode_ReferentConstraint());
-    this.myConstraints.add(new HelginsIntentionArgument_intentionArgument_ReferentConstraint());
     this.myConstraints.add(new HelginsIntentionArgument_quickFixArgument_ReferentConstraint());
     this.myConstraints.add(new QuickFixArgumentReference_quickFixArgument_ReferentConstraint());
   }
