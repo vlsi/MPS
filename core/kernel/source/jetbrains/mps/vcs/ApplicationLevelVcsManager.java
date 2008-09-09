@@ -12,6 +12,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.persistence.ConflictModelException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.ThreadUtils;
@@ -78,6 +79,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
 
   public void mergeModels(Set<SModelDescriptor> models) {
     Map<Project, List<VirtualFile>> toMerge = new HashMap<Project, List<VirtualFile>>();
+    Map<VirtualFile, SModelDescriptor> fileToModel = new HashMap<VirtualFile, SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : models) {
       IFile ifile = modelDescriptor.getModelFile();
       if (isInConflict(ifile, true)) {
@@ -89,12 +91,32 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
           toMerge.put(project, files);
         }
         files.add(vfile);
+        fileToModel.put(vfile, modelDescriptor);
       }
     }
 
+    final List<SModelDescriptor> merged = new LinkedList<SModelDescriptor>();
     for (Project project : toMerge.keySet()) {
-      AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project));
+      // show merge dialog
+      List<VirtualFile> virtualFileList = AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project));
+      // collect models
+      for (VirtualFile vfile : virtualFileList) {
+        SModelDescriptor model = fileToModel.get(vfile);
+        if (model != null) {
+          merged.add(model);
+        }
+      }
     }
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        // reload
+        for (SModelDescriptor model : merged) {
+          model.reloadFromDisk();
+        }
+      }
+    });
+
   }
 
   public boolean isInConflict(final SModelDescriptor modelDescriptor, boolean synchronously) {

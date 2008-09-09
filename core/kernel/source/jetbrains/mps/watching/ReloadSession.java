@@ -11,6 +11,7 @@ import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.logging.Logger;
 
 import java.util.List;
 import java.util.Set;
@@ -28,6 +29,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.SwingUtilities;
 
 public class ReloadSession {
+  private final static Logger LOG = Logger.getLogger(ReloadSession.class);
   private final Set<SModelDescriptor> myChangedModels = new LinkedHashSet<SModelDescriptor>();
   private final Set<VirtualFile> myNewModelVFiles = new LinkedHashSet<VirtualFile>();
   private final Set<IModule> myChangedModules = new LinkedHashSet<IModule>();
@@ -63,8 +65,12 @@ public class ReloadSession {
     for (final SModelDescriptor model : myChangedModels) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          progressIndicator.setText("Reloading " + model.getModelUID());
-          model.reloadFromDisk();
+          try {
+            progressIndicator.setText("Reloading " + model.getModelUID());
+            model.reloadFromDisk();
+          } catch (RuntimeException e) {
+            LOG.error(e);
+          }
         }
       });
     }
