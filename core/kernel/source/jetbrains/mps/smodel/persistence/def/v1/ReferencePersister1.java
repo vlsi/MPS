@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import org.jdom.Element;
 
-/*package*/ class ReferencePersister1 implements IReferencePersister {
+public class ReferencePersister1 implements IReferencePersister {
 
   private static Logger LOG = Logger.getLogger(ReferencePersister1.class);
 
