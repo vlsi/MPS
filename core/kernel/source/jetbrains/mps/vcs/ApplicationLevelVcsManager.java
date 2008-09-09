@@ -14,8 +14,9 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.persistence.ConflictModelException;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.ThreadUtils;
 
-import java.util.Collections;
+import java.util.*;
 
 public class ApplicationLevelVcsManager implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ApplicationLevelVcsManager.class);
@@ -71,18 +72,28 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     return null;
   }
 
-  public void checkModelFileNotInConflict(final SModelDescriptor modelDescriptor, boolean synchronously) {
-    IFile ifile = modelDescriptor.getModelFile();
-    if (isInConflict(ifile, synchronously)) {
-      VirtualFile vfile = VFileSystem.getFile(ifile);
-      if (vfile == null) return;
-      Project project = getProjectForFile(vfile);
-      AbstractVcsHelper.getInstance(project).showMergeDialog(Collections.singletonList(vfile));
-    }
-  }
-
   public boolean isInConflict(IFile ifile, boolean synchronously) {
     return StatusUtil.isInConflict(ifile, synchronously, myProjectManager.getOpenProjects());
   }
 
+  public void mergeModels(Set<SModelDescriptor> models) {
+    Map<Project, List<VirtualFile>> toMerge = new HashMap<Project, List<VirtualFile>>();
+    for (SModelDescriptor modelDescriptor : models) {
+      IFile ifile = modelDescriptor.getModelFile();
+      if (isInConflict(ifile, true)) {
+        VirtualFile vfile = VFileSystem.getFile(ifile);
+        Project project = getProjectForFile(vfile);
+        List<VirtualFile> files = toMerge.get(project);
+        if (files == null) {
+          files = new LinkedList<VirtualFile>();
+          toMerge.put(project, files);
+        }
+        files.add(vfile);
+      }
+    }
+
+    for (Project project : toMerge.keySet()) {
+      AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project));
+    }
+  }
 }

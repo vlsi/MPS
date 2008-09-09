@@ -12,6 +12,10 @@ public abstract class TaskQueue<T> {
   private final List<T> myTasks = new LinkedList<T>();
   private boolean myIsProcessingAllowed = true;
 
+  public TaskQueue(boolean isProcessingAllowed) {
+    myIsProcessingAllowed = isProcessingAllowed;
+  }
+
   public final synchronized void invokeLater(T task) {
     if (myIsProcessingAllowed) {
       LOG.assertLog(myTasks.size() == 0, "Task queue has not processed tasks:\n" + myTasks + "\nThat's weird cause processing is allowed.");

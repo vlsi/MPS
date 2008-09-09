@@ -48,7 +48,7 @@ public class MPSVCSManager implements ProjectComponent {
   private boolean myIsInitialized = false;
   private volatile boolean myChangeListManagerInitialized = false;
 
-  private final TaskQueue<Runnable> myTasksQueue = new TaskQueue<Runnable>(){
+  private final TaskQueue<Runnable> myTasksQueue = new TaskQueue<Runnable>(true){
 
     public void processTask(List<Runnable> tasks) {
       for (Runnable task : tasks) {

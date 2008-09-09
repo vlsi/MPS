@@ -10,6 +10,7 @@ import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.ide.ThreadUtils;
 
 import java.util.List;
 import java.util.Set;
@@ -23,6 +24,8 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task.Modal;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.SwingUtilities;
 
 public class ReloadSession {
   private final Set<SModelDescriptor> myChangedModels = new LinkedHashSet<SModelDescriptor>();

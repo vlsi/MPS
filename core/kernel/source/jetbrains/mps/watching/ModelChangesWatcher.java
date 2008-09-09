@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.watching.ReloadSession;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 

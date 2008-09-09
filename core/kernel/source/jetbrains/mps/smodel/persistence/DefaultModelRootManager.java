@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vcs.SuspiciousModelIndex;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -46,9 +47,13 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       }
     }
 
-    ApplicationLevelVcsManager.instance().checkModelFileNotInConflict(modelDescriptor, modelDescriptor.needsReloading());
-
-    SModel model = ModelPersistence.readModel(modelDescriptor.getModelFile());
+    SModel model;
+    try {
+      model = ModelPersistence.readModel(modelDescriptor.getModelFile());
+    } catch (RuntimeException t) {
+      SuspiciousModelIndex.instance().addModel(modelDescriptor);
+      throw t;
+    }
     LOG.assertLog(model.getUID().equals(modelDescriptor.getModelUID()),
       "\nError loading model from file: \"" + modelDescriptor.getModelFile() + "\"\n" +
         "expected model UID     : \"" + modelDescriptor.getModelUID() + "\"\n" +
@@ -164,7 +169,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
     IFile modelFile = createFileForModelUID(root, uid);
     SModelDescriptor result = DefaultModelRootManager.createModel(this, modelFile.getCanonicalPath(), uid, owner);
-    
+
     return result;
   }
 
