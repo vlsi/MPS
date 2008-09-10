@@ -10,10 +10,8 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   </language>
-  <language namespace="jetbrains.mps.transformation.TLBase">
-    <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
-    <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
-  </language>
+  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
+  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
@@ -23,8 +21,6 @@
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.regexp.structure" version="-1" />
-  <import index="2" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.regexp.generator.baseLanguage.template.util" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1174922445389">
     <property name="name" value="GeneratorUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1174923515098">

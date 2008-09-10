@@ -11,10 +11,6 @@
   </language>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <maxImportIndex value="4" />
-  <import index="1" modelUID="java.util.regex@java_stub" version="-1" />
-  <import index="2" modelUID="java.lang@java_stub" version="-1" />
-  <import index="3" modelUID="java.io@java_stub" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1174921457453">
     <property name="name" value="YYY" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1174921462032">

@@ -11,7 +11,6 @@
   </language>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <maxImportIndex value="4" />
-  <import index="1" modelUID="java.util@java_stub" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" version="-1" />
   <import index="4" modelUID="java.io@java_stub" version="-1" />
@@ -682,6 +681,16 @@
       <property name="name" value="TEST" />
       <node role="regexp" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp" id="1178104459093">
         <link role="symbolClass" targetNodeId="3.1174554738336" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.regexp.structure.Regexps" id="1220889094624">
+    <property name="name" value="Regexps" />
+    <node role="regexp" type="jetbrains.mps.regexp.structure.RegexpDeclaration" id="1220889117563">
+      <property name="name" value="Unicode" />
+      <property name="description" value="Unicode chars" />
+      <node role="regexp" type="jetbrains.mps.regexp.structure.UnicodeCharacterRegexp" id="1220889152317">
+        <property name="code" value="007F" />
       </node>
     </node>
   </node>

@@ -2,16 +2,14 @@
 <model name="jetbrains.mps.regexp.structure">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.structureLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  </language>
-  <language namespace="jetbrains.mps.core">
-    <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  </language>
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
+  <language namespace="jetbrains.mps.bootstrap.structureLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
+  </language>
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
@@ -327,12 +325,8 @@
     <link role="extends" targetNodeId="1174557861378" resolveInfo="SymbolClassPart" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1174557887320">
       <property name="name" value="character" />
-      <link role="dataType" targetNodeId="1174557900649" resolveInfo="_Character" />
+      <link role="dataType" targetNodeId="2.1200397549879" resolveInfo="_CharConstant_String" />
     </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration" id="1174557900649">
-    <property name="name" value="_Character" />
-    <property name="constraint" value="." />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174558301835">
     <property name="name" value="IntervalSymbolClassPart" />
@@ -340,11 +334,11 @@
     <link role="extends" targetNodeId="1174557861378" resolveInfo="SymbolClassPart" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1174558315290">
       <property name="name" value="start" />
-      <link role="dataType" targetNodeId="1174557900649" resolveInfo="_Character" />
+      <link role="dataType" targetNodeId="2.1200397549879" resolveInfo="_CharConstant_String" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1174558317822">
       <property name="name" value="end" />
-      <link role="dataType" targetNodeId="1174557900649" resolveInfo="_Character" />
+      <link role="dataType" targetNodeId="2.1200397549879" resolveInfo="_CharConstant_String" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174558792178">
@@ -733,8 +727,8 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration" id="1203415512996">
     <property name="package" value="Regexps" />
-    <property name="name" value="FourDigits" />
-    <property name="constraint" value="\\d\\d\\d\\d" />
+    <property name="name" value="FourHex" />
+    <property name="constraint" value="[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1220021842985">
     <property name="package" value="SymbolClassParts" />
