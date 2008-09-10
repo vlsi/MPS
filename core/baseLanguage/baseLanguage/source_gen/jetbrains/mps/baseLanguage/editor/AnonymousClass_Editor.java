@@ -458,7 +458,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }
 
       };

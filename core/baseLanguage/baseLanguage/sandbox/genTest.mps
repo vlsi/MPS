@@ -419,6 +419,7 @@
                   </node>
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220433916281" />
                 </node>
+                <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1221054590075" />
               </node>
             </node>
           </node>

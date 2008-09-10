@@ -8173,7 +8173,7 @@
             </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SideTransformAnchorTagStyleClassItem" id="1220435605146">
-            <property name="tag" value="ext_1_RTransform" />
+            <property name="tag" value="default_RTransform" />
           </node>
           <node role="focusPolicyApplicable" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1220441860455">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220441860456">
