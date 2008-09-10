@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
 import jetbrains.mps.smodel.persistence.def.v1.ModelWriter1;
+import jetbrains.mps.smodel.persistence.def.v2.ModelWriter2;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
@@ -64,8 +65,9 @@ public class ModelPersistence {
     modelReaders.put(0, new ModelReader0());
 //    modelWriters.put(0, new ModelWriter0());
     modelReaders.put(1, new ModelReader1());
-    modelReaders.put(2, new ModelReader1());
     modelWriters.put(1, new ModelWriter1());
+    modelReaders.put(2, new ModelReader1());
+    modelWriters.put(2, new ModelWriter2());
   }
 
   @NotNull
@@ -101,10 +103,13 @@ public class ModelPersistence {
     int modelPersistenceVersion = getModelPersistenceVersion(document);
     SModel model = modelReaders.get(modelPersistenceVersion).readModel(document, modelName, modelStereotype);
     if (modelPersistenceVersion < currentPersistenceVersion) {
-      model = upgradeModelPersistence(model, modelPersistenceVersion);
+      IFile[] fileArray = {file};
+      model = upgradeModelPersistence(model, modelPersistenceVersion, fileArray);
       document = saveModel(model, false);
       try {
-        JDOMUtil.writeDocument(document, file);
+        IFile file1 = fileArray[0];
+        file.delete();
+        JDOMUtil.writeDocument(document, file1);
       } catch (IOException e) {
         LOG.error("error while saving model after persistence upgrade " + model.getUID(), e);
       }
@@ -112,15 +117,19 @@ public class ModelPersistence {
     return model;
   }
 
-  private static SModel upgradeModelPersistence(SModel model, int fromVersion) {
+  private static SModel upgradeModelPersistence(SModel model, int fromVersion, IFile[] fileArray) {
     SModelUID uid = model.getUID();
     int version = fromVersion;
+    IFile file = fileArray[0];
     while (version < currentPersistenceVersion) {
-      Document document = modelWriters.get(++version).saveModel(model, false);
+      IModelWriter writer = modelWriters.get(++version);
+      Document document = writer.saveModel(model, false);
+      file = writer.upgradeFile(file);
       model.dispose();
       model = modelReaders.get(version).readModel(document, uid.getShortName(), uid.getStereotype());
     }
     LOG.info("persistence upgraded: " + fromVersion + "->" + currentPersistenceVersion + " " + uid);
+    fileArray[0] = file;
     return model;
   }
 

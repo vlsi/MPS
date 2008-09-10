@@ -780,6 +780,26 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221050082674">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1221050082675">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221050082676">
+              <link role="variableDeclaration" targetNodeId="1220869713824" resolveInfo="j" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221050082677">
+              <link role="variableDeclaration" targetNodeId="1220869712289" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221050082867">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1221050082868">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221050082869">
+              <link role="variableDeclaration" targetNodeId="1220869713824" resolveInfo="j" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221050082870">
+              <link role="variableDeclaration" targetNodeId="1220869712289" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1220869712289">
         <property name="name" value="i" />

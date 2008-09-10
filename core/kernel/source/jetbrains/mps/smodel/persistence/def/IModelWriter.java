@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -13,4 +14,6 @@ public interface IModelWriter {
   Document saveModel(SModel sourceModel, boolean validate);
 
   void saveNode(Element container, SNode node);
+
+  IFile upgradeFile(IFile oldFile);
 }

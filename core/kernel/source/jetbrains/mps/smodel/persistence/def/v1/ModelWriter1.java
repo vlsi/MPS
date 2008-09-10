@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -26,5 +27,9 @@ public class ModelWriter1 extends BaseModelWriter implements IModelWriter {
 
   protected SModelUID upgradeModelUID(SModelUID modelUID) {
     return modelUID;
+  }
+
+  public IFile upgradeFile(IFile oldFile) {
+    return oldFile;
   }
 }

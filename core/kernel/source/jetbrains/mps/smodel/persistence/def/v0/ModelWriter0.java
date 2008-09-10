@@ -3,6 +3,7 @@ package jetbrains.mps.smodel.persistence.def.v0;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -15,6 +16,10 @@ public class ModelWriter0 implements IModelWriter {
   }
 
   public void saveNode(Element container, SNode node) {
+    throw new RuntimeException("not implemented");
+  }
+
+  public IFile upgradeFile(IFile oldFile) {
     throw new RuntimeException("not implemented");
   }
 }
