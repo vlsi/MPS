@@ -23,7 +23,7 @@ public class AddMissingImports_Action extends GeneratedAction {
   public AddMissingImports_Action() {
     super("Fix Missing Imports", "", ICON);
     this.setIsAlwaysVisible(true);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull()

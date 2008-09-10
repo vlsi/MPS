@@ -1,17 +1,17 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ChooseModuleDialog;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.projectLanguage.structure.DevKitReference;
+import jetbrains.mps.projectLanguage.structure.LanguageReference;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.structure.ModuleReference;
-import jetbrains.mps.projectLanguage.structure.LanguageReference;
-import jetbrains.mps.projectLanguage.structure.DevKitReference;
 import jetbrains.mps.util.CollectionUtil;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MissingDependenciesFixer {
   private SModelDescriptor myModelDescriptor;
@@ -23,59 +23,78 @@ public class MissingDependenciesFixer {
   }
 
   public void fix() {
-    IModule module = myModelDescriptor.getModule();
-    assert module != null;
-    IScope moduleScope = module.getScope();
-    boolean wereChanges = false;
+    final IModule[] module = new IModule[1];
+    final IScope[] moduleScope = new IScope[1];
+    final boolean[] wereChanges = new boolean[]{false};
 
-    ModuleDescriptor md = module.getModuleDescriptor();
-    SModel model = md.getModel();
+    final ModuleDescriptor[] md = new ModuleDescriptor[1];
+    final SModel[] model = new SModel[1];
 
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        module[0] = myModelDescriptor.getModule();
+        assert module[0] != null;
+        moduleScope[0] = module[0].getScope();
+        md[0] = module[0].getModuleDescriptor();
+        model[0] = md[0].getModel();
+      }
+    });
+
+    final List<IModule> newImports = new ArrayList<IModule>();
     for (SModelUID modelImport : myModelDescriptor.getSModel().getImportedModelUIDs()) {
-      if (moduleScope.getModelDescriptor(modelImport) == null) {
+      if (moduleScope[0].getModelDescriptor(modelImport) == null) {
         SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(modelImport);
         if (sm != null) {
           IModule anotherModule = chooseModule(sm, new ArrayList<IModule>(sm.getModules()));
-          if (anotherModule != null && anotherModule != module) {
-            ModuleReference ref = ModuleReference.newInstance(model);
-            ref.setName(sm.getModule().getModuleUID());
-            md.addDependency(ref);
-            wereChanges = true;
+          if (anotherModule != null && anotherModule != module[0]) {
+            newImports.add(anotherModule);
           }
         }
       }
     }
 
-    for (String namespace : CollectionUtil.union(
-      myModelDescriptor.getSModel().getExplicitlyImportedLanguages(),
-      myModelDescriptor.getSModel().getEngagedOnGenerationLanguages())) {
-      if (moduleScope.getLanguage(namespace) == null) {
-        Language lang = GlobalScope.getInstance().getLanguage(namespace);
-        if (lang != null) {
-          LanguageReference ref = LanguageReference.newInstance(model);
-          ref.setName(namespace);
-          md.addUsedLanguage(ref);
-          wereChanges = true;
+    wereChanges[0] = !newImports.isEmpty();
+
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        for (IModule module : newImports) {
+          ModuleReference ref = ModuleReference.newInstance(model[0]);
+          ref.setName(module.getModuleUID());
+          md[0].addDependency(ref);
+        }
+
+        for (String namespace : CollectionUtil.union(
+          myModelDescriptor.getSModel().getExplicitlyImportedLanguages(),
+          myModelDescriptor.getSModel().getEngagedOnGenerationLanguages())) {
+          if (moduleScope[0].getLanguage(namespace) == null) {
+            Language lang = GlobalScope.getInstance().getLanguage(namespace);
+            if (lang != null) {
+              LanguageReference ref = LanguageReference.newInstance(model[0]);
+              ref.setName(namespace);
+              md[0].addUsedLanguage(ref);
+              wereChanges[0] = true;
+            }
+          }
+        }
+
+        for (String devKitNamespace : myModelDescriptor.getSModel().getDevKitNamespaces()) {
+          if (moduleScope[0].getDevKit(devKitNamespace) == null) {
+            DevKit devKit = GlobalScope.getInstance().getDevKit(devKitNamespace);
+            if (devKit != null) {
+              DevKitReference ref = DevKitReference.newInstance(model[0]);
+              ref.setName(devKitNamespace);
+              md[0].addUsedDevKit(ref);
+              wereChanges[0] = true;
+            }
+          }
+        }
+
+        if (wereChanges[0]) {
+          module[0].setModuleDescriptor(md[0]);
+          module[0].save();
         }
       }
-    }
-
-    for (String devKitNamespace : myModelDescriptor.getSModel().getDevKitNamespaces()) {
-      if (moduleScope.getDevKit(devKitNamespace) == null) {
-        DevKit devKit = GlobalScope.getInstance().getDevKit(devKitNamespace);
-        if (devKit != null) {
-          DevKitReference ref = DevKitReference.newInstance(model);
-          ref.setName(devKitNamespace);
-          md.addUsedDevKit(ref);
-          wereChanges = true;
-        }
-      }
-    }
-
-    if (wereChanges) {
-      module.setModuleDescriptor(md);
-      module.save();
-    }
+    });
   }
 
   protected IModule chooseModule(SModelDescriptor sm, List<IModule> modules) {
