@@ -219,7 +219,11 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     newFile.createNewFile();
     FileUtil.copyFile(modelFile.toFile(), newFile.toFile());
     modelFile.delete();
-    return getInstance(manager, createStub, newFile.getAbsolutePath(), newModelUID, owner, true);
+    SModelDescriptor result = getInstance(manager, createStub, newFile.getAbsolutePath(), newModelUID, owner, true);
+    //result.getSModel();
+    //result.save();
+    //addFilesToVCS(Collections.singletonList(newFile.toFile()));
+    return result;
   }
 
   private static SModelDescriptor getInstance(IModelRootManager manager, boolean createStub, String fileName, SModelUID modelUID, ModelOwner owner, boolean fireModelCreated) {
