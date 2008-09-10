@@ -103,13 +103,10 @@ public class ModelPersistence {
     int modelPersistenceVersion = getModelPersistenceVersion(document);
     SModel model = modelReaders.get(modelPersistenceVersion).readModel(document, modelName, modelStereotype);
     if (modelPersistenceVersion < currentPersistenceVersion) {
-      IFile[] fileArray = {file};
-      model = upgradeModelPersistence(model, modelPersistenceVersion, fileArray);
+      model = upgradeModelPersistence(model, modelPersistenceVersion);
       document = saveModel(model, false);
       try {
-        IFile file1 = fileArray[0];
-        file.delete();
-        JDOMUtil.writeDocument(document, file1);
+        JDOMUtil.writeDocument(document, file);
       } catch (IOException e) {
         LOG.error("error while saving model after persistence upgrade " + model.getUID(), e);
       }
@@ -117,19 +114,16 @@ public class ModelPersistence {
     return model;
   }
 
-  private static SModel upgradeModelPersistence(SModel model, int fromVersion, IFile[] fileArray) {
+  private static SModel upgradeModelPersistence(SModel model, int fromVersion) {
     SModelUID uid = model.getUID();
     int version = fromVersion;
-    IFile file = fileArray[0];
     while (version < currentPersistenceVersion) {
       IModelWriter writer = modelWriters.get(++version);
       Document document = writer.saveModel(model, false);
-      file = writer.upgradeFile(file);
       model.dispose();
       model = modelReaders.get(version).readModel(document, uid.getShortName(), uid.getStereotype());
     }
     LOG.info("persistence upgraded: " + fromVersion + "->" + currentPersistenceVersion + " " + uid);
-    fileArray[0] = file;
     return model;
   }
 
@@ -192,5 +186,17 @@ public class ModelPersistence {
 
   public static void saveNode(Element container, SNode node) {
     modelWriters.get(currentPersistenceVersion).saveNode(container, node);
+  }
+
+  public static boolean needsRecreating(IFile file) {
+    return modelWriters.get(currentPersistenceVersion).needsRecreating(file);
+  }
+
+  public static IFile upgradeFile(IFile modelFile) {
+    return modelWriters.get(currentPersistenceVersion).upgradeFile(modelFile);
+  }
+
+  public static SModelUID upgradeModelUID(SModelUID modelUID) {
+    return modelReaders.get(currentPersistenceVersion).upgradeModelUID(modelUID);
   }
 }

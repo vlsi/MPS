@@ -56,4 +56,16 @@ public class ModelWriter2 extends BaseModelWriter implements IModelWriter {
     System.err.println(modelWriter2.upgradeFileName("actions.mps"));
     System.err.println(modelWriter2.upgradeFileName("generator@templates.mps"));
   }
+
+  public boolean needsRecreating(IFile file) {
+    String fileName = file.getName();
+    int index = fileName.indexOf('.');
+    String rawModelName = (index >= 0) ? fileName.substring(0, index) : fileName;
+    String modelStereotype = "";
+    int index1 = rawModelName.indexOf("@");
+    if (index1 >= 0) {
+      modelStereotype = rawModelName.substring(index1 + 1);
+    }
+    return SModelStereotype.TEMPLATES.equals(modelStereotype);
+  }
 }

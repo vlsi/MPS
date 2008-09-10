@@ -32,4 +32,8 @@ public class ModelWriter1 extends BaseModelWriter implements IModelWriter {
   public IFile upgradeFile(IFile oldFile) {
     return oldFile;
   }
+
+  public boolean needsRecreating(IFile file) {
+    return false;
+  }
 }

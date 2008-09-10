@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
 import jetbrains.mps.vfs.FileSystem;
@@ -151,8 +152,14 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       boolean isMPSStub = fileName.endsWith(MPSExtentions.DOT_STUB);
       if (!(isMPSModel || isMPSStub)) continue;
       SModelUID modelUID = PathManager.getModelUID(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
-      SModelDescriptor modelDescriptor = getInstance(this, isMPSStub, file.getAbsolutePath(), modelUID, owner);
-      LOG.debug("I've read model descriptor " + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
+      SModelDescriptor modelDescriptor;
+      if (ModelPersistence.needsRecreating(file)) {
+        modelDescriptor = recreateFileAndGetInstance(this, isMPSStub, file.getAbsolutePath(), modelUID, owner);
+        LOG.debug("I've recreated file and read model descriptor" + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
+      } else {
+        modelDescriptor = getInstance(this, isMPSStub, file.getAbsolutePath(), modelUID, owner);
+        LOG.debug("I've read model descriptor " + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
+      }
       modelDescriptors.add(modelDescriptor);
     }
     for (IFile childDir : files) {
@@ -194,6 +201,25 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
     IFile modelFile = FileSystem.getFile(path + File.separator + filenameSuffix.replace('.', File.separatorChar) + MPSExtentions.DOT_MODEL);
     return modelFile;
+  }
+
+  private static SModelDescriptor recreateFileAndGetInstance(IModelRootManager manager, boolean createStub, String fileName, SModelUID modelUID, ModelOwner owner) {
+    SModelRepository modelRepository = SModelRepository.getInstance();
+    if (createStub) {
+      return getInstance(manager, createStub, fileName, modelUID, owner);
+    }
+    SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelUID);
+    if (modelDescriptor != null) {
+      LOG.error("can't recreate file for already loaded descriptor " + modelUID);
+      return getInstance(manager, createStub, fileName, modelUID, owner);
+    }
+    IFile modelFile = FileSystem.getFile(fileName);
+    IFile newFile = ModelPersistence.upgradeFile(modelFile);
+    SModelUID newModelUID = ModelPersistence.upgradeModelUID(modelUID);
+    newFile.createNewFile();
+    FileUtil.copyFile(modelFile.toFile(), newFile.toFile());
+    modelFile.delete();
+    return getInstance(manager, createStub, newFile.getName(), newModelUID, owner);
   }
 
   private static SModelDescriptor getInstance(IModelRootManager manager, boolean createStub, String fileName, SModelUID modelUID, ModelOwner owner) {

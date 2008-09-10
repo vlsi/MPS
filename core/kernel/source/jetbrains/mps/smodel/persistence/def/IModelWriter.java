@@ -16,4 +16,6 @@ public interface IModelWriter {
   void saveNode(Element container, SNode node);
 
   IFile upgradeFile(IFile oldFile);
+
+  boolean needsRecreating(IFile file);
 }
