@@ -27,14 +27,6 @@ public class ModelWriter2 extends BaseModelWriter implements IModelWriter {
     return 2;
   }
 
-  protected SModelUID upgradeModelUID(SModelUID modelUID) {
-    String stereotype = modelUID.getStereotype();
-    if (SModelStereotype.TEMPLATES.equals(stereotype)) {
-      return new SModelUID(modelUID.getLongName(), SModelStereotype.GENERATOR);
-    }
-    return modelUID;
-  }
-
   public IFile upgradeFile(IFile oldFile) {
     String fileName = oldFile.getName();
     String child = upgradeFileName(fileName);

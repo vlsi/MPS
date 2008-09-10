@@ -38,4 +38,8 @@ public class ModelReader1 extends BaseModelReader implements IModelReader {
   protected String getLegacyImportedModelUIDString(Element element) {
     return null;
   }
+
+  protected String upgradeStereotype(String stereotype) {
+    return stereotype;
+  }
 }

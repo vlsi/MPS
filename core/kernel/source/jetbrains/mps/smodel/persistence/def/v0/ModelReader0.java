@@ -50,4 +50,8 @@ public class ModelReader0 extends BaseModelReader implements IModelReader {
     importedModelUIDString = new SModelUID(importedModelFQName, importedModelStereotype).toString();
     return importedModelUIDString;
   }
+
+  protected String upgradeStereotype(String stereotype) {
+    return stereotype;
+  }
 }
