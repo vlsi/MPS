@@ -38,6 +38,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
   private Set<EditorComponent> myCheckedOnceEditors = new WeakSet<EditorComponent>();
   private EditorsProvider myEditorsProvider;
+  private InspectorTool myInspectorTool;
 
   private ReloadListener myReloadListener = new ReloadAdapter() {
     public void onReload() {
@@ -70,6 +71,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
     myClassLoaderManager.addReloadHandler(myReloadListener);
     myGlobalSModelEventsManager.addGlobalCommandListener(myCommandListener);
+
+    myInspectorTool = myProject.getComponent(InspectorTool.class);
+
     myThread = new HighlighterThread();
     myThread.start();
   }

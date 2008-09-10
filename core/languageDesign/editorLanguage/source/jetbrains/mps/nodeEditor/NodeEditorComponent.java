@@ -104,7 +104,7 @@ public class NodeEditorComponent extends EditorComponent {
     return getInspectorTool().getInspector();
   }
 
-  private InspectorTool getInspectorTool() {
+  public InspectorTool getInspectorTool() {
     return getOperationContext().getComponent(InspectorTool.class);
   }
 
