@@ -4,6 +4,7 @@ import jetbrains.mps.workbench.tools.BaseProjectTool;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.projectPane.Icons;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 
@@ -24,7 +25,7 @@ public class InspectorTool extends BaseProjectTool {
   private InspectorEditorComponent myInspectorComponent;
 
   public InspectorTool(Project project) {
-    super(project, ID, 5, null, ToolWindowAnchor.BOTTOM, true, false);
+    super(project, ID, 5, Icons.INSPECTOR_ICON, ToolWindowAnchor.BOTTOM, true, false);
   }
 
   public void initComponent() {
