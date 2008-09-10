@@ -154,7 +154,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       SModelUID modelUID = PathManager.getModelUID(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
       SModelDescriptor modelDescriptor;
       if (ModelPersistence.needsRecreating(file)) {
-        modelDescriptor = recreateFileAndGetInstance(this, isMPSStub, file.getAbsolutePath(), modelUID, owner);
+        modelDescriptor = recreateFileAndGetInstance(this, isMPSStub, file.getAbsolutePath(), modelUID, owner, modelRoot);
         LOG.debug("I've recreated file and read model descriptor" + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       } else {
         modelDescriptor = getInstance(this, isMPSStub, file.getAbsolutePath(), modelUID, owner);
@@ -203,7 +203,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     return modelFile;
   }
 
-  private static SModelDescriptor recreateFileAndGetInstance(IModelRootManager manager, boolean createStub, String fileName, SModelUID modelUID, ModelOwner owner) {
+  private SModelDescriptor recreateFileAndGetInstance(IModelRootManager manager, boolean createStub, String fileName, SModelUID modelUID, ModelOwner owner, SModelRoot root) {
     SModelRepository modelRepository = SModelRepository.getInstance();
     if (createStub) {
       return getInstance(manager, createStub, fileName, modelUID, owner);
@@ -214,8 +214,8 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       return getInstance(manager, createStub, fileName, modelUID, owner);
     }
     IFile modelFile = FileSystem.getFile(fileName);
-    IFile newFile = ModelPersistence.upgradeFile(modelFile);
     SModelUID newModelUID = ModelPersistence.upgradeModelUID(modelUID);
+    IFile newFile = createFileForModelUID(root, newModelUID);//ModelPersistence.upgradeFile(modelFile);
     newFile.createNewFile();
     FileUtil.copyFile(modelFile.toFile(), newFile.toFile());
     modelFile.delete();

@@ -5,6 +5,7 @@ import org.jdom.Element;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.vfs.IFile;
 
 /**
  * Igor Alshannikov
@@ -16,4 +17,6 @@ public interface IModelReader {
   SNode readNode(Element nodeElement, SModel model);
 
    public SModelUID upgradeModelUID(SModelUID modelUID);
+
+    boolean needsRecreating(IFile file);
 }

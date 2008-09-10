@@ -189,11 +189,7 @@ public class ModelPersistence {
   }
 
   public static boolean needsRecreating(IFile file) {
-    return modelWriters.get(currentPersistenceVersion).needsRecreating(file);
-  }
-
-  public static IFile upgradeFile(IFile modelFile) {
-    return modelWriters.get(currentPersistenceVersion).upgradeFile(modelFile);
+    return modelReaders.get(currentPersistenceVersion).needsRecreating(file);
   }
 
   public static SModelUID upgradeModelUID(SModelUID modelUID) {

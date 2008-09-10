@@ -28,12 +28,4 @@ public class ModelWriter1 extends BaseModelWriter implements IModelWriter {
   protected SModelUID upgradeModelUID(SModelUID modelUID) {
     return modelUID;
   }
-
-  public IFile upgradeFile(IFile oldFile) {
-    return oldFile;
-  }
-
-  public boolean needsRecreating(IFile file) {
-    return false;
-  }
 }

@@ -14,8 +14,4 @@ public interface IModelWriter {
   Document saveModel(SModel sourceModel, boolean validate);
 
   void saveNode(Element container, SNode node);
-
-  IFile upgradeFile(IFile oldFile);
-
-  boolean needsRecreating(IFile file);
 }

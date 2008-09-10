@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import jetbrains.mps.smodel.persistence.def.v1.ReferencePersister1;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 
 /**
@@ -42,4 +43,15 @@ public class ModelReader2 extends BaseModelReader {
     return stereotype;
   }
 
+  public boolean needsRecreating(IFile file) {
+    String fileName = file.getName();
+    int index = fileName.indexOf('.');
+    String rawModelName = (index >= 0) ? fileName.substring(0, index) : fileName;
+    String modelStereotype = "";
+    int index1 = rawModelName.indexOf("@");
+    if (index1 >= 0) {
+      modelStereotype = rawModelName.substring(index1 + 1);
+    }
+    return SModelStereotype.TEMPLATES.equals(modelStereotype);
+  }
 }

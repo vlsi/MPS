@@ -26,46 +26,4 @@ public class ModelWriter2 extends BaseModelWriter implements IModelWriter {
   protected int getModelPersistenceVersion() {
     return 2;
   }
-
-  public IFile upgradeFile(IFile oldFile) {
-    String fileName = oldFile.getName();
-    String child = upgradeFileName(fileName);
-    return new FileSystemFile(new File(oldFile.getParent().toFile(), child));
-  }
-
-  public String upgradeFileName(String fileName) {
-    int index = fileName.indexOf('.');
-    String rawModelName = (index >= 0) ? fileName.substring(0, index) : fileName;
-    String ext = (index >= 0) ? fileName.substring(index) : "";
-    String modelName = rawModelName;
-    String modelStereotype = "";
-    int index1 = rawModelName.indexOf("@");
-    if (index1 >= 0) {
-      modelName = rawModelName.substring(0, index1);
-      modelStereotype = rawModelName.substring(index1 + 1);
-    }
-    if (SModelStereotype.TEMPLATES.equals(modelStereotype)) {
-      modelStereotype = SModelStereotype.GENERATOR;
-    }
-    String child = new SModelUID(modelName, modelStereotype).toString() + ext;
-    return child;
-  }
-
-  public static void main(String[] args) {
-    ModelWriter2 modelWriter2 = new ModelWriter2();
-    System.err.println(modelWriter2.upgradeFileName("actions.mps"));
-    System.err.println(modelWriter2.upgradeFileName("generator@templates.mps"));
-  }
-
-  public boolean needsRecreating(IFile file) {
-    String fileName = file.getName();
-    int index = fileName.indexOf('.');
-    String rawModelName = (index >= 0) ? fileName.substring(0, index) : fileName;
-    String modelStereotype = "";
-    int index1 = rawModelName.indexOf("@");
-    if (index1 >= 0) {
-      modelStereotype = rawModelName.substring(index1 + 1);
-    }
-    return SModelStereotype.TEMPLATES.equals(modelStereotype);
-  }
 }

@@ -18,12 +18,4 @@ public class ModelWriter0 implements IModelWriter {
   public void saveNode(Element container, SNode node) {
     throw new RuntimeException("not implemented");
   }
-
-  public IFile upgradeFile(IFile oldFile) {
-    throw new RuntimeException("not implemented");
-  }
-
-  public boolean needsRecreating(IFile file) {
-    throw new RuntimeException("not implemented");
-  }
 }

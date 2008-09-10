@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -53,5 +54,9 @@ public class ModelReader0 extends BaseModelReader implements IModelReader {
 
   protected String upgradeStereotype(String stereotype) {
     return stereotype;
+  }
+
+  public boolean needsRecreating(IFile file) {
+    return false;
   }
 }
