@@ -157,7 +157,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
         modelDescriptor = recreateFileAndGetInstance(this, isMPSStub, file.getAbsolutePath(), modelUID, owner, modelRoot);
         LOG.debug("I've recreated file and read model descriptor" + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       } else {
-        modelDescriptor = getInstance(this, isMPSStub, file.getAbsolutePath(), modelUID, owner);
+        modelDescriptor = getInstance(this, isMPSStub, file.getAbsolutePath(), modelUID, owner, false);
         LOG.debug("I've read model descriptor " + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       }
       modelDescriptors.add(modelDescriptor);
@@ -206,12 +206,12 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   private SModelDescriptor recreateFileAndGetInstance(IModelRootManager manager, boolean createStub, String fileName, SModelUID modelUID, ModelOwner owner, SModelRoot root) {
     SModelRepository modelRepository = SModelRepository.getInstance();
     if (createStub) {
-      return getInstance(manager, createStub, fileName, modelUID, owner);
+      return getInstance(manager, createStub, fileName, modelUID, owner, false);
     }
     SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelUID);
     if (modelDescriptor != null) {
       LOG.error("can't recreate file for already loaded descriptor " + modelUID);
-      return getInstance(manager, createStub, fileName, modelUID, owner);
+      return getInstance(manager, createStub, fileName, modelUID, owner, false);
     }
     IFile modelFile = FileSystem.getFile(fileName);
     SModelUID newModelUID = ModelPersistence.upgradeModelUID(modelUID);
@@ -219,10 +219,10 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     newFile.createNewFile();
     FileUtil.copyFile(modelFile.toFile(), newFile.toFile());
     modelFile.delete();
-    return getInstance(manager, createStub, newFile.getAbsolutePath(), newModelUID, owner);
+    return getInstance(manager, createStub, newFile.getAbsolutePath(), newModelUID, owner, true);
   }
 
-  private static SModelDescriptor getInstance(IModelRootManager manager, boolean createStub, String fileName, SModelUID modelUID, ModelOwner owner) {
+  private static SModelDescriptor getInstance(IModelRootManager manager, boolean createStub, String fileName, SModelUID modelUID, ModelOwner owner, boolean fireModelCreated) {
     LOG.debug("Getting model " + modelUID + " from " + fileName + " with owner " + owner);
 
     SModelRepository modelRepository = SModelRepository.getInstance();
@@ -239,7 +239,11 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       } else {
         modelDescriptor = new DefaultSModelDescriptor(manager, modelFile, modelUID);
       }
-      modelRepository.registerModelDescriptor(modelDescriptor, owner);
+      if (fireModelCreated) {
+        modelRepository.createNewModel(modelDescriptor, owner);
+      } else {
+        modelRepository.registerModelDescriptor(modelDescriptor, owner);
+      }
       return modelDescriptor;
     }
   }
