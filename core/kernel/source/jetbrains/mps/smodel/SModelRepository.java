@@ -204,7 +204,7 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
-  public void removeModelDescriptor(SModelDescriptor modelDescriptor) {
+  public void removeModelDescriptor(@NotNull SModelDescriptor modelDescriptor) {
     fireBeforeModelRemoved(modelDescriptor);
 
     myModelsToOwners.clearFirst(modelDescriptor);
