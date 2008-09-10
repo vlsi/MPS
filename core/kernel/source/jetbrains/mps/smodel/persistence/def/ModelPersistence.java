@@ -1,14 +1,11 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
 import jetbrains.mps.smodel.persistence.def.v1.ModelWriter1;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -17,7 +14,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
-import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,6 +64,7 @@ public class ModelPersistence {
     modelReaders.put(0, new ModelReader0());
 //    modelWriters.put(0, new ModelWriter0());
     modelReaders.put(1, new ModelReader1());
+    modelReaders.put(2, new ModelReader1());
     modelWriters.put(1, new ModelWriter1());
   }
 
