@@ -60,6 +60,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     myGlobalSModelEventsManager = eventsManager;
     myClassLoaderManager = classLoaderManager;
     myEditorsProvider = new EditorsProvider(project);
+    myInspectorTool = project.getComponent(InspectorTool.class);
   }
 
   public void projectOpened() {
@@ -161,9 +162,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       }
     }
 
-    InspectorTool inspectorTool = myProject.getComponent(InspectorTool.class);
-    if (inspectorTool != null) {
-      if (updateEditorComponent(inspectorTool.getInspector(), events, checkers, checkersToRemove)) {
+    if (myInspectorTool != null) {
+      if (updateEditorComponent(myInspectorTool.getInspector(), events, checkers, checkersToRemove)) {
         isUpdated = true;
       }
     }
