@@ -157,6 +157,13 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       }
     }
 
+    InspectorTool inspectorTool = myProject.getComponent(InspectorTool.class);
+    if (inspectorTool != null) {
+      if (updateEditorComponent(inspectorTool.getInspector(), events, checkers, checkersToRemove)) {
+        isUpdated = true;
+      }
+    }
+
     if (isUpdated) { //why do we need this code? it's looks like a hack.
       IEditor currentEditor = getCurrentEditor();
       if (currentEditor != null) {
@@ -222,8 +229,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
 
     InspectorEditorComponent inspectorEditorComponent = null;
-    if (editor instanceof NodeEditorComponent) {
-      inspectorEditorComponent = ((NodeEditorComponent)editor).getInspector();
+    if (editor instanceof NodeEditorWithInspectorComponent) {
+      inspectorEditorComponent = ((NodeEditorWithInspectorComponent)editor).getInspector();
     }
 
     NodeHighlightManager highlightManager = editor.getHighlightManager();

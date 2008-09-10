@@ -239,7 +239,7 @@ public class MPSEditorOpener implements ProjectComponent {
           final EditorCell cellToSelect = cellInInspector;
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-              nec.showInspector();
+              //todo show inspector somehow
               inspector.changeSelection(cellToSelect);
               if (focus) inspector.requestFocus();
             }

@@ -42,6 +42,10 @@ public class InspectorTool extends BaseProjectTool {
     return true;
   }
 
+  public InspectorEditorComponent getInspector() {
+    return myInspectorComponent;
+  }
+
   public JComponent getComponent() {
     return myComponent;
   }

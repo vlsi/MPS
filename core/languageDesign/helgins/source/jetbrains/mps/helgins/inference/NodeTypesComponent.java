@@ -17,7 +17,7 @@ import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.nodeEditor.NodeEditorWithInspectorComponent;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -203,8 +203,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
           component.getHighlightManager().clearForOwner(this);
         }
 
-        if (component instanceof NodeEditorComponent) {
-          ((NodeEditorComponent) component).getInspector().getHighlightManager().clearForOwner(this);
+        if (component instanceof NodeEditorWithInspectorComponent) {
+          ((NodeEditorWithInspectorComponent) component).getInspector().getHighlightManager().clearForOwner(this);
         }
 
         doInvalidate();
@@ -260,8 +260,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
           component.getHighlightManager().clearForOwner(component.getHighlightMessagesOwner()); //todo change an owner
           for (SNodePointer notSkippedNode : notSkippedNodes) {
             markNode(component, notSkippedNode);
-            if (component instanceof NodeEditorComponent) {
-              markNode(((NodeEditorComponent) component).getInspector(), notSkippedNode);
+            if (component instanceof NodeEditorWithInspectorComponent) {
+              markNode(((NodeEditorWithInspectorComponent) component).getInspector(), notSkippedNode);
             }
           }
         }

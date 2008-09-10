@@ -288,13 +288,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }, KeyStroke.getKeyStroke("control Q"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        if (!getHighlightManager().clearForOwner(myOwner)) {
-          onEscape();
+    addKeyListener(new KeyAdapter() {
+      public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+          if (getHighlightManager().clearForOwner(myOwner) || onEscape())  {
+            e.consume();
+          }
         }
       }
-    }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    });
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -439,7 +441,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
-  protected void onEscape() {
+  protected boolean onEscape() {
+    return false;
   }
 
   public int getAdditionalShiftX() {
@@ -2002,10 +2005,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
       IOperationContext context = getOperationContext();
-      if (context==null) return null;
+      if (context == null) return null;
       return context.getProject();
     } else if (dataId.equals(MPSDataKeys.MPS_PROJECT.getName())) {
-      return getOperationContext().getMPSProject();
+      IOperationContext context = getOperationContext();
+      if (context == null) return null;
+      return context.getMPSProject();
     } else if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) {
       return createEditorContextForActions();
     } else if (dataId.equals(MPSDataKeys.SNODE.getName())) {
@@ -2022,7 +2027,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     } else if (dataId.equals(MPSDataKeys.MODEL_DESCRIPTOR.getName())) {
       return ModelAccess.instance().runReadAction(new Computable() {
         public Object compute() {
-          SModel model = getRootCell().getSNode().getModel();
+          SNode node = getRootCell().getSNode();
+          if (node == null) return null;
+          SModel model = node.getModel();
           if (model == null) return null; //removed model
           return model.getModelDescriptor();
         }

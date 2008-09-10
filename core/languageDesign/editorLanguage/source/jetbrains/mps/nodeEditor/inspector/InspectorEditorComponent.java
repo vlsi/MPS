@@ -12,17 +12,10 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import java.util.List;
 
 public class InspectorEditorComponent extends EditorComponent {
-  private NodeEditorComponent myContainer;
-
   public InspectorEditorComponent() {
-    this(null);
-  }
-
-  public InspectorEditorComponent(NodeEditorComponent container) {
     super(null);
     myNodePointer = new SNodePointer((SNode) null);
     reinitEditor();
-    myContainer = container;
   }
 
   private void reinitEditor() {

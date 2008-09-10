@@ -568,7 +568,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
     setText(text);
 
-    if (!EqualUtil.equals(oldText, text) && !isValidText(text) && CommandProcessor.getInstance().getCurrentCommand() != null) {
+    if (getSNode() != null && !EqualUtil.equals(oldText, text) && !isValidText(text) && CommandProcessor.getInstance().getCurrentCommand() != null) {
       UndoUtil.addUndoableAction(new MySNodeUndoableAction(getSNode(), cellInfo, editor, oldText, text));
 
       if (getSNode().getContainingRoot() != null) {
