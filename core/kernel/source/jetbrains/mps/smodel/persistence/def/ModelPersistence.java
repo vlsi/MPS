@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
 import jetbrains.mps.smodel.persistence.def.v1.ModelWriter1;
 import jetbrains.mps.smodel.persistence.def.v2.ModelWriter2;
+import jetbrains.mps.smodel.persistence.def.v2.ModelReader2;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
@@ -66,7 +67,7 @@ public class ModelPersistence {
 //    modelWriters.put(0, new ModelWriter0());
     modelReaders.put(1, new ModelReader1());
     modelWriters.put(1, new ModelWriter1());
-    modelReaders.put(2, new ModelReader1());
+    modelReaders.put(2, new ModelReader2());
     modelWriters.put(2, new ModelWriter2());
   }
 
