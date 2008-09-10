@@ -8,6 +8,10 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.Icon;
 
 public abstract class BaseProjectTool extends BaseTool implements ProjectComponent {
+  protected BaseProjectTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean sideTool, boolean canCloseContent) {
+    super(project, id, number, icon, anchor, sideTool, canCloseContent);
+  }
+
   protected BaseProjectTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
     super(project, id, number, icon, anchor, canCloseContent);
   }

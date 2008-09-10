@@ -424,6 +424,11 @@
       <implementation-class>jetbrains.mps.nodeEditor.search.SearchHistoryComponent</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.InspectorTool</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
     <!--project view tool-->
     <component>
       <interface-class>com.intellij.ide.projectView.ProjectView</interface-class>
@@ -451,6 +456,8 @@
       <option name="workspace" value="true"/>
       <skipForDummyProject/>
     </component>
+
+
   </project-components>
 
 

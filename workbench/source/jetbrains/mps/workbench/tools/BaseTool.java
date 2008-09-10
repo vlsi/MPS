@@ -11,6 +11,7 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -30,6 +31,7 @@ public abstract class BaseTool {
   private int myNumber;
   private Icon myIcon;
   private ToolWindowAnchor myAnchor;
+  private boolean mySideTool;
   private boolean myCanCloseContent;
   private boolean myIsRegistered;
   private ToolWindowManager myWindowManager;
@@ -37,7 +39,12 @@ public abstract class BaseTool {
   private JComponent myComponent = null;
 
   public BaseTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
+    this(project, id, number, icon, anchor, false, canCloseContent);
+  }
+
+  public BaseTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean sideTool, boolean canCloseContent) {
     myAnchor = anchor;
+    mySideTool = sideTool;
     myNumber = number;
     myId = id;
     myIcon = icon;
@@ -185,7 +192,9 @@ public abstract class BaseTool {
 
     //if we create a new project, tool windows are created for it automatically
     ToolWindow toolWindow = myWindowManager.getToolWindow(myId);
-    if (toolWindow == null) toolWindow = myWindowManager.registerToolWindow(myId, myCanCloseContent, myAnchor);
+    if (toolWindow == null) {
+      toolWindow = myWindowManager.registerToolWindow(myId, myCanCloseContent, myAnchor, mySideTool);
+    }
     toolWindow.setIcon(myIcon);
 
     if (myComponent == null) myComponent = getComponent();
