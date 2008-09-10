@@ -234,7 +234,6 @@ __switch__:
 
       public void run() {
         foo.value = 42;
-        //  return nothing
       }
 
     });

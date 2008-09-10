@@ -18,11 +18,11 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
   public FunctionType_subtypeOf_FunctionType_InequationReplacementRule() {
   }
 
-  public void processInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     if (SLinkOperations.getCount(subtype, "parameterType") != SLinkOperations.getCount(supertype, "parameterType")) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), "different parameter numbers", "jetbrains.mps.closures.helgins@3_0", "1219845936810", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), "different parameter numbers", "jetbrains.mps.closures.helgins@3_0", "1221068768938", intentionProvider);
       }
       return;
     }
@@ -65,7 +65,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     }
   }
 
-  public boolean checkInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     boolean result_14532009 = true;
     {
       if (SLinkOperations.getCount(subtype, "parameterType") != SLinkOperations.getCount(supertype, "parameterType")) {

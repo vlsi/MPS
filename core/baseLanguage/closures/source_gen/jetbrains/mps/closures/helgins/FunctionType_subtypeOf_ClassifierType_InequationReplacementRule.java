@@ -20,7 +20,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
   public FunctionType_subtypeOf_ClassifierType_InequationReplacementRule() {
   }
 
-  public void processInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     SNode classifier = SLinkOperations.getTarget(supertype, "classifier", false);
     String errorMsg = "";
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
@@ -69,11 +69,11 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     }
     {
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype) + errorMsg, "jetbrains.mps.closures.helgins@3_0", "1219845937233", intentionProvider);
+      TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype) + errorMsg, "jetbrains.mps.closures.helgins@3_0", "1221068769363", intentionProvider);
     }
   }
 
-  public boolean checkInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     boolean result_14532009 = true;
     {
       SNode classifier = SLinkOperations.getTarget(supertype, "classifier", false);

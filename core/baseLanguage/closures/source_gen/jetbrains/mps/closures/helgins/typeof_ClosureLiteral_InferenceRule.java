@@ -112,7 +112,7 @@ public class typeof_ClosureLiteral_InferenceRule implements InferenceRule_Runtim
       {
         SNode _nodeToCheck_1029348928467 = closure;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStmt, "expression", true), "jetbrains.mps.closures.helgins", "1199622127027", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins", "1199622121009", false, 0, intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStmt, "expression", true), "jetbrains.mps.closures.helgins", "1220961306410", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins", "1220961306406", false, 0, intentionProvider);
       }
       returnsValue = true;
     }

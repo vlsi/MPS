@@ -5139,9 +5139,6 @@
                           </node>
                         </node>
                       </node>
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1219743577895">
-                        <property name="value" value=" return nothing" />
-                      </node>
                     </node>
                   </node>
                 </node>

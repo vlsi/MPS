@@ -28,7 +28,7 @@ public class typeof_InvokeExpression_InferenceRule implements InferenceRule_Runt
         public void run() {
           SNode ft = TypeChecker.getInstance().getRuntimeSupport().typeOf(cl, "jetbrains.mps.closures.helgins", "1199711616632", true);
           {
-            SNode _nodeToCheck_1029348928467 = null;
+            SNode _nodeToCheck_1029348928467 = invoke;
             BaseIntentionProvider intentionProvider = null;
             TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(invoke, "jetbrains.mps.closures.helgins", "1199711815333", true), SLinkOperations.getTarget(ft, "resultType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins", "1199711813747", intentionProvider);
           }
@@ -50,7 +50,7 @@ public class typeof_InvokeExpression_InferenceRule implements InferenceRule_Runt
               pt = pt_iterator.next();
               p = p_iterator.next();
               {
-                SNode _nodeToCheck_1029348928467 = null;
+                SNode _nodeToCheck_1029348928467 = invoke;
                 BaseIntentionProvider intentionProvider = null;
                 TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(p, "jetbrains.mps.closures.helgins", "1202920161360", true), pt, _nodeToCheck_1029348928467, null, "jetbrains.mps.closures.helgins", "1202920161358", false, 0, intentionProvider);
               }
@@ -58,7 +58,7 @@ public class typeof_InvokeExpression_InferenceRule implements InferenceRule_Runt
           }
         }
 
-      }, "jetbrains.mps.closures.helgins", "1199711624300");
+      }, "jetbrains.mps.closures.helgins@3_0", "1221068767986");
     }
   }
 
