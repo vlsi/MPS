@@ -17,6 +17,7 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
 import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
@@ -28,7 +29,7 @@ import jetbrains.mps.logging.Logger;
 public class ExcludedFileIndexApplicationComponent implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ExcludedFileIndexApplicationComponent.class);
   private final MPSModuleRepository myModuleRepository;
-  private final Set<VirtualFile> myExcludedFiles = new HashSet<VirtualFile>();
+  private final Set<VirtualFile> myExcludedFiles = new CopyOnWriteArraySet<VirtualFile>();
   private final String[] myExcludedRegexps = new String[]{".*\\.svn.*"};
   private final ModuleRepositoryAdapter myModuleRepositoryListener = new ModuleRepositoryAdapter() {
     @Override
@@ -69,10 +70,7 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
     if (classesGen == null) return;
     VirtualFile classesGenVirtual = VFileSystem.getFile(classesGen);
     if (classesGenVirtual != null) {
-      boolean found;
-      synchronized (myExcludedFiles) {
-        found = myExcludedFiles.remove(classesGenVirtual);
-      }
+      boolean found = myExcludedFiles.remove(classesGenVirtual);
       if (!found) {
         LOG.error("Not found classes_gen folder " + classesGenVirtual + " of module " + module);
       }
@@ -84,9 +82,7 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
     if (classesGen == null) return;
     VirtualFile classesGenVirtual = VFileSystem.getFile(classesGen);
     if (classesGenVirtual != null) {
-      synchronized (myExcludedFiles) {
-        myExcludedFiles.add(classesGenVirtual);
-      }
+      myExcludedFiles.add(classesGenVirtual);
     }
   }
 
@@ -94,20 +90,10 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
     myModuleRepository.removeModuleRepositoryListener(myModuleRepositoryListener);
   }
 
-  private Set<VirtualFile> getExcludedFilesCopy() {
-    synchronized (myExcludedFiles) {
-      Set<VirtualFile> files = new HashSet<VirtualFile>();
-      files.addAll(myExcludedFiles);
-      return files;
-    }
-  }
-
   public boolean isExcluded(VirtualFile file) {
-    Set<VirtualFile> files = getExcludedFilesCopy();
+    if (myExcludedFiles.contains(file)) return true;
 
-    if (files.contains(file)) return true;
-
-    for (VirtualFile excludedFile : files) {
+    for (VirtualFile excludedFile : myExcludedFiles) {
       if (VfsUtil.isAncestor(excludedFile, file, false)) {
         return true;
       }
