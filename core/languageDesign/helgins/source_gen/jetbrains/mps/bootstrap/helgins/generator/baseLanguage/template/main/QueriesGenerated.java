@@ -5,21 +5,17 @@ package jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.genUtil.HelginsGenUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.List;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SearchScope_Operations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SearchScopeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.*;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.bootstrap.helgins.behavior.FindSourceBlock_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -830,7 +826,7 @@ public class QueriesGenerated {
     return ListSequence.fromList(vars).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SearchScope_Operations.containsNode(varScope, it);
+        return SearchScopeOperations.containsNode(varScope, it);
       }
 
     }).first();

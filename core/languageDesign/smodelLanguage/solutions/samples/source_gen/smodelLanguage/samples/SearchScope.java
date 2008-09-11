@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SearchScope_Operations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SearchScopeOperations;
 
 public class SearchScope {
 
@@ -17,7 +17,7 @@ public class SearchScope {
 
   public boolean isInScope(SNode methodCall, SNode methodDeclaration, IOperationContext context) {
     ISearchScope scope = SNodeOperations.getReferentSearchScope(methodCall, "instanceMethodDeclaration", context);
-    return SearchScope_Operations.containsNode(scope, methodDeclaration);
+    return SearchScopeOperations.containsNode(scope, methodDeclaration);
   }
 
 }
