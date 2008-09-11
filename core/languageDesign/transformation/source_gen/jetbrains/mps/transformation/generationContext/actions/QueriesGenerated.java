@@ -30,10 +30,16 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput")) {
       SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(_context.getSampleNode(), "label", false), false);
     }
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(_context.getSampleNode(), "label", false), false);
+    }
   }
 
   public static void nodeFactory_NodeSetup_GenerationContextOp_GetOutputByLabelAndInput_1216861604216(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabel")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(_context.getSampleNode(), "label", false), false);
+    }
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput")) {
       SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(_context.getSampleNode(), "label", false), false);
     }
   }
@@ -53,6 +59,15 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_GenerationContextOp_TransientObjectAccess_1217895187935(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_UserObjectAccessBase")) {
       SLinkOperations.setTarget(_context.getNewNode(), "userKey", SLinkOperations.getTarget(_context.getSampleNode(), "userKey", true), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_GenerationContextOp_GetOutputListByLabelAndInput_1221157578226(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabel")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(_context.getSampleNode(), "label", false), false);
+    }
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(_context.getSampleNode(), "label", false), false);
     }
   }
 

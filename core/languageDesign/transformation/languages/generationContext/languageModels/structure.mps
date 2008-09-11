@@ -395,5 +395,32 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1221156564099">
+    <property name="name" value="GenerationContextOp_GetOutputListByLabelAndInput" />
+    <link role="extends" targetNodeId="1216860049619" resolveInfo="GenerationContextOp_Base" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1221156564100">
+      <property name="name" value="labelName_intern" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1221156564101">
+      <property name="role" value="label" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1200911316486" resolveInfo="MappingLabelDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1221156564102">
+      <property name="value" value="get output list by label and input" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1221156564103">
+      <property name="value" value="search output nodes" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1221156564104">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="inputNode" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
 </model>
 

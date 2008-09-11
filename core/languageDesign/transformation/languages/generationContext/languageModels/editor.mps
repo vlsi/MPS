@@ -221,5 +221,35 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1221156644527">
+    <link role="conceptDeclaration" targetNodeId="1.1221156564099" resolveInfo="GenerationContextOp_GetOutputListByLabelAndInput" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1221156651497">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221156651498">
+        <property name="text" value="get output list" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1221157071916">
+        <property name="noTargetText" value="&lt;choose mapping label&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1221156564101" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1221157071917">
+          <link role="conceptDeclaration" targetNodeId="7.1200911316486" resolveInfo="MappingLabelDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1221157079981">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="3.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221156651502">
+        <property name="text" value="for input" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1221156651503" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1221157150062">
+        <property name="noTargetText" value="&lt;no input node&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1221156564104" />
+      </node>
+    </node>
+  </node>
 </model>
 

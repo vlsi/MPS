@@ -13,6 +13,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_UserObjectAccessBase", new GenerationContextOp_UserObjectAccessBase_DataFlow());
     manager.register("jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_ShowMessageBase", new GenerationContextOp_ShowMessageBase_DataFlow());
     manager.register("jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_CreateUniqueName", new GenerationContextOp_CreateUniqueName_DataFlow());
+    manager.register("jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput", new GenerationContextOp_GetOutputListByLabelAndInput_DataFlow());
   }
 
 }

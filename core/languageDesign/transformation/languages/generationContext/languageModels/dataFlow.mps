@@ -114,5 +114,20 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1221157689278">
+    <link role="conceptDeclaration" targetNodeId="1.1221156564099" resolveInfo="GenerationContextOp_GetOutputListByLabelAndInput" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1221157689279">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221157689280">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1221157696874">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221157698846">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1221157698798" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1221157701380">
+              <link role="link" targetNodeId="1.1221156564104" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
