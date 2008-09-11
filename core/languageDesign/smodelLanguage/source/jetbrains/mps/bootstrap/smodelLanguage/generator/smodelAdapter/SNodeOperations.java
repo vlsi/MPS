@@ -466,7 +466,7 @@ public class SNodeOperations {
     return new SNodePointer(modelUID, nodeID).getNode();
   }
 
-  public static ISearchScope getSearchScope(SNode referenceNode, String referenceRole, IOperationContext context) {
+  public static ISearchScope getReferentSearchScope(SNode referenceNode, String referenceRole, IOperationContext context) {
     if (referenceNode == null) return null;
     SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNode.getConceptDeclarationAdapter(), referenceRole, context);
     if (status.isOk()) return status.getSearchScope();

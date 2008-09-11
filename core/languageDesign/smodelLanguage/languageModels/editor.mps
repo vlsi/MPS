@@ -1857,8 +1857,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1182279746815">
-    <property name="package" value="operation.concept" />
-    <link role="conceptDeclaration" targetNodeId="1.1182279509750" />
+    <property name="package" value="operation.node" />
+    <link role="conceptDeclaration" targetNodeId="1.1221163681458" resolveInfo="Node_GetReferentSearchScopeOperation" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1182279799230">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206485988830">
@@ -1867,6 +1867,20 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206485988831">
         <property name="text" value="(" />
         <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1221164457353">
+        <property name="noTargetText" value="&lt;no reference role&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1221164078452" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1221164457354">
+          <link role="conceptDeclaration" targetNodeId="3.1071489288298" resolveInfo="LinkDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1221164467825">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="3.1071599776563" resolveInfo="role" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221164650030">
+        <property name="text" value="," />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1182279799233">
         <property name="noTargetText" value="&lt;global scope&gt;" />
@@ -2488,6 +2502,28 @@
       <link role="styleClass" targetNodeId="5.1186415544875" resolveInfo="KeyWord" />
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1221162067084">
         <property name="value" value="0.0" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1221164365409">
+    <property name="package" value="operation.concept" />
+    <link role="conceptDeclaration" targetNodeId="1.1182279509750" resolveInfo="Concept_FindInstances" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1221164365410">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1221164365411">
+        <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221164365412">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1221164365413">
+        <property name="noTargetText" value="&lt;global scope&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1182279708330" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221164365414">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="5.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>
