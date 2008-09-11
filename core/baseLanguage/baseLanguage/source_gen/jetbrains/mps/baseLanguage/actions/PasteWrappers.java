@@ -46,6 +46,38 @@ public class PasteWrappers {
       }
 
     });
+    result.add(new PasteWrapper() {
+
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        return SLinkOperations.getTarget(_context.getSourceNode(), "localVariableDeclaration", true);
+      }
+
+    });
+    result.add(new PasteWrapper() {
+
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.Statement";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        SNode statement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+        SLinkOperations.setTarget(statement, "localVariableDeclaration", _context.getSourceNode(), true);
+        return statement;
+      }
+
+    });
     return result;
   }
 

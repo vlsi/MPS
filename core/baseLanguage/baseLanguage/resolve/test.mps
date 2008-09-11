@@ -1489,6 +1489,11 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1175862183748">
           <link role="constructorDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221142028063">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221142028064">
+            <property name="value" value="23" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213004216359">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213004216360">
             <property name="name" value="d" />
