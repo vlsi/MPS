@@ -1099,10 +1099,6 @@
     <property name="name" value="TemplateFunctionParameter_outputNode" />
     <property name="package" value="functionParameter" />
     <link role="extends" targetNodeId="6.1107135704075" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1184690556152">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1137545963098" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1184690556153" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1184690432999">
       <property name="value" value="outputNode" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
