@@ -1,6 +1,7 @@
 package jetbrains.mps.datatransfer;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -11,21 +12,25 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.util.NameUtil;
 
 import java.util.List;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 
-public class PasteWrapperManager implements ApplicationComponent {
+public class PasteWrappersManager implements ApplicationComponent {
+
+  public static PasteWrappersManager getInstance() {
+    return ApplicationManager.getApplication().getComponent(PasteWrappersManager.class);
+  }
+
   public static final String PASTE_WRAPPER_CLASS_NAME = "PasteWrappers";
   public static final String PASTE_WRAPPERS_FACTORY_METHOD = "createPasteWrappers";
 
-  private static Logger LOG = Logger.getLogger(PasteWrapperManager.class);
+  private static Logger LOG = Logger.getLogger(PasteWrappersManager.class);
 
   private ClassLoaderManager myClassLoaderManager;
   private MyReloadHandler myReloadHandler = new MyReloadHandler();
   private Map<String, Map<String, PasteWrapper>> myWrappers = new HashMap<String, Map<String, PasteWrapper>>();
 
-  public PasteWrapperManager(ClassLoaderManager classLoaderManager) {
+  public PasteWrappersManager(ClassLoaderManager classLoaderManager) {
     myClassLoaderManager = classLoaderManager;
   }
 
@@ -57,6 +62,7 @@ public class PasteWrapperManager implements ApplicationComponent {
 
   private PasteWrapper getWrapperFor(SNode node, AbstractConceptDeclaration targetConcept) {
     Map<String, PasteWrapper> wrappers = myWrappers.get(NameUtil.nodeFQName(targetConcept));
+    if (wrappers == null) return null;
     List<AbstractConceptDeclaration> superConcepts = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
     for (AbstractConceptDeclaration acd : superConcepts) {
       if (wrappers.containsKey(NameUtil.nodeFQName(acd))) {

@@ -154,6 +154,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.datatransfer.PasteWrappersManager</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.dataFlow.DataFlowManager</implementation-class>
     </component>
 
@@ -426,10 +430,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.nodeEditor.InspectorTool</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.datatransfer.PasteWrapperManager</implementation-class>
     </component>
 
     <!--project view tool-->

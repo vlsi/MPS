@@ -166,7 +166,19 @@ public class NodePaster {
     SNode _anchorNode = anchorNode;
     boolean insertBefore = placeHint == PastePlaceHint.BEFORE_ANCHOR;
     for (SNode pasteNode : myPasteNodes) {
-      pasteTarget.insertChild(_anchorNode, link.getRole(), pasteNode, insertBefore);
+      SNode node;
+
+      if (SModelUtil_new.isAssignableConcept(pasteNode.getConceptDeclarationAdapter(), link.getTarget())) {
+        node = pasteNode;
+      } else if (PasteWrappersManager.getInstance().canWrapInto(pasteNode, link.getTarget())) {
+        node = PasteWrappersManager.getInstance().wrapInto(pasteNode,  link.getTarget());
+      } else {
+        throw new RuntimeException();
+      }
+
+      pasteTarget.insertChild(_anchorNode, link.getRole(), node, insertBefore);
+
+
       _anchorNode = pasteNode;
       insertBefore = false;
     }
@@ -226,7 +238,8 @@ public class NodePaster {
       boolean suitable = true;
       for (SNode pasteNode : myPasteNodes) {
         AbstractConceptDeclaration pasteConcept = pasteNode.getConceptDeclarationAdapter();
-        if (!SModelUtil_new.isAssignableConcept(pasteConcept, link.getTarget())) {
+        if (!SModelUtil_new.isAssignableConcept(pasteConcept, link.getTarget()) &&
+          !PasteWrappersManager.getInstance().canWrapInto(pasteNode, link.getTarget())) {
           suitable = false;
           break;
         }
