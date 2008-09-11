@@ -11,6 +11,7 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
+import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -23,6 +24,9 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.*;
+
+import com.intellij.openapi.project.ex.ProjectManagerEx;
+import com.intellij.openapi.project.Project;
 
 /**
  * @author Kostik
@@ -220,9 +224,12 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     FileUtil.copyFile(modelFile.toFile(), newFile.toFile());
     modelFile.delete();
     SModelDescriptor result = getInstance(manager, createStub, newFile.getAbsolutePath(), newModelUID, owner, true);
-    //result.getSModel();
-    //result.save();
-    //addFilesToVCS(Collections.singletonList(newFile.toFile()));
+    for (Project project : ProjectManagerEx.getInstance().getOpenProjects()) {
+      MPSVCSManager mpsvcsManager = MPSVCSManager.getInstance(project);
+      if (mpsvcsManager != null) {
+        mpsvcsManager.addFilesToVCS(Collections.singletonList(newFile.toFile()));
+      }
+    }
     return result;
   }
 
