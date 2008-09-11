@@ -23,7 +23,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private ArrayList<SNode> myRootsNotToCopy = new ArrayList<SNode>();
   private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
   private HashMap<Pair<String, SNode>, Object> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<Pair<String, SNode>, Object>();
-  //  private HashMap<Pair<String, SNode>, SNode> myMappingNameAndOutputNodeToInputNode = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
   private HashMap<SNode, Pair<SNode, Boolean>> myTemplateNodeToOutputNodeMap = new HashMap<SNode, Pair<SNode, Boolean>>();
   private DelayedChanges myDelayedChanges = new DelayedChanges();
@@ -63,7 +62,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myRootsNotToCopy.clear();
     myTemplateNodeAndInputNodeToOutputNodeMap.clear();
     myMappingNameAndInputNodeToOutputNodeMap.clear();
-//    myMappingNameAndOutputNodeToInputNode.clear();
     myOutputNodeToTemplateNodeMap.clear();
     myTemplateNodeToOutputNodeMap.clear();
     myDelayedChanges = new DelayedChanges();
@@ -285,12 +283,16 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   /*package*/ void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
     if (mappingName == null) return;
     Pair key = new Pair(mappingName, inputNode);
-    if (!myMappingNameAndInputNodeToOutputNodeMap.containsKey(key)) {
+    Object o = myMappingNameAndInputNodeToOutputNodeMap.get(key);
+    if (o == null) {
       myMappingNameAndInputNodeToOutputNodeMap.put(key, outputNode);
-//      Pair key2 = new Pair(mappingName, outputNode);
-//      if (!myMappingNameAndOutputNodeToInputNode.containsKey(key2)) {
-//        myMappingNameAndOutputNodeToInputNode.put(key2, inputNode);
-//      }
+    } else if (o instanceof List) {
+      ((List<SNode>) o).add(outputNode);
+    } else {
+      List<SNode> list = new ArrayList<SNode>();
+      list.add((SNode) o);
+      list.add(outputNode);
+      myMappingNameAndInputNodeToOutputNodeMap.put(key, list);
     }
   }
 
