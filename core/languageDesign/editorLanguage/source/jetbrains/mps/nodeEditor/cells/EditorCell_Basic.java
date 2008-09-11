@@ -100,6 +100,9 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (this instanceof EditorCell_Label) {
       pattern = ((EditorCell_Label) this).getText();
     }
+
+    if (pattern.equals("")) return false;
+
     List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, strict);
     if (matchingActions.size() == 0 && canActivatePopup) {
       return false;
