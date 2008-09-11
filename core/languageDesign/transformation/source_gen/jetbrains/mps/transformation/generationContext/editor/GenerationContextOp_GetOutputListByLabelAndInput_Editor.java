@@ -138,6 +138,7 @@ public class GenerationContextOp_GetOutputListByLabelAndInput_Editor extends Def
 
   private static void setupBasic_refCell_label1221157071916(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_label");
+    jetbrains.mps.transformation.TLBase.editor.Styles_StyleSheet.MAPPING_LABEL_REFERENCE.apply(editorCell);
   }
 
   private static void setupBasic_refNode_inputNode1221157150062(EditorCell editorCell, SNode node, EditorContext context) {

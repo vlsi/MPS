@@ -232,6 +232,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1221157071916">
         <property name="noTargetText" value="&lt;choose mapping label&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1221156564101" />
+        <link role="styleClass" targetNodeId="5.1216755869996" resolveInfo="mappingLabelReference" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1221157071917">
           <link role="conceptDeclaration" targetNodeId="7.1200911316486" resolveInfo="MappingLabelDeclaration" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1221157079981">
