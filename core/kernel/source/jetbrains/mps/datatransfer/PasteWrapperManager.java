@@ -5,13 +5,15 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 
 public class PasteWrapperManager implements ApplicationComponent {
   public static final String PASTE_WRAPPER_CLASS_NAME = "PasteWrappers";
@@ -21,7 +23,7 @@ public class PasteWrapperManager implements ApplicationComponent {
 
   private ClassLoaderManager myClassLoaderManager;
   private MyReloadHandler myReloadHandler = new MyReloadHandler();
-  private List<PasteWrapper> myWrappers = new ArrayList<PasteWrapper>();
+  private Map<String, Map<String, PasteWrapper>> myWrappers = new HashMap<String, Map<String, PasteWrapper>>();
 
   public PasteWrapperManager(ClassLoaderManager classLoaderManager) {
     myClassLoaderManager = classLoaderManager;
@@ -39,6 +41,29 @@ public class PasteWrapperManager implements ApplicationComponent {
 
   public void disposeComponent() {
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
+  }
+
+  public boolean canWrapInto(SNode node, AbstractConceptDeclaration targetConcept) {
+    return getWrapperFor(node, targetConcept) != null;
+  }
+
+  public SNode wrapInto(SNode node, AbstractConceptDeclaration targetConcept) {
+    PasteWrapper wrapper = getWrapperFor(node, targetConcept);
+    if (wrapper == null) {
+      throw new IllegalStateException();
+    }
+    return wrapper.wrap(new PasteWrapperContext(node));
+  }
+
+  private PasteWrapper getWrapperFor(SNode node, AbstractConceptDeclaration targetConcept) {
+    Map<String, PasteWrapper> wrappers = myWrappers.get(NameUtil.nodeFQName(targetConcept));
+    List<AbstractConceptDeclaration> superConcepts = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
+    for (AbstractConceptDeclaration acd : superConcepts) {
+      if (wrappers.containsKey(NameUtil.nodeFQName(acd))) {
+        return wrappers.get(NameUtil.nodeFQName(acd));
+      }
+    }
+    return null;
   }
 
   private void reload() {
@@ -61,10 +86,11 @@ public class PasteWrapperManager implements ApplicationComponent {
   }
 
   private void addWrapper(PasteWrapper wrapper) {
-    myWrappers.add(wrapper);
+    if (!myWrappers.containsKey(wrapper.getTargetConceptFqName())) {
+      myWrappers.put(wrapper.getTargetConceptFqName(), new HashMap<String, PasteWrapper>());
+    }
+    myWrappers.get(wrapper.getTargetConceptFqName()).put(wrapper.getSourceConceptFqName(), wrapper);
   }
-
-
 
   private class MyReloadHandler extends ReloadAdapter {
     public void onReload() {
