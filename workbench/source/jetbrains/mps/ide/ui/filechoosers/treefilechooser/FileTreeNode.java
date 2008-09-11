@@ -45,9 +45,7 @@ public abstract class FileTreeNode extends MPSTreeNode {
     Icon icon;
     String extension = FileUtil.getExtension(file.getName());
 
-    if (extension.equals(MPSExtentions.PROJECT)){
-      icon = Icons.PROJECT_ICON;
-    }else if (extension.equals(MPSExtentions.IDEAPROJECT)){
+    if (extension.equals(MPSExtentions.IDEAPROJECT)){
       icon = Icons.PROJECT_ICON;
     }else if (extension.equals(MPSExtentions.LANGUAGE)){
       icon = Icons.LANGUAGE_ICON;

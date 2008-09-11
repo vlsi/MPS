@@ -25,7 +25,6 @@ public class MPSFileTypesManager implements ApplicationComponent {
   public static final FileType SOLUTION_FILE_TYPE = new MPSTextFileType("Solution", "MPS Solution File Type", MPSExtentions.SOLUTION, Icons.SOLUTION_ICON);
   public static final FileType LANGUAGE_FILE_TYPE = new MPSTextFileType("Language", "MPS Language File Type", MPSExtentions.LANGUAGE, Icons.PROJECT_LANGUAGE_ICON);
   public static final FileType DEVKIT_FILE_TYPE = new MPSTextFileType("Devkit", "MPS Devkit File Type", MPSExtentions.DEVKIT, Icons.DEVKIT_ICON);
-  public static final FileType PROJECT_FILE_TYPE = new MPSTextFileType("Project", "MPS Project File Type", MPSExtentions.PROJECT, Icons.PROJECT_ICON);
   public static final FileType JAVA_FILE_TYPE = new MPSTextFileType("Java", "Java Source File Type", MPSExtentions.JAVAFILE, FileIcons.JAVA_ICON);
   public static final FileType XML_FILE_TYPE = new MPSTextFileType("XML", "XML File", "xml", FileIcons.XML_ICON);
   public static final FileType CLASS_FILE_TYPE = new FileType() {
@@ -65,7 +64,7 @@ public class MPSFileTypesManager implements ApplicationComponent {
       return "utf8";//todo ?
     }
   };
-  private final FileType[] myFileTypes = {MODEL_FILE_TYPE, SOLUTION_FILE_TYPE, LANGUAGE_FILE_TYPE, DEVKIT_FILE_TYPE, PROJECT_FILE_TYPE, CLASS_FILE_TYPE, JAVA_FILE_TYPE, XML_FILE_TYPE};
+  private final FileType[] myFileTypes = {MODEL_FILE_TYPE, SOLUTION_FILE_TYPE, LANGUAGE_FILE_TYPE, DEVKIT_FILE_TYPE, CLASS_FILE_TYPE, JAVA_FILE_TYPE, XML_FILE_TYPE};
   private static final String[] XML_EXTENSIONS = {MPSExtentions.IDEAPROJECT,
     MPSExtentions.IDEAWORKSPACE,
     MPSExtentions.WORKSPACE,
@@ -126,10 +125,6 @@ public class MPSFileTypesManager implements ApplicationComponent {
     return vfile.getFileType().equals(MODEL_FILE_TYPE);
   }
 
-  public boolean isProjectFile(VirtualFile vfile){
-    if (vfile == null) return false;
-    return vfile.getFileType().equals(PROJECT_FILE_TYPE);
-  }
 
   public boolean isModuleFile(String path) {
     if (path == null) return false;
@@ -141,11 +136,5 @@ public class MPSFileTypesManager implements ApplicationComponent {
     if (path == null) return false;
     FileType type = myFileTypeManager.getFileTypeByFileName(path);
     return type.equals(MODEL_FILE_TYPE);
-  }
-
-  public boolean isProjectFile(String path) {
-    if (path == null) return false;
-    FileType type = myFileTypeManager.getFileTypeByFileName(path);
-    return type.equals(PROJECT_FILE_TYPE);
   }
 }

@@ -2,7 +2,6 @@ package jetbrains.mps.vfs;
 
 public class MPSExtentions {
   public static final String IDEAPROJECT = "ipr";
-  public static final String PROJECT = "mpr";
   public static final String IDEAWORKSPACE = "iws";
   public static final String WORKSPACE = "mws";
   public static final String IDEAMODULE = "iml";
@@ -16,7 +15,6 @@ public class MPSExtentions {
   public static final String STUB = "mpstub";
 
   public static final String DOT_IDEAPROJECT = "." + IDEAPROJECT;
-  public static final String DOT_PROJECT = "." + PROJECT;
   public static final String DOT_LANGUAGE = "." + LANGUAGE;
   public static final String DOT_SOLUTION = "." + SOLUTION;
   public static final String DOT_DEVKIT = "." + DEVKIT;
