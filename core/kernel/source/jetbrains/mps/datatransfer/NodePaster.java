@@ -108,7 +108,7 @@ public class NodePaster {
     String role_ = role != null ? role : pasteTarget.getRole_();
 
     boolean canPasteAsRoot = (pasteTarget.getParent() == null) && canPasteAsRoots(); // root selected and ..
-    boolean canPasteToTarget = canPasteToTarget(pasteTarget, role_);
+    boolean canPasteToTarget = canPasteToTarget(pasteTarget, role_, true);
 
     if (pasteEnv == PasteEnv.PROJECT_TREE) {
       // project pane
@@ -133,9 +133,17 @@ public class NodePaster {
     return PASTE_N_A;
   }
 
-  private boolean canPasteToTarget(SNode pasteTarget, String role) {
+  private boolean canPasteToTarget(SNode pasteTarget, String role, boolean allowOneCardinality) {
     AbstractConceptDeclaration pasteTargetType = pasteTarget.getConceptDeclarationAdapter();
-    return findSuitableLink(pasteTargetType, role) != null;
+    LinkDeclaration link = findSuitableLink(pasteTargetType, role);
+    if (link != null) {
+      if (!allowOneCardinality) {
+        return link.getSourceCardinality() != Cardinality._0__1 && link.getSourceCardinality() != Cardinality._1; 
+      } else {
+        return true;
+      }
+    }
+    return false;
   }
 
   private void pasteToTarget(final SNode pasteTarget, final SNode anchorNode, String role, final PastePlaceHint placeHint) {
@@ -186,14 +194,15 @@ public class NodePaster {
     pasteToTarget(actualPasteTarget, actualAnchorNode, actualRole, placeHint);
   }
 
-  public NodeAndRole getActualAnchorNode(SNode anchorNode, String firstRole) {
+  public NodeAndRole getActualAnchorNode(SNode firstAnchorNode, String firstRole) {
     String role = firstRole;
+    SNode anchorNode = firstAnchorNode;
     while (anchorNode != null) {
       SNode container = anchorNode.getParent();
       if (container == null) {
         break;
       }                       
-      if (canPasteToTarget(container, role)) {
+      if (canPasteToTarget(container, role, firstAnchorNode == anchorNode)) {
         return new NodeAndRole(anchorNode, role);
       }
       anchorNode = container;
