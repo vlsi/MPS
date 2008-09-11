@@ -5313,7 +5313,7 @@
     <property name="name" value="SearchScope" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221164914076" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1221164930762">
-      <property name="name" value="get_search_scope" />
+      <property name="name" value="getSearchScope" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221165036855">
         <link role="classifier" targetNodeId="32.~ISearchScope" resolveInfo="ISearchScope" />
       </node>
@@ -5352,6 +5352,60 @@
         <property name="name" value="context" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221166290229">
           <link role="classifier" targetNodeId="4.~IOperationContext" resolveInfo="IOperationContext" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1221171286994">
+      <property name="name" value="isInScope" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221171328904">
+        <property name="name" value="methodCall" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221171328905">
+          <link role="concept" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221171333642">
+        <property name="name" value="methodDeclaration" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221171336863">
+          <link role="concept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221171328906">
+        <property name="name" value="context" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221171328907">
+          <link role="classifier" targetNodeId="4.~IOperationContext" resolveInfo="IOperationContext" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1221171297606" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221171286996" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221171286997">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221171408330">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221171408331">
+            <property name="name" value="scope" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SearchScopeType" id="1221171408332" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221171408333">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221171408334">
+                <link role="variableDeclaration" targetNodeId="1221171328904" resolveInfo="methodCall" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetReferentSearchScopeOperation" id="1221171408335">
+                <link role="referenceLink" targetNodeId="1.1202948736718" />
+                <node role="operationContext" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221171408336">
+                  <link role="variableDeclaration" targetNodeId="1221171328906" resolveInfo="context" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221171413634">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221171415324">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221171413635">
+              <link role="variableDeclaration" targetNodeId="1221171408331" resolveInfo="scope" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SearchScope_ContainsOperation" id="1221171523215">
+              <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221171722980">
+                <link role="variableDeclaration" targetNodeId="1221171333642" resolveInfo="methodDeclaration" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

@@ -6,12 +6,18 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SearchScope_Operations;
 
 public class SearchScope {
 
-  public ISearchScope get_search_scope(SNode methodCall, IOperationContext context) {
+  public ISearchScope getSearchScope(SNode methodCall, IOperationContext context) {
     ISearchScope scope = SNodeOperations.getReferentSearchScope(methodCall, "instanceMethodDeclaration", context);
-    return null;
+    return scope;
+  }
+
+  public boolean isInScope(SNode methodCall, SNode methodDeclaration, IOperationContext context) {
+    ISearchScope scope = SNodeOperations.getReferentSearchScope(methodCall, "instanceMethodDeclaration", context);
+    return SearchScope_Operations.containsNode(scope, methodDeclaration);
   }
 
 }

@@ -1497,7 +1497,15 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221170850336">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221170865060">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221170862416">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1221170850337" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221171443810">
+                <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1221171439464">
+                  <link role="concept" targetNodeId="18.1197027756228" resolveInfo="DotExpression" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1221170850337" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1221171450516">
+                  <link role="link" targetNodeId="18.1197027771414" />
+                </node>
+              </node>
               <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1221170863138" />
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1221170867501">
