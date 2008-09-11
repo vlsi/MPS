@@ -3,8 +3,6 @@ package jetbrains.mps.vcs;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.watching.ModelChangesWatcher.MetadataCreationListener;
 import jetbrains.mps.project.IModule;
@@ -17,22 +15,17 @@ import jetbrains.mps.generator.CompilationListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.lang.reflect.InvocationTargetException;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.*;
-import com.intellij.openapi.vcs.impl.VcsDirectoryMappingStorage;
 import com.intellij.openapi.vcs.changes.*;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.Application;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-
-import javax.swing.SwingUtilities;
 
 public class MPSVCSManager implements ProjectComponent {
   private static final Logger LOG = Logger.getLogger(MPSVCSManager.class);
@@ -59,9 +52,9 @@ public class MPSVCSManager implements ProjectComponent {
 
   private final GenerationListener myGenerationListener = new GenerationWhatcher();
   private final CompilationListener myCompilationListener = new CompilationWatcher();
-  private final SModelRepositoryListener myModelRepositoryListener = new SModelRepositoryListenerImpl();
+  private final SModelRepositoryListener myModelRepositoryListener = new MySModelRepositoryListener();
   private final SModelAdapter myModelInitializationListener = new ModelSavedListener();
-  private final MetadataCreationListener myMetadataListener = new MetadataCreationListenerImpl();
+  private final MetadataCreationListener myMetadataListener = new MyMetadataCreationListener();
   private final ChangeListAdapter myChangeListUpdateListener = new ChangeListAdapter() {
     @Override
     public void changeListUpdateDone() {
@@ -281,7 +274,7 @@ public class MPSVCSManager implements ProjectComponent {
     }
   }
 
-  private class MetadataCreationListenerImpl implements MetadataCreationListener {
+  private class MyMetadataCreationListener implements MetadataCreationListener {
     public void metadataFileCreated(IFile ifile) {
       if (ifile != null) {
         addFilesToVCS(Collections.singletonList(ifile.toFile()));
@@ -313,7 +306,7 @@ public class MPSVCSManager implements ProjectComponent {
     }
   }
 
-  private class SModelRepositoryListenerImpl extends SModelRepositoryAdapter {
+  private class MySModelRepositoryListener extends SModelRepositoryAdapter {
     @Override
     public void modelCreated(SModelDescriptor modelDescriptor) {
       modelDescriptor.addModelListener(myModelInitializationListener);
