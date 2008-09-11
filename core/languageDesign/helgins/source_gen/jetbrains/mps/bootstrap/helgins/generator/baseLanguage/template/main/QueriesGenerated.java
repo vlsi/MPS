@@ -965,6 +965,14 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "parameter", true)).first();
   }
 
+  public static Object referenceMacro_GetReferent_1221140483341(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return (_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "coercedPattern"));
+  }
+
+  public static Object referenceMacro_GetReferent_1221140739245(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return (_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "coercedNode"));
+  }
+
   public static boolean ifMacro_Condition_1174643945663(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
   }

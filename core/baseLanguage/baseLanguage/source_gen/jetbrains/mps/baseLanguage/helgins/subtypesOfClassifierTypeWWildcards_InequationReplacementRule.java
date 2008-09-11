@@ -32,7 +32,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
               {
                 SNode typeParam;
                 SNode myParam;
-                Iterator<SNode> typeParam_iterator = pattern_0.PatternVar2.iterator();
+                Iterator<SNode> typeParam_iterator = SLinkOperations.getTargets(coercedNode_0, "parameter", true).iterator();
                 Iterator<SNode> myParam_iterator = SLinkOperations.getTargets(supertype, "parameter", true).iterator();
                 while (true) {
                   if (!(typeParam_iterator.hasNext())) {
@@ -73,7 +73,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                           }
                         }
 
-                      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1220964296112");
+                      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1221141298329");
                     }
                   }
                 }
@@ -82,13 +82,13 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
             {
               {
                 BaseIntentionProvider intentionProvider = null;
-                TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "jetbrains.mps.baseLanguage.helgins@3_0", "1220964296152", intentionProvider);
+                TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "jetbrains.mps.baseLanguage.helgins@3_0", "1221141298353", intentionProvider);
               }
             }
           }
         }
 
-      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1220964296090");
+      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1221141298305");
     }
   }
 
@@ -103,7 +103,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
           {
             SNode typeParam;
             SNode myParam;
-            Iterator<SNode> typeParam_iterator = pattern_1.PatternVar2.iterator();
+            Iterator<SNode> typeParam_iterator = SLinkOperations.getTargets(coercedNode_1, "parameter", true).iterator();
             Iterator<SNode> myParam_iterator = SLinkOperations.getTargets(supertype, "parameter", true).iterator();
             while (true) {
               if (!(typeParam_iterator.hasNext())) {
