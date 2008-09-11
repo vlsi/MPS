@@ -16,8 +16,11 @@ import jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.genUtil.H
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SearchScope_Operations;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.bootstrap.helgins.behavior.FindSourceBlock_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -818,7 +821,19 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1176817939040(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false));
-    return _context.getOutputNodeByInputNodeAndMappingLabel(parent, "coercedNode");
+    /*
+      _context.getOutputNodeByInputNodeAndMappingLabel(parent, "coercedNode");
+    */
+    List<SNode> vars = _context.getAllOutputNodesByInputNodeAndMappingLabel(parent, "coercedNode");
+    SNode varRef = _context.getOutputNode();
+    final ISearchScope varScope = SNodeOperations.getReferentSearchScope(varRef, "localVariableDeclaration", operationContext);
+    return ListSequence.fromList(vars).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SearchScope_Operations.containsNode(varScope, it);
+      }
+
+    }).first();
   }
 
   public static Object referenceMacro_GetReferent_1177333800976(final IOperationContext operationContext, final ReferenceMacroContext _context) {

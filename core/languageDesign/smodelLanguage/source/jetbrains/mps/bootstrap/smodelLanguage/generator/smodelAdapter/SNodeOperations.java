@@ -1,6 +1,7 @@
 package jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
@@ -468,7 +469,11 @@ public class SNodeOperations {
 
   public static ISearchScope getReferentSearchScope(SNode referenceNode, String referenceRole, IOperationContext context) {
     if (referenceNode == null) return null;
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNode.getConceptDeclarationAdapter(), referenceRole, context);
+    AbstractConceptDeclaration referenceNodeConcept = referenceNode.getConceptDeclarationAdapter();
+    LinkDeclaration referenceLinkDecl = SModelSearchUtil.findLinkDeclaration(referenceNodeConcept, referenceRole);
+    if (referenceLinkDecl == null) return null;
+    String genuineRole = SModelUtil_new.getGenuineLinkRole(referenceLinkDecl);
+    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, genuineRole, context);
     if (status.isOk()) return status.getSearchScope();
     return null;
   }
