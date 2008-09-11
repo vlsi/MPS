@@ -2400,8 +2400,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
         public void focusLost(FocusEvent e) {
           myControlDown = false;
-          myLastReferenceCell = null;
           clearControlOver();
+          myLastReferenceCell = null;
         }
       });
     }
@@ -2410,6 +2410,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (myLastReferenceCell != null) {
         myLastReferenceCell.getStyle().set(StyleAttributes.CONTROL_OVERED_REFERENCE, false);
         setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+        repaint();
       }
     }
 
@@ -2417,6 +2418,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (myControlDown && myLastReferenceCell != null) {
         myLastReferenceCell.getStyle().set(StyleAttributes.CONTROL_OVERED_REFERENCE, true);
         setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        repaint();
       }
     }
   }
