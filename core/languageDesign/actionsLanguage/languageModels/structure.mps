@@ -1,238 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.actionsLanguage.structure">
   <persistence version="1" />
-  <refactoringHistory>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="RTransformHintSubstituteActions" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActions" featureKind="CONCEPT" />
-          <value featureName="SideTransformHintSubstituteActions" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="1">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="RightTransformVariableReference" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformVariableReference" featureKind="CONCEPT" />
-          <value featureName="SideTransformVariableReference" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformVariableReference" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="2">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="RightTransformVariableDeclaration" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformVariableDeclaration" featureKind="CONCEPT" />
-          <value featureName="SideTransformVariableDeclaration" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformVariableDeclaration" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="3">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="RTransformHintSubstitutePreconditionFunction" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstitutePreconditionFunction" featureKind="CONCEPT" />
-          <value featureName="SideTransformHintSubstitutePreconditionFunction" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstitutePreconditionFunction" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="4">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="RTransformHintSubstituteActionsBuilder" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" featureKind="CONCEPT" />
-          <value featureName="SideTransformHintSubstituteActionsBuilder" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="5">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="QueryFunction_RT_RemoveBy_Condition" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RT_RemoveBy_Condition" featureKind="CONCEPT" />
-          <value featureName="QueryFunction_ST_RemoveBy_Condition" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ST_RemoveBy_Condition" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="6">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="IRightTransform_String" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.IRightTransform_String" featureKind="CONCEPT" />
-          <value featureName="ISideTransform_String" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.ISideTransform_String" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="7">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="QueryFunction_ParameterizedRightTransform_Handler" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedRightTransform_Handler" featureKind="CONCEPT" />
-          <value featureName="QueryFunction_ParameterizedSideTransform_Handler" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSideTransform_Handler" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="8">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="QueryFunction_ParameterizedRightTransform_Query" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedRightTransform_Query" featureKind="CONCEPT" />
-          <value featureName="QueryFunction_ParameterizedSideTransform_Query" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSideTransform_Query" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="9">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="QueryFunction_RTVariableInitializer" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RTVariableInitializer" featureKind="CONCEPT" />
-          <value featureName="QueryFunction_STVariableInitializer" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_STVariableInitializer" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="10">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="QueryFunction_RT_CommonInitializer" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RT_CommonInitializer" featureKind="CONCEPT" />
-          <value featureName="QueryFunction_ST_CommonInitializer" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ST_CommonInitializer" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="11">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="QueryFunction_RightTransform_ConceptHandler" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_ConceptHandler" featureKind="CONCEPT" />
-          <value featureName="QueryFunction_SideTransform_ConceptHandler" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_ConceptHandler" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="12">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="QueryFunction_RightTransform_Handler" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_Handler" featureKind="CONCEPT" />
-          <value featureName="QueryFunction_SideTransform_Handler" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_Handler" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="13">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="QueryFunction_RightTransform_Icon" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_Icon" featureKind="CONCEPT" />
-          <value featureName="QueryFunction_SideTransform_Icon" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_Icon" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="14">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="QueryFunction_RightTransform_NodeQuery" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_NodeQuery" featureKind="CONCEPT" />
-          <value featureName="QueryFunction_SideTransform_NodeQuery" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_NodeQuery" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="15">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="QueryFunction_RightTransform_String" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" featureKind="CONCEPT" />
-          <value featureName="QueryFunction_SideTransform_String" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_String" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="16">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="RightTransform_SimpleString" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" featureKind="CONCEPT" />
-          <value featureName="SideTransform_SimpleString" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransform_SimpleString" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="17">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="SimpleRightTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleRightTransformMenuPart" featureKind="CONCEPT" />
-          <value featureName="SimpleSideTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleSideTransformMenuPart" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="18">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="RightTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformMenuPart" featureKind="CONCEPT" />
-          <value featureName="SideTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformMenuPart" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="19">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="ParameterizedRightTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart" featureKind="CONCEPT" />
-          <value featureName="ParameterizedSideTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSideTransformMenuPart" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="20">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="IncludeRightTransformForNodeMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodeMenuPart" featureKind="CONCEPT" />
-          <value featureName="IncludeSideTransformForNodeMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeSideTransformForNodeMenuPart" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="21">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="ConceptRightTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformMenuPart" featureKind="CONCEPT" />
-          <value featureName="ConceptSideTransformMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSideTransformMenuPart" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="22">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="RemoveRTByConditionPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveRTByConditionPart" featureKind="CONCEPT" />
-          <value featureName="RemoveSTByConditionPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveSTByConditionPart" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-  </refactoringHistory>
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   </language>
@@ -2089,6 +1858,29 @@
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1215605024347">
       <property name="externalValue" value="left" />
       <property name="internalValue" value="left" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1221135252814">
+    <property name="name" value="PasteWrappers" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1221135307644">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1221135321084">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="wrapper" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1221135315536" resolveInfo="PasteWrapper" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1221135315536">
+    <property name="name" value="PasteWrapper" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1221135563864">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="soruceConcept" />
+      <link role="target" targetNodeId="2.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
   </node>
 </model>
