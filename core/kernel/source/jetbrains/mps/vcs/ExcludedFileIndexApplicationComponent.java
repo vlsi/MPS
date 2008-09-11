@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
+import java.util.LinkedList;
 
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
@@ -45,7 +46,7 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
     myModuleRepository = moduleRepository;
   }
 
-  public static ExcludedFileIndexApplicationComponent getInstance(){
+  public static ExcludedFileIndexApplicationComponent getInstance() {
     return ApplicationManager.getApplication().getComponent(ExcludedFileIndexApplicationComponent.class);
   }
 
@@ -68,7 +69,10 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
     if (classesGen == null) return;
     VirtualFile classesGenVirtual = VFileSystem.getFile(classesGen);
     if (classesGenVirtual != null) {
-      boolean found = myExcludedFiles.remove(classesGenVirtual);
+      boolean found;
+      synchronized (myExcludedFiles) {
+        found = myExcludedFiles.remove(classesGenVirtual);
+      }
       if (!found) {
         LOG.error("Not found classes_gen folder " + classesGenVirtual + " of module " + module);
       }
@@ -80,7 +84,9 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
     if (classesGen == null) return;
     VirtualFile classesGenVirtual = VFileSystem.getFile(classesGen);
     if (classesGenVirtual != null) {
-      myExcludedFiles.add(classesGenVirtual);
+      synchronized (myExcludedFiles) {
+        myExcludedFiles.add(classesGenVirtual);
+      }
     }
   }
 
@@ -88,18 +94,28 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
     myModuleRepository.removeModuleRepositoryListener(myModuleRepositoryListener);
   }
 
-  public boolean isExcluded(VirtualFile file) {
-    if (myExcludedFiles.contains(file)) return true;
+  private Set<VirtualFile> getExcludedFilesCopy() {
+    synchronized (myExcludedFiles) {
+      Set<VirtualFile> files = new HashSet<VirtualFile>();
+      files.addAll(myExcludedFiles);
+      return files;
+    }
+  }
 
-    for (VirtualFile excludedFile : myExcludedFiles) {
+  public boolean isExcluded(VirtualFile file) {
+    Set<VirtualFile> files = getExcludedFilesCopy();
+
+    if (files.contains(file)) return true;
+
+    for (VirtualFile excludedFile : files) {
       if (VfsUtil.isAncestor(excludedFile, file, false)) {
         return true;
       }
     }
 
     String filePath = file.getPath();
-    for (String regexp : myExcludedRegexps){
-      if (filePath.matches(regexp)){
+    for (String regexp : myExcludedRegexps) {
+      if (filePath.matches(regexp)) {
         return true;
       }
 
