@@ -426,7 +426,10 @@
 
     <component>
       <implementation-class>jetbrains.mps.nodeEditor.InspectorTool</implementation-class>
-      <skipForDummyProject/>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.datatransfer.PasteWrapperManager</implementation-class>
     </component>
 
     <!--project view tool-->

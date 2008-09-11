@@ -16,6 +16,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.bootstrap.actionsLanguage.behavior.RemoveSTByConditionPart_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.datatransfer.PasteWrapperManager;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -103,6 +104,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1221138096817(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "targetConcept", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1221139659867(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return PasteWrapperManager.PASTE_WRAPPER_CLASS_NAME;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1221139734444(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return PasteWrapperManager.PASTE_WRAPPERS_FACTORY_METHOD;
   }
 
   public static Object referenceMacro_GetReferent_1202914532639(final IOperationContext operationContext, final ReferenceMacroContext _context) {
