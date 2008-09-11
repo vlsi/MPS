@@ -7181,6 +7181,22 @@
         </node>
       </node>
     </node>
+    <node role="wrapper" type="jetbrains.mps.bootstrap.actionsLanguage.structure.PasteWrapper" id="1221141744475">
+      <link role="sourceConcept" targetNodeId="1.1068580123155" resolveInfo="ExpressionStatement" />
+      <link role="targetConcept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+      <node role="wrapperFunction" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_PasteWrapper" id="1221141744476">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221141744477">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221141776289">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221141778636">
+              <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_nodeToPasteWrap" id="1221141777713" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1221141780108">
+                <link role="link" targetNodeId="1.1068580123156" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

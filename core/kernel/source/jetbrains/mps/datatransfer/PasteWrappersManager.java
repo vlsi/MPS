@@ -57,7 +57,11 @@ public class PasteWrappersManager implements ApplicationComponent {
     if (wrapper == null) {
       throw new IllegalStateException();
     }
-    return wrapper.wrap(new PasteWrapperContext(node));
+    SNode result = wrapper.wrap(new PasteWrapperContext(node));
+    if (result.getParent() != null) {
+      result.getParent().removeChild(result);
+    }
+    return result;
   }
 
   private PasteWrapper getWrapperFor(SNode node, AbstractConceptDeclaration targetConcept) {

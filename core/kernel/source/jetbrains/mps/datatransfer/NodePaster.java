@@ -149,35 +149,19 @@ public class NodePaster {
   private void pasteToTarget(final SNode pasteTarget, final SNode anchorNode, String role, final PastePlaceHint placeHint) {
     AbstractConceptDeclaration pasteTargetType = pasteTarget.getConceptDeclarationAdapter();
     final LinkDeclaration link = findSuitableLink(pasteTargetType, role);
-    if (link.getMetaClass() == LinkMetaclass.reference) {
-      assert myPasteNodes.size() == 1 : "cannot paste multiple nodes to reference";
-      pasteTarget.setReferent(link.getRole(), myPasteNodes.get(0));
-      return;
-    }
 
     // unique child?
     Cardinality cardinality = link.getSourceCardinality();
     if (cardinality == Cardinality._0__1 || cardinality == Cardinality._1) {
       assert myPasteNodes.size() == 1 : "cannot paste multiple children for role '" + link.getRole() + "'";
-      pasteTarget.setChild(link.getRole(), myPasteNodes.get(0));
+      pasteTarget.setChild(link.getRole(), normalizeForLink(myPasteNodes.get(0), link));
       return;
     }
 
     SNode _anchorNode = anchorNode;
     boolean insertBefore = placeHint == PastePlaceHint.BEFORE_ANCHOR;
     for (SNode pasteNode : myPasteNodes) {
-      SNode node;
-
-      if (SModelUtil_new.isAssignableConcept(pasteNode.getConceptDeclarationAdapter(), link.getTarget())) {
-        node = pasteNode;
-      } else if (PasteWrappersManager.getInstance().canWrapInto(pasteNode, link.getTarget())) {
-        node = PasteWrappersManager.getInstance().wrapInto(pasteNode,  link.getTarget());
-      } else {
-        throw new RuntimeException();
-      }
-
-      pasteTarget.insertChild(_anchorNode, link.getRole(), node, insertBefore);
-
+      pasteTarget.insertChild(_anchorNode, link.getRole(), normalizeForLink(pasteNode, link), insertBefore);
 
       _anchorNode = pasteNode;
       insertBefore = false;
@@ -187,6 +171,18 @@ public class NodePaster {
     if (anchorNode != null && anchorNode.getConceptDeclarationAdapter().hasConceptProperty(AbstractConceptDeclaration.CPR_Abstract)) {
       anchorNode.delete();
     }
+  }
+
+  private SNode normalizeForLink(SNode pasteNode, LinkDeclaration link) {
+    SNode node;
+    if (SModelUtil_new.isAssignableConcept(pasteNode.getConceptDeclarationAdapter(), link.getTarget())) {
+      node = pasteNode;
+    } else if (PasteWrappersManager.getInstance().canWrapInto(pasteNode, link.getTarget())) {
+      node = PasteWrappersManager.getInstance().wrapInto(pasteNode,  link.getTarget());
+    } else {
+      throw new RuntimeException();
+    }
+    return node;
   }
 
   private boolean canPasteToParent(SNode anchorNode, String role) {

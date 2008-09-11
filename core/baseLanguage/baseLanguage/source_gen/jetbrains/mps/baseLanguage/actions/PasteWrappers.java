@@ -12,9 +12,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class PasteWrappers {
 
-  public PasteWrappers() {
-  }
-
   public static List<PasteWrapper> createPasteWrappers() {
     List<PasteWrapper> result = new ArrayList();
     result.add(new PasteWrapper() {
@@ -31,6 +28,21 @@ public class PasteWrappers {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
         SLinkOperations.setTarget(result, "expression", _context.getSourceNode(), true);
         return result;
+      }
+
+    });
+    result.add(new PasteWrapper() {
+
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.ExpressionStatement";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.Expression";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        return SLinkOperations.getTarget(_context.getSourceNode(), "expression", true);
       }
 
     });
