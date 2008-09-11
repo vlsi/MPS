@@ -28,6 +28,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new SConceptPropertyAccess_conceptProperty_ReferentConstraint());
     this.myConstraints.add(new PropertyRefQualifier_property_ReferentConstraint());
     this.myConstraints.add(new NodeRefExpression_referentNode_ReferentConstraint());
+    this.myConstraints.add(new Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
