@@ -28,7 +28,7 @@
   <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
-  <maxImportIndex value="31" />
+  <maxImportIndex value="32" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -40,6 +40,7 @@
   <import index="27" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <import index="29" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <import index="31" modelUID="jetbrains.mps.core.behavior" version="-1" />
+  <import index="32" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1145576838780">
     <property name="name" value="SemanticDowncast" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1145576838781">
@@ -5304,6 +5305,35 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1221164914075">
+    <property name="name" value="SearchScope" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221164914076" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1221164930762">
+      <property name="name" value="get_search_scope" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221165036855">
+        <link role="classifier" targetNodeId="32.~ISearchScope" resolveInfo="ISearchScope" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221164930764" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221164930765">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221165073342">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221165428317">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221165073343">
+              <link role="variableDeclaration" targetNodeId="1221165056653" resolveInfo="methodCall" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetReferentSearchScopeOperation" id="1221165433807">
+              <node role="operationContext" type="jetbrains.mps.baseLanguage.structure.Expression" id="1221165433808" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221165056653">
+        <property name="name" value="methodCall" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221165056654">
+          <link role="concept" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />
         </node>
       </node>
     </node>

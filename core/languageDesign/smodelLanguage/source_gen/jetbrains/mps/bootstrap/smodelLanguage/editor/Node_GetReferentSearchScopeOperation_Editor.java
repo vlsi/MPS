@@ -156,6 +156,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
 
   private static void setupBasic_refCell_referenceLink1221164457353(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_referenceLink");
+    Styles_StyleSheet.REF_LINK_ROLE.apply(editorCell);
   }
 
   private static void setupBasic_Constant_12211646500301221164650030(EditorCell editorCell, SNode node, EditorContext context) {

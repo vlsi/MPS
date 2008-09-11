@@ -1871,6 +1871,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1221164457353">
         <property name="noTargetText" value="&lt;no reference role&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1221164078452" />
+        <link role="styleClass" targetNodeId="1205441017139" resolveInfo="ref_link_role" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1221164457354">
           <link role="conceptDeclaration" targetNodeId="3.1071489288298" resolveInfo="LinkDeclaration" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1221164467825">

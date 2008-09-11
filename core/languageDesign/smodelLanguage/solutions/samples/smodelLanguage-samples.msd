@@ -8,6 +8,7 @@
   <dependencies>
     <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage</dependency>
+    <dependency reexport="false">MPS.Classpath</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.bootstrap.smodelLanguage</usedLanguages>
