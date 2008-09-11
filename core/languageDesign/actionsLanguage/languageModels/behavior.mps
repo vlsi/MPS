@@ -1530,11 +1530,14 @@
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221137356131">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221137365526">
-          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1221137369124">
-            <link role="concept" targetNodeId="1.1221135315536" resolveInfo="PasteWrapper" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221137367464">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221137365747" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1221137368014" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221137848035">
+            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221137847659" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1221137849631">
+              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1221137849632">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1221137851978">
+                  <link role="conceptDeclaration" targetNodeId="1.1221135315536" resolveInfo="PasteWrapper" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

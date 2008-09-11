@@ -7136,5 +7136,51 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.PasteWrappers" id="1221138747025">
+    <property name="name" value="wrappers" />
+    <node role="wrapper" type="jetbrains.mps.bootstrap.actionsLanguage.structure.PasteWrapper" id="1221138747026">
+      <link role="sourceConcept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+      <link role="targetConcept" targetNodeId="1.1068580123157" resolveInfo="Statement" />
+      <node role="wrapperFunction" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_PasteWrapper" id="1221138747027">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221138747028">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221138747029">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221138747030">
+              <property name="name" value="result" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221138747031">
+                <link role="concept" targetNodeId="1.1068580123155" resolveInfo="ExpressionStatement" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1221138747032">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1221138747033">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221138747034">
+                    <link role="concept" targetNodeId="1.1068580123155" resolveInfo="ExpressionStatement" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221138747035">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221138747036">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221138747037">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221138747038">
+                  <link role="variableDeclaration" targetNodeId="1221138747030" resolveInfo="result" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1221138747039">
+                  <link role="link" targetNodeId="1.1068580123156" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1221138747040">
+                <node role="parameter" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_nodeToPasteWrap" id="1221138747041" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221138747042">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221138747043">
+              <link role="variableDeclaration" targetNodeId="1221138747030" resolveInfo="result" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
