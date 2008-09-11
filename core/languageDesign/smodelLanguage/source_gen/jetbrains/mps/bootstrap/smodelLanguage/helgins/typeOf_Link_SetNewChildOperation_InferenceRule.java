@@ -44,7 +44,7 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule implements Inference
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221169174398");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221172604388");
     }
   }
 

@@ -52,7 +52,7 @@ public class typeof_Node_GetReferentSearchScopeOperation_InferenceRule implement
             }
           }
 
-        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221169178439");
+        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221172608491");
       }
     }
   }
