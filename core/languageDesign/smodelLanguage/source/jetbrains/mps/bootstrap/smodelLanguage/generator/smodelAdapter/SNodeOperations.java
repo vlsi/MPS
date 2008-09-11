@@ -3,7 +3,11 @@ package jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
@@ -460,5 +464,12 @@ public class SNodeOperations {
 
   public static SNode getNode(String modelUID, String nodeID) {
     return new SNodePointer(modelUID, nodeID).getNode();
+  }
+
+  public static ISearchScope getSearchScope(SNode referenceNode, String referenceRole, IOperationContext context) {
+    if (referenceNode == null) return null;
+    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNode.getConceptDeclarationAdapter(), referenceRole, context);
+    if (status.isOk()) return status.getSearchScope();
+    return null;
   }
 }

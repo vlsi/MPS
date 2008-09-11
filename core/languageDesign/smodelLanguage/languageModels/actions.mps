@@ -1358,6 +1358,25 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1221162180020">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221162180021">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221162180022">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1221162180023">
+                  <property name="value" value="true" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221162180024">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221162180025">
+                <link role="variableDeclaration" targetNodeId="1206059813314" resolveInfo="expressionType" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1221162180026">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1221162186200">
+                  <link role="conceptDeclaration" targetNodeId="1.1221161909218" resolveInfo="SearchScopeType" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1179535648217">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206059990615">
               <property name="value" value="false" />

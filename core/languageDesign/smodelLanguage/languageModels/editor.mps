@@ -2481,5 +2481,15 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1221162023237">
+    <link role="conceptDeclaration" targetNodeId="1.1221161909218" resolveInfo="SearchScopeType" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221162027771">
+      <property name="text" value="search scope" />
+      <link role="styleClass" targetNodeId="5.1186415544875" resolveInfo="KeyWord" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1221162067084">
+        <property name="value" value="0.0" />
+      </node>
+    </node>
+  </node>
 </model>
 

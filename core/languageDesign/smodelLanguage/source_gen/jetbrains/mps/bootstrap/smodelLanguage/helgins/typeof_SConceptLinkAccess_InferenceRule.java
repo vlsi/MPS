@@ -32,7 +32,7 @@ public class typeof_SConceptLinkAccess_InferenceRule implements InferenceRule_Ru
           RulesUtil.checkAssignableConcept((SNode)TypeChecker.getInstance().getEquationManager().getRepresentator(concreteConcept), declaringConcept, op, "operation is applied to wrong concept");
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220882336905");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1221162931644");
     }
     // ==========
     {

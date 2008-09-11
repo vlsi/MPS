@@ -38,7 +38,7 @@ public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runti
             }
           }
 
-        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220882335042");
+        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1221162929714");
       }
     }
     SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(op, "property", false), "dataType", false);

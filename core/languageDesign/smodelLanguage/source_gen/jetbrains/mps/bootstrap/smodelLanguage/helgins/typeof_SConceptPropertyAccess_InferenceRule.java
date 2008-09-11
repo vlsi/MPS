@@ -32,7 +32,7 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
           RulesUtil.checkAssignableConcept((SNode)TypeChecker.getInstance().getEquationManager().getRepresentator(concreteConcept), declaringConcept, op, "operation is applied to wrong concept");
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220882336505");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1221162931223");
     }
     // ==========
     if (SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration")) {
@@ -59,7 +59,7 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
     {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(op, "unknown type of concept property: " + conceptPropertyDecl, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220882336558", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(op, "unknown type of concept property: " + conceptPropertyDecl, "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1221162931292", intentionProvider);
       }
     }
   }

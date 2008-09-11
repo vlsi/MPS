@@ -42,7 +42,7 @@ public class typeof_SNodeTypeCastExpression_InferenceRule implements InferenceRu
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1220882334866");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1221162929538");
     }
   }
 

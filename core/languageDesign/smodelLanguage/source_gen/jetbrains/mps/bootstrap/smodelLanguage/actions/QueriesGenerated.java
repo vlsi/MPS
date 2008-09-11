@@ -62,6 +62,9 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType")) {
       return true;
     }
+    if (SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SearchScopeType")) {
+      return true;
+    }
     return false;
   }
 
