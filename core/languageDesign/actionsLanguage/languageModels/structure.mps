@@ -1879,8 +1879,42 @@
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1221135563864">
       <property name="metaClass" value="reference" />
-      <property name="role" value="soruceConcept" />
+      <property name="role" value="sourceConcept" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1221137152191">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="targetConcept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1221137217490">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="wrapperFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1221137293320" resolveInfo="QueryFunction_PasteWrapper" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1221137268788">
+    <property name="package" value="conceptFunctionParameters" />
+    <property name="name" value="ConceptFunctionParameter_nodeToPasteWrap" />
+    <link role="extends" targetNodeId="3.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1221137333967">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1221137326903">
+      <property name="value" value="sourceNode" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1221137293320">
+    <property name="package" value="queryFunctions" />
+    <property name="name" value="QueryFunction_PasteWrapper" />
+    <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1221137315261">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1221137268788" resolveInfo="ConceptFunctionParameter_nodeToPasteWrap" />
     </node>
   </node>
 </model>

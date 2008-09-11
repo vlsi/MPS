@@ -13,7 +13,7 @@ public class PasteWrapper extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.PasteWrapper";
   public static String SOURCE_CONCEPT = "sourceConcept";
   public static String TARGET_CONCEPT = "targetConcept";
-  public static String WRAPPER = "wrapper";
+  public static String WRAPPER_FUNCTION = "wrapperFunction";
 
   public PasteWrapper(SNode node) {
     super(node);
@@ -35,12 +35,12 @@ public class PasteWrapper extends BaseConcept {
     super.setReferent(PasteWrapper.TARGET_CONCEPT, node);
   }
 
-  public QueryFunction_Wrapper getWrapper() {
-    return (QueryFunction_Wrapper)this.getChild(PasteWrapper.WRAPPER);
+  public QueryFunction_PasteWrapper getWrapperFunction() {
+    return (QueryFunction_PasteWrapper)this.getChild(PasteWrapper.WRAPPER_FUNCTION);
   }
 
-  public void setWrapper(QueryFunction_Wrapper node) {
-    super.setChild(PasteWrapper.WRAPPER, node);
+  public void setWrapperFunction(QueryFunction_PasteWrapper node) {
+    super.setChild(PasteWrapper.WRAPPER_FUNCTION, node);
   }
 
 

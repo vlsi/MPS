@@ -297,5 +297,52 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.PasteWrappers" id="1221137796068">
+    <property name="name" value="wrappers" />
+    <node role="wrapper" type="jetbrains.mps.bootstrap.actionsLanguage.structure.PasteWrapper" id="1221137827741">
+      <link role="targetConcept" targetNodeId="2v.1068580123157" resolveInfo="Statement" />
+      <link role="sourceConcept" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+      <node role="wrapperFunction" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_PasteWrapper" id="1221137827742">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221137827743">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221137903584">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221137903585">
+              <property name="name" value="result" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221137903586">
+                <link role="concept" targetNodeId="2v.1068580123155" resolveInfo="ExpressionStatement" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1221137906822">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1221137906823">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221137906824">
+                    <link role="concept" targetNodeId="2v.1068580123155" resolveInfo="ExpressionStatement" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221137908389">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221137911410">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221137908844">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221137908390">
+                  <link role="variableDeclaration" targetNodeId="1221137903585" resolveInfo="result" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1221137910988">
+                  <link role="link" targetNodeId="2v.1068580123156" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1221137913525">
+                <node role="parameter" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_nodeToPasteWrap" id="1221137914591" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221137915798">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221137916426">
+              <link role="variableDeclaration" targetNodeId="1221137903585" resolveInfo="result" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

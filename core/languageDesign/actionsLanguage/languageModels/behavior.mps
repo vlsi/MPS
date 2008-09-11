@@ -19,10 +19,12 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.quotation" />
+  <language namespace="jetbrains.mps.core">
+    <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.constraints" version="16" />
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
@@ -1512,6 +1514,88 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1221137354968">
+    <property name="package" value="conceptFunctionParameters" />
+    <link role="concept" targetNodeId="1.1221137268788" resolveInfo="ConceptFunctionParameter_nodeToPasteWrap" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1221137354969">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221137354970" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1221137356128">
+      <property name="name" value="getWrapper" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221137356129" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221137357413">
+        <link role="concept" targetNodeId="1.1221135315536" resolveInfo="PasteWrapper" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221137356131">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221137365526">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1221137369124">
+            <link role="concept" targetNodeId="1.1221135315536" resolveInfo="PasteWrapper" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221137367464">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221137365747" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1221137368014" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1221137518235">
+    <property name="package" value="queryFunctions" />
+    <link role="concept" targetNodeId="1.1221137293320" resolveInfo="QueryFunction_PasteWrapper" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1221137518236">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221137518237" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1221137519379">
+      <property name="name" value="getWrapper" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221137519380" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221137520399">
+        <link role="concept" targetNodeId="1.1221135315536" resolveInfo="PasteWrapper" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221137519382">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221137525728">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221137528310">
+            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221137527981" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1221137529626">
+              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1221137529627">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1221137532254">
+                  <link role="conceptDeclaration" targetNodeId="1.1221135315536" resolveInfo="PasteWrapper" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1221137533286">
+      <property name="name" value="getExpectedReturnType" />
+      <link role="overriddenMethod" targetNodeId="2v.1213877374441" resolveInfo="getExpectedReturnType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221137533289">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221137536479">
+          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1221137537294">
+            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221137540436">
+              <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1221137541297">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221137548069">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221137546285">
+                    <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221137546286" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221137546287">
+                      <link role="conceptMethodDeclaration" targetNodeId="1221137519379" resolveInfo="getWrapper" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1221137550416">
+                    <link role="link" targetNodeId="1.1221137152191" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221137535321">
+        <link role="concept" targetNodeId="4v.1068431790189" resolveInfo="Type" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221137535322" />
     </node>
   </node>
 </model>
