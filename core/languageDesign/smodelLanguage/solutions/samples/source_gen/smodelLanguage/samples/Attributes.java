@@ -30,15 +30,15 @@ public class Attributes {
   }
 
   public void accessToReferenceAttribute_1(SNode node) {
-    SNode referenceMacro = SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), true);
-    SNode referenceMacro1 = SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), true);
+    SNode referenceMacro = SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "variableDeclaration"), true);
+    SNode referenceMacro1 = SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "localVariableDeclaration"), true);
   }
 
   public void accessToReferenceAttribute_2(SNode node) {
     SNode refMacro = null;
-    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), refMacro, true);
-    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), refMacro, true);
-    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), refMacro, true);
+    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "variableDeclaration"), refMacro, true);
+    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "variableDeclaration"), refMacro, true);
+    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "localVariableDeclaration"), refMacro, true);
   }
 
   public void other(SNode node) {

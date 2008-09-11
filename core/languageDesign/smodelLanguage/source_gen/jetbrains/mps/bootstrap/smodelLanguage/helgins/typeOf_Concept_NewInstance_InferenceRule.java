@@ -44,7 +44,7 @@ public class typeOf_Concept_NewInstance_InferenceRule implements InferenceRule_R
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221168805726");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221169175949");
     }
   }
 

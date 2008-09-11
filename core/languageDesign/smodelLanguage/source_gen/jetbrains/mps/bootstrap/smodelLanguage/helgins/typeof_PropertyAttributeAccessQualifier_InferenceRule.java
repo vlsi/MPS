@@ -60,7 +60,7 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements In
             }
           }
 
-        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221168806587");
+        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221169176810");
       }
     }
   }

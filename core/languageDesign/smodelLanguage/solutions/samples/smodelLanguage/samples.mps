@@ -5319,18 +5319,25 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221164930764" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221164930765">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221165073342">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221166061375">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221165073343">
-              <link role="variableDeclaration" targetNodeId="1221165056653" resolveInfo="methodCall" />
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetReferentSearchScopeOperation" id="1221166065209">
-              <link role="referenceLink" targetNodeId="1.1202948736718" />
-              <node role="operationContext" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221166298777">
-                <link role="variableDeclaration" targetNodeId="1221166109617" resolveInfo="context" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221169280491">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221169280492">
+            <property name="name" value="scope" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SearchScopeType" id="1221169280493" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221169280494">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221169280495">
+                <link role="variableDeclaration" targetNodeId="1221165056653" resolveInfo="methodCall" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetReferentSearchScopeOperation" id="1221169280496">
+                <link role="referenceLink" targetNodeId="1.1202948736718" />
+                <node role="operationContext" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221169280497">
+                  <link role="variableDeclaration" targetNodeId="1221166109617" resolveInfo="context" />
+                </node>
               </node>
             </node>
           </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221169127143">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1221169129474" />
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221165056653">
