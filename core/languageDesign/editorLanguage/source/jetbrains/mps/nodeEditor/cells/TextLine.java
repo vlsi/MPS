@@ -167,6 +167,10 @@ public class TextLine {
   }
 
   public Color getTextColor() {
+    if (myStyle.get(StyleAttributes.CONTROL_OVERED_REFERENCE)) {
+      return Color.BLUE;
+    }
+
     if (!myNull) {
       return myStyle.get(StyleAttributes.TEXT_COLOR);
     } else {
@@ -429,6 +433,10 @@ public class TextLine {
   }
 
   public boolean isUnderlined() {
+    if (myStyle.get(StyleAttributes.CONTROL_OVERED_REFERENCE)) {
+      return true;
+    }
+
     return myStyle.get(StyleAttributes.UNDERLINED);
   }
 

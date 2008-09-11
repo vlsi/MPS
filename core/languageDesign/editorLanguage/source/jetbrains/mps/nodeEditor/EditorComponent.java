@@ -5,7 +5,6 @@ import com.intellij.ide.CutProvider;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
@@ -14,7 +13,6 @@ import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.ide.SplashScreen;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
@@ -36,7 +34,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.search.SearchPanel;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -169,6 +167,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private IntentionsSupport myIntentionsSupport;
   private AutoValidator myAutoValidator;
   private SearchPanel mySearchPanel = new SearchPanel(this);
+  private ReferenceUnderliner myReferenceUnderliner = new ReferenceUnderliner();
 
   public EditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -2299,7 +2298,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-
   private class MySimpleModelListener extends SModelAdapter {
     public void modelReloaded(SModelDescriptor sm) {
       ModelAccess.instance().runReadInEDT(new Runnable() {
@@ -2350,6 +2348,70 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  private class ReferenceUnderliner extends KeyAdapter implements MouseMotionListener {
+    private EditorCell myLastReferenceCell;
+    private boolean myControlDown;
+
+    private ReferenceUnderliner() {
+      addKeyListener(this);
+      addMouseMotionListener(this);
+    }
+
+    public void keyPressed(KeyEvent e) {
+      if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
+        myControlDown = true;
+        setControlOver();
+      }
+    }
+
+    public void keyReleased(KeyEvent e) {
+      if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
+        myControlDown = false;
+        clearControlOver();
+      }
+    }
+
+    public void mouseDragged(MouseEvent e) {
+    }
+
+    public void mouseMoved(MouseEvent e) {
+      clearControlOver();
+
+      final EditorCell editorCell = myRootCell.findCell(e.getX(), e.getY());
+      if (editorCell == null) {
+        myLastReferenceCell = null;
+        return;
+      }
+      SNode snodeWRTReference = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+        public SNode compute() {
+          return editorCell.getSNodeWRTReference();
+        }
+      });
+      if (editorCell.getSNode() == snodeWRTReference) {
+        myLastReferenceCell = null;
+        return;
+      }
+      myLastReferenceCell = editorCell;
+
+      setControlOver();
+    }
+
+    private void clearControlOver() {
+      if (myLastReferenceCell != null) {
+        myLastReferenceCell.getStyle().set(StyleAttributes.CONTROL_OVERED_REFERENCE, false);
+        setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+      }
+    }
+
+    private void setControlOver() {
+      if (myControlDown && myLastReferenceCell != null) {
+        myLastReferenceCell.getStyle().set(StyleAttributes.CONTROL_OVERED_REFERENCE, true);
+        setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+      }
+    }
+  }
+
+  
   private class MyCutProvider implements CutProvider {
     public void performCut(DataContext dataContext) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
