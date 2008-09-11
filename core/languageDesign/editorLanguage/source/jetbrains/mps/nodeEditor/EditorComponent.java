@@ -2348,52 +2348,62 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private class ReferenceUnderliner extends KeyAdapter implements MouseMotionListener {
+  private class ReferenceUnderliner {
     private EditorCell myLastReferenceCell;
     private boolean myControlDown;
 
     private ReferenceUnderliner() {
-      addKeyListener(this);
-      addMouseMotionListener(this);
-    }
+      addKeyListener(new KeyAdapter() {
+        public void keyPressed(KeyEvent e) {
+          if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
+            myControlDown = true;
+            setControlOver();
+          }
+        }
 
-    public void keyPressed(KeyEvent e) {
-      if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
-        myControlDown = true;
-        setControlOver();
-      }
-    }
-
-    public void keyReleased(KeyEvent e) {
-      if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
-        myControlDown = false;
-        clearControlOver();
-      }
-    }
-
-    public void mouseDragged(MouseEvent e) {
-    }
-
-    public void mouseMoved(MouseEvent e) {
-      clearControlOver();
-
-      final EditorCell editorCell = myRootCell.findCell(e.getX(), e.getY());
-      if (editorCell == null) {
-        myLastReferenceCell = null;
-        return;
-      }
-      SNode snodeWRTReference = ModelAccess.instance().runReadAction(new Computable<SNode>() {
-        public SNode compute() {
-          return editorCell.getSNodeWRTReference();
+        public void keyReleased(KeyEvent e) {
+          if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
+            myControlDown = false;
+            clearControlOver();
+          }
         }
       });
-      if (editorCell.getSNode() == snodeWRTReference) {
-        myLastReferenceCell = null;
-        return;
-      }
-      myLastReferenceCell = editorCell;
+      addMouseMotionListener(new MouseMotionListener() {
+        public void mouseDragged(MouseEvent e) {
+        }
 
-      setControlOver();
+        public void mouseMoved(MouseEvent e) {
+          clearControlOver();
+
+          final EditorCell editorCell = myRootCell.findCell(e.getX(), e.getY());
+          if (editorCell == null) {
+            myLastReferenceCell = null;
+            return;
+          }
+          SNode snodeWRTReference = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+            public SNode compute() {
+              return editorCell.getSNodeWRTReference();
+            }
+          });
+          if (editorCell.getSNode() == snodeWRTReference) {
+            myLastReferenceCell = null;
+            return;
+          }
+          myLastReferenceCell = editorCell;
+
+          setControlOver();
+        }
+      });
+      addFocusListener(new FocusListener() {
+        public void focusGained(FocusEvent e) {
+        }
+
+        public void focusLost(FocusEvent e) {
+          myControlDown = false;
+          myLastReferenceCell = null;
+          clearControlOver();
+        }
+      });
     }
 
     private void clearControlOver() {
