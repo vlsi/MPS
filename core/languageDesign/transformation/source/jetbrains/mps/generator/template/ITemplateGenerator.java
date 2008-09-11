@@ -45,6 +45,8 @@ public interface ITemplateGenerator {
 
   SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName);
 
+  List<SNode> findAllOutputNodesByInputNodeAndMappingName(SNode inputNode, String mappingName);
+
   SNode findCopiedOutputNodeForInputNode(SNode inputNode);
 
   SNode getPreviousInputNodeByMappingName(String mappingName);

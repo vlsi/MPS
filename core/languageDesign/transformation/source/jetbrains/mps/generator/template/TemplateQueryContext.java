@@ -4,6 +4,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 
+import java.util.List;
+
 /**
  * Igor Alshannikov
  * Jul 21, 2008
@@ -78,6 +80,10 @@ public class TemplateQueryContext {
     return myGenerator.findOutputNodeByInputNodeAndMappingName(inputNode, label);
   }
 
+  public List<SNode> getAllOutputNodesByInputNodeAndMappingLabel(SNode inputNode, String label) {
+    return myGenerator.findAllOutputNodesByInputNodeAndMappingName(inputNode, label);
+  }
+
   public SNode getCopiedOutputNodeForInputNode(SNode inputNode) {
     return myGenerator.findCopiedOutputNodeForInputNode(inputNode);
   }
@@ -89,7 +95,6 @@ public class TemplateQueryContext {
   public String createUniqueName(String baseName, SNode contextNode) {
     return myGenerator.getGeneratorSessionContext().createUniqueName(baseName, contextNode);
   }
-
 
   // user objects
 

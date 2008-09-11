@@ -22,8 +22,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private SModel myOutputModel;
   private ArrayList<SNode> myRootsNotToCopy = new ArrayList<SNode>();
   private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
-  private HashMap<Pair<String, SNode>, SNode> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<Pair<String, SNode>, SNode>();
-  private HashMap<Pair<String, SNode>, SNode> myMappingNameAndOutputNodeToInputNode = new HashMap<Pair<String, SNode>, SNode>();
+  private HashMap<Pair<String, SNode>, Object> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<Pair<String, SNode>, Object>();
+  //  private HashMap<Pair<String, SNode>, SNode> myMappingNameAndOutputNodeToInputNode = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
   private HashMap<SNode, Pair<SNode, Boolean>> myTemplateNodeToOutputNodeMap = new HashMap<SNode, Pair<SNode, Boolean>>();
   private DelayedChanges myDelayedChanges = new DelayedChanges();
@@ -63,7 +63,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myRootsNotToCopy.clear();
     myTemplateNodeAndInputNodeToOutputNodeMap.clear();
     myMappingNameAndInputNodeToOutputNodeMap.clear();
-    myMappingNameAndOutputNodeToInputNode.clear();
+//    myMappingNameAndOutputNodeToInputNode.clear();
     myOutputNodeToTemplateNodeMap.clear();
     myTemplateNodeToOutputNodeMap.clear();
     myDelayedChanges = new DelayedChanges();
@@ -269,11 +269,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
     // todo: combination (mappingName, inputN) -> outputN is not unique (in some rare cases)
     // todo: generator should report error on attempt to access not unique outputN
-    return myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingName, inputNode));
+    Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingName, inputNode));
+    if (o instanceof List) return ((List<SNode>) o).get(0);
+    return (SNode) o;
   }
 
-  /*package*/ SNode findInputNodeByMappingNameAndOutputNode(String mappingName, SNode outputNode) {
-    return myMappingNameAndOutputNodeToInputNode.get(new Pair(mappingName, outputNode));
+  public List<SNode> findAllOutputNodesByInputNodeAndMappingName(SNode inputNode, String mappingName) {
+    Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingName, inputNode));
+    if (o instanceof List) return ((List<SNode>) o);
+    List<SNode> list = new ArrayList<SNode>();
+    list.add((SNode) o);
+    return list;
   }
 
   /*package*/ void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
@@ -281,10 +287,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     Pair key = new Pair(mappingName, inputNode);
     if (!myMappingNameAndInputNodeToOutputNodeMap.containsKey(key)) {
       myMappingNameAndInputNodeToOutputNodeMap.put(key, outputNode);
-      Pair key2 = new Pair(mappingName, outputNode);
-      if (!myMappingNameAndOutputNodeToInputNode.containsKey(key2)) {
-        myMappingNameAndOutputNodeToInputNode.put(key2, inputNode);
-      }
+//      Pair key2 = new Pair(mappingName, outputNode);
+//      if (!myMappingNameAndOutputNodeToInputNode.containsKey(key2)) {
+//        myMappingNameAndOutputNodeToInputNode.put(key2, inputNode);
+//      }
     }
   }
 
