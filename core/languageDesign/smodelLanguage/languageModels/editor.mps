@@ -1883,9 +1883,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221164650030">
         <property name="text" value="," />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1182279799233">
-        <property name="noTargetText" value="&lt;global scope&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1182279708330" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1221165896439">
+        <link role="relationDeclaration" targetNodeId="1.1221164004670" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206485988837">
         <property name="text" value=")" />

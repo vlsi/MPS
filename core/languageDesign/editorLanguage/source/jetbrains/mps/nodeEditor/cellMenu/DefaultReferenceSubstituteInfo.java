@@ -25,6 +25,10 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   public DefaultReferenceSubstituteInfo(SNode sourceNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
     super(editorContext);
     LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
+    if(genuineLink == null) {
+      // test
+      genuineLink = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
+    }
     if (genuineLink.getMetaClass() != LinkMetaclass.reference) {
       LOG.error("only reference links are allowed here", linkDeclaration.getNode());
     }
