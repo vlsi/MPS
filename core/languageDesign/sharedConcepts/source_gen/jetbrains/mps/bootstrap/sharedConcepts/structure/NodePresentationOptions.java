@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.LinkedList;
 
 public enum NodePresentationOptions {
-  default_("<default>", null),
-  referent_("<referent node>", "default_referent"),
-  custom_("<custom>", "custom");
+  default_("default_", null),
+  referent_("referent_", "default_referent"),
+  custom_("custom_", "custom");
 
-  /* package */String myName;
-  /* package */String myValue;
+  private String myName;
+  private String myValue;
 
 NodePresentationOptions(String name, String value) {
     this.myName = name;

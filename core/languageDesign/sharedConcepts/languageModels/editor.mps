@@ -37,6 +37,15 @@
         <property name="color" value="DARK_MAGENTA" />
       </node>
     </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1221170124867">
+      <property name="name" value="ReferenceOnConceptualFeature" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1221170124868">
+        <property name="color" value="DARK_MAGENTA" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1221170145073">
+        <property name="style" value="ITALIC" />
+      </node>
+    </node>
   </node>
 </model>
 

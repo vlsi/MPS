@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.LinkedList;
 
 public enum Options_DefaultCustom {
-  default_("<default>", null),
-  custom_("custom", "custom");
+  default_("default_", null),
+  custom_("custom_", "custom");
 
-  /* package */String myName;
-  /* package */String myValue;
+  private String myName;
+  private String myValue;
 
 Options_DefaultCustom(String name, String value) {
     this.myName = name;

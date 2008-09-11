@@ -16,7 +16,7 @@ public class SharedStyles_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return SharedStyles_StyleSheet.calculateColor(cell);
+          return SharedStyles_StyleSheet.calculateColor6601_0(cell);
         }
 
       });
@@ -29,21 +29,40 @@ public class SharedStyles_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return SharedStyles_StyleSheet.calculateColor1(cell);
+          return SharedStyles_StyleSheet.calculateColor6601_1(cell);
         }
 
       });
     }
 
   };
+  public static final Style REFERENCE_ON_CONCEPTUAL_FEATURE = new Style() {
+    {
+      this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
-  private static Color calculateColor(EditorCell cell) {
+        public Color calculate(EditorCell cell) {
+          return SharedStyles_StyleSheet.calculateColor6601_2(cell);
+        }
+
+      });
+      this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    }
+
+  };
+
+  private static Color calculateColor6601_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor1(EditorCell cell) {
+  private static Color calculateColor6601_1(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor6601_2(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

@@ -16,12 +16,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.bootstrap.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class SNodeType_Editor extends DefaultNodeEditor {
 
@@ -130,6 +128,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_concept1138406014241(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_concept");
+    SharedStyles_StyleSheet.REFERENCE_ON_CONCEPT.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -168,12 +167,6 @@ public class SNodeType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1138406102625_1138406102625(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor7331_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
   }
 
   public static class _Inline7331_0 extends AbstractCellProvider {
@@ -225,13 +218,6 @@ public class SNodeType_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return SNodeType_Editor.calculateColor7331_0(cell);
-              }
-
-            });
             this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }
 

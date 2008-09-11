@@ -12,7 +12,7 @@ public class Options_DefaultTrue_PropertySupport extends PropertySupport {
       return true;
     }
     Iterator<Options_DefaultTrue> constants = Options_DefaultTrue.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       Options_DefaultTrue constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
@@ -26,7 +26,7 @@ public class Options_DefaultTrue_PropertySupport extends PropertySupport {
       return null;
     }
     Iterator<Options_DefaultTrue> constants = Options_DefaultTrue.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       Options_DefaultTrue constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();
@@ -40,7 +40,7 @@ public class Options_DefaultTrue_PropertySupport extends PropertySupport {
     if (constant != null) {
       return constant.getName();
     }
-    return null;
+    return "";
   }
 
 }

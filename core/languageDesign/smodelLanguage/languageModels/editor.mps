@@ -119,15 +119,13 @@
         <property name="attractsFocus" value="1" />
         <property name="emptyNoTargetText" value="true" />
         <link role="relationDeclaration" targetNodeId="1.1138405853777" />
+        <link role="styleClass" targetNodeId="10.1203541385314" resolveInfo="ReferenceOnConcept" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1138406014240">
           <link role="conceptDeclaration" targetNodeId="3.1169125787135" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1138406019759">
             <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;no name&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
-            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214399678299">
-              <property name="color" value="DARK_MAGENTA" />
-            </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1215165927727">
               <property name="value" value="0.0" />
             </node>
@@ -1871,7 +1869,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1221164457353">
         <property name="noTargetText" value="&lt;no reference role&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1221164078452" />
-        <link role="styleClass" targetNodeId="1205441017139" resolveInfo="ref_link_role" />
+        <link role="styleClass" targetNodeId="10.1221170124867" resolveInfo="ReferenceOnConceptualFeature" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1221164457354">
           <link role="conceptDeclaration" targetNodeId="3.1071489288298" resolveInfo="LinkDeclaration" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1221164467825">
