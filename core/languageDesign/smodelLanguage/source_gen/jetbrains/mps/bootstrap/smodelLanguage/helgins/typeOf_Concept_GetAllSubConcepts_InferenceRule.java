@@ -51,7 +51,7 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule implements Inference
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1221162934617");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221163285801");
     }
   }
 

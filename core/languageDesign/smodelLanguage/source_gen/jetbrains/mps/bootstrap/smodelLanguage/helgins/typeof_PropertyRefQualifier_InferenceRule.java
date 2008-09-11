@@ -20,7 +20,7 @@ public class typeof_PropertyRefQualifier_InferenceRule implements InferenceRule_
     if (op == null || propAAQ == null) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(nodeToCheck, "not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1221162935661", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(nodeToCheck, "not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221163286908", intentionProvider);
       }
       return;
     }

@@ -29,7 +29,7 @@ public class typeOf_Link_DeleteChildOperation_InferenceRule implements Inference
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1221162932773");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221163284050");
     }
   }
 

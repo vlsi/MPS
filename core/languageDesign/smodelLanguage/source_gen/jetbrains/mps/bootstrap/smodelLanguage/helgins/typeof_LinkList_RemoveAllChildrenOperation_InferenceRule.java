@@ -29,7 +29,7 @@ public class typeof_LinkList_RemoveAllChildrenOperation_InferenceRule implements
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1221162936804");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221163288034");
     }
   }
 

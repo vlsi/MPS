@@ -44,7 +44,7 @@ public class typeOf_Concept_FindInstances_InferenceRule implements InferenceRule
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@9_0", "1221162934748");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221163285947");
     }
   }
 
