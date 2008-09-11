@@ -119,6 +119,38 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
 
   }
 
+  public void addFilesToVcs(List<VirtualFile> files) {
+    // collect
+    Map<MPSVCSManager, List<VirtualFile>> vcsManagerToFile = new HashMap<MPSVCSManager, List<VirtualFile>>();
+    for (VirtualFile file : files) {
+      MPSVCSManager mpsVcsManager = MPSVCSManager.getInstance(getProjectForFile(file));
+      if (mpsVcsManager != null) {
+        List<VirtualFile> filesForManager = vcsManagerToFile.get(mpsVcsManager);
+        if (filesForManager == null) {
+          filesForManager = new LinkedList<VirtualFile>();
+          vcsManagerToFile.put(mpsVcsManager, filesForManager);
+        }
+        filesForManager.add(file);
+      } else {
+        LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
+      }
+    }
+
+    // add
+    for (MPSVCSManager manager : vcsManagerToFile.keySet()) {
+      manager.addVFilesToVCS(vcsManagerToFile.get(manager));
+    }
+  }
+
+  public void addFileToVcs(VirtualFile file) {
+    MPSVCSManager manager = MPSVCSManager.getInstance(getProjectForFile(file));
+    if (manager != null) {
+      manager.addVFilesToVCS(Collections.singletonList(file));
+    } else {
+      LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
+    }
+  }
+
   public boolean isInConflict(final SModelDescriptor modelDescriptor, boolean synchronously) {
     return isInConflict(modelDescriptor.getModelFile(), synchronously);
   }
