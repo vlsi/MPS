@@ -277,11 +277,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1176815544545(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("pattern_", null);
+    String name = _context.createUniqueName("pattern_", null);
+    _context.getNode().putUserObject("coercedPatternName", name);
+    return name;
   }
 
   public static Object propertyMacro_GetPropertyValue_1176817383122(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("coercedNode_", null);
+    String name = _context.createUniqueName("coercedNode_", null);
+    _context.getNode().putUserObject("coercedNodeName", name);
+    return name;
   }
 
   public static Object propertyMacro_GetPropertyValue_1177670027441(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -702,6 +706,18 @@ public class QueriesGenerated {
     }
   }
 
+  public static Object propertyMacro_GetPropertyValue_1221149877298(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String result = (String)_context.getNode().getUserObject("coercedNodeName");
+    _context.getNode().removeUserObject("coercedNodeName");
+    return result;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1221150031670(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String result = (String)_context.getNode().getUserObject("coercedPatternName");
+    _context.getNode().removeUserObject("coercedPatternName");
+    return result;
+  }
+
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
     SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(rule, "mainMethodForRule");
@@ -963,14 +979,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1215596987510(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "parameter", true)).first();
-  }
-
-  public static Object referenceMacro_GetReferent_1221140483341(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "coercedPattern"));
-  }
-
-  public static Object referenceMacro_GetReferent_1221140739245(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "coercedNode"));
   }
 
   public static boolean ifMacro_Condition_1174643945663(final IOperationContext operationContext, final IfMacroContext _context) {
