@@ -1489,5 +1489,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1221170817280">
+    <property name="package" value="operation" />
+    <link role="concept" targetNodeId="1.1221170373891" resolveInfo="SearchScope_ContainsOperation" />
+    <node role="canBeChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1221170833984">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221170833985">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221170850336">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221170865060">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221170862416">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1221170850337" />
+              <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1221170863138" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1221170867501">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1221170877221">
+                <link role="conceptDeclaration" targetNodeId="1.1221161909218" resolveInfo="SearchScopeType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
