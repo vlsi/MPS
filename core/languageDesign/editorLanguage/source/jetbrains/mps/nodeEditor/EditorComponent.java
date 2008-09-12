@@ -2243,7 +2243,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       e.accept(new SModelEventVisitorAdapter() {
         public void visitPropertyEvent(SModelPropertyEvent event) {
           EditorCell cell = findNodeCell(event.getNode());
-          if (cell != null && cell.isErrorState()) {
+          if (cell != null && isErrorWithinBigCell(cell)) {
             synchronizeWithModelWithinBigCell(cell);
             wereReverted[0] = true;
           }
@@ -2251,10 +2251,25 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
         public void visitReferenceEvent(SModelReferenceEvent event) {
           EditorCell cell = findNodeCell(event.getReference().getSourceNode());
-          if (cell != null && cell.isErrorState()) {
+          if (cell != null && isErrorWithinBigCell(cell)) {
             synchronizeWithModelWithinBigCell(cell);
             wereReverted[0] = true;
           }
+        }
+
+        private boolean isErrorWithinBigCell(EditorCell cell) {
+          if (cell.isErrorState()) return true;
+
+          if (cell instanceof EditorCell_Collection) {
+            EditorCell_Collection collection = (EditorCell_Collection) cell;
+
+            for (EditorCell child : collection) {
+              if (child.isBigCell()) continue;
+              if (isErrorWithinBigCell(child)) return true;
+            }
+          }
+
+          return false;
         }
       });
     }
