@@ -130,10 +130,12 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     row.add(myGlobalScopeButton, BorderLayout.WEST);
     myPanel.add(row);
 
-    row = new JPanel();
-    row.setLayout(new BorderLayout());
-    row.add(myBootstrapScopeButton, BorderLayout.WEST);
-    myPanel.add(row);
+    if (InternalFlag.isInternalModel()) {
+      row = new JPanel();
+      row.setLayout(new BorderLayout());
+      row.add(myBootstrapScopeButton, BorderLayout.WEST);
+      myPanel.add(row);
+    }
 
     setDefaults(defaultOptions);
   }
