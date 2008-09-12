@@ -48,7 +48,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
           RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);
         }
 
-      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1221223601081");
+      }, "jetbrains.mps.baseLanguage.helgins", "1204065986803");
     }
   }
 

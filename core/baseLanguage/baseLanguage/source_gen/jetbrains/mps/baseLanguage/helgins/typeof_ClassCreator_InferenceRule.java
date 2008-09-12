@@ -26,7 +26,7 @@ public class typeof_ClassCreator_InferenceRule implements InferenceRule_Runtime 
     if (!(SLinkOperations.getCount(creator, "typeParameter") == 0 || SLinkOperations.getCount(creator, "typeParameter") == SLinkOperations.getCount(SNodeOperations.getAncestor(SLinkOperations.getTarget(creator, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "typeVariableDeclaration"))) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "jetbrains.mps.baseLanguage.helgins@3_0", "1221223602485", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "jetbrains.mps.baseLanguage.helgins@3_0", "1221234380665", intentionProvider);
       }
     }
     for(SNode parameter : SLinkOperations.getTargets(creator, "typeParameter", true)) {
@@ -59,7 +59,7 @@ public class typeof_ClassCreator_InferenceRule implements InferenceRule_Runtime 
           RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);
         }
 
-      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1221223602538");
+      }, "jetbrains.mps.baseLanguage.helgins", "1212781606052");
     }
   }
 

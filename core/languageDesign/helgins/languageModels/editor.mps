@@ -2974,5 +2974,62 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1221229239306">
+    <link role="conceptDeclaration" targetNodeId="1.1221225538487" resolveInfo="WhenConcreteStatement_internal" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1221229241511">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1221229241512">
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221229241513">
+          <property name="text" value="when concrete" />
+          <link role="styleClass" targetNodeId="27.1215188818086" resolveInfo="CompactKeyWord" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1221229298704">
+          <link role="relationDeclaration" targetNodeId="1.1221225753305" resolveInfo="modelId" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1221229302004">
+          <link role="relationDeclaration" targetNodeId="1.1221225753306" resolveInfo="nodeId" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221229241514">
+          <property name="text" value="(" />
+          <link role="styleClass" targetNodeId="27.1215087929380" resolveInfo="LeftParen" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1221229241515">
+          <link role="relationDeclaration" targetNodeId="1.1221225619831" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221229241516">
+          <property name="text" value="as" />
+          <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1221229241517">
+          <link role="relationDeclaration" targetNodeId="1.1221225619832" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221229241518">
+          <property name="text" value=")" />
+          <link role="styleClass" targetNodeId="27.1215088010675" resolveInfo="RightParen" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221229241519">
+          <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="27.1215091279307" resolveInfo="LeftBrace" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1221229241520">
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221229241521">
+          <property name="text" value="  " />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1221229241522">
+            <property name="flag" value="false" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1221229241523">
+          <link role="relationDeclaration" targetNodeId="1.1221225619829" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221229241524">
+        <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="27.1215091331565" resolveInfo="RightBrace" />
+      </node>
+    </node>
+  </node>
 </model>
 

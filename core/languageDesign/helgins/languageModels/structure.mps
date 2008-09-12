@@ -1299,5 +1299,39 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1221225538487">
+    <property name="name" value="WhenConcreteStatement_internal" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1221225753305">
+      <property name="name" value="modelId" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1221225753306">
+      <property name="name" value="nodeId" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1221225619829">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="body" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068580123136" resolveInfo="StatementList" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1221225619831">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="argument" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1221225619832">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="argumentRepresentator" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1205762105978" resolveInfo="WhenConcreteVariableDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1221225725391">
+      <property name="value" value="when concrete (internal)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

@@ -85,11 +85,11 @@ public class RulesFunctions_BaseLanguage {
                 }
               }
 
-            }, "jetbrains.mps.baseLanguage.helgins@3_0", "1185963100352");
+            }, "jetbrains.mps.baseLanguage.helgins", "1185963100352");
           }
         }
 
-      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1185963072800");
+      }, "jetbrains.mps.baseLanguage.helgins", "1185963072800");
     }
   }
 
@@ -297,7 +297,7 @@ __switch__:
                       }
                     }
 
-                  }, "jetbrains.mps.baseLanguage.helgins@3_0", "1221223612953");
+                  }, "jetbrains.mps.baseLanguage.helgins", "1220347102532");
                 }
               } else
               {
@@ -395,7 +395,7 @@ __switch__:
                   System.out.println("-4- " + BaseConcept_Behavior.call_getPresentation_1213877396640(var) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(TypeChecker.getInstance().getEquationManager().getRepresentator(prevVar_typevar_1204114618000)));
                 }
 
-              }, "jetbrains.mps.baseLanguage.helgins@3_0", "1204114618006");
+              }, "jetbrains.mps.baseLanguage.helgins", "1204114618006");
             }
           }
         }
