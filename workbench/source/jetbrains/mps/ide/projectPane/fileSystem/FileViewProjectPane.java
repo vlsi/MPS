@@ -31,8 +31,9 @@ import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -52,6 +53,12 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private ChangeListListener myChangeListListener;
   private final MessageBus myBus;
   private MessageBusConnection myMessageBusConnection;
+  private final SModelAdapter myAllModelsListener = new SModelAdapter(){
+    @Override
+    public void modelSaved(SModelDescriptor sm) {
+      VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.getFile(sm.getModelFile()));
+    }
+  };
 
   @Override
   public void addToolbarActions(DefaultActionGroup actionGroup) {
@@ -63,7 +70,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private FileStatusListener myFileStatusListener;
   private VirtualFileAdapter myFileListener;
   private Timer myTimer;
-  private static final int DELAY = 500;
+  private static final int DELAY = 10;
   private VcsListener myDirectoryMappingListener = new VcsListener() {
     public void directoryMappingChanged() {
       rebuildTreeLater();
@@ -113,7 +120,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       public void actionPerformed(ActionEvent e) {
         ModelAccess.instance().runReadInEDT(new Runnable() {
           public void run() {
-            System.out.println("rebuild");
             getTree().rebuildNow();
           }
         });
@@ -138,6 +144,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myVirtualFileManagerListener);
     myProject.getComponent(ProjectLevelVcsManager.class).addVcsListener(myDirectoryMappingListener);
     ChangeListManager.getInstance(myProject).addChangeListListener(myChangeListListener);
+    SModelRepository.getInstance().addAllModelsListener(myAllModelsListener);
     myMessageBusConnection = myBus.connect();
     myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, new FileEditorManagerAdapter() {
       @Override
@@ -169,6 +176,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     VirtualFileManager.getInstance().removeVirtualFileManagerListener(myVirtualFileManagerListener);
     myProject.getComponent(ProjectLevelVcsManager.class).removeVcsListener(myDirectoryMappingListener);
     ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
+    SModelRepository.getInstance().removeAllModelsListener(myAllModelsListener);
     myMessageBusConnection.disconnect();
   }
 
