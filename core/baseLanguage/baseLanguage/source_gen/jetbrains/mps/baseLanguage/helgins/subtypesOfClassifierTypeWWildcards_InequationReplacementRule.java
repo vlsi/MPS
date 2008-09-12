@@ -73,7 +73,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                           }
                         }
 
-                      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1221177086699");
+                      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1221178929784");
                     }
                   }
                 }
@@ -82,13 +82,13 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
             {
               {
                 BaseIntentionProvider intentionProvider = null;
-                TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "jetbrains.mps.baseLanguage.helgins@3_0", "1221177086739", intentionProvider);
+                TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "jetbrains.mps.baseLanguage.helgins@3_0", "1221178929808", intentionProvider);
               }
             }
           }
         }
 
-      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1221177086675");
+      }, "jetbrains.mps.baseLanguage.helgins@3_0", "1221178929745");
     }
   }
 

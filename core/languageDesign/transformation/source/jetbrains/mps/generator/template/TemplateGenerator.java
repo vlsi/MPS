@@ -10,6 +10,7 @@ import jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule;
 import jetbrains.mps.transformation.TLBase.structure.RuleConsequence;
 import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
@@ -264,16 +265,22 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myDelayedChanges;
   }
 
-  public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
-    // todo: combination (mappingName, inputN) -> outputN is not unique (in some rare cases)
-    // todo: generator should report error on attempt to access not unique outputN
-    Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingName, inputNode));
-    if (o instanceof List) return ((List<SNode>) o).get(0);
+  public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingLabel) {
+    Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingLabel, inputNode));
+    if (o instanceof List) {
+      List<SNode> list = (List<SNode>) o;
+      showWarningMessage(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingLabel + "' and input " + inputNode.getDebugText());
+      for (int i = 0; i < list.size(); i++) {
+        Logger.getLogger(this.getClass()).warning("-- output [" + i + "] : " + list.get(i).getDebugText(), list.get(i));
+      }
+      return list.get(0);
+    }
+
     return (SNode) o;
   }
 
-  public List<SNode> findAllOutputNodesByInputNodeAndMappingName(SNode inputNode, String mappingName) {
-    Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingName, inputNode));
+  public List<SNode> findAllOutputNodesByInputNodeAndMappingName(SNode inputNode, String mappingLabel) {
+    Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingLabel, inputNode));
     if (o instanceof List) return ((List<SNode>) o);
     List<SNode> list = new ArrayList<SNode>();
     list.add((SNode) o);
