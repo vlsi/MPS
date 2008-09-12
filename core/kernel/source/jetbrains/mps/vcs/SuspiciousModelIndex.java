@@ -7,6 +7,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -27,13 +28,13 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   private final SuspiciousModelIndex.ProjectOpenedListener myProjectManagerListener;
   private final TaskQueue<SModelDescriptor> myTaskQueue = new TaskQueue<SModelDescriptor>(false) {
     public void processTask(final List<SModelDescriptor> tasks) {
-      SwingUtilities.invokeLater(new Runnable() {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           Set<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
           models.addAll(tasks);
           ApplicationLevelVcsManager.instance().mergeModels(models);
         }
-      });
+      }, ModalityState.NON_MODAL);
     }
   };
 
