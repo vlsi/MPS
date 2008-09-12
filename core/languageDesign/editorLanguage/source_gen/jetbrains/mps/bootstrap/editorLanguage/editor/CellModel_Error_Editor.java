@@ -364,19 +364,13 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1214480392873_1214480392873(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static Color _QueryFunction_Color_1214396913642(SNode node, EditorContext editorContext) {
+  public static Color _null_1214396913642(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
   private static Color calculateColor6148_0(EditorCell cell) {
     Color result;
-    result = CellModel_Error_Editor._QueryFunction_Color_1214396913642((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
+    result = CellModel_Error_Editor._null_1214396913642(cell.getSNode(), cell.getEditorContext());
     return result;
   }
 

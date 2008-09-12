@@ -17,11 +17,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
@@ -126,7 +127,13 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return InstanceMethodCallOperation_Editor.calculateFontStyle2215_0(cell);
+            }
+
+          });
         }
 
       };
@@ -145,7 +152,13 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return InstanceMethodCallOperation_Editor.calculateFontStyle2215_1(cell);
+            }
+
+          });
           this.set(StyleAttributes.EDITABLE, false);
         }
 
@@ -171,6 +184,18 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition2215_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
+  }
+
+  private static Integer calculateFontStyle2215_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.PLAIN;
+    return result;
+  }
+
+  private static Integer calculateFontStyle2215_1(EditorCell cell) {
+    int result;
+    result = MPSFonts.PLAIN;
+    return result;
   }
 
   public static class _Inline2215_0 extends AbstractCellProvider {

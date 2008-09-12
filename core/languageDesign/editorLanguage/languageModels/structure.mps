@@ -2169,29 +2169,17 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1176809959526">
     <property name="name" value="QueryFunction_Color" />
-    <property name="package" value="QueryFunction" />
-    <link role="extends" targetNodeId="4.1137021947720" />
+    <property name="package" value="QueryFunction.Style" />
+    <link role="extends" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1176809959527">
       <property name="value" value="color function" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1176809959528">
-      <property name="value" value="embedded block of code" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1176809959529">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176810139102">
         <link role="classifier" targetNodeId="39.~Color" resolveInfo="Color" />
       </node>
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1176809959531">
-      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
-      <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1176809959532">
-      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
-      <link role="target" targetNodeId="1161622981231" resolveInfo="ConceptFunctionParameter_editorContext" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1176897764478">
@@ -2418,6 +2406,11 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="FontStyleStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1220975211821">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="query" />
+      <link role="target" targetNodeId="1220974635399" resolveInfo="QueryFunction_FontStyle" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186403918499">
       <property name="value" value="font-style" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
@@ -2425,6 +2418,13 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1186403771423">
       <property name="name" value="style" />
       <link role="dataType" targetNodeId="1101211480448" resolveInfo="_FontStyle_Enum" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1221051468077">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1221051476610">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.FONT_STYLE" resolveInfo="FONT_STYLE" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186404549998">
@@ -2547,18 +2547,29 @@
       <property name="value" value="underlined" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1221219051630">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="query" />
+      <link role="target" targetNodeId="1221062700015" resolveInfo="QueryFunction_Underlined" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186415722038">
     <property name="package" value="Stylesheet" />
     <property name="name" value="FontSizeStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1221064706952">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="query" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1221057094638" resolveInfo="QueryFunction_FontSize" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186415796023">
       <property name="value" value="font-size" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1186415735165">
-      <property name="name" value="size" />
-      <link role="dataType" targetNodeId="3.1082983657062" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1221209241505">
+      <property name="name" value="value" />
+      <link role="dataType" targetNodeId="3.1082983657062" resolveInfo="integer" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186414860679">
@@ -3047,6 +3058,71 @@
       <property name="role" value="styleItem" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1220974635399">
+    <property name="package" value="QueryFunction.Style" />
+    <property name="name" value="QueryFunction_FontStyle" />
+    <link role="extends" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1220974841934">
+      <property name="value" value="font style function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1220974915063">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1221052118278" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1221057094638">
+    <property name="package" value="QueryFunction.Style" />
+    <property name="name" value="QueryFunction_Integer" />
+    <link role="extends" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1221057195672">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1221057195673" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1221057173654">
+      <property name="value" value="font size function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1221059528506">
+    <property name="package" value="QueryFunction.Style" />
+    <property name="name" value="QueryFunction_StyleParameter" />
+    <link role="extends" targetNodeId="4.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1221211298019">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1221059797722">
+      <property name="value" value="embedded block of code" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1221059701511">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1221059701512">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1161622981231" resolveInfo="ConceptFunctionParameter_editorContext" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1221060393848">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221060400056">
+        <link role="classifier" targetNodeId="36.~Object" resolveInfo="Object" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1221062700015">
+    <property name="package" value="QueryFunction.Style" />
+    <property name="name" value="QueryFunction_Underlined" />
+    <link role="extends" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1221062795610">
+      <property name="value" value="underlined function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1221062811502">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1221062816176" />
     </node>
   </node>
 </model>

@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
@@ -21,7 +22,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class StatementList_Editor extends DefaultNodeEditor {
@@ -61,6 +61,12 @@ public class StatementList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNodeList_statement_1073416106126(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Integer calculateFontStyle6577_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
   }
 
   private static Color calculateColor6577_0(EditorCell cell) {
@@ -130,7 +136,13 @@ public class StatementList_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.SELECTABLE, true);
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+              public Integer calculate(EditorCell cell) {
+                return StatementList_Editor.calculateFontStyle6577_0(cell);
+              }
+
+            });
             this.set(StyleAttributes.EDITABLE, true);
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 

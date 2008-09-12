@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class SetAccessor_Editor extends DefaultNodeEditor {
@@ -216,7 +217,13 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return SetAccessor_Editor.calculateFontStyle4227_0(cell);
+            }
+
+          });
         }
 
       };
@@ -248,6 +255,12 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1202861989102_1202861989102(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Integer calculateFontStyle4227_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.PLAIN;
+    return result;
   }
 
 }

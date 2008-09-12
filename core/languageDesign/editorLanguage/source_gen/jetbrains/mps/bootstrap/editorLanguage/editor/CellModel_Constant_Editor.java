@@ -292,6 +292,20 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return CellModel_Constant_Editor.calculateFontStyle6752_0(cell);
+            }
+
+          });
+          this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Constant_Editor.calculateUnderlined6752_0(cell);
+            }
+
+          });
         }
 
       };
@@ -469,31 +483,39 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
   }
 
-  public static Color _QueryFunction_Color_1214396926660(SNode node, EditorContext editorContext) {
+  public static Color _null_1214396926660(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
-  public static Color _QueryFunction_Color_1220968480805(SNode node, EditorContext editorContext) {
+  public static Color _null_1220968480805(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
 
-  public static Color _QueryFunction_Color_1220971712628(SNode node, EditorContext editorContext) {
+  public static Color _null_1220971712628(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
   }
 
-  public static Color _QueryFunction_Color_1220972053532(SNode node, EditorContext editorContext) {
+  public static Color _null_1220972053532(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
+  }
+
+  public static int _null_1221054684354(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
+  }
+
+  public static boolean _null_1221225749566(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
+  }
+
+  private static Integer calculateFontStyle6752_0(EditorCell cell) {
+    int result;
+    result = CellModel_Constant_Editor._null_1221054684354(cell.getSNode(), cell.getEditorContext());
+    return result;
   }
 
   private static Color calculateColor6752_0(EditorCell cell) {
     Color result;
-    result = CellModel_Constant_Editor._QueryFunction_Color_1214396926660((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
+    result = CellModel_Constant_Editor._null_1214396926660(cell.getSNode(), cell.getEditorContext());
     return result;
   }
 
@@ -523,37 +545,25 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6752_5(EditorCell cell) {
     Color result;
-    result = CellModel_Constant_Editor._QueryFunction_Color_1220968480805((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
+    result = CellModel_Constant_Editor._null_1220968480805(cell.getSNode(), cell.getEditorContext());
     return result;
   }
 
   private static Color calculateColor6752_6(EditorCell cell) {
     Color result;
-    result = CellModel_Constant_Editor._QueryFunction_Color_1220971712628((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
+    result = CellModel_Constant_Editor._null_1220971712628(cell.getSNode(), cell.getEditorContext());
     return result;
   }
 
   private static Color calculateColor6752_7(EditorCell cell) {
     Color result;
-    result = CellModel_Constant_Editor._QueryFunction_Color_1220972053532((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
+    result = CellModel_Constant_Editor._null_1220972053532(cell.getSNode(), cell.getEditorContext());
+    return result;
+  }
+
+  private static boolean calculateUnderlined6752_0(EditorCell cell) {
+    boolean result;
+    result = CellModel_Constant_Editor._null_1221225749566(cell.getSNode(), cell.getEditorContext());
     return result;
   }
 

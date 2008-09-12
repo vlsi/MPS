@@ -882,19 +882,13 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.getBoolean(node, "vertical"));
   }
 
-  public static Color _QueryFunction_Color_1214396913654(SNode node, EditorContext editorContext) {
+  public static Color _null_1214396913654(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
   private static Color calculateColor2102_0(EditorCell cell) {
     Color result;
-    result = CellModel_Collection_Editor._QueryFunction_Color_1214396913654((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
+    result = CellModel_Collection_Editor._null_1214396913654(cell.getSNode(), cell.getEditorContext());
     return result;
   }
 

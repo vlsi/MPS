@@ -61,6 +61,8 @@ public class Type_Behavior {
       SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(t, pattern_1);
       if (coercedNode_1 != null) {
         return true;
+      } else
+      {
       }
     }
     return false;

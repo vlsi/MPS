@@ -32,13 +32,25 @@ public class Styles_StyleSheet {
         }
 
       });
-      this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+        public Integer calculate(EditorCell cell) {
+          return Styles_StyleSheet.calculateFontStyle7582_0(cell);
+        }
+
+      });
     }
 
   };
   public static final Style ITEM = new Style() {
     {
-      this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+        public Integer calculate(EditorCell cell) {
+          return Styles_StyleSheet.calculateFontStyle7582_1(cell);
+        }
+
+      });
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
@@ -51,9 +63,21 @@ public class Styles_StyleSheet {
   };
   public static final Style HEADER = new Style() {
     {
-      this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+        public Integer calculate(EditorCell cell) {
+          return Styles_StyleSheet.calculateFontStyle7582_2(cell);
+        }
+
+      });
       this.set(StyleAttributes.SELECTABLE, false);
-      this.set(StyleAttributes.UNDERLINED, true);
+      this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
+
+        public Boolean calculate(EditorCell cell) {
+          return Styles_StyleSheet.calculateUnderlined7582_0(cell);
+        }
+
+      });
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
@@ -68,7 +92,13 @@ public class Styles_StyleSheet {
     {
       this.set(StyleAttributes.SELECTABLE, false);
       this.set(StyleAttributes.DRAW_BORDER, true);
-      this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+        public Integer calculate(EditorCell cell) {
+          return Styles_StyleSheet.calculateFontStyle7582_3(cell);
+        }
+
+      });
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
@@ -79,6 +109,30 @@ public class Styles_StyleSheet {
     }
 
   };
+
+  private static Integer calculateFontStyle7582_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
+  }
+
+  private static Integer calculateFontStyle7582_1(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
+  }
+
+  private static Integer calculateFontStyle7582_2(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
+  }
+
+  private static Integer calculateFontStyle7582_3(EditorCell cell) {
+    int result;
+    result = MPSFonts.PLAIN;
+    return result;
+  }
 
   private static Color calculateColor7582_0(EditorCell cell) {
     Color result;
@@ -107,6 +161,12 @@ public class Styles_StyleSheet {
   private static Color calculateColor7582_4(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static boolean calculateUnderlined7582_0(EditorCell cell) {
+    boolean result;
+    result = true;
     return result;
   }
 

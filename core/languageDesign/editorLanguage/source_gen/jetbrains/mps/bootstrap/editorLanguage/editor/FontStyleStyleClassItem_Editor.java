@@ -13,6 +13,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
@@ -28,7 +32,12 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1186403889931(context, node, "font-style"));
     editorCell.addEditorCell(this.createConstant1186403894198(context, node, ":"));
-    editorCell.addEditorCell(this.createProperty1186403896216(context, node));
+    if (renderingCondition0528_0(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createProperty1186403896216(context, node));
+    }
+    if (renderingCondition0528_1(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode1220975756218(context, node));
+    }
     return editorCell;
   }
 
@@ -77,6 +86,35 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public EditorCell createRefNode1220975756218_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_refNode_query1220975756218(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_refNode_query_1220975756218((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createRefNode1220975756218(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("query");
+    provider.setNoTargetText("<no query>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createRefNode1220975756218_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
 
   private static void setupBasic_Collection_11864038891791186403889179(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1186403889179");
@@ -95,6 +133,9 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_style");
   }
 
+  private static void setupBasic_refNode_query1220975756218(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_Constant_1186403889931_1186403889931(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -102,6 +143,17 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_style_1186403896216(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_query_1220975756218(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean renderingCondition0528_0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "query", true) == null;
+  }
+
+  public static boolean renderingCondition0528_1(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "query", true) != null || SPropertyOperations.hasValue(node, "style", "QUERY", null);
   }
 
 }

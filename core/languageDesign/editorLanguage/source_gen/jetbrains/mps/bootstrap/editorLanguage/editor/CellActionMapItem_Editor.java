@@ -319,7 +319,13 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return CellActionMapItem_Editor.calculateFontStyle7515_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -356,6 +362,12 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_description_1139537337313(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Integer calculateFontStyle7515_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
   }
 
   private static Color calculateColor7515_0(EditorCell cell) {

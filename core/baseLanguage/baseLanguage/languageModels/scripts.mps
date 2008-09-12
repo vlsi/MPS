@@ -1945,5 +1945,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1221227494971">
+    <property name="migrationFromBuild" value="944" />
+    <property name="name" value="GetRidOfQueryEnumValue" />
+    <property name="title" value="get rid of query enum" />
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1221227557250">
+      <property name="description" value="get rid of query enums" />
+      <link role="affectedInstanceConcept" targetNodeId="27.1186403694788" resolveInfo="ColorStyleClassItem" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1221227557251">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221227557252" />
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1221227572670">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221227572671">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221223115715">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1221223115716">
+              <property name="value" value="true" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

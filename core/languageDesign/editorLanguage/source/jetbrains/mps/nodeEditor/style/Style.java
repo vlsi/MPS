@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor.style;
 import com.intellij.util.containers.HashMap;
 
 import java.util.*;
+import java.awt.Font;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.util.EqualUtil;

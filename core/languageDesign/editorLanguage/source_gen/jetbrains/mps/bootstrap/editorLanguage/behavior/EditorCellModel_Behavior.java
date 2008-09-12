@@ -10,6 +10,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.EditorSettings;
+import java.awt.Font;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EditorCellModel_Behavior {
@@ -61,6 +64,7 @@ public class EditorCellModel_Behavior {
     try {
       return (Color)classColors.getField(SPropertyOperations.getString_def(firstItem, "color", null)).get(null);
     } catch (Throwable t) {
+      t.printStackTrace();
       return null;
     }
   }
@@ -74,6 +78,7 @@ public class EditorCellModel_Behavior {
     try {
       return (Color)classColors.getField(SPropertyOperations.getString_def(firstItem, "color", null)).get(null);
     } catch (Throwable t) {
+      t.printStackTrace();
       return null;
     }
   }
@@ -87,7 +92,34 @@ public class EditorCellModel_Behavior {
     try {
       return (Color)classColors.getField(SPropertyOperations.getString_def(firstItem, "color", null)).get(null);
     } catch (Throwable t) {
+      t.printStackTrace();
       return null;
+    }
+  }
+
+  public static boolean call_isUnderlined_1221220594206(SNode thisNode) {
+    return ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem"))).isNotEmpty();
+  }
+
+  public static int call_getFontSize_1221216397365(SNode thisNode) {
+    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.FontSizeStyleClassItem"))).first();
+    if ((firstItem == null)) {
+      return EditorSettings.getInstance().getDefaultEditorFont().getSize();
+    }
+    return SPropertyOperations.getInteger(firstItem, "value");
+  }
+
+  public static int call_getFontStyle_1221053923273(SNode thisNode) {
+    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem"))).first();
+    if ((firstItem == null)) {
+      return Font.PLAIN;
+    }
+    Class<MPSFonts> classFonts = MPSFonts.class;
+    try {
+      return (Integer)classFonts.getField(SPropertyOperations.getString_def(firstItem, "style", null)).get(null);
+    } catch (Throwable t) {
+      t.printStackTrace();
+      return Font.PLAIN;
     }
   }
 

@@ -120,6 +120,8 @@ public class ClassifierType_Behavior {
           }
         }
         return true;
+      } else
+      {
       }
     }
     return Type_Behavior.callSuper_isSupersetOf_1220438914705(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType", t);
