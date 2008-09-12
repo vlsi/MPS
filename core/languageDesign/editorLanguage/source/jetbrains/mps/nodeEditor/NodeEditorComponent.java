@@ -10,7 +10,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelEvent;
 
 import javax.swing.JComponent;
@@ -27,6 +29,7 @@ public class NodeEditorComponent extends EditorComponent {
   public static final KeyStroke CHANGE_ORIENTATION_KEYSTROKE = KeyStroke.getKeyStroke("alt shift I");
 
   private JPanel myExternalComponent;
+  private SNodePointer myLastInspectedNode = new SNodePointer((SNode) null);
 
   public NodeEditorComponent(IOperationContext operationContext) {
     super(operationContext, false);
@@ -63,7 +66,16 @@ public class NodeEditorComponent extends EditorComponent {
     }, KeyStroke.getKeyStroke("alt shift I"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
-  private void inspect(SNode toSelect) {
+  public SNode getLastInspectedNode() {
+    return myLastInspectedNode.getNode();
+  }
+
+  private void inspect(final SNode toSelect) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myLastInspectedNode = new SNodePointer(toSelect);
+      }
+    });
     if (toSelect != null && getInspector() != null) {
       getInspector().inspectNode(toSelect, getOperationContext(), null);
     }

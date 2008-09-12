@@ -190,52 +190,57 @@ public class MPSEditorOpener implements ProjectComponent {
     assert node.isRegistered() : "You can't edit unregistered node";
 
     SNode containingRoot = node.getContainingRoot();
-    IEditor nodeEditor = doOpenEditor(containingRoot, context);
-
-    boolean cellInInspector = false;
-    InspectorEditorComponent inspector = null;
+    final IEditor nodeEditor = doOpenEditor(containingRoot, context);
 
     if (!node.isRoot()) {
       doSelectNodeInEditor(nodeEditor, node);
 
       if (nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent) {
-        NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
-        inspector = nec.getInspector();
-        cellInInspector = doSelectNodeInInspector(inspector, node);
+        selectInInspector(nodeEditor, node, context, focus);
       }
     }
 
+    doFocus(focus, nodeEditor, false);
+
+    return nodeEditor;
+  }
+
+  private void doFocus(boolean focus, IEditor nodeEditor, boolean cellInInspector) {
     if (focus) {
       if (!cellInInspector) {
         final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
         manager.activateEditorComponent();
         IdeFocusManager.getInstance(myProject).requestFocus(nodeEditor.getCurrentEditorComponent(), false);
       } else {
-        final InspectorEditorComponent inspectorLocal = inspector;
-        myProject.getComponent(InspectorTool.class).getToolWindow().activate(new Runnable() {
-          public void run() {
-            IdeFocusManager.getInstance(myProject).requestFocus(inspectorLocal, true);
+        final InspectorTool inspectorTool = myProject.getComponent(InspectorTool.class);
+        inspectorTool.getToolWindow().activate(null);
+        IdeFocusManager.getInstance(myProject).requestFocus(inspectorTool.getInspector(), true);
+      }
+    }
+  }
+
+  public void selectInInspector(final IEditor nodeEditor, final SNode node, IOperationContext context, final boolean focus) {
+    NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
+    final InspectorEditorComponent inspector = nec.getInspector();
+    if (inspector == null) return;
+    if (nec.getLastInspectedNode() == null) return;
+
+    inspector.inspectNode(nec.getLastInspectedNode(), context, new Runnable() {
+      public void run() {
+        SNode currentTargetNode = node;
+        while (currentTargetNode != null) {
+          EditorCell cellInInspector = inspector.findNodeCell(currentTargetNode);
+          if (cellInInspector != null) {
+            inspector.selectNode(node);
+            doFocus(focus, nodeEditor, true);
+            return;
           }
-        });
+          currentTargetNode = currentTargetNode.getParent();
+        }
       }
-    }
-
-    return nodeEditor;
+    });
   }
 
-  //returns whether the cell is within the inspector
-  private boolean doSelectNodeInInspector(InspectorEditorComponent inspector, SNode node) {
-    SNode currentTargetNode = node;
-    while (currentTargetNode != null) {
-      EditorCell cellInInspector = inspector.findNodeCell(currentTargetNode);
-      if (cellInInspector != null) {
-        inspector.changeSelection(cellInInspector);
-        return true;
-      }
-      currentTargetNode = currentTargetNode.getParent();
-    }
-    return false;
-  }
 
   //select parent node, which is in editor, or the whole root node if the node given is not visible at all
   private void doSelectNodeInEditor(IEditor nodeEditor, SNode node) {
@@ -245,6 +250,7 @@ public class MPSEditorOpener implements ProjectComponent {
     while (currentSelectionTarget != null) {
       EditorCell cell = component.findNodeCell(currentSelectionTarget);
       if (cell != null) {
+
         component.changeSelection(cell);
         return;
       }

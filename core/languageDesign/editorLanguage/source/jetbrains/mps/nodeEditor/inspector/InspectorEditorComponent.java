@@ -34,9 +34,10 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   public void inspectNode(final SNode node, final IOperationContext context, @Nullable final Runnable afterInspect) {
-    if (node != null && getEditedNode() == node) {
-      return;
-    }
+    //DO NOT UNCOMMENT. TO CALL THIS METHOD TWICE IS THE ONLY WAY TO FOCUS WHERE WE NEED TO
+    //if (node != null && getEditedNode() == node) {
+    //  return;
+    //}
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         if (node == null) {
