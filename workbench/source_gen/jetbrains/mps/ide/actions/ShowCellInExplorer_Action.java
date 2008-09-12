@@ -17,7 +17,7 @@ import javax.swing.Icon;
 
 public class ShowCellInExplorer_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(ShowCellInExplorer_Action.class);
-  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}\\workbench\\source\\jetbrains\\mps\\ide\\projectPane\\nodes\\cellExplorer.png", "jetbrains.mps.ide"), true);
+  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\cellExplorer.png", "jetbrains.mps.ide"), true);
 
   public IOperationContext context;
   public EditorCell cell;

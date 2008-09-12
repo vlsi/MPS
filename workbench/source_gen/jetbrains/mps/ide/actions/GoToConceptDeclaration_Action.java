@@ -18,7 +18,7 @@ import javax.swing.Icon;
 
 public class GoToConceptDeclaration_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(GoToConceptDeclaration_Action.class);
-  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}\\core\\languageDesign\\structureLanguage\\source\\jetbrains\\mps\\bootstrap\\structureLanguage\\icons\\structure.png", "jetbrains.mps.ide"), true);
+  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\structure.png", "jetbrains.mps.ide"), true);
 
   private SNode node;
   public IOperationContext context;

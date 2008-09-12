@@ -20,12 +20,8 @@ public class Icons {
   public static final Icon MODULE_DEPENDENCIES_ICON = new ImageIcon(Icons.class.getResource("nodes/moduleDependencies.png"));
   public static final Icon TRANSIENT_MODELS_ICON = new ImageIcon(Icons.class.getResource("nodes/transientModels.png"));
 
-
   public static final Icon PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/properties.png"));
-  public static final Icon LANGUAGE_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/languageProperties.png"));
   public static final Icon MODEL_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/modelProperties.png"));
-  public static final Icon PROJECT_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/projectProperties.png"));
-  public static final Icon GENERATOR_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/generatorProperties.png"));
 
   public static final Icon SVN_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/svn.png"));
 
@@ -82,7 +78,6 @@ public class Icons {
   public static final Icon SELECT_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/selectAll.png"));
 
   public static final Icon SOLUTION_ICON = new ImageIcon(Icons.class.getResource("nodes/solution.png"));
-  public static final Icon SOLUTION_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/solutionProperties.png"));
 
   public static final Icon DEVKIT_ICON = new ImageIcon(Icons.class.getResource("nodes/devkit.png"));
 

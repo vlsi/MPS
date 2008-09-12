@@ -18,7 +18,7 @@ import javax.swing.Icon;
 
 public class GeneratorProperties_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(GeneratorProperties_Action.class);
-  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}\\workbench\\source\\jetbrains\\mps\\ide\\projectPane\\nodes\\generatorProperties.png", "jetbrains.mps.ide"), true);
+  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\generatorProperties.png", "jetbrains.mps.ide"), true);
 
   public MPSProject project;
 

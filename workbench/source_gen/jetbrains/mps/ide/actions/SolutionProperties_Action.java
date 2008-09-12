@@ -19,7 +19,7 @@ import javax.swing.Icon;
 
 public class SolutionProperties_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(SolutionProperties_Action.class);
-  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}\\workbench\\source\\jetbrains\\mps\\ide\\projectPane\\nodes\\solutionProperties.png", "jetbrains.mps.ide"), true);
+  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\solutionProperties.png", "jetbrains.mps.ide"), true);
 
   public IOperationContext context;
 

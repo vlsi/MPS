@@ -17,7 +17,7 @@ import javax.swing.Icon;
 
 public class ShowInProject_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(ShowInProject_Action.class);
-  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}\\workbench\\source\\jetbrains\\mps\\ide\\projectPane\\nodes\\project.png", "jetbrains.mps.ide"), true);
+  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\project.png", "jetbrains.mps.ide"), true);
 
   public IOperationContext context;
   public SNode node;

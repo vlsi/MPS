@@ -24,7 +24,7 @@ import java.util.LinkedHashSet;
 
 public class MakeAllModules_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(MakeAllModules_Action.class);
-  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}\\workbench\\source\\jetbrains\\mps\\ide\\actions\\tools\\compile.png", "jetbrains.mps.ide"), true);
+  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\compile.png", "jetbrains.mps.ide"), true);
 
   public Project project;
 
