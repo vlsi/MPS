@@ -48,11 +48,11 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   public List<INodeSubstituteAction> createActions() {
     EditorComponent editor = getEditorContext().getNodeEditorComponent();
-    EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, myLinkDeclaration.getRole());
+    EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, SModelUtil_new.getGenuineLinkRole(myLinkDeclaration));
 
-    if (referenceCell != null && referenceCell.isFirstPositionInBigCell() &&      
+    if (referenceCell != null && referenceCell.getContainingBigCell().getFirstLeaf() == referenceCell &&      
       ReferenceConceptUtil.getCharacteristicReference(mySourceNode.getConceptDeclarationAdapter()) == myLinkDeclaration &&
-      mySourceNode.getParent() != null) {
+      mySourceNode.getParent() != null && mySourceNode.getChildren().isEmpty()) {
 
       SNode parent = mySourceNode.getParent();
       String role = mySourceNode.getRole_();
