@@ -252,5 +252,41 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1221219511506">
+    <link role="conceptDeclaration" targetNodeId="1.1221218985173" resolveInfo="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1221219519621">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221219519622">
+        <property name="text" value="get output" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1221219519623">
+        <property name="noTargetText" value="&lt;choose mapping label&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1216860049628" />
+        <link role="styleClass" targetNodeId="5.1216755869996" resolveInfo="mappingLabelReference" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1221219519624">
+          <link role="conceptDeclaration" targetNodeId="7.1200911316486" resolveInfo="MappingLabelDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1221219519625">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="3.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221219519626">
+        <property name="text" value="for input" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1221219519627" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1221219519628">
+        <property name="noTargetText" value="&lt;no input node&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1216860049632" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221219525391">
+        <property name="text" value="(using ref.scope)" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1221219559413" />
+      </node>
+    </node>
+  </node>
 </model>
 

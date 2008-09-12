@@ -810,18 +810,18 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1176817939040(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false));
     /*
-      _context.getOutputNodeByInputNodeAndMappingLabel(parent, "coercedNode");
+      List<SNode> vars = _context.getAllOutputNodesByInputNodeAndMappingLabel(parent, "coercedNode");
+      SNode varRef = _context.getOutputNode();
+      final ISearchScope varScope = SNodeOperations.getReferentSearchScope(varRef, "localVariableDeclaration", operationContext);
+      return ListSequence.fromList(vars).where(new IWhereFilter <SNode>() {
+
+        public boolean accept(SNode it) {
+          return SearchScopeOperations.containsNode(varScope, it);
+        }
+
+      }).first();
     */
-    List<SNode> vars = _context.getAllOutputNodesByInputNodeAndMappingLabel(parent, "coercedNode");
-    SNode varRef = _context.getOutputNode();
-    final ISearchScope varScope = SNodeOperations.getReferentSearchScope(varRef, "localVariableDeclaration", operationContext);
-    return ListSequence.fromList(vars).where(new IWhereFilter <SNode>() {
-
-      public boolean accept(SNode it) {
-        return SearchScopeOperations.containsNode(varScope, it);
-      }
-
-    }).first();
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(parent, "coercedNode", operationContext);
   }
 
   public static Object referenceMacro_GetReferent_1177333800976(final IOperationContext operationContext, final ReferenceMacroContext _context) {

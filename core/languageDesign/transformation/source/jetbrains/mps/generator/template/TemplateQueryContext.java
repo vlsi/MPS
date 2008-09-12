@@ -3,6 +3,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
 
 import java.util.List;
 
@@ -82,6 +83,10 @@ public class TemplateQueryContext {
 
   public List<SNode> getAllOutputNodesByInputNodeAndMappingLabel(SNode inputNode, String label) {
     return myGenerator.findAllOutputNodesByInputNodeAndMappingName(inputNode, label);
+  }
+
+  public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode inputNode, String label, IOperationContext operationContext) {
+    throw new  UnsupportedOperationException("use this method only in reference macros");
   }
 
   public SNode getCopiedOutputNodeForInputNode(SNode inputNode) {

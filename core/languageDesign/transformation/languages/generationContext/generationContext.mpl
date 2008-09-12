@@ -13,7 +13,11 @@
       <external-templates />
       <dependencies>
         <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="false">MPS.Classpath</dependency>
       </dependencies>
+      <usedLanguages>
+        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+      </usedLanguages>
       <mapping-priorities />
     </generator>
   </generators>

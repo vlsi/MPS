@@ -241,6 +241,19 @@ public class QueriesGenerated {
       }
     }
     {
+      // references in 'get by label and node and ref.scope'
+      List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope");
+      for(SNode op : ops) {
+        SNode label = SLinkOperations.getTarget(op, "label", false);
+        if (label == null) {
+          _context.showErrorMessage(op, "reference on mapping label is broken");
+          continue;
+        }
+        SPropertyOperations.set(op, "labelName_intern", SPropertyOperations.getString(label, "name"));
+        SLinkOperations.setTarget(op, "label", null, false);
+      }
+    }
+    {
       // references in 'get all by label and node'
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput");
       for(SNode op : ops) {
