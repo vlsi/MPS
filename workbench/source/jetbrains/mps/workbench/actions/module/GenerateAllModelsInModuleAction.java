@@ -24,14 +24,16 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class GenerateAllModelsInModuleAction extends BaseAction {
   private boolean myRegenerate;
   private IOperationContext myOperationContext;
   private MPSProject myProject;
   private Frame myFrame;
-  private List<IModule> myModules;
+  private Set<IModule> myModules;
 
   public GenerateAllModelsInModuleAction(boolean regenerate) {
     super("Generate Models In Module");
@@ -56,7 +58,6 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
         module = ((Generator) module).getSourceLanguage();
         invocationContext = new MyContext(module, myOperationContext);
       }
-
       modelsToGenerate.addAll(getModelsToGenerate(module));
     }
 
@@ -115,13 +116,13 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
 
   protected void doUpdate(AnActionEvent e) {
     for (IModule module : myModules) {
-      if ((!(module instanceof Solution)) && (!(module instanceof Language))) {
+      if ((!(module instanceof Solution)) && (!(module instanceof Language)) && (!(module instanceof Generator))) {
         disable(e.getPresentation());
         return;
       }
     }
     enable(e.getPresentation());
-    String obj = myModules.size() == 1 ? NameUtil.shortNameFromLongName(myModules.get(0).getClass().getName()) : "Modules";
+    String obj = myModules.size() == 1 ? NameUtil.shortNameFromLongName(myModules.iterator().next().getClass().getName()) : "Modules";
     String newText = (myRegenerate ? "Regenerate" : "Generate") + " " + obj;
     e.getPresentation().setText(newText);
   }
@@ -132,7 +133,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
     myProject = data.getMPSProject();
     myOperationContext = data.getOperationContext();
     if (myOperationContext == null) return false;
-    myModules = data.getModules();
+    myModules = new HashSet(data.getModules());
     if (myModules.isEmpty()) {
       IModule contextModule = data.getContextModule();
       if (contextModule == null) return false;
