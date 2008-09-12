@@ -6,22 +6,21 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.util.Computable;
-import jetbrains.mps.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.nodeEditor.DefaultNodeEditor.DefaultInspectorCell;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.workbench.action.AbstractActionWithEmptyIcon;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.KeyStroke;
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.util.List;
 
 public class NodeEditorComponent extends EditorComponent {
@@ -66,7 +65,7 @@ public class NodeEditorComponent extends EditorComponent {
 
   private void inspect(SNode toSelect) {
     if (toSelect != null && getInspector() != null) {
-      getInspector().inspectNode(toSelect, getOperationContext());
+      getInspector().inspectNode(toSelect, getOperationContext(), null);
     }
   }
 
@@ -109,7 +108,7 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   public void dispose() {
-    getInspector().inspectNode(null, null);
+    getInspector().inspectNode(null, null, null);
     super.dispose();
   }
 }

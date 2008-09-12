@@ -1,21 +1,17 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.workbench.tools.BaseProjectTool;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.projectPane.Icons;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.workbench.tools.BaseProjectTool;
+import org.jetbrains.annotations.Nullable;
 
-import javax.swing.Icon;
-import javax.swing.SwingUtilities;
-import javax.swing.JPanel;
 import javax.swing.JComponent;
-
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 
 public class InspectorTool extends BaseProjectTool {
@@ -51,7 +47,7 @@ public class InspectorTool extends BaseProjectTool {
     return myComponent;
   }
 
-  public void inspect(SNode node, IOperationContext context) {
-    myInspectorComponent.inspectNode(node, context);
+  public void inspect(SNode node, IOperationContext context, @Nullable Runnable afterInspect) {
+    myInspectorComponent.inspectNode(node, context, afterInspect);
   }
 }

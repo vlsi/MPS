@@ -1,7 +1,7 @@
 package jetbrains.mps.nodeEditor.inspector;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
@@ -46,7 +46,7 @@ final class InspectorPaneEditorComponent extends JComponent {
     myInspectorEditorComponents.clear();
     myPanel.removeAll();
     InspectorEditorComponent inspectorEditorComponent = new InspectorEditorComponent();
-    inspectorEditorComponent.inspectNode(node, context);
+    inspectorEditorComponent.inspectNode(node, context, null);
     myInspectorEditorComponents.add(inspectorEditorComponent);
     myPanel.add(inspectorEditorComponent);
   }

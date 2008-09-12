@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor.inspector;
 
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.IOperationContext;
@@ -8,6 +9,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelEvent;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -28,17 +30,10 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   public void editNode(SNode semanticNode, IOperationContext operationContext) {
-    inspectNode(semanticNode, operationContext);
+    inspectNode(semanticNode, operationContext, null);
   }
 
-  public void inspectNode(final SNode node, final IOperationContext context) {
-    inspectNode(node, context, new Runnable() {
-      public void run() {
-      }
-    });
-  }
-
-  public void inspectNode(final SNode node, final IOperationContext context, final Runnable afterInspect) {
+  public void inspectNode(final SNode node, final IOperationContext context, @Nullable final Runnable afterInspect) {
     if (node != null && getEditedNode() == node) {
       return;
     }
@@ -55,7 +50,7 @@ public class InspectorEditorComponent extends EditorComponent {
         reinitEditor();
         repaint();
 
-        afterInspect.run();
+        if (afterInspect != null) afterInspect.run();
       }
     });
   }

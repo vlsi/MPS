@@ -7,9 +7,9 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -202,9 +202,11 @@ public class TabbedEditor implements IEditor {
   }
 
   public void selectNode(SNode node) {
-    EditorComponent editor = getCurrentEditorComponent();
-    assert editor != null;
-    editor.selectNode(node);
+    SNode containingRoot = node.getContainingRoot();
+    EditorComponent editorComponent = selectLinkedEditor(containingRoot);
+
+    assert editorComponent != null : "the root node is not in this editor";
+    editorComponent.selectNode(node);
   }
 
   public void requestFocus() {
@@ -263,7 +265,7 @@ public class TabbedEditor implements IEditor {
     selectTab(0);
   }
 
-  public void selectLinkedEditor(SNode node) {
+  public EditorComponent selectLinkedEditor(SNode node) {
     int index = 0;
     for (ILazyTab tab : myTabbedPane.getTabs()) {
       tab.getComponent();
@@ -274,7 +276,7 @@ public class TabbedEditor implements IEditor {
           if (editorComponent.getEditedNode() == node) {
             myTabbedPane.selectTab(index);
             multitabbedTab.selectTab(innerIndex);
-            return;
+            return multitabbedTab.getCurrentEditorComponent();
           }
           innerIndex++;
         }
@@ -282,12 +284,13 @@ public class TabbedEditor implements IEditor {
         for (EditorComponent c : tab.getEditorComponents()) {
           if (c.getEditedNode() == node) {
             myTabbedPane.selectTab(index);
-            return;
+            return myTabbedPane.getCurrentTab().getCurrentEditorComponent();
           }
         }
       }
       index++;
     }
+    return null;
   }
 
   public LazyTabbedPane getTabbedPane() {
