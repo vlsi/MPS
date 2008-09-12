@@ -24,12 +24,6 @@ public class TextRenderUtil {
     if (cells.isEmpty()) return TextBuilder.getEmptyTextBuilder();
 
     EditorCell_Collection parentCell = cells.get(0).getParent();
-    for (EditorCell cell : cells) {
-      if (cell.getParent() != parentCell) {
-        LOG.errorWithTrace("node range selection cells have different parents!");
-        return TextBuilder.getEmptyTextBuilder();
-      }
-    }
 
     CellLayout layout = parentCell.getCellLayout();
     return layout.doLayoutText(cells);
