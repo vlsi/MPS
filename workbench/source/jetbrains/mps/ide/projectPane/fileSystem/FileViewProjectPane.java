@@ -20,6 +20,7 @@ import com.intellij.openapi.vcs.VcsListener;
 import com.intellij.openapi.vcs.changes.ChangeListListener;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
+import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.messages.MessageBus;
@@ -62,7 +63,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private FileStatusListener myFileStatusListener;
   private VirtualFileAdapter myFileListener;
   private Timer myTimer;
-  private static final int DELAY = 1000;
+  private static final int DELAY = 500;
   private VcsListener myDirectoryMappingListener = new VcsListener() {
     public void directoryMappingChanged() {
       rebuildTreeLater();
@@ -112,6 +113,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       public void actionPerformed(ActionEvent e) {
         ModelAccess.instance().runReadInEDT(new Runnable() {
           public void run() {
+            System.out.println("rebuild");
             getTree().rebuildNow();
           }
         });
@@ -328,6 +330,11 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     @Override
     public void fileCopied(VirtualFileCopyEvent event) {
       rebuildTreeLater();
+    }
+
+    @Override
+    public void contentsChanged(VirtualFileEvent event) {
+      VcsDirtyScopeManager.getInstance(myProject).fileDirty(event.getFile());
     }
   }
 
