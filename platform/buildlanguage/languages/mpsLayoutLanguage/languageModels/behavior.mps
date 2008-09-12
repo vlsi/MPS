@@ -3786,10 +3786,6 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877518468" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877535585">
-    <property name="package" value="projectComponents" />
-    <link role="concept" targetNodeId="1.1204018553150" resolveInfo="Zip" />
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877541033">
     <property name="package" value="variables" />
     <link role="concept" targetNodeId="1.1205339464939" resolveInfo="VariableReference" />
@@ -4872,6 +4868,13 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1220983417228">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220983417229" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1221152505956">
+    <property name="package" value="projectComponents" />
+    <link role="concept" targetNodeId="1.1204018553150" resolveInfo="Zip" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1221152505957">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221152505958" />
     </node>
   </node>
 </model>
