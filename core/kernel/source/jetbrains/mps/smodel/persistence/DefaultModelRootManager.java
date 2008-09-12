@@ -52,17 +52,15 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       }
     }
 
-    if (ApplicationLevelVcsManager.instance().isInConflict(modelDescriptor, modelDescriptor.needsReloading())){
-      SuspiciousModelIndex.instance().addModel(modelDescriptor);
-      throw new ConflictModelException(modelDescriptor);
+    if (ApplicationLevelVcsManager.instance().isInConflict(modelDescriptor, modelDescriptor.needsReloading())) {
+      return handleExceptionDuringModelRead(modelDescriptor, new ConflictModelException(modelDescriptor));
     }
 
     SModel model;
     try {
       model = ModelPersistence.readModel(modelDescriptor.getModelFile());
     } catch (RuntimeException t) {
-      SuspiciousModelIndex.instance().addModel(modelDescriptor);
-      throw t;
+      return handleExceptionDuringModelRead(modelDescriptor, t);
     }
     LOG.assertLog(model.getUID().equals(modelDescriptor.getModelUID()),
       "\nError loading model from file: \"" + modelDescriptor.getModelFile() + "\"\n" +
@@ -71,6 +69,16 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
         "the model will not be available.\n" +
         "Make sure that all project's roots and/or the model namespace is correct");
     return model;
+  }
+
+  private SModel handleExceptionDuringModelRead(SModelDescriptor modelDescriptor, RuntimeException exception) {
+    SuspiciousModelIndex.instance().addModel(modelDescriptor);
+    if (modelDescriptor.isInitialized()) {
+      SModel newModel = new SModel(modelDescriptor.getModelUID());
+      LOG.error(exception.getMessage(), newModel);
+      return newModel;
+    }
+    throw exception;
   }
 
   public boolean containsSomeString(@NotNull SModelDescriptor modelDescriptor, @NotNull Set<String> strings) {
