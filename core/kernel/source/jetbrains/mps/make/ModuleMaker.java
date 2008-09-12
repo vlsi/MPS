@@ -143,11 +143,13 @@ public class ModuleMaker {
     int errorCount = 0;
 
     for (CompilationResult cr : compiler.getCompilationResults()) {
-      if (cr.getErrors() != null) {              
+      Set<String> classesWithErrors = new HashSet<String>();
+      if (cr.getErrors() != null) {
         for (CategorizedProblem cp : cr.getErrors()) {
-
           String fileName = new String(cp.getOriginatingFileName());
           String fqName = fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()).replace(File.separatorChar, '.');
+          classesWithErrors.add(fqName);
+
           IModule containingModule = myContainingModules.get(fqName);
           assert containingModule != null;
           JavaFile javaFile = myModuleSources.get(containingModule).getJavaFile(fqName);
@@ -164,8 +166,8 @@ public class ModuleMaker {
       }
 
       for (ClassFile cf : cr.getClassFiles()) {
-        String name = getName(cf.getCompoundName());
-        String containerClassName = name;
+        String fqName = getName(cf.getCompoundName());
+        String containerClassName = fqName;
         if (containerClassName.contains("$")) {
           int index = containerClassName.indexOf('$');
           containerClassName = containerClassName.substring(0, index);
@@ -173,24 +175,28 @@ public class ModuleMaker {
         if (myContainingModules.containsKey(containerClassName)) {
           IModule m = myContainingModules.get(containerClassName);
           File classesGen = m.getClassesGen().toFile();
-          String packageName = NameUtil.namespaceFromLongName(name);
+          String packageName = NameUtil.namespaceFromLongName(fqName);
           File outputDir = new File(classesGen + File.separator + packageName.replace('.', File.separatorChar));
           if (!outputDir.exists()) {
             if (!outputDir.mkdirs()) {
               throw new RuntimeException("Can't create " + outputDir.getPath() + " directory");
             }
           }
-          String className = NameUtil.shortNameFromLongName(name);
+          String className = NameUtil.shortNameFromLongName(fqName);
           File output = new File(outputDir, className + ".class");
-          try {
-            FileOutputStream os = new FileOutputStream(output);
-            os.write(cf.getBytes());
-            os.close();
-          } catch (IOException e) {
-            throw new RuntimeException(e);
+          if (!classesWithErrors.contains(fqName)) {
+            try {
+              FileOutputStream os = new FileOutputStream(output);
+              os.write(cf.getBytes());
+              os.close();
+            } catch (IOException e) {
+              throw new RuntimeException(e);
+            }
+          } else {
+            output.delete();            
           }
         } else {
-          LOG.error("I don't know in which module's output path I should place class file for " + name);
+          LOG.error("I don't know in which module's output path I should place class file for " + fqName);
         }
       }
     }
