@@ -12,6 +12,10 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.ide.NodeEditor;
 
 import java.util.List;
 
@@ -43,7 +47,13 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   public List<INodeSubstituteAction> createActions() {
-    if (ReferenceConceptUtil.getCharacteristicReference(mySourceNode.getConceptDeclarationAdapter()) == myLinkDeclaration && mySourceNode.getParent() != null) {
+    EditorComponent editor = getEditorContext().getNodeEditorComponent();
+    EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, myLinkDeclaration.getRole());
+
+    if (referenceCell != null && referenceCell.isFirstPositionInBigCell() &&      
+      ReferenceConceptUtil.getCharacteristicReference(mySourceNode.getConceptDeclarationAdapter()) == myLinkDeclaration &&
+      mySourceNode.getParent() != null) {
+
       SNode parent = mySourceNode.getParent();
       String role = mySourceNode.getRole_();
       LinkDeclaration roleLink = parent.getLinkDeclaration(role);
