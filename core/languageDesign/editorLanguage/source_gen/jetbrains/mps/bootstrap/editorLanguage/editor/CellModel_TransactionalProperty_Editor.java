@@ -17,6 +17,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
+import jetbrains.mps.bootstrap.editorLanguage.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
@@ -257,6 +260,48 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_TransactionalProperty_Editor.calculateColor3190_0(cell);
+            }
+
+          });
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_TransactionalProperty_Editor.calculateColor3190_1(cell);
+            }
+
+          });
+          this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_TransactionalProperty_Editor.calculateColor3190_2(cell);
+            }
+
+          });
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_TransactionalProperty_Editor.calculateColor3190_3(cell);
+            }
+
+          });
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return CellModel_TransactionalProperty_Editor.calculateFontStyle3190_0(cell);
+            }
+
+          });
+          this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_TransactionalProperty_Editor.calculateUnderlined3190_0(cell);
+            }
+
+          });
         }
 
       };
@@ -410,6 +455,66 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refCell_property_1216382092311(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Color _null_1221237741110(SNode node, EditorContext editorContext) {
+    return _EditorUtil.grayIfNotSelectable(node);
+  }
+
+  public static Color _null_1221237741116(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
+  }
+
+  public static Color _null_1221237741123(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
+  }
+
+  public static Color _null_1221237741130(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
+  }
+
+  public static int _null_1221237741137(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
+  }
+
+  public static boolean _null_1221237741151(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
+  }
+
+  private static Integer calculateFontStyle3190_0(EditorCell cell) {
+    int result;
+    result = CellModel_TransactionalProperty_Editor._null_1221237741137(cell.getSNode(), cell.getEditorContext());
+    return result;
+  }
+
+  private static Color calculateColor3190_0(EditorCell cell) {
+    Color result;
+    result = CellModel_TransactionalProperty_Editor._null_1221237741110(cell.getSNode(), cell.getEditorContext());
+    return result;
+  }
+
+  private static Color calculateColor3190_1(EditorCell cell) {
+    Color result;
+    result = CellModel_TransactionalProperty_Editor._null_1221237741116(cell.getSNode(), cell.getEditorContext());
+    return result;
+  }
+
+  private static Color calculateColor3190_2(EditorCell cell) {
+    Color result;
+    result = CellModel_TransactionalProperty_Editor._null_1221237741123(cell.getSNode(), cell.getEditorContext());
+    return result;
+  }
+
+  private static Color calculateColor3190_3(EditorCell cell) {
+    Color result;
+    result = CellModel_TransactionalProperty_Editor._null_1221237741130(cell.getSNode(), cell.getEditorContext());
+    return result;
+  }
+
+  private static boolean calculateUnderlined3190_0(EditorCell cell) {
+    boolean result;
+    result = CellModel_TransactionalProperty_Editor._null_1221237741151(cell.getSNode(), cell.getEditorContext());
+    return result;
   }
 
   public static class _Inline3190_0 extends AbstractCellProvider {

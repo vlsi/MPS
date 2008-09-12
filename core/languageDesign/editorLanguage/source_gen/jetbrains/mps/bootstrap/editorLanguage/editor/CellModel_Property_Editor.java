@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.editorLanguage.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_Property_Editor extends DefaultNodeEditor {
@@ -495,6 +496,41 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_Property_Editor.calculateColor3263_4(cell);
+            }
+
+          });
+          this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_Property_Editor.calculateColor3263_5(cell);
+            }
+
+          });
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_Property_Editor.calculateColor3263_6(cell);
+            }
+
+          });
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return CellModel_Property_Editor.calculateFontStyle3263_0(cell);
+            }
+
+          });
+          this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Property_Editor.calculateUnderlined3263_0(cell);
+            }
+
+          });
         }
 
       };
@@ -728,6 +764,32 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.getBoolean(node, "emptyNoTargetText"));
   }
 
+  public static Color _null_1221239223937(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
+  }
+
+  public static Color _null_1221239223944(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
+  }
+
+  public static Color _null_1221239223951(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
+  }
+
+  public static int _null_1221239223958(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
+  }
+
+  public static boolean _null_1221239223965(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
+  }
+
+  private static Integer calculateFontStyle3263_0(EditorCell cell) {
+    int result;
+    result = CellModel_Property_Editor._null_1221239223958(cell.getSNode(), cell.getEditorContext());
+    return result;
+  }
+
   private static Color calculateColor3263_0(EditorCell cell) {
     Color result;
     result = MPSColors.yellow;
@@ -749,6 +811,30 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
   private static Color calculateColor3263_3(EditorCell cell) {
     Color result;
     result = MPSColors.cyan;
+    return result;
+  }
+
+  private static Color calculateColor3263_4(EditorCell cell) {
+    Color result;
+    result = CellModel_Property_Editor._null_1221239223937(cell.getSNode(), cell.getEditorContext());
+    return result;
+  }
+
+  private static Color calculateColor3263_5(EditorCell cell) {
+    Color result;
+    result = CellModel_Property_Editor._null_1221239223944(cell.getSNode(), cell.getEditorContext());
+    return result;
+  }
+
+  private static Color calculateColor3263_6(EditorCell cell) {
+    Color result;
+    result = CellModel_Property_Editor._null_1221239223951(cell.getSNode(), cell.getEditorContext());
+    return result;
+  }
+
+  private static boolean calculateUnderlined3263_0(EditorCell cell) {
+    boolean result;
+    result = CellModel_Property_Editor._null_1221239223965(cell.getSNode(), cell.getEditorContext());
     return result;
   }
 

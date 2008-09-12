@@ -726,58 +726,14 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleClassItem" id="1214314939614">
           <property name="flag" value="true" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1214396926659">
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" id="1221237907156">
           <property name="color" value="query" />
-          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1214396926660">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214396926661">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214396926662">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1214396926663">
-                  <link role="classConcept" targetNodeId="1176888877514" resolveInfo="_EditorUtil" />
-                  <link role="baseMethodDeclaration" targetNodeId="1176888881562" resolveInfo="grayIfNotSelectable" />
-                  <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214396926664" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1220968480804">
-          <property name="color" value="query" />
-          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1220968480805">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220968480806">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1220968480807">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220968480808">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1220968480809" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1220968480810">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220960215403" resolveInfo="getColor" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1220971705268">
-          <property name="color" value="query" />
-          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1220971712628">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220971712629">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1220971717177">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220971722727">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1220971721179" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1220971727199">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220969182195" resolveInfo="getBackgroundColor" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" id="1220972042359">
-          <property name="color" value="query" />
-          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1220972053532">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220972053533">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1220972086320">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220972090510">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1220972089322" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1220972093295">
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221237912391">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237912392">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221237947201">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237949063">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237947202" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237956050">
                     <link role="conceptMethodDeclaration" targetNodeId="3v.1220972190901" resolveInfo="getTextBackgroundColor" />
                   </node>
                 </node>
@@ -785,14 +741,44 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1221054679446">
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1221237963100">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221237968304">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237968305">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221237970837">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237970933">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237970838" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237974249">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220969182195" resolveInfo="getBackgroundColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1221237980829">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221237984986">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237984987">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221237988442">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237988506">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237988443" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237992040">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220960215403" resolveInfo="getForegroundColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1221238013638">
           <property name="style" value="QUERY" />
-          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_FontStyle" id="1221054684354">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221054684355">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221054689293">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221054693156">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221054691983" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221054701175">
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_FontStyle" id="1221238018498">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221238018499">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221238020938">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238021002">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221238020939" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221238024724">
                     <link role="conceptMethodDeclaration" targetNodeId="3v.1221053923273" resolveInfo="getFontStyle" />
                   </node>
                 </node>
@@ -800,13 +786,27 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem" id="1221225746158">
-          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Underlined" id="1221225749566">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221225749567">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221225756334">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221225758727">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221225758617" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221225761871">
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontSizeStyleClassItem" id="1221240466272">
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Integer" id="1221240468805">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221240468806">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221240503323">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221240503622">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221240503324" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221240508187">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221216397365" resolveInfo="getFontSize" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem" id="1221238035602">
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Underlined" id="1221238039415">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221238039416">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221238041777">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238041841">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221238041778" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221238046251">
                     <link role="conceptMethodDeclaration" targetNodeId="3v.1221220594206" resolveInfo="isUnderlined" />
                   </node>
                 </node>
@@ -999,6 +999,80 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleClassItem" id="1214314941139">
           <property name="flag" value="true" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" id="1221238429632">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221238429633">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221238429634">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221238429635">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238429636">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221238429637" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221238429638">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220972190901" resolveInfo="getTextBackgroundColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1221238429639">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221238429640">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221238429641">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221238429642">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238429643">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221238429644" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221238429645">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220969182195" resolveInfo="getBackgroundColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1221238429646">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221238429647">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221238429648">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221238429649">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238429650">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221238429651" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221238429652">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220960215403" resolveInfo="getForegroundColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1221238429653">
+          <property name="style" value="QUERY" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_FontStyle" id="1221238429654">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221238429655">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221238429656">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238429657">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221238429658" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221238429659">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221053923273" resolveInfo="getFontStyle" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem" id="1221238429660">
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Underlined" id="1221238429661">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221238429662">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221238429663">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238429664">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221238429665" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221238429666">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221220594206" resolveInfo="isUnderlined" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1176717135427">
         <link role="editorComponent" targetNodeId="1176716904723" resolveInfo="_CloseTag" />
@@ -1101,6 +1175,80 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleClassItem" id="1214314940121">
           <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" id="1221239223936">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221239223937">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239223938">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239223939">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239223940">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239223941" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239223942">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220972190901" resolveInfo="getTextBackgroundColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1221239223943">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221239223944">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239223945">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239223946">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239223947">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239223948" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239223949">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220969182195" resolveInfo="getBackgroundColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1221239223950">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221239223951">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239223952">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239223953">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239223954">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239223955" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239223956">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220960215403" resolveInfo="getForegroundColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1221239223957">
+          <property name="style" value="QUERY" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_FontStyle" id="1221239223958">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239223959">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239223960">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239223961">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239223962" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239223963">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221053923273" resolveInfo="getFontStyle" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem" id="1221239223964">
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Underlined" id="1221239223965">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239223966">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239223967">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239223968">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239223969" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239223970">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221220594206" resolveInfo="isUnderlined" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1176717151805">
@@ -2808,15 +2956,75 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleClassItem" id="1214314940291">
           <property name="flag" value="true" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1214396913647">
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" id="1221239216352">
           <property name="color" value="query" />
-          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1214396913648">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214396913649">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214396913650">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1214396913651">
-                  <link role="classConcept" targetNodeId="1176888877514" resolveInfo="_EditorUtil" />
-                  <link role="baseMethodDeclaration" targetNodeId="1176888881562" resolveInfo="grayIfNotSelectable" />
-                  <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214396913652" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221239216353">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239216354">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239216355">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239216356">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239216357" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239216358">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220972190901" resolveInfo="getTextBackgroundColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1221239216359">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221239216360">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239216361">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239216362">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239216363">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239216364" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239216365">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220969182195" resolveInfo="getBackgroundColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1221239216366">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221239216367">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239216368">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239216369">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239216370">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239216371" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239216372">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220960215403" resolveInfo="getForegroundColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1221239216373">
+          <property name="style" value="QUERY" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_FontStyle" id="1221239216374">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239216375">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239216376">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239216377">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239216378" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239216379">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221053923273" resolveInfo="getFontStyle" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem" id="1221239216380">
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Underlined" id="1221239216381">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239216382">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239216383">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239216384">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239216385" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239216386">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221220594206" resolveInfo="isUnderlined" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -7013,6 +7221,94 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleClassItem" id="1216381326742">
           <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1221237741109">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221237741110">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237741111">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221237741112">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1221237741113">
+                  <link role="baseMethodDeclaration" targetNodeId="1176888881562" resolveInfo="grayIfNotSelectable" />
+                  <link role="classConcept" targetNodeId="1176888877514" resolveInfo="_EditorUtil" />
+                  <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237741114" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1221237741115">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221237741116">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237741117">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221237741118">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237741119">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237741120" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237741121">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220960215403" resolveInfo="getForegroundColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1221237741122">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221237741123">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237741124">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221237741125">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237741126">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237741127" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237741128">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220969182195" resolveInfo="getBackgroundColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" id="1221237741129">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221237741130">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237741131">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221237741132">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237741133">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237741134" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237741135">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220972190901" resolveInfo="getTextBackgroundColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1221237741136">
+          <property name="style" value="QUERY" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_FontStyle" id="1221237741137">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237741138">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221237741139">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237741140">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237741141" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237741142">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221053923273" resolveInfo="getFontStyle" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem" id="1221237741150">
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Underlined" id="1221237741151">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237741152">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221237741153">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237741154">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237741155" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237741156">
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221220594206" resolveInfo="isUnderlined" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1216381326743">

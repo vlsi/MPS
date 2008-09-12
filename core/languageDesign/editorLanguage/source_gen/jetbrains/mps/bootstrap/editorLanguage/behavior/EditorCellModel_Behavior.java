@@ -57,7 +57,7 @@ public class EditorCellModel_Behavior {
 
   public static Color call_getForegroundColor_1220960215403(SNode thisNode) {
     SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem"))).first();
-    if ((firstItem == null)) {
+    if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, "color", null) == null || SPropertyOperations.hasValue(firstItem, "color", "query", null)) {
       return null;
     }
     Class<MPSColors> classColors = MPSColors.class;
@@ -71,7 +71,7 @@ public class EditorCellModel_Behavior {
 
   public static Color call_getBackgroundColor_1220969182195(SNode thisNode) {
     SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem"))).first();
-    if ((firstItem == null)) {
+    if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, "color", null) == null || SPropertyOperations.hasValue(firstItem, "color", "query", null)) {
       return null;
     }
     Class<MPSColors> classColors = MPSColors.class;
@@ -85,7 +85,7 @@ public class EditorCellModel_Behavior {
 
   public static Color call_getTextBackgroundColor_1220972190901(SNode thisNode) {
     SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem"))).first();
-    if ((firstItem == null)) {
+    if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, "color", null) == null || SPropertyOperations.hasValue(firstItem, "color", "query", null)) {
       return null;
     }
     Class<MPSColors> classColors = MPSColors.class;
@@ -98,7 +98,11 @@ public class EditorCellModel_Behavior {
   }
 
   public static boolean call_isUnderlined_1221220594206(SNode thisNode) {
-    return ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem"))).isNotEmpty();
+    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleClassItem"))).first();
+    if ((firstItem == null)) {
+      return false;
+    }
+    return SPropertyOperations.hasValue(firstItem, "underlined", "2", "0");
   }
 
   public static int call_getFontSize_1221216397365(SNode thisNode) {
@@ -111,7 +115,7 @@ public class EditorCellModel_Behavior {
 
   public static int call_getFontStyle_1221053923273(SNode thisNode) {
     SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem"))).first();
-    if ((firstItem == null)) {
+    if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, "style", null) == null || SPropertyOperations.hasValue(firstItem, "style", "QUERY", null)) {
       return Font.PLAIN;
     }
     Class<MPSFonts> classFonts = MPSFonts.class;
