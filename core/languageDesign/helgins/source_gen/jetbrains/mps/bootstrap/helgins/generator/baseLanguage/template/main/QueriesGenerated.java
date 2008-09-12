@@ -709,18 +709,6 @@ public class QueriesGenerated {
     }
   }
 
-  public static Object propertyMacro_GetPropertyValue_1221149877298(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String result = (String)_context.getNode().getUserObject("coercedNodeName");
-    _context.getNode().removeUserObject("coercedNodeName");
-    return result;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1221150031670(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String result = (String)_context.getNode().getUserObject("coercedPatternName");
-    _context.getNode().removeUserObject("coercedPatternName");
-    return result;
-  }
-
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
     SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(rule, "mainMethodForRule");
@@ -994,6 +982,28 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1215596987510(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "parameter", true)).first();
+  }
+
+  public static Object referenceMacro_GetReferent_1221215081966(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    List<SNode> declarations = _context.getAllOutputNodesByInputNodeAndMappingLabel(_context.getNode(), "coercedNode");
+    SNode baseMethodDeclaration = SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+    for(SNode variableDeclaration : declarations) {
+      if (ListSequence.fromList(SNodeOperations.getDescendants(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false)).contains(variableDeclaration)) {
+        return variableDeclaration;
+      }
+    }
+    return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1221215516788(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    List<SNode> declarations = _context.getAllOutputNodesByInputNodeAndMappingLabel(_context.getNode(), "coercedPattern");
+    SNode baseMethodDeclaration = SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+    for(SNode variableDeclaration : declarations) {
+      if (ListSequence.fromList(SNodeOperations.getDescendants(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false)).contains(variableDeclaration)) {
+        return variableDeclaration;
+      }
+    }
+    return null;
   }
 
   public static boolean ifMacro_Condition_1174643945663(final IOperationContext operationContext, final IfMacroContext _context) {
