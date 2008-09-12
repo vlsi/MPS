@@ -58,7 +58,7 @@ public class typeof_InvokeExpression_InferenceRule implements InferenceRule_Runt
           }
         }
 
-      }, "jetbrains.mps.closures.helgins@3_0", "1221068767986");
+      }, "jetbrains.mps.closures.helgins@3_0", "1221209896754");
     }
   }
 

@@ -53,7 +53,7 @@ public class typeof_InvokeFunctionExpression_InferenceRule implements InferenceR
           }
         }
 
-      }, "jetbrains.mps.closures.helgins@3_0", "1221068767255");
+      }, "jetbrains.mps.closures.helgins@3_0", "1221209894312");
     }
   }
 
