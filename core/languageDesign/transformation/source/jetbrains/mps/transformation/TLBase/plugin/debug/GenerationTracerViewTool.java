@@ -51,10 +51,15 @@ public class GenerationTracerViewTool extends BaseProjectTool {
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
             showNoTabsComponent();
+            setAvailable(false);
             getContentManager().addContentManagerListener(new ContentManagerAdapter() {
               public void contentRemoved(ContentManagerEvent event) {
+                boolean closeAfter = event.getContent().getComponent() == myNoTabsComponent;
                 if (getContentManager().getContentCount() == 0) {
                   showNoTabsComponent();
+                  if (closeAfter) {
+                    makeUnavailableLater();
+                  }
                 }
               }
             });
@@ -69,9 +74,9 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     myContentListener = new ContentManagerAdapter() {
       public void contentRemoved(ContentManagerEvent event) {
         //noTabs component could be removed
-        if (myTracerViews.isEmpty()) return;
-
-        myTracerViews.remove(event.getIndex());
+        if (event.getContent().getComponent() != myNoTabsComponent) {
+          myTracerViews.remove(event.getIndex());
+        }
       }
     };
 

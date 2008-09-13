@@ -13,6 +13,6 @@ public class CloseAction extends BaseAction {
   }
 
   protected void doExecute(AnActionEvent e) {
-    myTool.unregister();
+    myTool.makeUnavailableLater();
   }
 }
