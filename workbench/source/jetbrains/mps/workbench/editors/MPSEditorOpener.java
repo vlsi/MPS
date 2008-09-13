@@ -262,7 +262,6 @@ public class MPSEditorOpener implements ProjectComponent {
 
 
   private IEditor doOpenEditor(final SNode root, IOperationContext context) {
-
     SNode baseNode = getBaseNode(context, root);
     if (baseNode == null) {
       baseNode = root;

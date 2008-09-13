@@ -2039,15 +2039,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return getOperationContext().getScope();
     } else if (dataId.equals(MPSDataKeys.MODULE.getName())) {
       return getOperationContext().getModule();
-    } /*else if (dataId.equals(MPSDataKeys.VIRTUAL_FILE.getName())) {
-      final SNode node = (SNode) getData(MPSDataKeys.SNODE.getName());
-      if (node == null) return null;
-      return ModelAccess.instance().runReadAction(new Computable<Object>() {
-        public Object compute() {
-          return MPSNodesVirtualFileSystem.getInstance().getFileFor(node.getContainingRoot());
-        }
-      });
-    }   */
+    }
 
     return null;
   }

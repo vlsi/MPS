@@ -1,5 +1,6 @@
 package jetbrains.mps.nodeEditor.inspector;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -9,11 +10,16 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.JComponent;
 import java.util.List;
 
 public class InspectorEditorComponent extends EditorComponent {
+
   public InspectorEditorComponent() {
     super(null);
     myNodePointer = new SNodePointer((SNode) null);
@@ -54,6 +60,27 @@ public class InspectorEditorComponent extends EditorComponent {
         if (afterInspect != null) afterInspect.run();
       }
     });
+  }
+
+  @Nullable
+  public Object getData(@NonNls String dataId) {
+    Object data = super.getData(dataId);
+    if (data != null) return data;
+
+    if (dataId.equals(MPSDataKeys.VIRTUAL_FILE.getName())) {
+      return ModelAccess.instance().runReadAction(new Computable<Object>() {
+        public Object compute() {
+          if (myNodePointer.getNode() == null) return null;
+          SNode node = myNodePointer.getNode();
+          return MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
+        }
+      });
+    }
+    return null;
+  }
+
+  public JComponent getExternalComponent() {
+    return super.getExternalComponent();
   }
 
   public EditorComponent getEditorComponent() {

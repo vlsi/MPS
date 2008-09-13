@@ -267,12 +267,18 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       public SNode myNode;
 
       public boolean canSelect(SelectInContext context) {
-        MPSNodeVirtualFile file = (MPSNodeVirtualFile) context.getVirtualFile();
+        VirtualFile virtualFile = context.getVirtualFile();
+        if (!(virtualFile instanceof MPSNodeVirtualFile)) return false;
+
+        MPSNodeVirtualFile file = (MPSNodeVirtualFile) virtualFile;
         FileEditor[] editors = FileEditorManager.getInstance(myProject).getEditors(file);
-        assert editors.length != 0 : "editors for node not found";
-        FileEditor editor = editors[0];
-        if (!(editor instanceof MPSFileNodeEditor)) return false;
-        myNode = ((MPSFileNodeEditor) editor).getNodeEditor().getCurrentEditorComponent().getEditedNode();
+        if (editors.length != 0) {
+          FileEditor editor = editors[0];
+          if (!(editor instanceof MPSFileNodeEditor)) return false;
+          myNode = ((MPSFileNodeEditor) editor).getNodeEditor().getCurrentEditorComponent().getEditedNode();
+        } else {
+          myNode = file.getNode();
+        }
         return true;
       }
 
