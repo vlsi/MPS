@@ -5,9 +5,7 @@ import com.intellij.ide.CutProvider;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.core.structure.INamedConcept;
@@ -290,7 +288,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-          if (getHighlightManager().clearForOwner(myOwner) || onEscape())  {
+          if (getHighlightManager().clearForOwner(myOwner) || onEscape()) {
             e.consume();
           }
         }
@@ -2002,15 +2000,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
-      IOperationContext context = getOperationContext();
-      if (context == null) return null;
-      return context.getProject();
-    } else if (dataId.equals(MPSDataKeys.MPS_PROJECT.getName())) {
-      IOperationContext context = getOperationContext();
-      if (context == null) return null;
-      return context.getMPSProject();
-    } else if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) {
+    if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) {
       return createEditorContextForActions();
     } else if (dataId.equals(MPSDataKeys.SNODE.getName())) {
       EditorCell selectedCell = getSelectedCell();
@@ -2045,10 +2035,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return this;
     } else if (dataId.equals(MPSDataKeys.MODULES.getName()) && getEditedNode() != null) {
       return Arrays.asList(getEditedNode().getModel().getModelDescriptor().getModule());
-    } else if (dataId.equals(MPSDataKeys.FRAME.getName())) {
-      DataContext dataContext = DataManager.getInstance().getDataContext(this);
-      Project project = MPSDataKeys.PROJECT.getData(dataContext);
-      return WindowManager.getInstance().getFrame(project);
     } else if (dataId.equals(MPSDataKeys.SCOPE.getName())) {
       return getOperationContext().getScope();
     } else if (dataId.equals(MPSDataKeys.MODULE.getName())) {
@@ -2448,7 +2434,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  
+
   private class MyCutProvider implements CutProvider {
     public void performCut(DataContext dataContext) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {

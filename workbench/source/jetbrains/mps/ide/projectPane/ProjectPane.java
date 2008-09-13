@@ -20,7 +20,6 @@ import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
-import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
@@ -375,67 +374,29 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(MPSDataKeys.SNODE.getName())) {
       return getSelectedSNode();
-    }
-
-    if (dataId.equals(MPSDataKeys.SNODES.getName())) {
+    } else if (dataId.equals(MPSDataKeys.SNODES.getName())) {
       return getSelectedNodes();
-    }
-
-    if (dataId.equals(MPSDataKeys.MODEL_DESCRIPTOR.getName())) {
+    } else if (dataId.equals(MPSDataKeys.MODEL_DESCRIPTOR.getName())) {
       return getSelectedModel();
-    }
-
-    if (dataId.equals(MPSDataKeys.MODELS.getName())) {
+    } else if (dataId.equals(MPSDataKeys.MODELS.getName())) {
       return getSelectedModels();
-    }
-
-    if (dataId.equals(MPSDataKeys.MODULES.getName())) {
+    } else if (dataId.equals(MPSDataKeys.MODULES.getName())) {
       return getSelectedModules();
-    }
-
-    if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+    } else if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
       return getContextForSelection();
-    }
-
-    if (dataId.equals(MPSDataKeys.MPS_PROJECT.getName())) {
-      return getMPSProject();
-    }
-
-    if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
-      return getProject();
-    }
-
-    if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName())) {
+    } else if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName())) {
       return new MyCopyProvider();
-    }
-
-    if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) {
+    } else if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) {
       return new MyPasteProvider();
-    }
-
-    if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) {
+    } else if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) {
       return new MyCutProvider();
-    }
-
-    if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
+    } else if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
       return getSelectedFiles();
-    }
-
-    if (dataId.equals(MPSDataKeys.FRAME.getName())) {
-      DataContext dataContext = DataManager.getInstance().getDataContext(getComponent());
-      Project project = MPSDataKeys.PROJECT.getData(dataContext);
-      return WindowManager.getInstance().getFrame(project);
-    }
-
-    if (dataId.equals(MPSDataKeys.SCOPE.getName())) {
+    } else if (dataId.equals(MPSDataKeys.SCOPE.getName())) {
       return getContextForSelection().getScope();
-    }
-
-    if (dataId.equals(MPSDataKeys.MODULE.getName())) {
+    } else if (dataId.equals(MPSDataKeys.MODULE.getName())) {
       return getContextForSelection().getModule();
-    }
-
-    if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
+    } else if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
       TreePath[] selection = getTree().getSelectionPaths();
       if (selection == null) return null;
       if (selection.length != 1) return null;
@@ -445,15 +406,11 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       }
       if (treeNode == null) return null;
       return ((ProjectModuleTreeNode) treeNode).getModule();
-    }
-
-    if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGE.getName())) {
+    } else if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGE.getName())) {
       List<String> selectedPackages = getSelectedPackages();
       if (selectedPackages.size() != 1) return null;
       return selectedPackages.get(0);
-    }
-
-    if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGES.getName())) {
+    } else if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGES.getName())) {
       return getSelectedPackages();
     }
 

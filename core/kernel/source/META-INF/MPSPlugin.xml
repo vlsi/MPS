@@ -41,5 +41,10 @@
                         serviceImplementation="com.intellij.platform.ProjectBaseDirectory"/>
 
     <projectOpenProcessor implementation="com.intellij.platform.PlatformProjectOpenProcessor"/>
+
+    <getDataRule key="MPS_MPSProject" implementationClass="jetbrains.mps.workbench.dataExtraction.MPSProjectRule"/>
+    <getDataRule key="MPS_Frame" implementationClass="jetbrains.mps.workbench.dataExtraction.FrameRule"/>
+    <getDataRule key="MPS_IOperationContext" implementationClass="jetbrains.mps.workbench.dataExtraction.ContextRule"/>
+    <getDataRule key="MPS_IScope" implementationClass="jetbrains.mps.workbench.dataExtraction.ScopeRule"/>
   </extensions>
 </idea-plugin>
