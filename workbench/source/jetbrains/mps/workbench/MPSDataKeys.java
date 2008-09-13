@@ -51,10 +51,7 @@ public class MPSDataKeys extends PlatformDataKeys {
   public static final DataKey<Frame> FRAME = DataKey.create("MPS_Frame");
   @Description(description = "scope")
   public static final DataKey<IScope> SCOPE = DataKey.create("MPS_IScope");
-  @Description(
-    description = "context module",
-    longDescription = "1234"
-  )
+  @Description(description = "context module")
   public static final DataKey<IModule> CONTEXT_MODULE = DataKey.create("MPS_Context_IModule");
   @Description(description = "current editor component")
   public static final DataKey<EditorComponent> EDITOR_COMPONENT = DataKey.create("MPS_EditorComponent");
