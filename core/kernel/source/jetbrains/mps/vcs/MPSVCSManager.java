@@ -92,7 +92,7 @@ public class MPSVCSManager implements ProjectComponent {
       });
     }
   }
-
+                                  
   public boolean deleteFilesAndRemoveFromVCS(List<File> files) {
     List<VirtualFile> list = new LinkedList<VirtualFile>();
     for (File f : files) {
