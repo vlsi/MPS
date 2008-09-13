@@ -16,7 +16,6 @@ public class DeleteGeneratorHelper {
   }
 
   public static void delete(Language sourceLanguage, GeneratorDescriptor generatorDescriptor, boolean deleteFiles) {
-
     LanguageDescriptor languageDescriptor = sourceLanguage.getLanguageDescriptor();
     generatorDescriptor.delete();
     sourceLanguage.setLanguageDescriptor(languageDescriptor);
