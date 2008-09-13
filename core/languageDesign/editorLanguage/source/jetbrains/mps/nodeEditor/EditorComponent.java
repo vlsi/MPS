@@ -49,7 +49,6 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.nodes.GoByCurrentReferenceAction;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -2040,7 +2039,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return getOperationContext().getScope();
     } else if (dataId.equals(MPSDataKeys.MODULE.getName())) {
       return getOperationContext().getModule();
-    } else if (dataId.equals(MPSDataKeys.VIRTUAL_FILE.getName())) {
+    } /*else if (dataId.equals(MPSDataKeys.VIRTUAL_FILE.getName())) {
       final SNode node = (SNode) getData(MPSDataKeys.SNODE.getName());
       if (node == null) return null;
       return ModelAccess.instance().runReadAction(new Computable<Object>() {
@@ -2048,7 +2047,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return MPSNodesVirtualFileSystem.getInstance().getFileFor(node.getContainingRoot());
         }
       });
-    }
+    }   */
 
     return null;
   }
