@@ -8,7 +8,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.wm.ToolWindow;
-import com.intellij.openapi.wm.ToolWindowType;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
@@ -93,13 +92,13 @@ public abstract class UsagesTree extends MPSTree {
 
     getActionMap().put(COMMAND_OPEN_NODE_IN_PROJECT, new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        openCurrentNodeLink(false, isUnstableWindow());
+        openCurrentNodeLink(false, !isUnstableWindow());
       }
     });
 
     getActionMap().put(COMMAND_OPEN_NODE_IN_TREE, new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        openCurrentNodeLink(true, isUnstableWindow());
+        openCurrentNodeLink(true, !isUnstableWindow());
       }
     });
 
@@ -120,7 +119,7 @@ public abstract class UsagesTree extends MPSTree {
         boolean goOneClick = e.getClickCount() == 1 && myAutoscroll && e.getButton() == MouseEvent.BUTTON1;
         boolean goTwoClick = e.getClickCount() == 2 && e.getButton() == MouseEvent.BUTTON1;
         if (goOneClick || goTwoClick) {
-          boolean focus = goTwoClick || isUnstableWindow();
+          boolean focus = goTwoClick || !isUnstableWindow();
           openCurrentNodeLink(false, focus);
         }
       }
@@ -543,7 +542,7 @@ public abstract class UsagesTree extends MPSTree {
 
     if (next != null) {
       setCurrentNode(next);
-      openCurrentNodeLink(false, isUnstableWindow());
+      openCurrentNodeLink(false, !isUnstableWindow());
     }
   }
 
@@ -561,7 +560,7 @@ public abstract class UsagesTree extends MPSTree {
 
     if (next != null) {
       setCurrentNode(next);
-      openCurrentNodeLink(false, isUnstableWindow());
+      openCurrentNodeLink(false, !isUnstableWindow());
     }
   }
 
@@ -629,15 +628,7 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   protected boolean isUnstableWindow() {
-    return !(isAutoHide() || isUnpinned());
-  }
-
-  private boolean isAutoHide() {
-    return getToolWindow().getType() == ToolWindowType.SLIDING;
-  }
-
-  private boolean isUnpinned() {
-    return getToolWindow().getType() == ToolWindowType.FLOATING && getToolWindow().isAutoHide();
+    return getToolWindow().isAutoHide();
   }
 
   private ToolWindow getToolWindow() {

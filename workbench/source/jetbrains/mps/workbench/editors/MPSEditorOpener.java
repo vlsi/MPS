@@ -19,6 +19,7 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.DefaultNodeEditor.DefaultInspectorCell;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
@@ -220,7 +221,7 @@ public class MPSEditorOpener implements ProjectComponent {
   }
 
   public void selectInInspector(final IEditor nodeEditor, final SNode node, IOperationContext context, final boolean focus) {
-    NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
+    final NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
     final InspectorEditorComponent inspector = nec.getInspector();
     if (inspector == null) return;
     if (nec.getLastInspectedNode() == null) return;
@@ -231,8 +232,12 @@ public class MPSEditorOpener implements ProjectComponent {
         while (currentTargetNode != null) {
           EditorCell cellInInspector = inspector.findNodeCell(currentTargetNode);
           if (cellInInspector != null) {
+            boolean hasInspector = !(inspector.getRootCell() instanceof DefaultInspectorCell);
+            if (hasInspector) {
+              nec.getInspectorTool().openTool(focus);
+            }
             inspector.selectNode(node);
-            doFocus(focus, nodeEditor, true);
+            doFocus(focus, nodeEditor, hasInspector);
             return;
           }
           currentTargetNode = currentTargetNode.getParent();
