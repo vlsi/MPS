@@ -18,10 +18,7 @@ import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
@@ -221,7 +218,11 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
       saveTransientModels = false;
     }
 
-    ApplicationManager.getApplication().saveAll();
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        SModelRepository.getInstance().saveAll();
+      }
+    });
 
     showMessageView();
     IdeEventQueue.getInstance().flushQueue();
