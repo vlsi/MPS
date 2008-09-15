@@ -456,7 +456,13 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
 
   private static Integer calculateFontStyle0649_0(EditorCell cell) {
     int result;
-    result = CellModel_ModelAccess_Editor._null_1221238429654(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_ModelAccess_Editor._null_1221238429654((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
@@ -474,25 +480,49 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor0649_2(EditorCell cell) {
     Color result;
-    result = CellModel_ModelAccess_Editor._null_1221238429633(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_ModelAccess_Editor._null_1221238429633((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static Color calculateColor0649_3(EditorCell cell) {
     Color result;
-    result = CellModel_ModelAccess_Editor._null_1221238429640(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_ModelAccess_Editor._null_1221238429640((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static Color calculateColor0649_4(EditorCell cell) {
     Color result;
-    result = CellModel_ModelAccess_Editor._null_1221238429647(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_ModelAccess_Editor._null_1221238429647((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static boolean calculateUnderlined0649_0(EditorCell cell) {
     boolean result;
-    result = CellModel_ModelAccess_Editor._null_1221238429661(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_ModelAccess_Editor._null_1221238429661((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

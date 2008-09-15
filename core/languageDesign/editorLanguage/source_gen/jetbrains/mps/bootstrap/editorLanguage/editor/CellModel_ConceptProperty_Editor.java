@@ -598,7 +598,13 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
 
   private static Integer calculateFontStyle6697_0(EditorCell cell) {
     int result;
-    result = CellModel_ConceptProperty_Editor._null_1221239216374(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_ConceptProperty_Editor._null_1221239216374((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
@@ -628,25 +634,49 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6697_4(EditorCell cell) {
     Color result;
-    result = CellModel_ConceptProperty_Editor._null_1221239216353(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_ConceptProperty_Editor._null_1221239216353((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static Color calculateColor6697_5(EditorCell cell) {
     Color result;
-    result = CellModel_ConceptProperty_Editor._null_1221239216360(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_ConceptProperty_Editor._null_1221239216360((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static Color calculateColor6697_6(EditorCell cell) {
     Color result;
-    result = CellModel_ConceptProperty_Editor._null_1221239216367(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_ConceptProperty_Editor._null_1221239216367((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static boolean calculateUnderlined6697_0(EditorCell cell) {
     boolean result;
-    result = CellModel_ConceptProperty_Editor._null_1221239216381(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_ConceptProperty_Editor._null_1221239216381((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

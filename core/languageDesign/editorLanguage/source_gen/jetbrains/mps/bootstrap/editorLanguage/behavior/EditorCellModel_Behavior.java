@@ -11,7 +11,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOp
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import java.awt.Font;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -116,14 +115,14 @@ public class EditorCellModel_Behavior {
   public static int call_getFontStyle_1221053923273(SNode thisNode) {
     SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem"))).first();
     if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, "style", null) == null || SPropertyOperations.hasValue(firstItem, "style", "QUERY", null)) {
-      return Font.PLAIN;
+      return EditorCellModel_Behavior.call_getDefaultFontStyle_1221472292001(thisNode);
     }
     Class<MPSFonts> classFonts = MPSFonts.class;
     try {
       return (Integer)classFonts.getField(SPropertyOperations.getString_def(firstItem, "style", null)).get(null);
     } catch (Throwable t) {
       t.printStackTrace();
-      return Font.PLAIN;
+      return EditorCellModel_Behavior.call_getDefaultFontStyle_1221472292001(thisNode);
     }
   }
 
@@ -165,6 +164,13 @@ public class EditorCellModel_Behavior {
       result += "FE";
     }
     return result;
+  }
+
+  public static int call_getDefaultFontStyle_1221472292001(SNode thisNode) {
+    return (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant") ?
+      MPSFonts.BOLD :
+      MPSFonts.PLAIN
+    );
   }
 
   public static String call_getCellId_1216737839993(SNode thisNode) {

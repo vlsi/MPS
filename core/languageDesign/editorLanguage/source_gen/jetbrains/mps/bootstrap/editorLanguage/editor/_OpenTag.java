@@ -89,7 +89,13 @@ public class _OpenTag extends AbstractCellProvider {
 
   private static Color calculateColor4575_0(EditorCell cell) {
     Color result;
-    result = _OpenTag._null_1214396913666(cell.getSNode(), cell.getEditorContext());
+    result = _OpenTag._null_1214396913666((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

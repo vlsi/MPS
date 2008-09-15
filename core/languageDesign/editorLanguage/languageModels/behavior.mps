@@ -1906,7 +1906,7 @@
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1221053923273">
       <property name="name" value="getFontStyle" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221053923274" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1221053927743" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1221472172666" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221053923276">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221053941467">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221053941468">
@@ -1933,10 +1933,12 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1221054010190">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221054010191">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221054021831">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1221054092388">
-                <link role="classifier" targetNodeId="10.~Font" resolveInfo="Font" />
-                <link role="variableDeclaration" targetNodeId="10.~Font.PLAIN" resolveInfo="PLAIN" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221472201892">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221472329016">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221472329017" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221472329018">
+                  <link role="conceptMethodDeclaration" targetNodeId="1221472292001" resolveInfo="getDefaultFontStyle" />
+                </node>
               </node>
             </node>
           </node>
@@ -2041,10 +2043,12 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221054057530">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1221054105346">
-                  <link role="classifier" targetNodeId="10.~Font" resolveInfo="Font" />
-                  <link role="variableDeclaration" targetNodeId="10.~Font.PLAIN" resolveInfo="PLAIN" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221472334026">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221472337964">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221472337965" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221472337966">
+                    <link role="conceptMethodDeclaration" targetNodeId="1221472292001" resolveInfo="getDefaultFontStyle" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -2325,6 +2329,33 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1220340140132">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220340140713">
             <link role="variableDeclaration" targetNodeId="1220340136451" resolveInfo="result" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1221472292001">
+      <property name="name" value="getDefaultFontStyle" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1221472295372" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1221472297255" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221472292004">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221472313718">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1221472313719">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1221472313720">
+              <link role="classifier" targetNodeId="11.~MPSFonts" resolveInfo="MPSFonts" />
+              <link role="variableDeclaration" targetNodeId="11.~MPSFonts.BOLD" resolveInfo="BOLD" />
+            </node>
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1221472313721">
+              <link role="classifier" targetNodeId="11.~MPSFonts" resolveInfo="MPSFonts" />
+              <link role="variableDeclaration" targetNodeId="11.~MPSFonts.PLAIN" resolveInfo="PLAIN" />
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221472313722">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221472313723" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1221472313724">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1221472313725">
+                  <link role="conceptDeclaration" targetNodeId="1.1073389577006" resolveInfo="CellModel_Constant" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

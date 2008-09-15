@@ -89,7 +89,13 @@ public class _CloseTag extends AbstractCellProvider {
 
   private static Color calculateColor6449_0(EditorCell cell) {
     Color result;
-    result = _CloseTag._null_1214396913636(cell.getSNode(), cell.getEditorContext());
+    result = _CloseTag._null_1214396913636((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

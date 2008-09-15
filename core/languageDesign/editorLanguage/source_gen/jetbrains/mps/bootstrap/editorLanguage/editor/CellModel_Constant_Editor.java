@@ -509,7 +509,13 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static Integer calculateFontStyle6752_0(EditorCell cell) {
     int result;
-    result = CellModel_Constant_Editor._null_1221238018498(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Constant_Editor._null_1221238018498((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
@@ -539,31 +545,61 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6752_4(EditorCell cell) {
     Color result;
-    result = CellModel_Constant_Editor._null_1221237912391(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Constant_Editor._null_1221237912391((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static Color calculateColor6752_5(EditorCell cell) {
     Color result;
-    result = CellModel_Constant_Editor._null_1221237968304(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Constant_Editor._null_1221237968304((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static Color calculateColor6752_6(EditorCell cell) {
     Color result;
-    result = CellModel_Constant_Editor._null_1221237984986(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Constant_Editor._null_1221237984986((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static Integer calculateFontSize6752_0(EditorCell cell) {
     int result;
-    result = CellModel_Constant_Editor._null_1221240468805(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Constant_Editor._null_1221240468805((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static boolean calculateUnderlined6752_0(EditorCell cell) {
     boolean result;
-    result = CellModel_Constant_Editor._null_1221238039415(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Constant_Editor._null_1221238039415((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

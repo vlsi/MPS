@@ -786,7 +786,13 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
 
   private static Integer calculateFontStyle3263_0(EditorCell cell) {
     int result;
-    result = CellModel_Property_Editor._null_1221239223958(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Property_Editor._null_1221239223958((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
@@ -816,25 +822,49 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor3263_4(EditorCell cell) {
     Color result;
-    result = CellModel_Property_Editor._null_1221239223937(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Property_Editor._null_1221239223937((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static Color calculateColor3263_5(EditorCell cell) {
     Color result;
-    result = CellModel_Property_Editor._null_1221239223944(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Property_Editor._null_1221239223944((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static Color calculateColor3263_6(EditorCell cell) {
     Color result;
-    result = CellModel_Property_Editor._null_1221239223951(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Property_Editor._null_1221239223951((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static boolean calculateUnderlined3263_0(EditorCell cell) {
     boolean result;
-    result = CellModel_Property_Editor._null_1221239223965(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Property_Editor._null_1221239223965((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

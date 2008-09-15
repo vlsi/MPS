@@ -826,13 +826,25 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor4233_0(EditorCell cell) {
     Color result;
-    result = CellModel_Alternation_Editor._null_1214396893965(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Alternation_Editor._null_1214396893965((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static Color calculateColor4233_1(EditorCell cell) {
     Color result;
-    result = CellModel_Alternation_Editor._null_1214396913660(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Alternation_Editor._null_1214396913660((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

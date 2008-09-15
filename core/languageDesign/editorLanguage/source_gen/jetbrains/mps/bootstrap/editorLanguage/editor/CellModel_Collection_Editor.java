@@ -888,7 +888,13 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor2102_0(EditorCell cell) {
     Color result;
-    result = CellModel_Collection_Editor._null_1214396913654(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Collection_Editor._null_1214396913654((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

@@ -370,7 +370,13 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6148_0(EditorCell cell) {
     Color result;
-    result = CellModel_Error_Editor._null_1214396913642(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_Error_Editor._null_1214396913642((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

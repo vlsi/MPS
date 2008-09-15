@@ -29,69 +29,69 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1221240558566(context, node);
+    return this.createCollection1221471675572(context, node);
   }
 
-  public EditorCell createCollection1221240558535(EditorContext context, SNode node) {
+  public EditorCell createCollection1221471675541(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_12212405585351221240558535(editorCell, node, context);
+    setupBasic_Collection_12214716755411221471675541(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1221240558537(context, node, "focus policy applicable:"));
-    editorCell.addEditorCell(this.createCollection1221240558539(context, node));
+    editorCell.addEditorCell(this.createConstant1221471675543(context, node, "focus policy applicable:"));
+    editorCell.addEditorCell(this.createCollection1221471675545(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1221240558539(EditorContext context, SNode node) {
+  public EditorCell createCollection1221471675545(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12212405585391221240558539(editorCell, node, context);
+    setupBasic_Collection_12214716755451221471675545(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRefNode1221240558541(context, node));
+    editorCell.addEditorCell(this.createRefNode1221471675547(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1221240558566(EditorContext context, SNode node) {
+  public EditorCell createCollection1221471675572(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12212405585661221240558566(editorCell, node, context);
+    setupBasic_Collection_12214716755721221471675572(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     if (renderingCondition7117_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection1221240558535(context, node));
+      editorCell.addEditorCell(this.createCollection1221471675541(context, node));
     }
     return editorCell;
   }
 
-  public EditorCell createConstant1221240558537(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1221471675543(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12212405585371221240558537(editorCell, node, context);
-    setupLabel_Constant_1221240558537_1221240558537(editorCell, node, context);
+    setupBasic_Constant_12214716755431221471675543(editorCell, node, context);
+    setupLabel_Constant_1221471675543_1221471675543(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode1221240558541_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode1221471675547_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_focusPolicyApplicable1221240558541(editorCell, node, context);
+    setupBasic_refNode_focusPolicyApplicable1221471675547(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_focusPolicyApplicable_1221240558541((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_focusPolicyApplicable_1221471675547((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1221240558541(EditorContext context, SNode node) {
+  public EditorCell createRefNode1221471675547(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("focusPolicyApplicable");
     provider.setNoTargetText("<no focus policy condition>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1221240558541_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode1221471675547_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -103,8 +103,8 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   }
 
 
-  private static void setupBasic_Collection_12212405585351221240558535(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221240558535");
+  private static void setupBasic_Collection_12214716755411221471675541(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221471675541");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -116,12 +116,12 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     }
   }
 
-  private static void setupBasic_Constant_12212405585371221240558537(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221240558537");
+  private static void setupBasic_Constant_12214716755431221471675543(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221471675543");
   }
 
-  private static void setupBasic_Collection_12212405585391221240558539(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221240558539");
+  private static void setupBasic_Collection_12214716755451221471675545(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221471675545");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -133,11 +133,11 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     }
   }
 
-  private static void setupBasic_refNode_focusPolicyApplicable1221240558541(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_refNode_focusPolicyApplicable1221471675547(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Collection_12212405585661221240558566(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221240558566");
+  private static void setupBasic_Collection_12214716755721221471675572(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221471675572");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -149,10 +149,10 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     }
   }
 
-  private static void setupLabel_Constant_1221240558537_1221240558537(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1221471675543_1221471675543(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_focusPolicyApplicable_1221240558541(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNode_focusPolicyApplicable_1221471675547(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition7117_0(SNode node, EditorContext editorContext, IScope scope) {

@@ -483,37 +483,73 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
   private static Integer calculateFontStyle3190_0(EditorCell cell) {
     int result;
-    result = CellModel_TransactionalProperty_Editor._null_1221237741137(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_TransactionalProperty_Editor._null_1221237741137((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static Color calculateColor3190_0(EditorCell cell) {
     Color result;
-    result = CellModel_TransactionalProperty_Editor._null_1221237741110(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_TransactionalProperty_Editor._null_1221237741110((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static Color calculateColor3190_1(EditorCell cell) {
     Color result;
-    result = CellModel_TransactionalProperty_Editor._null_1221237741116(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_TransactionalProperty_Editor._null_1221237741116((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static Color calculateColor3190_2(EditorCell cell) {
     Color result;
-    result = CellModel_TransactionalProperty_Editor._null_1221237741123(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_TransactionalProperty_Editor._null_1221237741123((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static Color calculateColor3190_3(EditorCell cell) {
     Color result;
-    result = CellModel_TransactionalProperty_Editor._null_1221237741130(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_TransactionalProperty_Editor._null_1221237741130((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
   private static boolean calculateUnderlined3190_0(EditorCell cell) {
     boolean result;
-    result = CellModel_TransactionalProperty_Editor._null_1221237741151(cell.getSNode(), cell.getEditorContext());
+    result = CellModel_TransactionalProperty_Editor._null_1221237741151((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 
