@@ -254,6 +254,7 @@ public class MPSVCSManager implements ProjectComponent {
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
     ModelChangesWatcher.instance().addMetadataListener(myMetadataListener);
     myChangeListManager.addChangeListListener(myChangeListUpdateListener);
+    addFilesScheduledToAddLater();
   }
 
   public void disposeComponent() {
@@ -263,8 +264,8 @@ public class MPSVCSManager implements ProjectComponent {
     ModelChangesWatcher.instance().removeMetadataListener(myMetadataListener);
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
 
-    myTasksQueue.allowAccessAndProcessAllTasks();
     addFilesScheduledToAddLater();
+    myTasksQueue.allowAccessAndProcessAllTasks();
   }
 
   public static void addFileLater(File file) {
