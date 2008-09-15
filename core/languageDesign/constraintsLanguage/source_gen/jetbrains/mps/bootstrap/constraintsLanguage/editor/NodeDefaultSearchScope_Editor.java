@@ -18,6 +18,9 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
@@ -54,8 +57,12 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection1159289834204(context, node));
-    editorCell.addEditorCell(this.createCollection1159289834235(context, node));
+    if (renderingCondition7999_1(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection1159289834204(context, node));
+    }
+    if (renderingCondition7999_0(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection1159289834235(context, node));
+    }
     editorCell.addEditorCell(this.createCollection1159289834239(context, node));
     return editorCell;
   }
@@ -66,7 +73,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1159289834205(context, node, "search scope"));
+    editorCell.addEditorCell(this.createConstant1159289834205(context, node, "search scope description (deprecated)"));
     editorCell.addEditorCell(this.createConstant1159289834206(context, node, ":"));
     editorCell.addEditorCell(this.createProperty1159289834207(context, node));
     return editorCell;
@@ -78,7 +85,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1159289834236(context, node, "can create"));
+    editorCell.addEditorCell(this.createConstant1159289834236(context, node, "can create (deprecated)"));
     editorCell.addEditorCell(this.createConstant1159289834237(context, node, ":"));
     editorCell.addEditorCell(this.createRefNode1159289834238(context, node));
     return editorCell;
@@ -90,7 +97,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1159289834240(context, node, "create"));
+    editorCell.addEditorCell(this.createConstant1159289834240(context, node, "search scope"));
     editorCell.addEditorCell(this.createConstant1159289834241(context, node, ":"));
     editorCell.addEditorCell(this.createRefNode1159289834242(context, node));
     return editorCell;
@@ -482,6 +489,14 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1159289834243_1159289834243(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  public static boolean renderingCondition7999_0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "searchScopeCanCreate", true) != null);
+  }
+
+  public static boolean renderingCondition7999_1(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getString(node, "description") != null && SPropertyOperations.getString(node, "description").length() > 0;
+  }
+
   private static Color calculateColor7999_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
@@ -490,13 +505,13 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor7999_1(EditorCell cell) {
     Color result;
-    result = MPSColors.DARK_BLUE;
+    result = MPSColors.red;
     return result;
   }
 
   private static Color calculateColor7999_2(EditorCell cell) {
     Color result;
-    result = MPSColors.DARK_BLUE;
+    result = MPSColors.red;
     return result;
   }
 

@@ -14,8 +14,8 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends DefaultNodeEditor {
@@ -292,7 +292,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateFontStyle2342_1(cell);
+            }
+
+          });
         }
 
       };
@@ -318,7 +324,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateFontStyle2342_2(cell);
+            }
+
+          });
         }
 
       };
@@ -361,7 +373,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateFontStyle2342_3(cell);
+            }
+
+          });
         }
 
       };
@@ -391,7 +409,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateFontStyle2342_4(cell);
+            }
+
+          });
         }
 
       };
@@ -434,7 +458,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateFontStyle2342_5(cell);
+            }
+
+          });
         }
 
       };
@@ -447,7 +477,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateFontStyle2342_6(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -484,7 +520,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateFontStyle2342_0(cell);
+            }
+
+          });
         }
 
       };
@@ -536,6 +578,48 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupLabel_Constant_1158790989585_1158790989585(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Integer calculateFontStyle2342_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.PLAIN;
+    return result;
+  }
+
+  private static Integer calculateFontStyle2342_1(EditorCell cell) {
+    int result;
+    result = MPSFonts.PLAIN;
+    return result;
+  }
+
+  private static Integer calculateFontStyle2342_2(EditorCell cell) {
+    int result;
+    result = MPSFonts.PLAIN;
+    return result;
+  }
+
+  private static Integer calculateFontStyle2342_3(EditorCell cell) {
+    int result;
+    result = MPSFonts.PLAIN;
+    return result;
+  }
+
+  private static Integer calculateFontStyle2342_4(EditorCell cell) {
+    int result;
+    result = MPSFonts.PLAIN;
+    return result;
+  }
+
+  private static Integer calculateFontStyle2342_5(EditorCell cell) {
+    int result;
+    result = MPSFonts.PLAIN;
+    return result;
+  }
+
+  private static Integer calculateFontStyle2342_6(EditorCell cell) {
+    int result;
+    result = MPSFonts.PLAIN;
+    return result;
   }
 
   private static Color calculateColor2342_0(EditorCell cell) {
