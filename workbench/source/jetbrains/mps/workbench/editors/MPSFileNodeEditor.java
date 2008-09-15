@@ -23,6 +23,7 @@ import java.awt.BorderLayout;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -33,6 +34,8 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentReferenceEditor, DocumentsEditor {
+  private static Logger LOG = Logger.getLogger(MPSFileNodeEditor.class);
+
   private IEditor myNodeEditor;
   private ReloadListener myReloadListener = new ReloadAdapter() {
     public void onReload() {
@@ -197,6 +200,12 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
 
     MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     SModelDescriptor sm = myFile.getNode().getModel().getModelDescriptor();
+
+    if (sm == null) {
+      throw new IllegalStateException("Can't find a model descriptor for model " + myFile.getNode().getModel().getUID());
+    }
+
+
     return new ModuleContext(sm.getModule(), mpsProject);
   }
 
