@@ -387,6 +387,20 @@ public class TextLine {
     this.myEndTextSelectionPosition = i;
   }
 
+  public void selectAll() {
+    setStartTextSelectionPosition(0);
+    setEndTextSelectionPosition(getText().length());
+  }
+
+  public void deselectAll() {
+    setStartTextSelectionPosition(0);
+    setEndTextSelectionPosition(0);
+  }
+
+  public boolean isEverythingSelected() {
+    return getStartTextSelectionPosition() == 0 && getEndTextSelectionPosition() == getText().length();
+  }
+
   public void setCaretByXCoord(int _x) {
     int x = _x - getLeftInternalInset();
     FontMetrics metrics = getFontMetrics();

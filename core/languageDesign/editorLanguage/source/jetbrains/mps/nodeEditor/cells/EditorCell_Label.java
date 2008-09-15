@@ -83,7 +83,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   public void setSelected(boolean selected) {
     super.setSelected(selected);
-    if (!selected) myTextLine.resetSelection();
+    if (!selected && !getEditor().selectionStackContains(this)) {
+      myTextLine.resetSelection();
+    }
     myCaretIsVisible = true;
   }
 
@@ -607,6 +609,18 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     pattern.setText(getText());
     pattern.setCaretPosition(getCaretPosition());
     return pattern;
+  }
+
+  public void selectAll() {
+    getTextLine().selectAll();
+  }
+
+  public void deselectAll() {
+    getTextLine().deselectAll();
+  }
+
+  public boolean isEverythingSelected() {
+    return getTextLine().isEverythingSelected();
   }
 
   public NodeSubstituteInfo getSubstituteInfo() {

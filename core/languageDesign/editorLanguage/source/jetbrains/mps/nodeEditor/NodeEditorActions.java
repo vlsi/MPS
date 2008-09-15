@@ -285,11 +285,22 @@ public class NodeEditorActions {
   public static class SelectUp extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+
+      if (selection instanceof EditorCell_Label && !((EditorCell_Label) selection).isEverythingSelected()) {
+        return true;
+      }
+
       return selection != null && selection.getParent() != null && findTarget(selection) != null;
     }
 
     public void execute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+
+      if (selection instanceof EditorCell_Label && !((EditorCell_Label) selection).isEverythingSelected()) {
+        ((EditorCell_Label) selection).selectAll();
+        return;
+      }
+
       int caretX = selection.getCaretX();
       context.getNodeEditorComponent().pushSelection(selection);
       EditorCell target = findTarget(selection);
@@ -311,10 +322,23 @@ public class NodeEditorActions {
 
   public static class SelectDown extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
+      EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+      if (selectedCell instanceof EditorCell_Label &&
+        ((EditorCell_Label) selectedCell).isEverythingSelected()) {
+        return true;
+      }
+
       return context.getNodeEditorComponent().peekSelection() != null;
     }
 
     public void execute(EditorContext context) {
+      EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+      if (selectedCell instanceof EditorCell_Label &&
+        ((EditorCell_Label) selectedCell).isEverythingSelected()) {        
+        ((EditorCell_Label) selectedCell).deselectAll();
+        return ;
+      }
+
       context.getNodeEditorComponent().setSelectionDontClearStack(context.getNodeEditorComponent().popSelection(), true);
     }
   }

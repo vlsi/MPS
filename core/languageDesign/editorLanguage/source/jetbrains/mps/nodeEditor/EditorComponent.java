@@ -354,6 +354,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       }
 
+      public void mouseClicked(MouseEvent e) {                
+        if (e.getClickCount() == 2 && myRootCell.findCell(e.getX(), e.getY()) == getSelectedCell() &&
+          getSelectedCell() instanceof EditorCell_Label) {
+          ((EditorCell_Label) getSelectedCell()).selectAll();
+          repaint();
+        }
+      }
+
       public void mouseReleased(MouseEvent e) {
         if (e.isPopupTrigger()) {
           processPopupMenu(e);
