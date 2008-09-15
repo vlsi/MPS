@@ -30,6 +30,9 @@ import org.jetbrains.annotations.NotNull;
 public class MPSVCSManager implements ProjectComponent {
   private static final Logger LOG = Logger.getLogger(MPSVCSManager.class);
 
+  //the files we want to add when we have no project loaded yet (and thus no VCS managers) 
+  private static List<File> ourFilesToAddLater = new ArrayList<File>();
+
   public static MPSVCSManager getInstance(Project project) {
     return project.getComponent(MPSVCSManager.class);
   }
@@ -261,6 +264,15 @@ public class MPSVCSManager implements ProjectComponent {
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
 
     myTasksQueue.allowAccessAndProcessAllTasks();
+    addFilesScheduledToAddLater();
+  }
+
+  public static void addFileLater(File file) {
+    ourFilesToAddLater.add(file);
+  }
+
+  private void addFilesScheduledToAddLater() {
+    addFilesToVCS(ourFilesToAddLater); //todo only files in an appropriate project or to every project opened; now files are added to a first opened project
   }
 
   private class ModelSavedListener extends SModelAdapter {
