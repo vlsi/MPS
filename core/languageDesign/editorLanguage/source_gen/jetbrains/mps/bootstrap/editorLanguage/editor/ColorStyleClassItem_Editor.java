@@ -17,7 +17,6 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
@@ -175,7 +174,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition4607_1(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "color", "query", null) || SLinkOperations.getTarget(node, "query", true) != null;
+    return SLinkOperations.getTarget(node, "query", true) != null;
   }
 
 }

@@ -18,6 +18,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.smodelLanguage.editor.Styles_StyleSheet;
@@ -246,7 +247,13 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ChildTypeRestriction_Editor.calculateFontStyle4762_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_LEFT, 1.0);
           this.set(StyleAttributes.PADDING_RIGHT, 1.0);
         }
@@ -301,6 +308,12 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_name_1212671248638(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Integer calculateFontStyle4762_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
   }
 
   public static class _Inline4762_0 extends AbstractCellProvider {

@@ -29,7 +29,7 @@
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
-  <maxImportIndex value="12" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
@@ -41,6 +41,7 @@
   <import index="10" modelUID="java.awt@java_stub" version="-1" />
   <import index="11" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <import index="12" modelUID="java.lang.reflect@java_stub" version="-1" />
+  <import index="13" modelUID="jetbrains.mps.nodeEditor.cells@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877183870">
     <property name="package" value="CellModel" />
@@ -2335,27 +2336,14 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1221472292001">
       <property name="name" value="getDefaultFontStyle" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1221472295372" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="1221473360841" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1221472297255" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221472292004">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221472313718">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1221472313719">
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1221472313720">
-              <link role="classifier" targetNodeId="11.~MPSFonts" resolveInfo="MPSFonts" />
-              <link role="variableDeclaration" targetNodeId="11.~MPSFonts.BOLD" resolveInfo="BOLD" />
-            </node>
-            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1221472313721">
-              <link role="classifier" targetNodeId="11.~MPSFonts" resolveInfo="MPSFonts" />
-              <link role="variableDeclaration" targetNodeId="11.~MPSFonts.PLAIN" resolveInfo="PLAIN" />
-            </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221472313722">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221472313723" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1221472313724">
-                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1221472313725">
-                  <link role="conceptDeclaration" targetNodeId="1.1073389577006" resolveInfo="CellModel_Constant" />
-                </node>
-              </node>
-            </node>
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1221473393548">
+            <link role="classifier" targetNodeId="11.~MPSFonts" resolveInfo="MPSFonts" />
+            <link role="variableDeclaration" targetNodeId="11.~MPSFonts.PLAIN" resolveInfo="PLAIN" />
           </node>
         </node>
       </node>
@@ -4120,6 +4108,21 @@
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1220962155098">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220962155099" />
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1221473513347">
+      <property name="name" value="getDefaultFontStyle" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="1221472292001" resolveInfo="getDefaultFontStyle" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221473513350">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221473775235">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1221473848307">
+            <link role="classifier" targetNodeId="13.~EditorCell_Constant" resolveInfo="EditorCell_Constant" />
+            <link role="variableDeclaration" targetNodeId="13.~EditorCell_Constant.DEFAULT_FONT_STYLE" resolveInfo="DEFAULT_FONT_STYLE" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1221473523398" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="1221473523399" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1221048114768">
     <property name="package" value="Stylesheet" />
@@ -4133,6 +4136,38 @@
     <link role="concept" targetNodeId="1.1176809959526" resolveInfo="QueryFunction_Color" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1221055011633">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221055011634" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1221482169625">
+    <property name="package" value="QueryFunction.Style" />
+    <link role="concept" targetNodeId="1.1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1221482178305">
+      <property name="name" value="getQueryMethodName" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221482178306" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221482178307">
+        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221482178308">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221482178309">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1221482178310">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221482178313">
+              <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1221482178314">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221482178315" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221482178316">
+                <link role="baseMethodDeclaration" targetNodeId="7.~SNode.getId():java.lang.String" resolveInfo="getId" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1221482178322">
+              <property name="value" value="_StyleParameter_QueryFunction_" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1221482169626">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221482169627" />
     </node>
   </node>
 </model>

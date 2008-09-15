@@ -16,9 +16,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class PatternCondition_Editor extends DefaultNodeEditor {
@@ -122,7 +122,13 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return PatternCondition_Editor.calculateFontStyle7841_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -144,6 +150,12 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_name_1174643021631(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Integer calculateFontStyle7841_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
   }
 
   private static Color calculateColor7841_0(EditorCell cell) {

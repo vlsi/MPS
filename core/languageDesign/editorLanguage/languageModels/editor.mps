@@ -172,7 +172,6 @@
           <property name="flag" value="true" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1214396913641">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1214396913642">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214396913643">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214396913644">
@@ -320,7 +319,6 @@
             <property name="flag" value="true" />
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1214396913653">
-            <property name="color" value="query" />
             <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1214396913654">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214396913655">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214396913656">
@@ -727,7 +725,6 @@
           <property name="flag" value="true" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" id="1221237907156">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221237912391">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237912392">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221237947201">
@@ -742,7 +739,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1221237963100">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221237968304">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237968305">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221237970837">
@@ -757,7 +753,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1221237980829">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221237984986">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237984987">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221237988442">
@@ -772,7 +767,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1221238013638">
-          <property name="style" value="QUERY" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_FontStyle" id="1221238018498">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221238018499">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221238020938">
@@ -1000,7 +994,6 @@
           <property name="flag" value="true" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" id="1221238429632">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221238429633">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221238429634">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221238429635">
@@ -1015,7 +1008,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1221238429639">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221238429640">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221238429641">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221238429642">
@@ -1030,7 +1022,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1221238429646">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221238429647">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221238429648">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221238429649">
@@ -1045,7 +1036,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1221238429653">
-          <property name="style" value="QUERY" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_FontStyle" id="1221238429654">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221238429655">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221238429656">
@@ -1177,7 +1167,6 @@
           <property name="flag" value="true" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" id="1221239223936">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221239223937">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239223938">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239223939">
@@ -1192,7 +1181,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1221239223943">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221239223944">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239223945">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239223946">
@@ -1207,7 +1195,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1221239223950">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221239223951">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239223952">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239223953">
@@ -1222,7 +1209,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1221239223957">
-          <property name="style" value="QUERY" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_FontStyle" id="1221239223958">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239223959">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239223960">
@@ -2144,7 +2130,6 @@
           <property name="flag" value="true" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1214396893964">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1214396893965">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214396893966">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214396893967">
@@ -2220,7 +2205,6 @@
           <property name="flag" value="true" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1214396913659">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1214396913660">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214396913661">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214396913662">
@@ -2957,7 +2941,6 @@
           <property name="flag" value="true" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" id="1221239216352">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221239216353">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239216354">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239216355">
@@ -2972,7 +2955,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1221239216359">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221239216360">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239216361">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239216362">
@@ -2987,7 +2969,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1221239216366">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221239216367">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239216368">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239216369">
@@ -3002,7 +2983,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1221239216373">
-          <property name="style" value="QUERY" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_FontStyle" id="1221239216374">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221239216375">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221239216376">
@@ -4763,7 +4743,6 @@
         <property name="flag" value="true" />
       </node>
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1214396913665">
-        <property name="color" value="query" />
         <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1214396913666">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214396913667">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214396913668">
@@ -4812,7 +4791,6 @@
         </node>
       </node>
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1214396913635">
-        <property name="color" value="query" />
         <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1214396913636">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214396913637">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214396913638">
@@ -6029,27 +6007,12 @@
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1186412621877">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186412621878">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186412623144">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1186412894017">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1186412917882">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1186412918760" />
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227927758">
-                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1186412914830" />
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1186412917256">
-                      <link role="link" targetNodeId="2.1186403803051" />
-                    </node>
-                  </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227906498">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227930872">
-                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1186412623145" />
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1186412626509">
-                      <link role="property" targetNodeId="2.1186403713874" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1186412629997">
-                    <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1186412629998">
-                      <link role="enumMember" targetNodeId="2.1139246571096" />
-                    </node>
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1186412917882">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1186412918760" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227927758">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1186412914830" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1186412917256">
+                    <link role="link" targetNodeId="2.1186403803051" />
                   </node>
                 </node>
               </node>
@@ -6093,29 +6056,34 @@
         <link role="relationDeclaration" targetNodeId="2.1220975211821" />
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1220975770016">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220975770017">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220975793909">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1221226531459">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221226544202">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221226535807">
-                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221226534384" />
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1221226543014">
-                      <link role="property" targetNodeId="2.1186403771423" resolveInfo="style" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1221226545330">
-                    <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1221226545331">
-                      <link role="enumMember" targetNodeId="2.1220973684614" />
-                    </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221475071260">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1221475075470">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1221475077004" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221475072215">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221475071261" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1221475073453">
+                    <link role="link" targetNodeId="2.1220975211821" />
                   </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1220975820069">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220975815971">
-                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1220975814376" />
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1220975817240">
-                      <link role="link" targetNodeId="2.1220975211821" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1221475093708">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Generic_Item" id="1221475097538">
+            <property name="matchingText" value="query" />
+            <node role="handlerFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Generic_Item_Handler" id="1221475097539">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221475097540">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221475105807">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221475105808">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221475105809">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Abstract_editedNode" id="1221475105810" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1221475109500">
+                        <link role="link" targetNodeId="2.1220975211821" />
+                      </node>
                     </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1221475105812" />
                   </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1220975822634" />
                 </node>
               </node>
             </node>
@@ -7223,7 +7191,6 @@
           <property name="flag" value="true" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1221237741109">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221237741110">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237741111">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221237741112">
@@ -7237,7 +7204,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1221237741115">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221237741116">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237741117">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221237741118">
@@ -7252,7 +7218,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleClassItem" id="1221237741122">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221237741123">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237741124">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221237741125">
@@ -7267,7 +7232,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleClassItem" id="1221237741129">
-          <property name="color" value="query" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1221237741130">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237741131">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221237741132">
@@ -7282,7 +7246,6 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1221237741136">
-          <property name="style" value="QUERY" />
           <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_FontStyle" id="1221237741137">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221237741138">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221237741139">

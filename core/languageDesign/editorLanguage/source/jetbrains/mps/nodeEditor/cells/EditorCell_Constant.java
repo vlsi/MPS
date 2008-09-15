@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
  * Created Sep 14, 2003
  */
 public class EditorCell_Constant extends EditorCell_Label {
+  public static final int DEFAULT_FONT_STYLE = Font.BOLD;
+
   protected String myOriginalText;
 
   public EditorCell_Constant(@NotNull EditorContext editorContext, SNode node, String text) {
@@ -22,7 +24,7 @@ public class EditorCell_Constant extends EditorCell_Label {
   public EditorCell_Constant(@NotNull EditorContext editorContext, SNode node, String text, boolean editable) {
     super(editorContext, node, text);
     myOriginalText = text;
-    getStyle().set(StyleAttributes.FONT_STYLE, Font.BOLD);
+    getStyle().set(StyleAttributes.FONT_STYLE, DEFAULT_FONT_STYLE);
     setEditable(editable);
   }
 

@@ -18,6 +18,7 @@ public class EditorCellModel_Behavior {
   public static Class[] PARAMETERS_1216737839993 = {SNode.class};
   public static Class[] PARAMETERS_1220339714057 = {SNode.class};
   public static Class[] PARAMETERS_1220339738643 = {SNode.class};
+  public static Class[] PARAMETERS_1221472292001 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -166,11 +167,8 @@ public class EditorCellModel_Behavior {
     return result;
   }
 
-  public static int call_getDefaultFontStyle_1221472292001(SNode thisNode) {
-    return (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant") ?
-      MPSFonts.BOLD :
-      MPSFonts.PLAIN
-    );
+  public static int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
+    return MPSFonts.PLAIN;
   }
 
   public static String call_getCellId_1216737839993(SNode thisNode) {
@@ -185,6 +183,10 @@ public class EditorCellModel_Behavior {
     return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getClosingText_1220339738643", PARAMETERS_1220339738643);
   }
 
+  public static int call_getDefaultFontStyle_1221472292001(SNode thisNode) {
+    return (Integer)BehaviorManager.getInstance().invoke(Integer.class, thisNode, "virtual_getDefaultFontStyle_1221472292001", PARAMETERS_1221472292001);
+  }
+
   public static String callSuper_getCellId_1216737839993(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getCellId_1216737839993", PARAMETERS_1216737839993);
   }
@@ -195,6 +197,10 @@ public class EditorCellModel_Behavior {
 
   public static String callSuper_getClosingText_1220339738643(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getClosingText_1220339738643", PARAMETERS_1220339738643);
+  }
+
+  public static int callSuper_getDefaultFontStyle_1221472292001(SNode thisNode, String callerConceptFqName) {
+    return (Integer)BehaviorManager.getInstance().invokeSuper(Integer.class, thisNode, callerConceptFqName, "virtual_getDefaultFontStyle_1221472292001", PARAMETERS_1221472292001);
   }
 
 }

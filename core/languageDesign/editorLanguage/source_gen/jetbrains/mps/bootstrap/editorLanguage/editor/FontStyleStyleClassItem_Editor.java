@@ -13,10 +13,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
 
 public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
@@ -95,6 +98,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
       setupLabel_refNode_query_1220975756218((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu0()}));
     return editorCell;
   }
 
@@ -153,7 +157,22 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition0528_1(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "query", true) != null || SPropertyOperations.hasValue(node, "style", "QUERY", null);
+    return SLinkOperations.getTarget(node, "query", true) != null;
   }
+
+  public static class FontStyleStyleClassItem_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
+
+    public FontStyleStyleClassItem_generic_cellMenu0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_FontStyle");
+    }
+
+    public String getMatchingText() {
+      return "query";
+    }
+
+}
 
 }
