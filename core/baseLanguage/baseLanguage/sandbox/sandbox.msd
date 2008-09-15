@@ -32,6 +32,7 @@
     <usedLanguages>webr.logging</usedLanguages>
     <usedLanguages>jetbrains.mps.nanoj</usedLanguages>
     <usedLanguages>jetbrains.mps.xml</usedLanguages>
+    <usedLanguages>jetbrains.mps.transformation.TLBase</usedLanguages>
   </usedLanguages>
   <usedDevKits>
     <usedDevKit>jetbrains.mps.devkit.general-purpose</usedDevKit>

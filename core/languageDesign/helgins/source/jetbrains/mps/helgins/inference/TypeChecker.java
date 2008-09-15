@@ -389,7 +389,7 @@ public class TypeChecker implements ApplicationComponent {
     if (myTypeCheckingMode == TypeCheckingMode.GENERATION && HelginsPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
       return getTypeOf_generationMode(node);
     } else if (myTypeCheckingMode == TypeCheckingMode.RESOLVE) {
-      return getTypeOf_resolveMode(node, false);
+      return getTypeOf_resolveMode(node, true);
     } else if (myTypeCheckingMode == TypeCheckingMode.COMPLETION) {
       return getTypeOf_resolveMode(node, true);
     } else {
