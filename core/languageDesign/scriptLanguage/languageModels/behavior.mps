@@ -27,11 +27,5 @@
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.ide.scriptLanguage.structure" version="-1" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877396127">
-    <link role="concept" targetNodeId="1.1172272794406" resolveInfo="Script" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877396128">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877396129" />
-    </node>
-  </node>
 </model>
 

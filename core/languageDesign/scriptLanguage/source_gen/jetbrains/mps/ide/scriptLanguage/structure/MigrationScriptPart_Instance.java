@@ -4,10 +4,10 @@ package jetbrains.mps.ide.scriptLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class MigrationScriptPart_Instance extends BaseConcept {
   public static final String concept = "jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance";
@@ -19,15 +19,6 @@ public class MigrationScriptPart_Instance extends BaseConcept {
   public MigrationScriptPart_Instance(SNode node) {
     super(node);
   }
-
-  public static MigrationScriptPart_Instance newInstance(SModel sm, boolean init) {
-    return (MigrationScriptPart_Instance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MigrationScriptPart_Instance newInstance(SModel sm) {
-    return MigrationScriptPart_Instance.newInstance(sm, false);
-  }
-
 
   public String getDescription() {
     return this.getProperty(MigrationScriptPart_Instance.DESCRIPTION);
@@ -59,6 +50,15 @@ public class MigrationScriptPart_Instance extends BaseConcept {
 
   public void setAffectedInstanceUpdater(MigrationScriptPart_Instance_Updater node) {
     super.setChild(MigrationScriptPart_Instance.AFFECTED_INSTANCE_UPDATER, node);
+  }
+
+
+  public static MigrationScriptPart_Instance newInstance(SModel sm, boolean init) {
+    return (MigrationScriptPart_Instance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MigrationScriptPart_Instance newInstance(SModel sm) {
+    return MigrationScriptPart_Instance.newInstance(sm, false);
   }
 
 }

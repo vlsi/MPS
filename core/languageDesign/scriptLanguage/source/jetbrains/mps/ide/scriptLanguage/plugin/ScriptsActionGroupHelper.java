@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.scriptLanguage.plugin;
 
 import jetbrains.mps.ide.scriptLanguage.structure.MigrationScript;
-import jetbrains.mps.ide.scriptLanguage.structure.Script;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -81,18 +80,14 @@ public class ScriptsActionGroupHelper {
     SModelDescriptor scriptsModel = language.getScriptsModelDescriptor();
     if (scriptsModel == null) return;
     List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
-    List<Script> genericScripts = scriptsModel.getSModel().getRootsAdapters(Script.class);
-    if (migrationScripts.isEmpty() && genericScripts.isEmpty()) return;
+    if (migrationScripts.isEmpty()) return;
     BaseGroup languageScriptsGroup = new BaseGroup(language.getNamespace(), "");
     for (MigrationScript script : migrationScripts) {
       languageScriptsGroup.add(new RunMigrationScriptAction(script,
         makeScriptActionName(script.getCategory(), script.getTitle(), script.getMigrationFromBuild()), applyToSelection));
     }
-    if (!(migrationScripts.isEmpty() || genericScripts.isEmpty())) {
+    if (!(migrationScripts.isEmpty())) {
       languageScriptsGroup.addSeparator();
-    }
-    for (Script script : genericScripts) {
-      languageScriptsGroup.add(new RunGenericScriptAction(script.getNode()));
     }
 
     languageScriptsGroup.setPopup(true);

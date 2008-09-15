@@ -30,7 +30,7 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
 
   public void doUpdate(AnActionEvent event) {
     try {
-      this.removeAll();
+      ScriptsForSelection_ActionGroup.this.removeAll();
       event.getPresentation().setVisible(true);
       IOperationContext context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
       if (context == null || context.getProject() == null) {

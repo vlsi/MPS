@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -18,7 +19,8 @@ public class typeof_MigrationScriptPart_node_InferenceRule implements InferenceR
     SNode affectedConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance", false, false), "affectedInstanceConcept", false);
     {
       SNode _nodeToCheck_1029348928467 = node;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.ide.scriptLanguage.helgins", "1209063748604", true), new QuotationClass_().createNode(affectedConcept), _nodeToCheck_1029348928467, null, "jetbrains.mps.ide.scriptLanguage.helgins", "1209063748602");
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.ide.scriptLanguage.helgins", "1209063748604", true), new QuotationClass_0().createNode(affectedConcept), _nodeToCheck_1029348928467, null, "jetbrains.mps.ide.scriptLanguage.helgins", "1209063748602", intentionProvider);
     }
   }
 

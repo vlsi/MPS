@@ -27,7 +27,6 @@
     <orderEntry type="module" module-name="editorLanguage" exported="" />
     <orderEntry type="module" module-name="helgins" exported="" />
     <orderEntry type="module" module-name="scriptLanguage" exported="" />
-    <orderEntry type="module" module-name="scriptLanguageInternal" exported="" />
     <orderEntry type="module" module-name="sharedConcepts" exported="" />
     <orderEntry type="module" module-name="smodeLanguage" exported="" />
     <orderEntry type="module" module-name="structureLanguage" exported="" />

@@ -5,11 +5,11 @@ package jetbrains.mps.ide.scriptLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class MigrationScript extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.ide.scriptLanguage.structure.MigrationScript";
@@ -25,15 +25,6 @@ public class MigrationScript extends BaseConcept implements INamedConcept {
   public MigrationScript(SNode node) {
     super(node);
   }
-
-  public static MigrationScript newInstance(SModel sm, boolean init) {
-    return (MigrationScript)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.scriptLanguage.structure.MigrationScript", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MigrationScript newInstance(SModel sm) {
-    return MigrationScript.newInstance(sm, false);
-  }
-
 
   public String getTitle() {
     return this.getProperty(MigrationScript.TITLE);
@@ -109,6 +100,15 @@ public class MigrationScript extends BaseConcept implements INamedConcept {
 
   public void insertPart(MigrationScriptPart_Instance prev, MigrationScriptPart_Instance node) {
     this.insertChild(prev, MigrationScript.PART, node);
+  }
+
+
+  public static MigrationScript newInstance(SModel sm, boolean init) {
+    return (MigrationScript)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.scriptLanguage.structure.MigrationScript", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MigrationScript newInstance(SModel sm) {
+    return MigrationScript.newInstance(sm, false);
   }
 
 }
