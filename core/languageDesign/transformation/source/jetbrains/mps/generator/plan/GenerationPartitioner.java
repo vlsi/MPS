@@ -240,7 +240,18 @@ public class GenerationPartitioner {
       String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
       String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
       if (modelUID != null && nodeID != null) {
-        SModelDescriptor refModel = GlobalScope.getInstance().getModelDescriptor(SModelUID.fromString(modelUID));
+        SModelUID uid = SModelUID.fromString(modelUID);
+        SModelDescriptor refModel = GlobalScope.getInstance().getModelDescriptor(uid);
+
+        if (refModel == null && uid.getStereotype().equals(SModelStereotype.TEMPLATES)) {
+          uid = new SModelUID(uid.getLongName(), SModelStereotype.GENERATOR);
+          modelUID = uid.toString();
+          refModel = GlobalScope.getInstance().getModelDescriptor(uid);
+          if (refModel != null) {
+            LOG.warning("change stereotype in property modelUID form templates to generator", mappingRef.getNode());
+          }
+        }
+
         if (refModel != null) {
           if (nodeID.equals("*")) {
             return refModel.getSModel().allAdapters(MappingConfiguration.class);
