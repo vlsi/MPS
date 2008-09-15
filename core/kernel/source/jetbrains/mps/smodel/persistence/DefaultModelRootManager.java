@@ -233,12 +233,15 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     modelFile.delete();
     SModelDescriptor result = getInstance(manager, createStub, newFile.getAbsolutePath(), newModelUID, owner, true);
     Project[] projects = ProjectManagerEx.getInstance().getOpenProjects();
+
     if (projects.length == 0)  {
       MPSVCSManager.addFileLater(newFile.toFile());
+      MPSVCSManager.removeFileLater(modelFile.toFile());
     } else {
       for (Project project : projects) {
         MPSVCSManager mpsvcsManager = MPSVCSManager.getInstance(project);
         if (mpsvcsManager != null) {
+          mpsvcsManager.removeMissingFilesFromVCS(Collections.singletonList(modelFile.toFile()));
           mpsvcsManager.addFilesToVCS(Collections.singletonList(newFile.toFile()));
         }
       }
