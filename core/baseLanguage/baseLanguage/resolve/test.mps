@@ -1498,8 +1498,18 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213004216360">
             <property name="name" value="d" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1213004216361" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1213004218039">
-              <property name="value" value="10" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1221143700182">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1221143701201">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221143701235">
+                  <property name="value" value="23" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221143700216">
+                  <property name="value" value="23" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1213004218039">
+                <property name="value" value="10" />
+              </node>
             </node>
           </node>
         </node>
@@ -1516,14 +1526,44 @@
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1216128381410">
-            <property name="value" value="true" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1221143682218">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1221143688055">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221143682580">
+                <property name="value" value="23" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1221143710097">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221143688433">
+                  <property name="value" value="23" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1221143712085">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221143712104">
+                    <property name="value" value="232" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221143710584">
+                    <property name="value" value="23" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221143708299">
+              <property name="value" value="23" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221143683909">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221143683910">
+            <property name="value" value="23" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221143678885">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221143678886">
+            <property name="value" value="23" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216128641991">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216128641992">
             <property name="name" value="a" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1216128641993" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1221207709501" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1216128916245">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1216130083490">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1216130084275">

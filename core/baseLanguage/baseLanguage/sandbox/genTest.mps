@@ -49,10 +49,11 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217334324703" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217334324704" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217334324705" />
+      <node role="throwsItem" type="jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType" id="1221058260162" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1216145869068">
       <property name="name" value="zz" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1216145869069" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1221058188156" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216145869070" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216145869071">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1219401058476">
@@ -436,6 +437,9 @@
       <property name="name" value="abc" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1217351529850" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1217351531383" />
+    </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221058195158">
+      <link role="classifier" targetNodeId="1215776922963" resolveInfo="ABCDEFEDED" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1215776939750">
