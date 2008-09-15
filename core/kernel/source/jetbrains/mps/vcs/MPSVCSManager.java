@@ -44,7 +44,7 @@ public class MPSVCSManager implements ProjectComponent {
   private boolean myIsInitialized = false;
   private volatile boolean myChangeListManagerInitialized = false;
 
-  private final TaskQueue<Runnable> myTasksQueue = new TaskQueue<Runnable>(true){
+  private final TaskQueue<Runnable> myTasksQueue = new TaskQueue<Runnable>(true) {
 
     public void processTask(List<Runnable> tasks) {
       for (Runnable task : tasks) {
@@ -95,7 +95,7 @@ public class MPSVCSManager implements ProjectComponent {
       });
     }
   }
-                                  
+
   public boolean deleteFilesAndRemoveFromVCS(List<File> files) {
     List<VirtualFile> list = new LinkedList<VirtualFile>();
     for (File f : files) {
@@ -127,7 +127,28 @@ public class MPSVCSManager implements ProjectComponent {
         });
       }
     }
+    );
+  }
 
+  public void removeMissingFilesFromVCS(final List<File> filesToRemove) {
+    myTasksQueue.invokeLater(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().runReadAction(new Runnable() {
+          public void run() {
+            for (File file : filesToRemove) {
+              FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOnDeleted(file, file.isDirectory());
+              AbstractVcs fromVCS = myManager.getVcsFor(path);
+              if (fromVCS != null) {
+                CheckinEnvironment ci = fromVCS.getCheckinEnvironment();
+                if (ci != null) {
+                  ci.scheduleMissingFileForDeletion(Collections.singletonList(path));
+                }
+              }
+            }
+          }
+        });
+      }
+    }
     );
   }
 
