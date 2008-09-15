@@ -132,11 +132,12 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public void removeMissingFilesFromVCS(final List<File> filesToRemove) {
+    final List<File> copiedFileList = new ArrayList<File>(filesToRemove); //a list "filesToRemove" can be modified by caller before invokeLater calls its runnable
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().runReadAction(new Runnable() {
           public void run() {
-            for (File file : filesToRemove) {
+            for (File file : copiedFileList) {
               FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOnDeleted(file, file.isDirectory());
               AbstractVcs fromVCS = myManager.getVcsFor(path);
               if (fromVCS != null) {
@@ -154,13 +155,14 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean addFilesToVCS(final List<File> files) {
+    final List<File> copiedFileList = new ArrayList<File>(files); //a list "files" can be modified by caller before invokeLater calls its runnable
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
         // doing addition in invokeLater cause of refreshAndGetFile method
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
             List<VirtualFile> virtualFileList = new LinkedList<VirtualFile>();
-            for (File f : files) {
+            for (File f : copiedFileList) {
               VirtualFile virtualFile = VFileSystem.refreshAndGetFile(f);
               if (virtualFile != null) {
                 virtualFileList.add(virtualFile);
