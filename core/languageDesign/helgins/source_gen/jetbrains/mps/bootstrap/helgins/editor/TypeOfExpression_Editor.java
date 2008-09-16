@@ -215,7 +215,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1195058084382_1195058084382(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static Color _null_1214399678001(SNode node, EditorContext editorContext) {
+  public static Color _StyleParameter_QueryFunction_1214399678001(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent")) {
       return Color.GRAY;
     } else
@@ -226,7 +226,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6237_0(EditorCell cell) {
     Color result;
-    result = TypeOfExpression_Editor._null_1214399678001((cell == null ?
+    result = TypeOfExpression_Editor._StyleParameter_QueryFunction_1214399678001((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?

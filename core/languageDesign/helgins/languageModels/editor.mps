@@ -1709,18 +1709,24 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1188473558532">
     <link role="conceptDeclaration" targetNodeId="1.1188473524530" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1188473560034">
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1221586799850">
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1188473560035">
-        <property name="text" value="MEET (" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221586799851">
+        <property name="text" value="meet" />
+        <link role="styleClass" targetNodeId="27.1215188818086" resolveInfo="CompactKeyWord" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1188473560036">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221586799852">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="27.1215087929380" resolveInfo="LeftParen" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1221586799853">
         <property name="vertical" value="false" />
         <property name="separatorText" value="&amp;" />
         <link role="relationDeclaration" targetNodeId="1.1188473537547" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202228508657">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1221586799854">
         <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="27.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>

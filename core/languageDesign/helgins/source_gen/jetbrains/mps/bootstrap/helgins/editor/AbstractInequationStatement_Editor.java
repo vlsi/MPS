@@ -351,7 +351,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1212056682592_1212056682592(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static Color _null_1214399678682(SNode node, EditorContext editorContext) {
+  public static Color _StyleParameter_QueryFunction_1214399678682(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "checkOnly")) {
       return Color.GRAY;
     } else
@@ -362,7 +362,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor9248_0(EditorCell cell) {
     Color result;
-    result = AbstractInequationStatement_Editor._null_1214399678682((cell == null ?
+    result = AbstractInequationStatement_Editor._StyleParameter_QueryFunction_1214399678682((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
