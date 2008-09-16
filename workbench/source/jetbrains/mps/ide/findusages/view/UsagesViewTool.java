@@ -388,11 +388,13 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
   }
 
   public void loadState(final Element state) {
+    /*
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         read(state, getProject().getComponent(MPSProjectHolder.class).getMPSProject());
       }
     });
+    */
   }
 
   public class UsageViewData {
