@@ -15,7 +15,6 @@ public class ConceptFunction_Behavior {
   public static Class[] PARAMETERS_1213877374441 = {SNode.class};
   public static Class[] PARAMETERS_1213877374450 = {SNode.class};
   public static Class[] PARAMETERS_1216468837268 = {SNode.class};
-  public static Class[] PARAMETERS_1221055351499 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -42,10 +41,6 @@ public class ConceptFunction_Behavior {
     return SConceptPropertyOperations.getString(thisNode, "alias");
   }
 
-  public static String virtual_getQueryMethodName_1221055351499(SNode thisNode) {
-    return "_" + thisNode.getName() + "_" + thisNode.getId();
-  }
-
   public static boolean call_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_usesParameterObjectFor_1213877374432", PARAMETERS_1213877374432, parameter);
   }
@@ -62,10 +57,6 @@ public class ConceptFunction_Behavior {
     return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getName_1216468837268", PARAMETERS_1216468837268);
   }
 
-  public static String call_getQueryMethodName_1221055351499(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getQueryMethodName_1221055351499", PARAMETERS_1221055351499);
-  }
-
   public static boolean callSuper_usesParameterObjectFor_1213877374432(SNode thisNode, String callerConceptFqName, SNode parameter) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_usesParameterObjectFor_1213877374432", PARAMETERS_1213877374432, parameter);
   }
@@ -80,10 +71,6 @@ public class ConceptFunction_Behavior {
 
   public static String callSuper_getName_1216468837268(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getName_1216468837268", PARAMETERS_1216468837268);
-  }
-
-  public static String callSuper_getQueryMethodName_1221055351499(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getQueryMethodName_1221055351499", PARAMETERS_1221055351499);
   }
 
 }

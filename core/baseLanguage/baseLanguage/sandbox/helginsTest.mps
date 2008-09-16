@@ -506,6 +506,19 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1186051408114" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1221563360809">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1221563360810" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221563360811" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221563360812" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1221563746060">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1221563746061" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221563746062" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221563746063" />
+    </node>
+    <node role="instanceInitializer" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer" id="1221563748706">
+      <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221563748707" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1188945707402">
     <property name="name" value="GenericParm_base" />
@@ -535,6 +548,9 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1188945707403" />
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1188945747827">
       <property name="name" value="T" />
+    </node>
+    <node role="instanceInitializer" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer" id="1221564942298">
+      <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221564942299" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1188945773006">
