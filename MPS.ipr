@@ -1019,7 +1019,7 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
-      <option name="VM_PARAMETERS" value="-ea -Xmx1024m -XX:MaxPermSize=92m -Xss1024k -XX:+HeapDumpOnOutOfMemoryError -Dmps.internal=true " />
+      <option name="VM_PARAMETERS" value="-ea -Xmx1024m -XX:MaxPermSize=92m -Xss1024k -Dmps.internal=true " />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1035,7 +1035,7 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;additional-options=&#13;&#10;snapshots-dir=&#13;&#10;" />
+        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
@@ -1340,7 +1340,6 @@
         </entry>
       </map>
     </option>
-    <option name="myVersion" value="123" />
   </component>
   <component name="TeamCityRootDirectoryHolder">
     <option name="myRelativeRootDirectory" />

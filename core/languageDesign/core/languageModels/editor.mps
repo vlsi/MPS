@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.core.editor">
-  <persistence version="1" />
-  <refactoringHistory>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
-      <moveMap>
-        <entry>
-          <key modelUID="jetbrains.mps.core.editor" nodeId="1198258356073" />
-          <value modelUID="jetbrains.mps.baseLanguage.editor" nodeId="1198595398954" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.core.editor" nodeId="1198258368534" />
-          <value modelUID="jetbrains.mps.baseLanguage.editor" nodeId="1198595398955" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.core.editor" nodeId="1198258386541" />
-          <value modelUID="jetbrains.mps.baseLanguage.editor" nodeId="1198595398956" />
-        </entry>
-      </moveMap>
-      <conceptFeatureMap />
-    </refactoringContext>
-  </refactoringHistory>
+  <persistence version="2" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="21" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />

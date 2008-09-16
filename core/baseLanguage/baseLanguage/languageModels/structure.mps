@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.structure">
-  <persistence version="1" />
-  <refactoringHistory>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="Annotable" conceptFQName="jetbrains.mps.baseLanguage.structure.Annotable" featureKind="CONCEPT" />
-          <value featureName="HasAnnotation" conceptFQName="jetbrains.mps.baseLanguage.structure.HasAnnotation" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-  </refactoringHistory>
+  <persistence version="2" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   </language>

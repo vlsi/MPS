@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.closures.structure">
-  <persistence version="1" />
-  <refactoringHistory>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="ClosureDeclaration" conceptFQName="jetbrains.mps.closures.structure.ClosureDeclaration" featureKind="CONCEPT" />
-          <value featureName="ClosureLiteral" conceptFQName="jetbrains.mps.closures.structure.ClosureLiteral" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-  </refactoringHistory>
+  <persistence version="2" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   </language>

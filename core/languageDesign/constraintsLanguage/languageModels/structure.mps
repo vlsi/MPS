@@ -1,38 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.constraintsLanguage.structure">
-  <persistence version="1" />
-  <refactoringHistory>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="overridenMethod" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" featureKind="REFERENCE" />
-          <value featureName="overriddenMethod" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structureConceptMethodDeclaration" featureKind="REFERENCE" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="1">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="PropertyGetter_FunctionParm_node" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertyGetter_FunctionParm_node" featureKind="CONCEPT" />
-          <value featureName="ConstraintsFunctionParameter_node" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="PropertySetter_FunctionParm_propertyValue" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_propertyValue" featureKind="CONCEPT" />
-          <value featureName="ConstraintsFunctionParameter_propertyValue" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_propertyValue" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-  </refactoringHistory>
+  <persistence version="2" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   </language>

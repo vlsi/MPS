@@ -60,7 +60,7 @@ public class ModelPersistence {
 
   private static final Map<Integer, IModelReader> modelReaders = new HashMap<Integer, IModelReader>();
   private static final Map<Integer, IModelWriter> modelWriters = new HashMap<Integer, IModelWriter>();
-  private static final int currentPersistenceVersion = 1;
+  private static final int currentPersistenceVersion = 2;
 
   static {
     modelReaders.put(0, new ModelReader0());

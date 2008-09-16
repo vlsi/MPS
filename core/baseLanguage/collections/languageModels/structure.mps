@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.ext.collections.lang.structure">
-  <persistence version="1" />
-  <refactoringHistory>
-    <refactoringContext modelVersion="1">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="leftExpression" conceptFQName="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" featureKind="CHILD" />
-          <value featureName="operand" conceptFQName="jetbrains.mps.baseLanguage.ext.collections.lang.structureSequenceOperationExpression" featureKind="CHILD" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-  </refactoringHistory>
+  <persistence version="2" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   </language>
