@@ -34,6 +34,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.AggregationCellContext;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
@@ -2085,9 +2086,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           substituteInfoNode = elementNode;
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
-        }
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPart[]{new ClassConcept_Editor.ClassConcept_generic_cellMenu1()}));
       }
     }
 
@@ -2435,6 +2434,30 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       return (List<SNode>)new VisibleClassifiersScope(SNodeOperations.getModel(node), IClassifiersSearchScope.NON_FINAL_CLASS, operationContext.getScope()).getNodes();
+    }
+
+    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      this.handleAction_impl((SNode)parameterObject, node, model, scope, operationContext);
+    }
+
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNode extendsType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+      SLinkOperations.setTarget(extendsType, "classifier", parameterObject, false);
+      SLinkOperations.setTarget(node, "superclass", extendsType, true);
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+}
+  public static class ClassConcept_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Group {
+
+    public ClassConcept_generic_cellMenu1() {
+    }
+
+    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      return (List<SNode>)new VisibleClassifiersScope(SNodeOperations.getModel(node), IClassifiersSearchScope.INTERFACE, operationContext.getScope()).getNodes();
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
