@@ -27,6 +27,9 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.AggregationCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 
 public class Interface_Editor extends DefaultNodeEditor {
 
@@ -669,9 +672,7 @@ public class Interface_Editor extends DefaultNodeEditor {
           substituteInfoNode = elementNode;
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
-        }
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPart[]{}));
       }
     }
 
