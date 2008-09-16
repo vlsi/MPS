@@ -457,33 +457,33 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private static void setupLabel_refCell_property_1216382092311(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static Color _null_1221237741110(SNode node, EditorContext editorContext) {
+  public static Color _StyleParameter_QueryFunction_1221237741110(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
-  public static Color _null_1221237741116(SNode node, EditorContext editorContext) {
+  public static Color _StyleParameter_QueryFunction_1221237741116(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
 
-  public static Color _null_1221237741123(SNode node, EditorContext editorContext) {
+  public static Color _StyleParameter_QueryFunction_1221237741123(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
   }
 
-  public static Color _null_1221237741130(SNode node, EditorContext editorContext) {
+  public static Color _StyleParameter_QueryFunction_1221237741130(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
 
-  public static int _null_1221237741137(SNode node, EditorContext editorContext) {
+  public static int _StyleParameter_QueryFunction_1221237741137(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
 
-  public static boolean _null_1221237741151(SNode node, EditorContext editorContext) {
+  public static boolean _StyleParameter_QueryFunction_1221237741151(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
 
   private static Integer calculateFontStyle3190_0(EditorCell cell) {
     int result;
-    result = CellModel_TransactionalProperty_Editor._null_1221237741137((cell == null ?
+    result = CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_1221237741137((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -495,7 +495,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor3190_0(EditorCell cell) {
     Color result;
-    result = CellModel_TransactionalProperty_Editor._null_1221237741110((cell == null ?
+    result = CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_1221237741110((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -507,7 +507,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor3190_1(EditorCell cell) {
     Color result;
-    result = CellModel_TransactionalProperty_Editor._null_1221237741116((cell == null ?
+    result = CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_1221237741116((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -519,7 +519,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor3190_2(EditorCell cell) {
     Color result;
-    result = CellModel_TransactionalProperty_Editor._null_1221237741123((cell == null ?
+    result = CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_1221237741123((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -531,7 +531,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor3190_3(EditorCell cell) {
     Color result;
-    result = CellModel_TransactionalProperty_Editor._null_1221237741130((cell == null ?
+    result = CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_1221237741130((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -543,7 +543,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
   private static boolean calculateUnderlined3190_0(EditorCell cell) {
     boolean result;
-    result = CellModel_TransactionalProperty_Editor._null_1221237741151((cell == null ?
+    result = CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_1221237741151((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?

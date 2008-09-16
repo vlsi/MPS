@@ -483,33 +483,33 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
   }
 
-  public static Color _null_1221237912391(SNode node, EditorContext editorContext) {
+  public static Color _StyleParameter_QueryFunction_1221237912391(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
 
-  public static Color _null_1221237968304(SNode node, EditorContext editorContext) {
+  public static Color _StyleParameter_QueryFunction_1221237968304(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
   }
 
-  public static Color _null_1221237984986(SNode node, EditorContext editorContext) {
+  public static Color _StyleParameter_QueryFunction_1221237984986(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
 
-  public static int _null_1221238018498(SNode node, EditorContext editorContext) {
+  public static int _StyleParameter_QueryFunction_1221238018498(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
 
-  public static boolean _null_1221238039415(SNode node, EditorContext editorContext) {
+  public static boolean _StyleParameter_QueryFunction_1221238039415(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
 
-  public static int _null_1221240468805(SNode node, EditorContext editorContext) {
+  public static int _StyleParameter_QueryFunction_1221240468805(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getFontSize_1221216397365(node);
   }
 
   private static Integer calculateFontStyle6752_0(EditorCell cell) {
     int result;
-    result = CellModel_Constant_Editor._null_1221238018498((cell == null ?
+    result = CellModel_Constant_Editor._StyleParameter_QueryFunction_1221238018498((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -545,7 +545,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6752_4(EditorCell cell) {
     Color result;
-    result = CellModel_Constant_Editor._null_1221237912391((cell == null ?
+    result = CellModel_Constant_Editor._StyleParameter_QueryFunction_1221237912391((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -557,7 +557,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6752_5(EditorCell cell) {
     Color result;
-    result = CellModel_Constant_Editor._null_1221237968304((cell == null ?
+    result = CellModel_Constant_Editor._StyleParameter_QueryFunction_1221237968304((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -569,7 +569,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor6752_6(EditorCell cell) {
     Color result;
-    result = CellModel_Constant_Editor._null_1221237984986((cell == null ?
+    result = CellModel_Constant_Editor._StyleParameter_QueryFunction_1221237984986((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -581,7 +581,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static Integer calculateFontSize6752_0(EditorCell cell) {
     int result;
-    result = CellModel_Constant_Editor._null_1221240468805((cell == null ?
+    result = CellModel_Constant_Editor._StyleParameter_QueryFunction_1221240468805((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -593,7 +593,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static boolean calculateUnderlined6752_0(EditorCell cell) {
     boolean result;
-    result = CellModel_Constant_Editor._null_1221238039415((cell == null ?
+    result = CellModel_Constant_Editor._StyleParameter_QueryFunction_1221238039415((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?

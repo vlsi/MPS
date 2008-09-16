@@ -83,13 +83,13 @@ public class _OpenTag extends AbstractCellProvider {
   private static void setupLabel_ModelAccess_1176716878596_1176716878596(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static Color _null_1214396913666(SNode node, EditorContext editorContext) {
+  public static Color _StyleParameter_QueryFunction_1214396913666(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
   private static Color calculateColor4575_0(EditorCell cell) {
     Color result;
-    result = _OpenTag._null_1214396913666((cell == null ?
+    result = _OpenTag._StyleParameter_QueryFunction_1214396913666((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?

@@ -14,6 +14,9 @@
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   </language>
+  <language namespace="jetbrains.mps.baseLanguage.strings">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.strings.constraints" version="1" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
@@ -25,7 +28,6 @@
   <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.strings.constraints" version="1" />
   <devkit namespace="jetbrains.mps.devkit.general-purpose" />
   <maxImportIndex value="17" />
   <import index="14" modelUID="java.lang@java_stub" version="-1" />
@@ -813,6 +815,24 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217334315587" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217334315588" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217334315589" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1221550340220">
+    <property name="name" value="ABC" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221550340221" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1221550340222">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1221550340223" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221550340224" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221550340225" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221550375090">
+        <property name="name" value="s" />
+        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1221550375091" />
+      </node>
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1221550371618">
+      <property name="name" value="s" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1221550371619" />
+      <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1221550372668" />
     </node>
   </node>
 </model>
