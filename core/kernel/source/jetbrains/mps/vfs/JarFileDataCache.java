@@ -48,17 +48,13 @@ class JarFileDataCache {
   }
 
   private void removeGCedReferences() {
-    try {
-      while (true) {
-        WeakReference<JarFileData> ref = (WeakReference<JarFileData>) myQueue.poll();        
-        if (ref == null) break;
+    while (true) {
+      WeakReference<JarFileData> ref = (WeakReference<JarFileData>) myQueue.poll();
+      if (ref == null) break;
 
-        String path = myRefToPath.get(ref);
-        myRefToPath.remove(ref);
-        myPathToRef.remove(path);
-      }
-    } catch (Exception e) {
-      throw new RuntimeException(e);
+      String path = myRefToPath.get(ref);
+      myRefToPath.remove(ref);
+      myPathToRef.remove(path);
     }
   }
 }

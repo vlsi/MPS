@@ -327,6 +327,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_11882122070051188212207005(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188212207005");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    VariableDeclaration_RemoveFinalOnDelete.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_refNode_type1188212207012(EditorCell editorCell, SNode node, EditorContext context) {

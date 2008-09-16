@@ -1706,6 +1706,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1188212207005">
           <property name="text" value="final" />
           <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+          <link role="actionMap" targetNodeId="1221569820786" resolveInfo="VariableDeclaration_RemoveFinal" />
           <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1188212207006">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188212207007">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1188212207008">
@@ -16679,6 +16680,32 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1219921135420">
         <property name="text" value="..." />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1221569820786">
+    <property name="name" value="VariableDeclaration_RemoveFinalOnDelete" />
+    <link role="applicableConcept" targetNodeId="17.1068431474542" resolveInfo="VariableDeclaration" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem" id="1221569837083">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_ExecuteFunction" id="1221569837084">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221569837085">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221569842477">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221569844514">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221569842713">
+                <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1221569842478" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1221569844029">
+                  <link role="property" targetNodeId="17.1176718929932" resolveInfo="isFinal" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1221569844814">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1221570532953">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
