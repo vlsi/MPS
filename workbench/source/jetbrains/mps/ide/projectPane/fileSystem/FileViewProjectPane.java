@@ -56,7 +56,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private final SModelAdapter myAllModelsListener = new SModelAdapter(){
     @Override
     public void modelSaved(SModelDescriptor sm) {
-      VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.getFile(sm.getModelFile()));
+      VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(sm.getModelFile()));
     }
   };
 
