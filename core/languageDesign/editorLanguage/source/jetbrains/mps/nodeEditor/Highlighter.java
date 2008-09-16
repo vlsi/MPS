@@ -282,6 +282,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       }
     }
 
+    editor.updateStatusBarMessage();
+
     return true;
   }
 

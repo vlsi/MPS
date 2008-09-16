@@ -6,6 +6,8 @@ import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.wm.ex.WindowManagerEx;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.core.structure.INamedConcept;
@@ -444,6 +446,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         commitAll();
       }
     });
+
+    addCellSelectionListener(new CellSelectionListener() {
+      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
+        updateStatusBarMessage();
+      }
+    });
   }
 
   protected boolean onEscape() {
@@ -585,18 +593,39 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (cell == null) {
           return null;
         }
-        SNode node = cell.getSNode();
-        while (node != null) {
-          final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(node);
-          if (herror != null) {
-            return herror.reportError();
-          }
-          node = node.getParent();
-        }
-
-        return null;
+        return getMessageFor(cell);
       }
     });
+  }
+
+  public void updateStatusBarMessage() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        if (!isFocusOwner()) return;
+        EditorCell selection = getSelectedCell();
+        String info = "";
+        if (selection != null) {
+          String message = getMessageFor(selection);
+          if (message != null) {
+            info = message;
+          }
+        }
+        WindowManager.getInstance().getIdeFrame(getOperationContext().getProject()).getStatusBar().setInfo(info);
+      }
+    });
+  }
+
+  private String getMessageFor(EditorCell cell) {
+    SNode node = cell.getSNode();
+    while (node != null) {
+      final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(node);
+      if (herror != null) {
+        return herror.reportError();
+      }
+      node = node.getParent();
+    }
+
+    return null;
   }
 
   public void showMessageTooltip() {
@@ -1291,6 +1320,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     });
   }
+
 
   public void addRebuildListener(RebuildListener listener) {
     myRebuildListeners.add(listener);
