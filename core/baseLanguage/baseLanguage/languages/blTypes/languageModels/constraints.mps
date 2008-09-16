@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.blTypes.constraints">
-  <persistence version="1" />
-  <refactoringHistory>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
-      <moveMap>
-        <entry>
-          <key modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" nodeId="1178181704994" />
-          <value modelUID="jetbrains.mps.baseLanguage.blTypes.behavior" nodeId="1213877253188" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" nodeId="1178181704995" />
-          <value modelUID="jetbrains.mps.baseLanguage.blTypes.behavior" nodeId="1213877253189" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" nodeId="1178181704996" />
-          <value modelUID="jetbrains.mps.baseLanguage.blTypes.behavior" nodeId="1213877253190" />
-        </entry>
-      </moveMap>
-      <conceptFeatureMap />
-    </refactoringContext>
-  </refactoringHistory>
+  <persistence version="2" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="9" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />

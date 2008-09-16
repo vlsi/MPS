@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.transformationTest.constraints">
-  <persistence version="1" />
-  <refactoringHistory>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
-      <moveMap>
-        <entry>
-          <key modelUID="jetbrains.mps.transformationTest.constraints" nodeId="1210674740264" />
-          <value modelUID="jetbrains.mps.transformationTest.behavior" nodeId="1213877365986" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.transformationTest.constraints" nodeId="1210674740265" />
-          <value modelUID="jetbrains.mps.transformationTest.behavior" nodeId="1213877365987" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.transformationTest.constraints" nodeId="1210674740266" />
-          <value modelUID="jetbrains.mps.transformationTest.behavior" nodeId="1213877365988" />
-        </entry>
-      </moveMap>
-      <conceptFeatureMap />
-    </refactoringContext>
-  </refactoringHistory>
+  <persistence version="2" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="9" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />

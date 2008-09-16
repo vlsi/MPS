@@ -1,62 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.patterns.constraints">
-  <persistence version="1" />
-  <refactoringHistory>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
-      <moveMap>
-        <entry>
-          <key modelUID="jetbrains.mps.patterns.constraints" nodeId="1178181705021" />
-          <value modelUID="jetbrains.mps.patterns.behavior" nodeId="1213877200307" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.patterns.constraints" nodeId="1178181705022" />
-          <value modelUID="jetbrains.mps.patterns.behavior" nodeId="1213877200308" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.patterns.constraints" nodeId="1178181705023" />
-          <value modelUID="jetbrains.mps.patterns.behavior" nodeId="1213877200309" />
-        </entry>
-      </moveMap>
-      <conceptFeatureMap />
-    </refactoringContext>
-    <refactoringContext modelVersion="1">
-      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
-      <moveMap>
-        <entry>
-          <key modelUID="jetbrains.mps.patterns.constraints" nodeId="1178181704982" />
-          <value modelUID="jetbrains.mps.patterns.behavior" nodeId="1213877241295" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.patterns.constraints" nodeId="1178181704983" />
-          <value modelUID="jetbrains.mps.patterns.behavior" nodeId="1213877241296" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.patterns.constraints" nodeId="1178181704984" />
-          <value modelUID="jetbrains.mps.patterns.behavior" nodeId="1213877241297" />
-        </entry>
-      </moveMap>
-      <conceptFeatureMap />
-    </refactoringContext>
-    <refactoringContext modelVersion="2">
-      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
-      <moveMap>
-        <entry>
-          <key modelUID="jetbrains.mps.patterns.constraints" nodeId="1178181704988" />
-          <value modelUID="jetbrains.mps.patterns.behavior" nodeId="1213877344249" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.patterns.constraints" nodeId="1178181704989" />
-          <value modelUID="jetbrains.mps.patterns.behavior" nodeId="1213877344250" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.patterns.constraints" nodeId="1178181704990" />
-          <value modelUID="jetbrains.mps.patterns.behavior" nodeId="1213877344251" />
-        </entry>
-      </moveMap>
-      <conceptFeatureMap />
-    </refactoringContext>
-  </refactoringHistory>
+  <persistence version="2" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="9" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />

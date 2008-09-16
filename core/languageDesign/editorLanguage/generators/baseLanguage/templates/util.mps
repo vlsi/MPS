@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.template.util">
-  <persistence version="1" />
+  <persistence version="2" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
@@ -34,7 +34,7 @@
   <import index="7" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="9" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.nodeEditor.cellProviders@java_stub" version="-1" />
-  <import index="14" modelUID="jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.template.main@templates" version="-1" />
+  <import index="14" modelUID="jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.template.main@generator" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1186771508849">
     <property name="name" value="QueriesUtil" />
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1210358696034">

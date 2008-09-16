@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.test_templates">
-  <persistence version="1" />
+  <persistence version="2" />
   <refactoringHistory />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />

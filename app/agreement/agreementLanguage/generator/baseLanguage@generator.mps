@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="agreementLanguage.generator.baseLanguage">
-  <persistence version="1" />
+  <persistence version="2" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
@@ -30,7 +30,7 @@
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <maxImportIndex value="19" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="6" modelUID="jetbrains.mps.formulaLanguage.generator.baseLanguage@templates" version="-1" />
+  <import index="6" modelUID="jetbrains.mps.formulaLanguage.generator.baseLanguage@generator" version="-1" />
   <import index="8" modelUID="mf@java_stub" version="-1" />
   <import index="9" modelUID="formulaAdapter@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.formulaLanguage.api@java_stub" version="-1" />

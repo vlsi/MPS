@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="agreementLanguage.declarations">
-  <persistence version="1" />
+  <persistence version="2" />
+  <refactoringHistory />
   <language namespace="agreementLanguage" />
   <maxImportIndex value="0" />
   <node type="agreementLanguage.structure.AgreementDeclarations" id="1112315976835">

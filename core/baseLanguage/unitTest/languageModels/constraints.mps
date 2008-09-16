@@ -1,44 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.unitTest.constraints">
-  <persistence version="1" />
-  <refactoringHistory>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
-      <moveMap>
-        <entry>
-          <key modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" nodeId="1178187486782" />
-          <value modelUID="jetbrains.mps.baseLanguage.unitTest.behavior" nodeId="1213877238815" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" nodeId="1178187486783" />
-          <value modelUID="jetbrains.mps.baseLanguage.unitTest.behavior" nodeId="1213877238816" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" nodeId="1178187486784" />
-          <value modelUID="jetbrains.mps.baseLanguage.unitTest.behavior" nodeId="1213877238817" />
-        </entry>
-      </moveMap>
-      <conceptFeatureMap />
-    </refactoringContext>
-    <refactoringContext modelVersion="1">
-      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
-      <moveMap>
-        <entry>
-          <key modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" nodeId="1178187486829" />
-          <value modelUID="jetbrains.mps.baseLanguage.unitTest.behavior" nodeId="1213877487741" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" nodeId="1178187486830" />
-          <value modelUID="jetbrains.mps.baseLanguage.unitTest.behavior" nodeId="1213877487742" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" nodeId="1178187486831" />
-          <value modelUID="jetbrains.mps.baseLanguage.unitTest.behavior" nodeId="1213877487743" />
-        </entry>
-      </moveMap>
-      <conceptFeatureMap />
-    </refactoringContext>
-  </refactoringHistory>
+  <persistence version="2" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="9" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
