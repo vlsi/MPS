@@ -391,7 +391,16 @@
       <property name="name" value="foof" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1216142061800" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216142061801" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216142061802" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216142061802">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221574715795">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221574715796">
+            <property name="name" value="s" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221574715797">
+              <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216142069836">
         <property name="name" value="i" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1216142069837" />

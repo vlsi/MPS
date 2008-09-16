@@ -600,7 +600,6 @@
       </node>
     </node>
     <node role="defaultScope" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeDefaultSearchScope" id="1213104846412">
-      <property name="description" value="visible classifiers from model and imported models" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104846413">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104846414">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104846415">

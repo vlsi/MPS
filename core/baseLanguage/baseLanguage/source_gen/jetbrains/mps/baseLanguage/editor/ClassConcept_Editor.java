@@ -18,6 +18,8 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
@@ -33,6 +35,13 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandlerElementKeyMap;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 
 public class ClassConcept_Editor extends DefaultNodeEditor {
 
@@ -803,6 +812,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       setupLabel_refNode_superclass_1211933522644((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ClassConcept_Editor.ClassConcept_generic_cellMenu0()}));
     return editorCell;
   }
 
@@ -2415,6 +2425,30 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_Constant_1201374326509_1201374326509(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    }
+
+}
+  public static class ClassConcept_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
+
+    public ClassConcept_generic_cellMenu0() {
+    }
+
+    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      return (List<SNode>)new VisibleClassifiersScope(SNodeOperations.getModel(node), IClassifiersSearchScope.NON_FINAL_CLASS, operationContext.getScope()).getNodes();
+    }
+
+    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      this.handleAction_impl((SNode)parameterObject, node, model, scope, operationContext);
+    }
+
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNode extendsType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+      SLinkOperations.setTarget(extendsType, "classifier", parameterObject, false);
+      SLinkOperations.setTarget(node, "superclass", extendsType, true);
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
     }
 
 }
