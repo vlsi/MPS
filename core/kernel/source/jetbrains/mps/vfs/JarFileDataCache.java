@@ -49,8 +49,9 @@ class JarFileDataCache {
 
   private void removeGCedReferences() {
     try {
-      while (myQueue.poll() != null) {
-        WeakReference<JarFileData> ref = (WeakReference<JarFileData>) myQueue.remove();
+      while (true) {
+        WeakReference<JarFileData> ref = (WeakReference<JarFileData>) myQueue.poll();        
+        if (ref == null) break;
 
         String path = myRefToPath.get(ref);
         myRefToPath.remove(ref);
