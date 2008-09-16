@@ -236,6 +236,10 @@ __switch__:
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeParameter", true)).isEmpty();
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_1221569236256(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration") && !(SPropertyOperations.getBoolean(SNodeOperations.getParent(_context.getSourceNode()), "isFinal"));
+  }
+
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Interface")) {
       SPropertyOperations.set(_context.getNewNode(), "isAbstract", "" + (true));
@@ -2445,6 +2449,31 @@ __switch__:
 
         public String getMatchingText(String pattern) {
           return "<";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Type_1221569206015(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode variable = SNodeOperations.getParent(_context.getSourceNode());
+          SPropertyOperations.set(variable, "isFinal", "" + (true));
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "final";
         }
 
         public String getVisibleMatchingText(String pattern) {
