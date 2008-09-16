@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.transformationTest.generator.baseLanguage.template.main">
-  <persistence version="1" />
+  <persistence version="2" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.transformation.TLBase">
     <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
@@ -61,7 +61,7 @@
   <import index="26" modelUID="jetbrains.mps.transformationTest.runtime" version="-1" />
   <import index="27" modelUID="com.intellij.openapi.project@java_stub" version="-1" />
   <import index="28" modelUID="org.junit@java_stub" version="-1" />
-  <import index="29" modelUID="jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@templates" version="-1" />
+  <import index="29" modelUID="jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator" version="-1" />
   <import index="30" modelUID="jetbrains.mps.baseLanguage.classifiers.behavior" version="-1" />
   <import index="31" modelUID="jetbrains.mps.baseLanguage.unitTest.behavior" version="-1" />
   <import index="32" modelUID="jetbrains.mps.transformationTest.behavior" version="-1" />

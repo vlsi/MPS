@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.template.main">
-  <persistence version="1" />
+  <persistence version="2" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.transformation.TLBase">
     <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
@@ -47,7 +47,7 @@
   <import index="21" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="22" modelUID="jetbrains.mps.nodeEditor.cellProviders@java_stub" version="-1" />
   <import index="23" modelUID="jetbrains.mps.bootstrap.editorLanguage.cellProviders@java_stub" version="-1" />
-  <import index="25" modelUID="jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@templates" version="-1" />
+  <import index="25" modelUID="jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator" version="-1" />
   <import index="28" modelUID="jetbrains.mps.smodel.action@java_stub" version="-1" />
   <import index="31" modelUID="jetbrains.mps.bootstrap.editorLanguage.generator.internal@java_stub" version="-1" />
   <import index="37" modelUID="jetbrains.mps.nodeEditor.cellMenu@java_stub" version="-1" />

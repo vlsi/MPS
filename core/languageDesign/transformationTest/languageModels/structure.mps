@@ -1,68 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.transformationTest.structure">
-  <persistence version="1" />
-  <refactoringHistory>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="NodeTypesCheckOperation" conceptFQName="jetbrains.mps.transformationTest.structure.NodeTypesCheckOperation" featureKind="CONCEPT" />
-          <value featureName="TypesCheckOperation" conceptFQName="jetbrains.mps.transformationTest.structure.TypesCheckOperation" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="1">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="NodeUnreacable" conceptFQName="jetbrains.mps.transformationTest.structure.NodeUnreacable" featureKind="CONCEPT" />
-          <value featureName="NodeUnreachable" conceptFQName="jetbrains.mps.transformationTest.structure.NodeUnreachable" featureKind="CONCEPT" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="element" conceptFQName="jetbrains.mps.transformationTest.structure.NodesTestCase" featureKind="CHILD" />
-          <value featureName="elements" conceptFQName="jetbrains.mps.transformationTest.structureNodesTestCase" featureKind="CHILD" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="1">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="type" conceptFQName="jetbrains.mps.transformationTest.structure.AssertType" featureKind="CHILD" />
-          <value featureName="typeToCheck" conceptFQName="jetbrains.mps.transformationTest.structureAssertType" featureKind="CHILD" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="2">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="methods" conceptFQName="jetbrains.mps.transformationTest.structure.NodesTestCase" featureKind="CHILD" />
-          <value featureName="testMethods" conceptFQName="jetbrains.mps.transformationTest.structureNodesTestCase" featureKind="CHILD" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-    <refactoringContext modelVersion="3">
-      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink" />
-      <moveMap />
-      <conceptFeatureMap>
-        <entry>
-          <key featureName="methodDeclaraiotns" conceptFQName="jetbrains.mps.transformationTest.structure.NodesTestCase" featureKind="CHILD" />
-          <value featureName="methods" conceptFQName="jetbrains.mps.transformationTest.structureNodesTestCase" featureKind="CHILD" />
-        </entry>
-      </conceptFeatureMap>
-    </refactoringContext>
-  </refactoringHistory>
+  <persistence version="2" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   </language>

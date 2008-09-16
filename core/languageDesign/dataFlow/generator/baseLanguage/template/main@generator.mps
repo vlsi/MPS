@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.dataFlow.generator.baseLanguage.template.main">
-  <persistence version="1" />
+  <persistence version="2" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.transformation.TLBase">
     <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
@@ -30,8 +30,8 @@
   <import index="4" modelUID="jetbrains.mps.core.constraints" version="2" />
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.dataFlow.framework@java_stub" version="-1" />
-  <import index="7" modelUID="jetbrains.mps.baseLanguage.generator.java.closures@templates" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@templates" version="-1" />
+  <import index="7" modelUID="jetbrains.mps.baseLanguage.generator.java.closures@generator" version="-1" />
+  <import index="8" modelUID="jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator" version="-1" />
   <import index="9" modelUID="jetbrains.mps.core.behavior" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1206455304202">

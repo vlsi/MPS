@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.internalCollections.test.nullHacks">
-  <persistence version="1" />
+  <persistence version="2" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.internal.collections">
     <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.ide.scriptLanguage.generator.baseLanguage.template.main">
-  <persistence version="1" />
+  <persistence version="2" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.transformation.TLBase">
     <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
@@ -30,7 +30,7 @@
   <import index="6" modelUID="jetbrains.mps.ide.scriptLanguage.runtime@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="9" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="10" modelUID="jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@templates" version="-1" />
+  <import index="10" modelUID="jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1177464516957">
     <property name="name" value="mc_migrationScript" />
     <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1177466559510">

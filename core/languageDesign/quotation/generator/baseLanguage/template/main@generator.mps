@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.quotation.generator.baseLanguage.template.main">
-  <persistence version="1" />
+  <persistence version="2" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.transformation.TLBase">
     <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
@@ -41,7 +41,7 @@
   <import index="13" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="14" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="16" modelUID="java.util@java_stub" version="-1" />
-  <import index="17" modelUID="jetbrains.mps.quotation.generator.baseLanguage.template.main@templates" version="-1" />
+  <import index="17" modelUID="jetbrains.mps.quotation.generator.baseLanguage.template.main@generator" version="-1" />
   <import index="18" modelUID="jetbrains.mps.helgins.inference@java_stub" version="-1" />
   <import index="19" modelUID="jetbrains.mps.bootstrap.helgins.structure@java_stub" version="-1" />
   <import index="20" modelUID="jetbrains.mps.bootstrap.helgins.runtime@java_stub" version="-1" />

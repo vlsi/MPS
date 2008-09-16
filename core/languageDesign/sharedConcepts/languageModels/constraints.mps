@@ -1,46 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.sharedConcepts.constraints">
-  <persistence version="1" />
-  <refactoringHistory>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
-      <moveMap>
-        <entry>
-          <key modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" nodeId="1199879876986" />
-          <value modelUID="jetbrains.mps.bootstrap.sharedConcepts.behavior" nodeId="1213877217441" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" nodeId="1199879876987" />
-          <value modelUID="jetbrains.mps.bootstrap.sharedConcepts.behavior" nodeId="1213877217447" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" nodeId="1199879876988" />
-          <value modelUID="jetbrains.mps.bootstrap.sharedConcepts.behavior" nodeId="1213877217448" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" nodeId="1199879879098" />
-          <value modelUID="jetbrains.mps.bootstrap.sharedConcepts.behavior" nodeId="1213877217442" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" nodeId="1199879879100" />
-          <value modelUID="jetbrains.mps.bootstrap.sharedConcepts.behavior" nodeId="1213877217443" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" nodeId="1199879959949" />
-          <value modelUID="jetbrains.mps.bootstrap.sharedConcepts.behavior" nodeId="1213877217446" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" nodeId="1199879961778" />
-          <value modelUID="jetbrains.mps.bootstrap.sharedConcepts.behavior" nodeId="1213877217444" />
-        </entry>
-        <entry>
-          <key modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" nodeId="1199879963202" />
-          <value modelUID="jetbrains.mps.bootstrap.sharedConcepts.behavior" nodeId="1213877217445" />
-        </entry>
-      </moveMap>
-      <conceptFeatureMap />
-    </refactoringContext>
-  </refactoringHistory>
+  <persistence version="2" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="9" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
