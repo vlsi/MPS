@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class AssignmentExpression_Behavior {
 
@@ -22,6 +24,22 @@ public class AssignmentExpression_Behavior {
 
   public static boolean virtual_isReadAsignment_1215696236033(SNode thisNode) {
     return false;
+  }
+
+  public static boolean call_canConvertToLocalVariableDeclaration_1221573334330(SNode thisNode) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+  }
+
+  public static SNode call_convertToLocalVariableDeclaration_1221573391693(SNode thisNode) {
+    assert SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+    SNode exprStatement = SNodeOperations.getParent(thisNode);
+    SNode varType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "rValue", true));
+    SNode varDeclStmnt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+    SPropertyOperations.set(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "name", "var");
+    SLinkOperations.setTarget(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "type", SNodeOperations.copyNode(varType), true);
+    SLinkOperations.setTarget(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "initializer", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "rValue", true)), true);
+    SNodeOperations.replaceWithAnother(exprStatement, varDeclStmnt);
+    return varDeclStmnt;
   }
 
 }

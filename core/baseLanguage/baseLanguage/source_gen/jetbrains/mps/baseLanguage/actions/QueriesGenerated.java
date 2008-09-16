@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
 import java.util.Iterator;
 import jetbrains.mps.closures.runtime.YieldingIterator;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import java.util.List;
@@ -59,6 +60,7 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
+import jetbrains.mps.core.behavior.BaseConcept_Behavior;
 
 public class QueriesGenerated {
 
@@ -238,6 +240,14 @@ __switch__:
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_1221569236256(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration") && !(SPropertyOperations.getBoolean(SNodeOperations.getParent(_context.getSourceNode()), "isFinal"));
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_LocalVariableReference_1221572369857(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"))) {
+      return false;
+    }
+    SNode assignment = SNodeOperations.getParent(_context.getSourceNode());
+    return AssignmentExpression_Behavior.call_canConvertToLocalVariableDeclaration_1221573334330(assignment) && SLinkOperations.getTarget(assignment, "lValue", true) == _context.getSourceNode();
   }
 
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -2474,6 +2484,51 @@ __switch__:
 
         public String getMatchingText(String pattern) {
           return "final";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_LocalVariableReference_1221572224367(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    final SNode assignment;
+    final SNode type;
+    {
+      Calculable calculable = new Calculable() {
+
+        public Object calculate() {
+          return SNodeOperations.getParent(_context.getSourceNode());
+        }
+
+      };
+      assignment = (SNode)calculable.calculate();
+    }
+    {
+      Calculable calculable = new Calculable() {
+
+        public Object calculate() {
+          return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(assignment, "rValue", true));
+        }
+
+      };
+      type = (SNode)calculable.calculate();
+    }
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          return AssignmentExpression_Behavior.call_convertToLocalVariableDeclaration_1221573391693(assignment);
+        }
+
+        public String getMatchingText(String pattern) {
+          return BaseConcept_Behavior.call_getPresentation_1213877396640(type);
         }
 
         public String getVisibleMatchingText(String pattern) {
