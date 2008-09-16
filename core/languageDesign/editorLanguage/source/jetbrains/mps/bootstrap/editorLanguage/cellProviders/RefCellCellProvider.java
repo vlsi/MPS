@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 
 import java.util.Iterator;
 
@@ -47,7 +48,11 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     setSemanticNodeToCells(editorCell, node);
 
     if (myIsCardinality1) {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+      if (ReferenceConceptUtil.getCharacteristicReference(node.getConceptDeclarationAdapter()) != null) {
+        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));
+      } else {
+        editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+      }
     } else {
       if (myIsAggregation) {
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));

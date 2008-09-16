@@ -8,6 +8,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
  * Time: Nov 6, 2003 5:00:20 PM
  */
 public class CellAction_Empty extends EditorCellAction {
+  private Throwable myCreationPoint = new Throwable();
+
   public boolean canExecute(EditorContext context) {
     return true;
   }
