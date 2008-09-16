@@ -5,8 +5,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
@@ -28,7 +26,7 @@ public class BeforeEventProcessor extends EventProcessor {
       VirtualFile vfile = getVFile(event);
       Project project = ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
       if (project != null) {
-        MPSVCSManager.getInstance(project).deleteVFilesAndRemoveFromVCS(Collections.singletonList(vfile));
+        MPSVCSManager.getInstance(project).deleteVirtualFilesAndRemoveFromVcs(Collections.singletonList(vfile));
       }
     } else {
       // if model is not null, than file was deleted externally

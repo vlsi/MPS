@@ -241,8 +241,8 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       for (Project project : projects) {
         MPSVCSManager mpsvcsManager = MPSVCSManager.getInstance(project);
         if (mpsvcsManager != null) {
-          mpsvcsManager.removeMissingFilesFromVCS(Collections.singletonList(modelFile.toFile()));
-          mpsvcsManager.addFilesToVCS(Collections.singletonList(newFile.toFile()));
+          mpsvcsManager.deleteFilesAndRemoveFromVcs(Collections.singletonList(modelFile.toFile()));
+          mpsvcsManager.addFilesToVcs(Collections.singletonList(newFile.toFile()));
         }
       }
     }

@@ -13,17 +13,13 @@ import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.CompilationListener;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.*;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.changes.*;
-import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
-import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -72,179 +68,44 @@ public class MPSVCSManager implements ProjectComponent {
     myChangeListManager = clmanager;
   }
 
-  private void scheduleMissingFileInternal(@NotNull final VirtualFile file) {
-    AbstractVcs fromVCS = myManager.getVcsFor(file);
-    if (fromVCS != null) {
-      CheckinEnvironment ci = fromVCS.getCheckinEnvironment();
-      if (ci != null && StatusUtil.isUnderVCS(myProject, file)) {
-        FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
-        ci.scheduleMissingFileForDeletion(Collections.singletonList(path));
+  public boolean deleteFilesAndRemoveFromVcs(List<File> files) {
+    final List<File> copiedFileList = new ArrayList<File>(files);
+    myTasksQueue.invokeLater(new Runnable() {
+      public void run() {
+        new RemoveOperation(copiedFileList, myManager).performInternal();
       }
-    } else {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            public void run() {
-              try {
-                file.delete(this);
-              } catch (IOException e) {
-                LOG.error(e);
-              }
-            }
-          });
-        }
-      });
-    }
-  }
-
-  public boolean deleteFilesAndRemoveFromVCS(List<File> files) {
-    List<VirtualFile> list = new LinkedList<VirtualFile>();
-    for (File f : files) {
-      VirtualFile file = VFileSystem.getFile(f);
-      if (file != null) {
-        list.add(file);
-      }
-    }
-
-    return deleteVFilesAndRemoveFromVCS(list);
-  }
-
-  public boolean deleteVFilesAndRemoveFromVCS(List<VirtualFile> files) {
-    deleteInternal(files);
+    });
     return true;
   }
 
-  private void deleteInternal(final List<VirtualFile> inVCS) {
+  public boolean deleteVirtualFilesAndRemoveFromVcs(List<VirtualFile> files) {
+    final HashSet<VirtualFile> filesCopy = new HashSet<VirtualFile>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        ApplicationManager.getApplication().runReadAction(new Runnable() {
-          public void run() {
-            for (VirtualFile vfile : inVCS) {
-              if (vfile != null) {
-                scheduleMissingFileInternal(vfile);
-              }
-            }
-          }
-        });
+        new RemoveOperation(filesCopy, myManager).performInternal();
       }
-    }
-    );
+    });
+    return true;
   }
 
-  public void removeMissingFilesFromVCS(final List<File> filesToRemove) {
-    final List<File> copiedFileList = new ArrayList<File>(filesToRemove); //a list "filesToRemove" can be modified by caller before invokeLater calls its runnable
-    myTasksQueue.invokeLater(new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runReadAction(new Runnable() {
-          public void run() {
-            for (File file : copiedFileList) {
-              FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOnDeleted(file, file.isDirectory());
-              AbstractVcs fromVCS = myManager.getVcsFor(path);
-              if (fromVCS != null) {
-                CheckinEnvironment ci = fromVCS.getCheckinEnvironment();
-                if (ci != null) {
-                  ci.scheduleMissingFileForDeletion(Collections.singletonList(path));
-                }
-              }
-            }
-          }
-        });
-      }
-    }
-    );
-  }
-
-  public boolean addFilesToVCS(final List<File> files) {
+  public boolean addFilesToVcs(List<File> files) {
     final List<File> copiedFileList = new ArrayList<File>(files); //a list "files" can be modified by caller before invokeLater calls its runnable
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        // doing addition in invokeLater cause of refreshAndGetFile method
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          public void run() {
-            List<VirtualFile> virtualFileList = new LinkedList<VirtualFile>();
-            for (File f : copiedFileList) {
-              VirtualFile virtualFile = VFileSystem.refreshAndGetFile(f);
-              if (virtualFile != null) {
-                virtualFileList.add(virtualFile);
-              } else {
-                LOG.error("Cannot find virtual file for File " + f);
-              }
-            }
-            addInternal(virtualFileList);
-          }
-        });
+        new AddOperation(copiedFileList, myManager, myProject).performInternal();
       }
     });
     return true;
   }
 
-  public boolean addVFilesToVCS(final List<VirtualFile> files) {
+  public boolean addVirtualFilesToVcs(List<VirtualFile> files) {
+    final HashSet<VirtualFile> filesCopy = new HashSet<VirtualFile>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        addInternal(files);
+        new AddOperation(filesCopy, myManager, myProject).performInternal();
       }
     });
     return true;
-  }
-
-  /**
-   * Should only be called from addVFilesToVcs or from addFilesToVcs.
-   *
-   * @param inVCS
-   */
-  private void addInternal(final List<VirtualFile> inVCS) {
-    ApplicationManager.getApplication().runReadAction(new Runnable() {
-      public void run() {
-        for (VirtualFile vf : inVCS) {
-          if (vf == null) {
-            continue;
-          }
-          List<VirtualFile> path = getPathMaxUnversionedParent(vf);
-          for (VirtualFile f : path) {
-            scheduleUnversionedFileForAdditionInternal(f);
-          }
-        }
-      }
-
-    });
-  }
-
-  private List<VirtualFile> getPathMaxUnversionedParent(VirtualFile vf) {
-    List<VirtualFile> path = new LinkedList<VirtualFile>();
-    path.add(vf);
-
-    while (true) {
-      VirtualFile parent = path.get(0).getParent();
-      if (parent == null) {
-        return Collections.EMPTY_LIST;
-      }
-
-      if (StatusUtil.isUnderVCS(myProject, parent)) {
-        break;
-      } else {
-        path.add(0, parent);
-      }
-    }
-
-    return path;
-  }
-
-  private void scheduleUnversionedFileForAdditionInternal(@NotNull VirtualFile vf) {
-    AbstractVcs vcs = myManager.getVcsFor(vf);
-    if (vcs != null) {
-      CheckinEnvironment ci = vcs.getCheckinEnvironment();
-      if (ci != null) {
-        List<VirtualFile> vfs = new ArrayList<VirtualFile>();
-        vfs.add(vf);
-        List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
-        if (result != null) {
-          for (VcsException e : result) {
-            LOG.error(e);
-          }
-        }
-        VcsDirtyScopeManager.getInstance(myProject).fileDirty(vf);
-      }
-    }
   }
 
   public void projectOpened() {
@@ -299,7 +160,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private void addFilesScheduledToAddLater() {
-    addFilesToVCS(ourFilesToAddLater); //todo only files in an appropriate project or to every project opened; now files are added to a first opened project
+    addFilesToVcs(ourFilesToAddLater); //todo only files in an appropriate project or to every project opened; now files are added to a first opened project
     ourFilesToAddLater.clear();
   }
 
@@ -308,7 +169,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private void removeFilesScheduledToRemoveLater() {
-    removeMissingFilesFromVCS(ourFilesToRemoveLater); //todo only files in an appropriate project or in every project opened
+    deleteFilesAndRemoveFromVcs(ourFilesToRemoveLater); //todo only files in an appropriate project or in every project opened
     ourFilesToRemoveLater.clear();
   }
 
@@ -317,7 +178,7 @@ public class MPSVCSManager implements ProjectComponent {
     public void modelSaved(SModelDescriptor sm) {
       final IFile ifile = sm.getModelFile();
       if (ifile != null) {
-        addFilesToVCS(Collections.singletonList(ifile.toFile()));
+        addFilesToVcs(Collections.singletonList(ifile.toFile()));
         sm.removeModelListener(this);
       }
     }
@@ -326,7 +187,7 @@ public class MPSVCSManager implements ProjectComponent {
   private class MyMetadataCreationListener implements MetadataCreationListener {
     public void metadataFileCreated(IFile ifile) {
       if (ifile != null) {
-        addFilesToVCS(Collections.singletonList(ifile.toFile()));
+        addFilesToVcs(Collections.singletonList(ifile.toFile()));
       }
     }
   }
@@ -364,7 +225,7 @@ public class MPSVCSManager implements ProjectComponent {
     public void modelFileChanged(SModelDescriptor modelDescriptor, IFile ifrom) {
       if (ifrom != null) {
         VirtualFile from = VFileSystem.getFile(ifrom);
-        deleteVFilesAndRemoveFromVCS(Collections.singletonList(from));
+        deleteVirtualFilesAndRemoveFromVcs(Collections.singletonList(from));
         modelDescriptor.addModelListener(myModelInitializationListener);
       }
     }
@@ -385,7 +246,7 @@ public class MPSVCSManager implements ProjectComponent {
       if (modelDescriptor instanceof StubModelDescriptor) { // TODO how to know that a stub model was created?
         IFile ifile = modelDescriptor.getModelFile();
         if (ifile != null) {
-          addVFilesToVCS(Collections.singletonList(VFileSystem.refreshAndGetFile(ifile.toFile())));
+          addVirtualFilesToVcs(Collections.singletonList(VFileSystem.refreshAndGetFile(ifile.toFile())));
         }
       }
     }

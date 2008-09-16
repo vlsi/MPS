@@ -13,9 +13,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.persistence.ConflictModelException;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.ThreadUtils;
 
 import java.util.*;
 
@@ -138,14 +136,14 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
 
     // add
     for (MPSVCSManager manager : vcsManagerToFile.keySet()) {
-      manager.addVFilesToVCS(vcsManagerToFile.get(manager));
+      manager.addVirtualFilesToVcs(vcsManagerToFile.get(manager));
     }
   }
 
   public void addFileToVcs(VirtualFile file) {
     MPSVCSManager manager = MPSVCSManager.getInstance(getProjectForFile(file));
     if (manager != null) {
-      manager.addVFilesToVCS(Collections.singletonList(file));
+      manager.addVirtualFilesToVcs(Collections.singletonList(file));
     } else {
       LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
     }
