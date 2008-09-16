@@ -20,17 +20,14 @@ public class AddOperation extends VcsOperation {
   private static final Logger LOG = Logger.getLogger(AddOperation.class);
   private final List<File> myFilesToAdd = new ArrayList<File>(10);
   private final Set<VirtualFile> myVirtualFilesToAdd = new HashSet<VirtualFile>();
-  private final Project myProject;
 
   public AddOperation(Set<VirtualFile> filesToAdd, ProjectLevelVcsManager manager, Project project) {
-    super(manager);
-    myProject = project;
+    super(manager, project);
     myVirtualFilesToAdd.addAll(filesToAdd);
   }
 
   public AddOperation(List<File> filesToAdd, ProjectLevelVcsManager manager, Project project) {
-    super(manager);
-    myProject = project;
+    super(manager, project);
     myFilesToAdd.addAll(filesToAdd);
   }
 

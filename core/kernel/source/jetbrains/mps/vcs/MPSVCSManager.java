@@ -72,7 +72,7 @@ public class MPSVCSManager implements ProjectComponent {
     final List<File> copiedFileList = new ArrayList<File>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        new RemoveOperation(copiedFileList, myManager).performInternal();
+        new RemoveOperation(copiedFileList, myManager, myProject).performInternal();
       }
     });
     return true;
@@ -82,7 +82,7 @@ public class MPSVCSManager implements ProjectComponent {
     final HashSet<VirtualFile> filesCopy = new HashSet<VirtualFile>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        new RemoveOperation(filesCopy, myManager).performInternal();
+        new RemoveOperation(filesCopy, myManager, myProject).performInternal();
       }
     });
     return true;
