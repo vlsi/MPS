@@ -2087,6 +2087,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return;
     }
 
+    SNode lastSelectedNode = getSelectedNode();
+
     if (!EventUtil.isDramaticalChange(events)) {
       if (EventUtil.isPropertyChange(events)) {
         String propertyName = ((SModelPropertyEvent) events.get(0)).getPropertyName();
@@ -2115,7 +2117,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
         if (editorCells != null) {
           rebuildEditorContent(events);
-          updateSelection(events);
+          updateSelection(events, lastSelectedNode);
         } else if (editorCell_properties != null) {
           for (EditorCell_Property cell : editorCell_properties) {
             cell.synchronizeViewWithModel();
@@ -2133,20 +2135,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         return;
       }
 
-      updateSelection(events);
+      updateSelection(events, lastSelectedNode);
     }
     revertErrorCells(events);
   }
 
-  private void updateSelection(List<SModelEvent> events) {
+  private void updateSelection(List<SModelEvent> events, SNode lastSelectedNode) {
     SModelEvent lastAdd = null;
     SModelEvent lastRemove = null;
 
     if (myNodeRangeSelection.isActive()) {
       myNodeRangeSelection.deactivate();
     }
-
-    SNode lastSelectedNode = getSelectedNode();
 
     List<SNode> childAddedEventNodes = new ArrayList<SNode>();
 
@@ -2257,6 +2257,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         } else {
           changeSelectionWRTFocusPolicy(nullCell);
         }
+      }
+    }
+
+    if (getSelectedNode() == null) {
+      EditorCell lastSelectedNodeCell = findNodeCell(lastSelectedNode);
+      if (lastSelectedNodeCell != null) {
+        changeSelection(lastSelectedNodeCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF));
       }
     }
   }
