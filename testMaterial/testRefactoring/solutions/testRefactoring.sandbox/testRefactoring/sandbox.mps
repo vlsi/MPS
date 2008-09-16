@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="testRefactoring.sandbox">
-  <persistence version="1" />
+  <persistence version="2" />
   <refactoringHistory>
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.core.scripts.Rename" />

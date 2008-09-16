@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="testRefactoring.structure">
-  <persistence version="1" />
+  <persistence version="2" />
   <refactoringHistory>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
