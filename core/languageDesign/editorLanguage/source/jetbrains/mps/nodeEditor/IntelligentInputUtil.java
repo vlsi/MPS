@@ -81,7 +81,7 @@ public class IntelligentInputUtil {
         }
       }
     } else if (substituteInfo.getMatchingActions(pattern, false).isEmpty() &&
-                substituteInfo.getMatchingActions(pattern.trim(), false).isEmpty() &&
+                substituteInfo.getMatchingActions(trimLeft(pattern), false).isEmpty() &&
                 nextCell != null && nextCell.isErrorState() && nextCell instanceof EditorCell_Label && ((EditorCell_Label) nextCell).isEditable()) {
 
       cell.getSNode().removeRightTransformHint();
@@ -109,11 +109,11 @@ public class IntelligentInputUtil {
       cellForNewNode = cell;
       sourceCellRemains = true;
     } else if (canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail) ||
-      canCompleteSmallPatternImmediately(substituteInfo, smallPattern.trim(), tail)) {
+      canCompleteSmallPatternImmediately(substituteInfo, trimLeft(smallPattern), tail)) {
 
       if (!canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail) &&
-        canCompleteSmallPatternImmediately(substituteInfo, smallPattern.trim(), tail)) {
-        smallPattern = smallPattern.trim();
+        canCompleteSmallPatternImmediately(substituteInfo, trimLeft(smallPattern), tail)) {
+        smallPattern = trimLeft(smallPattern);
       }
 
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
@@ -135,11 +135,11 @@ public class IntelligentInputUtil {
         return;
       }
     } else if (canCompleteTheWholeStringImmediately(substituteInfo, smallPattern + tail) ||
-      canCompleteTheWholeStringImmediately(substituteInfo, smallPattern.trim() + tail)) {
+      canCompleteTheWholeStringImmediately(substituteInfo, trimLeft(smallPattern) + tail)) {
 
       if (!canCompleteTheWholeStringImmediately(substituteInfo, smallPattern + tail) &&
-        canCompleteTheWholeStringImmediately(substituteInfo, smallPattern.trim() + tail)) {
-        smallPattern = smallPattern.trim();
+        canCompleteTheWholeStringImmediately(substituteInfo, trimLeft(smallPattern) + tail)) {
+        smallPattern = trimLeft(smallPattern);
       }
 
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern + tail, true);
@@ -238,12 +238,7 @@ public class IntelligentInputUtil {
 
       cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
     } else if (canCompleteTheWholeStringImmediately(info, head + smallPattern) ||
-      canCompleteTheWholeStringImmediately(info, head + smallPattern.trim())) {
-
-      if (!canCompleteTheWholeStringImmediately(info, head + smallPattern) &&
-        canCompleteTheWholeStringImmediately(info, head + smallPattern.trim())) {
-        smallPattern = smallPattern.trim();
-      }
+      canCompleteTheWholeStringImmediately(info, head + smallPattern)) {
 
       List<INodeSubstituteAction> matchingActions = info.getMatchingActions(head + smallPattern, true);
       INodeSubstituteAction item = matchingActions.get(0);
@@ -275,6 +270,15 @@ public class IntelligentInputUtil {
 
     EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
     prepareSTCell(editorContext, newCellForNewNode, head);
+  }
+
+  private static String trimLeft(String text) {
+    for (int i = 0; i < text.length(); i++) {
+      if (!Character.isWhitespace(text.charAt(i))) {
+        return text.substring(i);
+      }
+    }
+    return "";
   }
 
   private static boolean canCompleteSmallPatternImmediately(NodeSubstituteInfo info, String smallPattern, String tail) {
