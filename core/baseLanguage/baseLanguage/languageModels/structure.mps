@@ -81,6 +81,10 @@
       <property name="propertyType" value="boolean" />
       <link role="dataType" targetNodeId="4.1082983657063" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1221565133444">
+      <property name="name" value="isFinal" />
+      <link role="dataType" targetNodeId="4.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1068390468199">
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="field" />

@@ -2268,7 +2268,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       });
     }
     if (wereReverted[0]) {
-      System.out.println("were reverted");
       relayout();
     }
   }

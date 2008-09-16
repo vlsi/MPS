@@ -12,6 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ClassConcept extends Classifier {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ClassConcept";
   public static String ABSTRACT_CLASS = "abstractClass";
+  public static String IS_FINAL = "isFinal";
   public static String SUPERCLASS = "superclass";
   public static String INSTANCE_INITIALIZER = "instanceInitializer";
   public static String STATIC_INITIALIZER = "staticInitializer";
@@ -32,6 +33,14 @@ public class ClassConcept extends Classifier {
 
   public void setAbstractClass(boolean value) {
     this.setBooleanProperty(ClassConcept.ABSTRACT_CLASS, value);
+  }
+
+  public boolean getIsFinal() {
+    return this.getBooleanProperty(ClassConcept.IS_FINAL);
+  }
+
+  public void setIsFinal(boolean value) {
+    this.setBooleanProperty(ClassConcept.IS_FINAL, value);
   }
 
   public ClassifierType getSuperclass() {
