@@ -35,6 +35,10 @@ public class InspectorTool extends BaseProjectTool {
     });
   }
 
+  public void disposeComponent() {
+    myInspectorComponent.dispose();
+  }
+
   protected boolean isInitiallyAvailable() {
     return true;
   }
