@@ -15,4 +15,47 @@ public class StringLiteral_Behavior {
     return SPropertyOperations.getString(thisNode, "value");
   }
 
+  public static boolean call_isCorrect_1221565233201(SNode thisNode) {
+    boolean isEscapeMode = false;
+    boolean isUnicodeMode = false;
+    int unicodeDigitNumber = 0;
+    for(int i = 0 ; i < SPropertyOperations.getString(thisNode, "value").length() ; i++ ) {
+      char c = SPropertyOperations.getString(thisNode, "value").charAt(i);
+      if (c == '\\') {
+        isEscapeMode = true;
+      } else if (isEscapeMode) {
+        if (c == 'u') {
+          isUnicodeMode = true;
+        } else if (c != 'n' && c != 't' && c != 'b' && c != 'f' && c != 'r' && c != '"' && c != '\'' && c != '\\') {
+          return false;
+        }
+        isEscapeMode = false;
+      } else if (isUnicodeMode) {
+        if (Character.isDigit(c) || StringLiteral_Behavior.call_isHexChar_1221565869792(thisNode, c)) {
+          unicodeDigitNumber++ ;
+        } else
+        {
+          return false;
+        }
+        if (unicodeDigitNumber == 4) {
+          isUnicodeMode = false;
+        }
+      } else if (c == '"') {
+        return false;
+      }
+    }
+    if (isEscapeMode || isUnicodeMode) {
+      return false;
+    }
+    return true;
+  }
+
+  public static boolean call_isHexChar_1221565869792(SNode thisNode, char ch) {
+    if (Character.isDigit(ch)) {
+      return true;
+    }
+    char lc = Character.toLowerCase(ch);
+    return lc >= 'a' && lc <= 'f';
+  }
+
 }
