@@ -22,7 +22,6 @@
   <languageRuntimeClassPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="true">jetbrains.mps.baseLanguage.blTypes</dependency>
     <dependency reexport="true">JDK</dependency>
     <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
     <dependency reexport="false">jetbrains.mps.ide</dependency>

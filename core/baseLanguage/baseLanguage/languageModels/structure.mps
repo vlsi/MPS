@@ -2727,5 +2727,9 @@
       <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1221393582612">
+    <property name="name" value="IExtarctMethodAvailable" />
+    <property name="package" value="refactoring" />
+  </node>
 </model>
 

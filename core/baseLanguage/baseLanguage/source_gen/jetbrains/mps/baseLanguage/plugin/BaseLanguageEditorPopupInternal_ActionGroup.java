@@ -17,7 +17,6 @@ public class BaseLanguageEditorPopupInternal_ActionGroup extends GeneratedAction
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new ShowInternalExtractMethodStuff_Action());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

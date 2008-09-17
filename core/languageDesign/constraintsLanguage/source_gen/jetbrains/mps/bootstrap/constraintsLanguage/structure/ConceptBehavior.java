@@ -5,6 +5,7 @@ package jetbrains.mps.bootstrap.constraintsLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.baseLanguage.structure.IMemberContainer;
+import jetbrains.mps.baseLanguage.structure.IExtarctMethodAvailable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
@@ -14,7 +15,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemberContainer {
+public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemberContainer, IExtarctMethodAvailable {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";

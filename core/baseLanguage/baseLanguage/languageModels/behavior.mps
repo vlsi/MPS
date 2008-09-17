@@ -39,7 +39,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="17" />
+  <maxImportIndex value="18" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.project@java_stub" version="-1" />
@@ -56,6 +56,7 @@
   <import index="15" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" version="-1" />
   <import index="17" modelUID="jetbrains.mps.patterns.util@java_stub" version="-1" />
+  <import index="18" modelUID="jetbrains.mps.baseLanguage.plugin" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877208326">
     <property name="package" value="type.primitive" />
     <link role="concept" targetNodeId="1.1068581242867" resolveInfo="LongType" />
@@ -10064,6 +10065,31 @@
     <link role="concept" targetNodeId="1.1200397529627" resolveInfo="CharConstant" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1221567298371">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221567298372" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1221393363926">
+    <property name="package" value="refactoring" />
+    <link role="concept" targetNodeId="1.1221393582612" resolveInfo="IExtarctMethodAvailable" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1221393367929">
+      <property name="name" value="getExtractMethodRefactoringProcessor" />
+      <property name="isVirtual" value="true" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221393367932">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221393637506">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1221404084445">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1221404084446">
+              <link role="baseMethodDeclaration" targetNodeId="18.1221578571955" resolveInfo="ExtractMethodRefactoringProcessor" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221404088995" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221393367930" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221579439827">
+        <link role="classifier" targetNodeId="18.1221578571953" resolveInfo="ExtractMethodRefactoringProcessor" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1221393363927">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221393363928" />
     </node>
   </node>
 </model>
