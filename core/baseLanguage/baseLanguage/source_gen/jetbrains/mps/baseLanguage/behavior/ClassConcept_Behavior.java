@@ -8,6 +8,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class ClassConcept_Behavior {
 
@@ -61,6 +67,21 @@ public class ClassConcept_Behavior {
 
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
     return Classifier_Behavior.callSuper_hasStaticMemebers_1214840444586(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept") || ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)).count() > 0;
+  }
+
+  public static List<SNode> call_getMethodsToImplement_1221637841398(SNode thisNode) {
+    List<SNode> methods = new ArrayList<SNode>();
+    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(thisNode)), IClassifiersSearchScope.INSTANCE_METHOD);
+    for(SNode method : scope.getNodes()) {
+      SNode container = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      if (container == thisNode || container == null) {
+        continue;
+      }
+      if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(method, "isAbstract")) {
+        ListSequence.fromList(methods).addElement(method);
+      }
+    }
+    return methods;
   }
 
 }

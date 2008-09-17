@@ -816,6 +816,9 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217334315588" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217334315589" />
     </node>
+    <node role="extendedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221637757666">
+      <link role="classifier" targetNodeId="17.~Map$Entry" resolveInfo="Map.Entry" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1221550340220">
     <property name="name" value="ABC" />
@@ -848,6 +851,9 @@
     </node>
     <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221637239870">
       <link role="classifier" targetNodeId="15.~Closeable" resolveInfo="Closeable" />
+    </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221637778114">
+      <link role="classifier" targetNodeId="17.~AbstractList" resolveInfo="AbstractList" />
     </node>
   </node>
 </model>
