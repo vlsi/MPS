@@ -19,15 +19,15 @@ public class ReplaceForLoopWithWhileLoop_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Replace for with while";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     // replace for loop with while
     SNode whileStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WhileStatement", null);
     SNodeOperations.replaceWithAnother(node, whileStatement);

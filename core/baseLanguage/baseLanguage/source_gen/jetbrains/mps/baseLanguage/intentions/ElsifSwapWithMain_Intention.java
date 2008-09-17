@@ -18,11 +18,11 @@ public class ElsifSwapWithMain_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "swap this elsif clause with the main clause";
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SNode ifStatement = SNodeOperations.getParent(node);
     SNode condition = SLinkOperations.getTarget(ifStatement, "condition", true);
     SNode statementList = SLinkOperations.getTarget(ifStatement, "ifTrue", true);

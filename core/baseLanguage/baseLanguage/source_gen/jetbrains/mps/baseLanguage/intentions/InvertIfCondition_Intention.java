@@ -20,11 +20,11 @@ public class InvertIfCondition_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Invert If condition";
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     // Invert condition
     SNode condition = SLinkOperations.getTarget(node, "condition", true);
     if ((condition != null)) {

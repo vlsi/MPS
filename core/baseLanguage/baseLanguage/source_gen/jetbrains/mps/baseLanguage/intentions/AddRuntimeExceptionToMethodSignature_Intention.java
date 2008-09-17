@@ -23,11 +23,11 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Add runtime exception to method signature";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     // check that this is done in a method
     SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     if (methodDecl == null) {
@@ -59,7 +59,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
     return true;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     SLinkOperations.addChild(methodDecl, "throwsItem", (SNode)TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)));
   }

@@ -18,15 +18,15 @@ public class ConvertElseToElseIf_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Convert else block to else if";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "ifFalseStatement", true) != null);
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     IfStatement_Behavior.call_convertElseToElseIf_1217845914183(node);
   }
 

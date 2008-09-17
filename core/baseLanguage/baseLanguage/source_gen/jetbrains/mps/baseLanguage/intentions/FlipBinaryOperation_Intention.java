@@ -18,15 +18,15 @@ public class FlipBinaryOperation_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Flip binary operation";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SNode leftExpression = SLinkOperations.getTarget(node, "leftExpression", true);
     SNode rightExpression = SLinkOperations.getTarget(node, "rightExpression", true);
     SLinkOperations.setTarget(node, "leftExpression", SNodeOperations.copyNode(rightExpression), true);

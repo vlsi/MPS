@@ -114,12 +114,14 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1192803081350" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1192803155615">
         <property name="name" value="node" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1192803155616">
           <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1192803158101">
         <property name="name" value="editorContext" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195664847981">
           <link role="classifier" targetNodeId="10.~EditorContext" resolveInfo="EditorContext" />
         </node>
@@ -152,12 +154,14 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1192803179525" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1192803179527">
         <property name="name" value="node" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1192803179528">
           <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1192803179529">
         <property name="name" value="editorContext" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195664872654">
           <link role="classifier" targetNodeId="10.~EditorContext" resolveInfo="EditorContext" />
         </node>
@@ -207,12 +211,14 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1192803179689" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1192803179691">
         <property name="name" value="node" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1192803179692">
           <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1192803179693">
         <property name="name" value="editorContext" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194034142131">
           <link role="classifier" targetNodeId="10.~EditorContext" resolveInfo="EditorContext" />
         </node>

@@ -19,15 +19,15 @@ public class ExtractWhileConditionToInternalIfStatement_Intention extends BaseIn
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Extract while condition to internal if statement";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     // produce break statement
     SNode breakStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BreakStatement", null);
     // produce if statement

@@ -24,11 +24,11 @@ public class ReplaceBlockWithItsContent_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Replace block with its content";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     boolean applicable = false;
     if ((SNodeOperations.getParent(node) != null)) {
       String role = node.getRole_();
@@ -52,7 +52,7 @@ public class ReplaceBlockWithItsContent_Intention extends BaseIntention {
     return applicable;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true);
     for(SNode statement : statements) {
       SNodeOperations.insertPrevSiblingChild(node, statement);

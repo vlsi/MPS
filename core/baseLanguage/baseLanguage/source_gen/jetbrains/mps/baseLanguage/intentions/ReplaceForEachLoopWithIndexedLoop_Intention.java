@@ -24,11 +24,11 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Replace for each loop with indexed loop";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     boolean array = SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "iterable", true)), "jetbrains.mps.baseLanguage.structure.ArrayType");
     if (!(array)) {
       return false;
@@ -36,7 +36,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention {
     return true;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     // TODO: expression as iterable - make a variable
     final SNode iterable = SLinkOperations.getTarget(node, "iterable", true);
     // 

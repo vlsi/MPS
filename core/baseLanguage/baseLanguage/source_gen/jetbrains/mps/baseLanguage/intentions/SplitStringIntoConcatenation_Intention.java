@@ -20,15 +20,15 @@ public class SplitStringIntoConcatenation_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Split string into concatenation";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     EditorCell_Property ecProperty = (EditorCell_Property)editorContext.getContextCell();
     int caretPosition = ecProperty.getCaretPosition();
     String s1 = SPropertyOperations.getString(node, "value").substring(0, caretPosition);

@@ -19,11 +19,11 @@ public class ConvertAssignmentToVariableDeclaration_Intention extends BaseIntent
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Convert To Variable Declaration";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"))) {
       return false;
     }
@@ -31,7 +31,7 @@ public class ConvertAssignmentToVariableDeclaration_Intention extends BaseIntent
     return AssignmentExpression_Behavior.call_canConvertToLocalVariableDeclaration_1221573334330(assignment) && SLinkOperations.getTarget(assignment, "lValue", true) == node;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SNode assignment = SNodeOperations.getParent(node);
     AssignmentExpression_Behavior.call_convertToLocalVariableDeclaration_1221573391693(assignment);
   }

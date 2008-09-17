@@ -18,16 +18,16 @@ public class ElsifTransform_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "elsif transform";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     SNode ifFalseStatement = SLinkOperations.getTarget(node, "ifFalseStatement", true);
     return (ifFalseStatement != null) && SNodeOperations.isInstanceOf(ifFalseStatement, "jetbrains.mps.baseLanguage.structure.IfStatement");
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SNode ifFalseStatement = SLinkOperations.getTarget(node, "ifFalseStatement", true);
     while (true) {
       SNode ifStatement = ifFalseStatement;

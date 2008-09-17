@@ -18,15 +18,15 @@ public class ConvertClassCreatorToAnonimous_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Convert to anonimous";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) != null;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SNode anonimousClassCreator = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
     SLinkOperations.setTarget(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "classifier", SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), false);
     for(SNode typeParm : SLinkOperations.getTargets(node, "typeParameter", true)) {

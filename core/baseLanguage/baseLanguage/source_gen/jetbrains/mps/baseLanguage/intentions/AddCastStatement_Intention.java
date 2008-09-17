@@ -23,15 +23,15 @@ public class AddCastStatement_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Insert cast variable declaration";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression") && (SLinkOperations.getTarget(SLinkOperations.getTarget(node, "condition", true), "classType", true) != null);
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SNode castVariable = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
     SNode instanceOfExpression = SLinkOperations.getTarget(node, "condition", true);
     SNode declaration = SLinkOperations.getTarget(castVariable, "localVariableDeclaration", true);

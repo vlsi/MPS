@@ -19,15 +19,15 @@ public class MergeStringConcatenation_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Merge string concatination";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "rightExpression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral");
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SNode stringLiteral = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.StringLiteral");
     String left = SPropertyOperations.getString(SLinkOperations.getTarget(node, "leftExpression", true), "value");
     String right = SPropertyOperations.getString(SLinkOperations.getTarget(node, "rightExpression", true), "value");
