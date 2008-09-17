@@ -1340,7 +1340,7 @@
             </node>
           </node>
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1219405711162">
-            <property name="value" value="Find instances by condition" />
+            <property name="value" value="Find Instances by condition" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219416968531">
@@ -1735,7 +1735,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1219746306448">
     <property name="name" value="ReplacementQueryAction" />
-    <property name="caption" value="Replace Instances" />
+    <property name="caption" value="Modify Instances By Condition" />
     <property name="outsideCommandExecution" value="true" />
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1219746306449">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219746306450">
@@ -2189,7 +2189,7 @@
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219748129294">
           <link role="key" targetNodeId="28.~BaseDialog$Button.name():java.lang.String" resolveInfo="name" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1219748129295">
-            <property name="value" value="Replace" />
+            <property name="value" value="Modify" />
           </node>
         </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219748129296">
@@ -2310,7 +2310,7 @@
             </node>
           </node>
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1219746660057">
-            <property name="value" value="Replace" />
+            <property name="value" value="Modify Instances by condition" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219749994579">
@@ -2584,7 +2584,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1219749269092">
     <property name="name" value="ReplacementQueryActionWithNode" />
-    <property name="caption" value="Replace Instances" />
+    <property name="caption" value="Modify Instances By Condition" />
     <property name="outsideCommandExecution" value="true" />
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1219749269093">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219749269094">
@@ -2962,7 +2962,7 @@
                                       <link role="classConcept" targetNodeId="29.~JOptionPane" resolveInfo="JOptionPane" />
                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1220267416384" />
                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220267420419">
-                                        <property name="value" value="Replacement completed successfully" />
+                                        <property name="value" value="Modify completed successfully" />
                                       </node>
                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220267539089">
                                         <property name="value" value="Information" />
@@ -2988,7 +2988,7 @@
                                         <link role="baseMethodDeclaration" targetNodeId="29.~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int):void" resolveInfo="showMessageDialog" />
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1220264950809" />
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220264952358">
-                                          <property name="value" value="Replacement failed" />
+                                          <property name="value" value="Modify failed" />
                                         </node>
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220264955673">
                                           <property name="value" value="Warning" />

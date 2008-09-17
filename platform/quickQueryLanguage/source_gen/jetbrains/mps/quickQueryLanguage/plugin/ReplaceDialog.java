@@ -36,7 +36,7 @@ public class ReplaceDialog extends BaseDialog {
   private JPanel myPanel = new JPanel(new BorderLayout());
 
   public ReplaceDialog(final IOperationContext context, final Language language) {
-    super(context.getMainFrame(), "Replace");
+    super(context.getMainFrame(), "Modify Instances by condition");
     this.myContext = context;
     ModelAccess.instance().runWriteAction(new Runnable() {
 
@@ -80,7 +80,7 @@ public class ReplaceDialog extends BaseDialog {
     });
   }
 
-  @BaseDialog.Button(position = 0, name = "Replace", defaultButton = true)
+  @BaseDialog.Button(position = 0, name = "Modify", defaultButton = true)
   public void buttonReplace() {
     try {
       final GenerationResult result = this.myEditor.generate();

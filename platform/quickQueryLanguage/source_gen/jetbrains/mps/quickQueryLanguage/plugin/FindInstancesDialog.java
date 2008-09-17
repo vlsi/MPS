@@ -37,7 +37,7 @@ public class FindInstancesDialog extends BaseDialog {
   private SNode myNode;
 
   public FindInstancesDialog(final IOperationContext context, final Language language) {
-    super(context.getMainFrame(), "Find instances by condition");
+    super(context.getMainFrame(), "Find Instances by condition");
     this.myContext = context;
     this.setSize(new Dimension(500, 500));
     this.setModal(false);

@@ -28,7 +28,7 @@ public class ReplacementView {
   private UsagesView myUsagesView;
   private RunReplacement_Tool myTool;
   private JPanel myMainPanel = new JPanel(new BorderLayout());
-  private JButton myButton = new JButton("Do replace");
+  private JButton myButton = new JButton("Do modify");
 
   public ReplacementView(RunReplacement_Tool tool, MPSProject project, IResultProvider provider, SearchQuery searchQuery, final SearchResults results, final Query query) {
     this.myTool = tool;
@@ -51,9 +51,9 @@ public class ReplacementView {
               for(SNode node : replaceNodes) {
                 query.doReplace(node);
               }
-              JOptionPane.showMessageDialog(null, "Replacement completed successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
+              JOptionPane.showMessageDialog(null, "Modify completed successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
             } catch (Throwable t) {
-              JOptionPane.showMessageDialog(null, "Replacement failed", "Warning", JOptionPane.ERROR_MESSAGE);
+              JOptionPane.showMessageDialog(null, "Modify failed", "Warning", JOptionPane.ERROR_MESSAGE);
             }
           }
 

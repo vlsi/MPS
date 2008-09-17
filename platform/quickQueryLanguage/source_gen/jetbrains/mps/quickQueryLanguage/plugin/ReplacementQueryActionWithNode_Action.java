@@ -23,7 +23,7 @@ public class ReplacementQueryActionWithNode_Action extends GeneratedAction {
   public IModule langModule;
 
   public ReplacementQueryActionWithNode_Action() {
-    super("Replace Instances", "", ICON);
+    super("Modify Instances By Condition", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

@@ -47,7 +47,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1219745786560(context, node, "replace query"));
+    editorCell.addEditorCell(this.createConstant1219745786560(context, node, "modify query"));
     return editorCell;
   }
 
