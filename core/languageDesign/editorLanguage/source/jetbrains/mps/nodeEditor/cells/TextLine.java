@@ -393,8 +393,8 @@ public class TextLine {
   }
 
   public void deselectAll() {
-    setStartTextSelectionPosition(0);
-    setEndTextSelectionPosition(0);
+    setStartTextSelectionPosition(myCaretPosition);
+    setEndTextSelectionPosition(myCaretPosition);
   }
 
   public boolean isEverythingSelected() {

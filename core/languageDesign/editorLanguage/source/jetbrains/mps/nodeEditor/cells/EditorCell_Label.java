@@ -511,6 +511,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       if (!allowErrors && !isValidText(newText)) {
         return false;
       }
+
       changeText(newText);
       setCaretPosition(startSelection + 1);
       myTextLine.resetSelection();
