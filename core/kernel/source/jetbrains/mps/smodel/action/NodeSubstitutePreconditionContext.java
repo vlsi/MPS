@@ -7,12 +7,14 @@ public class NodeSubstitutePreconditionContext {
   private SNode myParentNode;
   private SNode myChildConcept;
   private SNode myCurrentTargetNode;
+  private SNode myLink;
   private boolean myWrapped;
 
-  public NodeSubstitutePreconditionContext(SNode parentNode, SNode childConcept, SNode currentTargetNode, boolean wrapped) {
+  public NodeSubstitutePreconditionContext(SNode parentNode, SNode childConcept, SNode currentTargetNode, SNode link, boolean wrapped) {
     myParentNode = parentNode;
     myChildConcept = childConcept;
     myCurrentTargetNode = currentTargetNode;
+    myLink = link;
     myWrapped = wrapped;
   }
 
@@ -30,6 +32,10 @@ public class NodeSubstitutePreconditionContext {
 
   public SNode getCurrentTargetNode() {
     return myCurrentTargetNode;
+  }
+
+  public SNode getLink() {
+    return myLink;
   }
 
   public boolean getWrapped() {

@@ -116,8 +116,13 @@ public class ChildSubstituteActionsHelper {
 
     List<NodeSubstituteActionsBuilder> allBuilders = new ArrayList<NodeSubstituteActionsBuilder>();
 
+    LinkDeclaration link = null;
+    if (childSetter instanceof DefaultChildNodeSetter) {
+      link = ((DefaultChildNodeSetter) childSetter).getLinkDeclaration();
+    }
+
     // add actions from 'primary' language
-    List<NodeSubstituteActionsBuilder> primaryBuilders = getActionsBuilders(parentNode, primaryLanguage, childConcept, currentChild, wrapped, context);
+    List<NodeSubstituteActionsBuilder> primaryBuilders = getActionsBuilders(parentNode, primaryLanguage, childConcept, BaseAdapter.fromAdapter(link), currentChild, wrapped, context);
     allBuilders.addAll(primaryBuilders);
 
     for (NodeSubstituteActionsBuilder builder : primaryBuilders) {
@@ -134,7 +139,7 @@ public class ChildSubstituteActionsHelper {
         if (SModelUtil_new.isAssignableConcept(applicableConcept, childConcept) ||
           SModelUtil_new.isAssignableConcept(childConcept, applicableConcept)) {
           // check precondition tricking builder by passing builder's own applicable-concept as child-concept
-          if (satisfiesPrecondition(actionsBuilder, parentNode, applicableConcept, currentChild, wrapped, context)) {
+          if (satisfiesPrecondition(actionsBuilder, parentNode, applicableConcept, BaseAdapter.fromAdapter(link), currentChild, wrapped, context)) {
             buildersFromSubconcepts.add(actionsBuilder);
           }
         }
@@ -158,7 +163,7 @@ public class ChildSubstituteActionsHelper {
       if (language == primaryLanguage) {
         continue;
       }
-      extendedBuilders.addAll(getActionsBuilders(parentNode, language, childConcept, currentChild, wrapped, context));
+      extendedBuilders.addAll(getActionsBuilders(parentNode, language, childConcept, BaseAdapter.fromAdapter(link), currentChild, wrapped, context));
     }
     allBuilders.addAll(extendedBuilders);
 
@@ -319,14 +324,21 @@ public class ChildSubstituteActionsHelper {
     return referentMatchingText;
   }
 
-  private static List<NodeSubstituteActionsBuilder> getActionsBuilders(SNode parentNode, Language language, AbstractConceptDeclaration childConcept, SNode currentTarget, boolean wrapped, IOperationContext context) {
+  private static List<NodeSubstituteActionsBuilder> getActionsBuilders(SNode parentNode,
+                                                                       Language language,
+                                                                       AbstractConceptDeclaration childConcept,
+                                                                       SNode link,
+                                                                       SNode currentTarget,
+                                                                       boolean wrapped,
+                                                                       IOperationContext context) {
+
     List<NodeSubstituteActionsBuilder> result = new ArrayList<NodeSubstituteActionsBuilder>();
     for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(language)) {
       // is applicable ?
       // the aggregation link target (child concept) should be sub-concept of the 'applicable concept'
       AbstractConceptDeclaration applicableChildConcept = actionsBuilder.getApplicableConcept();
       if (SModelUtil_new.isAssignableConcept(childConcept, applicableChildConcept) &&
-        satisfiesPrecondition(actionsBuilder, parentNode, childConcept, currentTarget, wrapped, context)) {
+        satisfiesPrecondition(actionsBuilder, parentNode, childConcept, link, currentTarget, wrapped, context)) {
         result.add(actionsBuilder);
       }
     }
@@ -363,6 +375,7 @@ public class ChildSubstituteActionsHelper {
       NodeSubstituteActionsBuilder actionsBuilder,
       SNode parentNode,
       AbstractConceptDeclaration concept,
+      SNode link,
       SNode currentTarget,
       boolean wrapped,
       IOperationContext context) {
@@ -371,14 +384,12 @@ public class ChildSubstituteActionsHelper {
     // precondition is optional
     if (precondition != null) {
       String methodName = NodeSubstituteActionsBuilder_Behavior.call_getPreconditionQueryMethodName_1220278671791(actionsBuilder.getNode());
-
-
       SModel model = actionsBuilder.getModel();
       try {
         return (Boolean) QueryMethodGenerated.invoke(
           methodName,
           context,
-          new NodeSubstitutePreconditionContext(parentNode, concept.getNode(), currentTarget, wrapped),
+          new NodeSubstitutePreconditionContext(parentNode, concept.getNode(), currentTarget, link, wrapped),
           model);
       } catch (Exception e) {
         LOG.error(e);

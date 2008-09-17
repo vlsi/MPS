@@ -46,5 +46,4 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
 
     return newChild;
   }
-
 }

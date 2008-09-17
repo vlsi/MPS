@@ -6196,6 +6196,11 @@
           <link role="wrappedConcept" targetNodeId="1.1146644584814" resolveInfo="Visibility" />
           <node role="wrapperBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SubstituteWrapper" id="1214830475238">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214830475239">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221634586826">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1221634586827">
+                  <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214831437288">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214831437289">
                   <property name="name" value="method" />

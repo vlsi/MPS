@@ -217,6 +217,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1214830969967" resolveInfo="ConceptFunctionParameter_wrapped" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1221635059571">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1221634900557" resolveInfo="ConceptFunctionParameter_link" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1154537040310">
       <property name="value" value="precondition" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -1921,6 +1925,24 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1221138606483">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1199874763892" resolveInfo="usesParameterObject" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1221634900557">
+    <property name="package" value="conceptFunctionParameters" />
+    <property name="name" value="ConceptFunctionParameter_link" />
+    <link role="extends" targetNodeId="3.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1221634900558">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1221634900559">
+      <property name="value" value="link" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1221634900560">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221634980556">
+        <link role="concept" targetNodeId="2.1071489288298" resolveInfo="LinkDeclaration" />
+      </node>
     </node>
   </node>
 </model>
