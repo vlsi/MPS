@@ -14,6 +14,6 @@ public class CellAction_DeleteEasily extends CellAction_DeleteNode {
   }
 
   private boolean canBeDeletedEasily() {
-    return getSNode().getChildren().isEmpty();
+    return getSourceNode().getChildren().isEmpty();
   }
 }

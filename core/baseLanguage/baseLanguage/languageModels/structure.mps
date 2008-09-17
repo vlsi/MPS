@@ -329,6 +329,9 @@
       <property name="value" value="expression statement" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1221647266925">
+      <link role="intfc" targetNodeId="4.1221647093812" resolveInfo="IWrapper" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123157">
     <property name="name" value="Statement" />
@@ -476,6 +479,9 @@
       <property name="role" value="localVariableDeclaration" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068581242863" resolveInfo="LocalVariableDeclaration" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1221647324653">
+      <link role="intfc" targetNodeId="4.1221647093812" resolveInfo="IWrapper" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068581242866">

@@ -99,5 +99,8 @@
       <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1221647093812">
+    <property name="name" value="IWrapper" />
+  </node>
 </model>
 

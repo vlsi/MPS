@@ -1,9 +1,11 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.core.structure.IWrapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +21,16 @@ public class CellAction_DeleteNode extends EditorCellAction {
     mySemanticNode = semanticNode;
   }
 
-  protected SNode getSNode() {
+  protected SNode getSourceNode() {
     return mySemanticNode;
+  }
+
+  protected SNode getNodeToDelete() {
+    SNode result = mySemanticNode;
+    while (BaseAdapter.fromNode(result.getParent()) instanceof IWrapper) {
+      result = result.getParent();
+    }
+    return result;
   }
 
   public boolean canExecute(EditorContext context) {
@@ -29,7 +39,7 @@ public class CellAction_DeleteNode extends EditorCellAction {
 
   public void execute(EditorContext context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    nodes.add(mySemanticNode);
+    nodes.add(getNodeToDelete());
     new DeleteNodesHelper(nodes, context.getOperationContext()).deleteNodes(false);
   }
 }
