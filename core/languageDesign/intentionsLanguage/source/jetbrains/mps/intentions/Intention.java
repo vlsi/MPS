@@ -12,7 +12,7 @@ public interface Intention {
 
   void execute(SNode node, EditorContext editorContext);
 
-  boolean isErrorIntention();
+  IntentionType getType();
 
   String getLocationString();
 }

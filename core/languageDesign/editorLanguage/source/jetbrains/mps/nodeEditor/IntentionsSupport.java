@@ -1,16 +1,14 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.application.RuntimeInterruptedException;
-import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.intentions.IntentionsManager;
-import jetbrains.mps.intentions.IntentionsMenu;
-import jetbrains.mps.intentions.LightBulbMenu;
+import jetbrains.mps.intentions.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.AbstractAction;
+import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 import javax.swing.event.ChangeEvent;
@@ -75,7 +73,7 @@ public class IntentionsSupport {
 
         hideLightBulb();
         myShowIntentionsAction.setEnabled(false);
-               
+
         myShowIntentionsThread.set(new Thread("Intentions") {
           public void run() {
             try {
@@ -134,8 +132,8 @@ public class IntentionsSupport {
     myLightBulb.setLocation(myLightBulbLocation);
   }
 
-  private void showLightBulb(boolean showError) {
-    myLightBulb.setError(showError);
+  private void showLightBulb(Icon icon) {
+    myLightBulb.setIcon(icon);
     myEditor.add(myLightBulb);
     myLightBulb.setLocation(myLightBulbLocation);
     myEditor.repaint();
@@ -218,13 +216,13 @@ public class IntentionsSupport {
         if (value) {
           Set<Intention> enabledIntentions = getEnabledIntentions();
           if ((!enabledIntentions.isEmpty()) && (!myEditor.getEditedNode().getModel().isNotEditable())) {
-            boolean showError = false;
+            IntentionType typeToShow = IntentionType.getLowestPriorityType();
             for (Intention intention : enabledIntentions) {
-              if (intention.isErrorIntention()) {
-                showError = true;
+              if (intention.getType().getPriority() < typeToShow.getPriority()) {
+                typeToShow = intention.getType();
               }
             }
-            showLightBulb(showError);
+            showLightBulb(typeToShow.getIcon());
           }
         } else {
           hideLightBulb();

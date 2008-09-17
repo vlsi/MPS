@@ -15,9 +15,15 @@ public abstract class BaseIntention implements Intention {
 
   public abstract void execute(SNode node, EditorContext editorContext);
 
-  public abstract boolean isErrorIntention();
+  public boolean isErrorIntention() {
+    return false;
+  }
 
   public String getLocationString() {
     return "";
+  }
+
+  public IntentionType getType() {
+    return isErrorIntention() ? IntentionType.ERROR : IntentionType.NORMAL;
   }
 }

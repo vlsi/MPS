@@ -31,8 +31,8 @@ public class MigrationRefactoringAdapter implements Intention {
     myRefactoring.doUpdateInstanceNode(node);
   }
 
-  public boolean isErrorIntention() {
-    return true;
+  public IntentionType getType() {
+    return IntentionType.MIGRATION;
   }
 
   public String getLocationString() {

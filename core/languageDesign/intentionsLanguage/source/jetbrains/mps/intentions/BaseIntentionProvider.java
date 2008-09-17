@@ -69,8 +69,8 @@ public class BaseIntentionProvider implements IntentionProvider {
         quickFix.execute(node);
       }
 
-      public boolean isErrorIntention() {
-        return true;
+      public IntentionType getType() {
+        return IntentionType.QUICKFIX;
       }
 
       public void putArgument(String key, Object argument) {
