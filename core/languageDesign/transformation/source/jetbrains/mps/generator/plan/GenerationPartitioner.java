@@ -248,7 +248,7 @@ public class GenerationPartitioner {
           modelUID = uid.toString();
           refModel = GlobalScope.getInstance().getModelDescriptor(uid);
           if (refModel != null) {
-            LOG.warning("change stereotype in property modelUID form templates to generator", mappingRef.getNode());
+            LOG.warning("please change stereotype in property modelUID from templates to generator", mappingRef.getNode());
           }
         }
 
