@@ -823,7 +823,16 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1221550340222">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1221550340223" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221550340224" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221550340225" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221550340225">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221636870470">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221636870471">
+            <property name="name" value="aabcde" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221636870472">
+              <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221550375090">
         <property name="name" value="s" />
         <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1221550375091" />
@@ -834,8 +843,11 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1221550371619" />
       <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1221550372668" />
     </node>
-    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221636377995">
-      <link role="classifier" targetNodeId="1215776922963" resolveInfo="ABCDEFEDED" />
+    <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221637235881">
+      <link role="classifier" targetNodeId="14.~Appendable" resolveInfo="Appendable" />
+    </node>
+    <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221637239870">
+      <link role="classifier" targetNodeId="15.~Closeable" resolveInfo="Closeable" />
     </node>
   </node>
 </model>
