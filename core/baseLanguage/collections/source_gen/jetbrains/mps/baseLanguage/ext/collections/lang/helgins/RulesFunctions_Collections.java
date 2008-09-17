@@ -26,7 +26,7 @@ public class RulesFunctions_Collections {
     {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@14_0", "1184783963366", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins@3_0", "1184783963366", intentionProvider);
       }
     }
     return input;

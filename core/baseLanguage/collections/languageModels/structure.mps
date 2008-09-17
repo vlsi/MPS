@@ -9,18 +9,20 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="3" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
+  <import index="4" modelUID="jetbrains.mps.closures.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1151688443754">
     <property name="name" value="ListType" />
     <link role="extends" targetNodeId="2.1068431790189" />
@@ -69,6 +71,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1152125346253">
     <property name="name" value="ValueSupplierBlock" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="2.1152728232947" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1152141063573">
@@ -135,6 +138,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1152906680026">
     <property name="name" value="MappingOperation" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1152907136217">
       <property name="metaClass" value="aggregation" />
@@ -149,6 +153,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1152906997013">
     <property name="name" value="MapperBlock" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="1153509719989" resolveInfo="ClosureWithInputElement" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1153248196026">
@@ -157,6 +162,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1153509719989">
     <property name="name" value="ClosureWithInputElement" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="2.1152728232947" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1153509754287">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
@@ -170,10 +176,12 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1153513461623">
     <property name="name" value="ForEachBlock" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="1153509719989" resolveInfo="ClosureWithInputElement" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1153513495343">
     <property name="name" value="ForEachOperation" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1153513608002">
       <property name="value" value="forEach" />
@@ -188,6 +196,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1153760673252">
     <property name="name" value="WhereBlock" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="1153509719989" resolveInfo="ClosureWithInputElement" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1172935318132">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" />
@@ -196,6 +205,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1153760737019">
     <property name="name" value="WhereOperation" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1153760925150">
       <property name="metaClass" value="aggregation" />
@@ -210,6 +220,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1153779885165">
     <property name="name" value="SelectorBlock" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="1153509719989" resolveInfo="ClosureWithInputElement" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1178759685882">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" />
@@ -218,6 +229,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1153779905654">
     <property name="name" value="SelectOperation" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1153779905655">
       <property name="metaClass" value="aggregation" />
@@ -391,6 +403,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1168502632000">
     <property name="name" value="SortOperation" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1168502800721">
       <property name="metaClass" value="aggregation" />
@@ -411,6 +424,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1168502774204">
     <property name="name" value="SortBlock" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="1153509719989" resolveInfo="ClosureWithInputElement" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1178763646277">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" />
@@ -562,6 +576,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1178286324487">
     <property name="name" value="SortDirection" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="2.1068580123137" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1178286349577">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
@@ -789,6 +804,176 @@
     <link role="extends" targetNodeId="1201225890326" resolveInfo="MapOperation" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1208542034278">
       <property name="value" value="clear" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201792049884">
+    <property name="name" value="TranslateOperation" />
+    <property name="package" value="internal" />
+    <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201885265234">
+      <property name="value" value="translate" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201885182287">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="mapper" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+      <link role="specializedLink" targetNodeId="1204796294226" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202120902084">
+    <property name="name" value="WhereOperationNew" />
+    <property name="package" value="internal" />
+    <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202120914925">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="filter" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+      <link role="specializedLink" targetNodeId="1204796294226" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1202121093872">
+      <property name="value" value="where" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202128969694">
+    <property name="name" value="SelectOperationNew" />
+    <property name="package" value="internal" />
+    <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202129035304">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="selector" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+      <link role="specializedLink" targetNodeId="1204796294226" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1202129363624">
+      <property name="value" value="select" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203518072036">
+    <property name="name" value="SmartClosureParameterDeclaration" />
+    <link role="extends" targetNodeId="4.1203252195462" resolveInfo="UnboundClosureParameterDeclaration" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203518094838">
+      <property name="value" value="~ &lt;name&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203518154856">
+      <property name="value" value="smart closure parameter" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204796164442">
+    <property name="name" value="InternalSequenceOperation" />
+    <property name="package" value="internal" />
+    <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204796294226">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="closure" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1204796182002">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204980550705">
+    <property name="name" value="VisitAllOperation" />
+    <property name="package" value="internal" />
+    <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1205842034725">
+      <property name="value" value="visitAll" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204980565575">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="visitor" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+      <link role="specializedLink" targetNodeId="1204796294226" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205598340672">
+    <property name="name" value="DisjunctOperation" />
+    <link role="extends" targetNodeId="1176906603202" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1205598362409">
+      <property name="value" value="disjunct" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205679737078">
+    <property name="name" value="SortOperationNew" />
+    <property name="package" value="internal" />
+    <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1205679819055">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="toComparable" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+      <link role="specializedLink" targetNodeId="1204796294226" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1205679832066">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="ascending" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1205679753601">
+      <property name="value" value="sortBy" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205753243362">
+    <property name="name" value="ChunkOperation" />
+    <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1205753261887">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="length" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1205753259110">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205753590798">
+    <property name="name" value="CutOperation" />
+    <link role="extends" targetNodeId="1205753243362" resolveInfo="ChunkOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1205753613023">
+      <property name="value" value="cut" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205753630278">
+    <property name="name" value="TailOperation" />
+    <link role="extends" targetNodeId="1205753243362" resolveInfo="ChunkOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1205753643313">
+      <property name="value" value="tail" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1209727891789">
+    <property name="name" value="ComparatorSortOperation" />
+    <property name="package" value="internal" />
+    <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1209727951854">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="comparator" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+      <link role="specializedLink" targetNodeId="1204796294226" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1209727996925">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="ascending" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1209727916589">
+      <property name="value" value="sort" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>

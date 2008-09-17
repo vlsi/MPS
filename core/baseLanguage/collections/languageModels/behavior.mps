@@ -23,12 +23,12 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" version="-1" />
   <import index="4" modelUID="jetbrains.mps.util@java_stub" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.closures.structure" version="0" />
   <visible index="2" modelUID="jetbrains.mps.core.behavior" />
   <visible index="3" modelUID="jetbrains.mps.baseLanguage.behavior" />
   <visible index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
@@ -544,6 +544,85 @@
     <link role="concept" targetNodeId="1.1201225890326" resolveInfo="MapOperation" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877532556">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877532557" />
+    </node>
+  </node>
+  <visible index="5" modelUID="jetbrains.mps.core.structure" />
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877222145">
+    <property name="package" value="internal" />
+    <link role="concept" targetNodeId="1.1204796164442" resolveInfo="InternalSequenceOperation" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877222146">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877222147">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877222148">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877222149">
+            <property name="name" value="cl" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877222150">
+              <link role="concept" targetNodeId="5.1199569711397" resolveInfo="ClosureLiteral" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877222151">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1213877222152">
+                <link role="concept" targetNodeId="5.1199569711397" resolveInfo="ClosureLiteral" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877222153">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1213877222154">
+                  <link role="link" targetNodeId="1.1204796294226" />
+                </node>
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877222155" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877222156">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877222157">
+            <property name="name" value="scpd" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877222158">
+              <link role="concept" targetNodeId="1.1203518072036" resolveInfo="SmartClosureParameterDeclaration" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877222159">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877222160">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1213877222161">
+                  <link role="link" targetNodeId="5.1199569906740" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877222162">
+                  <link role="variableDeclaration" targetNodeId="1213877222149" resolveInfo="cl" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation" id="1213877222163">
+                <link role="concept" targetNodeId="1.1203518072036" resolveInfo="SmartClosureParameterDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877222164">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877222165">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877222166">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877222167">
+                <link role="variableDeclaration" targetNodeId="1213877222157" resolveInfo="scpd" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1213877222168">
+                <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1213877222169">
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877222170">
+                <property name="value" value="it" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877243056">
+    <link role="concept" targetNodeId="1.1203518072036" resolveInfo="SmartClosureParameterDeclaration" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877243057">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877243058" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877250925">
+    <property name="package" value="internal" />
+    <link role="concept" targetNodeId="1.1201792049884" resolveInfo="TranslateOperation" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877250926">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877250927" />
     </node>
   </node>
 </model>

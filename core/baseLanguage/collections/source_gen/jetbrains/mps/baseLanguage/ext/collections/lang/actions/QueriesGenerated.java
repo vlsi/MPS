@@ -195,6 +195,40 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SequenceOperation_1201885300354(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.TranslateOperation");
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode mo = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.ext.collections.lang.structure.TranslateOperation", null);
+            SNode cl = SLinkOperations.setNewChild(mo, "closure", "jetbrains.mps.closures.structure.ClosureLiteral");
+            SNode scpd = SLinkOperations.addNewChild(cl, "parameter", "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SmartClosureParameterDeclaration");
+            SPropertyOperations.set(scpd, "name", "it");
+            return mo;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "mapping operation with closure";
+          }
+
+          public String getMatchingText(String pattern) {
+            return "map";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
+        });
+      }
+    }
+    return result;
+  }
+
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1197932848431(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {

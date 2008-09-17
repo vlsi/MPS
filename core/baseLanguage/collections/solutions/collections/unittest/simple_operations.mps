@@ -17,7 +17,6 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.strings.constraints" version="1" />
   </language>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <maxImportIndex value="4" />
