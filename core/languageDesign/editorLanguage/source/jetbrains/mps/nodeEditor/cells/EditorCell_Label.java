@@ -129,11 +129,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     getStyle().set(StyleAttributes.NULL_SELECTED_TEXT_BACKGROUND_COLOR, color);
   }
 
-  private boolean isFirstPositionAllowed() {
+  public boolean isFirstPositionAllowed() {
     return getStyle().get(StyleAttributes.FIRST_POSITION_ALLOWED);
   }
 
-  private boolean isLastPositionAllowed() {
+  public boolean isLastPositionAllowed() {
     return getStyle().get(StyleAttributes.LAST_POSITION_ALLOWED);
   }
 

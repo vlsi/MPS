@@ -153,6 +153,9 @@ public interface EditorCell extends Cloneable {
   boolean isFirstPositionInBigCell();
   boolean isLastPositionInBigCell();
 
+  boolean isFirstCaretPosition();
+  boolean isLastCaretPosition();
+
   boolean isOnLeftBoundary();
   boolean isOnRightBoundary();
 

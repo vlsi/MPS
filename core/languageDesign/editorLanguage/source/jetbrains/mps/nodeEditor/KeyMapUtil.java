@@ -137,9 +137,9 @@ public class KeyMapUtil {
     int actualCaretPosition = EditorCellKeyMapAction.CARET_AT_ANY_POSITION;
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) selectedCell;
-      if (label.isFirstCaretPosition()) {
+      if (isStrictlyFirstCaretPosition(label)) {
         actualCaretPosition = EditorCellKeyMapAction.CARET_AT_FIRST_POSITION;
-      } else if (label.isLastCaretPosition()) {
+      } else if (isStrictlyLastCaretPosition(label)) {
         actualCaretPosition = EditorCellKeyMapAction.CARET_AT_LAST_POSITION;
       } else {
         actualCaretPosition = EditorCellKeyMapAction.CARET_AT_INTERMEDIATE_POSITION;
@@ -160,9 +160,9 @@ public class KeyMapUtil {
         conditionSatisfied = true;
       } else if (action.getCaretPolicy() == actualCaretPosition) {
         if (action.getCaretPolicy() == EditorCellKeyMapAction.CARET_AT_FIRST_POSITION) {
-          conditionSatisfied = (actionCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF) == selectedCell);
+          conditionSatisfied = (actionCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF, true) == selectedCell) && isStrictlyFirstCaretPosition(selectedCell);
         } else if (action.getCaretPolicy() == EditorCellKeyMapAction.CARET_AT_LAST_POSITION) {
-          conditionSatisfied = (actionCell.findChild(CellFinders.LAST_SELECTABLE_LEAF) == selectedCell);
+          conditionSatisfied = (actionCell.findChild(CellFinders.LAST_SELECTABLE_LEAF, true) == selectedCell) && isStrictlyLastCaretPosition(selectedCell);
         } else {
           conditionSatisfied = true;
         }
@@ -182,6 +182,18 @@ public class KeyMapUtil {
       actionCell = actionCell.getParent();
     }
     return null;
+  }
+
+  private static boolean isStrictlyFirstCaretPosition(EditorCell cell) {
+    if (!(cell instanceof EditorCell_Label)) return false;
+    EditorCell_Label label = (EditorCell_Label) cell;
+    return label.isFirstCaretPosition() && label.isFirstPositionAllowed();
+  }
+
+  private static boolean isStrictlyLastCaretPosition(EditorCell cell) {
+    if (!(cell instanceof EditorCell_Label)) return false;
+    EditorCell_Label label = (EditorCell_Label) cell;
+    return label.isLastCaretPosition() && label.isLastPositionAllowed();
   }
 
   public static List<Pair<EditorCellKeyMapAction, ActionKey>> getAllApplicableActionsAndKeys(EditorCell selectedCell, EditorContext editorContext) {

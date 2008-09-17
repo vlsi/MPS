@@ -745,6 +745,14 @@ public abstract class EditorCell_Basic implements EditorCell {
     return getParent() == null || getParent().getSNode() != getSNode();
   }
 
+  public boolean isFirstCaretPosition() {
+    return false;
+  }
+
+  public boolean isLastCaretPosition() {
+    return false;
+  }
+
   public boolean isFirstPositionInBigCell() {
     return false;
   }
