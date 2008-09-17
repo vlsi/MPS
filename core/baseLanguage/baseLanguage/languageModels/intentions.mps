@@ -7240,5 +7240,63 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1221638114480">
+    <property name="name" value="MakeAbstract" />
+    <property name="isErrorIntention" value="true" />
+    <link role="forConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+    <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1221638114481">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221638114482">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221638132797">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1221638132798">
+            <property name="value" value="Make Abstract" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1221638114483">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221638114484">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221638162651">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221638165345">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221638162731">
+              <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1221638162652" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1221638164703">
+                <link role="property" targetNodeId="1.1075300953594" resolveInfo="abstractClass" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1221638165941">
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1221638167225">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IsApplicableBlock" id="1221638141877">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221638141878">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221638145160">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1221638150904">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221638155428">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221638151955">
+                <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1221638151861" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221638153505">
+                  <link role="conceptMethodDeclaration" targetNodeId="2v.1221637841398" resolveInfo="getMethodsToImplement" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1221638159572" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1221638149244">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221638149245">
+                <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1221638149246" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1221638149247">
+                  <link role="property" targetNodeId="1.1075300953594" resolveInfo="abstractClass" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
