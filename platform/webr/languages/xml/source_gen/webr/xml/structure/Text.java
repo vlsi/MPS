@@ -15,21 +15,21 @@ public class Text extends BaseText {
     super(node);
   }
 
-  public static Text newInstance(SModel sm, boolean init) {
-    return (Text)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.Text", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static Text newInstance(SModel sm) {
-    return Text.newInstance(sm, false);
-  }
-
-
   public String getText() {
     return this.getProperty(Text.TEXT);
   }
 
   public void setText(String value) {
     this.setProperty(Text.TEXT, value);
+  }
+
+
+  public static Text newInstance(SModel sm, boolean init) {
+    return (Text)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.Text", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static Text newInstance(SModel sm) {
+    return Text.newInstance(sm, false);
   }
 
 }

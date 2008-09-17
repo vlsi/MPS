@@ -29,7 +29,7 @@
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
-  <maxImportIndex value="13" />
+  <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
@@ -42,6 +42,7 @@
   <import index="11" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <import index="12" modelUID="java.lang.reflect@java_stub" version="-1" />
   <import index="13" modelUID="jetbrains.mps.nodeEditor.cells@java_stub" version="-1" />
+  <import index="14" modelUID="java.io@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1213877183870">
     <property name="package" value="CellModel" />
@@ -2340,8 +2341,8 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="1221473360841" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1221472297255" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221472292004">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221472313718">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1221473393548">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221648852804">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1221648856891">
             <link role="classifier" targetNodeId="11.~MPSFonts" resolveInfo="MPSFonts" />
             <link role="variableDeclaration" targetNodeId="11.~MPSFonts.PLAIN" resolveInfo="PLAIN" />
           </node>
@@ -4110,7 +4111,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1221473513347">
       <property name="name" value="getDefaultFontStyle" />
-      <property name="isVirtual" value="true" />
+      <property name="isVirtual" value="false" />
       <link role="overriddenMethod" targetNodeId="1221472292001" resolveInfo="getDefaultFontStyle" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221473513350">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221473775235">

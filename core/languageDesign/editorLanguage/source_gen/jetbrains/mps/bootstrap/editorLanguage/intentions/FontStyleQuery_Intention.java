@@ -18,7 +18,7 @@ public class FontStyleQuery_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     if ((SLinkOperations.getTarget(node, "query", true) == null)) {
       return "Add Query";
     } else
@@ -27,7 +27,7 @@ public class FontStyleQuery_Intention extends BaseIntention {
     }
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SPropertyOperations.set(node, "style", null);
     if ((SLinkOperations.getTarget(node, "query", true) == null)) {
       SLinkOperations.setNewChild(node, "query", "jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_FontStyle");

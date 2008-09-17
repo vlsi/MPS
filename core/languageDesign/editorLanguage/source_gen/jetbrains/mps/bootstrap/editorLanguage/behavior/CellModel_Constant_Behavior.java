@@ -4,24 +4,14 @@ package jetbrains.mps.bootstrap.editorLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CellModel_Constant_Behavior {
-  public static Class[] PARAMETERS_1221473513347 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
 
-  public static int virtual_getDefaultFontStyle_1221473513347(SNode thisNode) {
+  public static int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
     return EditorCell_Constant.DEFAULT_FONT_STYLE;
-  }
-
-  public static int call_getDefaultFontStyle_1221473513347(SNode thisNode) {
-    return (Integer)BehaviorManager.getInstance().invoke(Integer.class, thisNode, "virtual_getDefaultFontStyle_1221473513347", PARAMETERS_1221473513347);
-  }
-
-  public static int callSuper_getDefaultFontStyle_1221473513347(SNode thisNode, String callerConceptFqName) {
-    return (Integer)BehaviorManager.getInstance().invokeSuper(Integer.class, thisNode, callerConceptFqName, "virtual_getDefaultFontStyle_1221473513347", PARAMETERS_1221473513347);
   }
 
 }

@@ -77,9 +77,6 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1218795577187">
           <property name="flag" value="false" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1218795577189">
-          <property name="flag" value="false" />
-        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1218795912744">
           <property name="text" value="where" />
           <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />

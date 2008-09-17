@@ -15,21 +15,21 @@ public class CDATA extends Content {
     super(node);
   }
 
-  public static CDATA newInstance(SModel sm, boolean init) {
-    return (CDATA)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.CDATA", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static CDATA newInstance(SModel sm) {
-    return CDATA.newInstance(sm, false);
-  }
-
-
   public ContentList getContentList() {
     return (ContentList)this.getChild(CDATA.CONTENT_LIST);
   }
 
   public void setContentList(ContentList node) {
     super.setChild(CDATA.CONTENT_LIST, node);
+  }
+
+
+  public static CDATA newInstance(SModel sm, boolean init) {
+    return (CDATA)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.CDATA", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static CDATA newInstance(SModel sm) {
+    return CDATA.newInstance(sm, false);
   }
 
 }

@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.MPSFonts;
 
 import java.awt.*;
 
@@ -13,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
  * Created Sep 14, 2003
  */
 public class EditorCell_Constant extends EditorCell_Label {
-  public static final int DEFAULT_FONT_STYLE = Font.BOLD;
+  public static final int DEFAULT_FONT_STYLE = MPSFonts.BOLD;
 
   protected String myOriginalText;
 

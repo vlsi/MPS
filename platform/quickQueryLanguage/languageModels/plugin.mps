@@ -21,9 +21,6 @@
   <language namespace="jetbrains.mps.baseLanguage.classifiers">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   </language>
-  <language namespace="jetbrains.mps.internal.collections">
-    <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  </language>
   <language namespace="jetbrains.mps.closures">
     <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
     <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
@@ -33,6 +30,7 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.quickQueryLanguage" />
+  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" version="1" />

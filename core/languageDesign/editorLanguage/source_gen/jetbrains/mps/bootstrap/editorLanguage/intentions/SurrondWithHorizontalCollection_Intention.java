@@ -22,15 +22,15 @@ public class SurrondWithHorizontalCollection_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Surround with horizontal collection";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return editorContext.getSelectedNodes().size() > 0;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", null);
     SPropertyOperations.set(result, "vertical", "" + false);
     List<SNode> nodes = editorContext.getSelectedNodes();
