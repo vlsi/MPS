@@ -175,6 +175,30 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1221588332973">
     <property name="name" value="ReadActionProblem" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1221642887651">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1221642887652" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221642887653" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221642887654">
+        <node role="statement" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExecuteLightweightCommandStatement" id="1221642904686">
+          <node role="commandClosureLiteral" type="jetbrains.mps.bootstrap.smodelLanguage.structure.CommandClosureLiteral" id="1221642904687">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221642904688">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221642920033">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221642921313">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1221642920034" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221642923381">
+                    <link role="baseMethodDeclaration" targetNodeId="3.~Object.wait():void" resolveInfo="wait" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221642930255">
+        <link role="classifier" targetNodeId="3.~InterruptedException" resolveInfo="InterruptedException" />
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221588332974" />
   </node>
 </model>

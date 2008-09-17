@@ -589,7 +589,7 @@
                           <link role="variableDeclaration" targetNodeId="1217424542995" resolveInfo="cls" />
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217424543011">
-                          <link role="baseMethodDeclaration" targetNodeId="10.~Class.getMethod(java.lang.String,java.lang.Class[]):java.lang.reflect.Method" resolveInfo="getMethod" />
+                          <link role="baseMethodDeclaration" targetNodeId="10.~Class.getMethod(java.lang.String,java.lang.Class...):java.lang.reflect.Method" resolveInfo="getMethod" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217424543012">
                             <property name="value" value="getUrls" />
                           </node>
@@ -608,7 +608,7 @@
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217424543018">
-                        <link role="baseMethodDeclaration" targetNodeId="14.~Method.invoke(java.lang.Object,java.lang.Object[]):java.lang.Object" resolveInfo="invoke" />
+                        <link role="baseMethodDeclaration" targetNodeId="14.~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolveInfo="invoke" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217424543019">
                           <link role="variableDeclaration" targetNodeId="1217424542989" resolveInfo="classLoader" />
                         </node>
