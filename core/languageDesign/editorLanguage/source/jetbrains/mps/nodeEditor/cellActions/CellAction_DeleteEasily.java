@@ -2,6 +2,8 @@ package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 
 public class CellAction_DeleteEasily extends CellAction_DeleteNode {
 
@@ -14,6 +16,12 @@ public class CellAction_DeleteEasily extends CellAction_DeleteNode {
   }
 
   private boolean canBeDeletedEasily() {
-    return getSourceNode().getChildren().isEmpty();
+    for (SNode child : getSourceNode().getChildren()) {
+      if (child.isAttribute()) continue;
+      LinkDeclaration link = getSourceNode().getLinkDeclaration(child.getRole_());
+      if (link.getSourceCardinality() != Cardinality._1) return false; 
+    }
+
+    return true;
   }
 }
