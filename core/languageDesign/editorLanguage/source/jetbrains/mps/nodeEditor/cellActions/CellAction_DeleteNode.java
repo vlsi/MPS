@@ -1,11 +1,11 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
+import jetbrains.mps.core.structure.IWrapper;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.core.structure.IWrapper;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +40,6 @@ public class CellAction_DeleteNode extends EditorCellAction {
   public void execute(EditorContext context) {
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(getNodeToDelete());
-    new DeleteNodesHelper(nodes, context.getOperationContext()).deleteNodes(false);
+    new DeleteNodesHelper(nodes, context.getOperationContext(), false).deleteNodes(false);
   }
 }

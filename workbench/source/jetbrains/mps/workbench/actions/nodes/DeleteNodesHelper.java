@@ -6,7 +6,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.core.scripts.SafeDelete;
-import jetbrains.mps.dialogs.YesNoToAllDialog;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.refactoring.framework.GenericRefactoringAction;
@@ -30,73 +29,62 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class DeleteNodesHelper {
-  private boolean myUnsafeConceptDeletion = false;
-  private boolean mySafeConceptDeletion = false;
   private List<SNode> myNodes;
-  private IOperationContext myOperationContext;
+  private IOperationContext myContext;
+  private boolean mySafe;
 
-  public DeleteNodesHelper(List<SNode> nodes, IOperationContext operationContext) {
+  public DeleteNodesHelper(List<SNode> nodes, IOperationContext context, boolean safe) {
     myNodes = nodes;
-    myOperationContext = operationContext;
+    myContext = context;
+    mySafe = safe;
   }
 
   public void deleteNodes(boolean fromProjectPane) {
-    if (myNodes.size() < 1) return;
+    if (myNodes.size() == 0) return;
 
-    ProjectPane projectPane = myOperationContext.getComponent(ProjectPane.class);
-    if (myNodes.size() <= 1) {
-      execute_internal(projectPane, fromProjectPane, myNodes.get(0), myOperationContext);
-      return;
+    ProjectPane projectPane = myContext.getComponent(ProjectPane.class);
+    if (myNodes.size() == 1) {
+      deleteSingle(projectPane, fromProjectPane, myNodes.get(0));
+    } else {
+      deleteMultiple(fromProjectPane, projectPane);
     }
+  }
 
+  private void deleteMultiple(boolean fromProjectPane, ProjectPane projectPane) {
     for (Iterator<SNode> iterator = myNodes.iterator(); iterator.hasNext();) {
       SNode sNode = iterator.next();
       if (!iterator.hasNext() && fromProjectPane) {
         projectPane.rebuildTree();
         projectPane.selectNextTreeNode(sNode);
       }
-
-      doDelete(sNode, myOperationContext);
     }
   }
 
-  private void execute_internal(ProjectPane projectPane, boolean fromProjectPane, SNode node, IOperationContext context) {
+  private void deleteSingle(ProjectPane projectPane, boolean fromProjectPane, SNode node) {
     MPSTreeNode nextNode = null;
     if (fromProjectPane) {
       nextNode = projectPane.findNextTreeNode(node);
     }
-    boolean result = doDelete(node, context);
-    if (result && fromProjectPane) {
+    doDeleteNode(node);
+    if (!mySafe && fromProjectPane) {
       projectPane.getTree().selectNode(nextNode);
     }
   }
 
-  private boolean doDelete(SNode node, IOperationContext context) {
+  private void doDeleteNode(SNode node) {
     if (BaseAdapter.fromNode(node) instanceof ConceptDeclaration && node.isRoot()) {
-      if (mySafeConceptDeletion) {
-        safeDelete(context, node);
-        return false;
-      } else if (myUnsafeConceptDeletion) {
-        node.delete();
-        return true;
+      if (mySafe) {
+        safeDelete(myContext, node);
       } else {
-        YesNoToAllDialog.ResponseValue response = YesNoToAllDialog.showDialog(context.getMainFrame(),
-          "Delete concept",
-          "do you want to search for usages before delete concept " + node.getName() + " ?");
-        if (response.isPositive()) {
-          if (response.isToAll()) mySafeConceptDeletion = true;
-          safeDelete(context, node);
-          return false;
-        } else {
-          if (response.isToAll()) myUnsafeConceptDeletion = true;
-          node.delete();
-          return true;
-        }
+        delete(node);
       }
     } else {
-      node.delete();
-      return true;
+      delete(node);
     }
+  }
+
+  private void delete(SNode node) {
+    node.delete();
   }
 
   private void safeDelete(final IOperationContext context, final SNode node) {
@@ -117,6 +105,26 @@ public class DeleteNodesHelper {
     safeDeleteAction.update(event);
     if (event.getPresentation().isEnabled()) {
       safeDeleteAction.actionPerformed(event);
+    }
+  }
+
+  private static enum Mode {
+    SAFE("safe", false), UNSAFE("unsafe", true), NA("n/a", true), CANCELLED("cancelled", false);
+
+    private String myName;
+    private boolean myImmediate;
+
+    private Mode(String name, boolean isImmediate) {
+      myName = name;
+      myImmediate = isImmediate;
+    }
+
+    public String getName() {
+      return myName;
+    }
+
+    public boolean isImmediate() {
+      return myImmediate;
     }
   }
 }

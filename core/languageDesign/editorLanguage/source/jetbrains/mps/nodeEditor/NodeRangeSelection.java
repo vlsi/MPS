@@ -8,12 +8,12 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -246,7 +246,7 @@ public class NodeRangeSelection implements KeyboardHandler {
 
   private void doDeleteNodes(EditorContext editorContext) {
     if (getNodes().size() > 1) {
-      new DeleteNodesHelper(getNodes(), editorContext.getOperationContext()).deleteNodes(false);
+      new DeleteNodesHelper(getNodes(), editorContext.getOperationContext(), false).deleteNodes(false);
     } else {
       for (SNode semanticNode : getNodes()) {
         EditorCell nodeCell = myEditorComponent.findNodeCell(semanticNode);
