@@ -834,6 +834,9 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1221550371619" />
       <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1221550372668" />
     </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221636377995">
+      <link role="classifier" targetNodeId="1215776922963" resolveInfo="ABCDEFEDED" />
+    </node>
   </node>
 </model>
 

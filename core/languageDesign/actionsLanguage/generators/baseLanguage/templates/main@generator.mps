@@ -277,6 +277,12 @@
         <link role="template" targetNodeId="3.1143148725345" resolveInfo="reduce_ConceptFunctionParm_to_MethodParameterReference_by_Alias" />
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1221635381133">
+      <link role="applicableConcept" targetNodeId="4.1221634900557" resolveInfo="ConceptFunctionParameter_link" />
+      <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.TemplateDeclarationReference" id="1221635413432">
+        <link role="template" targetNodeId="3.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
+      </node>
+    </node>
     <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1172252200685">
       <link role="applicableConcept" targetNodeId="4.1158701289411" />
       <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.TemplateDeclarationReference" id="1172252210358">
