@@ -1438,6 +1438,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void clearSelectionStack() {
+    if (getDeepestSelectedCell() instanceof EditorCell_Label) {
+      ((EditorCell_Label) getDeepestSelectedCell()).deselectAll();
+    }
+
     mySelectedStack.clear();
   }
 
