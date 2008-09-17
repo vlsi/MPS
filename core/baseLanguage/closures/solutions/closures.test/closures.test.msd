@@ -4,7 +4,6 @@
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
   <classPath />
-  <runtimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="true">jetbrains.mps.baseLanguage.unitTest</dependency>
@@ -13,6 +12,7 @@
   <usedLanguages>
     <usedLanguages>jetbrains.mps.closures</usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
+    <usedLanguages>jetbrains.mps.internal.collections</usedLanguages>
   </usedLanguages>
 </solution>
 
