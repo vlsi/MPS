@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -578,7 +579,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     if (this.myListHandler_1107798989516 == null) {
       this.myListHandler_1107798989516 = new ClassConcept_Editor.implementedInterfaceListHandler_8372_0(node, "implementedInterface", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_1107798989516.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1107798989516.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_implementedInterface1107798989516(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -2074,6 +2075,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
         if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, ","));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
@@ -2082,7 +2084,11 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createSeparatorCell(EditorContext context) {
-      return super.createSeparatorCell(context);
+      {
+        EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
+        editorCell.setSelectable(false);
+        return editorCell;
+      }
     }
 
     public EditorCell createConstant1107798989517(EditorContext context, SNode node, String text) {
