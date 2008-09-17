@@ -19,15 +19,15 @@ public class ConvertGivetypeToTypeOfIntention_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "convert to TYPEOF";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SNode equationStatement = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement", null);
     SNode typeOfExpression = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression", null);
     SNode leftTypeClause = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause", null);

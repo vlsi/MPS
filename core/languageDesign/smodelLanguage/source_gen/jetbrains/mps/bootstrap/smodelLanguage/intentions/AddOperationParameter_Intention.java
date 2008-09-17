@@ -21,18 +21,18 @@ public class AddOperationParameter_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "add parameter(s)";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty()) {
       return ListSequence.fromList(SLinkOperations.getConceptLinkTargets(node, "applicableParameter")).isNotEmpty();
     }
     return false;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     List<SNode> applicableParms = SLinkOperations.getConceptLinkTargets(node, "applicableParameter");
     if (ListSequence.fromList(applicableParms).count() == 1) {
       SLinkOperations.addChild(node, "parameter", SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode)ListSequence.fromList(applicableParms).first())), null));

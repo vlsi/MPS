@@ -4,16 +4,22 @@ package jetbrains.mps.bootstrap.smodelLanguage.editor;
 
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Styles_StyleSheet {
   public static final Style REF_LINK_ROLE = new Style() {
     {
-      this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+        public Integer calculate(EditorCell cell) {
+          return Styles_StyleSheet.calculateFontStyle7582_0(cell);
+        }
+
+      });
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
@@ -25,6 +31,12 @@ public class Styles_StyleSheet {
     }
 
   };
+
+  private static Integer calculateFontStyle7582_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
+  }
 
   private static Color calculateColor7582_0(EditorCell cell) {
     Color result;

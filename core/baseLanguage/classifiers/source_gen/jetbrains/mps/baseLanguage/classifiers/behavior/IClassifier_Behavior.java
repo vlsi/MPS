@@ -11,6 +11,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoringProcessor;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IClassifier_Behavior {
@@ -75,6 +77,32 @@ public class IClassifier_Behavior {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(IClassifierPart_Behavior.call_getMembers_1213877255431(part)));
     }
     return result;
+  }
+
+  public static ExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode) {
+    return new ExtractMethodRefactoringProcessor(thisNode) {
+
+      public SNode createNewMethod(SNode returntType, List<SNode> params, SNode body) {
+        SNode methodDeclaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", null);
+        SLinkOperations.setTarget(methodDeclaration, "visibility", this.myParamteres.getVisibilityLevel().getNode(), true);
+        SLinkOperations.setTarget(methodDeclaration, "returnType", returntType, true);
+        SPropertyOperations.set(methodDeclaration, "name", this.myParamteres.getMethodName());
+        SLinkOperations.addAll(methodDeclaration, "parameter", params);
+        SLinkOperations.setTarget(methodDeclaration, "body", body, true);
+        return methodDeclaration;
+      }
+
+      public SNode createMethodCall(SNode methodDeclaration, List<SNode> parameteres) {
+        SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", null);
+        SLinkOperations.setTarget(call, "member", ((SNode)methodDeclaration), false);
+        SLinkOperations.addAll(call, "actualArgument", parameteres);
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+        SLinkOperations.setTarget(result, "operand", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson", null), true);
+        SLinkOperations.setTarget(result, "operation", call, true);
+        return result;
+      }
+
+    };
   }
 
   public static SNode call_createType_1213877527970(SNode thisNode) {

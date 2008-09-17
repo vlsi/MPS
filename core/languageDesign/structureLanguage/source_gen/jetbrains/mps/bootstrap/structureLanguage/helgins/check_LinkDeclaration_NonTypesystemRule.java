@@ -91,7 +91,7 @@ __switch__:
       if (SPropertyOperations.getString(linkToCheck, "role").equals(SPropertyOperations.getString(link, "role"))) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(linkToCheck, "link '" + SPropertyOperations.getString(link, "role") + "' is already declared in " + SPropertyOperations.getString(SNodeOperations.getAncestor(link, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false), "name"), "jetbrains.mps.bootstrap.structureLanguage.helgins@3_0", "1219835858706", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(linkToCheck, "link '" + SPropertyOperations.getString(link, "role") + "' is already declared in " + SPropertyOperations.getString(SNodeOperations.getAncestor(link, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false), "name"), "jetbrains.mps.bootstrap.structureLanguage.helgins@3_0", "1221655170681", intentionProvider);
         }
       }
     }

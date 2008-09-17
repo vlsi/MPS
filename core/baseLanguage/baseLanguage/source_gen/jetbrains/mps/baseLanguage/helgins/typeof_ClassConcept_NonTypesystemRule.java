@@ -22,21 +22,21 @@ public class typeof_ClassConcept_NonTypesystemRule implements NonTypesystemRule_
     if ((SLinkOperations.getTarget(cls, "superclass", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(cls, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(cls, "superclass", true), "Class expected", "jetbrains.mps.baseLanguage.helgins@3_0", "1221646863341", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(cls, "superclass", true), "Class expected", "jetbrains.mps.baseLanguage.helgins@3_0", "1221657432495", intentionProvider);
       }
     }
     for(SNode impl : SLinkOperations.getTargets(cls, "implementedInterface", true)) {
       if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(impl, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"))) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(impl, "Interface expected", "jetbrains.mps.baseLanguage.helgins@3_0", "1221646876920", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(impl, "Interface expected", "jetbrains.mps.baseLanguage.helgins@3_0", "1221657446324", intentionProvider);
         }
       }
     }
     if (!(SPropertyOperations.getBoolean(cls, "abstractClass")) && ListSequence.fromList(ClassConcept_Behavior.call_getMethodsToImplement_1221637841398(cls)).isNotEmpty()) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(cls, "Class has not implemented methods (press control+I too see)", "jetbrains.mps.baseLanguage.helgins@3_0", "1221646863364", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(cls, "Class has not implemented methods (press control+I too see)", "jetbrains.mps.baseLanguage.helgins@3_0", "1221657432518", intentionProvider);
       }
     }
   }

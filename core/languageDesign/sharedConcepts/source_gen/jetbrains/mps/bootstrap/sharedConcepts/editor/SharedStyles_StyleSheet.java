@@ -20,7 +20,13 @@ public class SharedStyles_StyleSheet {
         }
 
       });
-      this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+        public Integer calculate(EditorCell cell) {
+          return SharedStyles_StyleSheet.calculateFontStyle6601_0(cell);
+        }
+
+      });
     }
 
   };
@@ -45,10 +51,28 @@ public class SharedStyles_StyleSheet {
         }
 
       });
-      this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+        public Integer calculate(EditorCell cell) {
+          return SharedStyles_StyleSheet.calculateFontStyle6601_1(cell);
+        }
+
+      });
     }
 
   };
+
+  private static Integer calculateFontStyle6601_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
+  }
+
+  private static Integer calculateFontStyle6601_1(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
+  }
 
   private static Color calculateColor6601_0(EditorCell cell) {
     Color result;

@@ -19,15 +19,6 @@ public class EmitLabelStatement extends EmitStatement implements INamedConcept {
     super(node);
   }
 
-  public static EmitLabelStatement newInstance(SModel sm, boolean init) {
-    return (EmitLabelStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.dataFlow.structure.EmitLabelStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static EmitLabelStatement newInstance(SModel sm) {
-    return EmitLabelStatement.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(EmitLabelStatement.NAME);
   }
@@ -58,6 +49,15 @@ public class EmitLabelStatement extends EmitStatement implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(EmitLabelStatement.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static EmitLabelStatement newInstance(SModel sm, boolean init) {
+    return (EmitLabelStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.dataFlow.structure.EmitLabelStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static EmitLabelStatement newInstance(SModel sm) {
+    return EmitLabelStatement.newInstance(sm, false);
   }
 
 }

@@ -5,10 +5,10 @@ package jetbrains.mps.bootstrap.dataFlow.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class DataFlowBuilderDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration";
@@ -22,15 +22,6 @@ public class DataFlowBuilderDeclaration extends BaseConcept implements INamedCon
   public DataFlowBuilderDeclaration(SNode node) {
     super(node);
   }
-
-  public static DataFlowBuilderDeclaration newInstance(SModel sm, boolean init) {
-    return (DataFlowBuilderDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static DataFlowBuilderDeclaration newInstance(SModel sm) {
-    return DataFlowBuilderDeclaration.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(DataFlowBuilderDeclaration.NAME);
@@ -78,6 +69,15 @@ public class DataFlowBuilderDeclaration extends BaseConcept implements INamedCon
 
   public void setBuilderBlock(BuilderBlock node) {
     super.setChild(DataFlowBuilderDeclaration.BUILDER_BLOCK, node);
+  }
+
+
+  public static DataFlowBuilderDeclaration newInstance(SModel sm, boolean init) {
+    return (DataFlowBuilderDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static DataFlowBuilderDeclaration newInstance(SModel sm) {
+    return DataFlowBuilderDeclaration.newInstance(sm, false);
   }
 
 }

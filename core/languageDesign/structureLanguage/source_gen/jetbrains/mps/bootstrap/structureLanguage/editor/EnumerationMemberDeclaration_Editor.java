@@ -15,13 +15,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.structureLanguage.behavior.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
@@ -198,7 +198,13 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return EnumerationMemberDeclaration_Editor.calculateFontStyle9117_1(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -245,7 +251,13 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return EnumerationMemberDeclaration_Editor.calculateFontStyle9117_3(cell);
+            }
+
+          });
         }
 
       };
@@ -259,7 +271,13 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return EnumerationMemberDeclaration_Editor.calculateFontStyle9117_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -280,7 +298,13 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return EnumerationMemberDeclaration_Editor.calculateFontStyle9117_4(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -314,7 +338,13 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return EnumerationMemberDeclaration_Editor.calculateFontStyle9117_2(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -334,7 +364,13 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return EnumerationMemberDeclaration_Editor.calculateFontStyle9117_5(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -390,6 +426,42 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition9117_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(SNodeOperations.getParent(node), "memberIdentifierPolicy", "custom", "derive_from_presentation");
+  }
+
+  private static Integer calculateFontStyle9117_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
+  }
+
+  private static Integer calculateFontStyle9117_1(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
+  }
+
+  private static Integer calculateFontStyle9117_2(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
+  }
+
+  private static Integer calculateFontStyle9117_3(EditorCell cell) {
+    int result;
+    result = MPSFonts.PLAIN;
+    return result;
+  }
+
+  private static Integer calculateFontStyle9117_4(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
+  }
+
+  private static Integer calculateFontStyle9117_5(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD_ITALIC;
+    return result;
   }
 
   private static Color calculateColor9117_0(EditorCell cell) {

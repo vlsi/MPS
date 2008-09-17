@@ -15,7 +15,7 @@ public class DataFlow_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return DataFlow_StyleSheet.calculateColor(cell);
+          return DataFlow_StyleSheet.calculateColor5400_0(cell);
         }
 
       });
@@ -27,7 +27,7 @@ public class DataFlow_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return DataFlow_StyleSheet.calculateColor1(cell);
+          return DataFlow_StyleSheet.calculateColor5400_1(cell);
         }
 
       });
@@ -39,7 +39,7 @@ public class DataFlow_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return DataFlow_StyleSheet.calculateColor2(cell);
+          return DataFlow_StyleSheet.calculateColor5400_2(cell);
         }
 
       });
@@ -51,7 +51,7 @@ public class DataFlow_StyleSheet {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return DataFlow_StyleSheet.calculateColor3(cell);
+          return DataFlow_StyleSheet.calculateColor5400_3(cell);
         }
 
       });
@@ -59,25 +59,25 @@ public class DataFlow_StyleSheet {
 
   };
 
-  private static Color calculateColor(EditorCell cell) {
+  private static Color calculateColor5400_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor1(EditorCell cell) {
+  private static Color calculateColor5400_1(EditorCell cell) {
     Color result;
-    result = Color.blue;
+    result = MPSColors.blue;
     return result;
   }
 
-  private static Color calculateColor2(EditorCell cell) {
+  private static Color calculateColor5400_2(EditorCell cell) {
     Color result;
-    result = Color.lightGray;
+    result = MPSColors.lightGray;
     return result;
   }
 
-  private static Color calculateColor3(EditorCell cell) {
+  private static Color calculateColor5400_3(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;

@@ -31,7 +31,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221172605004");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057669142");
     }
     {
       SNode _nodeToCheck_1029348928467 = node;

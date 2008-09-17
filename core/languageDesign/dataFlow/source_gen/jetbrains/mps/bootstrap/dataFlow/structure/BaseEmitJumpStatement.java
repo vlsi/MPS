@@ -15,21 +15,21 @@ public class BaseEmitJumpStatement extends EmitStatement {
     super(node);
   }
 
-  public static BaseEmitJumpStatement newInstance(SModel sm, boolean init) {
-    return (BaseEmitJumpStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.dataFlow.structure.BaseEmitJumpStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BaseEmitJumpStatement newInstance(SModel sm) {
-    return BaseEmitJumpStatement.newInstance(sm, false);
-  }
-
-
   public Position getJumpTo() {
     return (Position)this.getChild(BaseEmitJumpStatement.JUMP_TO);
   }
 
   public void setJumpTo(Position node) {
     super.setChild(BaseEmitJumpStatement.JUMP_TO, node);
+  }
+
+
+  public static BaseEmitJumpStatement newInstance(SModel sm, boolean init) {
+    return (BaseEmitJumpStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.dataFlow.structure.BaseEmitJumpStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BaseEmitJumpStatement newInstance(SModel sm) {
+    return BaseEmitJumpStatement.newInstance(sm, false);
   }
 
 }

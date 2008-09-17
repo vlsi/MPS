@@ -11,13 +11,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class SPropertyAccess_Editor extends DefaultNodeEditor {
@@ -61,6 +61,12 @@ public class SPropertyAccess_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refCell_property_1138412409274(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Integer calculateFontStyle0768_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
   }
 
   private static Color calculateColor0768_0(EditorCell cell) {
@@ -118,7 +124,13 @@ public class SPropertyAccess_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+              public Integer calculate(EditorCell cell) {
+                return SPropertyAccess_Editor.calculateFontStyle0768_0(cell);
+              }
+
+            });
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {

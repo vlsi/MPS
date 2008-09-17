@@ -15,9 +15,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class PoundExpression_Editor extends DefaultNodeEditor {
@@ -84,7 +84,13 @@ public class PoundExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return PoundExpression_Editor.calculateFontStyle9048_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.EDITABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
@@ -109,6 +115,12 @@ public class PoundExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_expression_1204835162158(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Integer calculateFontStyle9048_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
   }
 
   private static Color calculateColor9048_0(EditorCell cell) {

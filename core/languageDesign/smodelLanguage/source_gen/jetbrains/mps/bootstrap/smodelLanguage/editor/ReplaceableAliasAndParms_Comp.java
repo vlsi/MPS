@@ -19,12 +19,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -146,7 +146,13 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ReplaceableAliasAndParms_Comp.calculateFontStyle4484_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -174,7 +180,13 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ReplaceableAliasAndParms_Comp.calculateFontStyle4484_1(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -199,7 +211,13 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ReplaceableAliasAndParms_Comp.calculateFontStyle4484_3(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
@@ -230,6 +248,30 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
   public static boolean renderingCondition4484_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
+  }
+
+  private static Integer calculateFontStyle4484_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
+  }
+
+  private static Integer calculateFontStyle4484_1(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
+  }
+
+  private static Integer calculateFontStyle4484_2(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
+  }
+
+  private static Integer calculateFontStyle4484_3(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
   }
 
   private static Color calculateColor4484_0(EditorCell cell) {
@@ -315,7 +357,13 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+              public Integer calculate(EditorCell cell) {
+                return ReplaceableAliasAndParms_Comp.calculateFontStyle4484_2(cell);
+              }
+
+            });
             this.set(StyleAttributes.EDITABLE, true);
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 

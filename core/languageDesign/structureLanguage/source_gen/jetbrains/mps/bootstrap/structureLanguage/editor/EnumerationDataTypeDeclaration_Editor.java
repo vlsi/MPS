@@ -19,11 +19,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
@@ -720,7 +720,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateFontStyle4339_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -740,7 +746,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateFontStyle4339_1(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -955,6 +967,24 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "hasNoDefaultMember");
   }
 
+  private static Integer calculateFontStyle4339_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
+  }
+
+  private static Integer calculateFontStyle4339_1(EditorCell cell) {
+    int result;
+    result = MPSFonts.PLAIN;
+    return result;
+  }
+
+  private static Integer calculateFontStyle4339_2(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
+  }
+
   private static Color calculateColor4339_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
@@ -1080,7 +1110,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+            this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+              public Integer calculate(EditorCell cell) {
+                return EnumerationDataTypeDeclaration_Editor.calculateFontStyle4339_2(cell);
+              }
+
+            });
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {

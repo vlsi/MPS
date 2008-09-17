@@ -30,7 +30,7 @@ public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Ru
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221172604907");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749957");
     }
     {
       SNode _nodeToCheck_1029348928467 = node;

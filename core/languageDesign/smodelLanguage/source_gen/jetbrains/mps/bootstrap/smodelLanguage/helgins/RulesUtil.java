@@ -95,7 +95,7 @@ public class RulesUtil {
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1186065634833");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186065634833");
     }
   }
 
@@ -121,7 +121,7 @@ public class RulesUtil {
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1205267224541");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267224541");
     }
   }
 
@@ -148,7 +148,7 @@ public class RulesUtil {
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1205267101146");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267101146");
     }
   }
 
@@ -170,7 +170,7 @@ public class RulesUtil {
       if (!(ListSequence.fromList(applicableParmConcepts).contains(SNodeOperations.getConceptDeclaration(parm)))) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(parm, "not applicable here", "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221172617126", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(parm, "not applicable here", "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1221655465733", intentionProvider);
         }
         noProblem = false;
       }
@@ -221,7 +221,7 @@ public class RulesUtil {
           }
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1208202100447");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1208202100447");
     }
   }
 
@@ -276,7 +276,7 @@ public class RulesUtil {
             }
           }
 
-        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0", "1219348182096");
+        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1219348182096");
       }
     }
   }

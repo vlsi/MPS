@@ -5,6 +5,7 @@ package jetbrains.mps.bootstrap.dataFlow.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,7 +19,8 @@ public class typeof_NodeParameter_InferenceRule implements InferenceRule_Runtime
     SNode builder = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration", true, false);
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.dataFlow.helgins", "1206443475036", true), new QuotationClass_().createNode(SLinkOperations.getTarget(builder, "conceptDeclaration", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.dataFlow.helgins", "1206443478602");
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.dataFlow.helgins", "1206443475036", true), new QuotationClass_0().createNode(SLinkOperations.getTarget(builder, "conceptDeclaration", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.dataFlow.helgins", "1206443478602", intentionProvider);
     }
   }
 

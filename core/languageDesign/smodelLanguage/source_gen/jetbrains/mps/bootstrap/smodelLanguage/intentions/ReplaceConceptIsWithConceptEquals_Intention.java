@@ -20,15 +20,15 @@ public class ReplaceConceptIsWithConceptEquals_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Replace concept= with concept list";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference");
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SNode conceptList = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptList", null);
     SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(conceptList, "concept", true)).first(), "concept", SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptArgument", true), "conceptDeclaration", false), false);
     SNodeOperations.replaceWithAnother(node, conceptList);

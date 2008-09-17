@@ -24,16 +24,16 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "convert to non-typesystem rule";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     List<SNode> descendants = SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement","jetbrains.mps.bootstrap.helgins.structure.GivetypeStatement","jetbrains.mps.bootstrap.helgins.structure.TypeVarDeclaration","jetbrains.mps.bootstrap.helgins.structure.TypeVarReference","jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression","jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement"}, false);
     return ListSequence.fromList(descendants).isEmpty();
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SNode nonTypesystemRule = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule", null);
     SPropertyOperations.set(nonTypesystemRule, "overrides", "" + (SPropertyOperations.getBoolean(node, "overrides")));
     SPropertyOperations.set(nonTypesystemRule, "name", SPropertyOperations.getString(node, "name"));

@@ -16,21 +16,21 @@ public class EmitMayBeUnreachable extends Statement {
     super(node);
   }
 
-  public static EmitMayBeUnreachable newInstance(SModel sm, boolean init) {
-    return (EmitMayBeUnreachable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static EmitMayBeUnreachable newInstance(SModel sm) {
-    return EmitMayBeUnreachable.newInstance(sm, false);
-  }
-
-
   public EmitStatement getEmitStatement() {
     return (EmitStatement)this.getChild(EmitMayBeUnreachable.EMIT_STATEMENT);
   }
 
   public void setEmitStatement(EmitStatement node) {
     super.setChild(EmitMayBeUnreachable.EMIT_STATEMENT, node);
+  }
+
+
+  public static EmitMayBeUnreachable newInstance(SModel sm, boolean init) {
+    return (EmitMayBeUnreachable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static EmitMayBeUnreachable newInstance(SModel sm) {
+    return EmitMayBeUnreachable.newInstance(sm, false);
   }
 
 }

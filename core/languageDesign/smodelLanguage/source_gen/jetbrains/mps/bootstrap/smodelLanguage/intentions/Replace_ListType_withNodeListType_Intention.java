@@ -18,15 +18,15 @@ public class Replace_ListType_withNodeListType_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "replace with nlist < >";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "elementType", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType");
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType");
   }
 

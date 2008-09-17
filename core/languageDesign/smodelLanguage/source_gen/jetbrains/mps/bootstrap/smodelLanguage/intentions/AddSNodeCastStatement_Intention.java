@@ -22,11 +22,11 @@ public class AddSNodeCastStatement_Intention extends BaseIntention {
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Insert cast variable declaration";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     boolean isApplicable = false;
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       SNode dotExpression = SLinkOperations.getTarget(node, "condition", true);
@@ -41,7 +41,7 @@ public class AddSNodeCastStatement_Intention extends BaseIntention {
     return isApplicable;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     SNode castVariable = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
     SNode de = SLinkOperations.getTarget(node, "condition", true);
     SNode conceptDeclaration = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(de, "operation", true), "conceptArgument", true), "conceptDeclaration", false);

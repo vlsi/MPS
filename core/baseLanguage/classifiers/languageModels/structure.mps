@@ -19,10 +19,14 @@
   <maxImportIndex value="2" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
+  <visible index="3" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1205751982837">
     <property name="name" value="IClassifier" />
     <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1205752941102">
       <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1221661913106">
+      <link role="intfc" targetNodeId="3v.1221393582612" resolveInfo="IExtarctMethodAvailable" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1205752032448">
@@ -38,7 +42,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1205752174734">
     <property name="name" value="IClassifierPart" />
   </node>
-  <visible index="3" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205752633985">
     <property name="name" value="ThisClassifierExpresson" />
     <link role="extends" targetNodeId="3v.1068431790191" resolveInfo="Expression" />

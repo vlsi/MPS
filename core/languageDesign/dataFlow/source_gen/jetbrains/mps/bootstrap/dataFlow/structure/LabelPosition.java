@@ -15,21 +15,21 @@ public class LabelPosition extends Position {
     super(node);
   }
 
-  public static LabelPosition newInstance(SModel sm, boolean init) {
-    return (LabelPosition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.dataFlow.structure.LabelPosition", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static LabelPosition newInstance(SModel sm) {
-    return LabelPosition.newInstance(sm, false);
-  }
-
-
   public EmitLabelStatement getLabel() {
     return (EmitLabelStatement)this.getReferent(LabelPosition.LABEL);
   }
 
   public void setLabel(EmitLabelStatement node) {
     super.setReferent(LabelPosition.LABEL, node);
+  }
+
+
+  public static LabelPosition newInstance(SModel sm, boolean init) {
+    return (LabelPosition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.dataFlow.structure.LabelPosition", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static LabelPosition newInstance(SModel sm) {
+    return LabelPosition.newInstance(sm, false);
   }
 
 }
