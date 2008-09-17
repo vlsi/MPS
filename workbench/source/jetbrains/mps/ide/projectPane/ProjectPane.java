@@ -398,10 +398,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       return new MyCutProvider();
     } else if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
       return getSelectedFiles();
-    } else if (dataId.equals(MPSDataKeys.SCOPE.getName())) {
-      return getContextForSelection().getScope();
-    } else if (dataId.equals(MPSDataKeys.MODULE.getName())) {
-      return getContextForSelection().getModule();
     } else if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
       TreePath[] selection = getTree().getSelectionPaths();
       if (selection == null) return null;

@@ -9,6 +9,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -58,7 +59,7 @@ public class DevkitProperties_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       ActionEventData data = new ActionEventData(event);
-      final DevKit devkit = data.getDevKit();
+      final DevKit devkit = getDevKit(data);
       final IOperationContext localContext = DevkitProperties_Action.this.context;
       final DevKitPropertiesDialog[] dialog = new DevKitPropertiesDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -74,4 +75,9 @@ public class DevkitProperties_Action extends GeneratedAction {
     }
   }
 
+  public DevKit getDevKit(ActionEventData data) {
+    IModule module = data.getModule();
+    if (!(module instanceof DevKit)) return null;
+    return (DevKit) module;
+  }
 }

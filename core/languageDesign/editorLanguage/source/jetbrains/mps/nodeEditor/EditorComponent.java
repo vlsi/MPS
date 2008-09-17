@@ -6,7 +6,6 @@ import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.wm.ex.WindowManagerEx;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
@@ -356,7 +355,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       }
 
-      public void mouseClicked(MouseEvent e) {                
+      public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2 && myRootCell.findCell(e.getX(), e.getY()) == getSelectedCell() &&
           getSelectedCell() instanceof EditorCell_Label) {
           ((EditorCell_Label) getSelectedCell()).selectAll();
@@ -2077,10 +2076,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return this;
     } else if (dataId.equals(MPSDataKeys.MODULES.getName()) && getEditedNode() != null) {
       return Arrays.asList(getEditedNode().getModel().getModelDescriptor().getModule());
-    } else if (dataId.equals(MPSDataKeys.SCOPE.getName())) {
-      return getOperationContext().getScope();
-    } else if (dataId.equals(MPSDataKeys.MODULE.getName())) {
-      return getOperationContext().getModule();
     }
 
     return null;
