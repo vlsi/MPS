@@ -374,7 +374,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
 
   private static Integer calculateFontSize9248_0(EditorCell cell) {
     int result;
-    result = 0;
+    result = 6;
     return result;
   }
 

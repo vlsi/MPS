@@ -2629,6 +2629,7 @@
         <link role="relationDeclaration" targetNodeId="1.1212056105818" resolveInfo="inequationPriority" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontSizeStyleClassItem" id="1214317283303">
           <property name="size" value="8" />
+          <property name="value" value="6" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1212056631986">
