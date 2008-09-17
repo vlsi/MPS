@@ -9368,6 +9368,35 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221652022969">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221652022970">
+            <property name="name" value="value" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221652022971">
+              <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221652022972">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221652022973" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1221652022974">
+                <link role="property" targetNodeId="1.1070475926801" resolveInfo="value" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1221652055561">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221652055562">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221652066642">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1221652067394">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1221652057176">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1221652057679" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221652056503">
+              <link role="variableDeclaration" targetNodeId="1221652022970" resolveInfo="value" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForStatement" id="1221565279181">
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221565279182">
             <property name="name" value="i" />
@@ -9632,11 +9661,8 @@
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanExpression" id="1221565294150">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221565298171">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221565295200">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221565294653" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1221565297671">
-                  <link role="property" targetNodeId="1.1070475926801" resolveInfo="value" />
-                </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221652022975">
+                <link role="variableDeclaration" targetNodeId="1221652022970" resolveInfo="value" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221565298846">
                 <link role="baseMethodDeclaration" targetNodeId="2.~String.length():int" resolveInfo="length" />

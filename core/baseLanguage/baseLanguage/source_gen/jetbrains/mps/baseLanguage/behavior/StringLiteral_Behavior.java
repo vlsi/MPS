@@ -19,7 +19,11 @@ public class StringLiteral_Behavior {
     boolean isEscapeMode = false;
     boolean isUnicodeMode = false;
     int unicodeDigitNumber = 0;
-    for(int i = 0 ; i < SPropertyOperations.getString(thisNode, "value").length() ; i++ ) {
+    String value = SPropertyOperations.getString(thisNode, "value");
+    if (value == null) {
+      return true;
+    }
+    for(int i = 0 ; i < value.length() ; i++ ) {
       char c = SPropertyOperations.getString(thisNode, "value").charAt(i);
       if (isEscapeMode) {
         if (c == 'u') {
