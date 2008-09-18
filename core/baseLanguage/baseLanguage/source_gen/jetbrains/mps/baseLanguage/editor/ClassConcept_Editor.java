@@ -289,6 +289,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant1221740437720(context, node, "deprecated"));
     editorCell.addEditorCell(this.createConstant1221562999716(context, node, "static"));
     editorCell.addEditorCell(this.createConstant1221562999717(context, node, "{"));
     return editorCell;
@@ -519,6 +520,14 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12215652286701221565228670(editorCell, node, context);
     setupLabel_Constant_1221565228670_1221565228670(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1221740437720(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12217404377201221740437720(editorCell, node, context);
+    setupLabel_Constant_1221740437720_1221740437720(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -1613,6 +1622,25 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   private static void setupBasic_refNode_classInitializer1221737979546(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_Constant_12217404377201221740437720(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221740437720");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ClassConcept_Editor.calculateColor8372_1(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupBasic_Collection_12217407528441221740752844(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221740752844");
     {
@@ -1649,7 +1677,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ClassConcept_Editor.calculateColor8372_1(cell);
+              return ClassConcept_Editor.calculateColor8372_2(cell);
             }
 
           });
@@ -1795,6 +1823,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   private static void setupLabel_refNode_classInitializer_1221737979546(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_Constant_1221740437720_1221740437720(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_Constant_1221740753427_1221740753427(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -1838,6 +1869,12 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static Color calculateColor8372_1(EditorCell cell) {
+    Color result;
+    result = MPSColors.red;
+    return result;
+  }
+
+  private static Color calculateColor8372_2(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
