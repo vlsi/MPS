@@ -36,7 +36,7 @@ public class RemoveOperation extends VcsOperation {
     }
   }
 
-  protected void performInternal() {
+  public void performInternal() {
     for (FilePath filePath : myFilePathsToDelete) {
       AbstractVcs vcs = myManager.getVcsFor(filePath);
       if (vcs != null) {

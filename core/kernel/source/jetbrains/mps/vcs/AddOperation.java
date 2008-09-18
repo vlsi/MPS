@@ -31,7 +31,7 @@ public class AddOperation extends VcsOperation {
     myFilesToAdd.addAll(filesToAdd);
   }
 
-  protected void performInternal() {
+  public void performInternal() {
     for (File f : myFilesToAdd) {
       VirtualFile virtualFile = VFileSystem.refreshAndGetFile(f);
       if (virtualFile != null) {
@@ -62,7 +62,7 @@ public class AddOperation extends VcsOperation {
   }
 
   @Override
-  protected void runPerform(Runnable runnable) {
+  public void runPerform(Runnable runnable) {
     ApplicationManager.getApplication().invokeLater(runnable);
   }
 

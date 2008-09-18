@@ -4,7 +4,6 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.project.Project;
 
 public abstract class VcsOperation {
-  private static final Object ourMonitor = new Object();
   protected final ProjectLevelVcsManager myManager;
   protected final Project myProject;
 
@@ -13,19 +12,9 @@ public abstract class VcsOperation {
     myProject = project;
   }
 
-  public final void perform() {
-    runPerform(new Runnable() {
-      public void run() {
-        synchronized (ourMonitor) {
-          performInternal();
-        }
-      }
-    });
-  }
+  public abstract void performInternal();
 
-  protected abstract void performInternal();
-
-  protected void runPerform(Runnable runnable) {
+  public void runPerform(Runnable runnable) {
     runnable.run();
   }
 }

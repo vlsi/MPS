@@ -40,6 +40,7 @@ public class MPSVCSManager implements ProjectComponent {
 
   private boolean myIsInitialized = false;
   private volatile boolean myChangeListManagerInitialized = false;
+  private final Object myMonitor = new Object();
 
   private final TaskQueue<Runnable> myTasksQueue = new TaskQueue<Runnable>(true) {
 
@@ -72,7 +73,7 @@ public class MPSVCSManager implements ProjectComponent {
     final List<File> copiedFileList = new ArrayList<File>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        new RemoveOperation(copiedFileList, myManager, myProject).perform();
+        perform(new RemoveOperation(copiedFileList, myManager, myProject));
       }
     });
     return true;
@@ -82,7 +83,7 @@ public class MPSVCSManager implements ProjectComponent {
     final HashSet<VirtualFile> filesCopy = new HashSet<VirtualFile>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        new RemoveOperation(filesCopy, myManager, myProject).perform();
+        perform(new RemoveOperation(filesCopy, myManager, myProject));
       }
     });
     return true;
@@ -92,7 +93,7 @@ public class MPSVCSManager implements ProjectComponent {
     final List<File> copiedFileList = new ArrayList<File>(files); //a list "files" can be modified by caller before invokeLater calls its runnable
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        new AddOperation(copiedFileList, myManager, myProject).perform();
+        perform(new AddOperation(copiedFileList, myManager, myProject));
       }
     });
     return true;
@@ -102,10 +103,20 @@ public class MPSVCSManager implements ProjectComponent {
     final HashSet<VirtualFile> filesCopy = new HashSet<VirtualFile>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        new AddOperation(filesCopy, myManager, myProject).perform();
+        perform(new AddOperation(filesCopy, myManager, myProject));
       }
     });
     return true;
+  }
+
+  private void perform(final VcsOperation operation) {
+    operation.runPerform(new Runnable() {
+      public void run() {
+        synchronized (myMonitor) {
+          operation.performInternal();
+        }
+      }
+    });
   }
 
   public void projectOpened() {
