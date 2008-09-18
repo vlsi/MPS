@@ -961,15 +961,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_10747947452241074794745224(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1074794745224");
     BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Collection_10748664214841074866421484(EditorCell editorCell, SNode node, EditorContext context) {
