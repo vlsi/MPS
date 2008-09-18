@@ -18,7 +18,7 @@ public class check_StringLiteral_NonTypesystemRule implements NonTypesystemRule_
     if (!(StringLiteral_Behavior.call_isCorrect_1221565233201(stringLiteral))) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(stringLiteral, "Incorrect string literal", "jetbrains.mps.baseLanguage.helgins@3_0", "1221657432432", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(stringLiteral, "Incorrect string literal", "jetbrains.mps.baseLanguage.helgins@9_0", "1221737734162", intentionProvider);
       }
     }
   }

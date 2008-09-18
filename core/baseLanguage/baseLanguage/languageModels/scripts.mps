@@ -38,6 +38,7 @@
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" version="0" />
   <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -1960,6 +1961,99 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221223115715">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1221223115716">
               <property name="value" value="true" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1221740778448">
+    <property name="name" value="ConvertStaticIntializers" />
+    <property name="category" value="baseLanguage" />
+    <property name="title" value="convert to static initializers" />
+    <property name="migrationFromBuild" value="1024" />
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1221740807902">
+      <property name="description" value="convert all static initializers" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1221740807903">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221740807904">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221740832209">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221740832210">
+              <property name="name" value="initializer" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221740832211">
+                <link role="concept" targetNodeId="1.1221737317277" resolveInfo="StaticInitializer" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1221740838400">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1221740838401">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221740838402">
+                    <link role="concept" targetNodeId="1.1221737317277" resolveInfo="StaticInitializer" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221740840248">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221740842754">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221740840890">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221740840249">
+                  <link role="variableDeclaration" targetNodeId="1221740832210" resolveInfo="initializer" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1221740842159">
+                  <link role="link" targetNodeId="1.1221737317278" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1221740843851">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221740850720">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221740847167">
+                    <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1221740846947" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1221740849999">
+                      <link role="link" targetNodeId="1.1171626359898" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" id="1221740851208" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221740860619">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221740862627">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221740860746">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1221740860620" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1221740861875">
+                  <link role="link" targetNodeId="1.1221737886778" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1221740863943">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221740864884">
+                  <link role="variableDeclaration" targetNodeId="1221740832210" resolveInfo="initializer" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221740866325">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221740868724">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221740866515">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1221740866326" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1221740868222">
+                  <link role="link" targetNodeId="1.1171626359898" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation" id="1221740870821" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1221740818024">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221740818025">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221740823010">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221740827172">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221740823168">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1221740823011" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1221740826656">
+                  <link role="link" targetNodeId="1.1171626359898" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1221740828191" />
             </node>
           </node>
         </node>

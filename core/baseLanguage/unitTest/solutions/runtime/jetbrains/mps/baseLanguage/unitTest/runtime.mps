@@ -18,6 +18,7 @@
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" version="0" />
   <maxImportIndex value="8" />
   <import index="1" modelUID="junit.framework@java_stub" version="-1" />
   <import index="2" modelUID="junit.runner@java_stub" version="-1" />
@@ -1708,40 +1709,6 @@
         </node>
       </node>
     </node>
-    <node role="staticInitializer" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208864642153">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208864651221">
-        <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1208864652333">
-          <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1208864655099">
-            <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1208864655100">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208864655101">
-                <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
-              </node>
-              <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1208864656081">
-                <link role="variableDeclaration" targetNodeId="1208864505391" resolveInfo="START_TEST_PREFIX" />
-              </node>
-              <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1208864656082">
-                <link role="variableDeclaration" targetNodeId="1208864505395" resolveInfo="END_TEST_PREFIX" />
-              </node>
-              <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1208864656083">
-                <link role="variableDeclaration" targetNodeId="1208864505399" resolveInfo="ERROR_TEST_PREFIX" />
-              </node>
-              <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1208864656085">
-                <link role="variableDeclaration" targetNodeId="1208864505404" resolveInfo="ERROR_TEST_SUFFIX" />
-              </node>
-              <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1208864656086">
-                <link role="variableDeclaration" targetNodeId="1208864505408" resolveInfo="FAILURE_TEST_PREFIX" />
-              </node>
-              <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1208864656087">
-                <link role="variableDeclaration" targetNodeId="1208864505412" resolveInfo="FAILURE_TEST_SUFFIX" />
-              </node>
-            </node>
-          </node>
-          <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1208864651222">
-            <link role="variableDeclaration" targetNodeId="1208864511737" resolveInfo="ALL_TOKENS" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1208865013303">
       <property name="name" value="getToken" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208865013304">
@@ -1818,6 +1785,42 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1208865031591" />
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1208865031592">
               <link role="fieldDeclaration" targetNodeId="1208860664059" resolveInfo="time" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="classInitializer" type="jetbrains.mps.baseLanguage.structure.StaticInitializer" id="1221741207444">
+      <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221741207445">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221741207446">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1221741207447">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1221741207448">
+              <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1221741207449">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221741207450">
+                  <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1221741207451">
+                  <link role="variableDeclaration" targetNodeId="1208864505391" resolveInfo="START_TEST_PREFIX" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1221741207452">
+                  <link role="variableDeclaration" targetNodeId="1208864505395" resolveInfo="END_TEST_PREFIX" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1221741207453">
+                  <link role="variableDeclaration" targetNodeId="1208864505399" resolveInfo="ERROR_TEST_PREFIX" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1221741207454">
+                  <link role="variableDeclaration" targetNodeId="1208864505404" resolveInfo="ERROR_TEST_SUFFIX" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1221741207455">
+                  <link role="variableDeclaration" targetNodeId="1208864505408" resolveInfo="FAILURE_TEST_PREFIX" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1221741207456">
+                  <link role="variableDeclaration" targetNodeId="1208864505412" resolveInfo="FAILURE_TEST_SUFFIX" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1221741207457">
+              <link role="variableDeclaration" targetNodeId="1208864511737" resolveInfo="ALL_TOKENS" />
             </node>
           </node>
         </node>

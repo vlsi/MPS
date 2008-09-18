@@ -15,6 +15,7 @@ public class ClassConcept extends Classifier {
   public static String IS_FINAL = "isFinal";
   public static String SUPERCLASS = "superclass";
   public static String INSTANCE_INITIALIZER = "instanceInitializer";
+  public static String CLASS_INITIALIZER = "classInitializer";
   public static String STATIC_INITIALIZER = "staticInitializer";
   public static String FIELD = "field";
   public static String CONSTRUCTOR = "constructor";
@@ -57,6 +58,14 @@ public class ClassConcept extends Classifier {
 
   public void setInstanceInitializer(InstanceInitializer node) {
     super.setChild(ClassConcept.INSTANCE_INITIALIZER, node);
+  }
+
+  public StaticInitializer getClassInitializer() {
+    return (StaticInitializer)this.getChild(ClassConcept.CLASS_INITIALIZER);
+  }
+
+  public void setClassInitializer(StaticInitializer node) {
+    super.setChild(ClassConcept.CLASS_INITIALIZER, node);
   }
 
   public StatementList getStaticInitializer() {

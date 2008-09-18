@@ -15,6 +15,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" version="0" />
   <maxImportIndex value="38" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="37" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -118,6 +119,11 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="instanceInitializer" />
       <link role="target" targetNodeId="1206629501431" resolveInfo="InstanceInitializer" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1221737886778">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="classInitializer" />
+      <link role="target" targetNodeId="1221737317277" resolveInfo="StaticInitializer" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1171626359898">
       <property name="metaClass" value="aggregation" />
@@ -2730,6 +2736,17 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1221393582612">
     <property name="name" value="IExtarctMethodAvailable" />
     <property name="package" value="refactoring" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1221737317277">
+    <property name="name" value="StaticInitializer" />
+    <property name="package" value="classifier" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1221737317278">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="statementList" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
+    </node>
   </node>
 </model>
 
