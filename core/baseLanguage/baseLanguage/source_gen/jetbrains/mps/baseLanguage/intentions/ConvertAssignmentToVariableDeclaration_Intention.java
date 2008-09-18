@@ -33,7 +33,8 @@ public class ConvertAssignmentToVariableDeclaration_Intention extends BaseIntent
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode assignment = SNodeOperations.getParent(node);
-    AssignmentExpression_Behavior.call_convertToLocalVariableDeclaration_1221573391693(assignment);
+    SNode result = AssignmentExpression_Behavior.call_convertToLocalVariableDeclaration_1221573391693(assignment);
+    editorContext.selectWRTFocusPolicy(result);
   }
 
   public String getLocationString() {

@@ -40,6 +40,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" version="0" />
   <maxImportIndex value="28" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
@@ -7157,13 +7158,30 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221573856637">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221573857248">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221573856638">
-              <link role="variableDeclaration" targetNodeId="1221573853849" resolveInfo="assignment" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221722787481">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221722787482">
+            <property name="name" value="result" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221722787483">
+              <link role="concept" targetNodeId="1.1068581242864" resolveInfo="LocalVariableDeclarationStatement" />
             </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221573859801">
-              <link role="conceptMethodDeclaration" targetNodeId="2v.1221573391693" resolveInfo="convertToLocalVariableDeclaration" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221722787484">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221722787485">
+                <link role="variableDeclaration" targetNodeId="1221573853849" resolveInfo="assignment" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221722787486">
+                <link role="conceptMethodDeclaration" targetNodeId="2v.1221573391693" resolveInfo="convertToLocalVariableDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221722790113">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221723060423">
+            <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1221723056184" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221723070422">
+              <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.selectWRTFocusPolicy(jetbrains.mps.smodel.SNode):void" resolveInfo="selectWRTFocusPolicy" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221723071907">
+                <link role="variableDeclaration" targetNodeId="1221722787482" resolveInfo="result" />
+              </node>
             </node>
           </node>
         </node>
