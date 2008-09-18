@@ -73,6 +73,19 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
         gToBase.add(gWhat, constraints);
       }
     }
+    {
+      BaseGroup gToBase = ActionUtils.getGroup(EditorPopup_ActionGroup.ID);
+      ActionGroup gWhat = ActionUtils.getDefaultGroup("VcsGroup");
+      if (gToBase == null || gWhat == null) {
+        return;
+      }
+      {
+        String labelName = null;
+        labelName = EditorPopup_ActionGroup.LABEL_ID_vcs;
+        Constraints constraints = new Constraints(Anchor.AFTER, labelName);
+        gToBase.add(gWhat, constraints);
+      }
+    }
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {

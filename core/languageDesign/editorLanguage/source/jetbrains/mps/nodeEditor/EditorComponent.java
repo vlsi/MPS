@@ -7,6 +7,7 @@ import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.core.structure.INamedConcept;
@@ -50,6 +51,8 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.nodes.GoByCurrentReferenceAction;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -2077,6 +2080,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return this;
     } else if (dataId.equals(MPSDataKeys.MODULES.getName()) && getEditedNode() != null) {
       return Arrays.asList(getEditedNode().getModel().getModelDescriptor().getModule());
+    } else if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
+      return ModelAccess.instance().runReadAction(new Computable() {
+        public Object compute() {
+          SNode node = getRootCell().getSNode();
+          if (node == null) return null;
+          SModel model = node.getModel();
+          if (model == null) return null; //removed model
+          IFile ifile = model.getModelDescriptor().getModelFile();
+          if (ifile == null) return null;
+          return new VirtualFile[]{VFileSystem.getFile(ifile)};
+        }
+      });
     }
 
     return null;

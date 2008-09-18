@@ -24,6 +24,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   public static Logger LOG = Logger.getLogger(EditorPopup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopup";
   public static final String LABEL_ID_structure = ID + "structure";
+  public static final String LABEL_ID_vcs = ID + "vcs";
 
   public EditorPopup_ActionGroup() {
     super("", ID);
@@ -64,6 +65,8 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.add(new ShowParametersAction());
       this.addSeparator();
       this.add(new ModelPropertiesActionWOShortcuts());
+      this.addSeparator();
+      this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_vcs);
       this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

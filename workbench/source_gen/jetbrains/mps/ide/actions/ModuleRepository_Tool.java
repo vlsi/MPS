@@ -47,6 +47,7 @@ public class ModuleRepository_Tool extends GeneratedTool {
     this.myComponent.install();
   }
 
+  @Override()
   public void makeUnavailable() {
     super.makeUnavailable();
     this.myComponent.uninstall();
