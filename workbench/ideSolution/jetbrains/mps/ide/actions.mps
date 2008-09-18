@@ -29,7 +29,7 @@
   <languageAspect modelUID="jetbrains.mps.ide.uiLanguage.constraints" version="3" />
   <languageAspect modelUID="jetbrains.mps.uiLanguage.constraints" version="26" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" version="0" />
-  <maxImportIndex value="112" />
+  <maxImportIndex value="113" />
   <import index="1" modelUID="jetbrains.mps.workbench.actions.nodes@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.modelchecker@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.workbench.actions.model@java_stub" version="-1" />
@@ -93,6 +93,7 @@
   <import index="106" modelUID="jetbrains.mps.ide.modelRepositoryViewer@java_stub" version="-1" />
   <import index="107" modelUID="jetbrains.mps.workbench@java_stub" version="-1" />
   <import index="109" modelUID="jetbrains.mps.ide.dialogs@java_stub" version="-1" />
+  <import index="113" modelUID="com.intellij.openapi.fileChooser.actions@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -7852,6 +7853,10 @@
     <property name="name" value="AbstractFileActions" />
     <property name="package" value="Menu.FileView" />
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1217431154934">
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1221761213650">
+        <link role="constructorDeclaration" targetNodeId="113.~FileDeleteAction.&lt;init&gt;()" resolveInfo="FileDeleteAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1221761396218" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1217431278099">
         <property name="name" value="vcs" />
       </node>
