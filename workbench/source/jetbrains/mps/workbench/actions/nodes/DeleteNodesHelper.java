@@ -57,6 +57,8 @@ public class DeleteNodesHelper {
         projectPane.rebuildTree();
         projectPane.selectNextTreeNode(sNode);
       }
+
+      doDeleteNode(sNode);
     }
   }
 
