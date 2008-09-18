@@ -121,7 +121,8 @@ public class NodeEditorComponent extends EditorComponent {
     return getInspectorTool().getInspector();
   }
 
-  public InspectorTool getInspectorTool() {
+  public InspectorTool getInspectorTool() {        
+    if (getOperationContext().getProject().isDisposed()) return null;
     return getOperationContext().getComponent(InspectorTool.class);
   }
 
