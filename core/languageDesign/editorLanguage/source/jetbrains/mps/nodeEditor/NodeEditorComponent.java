@@ -77,7 +77,7 @@ public class NodeEditorComponent extends EditorComponent {
       }
     });
     if (toSelect != null && getInspector() != null) {
-      getInspector().inspectNode(toSelect, getOperationContext(), null);
+      getInspectorTool().inspect(toSelect, getOperationContext(), null);
     }
   }
 
@@ -110,7 +110,7 @@ public class NodeEditorComponent extends EditorComponent {
     return myExternalComponent;
   }
 
-  public InspectorEditorComponent getInspector() {
+  public EditorComponent getInspector() {
     if (getInspectorTool() == null) return null;
     return getInspectorTool().getInspector();
   }
@@ -120,7 +120,7 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   public void dispose() {
-    getInspector().inspectNode(null, null, null);
+    getInspectorTool().inspect(null, null, null);
     super.dispose();
   }
 }

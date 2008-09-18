@@ -222,11 +222,12 @@ public class MPSEditorOpener implements ProjectComponent {
 
   public void selectInInspector(final IEditor nodeEditor, final SNode node, IOperationContext context, final boolean focus) {
     final NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
-    final InspectorEditorComponent inspector = nec.getInspector();
-    if (inspector == null) return;
+    final InspectorTool inspectorTool = nec.getInspectorTool();
+    if (inspectorTool == null) return;
     if (nec.getLastInspectedNode() == null) return;
 
-    inspector.inspectNode(nec.getLastInspectedNode(), context, new Runnable() {
+    final EditorComponent inspector = inspectorTool.getInspector();
+    inspectorTool.inspect(nec.getLastInspectedNode(), context, new Runnable() {
       public void run() {
         SNode currentTargetNode = node;
         while (currentTargetNode != null) {

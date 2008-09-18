@@ -43,7 +43,7 @@ public class InspectorTool extends BaseProjectTool {
     return true;
   }
 
-  public InspectorEditorComponent getInspector() {
+  public EditorComponent getInspector() {
     return myInspectorComponent;
   }
 
