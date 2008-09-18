@@ -53,7 +53,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "Model Changes Whatcher";
+    return "Model Changes Watcher";
   }
 
   public void initComponent() {

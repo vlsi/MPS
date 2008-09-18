@@ -6,6 +6,10 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -13,24 +17,68 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.MPSProjectHolder;
 
-public class VcsRootsManager  implements ProjectComponent {
+public class VcsRootsManager implements ProjectComponent {
   private final Project myProject;
   private final ProjectLevelVcsManager myVcsManager;
+  private final Set<VirtualFile> myExcludedRoots = new HashSet<VirtualFile>();
+  private final SModelAdapter myGlobalSModelListener = new SModelAdapter() {
+    @Override
+    public void modelSaved(SModelDescriptor sm) {
+      IFile modelFile = sm.getModelFile();
+      if (modelFile == null) return;
+      VirtualFile file = VFileSystem.getFile(modelFile.getParent());
+      if (file == null) return;
+      AbstractVcs vcs = myVcsManager.findVersioningVcs(file);
+      if (myVcsManager.getVcsRootFor(file) != null) return;
+      VirtualFile root = file;
+      while ((root.getParent() != null) && vcs.isVersionedDirectory(root.getParent())) {
+        root = root.getParent();
+      }
+      Set<VirtualFile> currentRoots = new HashSet<VirtualFile>(Arrays.asList(myVcsManager.getAllVersionedRoots()));
+      if ((root != null) && (!myExcludedRoots.contains(root)) && (!currentRoots.contains(root))) {
+        showAddVcsRootDialog(root, sm);
+      }
+    }
+  };
 
-  public VcsRootsManager(Project project, ProjectLevelVcsManager manager){
+  public VcsRootsManager(Project project, ProjectLevelVcsManager manager) {
     myProject = project;
     myVcsManager = manager;
   }
 
   public void projectOpened() {
     addDirectoryMappings();
+    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalSModelListener);
+  }
+
+  private void showAddVcsRootDialog(final VirtualFile vcsRoot, final SModelDescriptor sm) {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        String message = "You have changed model " + sm + ".\n" +
+          "Do you want to add folder " + vcsRoot.getPath() + " to the list of vcs roots so you would be able to commit your changes?\n" +
+          "You can always do it later choosing Settings -> Project Settings -> Version Control.";
+        String title = "Add folder " + vcsRoot.getPath() + " to the list of vcs roots?";
+        int result = Messages.showYesNoDialog(myProject, message, title, Messages.getQuestionIcon());
+
+        if (result == DialogWrapper.OK_EXIT_CODE) {
+          List<VcsDirectoryMapping> vcsDirectoryMappings = new ArrayList<VcsDirectoryMapping>(myVcsManager.getDirectoryMappings());
+          vcsDirectoryMappings.add(new VcsDirectoryMapping(vcsRoot.getPath(), myVcsManager.findVersioningVcs(vcsRoot).getName()));
+          myVcsManager.setDirectoryMappings(vcsDirectoryMappings);
+        } else {
+          myExcludedRoots.add(vcsRoot);
+        }
+      }
+    }, ModalityState.NON_MODAL);
   }
 
   public void projectClosed() {
+    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalSModelListener);
   }
 
   @NonNls
@@ -48,7 +96,8 @@ public class VcsRootsManager  implements ProjectComponent {
   private void addDirectoryMappings() {
     List<VcsDirectoryMapping> vcsMappings = new ArrayList<VcsDirectoryMapping>();
 
-    List<IModule> allModules = MPSModuleRepository.getInstance().getAllModules();
+    MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    List<IModule> allModules = mpsProject.getModules();
     Map<AbstractVcs, Set<VirtualFile>> vcss = new HashMap<AbstractVcs, Set<VirtualFile>>();
 
     for (IModule module : allModules) {
