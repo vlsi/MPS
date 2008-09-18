@@ -8,6 +8,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.ide.DataManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints;
@@ -29,6 +30,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -220,14 +222,16 @@ public class MPSEditorOpener implements ProjectComponent {
     }
   }
 
-  public void selectInInspector(final IEditor nodeEditor, final SNode node, IOperationContext context, final boolean focus) {
+  private void selectInInspector(final IEditor nodeEditor, final SNode node, IOperationContext context, final boolean focus) {
     final NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
     final InspectorTool inspectorTool = nec.getInspectorTool();
     if (inspectorTool == null) return;
     if (nec.getLastInspectedNode() == null) return;
 
+    FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(nodeEditor.getComponent()).getData(MPSDataKeys.FILE_EDITOR.getName());
+
     final EditorComponent inspector = inspectorTool.getInspector();
-    inspectorTool.inspect(nec.getLastInspectedNode(), context, new Runnable() {
+    inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor, new Runnable() {
       public void run() {
         SNode currentTargetNode = node;
         while (currentTargetNode != null) {

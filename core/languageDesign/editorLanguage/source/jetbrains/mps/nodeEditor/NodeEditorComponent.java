@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -24,6 +25,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.util.List;
+
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.ide.DataManager;
 
 public class NodeEditorComponent extends EditorComponent {
   public static final KeyStroke CHANGE_ORIENTATION_KEYSTROKE = KeyStroke.getKeyStroke("alt shift I");
@@ -77,7 +82,8 @@ public class NodeEditorComponent extends EditorComponent {
       }
     });
     if (toSelect != null && getInspector() != null) {
-      getInspectorTool().inspect(toSelect, getOperationContext(), null);
+      FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(this).getData(MPSDataKeys.FILE_EDITOR.getName());
+      getInspectorTool().inspect(toSelect, getOperationContext(), fileEditor, null);
     }
   }
 
@@ -120,7 +126,7 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   public void dispose() {
-    getInspectorTool().inspect(null, null, null);
+    getInspectorTool().inspect(null, null, null, null);
     super.dispose();
   }
 }
