@@ -115,6 +115,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
+    <dependency reexport="false">jetbrains.mps.internal.collections</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
