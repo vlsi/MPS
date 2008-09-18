@@ -31,62 +31,62 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates"
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator"
                           nodeID="1191841379233"/>
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates"
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator"
                           nodeID="1197288608511"/>
           </lesser-priority-mapping>
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates"
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator"
                           nodeID="1197288608511"/>
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates"
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator"
                           nodeID="1195732300474"/>
           </lesser-priority-mapping>
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates"
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator"
                           nodeID="1195732300474"/>
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates"
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator"
                           nodeID="1196711340877"/>
           </lesser-priority-mapping>
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates"
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator"
                           nodeID="1196711340877"/>
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates"
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator"
                           nodeID="1190373998785"/>
           </lesser-priority-mapping>
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates"
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator"
                           nodeID="1190373998785"/>
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.main@templates" nodeID="*"/>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.main@generator" nodeID="*"/>
           </lesser-priority-mapping>
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.main@templates"
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.main@generator"
                           nodeID="1168438163478"/>
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933"/>
             <external-mapping>
-              <mapping-node modelUID="jetbrains.mps.baseLanguage.generator.java.closures@templates" nodeID="*"/>
+              <mapping-node modelUID="jetbrains.mps.baseLanguage.generator.java.closures@generator" nodeID="*"/>
             </external-mapping>
           </lesser-priority-mapping>
         </mapping-priority-rule>
