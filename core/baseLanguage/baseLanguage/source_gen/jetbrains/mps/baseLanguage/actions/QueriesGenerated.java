@@ -9,6 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.structure.Interface;
+import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
@@ -55,6 +56,8 @@ import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.baseLanguage.search.VisibleThrowablesScope;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -126,6 +129,10 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_ClassifierType_1221637600613(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Interface") && Interface.EXTENDED_INTERFACE.equals(SPropertyOperations.getString(_context.getLink(), "role"));
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Type_1221732882209(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && BaseMethodDeclaration.THROWS_ITEM.equals(SPropertyOperations.getString(_context.getLink(), "role"));
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1177503884613(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -1489,6 +1496,38 @@ __switch__:
 
           public Object calculate() {
             return (List<SNode>)new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.INTERFACE, operationContext.getScope()).getNodes();
+          }
+
+        };
+        Iterable<SNode> queryResult = (Iterable)calc.calculate();
+        if (queryResult != null) {
+          for(final SNode item : queryResult) {
+            result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+                SLinkOperations.setTarget(result, "classifier", (item), false);
+                return result;
+              }
+
+            });
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Type_1221732858165(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Calculable calc = new Calculable() {
+
+          public Object calculate() {
+            return ((List<SNode>)BaseAdapter.toNodes(new VisibleThrowablesScope(_context.getModel(), IClassifiersSearchScope.CLASS, operationContext.getScope()).getClassifiers()));
           }
 
         };
