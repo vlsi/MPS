@@ -50,6 +50,7 @@
   </language>
   <languageAspect modelUID="jetbrains.mps.mpsLayoutLanguage.constraints" version="20" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" version="0" />
   <maxImportIndex value="22" />
   <import index="1" modelUID="jetbrains.mps.mpsLayoutLanguage.structure" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
@@ -183,6 +184,25 @@
     <node role="rootMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Root_MappingRule" id="1204019658777">
       <link role="applicableConcept" targetNodeId="1.1202916958754" resolveInfo="MPSLayout" />
       <link role="template" targetNodeId="1204019666126" resolveInfo="languages" />
+      <node role="conditionFunction" type="jetbrains.mps.transformation.TLBase.structure.BaseMappingRule_Condition" id="1221758915287">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221758915288">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221758925771">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221758958571">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221758925958">
+                <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1221758925772" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1221758932938">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1221758932939">
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1221758945432">
+                      <link role="conceptDeclaration" targetNodeId="1.1203599702327" resolveInfo="Module" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1221758962304" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="rootMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Root_MappingRule" id="1216902847094">
       <link role="applicableConcept" targetNodeId="1.1202916958754" resolveInfo="MPSLayout" />
@@ -416,6 +436,32 @@
     </node>
     <node role="importProject" type="jetbrains.mps.buildlanguage.structure.ImportProject" id="1204019787922">
       <link role="project" targetNodeId="1204019666126" resolveInfo="languages" />
+      <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.IfMacro" id="1221759211470">
+        <node role="conditionFunction" type="jetbrains.mps.transformation.TLBase.structure.IfMacro_Condition" id="1221759211471">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221759211472">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221759229169">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221759243797">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221759233352">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221759229270">
+                    <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1221759229170" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221759232348">
+                      <link role="conceptMethodDeclaration" targetNodeId="20.1213877261819" resolveInfo="getLayout" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1221759237536">
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1221759237537">
+                      <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1221759241948">
+                        <link role="conceptDeclaration" targetNodeId="1.1203599702327" resolveInfo="Module" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1221759247362" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="importProject" type="jetbrains.mps.buildlanguage.structure.ImportProject" id="1212489702198">
       <link role="project" targetNodeId="1212486240925" resolveInfo="multystep.tasks" />
