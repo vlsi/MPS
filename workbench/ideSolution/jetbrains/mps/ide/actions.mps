@@ -229,15 +229,16 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1216124611057">
         <link role="action" targetNodeId="1216124397308" resolveInfo="ShowDifferencesWithModelOnDisk" />
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1216225512592">
-        <property name="name" value="vcs" />
-      </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909591822" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1216120960664">
         <link role="action" targetNodeId="1216120752903" resolveInfo="RevertMemoryChanges" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1215889790375">
         <link role="action" targetNodeId="1215889706327" resolveInfo="SaveModel" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1221757534230" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1221757535813">
+        <property name="name" value="vcs" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909603015" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1217518717487">
@@ -978,7 +979,7 @@
     <property name="name" value="IDEAVCS" />
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1216225319668">
       <link role="modifiedGroup" targetNodeId="1204991218714" resolveInfo="ProjectPaneModelActions" />
-      <link role="point" targetNodeId="1216225512592" resolveInfo="vcs" />
+      <link role="point" targetNodeId="1221757535813" resolveInfo="vcs" />
     </node>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1217431296591">
       <link role="modifiedGroup" targetNodeId="1217254654927" resolveInfo="AbstractFileActions" />
