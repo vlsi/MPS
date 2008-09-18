@@ -98,7 +98,7 @@ public class VFileSystem {
     }
   }
 
-  public static VirtualFile refreshAndGetFile(IFile file) {
+  public static VirtualFile refreshAndGetFile(@NotNull IFile file) {
     if (file instanceof FileSystemFile) {
       LocalFileSystem lfs = LocalFileSystem.getInstance();
       return lfs.refreshAndFindFileByIoFile(file.toFile());

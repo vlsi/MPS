@@ -34,6 +34,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -56,7 +57,9 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private final SModelAdapter myAllModelsListener = new SModelAdapter(){
     @Override
     public void modelSaved(SModelDescriptor sm) {
-      VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(sm.getModelFile()));
+      IFile modeFile = sm.getModelFile();
+      if (modeFile == null) return;
+      VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(modeFile));
     }
   };
 
