@@ -1,13 +1,20 @@
 package jetbrains.mps.ide.blame;
 
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.application.ApplicationInfo;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task.Backgroundable;
+import com.intellij.openapi.project.Project;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.workbench.MPSDataKeys;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.PostMethod;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -17,7 +24,6 @@ import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -90,27 +96,8 @@ public class BlameDialog extends BaseDialog {
       }
     });
 
-    myTestLoginButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        boolean success = false;
-        String message;
-        try {
-          success = login(new HttpClient());
-          if (success) {
-            message = "Login OK";
-          } else {
-            message = myResponseString;
-          }
-        } catch (Exception e1) {
-          message = e1.getMessage();
-        }
-        if (success) {
-          JOptionPane.showMessageDialog(BlameDialog.this, message, "Info", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-          JOptionPane.showMessageDialog(BlameDialog.this, message, "Error", JOptionPane.ERROR_MESSAGE);
-        }
-      }
-    });
+    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    myTestLoginButton.setAction(new TestLoginAction(project));
   }
 
   private String ex2str(Throwable e) {
@@ -180,7 +167,15 @@ public class BlameDialog extends BaseDialog {
     return mySent;
   }
 
-  private boolean login(HttpClient c) throws IOException {
+  private String getLogin() {
+    return myAnonymous.isSelected() ? ANONYMOUS_LOGIN : myUsername.getText();
+  }
+
+  private String getPassword() {
+    return myAnonymous.isSelected() ? ANONYMOUS_PASSWORD : myPassword.getText();
+  }
+
+  private boolean login(final HttpClient c) throws IOException {
     PostMethod p = new PostMethod(teamsys + login);
     p.addParameter("login", getLogin());
     p.addParameter("password", getPassword());
@@ -194,14 +189,6 @@ public class BlameDialog extends BaseDialog {
     } else {
       return true;
     }
-  }
-
-  private String getLogin() {
-    return myAnonymous.isSelected() ? ANONYMOUS_LOGIN : myUsername.getText();
-  }
-
-  private String getPassword() {
-    return myAnonymous.isSelected() ? ANONYMOUS_PASSWORD : myPassword.getText();
   }
 
   private void postIssue(HttpClient c, String summary, String description) throws IOException {
@@ -340,4 +327,60 @@ public class BlameDialog extends BaseDialog {
     }
   }
 
+  private class TestLoginAction extends AbstractAction {
+    private Project myProject;
+
+    private String myMessage;
+    boolean mySuccess;
+
+    private Thread myRunThread;
+
+    public TestLoginAction(Project project) {
+      super("Test Login");
+      myProject = project;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+      mySuccess = false;
+      myRunThread = new Thread() {
+        public void run() {
+          try {
+            mySuccess = login(new HttpClient());
+            if (mySuccess) {
+              myMessage = "Login OK";
+            } else {
+              myMessage = myResponseString;
+            }
+          } catch (Exception e1) {
+            myMessage = e1.getMessage();
+          }
+        }
+      };
+
+      ProgressManager.getInstance().run(new Backgroundable(myProject, "Connection in progress. Please wait.", true) {
+        public void run(@NotNull ProgressIndicator indicator) {
+          myRunThread.start();
+          try {
+            myRunThread.join(10000);
+          } catch (InterruptedException e1) {
+            myMessage = "Unknown error while connecting";
+            JOptionPane.showMessageDialog(BlameDialog.this, myMessage, "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+          }
+          if (myRunThread.isAlive()) {
+            myMessage = "Bugtracker does not respond";
+            JOptionPane.showMessageDialog(BlameDialog.this, myMessage, "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+          }
+          if (mySuccess) {
+            JOptionPane.showMessageDialog(BlameDialog.this, myMessage, "Info", JOptionPane.INFORMATION_MESSAGE);
+            return;
+          } else {
+            JOptionPane.showMessageDialog(BlameDialog.this, myMessage, "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+          }
+        }
+      });
+    }
+  }
 }
