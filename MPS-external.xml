@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="MPS-external" default="main">
   <property file="./MPS.properties" />
-  <import file="MPS-languages.xml" />
-  <import file="MPS-multistep.xml" />
-  <import file="build-helpers.xml" />
   <fail unless="build.number" message="Property build.number unspecified." />
   <fail unless="build.vcs.number" message="Property build.vcs.number unspecified." />
   <fail unless="teamcity.buildConfName" message="Property teamcity.buildConfName unspecified." />
+  <import file="MPS-languages.xml" />
+  <import file="MPS-multistep.xml" />
+  <import file="build-helpers.xml" />
   <target name="main" depends="compile,clean.before,folders.create,do.the.job,clean.after" />
   <target name="compile" />
   <target name="clean.before" depends="compile">
@@ -280,6 +280,9 @@
       <fileset dir="core/baseLanguage/unitTest/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
+      <fileset dir="core/baseLanguage/blTypes/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="core/runtime/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
@@ -359,7 +362,6 @@
     <antcall target="pack.jetbrains.mps.bootstrap.sharedConcepts" />
     <antcall target="pack.jetbrains.mps.bootstrap.smodelLanguage" />
     <antcall target="pack.jetbrains.mps.ide.scriptLanguage" />
-    <antcall target="pack.jetbrains.mps.ide.scriptLanguageInternal" />
     <antcall target="pack.jetbrains.mps.bootstrap.structureLanguage" />
     <antcall target="pack.jetbrains.mps.core" />
     <antcall target="pack.jetbrains.mps.logging.refactoring" />
