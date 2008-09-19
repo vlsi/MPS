@@ -59,6 +59,8 @@ public class MPSDataKeys extends PlatformDataKeys {
   public static final DataKey<String> VIRTUAL_PACKAGE = DataKey.create("MPS_VirtualPackage");
   @Description(description = "selected packages")
   public static final DataKey<List<String>> VIRTUAL_PACKAGES = DataKey.create("MPS_VirtualPackage_List");
+  @Description(description = "number of selected items in ProjectPane")
+  public static final DataKey<Integer> SELECTED_ITEMS_NUM = DataKey.create("MPS_SelectedItemsNum");
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(ElementType.FIELD)

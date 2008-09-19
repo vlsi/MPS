@@ -4943,7 +4943,7 @@
     <property name="package" value="Menu.ProjectPane.Module.Actions"/>
     <property name="name" value="NewModel"/>
     <property name="outsideCommandExecution" value="true"/>
-    <property name="caption" value="New Model"/>
+    <property name="caption" value="Model"/>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
           id="1215903504455">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215903504456">

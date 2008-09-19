@@ -158,18 +158,9 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
     public ActionGroup getActionGroup() {
       DefaultActionGroup group = new DefaultActionGroup();
 
-      if (hasModulesUnder()) {
-        group.add(new NewSolutionAction(myName));
-        group.add(new NewLanguageAction(myName));
-        group.addSeparator();
-      }
-
-      if (hasModelsUnder()) {
-        group.add(new NewModel_Action() {
-          protected String getNamespace() {
-            return myName;
-          }
-        });
+      DefaultActionGroup newGroup = createNewGroup();
+      if (newGroup != null) {
+        group.add(newGroup);
         group.addSeparator();
       }
 
@@ -219,6 +210,31 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
       });
 
       return group;
+    }
+
+    private DefaultActionGroup createNewGroup() {
+      boolean hasModulesUnder = hasModulesUnder();
+      boolean hasModelsUnder = hasModelsUnder();
+
+      if (!hasModelsUnder && !hasModulesUnder) return null;
+
+      DefaultActionGroup newGroup = new DefaultActionGroup("New", true);
+
+      if (hasModulesUnder) {
+        newGroup.add(new NewSolutionAction(myName));
+        newGroup.add(new NewLanguageAction(myName));
+      }
+      if (hasModelsUnder && hasModulesUnder) {
+        newGroup.addSeparator();
+      }
+      if (hasModelsUnder) {
+        newGroup.add(new NewModel_Action() {
+          protected String getNamespace() {
+            return myName;
+          }
+        });
+      }
+      return newGroup;
     }
 
     private List<SModelDescriptor> getModelsUnder(MPSTreeNode node) {

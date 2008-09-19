@@ -26,7 +26,7 @@ public class NewModel_Action extends GeneratedAction {
   public IModule module;
 
   public NewModel_Action() {
-    super("New Model", "", ICON);
+    super("Model", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

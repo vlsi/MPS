@@ -28,7 +28,6 @@ public class PackageNode extends SNodeGroupTreeNode {
     DefaultActionGroup group = new DefaultActionGroup();
 
     CreateRootNodeGroup cg = new CreateRootNodeGroup(getPackage());
-    cg.setPopup(false);
     group.add(cg);
 
     group.addSeparator();

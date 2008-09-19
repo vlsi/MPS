@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -36,19 +37,16 @@ public class CreateRootNodeGroup extends BaseGroup {
     this();
     myAllowedLanguages = new HashSet<String>();
     myAllowedLanguages.addAll(allowed);
-    setPopup(true);
   }
 
   public CreateRootNodeGroup(String pack) {
     this();
     myPackage = pack;
-    setPopup(true);
   }
 
   public CreateRootNodeGroup(String pack, boolean plain) {
     this(pack);
     myPlain = plain;
-    setPopup(true);
   }
 
   public void doUpdate(AnActionEvent event) {
@@ -96,9 +94,12 @@ public class CreateRootNodeGroup extends BaseGroup {
           this.addSeparator();
         }
       }
-    }        
+    }
 
-    setEnabledState(event.getPresentation(),data.hasOneSelectedItem());
+    Integer selectedItemsCount = MPSDataKeys.SELECTED_ITEMS_NUM.getData(event.getDataContext());
+    boolean enabled = selectedItemsCount != null && selectedItemsCount == 1;
+
+    setEnabledState(event.getPresentation(), enabled);
   }
 
   private BaseAction newRootNodeAction(final SNodePointer nodeConcept, final SModelDescriptor modelDescriptor) {
