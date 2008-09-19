@@ -6,6 +6,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.FileUtil;
@@ -59,7 +60,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     SModel model;
     try {
       model = ModelPersistence.readModel(modelDescriptor.getModelFile());
-    } catch (RuntimeException t) {
+    } catch (ModelFileReadException t) {
       return handleExceptionDuringModelRead(modelDescriptor, t);
     }
     LOG.assertLog(model.getUID().equals(modelDescriptor.getModelUID()),

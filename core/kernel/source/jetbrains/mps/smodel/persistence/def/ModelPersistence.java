@@ -77,9 +77,9 @@ public class ModelPersistence {
     try {
       document = JDOMUtil.loadDocument(file);
     } catch (JDOMException e) {
-      throw new RuntimeException("Exception in file " + file, e);
+      throw new ModelFileReadException("Exception in file " + file, e);
     } catch (IOException e) {
-      throw new RuntimeException("Exception in file " + file, e);
+      throw new ModelFileReadException("Exception in file " + file, e);
     }
     return document;
   }
