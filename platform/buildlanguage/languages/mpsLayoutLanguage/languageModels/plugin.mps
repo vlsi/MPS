@@ -1266,12 +1266,11 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221242254683">
               <link role="classifier" targetNodeId="4.~SModelUID" resolveInfo="SModelUID" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1221242254684">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1221242254685">
-                <link role="baseMethodDeclaration" targetNodeId="4.~SModelUID.&lt;init&gt;(java.lang.String)" resolveInfo="SModelUID" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221242265754">
-                  <link role="variableDeclaration" targetNodeId="1221242259765" resolveInfo="modelName" />
-                </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1221845358216">
+              <link role="baseMethodDeclaration" targetNodeId="4.~SModelUID.fromString(java.lang.String):jetbrains.mps.smodel.SModelUID" resolveInfo="fromString" />
+              <link role="classConcept" targetNodeId="4.~SModelUID" resolveInfo="SModelUID" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221845360624">
+                <link role="variableDeclaration" targetNodeId="1221242259765" resolveInfo="modelName" />
               </node>
             </node>
           </node>
