@@ -160,7 +160,6 @@ public class SModelRepository implements ApplicationComponent {
 
     myModelsToOwners.addLink(modelDescriptor, owner);
 
-    myUIDToModelDescriptorMap.put(modelDescriptor.getModelUID(), modelDescriptor);
     myModelsWithNoOwners.remove(modelDescriptor);
 
     fireModelOwnerAdded(modelDescriptor, owner);
