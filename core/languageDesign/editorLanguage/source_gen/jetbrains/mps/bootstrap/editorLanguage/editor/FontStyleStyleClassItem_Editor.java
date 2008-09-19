@@ -126,7 +126,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11864038899311186403889931(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1186403889931");
-    Styles_StyleSheet.ITEM.apply(editorCell);
+    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11864038941981186403894198(EditorCell editorCell, SNode node, EditorContext context) {

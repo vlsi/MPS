@@ -106,7 +106,7 @@ public class PositionStyleClassItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1216309284180(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    Styles_StyleSheet.ITEM.apply(editorCell);
+    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12163092841811216309284181(EditorCell editorCell, SNode node, EditorContext context) {

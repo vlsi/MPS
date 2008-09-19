@@ -316,7 +316,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12144804528691214480452869(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1214480452869");
-    Styles_StyleSheet.PROPERTY.apply(editorCell);
+    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_imagePathProvider1214480452872(EditorCell editorCell, SNode node, EditorContext context) {
@@ -338,7 +338,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12144804528761214480452876(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1214480452876");
-    Styles_StyleSheet.PROPERTY.apply(editorCell);
+    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12144804528791214480452879(EditorCell editorCell, SNode node, EditorContext context) {
@@ -398,7 +398,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12144804528981214480452898(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1214480452898");
-    Styles_StyleSheet.PROPERTY.apply(editorCell);
+    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_descent1214480452901(EditorCell editorCell, SNode node, EditorContext context) {

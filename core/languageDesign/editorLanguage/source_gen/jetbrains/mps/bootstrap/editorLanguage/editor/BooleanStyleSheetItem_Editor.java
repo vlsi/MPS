@@ -106,7 +106,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1186414565427(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    Styles_StyleSheet.ITEM.apply(editorCell);
+    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11864145682891186414568289(EditorCell editorCell, SNode node, EditorContext context) {

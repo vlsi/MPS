@@ -219,7 +219,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11767950511161176795051116(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176795051116");
-    Styles_StyleSheet.PROPERTY.apply(editorCell);
+    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_cellProvider1176795052500(EditorCell editorCell, SNode node, EditorContext context) {

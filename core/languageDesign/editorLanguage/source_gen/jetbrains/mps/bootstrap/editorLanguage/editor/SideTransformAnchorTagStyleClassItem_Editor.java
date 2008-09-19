@@ -106,7 +106,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
 
   private static void setupBasic_conceptProperty_alias1214320157196(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    Styles_StyleSheet.ITEM.apply(editorCell);
+    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12143201571971214320157197(EditorCell editorCell, SNode node, EditorContext context) {

@@ -153,7 +153,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1186415811915(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    Styles_StyleSheet.ITEM.apply(editorCell);
+    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_query1221064737626(EditorCell editorCell, SNode node, EditorContext context) {
@@ -161,7 +161,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_property_value1221209981973(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_value");
-    BaseLanguageStyle_StyleSheet.NUMERIC_LITERAL.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getNumericLiteral(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1186415782550_1186415782550(EditorCell_Label editorCell, SNode node, EditorContext context) {

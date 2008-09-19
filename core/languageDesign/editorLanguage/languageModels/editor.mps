@@ -25,6 +25,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" version="0" />
   <maxImportIndex value="28" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -6184,7 +6185,7 @@
     <property name="name" value="Styles" />
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1214310532702">
       <property name="name" value="style" />
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214310536160">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1221842834147">
         <property name="color" value="DARK_GREEN" />
       </node>
     </node>
@@ -6230,7 +6231,7 @@
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1214480920272">
         <property name="style" value="PLAIN" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1214480929837">
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleClassItem" id="1221838955390">
         <property name="color" value="DARK_MAGENTA" />
       </node>
     </node>

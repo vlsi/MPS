@@ -367,7 +367,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12163820404411216382040441(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216382040441");
-    Styles_StyleSheet.HEADER.apply(editorCell);
+    Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12163820404421216382040442(EditorCell editorCell, SNode node, EditorContext context) {
@@ -398,7 +398,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12163820404441216382040444(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216382040444");
-    Styles_StyleSheet.PROPERTY.apply(editorCell);
+    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_handlerBlock1216382040446(EditorCell editorCell, SNode node, EditorContext context) {
@@ -420,7 +420,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12163820923101216382092310(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216382092310");
-    Styles_StyleSheet.PROPERTY.apply(editorCell);
+    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_property1216382092311(EditorCell editorCell, SNode node, EditorContext context) {

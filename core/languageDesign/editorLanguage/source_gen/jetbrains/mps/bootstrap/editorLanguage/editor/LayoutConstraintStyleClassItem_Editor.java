@@ -106,7 +106,7 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1214317920060(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    Styles_StyleSheet.ITEM.apply(editorCell);
+    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12143179200611214317920061(EditorCell editorCell, SNode node, EditorContext context) {

@@ -143,7 +143,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1186403839417(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    Styles_StyleSheet.ITEM.apply(editorCell);
+    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11864038419661186403841966(EditorCell editorCell, SNode node, EditorContext context) {

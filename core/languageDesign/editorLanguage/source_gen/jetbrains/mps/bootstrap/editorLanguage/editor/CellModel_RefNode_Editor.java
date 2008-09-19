@@ -321,7 +321,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10808323076251080832307625(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1080832307625");
-    Styles_StyleSheet.HEADER.apply(editorCell);
+    Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_linkDeclaration1140223719665(EditorCell editorCell, SNode node, EditorContext context) {
@@ -374,7 +374,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12144778078731214477807873(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1214477807873");
-    Styles_StyleSheet.PROPERTY.apply(editorCell);
+    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_linkDeclaration1214477807876(EditorCell editorCell, SNode node, EditorContext context) {
@@ -406,7 +406,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12144778078841214477807884(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1214477807884");
-    Styles_StyleSheet.PROPERTY.apply(editorCell);
+    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_noTargetText1214477807887(EditorCell editorCell, SNode node, EditorContext context) {
@@ -460,7 +460,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12145605716611214560571661(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1214560571661");
-    Styles_StyleSheet.PROPERTY.apply(editorCell);
+    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_emptyNoTargetText1214560571662(EditorCell editorCell, SNode node, EditorContext context) {

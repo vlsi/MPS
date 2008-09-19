@@ -499,7 +499,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_property_name1106262846793(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      SharedStyles_StyleSheet.REFERENCE_ON_CONCEPT.apply(editorCell);
+      SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
       {
         Style inlineStyle = new Style(editorCell) {
           {

@@ -17,6 +17,21 @@ public class StyleSheetClass_Behavior {
     return NameUtil.toConstantName(SPropertyOperations.getString(thisNode, "name"));
   }
 
+  public static String call_getGetterMethodName_1221829967694(SNode thisNode) {
+    StringBuffer bufferName = new StringBuffer();
+    bufferName.append("get");
+    for(int i = 0 ; i < SPropertyOperations.getString(thisNode, "name").length() ; i++ ) {
+      char ch = SPropertyOperations.getString(thisNode, "name").charAt(i);
+      if (i == 0) {
+        bufferName.append(Character.toUpperCase(ch));
+      } else
+      {
+        bufferName.append(ch);
+      }
+    }
+    return bufferName.toString();
+  }
+
   public static SNode call_getStyleSheet_1213877260644(SNode thisNode) {
     return SNodeOperations.getParent(thisNode);
   }

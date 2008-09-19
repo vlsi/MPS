@@ -62,6 +62,65 @@ public class SharedStyles_StyleSheet {
 
   };
 
+  public static Style getReferenceDecorated(EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+          public Color calculate(EditorCell cell) {
+            return SharedStyles_StyleSheet.calculateColor6601_0(cell);
+          }
+
+        });
+        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+          public Integer calculate(EditorCell cell) {
+            return SharedStyles_StyleSheet.calculateFontStyle6601_0(cell);
+          }
+
+        });
+      }
+
+    };
+  }
+
+  public static Style getReferenceOnConcept(EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+          public Color calculate(EditorCell cell) {
+            return SharedStyles_StyleSheet.calculateColor6601_1(cell);
+          }
+
+        });
+      }
+
+    };
+  }
+
+  public static Style getReferenceOnConceptualFeature(EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+          public Color calculate(EditorCell cell) {
+            return SharedStyles_StyleSheet.calculateColor6601_2(cell);
+          }
+
+        });
+        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+          public Integer calculate(EditorCell cell) {
+            return SharedStyles_StyleSheet.calculateFontStyle6601_1(cell);
+          }
+
+        });
+      }
+
+    };
+  }
+
   private static Integer calculateFontStyle6601_0(EditorCell cell) {
     int result;
     result = MPSFonts.ITALIC;

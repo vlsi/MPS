@@ -148,7 +148,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1214316290161(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    Styles_StyleSheet.ITEM.apply(editorCell);
+    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12143162916631214316291663(EditorCell editorCell, SNode node, EditorContext context) {

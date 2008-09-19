@@ -531,7 +531,7 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_property_name1106261028890(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      SharedStyles_StyleSheet.REFERENCE_ON_CONCEPT.apply(editorCell);
+      SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_property_name_1106261028890(EditorCell_Label editorCell, SNode node, EditorContext context) {
