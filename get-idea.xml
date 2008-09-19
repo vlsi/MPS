@@ -41,6 +41,8 @@
       <fileset dir="${tmp}/idea-src/extensions/source/" />
       <fileset dir="${tmp}/idea-src/lang-api/src/" />
       <fileset dir="${tmp}/idea-src/lang-impl/src/" />
+      <fileset dir="${tmp}/idea-src/lvcs/impl/src/" />
+      <fileset dir="${tmp}/idea-src/lvcs/openapi/src/" />
       <fileset dir="${tmp}/idea-src/platform-api/src/" />
       <fileset dir="${tmp}/idea-src/platform-impl/src/" />
       <fileset dir="${tmp}/idea-src/platform-resources/src/" />
