@@ -1,10 +1,6 @@
 package jetbrains.mps.ide.messages;
 
-import sun.util.calendar.CalendarDate;
-
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Calendar;
 
 /**
  * @author Kostik
@@ -21,6 +17,7 @@ public class Message {
     myText = text;
     myHintObject = hintObject;
   }
+
   public Message(MessageKind kind, String text, Object hintObject, Throwable exception) {
     this(kind, text, hintObject);
     myException = exception;
@@ -50,10 +47,14 @@ public class Message {
     return myText;
   }
 
+  public String toString() {
+    return getText();
+  }
+
   public String getCreationTimeString() {
     Date date = new Date(myCreationTime);
-    return expand("" +date.getHours(), 2) + ":" +
-            expand("" + date.getMinutes(), 2) + ":" + expand("" + date.getSeconds(), 2);
+    return expand("" + date.getHours(), 2) + ":" +
+      expand("" + date.getMinutes(), 2) + ":" + expand("" + date.getSeconds(), 2);
   }
 
   private String expand(String s, int n) {

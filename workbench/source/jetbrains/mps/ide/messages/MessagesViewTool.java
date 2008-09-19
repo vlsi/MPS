@@ -17,7 +17,7 @@ import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.action.AbstractActionWithEmptyIcon;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.*;
@@ -256,14 +256,26 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     return false;
   }
 
+
   private void showPopupMenu(MouseEvent evt) {
     if (myList.getSelectedValue() == null) return;
 
-    JPopupMenu menu = new JPopupMenu();
+    DefaultActionGroup group = createActionGroup();
+
+    JPopupMenu menu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
+    menu.show(myList, evt.getX(), evt.getY());
+  }
+
+  private DefaultActionGroup createActionGroup() {
+    DefaultActionGroup group = new DefaultActionGroup();
 
     if (myList.getSelectedIndices().length != 0) {
-      menu.add(new AbstractActionWithEmptyIcon("Copy Text") {
-        public void actionPerformed(ActionEvent e) {
+      group.add(new BaseAction("Copy Text") {
+        {
+          setExecuteOutsideCommand(true);
+        }
+
+        protected void doExecute(AnActionEvent e) {
           StringBuilder sb = new StringBuilder();
           for (Object o : myList.getSelectedValues()) {
             sb.append(((Message) o).getText());
@@ -274,9 +286,14 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
       });
     }
 
-    menu.addSeparator();
-    menu.add(new AbstractActionWithEmptyIcon("Clear") {
-      public void actionPerformed(ActionEvent e) {
+    group.addSeparator();
+
+    group.add(new BaseAction("Clear") {
+      {
+        setExecuteOutsideCommand(true);
+      }
+
+      protected void doExecute(AnActionEvent e) {
         clear();
       }
     });
@@ -284,16 +301,19 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     if (myList.getSelectedIndices().length == 1) {
       final Message message = (Message) myList.getSelectedValue();
       if (message.getKind() == MessageKind.ERROR) {
-        menu.addSeparator();
-        menu.add(new AbstractActionWithEmptyIcon("Submit to Issue tracker") {
-          public void actionPerformed(ActionEvent e) {
+        group.addSeparator();
+        group.add(new BaseAction("Submit to Issue tracker") {
+          {
+            setExecuteOutsideCommand(true);
+          }
+
+          protected void doExecute(AnActionEvent e) {
             submitToTracker(message);
           }
         });
       }
     }
-
-    menu.show(myList, evt.getX(), evt.getY());
+    return group;
   }
 
   private void submitToTracker(Message msg) {
