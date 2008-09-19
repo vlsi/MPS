@@ -11,6 +11,7 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.SwingUtilities;
 import java.util.*;
 
 
@@ -53,7 +54,11 @@ public class GenerationTracer {
 
   public void finishTracing() {
     myActive = false;
-    getTracerViewTool().setTracingDataIsAvailable(hasTracingData());
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        getTracerViewTool().setTracingDataIsAvailable(hasTracingData());
+      }
+    });
   }
 
   public boolean isTracing() {

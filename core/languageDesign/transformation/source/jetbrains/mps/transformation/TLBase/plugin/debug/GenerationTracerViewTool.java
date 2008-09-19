@@ -11,6 +11,7 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
@@ -146,6 +147,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   }
 
   public void setTracingDataIsAvailable(boolean b) {
+    assert ThreadUtils.isEventDispatchThread();
     myNoTabsComponent.setDataIsAvailable(b);
   }
 
