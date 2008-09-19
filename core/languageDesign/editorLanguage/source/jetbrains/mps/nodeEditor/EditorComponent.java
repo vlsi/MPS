@@ -110,6 +110,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         public void run() {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
+              if (getOperationContext().getProject().isDisposed()) return;              
               rebuildEditorContent();
               updateMPSActionsWithKeyStrokes(DataManager.getInstance().getDataContext());
             }
