@@ -25,10 +25,10 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main@templates" nodeID="1174411222995" />
+            <mapping-node modelUID="jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main@generator" nodeID="1174411222995" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main@templates" nodeID="1215528394348" />
+            <mapping-node modelUID="jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main@generator" nodeID="1215528394348" />
           </lesser-priority-mapping>
         </mapping-priority-rule>
       </mapping-priorities>

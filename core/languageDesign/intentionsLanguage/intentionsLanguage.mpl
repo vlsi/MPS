@@ -22,12 +22,12 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.bootstrap.intentionsLanguage.generator.baseLanguage.template.main@templates" nodeID="1192798704064" />
+            <mapping-node modelUID="jetbrains.mps.bootstrap.intentionsLanguage.generator.baseLanguage.template.main@generator" nodeID="1192798704064" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <generator generatorUID="jetbrains.mps.bootstrap.sharedConcepts#1161623873951" />
             <external-mapping>
-              <mapping-node modelUID="jetbrains.mps.bootstrap.sharedConcepts.generator.baseLanguage.template.main@templates" nodeID="1161623876737" />
+              <mapping-node modelUID="jetbrains.mps.bootstrap.sharedConcepts.generator.baseLanguage.template.main@generator" nodeID="1161623876737" />
             </external-mapping>
           </lesser-priority-mapping>
         </mapping-priority-rule>

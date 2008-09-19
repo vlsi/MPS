@@ -29,7 +29,61 @@ public class Generator extends AbstractModule {
   Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
     mySourceLanguage = sourceLanguage;
     myGeneratorDescriptor = generatorDescriptor;
+    upgradeGeneratorDescriptor();
     reload();
+  }
+
+  private void upgradeGeneratorDescriptor() {
+    boolean descriptorChanged = false;
+    for (MappingPriorityRule mappingPriorityRule : myGeneratorDescriptor.getPriorityRules()) {
+      MappingConfig_AbstractRef lesser = mappingPriorityRule.getLesserPriorityMapping();
+      MappingConfig_AbstractRef greater = mappingPriorityRule.getGreaterPriorityMapping();
+      if (upgradeMappingConfigRef(lesser)) {
+        descriptorChanged = true;
+      }
+      if (upgradeMappingConfigRef(greater)) {
+        descriptorChanged = true;
+      }
+    }
+    if (descriptorChanged) {
+      save();
+    }
+  }
+
+  private boolean upgradeMappingConfigRef(MappingConfig_AbstractRef ref) {
+    boolean descriptorChanged = false;
+    if (ref instanceof MappingConfig_SimpleRef) {
+      if (upgradeMappingConfigSimpleRef((MappingConfig_SimpleRef) ref)) {
+        descriptorChanged = true;
+      }
+    }
+    if (ref instanceof MappingConfig_SimpleRefSet) {
+      for (MappingConfig_SimpleRef simpleRef : ((MappingConfig_SimpleRefSet)ref).getMappingConfigs()) {
+        if (upgradeMappingConfigSimpleRef(simpleRef)) {
+          descriptorChanged = true;
+        }
+      }
+    }
+    if (ref instanceof MappingConfig_ExtRef) {
+      MappingConfig_ExtRef extRef = (MappingConfig_ExtRef) ref;
+      if (upgradeMappingConfigRef(extRef.getMappingConfig())) {
+        descriptorChanged = true;
+      }
+    }
+    return descriptorChanged;
+  }
+
+  private boolean upgradeMappingConfigSimpleRef(MappingConfig_SimpleRef simpleRef) {
+    boolean descriptorChanged = false;
+    String s = simpleRef.getModelUID();
+    SModelUID modelUID = SModelUID.fromString(s);
+    if (modelUID.getStereotype().equals(SModelStereotype.TEMPLATES)) {
+      modelUID = new SModelUID(modelUID.getLongName(), SModelStereotype.GENERATOR);
+      s = modelUID.toString();
+      simpleRef.setModelUID(s);
+      descriptorChanged = true;
+    }
+    return descriptorChanged;
   }
 
   public boolean isPackaged() {

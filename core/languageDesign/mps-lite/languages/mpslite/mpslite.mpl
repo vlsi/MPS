@@ -28,7 +28,7 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mpslite.generator.baseLanguage.template.main@templates" nodeID="*" />
+            <mapping-node modelUID="jetbrains.mpslite.generator.baseLanguage.template.main@generator" nodeID="*" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <generator generatorUID="jetbrains.mps.bootstrap.structureLanguage#1170324972255" />
@@ -39,7 +39,7 @@
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mpslite.generator.baseLanguage.template.main@templates" nodeID="*" />
+            <mapping-node modelUID="jetbrains.mpslite.generator.baseLanguage.template.main@generator" nodeID="*" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <generator generatorUID="jetbrains.mps.bootstrap.editorLanguage#1129914002149" />

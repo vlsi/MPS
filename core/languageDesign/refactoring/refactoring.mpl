@@ -27,7 +27,7 @@
       <mapping-priorities>
         <mapping-priority-rule kind="before_or_together ">
           <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.logging.refactoring.generator.baseLanguage.template.main@templates" nodeID="*" />
+            <mapping-node modelUID="jetbrains.mps.logging.refactoring.generator.baseLanguage.template.main@generator" nodeID="*" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <generator generatorUID="jetbrains.mps.bootstrap.smodelLanguage#1139186730696" />

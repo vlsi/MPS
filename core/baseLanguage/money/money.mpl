@@ -19,7 +19,7 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.accounting.money.generator.baseLanguage.template.main@templates" nodeID="*" />
+            <mapping-node modelUID="jetbrains.accounting.money.generator.baseLanguage.template.main@generator" nodeID="*" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />

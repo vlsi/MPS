@@ -26,7 +26,7 @@
           <lesser-priority-mapping>
             <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
             <external-mapping>
-              <mapping-node modelUID="jetbrains.mps.baseLanguage.generator.java.closures@templates" nodeID="*" />
+              <mapping-node modelUID="jetbrains.mps.baseLanguage.generator.java.closures@generator" nodeID="*" />
             </external-mapping>
           </lesser-priority-mapping>
         </mapping-priority-rule>
