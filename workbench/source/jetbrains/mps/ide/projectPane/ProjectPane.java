@@ -71,6 +71,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.Component;
+import java.awt.Point;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -1006,9 +1007,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   public MyState getState() {
-    MyState result = new MyState();
-    result.setState(getTree().saveState());
-    return result;
+    return new MyState((int) myScrollPane.getViewport().getViewPosition().getY(), getTree().saveState());
   }
 
   public void loadState(final MyState state) {
@@ -1016,12 +1015,22 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       public void run() {
         rebuildTreeNow();
         getTree().loadState(state.getState());
+        myScrollPane.getViewport().setViewPosition(new Point(0, state.getVerticalScrollPosition()));
       }
     });
   }
 
   public static class MyState {
     private TreeState myState;
+    private int myVerticalScrollPosition = 0;
+
+    public MyState() {
+    }
+
+    public MyState(int verticalScrollPosition, TreeState state) {
+      myVerticalScrollPosition = verticalScrollPosition;
+      myState = state;
+    }
 
     public TreeState getState() {
       return myState;
@@ -1029,6 +1038,14 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
     public void setState(TreeState state) {
       myState = state;
+    }
+
+    public int getVerticalScrollPosition() {
+      return myVerticalScrollPosition;
+    }
+
+    public void setVerticalScrollPosition(int verticalScrollPosition) {
+      myVerticalScrollPosition = verticalScrollPosition;
     }
   }
 
