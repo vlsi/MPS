@@ -48,9 +48,9 @@ public class GenerationTracerViewTool extends BaseProjectTool {
 
     StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
       public void run() {
-        setTracingDataIsAvailable(getMPSProject().getComponentSafe(GenerationTracer.class).hasTracingData());
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
+            setTracingDataIsAvailable(getMPSProject().getComponentSafe(GenerationTracer.class).hasTracingData());
             showNoTabsComponent();
             setAvailable(false);
             getContentManager().addContentManagerListener(new ContentManagerAdapter() {

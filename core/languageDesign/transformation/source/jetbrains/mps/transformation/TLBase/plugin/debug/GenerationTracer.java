@@ -49,7 +49,11 @@ public class GenerationTracer {
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
 
-    getTracerViewTool().setTracingDataIsAvailable(false);
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        getTracerViewTool().setTracingDataIsAvailable(false);
+      }
+    });
   }
 
   public void finishTracing() {
