@@ -6,6 +6,9 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vcs.*;
+import com.intellij.openapi.vcs.actions.VcsContextFactory;
+import com.intellij.openapi.vcs.changes.*;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -72,7 +75,68 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
   }
 
   public boolean isInConflict(IFile ifile, boolean synchronously) {
-    return StatusUtil.isInConflict(ifile, synchronously, myProjectManager.getOpenProjects());
+    VirtualFile vfile = VFileSystem.getFile(ifile);
+    if ((vfile != null) && (vfile.exists())) {
+      for (Project project : myProjectManager.getOpenProjects()) {
+        boolean isInConflict = isInConflict(project, vfile, synchronously);
+        if (isInConflict) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  private boolean isInConflict(Project project, final VirtualFile vfile, boolean synchronously) {
+    if (MPSVCSManager.getInstance(project).isChangeListManagerInitialized() && !synchronously){
+      return ChangeListManager.getInstance(project).getStatus(vfile).equals(FileStatus.MERGED_WITH_CONFLICTS);
+    }
+
+    ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(project);
+    MPSVCSManager.getInstance(project).ensureVcssInitialized();
+    AbstractVcs vcs = manager.getVcsFor(vfile);
+
+    if (vcs == null) {
+      return false;
+    }
+
+    VcsDirtyScopeImpl scope = new VcsDirtyScopeImpl(vcs, project); // TODO don't use Impl classes
+    scope.addDirtyFile(VcsContextFactory.SERVICE.getInstance().createFilePathOn(vfile));
+    ChangeProvider changeProvider = vcs.getChangeProvider();
+
+    if (changeProvider == null) {
+      return false;
+    }
+
+    final boolean[] result = new boolean[1];
+    try {
+      changeProvider.getChanges(scope, new EmptyChangelistBuilder() {
+        @Override
+        public void processChangeInList(Change change, @Nullable ChangeList changeList) {
+          processChange(change);
+        }
+
+        @Override
+        public void processChangeInList(Change change, String changeListName) {
+          processChange(change);
+        }
+
+        public void processChange(Change change) {
+          if (change.getFileStatus().equals(FileStatus.MERGED_WITH_CONFLICTS)) {
+            ContentRevision contentRevision = change.getAfterRevision();
+            if (contentRevision != null) {
+              if (contentRevision.getFile().getPresentableUrl().equals(vfile.getPresentableUrl())) {
+                result[0] = true;
+              }
+            }
+          }
+        }
+      }, new EmptyProgressIndicator());
+    } catch (VcsException e) {
+      LOG.error(e);
+    }
+
+    return result[0];
   }
 
   public void mergeModels(Set<SModelDescriptor> models) {

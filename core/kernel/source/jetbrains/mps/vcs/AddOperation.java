@@ -4,6 +4,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.VcsException;
+import com.intellij.openapi.vcs.FileStatus;
+import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -94,7 +96,7 @@ public class AddOperation extends VcsOperation {
         return Collections.EMPTY_LIST;
       }
 
-      if (StatusUtil.isUnderVCS(myProject, parent)) {
+      if (isUnderVCS(parent)) {
         break;
       } else {
         path.add(0, parent);
@@ -102,5 +104,25 @@ public class AddOperation extends VcsOperation {
     }
 
     return path;
+  }
+
+  /**
+   * This method can say that file is not changed when it actually unversioned. Don't know how to fix.
+   * <p/>
+   * For directories it should work fine.
+   *
+   * @param f
+   * @return
+   */
+  @Deprecated
+  private boolean isUnderVCS(VirtualFile f) {
+    if (myProject.isDisposed()) return false;
+    if (f.isDirectory()) {
+      return ProjectLevelVcsManager.getInstance(myProject).findVersioningVcs(f) != null;
+    }
+
+    VcsFileStatusProvider provider = myProject.getComponent(VcsFileStatusProvider.class);
+    FileStatus status = provider.getFileStatus(f);
+    return !(status.equals(FileStatus.UNKNOWN) || status.equals(FileStatus.IGNORED));
   }
 }
