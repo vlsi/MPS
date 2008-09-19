@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.lang.reflect.InvocationTargetException;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -22,27 +23,33 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.logging.Logger;
 
 public class VcsRootsManager implements ProjectComponent {
+  private final static Logger LOG = Logger.getLogger(VcsRootsManager.class);
   private final Project myProject;
   private final ProjectLevelVcsManager myVcsManager;
   private final Set<VirtualFile> myExcludedRoots = new HashSet<VirtualFile>();
   private final SModelAdapter myGlobalSModelListener = new SModelAdapter() {
     @Override
     public void modelSaved(SModelDescriptor sm) {
-      IFile modelFile = sm.getModelFile();
-      if (modelFile == null) return;
-      VirtualFile file = VFileSystem.getFile(modelFile.getParent());
-      if (file == null) return;
-      AbstractVcs vcs = myVcsManager.findVersioningVcs(file);
-      if (myVcsManager.getVcsRootFor(file) != null) return;
-      VirtualFile root = file;
-      while ((root.getParent() != null) && vcs.isVersionedDirectory(root.getParent())) {
-        root = root.getParent();
-      }
-      Set<VirtualFile> currentRoots = new HashSet<VirtualFile>(Arrays.asList(myVcsManager.getAllVersionedRoots()));
-      if ((root != null) && (!myExcludedRoots.contains(root)) && (!currentRoots.contains(root))) {
-        showAddVcsRootDialog(root, sm);
+      try {
+        IFile modelFile = sm.getModelFile();
+        if (modelFile == null) return;
+        VirtualFile file = VFileSystem.getFile(modelFile.getParent());
+        if (file == null) return;
+        AbstractVcs vcs = myVcsManager.findVersioningVcs(file);
+        if (myVcsManager.getVcsRootFor(file) != null) return;
+        VirtualFile root = file;
+        while ((root.getParent() != null) && vcs.isVersionedDirectory(root.getParent())) {
+          root = root.getParent();
+        }
+        Set<VirtualFile> currentRoots = new HashSet<VirtualFile>(Arrays.asList(myVcsManager.getAllVersionedRoots()));
+        if ((root != null) && (!myExcludedRoots.contains(root)) && (!currentRoots.contains(root))) {
+          showAddVcsRootDialog(root, sm);
+        }
+      } catch (IllegalArgumentException e) {
+        LOG.error(e);
       }
     }
   };
