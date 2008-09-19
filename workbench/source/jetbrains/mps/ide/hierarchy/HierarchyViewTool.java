@@ -1,15 +1,10 @@
 package jetbrains.mps.ide.hierarchy;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.util.containers.HashMap;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -72,6 +67,7 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
       public void run() {
         for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
           SModelDescriptor structureDescriptor = language.getStructureModelDescriptor();
+          assert structureDescriptor != null;
           structureDescriptor.addModelListener(myModelListener);
         }
 
