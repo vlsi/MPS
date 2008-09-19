@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.blTypes" generatorOutputPath="${mps_home}\core\baseLanguage\baseLanguage\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.baseLanguage.blTypes" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.baseLanguage.blTypes" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.baseLanguage.blTypes" />
@@ -9,7 +9,7 @@
   </accessoryModels>
   <generators />
   <classPath>
-    <entry path="${mps_home}\core\baseLanguage\baseLanguage\classes" />
+    <entry path="${language_descriptor}\classes" />
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />

@@ -38,6 +38,7 @@ public class SModel implements Iterable<SNode> {
 
   private List<SNode> myRoots = new ArrayList<SNode>();
   private SModelUID myUID = new SModelUID("unnamed", "");
+  private SModelId myId;
 
   @ForDebug
   private Throwable myStackTrace;
@@ -59,15 +60,27 @@ public class SModel implements Iterable<SNode> {
   private RefactoringHistory myRefactoringHistory = new RefactoringHistory();
   private boolean myUsesLog;
   private boolean myRegistrationsForbidden = false;
- // private Set<String> myNewLanguageNamespaces = new HashSet<String>();
- // private Set<String> myNewDevKitNamespaces = new HashSet<String>();
+
+  public SModel(@NotNull SModelUID modelUID, SModelId modelId) {
+    myUID = modelUID;
+    if (modelId != null) {
+      myId = SModelId.generate();
+    } else {
+      myId = modelId;
+    }
+  }
 
   public SModel(@NotNull SModelUID modelUID) {
-    myUID = modelUID;
+    this(modelUID, null);
   }
 
   public SModel() {
     this(SModelUID.fromString("test.model"));
+  }
+
+  @NotNull
+  public SModelId getId() {
+    return myId;
   }
 
   @NotNull
