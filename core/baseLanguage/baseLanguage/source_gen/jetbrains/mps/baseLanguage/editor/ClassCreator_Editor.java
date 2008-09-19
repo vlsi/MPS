@@ -243,7 +243,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_property_resolveInfo1212700054374(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_resolveInfo");
-      BaseLanguageStyle_StyleSheet.METHOD_NAME.apply(editorCell);
+      BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
       {
         Style inlineStyle = new Style(editorCell) {
           {

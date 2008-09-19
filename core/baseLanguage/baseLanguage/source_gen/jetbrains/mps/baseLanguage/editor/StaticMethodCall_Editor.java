@@ -131,7 +131,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10811495707781081149570778(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081149570778");
-    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_staticMethodDeclaration1088427863670(EditorCell editorCell, SNode node, EditorContext context) {
@@ -208,7 +208,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_property_name1088427863672(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      BaseLanguageStyle_StyleSheet.METHOD_NAME.apply(editorCell);
+      BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
       {
         Style inlineStyle = new Style(editorCell) {
           {

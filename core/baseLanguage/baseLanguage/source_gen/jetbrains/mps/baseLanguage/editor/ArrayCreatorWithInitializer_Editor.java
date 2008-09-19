@@ -127,12 +127,12 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11545430218471154543021847(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1154543021847");
-    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11545430414581154543041458(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1154543041458");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNodeList_initValue1154543050632(EditorCell editorCell, SNode node, EditorContext context) {
@@ -150,7 +150,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11545430715091154543071509(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1154543071509");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refNode_componentType_1154543009938(EditorCell_Label editorCell, SNode node, EditorContext context) {

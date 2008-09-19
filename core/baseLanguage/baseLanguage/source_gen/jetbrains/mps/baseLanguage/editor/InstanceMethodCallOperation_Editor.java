@@ -123,7 +123,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12029489383351202948938335(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202948938335");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -147,7 +147,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12029489383381202948938338(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202948938338");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -244,7 +244,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_property_name1202948938319(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      BaseLanguageStyle_StyleSheet.METHOD_NAME.apply(editorCell);
+      BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_property_name_1202948938319(EditorCell_Label editorCell, SNode node, EditorContext context) {

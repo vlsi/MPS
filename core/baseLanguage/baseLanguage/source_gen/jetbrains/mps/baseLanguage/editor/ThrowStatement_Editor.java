@@ -84,7 +84,7 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11649911352851164991135285(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1164991135285");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_throwable1164991147291(EditorCell editorCell, SNode node, EditorContext context) {
@@ -92,7 +92,7 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11649911546831164991154683(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1164991154683");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1164991135285_1164991135285(EditorCell_Label editorCell, SNode node, EditorContext context) {

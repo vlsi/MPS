@@ -103,7 +103,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
 
   private static void setupBasic_property_name1215517344868(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-    BaseLanguageStyle_StyleSheet.METHOD_NAME.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12155173467951215517346795(EditorCell editorCell, SNode node, EditorContext context) {

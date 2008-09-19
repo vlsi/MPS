@@ -90,7 +90,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10753791412371075379141237(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1075379141237");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refNode_expression_1075379141236(EditorCell_Label editorCell, SNode node, EditorContext context) {

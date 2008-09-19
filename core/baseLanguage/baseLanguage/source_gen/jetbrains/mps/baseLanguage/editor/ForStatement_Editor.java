@@ -396,12 +396,12 @@ public class ForStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11442313874201144231387420(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144231387420");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11442313874211144231387421(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144231387421");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_variable1144231387422(EditorCell editorCell, SNode node, EditorContext context) {
@@ -409,7 +409,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11442313874231144231387423(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144231387423");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -424,12 +424,12 @@ public class ForStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11442313874251144231387425(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144231387425");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11442313874261144231387426(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144231387426");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11442313874271144231387427(EditorCell editorCell, SNode node, EditorContext context) {
@@ -463,7 +463,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11442313874311144231387431(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144231387431");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_condition1144231420872(EditorCell editorCell, SNode node, EditorContext context) {
@@ -471,7 +471,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11442314236241144231423624(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144231423624");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

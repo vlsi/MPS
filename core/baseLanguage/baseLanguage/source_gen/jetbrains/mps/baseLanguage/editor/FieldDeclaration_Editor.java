@@ -279,7 +279,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_component_VariableDeclaration_NameCellComponent1188210576816(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "component_VariableDeclaration_NameCellComponent");
-    BaseLanguageStyle_StyleSheet.FIELD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11882105768171188210576817(EditorCell editorCell, SNode node, EditorContext context) {
@@ -297,7 +297,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11882105768181188210576818(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188210576818");
-    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_initializer1188210576819(EditorCell editorCell, SNode node, EditorContext context) {
@@ -360,7 +360,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12173516039021217351603902(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217351603902");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refNode_type_1188210576815(EditorCell_Label editorCell, SNode node, EditorContext context) {

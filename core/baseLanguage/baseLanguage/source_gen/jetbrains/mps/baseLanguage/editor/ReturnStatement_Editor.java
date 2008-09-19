@@ -104,12 +104,12 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10753807237681075380723768(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1075380723768");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_10757220756401075722075640(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1075722075640");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

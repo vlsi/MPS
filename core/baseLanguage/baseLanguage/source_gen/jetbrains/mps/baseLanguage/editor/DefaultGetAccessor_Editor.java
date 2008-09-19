@@ -54,7 +54,7 @@ public class DefaultGetAccessor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12020652929401202065292940(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202065292940");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1202065275985_1202065275985(EditorCell_Label editorCell, SNode node, EditorContext context) {

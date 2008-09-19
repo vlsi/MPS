@@ -252,7 +252,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11610017540751161001754075(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1161001754075");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1160998932010_1160998932010(EditorCell_Label editorCell, SNode node, EditorContext context) {

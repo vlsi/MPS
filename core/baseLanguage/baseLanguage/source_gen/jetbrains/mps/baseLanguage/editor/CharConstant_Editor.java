@@ -131,12 +131,12 @@ public class CharConstant_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12003975945261200397594526(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200397594526");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12003975986551200397598655(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200397598655");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Alternation_12088591558721208859155872(EditorCell editorCell, SNode node, EditorContext context) {
@@ -154,7 +154,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_property_charConstant1208859155873(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_charConstant");
-    BaseLanguageStyle_StyleSheet.STRING_LITERAL.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -168,7 +168,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_property_charConstant1208859230495(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_charConstant");
-    BaseLanguageStyle_StyleSheet.COMPACT_KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1200397594526_1200397594526(EditorCell_Label editorCell, SNode node, EditorContext context) {

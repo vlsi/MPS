@@ -318,7 +318,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10812642967651081264296765(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081264296765");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_condition1081264296766(EditorCell editorCell, SNode node, EditorContext context) {
@@ -326,7 +326,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10812642967671081264296767(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081264296767");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_10812642967841081264296784(EditorCell editorCell, SNode node, EditorContext context) {
@@ -362,12 +362,12 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10812642967871081264296787(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081264296787");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11012104854571101210485457(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1101210485457");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11994655105021199465510502(EditorCell editorCell, SNode node, EditorContext context) {
@@ -452,7 +452,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12150123010051215012301005(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215012301005");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Indent_12150123134751215012313475(EditorCell editorCell, SNode node, EditorContext context) {

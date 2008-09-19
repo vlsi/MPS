@@ -78,7 +78,7 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
 
   private static void setupBasic_Constant_10753805668311075380566831(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1075380566831");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refNode_localVariableDeclaration_1075380566830(EditorCell_Label editorCell, SNode node, EditorContext context) {

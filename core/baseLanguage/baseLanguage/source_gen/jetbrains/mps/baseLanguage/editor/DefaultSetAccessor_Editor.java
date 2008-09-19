@@ -88,7 +88,7 @@ public class DefaultSetAccessor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12020777649481202077764948(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202077764948");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_visibility1202077768793(EditorCell editorCell, SNode node, EditorContext context) {

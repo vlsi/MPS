@@ -144,7 +144,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11441867560961144186756096(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144186756096");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_type1144186756097(EditorCell editorCell, SNode node, EditorContext context) {
@@ -152,7 +152,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11441867560981144186756098(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144186756098");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12151035947461215103594746(EditorCell editorCell, SNode node, EditorContext context) {

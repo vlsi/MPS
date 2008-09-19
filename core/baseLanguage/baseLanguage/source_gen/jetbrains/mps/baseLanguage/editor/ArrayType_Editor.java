@@ -80,7 +80,7 @@ public class ArrayType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11132084555881113208455588(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1113208455588");
-    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

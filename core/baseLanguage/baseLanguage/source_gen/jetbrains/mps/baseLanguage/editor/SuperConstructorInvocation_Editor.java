@@ -95,7 +95,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10850596041781085059604178(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1085059604178");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -110,7 +110,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10851406120971085140612097(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1085140612097");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNodeList_actualArgument1085475861768(EditorCell editorCell, SNode node, EditorContext context) {
@@ -119,12 +119,12 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11788935715841178893571584(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178893571584");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11789066331721178906633172(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178906633172");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1085059604178_1085059604178(EditorCell_Label editorCell, SNode node, EditorContext context) {

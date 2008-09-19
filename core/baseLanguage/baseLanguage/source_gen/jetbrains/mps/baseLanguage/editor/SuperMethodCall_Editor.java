@@ -138,7 +138,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10917094812991091709481299(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1091709481299");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -163,7 +163,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10917094813031091709481303(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1091709481303");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -177,7 +177,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10917094813051091709481305(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1091709481305");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     if (renderingCondition4254_0(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
@@ -185,7 +185,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11012104854581101210485458(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1101210485458");
-    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNodeList_actualArgument1138337224101(EditorCell editorCell, SNode node, EditorContext context) {

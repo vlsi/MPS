@@ -119,7 +119,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10812570977471081257097747(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081257097747");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -70,7 +70,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
 
   private static void setupBasic_property_name1181823199382(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-    BaseLanguageStyle_StyleSheet.VARIABLE_NAME.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getVariableName(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -113,7 +113,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11012104854591101210485459(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1101210485459");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -128,7 +128,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11012104854601101210485460(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1101210485460");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11994661532601199466153260(EditorCell editorCell, SNode node, EditorContext context) {

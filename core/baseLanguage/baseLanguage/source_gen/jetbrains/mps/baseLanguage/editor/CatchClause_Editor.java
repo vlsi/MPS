@@ -183,7 +183,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11649034076211164903407621(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1164903407621");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -198,12 +198,12 @@ public class CatchClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11649034076221164903407622(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1164903407622");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11649034076231164903407623(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1164903407623");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_throwable1164903407624(EditorCell editorCell, SNode node, EditorContext context) {
@@ -211,7 +211,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11649034076251164903407625(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1164903407625");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -251,7 +251,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12150118161431215011816143(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215011816143");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Indent_12150118257531215011825753(EditorCell editorCell, SNode node, EditorContext context) {

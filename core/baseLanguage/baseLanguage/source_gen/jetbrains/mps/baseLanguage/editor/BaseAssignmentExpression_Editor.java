@@ -163,7 +163,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1215694331196(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refNode_lValue_1075310480284(EditorCell_Label editorCell, SNode node, EditorContext context) {

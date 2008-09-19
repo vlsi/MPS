@@ -350,12 +350,12 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11882106069821188210606982(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188210606982");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11882106069831188210606983(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188210606983");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_type1188210606990(EditorCell editorCell, SNode node, EditorContext context) {
@@ -363,7 +363,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_component_VariableDeclaration_NameCellComponent1188210606991(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "component_VariableDeclaration_NameCellComponent");
-    BaseLanguageStyle_StyleSheet.STATIC_FIELD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getStaticField(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11882106069921188210606992(EditorCell editorCell, SNode node, EditorContext context) {
@@ -381,7 +381,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11882106069931188210606993(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188210606993");
-    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_initializer1188210606994(EditorCell editorCell, SNode node, EditorContext context) {
@@ -398,7 +398,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11882106070031188210607003(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188210607003");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11882106137551188210613755(EditorCell editorCell, SNode node, EditorContext context) {

@@ -88,7 +88,7 @@ public class LowerBoundType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11719038822571171903882257(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171903882257");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_bound1171903885353(EditorCell editorCell, SNode node, EditorContext context) {

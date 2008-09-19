@@ -84,12 +84,12 @@ public class DimensionExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11849529556631184952955663(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184952955663");
-    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11849529580561184952958056(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184952958056");
-    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_expression1184953300484(EditorCell editorCell, SNode node, EditorContext context) {

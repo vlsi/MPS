@@ -189,12 +189,12 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11889953052451188995305245(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188995305245");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11889953152061188995315206(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188995315206");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1188208064966_1188208064966(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -268,7 +268,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_property_name1188208085021(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      BaseLanguageStyle_StyleSheet.ANNOTATION.apply(editorCell);
+      BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_property_name_1188208085021(EditorCell_Label editorCell, SNode node, EditorContext context) {

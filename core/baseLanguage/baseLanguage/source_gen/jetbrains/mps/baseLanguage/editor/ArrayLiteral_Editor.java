@@ -77,7 +77,7 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11882202123001188220212300(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188220212300");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -91,7 +91,7 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11882202140991188220214099(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188220214099");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNodeList_item1188220217555(EditorCell editorCell, SNode node, EditorContext context) {

@@ -141,7 +141,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10854851124301085485112430(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1085485112430");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNodeList_actualArgument1085485112431(EditorCell editorCell, SNode node, EditorContext context) {
@@ -150,7 +150,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10854851124321085485112432(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1085485112432");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_property_name_1085485112429(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -28,7 +28,7 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10796057165411079605716541(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1079605716541");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

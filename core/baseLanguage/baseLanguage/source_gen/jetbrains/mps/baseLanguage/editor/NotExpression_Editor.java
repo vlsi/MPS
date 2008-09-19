@@ -123,7 +123,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10819300716101081930071610(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081930071610");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -138,7 +138,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12150120517401215012051740(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215012051740");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1081930071608_1081930071608(EditorCell_Label editorCell, SNode node, EditorContext context) {

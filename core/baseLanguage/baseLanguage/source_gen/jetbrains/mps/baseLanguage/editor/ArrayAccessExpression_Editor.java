@@ -119,7 +119,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11731756048271173175604827(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1173175604827");
-    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -138,7 +138,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11731756109881173175610988(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1173175610988");
-    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -88,7 +88,7 @@ public class UpperBoundType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11719039338321171903933832(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171903933832");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_bound1171903933833(EditorCell editorCell, SNode node, EditorContext context) {

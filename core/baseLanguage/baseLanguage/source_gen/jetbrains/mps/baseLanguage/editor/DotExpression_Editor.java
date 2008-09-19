@@ -119,7 +119,7 @@ public class DotExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11970281393801197028139380(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197028139380");
-    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_operation1197028151463(EditorCell editorCell, SNode node, EditorContext context) {

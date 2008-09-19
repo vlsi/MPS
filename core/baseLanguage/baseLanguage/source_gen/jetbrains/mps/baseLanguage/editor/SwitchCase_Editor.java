@@ -156,7 +156,7 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11636707167111163670716711(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1163670716711");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_expression1163670720712(EditorCell editorCell, SNode node, EditorContext context) {

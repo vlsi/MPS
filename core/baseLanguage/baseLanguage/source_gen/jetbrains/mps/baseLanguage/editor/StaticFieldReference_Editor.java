@@ -117,7 +117,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10827401543941082740154394(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1082740154394");
-    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_staticFieldDeclaration1088427644683(EditorCell editorCell, SNode node, EditorContext context) {
@@ -193,7 +193,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_property_name1088427644685(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      BaseLanguageStyle_StyleSheet.STATIC_FIELD.apply(editorCell);
+      BaseLanguageStyle_StyleSheet.getStaticField(editorCell).apply(editorCell);
       {
         Style inlineStyle = new Style(editorCell) {
           {

@@ -330,7 +330,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11776667262741177666726274(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177666726274");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -350,7 +350,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11776667262771177666726277(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177666726277");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11776667262781177666726278(EditorCell editorCell, SNode node, EditorContext context) {
@@ -366,12 +366,12 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11776667262821177666726282(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177666726282");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11776667685051177666768505(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177666768505");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -391,7 +391,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11776667722661177666772266(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177666772266");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_condition1177666772267(EditorCell editorCell, SNode node, EditorContext context) {
@@ -399,7 +399,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11776667722681177666772268(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177666772268");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11994681614401199468161440(EditorCell editorCell, SNode node, EditorContext context) {
@@ -488,7 +488,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12150119105301215011910530(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215011910530");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1177666726274_1177666726274(EditorCell_Label editorCell, SNode node, EditorContext context) {

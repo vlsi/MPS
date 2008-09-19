@@ -151,7 +151,7 @@ public class GetAccessor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12025929739331202592973933(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202592973933");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12028615757911202861575791(EditorCell editorCell, SNode node, EditorContext context) {
@@ -169,12 +169,12 @@ public class GetAccessor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12028615781521202861578152(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202861578152");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12028615811071202861581107(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202861581107");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refNode_statementList_1202592973932(EditorCell_Label editorCell, SNode node, EditorContext context) {

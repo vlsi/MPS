@@ -164,7 +164,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11829549637481182954963748(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1182954963748");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -184,7 +184,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11829549706161182954970616(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1182954970616");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -206,7 +206,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11829550753191182955075319(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1182955075319");
-    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12187392350151218739235015(EditorCell editorCell, SNode node, EditorContext context) {
@@ -289,7 +289,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_property_name1182955065205(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      BaseLanguageStyle_StyleSheet.CLASS_NAME.apply(editorCell);
+      BaseLanguageStyle_StyleSheet.getClassName(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_property_name_1182955065205(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -342,7 +342,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_property_name1218739236893(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      BaseLanguageStyle_StyleSheet.CLASS_NAME.apply(editorCell);
+      BaseLanguageStyle_StyleSheet.getClassName(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_property_name_1218739236893(EditorCell_Label editorCell, SNode node, EditorContext context) {

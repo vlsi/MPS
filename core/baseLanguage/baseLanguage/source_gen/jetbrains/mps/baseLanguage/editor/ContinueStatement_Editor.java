@@ -116,7 +116,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11012104854611101210485461(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1101210485461");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -138,7 +138,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11012104854621101210485462(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1101210485462");
-    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11994700837741199470083774(EditorCell editorCell, SNode node, EditorContext context) {

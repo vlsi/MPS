@@ -121,7 +121,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10909286013781090928601378(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1090928601378");
-    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_enumConstantDeclaration1090928601379(EditorCell editorCell, SNode node, EditorContext context) {

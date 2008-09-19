@@ -79,7 +79,7 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11455531727651145553172765(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1145553172765");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

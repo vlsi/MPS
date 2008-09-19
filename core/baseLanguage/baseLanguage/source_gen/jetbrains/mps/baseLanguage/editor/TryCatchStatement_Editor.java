@@ -169,7 +169,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11648800339591164880033959(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1164880033959");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -183,7 +183,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11648800413831164880041383(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1164880041383");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11648800527631164880052763(EditorCell editorCell, SNode node, EditorContext context) {
@@ -232,7 +232,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11649111976391164911197639(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1164911197639");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
