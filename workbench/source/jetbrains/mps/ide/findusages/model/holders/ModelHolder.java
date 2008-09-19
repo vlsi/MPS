@@ -15,7 +15,7 @@ public class ModelHolder implements IHolder<SModel> {
   private static final String MODEL = "model";
   private static final String UID = "uid";
 
-  public SModelUID myModelUID = new SModelUID("");
+  public SModelUID myModelUID = SModelUID.fromString("");
 
   public ModelHolder(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);

@@ -16,8 +16,8 @@ public class SModelUID implements Comparable<Object> {
   private String myStereotype;
   private String myUIDString;
 
-  public SModelUID(String longName) {
-    this(longName, "");
+  public SModelUID(String namePrefix, String shortName, String stereotype) {
+    this(namePrefix + "." + shortName, stereotype);
   }
 
   public SModelUID(String longName, String stereotype) {
@@ -26,24 +26,6 @@ public class SModelUID implements Comparable<Object> {
     myLongName = InternUtil.intern(longName);
     myStereotype = InternUtil.intern(stereotype);
     myUIDString = InternUtil.intern(myLongName + (myStereotype.length() == 0 ? "" : "@" + myStereotype));
-  }
-
-  public SModelUID(String namePrefix, String shortName, String stereotype) {
-    if (shortName == null) shortName = "";
-    if (stereotype == null) stereotype = "";
-    if (namePrefix == null || namePrefix.length() == 0) {
-      myLongName = InternUtil.intern(shortName);
-    } else
-      myLongName = InternUtil.intern(namePrefix + '.' + shortName);
-
-    myStereotype = InternUtil.intern(stereotype);
-    myUIDString = InternUtil.intern(myLongName + (myStereotype.length() == 0 ? "" : "@" + myStereotype));
-  }
-
-  public SModelUID(SModelUID pattern) {
-    myLongName = pattern.myLongName;
-    myStereotype = pattern.myStereotype;
-    myUIDString = pattern.myUIDString;
   }
 
   public static SModelUID fromString(String s) {

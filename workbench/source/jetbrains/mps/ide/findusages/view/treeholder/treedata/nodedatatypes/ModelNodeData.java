@@ -18,7 +18,7 @@ public class ModelNodeData extends BaseNodeData {
   private static final String MODEL = "model";
   private static final String UID = "uid";
 
-  public SModelUID myModelUID = new SModelUID("");
+  public SModelUID myModelUID = SModelUID.fromString("");
   private SModelRepositoryListener myModelRepositoryListener = null;
   private boolean myIsRemoved = false;
 
