@@ -32,6 +32,10 @@ public class NullPsiDocumentManager extends PsiDocumentManager {
 
   }
 
+  public void performForCommittedDocument(@NotNull Document document, @NotNull Runnable action) {
+
+  }
+
   public void commitDocument(Document document) {
 
   }
