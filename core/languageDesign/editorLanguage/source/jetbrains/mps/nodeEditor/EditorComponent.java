@@ -110,7 +110,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         public void run() {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              if (getOperationContext().getProject().isDisposed()) return;              
+              if (isProjectDisposed()) return;
               rebuildEditorContent();
               updateMPSActionsWithKeyStrokes(DataManager.getInstance().getDataContext());
             }
@@ -605,6 +605,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         if (!isFocusOwner()) return;
+        if (getOperationContext() == null || getOperationContext().getProject() == null) return;
+        if (isProjectDisposed()) return;
+
         EditorCell selection = getSelectedCell();
         String info = "";
         if (selection != null) {
@@ -2357,6 +2360,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         doCommitAll(cell);
       }
     }
+  }
+
+  private boolean isProjectDisposed() {
+    return getOperationContext() != null && getOperationContext().getProject() != null && getOperationContext().getProject().isDisposed();
   }
 
   private class MySimpleModelListener extends SModelAdapter {
