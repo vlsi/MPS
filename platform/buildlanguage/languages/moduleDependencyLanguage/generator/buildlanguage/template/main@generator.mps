@@ -32,11 +32,11 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.propertylanguage.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" version="0" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.build.moduleDependencyLanguage.structure" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.buildlanguage.structure" version="16" />
-  <import index="4" modelUID="jetbrains.mps.buildlanguage.buildgeneration@java_stub" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1216906848218">
     <property name="name" value="main" />
     <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1219772386887">
