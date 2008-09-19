@@ -26,10 +26,11 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="java.util.regex@java_stub" version="-1" />
   <import index="2" modelUID="java.nio@java_stub" version="-1" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1216561660079">
     <property name="name" value="ForEach" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1220020391997">
@@ -200,6 +201,23 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221588332974" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1221827598678">
+    <property name="name" value="NodeProblem" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221827598679" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1221827598680">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1221827598681" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221827598682" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221827598683">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221827615806">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221827615807">
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221827615808">
+              <link role="concept" targetNodeId="4.1068431474542" resolveInfo="VariableDeclaration" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

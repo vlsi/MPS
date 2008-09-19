@@ -45,7 +45,6 @@
   </usedLanguages>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.baseLanguage.blTypes</extendedLanguage>
   </extendedLanguages>
 </language>
 

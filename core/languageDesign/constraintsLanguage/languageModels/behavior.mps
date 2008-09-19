@@ -821,6 +821,9 @@
                     </node>
                   </node>
                   <node role="parameter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221652287748" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221668490076">
+                    <link role="variableDeclaration" targetNodeId="1221668477830" resolveInfo="nodesToExtract" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -834,6 +837,10 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221586604007">
         <link role="classifier" targetNodeId="6.1221578571953" resolveInfo="ExtractMethodRefactoringProcessor" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221668477830">
+        <property name="name" value="nodesToExtract" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1221670382113" />
       </node>
     </node>
   </node>

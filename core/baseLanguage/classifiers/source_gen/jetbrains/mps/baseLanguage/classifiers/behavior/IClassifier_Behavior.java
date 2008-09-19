@@ -79,14 +79,14 @@ public class IClassifier_Behavior {
     return result;
   }
 
-  public static ExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode) {
-    return new ExtractMethodRefactoringProcessor(thisNode) {
+  public static ExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
+    return new ExtractMethodRefactoringProcessor(thisNode, nodesToRefactor) {
 
       public SNode createNewMethod(SNode returntType, List<SNode> params, SNode body) {
         SNode methodDeclaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", null);
-        SLinkOperations.setTarget(methodDeclaration, "visibility", this.myParamteres.getVisibilityLevel().getNode(), true);
+        SLinkOperations.setTarget(methodDeclaration, "visibility", this.myVisibylitylevel.getNode(), true);
         SLinkOperations.setTarget(methodDeclaration, "returnType", returntType, true);
-        SPropertyOperations.set(methodDeclaration, "name", this.myParamteres.getMethodName());
+        SPropertyOperations.set(methodDeclaration, "name", this.myMethodName);
         SLinkOperations.addAll(methodDeclaration, "parameter", params);
         SLinkOperations.setTarget(methodDeclaration, "body", body, true);
         return methodDeclaration;

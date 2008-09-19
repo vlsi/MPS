@@ -8,6 +8,7 @@
   <dependencies>
     <dependency reexport="false">JDK</dependency>
     <dependency reexport="false">jetbrains.mps.transformationTest</dependency>
+    <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.transformationTest</usedLanguages>

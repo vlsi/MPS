@@ -10079,6 +10079,9 @@
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1221404084446">
               <link role="baseMethodDeclaration" targetNodeId="18.1221578571955" resolveInfo="ExtractMethodRefactoringProcessor" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221404088995" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221668425711">
+                <link role="variableDeclaration" targetNodeId="1221668414343" resolveInfo="nodesToExtract" />
+              </node>
             </node>
           </node>
         </node>
@@ -10086,6 +10089,10 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221393367930" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221579439827">
         <link role="classifier" targetNodeId="18.1221578571953" resolveInfo="ExtractMethodRefactoringProcessor" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221668414343">
+        <property name="name" value="nodesToExtract" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1221668414344" />
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1221393363927">

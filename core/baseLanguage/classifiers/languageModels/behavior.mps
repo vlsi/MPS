@@ -1051,6 +1051,9 @@
               <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1221661952191">
                 <link role="classifier" targetNodeId="5.1221578571953" resolveInfo="ExtractMethodRefactoringProcessor" />
                 <node role="parameter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1221661952192" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221670664941">
+                  <link role="variableDeclaration" targetNodeId="1221670644669" resolveInfo="nodesToRefactor" />
+                </node>
                 <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221661952193" />
                 <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1221661952194">
                   <property name="name" value="createNewMethod" />
@@ -1103,15 +1106,10 @@
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221662084199">
                             <link role="baseMethodDeclaration" targetNodeId="5.1220532452404" resolveInfo="getNode" />
                           </node>
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221662084200">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221662084201">
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1221662084202">
-                                <link role="fieldDeclaration" targetNodeId="5.1221660041457" resolveInfo="myParamteres" />
-                              </node>
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1221662084203" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221662084204">
-                              <link role="baseMethodDeclaration" targetNodeId="5.1220532299333" resolveInfo="getVisibilityLevel" />
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221670419172">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1221670419174" />
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1221670450021">
+                              <link role="fieldDeclaration" targetNodeId="5.1221668009181" resolveInfo="myVisibylitylevel" />
                             </node>
                           </node>
                         </node>
@@ -1133,24 +1131,19 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221661952281">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1221661952282">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1221670484384">
+                        <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221670486186">
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1221670486187">
+                            <link role="fieldDeclaration" targetNodeId="5.1221668028581" resolveInfo="myMethodName" />
+                          </node>
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1221670486188" />
+                        </node>
                         <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221661952283">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221661952284">
                             <link role="variableDeclaration" targetNodeId="1221662022118" resolveInfo="methodDeclaration" />
                           </node>
                           <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1221661952285">
                             <link role="property" targetNodeId="4v.1169194664001" resolveInfo="name" />
-                          </node>
-                        </node>
-                        <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221661952286">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221661952287">
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1221661952288">
-                              <link role="fieldDeclaration" targetNodeId="5.1221660041457" resolveInfo="myParamteres" />
-                            </node>
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1221661952289" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221661952290">
-                            <link role="baseMethodDeclaration" targetNodeId="5.1220526892170" resolveInfo="getMethodName" />
                           </node>
                         </node>
                       </node>
@@ -1330,6 +1323,10 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221661930340">
         <link role="classifier" targetNodeId="5.1221578571953" resolveInfo="ExtractMethodRefactoringProcessor" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221670644669">
+        <property name="name" value="nodesToRefactor" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1221670644670" />
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877528168">
