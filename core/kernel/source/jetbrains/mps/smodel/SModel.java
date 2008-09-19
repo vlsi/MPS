@@ -38,7 +38,6 @@ public class SModel implements Iterable<SNode> {
 
   private List<SNode> myRoots = new ArrayList<SNode>();
   private SModelUID myUID = new SModelUID("unnamed", "");
-  private SModelId myId;
 
   @ForDebug
   private Throwable myStackTrace;
@@ -61,27 +60,14 @@ public class SModel implements Iterable<SNode> {
   private boolean myUsesLog;
   private boolean myRegistrationsForbidden = false;
 
-  public SModel(@NotNull SModelUID modelUID, SModelId modelId) {
-    myUID = modelUID;
-    if (modelId != null) {
-      myId = SModelId.generate();
-    } else {
-      myId = modelId;
-    }
-  }
-
   public SModel(@NotNull SModelUID modelUID) {
-    this(modelUID, null);
+    myUID = modelUID;
   }
 
   public SModel() {
     this(SModelUID.fromString("test.model"));
   }
 
-  @NotNull
-  public SModelId getId() {
-    return myId;
-  }
 
   @NotNull
   public SModelUID getUID() {
