@@ -119,9 +119,9 @@ public final class ObjectCache<K, V> {
 
   public V tryKey(final K key) {
     ++myAttempts;
-    V result = _firstGenerationQueue.remove(key);
+    V result = _secondGenerationQueue.remove(key);
     if (result == null) {
-      result = _secondGenerationQueue.remove(key);
+      result = _firstGenerationQueue.remove(key);
     }
     if (result != null) {
       _secondGenerationQueue.put(key, result);
