@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.blame.lowlevel;
+package jetbrains.mps.ide.blame.perform;
 
 public class Query {
   public static final String ANONYMOUS_LOGIN = "mpsexception";

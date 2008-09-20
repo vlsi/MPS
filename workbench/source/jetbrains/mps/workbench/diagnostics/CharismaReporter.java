@@ -6,8 +6,8 @@ import com.intellij.openapi.diagnostic.SubmittedReportInfo;
 import com.intellij.openapi.diagnostic.SubmittedReportInfo.SubmissionStatus;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
-import jetbrains.mps.ide.blame.lowlevel.Performer;
-import jetbrains.mps.ide.blame.lowlevel.Response;
+import jetbrains.mps.ide.blame.perform.Performer;
+import jetbrains.mps.ide.blame.perform.Response;
 import jetbrains.mps.ide.blame.perform.ResponseCallback;
 
 import java.awt.Component;

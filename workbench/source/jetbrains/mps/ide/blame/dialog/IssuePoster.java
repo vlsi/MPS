@@ -1,9 +1,7 @@
-package jetbrains.mps.ide.blame.perform;
+package jetbrains.mps.ide.blame.dialog;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.blame.lowlevel.Performer;
-import jetbrains.mps.ide.blame.lowlevel.Query;
-import jetbrains.mps.ide.blame.lowlevel.Response;
+import jetbrains.mps.ide.blame.perform.*;
 import org.apache.commons.httpclient.HttpClient;
 
 public class IssuePoster {
