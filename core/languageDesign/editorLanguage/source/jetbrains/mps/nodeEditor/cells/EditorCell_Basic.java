@@ -349,6 +349,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       editorContext.flushEvents();
 
       EditorCell nodeCell = nodeEditor.findNodeCell(newNode);
+      if (nodeCell == null) return false;
       EditorCell_Label editable = nodeCell.findChild(CellFinders.FIRST_EDITABLE);
       if (editable != null) {
         nodeEditor.changeSelection(editable);
