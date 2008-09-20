@@ -1214,6 +1214,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
+  public void selectRange(SNode first, SNode last) {
+    getNodeRangeSelection().setRange(first, last);
+  }
+
   public void selectRefCell(SReference reference) {
     SNode sourceNode = reference.getSourceNode();
     String role = reference.getRole();
