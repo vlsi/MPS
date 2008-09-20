@@ -1,29 +1,27 @@
-package jetbrains.mps.ide.blame;
+package jetbrains.mps.ide.blame.dialog;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import jetbrains.mps.ide.blame.BlameDialog.MyState;
+import jetbrains.mps.ide.blame.dialog.BlameDialog.MyState;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JComponent;
-import javax.swing.JDialog;
 import javax.swing.SwingUtilities;
-import java.awt.Frame;
-import java.awt.Dialog;
 import java.awt.Component;
+import java.awt.Dialog;
+import java.awt.Frame;
 
 @State(
   name = "CharismaBlameDialog",
   storages = {
-    @Storage(
-      id = "other",
-      file = "$APP_CONFIG$/charismaBlameDialog.xml"
-    )
-  }
+  @Storage(
+    id = "other",
+    file = "$APP_CONFIG$/charismaBlameDialog.xml"
+  )
+    }
 )
 public class BlameDialogComponent implements ApplicationComponent, PersistentStateComponent<BlameDialog.MyState> {
   private BlameDialog.MyState myDialogState = new MyState();
@@ -31,7 +29,7 @@ public class BlameDialogComponent implements ApplicationComponent, PersistentSta
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "Charisma Error Reporter"; 
+    return "Charisma Error Reporter";
   }
 
   public void initComponent() {

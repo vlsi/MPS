@@ -272,7 +272,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.blame.BlameDialogComponent</implementation-class>
+      <implementation-class>jetbrains.mps.ide.blame.dialog.BlameDialogComponent</implementation-class>
     </component>
   </application-components>
 
@@ -399,7 +399,7 @@
     <component>
       <implementation-class>jetbrains.mps.plugins.projectplugins.FileGeneratorManager</implementation-class>
     </component>
-    
+
     <component>
       <implementation-class>jetbrains.mps.plugins.projectplugins.ProjectPluginManager</implementation-class>
     </component>
@@ -413,7 +413,8 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.scriptLanguage.plugin.migrationtool.MigrationScriptsTool</implementation-class>
+      <implementation-class>jetbrains.mps.ide.scriptLanguage.plugin.migrationtool.MigrationScriptsTool
+      </implementation-class>
     </component>
 
     <component>

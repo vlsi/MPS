@@ -4,16 +4,15 @@ import com.intellij.openapi.diagnostic.ErrorReportSubmitter;
 import com.intellij.openapi.diagnostic.IdeaLoggingEvent;
 import com.intellij.openapi.diagnostic.SubmittedReportInfo;
 import com.intellij.openapi.diagnostic.SubmittedReportInfo.SubmissionStatus;
-import com.intellij.openapi.components.PersistentStateComponent;
-import jetbrains.mps.ide.blame.BlameDialog;
-import jetbrains.mps.ide.blame.BlameDialogComponent;
-import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.ide.blame.dialog.BlameDialog;
+import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
+import jetbrains.mps.ide.blame.lowlevel.Performer;
+import jetbrains.mps.ide.blame.lowlevel.Response;
+import jetbrains.mps.ide.blame.perform.ResponseCallback;
 
-import javax.swing.SwingUtilities;
 import java.awt.Component;
-import java.awt.Frame;
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CharismaReporter extends ErrorReportSubmitter {
 
@@ -30,25 +29,40 @@ public class CharismaReporter extends ErrorReportSubmitter {
     blameDialog.setEx(events[0].getThrowable());
     blameDialog.setMessage(events[0].getMessage());
 
-    SubmittedReportInfo reportInfo;
-    if (!blameDialog.showAuthDialog()) {
-      reportInfo = new SubmittedReportInfo(null, "Canceled issue submit", SubmissionStatus.FAILED);
-    } else if (blameDialog.getStatusCode() == 200) {
-      String responseString = blameDialog.getResponseString();
-      Pattern pattern = Pattern.compile("<id><!\\[CDATA\\[(.*?)\\]\\]></id>");
-      Matcher matcher = pattern.matcher(responseString);
-      String url = null;
-      String issueId = responseString;
-      if (matcher.find()) {
-        issueId = matcher.group(1);
-        url = BlameDialog.teamsys + "/issue/" + issueId;
-      }
+    final SubmittedReportInfo[] reportInfo = new SubmittedReportInfo[1];
+    blameDialog.setCallback(new ResponseCallback() {
+      public void run(Response response) {
+        if (response.isSuccess()) {
+          String responseString = response.getMessage();
+          Pattern pattern = Pattern.compile("<id><!\\[CDATA\\[(.*?)\\]\\]></id>");
+          Matcher matcher = pattern.matcher(responseString);
+          String url = null;
+          String issueId = responseString;
+          if (matcher.find()) {
+            issueId = matcher.group(1);
+            url = Performer.teamsys + "/issue/" + issueId;
+          }
 
-      reportInfo = new SubmittedReportInfo(url, issueId, SubmissionStatus.NEW_ISSUE);
+          reportInfo[0] = new SubmittedReportInfo(url, issueId, SubmissionStatus.NEW_ISSUE);
+        } else {
+          reportInfo[0] = new SubmittedReportInfo(null, response.getMessage(), SubmissionStatus.FAILED);
+        }
+      }
+    });
+
+    blameDialog.showDialog();
+    if (blameDialog.isCancelled()) {
+      reportInfo[0] = new SubmittedReportInfo(null, "Cancelled issue submit", SubmissionStatus.FAILED);
     } else {
-      reportInfo = new SubmittedReportInfo(null, blameDialog.getResponseString(), SubmissionStatus.FAILED);
+      while (reportInfo[0] == null) {
+        try {
+          Thread.sleep(100);
+        } catch (InterruptedException e) {
+
+        }
+      }
     }
 
-    return reportInfo;
+    return reportInfo[0];
   }
 }

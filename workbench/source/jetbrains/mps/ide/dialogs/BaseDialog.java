@@ -117,7 +117,6 @@ public abstract class BaseDialog extends JDialog {
       LOG.error("Dialogs shouldn't be called with lock on a stack", new Throwable());
     }
 
-
     prepareDialog();
     setVisible(true);
   }

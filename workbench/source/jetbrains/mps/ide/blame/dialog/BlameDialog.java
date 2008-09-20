@@ -1,20 +1,18 @@
-package jetbrains.mps.ide.blame;
+package jetbrains.mps.ide.blame.dialog;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.application.ApplicationInfo;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task.Backgroundable;
 import com.intellij.openapi.project.Project;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
+import jetbrains.mps.ide.blame.lowlevel.Query;
+import jetbrains.mps.ide.blame.perform.IssuePoster;
+import jetbrains.mps.ide.blame.perform.ResponseCallback;
+import jetbrains.mps.ide.blame.perform.TestLoginAction;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.workbench.MPSDataKeys;
-import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.methods.PostMethod;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -23,21 +21,14 @@ import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
 public class BlameDialog extends BaseDialog {
-  public static final String teamsys = "http://teamsys.intellij.net/teamsys";
-  public static final String login = "/rest/user/login";
-  public static final String issue = "XX-1";
-  public static final String postissue = "/rest/issue/";
+  private static final String CAPTION = "Submit system exception to developers";
 
-  private static final String PROJECT = "MPS";
-
-  private static final String ANONYMOUS_LOGIN = "mpsexception";
-  private static final String ANONYMOUS_PASSWORD = "mpsexception";
+  private boolean myIsCancelled = false;
+  private ResponseCallback myCallback = null;
 
   private Throwable myEx;
   private JPanel myPanel;
@@ -50,18 +41,18 @@ public class BlameDialog extends BaseDialog {
   private JButton myTestLoginButton;
   private String myMessage;
 
-  private int myStatusCode;
-  private String myResponseString;
-  private boolean mySent;
-
   public BlameDialog(Dialog dialog) {
-    super(dialog, "Submit system exception to developers");
+    super(dialog, CAPTION);
     init();
   }
 
   public BlameDialog(Frame mainFrame) {
-    super(mainFrame, "Submit system exception to developers");
+    super(mainFrame, CAPTION);
     init();
+  }
+
+  public void setCallback(ResponseCallback callback) {
+    myCallback = callback;
   }
 
   private void updateExceptionText() {
@@ -78,14 +69,6 @@ public class BlameDialog extends BaseDialog {
     updateExceptionText();
   }
 
-  public int getStatusCode() {
-    return myStatusCode;
-  }
-
-  public String getResponseString() {
-    return myResponseString;
-  }
-
   private void init() {
     setModal(true);
 
@@ -97,7 +80,11 @@ public class BlameDialog extends BaseDialog {
     });
 
     Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    myTestLoginButton.setAction(new TestLoginAction(project));
+    myTestLoginButton.setAction(new TestLoginAction(this, project) {
+      protected Query getQuery() {
+        return new Query(getLogin(), getPassword(), null, null);
+      }
+    });
   }
 
   private String ex2str(Throwable e) {
@@ -110,36 +97,6 @@ public class BlameDialog extends BaseDialog {
     e.printStackTrace(pw);
 
     return (e.getMessage() == null ? "" : e.getMessage() + "\n") + sw.toString();
-  }
-
-  public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(200, 200, 400, 300);
-  }
-
-  protected JComponent getMainComponent() {
-    return myPanel;
-  }
-
-  @Button(position = 0, name = "Send")
-  public void onSend() {
-    HttpClient c = new HttpClient();
-    String description = myDescription.getText();
-    description = description == null || description.length() == 0 ? getAdditionalInfo() : description + "\n\n" + getAdditionalInfo() + "\n\n\n";
-    description = description + ex2str(myEx);
-
-    try {
-      if (login(c)) {
-        postIssue(c, getBuildString() + myMessage, description);
-      }
-    } catch (Throwable e) {
-      myStatusCode = 500;
-      myResponseString = e.getMessage();
-    }
-
-    mySent = true;
-
-    BlameDialogComponent.getInstance().loadState(getState());
-    setVisible(false);
   }
 
   private String getBuildString() {
@@ -155,54 +112,49 @@ public class BlameDialog extends BaseDialog {
       "build date: " + ai.getBuildDate().getTime().toString() + "\n";
   }
 
-  @Button(position = 1, name = "Cancel")
-  public void onCancel() {
-    mySent = false;
-    setVisible(false);
+  public DialogDimensions getDefaultDimensionSettings() {
+    return new DialogDimensions(200, 200, 400, 300);
   }
 
-  public boolean showAuthDialog() {
-    mySent = false;
-    showDialog();
-    return mySent;
+  protected JComponent getMainComponent() {
+    return myPanel;
+  }
+
+  public boolean isCancelled() {
+    return myIsCancelled;
   }
 
   private String getLogin() {
-    return myAnonymous.isSelected() ? ANONYMOUS_LOGIN : myUsername.getText();
+    return myAnonymous.isSelected() ? Query.ANONYMOUS_LOGIN : myUsername.getText();
   }
 
   private String getPassword() {
-    return myAnonymous.isSelected() ? ANONYMOUS_PASSWORD : myPassword.getText();
+    return myAnonymous.isSelected() ? Query.ANONYMOUS_PASSWORD : myPassword.getText();
   }
 
-  private boolean login(final HttpClient c) throws IOException {
-    PostMethod p = new PostMethod(teamsys + login);
-    p.addParameter("login", getLogin());
-    p.addParameter("password", getPassword());
-    c.executeMethod(p);
+  @Button(position = 0, name = "Send")
+  public void onSend() {
+    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    IssuePoster poster = new IssuePoster(project);
 
-    myStatusCode = p.getStatusCode();
-    myResponseString = p.getResponseBodyAsString();
-    if (p.getStatusCode() != 200 || myResponseString.indexOf("ok") == -1) {
-      myResponseString = "Can't login into issue tracker: " + myResponseString;
-      return false;
-    } else {
-      return true;
-    }
+    String description = myDescription.getText();
+    description = description == null || description.length() == 0 ? getAdditionalInfo() : description + "\n\n" + getAdditionalInfo() + "\n\n\n";
+    description = description + ex2str(myEx);
+
+    String issue = getBuildString() + myMessage;
+
+    Query query = new Query(getLogin(), getPassword(), issue, description);
+    poster.send(query, myCallback);
+
+    myIsCancelled = false;
+    BlameDialogComponent.getInstance().loadState(getState());
+    setVisible(false);
   }
 
-  private void postIssue(HttpClient c, String summary, String description) throws IOException {
-    PostMethod p = new PostMethod(teamsys + postissue);
-    p.addParameter("project", PROJECT);
-    p.addParameter("summary", summary);
-    p.addParameter("description", description);
-    c.executeMethod(p);
-
-    myStatusCode = p.getStatusCode();
-    myResponseString = p.getResponseBodyAsString();
-    if (myStatusCode != 200) {
-      myResponseString = "Can't post issue: " + myResponseString;
-    }
+  @Button(position = 1, name = "Cancel")
+  public void onCancel() {
+    myIsCancelled = true;
+    setVisible(false);
   }
 
   public MyState getState() {
@@ -327,60 +279,4 @@ public class BlameDialog extends BaseDialog {
     }
   }
 
-  private class TestLoginAction extends AbstractAction {
-    private Project myProject;
-
-    private String myMessage;
-    boolean mySuccess;
-
-    private Thread myRunThread;
-
-    public TestLoginAction(Project project) {
-      super("Test Login");
-      myProject = project;
-    }
-
-    public void actionPerformed(ActionEvent e) {
-      mySuccess = false;
-      myRunThread = new Thread() {
-        public void run() {
-          try {
-            mySuccess = login(new HttpClient());
-            if (mySuccess) {
-              myMessage = "Login OK";
-            } else {
-              myMessage = myResponseString;
-            }
-          } catch (Exception e1) {
-            myMessage = e1.getMessage();
-          }
-        }
-      };
-
-      ProgressManager.getInstance().run(new Backgroundable(myProject, "Connection in progress. Please wait.", true) {
-        public void run(@NotNull ProgressIndicator indicator) {
-          myRunThread.start();
-          try {
-            myRunThread.join(10000);
-          } catch (InterruptedException e1) {
-            myMessage = "Unknown error while connecting";
-            JOptionPane.showMessageDialog(BlameDialog.this, myMessage, "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-          }
-          if (myRunThread.isAlive()) {
-            myMessage = "Bugtracker does not respond";
-            JOptionPane.showMessageDialog(BlameDialog.this, myMessage, "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-          }
-          if (mySuccess) {
-            JOptionPane.showMessageDialog(BlameDialog.this, myMessage, "Info", JOptionPane.INFORMATION_MESSAGE);
-            return;
-          } else {
-            JOptionPane.showMessageDialog(BlameDialog.this, myMessage, "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-          }
-        }
-      });
-    }
-  }
 }
