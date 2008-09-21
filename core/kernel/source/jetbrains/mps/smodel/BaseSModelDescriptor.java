@@ -29,7 +29,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
   protected static volatile long ourStructuralState = 0;
 
-  protected SModelUID myModelUID = new SModelUID("", "");
+  protected SModelUID myModelUID;
   protected Map<String, Object> myUserObjects = new HashMap<String, Object>();
   protected IFile myModelFile;
   protected IModelRootManager myModelRootManager;

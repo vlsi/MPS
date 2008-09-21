@@ -37,7 +37,7 @@ public class SModel implements Iterable<SNode> {
   private Set<Language> myVersionedLanguages = new HashSet<Language>();
 
   private List<SNode> myRoots = new ArrayList<SNode>();
-  private SModelUID myUID = new SModelUID("unnamed", "");
+  private SModelUID myUID;
 
   @ForDebug
   private Throwable myStackTrace;

@@ -102,7 +102,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
 
     for (String subpackage : subpackages) {
       if (!getClassPathItem().getAvailableClasses(subpackage).isEmpty()) {
-        SModelUID modelUID = SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB);
+        SModelUID modelUID = ClassPathModelProvider.uidForPackage(subpackage);
         if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
           final SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB));
 

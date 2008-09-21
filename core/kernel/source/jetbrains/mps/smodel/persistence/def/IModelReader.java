@@ -16,7 +16,7 @@ public interface IModelReader {
 
   SNode readNode(Element nodeElement, SModel model);
 
-   public SModelUID upgradeModelUID(SModelUID modelUID);
+  SModelUID upgradeModelUID(SModelUID modelUID);
 
-    boolean needsRecreating(IFile file);
+  boolean needsRecreating(IFile file);
 }

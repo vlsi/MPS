@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
-public class GlobalScope implements IScope {
+public class GlobalScope extends BaseScope {
   private static GlobalScope myInstance;
 
   public static GlobalScope getInstance() {

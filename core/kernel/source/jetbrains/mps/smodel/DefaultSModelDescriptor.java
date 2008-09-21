@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -44,7 +43,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange;
   private FastNodeFinder myFastNodeFinder;
-  private Throwable myInitializationStackTrace;
+  private Throwable myInitializationStackTrace = new Throwable();
 
   private boolean myTransient;
 
@@ -75,13 +74,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   protected SModel loadModel() {
-    myInitializationStackTrace = new Throwable();
     return myModelRootManager.loadModel(this);
-  }
-
-  @Nullable
-  public Throwable getInitializationStackTrace() {
-    return myInitializationStackTrace;
   }
 
   public void reloadFromDisk() {

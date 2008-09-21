@@ -49,7 +49,7 @@ public interface IModelRootManager {
    * 2. Fire new model created event : SModelsMulticaster.getInstance().fireModelCreatedEvent(modelDescriptor);
    */
   @NotNull SModelDescriptor createNewModel(@NotNull SModelRoot root,
-                                           @NotNull SModelUID modelUID,
+                                           @NotNull SModelFqName fqName,
                                            @NotNull ModelOwner owner);
 
   boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, MPSProject project);

@@ -404,7 +404,7 @@ public abstract class AbstractModule implements IModule {
     return list;
   }
 
-  public SModelDescriptor createModel(SModelUID uid, SModelRoot root) {
+  public SModelDescriptor createModel(SModelFqName name, SModelRoot root) {
     IModelRootManager manager = root.getManager();
 
     if (!manager.isNewModelsSupported()) {
@@ -412,7 +412,7 @@ public abstract class AbstractModule implements IModule {
       return null;
     }
 
-    final SModelDescriptor result = manager.createNewModel(root, uid, this);
+    final SModelDescriptor result = manager.createNewModel(root, name, this);
     result.getSModel().runLoadingAction(new Runnable() {
       public void run() {
         result.save();
@@ -749,7 +749,7 @@ public abstract class AbstractModule implements IModule {
   public void reloadFromDisk() {
   }
 
-  public class ModuleScope extends BaseScope {
+  public class ModuleScope extends DefaultScope {
     public ModelOwner getModelOwner() {
       return AbstractModule.this;
     }

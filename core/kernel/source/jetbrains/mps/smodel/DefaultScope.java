@@ -9,8 +9,8 @@ import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
-public abstract class BaseScope implements IScope {
-  private static Logger LOG = Logger.getLogger(BaseScope.class);
+public abstract class DefaultScope extends BaseScope {
+  private static Logger LOG = Logger.getLogger(DefaultScope.class);
 
   private boolean myInitialized;
   private boolean myInitializationInProgress;
@@ -19,16 +19,20 @@ public abstract class BaseScope implements IScope {
   private Map<String, Language> myLanguages = new HashMap<String, Language>();
   private Map<String, DevKit> myDevkits = new HashMap<String, DevKit>();
 
-  private Map<SModelUID, SModelDescriptor> myDescriptors = new HashMap<SModelUID, SModelDescriptor>();
+  private Map<SModelFqName, SModelDescriptor> myFqNameToDescriptor = new HashMap<SModelFqName, SModelDescriptor>();
+  private Map<SModelId, SModelDescriptor> myIdToDescriptor = new HashMap<SModelId, SModelDescriptor>();
   
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     initialize();
-    return myDescriptors.get(modelUID);
+    if (modelUID.getSModelId() == null) {
+      return myIdToDescriptor.get(modelUID.getSModelId());
+    }
+    return myFqNameToDescriptor.get(modelUID.getSModelFqName());
   }
 
   public List<SModelDescriptor> getModelDescriptors() {
     initialize();
-    return new ArrayList<SModelDescriptor>(myDescriptors.values());
+    return new ArrayList<SModelDescriptor>(myFqNameToDescriptor.values());
   }
 
   public Language getLanguage(String languageNamespace) {
@@ -77,7 +81,8 @@ public abstract class BaseScope implements IScope {
   public void invalidateCaches() {
     myVisibleModules = null;
     myLanguages.clear();
-    myDescriptors.clear();
+    myFqNameToDescriptor.clear();
+    myIdToDescriptor.clear();
     myInitialized = false;
   }
 
@@ -180,17 +185,22 @@ public abstract class BaseScope implements IScope {
 
     for (IModule module : visibleModules) {
       for (SModelDescriptor sm : module.getOwnModelDescriptors()) {
-        myDescriptors.put(sm.getModelUID(), sm);
+        addDescriptor(sm);
       }
     }
 
     for (Language l : usedLanguages) {
       for (SModelDescriptor accessory : l.getAccessoryModels()) {
-        myDescriptors.put(accessory.getModelUID(), accessory);
+        addDescriptor(accessory);
       }
     }
 
     myInitializationInProgress = false;
     myInitialized = true;
+  }
+
+  private void addDescriptor(SModelDescriptor sm) {
+    myFqNameToDescriptor.put(sm.getModelUID().getSModelFqName(), sm);
+    myIdToDescriptor.put(sm.getModelUID().getSModelId(), sm);
   }
 }

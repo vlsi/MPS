@@ -187,29 +187,29 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   }
 
   @NotNull
-  public SModelDescriptor createNewModel(@NotNull SModelRoot root, @NotNull SModelUID uid, @NotNull ModelOwner owner) {
-    if (root.getPrefix().length() > 0 && !uid.getLongName().startsWith(root.getPrefix())) {
+  public SModelDescriptor createNewModel(@NotNull SModelRoot root, @NotNull SModelFqName fqName, @NotNull ModelOwner owner) {
+    if (root.getPrefix().length() > 0 && !fqName.getLongName().startsWith(root.getPrefix())) {
       throw new IllegalArgumentException();
     }
 
-    IFile modelFile = createFileForModelUID(root, uid);
-    SModelDescriptor result = DefaultModelRootManager.createModel(this, modelFile.getCanonicalPath(), uid, owner);
+    IFile modelFile = createFileForModelUID(root, fqName);
+    SModelDescriptor result = DefaultModelRootManager.createModel(this, modelFile.getCanonicalPath(), fqName, owner);
 
     return result;
   }
 
-  private IFile createFileForModelUID(SModelRoot root, SModelUID uid) {
+  private IFile createFileForModelUID(SModelRoot root, SModelFqName fqName) {
     String pathPrefix = root.getPrefix();
     String path = root.getPath();
 
     if (pathPrefix == null) pathPrefix = "";
-    if (pathPrefix.length() > 0 && !uid.getLongName().startsWith(pathPrefix)) {
-      LOG.error("Model uid \"" + uid + "\" doesn't match name prefix \"" + pathPrefix + "\"");
+    if (pathPrefix.length() > 0 && !fqName.getLongName().startsWith(pathPrefix)) {
+      LOG.error("Model fqName \"" + fqName + "\" doesn't match name prefix \"" + pathPrefix + "\"");
     }
 
-    String filenameSuffix = uid.getLongName().substring(pathPrefix.length());
-    if (uid.hasStereotype()) {
-      filenameSuffix = filenameSuffix + '@' + uid.getStereotype();
+    String filenameSuffix = fqName.getLongName().substring(pathPrefix.length());
+    if (fqName.hasStereotype()) {
+      filenameSuffix = filenameSuffix + '@' + fqName.getStereotype();
     }
 
     IFile modelFile = FileSystem.getFile(path + File.separator + filenameSuffix.replace('.', File.separatorChar) + MPSExtentions.DOT_MODEL);
@@ -228,7 +228,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     }
     IFile modelFile = FileSystem.getFile(fileName);
     SModelUID newModelUID = ModelPersistence.upgradeModelUID(modelUID);
-    IFile newFile = createFileForModelUID(root, newModelUID);//ModelPersistence.upgradeFile(modelFile);
+    IFile newFile = createFileForModelUID(root, newModelUID.getSModelFqName());//ModelPersistence.upgradeFile(modelFile);
     newFile.createNewFile();
     FileUtil.copyFile(modelFile.toFile(), newFile.toFile());
     modelFile.delete();
@@ -276,7 +276,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     }
   }
 
-  private static SModelDescriptor createModel(IModelRootManager manager, String fileName, SModelUID modelUID, ModelOwner owner) {
+  private static SModelDescriptor createModel(IModelRootManager manager, String fileName, SModelFqName modelUID, ModelOwner owner) {
     LOG.debug("create model uid=\"" + modelUID + "\" file=\"" + fileName + "\" owner: " + owner);
 
     SModelRepository modelRepository = SModelRepository.getInstance();
@@ -284,7 +284,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       LOG.error("Couldn't create new model \"" + modelUID + "\" because such model exists");
     }
 
-    SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getFile(fileName), modelUID);
+    SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getFile(fileName), new SModelUID(modelUID, SModelId.generate()));
     SModelRepository.getInstance().createNewModel(modelDescriptor, owner);
     modelDescriptor.getSModel();
     return modelDescriptor;
@@ -308,7 +308,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   }
 
   public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, SModelRoot root, MPSProject project) {
-    assert modelDescriptor instanceof DefaultSModelDescriptor;
+/*    assert modelDescriptor instanceof DefaultSModelDescriptor;
     SModelUID newModelUID = new SModelUID(newLongName, modelDescriptor.getStereotype());
     SModelUID oldModelUID = modelDescriptor.getModelUID();
     ModelOwner owner = SModelRepository.getInstance().getOwners(modelDescriptor).iterator().next();
@@ -340,7 +340,8 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 //    IFile stubDescriptorModelFile = stubDescriptor.getModelFile();
 
     MPSModuleRepository.getInstance().invalidateCaches();
-    return true;
+    return true;*/
+    throw new RuntimeException();
   }
 
   public void saveMetadata(@NotNull SModelDescriptor modelDescriptor) {

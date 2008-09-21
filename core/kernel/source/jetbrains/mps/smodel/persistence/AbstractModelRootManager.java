@@ -3,10 +3,7 @@ package jetbrains.mps.smodel.persistence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.ModelOwner;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -58,9 +55,9 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
 
   @NotNull
   public SModelDescriptor createNewModel(@NotNull SModelRoot root,
-                                         @NotNull SModelUID modelUID,
+                                         @NotNull SModelFqName fqName,
                                          @NotNull ModelOwner owner) {
-    throw new RuntimeException("can't create new model " + modelUID + " manager class = " + getClass());
+    throw new RuntimeException("can't create new model " + fqName + " manager class = " + getClass());
   }
 
 

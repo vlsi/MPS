@@ -36,9 +36,6 @@ public interface SModelDescriptor {
 
   boolean isInitialized();
 
-  @Nullable
-  public Throwable getInitializationStackTrace();
-
   void addWeakModelListener(SModelListener listener);
 
   void addModelListener(SModelListener listener);

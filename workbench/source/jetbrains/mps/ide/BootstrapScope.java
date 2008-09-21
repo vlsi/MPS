@@ -2,17 +2,14 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class BootstrapScope implements IScope {
+public class BootstrapScope extends BaseScope {
   private static BootstrapScope myInstance;
 
   public static BootstrapScope getInstance() {

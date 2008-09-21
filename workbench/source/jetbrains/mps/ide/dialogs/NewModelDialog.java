@@ -88,7 +88,7 @@ public class NewModelDialog extends BaseDialog {
           return null;
         }
 
-        SModelUID modelUID = new SModelUID(myModelName.getText(), myModelStereotype.getSelectedItem().toString());
+        SModelFqName modelUID = new SModelFqName(myModelName.getText(), myModelStereotype.getSelectedItem().toString());
         if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
           setErrorText("Model with an uid " + myModelName.getText() + " is already exists");
           return null;

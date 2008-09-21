@@ -194,7 +194,7 @@ public class NewGeneratorDialog extends BaseDialog {
     }
     if (!alreadyOwnsTemplateModel) {
       SModelDescriptor templateModelDescriptor = newGenerator.createModel(
-        new SModelUID(templateModelNamePrefix, "main", SModelStereotype.GENERATOR),
+        new SModelFqName(templateModelNamePrefix, "main", SModelStereotype.GENERATOR),
         newGenerator.getSModelRoots().get(0));
 
       SModel templateModel = templateModelDescriptor.getSModel();

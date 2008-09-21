@@ -493,7 +493,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   //TODO: make private (was made visible for usages view to save view scope by Mihail Muhin)
-  public class ProjectScope extends BaseScope {
+  public class ProjectScope extends DefaultScope {
     public ModelOwner getModelOwner() {
       return MPSProject.this;
     }

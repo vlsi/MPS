@@ -1,9 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.InternUtil;
-import org.jetbrains.annotations.NotNull;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -12,78 +8,83 @@ import org.jetbrains.annotations.NotNull;
  * To change this template use File | Settings | File Templates.
  */
 public class SModelUID implements Comparable<Object> {
-  private String myLongName;
-  private String myStereotype;
-  private String myUIDString;
-
-  public SModelUID(String namePrefix, String shortName, String stereotype) {
-    this(namePrefix + "." + shortName, stereotype);
+  public static SModelUID fromString(String s) {
+    return new SModelUID(SModelFqName.fromString(s), null);
   }
+
+  private SModelId myModelId;
+  private SModelFqName myModelFqName;
 
   public SModelUID(String longName, String stereotype) {
-    if (longName == null) longName = "";
-    if (stereotype == null) stereotype = "";
-    myLongName = InternUtil.intern(longName);
-    myStereotype = InternUtil.intern(stereotype);
-    myUIDString = InternUtil.intern(myLongName + (myStereotype.length() == 0 ? "" : "@" + myStereotype));
+    this(new SModelFqName(longName, stereotype), null);
   }
 
-  public static SModelUID fromString(String s) {
-    if (s == null) s = "";
-    int index = s.indexOf("@");
-    String stereotype = "";
-    if (index >= 0) {
-      stereotype = s.substring(index + 1);
-    }
-    String longName = s;
-    if (index >= 0) {
-      longName = s.substring(0, index);
-    }
+  public SModelUID(SModelFqName fqName, SModelId modelId) {
+    myModelFqName = fqName;
+    myModelId = modelId;
+  }
 
-    return new SModelUID(longName, stereotype);
+  public SModelId getSModelId() {
+    return myModelId;
+  }
+
+  public SModelFqName getSModelFqName() {
+    return myModelFqName;
   }
 
   public boolean equals(Object o) {
     if (o == this) return true;
     if (!(o instanceof SModelUID)) return false;
     SModelUID otherUID = (SModelUID) o;
-    return otherUID.myUIDString.equals(myUIDString);
+
+    if (otherUID.myModelId != null && myModelId != null) {
+      return otherUID.myModelId.equals(myModelId);
+    }
+
+    if (otherUID.myModelId == null && myModelId != null) {
+      return false;
+    }
+
+    if (otherUID.myModelId != null && myModelId == null) {
+      return false;
+    }
+
+    return otherUID.myModelFqName.equals(myModelFqName);
   }
 
   public int hashCode() {
-    return myUIDString.hashCode();
+    if (myModelId != null) {
+      return myModelId.hashCode();
+    }
+    return myModelFqName.hashCode();
   }
 
   public String toString() {
-    return myUIDString;
+    return myModelFqName.toString();
   }
 
   public String getLongName() {
-    return myLongName;
+    return myModelFqName.getLongName();
   }
 
   public String getCompactPresentation() {
-    return NameUtil.compactNamespace(getLongName()) + (myStereotype.length() == 0 ? "" : "@" + myStereotype.charAt(0));
+    return myModelFqName.getCompactPresentation();
   }
 
   public String getNamespace() {
-    return NameUtil.namespaceFromLongName(getLongName());
+    return myModelFqName.getNamespace();
   }
 
   public String getShortName() {
-    int offset = getLongName().lastIndexOf('.');
-    if (offset < 0) {
-      return getLongName();
-    }
-    return getLongName().substring(offset + 1);
+    return myModelFqName.getShortName();
   }
 
   public String getStereotype() {
-    return myStereotype;
+    return myModelFqName.getStereotype();
   }
 
   public boolean hasStereotype() {
-    return myStereotype.length() > 0;
+    return myModelFqName.hasStereotype();
   }
 
   public int compareTo(Object o) {

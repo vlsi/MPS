@@ -10,6 +10,7 @@ import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.javastub.classpath.ClassPathModelProvider;
 
 import java.util.Map;
 
@@ -126,7 +127,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
               // model: either current output or java_stub
               if (!modelName.equals(generator.getOutputModel().getLongName())) {
                 // external java_stub
-                myExternalTargetModelUID = new SModelUID(modelName, SModelStereotype.JAVA_STUB);
+                myExternalTargetModelUID = ClassPathModelProvider.uidForPackage(modelName);
               }
             }
           }

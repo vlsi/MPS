@@ -37,7 +37,7 @@ public class TypeChecker implements ApplicationComponent {
 
   private static final String RUNTIME_TYPES = "$runtimeTypes$";
   private static final String TYPES_MODEL_NAME = "typesModel";
-  public static final SModelUID TYPES_MODEL_UID = new SModelUID(TYPES_MODEL_NAME, RUNTIME_TYPES);
+  private static final SModelFqName TYPES_MODEL_UID = new SModelFqName(TYPES_MODEL_NAME, RUNTIME_TYPES);
   private static final ModelOwner RUNTIME_TYPES_MODEL_OWNER = new ModelOwner() {};
 
   private Set<SNode> myCheckedRoots = new WeakSet<SNode>();
@@ -429,16 +429,16 @@ public class TypeChecker implements ApplicationComponent {
   }
 
 
-  public SModelUID getRuntimeTypesModelUID() {
+  public SModelFqName getRuntimeTypesModelUID() {
     return TYPES_MODEL_UID;
   }
 
   public SModel getRuntimeTypesModel() {
-    SModelUID uid = getRuntimeTypesModelUID();
-    SModelDescriptor modelDescriptor = (SModelRepository.getInstance().getModelDescriptor(uid));
+    SModelFqName fqName = getRuntimeTypesModelUID();
+    SModelDescriptor modelDescriptor = (SModelRepository.getInstance().getModelDescriptor(fqName));
 
     if (modelDescriptor == null) { // then create and register model descriptor
-      modelDescriptor = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, uid) {
+      modelDescriptor = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, new SModelUID(fqName, SModelId.generate())) {
         {
           mySModel = new SModel(getModelUID());
           mySModel.setLoading(true);

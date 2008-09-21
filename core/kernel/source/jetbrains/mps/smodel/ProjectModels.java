@@ -40,7 +40,8 @@ public class ProjectModels {
 
   @NotNull
   public static SModelDescriptor createDescriptorFor(@NotNull ModelOwner owner) {
-    SModelDescriptor result = new DefaultSModelDescriptor(ourModelRootManager, null, new SModelUID("projectModel" + ourProjectModelDescriptorCount++, "$internal$"));
+    SModelFqName fqName = new SModelFqName("projectModel" + ourProjectModelDescriptorCount++, "$internal$");
+    SModelDescriptor result = new DefaultSModelDescriptor(ourModelRootManager, null, new SModelUID(fqName, SModelId.generate()));
     SModelRepository.getInstance().registerModelDescriptor(result, owner);
     return result;
   }

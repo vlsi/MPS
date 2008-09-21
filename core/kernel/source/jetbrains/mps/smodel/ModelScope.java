@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 
-public class ModelScope implements IScope {
+public class ModelScope extends BaseScope {
   private IScope myScope = null;
   private SModelDescriptor myModelDescriptor = null;
 

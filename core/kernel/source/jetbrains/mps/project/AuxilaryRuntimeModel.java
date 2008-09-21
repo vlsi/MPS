@@ -9,7 +9,8 @@ import com.intellij.openapi.application.ApplicationManager;
  * May 31, 2007
  */
 public class AuxilaryRuntimeModel implements ModelOwner {
-  private static final SModelUID myModelUID = new SModelUID("" + System.currentTimeMillis(), "$orphan-stuff$");
+  private static final SModelFqName myModelFqName = new SModelFqName("" + System.currentTimeMillis(), "$orphan-stuff$");
+  private static final SModelUID myModelUID = new SModelUID(myModelFqName, SModelId.generate());
 
   public AuxilaryRuntimeModel() {
   }

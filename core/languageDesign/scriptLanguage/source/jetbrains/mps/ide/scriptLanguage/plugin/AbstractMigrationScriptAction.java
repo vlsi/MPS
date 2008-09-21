@@ -56,7 +56,7 @@ public abstract class AbstractMigrationScriptAction extends BaseAction {
   }
 
 
-  private static class MigrationScope implements IScope {
+  private static class MigrationScope extends BaseScope {
     private Set<SModelDescriptor> myModels = new LinkedHashSet<SModelDescriptor>();
 
     public void addModel(SModelDescriptor model) {

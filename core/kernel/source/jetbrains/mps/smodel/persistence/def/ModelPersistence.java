@@ -157,7 +157,6 @@ public class ModelPersistence {
     return modelReaders.get(currentPersistenceVersion).readNode(nodeElement, model);
   }
 
-
   public static void saveModel(@NotNull SModel model, @NotNull IFile file) {
     LOG.debug("Save model " + model.getUID() + " to file " + file.getAbsolutePath());
     Document document = saveModel(model);

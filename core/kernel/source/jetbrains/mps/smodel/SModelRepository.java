@@ -23,8 +23,10 @@ public class SModelRepository implements ApplicationComponent {
 
   private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
   private Map<SModelDescriptor, Long> myChangedModels = new LinkedHashMap<SModelDescriptor, Long>();
-  private Map<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new LinkedHashMap<SModelUID, SModelDescriptor>();
   private Set<SModelDescriptor> myModelsWithNoOwners = new LinkedHashSet<SModelDescriptor>();
+
+  private Map<SModelId, SModelDescriptor> myIdToModelDescriptorMap = new LinkedHashMap<SModelId, SModelDescriptor>();
+  private Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new LinkedHashMap<SModelFqName, SModelDescriptor>();
 
   private final Map<String, SModelDescriptor> myCanonicalPathsToModelDescriptorMap = new LinkedHashMap<String, SModelDescriptor>();
   private ManyToManyMap<SModelDescriptor, ModelOwner> myModelsToOwners = new ManyToManyMap<SModelDescriptor, ModelOwner>();
@@ -60,7 +62,7 @@ public class SModelRepository implements ApplicationComponent {
 
   public void refreshModels() {
     LOG.debug("Model refresh");
-    for (SModelDescriptor m : new ArrayList<SModelDescriptor>(myUIDToModelDescriptorMap.values())) {
+    for (SModelDescriptor m : new ArrayList<SModelDescriptor>(myModelDescriptors)) {
       m.refresh();
     }
     LOG.debug("Model refresh done");
@@ -167,7 +169,7 @@ public class SModelRepository implements ApplicationComponent {
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     SModelUID modelUID = modelDescriptor.getModelUID();
-    SModelDescriptor registeredModel = myUIDToModelDescriptorMap.get(modelUID);
+    SModelDescriptor registeredModel = getModelDescriptor(modelUID);
     LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
       "Another model \"" + modelUID + "\" is already registered!");
 
@@ -178,7 +180,11 @@ public class SModelRepository implements ApplicationComponent {
 
     myModelsToOwners.addLink(modelDescriptor, owner);
 
-    myUIDToModelDescriptorMap.put(modelUID, modelDescriptor);
+    if (modelUID.getSModelId() != null) {
+      myIdToModelDescriptorMap.put(modelUID.getSModelId(), modelDescriptor);
+    }
+    myFqNameToModelDescriptorMap.put(modelUID.getSModelFqName(), modelDescriptor);
+
     myModelDescriptors.add(modelDescriptor);
     addModelToFileCache(modelDescriptor);
     myModelsWithNoOwners.remove(modelDescriptor);
@@ -197,9 +203,8 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public void unRegisterModelDescriptors(ModelOwner owner) {
-    for (SModelUID uid : new HashMap<SModelUID, SModelDescriptor>(myUIDToModelDescriptorMap).keySet()) {
-      SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(uid);
-      unRegisterModelDescriptor(modelDescriptor, owner);
+    for (SModelDescriptor sm : myModelDescriptors) {
+      unRegisterModelDescriptor(sm, owner);
     }
   }
 
@@ -211,7 +216,11 @@ public class SModelRepository implements ApplicationComponent {
     myModelDescriptors.remove(modelDescriptor);
     boolean result = removeModelFromFileCache(modelDescriptor);
     assert result;
-    myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
+    if (modelDescriptor.getModelUID().getSModelId() != null) {
+      myIdToModelDescriptorMap.remove(modelDescriptor.getModelUID().getSModelId());
+    }
+    myFqNameToModelDescriptorMap.remove(modelDescriptor.getModelUID().getSModelFqName());
+
     myChangedModels.remove(modelDescriptor);
     myModelsWithNoOwners.remove(modelDescriptor);
 
@@ -249,15 +258,26 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public SModelDescriptor getModelDescriptor(SModel model) {
-    return myUIDToModelDescriptorMap.get(model.getUID());
+    return getModelDescriptor(model.getUID());
   }
 
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
-    return myUIDToModelDescriptorMap.get(modelUID);
+    if (modelUID.getSModelId() != null) {
+      return myIdToModelDescriptorMap.get(modelUID.getSModelId());
+    }
+    return myFqNameToModelDescriptorMap.get(modelUID.getSModelFqName());
+  }
+
+  public SModelDescriptor getModelDescriptor(SModelFqName modelFqName) {
+    return myFqNameToModelDescriptorMap.get(modelFqName);
+  }
+
+  public SModelDescriptor getModelDescriptor(SModelId modelId) {
+    return myIdToModelDescriptorMap.get(modelId);
   }
 
   public SModelDescriptor getModelDescriptor(SModelUID modelUID, ModelOwner owner) {
-    SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(modelUID);
+    SModelDescriptor descriptor = getModelDescriptor(modelUID);
     if (descriptor == null) {
       return null;
     }
@@ -283,7 +303,7 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   private void markChanged(SModel model, boolean changed) {
-    SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(model.getUID());
+    SModelDescriptor modelDescriptor = getModelDescriptor(model.getUID());
     if (modelDescriptor != null) { //i.e project model
       markChanged(modelDescriptor, changed);
     }
@@ -298,40 +318,41 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public void renameUID(SModelDescriptor modelDescriptor, SModelUID newModelUID) {
-    boolean contains0 = myUIDToModelDescriptorMap.containsKey(modelDescriptor.getModelUID());
-    myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
-    boolean contains1 = myModelDescriptors.contains(modelDescriptor);
-    myModelDescriptors.remove(modelDescriptor);
-    boolean result = removeModelFromFileCache(modelDescriptor);
-    assert result ^ !contains1;
-    removeModelFromFileCache(modelDescriptor);
-    Long aLong = myChangedModels.get(modelDescriptor);
-    myChangedModels.remove(modelDescriptor);
-
-    boolean contains2 = myModelsWithNoOwners.contains(modelDescriptor);
-    myModelsWithNoOwners.remove(modelDescriptor);
-
-    if (modelDescriptor instanceof DefaultSModelDescriptor) {
-      ((DefaultSModelDescriptor) modelDescriptor).changeSModelUID(newModelUID);
-    }
-
-    if (contains0) {
-      myUIDToModelDescriptorMap.put(newModelUID, modelDescriptor);
-    }
-    if (contains1) {
-      myModelDescriptors.add(modelDescriptor);
-      addModelToFileCache(modelDescriptor);
-    }
-    if (aLong != null) {
-      myChangedModels.put(modelDescriptor, aLong);
-    }
-
-    if (contains2) {
-      myModelsWithNoOwners.add(modelDescriptor);
-    }
-
-    markChanged(modelDescriptor, true);
-    fireModelRenamed(modelDescriptor);
+//    boolean contains0 = myUIDToModelDescriptorMap.containsKey(modelDescriptor.getModelUID());
+//    myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
+//    boolean contains1 = myModelDescriptors.contains(modelDescriptor);
+//    myModelDescriptors.remove(modelDescriptor);
+//    boolean result = removeModelFromFileCache(modelDescriptor);
+//    assert result ^ !contains1;
+//    removeModelFromFileCache(modelDescriptor);
+//    Long aLong = myChangedModels.get(modelDescriptor);
+//    myChangedModels.remove(modelDescriptor);
+//
+//    boolean contains2 = myModelsWithNoOwners.contains(modelDescriptor);
+//    myModelsWithNoOwners.remove(modelDescriptor);
+//
+//    if (modelDescriptor instanceof DefaultSModelDescriptor) {
+//      ((DefaultSModelDescriptor) modelDescriptor).changeSModelUID(newModelUID);
+//    }
+//
+//    if (contains0) {
+//      myUIDToModelDescriptorMap.put(newModelUID, modelDescriptor);
+//    }
+//    if (contains1) {
+//      myModelDescriptors.add(modelDescriptor);
+//      addModelToFileCache(modelDescriptor);
+//    }
+//    if (aLong != null) {
+//      myChangedModels.put(modelDescriptor, aLong);
+//    }
+//
+//    if (contains2) {
+//      myModelsWithNoOwners.add(modelDescriptor);
+//    }
+//
+//    markChanged(modelDescriptor, true);
+//    fireModelRenamed(modelDescriptor);
+    throw new UnsupportedOperationException();
   }
 
   private void addModelToFileCache(SModelDescriptor modelDescriptor) {

@@ -48,7 +48,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     String result = longName + "_copy";
     int i;
     for (i = 1; ; i++) {
-      if (getOperationContext().getScope().getModelDescriptor(new SModelUID(result + i, stereotype)) == null) break;
+      if (getOperationContext().getScope().getModelDescriptor(new SModelFqName(result + i, stereotype)) == null) break;
     }
     return result + i;
   }
@@ -130,7 +130,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     }
 
     SModelRoot modelRoot = module.findModelRoot(reference.getPath());
-    final SModelDescriptor modelDescriptor = module.createModel(new SModelUID(modelName, stereotype), modelRoot);
+    final SModelDescriptor modelDescriptor = module.createModel(new SModelFqName(modelName, stereotype), modelRoot);
     if (modelDescriptor == null) {
       setErrorText("You can't create a model in the model root that you specified");
       return false;

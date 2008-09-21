@@ -194,13 +194,19 @@ public class CopyPasteUtil {
 
   public static SModel copyModelProperties(SModel model) {
     SModelUID modelUID = model.getUID();
-    SModel newModel = new SModel(new SModelUID(modelUID.getLongName(), SModelStereotype.INTERNAL_COPY));
-    for (String language : model.getExplicitlyImportedLanguages())
+    SModelFqName fqName = new SModelFqName(modelUID.getLongName(), SModelStereotype.INTERNAL_COPY);
+    SModel newModel = new SModel(new SModelUID(fqName, SModelId.generate()));
+    for (String language : model.getExplicitlyImportedLanguages()) {
       newModel.addLanguage(language);
-    for (SModelUID importedModel : model.getImportedModelUIDs())
+    }
+    for (SModelUID importedModel : model.getImportedModelUIDs()) {
       newModel.addImportedModel(importedModel);
-    for (String devKit : model.getDevKitNamespaces())
+    }
+
+    for (String devKit : model.getDevKitNamespaces()) {
       newModel.addDevKit(devKit);
+    }
+    
     return newModel;
   }
 

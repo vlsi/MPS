@@ -194,7 +194,7 @@ public enum LanguageAspect {
     );
   }
 
-  private SModelUID getModuleUID(Language l) {
-    return new SModelUID(l.getNamespace() + "." + getName(), "");
+  private SModelFqName getModuleUID(Language l) {
+    return new SModelFqName(l.getNamespace() + "." + getName(), "");
   }
 }

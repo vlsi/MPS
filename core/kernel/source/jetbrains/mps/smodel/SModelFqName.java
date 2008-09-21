@@ -1,0 +1,86 @@
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.InternUtil;
+
+public class SModelFqName implements Comparable<Object> {
+  public static SModelFqName fromString(String s) {
+    if (s == null) s = "";
+    int index = s.indexOf("@");
+    String stereotype = "";
+    if (index >= 0) {
+      stereotype = s.substring(index + 1);
+    }
+    String longName = s;
+    if (index >= 0) {
+      longName = s.substring(0, index);
+    }
+
+    return new SModelFqName(longName, stereotype);
+  }
+
+  private String myLongName;
+  private String myStereotype;
+  private String myUIDString;
+
+  public SModelFqName(String namePrefix, String shortName, String stereotype) {
+    this(namePrefix + "." + shortName, stereotype);
+  }
+
+  public SModelFqName(String longName, String stereotype) {
+    if (longName == null) longName = "";
+    if (stereotype == null) stereotype = "";
+    myLongName = InternUtil.intern(longName);
+    myStereotype = InternUtil.intern(stereotype);
+    myUIDString = InternUtil.intern(myLongName + (myStereotype.length() == 0 ? "" : "@" + myStereotype));
+  }
+
+  public boolean equals(Object o) {
+    if (o == this) return true;
+    if (!(o instanceof SModelFqName)) return false;
+    SModelFqName otherUID = (SModelFqName) o;
+    return otherUID.myUIDString.equals(myUIDString);
+  }
+
+  public int hashCode() {
+    return myUIDString.hashCode();
+  }
+
+  public String toString() {
+    return myUIDString;
+  }
+
+  public String getLongName() {
+    return myLongName;
+  }
+
+  public String getCompactPresentation() {
+    return NameUtil.compactNamespace(getLongName()) + (myStereotype.length() == 0 ? "" : "@" + myStereotype.charAt(0));
+  }
+
+  public String getNamespace() {
+    return NameUtil.namespaceFromLongName(getLongName());
+  }
+
+  public String getShortName() {
+    int offset = getLongName().lastIndexOf('.');
+    if (offset < 0) {
+      return getLongName();
+    }
+    return getLongName().substring(offset + 1);
+  }
+
+  public String getStereotype() {
+    return myStereotype;
+  }
+
+  public boolean hasStereotype() {
+    return myStereotype.length() > 0;
+  }
+
+  public int compareTo(Object o) {
+    int compareStereotypes = this.getStereotype().compareTo(((SModelFqName)o).getStereotype());
+    if (compareStereotypes != 0) return compareStereotypes;
+    return this.toString().compareTo(o.toString());
+  }
+}

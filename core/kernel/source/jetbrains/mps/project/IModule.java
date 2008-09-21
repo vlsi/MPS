@@ -40,7 +40,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   void addUsedLangauge(String languageNamespace);
   void addUsedDevkit(String devkit);
 
-  SModelDescriptor createModel(SModelUID uid, SModelRoot root);
+  SModelDescriptor createModel(SModelFqName fqName, SModelRoot root);
 
   Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
   Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
