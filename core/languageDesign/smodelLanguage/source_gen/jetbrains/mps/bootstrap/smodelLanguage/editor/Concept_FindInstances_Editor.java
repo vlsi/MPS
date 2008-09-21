@@ -102,7 +102,7 @@ public class Concept_FindInstances_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12211643654121221164365412(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221164365412");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_scope1221164365413(EditorCell editorCell, SNode node, EditorContext context) {
@@ -110,7 +110,7 @@ public class Concept_FindInstances_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12211643654141221164365414(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221164365414");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1221164365412_1221164365412(EditorCell_Label editorCell, SNode node, EditorContext context) {

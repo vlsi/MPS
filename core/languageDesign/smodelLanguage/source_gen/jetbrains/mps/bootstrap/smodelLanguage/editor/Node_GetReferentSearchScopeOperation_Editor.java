@@ -144,17 +144,17 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
 
   private static void setupBasic_Constant_12064859888311206485988831(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206485988831");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12064859888371206485988837(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206485988837");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_referenceLink1221164457353(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_referenceLink");
-    SharedStyles_StyleSheet.REFERENCE_ON_CONCEPTUAL_FEATURE.apply(editorCell);
+    SharedStyles_StyleSheet.getReferenceOnConceptualFeature(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12211646500301221164650030(EditorCell editorCell, SNode node, EditorContext context) {

@@ -153,7 +153,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11746575487451174657548745(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174657548745");
-    BaseLanguageStyle_StyleSheet.COMPACT_KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -176,12 +176,12 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11756112121201175611212120(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175611212120");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11756112153881175611215388(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175611215388");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11950580801441195058080144(EditorCell editorCell, SNode node, EditorContext context) {
@@ -194,7 +194,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11950580843821195058084382(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1195058084382");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1174657548745_1174657548745(EditorCell_Label editorCell, SNode node, EditorContext context) {

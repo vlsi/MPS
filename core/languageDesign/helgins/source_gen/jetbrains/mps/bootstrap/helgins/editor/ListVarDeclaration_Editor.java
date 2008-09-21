@@ -85,12 +85,12 @@ public class ListVarDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12034326402301203432640230(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1203432640230");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_name1203432645201(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-    BaseLanguageStyle_StyleSheet.VARIABLE_NAME.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getVariableName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12034326475621203432647562(EditorCell editorCell, SNode node, EditorContext context) {

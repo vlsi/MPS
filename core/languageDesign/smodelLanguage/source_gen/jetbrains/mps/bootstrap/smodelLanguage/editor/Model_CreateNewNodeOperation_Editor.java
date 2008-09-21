@@ -183,7 +183,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11777008428811177700842881(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177700842881");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206480498092(EditorCell editorCell, SNode node, EditorContext context) {
@@ -192,7 +192,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12064849105901206484910590(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206484910590");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refCell_concept_1143235366833(EditorCell_Label editorCell, SNode node, EditorContext context) {

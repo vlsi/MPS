@@ -306,12 +306,12 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11765589464611176558946461(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176558946461");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11765589524941176558952494(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176558952494");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_nodeToCoerce1176558961668(EditorCell editorCell, SNode node, EditorContext context) {
@@ -326,7 +326,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11765589760011176558976001(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176558976001");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11765589836611176558983661(EditorCell editorCell, SNode node, EditorContext context) {
@@ -347,7 +347,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12154442428581215444242858(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215444242858");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12204477524001220447752400(EditorCell editorCell, SNode node, EditorContext context) {
@@ -365,17 +365,17 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12204477524021220447752402(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1220447752402");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12204477550291220447755029(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1220447755029");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12204477615941220447761594(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1220447761594");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12204477704711220447770471(EditorCell editorCell, SNode node, EditorContext context) {
@@ -404,7 +404,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12204477963081220447796308(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1220447796308");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1176558946461_1176558946461(EditorCell_Label editorCell, SNode node, EditorContext context) {

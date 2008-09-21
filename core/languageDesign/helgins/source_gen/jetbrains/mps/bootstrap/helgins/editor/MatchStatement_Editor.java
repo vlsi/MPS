@@ -285,7 +285,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11775147559281177514755928(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177514755928");
-    BaseLanguageStyle_StyleSheet.COMPACT_KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -302,7 +302,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11775147722761177514772276(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177514772276");
-    BaseLanguageStyle_StyleSheet.COMPACT_KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -381,7 +381,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11775153326401177515332640(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177515332640");
-    BaseLanguageStyle_StyleSheet.COMPACT_KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11775153326411177515332641(EditorCell editorCell, SNode node, EditorContext context) {
@@ -419,7 +419,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11775153326471177515332647(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177515332647");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11775153369301177515336930(EditorCell editorCell, SNode node, EditorContext context) {
@@ -441,7 +441,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12154462573851215446257385(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215446257385");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Indent_12154465360151215446536015(EditorCell editorCell, SNode node, EditorContext context) {

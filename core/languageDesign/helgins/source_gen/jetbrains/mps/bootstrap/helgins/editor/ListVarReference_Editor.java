@@ -104,7 +104,7 @@ public class ListVarReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_property_name1203432777530(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      BaseLanguageStyle_StyleSheet.VARIABLE_NAME.apply(editorCell);
+      BaseLanguageStyle_StyleSheet.getVariableName(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_property_name_1203432777530(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -157,7 +157,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12060198965731206019896573(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206019896573");
-    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_methodDeclaration1206019905903(EditorCell editorCell, SNode node, EditorContext context) {
@@ -166,7 +166,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12060199136271206019913627(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206019913627");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNodeList_actualArgument1206019917223(EditorCell editorCell, SNode node, EditorContext context) {
@@ -175,7 +175,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12060199200531206019920053(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206019920053");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refCell_concept_1206019889771(EditorCell_Label editorCell, SNode node, EditorContext context) {

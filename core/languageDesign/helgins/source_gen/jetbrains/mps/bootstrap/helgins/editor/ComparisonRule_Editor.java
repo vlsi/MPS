@@ -353,7 +353,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11888132177391188813217739(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188813217739");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -388,7 +388,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11888132177431188813217743(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188813217743");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -479,7 +479,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12016079291961201607929196(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1201607929196");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12016079291971201607929197(EditorCell editorCell, SNode node, EditorContext context) {
@@ -492,7 +492,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12016079709841201607970984(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1201607970984");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

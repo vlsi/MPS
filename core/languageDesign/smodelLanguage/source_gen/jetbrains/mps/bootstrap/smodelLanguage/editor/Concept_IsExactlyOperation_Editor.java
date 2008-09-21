@@ -102,7 +102,7 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12064861130141206486113014(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206486113014");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_conceptArgument1206733827041(EditorCell editorCell, SNode node, EditorContext context) {
@@ -110,7 +110,7 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12067338782451206733878245(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206733878245");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1206486113014_1206486113014(EditorCell_Label editorCell, SNode node, EditorContext context) {

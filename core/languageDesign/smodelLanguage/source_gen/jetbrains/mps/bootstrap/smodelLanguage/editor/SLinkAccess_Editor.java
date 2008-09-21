@@ -103,7 +103,7 @@ public class SLinkAccess_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_property_role1138412329758(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_role");
-      Styles_StyleSheet.REF_LINK_ROLE.apply(editorCell);
+      Styles_StyleSheet.getRef_link_role(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_property_role_1138412329758(EditorCell_Label editorCell, SNode node, EditorContext context) {

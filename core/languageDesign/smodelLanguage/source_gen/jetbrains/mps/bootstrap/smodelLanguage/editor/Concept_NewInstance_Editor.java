@@ -104,7 +104,7 @@ public class Concept_NewInstance_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12064862260391206486226039(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206486226039");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_prototypeNode1206486226040(EditorCell editorCell, SNode node, EditorContext context) {
@@ -121,7 +121,7 @@ public class Concept_NewInstance_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12064862260411206486226041(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206486226041");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1206486226039_1206486226039(EditorCell_Label editorCell, SNode node, EditorContext context) {

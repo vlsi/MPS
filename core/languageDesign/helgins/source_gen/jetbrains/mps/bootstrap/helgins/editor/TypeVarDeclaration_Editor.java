@@ -85,7 +85,7 @@ public class TypeVarDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11746656144571174665614457(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174665614457");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_name1174665627186(EditorCell editorCell, SNode node, EditorContext context) {

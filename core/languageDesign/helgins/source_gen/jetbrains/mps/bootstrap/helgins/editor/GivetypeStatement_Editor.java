@@ -156,7 +156,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11754962168361175496216836(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175496216836");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_typeExpression1175496229572(EditorCell editorCell, SNode node, EditorContext context) {
@@ -164,7 +164,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11754962456991175496245699(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175496245699");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_termExpression1175496250217(EditorCell editorCell, SNode node, EditorContext context) {
@@ -176,12 +176,12 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11755193803621175519380362(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175519380362");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11755193840201175519384020(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175519384020");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11967800087051196780008705(EditorCell editorCell, SNode node, EditorContext context) {

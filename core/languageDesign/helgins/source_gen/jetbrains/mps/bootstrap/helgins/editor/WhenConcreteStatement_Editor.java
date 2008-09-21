@@ -216,12 +216,12 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11858051167531185805116753(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1185805116753");
-    BaseLanguageStyle_StyleSheet.COMPACT_KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11858051254741185805125474(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1185805125474");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_argument1185805131335(EditorCell editorCell, SNode node, EditorContext context) {
@@ -229,7 +229,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11858051333221185805133322(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1185805133322");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11858051471531185805147153(EditorCell editorCell, SNode node, EditorContext context) {
@@ -254,12 +254,12 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11858051568931185805156893(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1185805156893");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12057620437131205762043713(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205762043713");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_argumentRepresentator1205762295902(EditorCell editorCell, SNode node, EditorContext context) {
@@ -267,7 +267,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12154408992561215440899256(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215440899256");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1185805116753_1185805116753(EditorCell_Label editorCell, SNode node, EditorContext context) {

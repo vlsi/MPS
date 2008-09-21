@@ -151,7 +151,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
 
   private static void setupBasic_Constant_12064866769971206486676997(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206486676997");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206486688202(EditorCell editorCell, SNode node, EditorContext context) {
@@ -160,7 +160,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
 
   private static void setupBasic_Constant_12064866882031206486688203(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206486688203");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refCell_concept_1176109740908(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -224,7 +224,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
 
     private static void setupBasic_property_name1176109745364(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      SharedStyles_StyleSheet.REFERENCE_ON_CONCEPT.apply(editorCell);
+      SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_property_name_1176109745364(EditorCell_Label editorCell, SNode node, EditorContext context) {

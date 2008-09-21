@@ -134,7 +134,7 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11819434775531181943477553(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1181943477553");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_prototypeNode1181943477554(EditorCell editorCell, SNode node, EditorContext context) {
@@ -151,7 +151,7 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11819434775551181943477555(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1181943477555");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refNode_createdType_1181937467361(EditorCell_Label editorCell, SNode node, EditorContext context) {

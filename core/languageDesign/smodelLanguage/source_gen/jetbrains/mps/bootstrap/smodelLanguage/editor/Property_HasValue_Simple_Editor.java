@@ -101,7 +101,7 @@ public class Property_HasValue_Simple_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12064879729881206487972988(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487972988");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206487983630(EditorCell editorCell, SNode node, EditorContext context) {
@@ -110,7 +110,7 @@ public class Property_HasValue_Simple_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12064879836311206487983631(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487983631");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refNode_value_1146253646908(EditorCell_Label editorCell, SNode node, EditorContext context) {

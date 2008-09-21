@@ -176,7 +176,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11755179708561175517970856(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175517970856");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_errorString1175517983013(EditorCell editorCell, SNode node, EditorContext context) {

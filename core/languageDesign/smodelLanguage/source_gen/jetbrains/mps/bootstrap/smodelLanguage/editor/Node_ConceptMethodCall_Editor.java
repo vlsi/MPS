@@ -121,7 +121,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11794093651571179409365157(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1179409365157");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNodeList_actualArgument1179409369096(EditorCell editorCell, SNode node, EditorContext context) {
@@ -130,7 +130,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11794093791771179409379177(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1179409379177");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     if (renderingCondition6574_0(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }

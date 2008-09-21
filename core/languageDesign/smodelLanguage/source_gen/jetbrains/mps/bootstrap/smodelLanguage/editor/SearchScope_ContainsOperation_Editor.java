@@ -109,7 +109,7 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12211707049181221170704918(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221170704918");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_nodeToCheck1221171056921(EditorCell editorCell, SNode node, EditorContext context) {
@@ -117,7 +117,7 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12211710776261221171077626(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221171077626");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1221170583510_1221170583510(EditorCell_Label editorCell, SNode node, EditorContext context) {

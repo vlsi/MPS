@@ -147,12 +147,12 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11746466599041174646659904(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174646659904");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11746471108801174647110880(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174647110880");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_name1174647124944(EditorCell editorCell, SNode node, EditorContext context) {
@@ -258,7 +258,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_property_name1174643059857(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      SharedStyles_StyleSheet.REFERENCE_ON_CONCEPT.apply(editorCell);
+      SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_property_name_1174643059857(EditorCell_Label editorCell, SNode node, EditorContext context) {

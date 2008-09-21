@@ -105,7 +105,7 @@ public class Node_InsertPrevSiblingOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12064872454631206487245463(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487245463");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206487265808(EditorCell editorCell, SNode node, EditorContext context) {
@@ -114,7 +114,7 @@ public class Node_InsertPrevSiblingOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12064872658091206487265809(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487265809");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refNode_parameter_1143224196793(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -100,7 +100,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11384059168301138405916830(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1138405916830");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -114,7 +114,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11384060056911138406005691(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1138406005691");
-    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -128,7 +128,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_concept1138406014241(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_concept");
-    SharedStyles_StyleSheet.REFERENCE_ON_CONCEPT.apply(editorCell);
+    SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -145,7 +145,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11384061026251138406102625(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1138406102625");
-    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

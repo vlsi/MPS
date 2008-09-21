@@ -155,12 +155,12 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
 
   private static void setupBasic_Constant_12064866126681206486612668(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206486612668");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12064866295871206486629587(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206486629587");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refNode_scope_1182511100904(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -224,7 +224,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
 
     private static void setupBasic_property_name1182511125130(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-      SharedStyles_StyleSheet.REFERENCE_ON_CONCEPT.apply(editorCell);
+      SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_property_name_1182511125130(EditorCell_Label editorCell, SNode node, EditorContext context) {

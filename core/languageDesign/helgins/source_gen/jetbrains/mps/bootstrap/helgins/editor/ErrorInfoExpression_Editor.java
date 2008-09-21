@@ -27,7 +27,7 @@ public class ErrorInfoExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12016183286921201618328692(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1201618328692");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1201618328692_1201618328692(EditorCell_Label editorCell, SNode node, EditorContext context) {

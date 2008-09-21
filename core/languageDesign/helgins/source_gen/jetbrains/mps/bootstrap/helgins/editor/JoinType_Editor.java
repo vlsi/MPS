@@ -85,7 +85,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11794796271701179479627170(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1179479627170");
-    BaseLanguageStyle_StyleSheet.COMPACT_KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNodeList_argument1179479667160(EditorCell editorCell, SNode node, EditorContext context) {
@@ -94,12 +94,12 @@ public class JoinType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12060153963701206015396370(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206015396370");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12154350205791215435020579(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215435020579");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1179479627170_1179479627170(EditorCell_Label editorCell, SNode node, EditorContext context) {

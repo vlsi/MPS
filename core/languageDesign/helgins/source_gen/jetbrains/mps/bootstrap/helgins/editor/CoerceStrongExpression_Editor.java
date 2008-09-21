@@ -162,7 +162,7 @@ public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11788715576351178871557635(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178871557635");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_nodeToCoerce1178871557636(EditorCell editorCell, SNode node, EditorContext context) {
@@ -177,7 +177,7 @@ public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11788715576391178871557639(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178871557639");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1178871557634_1178871557634(EditorCell_Label editorCell, SNode node, EditorContext context) {

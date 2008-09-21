@@ -174,7 +174,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11755180846101175518084610(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175518084610");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_condition1175518093442(EditorCell editorCell, SNode node, EditorContext context) {
@@ -182,7 +182,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11755180986001175518098600(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175518098600");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_errorString1175518108070(EditorCell editorCell, SNode node, EditorContext context) {

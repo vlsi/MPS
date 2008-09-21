@@ -174,7 +174,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12064873631261206487363126(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487363126");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206487372236(EditorCell editorCell, SNode node, EditorContext context) {
@@ -183,7 +183,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12064873722371206487372237(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487372237");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refCell_conceptOfParent_1144195585868(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -29,7 +29,7 @@ public class SearchScopeType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12211620277711221162027771(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221162027771");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
