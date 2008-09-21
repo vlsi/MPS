@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="jetbrains.mps.transformation.test.inputModels.test_getPrevInput">
-  <persistence version="2" />
+<model modelUID="jetbrains.mps.transformation.test.inputModels.test_getPrevInput">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.transformation.test.inputLang" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="webr.logging.intentions">
-  <persistence version="2" />
+<model modelUID="webr.logging.intentions">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />

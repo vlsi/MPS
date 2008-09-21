@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="postingrules.agreement">
-  <persistence version="2" />
+<model modelUID="postingrules.agreement">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="agreementLanguage" />
   <language namespace="jetbrains.mps.formulaLanguage" />

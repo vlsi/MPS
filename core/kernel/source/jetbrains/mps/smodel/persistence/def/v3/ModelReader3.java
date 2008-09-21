@@ -1,0 +1,263 @@
+package jetbrains.mps.smodel.persistence.def.v3;
+
+import jetbrains.mps.smodel.persistence.def.*;
+import jetbrains.mps.smodel.persistence.def.v1.ReferencePersister1;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.vfs.IFile;
+import org.jdom.Element;
+import org.jdom.Document;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class ModelReader3 implements IModelReader {
+  private static Logger LOG = Logger.getLogger(ModelReader3.class);
+
+  protected String getLegacyImportedModelUIDString(Element element) {
+    return null;
+  }
+
+  protected Element getLegacyMaxImportIndexElement(Element rootElement) {
+    return null;
+  }
+
+  protected String getLegacyModelName(String modelShortName, Element rootElement) {
+    return null;
+  }
+
+  protected String processConceptFQName(String rawFQName) {
+    return rawFQName;
+  }
+
+  protected IReferencePersister createReferencePersister() {
+    return new ReferencePersister1();
+  }
+
+  protected String upgradeStereotype(String stereotype) {
+    if (SModelStereotype.TEMPLATES.equals(stereotype)) {
+      return SModelStereotype.GENERATOR;
+    }
+    return stereotype;
+  }
+
+  public boolean needsRecreating(IFile file) {
+    String fileName = file.getName();
+    int index = fileName.indexOf('.');
+    String rawModelName = (index >= 0) ? fileName.substring(0, index) : fileName;
+    String modelStereotype = "";
+    int index1 = rawModelName.indexOf("@");
+    if (index1 >= 0) {
+      modelStereotype = rawModelName.substring(index1 + 1);
+    }
+    return SModelStereotype.TEMPLATES.equals(modelStereotype);
+  }
+
+  public SModel readModel(Document document, String modelShortName, String stereotype) {
+    Element rootElement = document.getRootElement();
+
+    SModelUID modelUID = SModelUID.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
+    SModel model = new SModel(modelUID);
+
+    model.setLoading(true);
+    try {
+      Element maxImportIndex = rootElement.getChild(ModelPersistence.MAX_IMPORT_INDEX);
+      if (maxImportIndex == null)  {
+        maxImportIndex = getLegacyMaxImportIndexElement(rootElement); // old manner
+      }
+      model.setMaxImportIndex(DocUtil.readIntAttributeValue(maxImportIndex, ModelPersistence.VALUE));
+    } catch (Throwable e) {
+      LOG.error(e);
+    }
+
+    // languages
+    List languages = rootElement.getChildren(ModelPersistence.LANGUAGE);
+    for (Object language : languages) {
+      Element element = (Element) language;
+      String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
+      model.addLanguage_internal(languageNamespace);
+      List<Element> aspectElements = element.getChildren(ModelPersistence.LANGUAGE_ASPECT);
+
+      //aspect models versions
+      readLanguageAspects(model, aspectElements);
+    }
+    //additional aspects
+    List<Element> aspectElements = rootElement.getChildren(ModelPersistence.LANGUAGE_ASPECT);
+    readLanguageAspects(model, aspectElements);
+
+    // languages engaged on generation
+    List languagesEOG = rootElement.getChildren(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
+    for (Object languageEOG : languagesEOG) {
+      Element element = (Element) languageEOG;
+      String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
+      model.addEngagedOnGenerationLanguage(languageNamespace);
+    }
+
+    //devkits
+    List devkits = rootElement.getChildren(ModelPersistence.DEVKIT);
+    for (Object devkit : devkits) {
+      Element element = (Element) devkit;
+      String devkitNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
+      model.addDevKit(devkitNamespace);
+    }
+
+    // imports
+    List imports = rootElement.getChildren(ModelPersistence.IMPORT_ELEMENT);
+    for (Object anImport : imports) {
+      Element element = (Element) anImport;
+
+      String indexValue = element.getAttributeValue(ModelPersistence.MODEL_IMPORT_INDEX, element.getAttributeValue("referenceID"));
+      int importIndex = Integer.parseInt(indexValue);
+
+      String usedModelVersionString = element.getAttributeValue(ModelPersistence.VERSION);
+      int usedModelVersion = -1;
+      try {
+        if (usedModelVersionString != null) {
+          usedModelVersion = Integer.parseInt(usedModelVersionString);
+        }
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+
+      String importedModelUIDString = element.getAttributeValue(ModelPersistence.MODEL_UID);
+
+      if (importedModelUIDString == null) {
+        // read in old manner...
+        importedModelUIDString = getLegacyImportedModelUIDString(element);
+      }
+
+      if (importedModelUIDString == null) {
+        LOG.error("Error loading import element for index " + importIndex + " in " + model.getUID());
+        continue;
+      }
+      if (importIndex > model.getMaxImportIndex()) {
+        LOG.warning("Import element " + importIndex + ":" + importedModelUIDString + " greater then max import index (" + model.getMaxImportIndex() + ") in " + model.getUID());
+        model.setMaxImportIndex(importIndex);
+      }
+
+      SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
+      importedModelUID = upgradeModelUID(importedModelUID);
+      model.addImportElement(importedModelUID, importIndex, usedModelVersion);
+    }
+
+    ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
+
+    // log
+    Element logElement = rootElement.getChild(ModelPersistence.REFACTORING_LOG);
+    if (logElement != null) {
+      SNode log = readNode(logElement, model, referenceDescriptors, false);
+      if (log != null) {
+        model.setLog(log);
+
+      }
+    }
+
+    // nodes
+    List children = rootElement.getChildren(ModelPersistence.NODE);
+    for (Object child : children) {
+      Element element = (Element) child;
+      SNode snode = readNode(element, model, referenceDescriptors, false);
+      if (snode != null) {
+        model.addRoot(snode);
+      }
+    }
+
+     VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
+    for (IReferencePersister referencePersister : referenceDescriptors) {
+      referencePersister.createReferenceInModel(model, visibleModelElements);
+    }
+
+    model.setLoading(false);
+    return model;
+  }
+
+  public SModelUID upgradeModelUID(SModelUID modelUID) {
+    return new SModelUID(modelUID.getLongName(), upgradeStereotype(modelUID.getStereotype()));
+  }
+
+  protected void readLanguageAspects(SModel model, List<Element> aspectElements) {
+    for (Element aspectElement : aspectElements) {
+      String aspectModelUID = aspectElement.getAttributeValue(ModelPersistence.MODEL_UID);
+      String versionString = aspectElement.getAttributeValue(ModelPersistence.VERSION);
+      int version = -1;
+      if (versionString != null) {
+        try {
+          version = Integer.parseInt(versionString);
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
+      }
+      if (aspectModelUID != null) {
+        model.addAdditionalModelVersion(upgradeModelUID(SModelUID.fromString(aspectModelUID)), version);
+      }
+    }
+  }
+
+  public SNode readNode(Element nodeElement, SModel model) {
+    return readNode(nodeElement, model, true, null);
+  }
+
+  @Nullable
+  protected SNode readNode(
+          Element nodeElement,
+          SModel model,
+          boolean useUIDs,
+          VisibleModelElements visibleModelElements) {
+    List<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
+    SNode result = readNode(nodeElement, model, referenceDescriptors, useUIDs);
+    for (IReferencePersister referencePersister : referenceDescriptors) {
+      referencePersister.createReferenceInModel(model, visibleModelElements);
+    }
+    return result;
+  }
+
+  @Nullable
+   protected SNode readNode(
+           Element nodeElement,
+           SModel model,
+           List<IReferencePersister> referenceDescriptors,
+           boolean useUIDs
+   ) {
+     String rawFQName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
+     String conceptFqName = processConceptFQName(rawFQName);
+     SNode node = new SNode(model, conceptFqName);
+
+     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
+     if (idValue != null) {
+       node.setId(SNodeId.fromString(idValue));
+     }
+
+     List properties = nodeElement.getChildren(ModelPersistence.PROPERTY);
+     for (Object property : properties) {
+       Element propertyElement = (Element) property;
+       String propertyName = propertyElement.getAttributeValue(ModelPersistence.NAME);
+       String propertyValue = propertyElement.getAttributeValue(ModelPersistence.VALUE);
+       if (propertyValue != null) {
+         node.setProperty(propertyName, propertyValue);
+       }
+     }
+
+     List links = nodeElement.getChildren(ModelPersistence.LINK);
+     for (Object link : links) {
+       Element linkElement = (Element) link;
+       IReferencePersister referencePersister = createReferencePersister();
+       referencePersister.fillFields(linkElement, node, useUIDs);
+       referenceDescriptors.add(referencePersister);
+     }
+
+     List childNodes = nodeElement.getChildren(ModelPersistence.NODE);
+     for (Object childNode1 : childNodes) {
+       Element childNodeElement = (Element) childNode1;
+       String role = childNodeElement.getAttributeValue(ModelPersistence.ROLE);
+       SNode childNode = readNode(childNodeElement, model, referenceDescriptors, useUIDs);
+       if (role == null || childNode == null) {
+         LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
+       } else {
+         node.addChild(role, childNode);
+       }
+     }
+
+     return node;
+   }
+}

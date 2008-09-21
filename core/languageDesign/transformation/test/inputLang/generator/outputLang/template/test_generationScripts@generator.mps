@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts">
-  <persistence version="2" />
+<model modelUID="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.transformation.TLBase">
     <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />

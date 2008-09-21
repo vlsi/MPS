@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="jetbrains.mps.baseLanguage.ext.collections.lang.constraints">
-  <persistence version="2" />
+<model modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="9" />
@@ -46,7 +46,6 @@
   <import index="10" modelUID="jetbrains.mps.core.behavior" version="-1" />
   <import index="11" modelUID="jetbrains.mps.baseLanguage.behavior" version="-1" />
   <import index="12" modelUID="java.util@java_stub" version="-1" />
-  <visible index="2" modelUID="jetbrains.mps.bootstrap.helgins.dependencies" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104847098">
     <link role="concept" targetNodeId="1.1153944233411" resolveInfo="ForEachVariableReference" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104847099">
@@ -128,6 +127,7 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="jetbrains.mps.bootstrap.helgins.dependencies" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1204071206995">
     <property name="name" value="SmartClosureParameterTypeUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1204071240725">

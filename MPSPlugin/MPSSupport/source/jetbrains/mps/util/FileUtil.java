@@ -279,10 +279,47 @@ public class FileUtil {
           r.close();
         }
       } catch (IOException e) {
-        throw new RuntimeException(e);
+        e.printStackTrace();
       }
     }
   }
+
+  public static String readLine(File file, int lineNo) {
+    try {
+      return readLine(new FileReader(file), lineNo);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public static String readLine(Reader reader, int lineNo) {
+    BufferedReader r = null;
+    try {
+      r = new BufferedReader(reader);
+
+      String line = null;
+      int currentLine = 0;
+      while ((line = r.readLine()) != null) {
+        if (currentLine == lineNo) {
+          return line;
+        }
+        currentLine++;       
+      }
+
+      return null;
+    } catch(IOException e) {
+      throw new RuntimeException(e);
+    } finally {
+      try {
+        if (r != null) {
+          r.close();
+        }
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
 
   public static boolean isParent(File parent, File child){
     if (!parent.isDirectory()){

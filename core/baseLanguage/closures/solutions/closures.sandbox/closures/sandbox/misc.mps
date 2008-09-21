@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="closures.sandbox.misc">
-  <persistence version="2" />
+<model modelUID="closures.sandbox.misc">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.closures">
     <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />

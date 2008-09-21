@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="helgins">
-  <persistence version="2" />
+<model modelUID="helgins">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.helgins">
     <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />

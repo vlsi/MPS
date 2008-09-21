@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory">
-  <persistence version="2" />
+<model modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.regexp">
     <languageAspect modelUID="jetbrains.mps.regexp.constraints" version="3" />

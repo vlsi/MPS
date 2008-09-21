@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="jetbrains.mps.transformation.TLBase.plugin">
-  <persistence version="2" />
+<model modelUID="jetbrains.mps.transformation.TLBase.plugin">
+  <persistence version="3" />
   <refactoringHistory />
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14" />

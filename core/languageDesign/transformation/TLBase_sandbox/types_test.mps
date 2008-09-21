@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="types_test">
-  <persistence version="2" />
+<model modelUID="types_test">
+  <persistence version="3" />
   <refactoringHistory />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />

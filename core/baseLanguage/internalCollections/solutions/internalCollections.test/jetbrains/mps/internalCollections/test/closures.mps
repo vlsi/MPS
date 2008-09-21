@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="jetbrains.mps.internalCollections.test.closures">
-  <persistence version="2" />
+<model modelUID="jetbrains.mps.internalCollections.test.closures">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage.unitTest">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="jetbrains.mps.closures.dataFlow">
-  <persistence version="2" />
+<model modelUID="jetbrains.mps.closures.dataFlow">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.dataFlow">
     <languageAspect modelUID="jetbrains.mps.bootstrap.dataFlow.constraints" version="4" />

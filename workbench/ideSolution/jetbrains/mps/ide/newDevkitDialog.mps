@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="jetbrains.mps.ide.newDevkitDialog">
-  <persistence version="2" />
+<model modelUID="jetbrains.mps.ide.newDevkitDialog">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.ide.uiLanguage">
     <languageAspect modelUID="jetbrains.mps.ide.uiLanguage.constraints" version="3" />

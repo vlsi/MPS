@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="jetbrains.mps.baseLanguage.ext.collections.lang.actions">
-  <persistence version="2" />
+<model modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.constraints" version="16" />
@@ -29,10 +29,8 @@
     <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <maxImportIndex value="10" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
@@ -40,7 +38,6 @@
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.closures.structure" version="0" />
   <import index="7" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <visible index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1151703690959">
     <property name="name" value="BLC_rtansform" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1197932848431">
@@ -979,7 +976,7 @@
                       <link role="variableDeclaration" targetNodeId="1204045240170" resolveInfo="scpd" />
                     </node>
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204045245225">
-                      <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
+                      <link role="property" targetNodeId="3.1169194664001" resolveInfo="name" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1204045250812">

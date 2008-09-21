@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="jetbrains.mps.transformationTest.categories">
-  <persistence version="2" />
+<model modelUID="jetbrains.mps.transformationTest.categories">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.transformationTest">
     <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />

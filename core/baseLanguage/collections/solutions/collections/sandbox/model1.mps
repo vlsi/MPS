@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="jetbrains.mps.baseLanguage.ext.collections.sandbox.model1">
-  <persistence version="2" />
+<model modelUID="jetbrains.mps.baseLanguage.ext.collections.sandbox.model1">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />

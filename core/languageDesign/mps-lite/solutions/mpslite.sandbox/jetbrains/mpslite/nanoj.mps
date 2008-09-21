@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="jetbrains.mpslite.nanoj">
-  <persistence version="2" />
+<model modelUID="jetbrains.mpslite.nanoj">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mpslite">
     <languageAspect modelUID="jetbrains.mpslite.constraints" version="27" />

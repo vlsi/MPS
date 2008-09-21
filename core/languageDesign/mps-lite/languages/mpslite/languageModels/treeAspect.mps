@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="jetbrains.mpslite.treeAspect">
-  <persistence version="2" />
+<model modelUID="jetbrains.mpslite.treeAspect">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.ypath">
     <languageAspect modelUID="jetbrains.mps.ypath.constraints" version="49" />
