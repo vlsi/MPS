@@ -55,7 +55,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024018(jetbrains.mps.bootstrap.structureLanguage.structure).PropertyDeclaration";
+    return "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration";
   }
 
   public Class getOverridenRefactoringClass() {
@@ -176,7 +176,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "r:1222075024018(jetbrains.mps.bootstrap.structureLanguage.structure).PropertyDeclaration")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration")) {
       return true;
     } else
     {

@@ -58,7 +58,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024018(jetbrains.mps.bootstrap.structureLanguage.structure).AbstractConceptDeclaration";
+    return "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration";
   }
 
   public Class getOverridenRefactoringClass() {
@@ -98,7 +98,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
   public void doRefactor(RefactoringContext refactoringContext) {
     {
       SNode node = (SNode)refactoringContext.getSelectedNode();
-      refactoringContext.changeFeatureName(node, SNodeOperations.getModel(node).toString() + "." + ((String)refactoringContext.getParameter("newName")), ((String)refactoringContext.getParameter("newName")));
+      refactoringContext.changeFeatureName(node, SNodeOperations.getModel(node).getSModelFqName() + "." + ((String)refactoringContext.getParameter("newName")), ((String)refactoringContext.getParameter("newName")));
     }
   }
 
@@ -181,7 +181,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "r:1222075024018(jetbrains.mps.bootstrap.structureLanguage.structure).AbstractConceptDeclaration")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
       return true;
     } else
     {
