@@ -84,7 +84,7 @@ public class AspectMethodsFinder extends BaseFinder {
       if (model.getModelDescriptor() == null)
         throw new CantSaveSomethingException("one of the models is transient - can't save");
       Element modelXML = new Element(MODEL);
-      modelXML.setAttribute(MODEL_UID, model.getModelDescriptor().getModelUID().toString());
+      modelXML.setAttribute(MODEL_UID, model.getModelDescriptor().getSModelReference().toString());
       modelsXML.addContent(modelXML);
     }
     element.addContent(modelsXML);

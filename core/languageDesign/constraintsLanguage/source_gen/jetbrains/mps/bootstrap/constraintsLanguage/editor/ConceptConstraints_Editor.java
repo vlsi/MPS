@@ -524,7 +524,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12130940877661213094087766(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1213094087766");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_concept1213094094190(EditorCell editorCell, SNode node, EditorContext context) {
@@ -679,7 +679,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12131064993761213106499376(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1213106499376");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_canBeChild1213106499377(EditorCell editorCell, SNode node, EditorContext context) {
@@ -716,7 +716,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12131064993971213106499397(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1213106499397");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_canBeParent1213106499398(EditorCell editorCell, SNode node, EditorContext context) {

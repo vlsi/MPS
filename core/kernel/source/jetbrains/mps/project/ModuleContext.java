@@ -88,7 +88,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
     if (owningModules.isEmpty()) {
       LOG.error("couldn't create module context for node:" +
-        "\ncouldn't find owner module for model '" + model.getModelUID() + "'");
+        "\ncouldn't find owner module for model '" + model.getSModelReference() + "'");
       return null;
     }
 

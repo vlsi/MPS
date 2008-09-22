@@ -160,7 +160,7 @@ public enum LanguageAspect {
           model.getSModel().addImportedModel(SModelReference.fromString(modelUID));
         }
 
-        model.getSModel().addImportedModel(l.getStructureModelDescriptor().getModelUID());
+        model.getSModel().addImportedModel(l.getStructureModelDescriptor().getSModelReference());
 
         model.save();
 
@@ -189,7 +189,7 @@ public enum LanguageAspect {
 
   protected List<String> getModelsToImport(Language l) {
     return CollectionUtil.asList(
-      l.getStructureModelDescriptor().getModelUID().toString()
+      l.getStructureModelDescriptor().getSModelReference().toString()
     );
   }
 

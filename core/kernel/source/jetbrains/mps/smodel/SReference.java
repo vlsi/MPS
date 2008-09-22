@@ -57,16 +57,16 @@ public abstract class SReference {
 
   protected abstract SNode getTargetNode_internal();
 
-  public abstract SModelReference getTargetModelUID();
+  public abstract SModelReference getTargetSModelReference();
 
-  public abstract void setTargetModelUID(@NotNull SModelReference targetModelReference);
+  public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
 
   public abstract boolean isExternal();
 
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.isRegistered() && targetNode.isRegistered()) {
       // 'mature' reference
-      return new StaticReference(role, sourceNode, targetNode.getModel().getUID(), targetNode.getSNodeId(), targetNode.getName());
+      return new StaticReference(role, sourceNode, targetNode.getModel().getSModelReference(), targetNode.getSNodeId(), targetNode.getName());
     }
     return new StaticReference(role, sourceNode, targetNode);
   }

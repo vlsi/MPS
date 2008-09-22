@@ -22,7 +22,7 @@ public abstract class BaseModelModel extends BaseMPSChooseModel<SModelDescriptor
   }
 
   public String doGetObjectName(SModelDescriptor modelDescriptor) {
-    String modelName = modelDescriptor.getModelUID().getShortName();
+    String modelName = modelDescriptor.getSModelReference().getShortName();
     boolean javaStub = modelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB);
     return modelName + (javaStub ? "@java_stub" : "");
   }

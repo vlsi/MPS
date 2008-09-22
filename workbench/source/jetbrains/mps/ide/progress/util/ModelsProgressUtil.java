@@ -136,7 +136,7 @@ public class ModelsProgressUtil {
   }
 
   public static long estimateModelGenerationTimeMillis(SModel model, boolean isPrimaryMapping) {
-    String taskName = getInstance().getModelsProgressHelper(TASK_KIND_GENERATION).modelTaskName(model.getUID());
+    String taskName = getInstance().getModelsProgressHelper(TASK_KIND_GENERATION).modelTaskName(model.getSModelReference());
     double koef = isPrimaryMapping ? 1 / 3 : 2 / 3;
     long modelTimeMillis = TaskProgressSettings.getInstance().getEstimatedTimeMillis(taskName);
     return (long) (((double) modelTimeMillis) * koef);

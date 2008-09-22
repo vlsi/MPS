@@ -94,7 +94,7 @@ public class DeleteModelHelper {
   }
 
   private static void deleteModelFromLanguage(Language language, SModelDescriptor modelDescriptor) {
-    if (language.isAccessoryModel(modelDescriptor.getModelUID())) {
+    if (language.isAccessoryModel(modelDescriptor.getSModelReference())) {
       language.removeAccessoryModel(modelDescriptor);
     }
   }

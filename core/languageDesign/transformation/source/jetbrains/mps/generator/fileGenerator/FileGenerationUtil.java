@@ -53,7 +53,7 @@ public class FileGenerationUtil {
   }
 
   public static File getDefaultOutputDir(SModel inputModel, File outputRootDir) {
-    String packageName = JavaNameUtil.packageNameForModelUID(inputModel.getUID());
+    String packageName = JavaNameUtil.packageNameForModelUID(inputModel.getSModelReference());
     File file = new File(outputRootDir, packageName.replace('.', File.separatorChar));
     return file;
   }

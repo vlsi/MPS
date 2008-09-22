@@ -21,12 +21,12 @@ public class SNodePointer {
   }
 
   public SNodePointer(@NotNull INodeAdapter node) {
-    this(node.getModel().getUID(), node.getNode().getSNodeId());
+    this(node.getModel().getSModelReference(), node.getNode().getSNodeId());
   }
 
   public SNodePointer(SNode node) {
     if (node == null) return;
-    myModelReference = node.getModel().getUID();
+    myModelReference = node.getModel().getSModelReference();
     myNodeId = node.getSNodeId();
     myTimestamp = createPointerTimestamp();
   }
@@ -55,18 +55,18 @@ public class SNodePointer {
   }
 
   public SModelDescriptor getModel() {
-    SModelReference modelReference = getCurrentModelUID(myModelReference, myTimestamp);
+    SModelReference modelReference = getCurrentSModelReference(myModelReference, myTimestamp);
     if (modelReference == null) return null;
     return SMODEL_REPOSITORY.getModelDescriptor(modelReference);
   }
 
   public SModelReference getModelUID() {
-    return getCurrentModelUID(myModelReference, myTimestamp);
+    return getCurrentSModelReference(myModelReference, myTimestamp);
   }
 
   public String toString() {
     if (getNode() == null) {
-      return "[bad pointer] model=" + getCurrentModelUID(myModelReference, myTimestamp) + " node id=" + myNodeId;
+      return "[bad pointer] model=" + getCurrentSModelReference(myModelReference, myTimestamp) + " node id=" + myNodeId;
     }
     return getNode().toString();
   }
@@ -95,7 +95,7 @@ public class SNodePointer {
 
 
   /*package*/
-  public static void changeModelUID(SModelReference oldModelReference, SModelReference newModelReference) {
+  public static void changeSModelReference(SModelReference oldModelReference, SModelReference newModelReference) {
     if (!ourRenamedModelUIDsByTimestamp.containsKey(ourPointersTimestamp)) {
       ourRenamedModelUIDsByTimestamp.put(ourPointersTimestamp, new HashMap<SModelReference, SModelReference>());
       ourModelsTimestamp++;
@@ -104,7 +104,7 @@ public class SNodePointer {
     ourRenamedModelUIDsByTimestamp.get(ourPointersTimestamp).put(oldModelReference, newModelReference);
   }
 
-  private static SModelReference getCurrentModelUID(SModelReference modelReference, int pointerTimestamp) {
+  private static SModelReference getCurrentSModelReference(SModelReference modelReference, int pointerTimestamp) {
     if (modelReference == null) return null;
     if (pointerTimestamp == ourModelsTimestamp) return modelReference;
     SModelReference renamedModelReference = ourRenamedModelUIDsByTimestamp.get(pointerTimestamp).get(modelReference);

@@ -99,7 +99,7 @@ public class FindersManager implements ApplicationComponent {
       if (findUsagesModelDescriptor != null) {
         SModel smodel = findUsagesModelDescriptor.getSModel();
         for (FinderDeclaration finderDeclaration : smodel.getRootsAdapters(FinderDeclaration.class)) {
-          String className = smodel.getUID().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(finderDeclaration.getNode());
+          String className = smodel.getSModelReference().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(finderDeclaration.getNode());
           String conceptName = FinderDeclaration_Behavior.call_getConceptName_1213877240111(finderDeclaration.getNode());
           try {
             Class<?> cls = l.getClass(className);

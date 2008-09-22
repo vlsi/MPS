@@ -101,7 +101,7 @@ public class NodePresentationUtil {
     }
 
     if (nodeAdapter.isRoot()) {
-      return NameUtil.shortNameFromLongName(nodeAdapter.getClass().getName()) + " (" + nodeAdapter.getModel().getUID().getCompactPresentation() + ")";
+      return NameUtil.shortNameFromLongName(nodeAdapter.getClass().getName()) + " (" + nodeAdapter.getModel().getSModelReference().getCompactPresentation() + ")";
     }
 
     return nodeAdapter.getRole_() + " (" + NameUtil.compactNodeFQName(nodeAdapter.getContainingRoot()) + ")";

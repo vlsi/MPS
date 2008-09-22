@@ -29,18 +29,18 @@ public class PostponedReference extends SReference {
   }
 
   @Nullable
-  public SModelReference getTargetModelUID() {
+  public SModelReference getTargetSModelReference() {
     if (myReferenceInfo != null) {
       return myReferenceInfo.getTargetModelUID(myGenerator);
     } else if (myReplacementReference != null) {
-      return myReplacementReference.getTargetModelUID();
+      return myReplacementReference.getTargetSModelReference();
     }
 
     // ok, reference is unresolved and not required
     return null;
   }
 
-  public void setTargetModelUID(@NotNull SModelReference modelReference) {
+  public void setTargetSModelReference(@NotNull SModelReference modelReference) {
     throw new RuntimeException("not supported");
   }
 

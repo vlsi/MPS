@@ -3,7 +3,6 @@ package jetbrains.mps.workbench.actions.goTo.framework.nodes;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Calculable;
 import jetbrains.mps.workbench.actions.goTo.framework.base.BasePresentation;
 
 import javax.swing.Icon;
@@ -22,7 +21,7 @@ public class NodePresentation extends BasePresentation {
     if (myModelName == null) {
       myModelName = ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          return myNode.getModel().getModelDescriptor().getModelUID().toString();
+          return myNode.getModel().getModelDescriptor().getSModelReference().toString();
         }
       });
     }

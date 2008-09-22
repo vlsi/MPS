@@ -4,12 +4,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.transformation.TLBase.structure.NodeMacro;
-import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -89,7 +86,7 @@ public class DelayedChanges {
 
     private void validateReference(SReference reference) {
       // reference to input model - illegal
-      if (myGenerator.getSourceModel().getUID().equals(reference.getTargetModelUID())) {
+      if (myGenerator.getSourceModel().getSModelReference().equals(reference.getTargetSModelReference())) {
         // replace
         reference.getSourceNode().removeReference(reference);
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(

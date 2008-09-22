@@ -37,12 +37,12 @@ import jetbrains.mps.util.PairMap;
 
   void put(SNode node) {
     if (!node.hasId()) return;
-    add(node.getModel().getUID(), node.getSNodeId(), node);
+    add(node.getModel().getSModelReference(), node.getSNodeId(), node);
   }
 
   void remove(SNode node) {
     if (!node.hasId()) return;
-    remove(node.getModel().getUID(), node.getSNodeId());
+    remove(node.getModel().getSModelReference(), node.getSNodeId());
   }
 
   SNode get(SModelReference modelReference, SNodeId nodeId) {
@@ -51,17 +51,17 @@ import jetbrains.mps.util.PairMap;
 
   void nodeIdChanged(SNode node, SNodeId oldNodeId) {
     if (oldNodeId != null) {
-      remove(node.getModel().getUID(), oldNodeId);
+      remove(node.getModel().getSModelReference(), oldNodeId);
     }
     if (node.hasId()) {
-      add(node.getModel().getUID(), node.getSNodeId(), node);
+      add(node.getModel().getSModelReference(), node.getSNodeId(), node);
     }
   }
 
   void nodeModelChanged(SNode node, SModel oldModel) {
     if (!node.hasId()) return;
-    remove(oldModel.getUID(), node.getSNodeId());
-    add(node.getModel().getUID(), node.getSNodeId(), node);
+    remove(oldModel.getSModelReference(), node.getSNodeId());
+    add(node.getModel().getSModelReference(), node.getSNodeId(), node);
   }
 
   private void add(SModelReference reference, SNodeId id, SNode node) {

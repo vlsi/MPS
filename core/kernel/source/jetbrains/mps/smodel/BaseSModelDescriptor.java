@@ -45,16 +45,16 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return getModelFile() instanceof JarFileEntryFile;
   }
 
-  public SModelReference getModelUID() {
+  public SModelReference getSModelReference() {
     return myModelReference;
   }
 
-  public SModelFqName getModelFqName() {
-    return getModelUID().getSModelFqName();
+  public SModelFqName getSModelFqName() {
+    return getSModelReference().getSModelFqName();
   }
 
   public SModelId getSModelId() {
-    return getModelUID().getSModelId();
+    return getSModelReference().getSModelId();
   }
 
   /**
@@ -79,7 +79,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     Set<IModule> modelOwners = getModules();
     for (IModule module : modelOwners) {
       for (SModelRoot modelRoot : module.getSModelRoots()) {
-        if (this.getModelUID().toString().equals(
+        if (this.getSModelReference().toString().equals(
           PathManager.getModelUIDString(sourceFile, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix()))) {
 
           result.add(modelRoot);

@@ -39,7 +39,7 @@ public class CopyPasteUtil {
     }
     for (SReference ref : allReferences) {
       if (sourceNodesToNewNodes.get(ref.getTargetNode()) == null) {
-        SModelReference targetModelReference = ref.getTargetModelUID();
+        SModelReference targetModelReference = ref.getTargetSModelReference();
         necessaryImports.add(targetModelReference);
       }
     }
@@ -193,7 +193,7 @@ public class CopyPasteUtil {
 
 
   public static SModel copyModelProperties(SModel model) {
-    SModelReference modelReference = model.getUID();
+    SModelReference modelReference = model.getSModelReference();
     SModelFqName fqName = new SModelFqName(modelReference.getLongName(), SModelStereotype.INTERNAL_COPY);
     SModel newModel = new SModel(new SModelReference(fqName, SModelId.generate()));
     for (String language : model.getExplicitlyImportedLanguages()) {
@@ -285,7 +285,7 @@ public class CopyPasteUtil {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModelReference modelReference : necessaryImports) {
-          if (modelReference != null && !(targetModel.hasImportedModel(modelReference)) && !(targetModel.getUID().equals(modelReference)))
+          if (modelReference != null && !(targetModel.hasImportedModel(modelReference)) && !(targetModel.getSModelReference().equals(modelReference)))
             additionalModels.add(modelReference);
         }
 

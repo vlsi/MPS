@@ -101,7 +101,7 @@ public class ScopeOptions extends BaseOptions<SearchQuery> {
       } else {
         List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptorsByModelName(myModel);
         if (models.isEmpty()) {
-          myModel = descriptor.getModelUID().toString();
+          myModel = descriptor.getSModelReference().toString();
           models = SModelRepository.getInstance().getModelDescriptorsByModelName(myModel);
           LOG.error("Model is not found for " + myModel + ". Using current model.");
         }

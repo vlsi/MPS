@@ -435,7 +435,7 @@ public class TypeChecker implements ApplicationComponent {
     if (modelDescriptor == null) { // then create and register model descriptor
       modelDescriptor = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, new SModelReference(fqName, SModelId.generate())) {
         {
-          mySModel = new SModel(getModelUID());
+          mySModel = new SModel(getSModelReference());
           mySModel.setLoading(true);
         }
 

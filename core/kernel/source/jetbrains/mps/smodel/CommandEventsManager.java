@@ -41,10 +41,10 @@ public class CommandEventsManager implements ApplicationComponent {
     Map<SModelReference, List<SModelEvent>> eventsByModel = new LinkedHashMap<SModelReference, List<SModelEvent>>();
 
     for (SModelEvent e : events) {
-      if (!eventsByModel.containsKey(e.getModel().getUID())) {
-        eventsByModel.put(e.getModel().getUID(), new ArrayList<SModelEvent>());
+      if (!eventsByModel.containsKey(e.getModel().getSModelReference())) {
+        eventsByModel.put(e.getModel().getSModelReference(), new ArrayList<SModelEvent>());
       }
-      eventsByModel.get(e.getModel().getUID()).add(e);
+      eventsByModel.get(e.getModel().getSModelReference()).add(e);
     }
 
     for (SModelReference modelReference : eventsByModel.keySet()) {

@@ -100,7 +100,7 @@ public class SearchQuery implements IExternalizeable {
         LOG.warning("No model descriptor for model. Maybe the model was deleted");
         throw new CantSaveSomethingException("Module is not found for module. Maybe the model was deleted");
       }
-      scopeXML.setAttribute(MODEL_ID, sModelDescriptor.getModelUID().toString());
+      scopeXML.setAttribute(MODEL_ID, sModelDescriptor.getSModelReference().toString());
     } else if (myScope instanceof BootstrapScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_BOOTSTRAP);
     } else {

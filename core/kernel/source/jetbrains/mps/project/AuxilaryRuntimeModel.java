@@ -29,7 +29,7 @@ public class AuxilaryRuntimeModel implements ModelOwner {
     if (modelDescriptor == null) {
       modelDescriptor = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, MY_MODEL_REFERENCE) {
         protected SModel loadModel() {
-          SModel model = new SModel(getModelUID());
+          SModel model = new SModel(getSModelReference());
 //          model.setLoading(true);
           return model;
         }

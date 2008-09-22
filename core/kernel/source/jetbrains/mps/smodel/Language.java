@@ -390,7 +390,7 @@ public class Language extends AbstractModule {
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
     // release modules and models (except descriptor model)
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Language.this);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getSModelReference(), Language.this);
 
     assert modelDescriptor != null;
 
@@ -776,7 +776,7 @@ public class Language extends AbstractModule {
 
   public void removeAccessoryModel(SModelDescriptor sm) {
     for (Model m : myLanguageDescriptor.getAccessoryModels()) {
-      if (m.getName().equals(sm.getModelUID().toString())) {
+      if (m.getName().equals(sm.getSModelReference().toString())) {
         m.delete();
       }
     }
@@ -859,7 +859,7 @@ public class Language extends AbstractModule {
     for (ModelOwner modelOwner : owners) {
       if (modelOwner instanceof Language) {
         Language l = (Language) modelOwner;
-        if (l.isAccessoryModel(sm.getModelUID())) {
+        if (l.isAccessoryModel(sm.getSModelReference())) {
           return true;
         }
       }

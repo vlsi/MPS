@@ -99,7 +99,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   public void clearUnused() {
     List<SModelDescriptor> models = this.getOwnModelDescriptors();
     for (SModelDescriptor model : models) {
-      if (!myModelsToKeep.contains(model.getModelUID().toString())) {
+      if (!myModelsToKeep.contains(model.getSModelReference().toString())) {
         SModelRepository.getInstance().removeModelDescriptor(model);
       }
     }
@@ -107,19 +107,19 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
 
   public void addModelToKeep(SModelDescriptor model) {
     assert model.isTransient();
-    myModelsToKeep.add(model.getModelUID().toString());
+    myModelsToKeep.add(model.getSModelReference().toString());
   }
 
   public boolean isModelToKeep(SModelDescriptor model) {
     assert model.isTransient();
-    return myModelsToKeep.contains(model.getModelUID().toString());
+    return myModelsToKeep.contains(model.getSModelReference().toString());
   }
 
   public SModelDescriptor createTransientModel(String name, String stereotype) {
     SModelFqName fqName = new SModelFqName(name, stereotype);
     DefaultSModelDescriptor result = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, new SModelReference(fqName, SModelId.generate())) {
       protected SModel loadModel() {
-        return new SModel(getModelUID());
+        return new SModel(getSModelReference());
       }
 
       public boolean isNotEditable() {

@@ -99,7 +99,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             for (SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
-              if (!namespace.equals(descriptor.getModelUID().getLongName())) continue;
+              if (!namespace.equals(descriptor.getSModelReference().getLongName())) continue;
               if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
 
               SNode node = descriptor.getSModel().getNodeById(id);
@@ -120,7 +120,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (final SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
-          if (!namespace.equals(descriptor.getModelUID().getLongName())) continue;
+          if (!namespace.equals(descriptor.getSModelReference().getLongName())) continue;
           if (!descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
             applicableModelDescriptors.add(descriptor.getSModel());
           }

@@ -202,7 +202,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
     SModelDescriptor sm = myFile.getNode().getModel().getModelDescriptor();
 
     if (sm == null) {
-      throw new IllegalStateException("Can't find a model descriptor for model " + myFile.getNode().getModel().getUID());
+      throw new IllegalStateException("Can't find a model descriptor for model " + myFile.getNode().getModel().getSModelReference());
     }
 
 

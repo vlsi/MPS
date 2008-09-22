@@ -46,7 +46,7 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
         }
         GenerationTracer tracer = ShowGenerationTraceback_Action.this.context.getComponent(GenerationTracer.class);
         event.getPresentation().setVisible(tracer.hasTracingData());
-        event.getPresentation().setEnabled(tracer.hasTracebackData(SNodeOperations.getModel(ShowGenerationTraceback_Action.this.node).getUID()));
+        event.getPresentation().setEnabled(tracer.hasTracebackData(SNodeOperations.getModel(ShowGenerationTraceback_Action.this.node).getSModelReference()));
       }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "ShowGenerationTraceback", t);

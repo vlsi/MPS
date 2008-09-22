@@ -20,7 +20,7 @@ public class typeof_ThisNodeExpression_InferenceRule implements InferenceRule_Ru
     {
       SNode _nodeToCheck_1029348928467 = thisNode;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(thisNode, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097673898", true), new QuotationClass_8().createNode(SLinkOperations.getTarget(behaviour, "concept", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097673896", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(thisNode, "r:1222075024137(jetbrains.mps.bootstrap.constraintsLanguage.helgins)", "1212097673898", true), new QuotationClass_8().createNode(SLinkOperations.getTarget(behaviour, "concept", false)), _nodeToCheck_1029348928467, null, "r:1222075024137(jetbrains.mps.bootstrap.constraintsLanguage.helgins)", "1212097673896", intentionProvider);
     }
   }
 

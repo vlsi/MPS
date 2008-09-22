@@ -82,7 +82,7 @@ public class ReferencePersister1 implements IReferencePersister {
 
   // -- create reference
   private SReference createReferenceInModelDoNotAddToSourceNode(SModel model, VisibleModelElements visibleModelElements) {
-    SModelReference importedModelReference = model.getUID();
+    SModelReference importedModelReference = model.getSModelReference();
     if (myUseUIDs) {
       if (!myImportedModelInfo.equals("-1")) {
         importedModelReference = SModelReference.fromString(myImportedModelInfo);
@@ -136,9 +136,9 @@ public class ReferencePersister1 implements IReferencePersister {
     String targetModelInfo = "";
     if (reference.isExternal()) {
       if (useUIDs) {
-        targetModelInfo = reference.getTargetModelUID().toString() + "#";
+        targetModelInfo = reference.getTargetSModelReference().toString() + "#";
       } else {
-        SModelReference targetModelReference = reference.getTargetModelUID();
+        SModelReference targetModelReference = reference.getTargetSModelReference();
         if (targetModelReference != null) {
           SModel.ImportElement importElement = node.getModel().getImportElement(targetModelReference);
           if (importElement != null) {

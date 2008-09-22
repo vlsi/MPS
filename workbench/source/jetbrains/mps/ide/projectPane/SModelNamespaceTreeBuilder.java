@@ -9,6 +9,6 @@ public class SModelNamespaceTreeBuilder extends NamespaceTreeBuilder<SModelTreeN
 
   protected String getNamespace(SModelTreeNode node) {
     SModelDescriptor d = node.getSModelDescriptor();
-    return d.getModelUID().getNamespace();    
+    return d.getSModelReference().getNamespace();
   }
 }

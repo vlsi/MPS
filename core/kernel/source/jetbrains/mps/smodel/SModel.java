@@ -72,16 +72,16 @@ public class SModel implements Iterable<SNode> {
 
 
   @NotNull
-  public SModelReference getUID() {
+  public SModelReference getSModelReference() {
     return myReference;
   }
 
   public SModelFqName getSModelFqName() {
-    return getUID().getSModelFqName();
+    return getSModelReference().getSModelFqName();
   }
 
   public SModelId getSModelId() {
-    return getUID().getSModelId();
+    return getSModelReference().getSModelId();
   }
 
   @NotNull
@@ -602,7 +602,7 @@ public class SModel implements Iterable<SNode> {
       return;
     }
     for (SModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
-      addAdditionalModelVersion(modelDescriptor.getModelUID(), modelDescriptor.getVersion());
+      addAdditionalModelVersion(modelDescriptor.getSModelReference(), modelDescriptor.getVersion());
     }
     myVersionedLanguages.add(language);
     for (Language l : language.getExtendedLanguages()) {
@@ -690,7 +690,7 @@ public class SModel implements Iterable<SNode> {
         //addAspectModelsVersions(languageNamespace, language);
       } else {
         if (!isLoading()) {
-        LOG.error("Language \"" + languageNamespace + "\" isn't visible in scope " + scope + " . Used by model \"" + getUID() +
+        LOG.error("Language \"" + languageNamespace + "\" isn't visible in scope " + scope + " . Used by model \"" + getSModelReference() +
                 "\"\nAdd this language to the LANGUAGES section of the module properties");
         }
       }
@@ -839,10 +839,10 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void deleteImportedModel(@NotNull SModel model) {
-    ImportElement importElement = getImportElement(model.getUID());
+    ImportElement importElement = getImportElement(model.getSModelReference());
     if (importElement != null) {
       myImports.remove(importElement);
-      fireImportRemovedEvent(model.getUID());
+      fireImportRemovedEvent(model.getSModelReference());
     }
   }
 
@@ -885,7 +885,7 @@ public class SModel implements Iterable<SNode> {
   public Set<SModelReference> getDependenciesModelUIDs() {
     return CollectionUtil.map(getDependenciesModels(), new Mapper<SModelDescriptor, SModelReference>() {
       public SModelReference map(SModelDescriptor sModelDescriptor) {
-        return sModelDescriptor.getModelUID();
+        return sModelDescriptor.getSModelReference();
       }
     });
   }
@@ -910,7 +910,7 @@ public class SModel implements Iterable<SNode> {
       if (modelDescriptor == null) {
         for (Language l : getLanguages(scope)) {
           for (SModelDescriptor accessory : l.getAccessoryModels()) {
-            if (modelReference.equals(accessory.getModelUID())) {
+            if (modelReference.equals(accessory.getSModelReference())) {
               modelDescriptor = accessory;
               break;
             }
@@ -921,7 +921,7 @@ public class SModel implements Iterable<SNode> {
       if (modelDescriptor != null) {
         modelsList.add(modelDescriptor);
       } else {
-        LOG.error("Couldn't find model descriptor for imported model: \"" + modelReference + "\" in: \"" + getUID() + "\"");
+        LOG.error("Couldn't find model descriptor for imported model: \"" + modelReference + "\" in: \"" + getSModelReference() + "\"");
       }
     }
     return modelsList.iterator();
@@ -963,7 +963,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public boolean isImported(@NotNull SModel model) {
-    return getImportElement(model.getUID()) != null;
+    return getImportElement(model.getSModelReference()) != null;
   }
 
   public void setMaxImportIndex(int i) {
@@ -976,7 +976,7 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public String toString() {
-    return this.getUID().toString();
+    return this.getSModelReference().toString();
   }
 
   @Nullable
@@ -998,7 +998,7 @@ public class SModel implements Iterable<SNode> {
 
   void putNodeId(@NotNull SNodeId id, @NotNull SNode node) {
     if (myRegistrationsForbidden) {
-      LOG.error("Registration in model " + getUID() + " is temporarely forbidden");
+      LOG.error("Registration in model " + getSModelReference() + " is temporarely forbidden");
     }
 
     SNode existingNode = myIdToNodeMap.get(id);
@@ -1049,7 +1049,7 @@ public class SModel implements Iterable<SNode> {
     Set<String> usedLanguages = new HashSet<String>(getLanguageNamespaces(GlobalScope.getInstance()));
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
     for (SModelDescriptor sm : allImportedModels(GlobalScope.getInstance())) {
-      importedModels.add(sm.getModelUID());
+      importedModels.add(sm.getSModelReference());
     }
     List<SNode> nodes = allNodes();
     for (SNode node : nodes) {
@@ -1062,7 +1062,7 @@ public class SModel implements Iterable<SNode> {
       List<SReference> references = node.getReferences();
       for (SReference reference : references) {
         if (reference.isExternal()) {
-          SModelReference targetModelReference = reference.getTargetModelUID();
+          SModelReference targetModelReference = reference.getTargetSModelReference();
           if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
             addImportedModel(targetModelReference);
             importedModels.add(targetModelReference);
@@ -1103,20 +1103,20 @@ public class SModel implements Iterable<SNode> {
     }
     for (SNode node : getAllNodesWithIds()) {
       for (SReference reference : node.getReferences()) {
-        if (oldImportedModelReference.equals(reference.getTargetModelUID())) {
-          reference.setTargetModelUID(newImportedModelReference);
+        if (oldImportedModelReference.equals(reference.getTargetSModelReference())) {
+          reference.setTargetSModelReference(newImportedModelReference);
         }
       }
     }
   }
 
-  public void changeModelUID(SModelReference newModelReference) {
+  public void changeModelReference(SModelReference newModelReference) {
     SModelReference oldReference = myReference;
     myReference = newModelReference;
     for (SNode node : getAllNodesWithIds()) {
       for (SReference reference : node.getReferences()) {
-        if (oldReference.equals(reference.getTargetModelUID())) {
-          reference.setTargetModelUID(newModelReference);
+        if (oldReference.equals(reference.getTargetSModelReference())) {
+          reference.setTargetSModelReference(newModelReference);
         }
       }
     }
@@ -1385,10 +1385,10 @@ public class SModel implements Iterable<SNode> {
   public void upgradeUIDS() {
     for (SNode node : getAllNodesWithIds()) {
       for (SReference reference : node.getReferences()) {
-        if (reference.getTargetModelUID().getSModelId() == null) {
-          SModelReference oldReference = reference.getTargetModelUID();
+        if (reference.getTargetSModelReference().getSModelId() == null) {
+          SModelReference oldReference = reference.getTargetSModelReference();
           SModelReference newReference = upgradeModelUID(oldReference);
-          reference.setTargetModelUID(newReference);
+          reference.setTargetSModelReference(newReference);
         }
       }
     }
@@ -1407,7 +1407,7 @@ public class SModel implements Iterable<SNode> {
     if (model == null) {
       return oldReference;
     }
-    SModelReference newReference = model.getModelUID();
+    SModelReference newReference = model.getSModelReference();
     return newReference;
   }
 
@@ -1422,12 +1422,12 @@ public class SModel implements Iterable<SNode> {
 
     for (SModel sm : ourActiveModels) {
       if (sm == null) continue;
-      SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(sm.getUID());
+      SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(sm.getSModelReference());
 
       if (md == null) {
-        System.out.println("can't find a descriptor for " + sm.getUID());
+        System.out.println("can't find a descriptor for " + sm.getSModelReference());
       } else if (sm != md.getSModel()) {
-        System.out.println("Found a leak! : " + sm.getUID());
+        System.out.println("Found a leak! : " + sm.getSModelReference());
       }
     }
   }

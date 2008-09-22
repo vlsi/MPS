@@ -119,7 +119,7 @@ public class RefactoringProcessor {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             SModelDescriptor modelDescriptor = refactoringContext.getSelectedModel();
-            SModelReference initialModelReference = modelDescriptor.getModelUID();
+            SModelReference initialModelReference = modelDescriptor.getSModelReference();
             refactoring.doRefactor(refactoringContext);
             final List<SNode> nodesToOpen = refactoring.getNodesToOpen(refactoringContext);
             if (!nodesToOpen.isEmpty()) {
@@ -227,7 +227,7 @@ public class RefactoringProcessor {
 
   private void processModel(SModel model, SModel usedModel, RefactoringContext refactoringContext) {
     refactoringContext.getRefactoring().updateModel(model, refactoringContext);
-    model.updateImportedModelUsedVersion(usedModel.getUID(), usedModel.getVersion());
+    model.updateImportedModelUsedVersion(usedModel.getSModelReference(), usedModel.getVersion());
   }
 
   private void writeIntoLog(SModel model, RefactoringContext refactoringContext) {

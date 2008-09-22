@@ -36,7 +36,7 @@ public class ComponentsUtil {
   public static Element nodeToElement(SNode node) {
     Element nodeElement = new Element(NODE);
     SModel model = node.getModel();
-    nodeElement.setAttribute(MODEL, model.getUID().toString());
+    nodeElement.setAttribute(MODEL, model.getSModelReference().toString());
     nodeElement.setAttribute(ID, node.getId());
     return nodeElement;
   }
@@ -57,7 +57,7 @@ public class ComponentsUtil {
   public static Element nodeToElement(SNode node, @NotNull IModule module) {
     Element nodeElement = new Element(NODE);
     SModel model = node.getModel();
-    nodeElement.setAttribute(MODEL, model.getUID().toString());
+    nodeElement.setAttribute(MODEL, model.getSModelReference().toString());
     String module_uid = module.getModuleUID();
     nodeElement.setAttribute(MODULE_UID, module_uid);
     nodeElement.setAttribute(ID, node.getId());

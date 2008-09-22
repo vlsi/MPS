@@ -402,8 +402,8 @@ public class RefactoringContext {
           if (ids != null) {
             for (FullNodeId fullNodeId : ids) {
               FullNodeId newFullNodeId = myMoveMap.get(fullNodeId);
-              if (fullNodeId.getModelUID().equals(staticReference.getTargetModelUID())) {
-                staticReference.setTargetModelUID(newFullNodeId.getModelUID());
+              if (fullNodeId.getModelUID().equals(staticReference.getTargetSModelReference())) {
+                staticReference.setTargetSModelReference(newFullNodeId.getModelUID());
                 staticReference.setTargetNodeId(newFullNodeId.getNodeId());
               }
             }
@@ -699,7 +699,7 @@ public class RefactoringContext {
     }
 
     public FullNodeId(SNode node) {
-      this(node.getSNodeId(), node.getModel().getUID());
+      this(node.getSNodeId(), node.getModel().getSModelReference());
     }
 
     public FullNodeId(Element element) {

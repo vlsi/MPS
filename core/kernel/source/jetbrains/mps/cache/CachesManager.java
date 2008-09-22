@@ -35,11 +35,11 @@ public class CachesManager implements ApplicationComponent {
     mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter() {
       public void modelRemoved(SModelDescriptor modelDescriptor) {
         List keysToRemove = new ArrayList();
-        SModelReference reference = modelDescriptor.getModelUID();
+        SModelReference reference = modelDescriptor.getSModelReference();
         for (Object key : myDependsOnModels.keySet()) {
           List<SModelDescriptor> dependsOnModels = myDependsOnModels.get(key);
           for (SModelDescriptor dependsOnModel : dependsOnModels) {
-            if (dependsOnModel.getModelUID().equals(reference)) {
+            if (dependsOnModel.getSModelReference().equals(reference)) {
               keysToRemove.add(key);
             }
           }

@@ -168,7 +168,7 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    SModelReference modelReference = modelDescriptor.getModelUID();
+    SModelReference modelReference = modelDescriptor.getSModelReference();
     SModelDescriptor registeredModel = getModelDescriptor(modelReference);
 
     LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
@@ -178,7 +178,7 @@ public class SModelRepository implements ApplicationComponent {
     if (modelDescByName != null && modelDescByName != modelDescriptor) {
       LOG.error("can't register model descriptor " + modelReference
         + "model with the same fq name but different id is already registered: id = "
-        + modelDescByName.getModelUID().getSModelId());
+        + modelDescByName.getSModelReference().getSModelId());
       registerModelDescriptor(modelDescByName, owner);
     }
 
@@ -225,10 +225,10 @@ public class SModelRepository implements ApplicationComponent {
     myModelDescriptors.remove(modelDescriptor);
     boolean result = removeModelFromFileCache(modelDescriptor);
     assert result;
-    if (modelDescriptor.getModelUID().getSModelId() != null) {
-      myIdToModelDescriptorMap.remove(modelDescriptor.getModelUID().getSModelId());
+    if (modelDescriptor.getSModelReference().getSModelId() != null) {
+      myIdToModelDescriptorMap.remove(modelDescriptor.getSModelReference().getSModelId());
     }
-    myFqNameToModelDescriptorMap.remove(modelDescriptor.getModelUID().getSModelFqName());
+    myFqNameToModelDescriptorMap.remove(modelDescriptor.getSModelReference().getSModelFqName());
 
     myChangedModels.remove(modelDescriptor);
     myModelsWithNoOwners.remove(modelDescriptor);
@@ -267,7 +267,7 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public SModelDescriptor getModelDescriptor(SModel model) {
-    return getModelDescriptor(model.getUID());
+    return getModelDescriptor(model.getSModelReference());
   }
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
@@ -312,7 +312,7 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   private void markChanged(SModel model, boolean changed) {
-    SModelDescriptor modelDescriptor = getModelDescriptor(model.getUID());
+    SModelDescriptor modelDescriptor = getModelDescriptor(model.getSModelReference());
     if (modelDescriptor != null) { //i.e project model
       markChanged(modelDescriptor, changed);
     }

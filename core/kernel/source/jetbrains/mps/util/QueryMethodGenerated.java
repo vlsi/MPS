@@ -47,7 +47,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
   }
 
   public static Class getQueriesGeneratedClassFor(SModelDescriptor sm) {
-    String packageName = JavaNameUtil.packageNameForModelUID(sm.getSModel().getUID());
+    String packageName = JavaNameUtil.packageNameForModelUID(sm.getSModel().getSModelReference());
     String queriesClassName = packageName + ".QueriesGenerated";
     IModule module = findModuleForModel(sm.getSModel());
     assert module != null;
@@ -55,12 +55,12 @@ public class QueryMethodGenerated implements ApplicationComponent {
   }
 
   private static Method getQueryMethod(SModel sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    Pair<SModelReference, String> pair = new Pair<SModelReference, String>(sourceModel.getUID(), methodName);
+    Pair<SModelReference, String> pair = new Pair<SModelReference, String>(sourceModel.getSModelReference(), methodName);
     if (QueryMethodGenerated.ourMethods.containsKey(pair)) {
       return QueryMethodGenerated.ourMethods.get(pair);
     }
 
-    String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
+    String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getSModelReference());
     String queriesClassName = packageName + ".QueriesGenerated";
     Class queriesClass;
     IModule module = findModuleForModel(sourceModel);
@@ -71,7 +71,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
     if (queriesClass == null) {
       if (!suppressErrorLogging) {
         if (!ourClassesReportedAsNotFound.contains(queriesClassName)) {
-          LOG.error("couldn't find class 'QueriesGenerated' for model '" + sourceModel.getUID() + "' : TRY TO GENERATE");
+          LOG.error("couldn't find class 'QueriesGenerated' for model '" + sourceModel.getSModelReference() + "' : TRY TO GENERATE");
         }
         ourClassesReportedAsNotFound.add(queriesClassName);
       }
@@ -90,7 +90,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
 
     if (method == null) {
       if (!suppressErrorLogging) {
-        LOG.error("couldn't find method '" + methodName + "' in '" + queriesClassName + "' : TRY TO GENERATE model '" + sourceModel.getUID() + "'");
+        LOG.error("couldn't find method '" + methodName + "' in '" + queriesClassName + "' : TRY TO GENERATE model '" + sourceModel.getSModelReference() + "'");
       }
       throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + queriesClassName + "'");
     }

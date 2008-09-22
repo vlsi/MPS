@@ -116,14 +116,14 @@ public class ModelPersistence {
       try {
         JDOMUtil.writeDocument(document, file);
       } catch (IOException e) {
-        LOG.error("error while saving model after persistence upgrade " + model.getUID(), e);
+        LOG.error("error while saving model after persistence upgrade " + model.getSModelReference(), e);
       }
     }
     return model;
   }
 
   private static SModel upgradeModelPersistence(SModel model, int fromVersion) {
-    SModelReference reference = model.getUID();
+    SModelReference reference = model.getSModelReference();
     int version = fromVersion;
     while (version < currentPersistenceVersion) {
       IModelWriter writer = modelWriters.get(++version);
@@ -169,7 +169,7 @@ public class ModelPersistence {
   }
 
   public static void saveModel(@NotNull SModel model, @NotNull IFile file, boolean validate) {
-    LOG.debug("Save model " + model.getUID() + " to file " + file.getAbsolutePath());
+    LOG.debug("Save model " + model.getSModelReference() + " to file " + file.getAbsolutePath());
     Document document = saveModel(model, validate);
 
     if (file.isReadOnly()) {

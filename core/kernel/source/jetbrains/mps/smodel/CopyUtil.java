@@ -1,7 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.GlobalScope;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -94,7 +92,7 @@ public final class CopyUtil {
             outputNode.addReference(new StaticReference(
               staticReference.getRole(),
               staticReference.getSourceNode(),
-              staticReference.getTargetModelUID(),
+              staticReference.getTargetSModelReference(),
               staticReference.getTargetNodeId(),
               staticReference.getResolveInfo()));
           }

@@ -7,7 +7,6 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
@@ -31,7 +30,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myName = "" + myNode.getPresentation();
-        myPath = myNode.getModel().getUID() + "/" + myName;
+        myPath = myNode.getModel().getSModelReference() + "/" + myName;
       }
     });
   }

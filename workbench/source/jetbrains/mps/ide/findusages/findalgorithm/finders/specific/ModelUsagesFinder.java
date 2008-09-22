@@ -18,7 +18,7 @@ public class ModelUsagesFinder extends BaseFinder {
     assert holder instanceof ModelHolder;
     SModel model = ((ModelHolder) holder).getObject();
     searchResults.getSearchedNodes().add(model);
-    SModelReference modelReference = model.getUID();
+    SModelReference modelReference = model.getSModelReference();
     for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (indicator.isCanceled()) return searchResults;
       if (modelDescriptor instanceof StubModelDescriptor) {

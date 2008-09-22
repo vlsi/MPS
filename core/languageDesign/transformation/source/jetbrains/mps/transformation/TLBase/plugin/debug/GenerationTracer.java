@@ -72,15 +72,15 @@ public class GenerationTracer {
   public void startTracing(SModel inputModel, SModel outputModel) {
     if (!myActive) return;
     myCurrentTracingData = new ArrayList<TracerNode>();
-    myTracingDataByInputModel.put(inputModel.getUID().toString(), myCurrentTracingData);
-    myTracingDataByOutputModel.put(outputModel.getUID().toString(), myCurrentTracingData);
+    myTracingDataByInputModel.put(inputModel.getSModelReference().toString(), myCurrentTracingData);
+    myTracingDataByOutputModel.put(outputModel.getSModelReference().toString(), myCurrentTracingData);
     myCurrentTraceNode = null;
   }
 
   public void discardTracing(SModel inputModel, SModel outputModel) {
     if (!myActive) return;
-    myTracingDataByInputModel.remove(inputModel.getUID().toString());
-    myTracingDataByOutputModel.remove(outputModel.getUID().toString());
+    myTracingDataByInputModel.remove(inputModel.getSModelReference().toString());
+    myTracingDataByOutputModel.remove(outputModel.getSModelReference().toString());
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
   }
@@ -370,7 +370,7 @@ public class GenerationTracer {
 
   @NotNull
   private List<TracerNode> findAllTopmostTracerNodes(Kind kind, SNode node) {
-    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModel().getUID());
+    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModel().getSModelReference());
     if (rootTracerNodes == null) return new ArrayList<TracerNode>();
 
     List<TracerNode> result = new ArrayList<TracerNode>();
@@ -397,7 +397,7 @@ public class GenerationTracer {
   }
 
   private TracerNode findTracerNode(Kind kind, SNode node) {
-    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModel().getUID());
+    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModel().getSModelReference());
     if (rootTracerNodes == null) return null;
 
     for (TracerNode rootTracerNode : rootTracerNodes) {
@@ -479,8 +479,8 @@ public class GenerationTracer {
     List<List<MappingScript>> myScripts = new ArrayList<List<MappingScript>>();
 
     public void put(SModel inputModel, SModel outputModel, List<MappingScript> scripts) {
-      myInputModels.add(inputModel.getUID().toString());
-      myOutputModels.add(outputModel.getUID().toString());
+      myInputModels.add(inputModel.getSModelReference().toString());
+      myOutputModels.add(outputModel.getSModelReference().toString());
       myScripts.add(scripts);
     }
 
@@ -493,7 +493,7 @@ public class GenerationTracer {
     }
 
     public List<MappingScript> getScriptsForInput(SModel model) {
-      int i = myInputModels.indexOf(model.getUID().toString());
+      int i = myInputModels.indexOf(model.getSModelReference().toString());
       if (i >= 0) {
         return myScripts.get(i);
       }
@@ -501,7 +501,7 @@ public class GenerationTracer {
     }
 
     public List<MappingScript> getScriptsForOutput(SModel model) {
-      int i = myOutputModels.indexOf(model.getUID().toString());
+      int i = myOutputModels.indexOf(model.getSModelReference().toString());
       if (i >= 0) {
         return myScripts.get(i);
       }
@@ -509,7 +509,7 @@ public class GenerationTracer {
     }
 
     public SModelReference getOutputForInput(SModel model) {
-      int i = myInputModels.indexOf(model.getUID().toString());
+      int i = myInputModels.indexOf(model.getSModelReference().toString());
       if (i >= 0) {
         return SModelReference.fromString(myOutputModels.get(i));
       }
@@ -517,7 +517,7 @@ public class GenerationTracer {
     }
 
     public SModelReference getInputForOutput(SModel model) {
-      int i = myOutputModels.indexOf(model.getUID().toString());
+      int i = myOutputModels.indexOf(model.getSModelReference().toString());
       if (i >= 0) {
         return SModelReference.fromString(myInputModels.get(i));
       }

@@ -20,7 +20,7 @@ public class SModelsSubtree {
     IModule module = operationContext.getModule();
     assert module != null;
     for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {
-      if (ProjectModels.isProjectModel(modelDescriptor.getModelUID())) continue;
+      if (ProjectModels.isProjectModel(modelDescriptor.getSModelReference())) continue;
 
       String stereotype = modelDescriptor.getStereotype();
 

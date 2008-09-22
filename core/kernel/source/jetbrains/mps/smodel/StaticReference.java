@@ -25,18 +25,18 @@ public class StaticReference extends SReferenceBase {
     myTargetNodeId = nodeId;
   }
 
-  public SModelReference getTargetModelUID() {
+  public SModelReference getTargetSModelReference() {
     if (mature()) {
-      return super.getTargetModelUID();
+      return super.getTargetSModelReference();
     } else if (myTargetNode != null) {
-      return myTargetNode.getModel().getUID();
+      return myTargetNode.getModel().getSModelReference();
     }
     return null;
   }
 
-  public void setTargetModelUID(@NotNull SModelReference modelReference) {
+  public void setTargetSModelReference(@NotNull SModelReference modelReference) {
     if (!mature()) makeMature();
-    super.setTargetModelUID(modelReference);
+    super.setTargetSModelReference(modelReference);
   }
 
   public SNodeId getTargetNodeId() {
@@ -54,7 +54,7 @@ public class StaticReference extends SReferenceBase {
   }
 
   protected SNode getTargetNode_internal() {
-    NodeReadAccessCaster.fireReferenceTargetReadAccessed(getSourceNode(), getTargetModelUID(), getTargetNodeId());
+    NodeReadAccessCaster.fireReferenceTargetReadAccessed(getSourceNode(), getTargetSModelReference(), getTargetNodeId());
 
     if (!mature()) {
       return myTargetNode;
@@ -71,9 +71,9 @@ public class StaticReference extends SReferenceBase {
     if (targetModel == null) return null;
     SNode targetNode = targetModel.getNodeById(targetNodeId);
     if (targetNode != null) return targetNode;
-    targetNode = UnregisteredNodes.instance().get(targetModel.getUID(), targetNodeId);
+    targetNode = UnregisteredNodes.instance().get(targetModel.getSModelReference(), targetNodeId);
     if (targetNode == null) {
-      error("target model '" + getTargetModelUID() + "' doesn't contain node with id=" + getTargetNodeId());
+      error("target model '" + getTargetSModelReference() + "' doesn't contain node with id=" + getTargetNodeId());
     }
 
     return targetNode;
@@ -87,7 +87,7 @@ public class StaticReference extends SReferenceBase {
   protected void makeMature() {
     super.makeMature();
     myTargetNodeId = myTargetNode.getSNodeId();
-    setTargetModelUID(myTargetNode.getModel().getUID());
+    setTargetSModelReference(myTargetNode.getModel().getSModelReference());
     setResolveInfo(myTargetNode.getName());
     myTargetNode = null;
   }

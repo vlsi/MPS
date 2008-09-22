@@ -16,7 +16,7 @@ public class ModelPresentation extends BasePresentation {
   }
 
   public String doGetPresentableText() {
-    String modelName = myModelDescriptor.getModelUID().getLongName();
+    String modelName = myModelDescriptor.getSModelReference().getLongName();
     boolean javaStub = myModelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB);
     return modelName + (javaStub ? "@java_stub" : "");
   }

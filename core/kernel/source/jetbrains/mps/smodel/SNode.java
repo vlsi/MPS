@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -766,7 +764,7 @@ public final class SNode {
       }
     }
     if (count > 1) {
-      String errorMessage = "ERROR: " + count + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getId() + "] " + getModel().getUID() + "\n";
+      String errorMessage = "ERROR: " + count + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getId() + "] " + getModel().getSModelReference() + "\n";
       errorMessage += "they are : " + getChildren(role);
       LOG.error(errorMessage, this);
     }
@@ -1020,7 +1018,7 @@ public final class SNode {
   /*package*/ void registerInModel(SModel model) {
     if (myRegisteredInModelFlag) {
       if (model != myModel) {
-        LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getUID() + "'");
+        LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
       }
       return;
     }
@@ -1287,7 +1285,7 @@ public final class SNode {
       //e.printStackTrace();
       nameText = "<??name??>";
     }
-    return roleText + " " + NameUtil.shortNameFromLongName(getConceptShortName()) + " " + nameText + " in " + myModel.getUID();
+    return roleText + " " + NameUtil.shortNameFromLongName(getConceptShortName()) + " " + nameText + " in " + myModel.getSModelReference();
   }
 
   public boolean hasId() {
@@ -1483,7 +1481,7 @@ public final class SNode {
     String conceptFQName = getConceptFqName();
     AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
     if (concept == null) {
-      LOG.error("couldn't find concept declaration '" + conceptFQName + " for node " + getId() + " in model " + getModel().getUID(), this);
+      LOG.error("couldn't find concept declaration '" + conceptFQName + " for node " + getId() + " in model " + getModel().getSModelReference(), this);
     }
     return concept;
   }

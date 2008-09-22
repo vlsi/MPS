@@ -26,7 +26,7 @@ public abstract class ReferenceInfo {
 
   public SModelReference getTargetModelUID(TemplateGenerator generator) {
     // local references only
-    return generator.getOutputModel().getUID();
+    return generator.getOutputModel().getSModelReference();
   }
 
   public String getReferenceRole() {

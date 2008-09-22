@@ -301,9 +301,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     SModelReference reference;
 
     if (getSModelDescriptor() != null) {
-      reference = getSModelDescriptor().getModelUID();
+      reference = getSModelDescriptor().getSModelReference();
     } else {
-      reference = getSModel().getUID();
+      reference = getSModel().getSModelReference();
     }
 
     String name = myShowLongName ? reference.getLongName() : reference.getShortName();

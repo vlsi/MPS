@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.genconf;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class GenParameters {
 
     Collections.sort(myModels, new Comparator<SModelDescriptor>() {
       public int compare(SModelDescriptor o1, SModelDescriptor o2) {
-        return o1.getModelUID().compareTo(o2.getModelUID());
+        return o1.getSModelReference().compareTo(o2.getSModelReference());
       }
     });
 

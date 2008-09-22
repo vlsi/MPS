@@ -101,7 +101,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public boolean isNotEditable() {
-    String stereotype = getModelUID().getStereotype();
+    String stereotype = getSModelReference().getStereotype();
     return stereotype.equals(SModelStereotype.JAVA_STUB);
   }
 
@@ -117,7 +117,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   public SModel getSModel() {
     if (mySModel == null) {
-      mySModel = new SModel(getModelUID());
+      mySModel = new SModel(getSModelReference());
       mySModel = loadModel();
       doPostLoadStuff();
       addListenersToNewModel();
@@ -128,7 +128,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   private void doPostLoadStuff() {
     myModelRootManager.updateAfterLoad(this);
-    LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
+    LOG.assertLog(mySModel != null, "Couldn't load model \"" + getSModelReference() + "\"");
 
     updateModelWithRefactorings();
 
@@ -183,12 +183,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (modelDescriptor instanceof StubModelDescriptor) {
       StubModelDescriptor stubModelDescriptor = (StubModelDescriptor) modelDescriptor;
       SModelDescriptor actualDescriptor = stubModelDescriptor.getActualDescriptor();
-      mySModel.changeImportedModelUID(stubModelDescriptor.getModelUID(), actualDescriptor.getModelUID());
+      mySModel.changeImportedModelUID(stubModelDescriptor.getSModelReference(), actualDescriptor.getSModelReference());
       playUsedModelDescriptorsRefactoring(actualDescriptor);
       return;
     }
     int currentVersion = modelDescriptor.getVersion();
-    int usedVersion = mySModel.getUsedVersion(modelDescriptor.getModelUID());
+    int usedVersion = mySModel.getUsedVersion(modelDescriptor.getSModelReference());
     if (myIsTestRefactoringMode) {
       System.err.println(this + ": current version of used model " + modelDescriptor + " is " + currentVersion + ", used version is " + usedVersion);
     }
@@ -203,7 +203,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
         if (refactoringContext.getModelVersion() <= usedVersion) continue;
         refactoringContext.getRefactoring().updateModel(mySModel, refactoringContext);
       }
-      mySModel.updateImportedModelUsedVersion(modelDescriptor.getModelUID(), currentVersion);
+      mySModel.updateImportedModelUsedVersion(modelDescriptor.getSModelReference(), currentVersion);
       /*   SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -362,7 +362,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       if (mySModel != null) {
         addListenersToNewModel();
       }
-      LOG.debug("Refresh  " + getModelUID() + ". Took " + (System.currentTimeMillis() - start) + " ms");
+      LOG.debug("Refresh  " + getSModelReference() + ". Took " + (System.currentTimeMillis() - start) + " ms");
     }
   }
 
@@ -394,7 +394,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       myModelListeners.clear();
     }
 
-    UnregisteredNodes.instance().clear(getModelUID());
+    UnregisteredNodes.instance().clear(getSModelReference());
 
     if (mySModel != null) {
       mySModel.dispose();
@@ -436,7 +436,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     getSModel();
     if (mySModel != null) {
       for (SModelDescriptor modelDescriptor : mySModel.allImportedModels(GlobalScope.getInstance())) {
-        if (models.contains(modelDescriptor.getModelUID())) {
+        if (models.contains(modelDescriptor.getSModelReference())) {
           return true;
         }
       }
@@ -457,7 +457,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (!myModelRootManager.containsSomeString(this, strings)) return false;
     getSModel();
     if (mySModel != null) {
-      return mySModel.hasImportedModel(modelDescriptor.getModelUID());
+      return mySModel.hasImportedModel(modelDescriptor.getSModelReference());
     }
     return false;
   }
@@ -596,7 +596,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public String toString() {
-    return getModelUID().toString();
+    return getSModelReference().toString();
   }
 
   public boolean isTransient() {
@@ -679,7 +679,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   /*package*/ void changeSModelUID(SModelReference newModelReference) {
     myModelReference = newModelReference;
-    getSModel().changeModelUID(newModelReference);
+    getSModel().changeModelReference(newModelReference);
   }
 
   /*package*/

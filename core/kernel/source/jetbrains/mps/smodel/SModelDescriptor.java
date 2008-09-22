@@ -22,9 +22,9 @@ public interface SModelDescriptor {
    */
   SModel getSModel();
 
-  SModelReference getModelUID();
+  SModelReference getSModelReference();
 
-  SModelFqName getModelFqName();
+  SModelFqName getSModelFqName();
 
   SModelId getSModelId();
 

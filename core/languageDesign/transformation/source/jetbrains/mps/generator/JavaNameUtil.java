@@ -32,7 +32,7 @@ public final class JavaNameUtil {
   }
 
   public static String packageName(SModel model) {
-    return packageNameForModelUID(model.getUID());
+    return packageNameForModelUID(model.getSModelReference());
   }
 
   public static String withoutStructure(String ns) {

@@ -1,7 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -130,7 +129,7 @@ public class EditorsFinderManager implements ApplicationComponent {
     String editorUID = null;
 
     if (editorModelDescriptor != null) {
-      editorUID = editorModelDescriptor.getModelUID().getSModelFqName().toString();
+      editorUID = editorModelDescriptor.getSModelReference().getSModelFqName().toString();
     }
 
     try {

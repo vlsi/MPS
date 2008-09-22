@@ -2,7 +2,6 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 
 import java.util.Set;
@@ -29,7 +28,7 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       for (final NodeTypesComponent nodeTypesComponent :
         myNodesToComponents.values().toArray(new NodeTypesComponent[myNodesToComponents.size()])) {
-        if (nodeTypesComponent.getNode().getModel().getUID().equals(modelDescriptor.getModelUID())) {
+        if (nodeTypesComponent.getNode().getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
           nodeTypesComponent.clearListeners();
           myNodesToComponents.remove(nodeTypesComponent.getNode());
           fireComponentRemoved(nodeTypesComponent);

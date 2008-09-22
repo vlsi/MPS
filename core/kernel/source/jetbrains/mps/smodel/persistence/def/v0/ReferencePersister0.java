@@ -103,7 +103,7 @@ import org.jdom.Element;
 
   // -- create reference
   private SReference createReferenceInModelDoNotAddToSourceNode(SModel model, VisibleModelElements visibleModelElements) {
-    SModelReference importedModelReference = model.getUID();
+    SModelReference importedModelReference = model.getSModelReference();
     if (myUseUIDs) {
       if (!myImportedModelInfo.equals("-1")) {
         importedModelReference = SModelReference.fromString(myImportedModelInfo);

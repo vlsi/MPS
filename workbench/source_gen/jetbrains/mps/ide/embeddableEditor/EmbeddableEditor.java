@@ -59,7 +59,7 @@ public class EmbeddableEditor {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
       public void run() {
-        EmbeddableEditor.this.myModel.getSModel().addImportedModel(language.getStructureModelDescriptor().getModelUID());
+        EmbeddableEditor.this.myModel.getSModel().addImportedModel(language.getStructureModelDescriptor().getSModelReference());
       }
 
     });

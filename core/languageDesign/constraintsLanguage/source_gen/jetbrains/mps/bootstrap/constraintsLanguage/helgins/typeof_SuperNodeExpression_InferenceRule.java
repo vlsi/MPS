@@ -31,7 +31,7 @@ public class typeof_SuperNodeExpression_InferenceRule implements InferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097622220", true), new QuotationClass_9().createNode(result), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097622218", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "r:1222075024137(jetbrains.mps.bootstrap.constraintsLanguage.helgins)", "1212097622220", true), new QuotationClass_9().createNode(result), _nodeToCheck_1029348928467, null, "r:1222075024137(jetbrains.mps.bootstrap.constraintsLanguage.helgins)", "1212097622218", intentionProvider);
     }
   }
 

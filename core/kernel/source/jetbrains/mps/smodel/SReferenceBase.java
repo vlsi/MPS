@@ -36,7 +36,7 @@ import org.jetbrains.annotations.Nullable;
 
   protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference, boolean mature) {
     super(role, sourceNode);
-    if (!sourceNode.getModel().getUID().equals(targetModelReference)) {
+    if (!sourceNode.getModel().getSModelReference().equals(targetModelReference)) {
       myExternal = true;
       myTargetModelReference = targetModelReference;
     }
@@ -55,12 +55,12 @@ import org.jetbrains.annotations.Nullable;
     return myExternal;
   }
 
-  public SModelReference getTargetModelUID() {
-    return myExternal ? myTargetModelReference : getSourceNode().getModel().getUID();
+  public SModelReference getTargetSModelReference() {
+    return myExternal ? myTargetModelReference : getSourceNode().getModel().getSModelReference();
   }
 
-  public void setTargetModelUID(@NotNull SModelReference modelReference) {
-    if (getSourceNode().getModel().getUID().equals(modelReference)) {
+  public void setTargetSModelReference(@NotNull SModelReference modelReference) {
+    if (getSourceNode().getModel().getSModelReference().equals(modelReference)) {
       myExternal = false;
       myTargetModelReference = null;
     } else {
@@ -75,7 +75,7 @@ import org.jetbrains.annotations.Nullable;
     }
 
     // external
-    SModelReference targetModelReference = getTargetModelUID();
+    SModelReference targetModelReference = getTargetSModelReference();
     if (targetModelReference == null) {
       // 'unresolved' actually.
       // It can be tmp reference created while copy/pasting a node
@@ -90,7 +90,7 @@ import org.jetbrains.annotations.Nullable;
 
     SModel model = modelDescriptor.getSModel();
     if (model == null) {
-      error("failed to get model '" + getTargetModelUID() + "' from model desctiptor");
+      error("failed to get model '" + getTargetSModelReference() + "' from model desctiptor");
     }
     return model;
   }

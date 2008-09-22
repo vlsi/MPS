@@ -46,8 +46,8 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
 
   @NotNull
   public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
-    SModel model = new SModel(modelDescriptor.getModelUID());
-    ourTimestamps.put(model.getUID(), timestamp(modelDescriptor));
+    SModel model = new SModel(modelDescriptor.getSModelReference());
+    ourTimestamps.put(model.getSModelReference(), timestamp(modelDescriptor));
     model.addLanguage(BootstrapLanguagesManager.getInstance().getBaseLanguage());
     return model;
   }
@@ -57,7 +57,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
     boolean wasLoading = model.isLoading();
     model.setLoading(true);
     try {
-      SModelReference reference = modelDescriptor.getModelUID();
+      SModelReference reference = modelDescriptor.getSModelReference();
       String pack = reference.getLongName();
       myConverter.updateModel(pack, true);
     } finally {
@@ -66,7 +66,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   }
 
   public long timestamp(@NotNull SModelDescriptor modelDescriptor) {
-    return getClassPathItem().getClassesTimestamp(modelDescriptor.getModelUID().getLongName());
+    return getClassPathItem().getClassesTimestamp(modelDescriptor.getSModelReference().getLongName());
   }
 
 
@@ -78,7 +78,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
     SModel smodel = modelDescriptor.getSModel();
     if (smodel != null) {
       long timestamp = timestamp(modelDescriptor);
-      long modelTimestamp = ourTimestamps.get(smodel.getUID());
+      long modelTimestamp = ourTimestamps.get(smodel.getSModelReference());
       if (modelTimestamp == timestamp) {
         return smodel;
       }

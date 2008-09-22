@@ -24,7 +24,7 @@ public class AddMissingDependency_Intention extends BaseIntention {
   public String getDescription(final SNode node, final EditorContext editorContext) {
     IScope scope = editorContext.getScope();
     for(SReference ref : node.getReferences()) {
-      SModelReference uid = ref.getTargetModelUID();
+      SModelReference uid = ref.getTargetSModelReference();
       if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
         SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
         return "Add dependency on module " + sm.getModule();
@@ -36,7 +36,7 @@ public class AddMissingDependency_Intention extends BaseIntention {
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     IScope scope = editorContext.getScope();
     for(SReference ref : node.getReferences()) {
-      SModelReference uid = ref.getTargetModelUID();
+      SModelReference uid = ref.getTargetSModelReference();
       if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
         return true;
       }
@@ -47,7 +47,7 @@ public class AddMissingDependency_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     IScope scope = editorContext.getScope();
     for(SReference ref : node.getReferences()) {
-      SModelReference uid = ref.getTargetModelUID();
+      SModelReference uid = ref.getTargetSModelReference();
       if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
         SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
         editorContext.getOperationContext().getModule().addDependency(sm.getModule().getModuleUID(), false);

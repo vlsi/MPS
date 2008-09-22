@@ -21,7 +21,7 @@ public class ModelsProgressHelper {
   }
 
   public String modelTaskName(SModelDescriptor modelDescriptor) {
-    return modelTaskName(modelDescriptor.getModelUID());
+    return modelTaskName(modelDescriptor.getSModelReference());
   }
 
   public String modelTaskName(SModelReference modelReference) {

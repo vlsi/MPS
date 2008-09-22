@@ -4,7 +4,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.NameUtil;
 
 import java.awt.Frame;
@@ -22,7 +21,7 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
       public String compute() {
         StringBuilder result = new StringBuilder();
 
-        result.append("model = ").append(node.getModel().getUID()).append("\n");
+        result.append("model = ").append(node.getModel().getSModelReference()).append("\n");
         result.append("concept = ").append(NameUtil.shortNameFromLongName(node.getConceptFqName())).append("\n");
         result.append("language = ").append(node.getLanguageNamespace()).append("\n");
         result.append("ID = ").append(node.getId()).append("\n");
@@ -35,7 +34,7 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
             result.append("Bad Reference\n");
 
           } else {
-            result.append("Model = ").append(target.getModel().getUID()).append("\n");
+            result.append("Model = ").append(target.getModel().getSModelReference()).append("\n");
             result.append("Node = ").append(NodePresentationUtil.getPathToRoot(target)).append("\n");
             result.append("ID = ").append(target.getId()).append("\n");
           }

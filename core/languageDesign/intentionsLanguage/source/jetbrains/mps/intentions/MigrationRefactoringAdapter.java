@@ -36,6 +36,6 @@ public class MigrationRefactoringAdapter implements Intention {
   }
 
   public String getLocationString() {
-    return myMigrationScript.getModel().getUID().toString();
+    return myMigrationScript.getModel().getSModelReference().toString();
   }
 }

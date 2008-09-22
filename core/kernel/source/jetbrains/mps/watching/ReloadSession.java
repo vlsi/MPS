@@ -2,18 +2,11 @@ package jetbrains.mps.watching;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.watching.ModelChangesWatcher;
-import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
-import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 
-import java.util.List;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import java.util.HashSet;
@@ -25,8 +18,6 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task.Modal;
 import org.jetbrains.annotations.NotNull;
-
-import javax.swing.SwingUtilities;
 
 public class ReloadSession {
   private final static Logger LOG = Logger.getLogger(ReloadSession.class);
@@ -66,7 +57,7 @@ public class ReloadSession {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           try {
-            progressIndicator.setText("Reloading " + model.getModelUID());
+            progressIndicator.setText("Reloading " + model.getSModelReference());
             model.reloadFromDisk();
           } catch (RuntimeException e) {
             LOG.error(e);

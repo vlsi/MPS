@@ -42,13 +42,13 @@ public class StatementList_Behavior {
         if (nodeToSelect != null) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(nodeToSelect, "Return expected", "r:1222083982015(jetbrains.mps.baseLanguage.behavior@6_0)", "1215433086400", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(nodeToSelect, "Return expected", "r:1222094342491(jetbrains.mps.baseLanguage.behavior@6_0)", "1215433086400", intentionProvider);
           }
         } else
         {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(n, "Return expected", "r:1222083982015(jetbrains.mps.baseLanguage.behavior@6_0)", "1215433086408", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(n, "Return expected", "r:1222094342491(jetbrains.mps.baseLanguage.behavior@6_0)", "1215433086408", intentionProvider);
           }
         }
       }
@@ -60,7 +60,7 @@ public class StatementList_Behavior {
     for(SNode n : unreachable) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(n, "Unreachable node", "r:1222083982015(jetbrains.mps.baseLanguage.behavior@6_0)", "1213877327444", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(n, "Unreachable node", "r:1222094342491(jetbrains.mps.baseLanguage.behavior@6_0)", "1213877327444", intentionProvider);
       }
     }
   }
@@ -76,7 +76,7 @@ public class StatementList_Behavior {
         }
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(read, "Variable used before it is initialized", "r:1222083982015(jetbrains.mps.baseLanguage.behavior@6_0)", "1213877327487", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(read, "Variable used before it is initialized", "r:1222094342491(jetbrains.mps.baseLanguage.behavior@6_0)", "1213877327487", intentionProvider);
         }
       }
     }

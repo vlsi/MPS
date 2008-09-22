@@ -213,7 +213,7 @@ public class GenerationController {
       TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.GENERATION);
       for (SModelDescriptor inputModel : inputModels) {
         if (!myGenerationType.isApplicable(inputModel)) {
-          LOG.error("Can't apply generation type " + myGenerationType + " to " + inputModel.getModelUID());
+          LOG.error("Can't apply generation type " + myGenerationType + " to " + inputModel.getSModelReference());
           continue;
         }
 
@@ -222,7 +222,7 @@ public class GenerationController {
         String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
 
         //  myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
-        setText2("model " + inputModel.getModelFqName(), totalJob, startJobTime);
+        setText2("model " + inputModel.getSModelFqName(), totalJob, startJobTime);
         TaskProgressHelper progress = new TaskProgressHelper(this);
         progress.startLeafTask(taskName, myProgress, totalJob, startJobTime);
 

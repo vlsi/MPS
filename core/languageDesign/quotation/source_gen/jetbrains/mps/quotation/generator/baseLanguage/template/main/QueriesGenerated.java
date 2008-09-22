@@ -330,7 +330,7 @@ public class QueriesGenerated {
         continue;
       }
       SNode referenceNode = BaseConcept.newInstance(model).getNode();
-      referenceNode.setProperty("targetModel", reference.getTargetModelUID().toString());
+      referenceNode.setProperty("targetModel", reference.getTargetSModelReference().toString());
       referenceNode.setProperty("role", reference.getRole());
       referenceNode.setProperty("targetNodeId", targetNode.getSNodeId().toString());
       result.add(referenceNode);

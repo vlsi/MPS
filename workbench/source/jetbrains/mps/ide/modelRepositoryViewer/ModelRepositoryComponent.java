@@ -110,8 +110,8 @@ public class ModelRepositoryComponent {
           setColor(new Color(0x00, 0x00, 0x90));
         }
         setColor(Color.BLACK);
-        setNodeIdentifier(myModelDescriptor.getModelUID().toString());
-        setText(myModelDescriptor.getModelUID().toString() + (myModelDescriptor.isInitialized() ? " (initialized)" : " (not initialized)"));
+        setNodeIdentifier(myModelDescriptor.getSModelReference().toString());
+        setText(myModelDescriptor.getSModelReference().toString() + (myModelDescriptor.isInitialized() ? " (initialized)" : " (not initialized)"));
       }
     }
 

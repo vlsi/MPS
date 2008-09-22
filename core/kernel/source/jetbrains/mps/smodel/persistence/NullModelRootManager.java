@@ -22,7 +22,7 @@ class NullModelRootManager extends AbstractModelRootManager {
 
   @NotNull
   public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
-    return new SModel(modelDescriptor.getModelUID());
+    return new SModel(modelDescriptor.getSModelReference());
   }
 
   public void saveModel(@NotNull SModelDescriptor modelDescriptor) {

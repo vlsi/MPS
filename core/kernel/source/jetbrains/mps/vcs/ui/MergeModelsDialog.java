@@ -14,7 +14,7 @@ public class MergeModelsDialog extends BaseDialog {
 
 
   public MergeModelsDialog(Frame mainFrame, SModel base, SModel mineModel, SModel repoModel) throws HeadlessException {
-    super(mainFrame, "Merge Model Changes : " + base.getUID());
+    super(mainFrame, "Merge Model Changes : " + base.getSModelReference());
     myMergeView = new MergeView(base, mineModel, repoModel);
   }
 

@@ -70,7 +70,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     } else {
       myWeakSModelRepositoryListener = new SModelRepositoryAdapter() {
         public void modelAdded(SModelDescriptor modelDescriptor) {
-          if (ProjectModels.isProjectModel(modelDescriptor.getModelUID())) {
+          if (ProjectModels.isProjectModel(modelDescriptor.getSModelReference())) {
             return;
           }
           if (listenCondition.met(modelDescriptor)) {

@@ -590,7 +590,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     assert modelDescriptor != null;
     SModelTreeNode modelTreeNode = findSModelTreeNode(rootNode, modelDescriptor);
     if (modelTreeNode == null) {
-      LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node for model \"" + modelDescriptor.getModelUID() + "\" not found.");
+      LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node for model \"" + modelDescriptor.getSModelReference() + "\" not found.");
       return;
     }
     modelTreeNode.flush();

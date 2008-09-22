@@ -22,7 +22,7 @@ public class ModelHolder implements IHolder<SModel> {
   }
 
   public ModelHolder(SModel model) {
-    myModelReference = model.getModelDescriptor().getModelUID();
+    myModelReference = model.getModelDescriptor().getSModelReference();
   }
 
   private SModelDescriptor getModelDescriptor() {

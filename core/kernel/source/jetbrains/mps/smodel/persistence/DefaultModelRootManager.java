@@ -49,7 +49,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       final File file = FileSystem.toFile(modelDescriptor.getModelFile());
 
       if (!file.exists()) {
-        return new SModel(modelDescriptor.getModelUID());
+        return new SModel(modelDescriptor.getSModelReference());
       }
     }
 
@@ -64,15 +64,15 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       return handleExceptionDuringModelRead(modelDescriptor, t);
     }
 
-    if (model.getUID().getSModelId() == null) {
-      model.changeModelUID(modelDescriptor.getModelUID());
+    if (model.getSModelReference().getSModelId() == null) {
+      model.changeModelReference(modelDescriptor.getSModelReference());
       ModelPersistence.saveModel(model, modelDescriptor.getModelFile());
     }
 
-    LOG.assertLog(model.getUID().equals(modelDescriptor.getModelUID()),
+    LOG.assertLog(model.getSModelReference().equals(modelDescriptor.getSModelReference()),
       "\nError loading model from file: \"" + modelDescriptor.getModelFile() + "\"\n" +
-        "expected model UID     : \"" + modelDescriptor.getModelUID() + "\"\n" +
-        "but was UID            : \"" + model.getUID() + "\"\n" +
+        "expected model UID     : \"" + modelDescriptor.getSModelReference() + "\"\n" +
+        "but was UID            : \"" + model.getSModelReference() + "\"\n" +
         "the model will not be available.\n" +
         "Make sure that all project's roots and/or the model namespace is correct");
     return model;
@@ -81,7 +81,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   private SModel handleExceptionDuringModelRead(SModelDescriptor modelDescriptor, RuntimeException exception) {
     SuspiciousModelIndex.instance().addModel(modelDescriptor);
     if (modelDescriptor.isInitialized()) {
-      SModel newModel = new SModel(modelDescriptor.getModelUID());
+      SModel newModel = new SModel(modelDescriptor.getSModelReference());
       LOG.error(exception.getMessage(), newModel);
       return newModel;
     }
@@ -179,10 +179,10 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       SModelDescriptor modelDescriptor;
       if (ModelPersistence.needsRecreating(file)) {
         modelDescriptor = recreateFileAndGetInstance(this, isMPSStub, file.getAbsolutePath(), modelReference, owner, modelRoot);
-        LOG.debug("I've recreated file and read model descriptor" + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
+        LOG.debug("I've recreated file and read model descriptor" + modelDescriptor.getSModelReference() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       } else {
         modelDescriptor = getInstance(this, isMPSStub, file.getAbsolutePath(), modelReference, owner, false);
-        LOG.debug("I've read model descriptor " + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
+        LOG.debug("I've read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       }
       modelDescriptors.add(modelDescriptor);
     }

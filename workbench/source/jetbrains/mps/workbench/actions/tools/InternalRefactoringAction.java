@@ -31,7 +31,7 @@ public class InternalRefactoringAction extends BaseAction {
 
     System.out.println(" -- process models (" + models.size() + ") -- ");
     for (SModel model : models) {
-      System.out.println("process model: " + model.getUID().toString());
+      System.out.println("process model: " + model.getSModelReference().toString());
       processModel(model);
     }
   }
@@ -50,7 +50,7 @@ public class InternalRefactoringAction extends BaseAction {
         if (descriptor.getStereotype().equals("java_stub")) continue;
         if (!descriptor.isInitialized()) {
           wasLoaded = true;
-          System.out.println("load model: " + descriptor.getModelUID().toString());
+          System.out.println("load model: " + descriptor.getSModelReference().toString());
         }
         SModel model = descriptor.getSModel();
         if (!models.contains(model)) {

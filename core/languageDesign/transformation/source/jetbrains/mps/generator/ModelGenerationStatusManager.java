@@ -89,7 +89,7 @@ public class ModelGenerationStatusManager {
   private long calculateLastGenerationTime(SModelDescriptor sm) {
     Set<IModule> modules = sm.getModules();
     if (modules.size() != 1) {
-      LOG.warning("model " + sm.getModelUID() + " has too many owners : " + modules);
+      LOG.warning("model " + sm.getSModelReference() + " has too many owners : " + modules);
     }
     IModule module = modules.iterator().next();
     String outputPath = module.getGeneratorOutputPath();

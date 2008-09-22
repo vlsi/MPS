@@ -37,7 +37,7 @@ public class TextGenerationUtil {
     for (SNode root : targetModel.getRoots()) {
       INodeAdapter outputNode = BaseAdapter.fromNode(root);
       if (outputNode instanceof ClassConcept || outputNode instanceof Interface) {
-        compiler.addSource(JavaNameUtil.packageNameForModelUID(targetModel.getUID()) + "." + root.getName(), generateText(context, root).getText()
+        compiler.addSource(JavaNameUtil.packageNameForModelUID(targetModel.getSModelReference()) + "." + root.getName(), generateText(context, root).getText()
         );
       }
     }

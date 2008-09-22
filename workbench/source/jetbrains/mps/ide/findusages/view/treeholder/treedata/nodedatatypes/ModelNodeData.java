@@ -24,7 +24,7 @@ public class ModelNodeData extends BaseNodeData {
 
   public ModelNodeData(PathItemRole role, SModel model, boolean isResult, boolean resultsSection) {
     super(role, model.getModelDescriptor().getLongName(), "", false, isResult, resultsSection);
-    myModelReference = model.getModelDescriptor().getModelUID();
+    myModelReference = model.getModelDescriptor().getSModelReference();
 
     startListening();
   }
@@ -36,7 +36,7 @@ public class ModelNodeData extends BaseNodeData {
   private void startListening() {
     myModelRepositoryListener = new SModelRepositoryAdapter() {
       public void modelRemoved(SModelDescriptor modelDescriptor) {
-        if (modelDescriptor.getModelUID().equals(myModelReference)) {
+        if (modelDescriptor.getSModelReference().equals(myModelReference)) {
           myIsRemoved = true;
           notifyChangeListeners();
         }

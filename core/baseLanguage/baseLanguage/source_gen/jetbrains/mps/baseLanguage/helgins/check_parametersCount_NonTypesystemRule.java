@@ -31,7 +31,7 @@ public class check_parametersCount_NonTypesystemRule implements NonTypesystemRul
     if (!(b)) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(iMethodCall, "wrong number of parameters", "r:1222085007939(jetbrains.mps.baseLanguage.helgins@3_0)", "1222085318381", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(iMethodCall, "wrong number of parameters", "r:1222094342530(jetbrains.mps.baseLanguage.helgins@21_0)", "1222095231485", intentionProvider);
       }
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "typeVariableDeclaration", true)).count() > 0) {

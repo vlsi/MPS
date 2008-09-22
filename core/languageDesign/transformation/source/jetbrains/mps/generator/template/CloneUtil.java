@@ -30,7 +30,7 @@ public class CloneUtil {
     outputNode.putProperties(inputNode);
     outputNode.putUserObjects(inputNode);
     for (SReference reference : inputNode.getReferences()) {
-      SModelReference targetModelReference = reference.isExternal() ? reference.getTargetModelUID() : outputModel.getUID();
+      SModelReference targetModelReference = reference.isExternal() ? reference.getTargetSModelReference() : outputModel.getSModelReference();
       if (targetModelReference == null) {
         LOG.warning("broken reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
       } else {

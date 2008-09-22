@@ -200,7 +200,7 @@ public abstract class DefaultScope extends BaseScope {
   }
 
   private void addDescriptor(SModelDescriptor sm) {
-    myFqNameToDescriptor.put(sm.getModelUID().getSModelFqName(), sm);
-    myIdToDescriptor.put(sm.getModelUID().getSModelId(), sm);
+    myFqNameToDescriptor.put(sm.getSModelReference().getSModelFqName(), sm);
+    myIdToDescriptor.put(sm.getSModelReference().getSModelId(), sm);
   }
 }

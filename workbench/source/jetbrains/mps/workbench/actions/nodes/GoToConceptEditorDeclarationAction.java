@@ -41,7 +41,7 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
     if (myModule instanceof Language) {
       Language contextLanguage = (Language) myModule;
       SModelDescriptor testStructureModel = contextLanguage.getStructureModelDescriptor();
-      if (myNode.getModel().getUID().equals(testStructureModel.getModelUID())) {
+      if (myNode.getModel().getSModelReference().equals(testStructureModel.getSModelReference())) {
         language = contextLanguage;
       }
     }

@@ -25,8 +25,8 @@ public class SortUtil {
         if (o == o1) {
           return 0;
         }
-        String name1 = o.getModelUID().toString();
-        String name2 = o1.getModelUID().toString();
+        String name1 = o.getSModelReference().toString();
+        String name2 = o1.getSModelReference().toString();
         if (name1 == null) name1 = "";
         if (name2 == null) name2 = "";
         return name1.compareTo(name2);
