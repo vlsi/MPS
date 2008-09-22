@@ -36,6 +36,8 @@ public class SModel implements Iterable<SNode> {
 
   private Set<Language> myVersionedLanguages = new HashSet<Language>();
 
+  private Set<String> myVersionedLanguageNamespaces = new HashSet<String>();
+
   private List<SNode> myRoots = new ArrayList<SNode>();
   private SModelUID myUID;
 
@@ -614,15 +616,6 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  @Deprecated
-  public void addAspectModelsVersions(@NotNull String languageNamespace, @NotNull Language language) {
-  /*  assert language.getNamespace().equals(languageNamespace);
-    if (myNewLanguageNamespaces.contains(languageNamespace)) {
-      addAspectModelsVersions(language);
-      myNewLanguageNamespaces.remove(languageNamespace);
-    }*/
-  }
-
 
   public void addLanguage_internal(@NotNull Language language) {
     addLanguage_internal(language.getModuleUID());
@@ -667,7 +660,6 @@ public class SModel implements Iterable<SNode> {
   public void addNewlyImportedDevKit(String fqName) {
     addDevKit(fqName);
     addAspectModelsVersions(GlobalScope.getInstance().getDevKit(fqName));
-    //myNewDevKitNamespaces.add(fqName);
   }
 
   public void addDevKit(@NotNull DevKit devKit) {

@@ -21,7 +21,7 @@ public class ModuleContext extends StandaloneMPSContext {
   //and if we store generator reference here it will be stale
   private String myModuleUID;
 
-  public ModuleContext(final IModule module, final MPSProject project) {
+  public ModuleContext(@NotNull final IModule module, @NotNull final MPSProject project) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myModuleUID = module.getModuleUID();

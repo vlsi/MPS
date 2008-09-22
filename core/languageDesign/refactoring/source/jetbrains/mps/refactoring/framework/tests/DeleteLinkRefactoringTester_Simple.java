@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.*;
  * To change this template use File | Settings | File Templates.
  */
 public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
-  public boolean testRefactoring(MPSProject project,
+  public boolean testRefactoring(final MPSProject project,
                                  final SModelDescriptor sandbox1,
                                  final SModelDescriptor sandbox2,
                                  final Language testRefactoringLanguage,
@@ -33,6 +33,7 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
         ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
         SNode link = concept.getLinkDeclarations().get(0).getNode();
         linkName[0] = link.getProperty("role");
+        refactoringContext.setSelectedMPSProject(project);
         refactoringContext.setSelectedNode(link);
         refactoringContext.setSelectedModel(structureModelDescriptor);
       }

@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
 public class MoveConceptRefactoringTester implements IRefactoringTester {
-  public boolean testRefactoring(MPSProject project,
+  public boolean testRefactoring(final MPSProject project,
                                  final SModelDescriptor sandbox1,
                                  final SModelDescriptor sandbox2,
                                  final Language testRefactoringLanguage,
@@ -25,6 +25,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         targetStructureModelDescriptor[0] = testRefactoringTargetLanguage.getStructureModelDescriptor();
         SNode concept = structureModelDescriptor.getSModel().getRootByName(conceptName);
+        refactoringContext.setSelectedMPSProject(project);
         refactoringContext.setSelectedNode(concept);
         refactoringContext.setSelectedNodes(CollectionUtil.asList(concept));
         refactoringContext.setSelectedModel(structureModelDescriptor);

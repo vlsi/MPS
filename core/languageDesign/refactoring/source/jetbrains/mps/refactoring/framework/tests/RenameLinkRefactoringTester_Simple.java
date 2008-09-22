@@ -8,7 +8,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
 
 public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
-  public boolean testRefactoring(MPSProject project,
+  public boolean testRefactoring(final MPSProject project,
                                  final SModelDescriptor sandbox1,
                                  final SModelDescriptor sandbox2,
                                  final Language testRefactoringLanguage,
@@ -25,6 +25,7 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
         SNode node = structureModelDescriptor.getSModel().getRootByName("MyVeryGoodConcept1");
         ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
         SNode link = concept.getLinkDeclarations().get(0).getNode();
+        refactoringContext.setSelectedMPSProject(project);
         refactoringContext.setSelectedNode(link);
         refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter(RenameLink.newName, newLinkName);

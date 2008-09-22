@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.*;
 public class RenameConceptRefactoringTester implements IRefactoringTester {
   private static final String STRMD = "strmd";
 
-  public boolean testRefactoring(MPSProject project,
+  public boolean testRefactoring(final MPSProject project,
                                  final SModelDescriptor sandbox1,
                                  final SModelDescriptor sandbox2,
                                  final Language testRefactoringLanguage,
@@ -25,6 +25,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
         refactoringContext.setParameter(STRMD, structureModelDescriptor);
         SNode concept = structureModelDescriptor.getSModel().getRootByName("MyVeryGoodConcept1");
         refactoringContext.setSelectedNode(concept);
+        refactoringContext.setSelectedMPSProject(project);
         refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter("newName", newConceptName);
       }

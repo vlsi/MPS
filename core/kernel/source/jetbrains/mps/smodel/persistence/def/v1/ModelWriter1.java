@@ -47,9 +47,9 @@ public class ModelWriter1 implements IModelWriter {
     for (String languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace);
-      Language l = GlobalScope.getInstance().getLanguage(languageNamespace);
+     /* Language l = GlobalScope.getInstance().getLanguage(languageNamespace);
       if (l != null) {
-        sourceModel.addAspectModelsVersions(/*languageNamespace, */l);
+        sourceModel.addAspectModelsVersions(*//*languageNamespace, *//*l);
         List<SModelDescriptor> aspectModelDescriptors = new ArrayList<SModelDescriptor>(l.getAspectModelDescriptors());
         Collections.sort(aspectModelDescriptors, new Comparator<SModelDescriptor>() {
           public int compare(SModelDescriptor o1, SModelDescriptor o2) {
@@ -63,7 +63,7 @@ public class ModelWriter1 implements IModelWriter {
             writeAspect(sourceModel, languageElem, uid);
           }
         }
-      }
+      }*/
       rootElement.addContent(languageElem);
     }
     for (ImportElement aspectElement : sourceModel.getLanguageAspectModelElements()) {
