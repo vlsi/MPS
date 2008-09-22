@@ -1,32 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template.main@generator">
+<model modelUID="r:1222075024233(jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template.main@generator)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+    <languageAspect modelUID="r:1222075024065(jetbrains.mps.baseLanguage.constraints)" version="83" />
+    <languageAspect modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
+    <languageAspect modelUID="r:1222075024123(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
+    <languageAspect modelUID="r:1222075024129(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
   </language>
   <language namespace="jetbrains.mps.transformation.TLBase">
-    <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
-    <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
+    <languageAspect modelUID="r:1222075024098(jetbrains.mps.transformation.TLBase.constraints)" version="16" />
+    <languageAspect modelUID="r:1222075024104(jetbrains.mps.transformation.TLBase.structure)" version="1" />
   </language>
   <language namespace="jetbrains.mps.transformation.generationContext" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
+    <languageAspect modelUID="r:1222075024168(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
+    <languageAspect modelUID="r:1222075024174(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguageInternal" />
   <language namespace="jetbrains.mps.bootstrap.helgins">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
+    <languageAspect modelUID="r:1222075024046(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   </language>
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.core">
-    <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+    <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   </language>
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
+  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14" />
@@ -36,7 +46,12 @@
   <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19" />
-  <maxImportIndex value="83" />
+  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
+  <languageAspect modelUID="r:1222075024058(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
+  <languageAspect modelUID="r:1222075024192(jetbrains.mps.patterns.constraints)" version="2" />
+  <maxImportIndex value="84" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -85,6 +100,7 @@
   <import index="81" modelUID="com.intellij.util.xmlb@java_stub" version="-1" />
   <import index="82" modelUID="org.jdom@java_stub" version="-1" />
   <import index="83" modelUID="java.io@java_stub" version="-1" />
+  <import index="84" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1203080454777">
     <property name="package" value="Plugin" />
     <property name="name" value="ProjectPlugin" />
@@ -138,7 +154,6 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="jetbrains.mps.generator@java_stub" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1203086899006">
     <property name="name" value="GeneratedAction" />
     <property name="package" value="Actions.Action" />
@@ -218,7 +233,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208965283815">
-                            <link role="baseMethodDeclaration" targetNodeId="2v.~GenerationSessionContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getInvocationContext" />
+                            <link role="baseMethodDeclaration" targetNodeId="84.~GenerationSessionContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getInvocationContext" />
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208965283816">
@@ -3925,7 +3940,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218025093463">
         <link role="classifier" targetNodeId="21.~List" resolveInfo="List" />
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218025126764">
-          <link role="classifier" targetNodeId="2v.~GenerationListener" resolveInfo="GenerationListener" />
+          <link role="classifier" targetNodeId="84.~GenerationListener" resolveInfo="GenerationListener" />
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1218025087946" />
@@ -3936,14 +3951,14 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218025182031">
               <link role="classifier" targetNodeId="21.~List" resolveInfo="List" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218025186658">
-                <link role="classifier" targetNodeId="2v.~GenerationListener" resolveInfo="GenerationListener" />
+                <link role="classifier" targetNodeId="84.~GenerationListener" resolveInfo="GenerationListener" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1218025192598">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1218025198928">
                 <link role="baseMethodDeclaration" targetNodeId="21.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
                 <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218025204149">
-                  <link role="classifier" targetNodeId="2v.~GenerationListener" resolveInfo="GenerationListener" />
+                  <link role="classifier" targetNodeId="84.~GenerationListener" resolveInfo="GenerationListener" />
                 </node>
               </node>
             </node>
@@ -4051,7 +4066,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212586223112">
-                    <link role="baseMethodDeclaration" targetNodeId="2v.~GenerationSessionContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getInvocationContext" />
+                    <link role="baseMethodDeclaration" targetNodeId="84.~GenerationSessionContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getInvocationContext" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212586226412">
@@ -4904,7 +4919,7 @@
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212256768929">
-                                <link role="baseMethodDeclaration" targetNodeId="2v.~GenerationSessionContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getInvocationContext" />
+                                <link role="baseMethodDeclaration" targetNodeId="84.~GenerationSessionContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getInvocationContext" />
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212256768930">
@@ -6802,7 +6817,7 @@
     <property name="name" value="GenerationListenerImpl" />
     <property name="package" value="GenerationListener" />
     <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210071101925">
-      <link role="classifier" targetNodeId="2v.~GenerationListener" resolveInfo="GenerationListener" />
+      <link role="classifier" targetNodeId="84.~GenerationListener" resolveInfo="GenerationListener" />
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1210071062179">
       <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.MapSrcNodeMacro" id="1210071435418">
@@ -8722,7 +8737,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215266495363">
-                    <link role="baseMethodDeclaration" targetNodeId="2v.~GenerationSessionContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getInvocationContext" />
+                    <link role="baseMethodDeclaration" targetNodeId="84.~GenerationSessionContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getInvocationContext" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215266495364">
@@ -9175,7 +9190,7 @@
                                       </node>
                                     </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217679691897">
-                                      <link role="baseMethodDeclaration" targetNodeId="2v.~GenerationSessionContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getInvocationContext" />
+                                      <link role="baseMethodDeclaration" targetNodeId="84.~GenerationSessionContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getInvocationContext" />
                                     </node>
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217679691898">

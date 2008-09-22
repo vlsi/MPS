@@ -4,10 +4,10 @@ package jetbrains.mps.logging.refactoring.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class UpdateModelProcedure extends Statement {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.UpdateModelProcedure";
@@ -17,21 +17,21 @@ public class UpdateModelProcedure extends Statement {
     super(node);
   }
 
-  public static UpdateModelProcedure newInstance(SModel sm, boolean init) {
-    return (UpdateModelProcedure)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.UpdateModelProcedure", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static UpdateModelProcedure newInstance(SModel sm) {
-    return UpdateModelProcedure.newInstance(sm, false);
-  }
-
-
   public Expression getArgument() {
     return (Expression)this.getChild(UpdateModelProcedure.ARGUMENT);
   }
 
   public void setArgument(Expression node) {
     super.setChild(UpdateModelProcedure.ARGUMENT, node);
+  }
+
+
+  public static UpdateModelProcedure newInstance(SModel sm, boolean init) {
+    return (UpdateModelProcedure)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.UpdateModelProcedure", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static UpdateModelProcedure newInstance(SModel sm) {
+    return UpdateModelProcedure.newInstance(sm, false);
   }
 
 }

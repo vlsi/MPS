@@ -4,10 +4,10 @@ package jetbrains.mps.logging.refactoring.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class ChangeFeatureNameOperation extends Statement {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.ChangeFeatureNameOperation";
@@ -18,15 +18,6 @@ public class ChangeFeatureNameOperation extends Statement {
   public ChangeFeatureNameOperation(SNode node) {
     super(node);
   }
-
-  public static ChangeFeatureNameOperation newInstance(SModel sm, boolean init) {
-    return (ChangeFeatureNameOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.ChangeFeatureNameOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ChangeFeatureNameOperation newInstance(SModel sm) {
-    return ChangeFeatureNameOperation.newInstance(sm, false);
-  }
-
 
   public Expression getFeature() {
     return (Expression)this.getChild(ChangeFeatureNameOperation.FEATURE);
@@ -50,6 +41,15 @@ public class ChangeFeatureNameOperation extends Statement {
 
   public void setNewFeatureName(Expression node) {
     super.setChild(ChangeFeatureNameOperation.NEW_FEATURE_NAME, node);
+  }
+
+
+  public static ChangeFeatureNameOperation newInstance(SModel sm, boolean init) {
+    return (ChangeFeatureNameOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.ChangeFeatureNameOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ChangeFeatureNameOperation newInstance(SModel sm) {
+    return ChangeFeatureNameOperation.newInstance(sm, false);
   }
 
 }

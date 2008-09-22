@@ -130,7 +130,7 @@ public class EditorsFinderManager implements ApplicationComponent {
     String editorUID = null;
 
     if (editorModelDescriptor != null) {
-      editorUID = editorModelDescriptor.getModelUID().toString();
+      editorUID = editorModelDescriptor.getModelUID().getSModelFqName().toString();
     }
 
     try {

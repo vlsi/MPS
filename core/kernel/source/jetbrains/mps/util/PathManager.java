@@ -3,6 +3,7 @@ package jetbrains.mps.util;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 
@@ -11,6 +12,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 
 /**
@@ -35,16 +38,7 @@ public class PathManager {
   private static String ourHelpIndexPath;
   private static String ourTutorialPath;
 
-  public static boolean ourServer;
-
-  public static boolean isServer() {
-    return ourServer;
-  }
-
-  public static void setServer(boolean server) {
-    ourServer = server;
-  }
-
+  private static Pattern MODEL_UID_PATTERN = Pattern.compile(ModelPersistence.MODEL_UID + "=\"(.*?)\"");
 
   public static String getUserHome() {
     return System.getProperty("user.home");
@@ -260,7 +254,6 @@ public class PathManager {
     }
 
     resultPath = StringUtil.replace(resultPath, "%20", " ");
-
     return resultPath;
   }
 
@@ -318,8 +311,30 @@ public class PathManager {
   }
 
   public static SModelUID getModelUID(IFile modelFile, IFile root, String namespacePrefix) {
+    SModelUID fromFile = getFileUID(modelFile);
+    if (fromFile != null) {
+      return fromFile;
+    }
     String rawLongName = getModelUIDString(modelFile, root, namespacePrefix);
     return SModelUID.fromString(rawLongName);
+  }
+
+  private static SModelUID getFileUID(IFile modelFile) {
+    try {
+      String secondLine = FileUtil.readLine(modelFile.openReader(), 1);
+      if (secondLine == null) {
+        return null;
+      }
+
+      Matcher m = MODEL_UID_PATTERN.matcher(secondLine);
+      if (m.find()) {
+        return SModelUID.fromString(m.group(1));
+      }
+
+      return null;
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   public static String getModelUIDString(IFile modelFile, IFile root, String namespacePrefix) {

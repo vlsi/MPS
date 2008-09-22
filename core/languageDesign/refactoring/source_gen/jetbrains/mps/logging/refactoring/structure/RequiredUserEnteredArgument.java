@@ -17,15 +17,6 @@ public class RequiredUserEnteredArgument extends RequiredAdditionalArgument {
     super(node);
   }
 
-  public static RequiredUserEnteredArgument newInstance(SModel sm, boolean init) {
-    return (RequiredUserEnteredArgument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static RequiredUserEnteredArgument newInstance(SModel sm) {
-    return RequiredUserEnteredArgument.newInstance(sm, false);
-  }
-
-
   public FilterArgumentClause getFilterClause() {
     return (FilterArgumentClause)this.getChild(RequiredUserEnteredArgument.FILTER_CLAUSE);
   }
@@ -48,6 +39,15 @@ public class RequiredUserEnteredArgument extends RequiredAdditionalArgument {
 
   public void setInitialValue(InitialValueClause node) {
     super.setChild(RequiredUserEnteredArgument.INITIAL_VALUE, node);
+  }
+
+
+  public static RequiredUserEnteredArgument newInstance(SModel sm, boolean init) {
+    return (RequiredUserEnteredArgument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static RequiredUserEnteredArgument newInstance(SModel sm) {
+    return RequiredUserEnteredArgument.newInstance(sm, false);
   }
 
 }

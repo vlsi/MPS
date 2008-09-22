@@ -12,8 +12,8 @@ public class ChooseComponentClause_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode elementType = SLinkOperations.getTarget(SNodeOperations.getParent(thisNode, null, false, false), "argumentType", true);
-    return new QuotationClass_().createNode(elementType);
+    SNode elementType = SLinkOperations.getTarget(SNodeOperations.getParent(thisNode), "argumentType", true);
+    return new QuotationClass_0().createNode(elementType);
   }
 
 }

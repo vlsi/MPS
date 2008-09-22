@@ -51,7 +51,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration";
+    return "r:1222075024018(jetbrains.mps.bootstrap.structureLanguage.structure).LinkDeclaration";
   }
 
   public Class getOverridenRefactoringClass() {
@@ -141,7 +141,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "r:1222075024018(jetbrains.mps.bootstrap.structureLanguage.structure).LinkDeclaration")) {
       return true;
     } else
     {

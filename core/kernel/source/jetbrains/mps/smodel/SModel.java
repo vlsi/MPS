@@ -1110,7 +1110,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  /*package*/ void changeModelUID(SModelUID newModelUID) {
+  public void changeModelUID(SModelUID newModelUID) {
     SModelUID oldUID = myUID;
     myUID = newModelUID;
     for (SNode node : getAllNodesWithIds()) {

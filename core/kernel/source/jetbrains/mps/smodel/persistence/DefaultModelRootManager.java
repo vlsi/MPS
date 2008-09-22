@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
 import jetbrains.mps.vcs.MPSVCSManager;
@@ -19,6 +20,9 @@ import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jdom.Document;
+import org.jdom.JDOMException;
+import org.jdom.Element;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -63,6 +67,12 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     } catch (ModelFileReadException t) {
       return handleExceptionDuringModelRead(modelDescriptor, t);
     }
+
+    if (model.getUID().getSModelId() == null) {
+      model.changeModelUID(modelDescriptor.getModelUID());
+      ModelPersistence.saveModel(model, modelDescriptor.getModelFile());
+    }
+
     LOG.assertLog(model.getUID().equals(modelDescriptor.getModelUID()),
       "\nError loading model from file: \"" + modelDescriptor.getModelFile() + "\"\n" +
         "expected model UID     : \"" + modelDescriptor.getModelUID() + "\"\n" +
@@ -165,6 +175,11 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       boolean isMPSStub = fileName.endsWith(MPSExtentions.DOT_STUB);
       if (!(isMPSModel || isMPSStub)) continue;
       SModelUID modelUID = PathManager.getModelUID(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
+
+      if (modelUID.getSModelId() == null) {
+        modelUID = new SModelUID(modelUID.getSModelFqName(), SModelId.generate());
+      }
+
       SModelDescriptor modelDescriptor;
       if (ModelPersistence.needsRecreating(file)) {
         modelDescriptor = recreateFileAndGetInstance(this, isMPSStub, file.getAbsolutePath(), modelUID, owner, modelRoot);

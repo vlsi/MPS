@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="jetbrains.mps.transformation.test.inputLang.structure">
+<model modelUID="r:1222075024884(jetbrains.mps.transformation.test.inputLang.structure)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
+    <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   </language>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
@@ -15,8 +16,10 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <maxImportIndex value="1" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195168316083">
     <property name="name" value="InputRoot" />
     <property name="rootable" value="true" />
@@ -119,10 +122,9 @@
     <property name="name" value="InputNode_C" />
     <link role="extends" targetNodeId="1206459872650" resolveInfo="InputNode_B" />
   </node>
-  <visible index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1209146548167">
     <property name="name" value="ExpressionToReduceToStatement" />
-    <link role="extends" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1209146621012">
       <property name="value" value="expression to reduce to statement" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -140,7 +142,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="statementList" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2v.1068580123136" resolveInfo="StatementList" />
+      <link role="target" targetNodeId="2.1068580123136" resolveInfo="StatementList" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1209149492537">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />

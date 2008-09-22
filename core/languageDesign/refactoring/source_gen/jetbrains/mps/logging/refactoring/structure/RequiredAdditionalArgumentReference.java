@@ -16,21 +16,21 @@ public class RequiredAdditionalArgumentReference extends Expression {
     super(node);
   }
 
-  public static RequiredAdditionalArgumentReference newInstance(SModel sm, boolean init) {
-    return (RequiredAdditionalArgumentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static RequiredAdditionalArgumentReference newInstance(SModel sm) {
-    return RequiredAdditionalArgumentReference.newInstance(sm, false);
-  }
-
-
   public RequiredAdditionalArgument getArgument() {
     return (RequiredAdditionalArgument)this.getReferent(RequiredAdditionalArgumentReference.ARGUMENT);
   }
 
   public void setArgument(RequiredAdditionalArgument node) {
     super.setReferent(RequiredAdditionalArgumentReference.ARGUMENT, node);
+  }
+
+
+  public static RequiredAdditionalArgumentReference newInstance(SModel sm, boolean init) {
+    return (RequiredAdditionalArgumentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static RequiredAdditionalArgumentReference newInstance(SModel sm) {
+    return RequiredAdditionalArgumentReference.newInstance(sm, false);
   }
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="jetbrains.mps.transformation.TLBase.plugin">
+<model modelUID="r:1222075024102(jetbrains.mps.transformation.TLBase.plugin)">
   <persistence version="3" />
   <refactoringHistory />
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19" />

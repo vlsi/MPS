@@ -5,10 +5,10 @@ package jetbrains.mps.logging.refactoring.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.IResolveInfo;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration;
 
 public class FinderReference extends BaseConcept implements IResolveInfo {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.FinderReference";
@@ -21,15 +21,6 @@ public class FinderReference extends BaseConcept implements IResolveInfo {
   public FinderReference(SNode node) {
     super(node);
   }
-
-  public static FinderReference newInstance(SModel sm, boolean init) {
-    return (FinderReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.FinderReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static FinderReference newInstance(SModel sm) {
-    return FinderReference.newInstance(sm, false);
-  }
-
 
   public String getResolveInfo() {
     return this.getProperty(FinderReference.RESOLVE_INFO);
@@ -69,6 +60,15 @@ public class FinderReference extends BaseConcept implements IResolveInfo {
 
   public void setFinderDeclaration(FinderDeclaration node) {
     super.setReferent(FinderReference.FINDER_DECLARATION, node);
+  }
+
+
+  public static FinderReference newInstance(SModel sm, boolean init) {
+    return (FinderReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.FinderReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static FinderReference newInstance(SModel sm) {
+    return FinderReference.newInstance(sm, false);
   }
 
 }

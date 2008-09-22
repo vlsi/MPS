@@ -17,15 +17,6 @@ public class AbstractMoveExpression extends Expression {
     super(node);
   }
 
-  public static AbstractMoveExpression newInstance(SModel sm, boolean init) {
-    return (AbstractMoveExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.AbstractMoveExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AbstractMoveExpression newInstance(SModel sm) {
-    return AbstractMoveExpression.newInstance(sm, false);
-  }
-
-
   public Expression getWhatToMove() {
     return (Expression)this.getChild(AbstractMoveExpression.WHAT_TO_MOVE);
   }
@@ -40,6 +31,15 @@ public class AbstractMoveExpression extends Expression {
 
   public void setDestination(Expression node) {
     super.setChild(AbstractMoveExpression.DESTINATION, node);
+  }
+
+
+  public static AbstractMoveExpression newInstance(SModel sm, boolean init) {
+    return (AbstractMoveExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.AbstractMoveExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AbstractMoveExpression newInstance(SModel sm) {
+    return AbstractMoveExpression.newInstance(sm, false);
   }
 
 }

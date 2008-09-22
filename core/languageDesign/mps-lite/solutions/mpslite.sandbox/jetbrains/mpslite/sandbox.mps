@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="jetbrains.mpslite.sandbox">
+<model modelUID="r:1222075024866(jetbrains.mpslite.sandbox)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.nanoj">
-    <languageAspect modelUID="jetbrains.mps.nanoj.constraints" version="45" />
+    <languageAspect modelUID="r:1222075024860(jetbrains.mps.nanoj.constraints)" version="45" />
   </language>
+  <languageAspect modelUID="jetbrains.mps.nanoj.constraints" version="45" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <maxImportIndex value="1" />
   <node type="jetbrains.mps.nanoj.structure.ClassConcept" id="1197634682459">
     <property name="name" value="ABCDEF" />

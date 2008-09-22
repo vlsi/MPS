@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="jetbrains.mps.baseLanguage.sandbox.testXml">
+<model modelUID="r:1222075024283(jetbrains.mps.baseLanguage.sandbox.testXml)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.xml" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.xml.structure.Document" id="1220988181973">
     <property name="name" value="doc" />

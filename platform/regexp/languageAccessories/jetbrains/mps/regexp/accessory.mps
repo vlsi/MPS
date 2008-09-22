@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory">
+<model modelUID="r:1222075024665(jetbrains.mps.regexp.jetbrains.mps.regexp.accessory)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.regexp">
-    <languageAspect modelUID="jetbrains.mps.regexp.constraints" version="3" />
+    <languageAspect modelUID="r:1222075024661(jetbrains.mps.regexp.constraints)" version="3" />
   </language>
+  <languageAspect modelUID="jetbrains.mps.regexp.constraints" version="3" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024065(jetbrains.mps.baseLanguage.constraints)" version="83" />
+  <languageAspect modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.regexp.structure.PredefinedSymbolClasses" id="1174554673597">
     <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1174554674770">

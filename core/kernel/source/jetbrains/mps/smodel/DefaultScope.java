@@ -24,7 +24,7 @@ public abstract class DefaultScope extends BaseScope {
   
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     initialize();
-    if (modelUID.getSModelId() == null) {
+    if (modelUID.getSModelId() != null) {
       return myIdToDescriptor.get(modelUID.getSModelId());
     }
     return myFqNameToDescriptor.get(modelUID.getSModelFqName());

@@ -4,11 +4,11 @@ package jetbrains.mps.logging.refactoring.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class ExecuteFindersExpression extends Expression {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.ExecuteFindersExpression";
@@ -19,15 +19,6 @@ public class ExecuteFindersExpression extends Expression {
   public ExecuteFindersExpression(SNode node) {
     super(node);
   }
-
-  public static ExecuteFindersExpression newInstance(SModel sm, boolean init) {
-    return (ExecuteFindersExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.ExecuteFindersExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ExecuteFindersExpression newInstance(SModel sm) {
-    return ExecuteFindersExpression.newInstance(sm, false);
-  }
-
 
   public Expression getSearchNode() {
     return (Expression)this.getChild(ExecuteFindersExpression.SEARCH_NODE);
@@ -63,6 +54,15 @@ public class ExecuteFindersExpression extends Expression {
 
   public void insertFinders(FinderReference prev, FinderReference node) {
     this.insertChild(prev, ExecuteFindersExpression.FINDERS, node);
+  }
+
+
+  public static ExecuteFindersExpression newInstance(SModel sm, boolean init) {
+    return (ExecuteFindersExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.ExecuteFindersExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ExecuteFindersExpression newInstance(SModel sm) {
+    return ExecuteFindersExpression.newInstance(sm, false);
   }
 
 }

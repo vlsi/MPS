@@ -5,10 +5,10 @@ package jetbrains.mps.logging.refactoring.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Type;
 
 public class RequiredAdditionalArgument extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument";
@@ -22,15 +22,6 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
   public RequiredAdditionalArgument(SNode node) {
     super(node);
   }
-
-  public static RequiredAdditionalArgument newInstance(SModel sm, boolean init) {
-    return (RequiredAdditionalArgument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static RequiredAdditionalArgument newInstance(SModel sm) {
-    return RequiredAdditionalArgument.newInstance(sm, false);
-  }
-
 
   public String getPresentation() {
     return this.getProperty(RequiredAdditionalArgument.PRESENTATION);
@@ -78,6 +69,15 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
 
   public void setArgumentType(Type node) {
     super.setChild(RequiredAdditionalArgument.ARGUMENT_TYPE, node);
+  }
+
+
+  public static RequiredAdditionalArgument newInstance(SModel sm, boolean init) {
+    return (RequiredAdditionalArgument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static RequiredAdditionalArgument newInstance(SModel sm) {
+    return RequiredAdditionalArgument.newInstance(sm, false);
   }
 
 }

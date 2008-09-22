@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="jetbrains.mps.bootstrap.editorLanguage.editor">
+<model modelUID="r:1222075024025(jetbrains.mps.bootstrap.editorLanguage.editor)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
+    <languageAspect modelUID="r:1222075024024(jetbrains.mps.bootstrap.editorLanguage.constraints)" version="21" />
+    <languageAspect modelUID="r:1222075024030(jetbrains.mps.bootstrap.editorLanguage.structure)" version="26" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+    <languageAspect modelUID="r:1222075024065(jetbrains.mps.baseLanguage.constraints)" version="83" />
+    <languageAspect modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
+    <languageAspect modelUID="r:1222075024123(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
+    <languageAspect modelUID="r:1222075024129(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
+    <languageAspect modelUID="r:1222075024168(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
+    <languageAspect modelUID="r:1222075024174(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   </language>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="21" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
@@ -26,7 +34,12 @@
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" version="0" />
-  <maxImportIndex value="28" />
+  <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024058(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
+  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
+  <maxImportIndex value="30" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -40,7 +53,8 @@
   <import index="25" modelUID="javax.swing@java_stub" version="-1" />
   <import index="26" modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
   <import index="28" modelUID="java.io@java_stub" version="-1" />
-  <visible index="2" modelUID="jetbrains.mps.bootstrap.sharedConcepts.editor" />
+  <import index="29" modelUID="jetbrains.mps.bootstrap.sharedConcepts.editor" version="-1" />
+  <import index="30" modelUID="jetbrains.mps.bootstrap.editorLanguage.behavior" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1078153915535">
     <property name="name" value="ConceptEditorDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="2.1071666914219" />
@@ -67,7 +81,7 @@
               <property name="noTargetText" value="&lt;no name&gt;" />
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="3.1169194664001" />
-              <link role="styleClass" targetNodeId="2v.1203541385314" resolveInfo="ReferenceOnConcept" />
+              <link role="styleClass" targetNodeId="29.1203541385314" resolveInfo="ReferenceOnConcept" />
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleClassItem" id="1214314940080">
                 <property name="flag" value="true" />
               </node>
@@ -619,7 +633,7 @@
                 <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1106261028890">
                   <property name="readOnly" value="true" />
                   <link role="relationDeclaration" targetNodeId="3.1169194664001" />
-                  <link role="styleClass" targetNodeId="2v.1203541385314" resolveInfo="ReferenceOnConcept" />
+                  <link role="styleClass" targetNodeId="29.1203541385314" resolveInfo="ReferenceOnConcept" />
                 </node>
               </node>
             </node>
@@ -684,7 +698,6 @@
       </node>
     </node>
   </node>
-  <visible index="3" modelUID="jetbrains.mps.bootstrap.editorLanguage.behavior" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1080742754453">
     <property name="name" value="CellModel_Constant_Editor" />
     <property name="package" value="CellModel" />
@@ -704,7 +717,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220340510123">
                     <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1220340509747" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1220340512330">
-                      <link role="conceptMethodDeclaration" targetNodeId="3v.1220340471382" resolveInfo="getOpeningTag" />
+                      <link role="conceptMethodDeclaration" targetNodeId="30.1220340471382" resolveInfo="getOpeningTag" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220340513691">
@@ -732,7 +745,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237949063">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237947202" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237956050">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220972190901" resolveInfo="getTextBackgroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220972190901" resolveInfo="getTextBackgroundColor" />
                   </node>
                 </node>
               </node>
@@ -746,7 +759,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237970933">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237970838" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237974249">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220969182195" resolveInfo="getBackgroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220969182195" resolveInfo="getBackgroundColor" />
                   </node>
                 </node>
               </node>
@@ -760,7 +773,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237988506">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237988443" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237992040">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220960215403" resolveInfo="getForegroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220960215403" resolveInfo="getForegroundColor" />
                   </node>
                 </node>
               </node>
@@ -774,7 +787,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238021002">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221238020939" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221238024724">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221053923273" resolveInfo="getFontStyle" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1221053923273" resolveInfo="getFontStyle" />
                   </node>
                 </node>
               </node>
@@ -788,7 +801,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221240503622">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221240503324" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221240508187">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221216397365" resolveInfo="getFontSize" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1221216397365" resolveInfo="getFontSize" />
                   </node>
                 </node>
               </node>
@@ -802,7 +815,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238041841">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221238041778" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221238046251">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221220594206" resolveInfo="isUnderlined" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1221220594206" resolveInfo="isUnderlined" />
                   </node>
                 </node>
               </node>
@@ -823,7 +836,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220340526682">
                     <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1220340526353" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1220340529123">
-                      <link role="conceptMethodDeclaration" targetNodeId="3v.1220340471382" resolveInfo="getOpeningTag" />
+                      <link role="conceptMethodDeclaration" targetNodeId="30.1220340471382" resolveInfo="getOpeningTag" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220340533861">
@@ -1001,7 +1014,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238429636">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221238429637" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221238429638">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220972190901" resolveInfo="getTextBackgroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220972190901" resolveInfo="getTextBackgroundColor" />
                   </node>
                 </node>
               </node>
@@ -1015,7 +1028,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238429643">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221238429644" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221238429645">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220969182195" resolveInfo="getBackgroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220969182195" resolveInfo="getBackgroundColor" />
                   </node>
                 </node>
               </node>
@@ -1029,7 +1042,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238429650">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221238429651" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221238429652">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220960215403" resolveInfo="getForegroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220960215403" resolveInfo="getForegroundColor" />
                   </node>
                 </node>
               </node>
@@ -1043,7 +1056,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238429657">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221238429658" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221238429659">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221053923273" resolveInfo="getFontStyle" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1221053923273" resolveInfo="getFontStyle" />
                   </node>
                 </node>
               </node>
@@ -1057,7 +1070,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238429664">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221238429665" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221238429666">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221220594206" resolveInfo="isUnderlined" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1221220594206" resolveInfo="isUnderlined" />
                   </node>
                 </node>
               </node>
@@ -1174,7 +1187,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239223940">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239223941" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239223942">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220972190901" resolveInfo="getTextBackgroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220972190901" resolveInfo="getTextBackgroundColor" />
                   </node>
                 </node>
               </node>
@@ -1188,7 +1201,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239223947">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239223948" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239223949">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220969182195" resolveInfo="getBackgroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220969182195" resolveInfo="getBackgroundColor" />
                   </node>
                 </node>
               </node>
@@ -1202,7 +1215,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239223954">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239223955" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239223956">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220960215403" resolveInfo="getForegroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220960215403" resolveInfo="getForegroundColor" />
                   </node>
                 </node>
               </node>
@@ -1216,7 +1229,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239223961">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239223962" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239223963">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221053923273" resolveInfo="getFontStyle" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1221053923273" resolveInfo="getFontStyle" />
                   </node>
                 </node>
               </node>
@@ -1230,7 +1243,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239223968">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239223969" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239223970">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221220594206" resolveInfo="isUnderlined" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1221220594206" resolveInfo="isUnderlined" />
                   </node>
                 </node>
               </node>
@@ -1829,7 +1842,7 @@
             <property name="noTargetText" value="&lt;no role&gt;" />
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="8.1071599776563" />
-            <link role="styleClass" targetNodeId="2v.1203541368202" resolveInfo="ReferenceDecorated" />
+            <link role="styleClass" targetNodeId="29.1203541368202" resolveInfo="ReferenceDecorated" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleClassItem" id="1214314940027">
               <property name="flag" value="true" />
             </node>
@@ -1903,7 +1916,7 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1140223422095">
             <property name="noTargetText" value="&lt;no link&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1088013239202" />
-            <link role="styleClass" targetNodeId="2v.1203541368202" resolveInfo="ReferenceDecorated" />
+            <link role="styleClass" targetNodeId="29.1203541368202" resolveInfo="ReferenceDecorated" />
             <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1140223422096">
               <link role="conceptDeclaration" targetNodeId="8.1071489288298" />
               <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1140223422097">
@@ -2948,7 +2961,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239216356">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239216357" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239216358">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220972190901" resolveInfo="getTextBackgroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220972190901" resolveInfo="getTextBackgroundColor" />
                   </node>
                 </node>
               </node>
@@ -2962,7 +2975,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239216363">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239216364" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239216365">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220969182195" resolveInfo="getBackgroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220969182195" resolveInfo="getBackgroundColor" />
                   </node>
                 </node>
               </node>
@@ -2976,7 +2989,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239216370">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239216371" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239216372">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220960215403" resolveInfo="getForegroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220960215403" resolveInfo="getForegroundColor" />
                   </node>
                 </node>
               </node>
@@ -2990,7 +3003,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239216377">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239216378" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239216379">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221053923273" resolveInfo="getFontStyle" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1221053923273" resolveInfo="getFontStyle" />
                   </node>
                 </node>
               </node>
@@ -3004,7 +3017,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221239216384">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221239216385" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221239216386">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221220594206" resolveInfo="isUnderlined" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1221220594206" resolveInfo="isUnderlined" />
                   </node>
                 </node>
               </node>
@@ -3262,7 +3275,7 @@
               <property name="noTargetText" value="&lt;no name&gt;" />
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="3.1169194664001" />
-              <link role="styleClass" targetNodeId="2v.1203541385314" resolveInfo="ReferenceOnConcept" />
+              <link role="styleClass" targetNodeId="29.1203541385314" resolveInfo="ReferenceOnConcept" />
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleClassItem" id="1214314941669">
                 <property name="flag" value="true" />
               </node>
@@ -4721,7 +4734,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220340552805">
                 <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1220340552491" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1220340556480">
-                  <link role="conceptMethodDeclaration" targetNodeId="3v.1220340471382" resolveInfo="getOpeningTag" />
+                  <link role="conceptMethodDeclaration" targetNodeId="30.1220340471382" resolveInfo="getOpeningTag" />
                 </node>
               </node>
             </node>
@@ -4772,7 +4785,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220340582243">
                 <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1220340582211" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1220340585418">
-                  <link role="conceptMethodDeclaration" targetNodeId="3v.1220340488560" resolveInfo="getClosingTag" />
+                  <link role="conceptMethodDeclaration" targetNodeId="30.1220340488560" resolveInfo="getClosingTag" />
                 </node>
               </node>
             </node>
@@ -5050,7 +5063,7 @@
                 <link role="variableDeclaration" targetNodeId="1176888932798" resolveInfo="cellModel" />
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1219420645058">
-                <link role="conceptMethodDeclaration" targetNodeId="3v.1219420196673" resolveInfo="isSelectable" />
+                <link role="conceptMethodDeclaration" targetNodeId="30.1219420196673" resolveInfo="isSelectable" />
               </node>
             </node>
           </node>
@@ -7211,7 +7224,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237741119">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237741120" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237741121">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220960215403" resolveInfo="getForegroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220960215403" resolveInfo="getForegroundColor" />
                   </node>
                 </node>
               </node>
@@ -7225,7 +7238,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237741126">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237741127" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237741128">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220969182195" resolveInfo="getBackgroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220969182195" resolveInfo="getBackgroundColor" />
                   </node>
                 </node>
               </node>
@@ -7239,7 +7252,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237741133">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237741134" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237741135">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1220972190901" resolveInfo="getTextBackgroundColor" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1220972190901" resolveInfo="getTextBackgroundColor" />
                   </node>
                 </node>
               </node>
@@ -7253,7 +7266,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237741140">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237741141" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237741142">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221053923273" resolveInfo="getFontStyle" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1221053923273" resolveInfo="getFontStyle" />
                   </node>
                 </node>
               </node>
@@ -7267,7 +7280,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221237741154">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1221237741155" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221237741156">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1221220594206" resolveInfo="isUnderlined" />
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1221220594206" resolveInfo="isUnderlined" />
                   </node>
                 </node>
               </node>

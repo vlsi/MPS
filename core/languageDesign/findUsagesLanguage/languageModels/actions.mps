@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.actions">
+<model modelUID="r:1222075024214(jetbrains.mps.bootstrap.findUsagesLanguage.actions)">
   <persistence version="3" />
   <refactoringHistory />
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />

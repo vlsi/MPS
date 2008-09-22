@@ -1,5 +1,8 @@
 package jetbrains.mps.smodel;
 
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -8,7 +11,15 @@ package jetbrains.mps.smodel;
  * To change this template use File | Settings | File Templates.
  */
 public class SModelUID implements Comparable<Object> {
+  private static Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
+
   public static SModelUID fromString(String s) {
+
+    Matcher matcher = MODEL_UID_PATTERN.matcher(s);
+    if (matcher.matches()) {
+      return new SModelUID(SModelFqName.fromString(matcher.group(2)), SModelId.fromString(matcher.group(1)));
+    }
+
     return new SModelUID(SModelFqName.fromString(s), null);
   }
 
@@ -60,6 +71,9 @@ public class SModelUID implements Comparable<Object> {
   }
 
   public String toString() {
+    if (myModelId != null) {
+      return myModelId + "(" + myModelFqName + ")";
+    }
     return myModelFqName.toString();
   }
 

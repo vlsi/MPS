@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="jetbrains.mps.baseLanguage.unitTest.runtime">
+<model modelUID="r:1222075024389(jetbrains.mps.baseLanguage.unitTest.runtime)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+    <languageAspect modelUID="r:1222075024065(jetbrains.mps.baseLanguage.constraints)" version="83" />
+    <languageAspect modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
+    <languageAspect modelUID="r:1222075024168(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
+    <languageAspect modelUID="r:1222075024174(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   </language>
   <language namespace="jetbrains.mps.regexp">
-    <languageAspect modelUID="jetbrains.mps.regexp.constraints" version="3" />
+    <languageAspect modelUID="r:1222075024661(jetbrains.mps.regexp.constraints)" version="3" />
   </language>
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.regexp.constraints" version="3" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" version="0" />
-  <maxImportIndex value="8" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="junit.framework@java_stub" version="-1" />
   <import index="2" modelUID="junit.runner@java_stub" version="-1" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
@@ -28,6 +34,7 @@
   <import index="6" modelUID="java.text@java_stub" version="-1" />
   <import index="7" modelUID="java.util.regex@java_stub" version="-1" />
   <import index="8" modelUID="java.util@java_stub" version="-1" />
+  <import index="9" modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1208532148294">
     <property name="name" value="TestRunner" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1208533712555">
@@ -933,7 +940,6 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1208860584607">
     <property name="name" value="TestEvent" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1208865442548">
@@ -1222,7 +1228,7 @@
                             <property name="name" value="time" />
                             <node role="regexp" type="jetbrains.mps.regexp.structure.PlusRegexp" id="1208862653730">
                               <node role="regexp" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp" id="1208862651901">
-                                <link role="symbolClass" targetNodeId="2v.1174554674770" resolveInfo="\d" />
+                                <link role="symbolClass" targetNodeId="9.1174554674770" resolveInfo="\d" />
                               </node>
                             </node>
                           </node>
@@ -1234,7 +1240,7 @@
                           <property name="name" value="memory" />
                           <node role="regexp" type="jetbrains.mps.regexp.structure.PlusRegexp" id="1208862617315">
                             <node role="regexp" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp" id="1208862617316">
-                              <link role="symbolClass" targetNodeId="2v.1174554674770" resolveInfo="\d" />
+                              <link role="symbolClass" targetNodeId="9.1174554674770" resolveInfo="\d" />
                             </node>
                           </node>
                         </node>

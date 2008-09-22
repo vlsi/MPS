@@ -165,8 +165,12 @@ public class ModelPersistence {
   }
 
   public static void saveModel(@NotNull SModel model, @NotNull IFile file) {
+    saveModel(model, file, true);
+  }
+
+  public static void saveModel(@NotNull SModel model, @NotNull IFile file, boolean validate) {
     LOG.debug("Save model " + model.getUID() + " to file " + file.getAbsolutePath());
-    Document document = saveModel(model);
+    Document document = saveModel(model, validate);
 
     if (file.isReadOnly()) {
       LOG.error("Can't write to " + file.getPath());

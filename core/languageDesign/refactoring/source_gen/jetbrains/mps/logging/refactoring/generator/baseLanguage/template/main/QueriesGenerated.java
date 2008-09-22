@@ -29,7 +29,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1189763520881(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode parent = SNodeOperations.getParent(_context.getNode(), null, false, false);
+    SNode parent = SNodeOperations.getParent(_context.getNode());
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
       return !(SLinkOperations.getTarget(parent, "lValue", true) == _context.getNode());
     }
@@ -82,12 +82,12 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1199462256696(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode overriden = SLinkOperations.getTarget(_context.getNode(), "overrides", false);
-    return SNodeOperations.getModel(overriden) + "." + SPropertyOperations.getString(overriden, "name");
+    return SNodeOperations.getModel(overriden).getUID().getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1199464123907(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode overriden = SLinkOperations.getTarget(_context.getNode(), "overrides", false);
-    return SNodeOperations.getModel(overriden) + "." + SPropertyOperations.getString(overriden, "name");
+    return SNodeOperations.getModel(overriden).getUID().getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1199464161444(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -102,7 +102,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1199468168869(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode overriden = SLinkOperations.getTarget(_context.getNode(), "overrides", false);
-    return SNodeOperations.getModel(overriden) + "." + SPropertyOperations.getString(overriden, "name");
+    return SNodeOperations.getModel(overriden).getUID().getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1200921209509(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -127,11 +127,13 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1215507182433(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      Pattern_ pattern_ = new Pattern_();
-      SNode coercedNode_ = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_);
-      if (coercedNode_ != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_.PatternVar;
+      Pattern_0 pattern_0 = new Pattern_0();
+      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_0);
+      if (coercedNode_0 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_0.PatternVar0;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
+      } else
+      {
       }
     }
     return null;
@@ -309,7 +311,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1215507182409(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), new QuotationClass_().createNode());
+    return (SLinkOperations.getTarget(_context.getNode(), "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), new QuotationClass_0().createNode());
   }
 
   public static boolean ifMacro_Condition_1215507182466(final IOperationContext operationContext, final IfMacroContext _context) {

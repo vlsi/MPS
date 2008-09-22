@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="postingrules.agreement">
+<model modelUID="r:1222075024399(postingrules.agreement)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="agreementLanguage" />

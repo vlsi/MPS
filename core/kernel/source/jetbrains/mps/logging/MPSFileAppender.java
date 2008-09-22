@@ -13,12 +13,7 @@ public class MPSFileAppender extends RollingFileAppender {
   public MPSFileAppender() {
     File logDir = new File(PathManager.getHomePath(), "log");
 
-    File logFile;
-    if (PathManager.isServer()) {
-      logFile = new File(logDir, "mps-server.log");
-    } else {
-      logFile = new File(logDir, "mps.log");
-    }
+    File logFile = new File(logDir, "mps.log");
 
     setFile(logFile.getAbsolutePath());
   }
