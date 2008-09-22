@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="testRefactoring.sandbox">
-  <persistence version="2" />
-  <refactoringHistory>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.core.scripts.Rename" />
-      <moveMap />
-      <conceptFeatureMap />
-    </refactoringContext>
-  </refactoringHistory>
+<model modelUID="r:1222090580427(testRefactoring.sandbox)">
+  <persistence version="3" />
+  <refactoringHistory />
   <language namespace="testRefactoring" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <maxImportIndex value="1" />

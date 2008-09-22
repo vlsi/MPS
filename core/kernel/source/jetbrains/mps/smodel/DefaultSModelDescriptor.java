@@ -11,6 +11,7 @@ import jetbrains.mps.project.ModuleStub;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.PlayRefactoringsFlag;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -138,6 +139,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   private void updateModelWithRefactorings() {
     assert mySModel != null;
+    if (!PlayRefactoringsFlag.refactoringsPlaybackEnabled()) {
+      return;
+    }
     if (!SModelStereotype.isUserModel(mySModel)) {
       return;
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="testRefactoring.sandbox2">
-  <persistence version="2" />
+<model modelUID="r:1222090580428(testRefactoring.sandbox2)">
+  <persistence version="3" />
   <refactoringHistory />
   <language namespace="testRefactoring" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
