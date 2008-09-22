@@ -20,39 +20,29 @@
   <language namespace="jetbrains.mps.core">
     <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
+  <languageAspect modelUID="r:1222075024141(jetbrains.mps.bootstrap.constraintsLanguage.structure)" version="1" />
   <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024024(jetbrains.mps.bootstrap.editorLanguage.constraints)" version="21" />
+  <languageAspect modelUID="r:1222075024058(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024356(jetbrains.mps.internal.collections.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024030(jetbrains.mps.bootstrap.editorLanguage.structure)" version="26" />
   <maxImportIndex value="41" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="27" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
-  <import index="28" modelUID="java.awt.event@java_stub" version="-1" />
-  <import index="29" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
-  <import index="33" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
-  <import index="34" modelUID="jetbrains.mps.annotations.structure" version="-1" />
-  <import index="35" modelUID="java.util@java_stub" version="-1" />
-  <import index="36" modelUID="java.lang@java_stub" version="-1" />
-  <import index="37" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
-  <import index="38" modelUID="javax.swing@java_stub" version="-1" />
-  <import index="39" modelUID="java.awt@java_stub" version="-1" />
-  <import index="40" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
-  <import index="41" modelUID="jetbrains.mps.nodeEditor.style@java_stub" version="-1" />
+  <import index="1" modelUID="r:1222075024018(jetbrains.mps.bootstrap.structureLanguage.structure)" version="-1" />
+  <import index="3" modelUID="r:1222075024008(jetbrains.mps.core.structure)" version="-1" />
+  <import index="4" modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
+  <import index="27" modelUID="r:1222075024030(jetbrains.mps.bootstrap.editorLanguage.structure)" version="26" />
+  <import index="28" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
+  <import index="29" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
+  <import index="33" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="34" modelUID="r:1222075024189(jetbrains.mps.annotations.structure)" version="-1" />
+  <import index="35" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="36" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="37" modelUID="r:1222075024060(jetbrains.mps.bootstrap.sharedConcepts.structure)" version="-1" />
+  <import index="38" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
+  <import index="39" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
+  <import index="40" modelUID="r:1222075024129(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
+  <import index="41" modelUID="f:java_stub#jetbrains.mps.nodeEditor.style(jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1071666914219">
     <property name="name" value="ConceptEditorDeclaration" />
     <property name="iconPath" value="${language_descriptor}\icons\editor.png" />

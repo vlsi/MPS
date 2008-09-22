@@ -9,10 +9,6 @@
   <language namespace="jetbrains.mps.regexp">
     <languageAspect modelUID="r:1222075024661(jetbrains.mps.regexp.constraints)" version="3" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.regexp.constraints" version="3" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   <maxImportIndex value="4" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1174921457453">

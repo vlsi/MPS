@@ -14,32 +14,21 @@
     <languageAspect modelUID="r:1222075024123(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
     <languageAspect modelUID="r:1222075024129(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
-  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
-  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
-  <languageAspect modelUID="r:1222075024058(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024058(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
   <maxImportIndex value="11" />
-  <import index="1" modelUID="jetbrains.mps.quickQueryLanguage.structure" version="-1" />
-  <import index="2" modelUID="java.lang@java_stub" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.util@java_stub" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.quickQueryLanguage.runtime@java_stub" version="-1" />
-  <import index="6" modelUID="java.io@java_stub" version="-1" />
-  <import index="7" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="10" modelUID="jetbrains.mps.quickQueryLanguage.generator.template.main@generator" version="-1" />
-  <import index="11" modelUID="jetbrains.mps.quickQueryLanguage.plugin" version="-1" />
+  <import index="1" modelUID="r:1222075024656(jetbrains.mps.quickQueryLanguage.structure)" version="-1" />
+  <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="4" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#jetbrains.mps.quickQueryLanguage.runtime(jetbrains.mps.quickQueryLanguage.runtime@java_stub)" version="-1" />
+  <import index="6" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="7" modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
+  <import index="10" modelUID="r:1222075024657(jetbrains.mps.quickQueryLanguage.generator.template.main@generator)" version="-1" />
+  <import index="11" modelUID="r:1222075024655(jetbrains.mps.quickQueryLanguage.plugin)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1218800262437">
     <property name="name" value="QueryImpl" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1218800262438" />

@@ -21,38 +21,26 @@
   <language namespace="jetbrains.mps.baseLanguage.classifiers">
     <languageAspect modelUID="r:1222075024238(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.constraints" version="0" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024158(jetbrains.mps.ide.scriptLanguage.constraints)" version="0" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024356(jetbrains.mps.internal.collections.constraints)" version="2" />
   <maxImportIndex value="14" />
-  <import index="1" modelUID="jetbrains.mps.ide.scriptLanguage.structure" version="-1" />
-  <import index="2" modelUID="jetbrains.mps.ide.scriptLanguage.plugin@java_stub" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.project@java_stub" version="-1" />
-  <import index="4" modelUID="java.util@java_stub" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
-  <import index="6" modelUID="jetbrains.mps.ide.scriptLanguage.structure@java_stub" version="-1" />
-  <import index="8" modelUID="java.lang@java_stub" version="-1" />
-  <import index="9" modelUID="com.intellij.openapi.actionSystem@java_stub" version="-1" />
-  <import index="10" modelUID="jetbrains.mps.workbench@java_stub" version="-1" />
-  <import index="11" modelUID="jetbrains.mps.plugins.pluginparts.actions@java_stub" version="-1" />
-  <import index="12" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1" />
-  <import index="13" modelUID="com.intellij.openapi.project@java_stub" version="-1" />
-  <import index="14" modelUID="jetbrains.mps.ide.actions" version="-1" />
+  <import index="1" modelUID="r:1222075024163(jetbrains.mps.ide.scriptLanguage.structure)" version="-1" />
+  <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.scriptLanguage.plugin(jetbrains.mps.ide.scriptLanguage.plugin@java_stub)" version="-1" />
+  <import index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="6" modelUID="f:java_stub#jetbrains.mps.ide.scriptLanguage.structure(jetbrains.mps.ide.scriptLanguage.structure@java_stub)" version="-1" />
+  <import index="8" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="9" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
+  <import index="10" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.actions(jetbrains.mps.plugins.pluginparts.actions@java_stub)" version="-1" />
+  <import index="12" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
+  <import index="13" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
+  <import index="14" modelUID="r:1222075024548(jetbrains.mps.ide.actions)" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207489199158">
     <property name="name" value="ScriptsForSelection" />
     <property name="caption" value="Scripts" />

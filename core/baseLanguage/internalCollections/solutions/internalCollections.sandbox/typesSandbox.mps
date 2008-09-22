@@ -20,22 +20,13 @@
   <language namespace="jetbrains.mps.baseLanguage.unitTest">
     <languageAspect modelUID="r:1222075024082(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   <maxImportIndex value="7" />
-  <import index="3" modelUID="java.lang@java_stub" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.internalCollections.test.closures" version="-1" />
-  <import index="6" modelUID="jetbrains.mps.internal.collections.runtime@java_stub" version="-1" />
-  <import index="7" modelUID="java.util@java_stub" version="-1" />
+  <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="5" modelUID="r:1222075024366(jetbrains.mps.internalCollections.test.closures)" version="-1" />
+  <import index="6" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
+  <import index="7" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1210602261632">
     <property name="testCaseName" value="Sort" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1210602261633" />

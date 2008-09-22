@@ -23,23 +23,12 @@
     <languageAspect modelUID="r:1222075024123(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
     <languageAspect modelUID="r:1222075024129(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
-  <languageAspect modelUID="jetbrains.mps.transformationTest.structure" version="3" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
   <maxImportIndex value="5" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
+  <import index="3" modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
+  <import index="4" modelUID="r:1222075024008(jetbrains.mps.core.structure)" version="-1" />
+  <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <node type="jetbrains.mps.transformationTest.structure.NodesTestCase" id="1217517843961">
     <property name="name" value="ExampleTest" />
     <node role="methods" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1217947404757">

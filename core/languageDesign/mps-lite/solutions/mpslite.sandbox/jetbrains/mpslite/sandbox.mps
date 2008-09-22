@@ -5,11 +5,8 @@
   <language namespace="jetbrains.mps.nanoj">
     <languageAspect modelUID="r:1222075024860(jetbrains.mps.nanoj.constraints)" version="45" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.nanoj.constraints" version="45" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   <maxImportIndex value="1" />
   <node type="jetbrains.mps.nanoj.structure.ClassConcept" id="1197634682459">
     <property name="name" value="ABCDEF" />

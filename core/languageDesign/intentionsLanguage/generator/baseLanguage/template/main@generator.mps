@@ -18,37 +18,26 @@
     <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   </language>
   <language namespace="jetbrains.mps.baseLanguageInternal" />
-  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
-  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" version="1" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
+  <languageAspect modelUID="r:1222075024141(jetbrains.mps.bootstrap.constraintsLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:1222075024058(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024207(jetbrains.mps.bootstrap.intentionsLanguage.constraints)" version="1" />
   <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
   <maxImportIndex value="13" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.structure" version="-1" />
-  <import index="2" modelUID="java.lang@java_stub" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="4" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
-  <import index="6" modelUID="jetbrains.mps.intentions@java_stub" version="-1" />
-  <import index="7" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.core.constraints" version="2" />
-  <import index="9" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" version="1" />
-  <import index="10" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
-  <import index="11" modelUID="java.util@java_stub" version="-1" />
-  <import index="12" modelUID="jetbrains.mps.core.behavior" version="-1" />
-  <import index="13" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" version="-1" />
+  <import index="1" modelUID="r:1222075024211(jetbrains.mps.bootstrap.intentionsLanguage.structure)" version="-1" />
+  <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="3" modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
+  <import index="4" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
+  <import index="6" modelUID="f:java_stub#jetbrains.mps.intentions(jetbrains.mps.intentions@java_stub)" version="-1" />
+  <import index="7" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="8" modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <import index="9" modelUID="r:1222075024207(jetbrains.mps.bootstrap.intentionsLanguage.constraints)" version="1" />
+  <import index="10" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="12" modelUID="r:1222075024002(jetbrains.mps.core.behavior)" version="-1" />
+  <import index="13" modelUID="r:1222075024206(jetbrains.mps.bootstrap.intentionsLanguage.behavior)" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1192798704064">
     <property name="name" value="mc_main" />
     <node role="rootMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Root_MappingRule" id="1192802684798">

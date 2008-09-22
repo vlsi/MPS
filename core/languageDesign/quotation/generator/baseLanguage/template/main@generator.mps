@@ -19,46 +19,33 @@
     <languageAspect modelUID="r:1222075024174(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   </language>
   <language namespace="jetbrains.mps.transformation.generationContext" />
-  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
-  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024141(jetbrains.mps.bootstrap.constraintsLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024192(jetbrains.mps.patterns.constraints)" version="2" />
   <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:1222075024058(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024046(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024356(jetbrains.mps.internal.collections.constraints)" version="2" />
   <maxImportIndex value="21" />
-  <import index="1" modelUID="jetbrains.mps.quotation.structure" version="-1" />
-  <import index="2" modelUID="java.lang@java_stub" version="-1" />
-  <import index="6" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
-  <import index="7" modelUID="jetbrains.mps.core.structure@java_stub" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" version="-1" />
-  <import index="9" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="7" />
-  <import index="10" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
-  <import index="11" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
-  <import index="12" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="13" modelUID="jetbrains.mps.project@java_stub" version="-1" />
-  <import index="14" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="16" modelUID="java.util@java_stub" version="-1" />
-  <import index="17" modelUID="jetbrains.mps.quotation.generator.baseLanguage.template.main@generator" version="-1" />
-  <import index="18" modelUID="jetbrains.mps.helgins.inference@java_stub" version="-1" />
-  <import index="19" modelUID="jetbrains.mps.bootstrap.helgins.structure@java_stub" version="-1" />
-  <import index="20" modelUID="jetbrains.mps.bootstrap.helgins.runtime@java_stub" version="-1" />
-  <import index="21" modelUID="jetbrains.mps.quotation.structure@java_stub" version="-1" />
+  <import index="1" modelUID="r:1222075024203(jetbrains.mps.quotation.structure)" version="-1" />
+  <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="6" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
+  <import index="7" modelUID="f:java_stub#jetbrains.mps.core.structure(jetbrains.mps.core.structure@java_stub)" version="-1" />
+  <import index="8" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
+  <import index="9" modelUID="r:1222075024052(jetbrains.mps.bootstrap.helgins.structure)" version="7" />
+  <import index="10" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="12" modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
+  <import index="13" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="14" modelUID="r:1222075024008(jetbrains.mps.core.structure)" version="-1" />
+  <import index="16" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="17" modelUID="r:1222075024204(jetbrains.mps.quotation.generator.baseLanguage.template.main@generator)" version="-1" />
+  <import index="18" modelUID="f:java_stub#jetbrains.mps.helgins.inference(jetbrains.mps.helgins.inference@java_stub)" version="-1" />
+  <import index="19" modelUID="f:java_stub#jetbrains.mps.bootstrap.helgins.structure(jetbrains.mps.bootstrap.helgins.structure@java_stub)" version="-1" />
+  <import index="20" modelUID="f:java_stub#jetbrains.mps.bootstrap.helgins.runtime(jetbrains.mps.bootstrap.helgins.runtime@java_stub)" version="-1" />
+  <import index="21" modelUID="f:java_stub#jetbrains.mps.quotation.structure(jetbrains.mps.quotation.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration" id="1196351886629">
     <property name="name" value="QuotationModel_modelToCreate" />
     <link role="applicableConcept" targetNodeId="1.1196350785113" resolveInfo="Quotation" />

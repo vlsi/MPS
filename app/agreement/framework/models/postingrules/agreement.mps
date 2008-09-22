@@ -5,7 +5,7 @@
   <language namespace="agreementLanguage" />
   <language namespace="jetbrains.mps.formulaLanguage" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="agreementLanguage.declarations" version="-1" />
+  <import index="1" modelUID="r:1222075024395(agreementLanguage.declarations)" version="-1" />
   <node type="agreementLanguage.structure.Plan" id="1112303557868">
     <property name="name" value="Regular" />
     <node role="event" type="agreementLanguage.structure.Event" id="1112383986387">

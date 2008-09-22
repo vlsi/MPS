@@ -20,55 +20,38 @@
   <language namespace="jetbrains.mps.ide.scriptLanguage">
     <languageAspect modelUID="r:1222075024158(jetbrains.mps.ide.scriptLanguage.constraints)" version="0" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.logging.refactoring.constraints" version="4" />
-  <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.constraints" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" version="1" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.constraints" version="4" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
-  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
-  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
-  <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
-  <languageAspect modelUID="r:1222075024024(jetbrains.mps.bootstrap.editorLanguage.constraints)" version="21" />
-  <languageAspect modelUID="r:1222075024030(jetbrains.mps.bootstrap.editorLanguage.structure)" version="26" />
-  <languageAspect modelUID="r:1222075024058(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
+  <languageAspect modelUID="r:1222075024141(jetbrains.mps.bootstrap.constraintsLanguage.structure)" version="0" />
   <languageAspect modelUID="r:1222075024219(jetbrains.mps.bootstrap.findUsagesLanguage.structure)" version="1" />
-  <languageAspect modelUID="r:1222075024216(jetbrains.mps.bootstrap.findUsagesLanguage.constraints)" version="4" />
+  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024024(jetbrains.mps.bootstrap.editorLanguage.constraints)" version="21" />
+  <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
+  <languageAspect modelUID="r:1222075024058(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:1222075024207(jetbrains.mps.bootstrap.intentionsLanguage.constraints)" version="1" />
+  <languageAspect modelUID="r:1222075024216(jetbrains.mps.bootstrap.findUsagesLanguage.constraints)" version="4" />
+  <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024356(jetbrains.mps.internal.collections.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024030(jetbrains.mps.bootstrap.editorLanguage.structure)" version="26" />
   <maxImportIndex value="28" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="4" modelUID="java.lang@java_stub" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
-  <import index="7" modelUID="jetbrains.mps.core.scripts" version="-1" />
-  <import index="9" modelUID="java.util@java_stub" version="-1" />
-  <import index="10" modelUID="jetbrains.mps.project@java_stub" version="-1" />
-  <import index="12" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
-  <import index="13" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
-  <import index="15" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure@java_stub" version="-1" />
-  <import index="16" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure@java_stub" version="-1" />
-  <import index="23" modelUID="jetbrains.mps.ide.findusages.model@java_stub" version="-1" />
-  <import index="24" modelUID="jetbrains.mps.refactoring.framework@java_stub" version="-1" />
-  <import index="28" modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
+  <import index="1" modelUID="r:1222075024018(jetbrains.mps.bootstrap.structureLanguage.structure)" version="-1" />
+  <import index="3" modelUID="r:1222075024008(jetbrains.mps.core.structure)" version="-1" />
+  <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="7" modelUID="r:1222075024007(jetbrains.mps.core.scripts)" version="-1" />
+  <import index="9" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="10" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="12" modelUID="r:1222075024030(jetbrains.mps.bootstrap.editorLanguage.structure)" version="26" />
+  <import index="13" modelUID="r:1222075024141(jetbrains.mps.bootstrap.constraintsLanguage.structure)" version="0" />
+  <import index="15" modelUID="f:java_stub#jetbrains.mps.bootstrap.editorLanguage.structure(jetbrains.mps.bootstrap.editorLanguage.structure@java_stub)" version="-1" />
+  <import index="16" modelUID="f:java_stub#jetbrains.mps.bootstrap.constraintsLanguage.structure(jetbrains.mps.bootstrap.constraintsLanguage.structure@java_stub)" version="-1" />
+  <import index="23" modelUID="f:java_stub#jetbrains.mps.ide.findusages.model(jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
+  <import index="24" modelUID="f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
+  <import index="28" modelUID="r:1222075024014(jetbrains.mps.bootstrap.structureLanguage.findUsages)" version="-1" />
+  <visible index="2" modelUID="jetbrains.mps.core.scripts" />
   <refactoringLog type="jetbrains.mps.logging.refactoring.structure.RuntimeLogStack" id="1191843465523">
     <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1191843465524">
       <property name="modelVersion" value="0" />
-      <link role="updateModelClause" targetNodeId="7.1191408536452" />
+      <link role="updateModelClause" targetNodeId="2v.1191408536452" />
       <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1191843465525">
         <property name="value" value="jetbrains.mps.bootstrap.structureLanguage.scripts#1191832155306" />
         <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1191843465526">

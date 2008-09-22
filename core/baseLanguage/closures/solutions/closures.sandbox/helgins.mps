@@ -25,33 +25,21 @@
     <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
     <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:1222075024192(jetbrains.mps.patterns.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024356(jetbrains.mps.internal.collections.constraints)" version="2" />
   <maxImportIndex value="11" />
-  <import index="1" modelUID="java.lang@java_stub" version="-1" />
-  <import index="2" modelUID="java.io@java_stub" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.core.behavior" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.closures.structure" version="0" />
-  <import index="5" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
-  <import index="6" modelUID="jetbrains.mps.helgins.inference@java_stub" version="-1" />
-  <import index="7" modelUID="jetbrains.mps.closures.helgins" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="9" modelUID="jetbrains.mps.patterns.util@java_stub" version="-1" />
-  <import index="10" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  <import index="11" modelUID="java.util@java_stub" version="-1" />
+  <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="3" modelUID="r:1222075024002(jetbrains.mps.core.behavior)" version="-1" />
+  <import index="4" modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <import index="5" modelUID="r:1222075024052(jetbrains.mps.bootstrap.helgins.structure)" version="-1" />
+  <import index="6" modelUID="f:java_stub#jetbrains.mps.helgins.inference(jetbrains.mps.helgins.inference@java_stub)" version="-1" />
+  <import index="7" modelUID="r:1222075024183(jetbrains.mps.closures.helgins)" version="-1" />
+  <import index="8" modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
+  <import index="9" modelUID="f:java_stub#jetbrains.mps.patterns.util(jetbrains.mps.patterns.util@java_stub)" version="-1" />
+  <import index="10" modelUID="r:1222075024174(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
+  <import index="11" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.bootstrap.helgins.structure.InferenceRule" id="1221068716152">
     <property name="name" value="typeof_ClosureLiteral" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221068716153">

@@ -6,17 +6,14 @@
     <languageAspect modelUID="r:1222075024065(jetbrains.mps.baseLanguage.constraints)" version="83" />
     <languageAspect modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   <maxImportIndex value="30" />
-  <import index="1" modelUID="java.lang@java_stub" version="-1" />
-  <import index="26" modelUID="jetbrains.mps.baseLanguage.sandbox.misc" version="0" />
-  <import index="27" modelUID="java.util@java_stub" version="-1" />
-  <import index="28" modelUID="org.jetbrains.annotations@java_stub" version="-1" />
-  <import index="29" modelUID="java.applet@java_stub" version="-1" />
-  <import index="30" modelUID="jetbrains.mps.closures.runtime@java_stub" version="-1" />
+  <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="26" modelUID="r:1222075024279(jetbrains.mps.baseLanguage.sandbox.misc)" version="0" />
+  <import index="27" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="28" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
+  <import index="29" modelUID="f:java_stub#java.applet(java.applet@java_stub)" version="-1" />
+  <import index="30" modelUID="f:java_stub#jetbrains.mps.closures.runtime(jetbrains.mps.closures.runtime@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.Interface" id="1115766127296">
     <property name="name" value="IBaseInterface" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1115766147547">

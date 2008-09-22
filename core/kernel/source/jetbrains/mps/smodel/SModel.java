@@ -1382,6 +1382,35 @@ public class SModel implements Iterable<SNode> {
     return list;
   }
 
+  public void upgradeUIDS() {
+    for (SNode node : getAllNodesWithIds()) {
+      for (SReference reference : node.getReferences()) {
+        if (reference.getTargetModelUID().getSModelId() == null) {
+          SModelUID oldUID = reference.getTargetModelUID();
+          SModelUID newUID = upgradeModelUID(oldUID);
+          reference.setTargetModelUID(newUID);
+        }
+      }
+    }
+
+    for (ImportElement e : myImports) {
+      e.myModelDescriptor = upgradeModelUID(e.myModelDescriptor);
+    }
+
+    for (ImportElement e : myAdditionalModelsVersions) {
+      e.myModelDescriptor = upgradeModelUID(e.myModelDescriptor);
+    }
+  }
+
+  private SModelUID upgradeModelUID(SModelUID oldUID) {
+    SModelDescriptor model = GlobalScope.getInstance().getModelDescriptor(oldUID);
+    if (model == null) {
+      return oldUID;
+    }
+    SModelUID newUID = model.getModelUID();
+    return newUID;
+  }
+
   private static WeakSet<SModel> ourActiveModels = new WeakSet<SModel>();
 
   {

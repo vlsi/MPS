@@ -26,42 +26,28 @@
   </language>
   <language namespace="jetbrains.mps.baseLanguageInternal" />
   <language namespace="jetbrains.mps.transformation.generationContext" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.uiLanguage.constraints" version="26" />
-  <languageAspect modelUID="jetbrains.mps.uiLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
-  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
-  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.ide.uiLanguage.constraints" version="3" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024174(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
-  <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
+  <languageAspect modelUID="r:1222075024558(jetbrains.mps.ide.uiLanguage.constraints)" version="3" />
+  <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   <maxImportIndex value="17" />
-  <import index="1" modelUID="jetbrains.mps.ide.uiLanguage.structure" version="-1" />
-  <import index="2" modelUID="java.lang@java_stub" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="5" modelUID="java.awt@java_stub" version="-1" />
-  <import index="6" modelUID="javax.swing@java_stub" version="-1" />
-  <import index="7" modelUID="jetbrains.mps.util@java_stub" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.ide.uiLanguage.constraints" version="3" />
-  <import index="9" modelUID="jetbrains.mps.baseLanguage.classifiers.structure" version="-1" />
-  <import index="11" modelUID="jetbrains.mps.baseLanguage.classifiers.behavior" version="-1" />
-  <import index="12" modelUID="jetbrains.mps.uiLanguage.behavior" version="-1" />
-  <import index="13" modelUID="jetbrains.mps.ide.dialogs@java_stub" version="-1" />
-  <import index="14" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
-  <import index="15" modelUID="jetbrains.mps.uiLanguage.structure" version="1" />
-  <import index="16" modelUID="jetbrains.mps.uiLanguage.components" version="-1" />
-  <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <import index="1" modelUID="r:1222075024561(jetbrains.mps.ide.uiLanguage.structure)" version="-1" />
+  <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="3" modelUID="r:1222075024008(jetbrains.mps.core.structure)" version="-1" />
+  <import index="5" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
+  <import index="6" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
+  <import index="7" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="8" modelUID="r:1222075024558(jetbrains.mps.ide.uiLanguage.constraints)" version="3" />
+  <import index="9" modelUID="r:1222075024243(jetbrains.mps.baseLanguage.classifiers.structure)" version="-1" />
+  <import index="11" modelUID="r:1222075024237(jetbrains.mps.baseLanguage.classifiers.behavior)" version="-1" />
+  <import index="12" modelUID="r:1222075024716(jetbrains.mps.uiLanguage.behavior)" version="-1" />
+  <import index="13" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
+  <import index="14" modelUID="f:java_stub#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
+  <import index="15" modelUID="r:1222075024723(jetbrains.mps.uiLanguage.structure)" version="1" />
+  <import index="16" modelUID="r:1222075024717(jetbrains.mps.uiLanguage.components)" version="-1" />
+  <import index="17" modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1203519942287">
     <property name="name" value="IDEDialog" />
     <property name="package" value="IDEDialog" />

@@ -20,30 +20,18 @@
   <language namespace="jetbrains.mps.baseLanguage.unitTest">
     <languageAspect modelUID="r:1222075024082(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
-  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
+  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:1222075024058(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
   <maxImportIndex value="7" />
-  <import index="1" modelUID="secretCompartmentLanguage.structure" version="-1" />
-  <import index="2" modelUID="java.lang@java_stub" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="4" modelUID="secretCompartmentLanguage.runtime@java_stub" version="-1" />
-  <import index="5" modelUID="java.util@java_stub" version="-1" />
-  <import index="6" modelUID="jetbrains.mps.baseLanguage.unitTest.structure" version="-1" />
-  <import index="7" modelUID="secretCompartmentLanguage.constraints" version="-1" />
+  <import index="1" modelUID="r:1222075024430(secretCompartmentLanguage.structure)" version="-1" />
+  <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="3" modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
+  <import index="4" modelUID="f:java_stub#secretCompartmentLanguage.runtime(secretCompartmentLanguage.runtime@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="6" modelUID="r:1222075024087(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
+  <import index="7" modelUID="r:1222075024428(secretCompartmentLanguage.constraints)" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1197167156483">
     <property name="name" value="mc_secretCompartmentLanguage" />
     <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1197255977264">

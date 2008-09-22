@@ -16,25 +16,17 @@
   <language namespace="jetbrains.mps.ypath">
     <languageAspect modelUID="r:1222075024808(jetbrains.mps.ypath.constraints)" version="49" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.ypath.constraints" version="49" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024356(jetbrains.mps.internal.collections.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
   <maxImportIndex value="8" />
-  <import index="2" modelUID="java.io@java_stub" version="-1" />
-  <import index="3" modelUID="java.lang@java_stub" version="-1" />
-  <import index="4" modelUID="org.w3c.dom@java_stub" version="-1" />
-  <import index="5" modelUID="javax.xml.parsers@java_stub" version="-1" />
-  <import index="6" modelUID="treepath_dom" version="-1" />
+  <import index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="4" modelUID="f:java_stub#org.w3c.dom(org.w3c.dom@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#javax.xml.parsers(javax.xml.parsers@java_stub)" version="-1" />
+  <import index="6" modelUID="r:1222075024821(treepath_dom)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1178886476824">
     <property name="testCaseName" value="XMLTreeSimple" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1179329314254">

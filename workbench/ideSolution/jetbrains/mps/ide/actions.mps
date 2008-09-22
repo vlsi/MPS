@@ -22,90 +22,79 @@
     <languageAspect modelUID="r:1222075024174(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguageInternal" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="14" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.ide.uiLanguage.constraints" version="3" />
-  <languageAspect modelUID="jetbrains.mps.uiLanguage.constraints" version="26" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" version="0" />
-  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
-  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024356(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
-  <maxImportIndex value="113" />
-  <import index="1" modelUID="jetbrains.mps.workbench.actions.nodes@java_stub" version="-1" />
-  <import index="2" modelUID="jetbrains.mps.ide.modelchecker@java_stub" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.workbench.actions.model@java_stub" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.workbench.actions.project@java_stub" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.workbench.actions.language@java_stub" version="-1" />
-  <import index="9" modelUID="jetbrains.mps.ide.hierarchy@java_stub" version="-1" />
-  <import index="10" modelUID="jetbrains.mps.workbench.actions.module@java_stub" version="-1" />
-  <import index="11" modelUID="jetbrains.mps.workbench.actions.solution@java_stub" version="-1" />
-  <import index="13" modelUID="jetbrains.mps.workbench.actions.tools@java_stub" version="-1" />
-  <import index="14" modelUID="jetbrains.mps.workbench.actions.generate@java_stub" version="-1" />
-  <import index="15" modelUID="jetbrains.mps.workbench.actions.cells@java_stub" version="-1" />
-  <import index="16" modelUID="jetbrains.mps.workbench.actions.baseLanguage@java_stub" version="-1" />
-  <import index="21" modelUID="jetbrains.mps.workbench.actions.help@java_stub" version="-1" />
-  <import index="40" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
-  <import index="42" modelUID="jetbrains.mps.ide.classpath@java_stub" version="-1" />
-  <import index="43" modelUID="jetbrains.mps.transformation.TLBase.plugin.debug.actions@java_stub" version="-1" />
-  <import index="46" modelUID="jetbrains.mps.workbench.actions.imports@java_stub" version="-1" />
-  <import index="52" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
-  <import index="53" modelUID="jetbrains.mps.workbench.actions.generate@java_stub" version="-1" />
-  <import index="54" modelUID="jetbrains.mps.workbench.actions.goTo.actions@java_stub" version="-1" />
-  <import index="57" modelUID="jetbrains.mps.workbench.actions@java_stub" version="-1" />
-  <import index="58" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1" />
-  <import index="60" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
-  <import index="62" modelUID="jetbrains.mps.workbench.editors@java_stub" version="-1" />
-  <import index="63" modelUID="jetbrains.mps.project@java_stub" version="-1" />
-  <import index="64" modelUID="jetbrains.mps.workbench.tools@java_stub" version="-1" />
-  <import index="65" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
-  <import index="66" modelUID="jetbrains.mps.nodeEditor.cellExplorer@java_stub" version="-1" />
-  <import index="67" modelUID="java.awt@java_stub" version="-1" />
-  <import index="68" modelUID="com.intellij.openapi.progress@java_stub" version="-1" />
-  <import index="69" modelUID="org.jetbrains.annotations@java_stub" version="-1" />
-  <import index="70" modelUID="jetbrains.mps.ide.progress@java_stub" version="-1" />
-  <import index="72" modelUID="javax.swing@java_stub" version="-1" />
-  <import index="73" modelUID="java.lang@java_stub" version="-1" />
-  <import index="76" modelUID="jetbrains.mps.util@java_stub" version="-1" />
-  <import index="77" modelUID="jetbrains.mps.make@java_stub" version="-1" />
-  <import index="78" modelUID="java.util@java_stub" version="-1" />
-  <import index="79" modelUID="jetbrains.mps.reloading@java_stub" version="-1" />
-  <import index="80" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
-  <import index="81" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="82" modelUID="jetbrains.mps.ide.projectPane@java_stub" version="-1" />
-  <import index="83" modelUID="jetbrains.mps.ide.ui@java_stub" version="-1" />
-  <import index="84" modelUID="javax.swing.tree@java_stub" version="-1" />
-  <import index="85" modelUID="jetbrains.mps.ide.messages@java_stub" version="-1" />
-  <import index="86" modelUID="jetbrains.mps.textPresentation@java_stub" version="-1" />
-  <import index="87" modelUID="jetbrains.mps.workbench.output@java_stub" version="-1" />
-  <import index="88" modelUID="java.io@java_stub" version="-1" />
-  <import index="90" modelUID="jetbrains.mps.ide.newDevkitDialog@java_stub" version="-1" />
-  <import index="91" modelUID="jetbrains.mps.logging@java_stub" version="-1" />
-  <import index="92" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="93" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="94" modelUID="jetbrains.mps.workbench.languagesFs@java_stub" version="-1" />
-  <import index="95" modelUID="com.intellij.openapi.fileEditor@java_stub" version="-1" />
-  <import index="97" modelUID="jetbrains.mps.smodel.persistence.def@java_stub" version="-1" />
-  <import index="98" modelUID="jetbrains.mps.vcs.ui@java_stub" version="-1" />
-  <import index="99" modelUID="jetbrains.mps.nodeEditor.inspector@java_stub" version="-1" />
-  <import index="100" modelUID="com.intellij.openapi.actionSystem@java_stub" version="-1" />
-  <import index="101" modelUID="jetbrains.mps.transformation.TLBase.plugin.debug@java_stub" version="-1" />
-  <import index="104" modelUID="jetbrains.mps.bootstrap.structureLanguage.plugin@java_stub" version="-1" />
-  <import index="105" modelUID="jetbrains.mps.ide.moduleRepositoryViewer@java_stub" version="-1" />
-  <import index="106" modelUID="jetbrains.mps.ide.modelRepositoryViewer@java_stub" version="-1" />
-  <import index="107" modelUID="jetbrains.mps.workbench@java_stub" version="-1" />
-  <import index="109" modelUID="jetbrains.mps.ide.dialogs@java_stub" version="-1" />
-  <import index="113" modelUID="com.intellij.openapi.fileChooser.actions@java_stub" version="-1" />
+  <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024558(jetbrains.mps.ide.uiLanguage.constraints)" version="3" />
+  <languageAspect modelUID="r:1222075024718(jetbrains.mps.uiLanguage.constraints)" version="26" />
+  <languageAspect modelUID="r:1222075024091(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
+  <maxImportIndex value="114" />
+  <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
+  <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
+  <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#jetbrains.mps.workbench.actions.project(jetbrains.mps.workbench.actions.project@java_stub)" version="-1" />
+  <import index="8" modelUID="f:java_stub#jetbrains.mps.workbench.actions.language(jetbrains.mps.workbench.actions.language@java_stub)" version="-1" />
+  <import index="9" modelUID="f:java_stub#jetbrains.mps.ide.hierarchy(jetbrains.mps.ide.hierarchy@java_stub)" version="-1" />
+  <import index="10" modelUID="f:java_stub#jetbrains.mps.workbench.actions.module(jetbrains.mps.workbench.actions.module@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#jetbrains.mps.workbench.actions.solution(jetbrains.mps.workbench.actions.solution@java_stub)" version="-1" />
+  <import index="13" modelUID="f:java_stub#jetbrains.mps.workbench.actions.tools(jetbrains.mps.workbench.actions.tools@java_stub)" version="-1" />
+  <import index="14" modelUID="f:java_stub#jetbrains.mps.workbench.actions.generate(jetbrains.mps.workbench.actions.generate@java_stub)" version="-1" />
+  <import index="15" modelUID="f:java_stub#jetbrains.mps.workbench.actions.cells(jetbrains.mps.workbench.actions.cells@java_stub)" version="-1" />
+  <import index="16" modelUID="f:java_stub#jetbrains.mps.workbench.actions.baseLanguage(jetbrains.mps.workbench.actions.baseLanguage@java_stub)" version="-1" />
+  <import index="21" modelUID="f:java_stub#jetbrains.mps.workbench.actions.help(jetbrains.mps.workbench.actions.help@java_stub)" version="-1" />
+  <import index="40" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="42" modelUID="f:java_stub#jetbrains.mps.ide.classpath(jetbrains.mps.ide.classpath@java_stub)" version="-1" />
+  <import index="43" modelUID="f:java_stub#jetbrains.mps.transformation.TLBase.plugin.debug.actions(jetbrains.mps.transformation.TLBase.plugin.debug.actions@java_stub)" version="-1" />
+  <import index="46" modelUID="f:java_stub#jetbrains.mps.workbench.actions.imports(jetbrains.mps.workbench.actions.imports@java_stub)" version="-1" />
+  <import index="52" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
+  <import index="53" modelUID="f:java_stub#jetbrains.mps.workbench.actions.generate(jetbrains.mps.workbench.actions.generate@java_stub)" version="-1" />
+  <import index="54" modelUID="f:java_stub#jetbrains.mps.workbench.actions.goTo.actions(jetbrains.mps.workbench.actions.goTo.actions@java_stub)" version="-1" />
+  <import index="57" modelUID="f:java_stub#jetbrains.mps.workbench.actions(jetbrains.mps.workbench.actions@java_stub)" version="-1" />
+  <import index="58" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
+  <import index="60" modelUID="f:java_stub#jetbrains.mps.bootstrap.structureLanguage.structure(jetbrains.mps.bootstrap.structureLanguage.structure@java_stub)" version="-1" />
+  <import index="62" modelUID="f:java_stub#jetbrains.mps.workbench.editors(jetbrains.mps.workbench.editors@java_stub)" version="-1" />
+  <import index="63" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="64" modelUID="f:java_stub#jetbrains.mps.workbench.tools(jetbrains.mps.workbench.tools@java_stub)" version="-1" />
+  <import index="65" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
+  <import index="66" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellExplorer(jetbrains.mps.nodeEditor.cellExplorer@java_stub)" version="-1" />
+  <import index="67" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
+  <import index="68" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
+  <import index="69" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
+  <import index="70" modelUID="f:java_stub#jetbrains.mps.ide.progress(jetbrains.mps.ide.progress@java_stub)" version="-1" />
+  <import index="72" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
+  <import index="73" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="76" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="77" modelUID="f:java_stub#jetbrains.mps.make(jetbrains.mps.make@java_stub)" version="-1" />
+  <import index="78" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="79" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
+  <import index="80" modelUID="f:java_stub#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
+  <import index="81" modelUID="r:1222075024008(jetbrains.mps.core.structure)" version="-1" />
+  <import index="82" modelUID="f:java_stub#jetbrains.mps.ide.projectPane(jetbrains.mps.ide.projectPane@java_stub)" version="-1" />
+  <import index="83" modelUID="f:java_stub#jetbrains.mps.ide.ui(jetbrains.mps.ide.ui@java_stub)" version="-1" />
+  <import index="84" modelUID="f:java_stub#javax.swing.tree(javax.swing.tree@java_stub)" version="-1" />
+  <import index="85" modelUID="f:java_stub#jetbrains.mps.ide.messages(jetbrains.mps.ide.messages@java_stub)" version="-1" />
+  <import index="86" modelUID="f:java_stub#jetbrains.mps.textPresentation(jetbrains.mps.textPresentation@java_stub)" version="-1" />
+  <import index="87" modelUID="f:java_stub#jetbrains.mps.workbench.output(jetbrains.mps.workbench.output@java_stub)" version="-1" />
+  <import index="88" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="90" modelUID="f:java_stub#jetbrains.mps.ide.newDevkitDialog(jetbrains.mps.ide.newDevkitDialog@java_stub)" version="-1" />
+  <import index="91" modelUID="f:java_stub#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" version="-1" />
+  <import index="92" modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
+  <import index="93" modelUID="r:1222075024018(jetbrains.mps.bootstrap.structureLanguage.structure)" version="-1" />
+  <import index="94" modelUID="f:java_stub#jetbrains.mps.workbench.languagesFs(jetbrains.mps.workbench.languagesFs@java_stub)" version="-1" />
+  <import index="95" modelUID="f:java_stub#com.intellij.openapi.fileEditor(com.intellij.openapi.fileEditor@java_stub)" version="-1" />
+  <import index="97" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def(jetbrains.mps.smodel.persistence.def@java_stub)" version="-1" />
+  <import index="98" modelUID="f:java_stub#jetbrains.mps.vcs.ui(jetbrains.mps.vcs.ui@java_stub)" version="-1" />
+  <import index="99" modelUID="f:java_stub#jetbrains.mps.nodeEditor.inspector(jetbrains.mps.nodeEditor.inspector@java_stub)" version="-1" />
+  <import index="100" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
+  <import index="101" modelUID="f:java_stub#jetbrains.mps.transformation.TLBase.plugin.debug(jetbrains.mps.transformation.TLBase.plugin.debug@java_stub)" version="-1" />
+  <import index="104" modelUID="f:java_stub#jetbrains.mps.bootstrap.structureLanguage.plugin(jetbrains.mps.bootstrap.structureLanguage.plugin@java_stub)" version="-1" />
+  <import index="105" modelUID="f:java_stub#jetbrains.mps.ide.moduleRepositoryViewer(jetbrains.mps.ide.moduleRepositoryViewer@java_stub)" version="-1" />
+  <import index="106" modelUID="f:java_stub#jetbrains.mps.ide.modelRepositoryViewer(jetbrains.mps.ide.modelRepositoryViewer@java_stub)" version="-1" />
+  <import index="107" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
+  <import index="109" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
+  <import index="113" modelUID="f:java_stub#com.intellij.openapi.fileChooser.actions(com.intellij.openapi.fileChooser.actions@java_stub)" version="-1" />
+  <import index="114" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def.v3(jetbrains.mps.smodel.persistence.def.v3@java_stub)" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -833,6 +822,9 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1215010257642" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1217518717373">
         <link role="constructorDeclaration" targetNodeId="13.~InstallIDEAPluginAction.&lt;init&gt;()" resolveInfo="InstallIDEAPluginAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1222078560629">
+        <link role="constructorDeclaration" targetNodeId="114.~UpgradeModelsAction.&lt;init&gt;()" resolveInfo="UpgradeModelsAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1206351971744" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205164534403">

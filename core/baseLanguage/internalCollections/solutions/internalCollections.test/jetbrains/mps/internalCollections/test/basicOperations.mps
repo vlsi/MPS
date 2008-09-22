@@ -20,25 +20,16 @@
     <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
     <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
   </language>
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  <languageAspect modelUID="r:1222075024104(jetbrains.mps.transformation.TLBase.structure)" version="1" />
+  <languageAspect modelUID="r:1222075024129(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   <language-engaged-on-generation namespace="jetbrains.mps.internal.collections" />
   <maxImportIndex value="4" />
-  <import index="1" modelUID="jetbrains.mps.internalCollections.test.closures" version="-1" />
-  <import index="2" modelUID="jetbrains.mps.internal.collections.runtime@java_stub" version="-1" />
-  <import index="3" modelUID="java.util@java_stub" version="-1" />
-  <import index="4" modelUID="java.lang@java_stub" version="-1" />
+  <import index="1" modelUID="r:1222075024366(jetbrains.mps.internalCollections.test.closures)" version="-1" />
+  <import index="2" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
+  <import index="3" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1204981976497">
     <property name="testCaseName" value="Sequence" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204981976498" />

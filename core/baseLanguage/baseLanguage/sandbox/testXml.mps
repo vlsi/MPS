@@ -3,7 +3,6 @@
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.xml" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.xml.structure.Document" id="1220988181973">
