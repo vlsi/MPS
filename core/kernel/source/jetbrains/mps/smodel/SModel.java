@@ -74,6 +74,14 @@ public class SModel implements Iterable<SNode> {
     return myUID;
   }
 
+  public SModelFqName getSModelFqName() {
+    return getUID().getSModelFqName();
+  }
+
+  public SModelId getSModelId() {
+    return getUID().getSModelId();
+  }
+
   @NotNull
   public String getShortName() {
     return myUID.getShortName();

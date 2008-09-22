@@ -25,6 +25,10 @@ public interface SModelDescriptor {
 
   SModelUID getModelUID();
 
+  SModelFqName getModelFqName();
+
+  SModelId getSModelId();
+
   /**
    * todo: should return "long name"
    */

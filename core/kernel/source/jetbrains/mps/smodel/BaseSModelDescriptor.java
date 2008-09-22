@@ -53,6 +53,14 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return myModelUID;
   }
 
+  public SModelFqName getModelFqName() {
+    return getModelUID().getSModelFqName();
+  }
+
+  public SModelId getSModelId() {
+    return getModelUID().getSModelId();
+  }
+
   /**
    * todo: should return "long name"
    */
