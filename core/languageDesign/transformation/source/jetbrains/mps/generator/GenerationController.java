@@ -213,7 +213,7 @@ public class GenerationController {
       TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.GENERATION);
       for (SModelDescriptor inputModel : inputModels) {
         if (!myGenerationType.isApplicable(inputModel)) {
-          LOG.error("Can't apply generation type " + myGenerationType + " to " + inputModel.getSModelReference());
+          LOG.error("Can't apply generation type " + myGenerationType + " to " + inputModel.getSModelFqName());
           continue;
         }
 
