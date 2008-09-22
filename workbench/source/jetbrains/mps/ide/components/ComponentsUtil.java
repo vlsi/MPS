@@ -2,7 +2,6 @@ package jetbrains.mps.ide.components;
 
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
@@ -50,7 +49,7 @@ public class ComponentsUtil {
   public static SNode nodeFromElement(Element nodeElement, IScope scope) {
     String modelUID = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
-    SModelDescriptor modelDescriptor = scope.getModelDescriptor(SModelUID.fromString(modelUID));
+    SModelDescriptor modelDescriptor = scope.getModelDescriptor(SModelReference.fromString(modelUID));
     if (modelDescriptor == null) return null;
     return modelDescriptor.getSModel().getNodeById(id);
   }
@@ -73,7 +72,7 @@ public class ComponentsUtil {
     if (moduleUID == null) return null;
     IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
     if (module == null) return null;
-    SModelDescriptor modelDescriptor = module.getScope().getModelDescriptor(SModelUID.fromString(modelUID));
+    SModelDescriptor modelDescriptor = module.getScope().getModelDescriptor(SModelReference.fromString(modelUID));
     if (modelDescriptor == null) return null;
 
     SNode node = modelDescriptor.getSModel().getNodeById(id);

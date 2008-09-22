@@ -18,12 +18,12 @@ public class typeOf_InstanceOfExpression_InferenceRule implements InferenceRule_
     {
       SNode _nodeToCheck_1029348928467 = instanceOfExpression;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(instanceOfExpression, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176907625382", true), SLinkOperations.getTarget(instanceOfExpression, "classType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176907635591", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(instanceOfExpression, "leftExpression", true), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176907625382", true), SLinkOperations.getTarget(instanceOfExpression, "classType", true), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176907635591", intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = instanceOfExpression;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(instanceOfExpression, "jetbrains.mps.baseLanguage.helgins", "1179744201892", true), new QuotationClass_35().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1179744208448", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(instanceOfExpression, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1179744201892", true), new QuotationClass_35().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1179744208448", intentionProvider);
     }
   }
 

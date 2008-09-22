@@ -234,11 +234,11 @@ public class GenerationTracer {
     return false;
   }
 
-  public boolean hasTraceInputData(SModelUID modelUID) {
-    if (getRootTracerNodes(Kind.INPUT, modelUID) != null) {
+  public boolean hasTraceInputData(SModelReference modelReference) {
+    if (getRootTracerNodes(Kind.INPUT, modelReference) != null) {
       return true;
     }
-    return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasInput(modelUID);
+    return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasInput(modelReference);
   }
 
   public boolean showTraceInputData(SNode node) {
@@ -272,9 +272,9 @@ public class GenerationTracer {
     // may be input is processed by scripts?
     List<MappingScript> mappingScripts = myModelsProcessedByScripts.getScriptsForInput(node.getModel());
     if (mappingScripts == null) return null;
-    SModelUID uid = myModelsProcessedByScripts.getOutputForInput(node.getModel());
-    if (uid == null) return null;
-    SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(uid);
+    SModelReference reference = myModelsProcessedByScripts.getOutputForInput(node.getModel());
+    if (reference == null) return null;
+    SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(reference);
     if (descriptor == null) return null;
     SModel outputModel = descriptor.getSModel();
     SNode inputNode = node;
@@ -303,11 +303,11 @@ public class GenerationTracer {
     return inputTracerNode;
   }
 
-  public boolean hasTracebackData(SModelUID modelUID) {
-    if (getRootTracerNodes(Kind.OUTPUT, modelUID) != null) {
+  public boolean hasTracebackData(SModelReference modelReference) {
+    if (getRootTracerNodes(Kind.OUTPUT, modelReference) != null) {
       return true;
     }
-    return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasOutput(modelUID);
+    return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasOutput(modelReference);
   }
 
   public boolean showTracebackData(SNode node) {
@@ -335,9 +335,9 @@ public class GenerationTracer {
     // may be output is produced by scripts?
     List<MappingScript> mappingScripts = myModelsProcessedByScripts.getScriptsForOutput(node.getModel());
     if (mappingScripts == null) return null;
-    SModelUID uid = myModelsProcessedByScripts.getInputForOutput(node.getModel());
-    if (uid == null) return null;
-    SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(uid);
+    SModelReference reference = myModelsProcessedByScripts.getInputForOutput(node.getModel());
+    if (reference == null) return null;
+    SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(reference);
     if (descriptor == null) return null;
     SModel inputModel = descriptor.getSModel();
     SNode outputNode = node;
@@ -381,14 +381,14 @@ public class GenerationTracer {
   }
 
   @Nullable
-  private List<TracerNode> getRootTracerNodes(Kind kind, SModelUID modelUID) {
+  private List<TracerNode> getRootTracerNodes(Kind kind, SModelReference modelReference) {
     if (myTracingDataByInputModel == null) return null;
 
     if (kind == Kind.INPUT) {
-      String inputModelUID = modelUID.toString();
+      String inputModelUID = modelReference.toString();
       return myTracingDataByInputModel.get(inputModelUID);
     } else if (kind == Kind.OUTPUT) {
-      String outputModelUID = modelUID.toString();
+      String outputModelUID = modelReference.toString();
       return myTracingDataByOutputModel.get(outputModelUID);
     }
 
@@ -425,8 +425,8 @@ public class GenerationTracer {
   /**
    * util
    */
-  public List<Pair<SNode, SNode>> getAllAppiedRulesWithInputNodes(SModelUID outputModelUID) {
-    List<TracerNode> list = myTracingDataByOutputModel.get(outputModelUID.toString());
+  public List<Pair<SNode, SNode>> getAllAppiedRulesWithInputNodes(SModelReference outputModelReference) {
+    List<TracerNode> list = myTracingDataByOutputModel.get(outputModelReference.toString());
     List<TracerNode> ruleNodes = new ArrayList<TracerNode>();
     for (TracerNode tracerNode : list) {
       tracerNode.findAll(Kind.RULE, ruleNodes);
@@ -484,12 +484,12 @@ public class GenerationTracer {
       myScripts.add(scripts);
     }
 
-    public boolean hasInput(SModelUID modelUID) {
-      return myInputModels.contains(modelUID.toString());
+    public boolean hasInput(SModelReference modelReference) {
+      return myInputModels.contains(modelReference.toString());
     }
 
-    public boolean hasOutput(SModelUID modelUID) {
-      return myOutputModels.contains(modelUID.toString());
+    public boolean hasOutput(SModelReference modelReference) {
+      return myOutputModels.contains(modelReference.toString());
     }
 
     public List<MappingScript> getScriptsForInput(SModel model) {
@@ -508,18 +508,18 @@ public class GenerationTracer {
       return null;
     }
 
-    public SModelUID getOutputForInput(SModel model) {
+    public SModelReference getOutputForInput(SModel model) {
       int i = myInputModels.indexOf(model.getUID().toString());
       if (i >= 0) {
-        return SModelUID.fromString(myOutputModels.get(i));
+        return SModelReference.fromString(myOutputModels.get(i));
       }
       return null;
     }
 
-    public SModelUID getInputForOutput(SModel model) {
+    public SModelReference getInputForOutput(SModel model) {
       int i = myOutputModels.indexOf(model.getUID().toString());
       if (i >= 0) {
-        return SModelUID.fromString(myInputModels.get(i));
+        return SModelReference.fromString(myInputModels.get(i));
       }
       return null;
     }

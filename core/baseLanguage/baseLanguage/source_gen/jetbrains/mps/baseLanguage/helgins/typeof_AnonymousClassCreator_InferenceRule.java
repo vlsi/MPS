@@ -18,7 +18,7 @@ public class typeof_AnonymousClassCreator_InferenceRule implements InferenceRule
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.baseLanguage.helgins", "1194624225363", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "cls", true), "jetbrains.mps.baseLanguage.helgins", "1194624230979", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1194624228553", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1194624225363", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "cls", true), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1194624230979", true), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1194624228553", intentionProvider);
     }
   }
 

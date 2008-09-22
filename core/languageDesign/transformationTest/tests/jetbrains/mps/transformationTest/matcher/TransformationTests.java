@@ -122,7 +122,7 @@ public class TransformationTests {
   public SModel getModel() {
     TestMain.configureMPS();
     IdeMain.setTestMode(true);
-    final SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.transformationTest.test"));
+    final SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString("jetbrains.mps.transformationTest.test"));
     return sm.getSModel();
   }
 

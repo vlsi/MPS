@@ -687,15 +687,15 @@ public class RefactoringContext {
 
     private SNodeId myNodeId;
 
-    private SModelUID myModelUID;
+    private SModelReference myModelReference;
 
     public static final String MODEL_UID = "modelUID";
 
     public static final String NODE_ID = "nodeId";
 
-    public FullNodeId(SNodeId nodeId, SModelUID modelUID) {
+    public FullNodeId(SNodeId nodeId, SModelReference modelReference) {
       myNodeId = nodeId;
-      myModelUID = modelUID;
+      myModelReference = modelReference;
     }
 
     public FullNodeId(SNode node) {
@@ -708,7 +708,7 @@ public class RefactoringContext {
 
     public int compareTo(FullNodeId o) {
       int i1 = myNodeId.toString().compareTo(o.myNodeId.toString());
-      int i2 = myModelUID.toString().compareTo(o.myModelUID.toString());
+      int i2 = myModelReference.toString().compareTo(o.myModelReference.toString());
       return Math.round(Math.signum(i1) + Math.signum(i2) * 10);
     }
 
@@ -716,17 +716,17 @@ public class RefactoringContext {
       return myNodeId;
     }
 
-    public SModelUID getModelUID() {
-      return myModelUID;
+    public SModelReference getModelUID() {
+      return myModelReference;
     }
 
     public void toElement(Element element) {
-      element.setAttribute(MODEL_UID, myModelUID.toString());
+      element.setAttribute(MODEL_UID, myModelReference.toString());
       element.setAttribute(NODE_ID, myNodeId.toString());
     }
 
     public void fromElement(Element element) {
-      myModelUID = SModelUID.fromString(element.getAttributeValue(MODEL_UID));
+      myModelReference = SModelReference.fromString(element.getAttributeValue(MODEL_UID));
       myNodeId = SNodeId.fromString(element.getAttributeValue(NODE_ID));
     }
 
@@ -739,8 +739,8 @@ public class RefactoringContext {
     }
 
     public SModelDescriptor getModel() {
-      if (myModelUID == null) return null;
-      return SModelRepository.getInstance().getModelDescriptor(myModelUID);
+      if (myModelReference == null) return null;
+      return SModelRepository.getInstance().getModelDescriptor(myModelReference);
     }
   }
 

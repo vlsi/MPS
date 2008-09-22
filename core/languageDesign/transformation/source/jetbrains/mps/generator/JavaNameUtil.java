@@ -2,7 +2,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
@@ -27,8 +27,8 @@ public final class JavaNameUtil {
     return fqClassName(node.getModel(), shortClassName);
   }
 
-  public static String packageNameForModelUID(SModelUID modelUID) {
-    return modelUID.getLongName();
+  public static String packageNameForModelUID(SModelReference modelReference) {
+    return modelReference.getLongName();
   }
 
   public static String packageName(SModel model) {

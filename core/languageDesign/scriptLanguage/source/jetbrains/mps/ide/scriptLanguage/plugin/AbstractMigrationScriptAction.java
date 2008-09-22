@@ -82,8 +82,8 @@ public abstract class AbstractMigrationScriptAction extends BaseAction {
       return new ArrayList<SModelDescriptor>(myModels);
     }
 
-    public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
-      return GlobalScope.getInstance().getModelDescriptor(modelUID);
+    public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
+      return GlobalScope.getInstance().getModelDescriptor(modelReference);
     }
 
     public Language getLanguage(String languageNamespace) {

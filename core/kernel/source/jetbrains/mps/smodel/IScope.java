@@ -1,8 +1,5 @@
 package jetbrains.mps.smodel;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
 import java.util.List;
 import java.util.Set;
 
@@ -13,7 +10,7 @@ import jetbrains.mps.project.IModule;
  * DO NOT implement this interface directly. Always use BaseScope class
  */
 public interface IScope {
-  SModelDescriptor getModelDescriptor(SModelUID modelUID);
+  SModelDescriptor getModelDescriptor(SModelReference modelReference);
   SModelDescriptor getModelDescriptor(SModelId modelId);
   SModelDescriptor getModelDescriptor(SModelFqName fqName);
 

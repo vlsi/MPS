@@ -18,14 +18,14 @@ public class StaticReference extends SReferenceBase {
     myTargetNode = targetNode;
   }
 
-  public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelUID targetModelUID, @Nullable SNodeId nodeId, @Nullable String resolveInfo) {
+  public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, @Nullable SNodeId nodeId, @Nullable String resolveInfo) {
     // 'mature' reference
-    super(role, sourceNode, targetModelUID, true);
+    super(role, sourceNode, targetModelReference, true);
     setResolveInfo(resolveInfo);
     myTargetNodeId = nodeId;
   }
 
-  public SModelUID getTargetModelUID() {
+  public SModelReference getTargetModelUID() {
     if (mature()) {
       return super.getTargetModelUID();
     } else if (myTargetNode != null) {
@@ -34,9 +34,9 @@ public class StaticReference extends SReferenceBase {
     return null;
   }
 
-  public void setTargetModelUID(@NotNull SModelUID modelUID) {
+  public void setTargetModelUID(@NotNull SModelReference modelReference) {
     if (!mature()) makeMature();
-    super.setTargetModelUID(modelUID);
+    super.setTargetModelUID(modelReference);
   }
 
   public SNodeId getTargetNodeId() {

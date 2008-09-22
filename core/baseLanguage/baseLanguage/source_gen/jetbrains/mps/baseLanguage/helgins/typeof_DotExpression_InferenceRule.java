@@ -18,7 +18,7 @@ public class typeof_DotExpression_InferenceRule implements InferenceRule_Runtime
     {
       SNode _nodeToCheck_1029348928467 = dotExpression;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(dotExpression, "jetbrains.mps.baseLanguage.helgins", "1197028434327", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(dotExpression, "operation", true), "jetbrains.mps.baseLanguage.helgins", "1197028440830", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1197028438070", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(dotExpression, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1197028434327", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(dotExpression, "operation", true), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1197028440830", false), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1197028438070", intentionProvider);
     }
   }
 

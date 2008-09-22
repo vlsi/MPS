@@ -2,7 +2,7 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -258,9 +258,9 @@ public class PathManager {
   }
 
 
-  public static String findModelPath(Collection<ModelRoot> modelRoots, SModelUID modelUID) {
+  public static String findModelPath(Collection<ModelRoot> modelRoots, SModelReference modelReference) {
     for (ModelRoot modelRoot : modelRoots) {
-      String path = findModelPath(modelRoot, modelUID);
+      String path = findModelPath(modelRoot, modelReference);
       if(path != null) {
         return path;
       }
@@ -268,10 +268,10 @@ public class PathManager {
     return null;
   }
 
-  public static String findModelPath(Iterator<ModelRoot> modelRoots, SModelUID modelUID) {
+  public static String findModelPath(Iterator<ModelRoot> modelRoots, SModelReference modelReference) {
     while (modelRoots.hasNext()) {
       ModelRoot modelRoot = modelRoots.next();
-      String path = findModelPath(modelRoot, modelUID);
+      String path = findModelPath(modelRoot, modelReference);
       if(path != null) {
         return path;
       }
@@ -280,8 +280,8 @@ public class PathManager {
   }
 
 
-  public static String findModelPath(ModelRoot modelRoot, SModelUID modelUID) {
-    String modelFQName = modelUID.getLongName();
+  public static String findModelPath(ModelRoot modelRoot, SModelReference modelReference) {
+    String modelFQName = modelReference.getLongName();
     String name = modelFQName;
     String packagePrefix = modelRoot.getPrefix();
     if(packagePrefix != null && packagePrefix.length() > 0) {
@@ -297,11 +297,11 @@ public class PathManager {
       path = File.separator + path;
     }
 
-    if (!modelUID.getStereotype().equals("")) {
+    if (!modelReference.getStereotype().equals("")) {
       String littleName = path.substring(path.lastIndexOf(File.separator) + 1);
       String rawPath = path.substring(0, path.lastIndexOf(File.separator) + 1);
       System.err.println ("littleName = " + littleName + ", rawPath = " + rawPath);
-      path = rawPath + modelUID.getStereotype() + "@" + littleName;
+      path = rawPath + modelReference.getStereotype() + "@" + littleName;
     }
     path = modelRoot.getPath() + path + MPSExtentions.DOT_MODEL;
     if(!(new File(path)).exists()) {
@@ -310,16 +310,16 @@ public class PathManager {
     return path;
   }
 
-  public static SModelUID getModelUID(IFile modelFile, IFile root, String namespacePrefix) {
-    SModelUID fromFile = getFileUID(modelFile);
+  public static SModelReference getModelUID(IFile modelFile, IFile root, String namespacePrefix) {
+    SModelReference fromFile = getFileUID(modelFile);
     if (fromFile != null) {
       return fromFile;
     }
     String rawLongName = getModelUIDString(modelFile, root, namespacePrefix);
-    return SModelUID.fromString(rawLongName);
+    return SModelReference.fromString(rawLongName);
   }
 
-  private static SModelUID getFileUID(IFile modelFile) {
+  private static SModelReference getFileUID(IFile modelFile) {
     try {
       String secondLine = FileUtil.readLine(modelFile.openReader(), 1);
       if (secondLine == null) {
@@ -328,7 +328,7 @@ public class PathManager {
 
       Matcher m = MODEL_UID_PATTERN.matcher(secondLine);
       if (m.find()) {
-        return SModelUID.fromString(m.group(1));
+        return SModelReference.fromString(m.group(1));
       }
 
       return null;

@@ -2,7 +2,7 @@ package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModel;
 
 import java.util.List;
@@ -21,14 +21,14 @@ public class PasteNodeData {
   private List<SNode> myNodes;
   private Set<SReference> myRequireResolveReferences;
   private Set<String> myNecessaryLanguages;
-  private Set<SModelUID> myNecessaryImports;
+  private Set<SModelReference> myNecessaryImports;
   private Set<String> myNecessaryDevKits;
   private SModel myModelProperties;
 
   public PasteNodeData(List<SNode> nodes, Set<SReference> references,
                        SModel modelProperties,
                        Set<String> necessaryLanguages,
-                       Set<SModelUID> necessaryImports,
+                       Set<SModelReference> necessaryImports,
                        Set<String> necessaryDevKits) {
     this.myNodes = nodes;
     this.myRequireResolveReferences = references;
@@ -50,7 +50,7 @@ public class PasteNodeData {
     return myNecessaryLanguages;
   }
 
-  public Set<SModelUID> getNecessaryImports() {
+  public Set<SModelReference> getNecessaryImports() {
     return myNecessaryImports;
   }
 
@@ -68,7 +68,7 @@ public class PasteNodeData {
             new HashSet<SReference>(),
             model,
             new HashSet<String>(),
-            new HashSet<SModelUID>(),
+            new HashSet<SModelReference>(),
             new HashSet<String>());
   }
 }

@@ -3,8 +3,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
@@ -59,9 +57,9 @@ public abstract class SReference {
 
   protected abstract SNode getTargetNode_internal();
 
-  public abstract SModelUID getTargetModelUID();
+  public abstract SModelReference getTargetModelUID();
 
-  public abstract void setTargetModelUID(@NotNull SModelUID targetModelUID);
+  public abstract void setTargetModelUID(@NotNull SModelReference targetModelReference);
 
   public abstract boolean isExternal();
 
@@ -73,8 +71,8 @@ public abstract class SReference {
     return new StaticReference(role, sourceNode, targetNode);
   }
 
-  public static SReference create(String role, SNode sourceNode, SModelUID targetModelUID, SNodeId targetNodeId) {
-    return new StaticReference(role, sourceNode, targetModelUID, targetNodeId, null);
+  public static SReference create(String role, SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
+    return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, null);
   }
 
 

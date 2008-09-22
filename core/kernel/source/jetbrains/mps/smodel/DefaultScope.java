@@ -22,12 +22,12 @@ public abstract class DefaultScope extends BaseScope {
   private Map<SModelFqName, SModelDescriptor> myFqNameToDescriptor = new HashMap<SModelFqName, SModelDescriptor>();
   private Map<SModelId, SModelDescriptor> myIdToDescriptor = new HashMap<SModelId, SModelDescriptor>();
   
-  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
+  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
     initialize();
-    if (modelUID.getSModelId() != null) {
-      return myIdToDescriptor.get(modelUID.getSModelId());
+    if (modelReference.getSModelId() != null) {
+      return myIdToDescriptor.get(modelReference.getSModelId());
     }
-    return myFqNameToDescriptor.get(modelUID.getSModelFqName());
+    return myFqNameToDescriptor.get(modelReference.getSModelFqName());
   }
 
   public List<SModelDescriptor> getModelDescriptors() {

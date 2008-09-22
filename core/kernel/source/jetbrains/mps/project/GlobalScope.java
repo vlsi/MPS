@@ -69,8 +69,8 @@ public class GlobalScope extends BaseScope {
     return false;
   }
 
-  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
     return modelDescriptor;
   }
 

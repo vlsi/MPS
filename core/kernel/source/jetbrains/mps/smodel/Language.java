@@ -753,7 +753,7 @@ public class Language extends AbstractModule {
     List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
     List<Model> accessoryModels = new ArrayList<Model>(getLanguageDescriptor().getAccessoryModels());
     for (Model model : accessoryModels) {
-      SModelDescriptor modelDescriptor = getScope().getModelDescriptor(SModelUID.fromString(model.getName()));
+      SModelDescriptor modelDescriptor = getScope().getModelDescriptor(SModelReference.fromString(model.getName()));
       if (modelDescriptor != null) {
         modelDescriptor = replaceAccessoryModel(modelDescriptor, model);
         result.add(modelDescriptor);
@@ -762,12 +762,12 @@ public class Language extends AbstractModule {
     return result;
   }
 
-  public boolean isAccessoryModel(SModelUID modelUID) {
+  public boolean isAccessoryModel(SModelReference modelReference) {
     Iterator<Model> accessoryModels = getLanguageDescriptor().accessoryModels();
     while (accessoryModels.hasNext()) {
       Model model = accessoryModels.next();
-      SModelUID accessoryUID = SModelUID.fromString(model.getName());
-      if (accessoryUID.equals(modelUID)) {
+      SModelReference accessoryReference = SModelReference.fromString(model.getName());
+      if (accessoryReference.equals(modelReference)) {
         return true;
       }
     }

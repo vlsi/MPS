@@ -76,10 +76,10 @@ public class Generator extends AbstractModule {
   private boolean upgradeMappingConfigSimpleRef(MappingConfig_SimpleRef simpleRef) {
     boolean descriptorChanged = false;
     String s = simpleRef.getModelUID();
-    SModelUID modelUID = SModelUID.fromString(s);
-    if (modelUID.getStereotype().equals(SModelStereotype.TEMPLATES)) {
-      modelUID = new SModelUID(modelUID.getLongName(), SModelStereotype.GENERATOR);
-      s = modelUID.toString();
+    SModelReference modelReference = SModelReference.fromString(s);
+    if (modelReference.getStereotype().equals(SModelStereotype.TEMPLATES)) {
+      modelReference = new SModelReference(modelReference.getLongName(), SModelStereotype.GENERATOR);
+      s = modelReference.toString();
       simpleRef.setModelUID(s);
       descriptorChanged = true;
     }

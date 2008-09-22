@@ -97,11 +97,11 @@ public class Serializer {
       return fullNodeId.getNode();
     }
     if (SMODEL_DESCRIPTOR.equals(OBJECT_TYPE)) {
-      return SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(element.getAttributeValue(MODEL_UID)));
+      return SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(element.getAttributeValue(MODEL_UID)));
     }
     if (SMODEL.equals(OBJECT_TYPE)) {
       SModelDescriptor modelDescriptor = SModelRepository.getInstance().
-              getModelDescriptor(SModelUID.fromString(element.getAttributeValue(MODEL_UID)));
+              getModelDescriptor(SModelReference.fromString(element.getAttributeValue(MODEL_UID)));
       if (modelDescriptor == null) {
         return null;
       }

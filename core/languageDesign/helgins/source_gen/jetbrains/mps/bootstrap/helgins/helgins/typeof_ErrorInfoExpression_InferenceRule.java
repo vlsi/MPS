@@ -17,7 +17,7 @@ public class typeof_ErrorInfoExpression_InferenceRule implements InferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.helgins.helgins", "1201618383367", true), new QuotationClass_20().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1201618387152", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1201618383367", true), new QuotationClass_20().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1201618387152", intentionProvider);
     }
   }
 

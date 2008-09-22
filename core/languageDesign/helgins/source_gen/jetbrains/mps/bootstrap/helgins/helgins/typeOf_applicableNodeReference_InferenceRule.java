@@ -15,7 +15,7 @@ public class typeOf_applicableNodeReference_InferenceRule implements InferenceRu
 
   public void applyRule(final SNode anr) {
     SNode applicableNodeRef = anr;
-    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(applicableNodeRef, "applicableNode", false), "jetbrains.mps.bootstrap.helgins.helgins", "1175522385423", true), applicableNodeRef, "jetbrains.mps.bootstrap.helgins.helgins", "1175522380873");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(applicableNodeRef, "applicableNode", false), "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1175522385423", true), applicableNodeRef, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1175522380873");
   }
 
   public String getApplicableConceptFQName() {

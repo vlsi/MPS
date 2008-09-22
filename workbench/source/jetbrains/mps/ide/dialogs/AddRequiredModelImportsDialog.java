@@ -2,7 +2,7 @@ package jetbrains.mps.ide.dialogs;
 
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelReference;
 
 import javax.swing.*;
 import javax.swing.event.TableModelEvent;
@@ -28,13 +28,13 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
   private SModel myModel;
 
   private List<String> myLanguages;
-  private List<SModelUID> myImports;
+  private List<SModelReference> myImports;
   private List<String> myDevKits;
 
   private boolean myCanceled = true;
 
   private List<String> myLanguagesToAdd;
-  private List<SModelUID> myImportsToAdd;
+  private List<SModelReference> myImportsToAdd;
   private List<String> myDevKitsToAdd;
 
   public boolean isCanceled() {
@@ -42,15 +42,15 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
   }
 
   public AddRequiredModelImportsDialog(Frame frame, SModel model,
-                                       Set<SModelUID> necessaryImports,
+                                       Set<SModelReference> necessaryImports,
                                        Set<String> necessaryLanguages,
                                        Set<String> necessaryDevKits) {
     super(frame, "Imports And Languages");
-    myImports = new ArrayList<SModelUID>(necessaryImports);
+    myImports = new ArrayList<SModelReference>(necessaryImports);
     myLanguages = new ArrayList<String>(necessaryLanguages);
     myDevKits = new ArrayList<String>(necessaryDevKits);
     myLanguagesToAdd = new ArrayList<String>(necessaryLanguages);
-    myImportsToAdd = new ArrayList<SModelUID>(necessaryImports);
+    myImportsToAdd = new ArrayList<SModelReference>(necessaryImports);
     myDevKitsToAdd = new ArrayList<String>(necessaryDevKits);
 
     myModel = model;
@@ -109,7 +109,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
   public void buttonAddAll() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        for (SModelUID imported : myImports) {
+        for (SModelReference imported : myImports) {
           myModel.addImportedModel(imported);
         }
         for (String language : myLanguages) {
@@ -128,7 +128,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
   public void buttonAddSelected() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        for (SModelUID imported : myImportsToAdd) {
+        for (SModelReference imported : myImportsToAdd) {
           myModel.addImportedModel(imported);
         }
         for (String language : myLanguagesToAdd) {

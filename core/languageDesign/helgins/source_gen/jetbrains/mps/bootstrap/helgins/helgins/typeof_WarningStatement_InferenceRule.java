@@ -18,12 +18,12 @@ public class typeof_WarningStatement_InferenceRule implements InferenceRule_Runt
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "warningText", true), "jetbrains.mps.bootstrap.helgins.helgins", "1207055636653", true), new QuotationClass_24().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1207055636648", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "warningText", true), "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1207055636653", true), new QuotationClass_24().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1207055636648", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "nodeToReport", true), "jetbrains.mps.bootstrap.helgins.helgins", "1207055636662", true), new QuotationClass_25().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1207055636657", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "nodeToReport", true), "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1207055636662", true), new QuotationClass_25().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1207055636657", false, 0, intentionProvider);
     }
   }
 

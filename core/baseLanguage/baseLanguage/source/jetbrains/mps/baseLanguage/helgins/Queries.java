@@ -4,13 +4,9 @@ import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
-import jetbrains.mps.smodel.CopyUtil;
 
 import java.util.Set;
-import java.util.List;
-import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,7 +27,7 @@ public class Queries {
     Set<SNode> leastCommonSupertypes = TypeChecker.getInstance().getSubtypingManager().leastCommonSupertypes(types, true);
 
     if (mayBeString) {
-      SModelDescriptor javaLangJavaStubModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("java.lang@java_stub"));
+      SModelDescriptor javaLangJavaStubModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString("java.lang@java_stub"));
       assert javaLangJavaStubModelDescriptor != null;
       SModel javaLang = javaLangJavaStubModelDescriptor.getSModel();
       INodeAdapter stringClass = javaLang.getRootAdapterByName("String");

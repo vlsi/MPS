@@ -18,7 +18,7 @@ public class typeof_MatchStatement_InferenceRule implements InferenceRule_Runtim
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "expression", true), "jetbrains.mps.bootstrap.helgins.helgins", "1196960489604", true), new QuotationClass_19().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1196960500018", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "expression", true), "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1196960489604", true), new QuotationClass_19().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1196960500018", false, 0, intentionProvider);
     }
   }
 

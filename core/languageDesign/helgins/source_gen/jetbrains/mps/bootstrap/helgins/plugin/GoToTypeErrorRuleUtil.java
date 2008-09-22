@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.helgins.plugin;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
@@ -16,8 +16,8 @@ public class GoToTypeErrorRuleUtil {
   public static void goToTypeErrorRule(IOperationContext context, IErrorReporter error, Logger LOG) {
     String ruleID = error.getRuleId();
     String ruleModel = error.getRuleModel();
-    SModelUID modelUID = SModelUID.fromString(ruleModel);
-    modelUID = SModelUID.fromString(modelUID.getLongName());
+    SModelReference modelUID = SModelReference.fromString(ruleModel);
+    modelUID = SModelReference.fromString(modelUID.getLongName());
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     if (modelDescriptor == null) {
       LOG.error("can't find rule's model " + ruleModel);

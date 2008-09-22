@@ -47,7 +47,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.core.structure.BaseConcept";
+    return "r:1222075024008(jetbrains.mps.core.structure).BaseConcept";
   }
 
   public Class getOverridenRefactoringClass() {
@@ -124,7 +124,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.core.structure.BaseConcept")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "r:1222075024008(jetbrains.mps.core.structure).BaseConcept")) {
       return true;
     } else
     {

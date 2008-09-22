@@ -3,24 +3,19 @@ package jetbrains.mps.helgins.inference;
 import jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
-import jetbrains.mps.helgins.statistics.Statistics;
 import jetbrains.mps.helgins.inference.util.SubtypingCache;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.intentions.IntentionProvider;
-import jetbrains.mps.intentions.Intention;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -438,7 +433,7 @@ public class TypeChecker implements ApplicationComponent {
     SModelDescriptor modelDescriptor = (SModelRepository.getInstance().getModelDescriptor(fqName));
 
     if (modelDescriptor == null) { // then create and register model descriptor
-      modelDescriptor = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, new SModelUID(fqName, SModelId.generate())) {
+      modelDescriptor = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, new SModelReference(fqName, SModelId.generate())) {
         {
           mySModel = new SModel(getModelUID());
           mySModel.setLoading(true);

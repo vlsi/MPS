@@ -119,11 +119,11 @@ public class NodeReadAccessCaster {
   }
 
 
-  public static void fireReferenceTargetReadAccessed(SNode sourceNode, SModelUID targetModelUID, SNodeId targetNodeId) {
+  public static void fireReferenceTargetReadAccessed(SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
     if (ourEventsBlocked) return;
     if(!sourceNode.isRegistered()) return;
     if (ourReadAccessListener != null) {
-      ourReadAccessListener.addRefTargetToDependOn(new SNodePointer(targetModelUID, targetNodeId));
+      ourReadAccessListener.addRefTargetToDependOn(new SNodePointer(targetModelReference, targetNodeId));
     }
   }
 

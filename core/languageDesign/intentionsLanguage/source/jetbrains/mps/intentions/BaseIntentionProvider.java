@@ -4,7 +4,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.quickfix.QuickFix_Runtime;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
@@ -28,7 +28,7 @@ public class BaseIntentionProvider implements IntentionProvider {
   private Map<String, Object> myMap = new HashMap<String, Object>();
 
   public BaseIntentionProvider(String classFQName) {
-    myClassFQName = SModelUID.fromString(NameUtil.namespaceFromLongName(classFQName)).getLongName() +
+    myClassFQName = SModelReference.fromString(NameUtil.namespaceFromLongName(classFQName)).getLongName() +
       "." + NameUtil.shortNameFromLongName(classFQName);
     myQuickFix = null;
     myQuickFixTaken = false;

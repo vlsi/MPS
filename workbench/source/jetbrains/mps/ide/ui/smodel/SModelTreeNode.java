@@ -298,18 +298,18 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public String calculateText() {
-    SModelUID uid;
+    SModelReference reference;
 
     if (getSModelDescriptor() != null) {
-      uid = getSModelDescriptor().getModelUID();
+      reference = getSModelDescriptor().getModelUID();
     } else {
-      uid = getSModel().getUID();
+      reference = getSModel().getUID();
     }
 
-    String name = myShowLongName ? uid.getLongName() : uid.getShortName();
+    String name = myShowLongName ? reference.getLongName() : reference.getShortName();
 
-    if (uid.getStereotype().length() > 0) {
-      name += "@" + uid.getStereotype();
+    if (reference.getStereotype().length() > 0) {
+      name += "@" + reference.getStereotype();
     }
 
 

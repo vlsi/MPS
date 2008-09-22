@@ -117,7 +117,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
 
   public SModelDescriptor createTransientModel(String name, String stereotype) {
     SModelFqName fqName = new SModelFqName(name, stereotype);
-    DefaultSModelDescriptor result = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, new SModelUID(fqName, SModelId.generate())) {
+    DefaultSModelDescriptor result = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, new SModelReference(fqName, SModelId.generate())) {
       protected SModel loadModel() {
         return new SModel(getModelUID());
       }

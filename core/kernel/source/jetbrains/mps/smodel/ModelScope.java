@@ -1,7 +1,5 @@
 package jetbrains.mps.smodel;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 import java.util.Set;
 import java.util.ArrayList;
@@ -23,8 +21,8 @@ public class ModelScope extends BaseScope {
     return myModelDescriptor;
   }
 
-  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
-    if (myScope.getModelDescriptor(modelUID) != myModelDescriptor) {
+  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
+    if (myScope.getModelDescriptor(modelReference) != myModelDescriptor) {
       return null;
     }
     return myModelDescriptor;

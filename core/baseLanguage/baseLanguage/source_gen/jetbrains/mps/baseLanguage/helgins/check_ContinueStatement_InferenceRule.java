@@ -28,7 +28,7 @@ public class check_ContinueStatement_InferenceRule implements InferenceRule_Runt
 
       });
       if (!(Sequence.fromIterable(matchingLoops).isNotEmpty())) {
-        TypeChecker.getInstance().reportTypeError(nodeToCheck, "No such label", "jetbrains.mps.baseLanguage.helgins", "1199470337258");
+        TypeChecker.getInstance().reportTypeError(nodeToCheck, "No such label", "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1199470337258");
       }
     }
   }

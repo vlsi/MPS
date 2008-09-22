@@ -70,8 +70,8 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
       myTypeParms = typeParms;
     }
 
-    public SNode resolve(String referenceInfo, SModelUID targetModelUID) {
-      SNode classifier_ = super.resolve(referenceInfo, targetModelUID);
+    public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
+      SNode classifier_ = super.resolve(referenceInfo, targetModelReference);
       if (classifier_ == null) return null;
       Classifier classifier = (Classifier) classifier_.getAdapter();
       if (classifier instanceof ClassConcept) {

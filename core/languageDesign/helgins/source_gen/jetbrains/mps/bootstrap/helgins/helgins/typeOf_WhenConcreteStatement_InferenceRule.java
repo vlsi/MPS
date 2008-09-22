@@ -18,7 +18,7 @@ public class typeOf_WhenConcreteStatement_InferenceRule implements InferenceRule
     {
       SNode _nodeToCheck_1029348928467 = whenConcreteStatement;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(whenConcreteStatement, "argument", true), "jetbrains.mps.bootstrap.helgins.helgins", "1185805519376", true), new QuotationClass_13().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805532321", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(whenConcreteStatement, "argument", true), "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1185805519376", true), new QuotationClass_13().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1185805532321", false, 0, intentionProvider);
     }
   }
 

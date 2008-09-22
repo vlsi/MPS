@@ -233,13 +233,13 @@ public class GenerationPartitioningUtil {
     if (mappingRef instanceof MappingConfig_SimpleRef) {
       String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
       String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
-      String modelName = moreDetails ? SModelUID.fromString(modelUID).getLongName() : SModelUID.fromString(modelUID).getShortName();
+      String modelName = moreDetails ? SModelReference.fromString(modelUID).getLongName() : SModelReference.fromString(modelUID).getShortName();
       String s = modelName + ".";
       if (nodeID.equals("*")) {
         return s + "*";
       } else {
         GlobalScope scope = GlobalScope.getInstance();
-        SModelDescriptor refModel = scope.getModelDescriptor(SModelUID.fromString(modelUID));
+        SModelDescriptor refModel = scope.getModelDescriptor(SModelReference.fromString(modelUID));
         if (refModel != null) {
           SNode mappingConfig = refModel.getSModel().getNodeById(nodeID);
           if (mappingConfig != null) {

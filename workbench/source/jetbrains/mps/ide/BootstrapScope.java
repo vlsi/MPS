@@ -70,10 +70,10 @@ public class BootstrapScope extends BaseScope {
     return getDevKit(devKitNamespace) != null;
   }
 
-  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
+  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
     for (IModule module : getVisibleModules()) {
       for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {
-        if (modelDescriptor.getModelUID().equals(modelUID)) {
+        if (modelDescriptor.getModelUID().equals(modelReference)) {
           return modelDescriptor;
         }
       }

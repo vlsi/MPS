@@ -7,12 +7,12 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import java.util.List;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -70,7 +70,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.core.structure.BaseConcept";
+    return "r:1222075024008(jetbrains.mps.core.structure).BaseConcept";
   }
 
   public Class getOverridenRefactoringClass() {
@@ -78,7 +78,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
-    if (ListSequence.fromList(refactoringContext.getSelectedNodes()).isEmpty()) {
+    if (refactoringContext.getSelectedNodes().isEmpty()) {
       return false;
     }
     if (((Object)refactoringContext.getParameter("target")) instanceof SNode) {
@@ -242,7 +242,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.core.structure.BaseConcept")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "r:1222075024008(jetbrains.mps.core.structure).BaseConcept")) {
       return true;
     } else
     {

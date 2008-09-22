@@ -18,7 +18,7 @@ public class typeof_AddDependencyStatement_InferenceRule implements InferenceRul
     {
       SNode _nodeToCheck_1029348928467 = statement;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(statement, "dependency", true), "jetbrains.mps.bootstrap.helgins.helgins", "1220357522695", true), new QuotationClass_26().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1220357537248", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(statement, "dependency", true), "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1220357522695", true), new QuotationClass_26().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1220357537248", false, 0, intentionProvider);
     }
   }
 

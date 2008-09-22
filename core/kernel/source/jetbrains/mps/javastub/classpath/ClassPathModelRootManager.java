@@ -18,7 +18,7 @@ import java.util.*;
 public abstract class ClassPathModelRootManager extends AbstractModelRootManager {
   private static Logger LOG = Logger.getLogger(ClassPathModelRootManager.class);
 
-  private static Map<SModelUID, Long> ourTimestamps = new HashMap<SModelUID, Long>();
+  private static Map<SModelReference, Long> ourTimestamps = new HashMap<SModelReference, Long>();
   private ModelOwner myOwner;
   private IConverter myConverter;
 
@@ -57,8 +57,8 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
     boolean wasLoading = model.isLoading();
     model.setLoading(true);
     try {
-      SModelUID uid = modelDescriptor.getModelUID();
-      String pack = uid.getLongName();      
+      SModelReference reference = modelDescriptor.getModelUID();
+      String pack = reference.getLongName();
       myConverter.updateModel(pack, true);
     } finally {
       model.setLoading(wasLoading);
@@ -102,9 +102,9 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
 
     for (String subpackage : subpackages) {
       if (!getClassPathItem().getAvailableClasses(subpackage).isEmpty()) {
-        SModelUID modelUID = ClassPathModelProvider.uidForPackage(subpackage);
-        if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
-          final SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB));
+        SModelReference modelReference = ClassPathModelProvider.uidForPackage(subpackage);
+        if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
+          final SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB));
 
           assert descriptor != null;
           
@@ -118,7 +118,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
             updateAfterLoad(descriptor);
           }
         } else {
-          SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, null, modelUID);
+          SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, null, modelReference);
           SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
           descriptors.add(modelDescriptor);
 

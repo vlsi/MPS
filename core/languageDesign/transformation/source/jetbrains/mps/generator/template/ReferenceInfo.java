@@ -1,16 +1,8 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.generator.template.IReferenceResolver;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.inference.TypeCheckingMode;
+import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -32,7 +24,7 @@ public abstract class ReferenceInfo {
     return myOutputSourceNode;
   }
 
-  public SModelUID getTargetModelUID(TemplateGenerator generator) {
+  public SModelReference getTargetModelUID(TemplateGenerator generator) {
     // local references only
     return generator.getOutputModel().getUID();
   }

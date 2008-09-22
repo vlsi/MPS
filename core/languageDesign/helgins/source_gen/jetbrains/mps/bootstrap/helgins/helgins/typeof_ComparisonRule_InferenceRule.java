@@ -18,7 +18,7 @@ public class typeof_ComparisonRule_InferenceRule implements InferenceRule_Runtim
     {
       SNode _nodeToCheck_1029348928467 = comparisonRule;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(comparisonRule, "body", true), "jetbrains.mps.bootstrap.helgins.helgins", "1188915257236", true), new QuotationClass_16().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1188915272415", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(comparisonRule, "body", true), "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1188915257236", true), new QuotationClass_16().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1188915272415", false, 0, intentionProvider);
     }
   }
 

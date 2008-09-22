@@ -18,7 +18,7 @@ public class typeOf_AssertStatement_InferenceRule implements InferenceRule_Runti
     {
       SNode _nodeToCheck_1029348928467 = assertStatement;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(assertStatement, "condition", true), "jetbrains.mps.bootstrap.helgins.helgins", "1178271601478", true), new QuotationClass_1().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1178271610359", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(assertStatement, "condition", true), "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1178271601478", true), new QuotationClass_1().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1178271610359", false, 0, intentionProvider);
     }
   }
 

@@ -1,23 +1,23 @@
 package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 
 public class SModelImportEvent extends SModelEvent {
-  private SModelUID myModelUID;
+  private SModelReference myModelReference;
 
-  public SModelImportEvent(SModel model, SModelUID modelUID) {
+  public SModelImportEvent(SModel model, SModelReference modelReference) {
     super(model);
-    myModelUID = modelUID;
+    myModelReference = modelReference;
   }
 
   public SNode getAffectedRoot() {
     return null;
   }
 
-  public SModelUID getModelUID() {
-    return myModelUID;
+  public SModelReference getModelUID() {
+    return myModelReference;
   }
 
   public void accept(SModelEventVisitor visitor) {

@@ -22,15 +22,11 @@ import java.util.LinkedHashSet;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectUtil;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.idea.IdeaTestApplication;
 import com.intellij.ide.IdeEventQueue;
-
-import javax.swing.SwingUtilities;
 
 import org.jdom.JDOMException;
 
@@ -153,11 +149,11 @@ public class TestMain {
   }
 
   private static SModelDescriptor getSandbox1(MPSProject project) {
-    return project.getScope().getModelDescriptor(SModelUID.fromString("testRefactoring.sandbox"));
+    return project.getScope().getModelDescriptor(SModelReference.fromString("testRefactoring.sandbox"));
   }
 
   private static SModelDescriptor getSandbox2(MPSProject project) {
-    return project.getScope().getModelDescriptor(SModelUID.fromString("testRefactoring.sandbox2"));
+    return project.getScope().getModelDescriptor(SModelReference.fromString("testRefactoring.sandbox2"));
   }
 
   private static Language getTestRefactoringLanguage(MPSProject project) {

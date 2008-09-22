@@ -18,7 +18,7 @@ public class check_MethodDeclaration_NonTypesystemRule implements NonTypesystemR
     for(SNode annotationInstance : SLinkOperations.getTargets(baseMethodDeclaration, "annotation", true)) {
       if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new QuotationClass_23().createNode(), "classifier", false)) {
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-          TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "inference method should not return a value", "jetbrains.mps.bootstrap.helgins.helgins", "1206297717786");
+          TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "inference method should not return a value", "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1206297717786");
         }
         return;
       }

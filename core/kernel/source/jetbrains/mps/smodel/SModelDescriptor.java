@@ -7,7 +7,6 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
@@ -23,7 +22,7 @@ public interface SModelDescriptor {
    */
   SModel getSModel();
 
-  SModelUID getModelUID();
+  SModelReference getModelUID();
 
   SModelFqName getModelFqName();
 
@@ -70,7 +69,7 @@ public interface SModelDescriptor {
 
   Set<SReference> findUsages(SNode node);
 
-  boolean hasUsages(Set<SModelUID> models);
+  boolean hasUsages(Set<SModelReference> models);
 
   Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> descendantsKnownInModel);
 

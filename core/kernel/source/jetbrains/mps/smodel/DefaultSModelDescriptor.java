@@ -50,8 +50,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private long myDiskTimestamp = -1;
   private boolean myIsTestRefactoringMode = false;
 
-  public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelUID modelUID) {
-    super(manager, modelFile, modelUID);
+  public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
+    super(manager, modelFile, modelReference);
     updateLastChange();
   }
 
@@ -418,11 +418,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     return result;
   }
 
-  public boolean hasUsages(Set<SModelUID> models) {
+  public boolean hasUsages(Set<SModelReference> models) {
     if (!myModelRootManager.isFindUsagesSupported()) return false;
 
     Set<String> strings = new HashSet<String>();
-    for (SModelUID model : models) {
+    for (SModelReference model : models) {
       if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
         strings.add(quoteSpecialXMLCharacters(model.toString()));
       }
@@ -673,9 +673,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     }
   }
 
-  /*package*/ void changeSModelUID(SModelUID newModelUID) {
-    myModelUID = newModelUID;
-    getSModel().changeModelUID(newModelUID);
+  /*package*/ void changeSModelUID(SModelReference newModelReference) {
+    myModelReference = newModelReference;
+    getSModel().changeModelUID(newModelReference);
   }
 
   /*package*/

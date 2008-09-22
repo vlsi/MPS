@@ -23,7 +23,7 @@ public class typeof_ArrayCreator_InferenceRule implements InferenceRule_Runtime 
     {
       SNode _nodeToCheck_1029348928467 = arrayCreator;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arrayCreator, "jetbrains.mps.baseLanguage.helgins", "1209402739197", true), type, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1209402744151", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arrayCreator, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1209402739197", true), type, _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1209402744151", intentionProvider);
     }
   }
 

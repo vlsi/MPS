@@ -20,13 +20,13 @@ public class typeOf_ArrayCreatorWithInitializer_InferenceRule implements Inferen
       {
         SNode _nodeToCheck_1029348928467 = arrayCreator;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.baseLanguage.helgins", "1175600272400", true), SLinkOperations.getTarget(arrayCreator, "componentType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1175600269225", false, 0, intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1175600272400", true), SLinkOperations.getTarget(arrayCreator, "componentType", true), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1175600269225", false, 0, intentionProvider);
       }
     }
     {
       SNode _nodeToCheck_1029348928467 = arrayCreator;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arrayCreator, "jetbrains.mps.baseLanguage.helgins", "1205279600881", true), new QuotationClass_8().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(arrayCreator, "componentType", true))), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1205279600879", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arrayCreator, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1205279600881", true), new QuotationClass_8().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(arrayCreator, "componentType", true))), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1205279600879", intentionProvider);
     }
   }
 

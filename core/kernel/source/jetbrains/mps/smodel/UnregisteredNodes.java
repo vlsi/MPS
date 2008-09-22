@@ -5,11 +5,6 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.util.PairMap;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
 /**
  * Igor Alshannikov
  * Jul 26, 2007
@@ -18,7 +13,7 @@ import java.util.Set;
   private static final Logger LOG = Logger.getLogger(UnregisteredNodes.class);
   private static UnregisteredNodes myInstance;
 
-  private PairMap<SModelUID, SNodeId, SNode> myMap = new PairMap<SModelUID, SNodeId, SNode>();
+  private PairMap<SModelReference, SNodeId, SNode> myMap = new PairMap<SModelReference, SNodeId, SNode>();
 
 
   public static UnregisteredNodes instance() {
@@ -50,8 +45,8 @@ import java.util.Set;
     remove(node.getModel().getUID(), node.getSNodeId());
   }
 
-  SNode get(SModelUID modelUID, SNodeId nodeId) {
-    return myMap.get(modelUID, nodeId);
+  SNode get(SModelReference modelReference, SNodeId nodeId) {
+    return myMap.get(modelReference, nodeId);
   }
 
   void nodeIdChanged(SNode node, SNodeId oldNodeId) {
@@ -69,23 +64,23 @@ import java.util.Set;
     add(node.getModel().getUID(), node.getSNodeId(), node);
   }
 
-  private void add(SModelUID uid, SNodeId id, SNode node) {
-    if (myMap.contains(uid, id)) {
-      LOG.error("attempt to put another node with same key: " + uid + "#" + id);
+  private void add(SModelReference reference, SNodeId id, SNode node) {
+    if (myMap.contains(reference, id)) {
+      LOG.error("attempt to put another node with same key: " + reference + "#" + id);
     }
-    myMap.put(uid, id, node);
+    myMap.put(reference, id, node);
   }
 
-  private void remove(SModelUID uid, SNodeId id) {
-    myMap.remove(uid, id);
+  private void remove(SModelReference reference, SNodeId id) {
+    myMap.remove(reference, id);
   }
 
   /**
    * We need this method to make generation economical with memory during generation
    * Do not remove it
    */
-  void clear(SModelUID uid) {
-    myMap.clear(uid);
+  void clear(SModelReference reference) {
+    myMap.clear(reference);
   }
 
 

@@ -10,7 +10,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
 
@@ -64,8 +64,8 @@ public class AspectMethodsFinder extends BaseFinder {
 
     Element modelsXML = element.getChild(MODELS);
     for (Element modelXML : (List<Element>) modelsXML.getChildren(MODEL)) {
-      SModelUID modelUID = SModelUID.fromString(modelXML.getAttribute(MODEL_UID).getValue());
-      SModelDescriptor modelDescriptor = project.getScope().getModelDescriptor(modelUID);
+      SModelReference modelReference = SModelReference.fromString(modelXML.getAttribute(MODEL_UID).getValue());
+      SModelDescriptor modelDescriptor = project.getScope().getModelDescriptor(modelReference);
       if (modelDescriptor != null) {
         SModel model = modelDescriptor.getSModel();
         myModels.add(model);

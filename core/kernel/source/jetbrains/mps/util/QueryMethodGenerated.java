@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 public class QueryMethodGenerated implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(QueryMethodGenerated.class);
 
-  private static Map<Pair<SModelUID, String>, Method> ourMethods = new HashMap<Pair<SModelUID, String>, Method>();
+  private static Map<Pair<SModelReference, String>, Method> ourMethods = new HashMap<Pair<SModelReference, String>, Method>();
   private static Set<String> ourClassesReportedAsNotFound = new HashSet<String>();
 
   public static IModule findModuleForModel(SModel sourceModel) {
@@ -55,7 +55,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
   }
 
   private static Method getQueryMethod(SModel sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    Pair<SModelUID, String> pair = new Pair<SModelUID, String>(sourceModel.getUID(), methodName);
+    Pair<SModelReference, String> pair = new Pair<SModelReference, String>(sourceModel.getUID(), methodName);
     if (QueryMethodGenerated.ourMethods.containsKey(pair)) {
       return QueryMethodGenerated.ourMethods.get(pair);
     }

@@ -57,8 +57,8 @@ public class ModelReader3 implements IModelReader {
   public SModel readModel(Document document, String modelShortName, String stereotype) {
     Element rootElement = document.getRootElement();
 
-    SModelUID modelUID = SModelUID.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
-    SModel model = new SModel(modelUID);
+    SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
+    SModel model = new SModel(modelReference);
 
     model.setLoading(true);
     try {
@@ -136,9 +136,9 @@ public class ModelReader3 implements IModelReader {
         model.setMaxImportIndex(importIndex);
       }
 
-      SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
-      importedModelUID = upgradeModelUID(importedModelUID);
-      model.addImportElement(importedModelUID, importIndex, usedModelVersion);
+      SModelReference importedModelReference = SModelReference.fromString(importedModelUIDString);
+      importedModelReference = upgradeModelUID(importedModelReference);
+      model.addImportElement(importedModelReference, importIndex, usedModelVersion);
     }
 
     ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
@@ -172,8 +172,8 @@ public class ModelReader3 implements IModelReader {
     return model;
   }
 
-  public SModelUID upgradeModelUID(SModelUID modelUID) {
-    return new SModelUID(modelUID.getLongName(), upgradeStereotype(modelUID.getStereotype()));
+  public SModelReference upgradeModelUID(SModelReference modelReference) {
+    return new SModelReference(modelReference.getLongName(), upgradeStereotype(modelReference.getStereotype()));
   }
 
   protected void readLanguageAspects(SModel model, List<Element> aspectElements) {
@@ -189,7 +189,7 @@ public class ModelReader3 implements IModelReader {
         }
       }
       if (aspectModelUID != null) {
-        model.addAdditionalModelVersion(upgradeModelUID(SModelUID.fromString(aspectModelUID)), version);
+        model.addAdditionalModelVersion(upgradeModelUID(SModelReference.fromString(aspectModelUID)), version);
       }
     }
   }

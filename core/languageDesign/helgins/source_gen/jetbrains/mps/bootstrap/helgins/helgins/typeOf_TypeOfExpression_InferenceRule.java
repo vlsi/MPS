@@ -18,12 +18,12 @@ public class typeOf_TypeOfExpression_InferenceRule implements InferenceRule_Runt
     {
       SNode _nodeToCheck_1029348928467 = typeOfExpression;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(typeOfExpression, "term", true), "jetbrains.mps.bootstrap.helgins.helgins", "1178192158210", true), new QuotationClass_3().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1178192184638", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(typeOfExpression, "term", true), "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1178192158210", true), new QuotationClass_3().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1178192184638", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = typeOfExpression;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(typeOfExpression, "jetbrains.mps.bootstrap.helgins.helgins", "1198582744237", true), new QuotationClass_4().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1198582744235", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(typeOfExpression, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1198582744237", true), new QuotationClass_4().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1198582744235", intentionProvider);
     }
   }
 

@@ -41,7 +41,7 @@ public class MissingDependenciesFixer {
     });
 
     final List<IModule> newImports = new ArrayList<IModule>();
-    for (SModelUID modelImport : myModelDescriptor.getSModel().getImportedModelUIDs()) {
+    for (SModelReference modelImport : myModelDescriptor.getSModel().getImportedModelUIDs()) {
       if (moduleScope[0].getModelDescriptor(modelImport) == null) {
         SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(modelImport);
         if (sm != null) {

@@ -15,11 +15,11 @@ public class check_ClassifierType_NonTypesystemRule implements NonTypesystemRule
 
   public void applyRule(final SNode classifierType) {
     if (!(SLinkOperations.getCount(classifierType, "parameter") == 0 || SLinkOperations.getCount(classifierType, "parameter") == SLinkOperations.getCount(SLinkOperations.getTarget(classifierType, "classifier", false), "typeVariableDeclaration"))) {
-      TypeChecker.getInstance().reportTypeError(classifierType, "wrong number of type parameters", "jetbrains.mps.baseLanguage.helgins", "1195494591081");
+      TypeChecker.getInstance().reportTypeError(classifierType, "wrong number of type parameters", "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1195494591081");
     }
     for(SNode typeParameter : SLinkOperations.getTargets(classifierType, "parameter", true)) {
       if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeParameter, SLinkOperations.getTarget(new QuotationClass_66().createNode(), "descriptor", false), false, false)))) {
-        TypeChecker.getInstance().reportTypeError(typeParameter, "primitive types not allowed", "jetbrains.mps.baseLanguage.helgins", "1195494591112");
+        TypeChecker.getInstance().reportTypeError(typeParameter, "primitive types not allowed", "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1195494591112");
       }
     }
   }

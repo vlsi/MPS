@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.progress.util;
 
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 
 import java.util.*;
@@ -24,8 +24,8 @@ public class ModelsProgressHelper {
     return modelTaskName(modelDescriptor.getModelUID());
   }
 
-  public String modelTaskName(SModelUID modelUID) {
-    return modelUID.toString() + "_" + myTaskKind;
+  public String modelTaskName(SModelReference modelReference) {
+    return modelReference.toString() + "_" + myTaskKind;
   }
 
   public String modelTaskKind() {

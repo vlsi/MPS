@@ -82,27 +82,42 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1199462256696(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode overriden = SLinkOperations.getTarget(_context.getNode(), "overrides", false);
-    return SNodeOperations.getModel(overriden).getUID().getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
+    if (overriden == null) {
+      return null;
+    }
+    return SNodeOperations.getModel(overriden).getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1199464123907(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode overriden = SLinkOperations.getTarget(_context.getNode(), "overrides", false);
-    return SNodeOperations.getModel(overriden).getUID().getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
+    if (overriden == null) {
+      return null;
+    }
+    return SNodeOperations.getModel(overriden).getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1199464161444(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false);
-    return SNodeOperations.getModel(conceptDeclaration) + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+    if (conceptDeclaration == null) {
+      return null;
+    }
+    return SNodeOperations.getModel(conceptDeclaration).getSModelFqName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1199466527696(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false);
-    return SNodeOperations.getModel(conceptDeclaration) + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+    if (conceptDeclaration == null) {
+      return null;
+    }
+    return SNodeOperations.getModel(conceptDeclaration).getSModelFqName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1199468168869(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode overriden = SLinkOperations.getTarget(_context.getNode(), "overrides", false);
-    return SNodeOperations.getModel(overriden).getUID().getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
+    if (overriden == null) {
+      return null;
+    }
+    return SNodeOperations.getModel(overriden).getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1200921209509(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -131,7 +146,7 @@ public class QueriesGenerated {
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_0);
       if (coercedNode_0 != null) {
         SNode abstractConceptDeclaration = (SNode)pattern_0.PatternVar0;
-        return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
+        return SNodeOperations.getModel(abstractConceptDeclaration).getSModelFqName() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       } else
       {
       }

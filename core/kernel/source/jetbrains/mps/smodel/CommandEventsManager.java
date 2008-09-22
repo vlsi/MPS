@@ -38,7 +38,7 @@ public class CommandEventsManager implements ApplicationComponent {
   }
 
   private void fireEvents(List<SModelEvent> events) {
-    Map<SModelUID, List<SModelEvent>> eventsByModel = new LinkedHashMap<SModelUID, List<SModelEvent>>();
+    Map<SModelReference, List<SModelEvent>> eventsByModel = new LinkedHashMap<SModelReference, List<SModelEvent>>();
 
     for (SModelEvent e : events) {
       if (!eventsByModel.containsKey(e.getModel().getUID())) {
@@ -47,10 +47,10 @@ public class CommandEventsManager implements ApplicationComponent {
       eventsByModel.get(e.getModel().getUID()).add(e);
     }
 
-    for (SModelUID modelUID : eventsByModel.keySet()) {
-      SModelDescriptor sm = mySModelRepository.getModelDescriptor(modelUID);
+    for (SModelReference modelReference : eventsByModel.keySet()) {
+      SModelDescriptor sm = mySModelRepository.getModelDescriptor(modelReference);
       if (sm == null) continue;
-      List<SModelEvent> modelEvents = eventsByModel.get(modelUID);
+      List<SModelEvent> modelEvents = eventsByModel.get(modelReference);
       sm.getSModel().fireSModelChangedInCommandEvent(Collections.unmodifiableList(modelEvents));
     }
   }

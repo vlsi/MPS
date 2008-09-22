@@ -3,7 +3,6 @@ package jetbrains.mps.cache;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 
 import java.util.*;
@@ -36,11 +35,11 @@ public class CachesManager implements ApplicationComponent {
     mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter() {
       public void modelRemoved(SModelDescriptor modelDescriptor) {
         List keysToRemove = new ArrayList();
-        SModelUID uid = modelDescriptor.getModelUID();
+        SModelReference reference = modelDescriptor.getModelUID();
         for (Object key : myDependsOnModels.keySet()) {
           List<SModelDescriptor> dependsOnModels = myDependsOnModels.get(key);
           for (SModelDescriptor dependsOnModel : dependsOnModels) {
-            if (dependsOnModel.getModelUID().equals(uid)) {
+            if (dependsOnModel.getModelUID().equals(reference)) {
               keysToRemove.add(key);
             }
           }

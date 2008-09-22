@@ -2,7 +2,7 @@ package jetbrains.mps.smodel.persistence.def.v1;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
@@ -57,8 +57,8 @@ public class ModelReader1 implements IModelReader {
 //      LOG.assertLog(shortName.equals(modelShortName), "Short name should be equal " + modelShortName + " (in model " + modelLongName + ")");  todo commented out temporary
     }
 
-    SModelUID modelUID = new SModelUID(modelLongName, upgradeStereotype(stereotype));
-    SModel model = new SModel(modelUID);
+    SModelReference modelReference = new SModelReference(modelLongName, upgradeStereotype(stereotype));
+    SModel model = new SModel(modelReference);
 
     model.setLoading(true);
     try {
@@ -136,9 +136,9 @@ public class ModelReader1 implements IModelReader {
         model.setMaxImportIndex(importIndex);
       }
 
-      SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
-      importedModelUID = upgradeModelUID(importedModelUID);
-      model.addImportElement(importedModelUID, importIndex, usedModelVersion);
+      SModelReference importedModelReference = SModelReference.fromString(importedModelUIDString);
+      importedModelReference = upgradeModelUID(importedModelReference);
+      model.addImportElement(importedModelReference, importIndex, usedModelVersion);
     }
 
     ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
@@ -172,8 +172,8 @@ public class ModelReader1 implements IModelReader {
     return model;
   }
 
-  public SModelUID upgradeModelUID(SModelUID modelUID) {
-    return new SModelUID(modelUID.getLongName(), upgradeStereotype(modelUID.getStereotype()));
+  public SModelReference upgradeModelUID(SModelReference modelReference) {
+    return new SModelReference(modelReference.getLongName(), upgradeStereotype(modelReference.getStereotype()));
   }
 
   protected void readLanguageAspects(SModel model, List<Element> aspectElements) {
@@ -189,7 +189,7 @@ public class ModelReader1 implements IModelReader {
         }
       }
       if (aspectModelUID != null) {
-        model.addAdditionalModelVersion(upgradeModelUID(SModelUID.fromString(aspectModelUID)), version);
+        model.addAdditionalModelVersion(upgradeModelUID(SModelReference.fromString(aspectModelUID)), version);
       }
     }
   }

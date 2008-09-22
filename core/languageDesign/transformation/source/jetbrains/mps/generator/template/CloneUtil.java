@@ -30,15 +30,15 @@ public class CloneUtil {
     outputNode.putProperties(inputNode);
     outputNode.putUserObjects(inputNode);
     for (SReference reference : inputNode.getReferences()) {
-      SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : outputModel.getUID();
-      if (targetModelUID == null) {
+      SModelReference targetModelReference = reference.isExternal() ? reference.getTargetModelUID() : outputModel.getUID();
+      if (targetModelReference == null) {
         LOG.warning("broken reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
       } else {
         if (reference instanceof StaticReference) {
           StaticReference outputReference = new StaticReference(
                   reference.getRole(),
                   outputNode,
-                  targetModelUID,
+            targetModelReference,
                   ((StaticReference) reference).getTargetNodeId(),
                   reference.getResolveInfo());
           outputNode.addReference(outputReference);
@@ -46,7 +46,7 @@ public class CloneUtil {
           DynamicReference outputReference = new DynamicReference(
                   reference.getRole(),
                   outputNode,
-                  targetModelUID,
+            targetModelReference,
                   reference.getResolveInfo());
           outputNode.addReference(outputReference);
         } else {

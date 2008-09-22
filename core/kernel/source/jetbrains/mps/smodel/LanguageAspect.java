@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.projectLanguage.structure.Model;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -133,7 +132,7 @@ public enum LanguageAspect {
   }
 
   public SModelDescriptor get(Language l) {
-    return SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(l.getNamespace() + "." + myName));
+    return SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(l.getNamespace() + "." + myName));
   }
 
   public String getName() {
@@ -158,7 +157,7 @@ public enum LanguageAspect {
         }
 
         for (String modelUID : getModelsToImport(l)) {
-          model.getSModel().addImportedModel(SModelUID.fromString(modelUID));
+          model.getSModel().addImportedModel(SModelReference.fromString(modelUID));
         }
 
         model.getSModel().addImportedModel(l.getStructureModelDescriptor().getModelUID());

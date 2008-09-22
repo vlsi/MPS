@@ -119,7 +119,7 @@ public class RefactoringProcessor {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             SModelDescriptor modelDescriptor = refactoringContext.getSelectedModel();
-            SModelUID initialModelUID = modelDescriptor.getModelUID();
+            SModelReference initialModelReference = modelDescriptor.getModelUID();
             refactoring.doRefactor(refactoringContext);
             final List<SNode> nodesToOpen = refactoring.getNodesToOpen(refactoringContext);
             if (!nodesToOpen.isEmpty()) {
@@ -139,7 +139,7 @@ public class RefactoringProcessor {
             List<SModel> modelsToUpdate = refactoring.getModelsToUpdate(refactoringContext);
             if (!refactoringContext.isLocal()) {
               if (refactoring.doesUpdateModel()) {
-                writeInLogAndUpdateModels(initialModelUID, model, refactoringContext);
+                writeInLogAndUpdateModels(initialModelReference, model, refactoringContext);
               }
             } else {
               if (refactoring.doesUpdateModel()) {
@@ -175,7 +175,7 @@ public class RefactoringProcessor {
     ThreadUtils.runInUIThreadNoWait(runnable);
   }
 
-  public void writeInLogAndUpdateModels(SModelUID initialModelUID, SModel model, RefactoringContext refactoringContext) {
+  public void writeInLogAndUpdateModels(SModelReference initialModelReference, SModel model, RefactoringContext refactoringContext) {
     writeIntoLog(model, refactoringContext);
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (!SModelStereotype.isUserModel(anotherDescriptor)) {
@@ -184,9 +184,9 @@ public class RefactoringProcessor {
       if (!anotherDescriptor.isInitialized()) continue;
       SModel anotherModel = anotherDescriptor.getSModel();
 
-      Set<SModelUID> dependenciesModels = anotherModel.getDependenciesModelUIDs();
+      Set<SModelReference> dependenciesModels = anotherModel.getDependenciesModelUIDs();
       if (model != anotherModel
-        && !dependenciesModels.contains(initialModelUID)) continue;
+        && !dependenciesModels.contains(initialModelReference)) continue;
       processModel(anotherModel, model, refactoringContext);
     }
   }

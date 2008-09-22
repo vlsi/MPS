@@ -123,15 +123,15 @@ public class ModelPersistence {
   }
 
   private static SModel upgradeModelPersistence(SModel model, int fromVersion) {
-    SModelUID uid = model.getUID();
+    SModelReference reference = model.getUID();
     int version = fromVersion;
     while (version < currentPersistenceVersion) {
       IModelWriter writer = modelWriters.get(++version);
       Document document = writer.saveModel(model, false);
       model.dispose();
-      model = modelReaders.get(version).readModel(document, uid.getShortName(), uid.getStereotype());
+      model = modelReaders.get(version).readModel(document, reference.getShortName(), reference.getStereotype());
     }
-    LOG.info("persistence upgraded: " + fromVersion + "->" + currentPersistenceVersion + " " + uid);
+    LOG.info("persistence upgraded: " + fromVersion + "->" + currentPersistenceVersion + " " + reference);
     return model;
   }
 
@@ -203,7 +203,7 @@ public class ModelPersistence {
     return modelReaders.get(currentPersistenceVersion).needsRecreating(file);
   }
 
-  public static SModelUID upgradeModelUID(SModelUID modelUID) {
-    return modelReaders.get(currentPersistenceVersion).upgradeModelUID(modelUID);
+  public static SModelReference upgradeModelUID(SModelReference modelReference) {
+    return modelReaders.get(currentPersistenceVersion).upgradeModelUID(modelReference);
   }
 }

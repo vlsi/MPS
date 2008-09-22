@@ -10,7 +10,7 @@ import com.intellij.openapi.application.ApplicationManager;
  */
 public class AuxilaryRuntimeModel implements ModelOwner {
   private static final SModelFqName myModelFqName = new SModelFqName("" + System.currentTimeMillis(), "$orphan-stuff$");
-  private static final SModelUID myModelUID = new SModelUID(myModelFqName, SModelId.generate());
+  private static final SModelReference MY_MODEL_REFERENCE = new SModelReference(myModelFqName, SModelId.generate());
 
   public AuxilaryRuntimeModel() {
   }
@@ -25,9 +25,9 @@ public class AuxilaryRuntimeModel implements ModelOwner {
   }
 
   private SModelDescriptor getDescriptor_internal() {
-    SModelDescriptor modelDescriptor = (SModelRepository.getInstance().getModelDescriptor(myModelUID));
+    SModelDescriptor modelDescriptor = (SModelRepository.getInstance().getModelDescriptor(MY_MODEL_REFERENCE));
     if (modelDescriptor == null) {
-      modelDescriptor = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, myModelUID) {
+      modelDescriptor = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, MY_MODEL_REFERENCE) {
         protected SModel loadModel() {
           SModel model = new SModel(getModelUID());
 //          model.setLoading(true);

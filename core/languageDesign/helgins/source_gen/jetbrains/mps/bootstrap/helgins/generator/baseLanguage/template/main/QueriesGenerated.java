@@ -249,14 +249,14 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1174644028587(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
     SNode conceptDecl = SLinkOperations.getTarget(applicableNode, "concept", false);
-    return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1174644237197(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
     SNode patternExpr = SLinkOperations.getTarget(applicableNode, "pattern", true);
     SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
-    return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1174666025058(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -357,27 +357,27 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1188831219936(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
     SNode conceptDecl = SLinkOperations.getTarget(applicableNode, "concept", false);
-    return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1188831219976(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
     SNode patternExpr = SLinkOperations.getTarget(applicableNode, "pattern", true);
     SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
-    return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1188831339623(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "anotherNode", true);
     SNode conceptDecl = SLinkOperations.getTarget(applicableNode, "concept", false);
-    return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1188831339663(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "anotherNode", true);
     SNode patternExpr = SLinkOperations.getTarget(applicableNode, "pattern", true);
     SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
-    return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1188910585269(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -447,27 +447,27 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1201609469872(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
     SNode conceptDecl = SLinkOperations.getTarget(applicableNode, "concept", false);
-    return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1201609469912(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
     SNode patternExpr = SLinkOperations.getTarget(applicableNode, "pattern", true);
     SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
-    return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1201609469964(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true);
     SNode conceptDecl = SLinkOperations.getTarget(applicableNode, "concept", false);
-    return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1201609470004(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true);
     SNode patternExpr = SLinkOperations.getTarget(applicableNode, "pattern", true);
     SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
-    return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1201609470053(final IOperationContext operationContext, final PropertyMacroContext _context) {

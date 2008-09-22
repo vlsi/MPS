@@ -19,14 +19,14 @@ public class typeOf_andExpression_InferenceRule implements InferenceRule_Runtime
     {
       SNode _nodeToCheck_1029348928467 = andExpr;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ae, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1175495306377", true), new QuotationClass_0().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1175495304171", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ae, "leftExpression", true), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1175495306377", true), new QuotationClass_0().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1175495304171", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = andExpr;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ae, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins", "1175495418307", true), new QuotationClass_1().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1175495418306", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ae, "rightExpression", true), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1175495418307", true), new QuotationClass_1().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1175495418306", false, 0, intentionProvider);
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(), ae, "jetbrains.mps.baseLanguage.helgins", "1175496779853");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(), ae, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1175496779853");
   }
 
   public String getApplicableConceptFQName() {

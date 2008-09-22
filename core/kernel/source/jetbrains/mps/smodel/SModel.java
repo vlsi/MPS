@@ -39,7 +39,7 @@ public class SModel implements Iterable<SNode> {
   private Set<String> myVersionedLanguageNamespaces = new HashSet<String>();
 
   private List<SNode> myRoots = new ArrayList<SNode>();
-  private SModelUID myUID;
+  private SModelReference myReference;
 
   @ForDebug
   private Throwable myStackTrace;
@@ -62,18 +62,18 @@ public class SModel implements Iterable<SNode> {
   private boolean myUsesLog;
   private boolean myRegistrationsForbidden = false;
 
-  public SModel(@NotNull SModelUID modelUID) {
-    myUID = modelUID;
+  public SModel(@NotNull SModelReference modelReference) {
+    myReference = modelReference;
   }
 
   public SModel() {
-    this(SModelUID.fromString("test.model"));
+    this(SModelReference.fromString("test.model"));
   }
 
 
   @NotNull
-  public SModelUID getUID() {
-    return myUID;
+  public SModelReference getUID() {
+    return myReference;
   }
 
   public SModelFqName getSModelFqName() {
@@ -86,7 +86,7 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public String getShortName() {
-    return myUID.getShortName();
+    return myReference.getShortName();
   }
 
   public void runLoadingAction(@NotNull Runnable runnable) {
@@ -106,12 +106,12 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public String getStereotype() {
-    return myUID.getStereotype();
+    return myReference.getStereotype();
   }
 
   @NotNull
   public String getLongName() {
-    return myUID.getLongName();
+    return myReference.getLongName();
   }
 
   @Deprecated
@@ -338,22 +338,22 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireImportAddedEvent(@NotNull SModelUID modelUID) {
+  void fireImportAddedEvent(@NotNull SModelReference modelReference) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       try {
-        sModelListener.importAdded(new SModelImportEvent(this, modelUID));
+        sModelListener.importAdded(new SModelImportEvent(this, modelReference));
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
   }
 
-  void fireImportRemovedEvent(@NotNull SModelUID modelUID) {
+  void fireImportRemovedEvent(@NotNull SModelReference modelReference) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       try {
-        sModelListener.importAdded(new SModelImportEvent(this, modelUID));
+        sModelListener.importAdded(new SModelImportEvent(this, modelReference));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -773,42 +773,42 @@ public class SModel implements Iterable<SNode> {
   }
 
 
-  public boolean hasImportedModel(@NotNull SModelUID modelUID) {
-    return getImportElement(modelUID) != null;
+  public boolean hasImportedModel(@NotNull SModelReference modelReference) {
+    return getImportElement(modelReference) != null;
   }
 
-  public void addImportedModel(@NotNull SModelUID modelUID) {
-    addImportElement(modelUID);
+  public void addImportedModel(@NotNull SModelReference modelReference) {
+    addImportElement(modelReference);
   }
 
-  void addImportElement(@NotNull SModelUID modelUID) {
-    ImportElement importElement = getImportElement(modelUID);
+  void addImportElement(@NotNull SModelReference modelReference) {
+    ImportElement importElement = getImportElement(modelReference);
     if (importElement != null) return;
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
     int usedVersion = -1;
     if (modelDescriptor != null) {
       usedVersion = modelDescriptor.getVersion();
     }
-    importElement = new ImportElement(modelUID, ++myMaxImportIndex, usedVersion);
+    importElement = new ImportElement(modelReference, ++myMaxImportIndex, usedVersion);
     myImports.add(importElement);
-    fireImportAddedEvent(modelUID);
+    fireImportAddedEvent(modelReference);
   }
 
-  public void addImportElement(@NotNull SModelUID modelUID, int referenceId, int usedVersion) {
-    ImportElement importElement = new ImportElement(modelUID, referenceId, usedVersion);
+  public void addImportElement(@NotNull SModelReference modelReference, int referenceId, int usedVersion) {
+    ImportElement importElement = new ImportElement(modelReference, referenceId, usedVersion);
     myImports.add(importElement);
-    fireImportAddedEvent(modelUID);
+    fireImportAddedEvent(modelReference);
   }
 
-  public void addAdditionalModelVersion(@NotNull SModelUID modelUID, int usedVersion) {
-    ImportElement importElement = new ImportElement(modelUID, -1, usedVersion);
+  public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
+    ImportElement importElement = new ImportElement(modelReference, -1, usedVersion);
     myAdditionalModelsVersions.add(importElement);
   }
 
   @Nullable
-  public ImportElement getImportElement(@NotNull SModelUID modelUID) {
+  public ImportElement getImportElement(@NotNull SModelReference modelReference) {
     for (ImportElement importElement : myImports) {
-      if (importElement.getModelUID().equals(modelUID)) {
+      if (importElement.getModelUID().equals(modelReference)) {
         return importElement;
       }
     }
@@ -816,9 +816,9 @@ public class SModel implements Iterable<SNode> {
   }
 
   @Nullable
-  ImportElement getAdditionalModelElement(@NotNull SModelUID modelUID) {
+  ImportElement getAdditionalModelElement(@NotNull SModelReference modelReference) {
     for (ImportElement importElement : myAdditionalModelsVersions) {
-      if (importElement.getModelUID().equals(modelUID)) {
+      if (importElement.getModelUID().equals(modelReference)) {
         return importElement;
       }
     }
@@ -830,11 +830,11 @@ public class SModel implements Iterable<SNode> {
   }
 
 
-  public void deleteImportedModel(@NotNull SModelUID modelUID) {
-    ImportElement importElement = getImportElement(modelUID);
+  public void deleteImportedModel(@NotNull SModelReference modelReference) {
+    ImportElement importElement = getImportElement(modelReference);
     if (importElement != null) {
       myImports.remove(importElement);
-      fireImportRemovedEvent(modelUID);
+      fireImportRemovedEvent(modelReference);
     }
   }
 
@@ -847,12 +847,12 @@ public class SModel implements Iterable<SNode> {
   }
 
   @NotNull
-  public List<SModelUID> getImportedModelUIDs() {
-    List<SModelUID> uids = new ArrayList<SModelUID>();
+  public List<SModelReference> getImportedModelUIDs() {
+    List<SModelReference> references = new ArrayList<SModelReference>();
     for (ImportElement importElement : myImports) {
-      uids.add(importElement.getModelUID());
+      references.add(importElement.getModelUID());
     }
-    return Collections.unmodifiableList(uids);
+    return Collections.unmodifiableList(references);
   }
 
   @NotNull
@@ -882,16 +882,16 @@ public class SModel implements Iterable<SNode> {
   }
 
   @NotNull
-  public Set<SModelUID> getDependenciesModelUIDs() {
-    return CollectionUtil.map(getDependenciesModels(), new Mapper<SModelDescriptor, SModelUID>() {
-      public SModelUID map(SModelDescriptor sModelDescriptor) {
+  public Set<SModelReference> getDependenciesModelUIDs() {
+    return CollectionUtil.map(getDependenciesModels(), new Mapper<SModelDescriptor, SModelReference>() {
+      public SModelReference map(SModelDescriptor sModelDescriptor) {
         return sModelDescriptor.getModelUID();
       }
     });
   }
 
   @Nullable
-  public SModelUID getImportedModelUID(int referenceID) {
+  public SModelReference getImportedModelUID(int referenceID) {
     for (ImportElement importElement : myImports) {
       if (importElement.getReferenceID() == referenceID) {
         return importElement.getModelUID();
@@ -904,13 +904,13 @@ public class SModel implements Iterable<SNode> {
   public Iterator<SModelDescriptor> importedModels(@NotNull IScope scope) {
     List<SModelDescriptor> modelsList = new ArrayList<SModelDescriptor>();
     for (ImportElement importElement : myImports) {
-      SModelUID modelUID = importElement.getModelUID();
-      SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelUID);
+      SModelReference modelReference = importElement.getModelUID();
+      SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelReference);
 
       if (modelDescriptor == null) {
         for (Language l : getLanguages(scope)) {
           for (SModelDescriptor accessory : l.getAccessoryModels()) {
-            if (modelUID.equals(accessory.getModelUID())) {
+            if (modelReference.equals(accessory.getModelUID())) {
               modelDescriptor = accessory;
               break;
             }
@@ -921,7 +921,7 @@ public class SModel implements Iterable<SNode> {
       if (modelDescriptor != null) {
         modelsList.add(modelDescriptor);
       } else {
-        LOG.error("Couldn't find model descriptor for imported model: \"" + modelUID + "\" in: \"" + getUID() + "\"");
+        LOG.error("Couldn't find model descriptor for imported model: \"" + modelReference + "\" in: \"" + getUID() + "\"");
       }
     }
     return modelsList.iterator();
@@ -1047,7 +1047,7 @@ public class SModel implements Iterable<SNode> {
 
   public void validateLanguagesAndImports() {
     Set<String> usedLanguages = new HashSet<String>(getLanguageNamespaces(GlobalScope.getInstance()));
-    Set<SModelUID> importedModels = new HashSet<SModelUID>();
+    Set<SModelReference> importedModels = new HashSet<SModelReference>();
     for (SModelDescriptor sm : allImportedModels(GlobalScope.getInstance())) {
       importedModels.add(sm.getModelUID());
     }
@@ -1062,10 +1062,10 @@ public class SModel implements Iterable<SNode> {
       List<SReference> references = node.getReferences();
       for (SReference reference : references) {
         if (reference.isExternal()) {
-          SModelUID targetModelUID = reference.getTargetModelUID();
-          if (targetModelUID != null && !importedModels.contains(targetModelUID)) {
-            addImportedModel(targetModelUID);
-            importedModels.add(targetModelUID);
+          SModelReference targetModelReference = reference.getTargetModelUID();
+          if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
+            addImportedModel(targetModelReference);
+            importedModels.add(targetModelReference);
           }
         }
       }
@@ -1095,28 +1095,28 @@ public class SModel implements Iterable<SNode> {
   }
 
   @UseCarefully
-  public void changeImportedModelUID(SModelUID oldImportedModelUID, SModelUID newImportedModelUID) {
+  public void changeImportedModelUID(SModelReference oldImportedModelReference, SModelReference newImportedModelReference) {
     for (ImportElement importElement : myImports) {
-      if (importElement.getModelUID().equals(oldImportedModelUID)) {
-        importElement.myModelDescriptor = newImportedModelUID;
+      if (importElement.getModelUID().equals(oldImportedModelReference)) {
+        importElement.myModelDescriptor = newImportedModelReference;
       }
     }
     for (SNode node : getAllNodesWithIds()) {
       for (SReference reference : node.getReferences()) {
-        if (oldImportedModelUID.equals(reference.getTargetModelUID())) {
-          reference.setTargetModelUID(newImportedModelUID);
+        if (oldImportedModelReference.equals(reference.getTargetModelUID())) {
+          reference.setTargetModelUID(newImportedModelReference);
         }
       }
     }
   }
 
-  public void changeModelUID(SModelUID newModelUID) {
-    SModelUID oldUID = myUID;
-    myUID = newModelUID;
+  public void changeModelUID(SModelReference newModelReference) {
+    SModelReference oldReference = myReference;
+    myReference = newModelReference;
     for (SNode node : getAllNodesWithIds()) {
       for (SReference reference : node.getReferences()) {
-        if (oldUID.equals(reference.getTargetModelUID())) {
-          reference.setTargetModelUID(newModelUID);
+        if (oldReference.equals(reference.getTargetModelUID())) {
+          reference.setTargetModelUID(newModelReference);
         }
       }
     }
@@ -1147,33 +1147,33 @@ public class SModel implements Iterable<SNode> {
     return new ArrayList<String>(myLanguagesEngagedOnGeneration);
   }
 
-  public int getUsedVersion(SModelUID sModelUID) {
-    ImportElement importElement = getImportElement(sModelUID);
+  public int getUsedVersion(SModelReference sModelReference) {
+    ImportElement importElement = getImportElement(sModelReference);
     if (importElement == null) {
-      return getLanguageAspectModelVersion(sModelUID);
+      return getLanguageAspectModelVersion(sModelReference);
     }
     return importElement.getUsedVersion();
   }
 
-  public int getLanguageAspectModelVersion(SModelUID sModelUID) {
-    ImportElement importElement = getAdditionalModelElement(sModelUID);
+  public int getLanguageAspectModelVersion(SModelReference sModelReference) {
+    ImportElement importElement = getAdditionalModelElement(sModelReference);
     if (importElement == null) return -1;
     return importElement.getUsedVersion();
   }
 
-  /*package*/ void updateImportedModelUsedVersion(SModelUID sModelUID, int currentVersion) {
-    ImportElement importElement = getImportElement(sModelUID);
+  /*package*/ void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
+    ImportElement importElement = getImportElement(sModelReference);
     if (importElement != null) {
       importElement.myUsedVersion = currentVersion;
     } 
 
-    importElement = getAdditionalModelElement(sModelUID);
+    importElement = getAdditionalModelElement(sModelReference);
     if (importElement != null) {
       importElement.myUsedVersion = currentVersion;
     } else {
-      addAdditionalModelVersion(sModelUID, currentVersion);
+      addAdditionalModelVersion(sModelReference, currentVersion);
     }
-    fireImportAddedEvent(myUID);
+    fireImportAddedEvent(myReference);
   }
 
   /*package*/ void increaseVersion() {
@@ -1215,21 +1215,21 @@ public class SModel implements Iterable<SNode> {
 
   /*package*/
   public static class ImportElement {
-    private SModelUID myModelDescriptor;
+    private SModelReference myModelDescriptor;
     private int myReferenceID;
     private int myUsedVersion;
 
-    public ImportElement(SModelUID modelUID, int referenceID) {
-      this(modelUID, referenceID, -1);
+    public ImportElement(SModelReference modelReference, int referenceID) {
+      this(modelReference, referenceID, -1);
     }
 
-    public ImportElement(SModelUID modelUID, int referenceID, int usedVersion) {
-      myModelDescriptor = modelUID;
+    public ImportElement(SModelReference modelReference, int referenceID, int usedVersion) {
+      myModelDescriptor = modelReference;
       myReferenceID = referenceID;
       myUsedVersion = usedVersion;
     }
 
-    public SModelUID getModelUID() {
+    public SModelReference getModelUID() {
       return myModelDescriptor;
     }
 
@@ -1386,9 +1386,9 @@ public class SModel implements Iterable<SNode> {
     for (SNode node : getAllNodesWithIds()) {
       for (SReference reference : node.getReferences()) {
         if (reference.getTargetModelUID().getSModelId() == null) {
-          SModelUID oldUID = reference.getTargetModelUID();
-          SModelUID newUID = upgradeModelUID(oldUID);
-          reference.setTargetModelUID(newUID);
+          SModelReference oldReference = reference.getTargetModelUID();
+          SModelReference newReference = upgradeModelUID(oldReference);
+          reference.setTargetModelUID(newReference);
         }
       }
     }
@@ -1402,13 +1402,13 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  private SModelUID upgradeModelUID(SModelUID oldUID) {
-    SModelDescriptor model = GlobalScope.getInstance().getModelDescriptor(oldUID);
+  private SModelReference upgradeModelUID(SModelReference oldReference) {
+    SModelDescriptor model = GlobalScope.getInstance().getModelDescriptor(oldReference);
     if (model == null) {
-      return oldUID;
+      return oldReference;
     }
-    SModelUID newUID = model.getModelUID();
-    return newUID;
+    SModelReference newReference = model.getModelUID();
+    return newReference;
   }
 
   private static WeakSet<SModel> ourActiveModels = new WeakSet<SModel>();

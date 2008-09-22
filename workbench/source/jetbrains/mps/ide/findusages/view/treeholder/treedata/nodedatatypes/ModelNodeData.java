@@ -18,13 +18,13 @@ public class ModelNodeData extends BaseNodeData {
   private static final String MODEL = "model";
   private static final String UID = "uid";
 
-  public SModelUID myModelUID = SModelUID.fromString("");
+  public SModelReference myModelReference = SModelReference.fromString("");
   private SModelRepositoryListener myModelRepositoryListener = null;
   private boolean myIsRemoved = false;
 
   public ModelNodeData(PathItemRole role, SModel model, boolean isResult, boolean resultsSection) {
     super(role, model.getModelDescriptor().getLongName(), "", false, isResult, resultsSection);
-    myModelUID = model.getModelDescriptor().getModelUID();
+    myModelReference = model.getModelDescriptor().getModelUID();
 
     startListening();
   }
@@ -36,7 +36,7 @@ public class ModelNodeData extends BaseNodeData {
   private void startListening() {
     myModelRepositoryListener = new SModelRepositoryAdapter() {
       public void modelRemoved(SModelDescriptor modelDescriptor) {
-        if (modelDescriptor.getModelUID().equals(myModelUID)) {
+        if (modelDescriptor.getModelUID().equals(myModelReference)) {
           myIsRemoved = true;
           notifyChangeListeners();
         }
@@ -62,20 +62,20 @@ public class ModelNodeData extends BaseNodeData {
   }
 
   private SModelDescriptor getModelDescriptor() {
-    return SModelRepository.getInstance().getModelDescriptor(myModelUID);
+    return SModelRepository.getInstance().getModelDescriptor(myModelReference);
   }
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     super.write(element, project);
     Element modelXML = new Element(MODEL);
-    modelXML.setAttribute(UID, myModelUID.toString());
+    modelXML.setAttribute(UID, myModelReference.toString());
     element.addContent(modelXML);
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     super.read(element, project);
     Element modelXML = element.getChild(MODEL);
-    myModelUID = SModelUID.fromString(modelXML.getAttributeValue(UID));
+    myModelReference = SModelReference.fromString(modelXML.getAttributeValue(UID));
 
     if (!isInvalid()) {
       startListening();

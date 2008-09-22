@@ -135,7 +135,7 @@ public class SearchQuery implements IExternalizeable {
       }
     } else if (scopeType.equals(SCOPE_TYPE_MODEL)) {
       String modelUID = scopeXML.getAttribute(MODEL_ID).getValue();
-      SModelDescriptor sModelDescriptor = project.getScope().getModelDescriptor(SModelUID.fromString(modelUID));
+      SModelDescriptor sModelDescriptor = project.getScope().getModelDescriptor(SModelReference.fromString(modelUID));
       if (sModelDescriptor == null) {
         LOG.warning("model scope not found for model " + modelUID);
         throw new CantLoadSomethingException("model scope not found for model " + modelUID);

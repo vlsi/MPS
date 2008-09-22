@@ -3,7 +3,7 @@ package jetbrains.mps.helgins.inference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.intentions.IntentionProvider;
 
 /**
@@ -86,7 +86,7 @@ public class EquationInfo {
   }
 
   public SNode findRuleNode() {
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(myRuleModel));
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(myRuleModel));
     if (modelDescriptor == null) return null;
     return modelDescriptor.getSModel().getNodeById(myRuleId);
   }

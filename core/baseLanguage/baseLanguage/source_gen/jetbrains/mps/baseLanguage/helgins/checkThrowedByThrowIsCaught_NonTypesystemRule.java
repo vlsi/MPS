@@ -22,7 +22,7 @@ public class checkThrowedByThrowIsCaught_NonTypesystemRule implements NonTypesys
       return;
     }
     {
-      final SNode ThrowableType = TypeChecker.getInstance().getRuntimeSupport().typeOf(throwable, "jetbrains.mps.baseLanguage.helgins", "1210182461919", true);
+      final SNode ThrowableType = TypeChecker.getInstance().getRuntimeSupport().typeOf(throwable, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1210182461919", true);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(ThrowableType, new Runnable() {
 
         public void run() {
@@ -33,7 +33,7 @@ public class checkThrowedByThrowIsCaught_NonTypesystemRule implements NonTypesys
           }
         }
 
-      }, "jetbrains.mps.baseLanguage.helgins", "1210182438695");
+      }, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1210182438695");
     }
   }
 

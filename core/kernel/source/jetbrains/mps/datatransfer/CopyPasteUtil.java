@@ -29,7 +29,7 @@ public class CopyPasteUtil {
   }
 
 
-  private static void processImportsAndLanguages(HashSet<SModelUID> necessaryImports, HashSet<String> necessaryLanguages, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
+  private static void processImportsAndLanguages(HashSet<SModelReference> necessaryImports, HashSet<String> necessaryLanguages, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     necessaryImports.clear();
     necessaryLanguages.clear();
     Set<SNode> sourceNodes = sourceNodesToNewNodes.keySet();
@@ -39,8 +39,8 @@ public class CopyPasteUtil {
     }
     for (SReference ref : allReferences) {
       if (sourceNodesToNewNodes.get(ref.getTargetNode()) == null) {
-        SModelUID targetModelUID = ref.getTargetModelUID();
-        necessaryImports.add(targetModelUID);
+        SModelReference targetModelReference = ref.getTargetModelUID();
+        necessaryImports.add(targetModelReference);
       }
     }
   }
@@ -58,7 +58,7 @@ public class CopyPasteUtil {
       SNode targetNode = copyNode_internal(sourceNode, sourceNodesAndAttributes, sourceNodesToNewNodes, allReferences);
       result.add(targetNode);
     }
-    HashSet<SModelUID> necessaryImports = new HashSet<SModelUID>();
+    HashSet<SModelReference> necessaryImports = new HashSet<SModelReference>();
     HashSet<String> necessaryLanguages = new HashSet<String>();
     HashSet<String> necessaryDevKits = new HashSet<String>();  // todo populate
     SModel fakeModel = copyModelProperties(model);
@@ -74,7 +74,7 @@ public class CopyPasteUtil {
 
   public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModel model, SModel modelProperties,
                                                 Set<String> necessaryLanguages,
-                                                Set<SModelUID> necessaryImports,
+                                                Set<SModelReference> necessaryImports,
                                                 Set<String> necessaryDevKits) {
     if (sourceNodes.isEmpty()) return PasteNodeData.emptyPasteNodeData(null);
     List<SNode> result = new ArrayList<SNode>();
@@ -193,13 +193,13 @@ public class CopyPasteUtil {
 
 
   public static SModel copyModelProperties(SModel model) {
-    SModelUID modelUID = model.getUID();
-    SModelFqName fqName = new SModelFqName(modelUID.getLongName(), SModelStereotype.INTERNAL_COPY);
-    SModel newModel = new SModel(new SModelUID(fqName, SModelId.generate()));
+    SModelReference modelReference = model.getUID();
+    SModelFqName fqName = new SModelFqName(modelReference.getLongName(), SModelStereotype.INTERNAL_COPY);
+    SModel newModel = new SModel(new SModelReference(fqName, SModelId.generate()));
     for (String language : model.getExplicitlyImportedLanguages()) {
       newModel.addLanguage(language);
     }
-    for (SModelUID importedModel : model.getImportedModelUIDs()) {
+    for (SModelReference importedModel : model.getImportedModelUIDs()) {
       newModel.addImportedModel(importedModel);
     }
 
@@ -265,7 +265,7 @@ public class CopyPasteUtil {
       return new PasteNodeData(nodes,
         new HashSet<SReference>(), model,
         new HashSet<String>(),
-        new HashSet<SModelUID>(),
+        new HashSet<SModelReference>(),
         new HashSet<String>());
     }
 
@@ -277,16 +277,16 @@ public class CopyPasteUtil {
     return getNodesFromClipboard(model).get(0);
   }
 
-  public static boolean addImportsAndLanguagesToModel(final SModel targetModel, final Set<String> necessaryLanguages, final Set<SModelUID> necessaryImports, final IOperationContext context) {
+  public static boolean addImportsAndLanguagesToModel(final SModel targetModel, final Set<String> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
     final List<String> additionalLanguages = new ArrayList<String>();
-    final List<SModelUID> additionalModels = new ArrayList<SModelUID>();
+    final List<SModelReference> additionalModels = new ArrayList<SModelReference>();
     final Set<String> necessaryDevKits = new HashSet<String>();
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModelUID modelUID : necessaryImports) {
-          if (modelUID != null && !(targetModel.hasImportedModel(modelUID)) && !(targetModel.getUID().equals(modelUID)))
-            additionalModels.add(modelUID);
+        for (SModelReference modelReference : necessaryImports) {
+          if (modelReference != null && !(targetModel.hasImportedModel(modelReference)) && !(targetModel.getUID().equals(modelReference)))
+            additionalModels.add(modelReference);
         }
 
         for (String namespace : necessaryLanguages) {

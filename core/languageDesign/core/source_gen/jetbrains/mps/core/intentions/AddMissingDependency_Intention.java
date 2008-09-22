@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 
@@ -24,7 +24,7 @@ public class AddMissingDependency_Intention extends BaseIntention {
   public String getDescription(final SNode node, final EditorContext editorContext) {
     IScope scope = editorContext.getScope();
     for(SReference ref : node.getReferences()) {
-      SModelUID uid = ref.getTargetModelUID();
+      SModelReference uid = ref.getTargetModelUID();
       if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
         SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
         return "Add dependency on module " + sm.getModule();
@@ -36,7 +36,7 @@ public class AddMissingDependency_Intention extends BaseIntention {
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     IScope scope = editorContext.getScope();
     for(SReference ref : node.getReferences()) {
-      SModelUID uid = ref.getTargetModelUID();
+      SModelReference uid = ref.getTargetModelUID();
       if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
         return true;
       }
@@ -47,7 +47,7 @@ public class AddMissingDependency_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     IScope scope = editorContext.getScope();
     for(SReference ref : node.getReferences()) {
-      SModelUID uid = ref.getTargetModelUID();
+      SModelReference uid = ref.getTargetModelUID();
       if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
         SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
         editorContext.getOperationContext().getModule().addDependency(sm.getModule().getModuleUID(), false);

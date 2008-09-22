@@ -24,7 +24,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
       {
         SNode _nodeToCheck_1029348928467 = bmd;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_98().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1215105338790", false, 0, intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_98().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1215105338790", false, 0, intentionProvider);
       }
     }
     // ==========
@@ -51,7 +51,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "jetbrains.mps.baseLanguage.helgins@9_0", "1221737745002", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "r:1222085007939(jetbrains.mps.baseLanguage.helgins@3_0)", "1222085329648", intentionProvider);
           }
         }
       }
@@ -62,15 +62,15 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "jetbrains.mps.baseLanguage.helgins@9_0", "1221737745017", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "r:1222085007939(jetbrains.mps.baseLanguage.helgins@3_0)", "1222085329663", intentionProvider);
           }
         } else
         {
-          SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1178765405776", true);
+          SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1178765405776", true);
           {
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, _nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "jetbrains.mps.baseLanguage.helgins", "1185363921400", false, 0, intentionProvider);
+            TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, _nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1185363921400", false, 0, intentionProvider);
           }
         }
       }
@@ -80,11 +80,11 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
       // last expression statement can serve as return statement
       SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(bmd, "body", true), "statement", true)).last();
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-        SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStatement, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1178765601477", true);
+        SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStatement, "expression", true), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1178765601477", true);
         {
           SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(lastStatement, "expression", true);
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, _nodeToCheck_1029348928467, expectedRetType + " is expected", "jetbrains.mps.baseLanguage.helgins", "1185363855090", false, 0, intentionProvider);
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, _nodeToCheck_1029348928467, expectedRetType + " is expected", "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1185363855090", false, 0, intentionProvider);
         }
       }
     }

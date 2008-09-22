@@ -18,7 +18,7 @@ public class typeof_LinkPatternVariableReference_InferenceRule implements Infere
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.helgins.helgins", "1202486754560", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.helgins", "1202486760114", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1202486758422", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1202486754560", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "patternVarDecl", false), "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1202486760114", true), _nodeToCheck_1029348928467, null, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1202486758422", intentionProvider);
     }
   }
 

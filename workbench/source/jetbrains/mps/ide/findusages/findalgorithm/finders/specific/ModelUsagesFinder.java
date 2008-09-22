@@ -18,7 +18,7 @@ public class ModelUsagesFinder extends BaseFinder {
     assert holder instanceof ModelHolder;
     SModel model = ((ModelHolder) holder).getObject();
     searchResults.getSearchedNodes().add(model);
-    SModelUID modelUID = model.getUID();
+    SModelReference modelReference = model.getUID();
     for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (indicator.isCanceled()) return searchResults;
       if (modelDescriptor instanceof StubModelDescriptor) {
@@ -27,7 +27,7 @@ public class ModelUsagesFinder extends BaseFinder {
       if (!SModelStereotype.isUserModel(modelDescriptor)) {
         continue;
       }
-      if (modelDescriptor.hasUsages(CollectionUtil.asSet(modelUID))) {
+      if (modelDescriptor.hasUsages(CollectionUtil.asSet(modelReference))) {
         searchResults.getSearchResults().add(new SearchResult<SModel>(modelDescriptor.getSModel(), "usages in imports"));
       }
     }

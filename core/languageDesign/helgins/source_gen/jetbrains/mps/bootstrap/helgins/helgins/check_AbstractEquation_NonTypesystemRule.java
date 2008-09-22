@@ -14,7 +14,7 @@ public class check_AbstractEquation_NonTypesystemRule implements NonTypesystemRu
 
   public void applyRule(final SNode abstractEquationStatement) {
     if (!(RulesUtil.withinInferenceItem(abstractEquationStatement))) {
-      TypeChecker.getInstance().reportTypeError(abstractEquationStatement, "type equations should be used only within inference rules", "jetbrains.mps.bootstrap.helgins.helgins", "1195217401619");
+      TypeChecker.getInstance().reportTypeError(abstractEquationStatement, "type equations should be used only within inference rules", "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1195217401619");
     }
   }
 

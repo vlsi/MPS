@@ -10,8 +10,7 @@ import java.util.*;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
@@ -36,7 +35,7 @@ public class SNodeTransferable implements Transferable {
   // ---- node data ----
   private List<SNode> mySNodes = new ArrayList<SNode>();
   private SModel myModelProperties;
-  private Set<SModelUID> myNecessaryImports = new HashSet<SModelUID>();
+  private Set<SModelReference> myNecessaryImports = new HashSet<SModelReference>();
   private Set<String> myNecessaryLanguages = new HashSet<String>();
   private Set<String> myNecessaryDevKits = new HashSet<String>();
   private String myText = "";
@@ -103,13 +102,13 @@ public class SNodeTransferable implements Transferable {
 
   public PasteNodeData createNodeData(SModel sModel) {
     Set<String> necessaryLanguages = myNecessaryLanguages;
-    Set<SModelUID> necessaryImports = myNecessaryImports;
+    Set<SModelReference> necessaryImports = myNecessaryImports;
     Set<String> necessaryDevKits = myNecessaryDevKits;
-    if (necessaryImports == null) necessaryImports = new HashSet<SModelUID>();
+    if (necessaryImports == null) necessaryImports = new HashSet<SModelReference>();
     if (necessaryLanguages == null) necessaryLanguages = new HashSet<String>();
     return CopyPasteUtil.createNodeDataOut(mySNodes, sModel, myModelProperties,
             new HashSet<String>(necessaryLanguages),
-            new HashSet<SModelUID>(necessaryImports),
+            new HashSet<SModelReference>(necessaryImports),
             new HashSet<String>(necessaryDevKits));
   }
 

@@ -240,8 +240,8 @@ public class GenerationPartitioner {
       String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
       String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
       if (modelUID != null && nodeID != null) {
-        SModelUID uid = SModelUID.fromString(modelUID);
-        SModelDescriptor refModel = GlobalScope.getInstance().getModelDescriptor(uid);
+        SModelReference reference = SModelReference.fromString(modelUID);
+        SModelDescriptor refModel = GlobalScope.getInstance().getModelDescriptor(reference);
 
         if (refModel != null) {
           if (nodeID.equals("*")) {

@@ -13,7 +13,7 @@ public class typeOf_TypeCheckerAccess_InferenceRule implements InferenceRule_Run
   }
 
   public void applyRule(final SNode typeCheckerAccess) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(), typeCheckerAccess, "jetbrains.mps.bootstrap.helgins.helgins", "1175595994022");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(), typeCheckerAccess, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1175595994022");
   }
 
   public String getApplicableConceptFQName() {

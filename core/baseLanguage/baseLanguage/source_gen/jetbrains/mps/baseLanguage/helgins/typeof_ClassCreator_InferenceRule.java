@@ -26,12 +26,12 @@ public class typeof_ClassCreator_InferenceRule implements InferenceRule_Runtime 
     if (!(SLinkOperations.getCount(creator, "typeParameter") == 0 || SLinkOperations.getCount(creator, "typeParameter") == SLinkOperations.getCount(SNodeOperations.getAncestor(SLinkOperations.getTarget(creator, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "typeVariableDeclaration"))) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "jetbrains.mps.baseLanguage.helgins@9_0", "1221737732945", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "r:1222085007939(jetbrains.mps.baseLanguage.helgins@3_0)", "1222085317435", intentionProvider);
       }
     }
     for(SNode parameter : SLinkOperations.getTargets(creator, "typeParameter", true)) {
       if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(new QuotationClass_92().createNode(), "descriptor", false), false, false)))) {
-        TypeChecker.getInstance().reportTypeError(parameter, "primitive type not allowed", "jetbrains.mps.baseLanguage.helgins", "1212781606006");
+        TypeChecker.getInstance().reportTypeError(parameter, "primitive type not allowed", "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1212781606006");
       }
     }
     // ---
@@ -39,13 +39,13 @@ public class typeof_ClassCreator_InferenceRule implements InferenceRule_Runtime 
     {
       SNode _nodeToCheck_1029348928467 = creator;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(creator, "jetbrains.mps.baseLanguage.helgins", "1212781606043", true), constructedType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1212781606039", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(creator, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1212781606043", true), constructedType, _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1212781606039", intentionProvider);
     }
     final SNode instanceType_typevar_1212781606045 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = creator;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1212781606045), constructedType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1212781606046", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1212781606045), constructedType, _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1212781606046", intentionProvider);
     }
     // --- following piece of cake is identical for any method call ---
     {
@@ -59,7 +59,7 @@ public class typeof_ClassCreator_InferenceRule implements InferenceRule_Runtime 
           RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);
         }
 
-      }, "jetbrains.mps.baseLanguage.helgins", "1212781606052");
+      }, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1212781606052");
     }
   }
 

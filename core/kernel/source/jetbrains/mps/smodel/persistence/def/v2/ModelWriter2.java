@@ -57,20 +57,20 @@ public class ModelWriter2 implements IModelWriter {
           }
         });
         for (SModelDescriptor sModelDescriptor : aspectModelDescriptors) {
-          SModelUID uid = sModelDescriptor.getModelUID();
-          if (!writtenAspects.contains(uid.toString())) {
-            writtenAspects.add(uid.toString());
-            writeAspect(sourceModel, languageElem, uid);
+          SModelReference reference = sModelDescriptor.getModelUID();
+          if (!writtenAspects.contains(reference.toString())) {
+            writtenAspects.add(reference.toString());
+            writeAspect(sourceModel, languageElem, reference);
           }
         }
       }*/
       rootElement.addContent(languageElem);
     }
     for (ImportElement aspectElement : sourceModel.getLanguageAspectModelElements()) {
-      SModelUID modelUID = aspectElement.getModelUID();
-      if (!writtenAspects.contains(modelUID.toString())) {
-        writtenAspects.add(modelUID.toString());
-        writeAspect(sourceModel, rootElement, modelUID);
+      SModelReference modelReference = aspectElement.getModelUID();
+      if (!writtenAspects.contains(modelReference.toString())) {
+        writtenAspects.add(modelReference.toString());
+        writeAspect(sourceModel, rootElement, modelReference);
       }
     }
 
@@ -98,12 +98,12 @@ public class ModelWriter2 implements IModelWriter {
       ImportElement importElement = imports.next();
       Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
       importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + importElement.getReferenceID());
-      SModelUID modelUID = importElement.getModelUID();
-      importElem.setAttribute(ModelPersistence.MODEL_UID, modelUID.toString());
+      SModelReference modelReference = importElement.getModelUID();
+      importElem.setAttribute(ModelPersistence.MODEL_UID, modelReference.toString());
       importElem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
 
       int version = -1;
-      SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+      SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
       if (importedModelDescriptor != null) {
         version = importedModelDescriptor.getVersion();
       }
@@ -130,11 +130,11 @@ public class ModelWriter2 implements IModelWriter {
     return document;
   }
 
-  private void writeAspect(SModel sourceModel, Element parent, SModelUID aspectUID) {
-    int modelVersion = sourceModel.getLanguageAspectModelVersion(aspectUID);
+  private void writeAspect(SModel sourceModel, Element parent, SModelReference aspectReference) {
+    int modelVersion = sourceModel.getLanguageAspectModelVersion(aspectReference);
     if (modelVersion > -1) {
       Element aspectModelElement = new Element(ModelPersistence.LANGUAGE_ASPECT);
-      aspectModelElement.setAttribute(ModelPersistence.MODEL_UID, aspectUID.toString());
+      aspectModelElement.setAttribute(ModelPersistence.MODEL_UID, aspectReference.toString());
       aspectModelElement.setAttribute(ModelPersistence.VERSION, "" + modelVersion);
       parent.addContent(aspectModelElement);
     }

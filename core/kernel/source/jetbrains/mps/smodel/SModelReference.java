@@ -10,27 +10,26 @@ import java.util.regex.Matcher;
  * Time: 14:07:53
  * To change this template use File | Settings | File Templates.
  */
-public class SModelUID implements Comparable<Object> {
+public class SModelReference implements Comparable<Object> {
   private static Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
 
-  public static SModelUID fromString(String s) {
-
+  public static SModelReference fromString(String s) {
     Matcher matcher = MODEL_UID_PATTERN.matcher(s);
     if (matcher.matches()) {
-      return new SModelUID(SModelFqName.fromString(matcher.group(2)), SModelId.fromString(matcher.group(1)));
+      return new SModelReference(SModelFqName.fromString(matcher.group(2)), SModelId.fromString(matcher.group(1)));
     }
 
-    return new SModelUID(SModelFqName.fromString(s), null);
+    return new SModelReference(SModelFqName.fromString(s), null);
   }
 
   private SModelId myModelId;
   private SModelFqName myModelFqName;
 
-  public SModelUID(String longName, String stereotype) {
+  public SModelReference(String longName, String stereotype) {
     this(new SModelFqName(longName, stereotype), null);
   }
 
-  public SModelUID(SModelFqName fqName, SModelId modelId) {
+  public SModelReference(SModelFqName fqName, SModelId modelId) {
     myModelFqName = fqName;
     myModelId = modelId;
   }
@@ -45,22 +44,22 @@ public class SModelUID implements Comparable<Object> {
 
   public boolean equals(Object o) {
     if (o == this) return true;
-    if (!(o instanceof SModelUID)) return false;
-    SModelUID otherUID = (SModelUID) o;
+    if (!(o instanceof SModelReference)) return false;
+    SModelReference otherReference = (SModelReference) o;
 
-    if (otherUID.myModelId != null && myModelId != null) {
-      return otherUID.myModelId.equals(myModelId);
+    if (otherReference.myModelId != null && myModelId != null) {
+      return otherReference.myModelId.equals(myModelId);
     }
 
-    if (otherUID.myModelId == null && myModelId != null) {
+    if (otherReference.myModelId == null && myModelId != null) {
       return false;
     }
 
-    if (otherUID.myModelId != null && myModelId == null) {
+    if (otherReference.myModelId != null && myModelId == null) {
       return false;
     }
 
-    return otherUID.myModelFqName.equals(myModelFqName);
+    return otherReference.myModelFqName.equals(myModelFqName);
   }
 
   public int hashCode() {
@@ -102,7 +101,7 @@ public class SModelUID implements Comparable<Object> {
   }
 
   public int compareTo(Object o) {
-    int compareStereotypes = this.getStereotype().compareTo(((SModelUID)o).getStereotype());
+    int compareStereotypes = this.getStereotype().compareTo(((SModelReference)o).getStereotype());
     if (compareStereotypes != 0) return compareStereotypes;
     return this.toString().compareTo(o.toString());
   }

@@ -103,18 +103,18 @@ import org.jdom.Element;
 
   // -- create reference
   private SReference createReferenceInModelDoNotAddToSourceNode(SModel model, VisibleModelElements visibleModelElements) {
-    SModelUID importedModelUID = model.getUID();
+    SModelReference importedModelReference = model.getUID();
     if (myUseUIDs) {
       if (!myImportedModelInfo.equals("-1")) {
-        importedModelUID = SModelUID.fromString(myImportedModelInfo);
+        importedModelReference = SModelReference.fromString(myImportedModelInfo);
       }
     } else if (getImportIndex() > -1) {
       if (myNotImported) {
-        importedModelUID = visibleModelElements.getModelUID(getImportIndex());
+        importedModelReference = visibleModelElements.getModelUID(getImportIndex());
       } else {
-        importedModelUID = model.getImportedModelUID(getImportIndex());
+        importedModelReference = model.getImportedModelUID(getImportIndex());
       }
-      if (importedModelUID == null) {
+      if (importedModelReference == null) {
         LOG.error("Couldn't create reference from " + this.getSourceNode().getDebugText() + " : import for index [" + getImportIndex() + "] not found");
         return null;
       }
@@ -123,7 +123,7 @@ import org.jdom.Element;
     if (this.getExtResolveInfo() == null) {
       return new StaticReference(this.getRole(),
               this.getSourceNode(),
-              importedModelUID,
+        importedModelReference,
               SNodeId.fromString(this.getTargetId()),
               this.getResolveInfo());
     }
@@ -134,7 +134,7 @@ import org.jdom.Element;
     if (targetId != null) {
       return new StaticReference(this.getRole(),
               this.getSourceNode(),
-              importedModelUID,
+        importedModelReference,
               targetId,
               resolveInfo);
     }
@@ -145,7 +145,7 @@ import org.jdom.Element;
     }
     return new StaticReference(this.getRole(),
             this.getSourceNode(),
-            importedModelUID,
+      importedModelReference,
             null,
             resolveInfo);
   }

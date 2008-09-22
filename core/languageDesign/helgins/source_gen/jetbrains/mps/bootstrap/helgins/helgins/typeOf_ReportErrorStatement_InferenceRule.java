@@ -18,12 +18,12 @@ public class typeOf_ReportErrorStatement_InferenceRule implements InferenceRule_
     {
       SNode _nodeToCheck_1029348928467 = reportErrorStatement;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(reportErrorStatement, "errorString", true), "jetbrains.mps.bootstrap.helgins.helgins", "1185805422170", true), new QuotationClass_11().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805429689", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(reportErrorStatement, "errorString", true), "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1185805422170", true), new QuotationClass_11().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1185805429689", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = reportErrorStatement;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(reportErrorStatement, "nodeToReport", true), "jetbrains.mps.bootstrap.helgins.helgins", "1185805452077", true), new QuotationClass_12().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805461349", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(reportErrorStatement, "nodeToReport", true), "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1185805452077", true), new QuotationClass_12().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1185805461349", false, 0, intentionProvider);
     }
   }
 

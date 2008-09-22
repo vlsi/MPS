@@ -31,14 +31,14 @@ import org.jetbrains.annotations.Nullable;
 
 
   private boolean myMature;
-  private SModelUID myTargetModelUID;
+  private SModelReference myTargetModelReference;
   private boolean myExternal;
 
-  protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelUID targetModelUID, boolean mature) {
+  protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference, boolean mature) {
     super(role, sourceNode);
-    if (!sourceNode.getModel().getUID().equals(targetModelUID)) {
+    if (!sourceNode.getModel().getUID().equals(targetModelReference)) {
       myExternal = true;
-      myTargetModelUID = targetModelUID;
+      myTargetModelReference = targetModelReference;
     }
 
     myMature = mature;
@@ -55,17 +55,17 @@ import org.jetbrains.annotations.Nullable;
     return myExternal;
   }
 
-  public SModelUID getTargetModelUID() {
-    return myExternal ? myTargetModelUID : getSourceNode().getModel().getUID();
+  public SModelReference getTargetModelUID() {
+    return myExternal ? myTargetModelReference : getSourceNode().getModel().getUID();
   }
 
-  public void setTargetModelUID(@NotNull SModelUID modelUID) {
-    if (getSourceNode().getModel().getUID().equals(modelUID)) {
+  public void setTargetModelUID(@NotNull SModelReference modelReference) {
+    if (getSourceNode().getModel().getUID().equals(modelReference)) {
       myExternal = false;
-      myTargetModelUID = null;
+      myTargetModelReference = null;
     } else {
       myExternal = true;
-      myTargetModelUID = modelUID;
+      myTargetModelReference = modelReference;
     }
   }
 
@@ -75,16 +75,16 @@ import org.jetbrains.annotations.Nullable;
     }
 
     // external
-    SModelUID targetModelUID = getTargetModelUID();
-    if (targetModelUID == null) {
+    SModelReference targetModelReference = getTargetModelUID();
+    if (targetModelReference == null) {
       // 'unresolved' actually.
       // It can be tmp reference created while copy/pasting a node
       return null;
     }
 
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelUID);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
     if (modelDescriptor == null) {
-      error("couldn't access model '" + targetModelUID + "'");
+      error("couldn't access model '" + targetModelReference + "'");
       return null;
     }
 

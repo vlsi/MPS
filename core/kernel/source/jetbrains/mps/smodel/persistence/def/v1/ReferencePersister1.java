@@ -82,18 +82,18 @@ public class ReferencePersister1 implements IReferencePersister {
 
   // -- create reference
   private SReference createReferenceInModelDoNotAddToSourceNode(SModel model, VisibleModelElements visibleModelElements) {
-    SModelUID importedModelUID = model.getUID();
+    SModelReference importedModelReference = model.getUID();
     if (myUseUIDs) {
       if (!myImportedModelInfo.equals("-1")) {
-        importedModelUID = SModelUID.fromString(myImportedModelInfo);
+        importedModelReference = SModelReference.fromString(myImportedModelInfo);
       }
     } else if (getImportIndex() > -1) {
       if (myNotImported) {
-        importedModelUID = visibleModelElements.getModelUID(getImportIndex());
+        importedModelReference = visibleModelElements.getModelUID(getImportIndex());
       } else {
-        importedModelUID = model.getImportedModelUID(getImportIndex());
+        importedModelReference = model.getImportedModelUID(getImportIndex());
       }
-      if (importedModelUID == null) {
+      if (importedModelReference == null) {
         LOG.error("couldn't create reference '" + this.getRole() + "' from " + this.getSourceNode().getDebugText() + " : import for index [" + getImportIndex() + "] not found");
         return null;
       }
@@ -108,13 +108,13 @@ public class ReferencePersister1 implements IReferencePersister {
       return new DynamicReference(
         this.getRole(),
         this.getSourceNode(),
-        importedModelUID,
+        importedModelReference,
         this.getResolveInfo());
     }
     return new StaticReference(
       this.getRole(),
       this.getSourceNode(),
-      importedModelUID,
+      importedModelReference,
       SNodeId.fromString(this.getTargetId()),
       this.getResolveInfo());
   }
@@ -138,14 +138,14 @@ public class ReferencePersister1 implements IReferencePersister {
       if (useUIDs) {
         targetModelInfo = reference.getTargetModelUID().toString() + "#";
       } else {
-        SModelUID targetModelUID = reference.getTargetModelUID();
-        if (targetModelUID != null) {
-          SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
+        SModelReference targetModelReference = reference.getTargetModelUID();
+        if (targetModelReference != null) {
+          SModel.ImportElement importElement = node.getModel().getImportElement(targetModelReference);
           if (importElement != null) {
             int importIndex = importElement.getReferenceID();
             targetModelInfo = importIndex + ".";
           } else {
-            int visibleIndex = visibleModelElements.getVisibleModelIndex(targetModelUID);
+            int visibleIndex = visibleModelElements.getVisibleModelIndex(targetModelReference);
             targetModelInfo = visibleIndex + "v.";
           }
         } else {

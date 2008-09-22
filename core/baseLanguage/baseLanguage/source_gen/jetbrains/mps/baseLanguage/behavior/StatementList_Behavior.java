@@ -42,13 +42,13 @@ public class StatementList_Behavior {
         if (nodeToSelect != null) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(nodeToSelect, "Return expected", "jetbrains.mps.baseLanguage.behavior@6_0", "1215433086400", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(nodeToSelect, "Return expected", "r:1222083982015(jetbrains.mps.baseLanguage.behavior@6_0)", "1215433086400", intentionProvider);
           }
         } else
         {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(n, "Return expected", "jetbrains.mps.baseLanguage.behavior@6_0", "1215433086408", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(n, "Return expected", "r:1222083982015(jetbrains.mps.baseLanguage.behavior@6_0)", "1215433086408", intentionProvider);
           }
         }
       }
@@ -60,7 +60,7 @@ public class StatementList_Behavior {
     for(SNode n : unreachable) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(n, "Unreachable node", "jetbrains.mps.baseLanguage.behavior@6_0", "1213877327444", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(n, "Unreachable node", "r:1222083982015(jetbrains.mps.baseLanguage.behavior@6_0)", "1213877327444", intentionProvider);
       }
     }
   }
@@ -76,7 +76,7 @@ public class StatementList_Behavior {
         }
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(read, "Variable used before it is initialized", "jetbrains.mps.baseLanguage.behavior@6_0", "1213877327487", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(read, "Variable used before it is initialized", "r:1222083982015(jetbrains.mps.baseLanguage.behavior@6_0)", "1213877327487", intentionProvider);
         }
       }
     }
@@ -95,8 +95,8 @@ public class StatementList_Behavior {
           }
           {
             BaseIntentionProvider intentionProvider = null;
-            intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.constraints.RemoveUnusedAssignment_QuickFix");
-            TypeChecker.getInstance().reportWarning(assignment, "Unused assignment", "jetbrains.mps.baseLanguage.behavior", "1213877327543", intentionProvider);
+            intentionProvider = new BaseIntentionProvider("r:1222075024065(jetbrains.mps.baseLanguage.constraints).RemoveUnusedAssignment_QuickFix");
+            TypeChecker.getInstance().reportWarning(assignment, "Unused assignment", "r:1222075024064(jetbrains.mps.baseLanguage.behavior)", "1213877327543", intentionProvider);
           }
         }
       }
@@ -106,8 +106,8 @@ public class StatementList_Behavior {
         }
         {
           BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.constraints.RemoveUnusedAssignment_QuickFix");
-          TypeChecker.getInstance().reportWarning(write, "Unused assignment", "jetbrains.mps.baseLanguage.behavior", "1213877327573", intentionProvider);
+          intentionProvider = new BaseIntentionProvider("r:1222075024065(jetbrains.mps.baseLanguage.constraints).RemoveUnusedAssignment_QuickFix");
+          TypeChecker.getInstance().reportWarning(write, "Unused assignment", "r:1222075024064(jetbrains.mps.baseLanguage.behavior)", "1213877327573", intentionProvider);
         }
       }
       if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
@@ -115,7 +115,7 @@ public class StatementList_Behavior {
         if (SPropertyOperations.getBoolean(method, "isFinal") || SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.Visible") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(((SNode)method), "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportWarning(write, "Unused parameter", "jetbrains.mps.baseLanguage.behavior", "1220266223599", intentionProvider);
+            TypeChecker.getInstance().reportWarning(write, "Unused parameter", "r:1222075024064(jetbrains.mps.baseLanguage.behavior)", "1220266223599", intentionProvider);
           }
         }
       }
@@ -128,7 +128,7 @@ public class StatementList_Behavior {
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause"))) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportWarning(var, "Unused variable", "jetbrains.mps.baseLanguage.behavior", "1220012814436", intentionProvider);
+          TypeChecker.getInstance().reportWarning(var, "Unused variable", "r:1222075024064(jetbrains.mps.baseLanguage.behavior)", "1220012814436", intentionProvider);
         }
       }
     }

@@ -21,7 +21,7 @@ public class typeof_FindSourceBlockParameter_InferenceRule implements InferenceR
       {
         SNode _nodeToCheck_1029348928467 = findSourceBlockParameter;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(findSourceBlockParameter, "jetbrains.mps.bootstrap.helgins.helgins", "1193734407573", true), new QuotationClass_17().createNode(SLinkOperations.getTarget(dependency, "targetConcept", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.helgins.helgins", "1193734407570", intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(findSourceBlockParameter, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1193734407573", true), new QuotationClass_17().createNode(SLinkOperations.getTarget(dependency, "targetConcept", false)), _nodeToCheck_1029348928467, null, "r:1222075024049(jetbrains.mps.bootstrap.helgins.helgins)", "1193734407570", intentionProvider);
       }
     }
   }

@@ -3,8 +3,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent;
@@ -29,7 +28,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private boolean myMacroProcessed;
   private String myResolveInfoForDynamicResolve;
   private SNode myOutputTargetNode;
-  private SModelUID myExternalTargetModelUID;
+  private SModelReference myExternalTargetModelReference;
 
   public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro macro, @Nullable SNode inputNode, Map<String, SNode> inputNodesByMappingName, SNode templateReferenceNode) {
     super(outputSourceNode, getReferenceRole(macro), inputNode);
@@ -48,9 +47,9 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return linkRole;
   }
 
-  public SModelUID getTargetModelUID(TemplateGenerator generator) {
+  public SModelReference getTargetModelUID(TemplateGenerator generator) {
     ensureMacroProcessed(generator);
-    if (myExternalTargetModelUID != null) return myExternalTargetModelUID;
+    if (myExternalTargetModelReference != null) return myExternalTargetModelReference;
     return super.getTargetModelUID(generator);
   }
 
@@ -127,7 +126,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
               // model: either current output or java_stub
               if (!modelName.equals(generator.getOutputModel().getLongName())) {
                 // external java_stub
-                myExternalTargetModelUID = ClassPathModelProvider.uidForPackage(modelName);
+                myExternalTargetModelReference = ClassPathModelProvider.uidForPackage(modelName);
               }
             }
           }

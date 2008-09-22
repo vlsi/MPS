@@ -13,7 +13,7 @@ public class typeOf_BooleanConst_InferenceRule implements InferenceRule_Runtime 
   }
 
   public void applyRule(final SNode boolConst) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_5().createNode(), boolConst, "jetbrains.mps.baseLanguage.helgins", "1175598801792");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_5().createNode(), boolConst, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1175598801792");
   }
 
   public String getApplicableConceptFQName() {

@@ -6,12 +6,8 @@ import jetbrains.mps.vfs.JarFileEntryFile;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
 import java.util.*;
 
@@ -29,13 +25,13 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
   protected static volatile long ourStructuralState = 0;
 
-  protected SModelUID myModelUID;
+  protected SModelReference myModelReference;
   protected Map<String, Object> myUserObjects = new HashMap<String, Object>();
   protected IFile myModelFile;
   protected IModelRootManager myModelRootManager;
 
-  public BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelUID modelUID) {
-    myModelUID = modelUID;
+  public BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
+    myModelReference = modelReference;
     myModelFile = modelFile;
     myModelRootManager = manager;
     checkModelDuplication();
@@ -49,8 +45,8 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return getModelFile() instanceof JarFileEntryFile;
   }
 
-  public SModelUID getModelUID() {
-    return myModelUID;
+  public SModelReference getModelUID() {
+    return myModelReference;
   }
 
   public SModelFqName getModelFqName() {
@@ -65,16 +61,16 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
    * todo: should return "long name"
    */
   public String getName() {
-    return NameUtil.shortNameFromLongName(myModelUID.getLongName());
+    return NameUtil.shortNameFromLongName(myModelReference.getLongName());
   }
 
   public String getLongName() {
-    return myModelUID.getLongName();
+    return myModelReference.getLongName();
   }
 
   @NotNull
   public String getStereotype() {
-    return myModelUID.getStereotype();
+    return myModelReference.getStereotype();
   }
 
   public Set<SModelRoot> collectSModelRoots() {
@@ -127,9 +123,9 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   protected void checkModelDuplication() {
-    SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelUID);
+    SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelReference);
     if (anotherModel != null) {
-      String message = "Model Already Register : " + myModelUID + "\n";
+      String message = "Model Already Register : " + myModelReference + "\n";
       message += "file = " + myModelFile + "\n";
       message += "another model's file = " + anotherModel.getModelFile();
       LOG.error(message);
@@ -144,9 +140,9 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     List<String> errors = new ArrayList<String>();
     SModel model = getSModel();
 
-    for (SModelUID uid : model.getImportedModelUIDs()) {
-      if (scope.getModelDescriptor(uid) == null) {
-        errors.add("Can't find model " + uid);
+    for (SModelReference reference : model.getImportedModelUIDs()) {
+      if (scope.getModelDescriptor(reference) == null) {
+        errors.add("Can't find model " + reference);
       }
     }
 

@@ -29,7 +29,7 @@ public class PostponedReference extends SReference {
   }
 
   @Nullable
-  public SModelUID getTargetModelUID() {
+  public SModelReference getTargetModelUID() {
     if (myReferenceInfo != null) {
       return myReferenceInfo.getTargetModelUID(myGenerator);
     } else if (myReplacementReference != null) {
@@ -40,7 +40,7 @@ public class PostponedReference extends SReference {
     return null;
   }
 
-  public void setTargetModelUID(@NotNull SModelUID modelUID) {
+  public void setTargetModelUID(@NotNull SModelReference modelReference) {
     throw new RuntimeException("not supported");
   }
 
@@ -64,7 +64,7 @@ public class PostponedReference extends SReference {
 
     String role = myReferenceInfo.getReferenceRole();
     SNode outputSourceNode = myReferenceInfo.getOutputSourceNode();
-    SModelUID targetModelUID = myReferenceInfo.getTargetModelUID(myGenerator);
+    SModelReference targetModelReference = myReferenceInfo.getTargetModelUID(myGenerator);
 
     SNode outputTargetNode = myReferenceInfo.doResolve_Straightforward(myGenerator);
     if (outputTargetNode != null) {
@@ -73,7 +73,7 @@ public class PostponedReference extends SReference {
       myReplacementReference = new DynamicReference(
         role,
         outputSourceNode,
-        targetModelUID,
+        targetModelReference,
         myReferenceInfo.getResolveInfoForDynamicResolve());
     } else {
       outputTargetNode = myReferenceInfo.doResolve_Tricky(myGenerator);
@@ -83,11 +83,11 @@ public class PostponedReference extends SReference {
           myReplacementReference = new StaticReference(role, outputSourceNode, outputTargetNode);
         } else {
           myReferenceInfo.showErrorMessage(myGenerator);
-          myReplacementReference = new StaticReference(role, outputSourceNode, targetModelUID, null, myReferenceInfo.getResolveInfoForNothing());
+          myReplacementReference = new StaticReference(role, outputSourceNode, targetModelReference, null, myReferenceInfo.getResolveInfoForNothing());
         }
       } else if (myReferenceInfo.isRequired()) {
         myReferenceInfo.showErrorMessage(myGenerator);
-        myReplacementReference = new StaticReference(role, outputSourceNode, targetModelUID, null, myReferenceInfo.getResolveInfoForNothing());
+        myReplacementReference = new StaticReference(role, outputSourceNode, targetModelReference, null, myReferenceInfo.getResolveInfoForNothing());
       } else {
         // not resolved and not required
       }

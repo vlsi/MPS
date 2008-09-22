@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.helgins.uiActions.MyMenu;
 
@@ -101,7 +101,7 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
       }
       List<SNode> rules = new ArrayList<SNode>();
       for(Pair<String, String> ruleId : rulesIds) {
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(ruleId.o1));
+        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ruleId.o1));
         if (modelDescriptor == null) {
           continue;
         }

@@ -23,13 +23,13 @@ public class DynamicReference extends SReferenceBase {
     myTargetNode = targetNode;
   }
 
-  public DynamicReference(String role, SNode sourceNode, SModelUID targetModelUID, String resolveInfo) {
+  public DynamicReference(String role, SNode sourceNode, SModelReference targetModelReference, String resolveInfo) {
     // 'mature' reference
-    super(role, sourceNode, targetModelUID, true);
+    super(role, sourceNode, targetModelReference, true);
     setResolveInfo(resolveInfo);
   }
 
-  public SModelUID getTargetModelUID() {
+  public SModelReference getTargetModelUID() {
     if (mature()) {
       return super.getTargetModelUID();
     } else if (myTargetNode != null) {
@@ -38,9 +38,9 @@ public class DynamicReference extends SReferenceBase {
     return null;
   }
 
-  public void setTargetModelUID(@NotNull SModelUID modelUID) {
+  public void setTargetModelUID(@NotNull SModelReference modelReference) {
     if (!mature()) makeMature();
-    super.setTargetModelUID(modelUID);
+    super.setTargetModelUID(modelReference);
   }
 
 

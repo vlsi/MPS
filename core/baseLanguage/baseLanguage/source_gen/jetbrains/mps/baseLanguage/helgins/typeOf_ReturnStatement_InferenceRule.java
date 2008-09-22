@@ -18,7 +18,7 @@ public class typeOf_ReturnStatement_InferenceRule implements InferenceRule_Runti
     {
       SNode _nodeToCheck_1029348928467 = returnStatement;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(returnStatement, "jetbrains.mps.baseLanguage.helgins", "1176898207955", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1176898215727", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1176898213115", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(returnStatement, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176898207955", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176898215727", true), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176898213115", intentionProvider);
     }
   }
 
