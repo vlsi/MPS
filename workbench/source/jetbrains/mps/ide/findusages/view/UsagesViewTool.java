@@ -14,7 +14,6 @@ import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
@@ -155,12 +154,12 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     });
     KeymapManager.getInstance().getActiveKeymap().addShortcut(NEXT_COMMAND, getNextShortcut());
 
-    myContentListener = new ContentManagerAdapter(){
+    myContentListener = new ContentManagerAdapter() {
       public void contentRemoved(ContentManagerEvent event) {
         myUsageViewsData.remove(event.getIndex());
       }
     };
-    
+
     getContentManager().addContentManagerListener(myContentListener);
   }
 
@@ -388,9 +387,15 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
   }
 
   public void loadState(final Element state) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    //startup manager is needed cause the contract is that you can't use read and write locks
+    //on component load - it can cause a deadlock (MPS-2811) 
+    StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
       public void run() {
-        read(state, getProject().getComponent(MPSProjectHolder.class).getMPSProject());
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            read(state, getProject().getComponent(MPSProjectHolder.class).getMPSProject());
+          }
+        });
       }
     });
   }
