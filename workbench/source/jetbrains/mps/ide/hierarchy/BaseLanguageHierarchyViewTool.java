@@ -8,7 +8,6 @@ import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
@@ -47,8 +46,7 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView<Classif
             result.add(interfaceClassifier);
           }
         }
-      }
-      if (node instanceof Interface) {
+      } else if (node instanceof Interface) {
         Interface anInterface = (Interface) node;
         for (ClassifierType interfaceType : anInterface.getExtendedInterfaces()) {
           Classifier interfaceClassifier = interfaceType.getClassifier();
@@ -73,6 +71,8 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView<Classif
         if (classifier instanceof ClassConcept) {
           return classifier;
         }
+      } else if (node instanceof Interface) {
+        return null;
       }
       return null;
     }
