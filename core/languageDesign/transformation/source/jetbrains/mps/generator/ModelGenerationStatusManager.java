@@ -1,16 +1,15 @@
 package jetbrains.mps.generator;
 
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.logging.Logger;
 
-import java.util.*;
 import java.io.File;
-
-import com.intellij.openapi.application.ApplicationManager;
+import java.util.*;
 
 public class ModelGenerationStatusManager {
   private static final Logger LOG = Logger.getLogger(ModelGenerationStatusManager.class);
@@ -23,7 +22,7 @@ public class ModelGenerationStatusManager {
   private Map<SModelDescriptor, Boolean> myEmptyStatus = new HashMap<SModelDescriptor, Boolean>();
   private Map<SModelDescriptor, Long> myEmptyStatusRetrievalTime = new HashMap<SModelDescriptor, Long>();
 
-  private List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();    
+  private List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
 
   public boolean generationRequired(SModelDescriptor sm) {
     if (sm.isPackaged()) {
@@ -90,7 +89,7 @@ public class ModelGenerationStatusManager {
   private long calculateLastGenerationTime(SModelDescriptor sm) {
     Set<IModule> modules = sm.getModules();
     if (modules.size() != 1) {
-      LOG.warning("model " + sm.getModelUID() + " has to many owners : " + modules);
+      LOG.warning("model " + sm.getModelUID() + " has too many owners : " + modules);
     }
     IModule module = modules.iterator().next();
     String outputPath = module.getGeneratorOutputPath();
