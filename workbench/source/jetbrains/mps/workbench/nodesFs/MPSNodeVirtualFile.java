@@ -30,7 +30,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myName = "" + myNode.getPresentation();
-        myPath = myNode.getModel().getSModelReference() + "/" + myName;
+        myPath = myNode.getModel().getSModelFqName() + "/" + myName;
       }
     });
   }
