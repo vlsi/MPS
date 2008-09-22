@@ -170,8 +170,17 @@ public class SModelRepository implements ApplicationComponent {
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     SModelUID modelUID = modelDescriptor.getModelUID();
     SModelDescriptor registeredModel = getModelDescriptor(modelUID);
+
     LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
       "Another model \"" + modelUID + "\" is already registered!");
+
+    SModelDescriptor modelDescByName = myFqNameToModelDescriptorMap.get(modelUID.getSModelFqName());
+    if (modelDescByName != null && modelDescByName != modelDescriptor) {
+      LOG.error("can't register model descriptor " + modelUID
+        + "model with the same fq name but different id is already registered: id = "
+        + modelDescByName.getModelUID().getSModelId());
+      registerModelDescriptor(modelDescByName, owner);
+    }
 
     Set<ModelOwner> owners = myModelsToOwners.getByFirst(modelDescriptor);
     LOG.assertLog(owners == null ||
