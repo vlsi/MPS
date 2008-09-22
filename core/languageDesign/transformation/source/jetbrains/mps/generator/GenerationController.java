@@ -222,7 +222,7 @@ public class GenerationController {
         String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
 
         //  myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
-        setText2("model " + inputModel.getModelUID().toString(), totalJob, startJobTime);
+        setText2("model " + inputModel.getModelFqName(), totalJob, startJobTime);
         TaskProgressHelper progress = new TaskProgressHelper(this);
         progress.startLeafTask(taskName, myProgress, totalJob, startJobTime);
 
