@@ -58,7 +58,6 @@ public class TypeChecker implements ApplicationComponent {
   @ForDebug
   private Object myResolveModeStartedFrame;
 
-  private MPSProject myProject;
   private boolean myIsIncrementalMode = true;
 
   private ClassLoaderManager myClassLoaderManager;
@@ -88,17 +87,6 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-  }
-
-
-  @Hack
-  @Deprecated
-  public void setProject(MPSProject project) {
-    myProject = project;
-  }
-
-  public MPSProject getProject() {
-    return myProject;
   }
 
   public static TypeChecker getInstance() {
@@ -258,6 +246,7 @@ public class TypeChecker implements ApplicationComponent {
     checkRoot(node, false);
   }
 
+  //uncomplete
   public void interrupt() {
     NodeTypesComponent currentTypesComponent = getCurrentTypesComponent();
     while (currentTypesComponent != null) {

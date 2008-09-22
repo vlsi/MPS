@@ -172,21 +172,6 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     return true;
   }
 
-  @Nullable
-  private EditorComponent getEditorComponent() {
-// todo on IDEA platform this code always returns null. Move it somewhere  
-//    MPSProject project = myTypeChecker.getProject();
-//    if (project == null) return null;
-//    EditorsPane editorsPane = project.getComponent(EditorsPane.class);
-//    if (editorsPane == null) return null;
-//    IEditor iEditor = editorsPane.getEditorFor(myRootNode);
-//    if (iEditor == null) return null;
-//    EditorComponent component = iEditor.getCurrentEditorComponent();
-//    return component;
-    return null;
-  }
-
-
   public void computeTypes(boolean refreshTypes) {
     computeTypes(myRootNode, refreshTypes, true, true, new ArrayList<SNode>());
   }
@@ -198,14 +183,6 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
         clear();
       } else {
         myNotSkippedNodes.clear();
-        EditorComponent component = getEditorComponent();
-        if (component != null) {
-          component.getHighlightManager().clearForOwner(this);
-        }
-
-        if (component instanceof NodeEditorWithInspectorComponent) {
-          ((NodeEditorWithInspectorComponent) component).getInspector().getHighlightManager().clearForOwner(this);
-        }
 
         doInvalidate();
         myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
@@ -251,26 +228,6 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
         }
       }
     }
-    final Set<SNodePointer> notSkippedNodes = new HashSet<SNodePointer>(myNotSkippedNodes);
-    if (HelginsPreferencesComponent.getInstance().isUsesDebugHighlighting()) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          EditorComponent component = (EditorComponent) getEditorComponent();
-          if (component == null) return;
-          component.getHighlightManager().clearForOwner(component.getHighlightMessagesOwner()); //todo change an owner
-          for (SNodePointer notSkippedNode : notSkippedNodes) {
-            markNode(component, notSkippedNode);
-            if (component instanceof NodeEditorWithInspectorComponent) {
-              markNode(((NodeEditorWithInspectorComponent) component).getInspector(), notSkippedNode);
-            }
-          }
-        }
-      });
-    }
-  }
-
-  private void markNode(EditorComponent component, SNodePointer notSkippedNode) {
-    component.getHighlightManager().mark(notSkippedNode.getNode(), new Color(255, 127, 0, 50), "", component.getHighlightMessagesOwner()); //todo change an owner
   }
 
   public void solveInequationsAndExpandTypes() {
