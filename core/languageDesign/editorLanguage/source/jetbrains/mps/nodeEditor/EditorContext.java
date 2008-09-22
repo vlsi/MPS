@@ -162,7 +162,13 @@ public class EditorContext {
 
     getNodeEditorComponent().selectNode(node);
   }
-  
+
+  public void selectRange(SNode first, SNode last) {
+    flushEvents();
+
+    getNodeEditorComponent().getNodeRangeSelection().setRange(first, last);
+  }
+
   public void select(final SNode node, String cellId) {
     flushEvents();
 
