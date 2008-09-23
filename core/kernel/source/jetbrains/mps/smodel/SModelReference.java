@@ -1,5 +1,7 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.GlobalScope;
+
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -98,6 +100,14 @@ public class SModelReference implements Comparable<Object> {
 
   public boolean hasStereotype() {
     return myModelFqName.hasStereotype();
+  }
+
+  public SModelReference update() {
+    if (myModelId != null) {
+      return GlobalScope.getInstance().getModelDescriptor(myModelId).getSModelReference();      
+    } else {
+      return GlobalScope.getInstance().getModelDescriptor(myModelFqName).getSModelReference();
+    }
   }
 
   public int compareTo(Object o) {

@@ -1382,33 +1382,37 @@ public class SModel implements Iterable<SNode> {
     return list;
   }
 
-  public void upgradeUIDS() {
+  public boolean updateSModelReferences() {
+    boolean changed = false;
     for (SNode node : getAllNodesWithIds()) {
       for (SReference reference : node.getReferences()) {
-        if (reference.getTargetSModelReference().getSModelId() == null) {
-          SModelReference oldReference = reference.getTargetSModelReference();
-          SModelReference newReference = upgradeModelUID(oldReference);
-          reference.setTargetSModelReference(newReference);
-        }
+        SModelReference oldReference = reference.getTargetSModelReference();
+        SModelReference newReference = oldReference.update();
+        reference.setTargetSModelReference(newReference);
+        changed = changed || changed(oldReference, newReference);
       }
     }
 
     for (ImportElement e : myImports) {
-      e.myModelDescriptor = upgradeModelUID(e.myModelDescriptor);
+      SModelReference oldReference = e.myModelDescriptor;
+      SModelReference newReference = oldReference.update();
+      e.myModelDescriptor = newReference;
+      changed = changed || changed(oldReference, newReference);
     }
 
     for (ImportElement e : myAdditionalModelsVersions) {
-      e.myModelDescriptor = upgradeModelUID(e.myModelDescriptor);
+      SModelReference oldReference = e.myModelDescriptor;
+      SModelReference newReference = oldReference.update();
+      e.myModelDescriptor = newReference;
+      changed = changed || changed(oldReference, newReference);
     }
+
+    return changed;
   }
 
-  private SModelReference upgradeModelUID(SModelReference oldReference) {
-    SModelDescriptor model = GlobalScope.getInstance().getModelDescriptor(oldReference);
-    if (model == null) {
-      return oldReference;
-    }
-    SModelReference newReference = model.getSModelReference();
-    return newReference;
+  private boolean changed(SModelReference ref1, SModelReference ref2) {
+    return !EqualUtil.equals(ref1.getSModelId(), ref2.getSModelId()) ||
+      !EqualUtil.equals(ref1.getSModelFqName(), ref2.getSModelFqName());
   }
 
   private static WeakSet<SModel> ourActiveModels = new WeakSet<SModel>();
