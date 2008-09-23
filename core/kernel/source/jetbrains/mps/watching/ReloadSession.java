@@ -52,7 +52,6 @@ public class ReloadSession {
   }
 
   private void updateModels(final ProgressIndicator progressIndicator) {
-    LOG.info("models to update " + myChangedModels);
     for (final SModelDescriptor model : myChangedModels) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -68,7 +67,6 @@ public class ReloadSession {
   }
 
   private void updateModules(final ProgressIndicator progressIndicator) {
-    LOG.info("modules to update " + myChangedModules);
     for (final IModule module : myChangedModules) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -121,31 +119,25 @@ public class ReloadSession {
 
   public void addChangedModel(SModelDescriptor model) {
     myChangedModels.add(model);
-    LOG.info("changed model " + model);
   }
 
   public void addNewModelFile(VirtualFile vfile) {
     myNewModelVFiles.add(vfile);
-    LOG.info("created model " + vfile);
   }
 
   public void addChangedModule(IModule module) {
     myChangedModules.add(module);
-    LOG.info("changed module " + module);
   }
 
   public void addNewModuleFile(VirtualFile vfile) {
     myNewModuleVFiles.add(vfile);
-    LOG.info("added module " + vfile);
   }
 
   public void addChangedProject(Project project) {
     myChangedProjects.add(project);
-    LOG.info("changed project " + project);
   }
 
   public void addDeletedModelFilePath(String path) {
     myDeletedModels.add(path);
-    LOG.info("model deleted " + path);
   }
 }
