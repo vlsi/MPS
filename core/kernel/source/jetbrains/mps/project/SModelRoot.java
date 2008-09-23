@@ -3,6 +3,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.logging.Logger;
 
 public class SModelRoot {
@@ -38,6 +39,10 @@ public class SModelRoot {
 
   public String getPrefix() {
     return myModelRoot.getPrefix();
+  }
+
+  public boolean isCorrectModelFqName(SModelFqName fqName) {
+    return fqName.getLongName().startsWith(getPrefix());
   }
 
   public void dispose() {

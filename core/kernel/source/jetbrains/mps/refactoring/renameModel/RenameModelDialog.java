@@ -5,6 +5,7 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.SModelRoot;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,13 +18,15 @@ public class RenameModelDialog extends BaseDialog {
   private JCheckBox myUpdateAllReferences;
 
   private SModelDescriptor myModelDescriptor;
+  private SModelRoot myModelRoot;
 
-  public RenameModelDialog(Frame frame, SModelDescriptor sm) throws HeadlessException {
+  public RenameModelDialog(Frame frame, SModelRoot root, SModelDescriptor sm) throws HeadlessException {
     super(frame);
 
     setTitle("Rename Model");
 
     myModelDescriptor = sm;
+    myModelRoot = root;
 
     myMainPanel = new JPanel(new GridBagLayout());
 
@@ -70,12 +73,20 @@ public class RenameModelDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void buttonOk() {
+
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        new ModelRenamer(myModelDescriptor, SModelFqName.fromString(myModelNameField.getText()), !myUpdateAllReferences.getModel().isSelected()).rename();
+        final SModelFqName fqName = SModelFqName.fromString(myModelNameField.getText());
+
+        if (!myModelRoot.isCorrectModelFqName(fqName)) {
+          setErrorText("Incorrect model name for the model root (should start with prefix " + myModelRoot.getPrefix() + ")");
+          return;
+        }
+
+        new ModelRenamer(myModelDescriptor, fqName, !myUpdateAllReferences.getModel().isSelected()).rename();
+        dispose();
       }
     });
-    dispose();
   }
 
 

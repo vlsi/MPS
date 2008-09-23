@@ -153,7 +153,6 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
                         fireFileDeleted(this, vf, vf.getName(), null);
                         myVirtualFiles.remove(event.getRoot());
                       }
-
                     }
                   }
 
