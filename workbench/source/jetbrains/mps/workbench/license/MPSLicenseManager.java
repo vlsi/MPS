@@ -3,6 +3,7 @@ package jetbrains.mps.workbench.license;
 import com.intellij.ide.license.LicenseManager;
 import com.intellij.ide.license.LicenseFactory;
 import com.intellij.ide.license.impl.LicenseFactoryImpl;
+import com.intellij.ide.license.impl.IdeaLicenseNew;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -25,7 +26,7 @@ public class MPSLicenseManager extends LicenseManager {
   }
 
   public String licensedRestrictionsMessage() {
-    return "license.restriction.message";
+    return "";
   }
 
   public LicenseFactory createLicenseFactory() {
