@@ -28,6 +28,11 @@ import jetbrains.mps.logging.Logger;
 
 public class ExcludedFileIndexApplicationComponent implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ExcludedFileIndexApplicationComponent.class);
+
+  public static ExcludedFileIndexApplicationComponent getInstance() {
+    return ApplicationManager.getApplication().getComponent(ExcludedFileIndexApplicationComponent.class);
+  }
+
   private final MPSModuleRepository myModuleRepository;
   private final Set<VirtualFile> myExcludedFiles = new CopyOnWriteArraySet<VirtualFile>();
   private final String[] myExcludedRegexps = new String[]{".*\\.svn.*"};
@@ -45,10 +50,6 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
 
   public ExcludedFileIndexApplicationComponent(final MPSModuleRepository moduleRepository) {
     myModuleRepository = moduleRepository;
-  }
-
-  public static ExcludedFileIndexApplicationComponent getInstance() {
-    return ApplicationManager.getApplication().getComponent(ExcludedFileIndexApplicationComponent.class);
   }
 
   @NonNls

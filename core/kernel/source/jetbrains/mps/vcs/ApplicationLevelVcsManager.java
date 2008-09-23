@@ -140,6 +140,19 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
   }
 
   public void mergeModels(Set<SModelDescriptor> models) {
+    final List<SModelDescriptor> merged = showMergeDialog(models);
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SModelDescriptor model : merged) {
+          model.reloadFromDisk();
+        }
+      }
+    });
+
+  }
+
+  private List<SModelDescriptor> showMergeDialog(Set<SModelDescriptor> models) {
     Map<Project, List<VirtualFile>> toMerge = new HashMap<Project, List<VirtualFile>>();
     Map<VirtualFile, SModelDescriptor> fileToModel = new HashMap<VirtualFile, SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : models) {
@@ -159,9 +172,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
 
     final List<SModelDescriptor> merged = new LinkedList<SModelDescriptor>();
     for (Project project : toMerge.keySet()) {
-      // show merge dialog
       List<VirtualFile> virtualFileList = AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project));
-      // collect models
       for (VirtualFile vfile : virtualFileList) {
         SModelDescriptor model = fileToModel.get(vfile);
         if (model != null) {
@@ -169,16 +180,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
         }
       }
     }
-
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        // reload
-        for (SModelDescriptor model : merged) {
-          model.reloadFromDisk();
-        }
-      }
-    });
-
+    return merged;
   }
 
   public void addFilesToVcs(List<VirtualFile> files) {

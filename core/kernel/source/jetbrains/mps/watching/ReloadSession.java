@@ -29,14 +29,14 @@ public class ReloadSession {
   private Set<String> myDeletedModels = new HashSet<String>();
 
   public void doReload() {
-    if (hasSomethingToDo()) {
+    if (hasAnythingToDo()) {
       // TODO what to do with projects?
 
       ProgressManager.getInstance().run(new Modal(null, "Reloading", false) {
 
         public void run(@NotNull final ProgressIndicator progressIndicator) {
           if (!myNewModuleVFiles.isEmpty()) {
-//            System.out.println("reloading libraries");
+            LOG.info("reloading libraries");
             progressIndicator.setText("Updating Modules");
             LibraryManager.getInstance().update();
             return;
@@ -52,7 +52,7 @@ public class ReloadSession {
   }
 
   private void updateModels(final ProgressIndicator progressIndicator) {
-//    System.out.println("models to update " + myChangedModels);
+    LOG.info("models to update " + myChangedModels);
     for (final SModelDescriptor model : myChangedModels) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -68,7 +68,7 @@ public class ReloadSession {
   }
 
   private void updateModules(final ProgressIndicator progressIndicator) {
-//    System.out.println("modules to update " + myChangedModules);
+    LOG.info("modules to update " + myChangedModules);
     for (final IModule module : myChangedModules) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -114,37 +114,38 @@ public class ReloadSession {
     });
   }
 
-  private boolean hasSomethingToDo() {
+  private boolean hasAnythingToDo() {
     return !(myChangedModels.isEmpty() && myChangedModules.isEmpty() && myChangedProjects.isEmpty()
       && myNewModelVFiles.isEmpty() && myNewModuleVFiles.isEmpty() && myDeletedModels.isEmpty());
   }
 
   public void addChangedModel(SModelDescriptor model) {
     myChangedModels.add(model);
-//    System.out.println("changed model " + model);
+    LOG.info("changed model " + model);
   }
 
   public void addNewModelFile(VirtualFile vfile) {
     myNewModelVFiles.add(vfile);
-//    System.out.println("created model " + vfile);
+    LOG.info("created model " + vfile);
   }
 
   public void addChangedModule(IModule module) {
     myChangedModules.add(module);
-//    System.out.println("changed module " + module);
+    LOG.info("changed module " + module);
   }
 
   public void addNewModuleFile(VirtualFile vfile) {
     myNewModuleVFiles.add(vfile);
-//    System.out.println("added module " + vfile);
+    LOG.info("added module " + vfile);
   }
 
   public void addChangedProject(Project project) {
     myChangedProjects.add(project);
-//    System.out.println("changed project " + project);
+    LOG.info("changed project " + project);
   }
 
   public void addDeletedModelFilePath(String path) {
     myDeletedModels.add(path);
+    LOG.info("model deleted " + path);
   }
 }
