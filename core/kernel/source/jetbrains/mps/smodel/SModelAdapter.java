@@ -78,6 +78,13 @@ public class SModelAdapter implements SModelListener {
     modelChangedDramatically(event.getModel());
   }
 
+  public void beforeModelRenamed(SModelRenamedEvent event) {
+  }
+
+  public void modelRenamed(SModelRenamedEvent event) {
+    eventFired(event);
+  }
+
   public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
   }
 

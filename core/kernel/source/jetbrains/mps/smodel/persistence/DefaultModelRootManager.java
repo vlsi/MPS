@@ -17,6 +17,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.watching.ModelChangesWatcher;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -247,21 +248,11 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     newFile.createNewFile();
     FileUtil.copyFile(modelFile.toFile(), newFile.toFile());
     modelFile.delete();
-    SModelDescriptor result = getInstance(manager, newFile.getAbsolutePath(), newModelReference, owner, true);
-    Project[] projects = ProjectManagerEx.getInstance().getOpenProjects();
 
-    if (projects.length == 0)  {
-      MPSVCSManager.addFileLater(newFile.toFile());
-      MPSVCSManager.removeFileLater(modelFile.toFile());
-    } else {
-      for (Project project : projects) {
-        MPSVCSManager mpsvcsManager = MPSVCSManager.getInstance(project);
-        if (mpsvcsManager != null) {
-          mpsvcsManager.deleteFilesAndRemoveFromVcs(Collections.singletonList(modelFile.toFile()));
-          mpsvcsManager.addFilesToVcs(Collections.singletonList(newFile.toFile()));
-        }
-      }
-    }
+    SModelDescriptor result = getInstance(manager, newFile.getAbsolutePath(), newModelReference, owner, true);
+
+    renameFile(modelFile, newFile);
+
     return result;
   }
 
@@ -326,5 +317,33 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     String modelPath = modelFile.getAbsolutePath();
     String versionPath = modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length()) + ".metadata";
     return FileSystem.getFile(versionPath);
+  }
+
+  public void rename(SModelDescriptor sm, SModelFqName modelFqName) {
+    IFile oldFile = sm.getModelFile();
+    List<SModelRoot> roots = new ArrayList<SModelRoot>(sm.collectSModelRoots());
+    assert !roots.isEmpty();
+    SModelRoot root = roots.get(0);
+    IFile newFile = createFileForModelUID(root, modelFqName);
+    ((BaseSModelDescriptor) sm).changeModelFile(newFile);
+    sm.save();
+    oldFile.delete();
+    renameFile(oldFile, newFile);
+  }
+
+  private void renameFile(IFile modelFile, IFile newFile) {
+    Project[] projects = ProjectManagerEx.getInstance().getOpenProjects();
+    if (projects.length == 0)  {
+      MPSVCSManager.addFileLater(newFile.toFile());
+      MPSVCSManager.removeFileLater(modelFile.toFile());
+    } else {
+      for (Project project : projects) {
+        MPSVCSManager mpsvcsManager = MPSVCSManager.getInstance(project);
+        if (mpsvcsManager != null) {
+          mpsvcsManager.deleteFilesAndRemoveFromVcs(Collections.singletonList(modelFile.toFile()));
+          mpsvcsManager.addFilesToVcs(Collections.singletonList(newFile.toFile()));
+        }
+      }
+    }
   }
 }

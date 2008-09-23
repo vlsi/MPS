@@ -20,6 +20,9 @@ public interface SModelListener {
   void rootRemoved(SModelRootEvent event);
   void beforeRootRemoved(SModelRootEvent event);
 
+  void beforeModelRenamed(SModelRenamedEvent event);
+  void modelRenamed(SModelRenamedEvent event);
+
   void propertyChanged(SModelPropertyEvent event);
 
   void childAdded(SModelChildEvent event);
@@ -28,7 +31,6 @@ public interface SModelListener {
 
   void referenceAdded(SModelReferenceEvent event);
   void referenceRemoved(SModelReferenceEvent event);
-
 
   void loadingStateChanged(SModelDescriptor model, boolean isLoading);
   void modelSaved(SModelDescriptor sm);

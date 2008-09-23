@@ -131,4 +131,6 @@ public interface SModelDescriptor {
   List<String> validate(IScope scope);
 
   boolean isValid(IScope scope);
+
+  void rename(SModelFqName newModelFqName);
 }

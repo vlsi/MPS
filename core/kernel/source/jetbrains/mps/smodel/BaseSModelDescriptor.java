@@ -4,6 +4,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.JarFileEntryFile;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.project.*;
@@ -164,4 +165,18 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return errors;
   }
 
+  public void rename(SModelFqName newModelFqName) {
+    SModelFqName oldFqName = getSModelFqName();
+    SModel model = getSModel();
+    model.fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
+
+    myModelRootManager.rename(this, newModelFqName);
+    myModelReference = new SModelReference(newModelFqName, myModelReference.getSModelId());
+
+    model.fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
+  }
+
+  public void changeModelFile(IFile newModelFile) {
+    myModelFile = newModelFile;
+  }
 }

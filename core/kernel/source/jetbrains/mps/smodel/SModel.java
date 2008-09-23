@@ -519,6 +519,28 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  void fireBeforeModelRenamed(SModelRenamedEvent event) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      try {
+        sModelListener.beforeModelRenamed(event);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  void fireModelRenamed(SModelRenamedEvent event) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      try {
+        sModelListener.modelRenamed(event);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
   @NotNull
   private List<SModelListener> copyListeners() {
     synchronized (myListenersLock) {

@@ -52,5 +52,7 @@ public interface IModelRootManager {
                                            @NotNull SModelFqName fqName,
                                            @NotNull ModelOwner owner);
 
+  void rename(SModelDescriptor model, SModelFqName modelFqName);
+
   void dispose();
 }

@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SModel;
 /**
  * @author Kostik
  */
-public class SModelChildEvent extends SModelEvent{
+public class SModelChildEvent extends SModelEvent {
   private boolean myAdded;
   private SNode myParent;
   private SNode myChild;
