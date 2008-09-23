@@ -5,11 +5,11 @@ package jetbrains.mps.ypath.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class TreeNodeKind extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.ypath.structure.TreeNodeKind";
@@ -23,15 +23,6 @@ public class TreeNodeKind extends BaseConcept implements INamedConcept {
   public TreeNodeKind(SNode node) {
     super(node);
   }
-
-  public static TreeNodeKind newInstance(SModel sm, boolean init) {
-    return (TreeNodeKind)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKind", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TreeNodeKind newInstance(SModel sm) {
-    return TreeNodeKind.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(TreeNodeKind.NAME);
@@ -91,6 +82,15 @@ public class TreeNodeKind extends BaseConcept implements INamedConcept {
 
   public void insertProperties(TreeNodeKindProperty prev, TreeNodeKindProperty node) {
     this.insertChild(prev, TreeNodeKind.PROPERTIES, node);
+  }
+
+
+  public static TreeNodeKind newInstance(SModel sm, boolean init) {
+    return (TreeNodeKind)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKind", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TreeNodeKind newInstance(SModel sm) {
+    return TreeNodeKind.newInstance(sm, false);
   }
 
 }

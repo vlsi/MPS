@@ -13,7 +13,7 @@ public class typeof_ExpressionFunctionParam_InferenceRule implements InferenceRu
   }
 
   public void applyRule(final SNode expressionFunctionParam) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_10().createNode(), expressionFunctionParam, "jetbrains.mps.ypath.helgins", "1192620803140");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_10().createNode(), expressionFunctionParam, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1192620803140");
   }
 
   public String getApplicableConceptFQName() {

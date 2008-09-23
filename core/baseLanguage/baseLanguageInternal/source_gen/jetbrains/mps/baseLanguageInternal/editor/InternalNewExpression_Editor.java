@@ -282,7 +282,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11739964946971173996494697(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1173996494697");
-    StyleSheet_StyleSheet.INTERNAL_KEYWORD.apply(editorCell);
+    StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_fqClassName1173996598179(EditorCell editorCell, SNode node, EditorContext context) {
@@ -310,7 +310,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11793329954331179332995433(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1179332995433");
-    StyleSheet_StyleSheet.SQUARE_BRACKET.apply(editorCell);
+    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_type1179333003826(EditorCell editorCell, SNode node, EditorContext context) {
@@ -318,7 +318,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11793330089681179333008968(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1179333008968");
-    StyleSheet_StyleSheet.SQUARE_BRACKET.apply(editorCell);
+    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11793333222021179333322202(EditorCell editorCell, SNode node, EditorContext context) {

@@ -84,12 +84,12 @@ public class EmitCodeForStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12064540900571206454090057(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206454090057");
-    DataFlow_StyleSheet.INSTRUCTION.apply(editorCell);
+    DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12064540914491206454091449(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206454091449");
-    DataFlow_StyleSheet.INSTRUCTION.apply(editorCell);
+    DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_codeFor1206454092905(EditorCell editorCell, SNode node, EditorContext context) {

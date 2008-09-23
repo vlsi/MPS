@@ -17,15 +17,6 @@ public class GFCardinalParamFun extends GFCardinalFun implements IParamFeatureFu
     super(node);
   }
 
-  public static GFCardinalParamFun newInstance(SModel sm, boolean init) {
-    return (GFCardinalParamFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFCardinalParamFun", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GFCardinalParamFun newInstance(SModel sm) {
-    return GFCardinalParamFun.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(GFCardinalParamFun.SHORT_DESCRIPTION);
   }
@@ -48,6 +39,15 @@ public class GFCardinalParamFun extends GFCardinalFun implements IParamFeatureFu
 
   public void setVirtualPackage(String value) {
     this.setProperty(GFCardinalParamFun.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static GFCardinalParamFun newInstance(SModel sm, boolean init) {
+    return (GFCardinalParamFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFCardinalParamFun", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GFCardinalParamFun newInstance(SModel sm) {
+    return GFCardinalParamFun.newInstance(sm, false);
   }
 
 }

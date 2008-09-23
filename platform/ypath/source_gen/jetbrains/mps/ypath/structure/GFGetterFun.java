@@ -18,15 +18,6 @@ public class GFGetterFun extends ConceptFunction implements IDesignFunction {
     super(node);
   }
 
-  public static GFGetterFun newInstance(SModel sm, boolean init) {
-    return (GFGetterFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFGetterFun", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GFGetterFun newInstance(SModel sm) {
-    return GFGetterFun.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(GFGetterFun.SHORT_DESCRIPTION);
   }
@@ -49,6 +40,15 @@ public class GFGetterFun extends ConceptFunction implements IDesignFunction {
 
   public void setVirtualPackage(String value) {
     this.setProperty(GFGetterFun.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static GFGetterFun newInstance(SModel sm, boolean init) {
+    return (GFGetterFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFGetterFun", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GFGetterFun newInstance(SModel sm) {
+    return GFGetterFun.newInstance(sm, false);
   }
 
 }

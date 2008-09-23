@@ -8,16 +8,18 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
 
@@ -49,6 +51,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     setupBasic_Constant_11864038899311186403889931(editorCell, node, context);
     setupLabel_Constant_1186403889931_1186403889931(editorCell, node, context);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     return editorCell;
   }
 
@@ -160,6 +163,16 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "query", true) != null;
   }
 
+  public static class FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+
+    public FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.bootstrap.editorLanguage.structure.StyleClassItem";
+    }
+
+}
   public static class FontStyleStyleClassItem_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
 
     public FontStyleStyleClassItem_generic_cellMenu0() {

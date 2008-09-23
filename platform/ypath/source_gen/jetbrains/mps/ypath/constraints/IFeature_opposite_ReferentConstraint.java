@@ -51,7 +51,7 @@ public class IFeature_opposite_ReferentConstraint implements IModelConstraints, 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     final SNode feature = _context.getReferenceNode();
     final boolean isGeneric = SNodeOperations.isInstanceOf(feature, "jetbrains.mps.ypath.structure.IGenericFeature");
-    return new SimpleSearchScope(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(feature, null, false, false), "features", true)).where(new IWhereFilter <SNode>() {
+    return new SimpleSearchScope(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(feature), "features", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return it != feature && ((isGeneric ?

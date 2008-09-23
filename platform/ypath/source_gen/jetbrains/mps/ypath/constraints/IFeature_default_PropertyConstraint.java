@@ -26,7 +26,7 @@ public class IFeature_default_PropertyConstraint implements IModelConstraints, I
 
   public void execPropertySet(SNode node, String propertyName, String propertyValue, IScope scope) {
     if ((SPropertyOperations.getBoolean(propertyValue))) {
-      for(SNode foo : SLinkOperations.getTargets(SNodeOperations.getParent(node, null, false, false), "features", true)) {
+      for(SNode foo : SLinkOperations.getTargets(SNodeOperations.getParent(node), "features", true)) {
         if (foo != node) {
           SPropertyOperations.set(foo, "default", "" + (false));
         }

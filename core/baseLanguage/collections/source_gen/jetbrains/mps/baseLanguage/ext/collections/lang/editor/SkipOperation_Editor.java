@@ -99,7 +99,7 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11726585410281172658541028(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172658541028");
-    Collections_Style_StyleSheet.OPERATION.apply(editorCell);
+    Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_elementsToSkip1172658545280(EditorCell editorCell, SNode node, EditorContext context) {
@@ -107,12 +107,12 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11726585475641172658547564(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172658547564");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12157084303801215708430380(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215708430380");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1172658541028_1172658541028(EditorCell_Label editorCell, SNode node, EditorContext context) {

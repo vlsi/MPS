@@ -77,12 +77,12 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
 
   private static void setupBasic_Constant_12178821123801217882112380(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217882112380");
-    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
+    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_label1217882112381(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_label");
-    jetbrains.mps.transformation.TLBase.editor.Styles_StyleSheet.MAPPING_LABEL_REFERENCE.apply(editorCell);
+    jetbrains.mps.transformation.TLBase.editor.Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1217882112380_1217882112380(EditorCell_Label editorCell, SNode node, EditorContext context) {

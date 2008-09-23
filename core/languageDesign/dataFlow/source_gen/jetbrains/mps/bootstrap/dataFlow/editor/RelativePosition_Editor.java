@@ -96,7 +96,7 @@ public class RelativePosition_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1206444935206(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    DataFlow_StyleSheet.POSITION.apply(editorCell);
+    DataFlow_StyleSheet.getPosition(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_relativeTo1206444961726(EditorCell editorCell, SNode node, EditorContext context) {

@@ -22,15 +22,6 @@ public class ParameterWrapper extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-  public static ParameterWrapper newInstance(SModel sm, boolean init) {
-    return (ParameterWrapper)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParameterWrapper", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ParameterWrapper newInstance(SModel sm) {
-    return ParameterWrapper.newInstance(sm, false);
-  }
-
-
   public String getParamValue() {
     return this.getProperty(ParameterWrapper.PARAM_VALUE);
   }
@@ -77,6 +68,15 @@ public class ParameterWrapper extends BaseConcept implements INamedConcept {
 
   public void setParamRef(BaseConcept node) {
     super.setReferent(ParameterWrapper.PARAM_REF, node);
+  }
+
+
+  public static ParameterWrapper newInstance(SModel sm, boolean init) {
+    return (ParameterWrapper)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParameterWrapper", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ParameterWrapper newInstance(SModel sm) {
+    return ParameterWrapper.newInstance(sm, false);
   }
 
 }

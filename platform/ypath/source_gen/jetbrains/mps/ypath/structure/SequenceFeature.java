@@ -28,15 +28,6 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
     super(node);
   }
 
-  public static SequenceFeature newInstance(SModel sm, boolean init) {
-    return (SequenceFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.SequenceFeature", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SequenceFeature newInstance(SModel sm) {
-    return SequenceFeature.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(SequenceFeature.NAME);
   }
@@ -131,6 +122,15 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
 
   public void setRemoveFunction(FeatureRemoveFun node) {
     super.setChild(SequenceFeature.REMOVE_FUNCTION, node);
+  }
+
+
+  public static SequenceFeature newInstance(SModel sm, boolean init) {
+    return (SequenceFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.SequenceFeature", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SequenceFeature newInstance(SModel sm) {
+    return SequenceFeature.newInstance(sm, false);
   }
 
 }

@@ -4,11 +4,8 @@ package jetbrains.mps.ypath.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -19,11 +16,112 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class ParameterWrapper_Editor extends DefaultNodeEditor {
+
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
+    return this.createProperty1197479518472(context, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext context, SNode node) {
+    return this.createCollection1197465898367(context, node);
+  }
+
+  public EditorCell createCollection1197465898367(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    setupBasic_Collection_11974658983671197465898367(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createCollection1197465942604(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createCollection1197465942604(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_Collection_11974659426041197465942604(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant1197465955178(context, node, "feature:"));
+    editorCell.addEditorCell(this.createModelAccess1197465964250(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createConstant1197465955178(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_11974659551781197465955178(editorCell, node, context);
+    setupLabel_Constant_1197465955178_1197465955178(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createModelAccess1197465964250(EditorContext context, SNode node) {
+    ModelAccessor modelAccessor = this._modelAcessorFactory_1197465964250(context, node);
+    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    setupBasic_ModelAccess_11974659642501197465964250(editorCell, node, context);
+    setupLabel_ModelAccess_1197465964250_1197465964250(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public ModelAccessor _modelAcessorFactory_1197465964250(final EditorContext editorContext, final SNode node) {
+    return new ModelAccessor() {
+
+      public String getText() {
+        SNodeOperations.getParent(node);
+        return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.ypath.structure.IterateOperation") ?
+          SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.getParent(node), "usedFeature", false), "name") :
+          "???"
+        );
+      }
+
+      public void setText(String text) {
+      }
+
+      public boolean isValidText(String text) {
+        return true;
+      }
+
+    };
+  }
+
+  public EditorCell createProperty1197479518472_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_property_name1197479518472(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_property_name_1197479518472((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createProperty1197479518472(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createProperty1197479518472_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
 
   private static void setupBasic_Collection_11974658983671197465898367(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197465898367");
@@ -79,104 +177,6 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_name_1197479518472(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createProperty1197479518472(context, node);
-  }
-
-  public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createCollection1197465898367(context, node);
-  }
-
-  public EditorCell createCollection1197465898367(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_11974658983671197465898367(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection1197465942604(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection1197465942604(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11974659426041197465942604(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1197465955178(context, node, "feature:"));
-    editorCell.addEditorCell(this.createModelAccess1197465964250(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createConstant1197465955178(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11974659551781197465955178(editorCell, node, context);
-    setupLabel_Constant_1197465955178_1197465955178(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createModelAccess1197465964250(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAcessorFactory_1197465964250(context, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ModelAccess_11974659642501197465964250(editorCell, node, context);
-    setupLabel_ModelAccess_1197465964250_1197465964250(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public ModelAccessor _modelAcessorFactory_1197465964250(final EditorContext editorContext, final SNode node) {
-    return new ModelAccessor() {
-
-      public String getText() {
-        SNodeOperations.getParent(node, null, false, false);
-        return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.ypath.structure.IterateOperation") ?
-          SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "usedFeature", false), "name") :
-          "???"
-        );
-      }
-
-      public void setText(String text) {
-      }
-
-      public boolean isValidText(String text) {
-        return true;
-      }
-
-    };
-  }
-
-  public EditorCell createProperty1197479518472_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_name1197479518472(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_name_1197479518472((EditorCell_Label)editorCell, node, context);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty1197479518472(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1197479518472_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
   }
 
 }

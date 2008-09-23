@@ -26,7 +26,7 @@ public class EmitRetStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12064629135001206462913500(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206462913500");
-    DataFlow_StyleSheet.INSTRUCTION.apply(editorCell);
+    DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1206462913500_1206462913500(EditorCell_Label editorCell, SNode node, EditorContext context) {

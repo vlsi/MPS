@@ -15,21 +15,21 @@ public class NodeKindSpecificCase extends NodeKindCase {
     super(node);
   }
 
-  public static NodeKindSpecificCase newInstance(SModel sm, boolean init) {
-    return (NodeKindSpecificCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeKindSpecificCase", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static NodeKindSpecificCase newInstance(SModel sm) {
-    return NodeKindSpecificCase.newInstance(sm, false);
-  }
-
-
   public TreeNodeKind getTreeNodeKind() {
     return (TreeNodeKind)this.getReferent(NodeKindSpecificCase.TREE_NODE_KIND);
   }
 
   public void setTreeNodeKind(TreeNodeKind node) {
     super.setReferent(NodeKindSpecificCase.TREE_NODE_KIND, node);
+  }
+
+
+  public static NodeKindSpecificCase newInstance(SModel sm, boolean init) {
+    return (NodeKindSpecificCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeKindSpecificCase", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static NodeKindSpecificCase newInstance(SModel sm) {
+    return NodeKindSpecificCase.newInstance(sm, false);
   }
 
 }

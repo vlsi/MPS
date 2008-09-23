@@ -17,15 +17,6 @@ public class GFGetterParamFun extends GFGetterFun implements IParamFeatureFun, I
     super(node);
   }
 
-  public static GFGetterParamFun newInstance(SModel sm, boolean init) {
-    return (GFGetterParamFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFGetterParamFun", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GFGetterParamFun newInstance(SModel sm) {
-    return GFGetterParamFun.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(GFGetterParamFun.SHORT_DESCRIPTION);
   }
@@ -48,6 +39,15 @@ public class GFGetterParamFun extends GFGetterFun implements IParamFeatureFun, I
 
   public void setVirtualPackage(String value) {
     this.setProperty(GFGetterParamFun.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static GFGetterParamFun newInstance(SModel sm, boolean init) {
+    return (GFGetterParamFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFGetterParamFun", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GFGetterParamFun newInstance(SModel sm) {
+    return GFGetterParamFun.newInstance(sm, false);
   }
 
 }

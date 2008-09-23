@@ -96,7 +96,7 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1206445210819(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    DataFlow_StyleSheet.INSTRUCTION.apply(editorCell);
+    DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_jumpTo1206445217024(EditorCell editorCell, SNode node, EditorContext context) {

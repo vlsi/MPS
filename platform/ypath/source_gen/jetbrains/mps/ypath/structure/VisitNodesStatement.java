@@ -16,21 +16,21 @@ public class VisitNodesStatement extends Statement {
     super(node);
   }
 
-  public static VisitNodesStatement newInstance(SModel sm, boolean init) {
-    return (VisitNodesStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitNodesStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static VisitNodesStatement newInstance(SModel sm) {
-    return VisitNodesStatement.newInstance(sm, false);
-  }
-
-
   public VisitBlock getVisitBlock() {
     return (VisitBlock)this.getChild(VisitNodesStatement.VISIT_BLOCK);
   }
 
   public void setVisitBlock(VisitBlock node) {
     super.setChild(VisitNodesStatement.VISIT_BLOCK, node);
+  }
+
+
+  public static VisitNodesStatement newInstance(SModel sm, boolean init) {
+    return (VisitNodesStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitNodesStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static VisitNodesStatement newInstance(SModel sm) {
+    return VisitNodesStatement.newInstance(sm, false);
   }
 
 }

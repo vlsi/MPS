@@ -128,17 +128,17 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
 
   private static void setupBasic_Constant_12212195196221221219519622(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221219519622");
-    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
+    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_label1221219519623(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_label");
-    jetbrains.mps.transformation.TLBase.editor.Styles_StyleSheet.MAPPING_LABEL_REFERENCE.apply(editorCell);
+    jetbrains.mps.transformation.TLBase.editor.Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12212195196261221219519626(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221219519626");
-    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
+    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -155,7 +155,7 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
 
   private static void setupBasic_Constant_12212195253911221219525391(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221219525391");
-    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
+    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

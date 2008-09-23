@@ -10,6 +10,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -17,6 +19,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
@@ -58,6 +61,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
       setupLabel_conceptProperty_alias_1186403839417((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     return editorCell;
   }
 
@@ -176,5 +180,16 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
   public static boolean renderingCondition4607_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "query", true) != null;
   }
+
+  public static class ColorStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+
+    public ColorStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.bootstrap.editorLanguage.structure.StyleClassItem";
+    }
+
+}
 
 }

@@ -345,7 +345,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11539445702421153944570242(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1153944570242");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_variable1153944570243(EditorCell editorCell, SNode node, EditorContext context) {
@@ -353,7 +353,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11539445702441153944570244(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1153944570244");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_inputSequence1153944570245(EditorCell editorCell, SNode node, EditorContext context) {
@@ -364,7 +364,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11539445886851153944588685(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1153944588685");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11539446064211153944606421(EditorCell editorCell, SNode node, EditorContext context) {
@@ -398,7 +398,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11539447533851153944753385(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1153944753385");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11994681997481199468199748(EditorCell editorCell, SNode node, EditorContext context) {

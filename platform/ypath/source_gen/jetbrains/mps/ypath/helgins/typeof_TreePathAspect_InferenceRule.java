@@ -18,7 +18,7 @@ public class typeof_TreePathAspect_InferenceRule implements InferenceRule_Runtim
     {
       SNode _nodeToCheck_1029348928467 = aspect;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(aspect, "jetbrains.mps.ypath.helgins", "1184578634207", true), SLinkOperations.getTarget(aspect, "treePathType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1184578634206", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(aspect, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1184578634207", true), SLinkOperations.getTarget(aspect, "treePathType", true), _nodeToCheck_1029348928467, null, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1184578634206", intentionProvider);
     }
   }
 

@@ -5,11 +5,11 @@ package jetbrains.mps.ypath.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class GenericFeature extends BaseConcept implements IGenericFeature, INamedConcept, IFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.GenericFeature";
@@ -27,15 +27,6 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   public GenericFeature(SNode node) {
     super(node);
   }
-
-  public static GenericFeature newInstance(SModel sm, boolean init) {
-    return (GenericFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeature", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GenericFeature newInstance(SModel sm) {
-    return GenericFeature.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(GenericFeature.NAME);
@@ -127,6 +118,15 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
 
   public void insertFunHolders(GenericFeatureFunHolder prev, GenericFeatureFunHolder node) {
     this.insertChild(prev, GenericFeature.FUN_HOLDERS, node);
+  }
+
+
+  public static GenericFeature newInstance(SModel sm, boolean init) {
+    return (GenericFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeature", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GenericFeature newInstance(SModel sm) {
+    return GenericFeature.newInstance(sm, false);
   }
 
 }

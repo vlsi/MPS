@@ -16,21 +16,21 @@ public class LambdaMethod extends Closure {
     super(node);
   }
 
-  public static LambdaMethod newInstance(SModel sm, boolean init) {
-    return (LambdaMethod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.LambdaMethod", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static LambdaMethod newInstance(SModel sm) {
-    return LambdaMethod.newInstance(sm, false);
-  }
-
-
   public LambdaMethodParameter getParameter() {
     return (LambdaMethodParameter)this.getChild(LambdaMethod.PARAMETER);
   }
 
   public void setParameter(LambdaMethodParameter node) {
     super.setChild(LambdaMethod.PARAMETER, node);
+  }
+
+
+  public static LambdaMethod newInstance(SModel sm, boolean init) {
+    return (LambdaMethod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.LambdaMethod", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static LambdaMethod newInstance(SModel sm) {
+    return LambdaMethod.newInstance(sm, false);
   }
 
 }

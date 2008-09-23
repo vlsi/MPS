@@ -22,15 +22,6 @@ public class TreeNodeKindProperty extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-  public static TreeNodeKindProperty newInstance(SModel sm, boolean init) {
-    return (TreeNodeKindProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKindProperty", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TreeNodeKindProperty newInstance(SModel sm) {
-    return TreeNodeKindProperty.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(TreeNodeKindProperty.NAME);
   }
@@ -77,6 +68,15 @@ public class TreeNodeKindProperty extends BaseConcept implements INamedConcept {
 
   public void setGetter(PropertyGetter node) {
     super.setChild(TreeNodeKindProperty.GETTER, node);
+  }
+
+
+  public static TreeNodeKindProperty newInstance(SModel sm, boolean init) {
+    return (TreeNodeKindProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKindProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TreeNodeKindProperty newInstance(SModel sm) {
+    return TreeNodeKindProperty.newInstance(sm, false);
   }
 
 }

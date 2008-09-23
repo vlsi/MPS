@@ -34,7 +34,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell10755_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10755_0");
-    Stylesheet_StyleSheet.COMPONENT.apply(editorCell);
+    Stylesheet_StyleSheet.getComponent(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell10755_01(EditorCell editorCell, SNode node, EditorContext context) {

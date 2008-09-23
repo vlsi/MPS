@@ -138,7 +138,7 @@ public class PageOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11726677811871172667781187(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172667781187");
-    Collections_Style_StyleSheet.OPERATION.apply(editorCell);
+    Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_fromElement1172667790002(EditorCell editorCell, SNode node, EditorContext context) {
@@ -153,12 +153,12 @@ public class PageOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11726678004611172667800461(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172667800461");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12157068013561215706801356(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215706801356");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1172667781187_1172667781187(EditorCell_Label editorCell, SNode node, EditorContext context) {

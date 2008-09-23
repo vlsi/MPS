@@ -13,7 +13,7 @@ public class typeof_GeneratorFunctionParam_InferenceRule implements InferenceRul
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_26().createNode(), nodeToCheck, "jetbrains.mps.ypath.helgins", "1196768351890");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_26().createNode(), nodeToCheck, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1196768351890");
   }
 
   public String getApplicableConceptFQName() {

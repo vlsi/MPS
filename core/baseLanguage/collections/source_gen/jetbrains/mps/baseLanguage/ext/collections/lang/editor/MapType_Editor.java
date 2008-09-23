@@ -135,7 +135,7 @@ public class MapType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11976834316651197683431665(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197683431665");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -149,12 +149,12 @@ public class MapType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11976834407301197683440730(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197683440730");
-    Collections_Style_StyleSheet.LEFT_ANGLE_BRACKET.apply(editorCell);
+    Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11976834424661197683442466(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197683442466");
-    Collections_Style_StyleSheet.RIGHT_ANGLE_BRACKET.apply(editorCell);
+    Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_keyType1197683501158(EditorCell editorCell, SNode node, EditorContext context) {

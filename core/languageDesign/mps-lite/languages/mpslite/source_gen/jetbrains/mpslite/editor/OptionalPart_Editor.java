@@ -74,7 +74,7 @@ public class OptionalPart_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11973794526671197379452667(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197379452667");
-    MPSLite_Style_StyleSheet.M_P_S_LITE_OPTIONAL_PART.apply(editorCell);
+    MPSLite_Style_StyleSheet.getMPSLiteOptionalPart(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNodeList_part1197379457060(EditorCell editorCell, SNode node, EditorContext context) {
@@ -83,7 +83,7 @@ public class OptionalPart_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11973794594211197379459421(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197379459421");
-    MPSLite_Style_StyleSheet.M_P_S_LITE_OPTIONAL_PART.apply(editorCell);
+    MPSLite_Style_StyleSheet.getMPSLiteOptionalPart(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1197379452667_1197379452667(EditorCell_Label editorCell, SNode node, EditorContext context) {

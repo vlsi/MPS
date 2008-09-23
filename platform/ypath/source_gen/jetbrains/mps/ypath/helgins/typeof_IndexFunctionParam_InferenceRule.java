@@ -13,7 +13,7 @@ public class typeof_IndexFunctionParam_InferenceRule implements InferenceRule_Ru
   }
 
   public void applyRule(final SNode index) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_8().createNode(), index, "jetbrains.mps.ypath.helgins", "1183982109148");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_8().createNode(), index, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1183982109148");
   }
 
   public String getApplicableConceptFQName() {

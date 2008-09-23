@@ -191,12 +191,12 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11976869246261197686924626(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197686924626");
-    Collections_Style_StyleSheet.LEFT_ANGLE_BRACKET.apply(editorCell);
+    Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11976869285651197686928565(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197686928565");
-    Collections_Style_StyleSheet.RIGHT_ANGLE_BRACKET.apply(editorCell);
+    Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_keyType1197687048321(EditorCell editorCell, SNode node, EditorContext context) {
@@ -211,7 +211,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1198082865184(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

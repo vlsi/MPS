@@ -14904,60 +14904,6 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1186404727331">
     <property name="package" value="styleSheet" />
     <property name="name" value="StyleSheetClass" />
-    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1186404745928">
-      <property name="name" value="STYLE_NAME" />
-      <property name="isFinal" value="true" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1186404748946" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1186404752416">
-        <link role="classifier" targetNodeId="64.~Style" resolveInfo="Style" />
-      </node>
-      <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.LoopMacro" id="1186404797844">
-        <node role="sourceNodesQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodesQuery" id="1186404797845">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186404797846">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186404801144">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227929791">
-                <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1186404801145" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1186404805196">
-                  <link role="link" targetNodeId="38.1186402402630" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1221839457493">
-        <link role="baseMethodDeclaration" targetNodeId="1221820411769" resolveInfo="getStyleName" />
-        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1221839460291" />
-        <node role="referenceMacro$link_attribute$baseMethodDeclaration" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1221839468339">
-          <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1221839468340">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221839468341">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221839477842">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221839477843">
-                  <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1221839477844" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221839477845">
-                    <link role="conceptMethodDeclaration" targetNodeId="62.1221829967694" resolveInfo="getGetterMethodName" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1221839418208">
-        <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1221839418209">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221839418210">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221839428222">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221839434818">
-                <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1221839428223" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1221839447539">
-                  <link role="conceptMethodDeclaration" targetNodeId="62.1213877260636" resolveInfo="getConstantName" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1186404727332" />
     <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.transformation.TLBase.structure.RootTemplateAnnotation" id="1186404741005">
       <link role="applicableConcept" targetNodeId="38.1186402211651" />

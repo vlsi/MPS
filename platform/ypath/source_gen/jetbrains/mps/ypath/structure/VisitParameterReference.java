@@ -15,21 +15,21 @@ public class VisitParameterReference extends VariableReference {
     super(node);
   }
 
-  public static VisitParameterReference newInstance(SModel sm, boolean init) {
-    return (VisitParameterReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static VisitParameterReference newInstance(SModel sm) {
-    return VisitParameterReference.newInstance(sm, false);
-  }
-
-
   public VisitParameterDeclaration getVisitParameterDeclaration() {
     return (VisitParameterDeclaration)this.getVariableDeclaration();
   }
 
   public void setVisitParameterDeclaration(VisitParameterDeclaration node) {
     this.setVariableDeclaration(node);
+  }
+
+
+  public static VisitParameterReference newInstance(SModel sm, boolean init) {
+    return (VisitParameterReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static VisitParameterReference newInstance(SModel sm) {
+    return VisitParameterReference.newInstance(sm, false);
   }
 
 }

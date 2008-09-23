@@ -17,15 +17,6 @@ public class TreeNodeKindReference extends Expression {
     super(node);
   }
 
-  public static TreeNodeKindReference newInstance(SModel sm, boolean init) {
-    return (TreeNodeKindReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKindReference", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TreeNodeKindReference newInstance(SModel sm) {
-    return TreeNodeKindReference.newInstance(sm, false);
-  }
-
-
   public TreePathAspect getTreePathAspect() {
     return (TreePathAspect)this.getReferent(TreeNodeKindReference.TREE_PATH_ASPECT);
   }
@@ -40,6 +31,15 @@ public class TreeNodeKindReference extends Expression {
 
   public void setTreeNodeKind(TreeNodeKind node) {
     super.setReferent(TreeNodeKindReference.TREE_NODE_KIND, node);
+  }
+
+
+  public static TreeNodeKindReference newInstance(SModel sm, boolean init) {
+    return (TreeNodeKindReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKindReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TreeNodeKindReference newInstance(SModel sm) {
+    return TreeNodeKindReference.newInstance(sm, false);
   }
 
 }

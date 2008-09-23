@@ -4,11 +4,11 @@ package jetbrains.mps.ypath.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class VisitChildrenExpression extends Expression {
   public static final String concept = "jetbrains.mps.ypath.structure.VisitChildrenExpression";
@@ -17,15 +17,6 @@ public class VisitChildrenExpression extends Expression {
   public VisitChildrenExpression(SNode node) {
     super(node);
   }
-
-  public static VisitChildrenExpression newInstance(SModel sm, boolean init) {
-    return (VisitChildrenExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitChildrenExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static VisitChildrenExpression newInstance(SModel sm) {
-    return VisitChildrenExpression.newInstance(sm, false);
-  }
-
 
   public int getActualArgumentsCount() {
     return this.getChildCount(VisitChildrenExpression.ACTUAL_ARGUMENT);
@@ -45,6 +36,15 @@ public class VisitChildrenExpression extends Expression {
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, VisitChildrenExpression.ACTUAL_ARGUMENT, node);
+  }
+
+
+  public static VisitChildrenExpression newInstance(SModel sm, boolean init) {
+    return (VisitChildrenExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitChildrenExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static VisitChildrenExpression newInstance(SModel sm) {
+    return VisitChildrenExpression.newInstance(sm, false);
   }
 
 }

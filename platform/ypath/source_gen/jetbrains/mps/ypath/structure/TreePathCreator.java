@@ -4,11 +4,11 @@ package jetbrains.mps.ypath.structure;
 
 import jetbrains.mps.baseLanguage.structure.AbstractCreator;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class TreePathCreator extends AbstractCreator implements TreePath {
   public static final String concept = "jetbrains.mps.ypath.structure.TreePathCreator";
@@ -24,15 +24,6 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
   public TreePathCreator(SNode node) {
     super(node);
   }
-
-  public static TreePathCreator newInstance(SModel sm, boolean init) {
-    return (TreePathCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathCreator", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TreePathCreator newInstance(SModel sm) {
-    return TreePathCreator.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(TreePathCreator.SHORT_DESCRIPTION);
@@ -108,6 +99,15 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
 
   public void insertFeatures(IFeature prev, IFeature node) {
     this.insertChild(prev, TreePathCreator.FEATURES, node);
+  }
+
+
+  public static TreePathCreator newInstance(SModel sm, boolean init) {
+    return (TreePathCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TreePathCreator newInstance(SModel sm) {
+    return TreePathCreator.newInstance(sm, false);
   }
 
 }

@@ -155,7 +155,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1209728126060(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12097281287761209728128776(EditorCell editorCell, SNode node, EditorContext context) {

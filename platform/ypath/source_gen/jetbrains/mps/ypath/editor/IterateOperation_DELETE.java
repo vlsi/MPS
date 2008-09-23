@@ -29,7 +29,7 @@ public class IterateOperation_DELETE {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode expr = SNodeOperations.getParent(node, null, false, false);
+      SNode expr = SNodeOperations.getParent(node);
       if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
         SNode newExpr = SLinkOperations.getTarget(expr, "expression", true);
         SNodeOperations.replaceWithAnother(expr, newExpr);

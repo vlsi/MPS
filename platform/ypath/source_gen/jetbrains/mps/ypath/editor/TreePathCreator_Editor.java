@@ -5,61 +5,19 @@ package jetbrains.mps.ypath.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class TreePathCreator_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myTreePath_component;
-
-  private static void setupBasic_Collection_11684298585401168429858540(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1168429858540");
-  }
-
-  private static void setupBasic_Constant_11684298714191168429871419(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168429871419");
-  }
-
-  private static void setupBasic_refNode_parentBlock1168429937123(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_11684299408491168429940849(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168429940849");
-  }
-
-  private static void setupBasic_refNode_childrenBlock1168429945365(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_11684299510941168429951094(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168429951094");
-  }
-
-  private static void setupBasic_component_TreePath_component1179306250318(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_TreePath_component");
-  }
-
-  private static void setupLabel_Constant_1168429871419_1168429871419(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNode_parentBlock_1168429937123(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1168429940849_1168429940849(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNode_childrenBlock_1168429945365(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1168429951094_1168429951094(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
+  /* package */AbstractCellProvider myTreePath_component6851_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1168429858540(context, node);
@@ -81,10 +39,10 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent1179306250318(EditorContext context, SNode node) {
-    if (this.myTreePath_component == null) {
-      this.myTreePath_component = new TreePath_component(node);
+    if (this.myTreePath_component6851_0 == null) {
+      this.myTreePath_component6851_0 = new TreePath_component(node);
     }
-    EditorCell editorCell = this.myTreePath_component.createEditorCell(context);
+    EditorCell editorCell = this.myTreePath_component6851_0.createEditorCell(context);
     setupBasic_component_TreePath_component1179306250318(editorCell, node, context);
     return editorCell;
   }
@@ -169,6 +127,48 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
+  }
+
+
+  private static void setupBasic_Collection_11684298585401168429858540(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1168429858540");
+  }
+
+  private static void setupBasic_Constant_11684298714191168429871419(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168429871419");
+  }
+
+  private static void setupBasic_refNode_parentBlock1168429937123(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_Constant_11684299408491168429940849(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168429940849");
+  }
+
+  private static void setupBasic_refNode_childrenBlock1168429945365(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_Constant_11684299510941168429951094(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168429951094");
+  }
+
+  private static void setupBasic_component_TreePath_component1179306250318(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "component_TreePath_component");
+  }
+
+  private static void setupLabel_Constant_1168429871419_1168429871419(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_parentBlock_1168429937123(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1168429940849_1168429940849(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_childrenBlock_1168429945365(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1168429951094_1168429951094(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

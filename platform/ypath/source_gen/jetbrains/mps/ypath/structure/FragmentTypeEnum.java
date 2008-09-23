@@ -17,8 +17,8 @@ public enum FragmentTypeEnum {
   insert_before("insert before", "INSERT_BEFORE"),
   insert_after("insert after", "INSERT_AFTER");
 
-  /* package */String myName;
-  /* package */String myValue;
+  private String myName;
+  private String myValue;
 
 FragmentTypeEnum(String name, String value) {
     this.myName = name;

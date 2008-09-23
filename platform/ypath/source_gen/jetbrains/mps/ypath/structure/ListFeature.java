@@ -29,15 +29,6 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
     super(node);
   }
 
-  public static ListFeature newInstance(SModel sm, boolean init) {
-    return (ListFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ListFeature", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ListFeature newInstance(SModel sm) {
-    return ListFeature.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(ListFeature.NAME);
   }
@@ -140,6 +131,15 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
 
   public void setDeleteFunction(FeatureDeleteFun node) {
     super.setChild(ListFeature.DELETE_FUNCTION, node);
+  }
+
+
+  public static ListFeature newInstance(SModel sm, boolean init) {
+    return (ListFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ListFeature", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ListFeature newInstance(SModel sm) {
+    return ListFeature.newInstance(sm, false);
   }
 
 }

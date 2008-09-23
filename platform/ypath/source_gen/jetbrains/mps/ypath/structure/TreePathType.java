@@ -21,15 +21,6 @@ public class TreePathType extends Type implements INamedConcept {
     super(node);
   }
 
-  public static TreePathType newInstance(SModel sm, boolean init) {
-    return (TreePathType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathType", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TreePathType newInstance(SModel sm) {
-    return TreePathType.newInstance(sm, false);
-  }
-
-
   public String getName() {
     return this.getProperty(TreePathType.NAME);
   }
@@ -68,6 +59,15 @@ public class TreePathType extends Type implements INamedConcept {
 
   public void setNodeType(Type node) {
     super.setChild(TreePathType.NODE_TYPE, node);
+  }
+
+
+  public static TreePathType newInstance(SModel sm, boolean init) {
+    return (TreePathType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TreePathType newInstance(SModel sm) {
+    return TreePathType.newInstance(sm, false);
   }
 
 }

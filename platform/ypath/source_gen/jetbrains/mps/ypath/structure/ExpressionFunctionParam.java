@@ -18,15 +18,6 @@ public class ExpressionFunctionParam extends ConceptFunctionParameter implements
     super(node);
   }
 
-  public static ExpressionFunctionParam newInstance(SModel sm, boolean init) {
-    return (ExpressionFunctionParam)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ExpressionFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ExpressionFunctionParam newInstance(SModel sm) {
-    return ExpressionFunctionParam.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(ExpressionFunctionParam.SHORT_DESCRIPTION);
   }
@@ -49,6 +40,15 @@ public class ExpressionFunctionParam extends ConceptFunctionParameter implements
 
   public void setVirtualPackage(String value) {
     this.setProperty(ExpressionFunctionParam.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static ExpressionFunctionParam newInstance(SModel sm, boolean init) {
+    return (ExpressionFunctionParam)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ExpressionFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ExpressionFunctionParam newInstance(SModel sm) {
+    return ExpressionFunctionParam.newInstance(sm, false);
   }
 
 }

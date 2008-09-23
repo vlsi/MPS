@@ -2806,20 +2806,20 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877515590">
               <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877515591">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877515592">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222170546158">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222170508345">
                 <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1213877515593">
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877515594">
                     <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877515595" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" id="1213877515596" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213877515597">
-                  <link role="baseMethodDeclaration" targetNodeId="7.~SModel.getUID():jetbrains.mps.smodel.SModelUID" resolveInfo="getUID" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222170542809">
+                  <link role="baseMethodDeclaration" targetNodeId="7.~SModel.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213877515598">
-                <link role="baseMethodDeclaration" targetNodeId="7.~SModelUID.getLongName():java.lang.String" resolveInfo="getLongName" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222170555519">
+                <link role="baseMethodDeclaration" targetNodeId="7.~SModelReference.getLongName():java.lang.String" resolveInfo="getLongName" />
               </node>
             </node>
           </node>

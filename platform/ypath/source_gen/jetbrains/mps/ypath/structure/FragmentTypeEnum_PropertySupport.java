@@ -12,7 +12,7 @@ public class FragmentTypeEnum_PropertySupport extends PropertySupport {
       return true;
     }
     Iterator<FragmentTypeEnum> constants = FragmentTypeEnum.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       FragmentTypeEnum constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
@@ -26,7 +26,7 @@ public class FragmentTypeEnum_PropertySupport extends PropertySupport {
       return null;
     }
     Iterator<FragmentTypeEnum> constants = FragmentTypeEnum.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       FragmentTypeEnum constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();
@@ -40,7 +40,7 @@ public class FragmentTypeEnum_PropertySupport extends PropertySupport {
     if (constant != null) {
       return constant.getName();
     }
-    return null;
+    return "";
   }
 
 }

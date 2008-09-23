@@ -15,7 +15,7 @@ public class typeof_ValueFunctionParam_InferenceRule implements InferenceRule_Ru
   }
 
   public void applyRule(final SNode value) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(value, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true), value, "jetbrains.mps.ypath.helgins", "1183982168880");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(value, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true), value, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1183982168880");
   }
 
   public String getApplicableConceptFQName() {

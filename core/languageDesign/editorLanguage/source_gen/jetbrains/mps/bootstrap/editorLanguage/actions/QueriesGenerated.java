@@ -73,6 +73,25 @@ public class QueriesGenerated {
     }
   }
 
+  public static void nodeFactory_NodeSetup_ColorStyleClassItem_1222177342205(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.ColorStyleClassItem")) {
+      SPropertyOperations.set(_context.getNewNode(), "color", SPropertyOperations.getString_def(_context.getSampleNode(), "color", null));
+      SLinkOperations.setTarget(_context.getNewNode(), "query", SLinkOperations.getTarget(_context.getSampleNode(), "query", true), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_BooleanStyleSheetItem_1222178769289(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.BooleanStyleSheetItem")) {
+      SPropertyOperations.set(_context.getNewNode(), "flag", "" + SPropertyOperations.getBoolean(_context.getSampleNode(), "flag"));
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_FloatStyleClassItem_1222178992988(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.FloatStyleClassItem")) {
+      SPropertyOperations.set(_context.getNewNode(), "value", SPropertyOperations.getString(_context.getSampleNode(), "value"));
+    }
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_EditorCellModel_1177585776510(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
@@ -561,7 +580,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            return SLinkOperations.getTargets(SNodeOperations.getNode("jetbrains.mps.bootstrap.editorLanguage.structure", "1139535328871"), "member", true);
+            return SLinkOperations.getTargets(SNodeOperations.getNode("r:1222075024030(jetbrains.mps.bootstrap.editorLanguage.structure)", "1139535328871"), "member", true);
           }
 
         };

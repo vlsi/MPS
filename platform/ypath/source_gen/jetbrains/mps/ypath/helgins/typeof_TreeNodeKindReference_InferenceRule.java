@@ -19,7 +19,7 @@ public class typeof_TreeNodeKindReference_InferenceRule implements InferenceRule
     {
       SNode _nodeToCheck_1029348928467 = treeNodeKindReference;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(treeNodeKindReference, "jetbrains.mps.ypath.helgins", "1179740518224", true), new QuotationClass_6().createNode(TreePath_Behavior.call_getNodeType_1213877481303(SLinkOperations.getTarget(treeNodeKindReference, "treePathAspect", false))), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1179740556071", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(treeNodeKindReference, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1179740518224", true), new QuotationClass_6().createNode(TreePath_Behavior.call_getNodeType_1213877481303(SLinkOperations.getTarget(treeNodeKindReference, "treePathAspect", false))), _nodeToCheck_1029348928467, null, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1179740556071", intentionProvider);
     }
   }
 

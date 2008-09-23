@@ -15,29 +15,29 @@ public class typeof_TreePathOperation_InferenceRule implements InferenceRule_Run
   }
 
   public void applyRule(final SNode op) {
-    SNode parent = SNodeOperations.getParent(op, null, false, false);
+    SNode parent = SNodeOperations.getParent(op);
     do {
-      SNode matchedNode_ = parent;
+      SNode matchedNode_0 = parent;
       {
-        boolean matches_ = false;
+        boolean matches_0 = false;
         {
-          SNode matchingNode_ = parent;
-          if (matchingNode_ != null) {
-            matches_ = SModelUtil_new.isAssignableConcept(matchingNode_.getConceptFqName(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+          SNode matchingNode_0 = parent;
+          if (matchingNode_0 != null) {
+            matches_0 = SModelUtil_new.isAssignableConcept(matchingNode_0.getConceptFqName(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
           }
         }
-        if (matches_) {
+        if (matches_0) {
           {
             SNode _nodeToCheck_1029348928467 = op;
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.ypath.helgins", "1178551167102", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(matchedNode_, "jetbrains.mps.ypath.helgins", "1178551167104", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1178551167101", intentionProvider);
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1178551167102", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(matchedNode_0, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1178551167104", true), _nodeToCheck_1029348928467, null, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1178551167101", intentionProvider);
           }
           break;
         }
       }
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(op, "Error in model structure: wrong parent type", "jetbrains.mps.ypath.helgins@22_0", "1217625800551", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(op, "Error in model structure: wrong parent type", "r:1222172353246(jetbrains.mps.ypath.helgins@22_0)", "1222174732255", intentionProvider);
       }
     } while(false);
   }

@@ -17,15 +17,6 @@ public class ParamFeatureGetFun extends FeatureGetFun implements IParamFeatureFu
     super(node);
   }
 
-  public static ParamFeatureGetFun newInstance(SModel sm, boolean init) {
-    return (ParamFeatureGetFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFeatureGetFun", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ParamFeatureGetFun newInstance(SModel sm) {
-    return ParamFeatureGetFun.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(ParamFeatureGetFun.SHORT_DESCRIPTION);
   }
@@ -48,6 +39,15 @@ public class ParamFeatureGetFun extends FeatureGetFun implements IParamFeatureFu
 
   public void setVirtualPackage(String value) {
     this.setProperty(ParamFeatureGetFun.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static ParamFeatureGetFun newInstance(SModel sm, boolean init) {
+    return (ParamFeatureGetFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFeatureGetFun", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ParamFeatureGetFun newInstance(SModel sm) {
+    return ParamFeatureGetFun.newInstance(sm, false);
   }
 
 }

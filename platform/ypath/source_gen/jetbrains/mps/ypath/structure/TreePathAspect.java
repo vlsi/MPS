@@ -6,12 +6,12 @@ import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.baseLanguage.structure.Visible;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Visibility;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class TreePathAspect extends BaseConcept implements INamedConcept, Visible, TreePath {
   public static final String concept = "jetbrains.mps.ypath.structure.TreePathAspect";
@@ -30,15 +30,6 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, Visibl
   public TreePathAspect(SNode node) {
     super(node);
   }
-
-  public static TreePathAspect newInstance(SModel sm, boolean init) {
-    return (TreePathAspect)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAspect", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TreePathAspect newInstance(SModel sm) {
-    return TreePathAspect.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(TreePathAspect.NAME);
@@ -150,6 +141,15 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, Visibl
 
   public void insertFeatures(IFeature prev, IFeature node) {
     this.insertChild(prev, TreePathAspect.FEATURES, node);
+  }
+
+
+  public static TreePathAspect newInstance(SModel sm, boolean init) {
+    return (TreePathAspect)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAspect", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TreePathAspect newInstance(SModel sm) {
+    return TreePathAspect.newInstance(sm, false);
   }
 
 }

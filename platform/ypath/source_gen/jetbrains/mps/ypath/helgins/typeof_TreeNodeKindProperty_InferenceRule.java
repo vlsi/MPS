@@ -18,7 +18,7 @@ public class typeof_TreeNodeKindProperty_InferenceRule implements InferenceRule_
     {
       SNode _nodeToCheck_1029348928467 = prop;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(prop, "jetbrains.mps.ypath.helgins", "1190288840926", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(prop, null, false, false), "jetbrains.mps.ypath.helgins", "1190288859999", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1190288835157", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(prop, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1190288840926", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(prop), "r:1222075024810(jetbrains.mps.ypath.helgins)", "1190288859999", true), _nodeToCheck_1029348928467, null, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1190288835157", intentionProvider);
     }
   }
 

@@ -120,12 +120,12 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1176906825135(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    Collections_Style_StyleSheet.OPERATION.apply(editorCell);
+    Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11769068536061176906853606(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176906853606");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_rightExpression1176906863718(EditorCell editorCell, SNode node, EditorContext context) {
@@ -133,7 +133,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11769068723131176906872313(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176906872313");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_conceptProperty_alias_1176906825135(EditorCell_Label editorCell, SNode node, EditorContext context) {

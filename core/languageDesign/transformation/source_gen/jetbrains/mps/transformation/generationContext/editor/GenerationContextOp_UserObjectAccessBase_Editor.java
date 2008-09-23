@@ -121,12 +121,12 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
 
   private static void setupBasic_conceptProperty_alias1217890083480(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
+    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12178906722131217890672213(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217890672213");
-    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
+    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -140,7 +140,7 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
 
   private static void setupBasic_Constant_12178906830111217890683011(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217890683011");
-    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
+    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_userKey1217890728561(EditorCell editorCell, SNode node, EditorContext context) {

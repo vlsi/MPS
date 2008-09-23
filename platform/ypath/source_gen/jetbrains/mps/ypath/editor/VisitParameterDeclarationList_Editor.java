@@ -5,58 +5,27 @@ package jetbrains.mps.ypath.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import java.awt.Color;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myListHandler_1180025114326;
-
-  private static void setupBasic_Collection_11800251143251180025114325(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180025114325");
-  }
-
-  private static void setupBasic_refNodeList_visitParameterDeclaration1180025114326(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_visitParameterDeclaration");
-  }
-
-  private static void setupBasic_Constant_11800251180961180025118096(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180025118096");
-  }
-
-  private static void setupBasic_Constant_11800251221131180025122113(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180025122113");
-  }
-
-  private static void setupLabel_refNodeList_visitParameterDeclaration_1180025114326(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1180025118096_1180025118096(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1180025122113_1180025122113(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor7(EditorCell cell) {
-    Color result;
-    result = Color.lightGray;
-    return result;
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1180025114325(context, node);
@@ -92,7 +61,7 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1180025114326(EditorContext context, SNode node) {
     if (this.myListHandler_1180025114326 == null) {
-      this.myListHandler_1180025114326 = new VisitParameterDeclarationList_Editor.visitParameterDeclarationListHandler_(node, "visitParameterDeclaration", context);
+      this.myListHandler_1180025114326 = new VisitParameterDeclarationList_Editor.visitParameterDeclarationListHandler_2322_0(node, "visitParameterDeclaration", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1180025114326.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_visitParameterDeclaration1180025114326(editorCell, node, context);
@@ -103,34 +72,43 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class visitParameterDeclarationListHandler_ extends RefNodeListHandler {
 
-    public visitParameterDeclarationListHandler_(SNode ownerNode, String childRole, EditorContext context) {
+  private static void setupBasic_Collection_11800251143251180025114325(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180025114325");
+  }
+
+  private static void setupBasic_refNodeList_visitParameterDeclaration1180025114326(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_visitParameterDeclaration");
+  }
+
+  private static void setupBasic_Constant_11800251180961180025118096(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180025118096");
+  }
+
+  private static void setupBasic_Constant_11800251221131180025122113(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180025122113");
+  }
+
+  private static void setupLabel_refNodeList_visitParameterDeclaration_1180025114326(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1180025118096_1180025118096(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1180025122113_1180025122113(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor2322_0(EditorCell cell) {
+    Color result;
+    result = MPSColors.lightGray;
+    return result;
+  }
+
+  public static class visitParameterDeclarationListHandler_2322_0 extends RefNodeListHandler {
+
+    public visitParameterDeclarationListHandler_2322_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
-    private static void setupBasic_Constant_11800251143271180025114327(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180025114327");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return VisitParameterDeclarationList_Editor.calculateColor7(cell);
-              }
-
-            });
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
-    }
-
-    private static void setupLabel_Constant_1180025114327_1180025114327(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    }
-
 
     public SNode createNodeToInsert(EditorContext context) {
       SNode listOwner = super.getOwner();
@@ -178,6 +156,29 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
       setupLabel_Constant_1180025114327_1180025114327(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
+    }
+
+
+    private static void setupBasic_Constant_11800251143271180025114327(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180025114327");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return VisitParameterDeclarationList_Editor.calculateColor2322_0(cell);
+              }
+
+            });
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
+    }
+
+    private static void setupLabel_Constant_1180025114327_1180025114327(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

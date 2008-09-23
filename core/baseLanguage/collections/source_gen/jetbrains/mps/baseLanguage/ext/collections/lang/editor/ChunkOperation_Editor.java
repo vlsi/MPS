@@ -116,7 +116,7 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1205753275877(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12057532812091205753281209(EditorCell editorCell, SNode node, EditorContext context) {

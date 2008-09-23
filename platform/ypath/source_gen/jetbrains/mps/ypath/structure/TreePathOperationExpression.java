@@ -20,15 +20,6 @@ public class TreePathOperationExpression extends Expression implements ITreePath
     super(node);
   }
 
-  public static TreePathOperationExpression newInstance(SModel sm, boolean init) {
-    return (TreePathOperationExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TreePathOperationExpression newInstance(SModel sm) {
-    return TreePathOperationExpression.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(TreePathOperationExpression.SHORT_DESCRIPTION);
   }
@@ -67,6 +58,15 @@ public class TreePathOperationExpression extends Expression implements ITreePath
 
   public void setOperation(TreePathOperation node) {
     super.setChild(TreePathOperationExpression.OPERATION, node);
+  }
+
+
+  public static TreePathOperationExpression newInstance(SModel sm, boolean init) {
+    return (TreePathOperationExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TreePathOperationExpression newInstance(SModel sm) {
+    return TreePathOperationExpression.newInstance(sm, false);
   }
 
 }

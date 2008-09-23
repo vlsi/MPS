@@ -22,12 +22,12 @@ public class check_VisitChildrenExpression_InferenceRule implements InferenceRul
     int actualCount = SLinkOperations.getCount(visitChildrenExpression, "actualArgument");
     SNode visitBlock = VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1213877259423(visitChildrenExpression);
     if (!((visitBlock != null))) {
-      TypeChecker.getInstance().reportTypeError(visitChildrenExpression, "visit children is unexpected here", "jetbrains.mps.ypath.helgins", "1180014856089");
+      TypeChecker.getInstance().reportTypeError(visitChildrenExpression, "visit children is unexpected here", "r:1222075024810(jetbrains.mps.ypath.helgins)", "1180014856089");
     }
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(visitBlock, "visitParameterDeclarationList", true), "visitParameterDeclaration", true);
     int expectedCount = ListSequence.fromList(parameters).count();
     if (!(actualCount == expectedCount)) {
-      TypeChecker.getInstance().reportTypeError(visitChildrenExpression, "wrong parameters number: expected " + expectedCount + " , actual " + actualCount, "jetbrains.mps.ypath.helgins", "1180014444793");
+      TypeChecker.getInstance().reportTypeError(visitChildrenExpression, "wrong parameters number: expected " + expectedCount + " , actual " + actualCount, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1180014444793");
     }
     {
       SNode arg;
@@ -46,7 +46,7 @@ public class check_VisitChildrenExpression_InferenceRule implements InferenceRul
         {
           SNode _nodeToCheck_1029348928467 = visitChildrenExpression;
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg, "jetbrains.mps.ypath.helgins", "1180014730654", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(param, "jetbrains.mps.ypath.helgins", "1180014739452", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1180014737422", false, 0, intentionProvider);
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1180014730654", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(param, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1180014739452", true), _nodeToCheck_1029348928467, null, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1180014737422", false, 0, intentionProvider);
         }
       }
     }

@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Styles_StyleSheet {
-  public static final Style REF_LINK_ROLE = getRef_link_role(null);
 
   public static Style getRef_link_role(final EditorCell cell) {
     return new Style(cell) {

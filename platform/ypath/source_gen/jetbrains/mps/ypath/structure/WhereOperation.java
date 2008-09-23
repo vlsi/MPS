@@ -15,21 +15,21 @@ public class WhereOperation extends TreePathOperation {
     super(node);
   }
 
-  public static WhereOperation newInstance(SModel sm, boolean init) {
-    return (WhereOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.WhereOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static WhereOperation newInstance(SModel sm) {
-    return WhereOperation.newInstance(sm, false);
-  }
-
-
   public WhereBlock getWhereBlock() {
     return (WhereBlock)this.getChild(WhereOperation.WHERE_BLOCK);
   }
 
   public void setWhereBlock(WhereBlock node) {
     super.setChild(WhereOperation.WHERE_BLOCK, node);
+  }
+
+
+  public static WhereOperation newInstance(SModel sm, boolean init) {
+    return (WhereOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.WhereOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static WhereOperation newInstance(SModel sm) {
+    return WhereOperation.newInstance(sm, false);
   }
 
 }

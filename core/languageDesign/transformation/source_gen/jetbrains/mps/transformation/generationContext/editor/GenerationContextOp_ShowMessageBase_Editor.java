@@ -142,7 +142,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
 
   private static void setupBasic_conceptProperty_alias1217960446064(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
+    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_messageText1217960469679(EditorCell editorCell, SNode node, EditorContext context) {
@@ -150,7 +150,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
 
   private static void setupBasic_Constant_12179605073061217960507306(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217960507306");
-    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
+    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

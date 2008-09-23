@@ -75,7 +75,7 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
 
   private static void setupBasic_Constant_12178848615251217884861525(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217884861525");
-    Styles_StyleSheet.GEN_CONTEXT_OPERATION.apply(editorCell);
+    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_inputNode1217884861530(EditorCell editorCell, SNode node, EditorContext context) {

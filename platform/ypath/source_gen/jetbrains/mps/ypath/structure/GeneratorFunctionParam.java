@@ -18,15 +18,6 @@ public class GeneratorFunctionParam extends ConceptFunctionParameter implements 
     super(node);
   }
 
-  public static GeneratorFunctionParam newInstance(SModel sm, boolean init) {
-    return (GeneratorFunctionParam)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GeneratorFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GeneratorFunctionParam newInstance(SModel sm) {
-    return GeneratorFunctionParam.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(GeneratorFunctionParam.SHORT_DESCRIPTION);
   }
@@ -49,6 +40,15 @@ public class GeneratorFunctionParam extends ConceptFunctionParameter implements 
 
   public void setVirtualPackage(String value) {
     this.setProperty(GeneratorFunctionParam.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static GeneratorFunctionParam newInstance(SModel sm, boolean init) {
+    return (GeneratorFunctionParam)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GeneratorFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GeneratorFunctionParam newInstance(SModel sm) {
+    return GeneratorFunctionParam.newInstance(sm, false);
   }
 
 }

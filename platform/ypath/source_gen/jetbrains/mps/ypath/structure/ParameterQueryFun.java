@@ -18,15 +18,6 @@ public class ParameterQueryFun extends ConceptFunction implements IDesignFunctio
     super(node);
   }
 
-  public static ParameterQueryFun newInstance(SModel sm, boolean init) {
-    return (ParameterQueryFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParameterQueryFun", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ParameterQueryFun newInstance(SModel sm) {
-    return ParameterQueryFun.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(ParameterQueryFun.SHORT_DESCRIPTION);
   }
@@ -49,6 +40,15 @@ public class ParameterQueryFun extends ConceptFunction implements IDesignFunctio
 
   public void setVirtualPackage(String value) {
     this.setProperty(ParameterQueryFun.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static ParameterQueryFun newInstance(SModel sm, boolean init) {
+    return (ParameterQueryFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParameterQueryFun", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ParameterQueryFun newInstance(SModel sm) {
+    return ParameterQueryFun.newInstance(sm, false);
   }
 
 }

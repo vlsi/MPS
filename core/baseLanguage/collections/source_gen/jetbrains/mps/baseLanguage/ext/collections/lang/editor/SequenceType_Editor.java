@@ -96,7 +96,7 @@ public class SequenceType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11516909389511151690938951(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1151690938951");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -114,7 +114,7 @@ public class SequenceType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11516909389531151690938953(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1151690938953");
-    Collections_Style_StyleSheet.RIGHT_ANGLE_BRACKET.apply(editorCell);
+    Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -128,7 +128,7 @@ public class SequenceType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12157084026391215708402639(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215708402639");
-    Collections_Style_StyleSheet.LEFT_ANGLE_BRACKET.apply(editorCell);
+    Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -284,7 +284,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12021487834231202148783423(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202148783423");
-    StyleSheet_StyleSheet.SQUARE_BRACKET.apply(editorCell);
+    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_fqClassName1202148783424(EditorCell editorCell, SNode node, EditorContext context) {
@@ -293,7 +293,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12021487834251202148783425(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202148783425");
-    StyleSheet_StyleSheet.INTERNAL_KEYWORD.apply(editorCell);
+    StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_classifier1202148783426(EditorCell editorCell, SNode node, EditorContext context) {
@@ -302,7 +302,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12021487834291202148783429(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202148783429");
-    StyleSheet_StyleSheet.SQUARE_BRACKET.apply(editorCell);
+    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12021488062861202148806286(EditorCell editorCell, SNode node, EditorContext context) {
@@ -311,7 +311,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12021488062871202148806287(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202148806287");
-    StyleSheet_StyleSheet.SQUARE_BRACKET.apply(editorCell);
+    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_fqClassName1202148806288(EditorCell editorCell, SNode node, EditorContext context) {
@@ -320,7 +320,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12021488062891202148806289(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202148806289");
-    StyleSheet_StyleSheet.INTERNAL_KEYWORD.apply(editorCell);
+    StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_classifier1202148806290(EditorCell editorCell, SNode node, EditorContext context) {
@@ -329,7 +329,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12021488062931202148806293(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202148806293");
-    StyleSheet_StyleSheet.SQUARE_BRACKET.apply(editorCell);
+    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12021488114761202148811476(EditorCell editorCell, SNode node, EditorContext context) {

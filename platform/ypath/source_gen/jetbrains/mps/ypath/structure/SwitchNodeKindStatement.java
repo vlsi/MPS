@@ -4,11 +4,11 @@ package jetbrains.mps.ypath.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class SwitchNodeKindStatement extends Statement {
   public static final String concept = "jetbrains.mps.ypath.structure.SwitchNodeKindStatement";
@@ -18,15 +18,6 @@ public class SwitchNodeKindStatement extends Statement {
   public SwitchNodeKindStatement(SNode node) {
     super(node);
   }
-
-  public static SwitchNodeKindStatement newInstance(SModel sm, boolean init) {
-    return (SwitchNodeKindStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.SwitchNodeKindStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static SwitchNodeKindStatement newInstance(SModel sm) {
-    return SwitchNodeKindStatement.newInstance(sm, false);
-  }
-
 
   public TreePathAdapterExpression getNodeExpression() {
     return (TreePathAdapterExpression)this.getChild(SwitchNodeKindStatement.NODE_EXPRESSION);
@@ -54,6 +45,15 @@ public class SwitchNodeKindStatement extends Statement {
 
   public void insertNodeKindCase(NodeKindCase prev, NodeKindCase node) {
     this.insertChild(prev, SwitchNodeKindStatement.NODE_KIND_CASE, node);
+  }
+
+
+  public static SwitchNodeKindStatement newInstance(SModel sm, boolean init) {
+    return (SwitchNodeKindStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.SwitchNodeKindStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static SwitchNodeKindStatement newInstance(SModel sm) {
+    return SwitchNodeKindStatement.newInstance(sm, false);
   }
 
 }

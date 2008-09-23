@@ -17,15 +17,6 @@ public class ParamFeatureSequenceFun extends FeatureSequenceFun implements IPara
     super(node);
   }
 
-  public static ParamFeatureSequenceFun newInstance(SModel sm, boolean init) {
-    return (ParamFeatureSequenceFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFeatureSequenceFun", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ParamFeatureSequenceFun newInstance(SModel sm) {
-    return ParamFeatureSequenceFun.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(ParamFeatureSequenceFun.SHORT_DESCRIPTION);
   }
@@ -48,6 +39,15 @@ public class ParamFeatureSequenceFun extends FeatureSequenceFun implements IPara
 
   public void setVirtualPackage(String value) {
     this.setProperty(ParamFeatureSequenceFun.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static ParamFeatureSequenceFun newInstance(SModel sm, boolean init) {
+    return (ParamFeatureSequenceFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFeatureSequenceFun", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ParamFeatureSequenceFun newInstance(SModel sm) {
+    return ParamFeatureSequenceFun.newInstance(sm, false);
   }
 
 }

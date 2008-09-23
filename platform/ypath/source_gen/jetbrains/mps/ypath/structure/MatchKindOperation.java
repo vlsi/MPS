@@ -16,15 +16,6 @@ public class MatchKindOperation extends TreePathOperation {
     super(node);
   }
 
-  public static MatchKindOperation newInstance(SModel sm, boolean init) {
-    return (MatchKindOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.MatchKindOperation", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MatchKindOperation newInstance(SModel sm) {
-    return MatchKindOperation.newInstance(sm, false);
-  }
-
-
   public TreeNodeKind getNodeKind() {
     return (TreeNodeKind)this.getReferent(MatchKindOperation.NODE_KIND);
   }
@@ -39,6 +30,15 @@ public class MatchKindOperation extends TreePathOperation {
 
   public void setNodeKindOccurrence(TreeNodeKindOccurrence node) {
     super.setChild(MatchKindOperation.NODE_KIND_OCCURRENCE, node);
+  }
+
+
+  public static MatchKindOperation newInstance(SModel sm, boolean init) {
+    return (MatchKindOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.MatchKindOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MatchKindOperation newInstance(SModel sm) {
+    return MatchKindOperation.newInstance(sm, false);
   }
 
 }

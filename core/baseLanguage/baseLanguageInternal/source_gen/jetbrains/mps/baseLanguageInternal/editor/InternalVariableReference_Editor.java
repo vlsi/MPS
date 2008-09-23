@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class InternalVariableReference_Editor extends DefaultNodeEditor {
 
@@ -161,7 +162,7 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor8666_0(EditorCell cell) {
     Color result;
-    result = Color.green;
+    result = MPSColors.green;
     return result;
   }
 

@@ -158,7 +158,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12069565836851206956583685(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206956583685");
-    DataFlow_StyleSheet.INSTRUCTION.apply(editorCell);
+    DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12069565920921206956592092(EditorCell editorCell, SNode node, EditorContext context) {
@@ -183,7 +183,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12069565989981206956598998(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206956598998");
-    DataFlow_StyleSheet.INSTRUCTION.apply(editorCell);
+    DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12069566019571206956601957(EditorCell editorCell, SNode node, EditorContext context) {
@@ -208,7 +208,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12069566073861206956607386(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206956607386");
-    DataFlow_StyleSheet.INSTRUCTION.apply(editorCell);
+    DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1206956583685_1206956583685(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -77,7 +77,7 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12070627205241207062720524(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1207062720524");
-    DataFlow_StyleSheet.POSITION.apply(editorCell);
+    DataFlow_StyleSheet.getPosition(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_label1207062721854(EditorCell editorCell, SNode node, EditorContext context) {

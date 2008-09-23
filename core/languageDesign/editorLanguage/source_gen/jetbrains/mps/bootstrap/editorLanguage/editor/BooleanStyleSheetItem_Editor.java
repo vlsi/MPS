@@ -10,10 +10,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
 
@@ -50,6 +53,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
       setupLabel_conceptProperty_alias_1186414565427((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     return editorCell;
   }
 
@@ -125,5 +129,16 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_property_flag_1186414570275(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
+  public static class BooleanStyleSheetItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+
+    public BooleanStyleSheetItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.bootstrap.editorLanguage.structure.StyleClassItem";
+    }
+
+}
 
 }

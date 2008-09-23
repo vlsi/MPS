@@ -12,7 +12,7 @@ public class TraversalAxis_PropertySupport extends PropertySupport {
       return true;
     }
     Iterator<TraversalAxis> constants = TraversalAxis.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       TraversalAxis constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
@@ -26,7 +26,7 @@ public class TraversalAxis_PropertySupport extends PropertySupport {
       return null;
     }
     Iterator<TraversalAxis> constants = TraversalAxis.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       TraversalAxis constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();
@@ -40,7 +40,7 @@ public class TraversalAxis_PropertySupport extends PropertySupport {
     if (constant != null) {
       return constant.getName();
     }
-    return null;
+    return "";
   }
 
 }

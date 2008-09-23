@@ -18,15 +18,6 @@ public class ToStringFun extends ConceptFunction implements IDesignFunction {
     super(node);
   }
 
-  public static ToStringFun newInstance(SModel sm, boolean init) {
-    return (ToStringFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ToStringFun", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ToStringFun newInstance(SModel sm) {
-    return ToStringFun.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(ToStringFun.SHORT_DESCRIPTION);
   }
@@ -49,6 +40,15 @@ public class ToStringFun extends ConceptFunction implements IDesignFunction {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ToStringFun.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static ToStringFun newInstance(SModel sm, boolean init) {
+    return (ToStringFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ToStringFun", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ToStringFun newInstance(SModel sm) {
+    return ToStringFun.newInstance(sm, false);
   }
 
 }

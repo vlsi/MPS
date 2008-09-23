@@ -17,15 +17,6 @@ public class ParamFeatureSizeFun extends FeatureSizeFun implements IParamFeature
     super(node);
   }
 
-  public static ParamFeatureSizeFun newInstance(SModel sm, boolean init) {
-    return (ParamFeatureSizeFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFeatureSizeFun", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ParamFeatureSizeFun newInstance(SModel sm) {
-    return ParamFeatureSizeFun.newInstance(sm, false);
-  }
-
-
   public String getShortDescription() {
     return this.getProperty(ParamFeatureSizeFun.SHORT_DESCRIPTION);
   }
@@ -48,6 +39,15 @@ public class ParamFeatureSizeFun extends FeatureSizeFun implements IParamFeature
 
   public void setVirtualPackage(String value) {
     this.setProperty(ParamFeatureSizeFun.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static ParamFeatureSizeFun newInstance(SModel sm, boolean init) {
+    return (ParamFeatureSizeFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFeatureSizeFun", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ParamFeatureSizeFun newInstance(SModel sm) {
+    return ParamFeatureSizeFun.newInstance(sm, false);
   }
 
 }

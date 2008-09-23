@@ -18,7 +18,7 @@ public class typeof_TreePathCreator_InferenceRule implements InferenceRule_Runti
     {
       SNode _nodeToCheck_1029348928467 = tpCreator;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(tpCreator, "jetbrains.mps.ypath.helgins", "1184578650091", true), SLinkOperations.getTarget(tpCreator, "treePathType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1184578650090", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(tpCreator, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1184578650091", true), SLinkOperations.getTarget(tpCreator, "treePathType", true), _nodeToCheck_1029348928467, null, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1184578650090", intentionProvider);
     }
   }
 

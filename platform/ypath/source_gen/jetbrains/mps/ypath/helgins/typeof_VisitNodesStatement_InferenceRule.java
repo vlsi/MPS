@@ -19,12 +19,12 @@ public class typeof_VisitNodesStatement_InferenceRule implements InferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = visitNodesStatement;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(visitNodesStatement, "visitBlock", true), "expression", true), "jetbrains.mps.ypath.helgins", "1180009367649", true), new QuotationClass_7().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1180009898513)), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1180009374907", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(visitNodesStatement, "visitBlock", true), "expression", true), "r:1222075024810(jetbrains.mps.ypath.helgins)", "1180009367649", true), new QuotationClass_7().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1180009898513)), _nodeToCheck_1029348928467, null, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1180009374907", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = visitNodesStatement;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(visitNodesStatement, "jetbrains.mps.ypath.helgins", "1180009856000", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(visitNodesStatement, "visitBlock", true), "expression", true), "jetbrains.mps.ypath.helgins", "1180009865622", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1180009862290", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(visitNodesStatement, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1180009856000", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(visitNodesStatement, "visitBlock", true), "expression", true), "r:1222075024810(jetbrains.mps.ypath.helgins)", "1180009865622", true), _nodeToCheck_1029348928467, null, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1180009862290", intentionProvider);
     }
   }
 

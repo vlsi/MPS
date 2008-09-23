@@ -5,24 +5,24 @@ package jetbrains.mps.ypath.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ypath.behavior.VisitChildrenExpression_Behavior;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.ypath.behavior.VisitChildrenExpression_Behavior;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -35,75 +35,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myListHandler_1180014198298;
 
-  private static void setupBasic_Collection_11800141781151180014178115(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180014178115");
-  }
-
-  private static void setupBasic_conceptProperty_alias1180014178116(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.EDITABLE, false);
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return VisitChildrenExpression_Editor.calculateColor31(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Collection_11800141831191180014183119(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180014183119");
-  }
-
-  private static void setupBasic_Constant_11800141934191180014193419(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180014193419");
-  }
-
-  private static void setupBasic_Constant_11800141955771180014195577(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180014195577");
-  }
-
-  private static void setupBasic_refNodeList_actualArgument1180014198298(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_actualArgument");
-  }
-
-  private static void setupLabel_conceptProperty_alias_1180014178116(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1180014193419_1180014193419(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1180014195577_1180014195577(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_refNodeList_actualArgument_1180014198298(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static boolean renderingCondition3(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(SLinkOperations.getTarget(VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1213877259423(node), "visitParameterDeclarationList", true), "visitParameterDeclaration") > 0;
-  }
-
-  private static Color calculateColor8(EditorCell cell) {
-    Color result;
-    result = Color.lightGray;
-    return result;
-  }
-
-  private static Color calculateColor31(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
-
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1180014178115(context, node);
   }
@@ -115,7 +46,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConceptProperty1180014178116(context, node));
-    if (renderingCondition3(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition9190_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1180014183119(context, node));
     }
     return editorCell;
@@ -151,7 +82,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1180014198298(EditorContext context, SNode node) {
     if (this.myListHandler_1180014198298 == null) {
-      this.myListHandler_1180014198298 = new VisitChildrenExpression_Editor.actualArgumentListHandler_(node, "actualArgument", context);
+      this.myListHandler_1180014198298 = new VisitChildrenExpression_Editor.actualArgumentListHandler_9190_0(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1180014198298.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_actualArgument1180014198298(editorCell, node, context);
@@ -191,34 +122,80 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class actualArgumentListHandler_ extends RefNodeListHandler {
 
-    public actualArgumentListHandler_(SNode ownerNode, String childRole, EditorContext context) {
+  private static void setupBasic_Collection_11800141781151180014178115(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180014178115");
+  }
+
+  private static void setupBasic_conceptProperty_alias1180014178116(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return VisitChildrenExpression_Editor.calculateColor9190_1(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Collection_11800141831191180014183119(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180014183119");
+  }
+
+  private static void setupBasic_Constant_11800141934191180014193419(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180014193419");
+  }
+
+  private static void setupBasic_Constant_11800141955771180014195577(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180014195577");
+  }
+
+  private static void setupBasic_refNodeList_actualArgument1180014198298(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_actualArgument");
+  }
+
+  private static void setupLabel_conceptProperty_alias_1180014178116(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1180014193419_1180014193419(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1180014195577_1180014195577(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNodeList_actualArgument_1180014198298(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean renderingCondition9190_0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(SLinkOperations.getTarget(VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1213877259423(node), "visitParameterDeclarationList", true), "visitParameterDeclaration") > 0;
+  }
+
+  private static Color calculateColor9190_0(EditorCell cell) {
+    Color result;
+    result = MPSColors.lightGray;
+    return result;
+  }
+
+  private static Color calculateColor9190_1(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static class actualArgumentListHandler_9190_0 extends RefNodeListHandler {
+
+    public actualArgumentListHandler_9190_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
-    private static void setupBasic_Constant_11800142194711180014219471(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180014219471");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return VisitChildrenExpression_Editor.calculateColor8(cell);
-              }
-
-            });
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
-    }
-
-    private static void setupLabel_Constant_1180014219471_1180014219471(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    }
-
 
     public SNode createNodeToInsert(EditorContext context) {
       SNode listOwner = super.getOwner();
@@ -271,6 +248,29 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
       setupLabel_Constant_1180014219471_1180014219471(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
+    }
+
+
+    private static void setupBasic_Constant_11800142194711180014219471(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180014219471");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return VisitChildrenExpression_Editor.calculateColor9190_0(cell);
+              }
+
+            });
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
+    }
+
+    private static void setupLabel_Constant_1180014219471_1180014219471(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

@@ -4,11 +4,11 @@ package jetbrains.mps.ypath.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class VisitParameterDeclarationList extends BaseConcept {
   public static final String concept = "jetbrains.mps.ypath.structure.VisitParameterDeclarationList";
@@ -17,15 +17,6 @@ public class VisitParameterDeclarationList extends BaseConcept {
   public VisitParameterDeclarationList(SNode node) {
     super(node);
   }
-
-  public static VisitParameterDeclarationList newInstance(SModel sm, boolean init) {
-    return (VisitParameterDeclarationList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitParameterDeclarationList", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static VisitParameterDeclarationList newInstance(SModel sm) {
-    return VisitParameterDeclarationList.newInstance(sm, false);
-  }
-
 
   public int getVisitParameterDeclarationsCount() {
     return this.getChildCount(VisitParameterDeclarationList.VISIT_PARAMETER_DECLARATION);
@@ -45,6 +36,15 @@ public class VisitParameterDeclarationList extends BaseConcept {
 
   public void insertVisitParameterDeclaration(VisitParameterDeclaration prev, VisitParameterDeclaration node) {
     this.insertChild(prev, VisitParameterDeclarationList.VISIT_PARAMETER_DECLARATION, node);
+  }
+
+
+  public static VisitParameterDeclarationList newInstance(SModel sm, boolean init) {
+    return (VisitParameterDeclarationList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitParameterDeclarationList", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static VisitParameterDeclarationList newInstance(SModel sm) {
+    return VisitParameterDeclarationList.newInstance(sm, false);
   }
 
 }

@@ -158,7 +158,7 @@ public class IGenericFeature_Behavior {
   }
 
   public static boolean call_isSingleCardinality_1213877249147(SNode thisNode, SNode param) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_isSingleCardinality_1213877249147", PARAMETERS_1213877249147, param);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isSingleCardinality_1213877249147", PARAMETERS_1213877249147, param);
   }
 
   public static SNode call_getterExpression_1213877249152(SNode thisNode, SNode srcExpr, SNode param, ITemplateGenerator generator) {
@@ -178,7 +178,7 @@ public class IGenericFeature_Behavior {
   }
 
   public static boolean callSuper_isSingleCardinality_1213877249147(SNode thisNode, String callerConceptFqName, SNode param) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_isSingleCardinality_1213877249147", PARAMETERS_1213877249147, param);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isSingleCardinality_1213877249147", PARAMETERS_1213877249147, param);
   }
 
   public static SNode callSuper_getterExpression_1213877249152(SNode thisNode, String callerConceptFqName, SNode srcExpr, SNode param, ITemplateGenerator generator) {

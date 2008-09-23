@@ -17,15 +17,6 @@ public class TreePathAdapterExpression extends Expression {
     super(node);
   }
 
-  public static TreePathAdapterExpression newInstance(SModel sm, boolean init) {
-    return (TreePathAdapterExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAdapterExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static TreePathAdapterExpression newInstance(SModel sm) {
-    return TreePathAdapterExpression.newInstance(sm, false);
-  }
-
-
   public TreePathAspect getTreepathAspect() {
     return (TreePathAspect)this.getReferent(TreePathAdapterExpression.TREEPATH_ASPECT);
   }
@@ -40,6 +31,15 @@ public class TreePathAdapterExpression extends Expression {
 
   public void setExpression(Expression node) {
     super.setChild(TreePathAdapterExpression.EXPRESSION, node);
+  }
+
+
+  public static TreePathAdapterExpression newInstance(SModel sm, boolean init) {
+    return (TreePathAdapterExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAdapterExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static TreePathAdapterExpression newInstance(SModel sm) {
+    return TreePathAdapterExpression.newInstance(sm, false);
   }
 
 }

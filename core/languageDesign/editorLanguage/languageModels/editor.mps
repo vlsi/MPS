@@ -5976,6 +5976,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1186403839417">
         <link role="relationDeclaration" targetNodeId="3.1137473891462" />
         <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1222177241095">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1222179119836">
+            <link role="replacementConcept" targetNodeId="2.1186402475462" resolveInfo="StyleClassItem" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1186403841966">
         <property name="text" value=":" />
@@ -6027,6 +6032,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1186403889931">
         <property name="text" value="font-style" />
         <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1222179702968">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1222179706875">
+            <link role="replacementConcept" targetNodeId="2.1186402475462" resolveInfo="StyleClassItem" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1186403894198">
         <property name="text" value=":" />
@@ -6097,6 +6107,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1186414565427">
         <link role="relationDeclaration" targetNodeId="3.1137473891462" />
         <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1222179576632">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1222179580836">
+            <link role="replacementConcept" targetNodeId="2.1186402475462" resolveInfo="StyleClassItem" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1186414568289">
         <property name="text" value=":" />
@@ -6114,6 +6129,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1186415811915">
         <link role="relationDeclaration" targetNodeId="3.1137473891462" />
         <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1222179680715">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1222179687107">
+            <link role="replacementConcept" targetNodeId="2.1186402475462" resolveInfo="StyleClassItem" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1186415782550">
         <property name="text" value=":" />
@@ -6806,6 +6826,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1214316290161">
         <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
         <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1222179802524">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1222179805697">
+            <link role="replacementConcept" targetNodeId="2.1186402475462" resolveInfo="StyleClassItem" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214316291663">
         <property name="text" value=":" />
@@ -6876,6 +6901,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1214317920060">
         <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
         <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1222179722735">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1222179726658">
+            <link role="replacementConcept" targetNodeId="2.1186402475462" resolveInfo="StyleClassItem" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214317920061">
         <property name="text" value=":" />
@@ -6893,6 +6923,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1214320157196">
         <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
         <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1222179775615">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1222179779945">
+            <link role="replacementConcept" targetNodeId="2.1186402475462" resolveInfo="StyleClassItem" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214320157197">
         <property name="text" value=":" />
@@ -6910,6 +6945,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1214472841427">
         <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
         <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1222179612384">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1222179619229">
+            <link role="replacementConcept" targetNodeId="2.1186402475462" resolveInfo="StyleClassItem" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214472842648">
         <property name="text" value=":" />
@@ -7133,6 +7173,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1215007844401">
         <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
         <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1222179552114">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1222179557162">
+            <link role="replacementConcept" targetNodeId="2.1186402475462" resolveInfo="StyleClassItem" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215007846091">
         <property name="text" value=":" />
@@ -7357,6 +7402,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1216561900975">
         <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
         <link role="relationDeclaration" targetNodeId="3.1156235010670" resolveInfo="alias" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1222179752175">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1222179755989">
+            <link role="replacementConcept" targetNodeId="2.1186402475462" resolveInfo="StyleClassItem" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1216561900976">
         <property name="text" value=":" />

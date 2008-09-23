@@ -90,7 +90,7 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11744787486511174478748651(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174478748651");
-    StyleSheet_StyleSheet.INTERNAL_KEYWORD.apply(editorCell);
+    StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -104,7 +104,7 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12190641065791219064106579(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219064106579");
-    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refNode_type_1174478741007(EditorCell_Label editorCell, SNode node, EditorContext context) {

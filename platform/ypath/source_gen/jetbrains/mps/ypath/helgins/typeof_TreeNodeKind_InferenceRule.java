@@ -18,7 +18,7 @@ public class typeof_TreeNodeKind_InferenceRule implements InferenceRule_Runtime 
     {
       SNode _nodeToCheck_1029348928467 = kind;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(kind, "jetbrains.mps.ypath.helgins", "1184316264005", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(kind, null, false, false), "jetbrains.mps.ypath.helgins", "1184316290748", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1184316270386", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(kind, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1184316264005", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(kind), "r:1222075024810(jetbrains.mps.ypath.helgins)", "1184316290748", true), _nodeToCheck_1029348928467, null, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1184316270386", intentionProvider);
     }
   }
 

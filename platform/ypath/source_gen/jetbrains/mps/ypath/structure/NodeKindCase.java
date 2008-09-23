@@ -4,10 +4,10 @@ package jetbrains.mps.ypath.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class NodeKindCase extends BaseConcept {
   public static final String concept = "jetbrains.mps.ypath.structure.NodeKindCase";
@@ -17,21 +17,21 @@ public class NodeKindCase extends BaseConcept {
     super(node);
   }
 
-  public static NodeKindCase newInstance(SModel sm, boolean init) {
-    return (NodeKindCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeKindCase", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static NodeKindCase newInstance(SModel sm) {
-    return NodeKindCase.newInstance(sm, false);
-  }
-
-
   public StatementList getStatementList() {
     return (StatementList)this.getChild(NodeKindCase.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {
     super.setChild(NodeKindCase.STATEMENT_LIST, node);
+  }
+
+
+  public static NodeKindCase newInstance(SModel sm, boolean init) {
+    return (NodeKindCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeKindCase", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static NodeKindCase newInstance(SModel sm) {
+    return NodeKindCase.newInstance(sm, false);
   }
 
 }

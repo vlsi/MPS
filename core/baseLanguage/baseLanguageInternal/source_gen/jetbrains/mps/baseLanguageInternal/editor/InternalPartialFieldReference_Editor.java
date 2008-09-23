@@ -240,7 +240,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11775901274901177590127490(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177590127490");
-    StyleSheet_StyleSheet.SQUARE_BRACKET.apply(editorCell);
+    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_fieldType1177590138558(EditorCell editorCell, SNode node, EditorContext context) {
@@ -248,7 +248,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11775901415911177590141591(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177590141591");
-    StyleSheet_StyleSheet.SQUARE_BRACKET.apply(editorCell);
+    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_instance1177590147655(EditorCell editorCell, SNode node, EditorContext context) {
@@ -265,7 +265,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11775901504701177590150470(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177590150470");
-    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_fieldName1177590154097(EditorCell editorCell, SNode node, EditorContext context) {
@@ -289,7 +289,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11775979552951177597955295(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177597955295");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12098172765111209817276511(EditorCell editorCell, SNode node, EditorContext context) {
@@ -307,7 +307,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12098172827631209817282763(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209817282763");
-    StyleSheet_StyleSheet.SQUARE_BRACKET.apply(editorCell);
+    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_instanceType1209817282764(EditorCell editorCell, SNode node, EditorContext context) {
@@ -315,12 +315,12 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12098172827651209817282765(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209817282765");
-    StyleSheet_StyleSheet.SQUARE_BRACKET.apply(editorCell);
+    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12098173109381209817310938(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209817310938");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1177590127490_1177590127490(EditorCell_Label editorCell, SNode node, EditorContext context) {

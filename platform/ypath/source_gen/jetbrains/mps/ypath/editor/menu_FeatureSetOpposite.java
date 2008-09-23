@@ -21,18 +21,18 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
 
   public menu_FeatureSetOpposite() {
-    super(new SubstituteInfoPart[]{new menu_FeatureSetOpposite.IFeature_generic_cellMenu()});
+    super(new SubstituteInfoPart[]{new menu_FeatureSetOpposite.IFeature_generic_cellMenu0()});
   }
-  public static class IFeature_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
+  public static class IFeature_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
 
-    public IFeature_generic_cellMenu() {
+    public IFeature_generic_cellMenu0() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       List<Pair> res = ListSequence.<Pair>fromArray();
       final SNode srcNode = node;
       final boolean isGeneric = SNodeOperations.isInstanceOf(srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
-      for(SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(srcNode, null, false, false), "features", true)).where(new IWhereFilter <SNode>() {
+      for(SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(srcNode), "features", true)).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
           return it != srcNode && ((isGeneric ?

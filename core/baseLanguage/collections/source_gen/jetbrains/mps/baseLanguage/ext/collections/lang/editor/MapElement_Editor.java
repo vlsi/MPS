@@ -118,7 +118,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11979326105411197932610541(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197932610541");
-    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_key1197932614043(EditorCell editorCell, SNode node, EditorContext context) {
@@ -126,7 +126,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11979326167641197932616764(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197932616764");
-    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refNode_map_1197932608070(EditorCell_Label editorCell, SNode node, EditorContext context) {

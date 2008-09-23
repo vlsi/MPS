@@ -16,7 +16,7 @@ public class typeof_NodeTypeFunctionParam_InferenceRule implements InferenceRule
 
   public void applyRule(final SNode nodeToCheck) {
     SNode nodeType = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_9().createNode(SNodeOperations.getConceptDeclaration(nodeType)), nodeToCheck, "jetbrains.mps.ypath.helgins", "1196721449847");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_9().createNode(SNodeOperations.getConceptDeclaration(nodeType)), nodeToCheck, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1196721449847");
   }
 
   public String getApplicableConceptFQName() {

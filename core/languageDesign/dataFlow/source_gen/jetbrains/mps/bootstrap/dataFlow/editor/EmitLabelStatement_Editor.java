@@ -75,7 +75,7 @@ public class EmitLabelStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12070624928041207062492804(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1207062492804");
-    DataFlow_StyleSheet.LABEL.apply(editorCell);
+    DataFlow_StyleSheet.getLabel(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_name1207062494415(EditorCell editorCell, SNode node, EditorContext context) {

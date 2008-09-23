@@ -19,12 +19,12 @@ public class typeOf_LambdaMethodParameter_InferenceRule implements InferenceRule
     {
       SNode _nodeToCheck_1029348928467 = parameter;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(new QuotationClass_2().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1178551166899)), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(SNodeOperations.getParent(parameter, null, false, false), null, false, false), "jetbrains.mps.ypath.helgins", "1179327748294", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1179327739073", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(new QuotationClass_2().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1178551166899)), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(SNodeOperations.getParent(parameter)), "r:1222075024810(jetbrains.mps.ypath.helgins)", "1179327748294", true), _nodeToCheck_1029348928467, null, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1179327739073", intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = parameter;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.ypath.helgins", "1179326834794", true), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1178551166899), _nodeToCheck_1029348928467, null, "jetbrains.mps.ypath.helgins", "1179326842470", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1179326834794", true), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1178551166899), _nodeToCheck_1029348928467, null, "r:1222075024810(jetbrains.mps.ypath.helgins)", "1179326842470", intentionProvider);
     }
   }
 

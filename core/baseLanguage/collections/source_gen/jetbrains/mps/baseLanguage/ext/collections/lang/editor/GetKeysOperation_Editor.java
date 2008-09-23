@@ -51,7 +51,7 @@ public class GetKeysOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1201872488234(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_conceptProperty_alias_1201872488234(EditorCell_Label editorCell, SNode node, EditorContext context) {

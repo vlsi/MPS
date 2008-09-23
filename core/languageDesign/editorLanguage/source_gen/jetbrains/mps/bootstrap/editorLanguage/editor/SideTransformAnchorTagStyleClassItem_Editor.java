@@ -10,10 +10,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEditor {
 
@@ -50,6 +53,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
       setupLabel_conceptProperty_alias_1214320157196((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new SideTransformAnchorTagStyleClassItem_Editor.SideTransformAnchorTagStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     return editorCell;
   }
 
@@ -125,5 +129,16 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
 
   private static void setupLabel_property_tag_1214320157198(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
+  public static class SideTransformAnchorTagStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+
+    public SideTransformAnchorTagStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.bootstrap.editorLanguage.structure.StyleClassItem";
+    }
+
+}
 
 }

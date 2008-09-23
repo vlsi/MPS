@@ -215,7 +215,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
 
   private static void setupBasic_Constant_11742943403311174294340331(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174294340331");
-    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_methodName1174294352708(EditorCell editorCell, SNode node, EditorContext context) {
@@ -250,7 +250,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
 
   private static void setupBasic_Constant_11743182201741174318220174(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174318220174");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -264,7 +264,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
 
   private static void setupBasic_Constant_11743182221921174318222192(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174318222192");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNodeList_actualArgument1174318227631(EditorCell editorCell, SNode node, EditorContext context) {
