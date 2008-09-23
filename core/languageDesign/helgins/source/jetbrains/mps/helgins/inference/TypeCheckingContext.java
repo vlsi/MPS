@@ -50,7 +50,7 @@ public class TypeCheckingContext {
   }
 
   private String getNewVarName() {
-    return myTypeChecker.getCurrentTypesComponent().getNewVarName();
+    return myNodeTypesComponent.getNewVarName();
   }
 
   public void registerTypeVariable(SNode variable) {

@@ -779,17 +779,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(new QuotationClass_5().createNode(_context.getOutputModel()), "classifier", false);
   }
 
-  public static Object referenceMacro_GetReferent_1175149443385(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode clt;
-    if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.SubtypingRule")) {
-      return SLinkOperations.getTarget(new QuotationClass_6().createNode(), "classifier", false);
-    }
-    if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
-      return SLinkOperations.getTarget(new QuotationClass_7().createNode(), "classifier", false);
-    }
-    return SLinkOperations.getTarget(new QuotationClass_8().createNode(), "classifier", false);
-  }
-
   public static Object referenceMacro_GetReferent_1175249167916(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "classForRule").getChild("constructor");
   }
@@ -1014,6 +1003,16 @@ public class QueriesGenerated {
     return null;
   }
 
+  public static Object referenceMacro_GetReferent_1222182391879(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.SubtypingRule")) {
+      return SLinkOperations.getTarget(new QuotationClass_6().createNode(), "classifier", false);
+    }
+    if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
+      return SLinkOperations.getTarget(new QuotationClass_7().createNode(), "classifier", false);
+    }
+    return SLinkOperations.getTarget(new QuotationClass_8().createNode(), "classifier", false);
+  }
+
   public static boolean ifMacro_Condition_1174643945663(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
   }
@@ -1032,10 +1031,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1174998351525(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
-  }
-
-  public static boolean ifMacro_Condition_1175149440226(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule");
   }
 
   public static boolean ifMacro_Condition_1175607840890(final IOperationContext operationContext, final IfMacroContext _context) {

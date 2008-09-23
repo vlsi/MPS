@@ -1728,95 +1728,8 @@
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1175149432098">
       <link role="classifier" targetNodeId="15.~AbstractSubtypingRule_Runtime" resolveInfo="AbstractSubtypingRule_Runtime" />
-      <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.IfMacro" id="1175149440225">
-        <node role="conditionFunction" type="jetbrains.mps.transformation.TLBase.structure.IfMacro_Condition" id="1175149440226">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175149440227">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1175149451121">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227956282">
-                <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1175149451122" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1175149459250">
-                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1177556243000">
-                    <link role="conceptDeclaration" targetNodeId="1.1175147569072" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="referenceMacro$link_attribute$classifier" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1175149443384">
-        <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1175149443385">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175149443386">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1175149478923">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1175149478924">
-                <property name="name" value="clt" />
-                <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1175149478925">
-                  <link role="concept" targetNodeId="3.1107535904670" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1175442083625">
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227818228">
-                <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1175442093206" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1175442106723">
-                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1177556242940">
-                    <link role="conceptDeclaration" targetNodeId="1.1175147670730" />
-                  </node>
-                </node>
-              </node>
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175442083627">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1175442143198">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227919400">
-                    <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1196952400218">
-                      <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196952400219">
-                        <link role="classifier" targetNodeId="15.~SubtypingRule_Runtime" resolveInfo="SubtypingRule_Runtime" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1175442176407">
-                      <link role="link" targetNodeId="3.1107535924139" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1188816459771">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188816459772">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1188816473064">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227903672">
-                    <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1196952400238">
-                      <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196952400239">
-                        <link role="classifier" targetNodeId="15.~ComparisonRule_Runtime" resolveInfo="ComparisonRule_Runtime" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1188816486915">
-                      <link role="link" targetNodeId="3.1107535924139" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227935677">
-                <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1188816461900" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1188816466045">
-                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1188816471266">
-                    <link role="conceptDeclaration" targetNodeId="1.1188811367543" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1175149491411">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227887547">
-                <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1196952400240">
-                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196952400241">
-                    <link role="classifier" targetNodeId="15.~AbstractSubtypingRule_Runtime" resolveInfo="AbstractSubtypingRule_Runtime" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1175149499852">
-                  <link role="link" targetNodeId="3.1107535924139" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.SwitchMacro" id="1222182617042">
+        <link role="templateSwitch" targetNodeId="1222180493920" resolveInfo="ExtendedClass_switch" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550081022" />
@@ -2097,6 +2010,13 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1222180249186">
+        <property name="isFinal" value="true" />
+        <property name="name" value="typeCheckingContext" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222180279724">
+          <link role="classifier" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
         </node>
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1174652020947">
@@ -12456,6 +12376,13 @@
           </node>
         </node>
       </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1222180308351">
+        <property name="name" value="typeCheckingContext" />
+        <property name="isFinal" value="true" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222180311837">
+          <link role="classifier" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
+        </node>
+      </node>
       <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1212596264031" />
     </node>
   </node>
@@ -14354,6 +14281,102 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.transformation.TLBase.structure.TemplateSwitch" id="1222180493920">
+    <property name="name" value="ExtendedClass_switch" />
+    <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1222180551719">
+      <property name="applyToConceptInheritors" value="true" />
+      <link role="applicableConcept" targetNodeId="1.1175147569072" resolveInfo="AbstractSubtypingRule" />
+      <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1222182088964">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222182121718">
+          <link role="classifier" targetNodeId="15.~AbstractSubtypingRule_Runtime" resolveInfo="AbstractSubtypingRule_Runtime" />
+          <node role="referenceMacro$link_attribute$classifier" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1222182386798">
+            <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1222182391879">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222182391880">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1222182391884">
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222182391885">
+                    <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1222182391886" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1222182391887">
+                      <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1222182391888">
+                        <link role="conceptDeclaration" targetNodeId="1.1175147670730" resolveInfo="SubtypingRule" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222182391889">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1222182391890">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222182391891">
+                        <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1222182391892">
+                          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222182391893">
+                            <link role="classifier" targetNodeId="15.~SubtypingRule_Runtime" resolveInfo="SubtypingRule_Runtime" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1222182391894">
+                          <link role="link" targetNodeId="3.1107535924139" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1222182391895">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222182391896">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1222182391897">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222182391898">
+                        <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1222182391899">
+                          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222182391900">
+                            <link role="classifier" targetNodeId="15.~ComparisonRule_Runtime" resolveInfo="ComparisonRule_Runtime" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1222182391901">
+                          <link role="link" targetNodeId="3.1107535924139" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222182391902">
+                    <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1222182391903" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1222182391904">
+                      <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1222182391905">
+                        <link role="conceptDeclaration" targetNodeId="1.1188811367543" resolveInfo="ComparisonRule" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222182391906">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222182391907">
+                    <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1222182391908">
+                      <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222182391909">
+                        <link role="classifier" targetNodeId="15.~AbstractSubtypingRule_Runtime" resolveInfo="AbstractSubtypingRule_Runtime" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1222182391910">
+                      <link role="link" targetNodeId="3.1107535924139" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1222180564877">
+      <property name="applyToConceptInheritors" value="true" />
+      <link role="applicableConcept" targetNodeId="1.1174643105530" resolveInfo="InferenceRule" />
+      <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1222182261332">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222182303164">
+          <link role="classifier" targetNodeId="15.~AbstractInferenceRule_Runtime" resolveInfo="AbstractInferenceRule_Runtime" />
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1222182305102">
+      <property name="applyToConceptInheritors" value="true" />
+      <link role="applicableConcept" targetNodeId="1.1195214364922" resolveInfo="NonTypesystemRule" />
+      <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1222182327918">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222182340218">
+          <link role="classifier" targetNodeId="15.~AbstractNonTypesystemRule_Runtime" resolveInfo="AbstractNonTypesystemRule_Runtime" />
         </node>
       </node>
     </node>

@@ -9,9 +9,7 @@ import jetbrains.mps.util.Mapper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
-import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
-import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
-import jetbrains.mps.bootstrap.helgins.runtime.ICheckingRule_Runtime;
+import jetbrains.mps.bootstrap.helgins.runtime.*;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
@@ -423,13 +421,17 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   private void applyRuleToNode(SNode node, ICheckingRule_Runtime rule) {
-    // long t1 = System.currentTimeMillis();
     try {
-      rule.applyRule(node);
+      //todo get rid of ifs when refactoring is complete
+      if (rule instanceof AbstractInferenceRule_Runtime) {
+        ((AbstractInferenceRule_Runtime)rule).applyRule(node, getTypeCheckingContext());
+      } else if (rule instanceof AbstractNonTypesystemRule_Runtime) {
+        ((AbstractNonTypesystemRule_Runtime)rule).applyRule(node, getTypeCheckingContext());
+      } else {
+        rule.applyRule(node);
+      }
     } catch (Throwable t) {
       LOG.error(t);
-    } finally {
-      //  Statistics.getStatistic(Statistics.HELGINS).add(rule.getClass().getName(), System.currentTimeMillis() - t1, true);
     }
   }
 
