@@ -249,17 +249,8 @@ public class TypeChecker implements ApplicationComponent {
     checkRoot(node, false);
   }
 
-  //uncomplete
-  public void interrupt() {
-    NodeTypesComponent currentTypesComponent = getCurrentTypesComponent();
-    while (currentTypesComponent != null) {
-      currentTypesComponent.interrupt();
-      clearCurrentTypesComponent();
-      currentTypesComponent = getCurrentTypesComponent();
-    }
-  }
-
   public void checkRoot(final SNode node, final boolean refreshTypes) {
+    if (node == null) return;
     assert node.isRoot();
     checkWithinRoot(node, new Runnable() {
       public void run() {
@@ -368,6 +359,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void markAsChecked(SNode node) {
+    if (node == null) return;
     myCheckedRoots.add(node);
   }
 

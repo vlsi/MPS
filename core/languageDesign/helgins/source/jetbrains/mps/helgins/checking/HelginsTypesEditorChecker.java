@@ -37,20 +37,20 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
     if (!TypeChecker.getInstance().isCheckedRoot(node.getContainingRoot())) {
       try {
-        int timeoutSeconds = HelginsPreferencesComponent.getInstance().getHelginsTimeoutSeconds();
+      /*  int timeoutSeconds = HelginsPreferencesComponent.getInstance().getHelginsTimeoutSeconds();
         long timeoutMillis = timeoutSeconds <= -1 ? -1 : timeoutSeconds * 1000;
         if (timeoutMillis > -1) {
           TimerTask timerTask = new TimerTask() {
             public void run() {
               System.err.println("interrupting h-ns");
-            /*  int i = JOptionPane.showConfirmDialog(null, "do you want to interrupt helgins?");
-              if (i == JOptionPane.YES_OPTION) {*/
+            *//*  int i = JOptionPane.showConfirmDialog(null, "do you want to interrupt helgins?");
+              if (i == JOptionPane.YES_OPTION) {*//*
                 TypeChecker.getInstance().interrupt();
               }
        //     }
           };
           myTimer.schedule(timerTask, timeoutMillis);
-        }
+        }*/
         TypeChecker.getInstance().checkRoot(node.getContainingRoot());
       } catch (Throwable t) {
         LOG.error(t);
