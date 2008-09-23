@@ -44,7 +44,6 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
   @NotNull
   public SModel loadModel(final @NotNull SModelDescriptor modelDescriptor) {
-
     if (!modelDescriptor.getModelFile().isReadOnly()) {
       final File file = FileSystem.toFile(modelDescriptor.getModelFile());
 
@@ -64,8 +63,17 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       return handleExceptionDuringModelRead(modelDescriptor, t);
     }
 
+    boolean needToSave = false;
     if (model.getSModelReference().getSModelId() == null) {
       model.changeModelReference(modelDescriptor.getSModelReference());
+      needToSave = true;
+    }
+
+    if (model.updateSModelReferences()) {
+      needToSave = true;
+    }
+
+    if (needToSave && !modelDescriptor.getModelFile().isReadOnly()) {
       ModelPersistence.saveModel(model, modelDescriptor.getModelFile());
     }
 
