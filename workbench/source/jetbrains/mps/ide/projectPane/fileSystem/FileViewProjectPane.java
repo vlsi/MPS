@@ -54,7 +54,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private ChangeListListener myChangeListListener;
   private final MessageBus myBus;
   private MessageBusConnection myMessageBusConnection;
-  private final SModelAdapter myAllModelsListener = new SModelAdapter(){
+  private final SModelAdapter myGlobalSModelListener = new SModelAdapter() {
     @Override
     public void modelSaved(SModelDescriptor sm) {
       IFile modeFile = sm.getModelFile();
@@ -135,8 +135,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     myFileListener = new FileChangesListener();
     myVirtualFileManagerListener = new RefreshListener();
     myChangeListListener = new ChangeListUpdateListener();
-
-
   }
 
   protected abstract MPSTreeNode createRoot(Project project);
@@ -147,7 +145,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myVirtualFileManagerListener);
     myProject.getComponent(ProjectLevelVcsManager.class).addVcsListener(myDirectoryMappingListener);
     ChangeListManager.getInstance(myProject).addChangeListListener(myChangeListListener);
-    SModelRepository.getInstance().addAllModelsListener(myAllModelsListener);
+    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalSModelListener);
     myMessageBusConnection = myBus.connect();
     myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, new FileEditorManagerAdapter() {
       @Override
@@ -179,7 +177,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     VirtualFileManager.getInstance().removeVirtualFileManagerListener(myVirtualFileManagerListener);
     myProject.getComponent(ProjectLevelVcsManager.class).removeVcsListener(myDirectoryMappingListener);
     ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
-    SModelRepository.getInstance().removeAllModelsListener(myAllModelsListener);
+    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalSModelListener);
     myMessageBusConnection.disconnect();
   }
 
