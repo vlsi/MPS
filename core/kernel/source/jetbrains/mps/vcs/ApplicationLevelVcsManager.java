@@ -139,9 +139,11 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     return result[0];
   }
 
-  public void mergeModels(Set<SModelDescriptor> models) {
+  public synchronized void mergeModels(Set<SModelDescriptor> models) {
     final List<SModelDescriptor> merged = showMergeDialog(models);
 
+    if (merged.isEmpty()) return;
+    
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModelDescriptor model : merged) {
