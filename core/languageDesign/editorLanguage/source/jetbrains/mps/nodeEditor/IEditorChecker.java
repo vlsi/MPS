@@ -1,4 +1,4 @@
-package jetbrains.mps.helgins.checking;
+package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorMessage;

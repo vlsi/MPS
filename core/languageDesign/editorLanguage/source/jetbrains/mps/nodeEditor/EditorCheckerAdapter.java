@@ -1,9 +1,6 @@
-package jetbrains.mps.helgins.checking;
+package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.DefaultEditorMessage;
-import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
