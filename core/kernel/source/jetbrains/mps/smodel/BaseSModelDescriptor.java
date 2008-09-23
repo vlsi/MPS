@@ -75,6 +75,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return myModelReference.getStereotype();
   }
 
+  public SModelRoot getSModelRoot() {
+    List<SModelRoot> roots = new ArrayList<SModelRoot>(collectSModelRoots());
+    if (roots.isEmpty()) return null;
+    return roots.get(0);
+  }
+
   public Set<SModelRoot> collectSModelRoots() {
     Set<SModelRoot> result = new HashSet<SModelRoot>();
     IFile sourceFile = this.getModelFile();
@@ -83,7 +89,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       for (SModelRoot modelRoot : module.getSModelRoots()) {
         if (this.getSModelFqName().toString().equals(
           PathManager.getModelUIDString(sourceFile, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix()))) {
-
           result.add(modelRoot);
         }
       }

@@ -321,11 +321,8 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
   public void rename(SModelDescriptor sm, SModelFqName modelFqName) {
     IFile oldFile = sm.getModelFile();
-    List<SModelRoot> roots = new ArrayList<SModelRoot>(sm.collectSModelRoots());
-
-    assert !roots.isEmpty();
-
-    SModelRoot root = roots.get(0);
+    
+    SModelRoot root = sm.getSModelRoot();
     IFile newFile = createFileForModelUID(root, modelFqName);
     ((BaseSModelDescriptor) sm).changeModelFile(newFile);
     sm.save();
