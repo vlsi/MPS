@@ -215,5 +215,52 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1222169219677">
+    <property name="name" value="InstanceOfProblem" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222169219678" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1222169219679">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1222169219680" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222169219681" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222169219682">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1222169241776">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1222169257650">
+            <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222169273128">
+              <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222169256364">
+              <link role="variableDeclaration" targetNodeId="1222169248202" resolveInfo="param" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222169241778" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1222169248202">
+        <property name="name" value="param" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222169266361">
+          <link role="classifier" targetNodeId="3.~Object" resolveInfo="Object" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1222171953298">
+    <property name="name" value="IntentionProblem" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222171953299" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1222171953300">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1222171953301" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222171953302" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222171953303">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222171984822">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1222171985120">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222171984823">
+              <link role="variableDeclaration" targetNodeId="1222171978661" resolveInfo="a" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222171986436">
+              <property name="value" value="1" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

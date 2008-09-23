@@ -37,7 +37,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "r:1222094342530(jetbrains.mps.baseLanguage.helgins@21_0)", "1222095241404", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "r:1222178961037(jetbrains.mps.baseLanguage.helgins@21_0)", "1222179740755", intentionProvider);
           }
         }
       }
@@ -50,7 +50,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "r:1222094342530(jetbrains.mps.baseLanguage.helgins@21_0)", "1222095241419", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "r:1222178961037(jetbrains.mps.baseLanguage.helgins@21_0)", "1222179740770", intentionProvider);
           }
         } else
         {
@@ -79,7 +79,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
         );
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(func, "function should return " + whatExpected, "r:1222094342530(jetbrains.mps.baseLanguage.helgins@21_0)", "1222095227810", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(func, "function should return " + whatExpected, "r:1222178961037(jetbrains.mps.baseLanguage.helgins@21_0)", "1222179723867", intentionProvider);
         }
       }
       {

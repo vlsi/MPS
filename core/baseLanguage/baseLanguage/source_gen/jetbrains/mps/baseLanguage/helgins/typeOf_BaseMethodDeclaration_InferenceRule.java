@@ -51,7 +51,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "r:1222094342530(jetbrains.mps.baseLanguage.helgins@21_0)", "1222095241284", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "r:1222178961037(jetbrains.mps.baseLanguage.helgins@21_0)", "1222179740218", intentionProvider);
           }
         }
       }
@@ -62,7 +62,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "r:1222094342530(jetbrains.mps.baseLanguage.helgins@21_0)", "1222095241299", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "r:1222178961037(jetbrains.mps.baseLanguage.helgins@21_0)", "1222179740233", intentionProvider);
           }
         } else
         {

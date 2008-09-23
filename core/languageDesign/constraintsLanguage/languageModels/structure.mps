@@ -358,6 +358,9 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1221394041424">
       <link role="intfc" targetNodeId="3.1221393582612" resolveInfo="IExtarctMethodAvailable" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1222174884280">
+      <link role="intfc" targetNodeId="3.1222174328436" resolveInfo="IStaticConceptForMethods" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177670543683">
       <property name="role" value="concept" />
       <link role="target" targetNodeId="2.1169125787135" />

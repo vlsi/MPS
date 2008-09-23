@@ -10092,5 +10092,26 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221393363928" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1222174362468">
+    <property name="package" value="refactoring" />
+    <link role="concept" targetNodeId="1.1222174328436" resolveInfo="IStaticConceptForMethods" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1222174378300">
+      <property name="name" value="getStaticContainerProcessor" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222174378301" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222174387710">
+        <link role="classifier" targetNodeId="18.1222173596072" resolveInfo="StaticContainerProcessor" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222174378303" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1222174402102">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1222174402103" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1222174362469">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222174362470" />
+    </node>
+  </node>
 </model>
 

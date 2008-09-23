@@ -2747,5 +2747,9 @@
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1222174328436">
+    <property name="package" value="refactoring" />
+    <property name="name" value="IStaticConceptForMethods" />
+  </node>
 </model>
 
