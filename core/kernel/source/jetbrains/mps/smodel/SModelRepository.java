@@ -326,44 +326,6 @@ public class SModelRepository implements ApplicationComponent {
     markChanged(model, false);
   }
 
-  public void renameUID(SModelDescriptor modelDescriptor, SModelReference newModelReference) {
-//    boolean contains0 = myUIDToModelDescriptorMap.containsKey(modelDescriptor.getModelUID());
-//    myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
-//    boolean contains1 = myModelDescriptors.contains(modelDescriptor);
-//    myModelDescriptors.remove(modelDescriptor);
-//    boolean result = removeModelFromFileCache(modelDescriptor);
-//    assert result ^ !contains1;
-//    removeModelFromFileCache(modelDescriptor);
-//    Long aLong = myChangedModels.get(modelDescriptor);
-//    myChangedModels.remove(modelDescriptor);
-//
-//    boolean contains2 = myModelsWithNoOwners.contains(modelDescriptor);
-//    myModelsWithNoOwners.remove(modelDescriptor);
-//
-//    if (modelDescriptor instanceof DefaultSModelDescriptor) {
-//      ((DefaultSModelDescriptor) modelDescriptor).changeSModelUID(newModelUID);
-//    }
-//
-//    if (contains0) {
-//      myUIDToModelDescriptorMap.put(newModelUID, modelDescriptor);
-//    }
-//    if (contains1) {
-//      myModelDescriptors.add(modelDescriptor);
-//      addModelToFileCache(modelDescriptor);
-//    }
-//    if (aLong != null) {
-//      myChangedModels.put(modelDescriptor, aLong);
-//    }
-//
-//    if (contains2) {
-//      myModelsWithNoOwners.add(modelDescriptor);
-//    }
-//
-//    markChanged(modelDescriptor, true);
-//    fireModelRenamed(modelDescriptor);
-    throw new UnsupportedOperationException();
-  }
-
   private void addModelToFileCache(SModelDescriptor modelDescriptor) {
     IFile modelFile = modelDescriptor.getModelFile();
     if (modelFile != null) {

@@ -116,8 +116,6 @@ public interface SModelDescriptor {
 
   void setVersion(int newVersion);
 
-  boolean rename(String newLongName, MPSProject project, SModelRoot newRoot);
-
   Set<SModelRoot> collectSModelRoots();
 
   Object getUserObject(String key);

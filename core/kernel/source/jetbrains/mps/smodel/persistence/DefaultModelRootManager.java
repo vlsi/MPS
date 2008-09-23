@@ -299,60 +299,6 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     return modelDescriptor;
   }
 
-  public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, MPSProject project) {
-    assert modelDescriptor instanceof DefaultSModelDescriptor;
-    // 1. rename file
-    Set<SModelRoot> modelRoots = modelDescriptor.collectSModelRoots();
-    if (modelRoots.size() == 0) {
-      LOG.error("can't rename model " + modelDescriptor + " : no model root exists");
-      return false;
-    }
-    if (modelRoots.size() > 1) {
-      LOG.error("can't rename model " + modelDescriptor + " : more than one model root exists");
-      return false;
-    }
-
-    SModelRoot root = modelRoots.iterator().next();
-    return renameModelDescriptor(modelDescriptor, newLongName, root, project);
-  }
-
-  public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, SModelRoot root, MPSProject project) {
-/*    assert modelDescriptor instanceof DefaultSModelDescriptor;
-    SModelUID newModelUID = new SModelUID(newLongName, modelDescriptor.getStereotype());
-    SModelUID oldModelUID = modelDescriptor.getModelUID();
-    ModelOwner owner = SModelRepository.getInstance().getOwners(modelDescriptor).iterator().next();
-    IFile oldModelFile = modelDescriptor.getModelFile();
-    String oldFileName = oldModelFile.getAbsolutePath();
-
-    //create a file for a new model
-    IFile dest = createFileForModelUID(root, newModelUID);
-
-    // if imports itself: rename import here
-    if (modelDescriptor.getSModel().hasImportedModel(oldModelUID)) {
-      modelDescriptor.getSModel().changeImportedModelUID(oldModelUID, newModelUID);
-    }
-
-    // update model repository and rename descriptor itself
-    SModelRepository.getInstance().renameUID(modelDescriptor, newModelUID);
-
-    // update node pointers
-    SNodePointer.changeModelUID(oldModelUID, newModelUID);
-
-    //set model file
-    SModelRepository.getInstance().setModelFile((DefaultSModelDescriptor) modelDescriptor, dest);
-
-    //create stub for an old UID
-    String stubFileName = oldFileName.substring(0, oldFileName.lastIndexOf(MPSExtentions.DOT_MODEL)) + MPSExtentions.DOT_STUB;
-    SModelDescriptor stubDescriptor = new StubModelDescriptor(this, FileSystem.getFile(stubFileName), oldModelUID, newModelUID);
-    stubDescriptor.save();
-    SModelRepository.getInstance().registerModelDescriptor(stubDescriptor, owner);
-//    IFile stubDescriptorModelFile = stubDescriptor.getModelFile();
-
-    MPSModuleRepository.getInstance().invalidateCaches();
-    return true;*/
-    throw new RuntimeException();
-  }
-
   public void saveMetadata(@NotNull SModelDescriptor modelDescriptor) {
     Map<String, String> metadata = modelDescriptor.getMetaData();
     if (metadata.isEmpty()) return;

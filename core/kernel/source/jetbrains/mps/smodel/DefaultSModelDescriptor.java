@@ -662,14 +662,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     myTransient = b;
   }
 
-  public boolean rename(String newLongName, MPSProject project, SModelRoot newRoot) {
-    if (newRoot == null) {
-      return myModelRootManager.renameModelDescriptor(this, newLongName, project);
-    } else {
-      return myModelRootManager.renameModelDescriptor(this, newLongName, newRoot, project);
-    }
-  }
-
   /*package*/ void changeSModelUID(SModelReference newModelReference) {
     myModelReference = newModelReference;
     getSModel().changeModelReference(newModelReference);
