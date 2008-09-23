@@ -29,6 +29,7 @@ public class VcsRootsManager implements ProjectComponent {
   private final static Logger LOG = Logger.getLogger(VcsRootsManager.class);
   private final Project myProject;
   private final ProjectLevelVcsManager myVcsManager;
+  private final MPSVCSManager myMpsVcsManager;
   private final Set<VirtualFile> myExcludedRoots = new HashSet<VirtualFile>();
   private final SModelAdapter myGlobalSModelListener = new SModelAdapter() {
     @Override
@@ -38,7 +39,7 @@ public class VcsRootsManager implements ProjectComponent {
         if (modelFile == null) return;
         VirtualFile file = VFileSystem.getFile(modelFile.getParent());
         if (file == null) return;
-        MPSVCSManager.getInstance(myProject).ensureVcssInitialized();
+        myMpsVcsManager.ensureVcssInitialized();
         AbstractVcs vcs = myVcsManager.findVersioningVcs(file);
         if (vcs == null) return;
         if (myVcsManager.getVcsRootFor(file) != null) return;
@@ -56,9 +57,10 @@ public class VcsRootsManager implements ProjectComponent {
     }
   };
 
-  public VcsRootsManager(Project project, ProjectLevelVcsManager manager) {
+  public VcsRootsManager(Project project, ProjectLevelVcsManager manager, MPSVCSManager mpsManager) {
     myProject = project;
     myVcsManager = manager;
+    myMpsVcsManager = mpsManager;
   }
 
   public void projectOpened() {
