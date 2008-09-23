@@ -81,6 +81,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return roots.get(0);
   }
 
+  public void changeSModelRoot(SModelRoot root) {
+    myModelRootManager.changeSModelRoot(this, root);
+  }
+
   public Set<SModelRoot> collectSModelRoots() {
     Set<SModelRoot> result = new HashSet<SModelRoot>();
     IFile sourceFile = this.getModelFile();

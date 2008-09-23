@@ -54,5 +54,7 @@ public interface IModelRootManager {
 
   void rename(SModelDescriptor model, SModelFqName modelFqName);
 
+  void changeSModelRoot(SModelDescriptor model, SModelRoot modelRoot);
+
   void dispose();
 }

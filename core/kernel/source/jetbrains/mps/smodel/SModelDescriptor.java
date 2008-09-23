@@ -118,6 +118,8 @@ public interface SModelDescriptor {
 
   SModelRoot getSModelRoot();
 
+  void changeSModelRoot(SModelRoot root);
+
   Set<SModelRoot> collectSModelRoots();
 
   Object getUserObject(String key);
