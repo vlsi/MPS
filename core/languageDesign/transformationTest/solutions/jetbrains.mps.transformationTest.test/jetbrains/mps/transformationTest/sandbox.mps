@@ -2,29 +2,24 @@
 <model modelUID="r:1222075024909(jetbrains.mps.transformationTest.sandbox)">
   <persistence version="3" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.transformationTest">
-    <languageAspect modelUID="r:1222075024258(jetbrains.mps.transformationTest.constraints)" version="0" />
-    <languageAspect modelUID="r:1222075024264(jetbrains.mps.transformationTest.structure)" version="3" />
-  </language>
-  <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="r:1222075024065(jetbrains.mps.baseLanguage.constraints)" version="83" />
-    <languageAspect modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
-  </language>
-  <language namespace="jetbrains.mps.baseLanguage.unitTest">
-    <languageAspect modelUID="r:1222075024082(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
-  </language>
-  <language namespace="jetbrains.mps.core">
-    <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
-  </language>
-  <language namespace="jetbrains.mps.baseLanguage.classifiers">
-    <languageAspect modelUID="r:1222075024238(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  </language>
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
-    <languageAspect modelUID="r:1222075024123(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
-    <languageAspect modelUID="r:1222075024129(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
-  </language>
+  <language namespace="jetbrains.mps.transformationTest" />
+  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage.unitTest" />
+  <language namespace="jetbrains.mps.core" />
+  <language namespace="jetbrains.mps.baseLanguage.classifiers" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <languageAspect modelUID="r:1222075024258(jetbrains.mps.transformationTest.constraints)" version="0" />
+  <languageAspect modelUID="r:1222075024264(jetbrains.mps.transformationTest.structure)" version="3" />
+  <languageAspect modelUID="r:1222075024065(jetbrains.mps.baseLanguage.constraints)" version="83" />
+  <languageAspect modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024082(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024238(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
+  <languageAspect modelUID="r:1222075024123(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
+  <languageAspect modelUID="r:1222075024129(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
   <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024091(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <maxImportIndex value="5" />
   <import index="3" modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="4" modelUID="r:1222075024008(jetbrains.mps.core.structure)" version="-1" />

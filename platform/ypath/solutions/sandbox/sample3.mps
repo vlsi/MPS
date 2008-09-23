@@ -2,15 +2,14 @@
 <model modelUID="r:1222075024826(sample3)">
   <persistence version="3" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="r:1222075024065(jetbrains.mps.baseLanguage.constraints)" version="83" />
-    <languageAspect modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
-  </language>
-  <language namespace="jetbrains.mps.ypath">
-    <languageAspect modelUID="r:1222075024808(jetbrains.mps.ypath.constraints)" version="49" />
-  </language>
+  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.ypath" />
+  <languageAspect modelUID="r:1222075024065(jetbrains.mps.baseLanguage.constraints)" version="83" />
+  <languageAspect modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024808(jetbrains.mps.ypath.constraints)" version="49" />
   <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024091(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <maxImportIndex value="8" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#org.w3c.dom(org.w3c.dom@java_stub)" version="-1" />

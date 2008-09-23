@@ -1411,8 +1411,14 @@ public class SModel implements Iterable<SNode> {
   }
 
   private boolean changed(SModelReference ref1, SModelReference ref2) {
-    return !EqualUtil.equals(ref1.getSModelId(), ref2.getSModelId()) ||
+    boolean result = !EqualUtil.equals(ref1.getSModelId(), ref2.getSModelId()) ||
       !EqualUtil.equals(ref1.getSModelFqName(), ref2.getSModelFqName());
+
+    if (result) {
+      System.out.println("!!!");
+    }
+
+    return result;
   }
 
   private static WeakSet<SModel> ourActiveModels = new WeakSet<SModel>();

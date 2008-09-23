@@ -2,9 +2,8 @@
 <model modelUID="r:1222075024866(jetbrains.mpslite.sandbox)">
   <persistence version="3" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.nanoj">
-    <languageAspect modelUID="r:1222075024860(jetbrains.mps.nanoj.constraints)" version="45" />
-  </language>
+  <language namespace="jetbrains.mps.nanoj" />
+  <languageAspect modelUID="r:1222075024860(jetbrains.mps.nanoj.constraints)" version="45" />
   <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
   <maxImportIndex value="1" />

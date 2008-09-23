@@ -2,12 +2,12 @@
 <model modelUID="r:1222075024896(jetbrains.mps.transformation.test.inputModels.test_reduceExpressionToStatement)">
   <persistence version="3" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="r:1222075024065(jetbrains.mps.baseLanguage.constraints)" version="83" />
-    <languageAspect modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
-  </language>
+  <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.transformation.test.inputLang" />
+  <languageAspect modelUID="r:1222075024065(jetbrains.mps.baseLanguage.constraints)" version="83" />
+  <languageAspect modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024091(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList" id="1209149708201">
     <property name="name" value="Input" />
