@@ -259,8 +259,6 @@ public class GenerationController {
       generationSession.discardTransients();
       Logger.removeLoggingHandler(generationSession.getLoggingHandler());
       TypeChecker.getInstance().resetTypeCheckingMode();
-
-      tryToReloadModelsFromDisk();
     }
 
     checkMonitorCanceled();
@@ -348,12 +346,6 @@ public class GenerationController {
 
   private MPSProject getProject() {
     return getFirstContext().getMPSProject();
-  }
-
-  private void tryToReloadModelsFromDisk() {
-    if (getFirstContext().getMainFrame() != null) {
-      SModelRepository.getInstance().tryToReloadModelsFromDisk((JFrame) getFirstContext().getMainFrame());
-    }
   }
 
   private void clearMessageVew() {

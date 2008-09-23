@@ -24,7 +24,7 @@
   <languageAspect modelUID="r:1222075024558(jetbrains.mps.ide.uiLanguage.constraints)" version="3" />
   <languageAspect modelUID="r:1222075024718(jetbrains.mps.uiLanguage.constraints)" version="26" />
   <languageAspect modelUID="r:1222075024091(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <maxImportIndex value="114" />
+  <maxImportIndex value="115" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -90,6 +90,7 @@
   <import index="109" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
   <import index="113" modelUID="f:java_stub#com.intellij.openapi.fileChooser.actions(com.intellij.openapi.fileChooser.actions@java_stub)" version="-1" />
   <import index="114" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def.v3(jetbrains.mps.smodel.persistence.def.v3@java_stub)" version="-1" />
+  <import index="115" modelUID="f:java_stub#jetbrains.mps.refactoring.renameModel(jetbrains.mps.refactoring.renameModel@java_stub)" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -186,6 +187,9 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909227967" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1217518716185">
         <link role="constructorDeclaration" targetNodeId="3.~DeleteModelsAction.&lt;init&gt;()" resolveInfo="DeleteModelsAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1222162489132">
+        <link role="constructorDeclaration" targetNodeId="115.~RenameModelAction.&lt;init&gt;()" resolveInfo="RenameModelAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1215874907325">
         <link role="action" targetNodeId="1215874656794" resolveInfo="CloneModel" />
@@ -6847,7 +6851,7 @@
                   <link role="variableDeclaration" targetNodeId="1216128592881" resolveInfo="tracer" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216128675339">
-                  <link role="baseMethodDeclaration" targetNodeId="101.~GenerationTracer.hasTracebackData(jetbrains.mps.smodel.SModelUID):boolean" resolveInfo="hasTracebackData" />
+                  <link role="baseMethodDeclaration" targetNodeId="101.~GenerationTracer.hasTracebackData(jetbrains.mps.smodel.SModelReference):boolean" resolveInfo="hasTracebackData" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216128699730">
                     <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1216128707561">
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216128697116">
@@ -6860,8 +6864,8 @@
                         <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" id="1216128698604" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216128712598">
-                      <link role="baseMethodDeclaration" targetNodeId="40.~SModel.getUID():jetbrains.mps.smodel.SModelUID" resolveInfo="getUID" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222162654167">
+                      <link role="baseMethodDeclaration" targetNodeId="40.~SModel.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
                     </node>
                   </node>
                 </node>

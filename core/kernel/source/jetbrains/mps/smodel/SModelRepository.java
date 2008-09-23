@@ -38,12 +38,6 @@ public class SModelRepository implements ApplicationComponent {
   private List<SModelListener> myAllModelsListeners = new ArrayList<SModelListener>();
   private WeakSet<SModelListener> myWeakAllModelsListeners = new WeakSet<SModelListener>();
 
-  private SModelListener myAllModelsListener = new SModelEventBroadcaster(){
-    protected Collection<SModelListener> getListeners() {
-      return modelListeners();
-    }
-  };
-
   public SModelRepository() {
   }
 
@@ -240,12 +234,10 @@ public class SModelRepository implements ApplicationComponent {
 
   private void addListeners(SModelDescriptor modelDescriptor) {
     modelDescriptor.addModelListener(myModelsListener);
-    modelDescriptor.addModelListener(myAllModelsListener);
   }
 
   private void removeListeners(SModelDescriptor modelDescriptor) {
     modelDescriptor.removeModelListener(myModelsListener);
-    modelDescriptor.removeModelListener(myAllModelsListener);
   }
 
   public void removeUnusedDescriptors() {
@@ -425,46 +417,6 @@ public class SModelRepository implements ApplicationComponent {
     return result;
   }
 
-  public void tryToReloadModelsFromDisk(final JFrame frame) {
-//    if (myInChangedModelsReloading) {
-//      return;
-//    }
-//
-//    Runnable command = new Runnable() {
-//      public void run() {
-//        myInChangedModelsReloading = true;
-//        try {
-//          final Set<SModelDescriptor> toReload = new HashSet<SModelDescriptor>();
-//          for (SModelDescriptor sm : getModelDescriptors()) {
-//            if (sm.needsReloading()) {
-//              toReload.add(sm);
-//            }
-//          }
-//
-//          for (SModelDescriptor sm : toReload) {
-//            if (isChanged(sm)) {
-//              int result = JOptionPane.showConfirmDialog(frame,
-//                      "Model " + sm.getModelUID() + " changed on a disk. Do you want to discard memory changes?",
-//                      "Model Changed " + sm.getModelUID(), JOptionPane.YES_NO_OPTION);
-//
-//              if (result == JOptionPane.YES_OPTION) {
-//                sm.reloadFromDisk();
-//              } else {
-//                sm.save();
-//              }
-//            } else {
-//              sm.reloadFromDisk();
-//            }
-//          }
-//        } finally {
-//          myInChangedModelsReloading = false;
-//        }
-//      }
-//    };
-//
-//    CommandProcessor.instance().executeLightweightCommandInEDT(command);
-  }
-
   private void fireBeforeModelRemoved(SModelDescriptor modelDescriptor) {
     for (SModelRepositoryListener l : listeners()) {
       l.beforeModelRemoved(modelDescriptor);
@@ -549,6 +501,20 @@ public class SModelRepository implements ApplicationComponent {
 
     public void modelChangedDramatically(SModel model) {
       markChanged(model);
+    }
+
+    public void modelRenamed(SModelRenamedEvent event) {
+      myFqNameToModelDescriptorMap.remove(event.getOldName());
+      myFqNameToModelDescriptorMap.put(event.getNewName(), event.getModelDescriptor());
+      fireModelRenamed(event.getModelDescriptor());
+    }
+
+    public void beforeModelFileChanged(SModelFileChangedEvent event) {
+      removeModelFromFileCache(event.getModelDescriptor());
+    }
+
+    public void modelFileChanged(SModelFileChangedEvent event) {
+      addModelToFileCache(event.getModelDescriptor());
     }
   }
 }

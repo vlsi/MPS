@@ -81,7 +81,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     Set<IModule> modelOwners = getModules();
     for (IModule module : modelOwners) {
       for (SModelRoot modelRoot : module.getSModelRoots()) {
-        if (this.getSModelReference().toString().equals(
+        if (this.getSModelFqName().toString().equals(
           PathManager.getModelUIDString(sourceFile, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix()))) {
 
           result.add(modelRoot);
