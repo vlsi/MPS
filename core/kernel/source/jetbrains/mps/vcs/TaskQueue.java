@@ -26,8 +26,10 @@ public abstract class TaskQueue<T> {
 
   public final synchronized void allowAccessAndProcessAllTasks() {
     myIsProcessingAllowed = true;
-    processTask(myTasks);
-    myTasks.clear();
+    if (!myTasks.isEmpty()) {
+      processTask(new LinkedList<T>(myTasks));
+      myTasks.clear();
+    }
   }
 
   public final synchronized void prohibitAccess() {
