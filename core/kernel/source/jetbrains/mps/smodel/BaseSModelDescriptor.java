@@ -171,8 +171,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     SModel model = getSModel();
     model.fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
 
+    SModelReference newModelReference = new SModelReference(newModelFqName, myModelReference.getSModelId());
+    model.changeModelReference(newModelReference);
     myModelRootManager.rename(this, newModelFqName);
-    myModelReference = new SModelReference(newModelFqName, myModelReference.getSModelId());
+    myModelReference = newModelReference;
 
     model.fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
   }
