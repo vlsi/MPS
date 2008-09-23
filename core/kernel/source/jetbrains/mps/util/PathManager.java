@@ -351,7 +351,7 @@ public class PathManager {
     longName = longName.substring(0, longName.lastIndexOf("."));
     longName = longName.replace(File.separatorChar, '.').replace('/', '.');
     if(namespacePrefix != null && namespacePrefix.length() > 0) {
-      longName = namespacePrefix + "." + longName;
+      longName = namespacePrefix + ((longName.length() > 0) ? "." + longName : "");
     }
     return longName;
   }

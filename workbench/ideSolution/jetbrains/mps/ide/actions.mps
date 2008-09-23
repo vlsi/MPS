@@ -188,9 +188,6 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1217518716185">
         <link role="constructorDeclaration" targetNodeId="3.~DeleteModelsAction.&lt;init&gt;()" resolveInfo="DeleteModelsAction" />
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1222162489132">
-        <link role="constructorDeclaration" targetNodeId="115.~RenameModelAction.&lt;init&gt;()" resolveInfo="RenameModelAction" />
-      </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1215874907325">
         <link role="action" targetNodeId="1215874656794" resolveInfo="CloneModel" />
       </node>
@@ -236,6 +233,10 @@
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1215889790375">
         <link role="action" targetNodeId="1215889706327" resolveInfo="SaveModel" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1222173593116" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1222173595836">
+        <property name="name" value="refactoring" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1221757534230" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1221757535813">
@@ -7908,6 +7909,21 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1217431777694">
         <property name="name" value="abstractFileActions" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1222173496701">
+    <property name="package" value="Menu.ProjectPane.Model" />
+    <property name="name" value="ProjectPaneModelRefactoring" />
+    <property name="isPopup" value="true" />
+    <property name="caption" value="Refactoring" />
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1222173514374">
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1222173585114">
+        <link role="constructorDeclaration" targetNodeId="115.~RenameModelAction.&lt;init&gt;()" resolveInfo="RenameModelAction" />
+      </node>
+    </node>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1222173607728">
+      <link role="modifiedGroup" targetNodeId="1204991218714" resolveInfo="ProjectPaneModelActions" />
+      <link role="point" targetNodeId="1222173595836" resolveInfo="refactoring" />
     </node>
   </node>
 </model>
