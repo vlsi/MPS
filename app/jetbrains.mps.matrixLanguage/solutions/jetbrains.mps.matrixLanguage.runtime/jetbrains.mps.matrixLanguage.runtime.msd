@@ -10,9 +10,5 @@
     <usedLanguages>jetbrains.mps.bootstrap.helgins</usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.blTypes</usedLanguages>
   </usedLanguages>
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
 </solution>
 

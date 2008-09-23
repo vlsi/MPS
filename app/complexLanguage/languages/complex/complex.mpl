@@ -21,10 +21,6 @@
   <classPath />
   <languageRuntimeClassPath />
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <dependencies>
     <dependency reexport="true">jetbrains.mps.complex.runtime</dependency>
   </dependencies>

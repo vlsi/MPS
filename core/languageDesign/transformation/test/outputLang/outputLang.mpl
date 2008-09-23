@@ -22,10 +22,6 @@
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
   </extendedLanguages>

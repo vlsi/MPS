@@ -5,7 +5,7 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.logging.refactoring" />
   </models>
   <accessoryModels>
-    <model modelUID="r:1222075024152(jetbrains.mps.logging.refactoring.samples)" />
+    <model modelUID="r:00000000-0000-4000-0000-011c89590318(jetbrains.mps.logging.refactoring.samples)" />
   </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.logging.refactoring#1189697379687">
@@ -27,7 +27,7 @@
       <mapping-priorities>
         <mapping-priority-rule kind="before_or_together ">
           <greater-priority-mapping>
-            <mapping-node modelUID="r:1222075024154(jetbrains.mps.logging.refactoring.generator.baseLanguage.template.main@generator)" nodeID="*" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c8959031a(jetbrains.mps.logging.refactoring.generator.baseLanguage.template.main@generator)" nodeID="*" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <generator generatorUID="jetbrains.mps.bootstrap.smodelLanguage#1139186730696" />

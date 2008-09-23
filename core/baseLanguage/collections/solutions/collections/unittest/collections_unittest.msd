@@ -4,7 +4,6 @@
     <modelRoot path="${solution_descriptor}\" namespacePrefix="jetbrains.mps.baseLanguage.ext.collections.unittest" />
   </models>
   <classPath />
-  <runtimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="true">jetbrains.mps.baseLanguage.ext.collections.lang</dependency>

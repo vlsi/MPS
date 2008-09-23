@@ -38,23 +38,6 @@ public class ModelWriter3 implements IModelWriter {
     for (String languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace);
-     /* Language l = GlobalScope.getInstance().getLanguage(languageNamespace);
-      if (l != null) {
-        sourceModel.addAspectModelsVersions(l);
-        List<SModelDescriptor> aspectModelDescriptors = new ArrayList<SModelDescriptor>(l.getAspectModelDescriptors());
-        Collections.sort(aspectModelDescriptors, new Comparator<SModelDescriptor>() {
-          public int compare(SModelDescriptor o1, SModelDescriptor o2) {
-            return o1.toString().compareTo(o2.toString());
-          }
-        });
-        for (SModelDescriptor sModelDescriptor : aspectModelDescriptors) {
-          SModelReference reference = sModelDescriptor.getModelUID();
-          if (!writtenAspects.contains(reference.toString())) {
-            writtenAspects.add(reference.toString());
-            writeAspect(sourceModel, languageElem, reference);
-          }
-        }
-      }*/
       rootElement.addContent(languageElem);
     }
     for (ImportElement aspectElement : sourceModel.getLanguageAspectModelElements()) {

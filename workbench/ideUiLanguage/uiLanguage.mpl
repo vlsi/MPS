@@ -23,7 +23,7 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="r:1222075024562(jetbrains.mps.ide.uiLanguage.generator.baseLanguage.template.main@generator)" nodeID="*" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895904b2(jetbrains.mps.ide.uiLanguage.generator.baseLanguage.template.main@generator)" nodeID="*" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <generator generatorUID="jetbrains.mps.uiLanguage#1202393863737" />

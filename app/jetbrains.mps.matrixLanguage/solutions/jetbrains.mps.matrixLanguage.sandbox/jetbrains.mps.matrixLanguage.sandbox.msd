@@ -8,9 +8,5 @@
   <usedLanguages>
     <usedLanguages>jetbrains.mps.matrixLanguage</usedLanguages>
   </usedLanguages>
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
 </solution>
 

@@ -12,9 +12,5 @@
     <usedLanguages>jetbrains.mps.transformation.test.inputLang</usedLanguages>
     <usedLanguages>jetbrains.mps.transformation.test.outputLang</usedLanguages>
   </usedLanguages>
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
 </solution>
 

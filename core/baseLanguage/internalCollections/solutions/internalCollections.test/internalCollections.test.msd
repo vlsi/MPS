@@ -4,7 +4,6 @@
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
   <classPath />
-  <runtimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">jetbrains.mps.baseLanguage.unitTest</dependency>

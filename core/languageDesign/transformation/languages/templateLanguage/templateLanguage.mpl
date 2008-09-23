@@ -28,10 +28,10 @@
           <greater-priority-mapping>
             <mapping-set>
               <mapping-set-element>
-                <mapping-node modelUID="r:1222075024105(jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.main@generator)" nodeID="1167163238171" />
+                <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.main@generator)" nodeID="1167163238171" />
               </mapping-set-element>
               <mapping-set-element>
-                <mapping-node modelUID="r:1222075024105(jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.main@generator)" nodeID="1200915686141" />
+                <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.main@generator)" nodeID="1200915686141" />
               </mapping-set-element>
             </mapping-set>
           </greater-priority-mapping>

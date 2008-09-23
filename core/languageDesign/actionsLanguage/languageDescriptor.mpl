@@ -23,29 +23,29 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="r:1222075024041(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1196434407478" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1196434407478" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <mapping-node modelUID="r:1222075024041(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1154466410557" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1154466410557" />
           </lesser-priority-mapping>
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
-            <mapping-node modelUID="r:1222075024041(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1154466410557" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1154466410557" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <generator generatorUID="jetbrains.mps.bootstrap.sharedConcepts#1161623873951" />
             <external-mapping>
-              <mapping-node modelUID="r:1222075024061(jetbrains.mps.bootstrap.sharedConcepts.generator.baseLanguage.template.main@generator)" nodeID="1161623876737" />
+              <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902bd(jetbrains.mps.bootstrap.sharedConcepts.generator.baseLanguage.template.main@generator)" nodeID="1161623876737" />
             </external-mapping>
           </lesser-priority-mapping>
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
-            <mapping-node modelUID="r:1222075024041(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1154466410557" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1154466410557" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <mapping-node modelUID="r:1222075024041(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1221137101806" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1221137101806" />
           </lesser-priority-mapping>
         </mapping-priority-rule>
       </mapping-priorities>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:1222075024866(jetbrains.mpslite.sandbox)">
+<model modelUID="r:00000000-0000-4000-0000-011c895905e2(jetbrains.mpslite.sandbox)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.nanoj" />
-  <languageAspect modelUID="r:1222075024860(jetbrains.mps.nanoj.constraints)" version="45" />
-  <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
-  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905dc(jetbrains.mps.nanoj.constraints)" version="45" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
   <maxImportIndex value="1" />
   <node type="jetbrains.mps.nanoj.structure.ClassConcept" id="1197634682459">
     <property name="name" value="ABCDEF" />

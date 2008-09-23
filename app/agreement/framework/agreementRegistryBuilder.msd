@@ -4,7 +4,6 @@
     <modelRoot path="${solution_descriptor}\models\postingrules" namespacePrefix="postingrules" />
   </models>
   <classPath />
-  <runtimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="true">jetbrains.mps.formulaLanguage</dependency>

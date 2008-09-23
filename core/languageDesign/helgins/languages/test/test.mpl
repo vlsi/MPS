@@ -7,12 +7,8 @@
   <accessoryModels />
   <generators />
   <classPath />
-  <runtimeClassPath />
+  <languageRuntimeClassPath />
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <dependencies>
     <dependency reexport="true">jetbrains.mps.bootstrap.helgins</dependency>
   </dependencies>

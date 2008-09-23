@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:1222075024399(postingrules.agreement)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959040f(postingrules.agreement)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="agreementLanguage" />
   <language namespace="jetbrains.mps.formulaLanguage" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="r:1222075024395(agreementLanguage.declarations)" version="-1" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959040b(agreementLanguage.declarations)" version="-1" />
   <node type="agreementLanguage.structure.Plan" id="1112303557868">
     <property name="name" value="Regular" />
     <node role="event" type="agreementLanguage.structure.Event" id="1112383986387">

@@ -5,7 +5,7 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.baseLanguage.blTypes" />
   </models>
   <accessoryModels>
-    <model modelUID="r:1222075024094(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <model modelUID="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   </accessoryModels>
   <generators />
   <classPath>

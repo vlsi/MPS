@@ -5,7 +5,7 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage" />
   </models>
   <accessoryModels>
-    <model modelUID="r:1222075024548(jetbrains.mps.ide.actions)" />
+    <model modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
     <model modelUID="f:java_stub#jetbrains.mps.plugin(jetbrains.mps.plugin@java_stub)" />
     <model modelUID="f:java_stub#jetbrains.mps.plugins(jetbrains.mps.plugins@java_stub)" />
   </accessoryModels>
@@ -36,7 +36,7 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="r:1222075024233(jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template.main@generator)" nodeID="*" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template.main@generator)" nodeID="*" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <generator generatorUID="jetbrains.mps.closures#1199623535494" />

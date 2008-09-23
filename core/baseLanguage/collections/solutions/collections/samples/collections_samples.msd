@@ -9,9 +9,5 @@
     <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
     <dependency reexport="true">jetbrains.mps.baseLanguage.ext.collections.lang</dependency>
   </dependencies>
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
 </solution>
 

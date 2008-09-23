@@ -4,7 +4,6 @@
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
   <classPath />
-  <runtimeClassPath />
   <sourcePath />
   <usedLanguages>
     <usedLanguages>jetbrains.mps.bootstrap.dataFlow</usedLanguages>

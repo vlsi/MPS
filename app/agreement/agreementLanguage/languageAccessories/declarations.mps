@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:1222075024395(agreementLanguage.declarations)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959040b(agreementLanguage.declarations)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="agreementLanguage" />
