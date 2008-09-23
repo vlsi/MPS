@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.intentions.IntentionProvider;
 
 import java.util.Map;
 
@@ -37,10 +38,37 @@ public class TypeCheckingContext {
     return myNodeTypesComponent.getEquationManager();
   }
 
+  //errors reporting
+
+   public void reportTypeError(SNode nodeWithError, String errorString) {
+    reportTypeError(nodeWithError, errorString, null, null);
+  }
+
+  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
+    reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId));
+  }
+
+  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
+    SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
+    reporter.setIntentionProvider(intentionProvider);
+    reportTypeError(nodeWithError, reporter);
+  }
+
+  public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
+    reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId, true));
+  }
+
+   public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
+     SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId, true);
+     reporter.setIntentionProvider(intentionProvider);
+     reportTypeError(nodeWithError, reporter);
+  }
+
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
     myNodeTypesComponent.reportTypeError(nodeWithError, errorReporter);
     myNodeTypesComponent.addDependcyOnCurrent(nodeWithError);
   }
+  //~
 
    public SNode createNewRuntimeTypesVariable() {
     SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable", getRuntimeTypesModel(), GlobalScope.getInstance(), false);
