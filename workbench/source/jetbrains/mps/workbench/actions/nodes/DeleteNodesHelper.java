@@ -109,24 +109,4 @@ public class DeleteNodesHelper {
       safeDeleteAction.actionPerformed(event);
     }
   }
-
-  private static enum Mode {
-    SAFE("safe", false), UNSAFE("unsafe", true), NA("n/a", true), CANCELLED("cancelled", false);
-
-    private String myName;
-    private boolean myImmediate;
-
-    private Mode(String name, boolean isImmediate) {
-      myName = name;
-      myImmediate = isImmediate;
-    }
-
-    public String getName() {
-      return myName;
-    }
-
-    public boolean isImmediate() {
-      return myImmediate;
-    }
-  }
 }
