@@ -57,6 +57,10 @@ public abstract class AbstractModule implements IModule {
   public void onModuleLoad() {
     boolean save = false;
 
+    if (updateSModelReferences()) {
+      save = true;
+    }
+
     if (isPackaged()) {
       updateDescriptorClasspath();
     } else {
