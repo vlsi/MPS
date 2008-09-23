@@ -15,7 +15,6 @@ import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.bootstrap.helgins.runtime.quickfix.QuickFix_Runtime;
 
-import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.util.LinkedHashSet;
 import java.util.Set;

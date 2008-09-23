@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.helgins.checking.IEditorChecker;
+import jetbrains.mps.nodeEditor.IEditorChecker;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;

@@ -5,7 +5,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.helgins.checking.EditorCheckerAdapter;
+import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
 import jetbrains.mps.ide.ThreadUtils;
 
 import java.util.*;
