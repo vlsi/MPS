@@ -39,7 +39,6 @@ public class VcsRootsManager implements ProjectComponent {
         if (modelFile == null) return;
         VirtualFile file = VFileSystem.getFile(modelFile.getParent());
         if (file == null) return;
-        myMpsVcsManager.ensureVcssInitialized();
         AbstractVcs vcs = myVcsManager.findVersioningVcs(file);
         if (vcs == null) return;
         if (myVcsManager.getVcsRootFor(file) != null) return;
@@ -52,7 +51,7 @@ public class VcsRootsManager implements ProjectComponent {
           showAddVcsRootDialog(root, sm);
         }
       } catch (IllegalArgumentException e) {
-        LOG.error(e);
+//        LOG.error(e);
       }
     }
   };
