@@ -23,11 +23,11 @@ public class SuspiciousModelIndex implements ApplicationComponent {
 
   private final ProjectManager myProjectManager;
   private final SuspiciousModelIndex.ProjectOpenedListener myProjectManagerListener;
-  private final TaskQueue<SModelDescriptor> myTaskQueue = new TaskQueue<SModelDescriptor>(false) {
-    public void processTask(final List<SModelDescriptor> tasks) {
+  private final TaskQueue<Pair<SModelDescriptor, Boolean>> myTaskQueue = new TaskQueue<Pair<SModelDescriptor, Boolean>>(false) {
+    public void processTask(final List<Pair<SModelDescriptor, Boolean>> tasks) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          Set<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
+          Set<Pair<SModelDescriptor, Boolean>> models = new LinkedHashSet<Pair<SModelDescriptor, Boolean>>();
           models.addAll(tasks);
           ApplicationLevelVcsManager.instance().mergeModels(models);
         }
@@ -40,8 +40,8 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     myProjectManagerListener = new ProjectOpenedListener();
   }
 
-  public void addModel(SModelDescriptor model) {
-    myTaskQueue.invokeLater(model);
+  public void addModel(SModelDescriptor model, boolean isInConflict) {
+    myTaskQueue.invokeLater(new Pair<SModelDescriptor, Boolean>(model, isInConflict));
   }
 
   @NonNls
@@ -78,6 +78,24 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
 
     public void projectClosing(Project project) {
+    }
+  }
+
+  static class Pair<K,V>{
+    private final K myK;
+    private final V myV;
+
+    private Pair(K k, V v) {
+      myK = k;
+      myV = v;
+    }
+
+    public K getK() {
+      return myK;
+    }
+
+    public V getV() {
+      return myV;
     }
   }
 }

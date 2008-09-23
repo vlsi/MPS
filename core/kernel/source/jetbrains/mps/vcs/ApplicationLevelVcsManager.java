@@ -17,6 +17,7 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.vcs.SuspiciousModelIndex.Pair;
 
 import java.util.*;
 
@@ -88,7 +89,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
   }
 
   private boolean isInConflict(Project project, final VirtualFile vfile, boolean synchronously) {
-    if (MPSVCSManager.getInstance(project).isChangeListManagerInitialized() && !synchronously){
+    if (MPSVCSManager.getInstance(project).isChangeListManagerInitialized() && !synchronously) {
       return ChangeListManager.getInstance(project).getStatus(vfile).equals(FileStatus.MERGED_WITH_CONFLICTS);
     }
 
@@ -139,11 +140,11 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     return result[0];
   }
 
-  public synchronized void mergeModels(Set<SModelDescriptor> models) {
+  public synchronized void mergeModels(Set<Pair<SModelDescriptor, Boolean>> models) {
     final List<SModelDescriptor> merged = showMergeDialog(models);
 
     if (merged.isEmpty()) return;
-    
+
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModelDescriptor model : merged) {
@@ -154,10 +155,20 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
 
   }
 
-  private List<SModelDescriptor> showMergeDialog(Set<SModelDescriptor> models) {
+  /**
+   * Show merge dialogs for given model descriptors.
+   *
+   * @param models model descriptors to merge
+   * @return list of model descriptors, which have to be reloaded
+   *         (they were succesfully merged or they were not in conflict but just a bit outdated)
+   */
+  private List<SModelDescriptor> showMergeDialog(Set<Pair<SModelDescriptor, Boolean>> models) {
     Map<Project, List<VirtualFile>> toMerge = new HashMap<Project, List<VirtualFile>>();
+    // TODO deal with duplicate models
     Map<VirtualFile, SModelDescriptor> fileToModel = new HashMap<VirtualFile, SModelDescriptor>();
-    for (SModelDescriptor modelDescriptor : models) {
+    List<SModelDescriptor> toReload = new ArrayList<SModelDescriptor>();
+    for (Pair<SModelDescriptor, Boolean> pair : models) {
+      SModelDescriptor modelDescriptor = pair.getK();
       IFile ifile = modelDescriptor.getModelFile();
       if (isInConflict(ifile, true)) {
         VirtualFile vfile = VFileSystem.getFile(ifile);
@@ -169,20 +180,25 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
         }
         files.add(vfile);
         fileToModel.put(vfile, modelDescriptor);
+      } else if (pair.getV() || modelDescriptor.needsReloading()) {
+        toReload.add(modelDescriptor);
+        // pair.getV() is true when during model loading a conflict was detected
+        // this means that model is not in conflict now, but still may need reloading
+        // if pair.getV() is false, then there were no conflict all the time
+        // if the model really needs reloading, we' ll do it, but if not, it would be wrong
       }
     }
 
-    final List<SModelDescriptor> merged = new LinkedList<SModelDescriptor>();
     for (Project project : toMerge.keySet()) {
       List<VirtualFile> virtualFileList = AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project));
       for (VirtualFile vfile : virtualFileList) {
         SModelDescriptor model = fileToModel.get(vfile);
         if (model != null) {
-          merged.add(model);
+          toReload.add(model);
         }
       }
     }
-    return merged;
+    return toReload;
   }
 
   public void addFilesToVcs(List<VirtualFile> files) {

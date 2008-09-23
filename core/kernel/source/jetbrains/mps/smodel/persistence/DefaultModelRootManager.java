@@ -54,14 +54,14 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     }
 
     if (ApplicationLevelVcsManager.instance().isInConflict(modelDescriptor, modelDescriptor.needsReloading())) {
-      return handleExceptionDuringModelRead(modelDescriptor, new ConflictModelException(modelDescriptor));
+      return handleExceptionDuringModelRead(modelDescriptor, new ConflictModelException(modelDescriptor), true);
     }
 
     SModel model;
     try {
       model = ModelPersistence.readModel(modelDescriptor.getModelFile());
     } catch (ModelFileReadException t) {
-      return handleExceptionDuringModelRead(modelDescriptor, t);
+      return handleExceptionDuringModelRead(modelDescriptor, t, false);
     }
 
     boolean needToSave = false;
@@ -87,8 +87,8 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     return model;
   }
 
-  private SModel handleExceptionDuringModelRead(SModelDescriptor modelDescriptor, RuntimeException exception) {
-    SuspiciousModelIndex.instance().addModel(modelDescriptor);
+  private SModel handleExceptionDuringModelRead(SModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
+    SuspiciousModelIndex.instance().addModel(modelDescriptor, isConflictStateFixed);
     if (modelDescriptor.isInitialized()) {
       SModel newModel = new SModel(modelDescriptor.getSModelReference());
       LOG.error(exception.getMessage(), newModel);
